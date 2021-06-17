@@ -1,0 +1,62 @@
+В: Как удалить предмет из окна предметов?
+
+О:
+	Для того, чтобы удалить предмет из окна предметов, необходимо воспользоваться оператором delobj. Оператор delobj удаляет предмет по названию предмета, то есть в качестве аргумента этому оператору указываем название предмета:
+
+		delobj "Отвёртка"
+
+	Если Вы выводили картинку в названии предмета с помощью html, то частью названия предмета является и html-тег <img>, а значит удалять предмет нужно точно так же, полностью указывая название:
+
+		delobj "<img scr='img/screw.png'> Отвёртка"
+
+	Существует оператор, который удаляет предмет по индексу. Это оператор killobj. В качестве аргумента указываем номер предмета в списке:
+
+		killobj 3
+
+	Если не указывать аргумент оператору killobj, он удалит все предметы в списке:
+
+		killobj
+
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
+
+unselect
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
+
+Динамические (изменяющиеся) названия предметов:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
+
+Замена предмета
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
+
+Предмет без надписи
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
+
+Предмет в предмете
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
+
+Предметы не в окне предметов
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
+
+Удалить все предметы:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
+
+OnObjAdd:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
+
+onObjSel
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462

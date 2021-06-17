@@ -1,0 +1,19 @@
+В: Как вставить в игру видео?
+
+О:
+	В классическом плеере воспроизведение видео не поддерживается, поэтому единственное, что вы можете сделать — это вставить GIF-анимацию.
+
+	Теоретически видео воспроизводятся в Quest Navigator, для этого пользуемся специальным тегом:
+
+		*pl '<video loop src="video/clip.WebM" width="800" height="400" autoplay />'
+
+	Однако на практике такие видео не всегда работают. В разделе [22_quest_navigator/07_видео] описано более подробно, как запустить видео на Quest Navigator. Так же есть плеер с поддержкой webm от Sonnix`а.
+
+	Плеер от Sonnix`а http://qsp.su/index.php?option=com_agora&task=topic&id=1192&p=1&prc=25&Itemid=57#p26404
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=374&Itemid=57#p22438
+http://qsp.su/index.php?option=com_agora&task=topic&id=1192&p=1&prc=25&Itemid=57#p26926
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=136&prc=25&Itemid=57#p21523
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22436
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26667
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27117

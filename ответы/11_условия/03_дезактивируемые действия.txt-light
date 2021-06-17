@@ -1,0 +1,45 @@
+В: Видел в одной из игр, как после нажатия на действие, оно становится неактивным. Как это сделать?
+
+О:
+	На самом деле это всего лишь частный случай реализации действия по условию.
+
+	Для того, чтобы название неактивного действия меняло свой цвет используются html-теги. Поэтому в первую очередь необходимо включить поддержку html. Для этого, например, на самой первой локации в игре пишем:
+
+		usehtml=1
+
+	Далее в нужном месте вставляем приблизительно такой код:
+
+		if действие_не_активно=0:
+		! если значение переменной-маркера равно нулю (по-умолчанию)
+			! Выводим "активный" вариант действия
+			act "Выключить музыку":
+				! действие выключает звуки
+				close all
+				! меняем значение переменной-маркера
+				действие_не_активно=1
+				! перезаходим на локацию, чтобы увидеть эффект
+				goto $curloc
+			! закрываем "активный" вариант действия
+			end
+		else
+		! если значение переменной-маркера не равно нулю
+			! выводим "неактивный" вариант действия
+			act "<font color=#888888>Выключить музыку</font>":
+				! никакой код в действие помещать не нужно
+			! закрываем "неактивный" вариант действия
+			end
+		! закрываем конструкцию условия
+		end
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=138&prc=25&Itemid=57#p21604
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=160&prc=25&Itemid=57#p23220
+http://qsp.su/index.php?option=com_agora&task=topic&id=348&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25352
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25429
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25470
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25482
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26276
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26716
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27064
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24036

@@ -1,0 +1,72 @@
+В: Как добавить предмет в определённую позицию в окне предметов?
+
+О:
+	Вы можете указать номер позиции, в которую хотите добавить предмет, третим аргументом оператору addobj:
+
+		addobj "Название предмета","Путь к файлу картинки/картинка.jpg",3
+
+	Можно добавлять предметы только в уже существующие позиции, либо в позицию сразу за последним предметом. Если Вы укажете большее число, предмет не добавится:
+
+		! исходный список предметов
+		addobj "Отвёртка"
+		addobj "Гаечный ключ"
+		addobj "Радиоактивный пепел"
+		! добавляем предмет без картинки в седьмую позицию, которой ещё нет
+		addobj "Апельсин","",7
+
+	Обратите внимание, если Вы добавляете предмет в уже существующую позицию, предмет, стоявший в этой позиции, а так же следующие за ним, будут смещены на позицию вниз. Т.е. замена предметов при добавлении в уже существующую позицию не происходит:
+
+		! предмет в первой позиции
+		addobj "Отвёртка"
+		! предмет во второй позиции
+		addobj "Гаечный ключ"
+		! предмет в третьей позиции
+		addobj "Радиоактивный пепел"
+		! добавляем предмет во вторую позицию, при этом
+		! гаечный ключ и радиоактивный пепел сместятся
+		! на позицию вниз
+		addobj "Апельсин","",2
+	
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
+
+unselect
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
+
+Динамические (изменяющиеся) названия предметов:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
+
+Замена предмета
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
+
+Предмет без надписи
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
+
+Предмет в предмете
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
+
+Предметы не в окне предметов
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
+
+Удалить все предметы:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
+
+OnObjAdd:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
+
+onObjSel
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462

@@ -1,0 +1,75 @@
+В: Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?
+
+О:
+	Для начала нужно завести локацию-обработчик выделения предмета. Для этого:
+		* создаём локацию и называем, например, "если_предмет_выбран". Название может быть любым.
+		* в самой первой локации в игре указываем плееру, какую локацию он должен использовать, как обработчик выделения предмета. Для этого в системную переменную $onobjsel вносим имя нашей новой локации:
+
+			$onobjsel="если_предмет_выбран"
+
+	Теперь код локации будет выполняться всякий раз, когда мы выделяем новый предмет.
+
+	Функция $selobj возвращает нам название выделенного предмета, поэтому на локации-обработчике мы можем проверять, какой предмет выделен, и выполнять соответствующий код.
+
+	Например, можно выводить описание предмета в окно дополнительного описания при щелчке по предмету:
+
+		if $selobj="Отвёртка":
+		! если выделен предмет Отвёртка
+			! очищаем окно доп описания
+			clr
+			! выводим описание предмета
+			pl "Прекрасная крестовая отвёртка. Отлично подойдёт для регулирования уровня громкости"	
+		end
+
+	Или совершать переход на локацию:
+
+		if $selobj="Камень телепортации":
+		! если выделен предмет Камень телепортации
+			! переходим на локацию
+			goto "Эверест"
+		end
+
+	В конце локации-обработчика не забывайте ставить команду unselect, чтобы снимать выделение с предмета и дать игроку возможность повторно воспользоваться предметом.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
+
+unselect
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
+
+Динамические (изменяющиеся) названия предметов:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
+
+Замена предмета
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
+
+Предмет без надписи
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
+
+Предмет в предмете
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
+
+Предметы не в окне предметов
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
+
+Удалить все предметы:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
+
+OnObjAdd:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
+
+onObjSel
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462

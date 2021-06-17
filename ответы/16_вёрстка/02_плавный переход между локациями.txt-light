@@ -1,0 +1,24 @@
+В: Возможно ли сделать плавный переход между локациями?
+
+О:
+	В классическом плеере можно реализовать плавное появление и затухание текста, однако, чтобы проделать такое с изображениями придётся создавать для каждого изображения несколько копий с разной прозрачностью, либо подготовить заранее gif-изображения.
+
+	В любом случае реализация подобного достаточно сложна на классическом плеере.
+
+	Чуть проще сделать плавные переходы на Quest Navigator? однако это потребует довольно глубокого знания CSS и Java Script.
+
+	Плавные переходы можно делать в AeroQSP.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20575
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20586
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21673
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26288
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=145&prc=25&Itemid=57#p22103
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22616
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=159&prc=25&Itemid=57#p23200
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=164&prc=25&Itemid=57#p23332
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23837
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24077
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24415
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p25003
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27014

@@ -1,0 +1,24 @@
+В: Можно ли задавать размер окон из кода игры? Чтобы в одной локации были одни настройки, в другой — другие.
+
+О:
+	Нет. В классическом плеере этого сделать нельзя.
+
+	Но можно попытаться сделать подобное в Quest Navigator, прописав в css необходимые классы, а затем переназначая классы с помощью команды:
+
+		! меняет класс окна основного описания на yourClass
+		EXEC('JS:document.getElementById("qsp-main").className="yourClass"')
+
+	Так же есть вариант, который в равной степени подходит и для классического плеера и для Quest Navigator: отказаться от всех окон, кроме окна основного описания, и манипулировать блоками уже непосредственно из кода игры. В классическом плеере это можно делать, верстая страницы с помощью таблиц ("<table> </table>"), а в Quest Navigator — используя все возможности html.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=861&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=133&prc=25&Itemid=57#p21308
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=133&prc=25&Itemid=57#p21312
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=133&prc=25&Itemid=57#p21353
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=153&prc=25&Itemid=57#p22683
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23441
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24655
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=188&prc=25&Itemid=57#p24741
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25307
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=204&prc=25&Itemid=57#p25937
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26614
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27072

@@ -1,0 +1,30 @@
+В: Как вставить музыку или звук в игру?
+О:
+	Всё довольно просто:
+		* Скопируйте музыкальный файл в папку с вашей игрой, или во вложенную папку.
+		* В том месте в вашей игре, где должна запускаться музыка, воспользуйтесь оператором PLAY
+
+			PLAY "путь к звуковому файлу/звук.mp3"
+
+	Например, ваш файл называется "песня солнца.mp3" и Вы скопировали его в папку с игрой. Чтобы музыка запустилась в какой-то локации, нужно в этой локации написать:
+
+		PLAY "песня солнца.mp3"
+
+	Другой пример. Вы создали в папке с вашей игрой ещё одну папку, и назвали "sound". В неё поместили звуковой файл "бадамс.wav". Вам нужно, чтобы этот файл проигрывался в момент нажатия действия. Делаем так:
+
+		act "Взорвать бомбу":
+			PLAY "sound/бадамс.wav"
+			! какой-то другой код
+		end
+
+	Не забывайте указывать расширения файлов (.mp3, .wav, .ogg и т.д.).
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21451
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23506
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24099
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24562
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25399
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25506
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27051
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=227&prc=25&Itemid=57#p25177

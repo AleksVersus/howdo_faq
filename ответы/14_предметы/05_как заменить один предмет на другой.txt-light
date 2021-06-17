@@ -1,0 +1,80 @@
+В: Как заменить один предмет на другой?
+
+О:
+	Чтобы заменить один предмет на другой, нужно удалить старый предмет, а в позицию, которую он занимал, вписать новый предмет.
+
+	Если Вы знаете позицию предмета, который собираетесь удалить, то код довольно простой:
+
+		! светящийся шар был помещён в третью позицию
+
+		! удаляем светящийся шар
+		delobj "Светящийся шар"
+		! добавляем "Тёмный шар" в третью позицию
+		addobj "Тёмный шар","",3
+
+	Если Вы не знаете заранее, в какой позиции окажется тот или иной предмет, придётся написать алгоритм, который будет находить позицию нужного предмета перед удалением:
+
+		!ищем позицию предмета по имени 
+		i = 1 
+		:loop 
+		if no i > countobj: 
+			if $getobj(i)="Светящийся шар": 
+				objnumber = i 
+			else 
+				i=i+1 
+				jump "loop" 
+			end 
+		end
+
+		! удаляем предмет по имени 
+		delobj $getobj(objnumber) 
+		! вставляем на его место новый предмет 
+		addobj "Тёмный шар","",objnumber
+
+	Функция countobj возвращает число предметов в инвентаре. Функция $getobj возвращает название предмета по его номеру.
+
+	То есть, данный алгоритм сравнивает названия всех предметов в инвентаре по очереди, и если встречает такое же название, как мы указали, записывает номер в переменную objnumber.
+
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
+
+unselect
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
+
+Динамические (изменяющиеся) названия предметов:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
+
+Замена предмета
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
+
+Предмет без надписи
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
+
+Предмет в предмете
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
+
+Предметы не в окне предметов
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
+
+Удалить все предметы:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
+
+OnObjAdd:
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
+
+onObjSel
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462

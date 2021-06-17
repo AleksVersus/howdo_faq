@@ -1,0 +1,45 @@
+В: Как вставить картинку в действие?
+
+О:
+
+	С помощью html-разметки изображения можно вставлять в названия действий, в названия предметов, выводить в окна основного и дополнительного описаний.
+
+	Чтобы вставить картинку в название действия с помощью html-разметки, нужно включить в плеере распознавание html. Например, в самой первой локации в игре нужно написать такую команду:
+
+		usehtml=1
+
+	Теперь в названия действий можно вставлять изображения с помощью тега <img>. В атрибуте "src" этого тега прописывается путь к файлу картинки:
+
+		act "<img src='путь к файлу картинки/картинка.jpg'> Выйти на улицу.":
+			goto "улица"
+		end
+
+	Используя html, можно вставлять изображение как в начале названия действия, так и в конце:
+
+		act "Выйти на улицу. <img src='путь к файлу картинки/картинка.jpg'>":
+			goto "улица"
+		end
+
+	Так же QSP умеет выводить изображение перед названием действия без использования html. Для этого путь к файлу картинки указывается вторым аргументом к оператору act (через запятую после названия действия):
+
+		act "Выйти на улицу","путь к файлу картинки/картинка.jpg":
+			goto "улица"
+		end
+
+
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25305
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24565
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306
+
+Поломка gif:
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409
+
+Примеры по вставке gif от NickoAilus`а:
+	http://qsp.su/components/com_agora/img/members/2018/GIF.zip
+	http://qsp.su/components/com_agora/img/members/2018/GIF2.zip

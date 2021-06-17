@@ -1,0 +1,61 @@
+В:	Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?
+
+О:
+	Это решается довольно просто, с помощью переменной-счётчика:
+
+		! где-то заранее устанавливаем переменную счётчик
+		savecount=1
+
+		! в нужном месте пишем действие
+		act "Сохранить":
+			if savecount=1:
+				savecount=2
+				savegame "1.sav"
+			else
+				savecount=1
+				savegame "2.sav"
+			end
+		end
+
+	В данном случае в файле сохранения "1.sav" значение переменной-счётчика будет равно 2, а в файле "2.sav" — 1. Это позволит при загрузке игры из одного файла нажатием действия "Сохранить" записать сохранение в следующий файл.
+
+	Например, мы нажали действие "Сохранить" и сохранили игру в файл "1.sav", после чего нажатие на действие "Сохранить" должно записывать состояние в файл "2.sav". Не важно, нажмём мы действие ещё раз, или нет, при загрузке состояния из файла "1.sav" мы снова получим ситуацию, когда действие "Сохранить" должно будет записать очередное состояние в файл "2.sav".
+
+	Чтобы загружать игру из последнего сохранения, нам нужно такое действие:
+
+		act "Загрузить последнее":
+			if savecount=1:
+				opengame "2.sav"
+			else
+				opengame "1.sav"
+			end
+		end
+
+	В этом случае, если мы сохранили состояние в файл "1.sav", то даже если мы загрузим состояние из этого файла, в следующий раз при выборе "Загрузить последнее" мы вновь загрузим состояние из "1.sav".
+
+	Однако если нам нужно загружать состояния из предыдущего файла, нужно создать такое действие:
+
+		act "Загрузить предыдущее":
+			opengame "<<savecount>>.save"
+		end
+
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
+http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57

@@ -1,0 +1,53 @@
+В: Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?
+
+О:
+	На данный момент существует только костыльный способ, предложенный newsash в теме http://qsp.su/index.php?option=com_agora&task=topic&id=658&Itemid=57:
+
+```qsp
+		t=1
+		tort=0
+		if t _
+			or _
+			t:
+			"Игра запущена на Quest Navigator"
+		else
+			"Игра запущена на Классике"
+		end
+```
+
+	Данный способ работает благодаря разнице в интерпретации однострочной команды, разбитой на несколько строк.
+
+	В классическом плеере оператору условия передаётся имя переменной tort, тогда как в Quest Navigator это выражение
+
+```qsp
+		t or t
+```
+	, результат которого равен 1.
+
+	В самом Quest Navigator есть встроенная функция $GETPLAYER, которая позволяет получить название плеера, на котором запущена игра:
+
+```qsp
+	$GETPLAYER("player")
+```
+
+	К сожалению, в классическом плеере эта функция вызывает ошибку 119.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
+http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57

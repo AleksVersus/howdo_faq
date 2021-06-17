@@ -1,0 +1,37 @@
+В: Как делать контекстное (динамическое) меню?
+О:
+
+	Контекстное меню делать не сложнее, чем обыкновенное. Единственная сложность в том, чтобы добавлять в меню новые пункты, не отслеживая номеров.
+
+	Любое меню записывается в массив, начиная с нулевой ячейки, и обычно мы это делаем так:
+
+		$меню_отвёртка[0]="Осмотреть:info_screw"
+		$меню_отвёртка[1]="Использовать:use_screw"
+		$меню_отвёртка[2]="Выбросить:put_screw"
+
+	Тем самым мы указываем плееру конкретные ячейки, в которые нужно прописать пункты меню. Однако мы можем писать и так:
+
+		$меню_отвёртка[]="Осмотреть:info_screw"
+		$меню_отвёртка[]="Использовать:use_screw"
+		$меню_отвёртка[]="Выбросить:put_screw"
+
+	Запись "$меню_отвёртка[]" означает, что когда мы используем операцию присвоения, плеер создаст новую ячейку в массиве $меню_отвёртка с номером на 1 больше номера самой последней ячейки, и уже ей присвоит значение. Эта запись аналогична такой:
+
+		$меню_отвёртка[arrsize('$меню_предмет')]="Осмотреть:info_screw"
+		$меню_отвёртка[arrsize('$меню_предмет')]="Использовать:use_screw"
+		$меню_отвёртка[arrsize('$меню_предмет')]="Выбросить:put_screw"
+
+	Таким образом мы можем добавлять в массив меню новые пункты, не опасаясь, что одни пункты затрут другие.
+
+Пример меню от Svandrus			http://qsp.su/components/com_agora/img/members/983/menu_2.qsp
+Пример меню от Aleks Versus		http://qsp.su/components/com_agora/img/members/248/21032016-0856_menu.qsp
+Динамическое меню от Lisichka	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=114&prc=25&Itemid=57#p19982
+
+http://wiki.qsp.su/help:menu
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21810
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22270
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23451
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=176&prc=25&Itemid=57#p23959
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24260
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=184&prc=25&Itemid=57#p24527
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=229&prc=25&Itemid=57#p18215

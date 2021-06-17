@@ -1,0 +1,28 @@
+В: Как менять цвет гиперссылки?
+
+О:
+	В классическом плеере цвет всех гиперссылок в игре можно изменить, задав значение системной переменной lcolor:
+
+		! задаст тёмно-зелёный цвет гиперссылок
+		lcolor=rgb(0,120,0)
+
+	rgb — функция, которая преобразует три составляющие цвета в формат понятный QSP. Значения составляющих прописываем аргументами функции в порядке: красный, зелёный, синий.
+
+	Если Вам нужно изменить цвет отдельной гиперссылки, не трогая цвета остальных, можно воспользоваться тегом <font>:
+
+		*pl "<a href='...'><font color=#008888>ссылка бирюзового цвета</font></a>"
+
+	Цвет указывается в формате шестнадцатеричного кода в атрибуте color. Те же значения составляющих: #RRGGBB (RR — красная составляющая, GG — зелёная, BB — синяя).
+
+	В Quest Navigator необходимо заранее предопределить стили в game.css вашего шаблона для расцвечивания сразу всех гиперссылок. Сменить их цвет из игры, даже с помощью JS, вряд ли получится.
+
+
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24011
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p25011
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=195&prc=25&Itemid=57#p25108
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=217&prc=25&Itemid=57#p26906
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21647
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p19373
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=174&prc=25&Itemid=57#p23885
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25442

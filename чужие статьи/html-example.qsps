@@ -1,0 +1,71 @@
+#Начало
+showstat 0 & ! скрываем дополнительное описание
+showinput 0 & ! скрываем строку ввода
+usehtml = 1 & ! включаем режим HTML-вывода
+bcolor = rgb(0, 0, 1) & ! цвет фона черный
+fcolor = rgb(255, 0, 0) & ! цвет шрифта красный
+$onobjsel = 'objsel' & ! устанавливаем локацию-обработчик выбора предмета
+'<center>'
+'<b>Пример использования HTML</b><hr><font color=#FFFFFF>' & ! устанавливаем белый шрифт
+i = 1
+:loop
+    '<font size=<<i>>>Текст размера <<i>></font>'
+    i = i + 1
+if i < 8: jump 'loop'
+'</font></center><hr>'
+! добавим ссылку на 1е действие
+'<a href="1">Дальше</a>'
+! и само действие
+act '<u>Вперед</u>': gt 'loc1'
+-
+
+#loc1
+'Пример таблицы:<hr>'
+'<table width=50% border=1>'+ _
+    '<tr>'+ _
+        '<td width=30%><u>1st cell</u></td>'+ _
+        '<td><b>2</b></td>'+ _
+    '</tr>'+ _
+    '<tr>'+ _
+        '<td><font color=#00FF00>3</font></td>'+ _
+        '<td><center>4</center></td>'+ _
+    '</tr>'+ _
+'</table>'
+'<hr>Список:'
+! выводим элементы с помощью *P, т.е. без дополнительных переносов строк
+*p '<ul>'
+*p '<li>Элемент 1</li>'
+*p '<li>Элемент 2</li>'
+*p '<li>Элемент 3</li>'
+*p '</ul>'
+
+! добавим предмет
+num = num + 1
+addobj '<center>предмет <<num>></center>'
+
+! и действия
+act '&lt;&lt; Назад': gt 'Начало'
+act '<center>Удалить последний предмет</center>':
+    if num > 0:
+        delobj '<center>предмет <<num>></center>'
+        num = num - 1
+    end
+end
+-
+
+#objsel
+$s = $selobj
+gs 'deltags' & ! в нашем случае нужно удалить <center> и </center> из названия предмета, чтобы корректно его отобразить
+'Вы выбрали <u><<$s>></u>'
+-
+
+Подпрограмма удаления HTML-тэгов:
+#deltags
+:loop
+i = strpos($s, '<[^>]*>', 0)
+if i > 0:
+    foundlen = len(strfind($s, '<[^>]*>', 0))
+    $s = mid($s, 1, i - 1) + mid($s, i + foundlen, len($s) - i - foundlen + 1)
+    jump 'loop'
+end
+-

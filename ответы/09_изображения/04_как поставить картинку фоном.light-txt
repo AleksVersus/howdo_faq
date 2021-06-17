@@ -1,0 +1,35 @@
+В: Как поставить картинку фоном?
+
+О:
+	Чтобы поставить картинку фоном в окно основного описания, необходимо прописать путь к файлу картинки в переменную $backimage.
+
+	Например, файл вашей картинки называется "солнечный_день.jpg" и лежит в папке с игрой, тогда поставить её фоном можно так:
+
+		$backimage="солнечный_день.jpg"
+
+	Или же Вы создали в паке с игрой ещё одну папку и назвали её "background", а уже в неё поместили файл изображения. Тогда поставить её фоном можно так:
+
+		$backimage="background/солнечный_день.jpg"
+
+	Чтобы заменить фон на другой, нужно в переменной $backimage прописать путь к другой картинке.
+
+	Чтобы совсем убрать фон, нужно переменной $backimage присвоить пустое значение:
+
+		$backimage=""
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25305
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24565
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306
+
+Поломка gif:
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409
+
+Примеры по вставке gif от NickoAilus`а:
+	http://qsp.su/components/com_agora/img/members/2018/GIF.zip
+	http://qsp.su/components/com_agora/img/members/2018/GIF2.zip

@@ -1,0 +1,61 @@
+В: Как сделать кликабельное изображение?
+В: Как сделать так, чтобы при щелчке по изображению выполнялись какие-то действия?
+
+О:
+	Картинка должна выводиться с помощью html. То есть прежде всего необходимо включить распознавание html в игре. Для этого прописываем, например в самой первой локации в игре, такую команду:
+
+		usehtml=1
+
+	Далее выводим картинку с помощью html-тега <img>. Путь к файлу картинки прописываем в атрибуте "src" этого тега:
+
+		*pl "<img src='images/picture.png'>"
+
+	Чтобы картинка стала кликабельна, необходимо "обернуть" её в теги гиперссылки:
+
+		*pl "<a href=''><img src='images/picture.png'></a>"
+
+	В атрибуте href обычно прописывают url — адресс страницы в интернете. Однако в QSP мы можем размещать внутри этого атрибута строки кода. В том числе и строку типа:
+
+		play "sound/opendoor.wav" & goto "улица"
+
+	Чтобы плеер понял, что в атрибуте href находится не url, а какой-то код, мы должны указать перед этим кодом ключевое слово "EXEC:":
+
+		*pl "<a href='exec:'><img src='images/picture.png'></a>"
+
+	После "EXEC:" нам нужно вписать нашу строку кода. Однако, мы уже использовали кавычки ("") для указания границ строки, и апострофы ('') для указания границ атрибута href. А в нашей строке кода тоже есть кавычки. Как быть?
+
+	Мы можем экранировать кавычки кода от QSP с помощью дублирования:
+
+		*pl "<a href='exec:play ""sound/opendoor.wav"" & goto ""улица""'><img src='images/picture.png'></a>"
+
+	Или, мы можем поместить название массива в апострофы и экранировать апострофы кода от HTML:
+
+		*pl "<a href='exec:play \'sound/opendoor.wav\' & goto \'улица\''><img src='images/picture.png'></a>"
+
+	Эти два варианта равнозначны, используйте тот, что удобнее.
+
+	Теперь картинка будет представлять собой гиперссылку, и, когда мы запустим игру и щёлкнем по картинке, плеер выполнит код, который поместили мы в гиперссылку.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20567
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20428
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=162&prc=25&Itemid=57#p23267
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p19373
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23409
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=167&prc=25&Itemid=57#p23534
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25305
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24565
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306
+
+Поломка gif:
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550
+	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409
+
+Примеры по вставке gif от NickoAilus`а:
+	http://qsp.su/components/com_agora/img/members/2018/GIF.zip
+	http://qsp.su/components/com_agora/img/members/2018/GIF2.zip

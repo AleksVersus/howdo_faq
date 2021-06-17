@@ -1,0 +1,22 @@
+В: Как перезапустить звуковую дорожку?
+О:
+	Если Вы воспользовались командой PLAY и запустили музыку, например так:
+
+		PLAY "sound/relax.mp3"
+
+	то, если мелодия уже воспроизводится, повторное использование команды PLAY не запустит её заново.
+
+	Чтобы перезапустить мелодию, нужно сначала закрыть её, а затем запустить снова:
+
+		CLOSE "sound/relax.mp3"
+		PLAY "sound/relax.mp3"
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21451
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23506
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24099
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24562
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25399
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25506
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27051
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=227&prc=25&Itemid=57#p25177

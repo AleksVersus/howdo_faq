@@ -1,0 +1,26 @@
+В: Рисую таблицу и хочу зафиксировать высоту, но атрибут height не работает.
+
+О:
+
+	Да, атрибут height для таблиц не работает в QSP. Он в принципе не работает для таблиц в HTML начиная с четвёртой редакции. Однако большинство браузеров его всё равно распознают и обрабатывают. Особенно, если указывать абсолютное значение.
+
+	Quest Navigator работает с абсолютными значениями атрибута height. Так же в Quest Navigator можно воспользоваться свойством CSS, задающим высоту элементов.
+
+	В классическом плеере можно использовать костыль. Вставить в одну из ячеек прозрачное изображение в 1 пиксель, растянув до нужной высоты.
+
+		*p '<table>'
+			*p '<tr>'
+				*p '<td><img src="костыль.png" width=1 height=350></td>'
+				*p '<td>Содержимое таблицы</td>'
+			*p '</tr>'
+		*p '</table>'
+
+	Вообще, прежде чем использовать какой-либо атрибут, ознакомьтесь со справкой http://wiki.qsp.su/help:html, где перечислены все теги и атрибуты, которые поддерживаются в классической версии плеера.
+
+	Полная поддержка HTML присутствует в Quest Navigator.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21893
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=183&prc=25&Itemid=57#p24518
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27028
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25060
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24921

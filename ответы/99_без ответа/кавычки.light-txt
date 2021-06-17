@@ -1,0 +1,78 @@
+кавычки
+-------------------------------------------------------------------------------------------
+=DeathSpace=
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=161&prc=25&Itemid=57#p23251
+Ребят хотел из этого 
+  
+if iditem[1] = 1:'<a href="exec:gs ''WeaponDefault'',1"><<$wea[1]>></a>.' 
+if iditem[2] = 1:'<a href="exec:gs ''WeaponDefault'',2"><<$wea[2]>></a>.' 
+if iditem[3] = 1:'<a href="exec:gs ''WeaponDefault'',3"><<$wea[3]>></a>.' 
+if iditem[4] = 1:'<a href="exec:gs ''WeaponDefault'',4"><<$wea[4]>></a>.' 
+if iditem[5] = 1:'<a href="exec:gs ''WeaponDefault'',5"><<$wea[5]>></a>.' 
+if iditem[6] = 1:'<a href="exec:gs ''WeaponDefault'',6"><<$wea[6]>></a>.' 
+if iditem[7] = 1:'<a href="exec:gs ''WeaponDefault'',7"><<$wea[7]>></a>.' 
+if iditem[8] = 1:'<a href="exec:gs ''WeaponDefault'',8"><<$wea[8]>></a>.' 
+if iditem[9] = 1:'<a href="exec:gs ''WeaponDefault'',9"><<$wea[9]>></a>.' 
+if iditem[10] = 1:'<a href="exec:gs ''WeaponDefault'',10"><<$wea[10]>></a>.' 
+if iditem[11] = 1:'<a href="exec:gs ''WeaponDefault'',11"><<$wea[11]>></a>.' 
+if iditem[12] = 1:'<a href="exec:gs ''WeaponDefault'',12"><<$wea[12]>></a>.' 
+if iditem[13] = 1:'<a href="exec:gs ''WeaponDefault'',13"><<$wea[13]>></a>.' 
+if iditem[14] = 1:'<a href="exec:gs ''WeaponDefault'',14"><<$wea[14]>></a>.' 
+if iditem[15] = 1:'<a href="exec:gs ''WeaponDefault'',15"><<$wea[15]>></a>.' 
+if iditem[16] = 1:'<a href="exec:gs ''WeaponDefault'',16"><<$wea[16]>></a>.' 
+if iditem[17] = 1:'<a href="exec:gs ''WeaponDefault'',17"><<$wea[17]>></a>.' 
+сделать такой цикл 
+  
+id1=1 
+:next_id1 
+    if iditem[id1] = 1: 
+        '<table border = "1" bordercolor = black>' 
+        *p "<tr><td><a href='exec:gs ''WeaponDefault'',<<id1>>'><<$wea[id1]>></a>.</td></tr>"    
+    end 
+    id1 += 1 
+if id1 < 18: jump 'next_id1' 
+в итоге хотел чтобы для каждого предмета была ячейка но выходит такая ошибка в чем она может заключаться? 
+
+=Aleks Versus=
+когда вылазит ошибка? Когда щёлкаешь по ссылке? Или когда этот код начинает выводить текст на экран? Код скопирован точно?
+
+=DeathSpace=
+по ссылке нажимая
+
+=Aleks Versus=
+Тогда очевидно, что ты неправильно расставил кавычки. 
+
+Код:
+*p "<tr><td><a href='exec:gs ""WeaponDefault"",<<id1>>'><<$wea[id1]>></a>.</td></tr>"   
+
+Когда у тебя было 
+
+Код:
+*p "<tr><td><a href='exec:gs ''WeaponDefault'',<<id1>>'><<$wea[id1]>></a>.</td></tr>" 
+
+Это означало следующее: 
+вывести на экран строку
+
+Код:
+<tr><td><a href='exec:gs ''WeaponDefault'',1'>Название лута</a>.</td></tr>
+т.е. После того, как были раскрыты подвыражения, строка вывелась полностью, как ты её написал. 
+
+Теперь ты видишь на экране только Название лута в виде ссылки. Щёлкаешь по ней, и происходит вот что: 
+
+html-рендерер видит, что это ссылка, и обращается к атрибуту href, пытаясь получить его значение. Значение атрибута (он это знает) лежит в пределах от первой до последней кавычки (апострофа) и получает такое значение exec:gs . Передаёт это значение QSP, и тот естественно пытается выполнить gs, но аргумента не получает. 
+
+Чтобы html рендерер здесь правильно прочитал значение атрибута, нужно или ставить внутри атрибута другие кавычки (двойные), или экранировать одинарные для рендерера: 
+
+Код:
+*p "<tr><td><a href='exec:gs \'WeaponDefault\',<<id1>>'><<$wea[id1]>></a>.</td></tr>" 
+
+так тоже будет работать. 
+В строке 
+
+Код:
+*p "<tr><td><a href='exec:gs ""WeaponDefault"",<<id1>>'><<$wea[id1]>></a>.</td></tr>" 
+я экранировал двойные кавычки для QSP, т.е. строка, выводимая на экран выглядит так: 
+
+Код:
+<tr><td><a href='exec:gs "WeaponDefault",1'>Название лута</a>.</td></tr>
+Когда рендерер пытается получить значение атрибута href, он получает: exec:gs "WeaponDefault",1. Т.е. нормальную строку кода. 

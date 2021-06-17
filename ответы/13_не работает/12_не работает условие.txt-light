@@ -1,0 +1,27 @@
+В: Не работает условие. Как исправить?
+	
+	Пишу такой код:
+
+		if skrom>10 and <15:
+			! какой-то код
+			! ...
+		end
+
+	Но плеер выдаёт ошибку.
+
+О:
+	Дело в том, что в этом условии не полностью задана одна часть выражения.
+
+	Плеер проверяет skrom больше 10. Затем идёт AND и плееру предлагается что-то сравнить с числом пятнадцать, но не указано что.
+
+	Правильно написать так:
+
+		if skrom>10 and skrom<15:
+			! какой-то код
+			! ...
+		end
+	
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=167&prc=25&Itemid=57#p23532
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24956
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=217&prc=25&Itemid=57#p26918
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=228&prc=25&Itemid=57#p17192

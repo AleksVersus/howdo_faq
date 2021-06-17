@@ -1,0 +1,66 @@
+В: Как вставить видео в игру на Навигаторе?
+
+О:
+
+	ВНИМАНИЕ!!! Перед прочтением нижеследующего текста рекомендуется ознакомиться с разделами [01_шаблоны оформления для игр] и [08_standalone].
+
+	Изначально заявлено, что Quest Navigator умеет воспроизводить видео, как обычный браузер.
+
+	Мы ожидаем, что вставка видео в игру мало чем будет отличаться от вставки изображений, поэтому, чтобы вставить видео в свою игру, мы пытаемся сделать следующее:
+
+		1. Положить видеофайл в папку с игрой, или во вложенную папку.
+		2. Прописать в игре контейнер для видео с помощью тегов <video> и <source>. http://htmlbook.ru/html/video
+
+	В первую очередь давайте рассмотрим второй пункт, ведь именно теги <video> и <source> выводят видео в нашей игре.
+
+	Тег <video> по сути представляет собой контейнер, внутри которого перечисляются источники, из которых браузер (а в нашем случае плеер) будет подгружать видеофайл. В общем виде в Quest Navigator видео в игру мы вставляем так:
+
+		! открываем контейнер VIDEO
+		*p "<video autoplay loop width='500px'>"
+			! указываем источники видео, то есть пути к файлам в тегах SOURCE
+			*p "<source src='video/GeneveDrive.ogg' type='video/ogg;'>"
+			*p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
+		! закрываем контейнер VIDEO
+		*pl "</video>"
+
+	Мы указываем несколько источников на случай, если один не будет воспроизводиться. Однако, это не обязательно. Quest Navigator прекрасно воспроизводит webM, поэтому достаточно использовать только один файл видео формата webM и только один источник соответственно в коде HTML.
+
+	Вот вроде бы и всё. В тегах "<source>" прописаны относительные пути, согласно первому пункту мы кладём в папку с игрой папку "video", в неё помещаем наши видеофайлы и ожидаем, что Quest Navigator будет эти видеофайлы воспроизводить. Однако данный способ не сработает. Вместо непосредственно видео мы увидим чёрный прямоугольник и (возможно) кнопки управления.
+
+	К сожалению, нам недостаточно просто положить видео в папку с игрой, Quest Navigator не будет его воспроизводить.
+
+	Мы можем указать абсолютный путь к видео, и тогда видео появится в Quest Navigator:
+
+		*p "<video autoplay loop width='500'>"
+			*p "<source src='D:/QSPgames/myCoolGame/video/GeneveDrive.webm' type='video/webm;'>"
+		*pl "</video>"
+
+	Однако этот вариант нам не подходит, ведь у каждого игрока игра будет лежать в разных местах на компьютере. Нам нужен вариант, когда мы можем свободно раздавать копии игры, не заботясь о путях. И к сожалению, это возможно только если мы будем распространять нашу игру в виде Standalone-сборки.
+
+	Тогда, поскольку наша игра будет располагаться относительно плеера по пути "assets\standalone_content\start.qsp", мы сможем размещать в папке "standalone_content" или во вложенных в неё папках наши видео и вызывать их из игры, когда захотим, используя относительные пути:
+
+		*p "<video autoplay loop width='500'>"
+			*p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
+		*pl "</video>"
+
+	Подробнее о том, как создавать Standalone-сборки игры для Quest Navigator читайте в разделе [08_standalone].
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
+http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57

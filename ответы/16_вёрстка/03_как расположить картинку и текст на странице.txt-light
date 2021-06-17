@@ -1,0 +1,40 @@
+В: Как расположить картинку справа, а текст слева?
+
+О:
+	В классическом плеере используйте таблицы для вёрстки страниц:
+
+		! открываем таблицу
+		*p '<table width=100%>'
+			! открываем строку
+			*p '<tr>'
+				! открываем ячейку для текста
+				*p '<td width=50%>'
+					! помещаем в ячейку текст
+					*p 'Текст, расположенный слева.'
+				! закрываем ячейку для текста
+				*p '</td>'
+				! открываем ячейку с изображением
+				*p '<td width=50%>'
+					! помещаем в ячейку изображение
+					*p '<img src="pic/kartinka.jpg">'
+				*p '</td>'
+			! закрываем строку
+			*p '</tr>'
+		! закрываем таблицу
+		*p '</table>'
+
+	В Quest Navigator можно использовать блоки <div> и послойный вывод.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20575
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20586
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21673
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26288
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=145&prc=25&Itemid=57#p22103
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22616
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=159&prc=25&Itemid=57#p23200
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=164&prc=25&Itemid=57#p23332
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23837
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24077
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24415
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p25003
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27014

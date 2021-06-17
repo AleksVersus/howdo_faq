@@ -1,0 +1,1053 @@
+/* Coolness Copyright 2009 www.joomlapolis.com */
+
+/* Core html: */
+html {margin-bottom:1px;}
+body {
+	margin:15px;
+	height:100%;
+	padding:0px;
+	font-family: "Arial", "Helvetica", "Sans Serif";
+	line-height:140%;
+	font-size:12px;
+	color:#000;
+}
+body#page_bg { background:#636363; }
+p {margin-top:0px; margin-bottom:5px;}
+strong {font-weight:bold;}
+em {font-style:italic;}
+h1, h2, h3, h4, h5, h6 {margin:0px; padding:0px; padding:15px 0px; font-family:Arial, Helvetica, sans-serif;}
+h1 {font-size:20px;}
+h2 {font-size:18px;}
+h3 {font-size:16px;}
+h4 {font-size:14px;}
+h5 {font-size:13px;}
+h6 {font-size:12px;}
+form {margin:0px; padding:0px;}
+img {border:0px none;}
+td {
+	font-family: "Arial", "Helvetica", "Sans Serif";
+	line-height:138%;
+	font-size:12px;
+}
+a:link, a:visited {
+	text-decoration:none;
+	font-weight:normal;
+}
+a:hover {
+	text-decoration:underline;
+	font-weight:normal;
+}
+blockquote {display:block; padding:10px 20px 10px 20px;margin:15px 0px; font-style:italic; font-size:12px; background:#f7f7f7; border-top:solid 1px #b7b7b7; border-bottom:solid 1px #b7b7b7;}
+li ul, li ol {margin:0px; padding:0px; margin:0.5em 1.5em;}
+ol {margin:0px; padding:0px; margin:0px 1.5em 1.5em 1.1em;}
+ul li {padding:2px 0px; margin:0.5em; margin-left: 0.5em;}
+ol li {padding:2px 0px; margin:1.0em; margin-left: 1.0em;}
+ol  ul ol li { background: none; padding-left:0; }
+ul {margin: 0; padding:0; list-style:none; margin:5px 0;}
+ul li { background:url(../images/bullet.gif) no-repeat 0px 6px; padding-left:15px; }
+ol {list-style-type:decimal;padding-left:5px;}
+dl {margin:0px 0px 20px 0px;}
+/*dl dt {font-weight:bold;}*/
+dd {margin:2px 0px 2px 20px}
+
+pre {padding:10px; background:#f7f7f7; border:solid 1px #b7b7b7; white-space:pre-wrap;}
+
+fieldset label {
+	float:left;
+	text-align:right;
+	margin-right:0.5em;
+	width: auto;
+}
+fieldset legend { color:white; }
+fieldset table {margin:0px; border:0px;}
+fieldset table label {float:none; text-align:left; width: auto;}
+fieldset {
+	border:1px solid #b7b7b7;
+	margin:5px 0px;
+	padding:5px 10px;
+}
+legend {
+	background:#d1e0ed;
+	border:1px solid #b7b7b7;
+	padding:2px 6px;
+	font-weight:bold;
+	margin:0px 0px 5px 0px;
+}
+
+/* GENERAL STUFF: */
+
+/* Form validation */
+.invalid { border-color: #ff0000; }
+label.invalid { color: #ff0000; }
+
+/* Buttons */
+#editor-xtd-buttons {
+	padding: 5px;
+}
+
+.button2-left,
+.button2-right,
+.button2-left div,
+.button2-right div {
+	float: left;
+}
+
+.button2-left a,
+.button2-right a,
+.button2-left span,
+.button2-right span {
+	display: block;
+	height: 22px;
+	float: left;
+	line-height: 22px;
+	font-size: 11px;
+	color: #666;
+	cursor: pointer;
+}
+
+.button2-left span,
+.button2-right span {
+	cursor: default;
+	color: #999;
+}
+
+.button2-left .page a,
+.button2-right .page a,
+.button2-left .page span,
+.button2-right .page span {
+	padding: 0 6px;
+}
+
+.page span {
+	color: #000;
+	font-weight: bold;
+}
+
+.button2-left a:hover,
+.button2-right a:hover {
+	text-decoration: none;
+	color: #0B55C4;
+}
+
+.button2-left a,
+.button2-left span {
+	padding: 0 24px 0 6px;
+}
+
+.button2-right a,
+.button2-right span {
+	padding: 0 6px 0 24px;
+}
+
+.button2-left {
+	background: url(../images/j_button2_left.png) no-repeat;
+	float: left;
+	margin-left: 5px;
+}
+
+.button2-right {
+	background: url(../images/j_button2_right.png) 100% 0 no-repeat;
+	float: left;
+	margin-left: 5px;
+}
+
+.button2-left .image {
+	background: url(../images/j_button2_image.png) 100% 0 no-repeat;
+}
+
+.button2-left .readmore {
+	background: url(../images/j_button2_readmore.png) 100% 0 no-repeat;
+}
+
+.button2-left .pagebreak {
+	background: url(../images/j_button2_pagebreak.png) 100% 0 no-repeat;
+}
+
+.button2-left .blank {
+	background: url(../images/j_button2_blank.png) 100% 0 no-repeat;
+}
+
+/* Tooltips */
+div.tooltip {
+	float: left;
+	background: #ffc;
+	border: 1px solid #D4D5AA;
+	padding: 5px;
+	max-width: 200px;
+	z-index:13000;
+}
+
+div.tooltip h4 {
+	padding: 0;
+	margin: 0;
+	font-size: 95%;
+	font-weight: bold;
+	margin-top: -15px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	background: url(../images/selector-arrow.png) no-repeat;
+}
+
+div.tooltip p {
+	font-size: 90%;
+	margin: 0;
+}
+
+/* Caption fixes */
+.img_caption.left {
+	float: left;
+	margin-right: 1em;
+}
+
+.img_caption.right {
+	float: right;
+	margin-left: 1em;
+}
+
+.img_caption.left p {
+	clear: left;
+	text-align: center;
+}
+
+.img_caption.right p {
+	clear: right;
+	text-align: center;
+}
+
+/* Calendar */
+a img.calendar {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	background: url(../images/calendar.png) no-repeat;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+
+/* Template stuff: */
+#container { width: 965px; text-align: left; background:white; margin-bottom:15px; overflow:hidden;  }
+#inner { padding:15px; width:auto!important; width:93%;}
+#header { height:82px; background:url(../images/head_foot.png) no-repeat right top; overflow: hidden; }
+#foot { height: 102px; background: url(../images/head_foot.png) no-repeat 100% -164px; overflow:hidden;  }
+#footl { float:left; width: 45%; background: url(../images/head_foot.png) no-repeat 0 -266px;  height: 102px;  }
+#footr { float:right; text-align:right; width: 50%; height: 102px;  }
+#footr div.moduletable { padding:33px 15px 0 0; text-align:right; }
+#footr IMG { float:right; width:auto; }
+#botmenu { padding:30px 0px 0px 10px!important; padding:30px 0px 0px 14px}
+#botmenu ul { margin:0; padding:0; list-style:none; }
+#botmenu ul li { float:left; background:none; border:0; margin:0; padding: 0 10px; border-right: solid 1px #747474;  width:auto; }
+#botmenu a { padding:0; background:none;  }
+#botmenu a:hover { text-decoration: underline; }
+#copyright { padding:5px 0px 0px 15px; clear:left; }
+#menusearch { height:33px; line-height:33px; overflow:hidden; }
+#search { float:right; text-align:right; width: 150px; margin-right: 25px!important; margin-right:15px; overflow:hidden; }
+#search .inputbox { border: solid 1px #c9c7c7; background:#f0f0f0 url(../images/head_foot.png) repeat-x 0 -436px; font-size:13px; color:#636363; margin-top:6px; }
+#search .button { background:none; border:0; position:absolute; padding-top: 0px; margin:0; background: url(../images/author_time.gif) no-repeat 0 0; height:11px;width: 11px; padding-left: 10px; text-indent:10px; margin-top: 12px;  margin-left: 7px; overflow:hidden  }
+#search  label { width:1px; float:left; display:block; height:33px; padding-top:35px; overflow:hidden; }
+
+#content { background:#f3f3f3 url(../images/head_foot.png) repeat-x 0 -1000px; }
+#multicol h3 a { font-weight:bold; }
+#maincol h3 a { font-weight:bold; }
+
+#pathflags { height:28px; line-height:28px; font-size: 11px; color: #636363; margin:0px 25px; overflow:hidden; display:block; }
+#path  { float:left; width: 75%;}
+#path IMG { margin: 3px 5px 0px 5px; }
+#flags  { float:right; text-align:right; width: 20%;line-height:28px; }
+#flags IMG { vertical-align:middle; }
+
+.clr {clear:both;  overflow:hidden; height:1px; }
+.clr_bot {clear:both;  overflow:hidden; height:1px; font-size:0px; line-height:0px; background:#f3f3f3; }
+
+/* Logo formatting: */
+#logo { float:left; width: 200px; background:url(../images/head_foot.png) no-repeat 0px -82px; }
+#logo a {text-decoration:none; color:#636363;}
+#logo h1 {margin:0px; padding:0px;  font-family: Arial, Helvetica, sans-serif; font-size:32px; line-height:100%; font-weight:500; display:block; padding:4px 0 0 31px; }
+#logo h1 STRONG { color: #636363; font-style: italic; font-weight: bold; }
+#logo h1 a STRONG { color: #636363; }
+#slogan h2 { margin:0px; padding:0px; height:49px; line-height:49px; color:#636363; text-align:right; font-style: italic; font-size:18px; font-weight:500; padding-right: 20px; }
+
+#menu { float:left; width: 100%; line-height:150%;   }
+#menu a { color:white; font-size: 14px; font-weight:500; text-decoration:none; padding:0; background:none; }
+#menu a:hover, #menu ul.menu li.active a { color:black; }
+#menu ul#mainlevel-nav, #menu ul#mainlevel { padding: 0px; list-style: none; }
+#menu ul li { float:left; padding:0px; margin: 0px !important; border-right: solid 1px #ccc; background:none; border-bottom:0px; width: auto; }
+#menu ul li a { display:block; height:100%; width:auto; margin:0px; padding:5px 15px; background:none;}
+
+#topusers1 div.module h3, #topusers2 div.module h3, #botusers1 div.module h3, #botusers2 div.module h3 {margin:0px; padding:0px; margin-bottom:10px;  color:#000; font-size:14px; font-weight:500;}
+#topusers1 div.module, #topusers2 div.module, #botusers1 div.module, #botusers2 div.module { padding:15px; }
+#user4 h3, #user6 h3 { text-align:right; }
+
+#botusers2 #user5, #topusers2 #user3 {width:49%; float:left;}
+#topusers2 #user4, #botusers2 #user6 {width:49%; float:right;}
+
+
+#topusers2 { background:url(../images/users_bg.png) no-repeat bottom center; margin:0px 1px;  }
+.cbPosTop {background:url(../images/users_bg.png) no-repeat bottom center!important;  background:url(../images/users_bg.png) no-repeat 50% 100px; margin:0px 1px;  }
+#topusers2 { display:block; width:100%!important; width: 99.8%; margin-left:0px; }
+#botusers2 { background:url(../images/users_bbg.png) no-repeat center top; margin:0px 1px;  }
+
+#topusers1, .cbPosTopOne { background:url(../images/user_bg.png) repeat-x bottom left; margin:0px 1px;  }
+#botusers1 { background:url(../images/head_foot.png) repeat-x 0 -644px; margin:0px 1px;  }
+.cbPosUnderAll { background:url(../images/users_bbg.png) no-repeat top left; margin:0px 1px;  }
+
+.jpcool_dialog_menu ul.menu, .jpcool_dialog ul.menu, .jpcool_dialog ul.cbMenuULlist, .jpcool_dialog ul#mainlevel, .jpcool_dialog_menu ul#mainlevel { position:relative; z-index:999; }
+
+#leftcol .jpcool_dialog_menu ul.menu li, #leftcol ul.menu li, #leftcol .jpcool_dialog ul.cbMenuULlist li, #leftcol ul#mainlevel li { border-bottom:#d6d6d6 solid 1px; padding:0; background:none; }
+#rightcol .jpcool_dialog_menu ul.menu li, #rightcol ul.menu li, #rightcol .jpcool_dialog ul.cbMenuULlist li, #rightcol ul#mainlevel li { border-bottom:#d6d6d6 solid 1px; padding:0; background:none; }
+#multicol .jpcool_dialog_menu ul.menu li, #multicol ul.menu li, #multicol .jpcool_dialog ul.cbMenuULlist li, #multicol ul#mainlevel li { border-bottom:#d6d6d6 solid 1px; padding:0; background:none; }
+
+#leftcol ul.menu li a, #leftcol .jpcool_dialog_menu ul.menu li a, #leftcol ul#mainlevel li a, 
+#multicol ul.menu li a, #multicol .jpcool_dialog_menu ul.menu li a, #multicol ul#mainlevel li a, 
+#rightcol ul.menu li a, #rightcol .jpcool_dialog_menu ul.menu li a, #rightcol ul#mainlevel li a
+{ display:block; padding:5px 15px; background:white; text-decoration:none; }
+
+
+ul.cbMenuULlist li a  {padding:3px 15px 3px 23px; }
+ul.cbMenuULlist li { background:none; }
+ul.menu li a:hover, ul.menu li.active a, ul#mainlevel li a:hover, ul#mainlevel li.active a { color:black; }
+ul.menu li.active a, ul#mainlevel li.active a  { font-weight:bold; }
+
+#leftcol h3, #rightcol h3, #multicol h3, #maincol h3 { font-size:15px; color:#636363; font-weight: 500; margin:0; padding:0; line-height:35px; height:35px; text-indent:15px; margin-bottom:10px; }
+#leftcol div.jpcool_dialog h3, #rightcol div.jpcool_dialog h3, #multicol div.jpcool_dialog h3, #maincol div.jpcool_dialog h3 { margin-left: -8px; font-weight: bold; }
+#leftcol div.jpcool_dialog_menu h3, #rightcol div.jpcool_dialog_menu h3, #multicol div.jpcool_dialog_menu h3 {margin-bottom:10px;}
+#leftcol div.module,#leftcol div.module_menu,#rightcol div.module,#rightcol div.module_menu,#multicol div.module,#multicol div.module_menu {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 15px; 
+}
+
+#leftcol div.module div div div, #rightcol div.module div div div , #multicol div.module div div div {
+	padding: 0px 8px 30px 8px!important;
+	padding: 0px 1px 30px 8px;
+	width: auto;
+}
+
+#leftcol div.module_menu div div div, #rightcol div.module_menu div div div, #multicol div.module_menu div div div {
+	padding: 0;
+	padding-bottom: 15px;
+	margin:0px 0px;
+	width: auto;
+}
+
+#topcurve { height:9px; background:url(../images/head_foot.png) no-repeat 100% -418px; display:block; overflow:hidden; }
+#topcurve SPAN { display:block; background:url(../images/head_foot.png) no-repeat 0 -427px; width: 50px;  }
+
+#botcurve { height:25px; background:url(../images/head_foot.png) no-repeat 100% -368px; display:block;  overflow:hidden; }
+#botcurve SPAN { display:block; background:url(../images/head_foot.png) no-repeat 0 -393px; width: 30px; height:25px;  }
+
+#leftcol div.module, #leftcol div.module_menu, #rightcol div.module, #rightcol div.module_menu, #multicol div.module, #multicol div.module_menu {
+	background: url(../images/box_tl.png) top left no-repeat;
+}
+
+#leftcol div.module div, #leftcol div.module_menu div, #rightcol div.module div, #rightcol div.module_menu div, #multicol div.module div, #multicol div.module_menu div {
+	background: url(../images/box_tr.png) top right no-repeat;
+}
+
+#leftcol div.module div div, #leftcol div.module_menu div div,#rightcol div.module div div, #rightcol div.module_menu div div ,#multicol div.module div div, #multicol div.module_menu div div {
+	background: url(../images/box_bl.png) bottom left no-repeat;
+}
+
+#leftcol div.module div div div, #leftcol div.module_menu div div div, #rightcol div.module div div div, #rightcol div.module_menu div div div, #multicol div.module div div div, #multicol div.module_menu div div div {
+	background: url(../images/box_br.png) bottom right no-repeat;
+}
+#mainborders { border-left: solid 1px #d6d6d6; border-right: solid 1px #d6d6d6;  background:white; }
+
+#maincol {
+	padding-bottom: 50px;
+}
+
+#maincol div#main_tr {
+	background: url(../images/body_tr.png) top right no-repeat;
+}
+
+#maincol div#main_bl {
+	background: url(../images/body_bl.png) bottom left no-repeat;
+}
+
+#maincol div#main_br {
+	background: url(../images/body_br.png) bottom right no-repeat;
+}
+
+#leftcol div.module div div div div, #rightcol div.module div div div div, #multicol div.module div div div div {  background: white;	 padding:0!important; padding:0; margin:0;  }
+#leftcol div.module div div div div.cbMenuList, #rightcol div.module div div div div.cbMenuList, #multicol div.module div div div div.cbMenuList { background:none; }
+
+/* Joomla! specific content elements */
+div.offline {
+	background:#fffebb;
+	width:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:1.2em;
+	padding:5px;
+}
+/* headers */
+.contentheading, .componentheading, .jhcb_forumtitle {
+	color:#000;
+	font-weight:500;
+	font-size:18px; line-height:120%; font-family:Arial, Helvetica, sans-serif;
+}
+.componentheading {
+	font-size:18px;
+}
+table.moduletable th {
+	margin:0px;
+	font-weight:bold;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size:16px;
+	padding-left:0px;
+	margin-bottom:10px;
+}
+
+/* small text */
+.small {
+	font-size:9px;
+	color:#636363; text-transform:uppercase;
+	font-weight:normal;
+	text-align:left;
+	padding-left:15px;
+	background:url(../images/author_time.gif) no-repeat 0px -10px;
+}
+fieldset .small { background:none; padding-left:0; }
+
+.createdate, .modifydate {
+	vertical-align:top;
+	font-size:9px; text-transform:uppercase;
+	color:#636363;
+	font-weight:normal;
+	padding-bottom:5px; padding-left:15px;
+	padding-top:0px; background: url(../images/author_time.gif) no-repeat 0px -26px;
+
+}
+.modifydate { padding-top:5px; background: url(../images/author_time.gif) no-repeat 0px -21px; }
+a.readon {
+	margin-top:10px;
+	display:block;
+	padding-right:20px;
+	line-height:14px;
+	height:16px; 
+}
+
+/* form validation */
+.invalid {border-color:#ff0000;}
+label.invalid {color:#ff0000;}
+
+/** overlib **/
+.ol-foreground {
+	background-color:#f6f6f6;
+}
+.ol-background {
+	background-color:#666666;
+}
+.ol-textfont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+.ol-captionfont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#f6f6f6;
+	font-weight:bold;
+}
+.ol-captionfont a {
+	color:#0B55C4;
+	text-decoration:none;
+	font-size:12px;
+}
+.ol-closefont {}
+
+/* menu links */
+a.mainlevel:link, a.mainlevel:visited {}
+a.mainlevel:hover {}
+
+/* spacers */
+span.article_separator {
+	display:block;
+	height:20px;
+}
+.article_column {
+	padding-right:5px;
+}
+.column_separator {
+	border-left:1px dashed #e0e0e0;
+	padding-left:10px;
+}
+
+/* buttons: */
+.button {
+	color:#636363;
+	font-family: Arial, Hevlvetica, sans-serif;
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+	border:1px solid #636363;
+	width:auto;
+	background:#c8c8c8 url(../images/head_foot.png) repeat-x 0px -478px;
+	padding:2px 5px;
+}
+input.button {cursor:pointer;}
+a.button:link, a.button:visited, a.button:hover {color:#ffffff;}
+.inputbox {
+	padding:2px;
+	background:#ffffff url(../images/head_foot.png) repeat-x 0px -458px;
+}
+TEXTAREA, SELECT.inputbox, TEXTAREA.inputbox { background: white url(../images/grad.png) repeat-x top; }
+td.buttonheading img {
+	border:none;
+}
+td.greyline {
+	width:20px;
+	background:url(../images/mw_line_grey.png) 50% 0px repeat-y;
+}
+div#maindivider {
+	border-top:1px solid #ddd;
+	margin-bottom:10px;
+	overflow:hidden;
+	height:1px;
+}
+table.blog span.article_separator {
+	display:block;
+	height:20px;
+}
+
+/* edit button */
+.contentpaneopen_edit{
+	float:left; width:auto;
+} 
+
+/* table of contents */
+table.contenttoc {
+	margin:5px;
+	border:1px solid #ccc;
+	padding:5px; float:right; width: auto;
+}
+table.contenttoc td {
+	padding:0px 5px;
+}
+
+/* content tables */
+td.sectiontableheader {
+	border: 0;
+	color:#ffffff;
+	font-weight:bold;
+	padding:4px;
+}
+tr.sectiontableentry0 td, tr.sectiontableentry1 td, tr.sectiontableentry2 td {
+	padding:4px;
+}
+td.sectiontableentry0, td.sectiontableentry1, td.sectiontableentry2 {
+	padding:3px;
+}
+.sectiontableheader th {text-align:left;}
+div.sectiontableheader {text-indent:5px;}
+.sectiontableheader th a, td.sectiontableheader a {color:#ffffff; text-decoration:none; font-weight:bold;}
+.sectiontablefooter {}
+.sectiontableentry1 {
+	background-color :#ffffff; color:#000; font-weight:normal;
+}
+.sectiontableentry2 {
+	background-color :#f9f9f9; color:#000; font-weight:normal;
+}
+table.contentpane td.sectiontableheader {padding:4px;}
+.sectiontableheader {
+	font-weight:bold;
+	padding:4px;
+	color:#ffffff;
+}
+div.sectiontableheader {text-indent:5px;}
+
+/* content styles */
+table.contentpaneopen, table.contentpane {
+	margin:0px;
+	padding:0px;
+	width:100%; 
+}
+
+.dynamic-tab-pane-control .tab-row h2 {height:15px;}
+.mceToolbarContainer {text-align:left;}
+
+table.contentpaneopen h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	color:#333;
+}
+
+.highlight {
+	background-color:#fffebb;
+}
+
+/* forms */
+table.adminform textarea {
+	width:540px;
+	height:400px;
+	font-size:1em;
+}
+
+.back_button {
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+	border:1px solid #b7b7b7;
+	width:50px;
+	padding:0px 10px;
+	line-height:20px;
+	margin:3px;
+}
+
+.pagenav {
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+	border:1px solid #b7b7b7;
+	width:auto;
+	padding:0px 10px;
+	line-height:20px;
+	margin:1px; background:url(../images/head_foot.png) repeat-x 0 -436px;
+}
+a.pagenav {text-decoration:none;}
+a.pagenav:hover {background:url(../images/head_foot.png) repeat-x 0 -458px;}
+.pagenavbar {float:right; width:auto;}
+
+form#form-login fieldset {border:0px none; margin:0px; padding:0.2em;}
+
+/* thumbnails */
+div.mosimage {margin:5px;}
+div.mosimage_caption {font-size:.90em; color:#666666;}
+
+div.caption {padding:0px 10px 0px 10px;}
+div.caption img {border:1px solid #CCC;}
+div.caption p {font-size:0.90em; color:#666666; text-align:center;}
+
+/* Parameter Table */
+table.paramlist {
+	margin-top:5px;
+}
+table.paramlist td.paramlist_key {
+	width:128px;
+	text-align:left;
+	height:30px;
+}
+table.paramlist td.paramlist_value {}
+
+/* Banners module */
+.banneritem img {
+	display:block;
+}
+
+/* Text advert style */
+.banneritem_text {
+	padding:4px;
+	font-size:11px;
+}
+.bannerfooter_text {
+	padding:4px;
+	font-size:11px;
+	background-color:#F7F7F7;
+	text-align:right;
+}
+
+.pagination span {padding:2px;}
+.pagination a {padding:2px;}
+
+/* Polls */
+.pollstableborder td {
+	text-align:left;
+}
+
+/* WebLinks */
+span.description {
+	display:block;
+	padding-left:30px;
+}
+
+/* Frontend Editing*/
+td.key {
+	border-bottom:1px solid #eee;
+	color:#666666;
+}
+
+/* Tooltips */
+.tool-tip {
+	float:left;
+	background:#ffc;
+	border:1px solid #D4D5AA;
+	padding:5px;
+	max-width:200px;
+	width: auto;
+}
+.tool-title {
+	padding:0px;
+	margin:0px;
+	font-size:100%;
+	font-weight:bold;
+	margin-top:-15px;
+	padding-top:15px;
+	padding-bottom:5px;
+	background:url(../../system/images/selector-arrow.png) no-repeat;
+}
+.tool-text {
+	font-size:100%;
+	margin:0px;
+}
+
+/* OpenID icon style */
+input.system-openid, input.com-system-openid {
+   background: url(http://openid.net/images/login-bg.gif) no-repeat;
+   background-color: #fff;
+   background-position: 0 50%;
+   color: #000;
+   padding-left: 18px;
+}
+
+
+/* Unpublished */
+.system-unpublished {
+background: #e8edf1;
+border-top: 4px solid #c4d3df;
+border-bottom: 4px solid #c4d3df;
+}
+
+/* Notices */
+.attention, .notice, .alert, .note, .error, .message {display:block; padding:8px 10px 8px 42px; margin:15px 0px; font-size:12px; line-height:120%; font-family: Arial, Helvetica, sans-serif;}
+.attention {color:#b65718; border:1px solid #f18a43; background:#fedaa8 url(../images/attention.png) 10px 50% no-repeat;}
+.attention a {color:#b65718 !important; font-weight:bold !important; font-style:italic !important;}
+.notice, .note, .message {color:#0046cc; border:1px solid #0047c9; background:#a8c1f0 url(../images/notice.png) 10px 50% no-repeat;}
+.notice a, .note a, .message a {color:#0046cc !important; font-weight:bold !important; font-style:italic !important;}
+.alert, .error {color:#cb0000; border:1px solid #FFACAD; background:#e9bcbc url(../images/alert.png) 10px 50% no-repeat;}
+.alert a, .error a {color:#cb0000 !important; font-weight:bold !important; font-style:italic !important;}
+
+/* System Messages */
+#system-message    { margin-bottom: 10px; padding: 0;}
+#system-message dt { font-weight: bold; }
+#system-message dd { margin: 0; font-weight: bold; text-indent: 30px; }
+#system-message dd ul { color: #0055BB; margin-bottom: 10px; list-style: none; padding: 10px; border-top: 3px solid #84A7DB; border-bottom: 3px solid #84A7DB;}
+
+/* System Standard Messages */
+#system-message dt.message { display: none; }
+#system-message dd.message {  }
+
+/* System Error Messages */
+#system-message dt.error { display: none; }
+#system-message dd.error ul { color: #c00; background-color: #E6C0C0; border-top: 3px solid #DE7A7B; border-bottom: 3px solid #DE7A7B;}
+
+/* System Notice Messages */
+#system-message dt.notice { display: none; }
+#system-message dd.notice ul { color: #c00; background: #EFE7B8; border-top: 3px solid #F0DC7E; border-bottom: 3px solid #F0DC7E;}
+
+/* Debug */
+#system-debug     { color: #ccc; background-color: #fff; padding: 10px; margin: 10px; }
+#system-debug div { font-size: 11px;}
+
+#system-message dd {text-indent:0px; font-weight:normal; margin:15px 0px;}
+#system-message dd ul, #system-message dd ol {margin:0px; padding:0px;}
+#system-message dd ul li, #system-message dd ol li {padding:0px; background:none;}
+#system-message dd.error ul {border:0px; margin:0px; color:#CB0000;}
+#system-message dd.notice ul, #system-message dd.message ul {border:0px; margin:0px; color:#0046cc;}
+
+#syndicate{float:left; padding-left:25px; width: 45%;}
+#power_by{float:right; padding-right:25px; width: 45%;}
+
+/* CB module Menu */
+
+.jpcool_dialog ul.cbMenuULlist, #leftcol ul.menu, #mainright ul.menu, #leftcol ul#mainlevel, #mainright ul#mainlevel {margin:0px; padding:0px; list-style:none; margin:0px 1px;}
+
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_VIEWMYPROFILE a {background:url(../images/cbicons.png) repeat-y 0px 0px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_VIEWMYPROFILE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_CB a {background:url(../images/cbicons.png) repeat-y 0px -200px;display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_CB a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_ABOUT_CB a {background:url(../images/cbicons.png) repeat-y 0px -400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_ABOUT_CB a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_TEAMCREDITS_CB a {background:url(../images/cbicons.png) repeat-y 0px -400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_TEAMCREDITS_CB a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UPDATEPROFILE a {background:url(../images/cbicons.png) repeat-y 0px -600px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UPDATEPROFILE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -700px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UPDATEAVATAR a {background:url(../images/cbicons.png) repeat-y 0px -800px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UPDATEAVATAR a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -900px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_DELETE_AVATAR a {background:url(../images/cbicons.png) repeat-y 0px -1000px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_DELETE_AVATAR a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -1100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_HOME a {background:url(../images/cbicons.png) repeat-y 0px -1200px;display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_HOME a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -1300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MESSAGES a {background:url(../images/cbicons.png) repeat-y 0px -1400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MESSAGES a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -1500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_USER a {background:url(../images/cbicons.png) repeat-y 0px -1600px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_USER a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -1700px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_INBOX a {background:url(../images/cbicons.png) repeat-y 0px -1800px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_INBOX a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y -0px -1900px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_OUTBOX a {background:url(../images/cbicons.png) repeat-y 0px -2000px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_OUTBOX a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -2100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_TRASHBOX a {background:url(../images/cbicons.png) repeat-y 0px -2200px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_TRASHBOX a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -2300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_OPTIONS a {background:url(../images/cbicons.png) repeat-y 0px -2400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_OPTIONS a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -2500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_SENDMESSAGE a {background:url(../images/cbicons.png) repeat-y 0px -2600px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_PM_SENDMESSAGE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -2700px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_SENDUSEREMAIL a {background:url(../images/cbicons.png) repeat-y 0px -2800px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_SENDUSEREMAIL a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -2900px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MANAGEMYCONNECTIONS a {background:url(../images/cbicons.png) repeat-y 0px -3000px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MANAGEMYCONNECTIONS a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_ADDCONNECTIONREQUEST a {background:url(../images/cbicons.png) repeat-y 0px -3200px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_ADDCONNECTIONREQUEST a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_ADDCONNECTION a {background:url(../images/cbicons.png) repeat-y 0px -3200px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_ADDCONNECTION a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REMOVECONNECTION a {background:url(../images/cbicons.png) repeat-y 0px -3400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REMOVECONNECTION a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REVOKECONNECTIONREQUEST a {background:url(../images/cbicons.png) repeat-y 0px -3400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REVOKECONNECTIONREQUEST a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MODERATE a {background:url(../images/cbicons.png) repeat-y 0px -3600px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_MODERATE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3700px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REPORTUSER a {background:url(../images/cbicons.png) repeat-y 0px -3800px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REPORTUSER a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -3900px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REQUESTUNBANPROFILE a {background:url(../images/cbicons.png) repeat-y 0px -4000px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REQUESTUNBANPROFILE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -4100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_APPROVE_IMAGE a {background:url(../images/cbicons.png) repeat-y 0px -4200px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_APPROVE_IMAGE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -4300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REJECT_IMAGE a {background:url(../images/cbicons.png) repeat-y 0px -4400px;display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_REJECT_IMAGE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -4500px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_BANPROFILE a {background:url(../images/cbicons.png) repeat-y 0px -4600px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_BANPROFILE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -4699px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UNBANPROFILE a {background:url(../images/cbicons.png) repeat-y 0px -4800px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_UNBANPROFILE a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -4900px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_BANPROFILE_HISTORY a {background:url(../images/cbicons.png) repeat-y 0px -5000px;display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_MENU_BANPROFILE_HISTORY a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -5100px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_VIEWUSERREPORTS a {background:url(../images/cbicons.png) repeat-y 0px -5200px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_VIEWUSERREPORTS a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -5300px;}
+
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_STATISTICS a {background:url(../images/cbicons.png) repeat-y 0px -5400px; display:block;}
+.jpcool_dialog ul.cbMenuULlist li.cbMenu_UE_STATISTICS a:hover {background:#d8dfea url(../images/cbicons.png) repeat-y 0px -5500px;}
+
+/* Component Specific Fixes: */
+
+#component-contact table td {padding:2px 0px;}
+#fireboard { width: 99.8%; }
+#fireboard table.fb_blocktable thead tr th {background-color:#1e5fa2; background-image:none; font-size:12px;}
+#fireboard .fbl {font-size:12px;}
+#fireboard #fireboard_top td {white-space:normal;}
+#fireboard table#fb_postmessage .button {color:#ffffff}
+
+#uddeim-writeform input.button {color:#000000;}
+
+.jhcb_forumtitle {color:#1e5fa2; font-size:18px; font-weight:500; font-family:Arial, Helvetica, sans-serif;}
+
+/* J1.0 Support and legacy: */
+
+table.searchinto {width:100%;}
+table.searchintro td {font-weight:bold;}
+.code {
+	background-color:#ddd;
+	border:1px solid #bbb;
+}
+span.article_seperator {
+	display:block;
+	height:1.5em;
+}
+/* 
+  -- Even more rounded corners with CSS: Base stylesheet --
+*/
+
+.jpcool_dialog,
+.jpcool_dialog_menu,
+.jpcool_dialog_notitle,
+.jpcool_dialog_notitle_menu {
+ position:relative;
+ margin:0px auto;
+ min-width:8em;
+ max-width:760px; /* based on image dimensions - not quite consistent with drip styles yet */
+ z-index:1;
+ margin-left:12px; /* default, width of left corner */
+ margin-bottom:0.5em; /* spacing under dialog */
+}
+
+.jpcool_dialog .jpcool_content,
+.jpcool_dialog_menu .jpcool_content,
+.jpcool_dialog .jpcool_top,
+.jpcool_dialog_menu .jpcool_top,
+.jpcool_dialog .jpcool_bot,
+.jpcool_dialog_menu .jpcool_bot,
+.jpcool_dialog .jpcool_bot div,
+.jpcool_dialog_menu .jpcool_bot div {
+ background:transparent url(../images/dialog.png) no-repeat top right;
+}
+
+.jpcool_dialog_notitle .jpcool_content,
+.jpcool_dialog_notitle_menu .jpcool_content,
+.jpcool_dialog_notitle .jpcool_top,
+.jpcool_dialog_notitle_menu .jpcool_top,
+.jpcool_dialog_notitle .jpcool_bot,
+.jpcool_dialog_notitle_menu .jpcool_bot,
+.jpcool_dialog_notitle .jpcool_bot div,
+.jpcool_dialog_notitle_menu .jpcool_bot div {
+ background:transparent url(../images/dialog_notitle.png) no-repeat top right;
+}
+
+.jpcool_dialog .jpcool_content,
+.jpcool_dialog_menu .jpcool_content {
+ position:relative;
+ padding:0px 12px 0px 0px; 
+}
+
+.jpcool_dialog_notitle .jpcool_content,
+.jpcool_dialog_notitle_menu .jpcool_content {
+ position:relative;
+ padding:15px 12px 0px 0px; 
+}
+
+.jpcool_dialog .jpcool_top,
+.jpcool_dialog_menu .jpcool_top,
+.jpcool_dialog_notitle .jpcool_top,
+.jpcool_dialog_notitle_menu .jpcool_top {
+ /* top+left vertical slice */
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:12px; /* top slice width */
+ margin-left:-12px;
+ height:100%; 
+ background-position:top left;
+}
+
+.jpcool_dialog .jpcool_bot,
+.jpcool_dialog_menu .jpcool_bot,
+.jpcool_dialog_notitle .jpcool_bot,
+.jpcool_dialog_notitle_menu .jpcool_bot {
+ /* bottom */
+ position:relative;
+ width:100%;
+}
+
+.jpcool_dialog .jpcool_bot,
+.jpcool_dialog .jpcool_bot div,
+.jpcool_dialog_menu .jpcool_bot,
+.jpcool_dialog_menu .jpcool_bot div,
+.jpcool_dialog_notitle .jpcool_bot,
+.jpcool_dialog_notitle .jpcool_bot div,
+.jpcool_dialog_notitle_menu .jpcool_bot,
+.jpcool_dialog_notitle_menu .jpcool_bot div {
+ height:20px; /* height of bottom cap/shade */
+ font-size:1px;
+}
+
+.jpcool_dialog .jpcool_bot,
+.jpcool_dialog_menu .jpcool_bot,
+.jpcool_dialog_notitle .jpcool_bot,
+.jpcool_dialog_notitle_menu .jpcool_bot {
+ background-position:bottom right;
+}
+
+.jpcool_dialog .jpcool_bot div,
+.jpcool_dialog_menu .jpcool_bot div,
+.jpcool_dialog_notitle .jpcool_bot div,
+.jpcool_dialog_notitle_menu .jpcool_bot div {
+ position:relative;
+ width:12px; /* bottom corner width */
+ margin-left:-12px;
+ background-position:bottom left;
+}
+
+.jpcool_dialog .hd,
+.jpcool_dialog .jpcool_botd,
+.jpcool_dialog .ft,
+.jpcool_dialog_menu .hd,
+.jpcool_dialog_menu .jpcool_botd,
+.jpcool_dialog_menu .ft,
+.jpcool_dialog_notitle .hd,
+.jpcool_dialog_notitle .jpcool_botd,
+.jpcool_dialog_notitle .ft,
+.jpcool_dialog_notitle_menu .hd,
+.jpcool_dialog_notitle_menu .jpcool_botd,
+.jpcool_dialog_notitle_menu .ft {
+ position:relative;
+}
+
+.jpcool_dialog .wrapper,
+.jpcool_dialog_menu .wrapper,
+.jpcool_dialog_notitle .wrapper,
+.jpcool_dialog_notitle_menu .wrapper {
+ /* extra content protector - preventing vertical overflow (past background) */
+ position:static;
+ max-height:1000px;
+ overflow:auto; /* note that overflow:auto causes a rather annoying redraw "lag" in Firefox 2, and may degrade performance. Might be worth trying without if you aren't worried about height/overflow issues. */
+}
+
+div.sobi2latest, 
+div.sobi2toprated, 
+div.sobi2mostliked, 
+div.sobi2monthbest
+{ clear:left; }
+div.sobi2latest div.s2moduleDesc, 
+div.sobi2toprated div.s2moduleDesc, 
+div.sobi2mostliked div.s2moduleDesc, 
+div.sobi2monthbest div.s2moduleDesc 
+{ float:right; padding:10px 10px 0 10px; width:160px; line-height:130%;}
+div.sobi2latest div.s2moduleIco, 
+div.sobi2toprated div.s2moduleIco, 
+div.sobi2mostliked div.s2moduleIco, 
+div.sobi2monthbest div.s2moduleIco 
+{ float:left; width:60px; height:60px; text-align:center;}
+div.s2moduleIco a img 
+{vertical-align:middle;}
+div.s2moduleDesc span.likes 
+{line-height:18px;}
+div.sobi2latest div a, 
+div.sobi2toprated div a, 
+div.sobi2mostliked div a, 
+div.sobi2monthbest div a 
+{ font-weight:bold;}
+
+div.moduletable_online { padding: 30px 0 0 0; margin:0.5em; }
+div.moduletable_online h3, div.moduletable_online ul, div.moduletable_online ul li { font-weight:normal; font-size:12px; float:left; margin: 0 !important; background: 0;}
+div.moduletable_online h3, div.moduletable_online ul li {  padding:0 3px;} 
+
+div.jpcool_dialog_notitle_vk { margin:0 0 0.5em 0; }
+
+div.toplogin { padding: 5px 15px; float: right; font-size: 14px; }
+
+
+.aero-listing-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+.aero-listing-wrapper div.sobi2latest.aero-full-width {
+    flex: 1 0 auto;
+    padding: 10px 0;
+    display: flex;
+}
+.aero-listing-wrapper div.sobi2latest div.s2moduleIco {
+    float: none;
+}
+.aero-listing-wrapper div.sobi2latest div.s2moduleDesc {
+    float: none;
+    padding: 0 10px;
+    align-self: center;
+}

@@ -1,0 +1,13 @@
+В: Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?
+
+О:
+
+	Бороться с этим нельзя, можно только стараться не использовать такое большое количество переменных. QSP не позволяет работать более, чем с пятью десятками переменных с одинаковым хэшем имени. При этом массив считается за одну переменную. Всего можно использовать 12800 различных переменных в игре. Поэтому, когда Вы превышаете это число, плеер ругается.
+
+http://qsp.su/index.php?option=com_agora&task=topic&id=392&Itemid=57
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20327
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26114
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=145&prc=25&Itemid=57#p22117
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=153&prc=25&Itemid=57#p22690
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=154&prc=25&Itemid=57#p22850
+http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=155&prc=25&Itemid=57#p22916
