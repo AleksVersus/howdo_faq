@@ -1,0 +1,20 @@
+/* ----------------- стили для офлайн ----------------- */
+body {
+    padding:0;
+    margin:0;
+}
+body > .em_AROUND{
+    max-width:840px;
+    margin:0 auto;
+}
+
+/* прилипчивый блок внизу */
+.stickUP {
+    text-align: right;
+    position: sticky;
+    bottom: 0;
+}
+.stickUP img {
+    max-height:50px;
+}
+/* ----------------- стили для офлайн ----------------- */
