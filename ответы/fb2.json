@@ -1,0 +1,41 @@
+{
+	"project":
+	[
+		{
+			"export_file":"..\\release\\faq.qsp.%TIME%.fb2",
+			"folders":
+			[
+				{"path":"."}
+			]
+		}
+	],
+	"book-info":
+	{
+		"book-title":"Как сделать? Часто Задаваемые Вопросы по QSP",
+		"author":
+		{
+	    	"first-name":"Алексей",
+	    	"middle-name":"Олегович",
+	    	"last-name":"Шпак"
+		},
+		"genre": ["ref_ref","comp_programming"],
+		"annotation":".\\92_дополнительные тексты\\00_аннотация.txt",
+		"date":"2020-08-24",
+		"lang":"ru"
+	},
+	"document-info":
+	{
+		"author":
+		{
+	    	"first-name":"Aleks",
+	    	"middle-name":"",
+	    	"last-name":"Versus"
+		},
+		"version":"1.0",
+		"history":
+		[
+			"1.0 — создание файла",
+			"2.0 — полное обновление файла"
+		]
+	}
+}

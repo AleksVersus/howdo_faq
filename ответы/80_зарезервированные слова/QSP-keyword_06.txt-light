@@ -1,159 +1,159 @@
 =Почти алфавитный указатель ключевых слов, системных переменных и спецсимволов=
 
-! (комментарий)
-! (не равно)
-& (конкатенация)
-& (перечисление команд)
-: (метки)
-, (разделитель аргументов)
-"" (кавычки)
-'' (апострофы)
-{} (Фигурные скобки)
-() (круглые скобки)
-[] (квадратные скобки)
-*
-*=
-+
-+=
--
--=
-+ и - (унарные)
-/
-/=
-<
-<=
-<>
-= (равно)
-= (присвоение)
-=<
-=>
->
->=
-ACT
-ADDLIB
-ADDOBJ
-ADDQST
-AND
-ARGS
-ARRCOMP
-ARRPOS
-ARRSIZE
-$BACKIMAGE
-BCOLOR
-CLA
-CLEAR
-*CLEAR
-CLOSE
-CLOSE ALL
-CLR
-*CLR
-CLS
-CMDCLEAR
-CMDCLR
-COPYARR
-$COUNTER
-COUNTOBJ
-$CURACTS
-$CURLOC
-DEBUG
-DELACT
-DELLIB
-DELOBJ
-$DESC
-DISABLESCROLL
-DISABLESUBEX
-DYNAMIC
-DYNEVAL
-ELSE
-ELSEIF
-END
-EXIT
-FCOLOR
-$FNAME
-FREELIB
-FSIZE
-FUNC
-$GETOBJ
-GOSUB
-GOTO
-GS
-GT
-IF
-IIF
-INCLIB
-$INPUT
-INSTR
-ISNUM
-ISPLAY
-JUMP
-KILLALL
-KILLOBJ
-KILLQST
-KILLVAR
-$LCASE
-LCOLOR
-LEN
-LET
-LOC
-$MAINTXT
-MAX
-MENU
-$MID
-MIN
-MOD
-MSECSCOUNT
-MSG
-NL
-*NL
-NO
-NOSAVE
-OBJ
-$ONACTSEL
-$ONGLOAD
-$ONGSAVE
-$ONNEWLOC
-$ONOBJADD
-$ONOBJDEL
-$ONOBJSEL
-OPENGAME
-OPENQST
-OR
-P
-*P
-PL
-*PL
-PLAY
-$QSPVER
-RAND
-REFINT
-$REPLACE
-RESULT
-RGB
-RND
-SAVEGAME
-$SELACT
-$SELOBJ
-SET
-SETTIMER
-SHOWACTS
-SHOWINPUT
-SHOWOBJS
-SHOWSTAT
-$STATTXT
-$STR
-STRCOMP
-$STRFIND
-STRPOS
-$TRIM
-$UCASE
-UNSEL
-UNSELECT
-USEHTML
-$USERCOM
-$USER_TEXT
-$USRTXT
-VAL
-VIEW
-WAIT
-XGOTO
-XGT
+[! (комментарий)](#faq_99_02_comments)
+[! (не равно)](#faq_99_01_18)
+[&amp; (конкатенация)](#faq_99_01_concatenation)
+[&amp; (перечисление команд)](#faq_99_05_ampersand)
+[: (метки)](#faq_99_05_marks)
+[, (разделитель аргументов)](#faq_99_05_comma)
+["" (кавычки)](#faq_99_05_quotes)
+['' (апострофы)](#faq_99_05_apostrophes)
+[{} (Фигурные скобки)](#faq_99_05_curclybraces)
+[() (круглые скобки)](#faq_99_05_roundbrackets)
+[%% (квадратные скобки)](#faq_99_05_squarebrackets)
+[*](#faq_99_01_multi)
+[*=](#faq_99_01_multiaprop)
+[+](#faq_99_01_add)
+[+=](#faq_99_01_incr)
+[-](#faq_99_01_subt)
+[-=](#faq_99_01_decr)
+[+ и - (унарные)](#faq_99_01_unar)
+[/](#faq_99_01_div)
+[/=](#faq_99_01_divaprop)
+[&lt;](#faq_99_01_smal)
+[&lt;=](#faq_99_01_smaleq)
+[&lt;&gt;](#faq_99_01_smalmore)
+[= (равно)](#faq_99_01_eq)
+[= (присвоение)](#faq_99_01_aprop)
+[=&lt;](#faq_99_01_eqsmal)
+[=&gt;](#faq_99_01_eqmore)
+[&gt;](#faq_99_01_more)
+[&gt;=](#faq_99_01_moreeq)
+[ACT](#faq_99_02_act)
+[ADDLIB](#faq_99_02_addqst)
+[ADDOBJ](#faq_99_02_addobj)
+[ADDQST](#faq_99_02_addqst)
+[AND](#faq_99_01_and)
+[ARGS](#faq_99_04_args)
+[ARRCOMP](#faq_99_03_arrcomp)
+[ARRPOS](#faq_99_03_arrpos)
+[ARRSIZE](#faq_99_03_arrsize)
+[$BACKIMAGE](#faq_99_04_backimage)
+[BCOLOR](#faq_99_04_bcolor)
+[CLA](#faq_99_02_cla)
+[CLEAR](#faq_99_02_clear)
+[*CLEAR](#faq_99_02_sclr)
+[CLOSE](#faq_99_02_close)
+[CLOSE ALL](#faq_99_02_closeall)
+[CLR](#faq_99_02_clear)
+[*CLR](#faq_99_02_sclr)
+[CLS](#faq_99_02_cls)
+[CMDCLEAR](#faq_99_02_cmdclear)
+[CMDCLR](#faq_99_02_cmdclear)
+[COPYARR](#faq_99_02_copyarr)
+[$COUNTER](#faq_99_04_counter)
+[COUNTOBJ](#faq_99_03_countobj)
+[$CURACTS](#faq_99_03_curacts)
+[$CURLOC](#faq_99_03_curloc)
+[DEBUG](#faq_99_04_debug)
+[DELACT](#faq_99_02_delact)
+[DELLIB](#faq_99_02_killqst)
+[DELOBJ](#faq_99_02_delobj)
+[$DESC](#faq_99_03_desc)
+[DISABLESCROLL](#faq_99_04_disablescroll)
+[DISABLESUBEX](#faq_99_04_disablesubex)
+[DYNAMIC](#faq_99_02_dynamic)
+[DYNEVAL](#faq_99_03_dyneval)
+[ELSE](#faq_99_02_if)
+[ELSEIF](#faq_99_02_if)
+[END](#faq_99_05_end)
+[EXIT](#faq_99_02_exit)
+[FCOLOR](#faq_99_04_fcolor)
+[$FNAME](#faq_99_04_fname)
+[FREELIB](#faq_99_02_killqst)
+[FSIZE](#faq_99_04_fsize)
+[FUNC](#faq_99_03_func)
+[$GETOBJ](#faq_99_03_getobj)
+[GOSUB](#faq_99_02_gosub)
+[GOTO](#faq_99_02_goto)
+[GS](#faq_99_02_gosub)
+[GT](#faq_99_02_goto)
+[IF](#faq_99_02_if)
+[IIF](#faq_99_03_iif)
+[INCLIB](#faq_99_02_addqst)
+[$INPUT](#faq_99_03_input)
+[INSTR](#faq_99_03_instr)
+[ISNUM](#faq_99_03_isnum)
+[ISPLAY](#faq_99_03_isplay)
+[JUMP](#faq_99_02_jump)
+[KILLALL](#faq_99_02_killall)
+[KILLOBJ](#faq_99_02_killobj)
+[KILLQST](#faq_99_02_killqst)
+[KILLVAR](#faq_99_02_killvar)
+[$LCASE](#faq_99_03_lcase)
+[LCOLOR](#faq_99_04_lcolor)
+[LEN](#faq_99_03_len)
+[LET](#faq_99_02_let)
+[LOC](#faq_99_01_loc)
+[$MAINTXT](#faq_99_03_maintxt)
+[MAX](#faq_99_03_max)
+[MENU](#faq_99_02_menu)
+[$MID](#faq_99_03_mid)
+[MIN](#faq_99_03_min)
+[MOD](#faq_99_01_mod)
+[MSECSCOUNT](#faq_99_03_msecscount)
+[MSG](#faq_99_02_msg)
+[NL](#faq_99_02_nl)
+[*NL](#faq_99_02_snl)
+[NO](#faq_99_01_no)
+[NOSAVE](#faq_99_04_nosave)
+[OBJ](#faq_99_01_obj)
+[$ONACTSEL](#faq_99_04_onactsel)
+[$ONGLOAD](#faq_99_04_ongload)
+[$ONGSAVE](#faq_99_04_ongsave)
+[$ONNEWLOC](#faq_99_04_onnewloc)
+[$ONOBJADD](#faq_99_04_onobjadd)
+[$ONOBJDEL](#faq_99_04_onobjdel)
+[$ONOBJSEL](#faq_99_04_onobjsel)
+[OPENGAME](#faq_99_02_opengame)
+[OPENQST](#faq_99_02_openqst)
+[OR](#faq_99_01_or)
+[P](#faq_99_02_p)
+[*P](#faq_99_02_sp)
+[PL](#faq_99_02_pl)
+[*PL](#faq_99_02_spl)
+[PLAY](#faq_99_02_play)
+[$QSPVER](#faq_99_03_qspver)
+[RAND](#faq_99_03_rand)
+[REFINT](#faq_99_02_refint)
+[$REPLACE](#faq_99_03_replace)
+[RESULT](#faq_99_04_result)
+[RGB](#faq_99_03_rgb)
+[RND](#faq_99_03_rnd)
+[SAVEGAME](#faq_99_02_savegame)
+[$SELACT](#faq_99_03_selact)
+[$SELOBJ](#faq_99_03_selobj)
+[SET](#faq_99_02_set)
+[SETTIMER](#faq_99_02_settimer)
+[SHOWACTS](#faq_99_02_showacts)
+[SHOWINPUT](#faq_99_02_showinput)
+[SHOWOBJS](#faq_99_02_showobjs)
+[SHOWSTAT](#faq_99_02_showstat)
+[$STATTXT](#faq_99_03_stattxt)
+[$STR](#faq_99_03_str)
+[STRCOMP](#faq_99_03_strcomp)
+[$STRFIND](#faq_99_03_strfind)
+[STRPOS](#faq_99_03_strpos)
+[$TRIM](#faq_99_03_trim)
+[$UCASE](#faq_99_03_ucase)
+[UNSEL](#faq_99_02_unsel)
+[UNSELECT](#faq_99_02_unsel)
+[USEHTML](#faq_99_04_usehtml)
+[$USERCOM](#faq_99_04_usercom)
+[$USER_TEXT](#faq_99_03_usrtxt)
+[$USRTXT](#faq_99_03_usrtxt)
+[VAL](#faq_99_03_val)
+[VIEW](#faq_99_02_view)
+[WAIT](#faq_99_02_wait)
+[XGOTO](#faq_99_02_xgoto)
+[XGT](#faq_99_02_xgoto)

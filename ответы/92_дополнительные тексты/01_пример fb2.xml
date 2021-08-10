@@ -1,0 +1,41 @@
+<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0" xmlns:l="http://www.w3.org/1999/xlink">
+ <description>
+  <title-info>
+   <genre>ref_ref</genre>
+   <genre>comp_programming</genre>
+   <author>
+    <first-name>Алексей</first-name>
+    <middle-name>Олегович</middle-name>
+    <last-name>Шпак</last-name>
+   </author>
+   <book-title>Как сделать? Часто задаваемые Вопросы по QSP</book-title>
+   <annotation>
+    <p>На форуме QSP.su в теме "Как сделать?" было задано очень много вопросов. В этом сборнике представлены наиболее часто задаваемые.</p>
+    <empty-line/>
+    <p>редакция от 24.05.2020 г.</p>
+   </annotation>
+   <date value="2020-08-24">2020.08.24</date>
+   <lang>ru</lang>
+  </title-info>
+  <document-info>
+   <author>
+    <first-name>Aleks</first-name>
+    <last-name>Versus</last-name>
+   </author>
+   <program-used>FictionBook Editor Release 2.6.6</program-used>
+   <date value="2020-05-18">18 May 2020</date>
+   <id>691C3AD3-DB00-4DCD-8B3F-FE36355FD126</id>
+   <version>1.0</version>
+   <history>
+    <p>1.0 — создание файла</p>
+   </history>
+  </document-info>
+ </description>
+ <body>
+  <section>
+   <title>
+    <p>Важное предисловие</p>
+   </title>
+  </section>
+ </body>
+</FictionBook>
