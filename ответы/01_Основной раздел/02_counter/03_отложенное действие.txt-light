@@ -1,3 +1,6 @@
+=2.3. Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?=
+[:faq_02_03]
+
 В: Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?
 
 О:
@@ -7,16 +10,16 @@
 
 		*	создаём локацию, название может быть любым, например "реалтайм".
 		*	указываем плееру, какую локацию ему нужно использовать, как локацию-счётчик. Пишем, например на самой первой локации в игре:
-
+```qsp
 				$counter="реалтайм"
-
+```
 	По умолчанию обращение к локации-счётчику выполняется каждые пол секунды. Если нужно изменить период обращения, воспользуйтесь оператором settimer. В качестве аргумента этому оператору указывается период обращения к локации-счётчику в миллисекундах:
-
+```qsp
 		! обращение к локации-счётчику каждые 100 мс.
 		settimer 100
-
+```
 	Теперь на локации-счётчике пишем требуемый код. Например, данный код будет создавать действие "Шагнуть в портал" через 7 секунд после входа на локацию "зал_с_порталами":
-
+```qsp
 		! фиксируем, в какое время обратились к локации-счётчику
 		time_now=msecscount
 		if $curloc="зал_с_порталами":
@@ -38,17 +41,5 @@
 			end
 		! закрываем условие
 		end
-
-	Довольно простой код. Функция msecscount возвращает, сколько прошло миллисекунд с момента начала игры.
-
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23828
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25212
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=202&prc=25&Itemid=57#p25564
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=216&prc=25&Itemid=57#p26885
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26389
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=127&prc=25&Itemid=57#p20887
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22355
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24390
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=188&prc=25&Itemid=57#p24722
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25399
+```
+	Довольно простой код. Функция `msecscount` возвращает, сколько прошло миллисекунд с момента начала игры.
