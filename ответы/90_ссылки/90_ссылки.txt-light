@@ -98,4 +98,42 @@ oleksandrigo (TEMP_USER). #5246 11.Мар.18 18:34:42: [Зачем нужно п
 [:link_03_05]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=RTMrZF_mTD0&t=415s
 
-==
+=04. Вопросы о меню=
+[:link_04]
+Пример от Svandrus:		[Скачать](http://qsp.su/components/com_agora/img/members/983/menu_2.qsp)
+Пример от Aleks Versus:	[Скачать](http://qsp.su/components/com_agora/img/members/248/21032016-0856_menu.qsp)
+Динамическое меню от Lisichka: [Сообщение в теме "Как сделать?"](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=114&prc=25&Itemid=57#p19982)
+О меню в справке: http://wiki.qsp.su/help:menu
+PsiH. #3522 23.Сен.15 17:06:11: [Покажите пример меню с двумя и более предметами.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21810)
+St-john. #3665 25.Ноя.15 10:04:08: [как мне из меню напрямую передать нужные аргументы?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22270)
+Lisichka. #4134 20.Мар.16 18:05:34: [хочу сделать разворачивающееся меню из ссылки в тексте](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23451)
+Darvin432. #4380 16.Май.16 22:35:17: [как сделать так что бы при нажатии предметов выводилось доп окно на которое можно было нажать.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=176&prc=25&Itemid=57#p23959)
+denedi. #4478 27.Июн.16 09:27:29: [Как сделать меню которое будет выскакивать при выборе предмета в инвентаре?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24260)
+Axi.Lex. #4582 17.Авг.16 13:47:19: [Создать меню предмета?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=184&prc=25&Itemid=57#p24527)
+Ivan27_XL. #5721 19.Май.19 12:50:08: [Как сделать, чтобы предмет (записка, например) можно было использовать прямо в окне предметов](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=229&prc=25&Itemid=57#p18215)
+
+--4.1. Как сделать меню предмета?--
+[:link_04_01]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=THlEwBbzf1k&t=16s
+--4.2. Как сделать разные меню для двух и более предметов?--
+[:link_04_02]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=THlEwBbzf1k&t=460s
+--4.3. Как сделать меню в ссылках?--
+[:link_04_03]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=JRUjSCbbUIY&t=16s
+--4.4. Как передавать локациям-пунктам меню аргументы?--
+[:link_04_04]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=JRUjSCbbUIY&t=292s
+--4.5. Как делать контекстное (динамическое) меню?--
+[:link_04_05]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=eMYJG5WrY4k&t=18s
+--4.6. Как вставить разделитель в меню?--
+[:link_04_06]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=eMYJG5WrY4k&t=210s
+--4.7. Как вставить картинки в меню?--
+[:link_04_07]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=eMYJG5WrY4k&t=287s
+
+=05. Вопросы по $ONNEWLOC=
+[:link_05]
+
