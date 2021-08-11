@@ -1,3 +1,5 @@
+=3.4. Как сделать ввод имени игроком?=
+[:faq_03_04]
 В: Как сделать ввод имени игроком?
 
 О:
@@ -5,17 +7,12 @@
 	Для этого необходимо использовать функцию $input. В качестве аргумента этой функции указывается строка текста, которую мы хотим увидеть во всплывающем окошке. А возвращает функция текст, введённый игроком.
 
 	Например:
-
+```qsp
 		$name=$input("Введите своё имя.")
-
+```
 	Чтобы игрок не мог проигнорировать ввод имени, нужно зациклить выполнение данного кода, если $input возвращает пустую строку:
-
+```qsp
 		:loop
 		$name=$input("Введите своё имя.")
 		if $name="": jump "loop"
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19933
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=119&prc=25&Itemid=57#p20423
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23758
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25192
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26516
+```

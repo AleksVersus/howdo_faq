@@ -1,15 +1,11 @@
+=3.1. Как вывести на экран отдельное окошко с текстом?=
+[:faq_03_01]
 В: Как вывести на экран отдельное окошко с текстом?
 В: Подскажите аналог команды alert в QSP.
 
 О:
 	Вывод сообщения в виде всплывающего окна в QSP выполняет оператор msg. В качестве аргумента оператору указывается строка текста, которую мы хотим увидеть в сообщении:
-
+```qsp
 		msg "Осторожно! Мост разрушен!"
-
+```
 	Обратите внимание, команда msg выводит на экран сообщение и прерывает дальнейшее выполнение кода, пока игрок не нажмёт кнопку "ОК".
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19933
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=119&prc=25&Itemid=57#p20423
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23758
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25192
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26516
