@@ -1,25 +1,15 @@
+=6.5. Как приглушить музыку?=
+[:faq_06_05]
 В: Как приглушить музыку?
 О:
 	QSP позволяет запускать музыку с заданной громкостью. Громкость указывается вторым аргументом:
-
+```qsp
 		PLAY "путь к файлу/музыка.mp3",100
-
+```
 	Вместо числа 100 нужно подставить требуемый уровень (от 0 до 100 — означает проценты). Если число не указано, подразумевается, что мелодию нужно воспроизводить со 100% громкостью.
 
 	Если повторно воспользоваться командой PLAY для файла, который уже воспроизводится, то плеер не перезапустит воспроизведение файла, а просто изменит уровень громкости в соответствии с указанным значением:
-
+```qsp
 		PLAY "путь к файлу/музыка.mp3",50
-
+```
 	Таким образом, чтобы приглушить мелодию, используйте команду PLAY к запущенному файлу с другим значением громкости.
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25054
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21451
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23506
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24099
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24562
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25399
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25506
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27051
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=227&prc=25&Itemid=57#p25177

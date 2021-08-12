@@ -1,16 +1,9 @@
+=6.2. Как запустить две звуковые дорожки?=
+[:faq_06_02]
 В: Как запустить две звуковые дорожки?
 О:
 	QSP поддерживает одновременное воспроизведение до 32-х звуковых файлов. Это значит, что для запуска двух звуковых файлов достаточно просто написать по команде на каждый:
-
+```qsp
 		PLAY "путь к файлу/один музыкальный файл.mp3"
 		PLAY "путь к файлу/другой музыкальный файл.mp3"
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21451
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23506
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24099
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24562
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25399
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25506
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27051
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=227&prc=25&Itemid=57#p25177
+```
