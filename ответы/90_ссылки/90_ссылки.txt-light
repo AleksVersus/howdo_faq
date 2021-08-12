@@ -10,28 +10,28 @@
 --1.1. В чём разница между `set x=10`, `let x=10` и `x=10`?--
 [:link_01_01]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=25s
-oleksandrigo (TEMP_USER). #5253 15.Мар.18 00:08:17: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=211&prc=25&Itemid=57#p26532
+oleksandrigo (TEMP_USER). #5253 15.Мар.18 00:08:17: [`set x = 1` `let x = 1` `x = 1` Может между ними есть хоть какая-то разница?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=211&prc=25&Itemid=57#p26532)
 
 --1.2. В чём разница между переменной со знаком `$` и без знака `$`?--
 [:link_01_02]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=64s
-WastedCarl. #5205 17.Фев.18 22:17:57: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=209&prc=25&Itemid=57#p26408
+WastedCarl. #5205 17.Фев.18 22:17:57: [Какая разница между названием переменной с $ и без $ ?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=209&prc=25&Itemid=57#p26408)
 
 --1.3. В чём разница между ' ' (апострофы) и " " (кавычки)?--
 [:link_01_03]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=113s
-CH_B_L. #4333 09.Май.16 15:31:05: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=174&prc=25&Itemid=57#p23889
-Storm. #3567 21.Окт.15 22:43:22: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=143&prc=25&Itemid=57#p21978
+CH_B_L. #4333 09.Май.16 15:31:05: [в чем отличия в qsp у ' ' от " "?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=174&prc=25&Itemid=57#p23889)
+Storm. #3567 21.Окт.15 22:43:22: [Сложный код](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=143&prc=25&Itemid=57#p21978)
 
 --1.4. В чём разница между `*pl "строка"` и просто `"строка"`?--
 [:link_01_04]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=238s
-Jolly Roger. #3482 13.Сен.15 22:46:52: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=140&prc=25&Itemid=57#p21694
+Jolly Roger. #3482 13.Сен.15 22:46:52: [не вижу разницы между командами](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=140&prc=25&Itemid=57#p21694)
 
 --1.5. Чем отличаются эти две команды? `*pl "<<$perem>>"` и `*pl $perem`--
 [:link_01_05]
 Смотреть ответ на ютубе: https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=280s
-oleksandrigo (TEMP_USER). #5199 16.Фев.18 21:45:45: http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26396
+oleksandrigo (TEMP_USER). #5199 16.Фев.18 21:45:45: [Чем отличаются эти две команды?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26396)
 
 --1.6. В чём разница между `dynamic` и `dyneval`?--
 [:link_01_06]
@@ -438,7 +438,6 @@ Cannibal_Rat. #5108 Топ10.Июл.17 09:31:56: [как добавить зав
 [:link_11_05]
 Смотреть на ютубе: https://www.youtube.com/watch?v=qYDeZ6wmaDY&t=216s
 прохожий. #4763 Топ05.Ноя.16 21:42:54: [как в диалоговое окно засунуть несколько условий?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=191&prc=25&Itemid=57#p24837)
-
 --11.6. Как упростить условие?--
 [:link_11_06]
 Смотреть на ютубе: https://www.youtube.com/watch?v=qYDeZ6wmaDY&t=586s
