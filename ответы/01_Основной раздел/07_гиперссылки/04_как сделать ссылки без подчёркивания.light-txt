@@ -1,17 +1,10 @@
+=7.4. Как сделать гиперссылки без подчёркивания?=
+[:faq_07_04]
 В: Как сделать гиперссылки без подчёркивания?
 
 О:
 	В классическом плеере подчёркивание отключается присвоением гиперссылке класса "plain":
-
+```qsp
 		*pl "На берёзе созрело несколько <a href='exec:яблоко=яблоко+1 & addobj ""Яблоко""' class='plain'>яблок</a>."
-
+```
 	В Quest Navigator класс "plain" заранее не прописан, поэтому Вы можете либо прописать его в своём шаблоне (что обеспечит одинаковый вид ссылок и в классическом плеере и в Quest Navigator, если хотите, чтобы игра работала на обоих плеерах), либо прописать в шаблоне собственные классы с нужными декоративными эффектами.
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24011
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p25011
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=195&prc=25&Itemid=57#p25108
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=217&prc=25&Itemid=57#p26906
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21647
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p19373
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=174&prc=25&Itemid=57#p23885
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25442
