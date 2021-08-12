@@ -257,4 +257,54 @@ Genryzz. #5352 Топ26.Июн.18 05:22:01: [как добавить текст 
 Работа с окном дополнительного описания в справке: http://wiki.qsp.su/help:stat
 Белый Шарик. #3003 Топ24.Июн.15 15:44:44: [Как в коде прописать опцию Quit ? Ну тоесть выход из игры.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20553)
 
+=09. Вопросы об изображениях=
+--9.1. Как вставить картинку в игру?--
+[:link_09_01]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=16s
+gribochek. #3746 Топ11.Янв.16 01:12:40: [Как вставить картинку и звуки в локацию?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446)
+Axi.Lex. #4610 Топ28.Авг.16 17:16:19: [Как загрузить картинку в игру и изменить фон.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24565)
+
+--9.2. Можно ли вставить в игру gif-файл?--
+[:link_09_02]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=431s
+Примеры по вставке gif от NickoAilus: [Пример 1 в архиве ZIP](http://qsp.su/components/com_agora/img/members/2018/GIF.zip), [Пример 2в архиве ZIP](http://qsp.su/components/com_agora/img/members/2018/GIF2.zip)
+loony25 (WastedCarl). #5167 Топ16.Дек.17 20:21:46: [Как в QSP вставить GIF файл ?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259)
+Bup0H. #4512 Топ14.Июл.16 02:30:39: [Подскажите, почему некоторые гифки проигрываются нормально, а у некоторых искажаются либо цвета, либо скорость в qsp плеере?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359)
+ejikplains. #5564 Топ18.Май.19 09:58:08: [при добавлении гиф картинок они воспроизводятся коряво и то пропадают, то их почти не видно](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550)
+Larson. #5629 Топ18.Май.19 10:15:38: [Проблемы с гифками (+ссылки на сообщения и темы)](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409)
+TEMP_USER. #5769 Топ23.Май.19 12:32:46: [Гифка не работает/не отображается/выводится неправильно](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=231&prc=25&Itemid=57#p27217)
+
+--9.3. Как вставить картинку в действие?--
+[:link_09_03]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=616s
+Mioirel. #4947 Топ27.Фев.17 15:33:22: [Как вставить изображение в меню плеера? Например, чтобы рядом с act'ом "север" стояла пикча в формате jpg](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25305)
+
+--9.4. Как поставить картинку фоном?--
+[:link_09_04]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=45s
+Aaaspavel. #3679 Топ09.Дек.15 15:01:10: [как сделать картинку фоном?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22306)
+
+--9.5. Как выводить изображения послойно? Накладывать друг на друга?--
+[:link_09_05]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=744s
+Chaos Legion. #4113 Топ18.Мар.16 12:52:08: [как сделать в классике вывод изображений послойно.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23409)
+lamerUA. #4152 Топ25.Мар.16 12:08:11: [Возможно ли в QSP 5.7 осуществить наложение одной картинки на другую](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=167&prc=25&Itemid=57#p23534)
+
+--9.6. Как сделать кликабельное изображение?--
+[:link_09_06]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=xCpp_ZYN7Tw&t=801s
+Mr.Crazzyr. #3013 Топ24.Июн.15 23:58:46: [как сделать кликабельное изображение в основном окне.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20567)
+BraJelon. #2978 Топ13.Июн.15 04:24:21: [Как сделать так, чтобы эти действия были отдельно друг от друга, а не в одном подменю, а также, как корректировать их расположение на экране или к примеру, чтобы это самое действие игрока было изображением и при нажатии, происходил переход?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20428)
+saks. #4027 Топ07.Мар.16 05:53:02: [тоесть полностью отказаться от окна "Действия" и перенести весь интерфейс в основное окно не получится?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=162&prc=25&Itemid=57#p23267)
+Сергей. #5738 Топ19.Май.19 13:12:46: [Как заставить код выполняться по нажатию на картинку/текст](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p19373)
+
+--9.7. Как сделать сменяемое изображение на локации?--
+[:link_09_07]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=HMYo0xVyGNA&t=16s
+jeesson. #4914 Топ14.Фев.17 05:32:46: [как сделать динамическое изображение(ну или как-то так называется), чтобы по нажатию по него - оно менялось на другое.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25227)
+Фрай. #5430 Топ06.Янв.19 13:47:25: [как сделать, чтобы на одной локации картинки (jpg, png, gif) и текст под ними, сменяли одна другую?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27018)
+--9.8. Как сделать вывод рандомного изображения?--
+[:link_09_08]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=HMYo0xVyGNA&t=318s
+WeReT. #4062 Топ10.Мар.16 20:18:24: [Как создать выбор из нескольких картинок?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=163&prc=25&Itemid=57#p23310)
 

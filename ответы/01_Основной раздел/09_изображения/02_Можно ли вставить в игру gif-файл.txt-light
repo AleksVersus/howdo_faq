@@ -1,28 +1,16 @@
+=9.2. Можно ли вставить в игру gif-файл?=
+[:faq_09_02]
 В: Можно ли вставить в игру gif-файл?
 О:
 	Да, можно. gif-файл вставляется в игру точно так же, как и любое другое изображение.
 
 	Для примера покажем вставку gif с помощью html:
-
+```qsp
 		usehtml=1
 		*pl "<img src='images/clouds.gif'>"
-
+```
 	Если вместо изображения Вы видите разбитый серый квадрат, возможно Вы неверно указали путь или название файла.
 
 	Если изображение не отображается в указанном месте даже в виде разбитого квадрата, скорее всего плеер не поддерживает данный формат.
 
-	Если у вас проблемы с воспроизведением gif-анимации, вам поможет вот эта тема:
-		http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=231&prc=25&Itemid=57#p27217
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22446
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24565
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259
-
-Поломка gif:
-	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359
-	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550
-	http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409
-
-Примеры по вставке gif от NickoAilus`а:
-	http://qsp.su/components/com_agora/img/members/2018/GIF.zip
-	http://qsp.su/components/com_agora/img/members/2018/GIF2.zip
+	Если у вас проблемы с воспроизведением gif-анимации, посмотрите список тем в разделе источников: [перейти к разделу](#link_09_02)

@@ -1,9 +1,0 @@
-рандомное изображение
----------------------------------------------------------------------------------
-=WeReT=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=163&prc=25&Itemid=57#p23310
-Как создать выбор из нескольких картинок?
-
-=Aaaspavel=
-photo_random=rand(1,99) 
-'img src="images/pic_<<photo_random>>.gif"'
