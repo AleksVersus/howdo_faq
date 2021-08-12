@@ -1,11 +1,10 @@
+=8.1. Какой командой можно очистить окно дополнительного описания?=
+[:faq_08_01]
 В: Какой командой можно очистить окно дополнительного описания?
 
 О:
 
 	Воспользуйтесь оператором CLR:
-
+```qsp
 		CLR
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=135&prc=25&Itemid=57#p21505
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21651
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=164&prc=25&Itemid=57#p23363
+```
