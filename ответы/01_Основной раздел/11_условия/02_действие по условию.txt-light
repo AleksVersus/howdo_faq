@@ -1,3 +1,5 @@
+=11.2. Как сделать так, чтобы действие появлялось только при определённом условии?=
+[:faq_11_02]
 В: Как сделать так, чтобы действие появлялось только при определённом условии?
 
 О:
@@ -102,16 +104,3 @@
 			end
 		end
 ```
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=138&prc=25&Itemid=57#p21604
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=160&prc=25&Itemid=57#p23220
-http://qsp.su/index.php?option=com_agora&task=topic&id=348&Itemid=57
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25352
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25429
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25470
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25482
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26276
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26716
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27064
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24036
