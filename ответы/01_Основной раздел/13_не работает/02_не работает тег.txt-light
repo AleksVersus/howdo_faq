@@ -1,3 +1,6 @@
+=13.2. Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?=
+[:faq_13_02]
+
 В: Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?
 
 О:
@@ -11,9 +14,3 @@
 	Поэтому, прежде чем использовать какой-либо тег, ознакомьтесь со справкой http://wiki.qsp.su/help:html, где перечислены все теги и атрибуты, которые поддерживаются в классической версии плеера.
 
 	Полная поддержка HTML присутствует в Quest Navigator.
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21893
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=183&prc=25&Itemid=57#p24518
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27028
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25060
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24921

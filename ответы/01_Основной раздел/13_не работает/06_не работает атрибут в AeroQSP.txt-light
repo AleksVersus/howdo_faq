@@ -1,3 +1,6 @@
+=13.6. В AeroQSP не работает атрибут=
+[:faq_13_06]
+
 В: В AeroQSP не работает атрибут.
 
 	Например, border=1, bgcolor=#557700.
@@ -7,7 +10,7 @@
 	AeroQSP ориентирован на работу со стилями, поэтому для стилизации различных элементов пользуйтесь возможностями CSS.
 
 	Собственную таблицу стилей можно вписать в переменную $STYLESHEET. Вот пример из игры "Один в снегах" от Lisichk`и:
-
+```css
 		$STYLESHEET='
 			.main { 
 				position:absolute; 
@@ -47,19 +50,9 @@
 				left:800px;
 				text-align:center;
 			}'
-
+```
 	Стили для отдельного элемента можно прописать в атрибуте style:
-
+```qsp
 		*p "<div style='color:#333333;width:350px;border:12;'>Текст внутри блока</div>"
-
+```
 	Все поддерживаемые свойства перечисленны в сводной справке по AeroQSP http://qsp.su/misc/aero/help.htm
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22645
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=154&prc=25&Itemid=57#p22877
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23639
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23838
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24397
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25311
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26298
-http://qsp.su/index.php?option=com_agora&task=topic&id=297&Itemid=57

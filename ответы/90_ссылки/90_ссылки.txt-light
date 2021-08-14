@@ -2,9 +2,17 @@
 [:link_list]
 Список ссылок на источники, по которым составлялся справочник, на дополнительные материалы и видео по указанным темам.
 =Ссылки на полезные программы=
-
+[:link_program]
 Проба цвета с любой точки на экране [ColorMania](https://colormania.ru.uptodown.com/windows/download)
 
+=Некоторые общие и частные вопросы по работе с AeroQSP=
+[:link_aeroqsp]
+Инструкция по работе с AeroQSP: http://qsp.su/misc/aero/help.htm
+Запуск AeroQSP из Quest Generator: [Тема на форуме QSP.su](http://qsp.su/index.php?option=com_agora&task=topic&id=297&Itemid=57)
+Stand-alone сборка на AeroQSP: [статья на QSP.su](http://qsp.su/index.php?option=com_content&view=article&id=117&Itemid=56)
+Lisichka. #3849 Топ05.Фев.16 00:51:59: [можно ли как-то в аэру добавить второе окно доп описания?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=154&prc=25&Itemid=57#p22877)
+Mira. #4952 Топ28.Фев.17 22:49:27: [Создала на аеро свой хелоуворд, через standalone не работает, swf создается, грузится и черный экран дальше](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25311)
+BlooDwareN. #5182 Топ10.Янв.18 22:00:22: [как установить AeroQSP!](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26298)
 =01. Чем отличается?=
 [:link_01]
 --1.1. В чём разница между `set x=10`, `let x=10` и `x=10`?--
@@ -444,7 +452,7 @@ Cannibal_Rat. #5108 10.Июл.17 09:31:56: [как добавить зависи
 Gefestions. #3358 25.Авг.15 11:05:06: [как сделать: к примеру есть 3 локации... что бы открылась 4 надо во всех 3 побыть, неважно в каком порядке.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=135&prc=25&Itemid=57#p21473)
 
 =12. Вопросы о DYNAMIC=
-
+[:link_12]
 --12.1. Зачем нужен оператор dynamic?--
 [:link_12_01]
 Смотреть на ютубе: https://www.youtube.com/watch?v=djQbaN7-bfE&t=16s
@@ -468,3 +476,90 @@ St-john. #4616 Топ28.Авг.16 19:01:39: [Как в коде ниже при 
 [:link_12_04]
 Смотреть на ютубе: https://www.youtube.com/watch?v=djQbaN7-bfE&t=512s
 oleksandrigo (TEMP_USER). #5310 Топ13.Май.18 14:48:52: [Почему вместо того чтобы изменить Х он просто в виде текста выдает мне x -= 10. И как сделать так чтобы это был не текст а код?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26665)
+=13. Не работает...=
+[:link_13]
+
+--13.1. Рисую таблицу и хочу зафиксировать высоту, но атрибут height не работает.--
+[:link_13_01]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=177Wyt7Z13Q&t=18s
+svandrus. #3541 Топ01.Окт.15 14:59:43: [Можно ли в классическом плеере отрегулировать высоту строк. Тег height не поддерживается](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21893)
+kosmosnash. #4574 Топ14.Авг.16 16:55:06: [можно ли в куспе как-то зафиксировать высоту таблицы и высоту отдельных ячеек в частности](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=183&prc=25&Itemid=57#p24518)
+Darvin432. #5440 Топ08.Янв.19 14:41:23: [почему то не работает тег "height", хотя  тег "width" работает](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27028)
+
+--13.2. Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?--
+[:link_13_02]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=177Wyt7Z13Q&t=151s
+Поддерживаемые в классическом плеере HTML-теги: [wiki.qsp.su](http://wiki.qsp.su/help:html)
+Bup0H. #4789 Топ25.Ноя.16 22:01:09: [Как я понимаю небольшая разница в оформлении HTML в QSP есть](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24921)
+Darvin432. #4842 Топ10.Янв.17 01:16:10: [Я нашёл команду table-layout, Но не могу разобраться почему она не работает в Qsp.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25060)
+--13.3. Не работает IIF!--
+[:link_13_03]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=177Wyt7Z13Q&t=244s
+TEMP_USER (oleksandrigo). #5253 Топ15.Мар.18 00:08:17: [Насчет оператора IIF](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=211&prc=25&Itemid=57#p26532)
+
+--13.4. Пытаюсь сделать кликабельную картинку с помощью тегов MAP и AREA, но ничего не получается--
+[:link_13_04]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=h5h1pwbkw5k&t=18s
+Как работать с тегами MAP и AREA: [Тема на форуме](http://qsp.su/index.php?option=com_agora&task=topic&id=793&Itemid=57)
+Shellect. #3178 Топ27.Июл.15 17:27:07: [Создаю HTML файл, запускаю - всё работает, как задумано. На странице картинка, в центре круглая область-ссылка. Пытаюсь запустить этот код в QSP - ссылки нет.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=128&prc=25&Itemid=57#p20912)
+Gefestions. #3358 Топ25.Авг.15 11:05:06: [Есть ли возможность нарисовать карту? что бы при нажатии на изображение (определенную часть) был переход на локацию?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=135&prc=25&Itemid=57#p21473)
+Lamer. #4940 Топ25.Фев.17 17:32:43: [Можно увидеть, хоть где нибудь, простенький пример использования тегов <map> и соответственно <area>](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25293)
+Light_333. #5103 Топ02.Июл.17 16:35:30: [Подскажите пожалуйста, поддерживает ли QSP работу с картами изображений?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25964)
+
+--13.5. Не работает *pl в действии с goto--
+[:link_13_05]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=h5h1pwbkw5k&t=383s
+Ars_Sacra. #4396 Топ21.Май.16 21:28:01: [в АКТЕ 'ДАЛЕЕ' функции *PL - не работают. *CLR так же.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=176&prc=25&Itemid=57#p23989)
+
+--13.6. В AeroQSP не работает атрибут--
+[:link_13_06]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TCve-b6AQMs&t=18s
+Storm. #2828 Топ10.Май.15 18:33:19: [В классическом плеере и в Quest Navigator`е свойство "border" работает, а в Aero нет.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941)
+Вета. #3784 Топ24.Янв.16 14:50:18: [как в аере задать ячейке таблицы цвет? С bgcolor не работает что-то...](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22645)
+DeathSpace. #4212 Топ02.Апр.16 13:52:20: [перевожу игру на AeroQSP но не показывает таблицы который были в классической версии плеера](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23639)
+DeathSpace. #4313 Топ01.Май.16 02:05:59: [Ребят кто знает как в AeroQSP строить таблицы?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23838)
+--13.7. Не работает гиперссылка в AeroQSP--
+[:link_13_07]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TCve-b6AQMs&t=221s
+folkextreme. #4534 Топ20.Июл.16 14:45:03: [примерно в области, выделенной красным, некликабельны ссылки](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24397)
+
+--13.8. Не работает оператор JUMP — не может найти метку--
+[:link_13_08]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TCve-b6AQMs&t=376s
+svandrus. #2874 Топ19.Май.15 20:17:41: [у меня вопрос по меткам в локации](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20071)
+JUMP надо модифицировать? [Тема на форуме QSP.su](http://qsp.su/index.php?option=com_agora&task=topic&id=314&Itemid=57)
+Белый Шарик. #3057 Топ07.Июл.15 13:37:00: [Да что ж я делаю не так?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=123&prc=25&Itemid=57#p20670)
+Small Jerboa. #3336 Топ19.Авг.15 21:26:16: [ругается, что не находит такой метки](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21421)
+Storm. #3517 Топ20.Сен.15 03:19:08: [можно ли использовать оператор "jump" в операторе "dynamic"?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21764)
+Darvin432. #4394 Топ21.Май.16 11:18:44: [Народ а почему не работает команда джамп?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=176&prc=25&Itemid=57#p23984)
+Lv2013. #5036 Топ03.Май.17 17:48:52: [есть такой код...](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=202&prc=25&Itemid=57#p25575)
+--13.9. Не работает многострочное условие. Как исправить?--
+[:link_13_09]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TCve-b6AQMs&t=531s
+Kaspar. #3681 Топ10.Дек.15 18:05:55: [Подскажите в чём ошибка? Дело в том, что не выводится msg.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22310)
+Lexon. #3909 Топ21.Фев.16 03:13:48: [все 3 картинки всплывают когда подходишь к кузницу в любое время и при любом статусе, как сделать что бы 1 картинка была, а не все 3.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23047)
+--13.10. Не работает многострочный код. Как исправить?--
+[:link_13_10]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=2S4nFzzal7Y&t=18s
+Gefestions. #3419 Топ02.Сен.15 16:54:57: [помогите плз найти ошибку](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=137&prc=25&Itemid=57#p21592)
+
+--13.11. Сколько END'ов нужно добавить?--
+[:link_13_11]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=2S4nFzzal7Y&t=377s
+Gefestions. #3419 Топ02.Сен.15 16:54:57: [помогите плз найти ошибку](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=137&prc=25&Itemid=57#p21592)
+Twinkie. #4781 Топ16.Ноя.16 18:38:54: [Не могу понять сколько эндов надо добавить](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24901)
+skov. #4800 Топ14.Дек.16 18:32:43: [скажите пожалуйста что не так? Почему он не видит функцию IF?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p24964)
+--13.12. Не работает условие. Как исправить?--
+[:link_13_12]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=2S4nFzzal7Y&t=838s
+lamerUA. #4151 Топ25.Мар.16 11:48:46: [Срабатывают только 2 первых. И как в таком случае проще организовать "сумерки" в игре?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=167&prc=25&Itemid=57#p23532)
+skov. #4796 Топ11.Дек.16 13:36:08: [что я делаю не так?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24956)
+Amadeus. #5411 Топ30.Окт.18 23:25:52: [Можно ли как-то сделать, чтоб если одна переменная была равна другой? Почему-то выдает ошибку](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=217&prc=25&Itemid=57#p26918)
+SneakBug8. #5681 Топ19.Май.19 12:12:28: [Как в один оператор if загнать несколько условий типо if x=1 y=6 z=39?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=228&prc=25&Itemid=57#p17192)
+--13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!--
+[:link_13_13]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=2S4nFzzal7Y&t=874s
+Талер. #2881 Топ22.Май.15 19:25:08: [Во время назначения переменных, при использовании запятой пишет, "ошибка синтаксиса", а при использовании точки "неизвестное действие"](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20116)
+DeathSpace. #3798 Топ25.Янв.16 20:54:06: [нужны коэффициенты например 0.05, но их нельзя писать т.к. выходит ошибка](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22674)
+SneakBug8. #5731 Топ19.Май.19 13:05:03: [Умеет ли QSP работать с дробными числами?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p18405)
+
