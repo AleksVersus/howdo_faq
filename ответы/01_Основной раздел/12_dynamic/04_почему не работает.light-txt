@@ -1,47 +1,38 @@
+=12.4. Почему не работает dynamic?=
+[:faq_12_04]
 В:	Почему не работает dynamic?
-	Пишу код в переменной, а потом dynamic "$var_name", но вместо того, чтобы выполнить код, плеер выводит этот код на экран. Почему?
+	Пишу код в переменной, а потом `dynamic "$var_name"`, но вместо того, чтобы выполнить код, плеер выводит этот код на экран. Почему?
 
 О:
 	Для примера поместим некий код в переменную:
-
+```qsp
 		$var_name="var_count=25"
-
+```
 	Теперь попробуем использовать dynamic, как в предложенном вопросе:
-
+```qsp
 		dynamic "$var_name"
-
+```
 	Что при этом произойдёт?
 
 	dynamic должен выполнить код, переданный ему в виде строки текста.
 
 	Какую строку текста мы ему передаём?
-
+```qsp
 		"$var_name"
-
+```
 	Какой код содержится в этой строке?
-
+```qsp
 		$var_name
-
+```
 	Что делает этот код?
 
 	Выводит на экран содержимое переменной $var_name. А какое у этой переменной содержимое?
-
+```qsp
 		"var_count=25"
-
+```
 	Эту строку мы и увидим на экране.
 
 	Чтобы dynamic выполнил код, записанный в переменную, нужно передать ему непосредственно значение переменной:
-
+```qsp
 		dynamic $var_name
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26665
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20054
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=140&prc=25&Itemid=57#p21696
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=183&prc=25&Itemid=57#p24437
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=185&prc=25&Itemid=57#p24572
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=125&prc=25&Itemid=57#p20811
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=160&prc=25&Itemid=57#p23212
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25505
+```
