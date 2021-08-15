@@ -1,30 +1,19 @@
+=16.04. Как ограничить размер выводимого изображения?=
+[:faq_16_04]
+
 В: Как ограничить размер выводимого изображения?
 
 О:
 	Для того, чтобы ограничить размер изображения, используйте атрибуты "width" и "height" для тега <img>:
-
+```qsp
 		! выводит картинку шириной и высотой в 100 пикселей
 		*p '<img src="pic/cartinca.jpg" width="100" height="100">'
-
+```
 	Поддерживаются относительные размеры:
-
+```qsp
 		! выводит картинку в половину ширины от родительского элемента
 		*p '<img src="pic/cartinca.jpg" width="50%">'
-
+```
 	Если указывать только ширину, или только высоту картинки, то второй размер вычисляется пропорционально.
 
 	Высоту изображения можно указывать только в абсолютном размере, то есть только в пикселях.
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20575
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=121&prc=25&Itemid=57#p20586
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21673
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26288
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=145&prc=25&Itemid=57#p22103
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22616
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=159&prc=25&Itemid=57#p23200
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=164&prc=25&Itemid=57#p23332
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23837
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=178&prc=25&Itemid=57#p24077
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24415
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=193&prc=25&Itemid=57#p25003
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=218&prc=25&Itemid=57#p27014
