@@ -13,6 +13,10 @@ Stand-alone сборка на AeroQSP: [статья на QSP.su](http://qsp.su/
 Lisichka. #3849 Топ05.Фев.16 00:51:59: [можно ли как-то в аэру добавить второе окно доп описания?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=154&prc=25&Itemid=57#p22877)
 Mira. #4952 Топ28.Фев.17 22:49:27: [Создала на аеро свой хелоуворд, через standalone не работает, swf создается, грузится и черный экран дальше](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25311)
 BlooDwareN. #5182 Топ10.Янв.18 22:00:22: [как установить AeroQSP!](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26298)
+=Ссылки на примеры=
+[:link_example]
+Сборник различных полезных примеров: [MEGA.nz/QSP-Example](https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw)
+
 =01. Чем отличается?=
 [:link_01]
 --1.1. В чём разница между `set x=10`, `let x=10` и `x=10`?--
@@ -114,6 +118,7 @@ oleksandrigo (TEMP_USER). #5246 11.Мар.18 18:34:42: [Зачем нужно п
 Пример от Svandrus:		[Скачать](http://qsp.su/components/com_agora/img/members/983/menu_2.qsp)
 Пример от Aleks Versus:	[Скачать](http://qsp.su/components/com_agora/img/members/248/21032016-0856_menu.qsp)
 Динамическое меню от Lisichka: [Сообщение в теме "Как сделать?"](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=114&prc=25&Itemid=57#p19982)
+Как сделать меню предмета? [Тема на форуме QSP.su](http://qsp.su/index.php?option=com_agora&task=topic&prc=25&p=1&id=829&Itemid=57#p18902)
 О меню в справке: http://wiki.qsp.su/help:menu
 PsiH. #3522 23.Сен.15 17:06:11: [Покажите пример меню с двумя и более предметами.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21810)
 St-john. #3665 25.Ноя.15 10:04:08: [как мне из меню напрямую передать нужные аргументы?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22270)
@@ -562,4 +567,85 @@ SneakBug8. #5681 Топ19.Май.19 12:12:28: [Как в один операто
 Талер. #2881 Топ22.Май.15 19:25:08: [Во время назначения переменных, при использовании запятой пишет, "ошибка синтаксиса", а при использовании точки "неизвестное действие"](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20116)
 DeathSpace. #3798 Топ25.Янв.16 20:54:06: [нужны коэффициенты например 0.05, но их нельзя писать т.к. выходит ошибка](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22674)
 SneakBug8. #5731 Топ19.Май.19 13:05:03: [Умеет ли QSP работать с дробными числами?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=230&prc=25&Itemid=57#p18405)
+
+=14. Вопросы о предметах=
+[:link_14]
+--14.1. Как добавить предмет в окно предметов?--
+[:link_14_01]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=VRRPLrP72Ds&t=18s
+
+--14.2. Как удалить предмет из окна предметов?--
+[:link_14_02]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=VRRPLrP72Ds&t=143s
+rutigl. #2991 Топ17.Июн.15 16:55:12: [Разве нельзя удалять предмет из инвентаря по индексу?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499)
+
+--14.3. Как удалить все предметы?--
+[:link_14_03]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=VRRPLrP72Ds&t=374s
+WastedCarl. #5300 Топ01.Май.18 22:06:38: [После смерти игрока все предметы должны исчезнуть,как это сделать?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642)
+
+--14.4. Как добавить предмет в определённую позицию в окне предметов?--
+[:link_14_04]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=VRRPLrP72Ds&t=448s
+Oliver. #4041 Топ09.Мар.16 00:49:31: [как сделать так, чтобы предмет "Очистить журнал" был последним, а предмет "Экипировка" первым?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=162&prc=25&Itemid=57#p23284)
+
+--14.5. Как заменить один предмет на другой?--
+[:link_14_05]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=VRRPLrP72Ds&t=551s
+Mr. Black (BiK). #3653 Топ09.Ноя.15 08:32:59: [меню у предмета появляется, а вот имя предмета меняться не хочет. Что делать?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168)
+
+--14.6. Как делать динамические/считаемые предметы?--
+[:link_14_06]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=4tjOVO8ccrI&t=18s
+Библиотечка, расширяющая возможности инвентаря: [Страница на QSP.su](http://qsp.su/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
+Одиночка. #2858 Топ14.Май.15 02:48:16: [addobj 'Здоровье: <<$Здоровье>> ед.' Добавил в инвентарь, но при изменении переменной здесь ничего не высвечивается, что делать?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004)
+Белый Шарик. #2947 Топ09.Июн.15 14:09:36: [Как сделать, что бы однотипные предметы в инвентарь попадали не отдельными строками, а складывались в одну строку с указанием количества?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330)
+Lexian13. #4409 Топ24.Май.16 17:31:40: [В своей игре использую объект Зелья. Хочу что бы в запасе было несколько. Но чтоб не забивать инвентарь.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014)
+Aleks Versus. #5594 Топ18.Май.19 10:06:35: [Стакающиеся предметы — это считаемые, как я понимаю. Деньги, патроны, одинаковые мечи и прочее. Тема довольно интересная и сложная. Но новичкам обычно предлагают начать с этого:](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370) 
+--14.7. Как добавить предмет с картинкой но без названия?--
+[:link_14_07]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=4tjOVO8ccrI&t=366s
+Podkovally. #3706 Топ24.Дек.15 13:37:40: [подскажите пожалуйста, как правильно сделать предметы графическими?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371)
+sergeev_v. #3026 Топ25.Июн.15 23:52:16: [При лобавлении в инвентарь предмета с картинуой, сначала идёт картинка, а затем название предмета. Пожалуйста подскажите как убрать название.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588)
+Lisichka. #3526 Топ26.Сен.15 14:56:49: [но стоит только назвать предмет так, чтобы его имя не отображалось, например, '<<$кинжал>>', для того, чтобы осталась одна картинка, и код начинает выделывать фортели и показывать совсем не то, что нужно](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826)
+новичок. #5479 Топ08.Фев.19 23:41:11: [как сделать предмет в виде картинки?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084)
+--14.8. Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?--
+[:link_14_08]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=4tjOVO8ccrI&t=566s
+Одиночка. #2814 Топ08.Май.15 01:46:06: [что нужно прописать, чтобы при нажатии на предмет в инвентаре происходило действие.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907)
+konolya. #3350 Топ23.Авг.15 11:20:13: [Расскажите как используя предмет перейти в локацию, допустим: "Инвентарь", а затем перейти обратно в локацию.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462)
+Katy. #3456 Топ11.Сен.15 18:35:46: [как сделать так, чтобы при выборе предмета появлялось его описание?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639)
+Lolopok. #4659 Топ16.Сен.16 21:12:15: [как сделать вывод описания предмета по клику в основное окно/стат?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653)
+FreshBlood. #4907 Топ10.Фев.17 19:41:55: [как сделать так, чтобы при нажатии предмета в инвентаре на окно дополнительного описания выводился текст?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207)
+NaViGaToR. #4916 Топ14.Фев.17 18:54:00: [Как сделать чтобы при нажатии на предмет в инвенторе открывалось окно действий?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231)
+Alcohol. #4993 Топ16.Апр.17 13:45:26: [как сделать так, чтобы при нажатии на предмет в инвентаре в окне дополнительного описания выводилось описание предмета?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479)
+loony25. #5238 Топ04.Мар.18 20:31:45: [Как сделать так, чтобы при нажатии использовать игрока перекинуло на другую локацию?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487)
+--14.9. Как снять выделение предмета?--
+[:link_14_09]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=7OCfh3TxLbk&t=18s
+Axil. #2894 Топ31.Май.15 22:49:41: [Как сделать чтобы на выбраный предмет в инвентаре можно было кликнуть еще раз?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231)
+
+--14.10. Как сделать два списка предметов?--
+[:link_14_10]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TWAA2cq-hhk&t=18s
+
+--14.11. Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?--
+[:link_14_11]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=7OCfh3TxLbk&t=279s
+Одиночка. #4130 Топ19.Мар.16 16:21:20: [Можно ли сделать так, чтобы при добавлении любого предмета в инвентарь какая-либо переменная менялась автоматически?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440)
+
+--14.12. Как сделать два разных предмета с одинаковыми названиями?--
+[:link_14_12]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=7OCfh3TxLbk&t=495s
+
+--14.13. Как сделать многоуровневый рюкзак?--
+[:link_14_13]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=TWAA2cq-hhk&t=1177s
+Darvin432. #4373 Топ16.Май.16 11:05:21: [Как сделать рюкзак? то есть что бы на панели предметов был просто "инвентарь" а уже если заходить в него то там(например в доп окне) показывался весь список предметов.](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951)
+Многоуровневый рюкзак: [Скачать пример](http://qsp.su/components/com_agora/img/members/248/multibag.qsp)
+--14.14. Можно ли выводить предметы не в окне предметов?--
+[:link_14_14]
+Смотреть ответ на ютубе: https://www.youtube.com/watch?v=7OCfh3TxLbk&t=670s
+Lisichka. #3519 Топ23.Сен.15 00:27:25: [можно ли сделать так, чтобы предметы в окне инвентаря отображались не один за другим, а были как бы в таблице?](http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803)
+Предметы не в окне предметов: [Скачать пример](http://qsp.su/components/com_agora/img/members/248/invent.zip)
 

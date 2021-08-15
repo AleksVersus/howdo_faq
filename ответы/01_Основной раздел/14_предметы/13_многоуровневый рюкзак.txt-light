@@ -1,10 +1,13 @@
+=14.13. Как сделать многоуровневый рюкзак?=
+[:faq_14_13]
+
 В: Как сделать многоуровневый рюкзак?
 В: Как сделать предметы в предметах?
 Например, щёлкаешь по предмету "Рюкзак", и в окне инвентаря появляется список предметов в рюкзаке.
 
 О:
 	Списки предметов можно хранить в разных массивах. Например:
-
+```qsp
 		! верхний уровень предметов
 		$ур0_предметы[0]="Дневник заданий"
 		$ур0_предметы[1]="Рюкзак"
@@ -14,11 +17,11 @@
 		$ур1_предметы[0]="Отвёртка"
 		$ур1_предметы[1]="Хрустальный шар"
 		$ур1_предметы[2]="Агар-Агар"
-	
+```	
 	С помощью цикла любой из этих списков можно вывести на экран.
 
 	На локации-обработчике выделения предмета можно прописать примерно такой код:
-
+```qsp
 		if $selobj="Рюкзак":
 		! если кликнули по предмету рюкзак
 			! удаляем список предметов верхнего уровня
@@ -49,7 +52,7 @@
 				jump 'for'
 			end	
 		end
-
+```
 	Если Вам нужно более двух списков предметов, то заводить отдельный массив на каждый неразумно. Проще завести два массива:
 
 		* в одном массиве прописывать сам предмет
@@ -60,11 +63,11 @@
 	Важно, чтобы индексы и предмета, и его расположения, в каждом массиве совпадали.
 
 	Вывести все предметы текущего уровня можно так:
-
+```qsp
 		! где-то ранее мы написали, предметы какого уровня нам нужно вывести
 		$уровень_вложений="Рюкзак"
-
-
+```
+```qsp
 		! очищаем окно предметов от предметов другого уровня
 		killobj
 		! выводим предметы текущего уровня в окно предметов
@@ -82,46 +85,4 @@
 			! повторяем
 			jump 'for'
 		end
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
-
-unselect
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
-
-Динамические (изменяющиеся) названия предметов:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
-
-Замена предмета
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
-
-Предмет без надписи
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
-
-Предмет в предмете
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
-
-Предметы не в окне предметов
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
-
-Удалить все предметы:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
-
-OnObjAdd:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
-
-onObjSel
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462
+```

@@ -1,14 +1,17 @@
+=14.6. Как делать динамические/считаемые предметы?=
+[:faq_14_06]
+
 В: Как делать динамические/считаемые предметы?
 В: Как делать стакающиеся предметы?
 В: Как делать предметы, рядом с названиями которых выводится их количество?
 
 О:
 	Допустим, на разных локациях мы можем подбирать одинаковые предметы с названием "Грибочек". Если мы просто пропишем везде команду:
-
+```qsp
 		addobj "Грибочек"
-
+```
 	, то наш инвентарь окажется захламлён множеством одинаковых "Грибочков". Чтобы избежать этого, обычно заводят переменную, которая ведёт подсчёт числа предметов, и тогда код каждого подъёма грибочков слегка усложняется:
-
+```qsp
 		if грибочек=0:
 		! если мы ещё не собрали ни одного грибочка
 			! добавляем предмет
@@ -16,77 +19,34 @@
 		end
 		! увеличиваем число собранных грибочков на 1
 		грибочек=грибочек+1
-
+```
 	Затем можно выводить число грибочков на экран при щелчке по предмету "Грибочек".
 
 	Но как же сделать, чтобы в окне инвентаря отображалась актуальная информация о числе "Грибочков", и нам не приходилось щёлкать по предмету?
 
 	Мы можем добавить в окно инвентаря предмет, указав его количество прямо в названии:
-
+```qsp
 		! увеличиваем число грибочков
 		грибочек=грибочек+1
 		! добавляем предмет с указанным количеством
 		addobj "Грибочек (<<грибочек>> шт.)"
-
+```
 	А чтобы с экрана пропадал предмет со старым названием, необходимо его предварительно удалить с помощью оператора delobj:
-
+```qsp
 		! удаляем старый предмет
 		delobj "Грибочек (<<грибочек>> шт.)"
 		! увеличиваем число грибочков
 		грибочек=грибочек+1
 		! добавляем предмет с новым количеством
 		addobj "Грибочек (<<грибочек>> шт.)"
-
+```
 	Иными словами, всякий раз, как мы изменяем количество, предмет со старым названием удаляется из инвентаря, а предмет с новым, актуальным названием добавляется в инвентарь.
 
 	При этом у Вас могут возникнуть сложности со взаимодействием с этим предметом, например, в локации-обработчике выделения предмета, поскольку теперь нельзя будет точно предсказать, в какой момент игры, какое будет у предмета название. Условие:
-
+```qsp
 		if $selobj="Грибочек":
-
+```
 	не сработает. В этом случае нужно проверять только часть названия, например с помощью функции instr:
-
+```qsp
 		if instr($selobj,"Грибочек")<>0:
-
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21639
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=139&prc=25&Itemid=57#p21642
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=187&prc=25&Itemid=57#p24653
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25207
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25231
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=200&prc=25&Itemid=57#p25479
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26487
-
-unselect
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=116&prc=25&Itemid=57#p20231
-
-Динамические (изменяющиеся) названия предметов:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20499
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
-
-Замена предмета
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22168
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=149&prc=25&Itemid=57#p22371
-
-Предмет без надписи
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=122&prc=25&Itemid=57#p20588
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21826
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=220&prc=25&Itemid=57#p27084
-
-Предмет в предмете
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23951
-
-Предметы не в окне предметов
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21803
-
-Удалить все предметы:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=213&prc=25&Itemid=57#p26642
-
-OnObjAdd:
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=166&prc=25&Itemid=57#p23440
-
-onObjSel
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19907
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21462
+```
