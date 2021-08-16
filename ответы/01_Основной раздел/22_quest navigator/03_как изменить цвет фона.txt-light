@@ -1,3 +1,5 @@
+=22.3. Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?=
+[:faq_22_03]
 В: Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?
 
 О:
@@ -7,31 +9,8 @@
 		EXEC('JS:document.body.style.backgroundColor="#RRGGBB";')
 ```
 
-	В качестве аргумента данному оператору передаётся строка текста. Левая часть — до двоеточия — показывает на тип выполняемой инструкции JS — JavaScript. Правая часть — после двоеточия — непосредственно инструкция на JavaScript, которая присваивает элементу document.body соответствующий цвет фона.
+	В качестве аргумента данному оператору передаётся строка текста. Левая часть — до двоеточия — показывает на тип выполняемой инструкции JS — JavaScript. Правая часть — после двоеточия — непосредственно инструкция на JavaScript, которая присваивает элементу `document.body` соответствующий цвет фона.
 
 	Вместо "#RRGGBB" необходимо указать цветовой код в шестнадцатеричной системе счисления, формата RGB.
 
 	Таким же образом можно менять цвет фона других элементов страницы прямо из кода QSP.
-	
-
-
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
-http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
-http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57
