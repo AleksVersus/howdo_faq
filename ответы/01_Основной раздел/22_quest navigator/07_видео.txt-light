@@ -4,14 +4,14 @@
 
 О:
 
-	ВНИМАНИЕ!!! Перед прочтением нижеследующего текста рекомендуется ознакомиться с разделами [01_шаблоны оформления для игр] и [08_standalone].
+	ВНИМАНИЕ!!! Перед прочтением нижеследующего текста рекомендуется ознакомиться с разделами [22.1. Шаблоны оформления для игр](#faq_22_01) и ["22.8. Stand-Alone сборка на Навигаторе"](#faq_22_08).
 
-	Изначально заявлено, что Quest Navigator умеет воспроизводить видео, как обычный браузер.
+	Изначально заявлено, что Quest Navigator умеет воспроизводить видео, как обычный браузер (как это делается в браузере можно прочитать на сайте [htmlbook.ru](http://htmlbook.ru/html/video)).
 
 	Мы ожидаем, что вставка видео в игру мало чем будет отличаться от вставки изображений, поэтому, чтобы вставить видео в свою игру, мы пытаемся сделать следующее:
 
 		1. Положить видеофайл в папку с игрой, или во вложенную папку.
-		2. Прописать в игре контейнер для видео с помощью тегов <video> и <source>. http://htmlbook.ru/html/video
+		2. Прописать в игре контейнер для видео с помощью тегов <video> и <source>.
 
 	В первую очередь давайте рассмотрим второй пункт, ведь именно теги <video> и <source> выводят видео в нашей игре.
 
@@ -45,24 +45,4 @@
 			*p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
 		*pl "</video>"
 ```
-	Подробнее о том, как создавать Standalone-сборки игры для Quest Navigator читайте в разделе [08_standalone].
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
-http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
-http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57
+	Подробнее о том, как создавать Standalone-сборки игры для Quest Navigator читайте в разделе ["22.8. Как делать standalone-сборку на Навигаторе?"](#faq_22_08).
