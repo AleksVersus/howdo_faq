@@ -3,39 +3,19 @@
 В: Хочу прописать игре собственный вид курсора, как это сделать?
 
 О:
-	Это можно сделать двумя способами. В файле "game.css" своего шаблона пропишите отдельный стиль для курсора:
+Это можно сделать двумя способами. В файле "game.css" своего шаблона пропишите отдельный стиль для курсора:
 
 ```css
-	.intCur {cursor: url(путь к файлу курсора/cursor.ani);}
+.intCur {cursor: url(путь к файлу курсора/cursor.ani);}
 ```
-	Путь до файла курсора нужно указывать относительно файла "game.css", то есть файл курсора (в данном примере "cursor.ani") должен лежать на одном уровне с файлом "game.css", либо во вложенной папке. Чтобы применить стиль курсора в своей игре, используйте класс:
+Путь до файла курсора нужно указывать относительно файла "game.css", то есть файл курсора (в данном примере "cursor.ani") должен лежать на одном уровне с файлом "game.css", либо во вложенной папке. Чтобы применить стиль курсора в своей игре, используйте класс:
 ```qsp
-	*pl "<p class='intCur'>Текст, при наведении на который курсор будет меняться на другой.</p>"
+*pl "<p class='intCur'>Текст, при наведении на который курсор будет меняться на другой.</p>"
 ```
-	Второй способ — это прописать стиль курсора через атрибут style прямо в игре:
+Второй способ — это прописать стиль курсора через атрибут style прямо в игре:
 ```qsp
-	*pl "<p style='cursor: url('/путь к файлу курсора/cursor.ani');'>Текст, при наведении на который курсор будет меняться на твой</p>"
+*pl "<p style='cursor: url('/путь к файлу курсора/cursor.ani');'>Текст, при наведении на который курсор будет меняться на твой</p>"
 ```
-	В этом случае файл курсора должен лежать на одном уровне с игрой или во вложенной папке, и путь до файла курсора указывается относительно файла игры.
+В этом случае файл курсора должен лежать на одном уровне с игрой или во вложенной папке, и путь до файла курсора указывается относительно файла игры.
 
-	Примечание: твёрдого убеждения, что это будет работать у меня нет, я не проверял. Если есть уточнения по любому из этих способов пишите на aleksversus@mail.ru.
-
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=165&prc=25&Itemid=57#p23387
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067
-http://qsp.su/index.php?option=com_agora&task=topic&id=1067&Itemid=57
-http://qsp.su/index.php?option=com_agora&task=topic&id=952&Itemid=57
+Примечание: твёрдого убеждения, что это будет работать у меня нет, я не проверял. Если есть уточнения по любому из этих способов пишите на `aleksversus@mail.ru`.
