@@ -27,15 +27,51 @@ def typeString(string_):
 	else:
 		return 'other'
 
-class SectionObj():
+def getTitle(string_):
+	return re.findall(r'(={1,2}|-{1,2}|\+)(.+?)(\1)',string_)[0][1]
+
+
+def dirList(folder_path):
+	# получаем список файлов и папок
+	paths_list=os.listdir(folder_path)
+	# обходим каждый адрес, проверяя является ли это файлом или папкой
+	for path in paths_list:
+		if os.path.isfile(folder_path+"\\"+path) and os.path.splitext(path)[1]=='.txt-light':
+			files_list.append(folder_path+"\\"+path)
+		elif os.path.isdir(folder_path+"\\"+path):
+			folders_list.append(folder_path+"\\"+path)
+	return files_list, folders_list
+
+def getStringList(files_list):
+	# используем список файлов, чтобы генерировать секции
+	for file in files_list:
+		# открываем каждый файл последовательно
+		with open(file,'r',encoding='utf-8') as this_file:
+			string_list.extend(this_file.readlines())
+	return string_list
+
+class NewSection():
 	"""section"""
-	def __init__(self, id_, type_, title_):
-		self.id=id_ # идентификатор секции
-		self.type=type_ # тип секции
-		self.title=title_ # заголовок секции
-		self.body=[] # тело секции - список
-		global section_count
-		section_count+=1
+	def __init__(self, path_, string_list_):
+		global section_list
+		# выставляем значения по умолчанию
+		self.id=""
+		self.title=""
+		self.body=[]
+		buffer=[]
+		if len(path_)!=0:
+			# если передан путь, получаем список файлов и папок
+			files_list, folders_list = dirList(path_)
+			# получаем список строк
+			string_list=getStringList(files_list)
+			# получив список строк, перебираем эти строки
+			for string in string_list:
+				string_type=typeString(string) # получаем тип строки
+				if string_type=='h1': # если мы имеем дело с заголовком первого уровня
+					if len(self.title)==0 and len(buffer)==0: # если ни в буффере, ни взаголовке текущей секции ничего нет
+						self.title=getTitle(string)
+					else:
+						section
 	def addInBody(self,string_):
 		self.body.append(string_)
 	def getBody(self):
@@ -52,6 +88,7 @@ class SectionObj():
 		return f"{self.type}[{self.id}]: {self.title} (lenght {len(self.body)})"
 	
 section_count=0 # подсчёт числа создаваемых секций
+section_list=[]
 work_dir=os.getcwd()
 # открываем файл проекта для чтения и получаем его структуру в переменную root
 with open("fb2.json","r",encoding="utf-8") as project_file:
@@ -62,27 +99,7 @@ export_file_path=os.path.abspath(project_dict["export_file"].replace('%TIME%',ge
 folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
 
-# генерируем первую секцию
-section=SectionObj("body","body","")
-files_list=[]
-folders_list=[]
-# получаем список файлов и папок
-paths_list=os.listdir(folder_path)
-print(folder_path,paths_list)
-# обходим каждый адрес, проверяя является ли это файлом или папкой
-for path in paths_list:
-	if os.path.isfile(folder_path+"\\"+path) and os.path.splitext(path)[1]=='.txt-light':
-		files_list.append(folder_path+"\\"+path)
-	elif os.path.isdir(folder_path+"\\"+path):
-		folders_list.append(folder_path+"\\"+path)
-# теперь когда у нас есть список файлов и папок
-# используем список файлов, чтобы генерировать секции
-for file in files_list:
-	# открываем каждый файл последовательно
-	with open(file,'r',encoding='utf-8') as this_file:
-		string_list=this_file.readlines()
-	# получив список строк, перебираем эти строки
-	for string in string_list:
-		string_type=typeString(string)
-		if string_type=='h1':
-			# если мы имеем дело с заголовком
+print(getTitle('==Заголовок=='))
+	
+	
+	
