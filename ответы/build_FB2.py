@@ -53,6 +53,8 @@ def getStringList(files_list):
 			string_list.extend(this_file.readlines())
 	return string_list
 	
+
+
 class NewFolder():
 	"""docstring for NewFolder"""
 	def __init__(self, path_):
@@ -63,6 +65,8 @@ class NewFolder():
 		# перебираем все пути из списка папок и создаём на каждый по новому объекту
 		for folder in folders_list:
 			self.folders.append(NewFolder(folder))
+		self.sections=[]
+		self.fileSplit()
 	def __str__(self):
 		return f'Folder Path: {self.path}; lenght of file: {len(self.file)}; number of includes: {len(self.folders)}.'
 	def printFile(self):
@@ -75,6 +79,20 @@ class NewFolder():
 		for i in self.folders:
 			text+=i.path+"\n"
 		return text
+	def popString(self):
+		string=self.file.pop(0)
+		return typeString(string),string
+	def fileSplit():
+		level=5
+		for string in self.file:
+			type_=typeString(string)
+			if re.match(r'h\d+',type_)!=None:
+				level_=int(type_[1:])
+				if level_<level:
+					level=level_
+		# теперь, когда уровень получен, можно разбивать
+
+
 
 work_dir=os.getcwd()
 # открываем файл проекта для чтения и получаем его структуру в переменную root
@@ -86,11 +104,9 @@ export_file_path=os.path.abspath(project_dict["export_file"].replace('%TIME%',ge
 folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
 # создаём объект папка верхнего уровня
-roof=NewFolder(folder_path)
+roof_folder=NewFolder(folder_path)
+# теперь нам необходимо разматывать этот объект в секции
 
-print(roof)
-print(roof.printFile())
-print(roof.printFolders())
 	
 	
 	
