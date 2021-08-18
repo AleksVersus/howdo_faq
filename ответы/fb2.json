@@ -1,14 +1,9 @@
 {
 	"project":
-	[
-		{
-			"export_file":"..\\release\\faq.qsp.%TIME%.fb2",
-			"folders":
-			[
-				{"path":"."}
-			]
-		}
-	],
+	{
+		"export_file":"..\\release\\faq.qsp.%TIME%.fb2",
+		"folder":"."
+	},
 	"book-info":
 	{
 		"book-title":"Как сделать? Часто Задаваемые Вопросы по QSP",
