@@ -32,6 +32,8 @@ def getTitle(string_):
 
 
 def dirList(folder_path):
+	files_list=[]
+	folders_list=[] # локальные переменные
 	# получаем список файлов и папок
 	paths_list=os.listdir(folder_path)
 	# обходим каждый адрес, проверяя является ли это файлом или папкой
@@ -43,52 +45,37 @@ def dirList(folder_path):
 	return files_list, folders_list
 
 def getStringList(files_list):
+	string_list=[] # локальная переменная
 	# используем список файлов, чтобы генерировать секции
 	for file in files_list:
 		# открываем каждый файл последовательно
 		with open(file,'r',encoding='utf-8') as this_file:
 			string_list.extend(this_file.readlines())
 	return string_list
-
-class NewSection():
-	"""section"""
-	def __init__(self, path_, string_list_):
-		global section_list
-		# выставляем значения по умолчанию
-		self.id=""
-		self.title=""
-		self.body=[]
-		buffer=[]
-		if len(path_)!=0:
-			# если передан путь, получаем список файлов и папок
-			files_list, folders_list = dirList(path_)
-			# получаем список строк
-			string_list=getStringList(files_list)
-			# получив список строк, перебираем эти строки
-			for string in string_list:
-				string_type=typeString(string) # получаем тип строки
-				if string_type=='h1': # если мы имеем дело с заголовком первого уровня
-					if len(self.title)==0 and len(buffer)==0: # если ни в буффере, ни взаголовке текущей секции ничего нет
-						self.title=getTitle(string)
-					else:
-						section
-	def addInBody(self,string_):
-		self.body.append(string_)
-	def getBody(self):
-		return self.body
-	def change(self,element_,string_):
-		# данный метод заменяет значение атрибута
-		if element_=="id":
-			self.id=string_
-		elif element_=="type":
-			self.type=string_
-		elif element_=="title":
-			self.title=string_
-	def __str__(self):
-		return f"{self.type}[{self.id}]: {self.title} (lenght {len(self.body)})"
 	
-section_count=0 # подсчёт числа создаваемых секций
-section_list=[]
+class NewFolder():
+	"""docstring for NewFolder"""
+	def __init__(self, path_):
+		self.path=path_ # объект папка обладает атрибутом путь
+		files_list, folders_list = dirList(path_)
+		self.file=getStringList(files_list) # атрибут file - это по сути список всех строк из всех файлов в папке
+		self.folders=[] # атрибут folders - это по сути список вложенных объектов того же класса
+		# перебираем все пути из списка папок и создаём на каждый по новому объекту
+		for folder in folders_list:
+			self.folders.append(NewFolder(folder))
+	def __str__(self):
+		return f'Folder Path: {self.path}; lenght of file: {len(self.file)}; number of includes: {len(self.folders)}.'
+	def printFile(self):
+		text=""
+		for i in self.file:
+			text+=i+'\n'
+		return text
+	def printFolders(self):
+		text=""
+		for i in self.folders:
+			text+=i.path+"\n"
+		return text
+
 work_dir=os.getcwd()
 # открываем файл проекта для чтения и получаем его структуру в переменную root
 with open("fb2.json","r",encoding="utf-8") as project_file:
@@ -98,8 +85,12 @@ project_dict=root_dict["project"] # словарь помещаем в пере�
 export_file_path=os.path.abspath(project_dict["export_file"].replace('%TIME%',getDate()))
 folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
+# создаём объект папка верхнего уровня
+roof=NewFolder(folder_path)
 
-print(getTitle('==Заголовок=='))
+print(roof)
+print(roof.printFile())
+print(roof.printFolders())
 	
 	
 	
