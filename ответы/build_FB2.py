@@ -53,6 +53,32 @@ def getStringList(files_list):
 			string_list.extend(this_file.readlines())
 	return string_list
 	
+class NewSection():
+	def __init__(self,**args_):
+		if "id" in args_:
+			self.id=args_['id']
+		else:
+			self.id=""
+		if "title" in args_:
+			self.title=args_['title']
+		else:
+			self.title=''
+		if "body" in args_:
+			self.body=args_['body']
+		else:
+			self.body=[]
+	def chAttr(self, attr_, string_):
+		if attr_=="id":
+			self.id=string_
+		if attr_=="title":
+			self.title=string_
+	def addInBody(self,string_)
+		if type(string_)==str:
+			self.body.append(string)
+		elif type(string_)==list:
+			self.body.extend(string_)
+	def bodyLen(self):
+		return len(self.body)
 
 
 class NewFolder():
@@ -82,7 +108,7 @@ class NewFolder():
 	def popString(self):
 		string=self.file.pop(0)
 		return typeString(string),string
-	def fileSplit():
+	def fileSplit(self):
 		level=5
 		for string in self.file:
 			type_=typeString(string)
@@ -90,7 +116,40 @@ class NewFolder():
 				level_=int(type_[1:])
 				if level_<level:
 					level=level_
+		split_type='h'+str(level)
 		# теперь, когда уровень получен, можно разбивать
+		section_=NewSection()
+		mode={'give_id':False,'give_id_off':False} 
+		while len(self.file)>0:
+			# пока не будут выбраны все строки
+			type_,string=self.popString() # выбираем строку
+			if type_==split_type:
+				# строка нужного нам типа заголовок
+				if section_.bodyLen()==0 and section_.title=="":
+					# секция пока пуста
+					pass
+				else:
+					# если секция не пуста, создаём новую секцию
+					self.sections.append(section_)
+					section_=NewSection()
+				section_.chAttr('title',getTitle(string))
+				mode['give_id']=True # включаем режим приёма ай-ди. Следующая строка может рассматриваться, как ай-ди
+				mode['give_id_off']=True
+			elif type_=='id':
+				# строка типа айди
+				if mode['give_id']==True:
+					section_.chAttr('id',getID(string))
+				else:
+					section_.addInBody(string)
+				mode['give_id_off']=True
+			else:
+				section.addInBody(string)
+			# отключает режим приёма ай-ди только на второй проход после заголовка
+			if mode['give_id_off']==True:
+				mode['give_id_off']=False
+			else:
+				mode['give_id']=False
+
 
 
 
