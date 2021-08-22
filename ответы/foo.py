@@ -110,6 +110,21 @@ def getStringList(files_list):
 				new_string_list.append(string_) 
 	return new_string_list
 
+def convertationFB2(body_list):
+	# данная функция конвертирует перворазбитый список строк в готовый документ fb2
+	new_string_list=[] # выходной список строк
+	buffer=[] # буфферный список
+	mode={"section_in_buffer":False} # словарь режимов
+	for string_ in body_list:
+		body=re.match(r'^\s*</?body(\s+[^>]*?)?>\s*$',string_)
+		section_open=re.match(r'^\s*<section(\s+[^>]*?)?>\s*$',string_)
+		if body!=None:
+			new_string_list.append(string_)
+		elif section_open!=None:
+			buffer.append(string_)
+			mode["section in buffer"]=True
+	return new_string_list
+
 if __name__=="__main__":
 	print("Модуль foo - тест функций:")
 	print(":",remComment("строка1 /* комментарий */ строка2"))

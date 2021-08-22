@@ -18,6 +18,19 @@ class NewSection():
 		else:
 			self.body=[]
 		self.sections=[]
+		self.tempfile=self.body[:]
+	def printAll(self):
+		text=[]
+		text.append(f"==section: {self.id} open!==\n")
+		text.append(f"section: {self.id}, iclude body: \n")
+		text.extend(self.tempfile)
+		text.append(f"section: {self.id}, bodies strings enough!\n")
+		text.append(f"section: {self.id}, include sections: \n")
+		for i in self.sections:
+			text.extend(i.printAll())
+		text.append(f"section: {self.id}, sections enough!\n")
+		text.append(f"==section: {self.id} close!==\n")
+		return text
 	def chAttr(self, attr_, string_):
 		if attr_=="id":
 			self.id=string_
@@ -26,8 +39,10 @@ class NewSection():
 	def addInBody(self,string_):
 		if type(string_)==str:
 			self.body.append(string_)
+			self.tempfile.append(string_)
 		elif type(string_)==list:
 			self.body.extend(string_)
+			self.tempfile.extend(string_)
 	def bodyLen(self):
 		return len(self.body)
 	def popString(self):
@@ -125,6 +140,7 @@ class NewFolder():
 		self.path=path_ # объект папка обладает атрибутом путь
 		files_list, folders_list = dirList(path_)
 		self.file=getStringList(files_list) # атрибут file - это по сути список всех строк из всех файлов в папке
+		self.tempfile=self.file[:]
 		self.folders=[] # атрибут folders - это по сути список вложенных объектов того же класса
 		# перебираем все пути из списка папок и создаём на каждый по новому объекту
 		for folder in folders_list:
@@ -135,7 +151,7 @@ class NewFolder():
 		return f'Folder Path: {self.path}; lenght of file: {len(self.file)}; number of includes: {len(self.folders)}.'
 	def printFile(self):
 		text=""
-		for i in self.file:
+		for i in self.tempfile:
 			text+=i+'\n'
 		return text
 	def printFolders(self):
@@ -147,6 +163,22 @@ class NewFolder():
 		text=f"number of sections: {len(self.sections)}\n"
 		for i in self.sections:
 			text+=f"{i.title}\n[:{i.id}]\n"
+		return text
+	def printAll(self):
+		text=[]
+		text.append(f"==folder: {self.path} open!==\n")
+		text.append(f"folder: {self.path}, iclude file: \n")
+		text.extend(self.tempfile)
+		text.append(f"folder: {self.path}, files strings enough!\n")
+		text.append(f"folder: {self.path}, include folders: \n")
+		for i in self.folders:
+			text.extend(i.printAll())
+		text.append(f"folder: {self.path}, folders enough!\n")
+		text.append(f"folder: {self.path}, include sections: \n")
+		for i in self.sections:
+			text.extend(i.printAll())
+		text.append(f"folder: {self.path}, sections enough!\n")
+		text.append(f"==folder: {self.path} close!==\n")
 		return text
 	def popString(self):
 		string=self.file.pop(0)
@@ -222,36 +254,38 @@ class NewFolder():
 				self.sections.append(section_)
 	def getFB2(self,**args_):
 		text_strings=[]
-		if not "start" in args_:
-			args_["start"]=False
-		if args_["start"]:
-			open_='<body>\n'
-			close_='</body>\n'
-		elif len(self.sections)==0 and len(self.file)==0:
-			open_=f'<section id="{self.path}">\n'
-			close_='</section>\n'
-		else:
-			open_=''
-			close_=''
-		text_strings.append(open_)
-		# данный метод получает Структуру fb2-документа из содержимого папки
-		if len(self.sections)==0 and len(self.file)!=0:
-			# если в папке нет натуральных секций, значит весь файл является секцией
-			text_strings.append(f'<section id="{self.path}">\n')
-			text_strings.extend(self.file)
-			text_strings.append('</section>\n')
-		elif len(self.sections)==1:
-			text_strings.append(f'<section id="{self.sections[0].id}">\n')
-			text_strings.extend(self.sections[0].getFB2()[1:-1])
-			close_='</section>\n'
-		elif len(self.sections)!=0 and len(self.file)==0:
-			# может быть либо файл, либо секция, третьего не дано
-			for section_ in self.sections:
-				text_strings.extend(section_.getFB2())
-		if len(self.folders)!=0:
-			for folder_ in self.folders:
-				text_strings.extend(folder_.getFB2())
-		text_strings.append(close_)
+		if len(self.sections)!=0 or len(self.file)!=0 or len(self.folders)!=0:
+			# чтобы не плодить пустые секции, нужно чтобы хотябы какой-то атрибут папки существовал
+			if not "start" in args_:
+				args_["start"]=False
+			if args_["start"]:
+				open_='<body>\n'
+				close_='</body>\n'
+			elif len(self.sections)==0 and len(self.file)==0:
+				open_=f'<section id="{self.path}">\n'
+				close_='</section>\n'
+			else:
+				open_=''
+				close_=''
+			text_strings.append(open_)
+			# данный метод получает Структуру fb2-документа из содержимого папки
+			if len(self.sections)==0 and len(self.file)!=0:
+				# если в папке нет натуральных секций, значит весь файл является секцией
+				text_strings.append(f'<section id="{self.path}">\n')
+				text_strings.extend(self.file)
+				text_strings.append('</section>\n')
+			elif len(self.sections)==1:
+				text_strings.append(f'<section id="{self.sections[0].id}">\n')
+				text_strings.extend(self.sections[0].getFB2()[1:-1])
+				close_='</section>\n'
+			elif len(self.sections)!=0 and len(self.file)==0:
+				# может быть либо файл, либо секция, третьего не дано
+				for section_ in self.sections:
+					text_strings.extend(section_.getFB2())
+			if len(self.folders)!=0:
+				for folder_ in self.folders:
+					text_strings.extend(folder_.getFB2())
+			text_strings.append(close_)
 		return text_strings
 
 
@@ -266,7 +300,13 @@ folder_path=os.path.abspath(project_dict["folder"]) # папка, из кото�
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
 # создаём объект папка верхнего уровня
 roof_folder=NewFolder(folder_path)
+with open("all.txt-light",'w',encoding='utf-8') as export_file:
+	export_file.writelines(roof_folder.printAll())
 # теперь нам необходимо разматывать этот объект в секции
-print(roof_folder.printSections())
-with open("export-2.xml",'w',encoding='utf-8') as export_file:
-	export_file.writelines(roof_folder.getFB2(start=True))
+body_fb2=roof_folder.getFB2(start=True)
+# теперь, когда объект размотан в список строк с секциями, можно начинать форматирование
+fb2output=convertationFB2(body_fb2)
+with open("body_fb2.xml",'w',encoding='utf-8') as export_file:
+	export_file.writelines(body_fb2)
+with open("fb2output.xml",'w',encoding='utf-8') as export_file:
+	export_file.writelines(fb2output)
