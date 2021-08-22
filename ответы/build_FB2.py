@@ -119,8 +119,14 @@ class NewSection():
 				section_.split() # похожий метод применяем к секции
 				self.sections.append(section_)
 	def getFB2(self):
+		global generate_id
 		text_strings=[]
-		text_strings.append(f'<section id="{self.id}">\n')
+		if self.id!="":
+			id_=self.id
+		else:
+			generate_id+=1
+			id_=f"generate_{generate_id}"
+		text_strings.append(f'<section id="{id_}">\n')
 		# данный метод получает Структуру fb2-документа из содержимого секции
 		if len(self.title)!=0:
 			text_strings.append(f'<title>{self.title}</title>\n')
@@ -253,6 +259,7 @@ class NewFolder():
 				section_.split() # похожий метод применяем к секции
 				self.sections.append(section_)
 	def getFB2(self,**args_):
+		global generate_id
 		text_strings=[]
 		if len(self.sections)!=0 or len(self.file)!=0 or len(self.folders)!=0:
 			# чтобы не плодить пустые секции, нужно чтобы хотябы какой-то атрибут папки существовал
@@ -275,7 +282,12 @@ class NewFolder():
 				text_strings.extend(self.file)
 				text_strings.append('</section>\n')
 			elif len(self.sections)==1:
-				text_strings.append(f'<section id="{self.sections[0].id}">\n')
+				if self.sections[0].id!="":
+					id_=self.sections[0].id
+				else:
+					generate_id+=1
+					id_=f"generate_{generate_id}"
+				text_strings.append(f'<section id="{id_}">\n')
 				text_strings.extend(self.sections[0].getFB2()[1:-1])
 				close_='</section>\n'
 			elif len(self.sections)!=0 and len(self.file)==0:
@@ -290,6 +302,7 @@ class NewFolder():
 
 
 work_dir=os.getcwd()
+generate_id=0
 # открываем файл проекта для чтения и получаем его структуру в переменную root
 with open("fb2.json","r",encoding="utf-8") as project_file:
 	root_dict=json.load(project_file)
@@ -300,8 +313,6 @@ folder_path=os.path.abspath(project_dict["folder"]) # папка, из кото�
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
 # создаём объект папка верхнего уровня
 roof_folder=NewFolder(folder_path)
-with open("all.txt-light",'w',encoding='utf-8') as export_file:
-	export_file.writelines(roof_folder.printAll())
 # теперь нам необходимо разматывать этот объект в секции
 body_fb2=roof_folder.getFB2(start=True)
 # теперь, когда объект размотан в список строк с секциями, можно начинать форматирование

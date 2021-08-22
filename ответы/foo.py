@@ -29,7 +29,7 @@ def typeString(string_):
 		return 'other'
 
 def getTitle(string_):
-	return re.findall(r'(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)',string_)[0][1]
+	return re.findall(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$',string_)[0][1]
 
 def getID(string_):
 	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
@@ -110,25 +110,39 @@ def getStringList(files_list):
 				new_string_list.append(string_) 
 	return new_string_list
 
+def ampersandReplace(string_):
+	# замена амперсандов в строках
+	while True:
+		if re.search(r'\&(?!\w+;)',string_)!=None:
+			string_=re.sub(r'\&(?!\w+;)','&amp;',string_)
+		else:
+			break
+	return string_
+
+def convertTitle(string_):
+	title_string=[]
+	title=re.findall(r'^\s*(<title>)(.*?)(</title>)\s*$',string_)[0][1]
+	link_list=re.findall(r'\[[^\]]+\]\([^\)]*\)',title)
+	for link in link_list:
+		symbol=title.find(link)
+		title_string
+	return title
+	
 def convertationFB2(body_list):
 	# данная функция конвертирует перворазбитый список строк в готовый документ fb2
 	new_string_list=[] # выходной список строк
-	buffer=[] # буфферный список
-	mode={"section_in_buffer":False} # словарь режимов
+	mode={} # словарь режимов
 	for string_ in body_list:
 		body=re.match(r'^\s*</?body(\s+[^>]*?)?>\s*$',string_)
-		section_open=re.match(r'^\s*<section(\s+[^>]*?)?>\s*$',string_)
+		section=re.match(r'^\s*</?section(\s+[^>]*?)?>\s*$',string_)
+		title=re.match(r'^\s*<title>.*?</title>\s*$',string_)
 		if body!=None:
 			new_string_list.append(string_)
-		elif section_open!=None:
-			buffer.append(string_)
-			mode["section in buffer"]=True
+		elif section!=None:
+			new_string_list.append(string_)
+		elif title!=None:
+			new_string_list.append(convertTitle(string_))
 	return new_string_list
 
 if __name__=="__main__":
-	print("Модуль foo - тест функций:")
-	print(":",remComment("строка1 /* комментарий */ строка2"))
-	print(":",remComment("строка1 /* комментарий "))
-	print(":",remComment("комментарий */ строка2"))
-	print(":",remComment("строка1 /*"))
-	print(":",remComment("/*"))
+	print(convertTitle("<title>[название ссылки](#link_01_01)Есть просто символ &. Есть в слове &ghjk. А есть &nbsp; [https://www.youtube.com/watch?v=uaEfDzBXFSw&](https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=25s) ещё часть строки</title>"))
