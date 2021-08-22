@@ -1,9 +1,14 @@
 import sys, os, re, json
 import datetime
 
-def getDate():
+def getDate(**args):
 	when=datetime.datetime.now()
-	time=f"{when.year}.{when.month}.{when.day}"
+	if not 'mode' in args:
+		args['mode']=''
+	if args['mode']!='xml':
+		time=f"{when.year}.{when.month}.{when.day}"
+	else:
+		time=f"{when.year}-{when.month}-{when.day}"
 	return time
 
 def typeString(string_):
@@ -246,7 +251,7 @@ class NewString():
 				string_+='</subtitle>\n'
 				return string_
 			elif self.type=='hyperlink':
-				return f'<a href="{self.string_body[1].getString()}">{self.string_body[0].getString()}</a>'
+				return f'<a l:href="{self.string_body[1].getString()}">{self.string_body[0].getString()}</a>'
 			elif self.type=='string':
 				if len(self.string_body)>1:
 					return f'<p id="{self.string_body[1].getString()}">{self.string_body[0].getString()[:-1]}</p>\n'

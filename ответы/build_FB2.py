@@ -311,13 +311,66 @@ project_dict=root_dict["project"] # словарь помещаем в пере�
 export_file_path=os.path.abspath(project_dict["export_file"].replace('%TIME%',getDate()))
 folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
 book_info_dict=root_dict["book-info"] # словарь с информацией о книге
+document_info=root_dict["document-info"]
 # создаём объект папка верхнего уровня
 roof_folder=NewFolder(folder_path)
 # теперь нам необходимо разматывать этот объект в секции
 body_fb2=roof_folder.getFB2(start=True)
 # теперь, когда объект размотан в список строк с секциями, можно начинать форматирование
 fb2output=convertationFB2(body_fb2)
-with open("body_fb2.xml",'w',encoding='utf-8') as export_file:
-	export_file.writelines(body_fb2)
 with open("fb2output.xml",'w',encoding='utf-8') as export_file:
 	export_file.writelines(fb2output)
+fb2_file=[]
+fb2_file.append(f'<?xml version="1.0" encoding="utf-8"?>\n')
+fb2_file.append(f'<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0" xmlns:l="http://www.w3.org/1999/xlink">\n')
+fb2_file.append(f'<description>\n')
+fb2_file.append(f'<title-info>\n')
+genres=book_info_dict["genre"]
+for i in genres:
+	fb2_file.append(f'<genre>{i}</genre>\n')
+fb2_file.append(f'<author>')
+fn=book_info_dict["author"]['first-name']
+mn=book_info_dict["author"]['middle-name']
+ln=book_info_dict["author"]['last-name']
+fb2_file.append(f'<first-name>{fn}</first-name>\n')
+fb2_file.append(f'<middle-name>{mn}</middle-name>\n')
+fb2_file.append(f'<last-name>{ln}</last-name>\n')
+fb2_file.append(f'</author>\n')
+fb2_file.append(f'<book-title>{book_info_dict["book-title"]}</book-title>\n')
+fb2_file.append(f'<annotation>\n')
+with open(book_info_dict["annotation"],"r",encoding='utf-8') as annotation:
+	an_list=annotation.readlines()
+for i in an_list:
+	fb2_file.append(f'<p>{i}</p>\n')
+fb2_file.append(f'</annotation>\n')
+date_=book_info_dict['date']
+fb2_file.append(f'<date value="{date_}">24 августа 2021</date>\n')
+lang_=book_info_dict['lang']
+fb2_file.append(f'<lang>{lang_}</lang>\n')
+fb2_file.append(f'</title-info>\n')
+
+fb2_file.append(f'<document-info>\n')
+for i in book_info_dict["genre"]:
+	fb2_file.append(f'<genre>{i}</genre>\n')
+fb2_file.append(f'<author>\n')
+fn=document_info["author"]['first-name']
+mn=document_info["author"]['middle-name']
+ln=document_info["author"]['last-name']
+fb2_file.append(f'<first-name>{fn}</first-name>\n')
+fb2_file.append(f'<middle-name>{mn}</middle-name>\n')
+fb2_file.append(f'<last-name>{ln}</last-name>\n')
+fb2_file.append(f'</author>\n')
+fb2_file.append(f'<program-used>build_fb2.py</program-used>\n')
+fb2_file.append(f'<date value="{getDate(mode="xml")}">{getDate(mode="xml")}</date>\n')
+fb2_file.append(f'<id>691C3AD3-DB00-4DCD-8B3F-FE36355FD126</id>\n')
+fb2_file.append(f'<version>{document_info["version"]}</version>\n')
+fb2_file.append(f'<history>\n')
+for i in document_info["history"]:
+	fb2_file.append(f'<p>{i}</p>\n')
+fb2_file.append(f'</history>\n')
+fb2_file.append(f'</document-info>\n')
+fb2_file.append(f'</description>\n')
+fb2_file.extend(fb2output)
+fb2_file.append(f'</FictionBook>\n')
+with open(export_file_path,'w',encoding='utf-8') as export_file:
+	export_file.writelines(fb2_file)

@@ -15,7 +15,7 @@
 		},
 		"genre": ["ref_ref","comp_programming"],
 		"annotation":".\\92_дополнительные тексты\\00_аннотация.txt",
-		"date":"2020-08-24",
+		"date":"2021-08-24",
 		"lang":"ru"
 	},
 	"document-info":
@@ -26,7 +26,7 @@
 	    	"middle-name":"",
 	    	"last-name":"Versus"
 		},
-		"version":"1.0",
+		"version":"2.0",
 		"history":
 		[
 			"1.0 — создание файла",
