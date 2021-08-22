@@ -140,6 +140,11 @@ class NewString():
 			self.type='title'
 			string_=re.findall(r'^\s*(<title>)(.*?)(</title>)\s*$',string_)[0][1]
 			self.string_body.append(NewString(string_))
+		elif args_['strtype']=='subtitle':
+			# если это строка заголовок
+			self.type='subtitle'
+			string_=re.findall(r'^\s*(\+)(.*?)(\+)\s*$',string_)[0][1]
+			self.string_body.append(NewString(string_))
 		elif args_['strtype']=='hyperlink':
 			# если строка является гиперссылкой
 			self.type="hyperlink"
@@ -149,12 +154,30 @@ class NewString():
 		elif args_['strtype']=='href':
 			self.type='href'
 			self.last_string=string_
+		elif args_['strtype']=='code':
+			self.type='code'
+			self.last_string=string_
+		elif args_['strtype']=='askquest':
+			self.type='askquest'
+			self.last_string=string_
 		elif args_['strtype']=='monotype':
 			self.type='monotype'
 			self.last_string=string_
+		elif args_['strtype']=='id':
+			self.type='id'
+			self.last_string=string_
+		elif args_['strtype']=='string':
+			self.type='string'
+			if re.match(r'^\[:(.*?)\]([^\(].*)?$',string_)!=None:
+				id_p,text_p=re.findall(r'^\[:(.*?)\](.*?)$',string_)[0]
+				self.string_body.append(NewString(text_p))
+				self.string_body.append(NewString(id_p,strtype='id'))
+			else:
+				self.string_body.append(NewString(string_))
 		else:
 			hyperlink=re.search(r'\[(.*?)\]\((.*?)\)',string_)
 			monotype=re.search(r'`[^`]+`',string_)
+			askquest=re.match(r'^(В:|О:)',string_)
 			if hyperlink!=None:
 				# если в тексте пристутсвуют гиперссылки, разбиваем текст на части
 				link_list=re.findall(r'\[[^\]]+\]\([^\)]*\)',string_)
@@ -170,38 +193,65 @@ class NewString():
 				mt_list=re.findall(r'`\w+`\w+\b',string_)
 				for i in mt_list:
 					y_name,y_sub=re.findall(r'`(\w+?)`(\w+)\b',i)[0]
-					string_=string_.replace(i,f"{y_name}'{y_sub}")
+					string_=string_.replace(i,f"`{y_name}`'{y_sub}")
 				monotype=re.search(r'`[^`]+`',string_)
 				if monotype!=None:
 					mt_list=re.findall(r'`[^`]+`',string_)
 					for i in mt_list:
 						symbol=string_.find(i)
 						self.string_body.append(NewString(string_[0:symbol])) # простая строка
-						self.string_body.append(NewString(string_[symbol:symbol+len(link)],strtype='monotype'))
-						string_=string_[symbol+len(link):]
+						self.string_body.append(NewString(string_[symbol:symbol+len(i)],strtype='monotype'))
+						string_=string_[symbol+len(i):]
 					if len(string_)>0: self.string_body.append(NewString(string_))
+			elif askquest!=None:
+				aq_list=re.findall(r'^(В:|О:)(.*?)',string_)[0]
+				self.string_body.append(NewString(aq_list[0],strtype='askquest'))
+				self.string_body.append(NewString(aq_list[1]+'\n'))
 			else:
 				self.last_string=string_
 	def getString(self):
 		if len(self.last_string)>0:
 			string_=replaceAll(self.last_string)
 			if self.type=='title':
-				return f'<title>{string_}</title>'
+				return f'<title><p>{string_}</p></title>\n'
+			if self.type=='subtitle':
+				return f'<subtitle>{string_}</subtitle>\n'
 			elif self.type=='href':
-				return f'<a href="{self.last_string}">'
+				# return self.last_string
+				return string_
+			elif self.type=='id':
+				return self.last_string
 			elif self.type=='monotype':
+				string_=string_.strip('`')
 				return f'<strong>{string_}</strong>'
+			elif self.type=='askquest':
+				return f'<strong>{string_}</strong>'
+			elif self.type=='string':
+				return f'<p>{string_[:-1]}</p>\n'
+			elif self.type=='code':
+				return f'<p><code>{string_[:-1]}</code></p>\n'
 			else:
 				return string_
 		else:
 			if self.type=='title':
 				string_="<title>"
 				for i in self.string_body:
+					string_+='<p>'+i.getString()+'</p>'
+				string_+='</title>\n'
+				return string_
+			elif self.type=='subtitle':
+				string_="<subtitle>"
+				for i in self.string_body:
 					string_+=i.getString()
-				string_+='</title>'
+				string_+='</subtitle>\n'
 				return string_
 			elif self.type=='hyperlink':
-				return f'{self.string_body[1].getString()}{self.string_body[0].getString()}</a>'
+				return f'<a href="{self.string_body[1].getString()}">{self.string_body[0].getString()}</a>'
+			elif self.type=='string':
+				if len(self.string_body)>1:
+					return f'<p id="{self.string_body[1].getString()}">{self.string_body[0].getString()[:-1]}</p>\n'
+				else:
+					return f'<p>{self.string_body[0].getString()[:-1]}</p>\n'
 			else:
 				string_=""
 				for i in self.string_body:
@@ -218,20 +268,52 @@ def convertString(string_,**args_):
 def convertationFB2(body_list):
 	# данная функция конвертирует перворазбитый список строк в готовый документ fb2
 	new_string_list=[] # выходной список строк
-	mode={} # словарь режимов
+	mode={"code":False,"cite-block":False,"cite":False} # словарь режимов
 	for string_ in body_list:
 		body=re.match(r'^\s*</?body(\s+[^>]*?)?>\s*$',string_)
 		section=re.match(r'^\s*</?section(\s+[^>]*?)?>\s*$',string_)
 		title=re.match(r'^\s*<title>.*?</title>\s*$',string_)
-		if body!=None:
+		subtitle=re.match(r'^\s*?\+.*?\+\s*?$',string_)
+		code=re.match(r'^\s*?```\w*\s*$',string_)
+		cite_block=re.match(r'^\*?>>>\s*?',string_)
+		cite=re.match(r'^\s*?>\s+?.*$',string_)
+		if mode["cite"]==True and cite==None:
+			# если строки цитаты закончились
+			mode["cite"]=False
+			new_string_list.append('</cite>\n')
+		if mode["code"]==True and code==None:
+			new_string_list.append(convertString(string_,strtype='code'))
+		elif body!=None:
 			new_string_list.append(string_)
 		elif section!=None:
 			new_string_list.append(string_)
 		elif title!=None:
 			new_string_list.append(convertString(string_,strtype='title'))
+		elif subtitle!=None:
+			new_string_list.append(convertString(string_,strtype='subtitle'))
+		elif code!=None:
+			if mode["code"]==False:
+				mode["code"]=True
+			else:
+				mode["code"]=False
+		elif cite_block!=None:
+			if mode["cite-block"]==False:
+				new_string_list.append('<cite>\n')
+				mode["cite-block"]=True
+			else:
+				new_string_list.append('</cite>\n')
+				mode["cite-block"]=False
+		elif cite!=None:
+			if mode["cite"]==False:
+				mode["cite"]=True
+				new_string_list.append('<cite>\n')
+			quotes=re.findall(r'^(\s*?>\s*?)(.*)',string_)[0]
+			new_string_list.append(convertString(quotes[1],strtype='string'))
+		else:
+			if string_!="" and re.match(r'^\s*?$',string_)==None:
+				# пустые строки и строки состоящие исключительно из пробелов игнорируются
+				new_string_list.append(convertString(string_,strtype='string'))
 	return new_string_list
 
 if __name__=="__main__":
-	string="<title>[название ссылки](#link_01_01)Есть <просто> символ &. Есть в слове &ghjk. А есть &nbsp; [https://www.youtube.com/watch?v=uaEfDzBXFSw&](https://www.youtube.com/watch?v=uaEfDzBXFSw&list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&index=1&t=25s) ещё часть строки</title>"
-	print(string)
-	print(convertString(string,strtype='title'))
+	pass
