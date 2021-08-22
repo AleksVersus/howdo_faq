@@ -118,14 +118,35 @@ def ampersandReplace(string_):
 		else:
 			break
 	return string_
-
-def convertTitle(string_):
+class NewString():
+	def __init__(self,string_,**args_):
+		self.type="" # по типу определяем, что это за строка (например <title>)
+		self.string_body=[] # список объектов
+		if args_['start']==True:
+			# заголовок рассматривается только если строка приходит первый раз
+			title=re.match(r'^\s*(<title>)(.*?)(</title>)\s*$',string_) # заголовок ли?
+		else:
+			title=None
+		hyperlink=re.match(r'^\[[^\]]+\]\([^\)]*\)$',string_) # есть ли гиперссылки
+		if title!=None:
+			# если это строка заголовок
+			self.type='title'
+			string_=re.match(r'^\s*(<title>)(.*?)(</title>)\s*$',string_)[0][1]
+			string_body.append(NewString(string_))
+		elif hyperlink!=None:
+			# если строка является гиперссылкой
+def convertString(string_):
 	title_string=[]
-	title=re.findall(r'^\s*(<title>)(.*?)(</title>)\s*$',string_)[0][1]
+	varname=NewString(string_,start=True)
 	link_list=re.findall(r'\[[^\]]+\]\([^\)]*\)',title)
 	for link in link_list:
 		symbol=title.find(link)
-		title_string
+		title_string.append(title[0:symbol])
+		title_string.append(title[symbol:symbol+len(link)])
+		title=title[symbol+len(link):]
+	title=""
+	for i in title_string:
+		title+=f"{i}\n"
 	return title
 	
 def convertationFB2(body_list):
@@ -141,7 +162,7 @@ def convertationFB2(body_list):
 		elif section!=None:
 			new_string_list.append(string_)
 		elif title!=None:
-			new_string_list.append(convertTitle(string_))
+			new_string_list.append(convertString(string_))
 	return new_string_list
 
 if __name__=="__main__":
