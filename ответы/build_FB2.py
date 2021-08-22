@@ -1,58 +1,8 @@
 # Builder fb2-файла 
 import sys, os, re, json # импорт необходимых модлулей
 import datetime
+from foo import *
 
-def getDate():
-	when=datetime.datetime.now()
-	time=f"{when.year}.{when.month}.{when.day}"
-	return time
-
-def typeString(string_):
-	if re.match(r'^==.*?==$',string_)!=None:
-		return 'h1'
-	elif re.match(r'^=.*?=$',string_)!=None:
-		return 'h2'
-	elif re.match(r'^--.*?--$',string_)!=None:
-		return 'h3'
-	elif re.match(r'^-.*?-$',string_)!=None:
-		return 'h4'
-	elif re.match(r'^\+\+.*?\+\+$',string_)!=None:
-		return 'h5'
-	elif re.match(r'^\+.*?\+$',string_)!=None:
-		return 'h6'
-	elif re.match(r'^\s*<section_of_head>\s*$',string_)!=None:
-		return 'section_of_head'
-	elif re.match(r'^\[:.*?\]$',string_)!=None:
-		return 'id'
-	else:
-		return 'other'
-
-def getTitle(string_):
-	return re.findall(r'(={1,2}|-{1,2}|\+)(.+?)(\1)',string_)[0][1]
-
-
-def dirList(folder_path):
-	files_list=[]
-	folders_list=[] # локальные переменные
-	# получаем список файлов и папок
-	paths_list=os.listdir(folder_path)
-	# обходим каждый адрес, проверяя является ли это файлом или папкой
-	for path in paths_list:
-		if os.path.isfile(folder_path+"\\"+path) and os.path.splitext(path)[1]=='.txt-light':
-			files_list.append(folder_path+"\\"+path)
-		elif os.path.isdir(folder_path+"\\"+path):
-			folders_list.append(folder_path+"\\"+path)
-	return files_list, folders_list
-
-def getStringList(files_list):
-	string_list=[] # локальная переменная
-	# используем список файлов, чтобы генерировать секции
-	for file in files_list:
-		# открываем каждый файл последовательно
-		with open(file,'r',encoding='utf-8') as this_file:
-			string_list.extend(this_file.readlines())
-	return string_list
-	
 class NewSection():
 	def __init__(self,**args_):
 		if "id" in args_:
@@ -67,19 +17,107 @@ class NewSection():
 			self.body=args_['body']
 		else:
 			self.body=[]
+		self.sections=[]
 	def chAttr(self, attr_, string_):
 		if attr_=="id":
 			self.id=string_
 		if attr_=="title":
 			self.title=string_
-	def addInBody(self,string_)
+	def addInBody(self,string_):
 		if type(string_)==str:
-			self.body.append(string)
+			self.body.append(string_)
 		elif type(string_)==list:
 			self.body.extend(string_)
 	def bodyLen(self):
 		return len(self.body)
-
+	def popString(self):
+		string=self.body.pop(0)
+		return typeString(string),string
+	def split(self):
+		level=5
+		no_split=True
+		no_search=False
+		# получаем наибольший уровень заголовка
+		for string in self.body:
+			if re.match(r'^\s*<section_of_head>\s*$',string)!=None:
+				no_search=True
+			elif re.match(r'^\s*</section_of_head>\s*$',string)!=None:
+				no_search=False
+			if no_search!=True:
+				type_=typeString(string)
+				if re.match(r'h\d+',type_)!=None:
+					no_split=False
+					level_=int(type_[1:])
+					if level_<level:
+						level=level_
+		split_type='h'+str(level)
+		# разбиваем на секции только если есть возможность, т.е. найдены заголовки
+		if no_split!=True:
+			# теперь, когда уровень получен, можно разбивать
+			section_=NewSection()
+			mode={'give_id':False,'give_id_off':False,'no_spliting':False} 
+			while len(self.body)>0:
+				# пока не будут выбраны все строки
+				type_,string=self.popString() # выбираем строку
+				if type_=="section_of_head-open":
+					section_.split() # похожий метод применяем к секции
+					self.sections.append(section_)
+					section_=NewSection()
+					mode['no_spliting']=True
+				elif mode['no_spliting']==False:
+					if type_==split_type:
+						# строка нужного нам типа заголовок
+						if section_.bodyLen()==0 and section_.title=="":
+							# секция пока пуста
+							pass
+						else:
+							# если секция не пуста, создаём новую секцию
+							section_.split() # похожий метод применяем к секции
+							self.sections.append(section_)
+							section_=NewSection()
+						section_.chAttr('title',getTitle(string))
+						mode['give_id']=True # включаем режим приёма ай-ди. Следующая строка может рассматриваться, как ай-ди
+						mode['give_id_off']=True
+					elif type_=='id':
+						# строка типа айди
+						if mode['give_id']==True:
+							section_.chAttr('id',getID(string))
+						else:
+							section_.addInBody(string)
+						mode['give_id_off']=True
+					else:
+						section_.addInBody(string)
+					# отключает режим приёма ай-ди только на второй проход после заголовка
+					if mode['give_id_off']==True:
+						mode['give_id_off']=False
+					else:
+						mode['give_id']=False
+				elif type_=="section_of_head-close":
+					section_.split() # похожий метод применяем к секции
+					self.sections.append(section_)
+					section_=NewSection()
+					mode['no_spliting']=False
+				else:
+					section_.addInBody(string)
+			if section_.bodyLen()!=0 or section_.title!="":
+				# когда мы перебрали все строки, а набираемая секция не пуста
+				section_.split() # похожий метод применяем к секции
+				self.sections.append(section_)
+	def getFB2(self):
+		text_strings=[]
+		text_strings.append(f'<section id="{self.id}">\n')
+		# данный метод получает Структуру fb2-документа из содержимого секции
+		if len(self.title)!=0:
+			text_strings.append(f'<title>{self.title}</title>\n')
+		if len(self.sections)==0 and len(self.body)!=0:
+			# если в секции нет секций, она содержит только строки
+			text_strings.extend(self.body)
+		elif len(self.sections)!=0 and len(self.body)==0:
+			# может быть либо список строк, либо список секций
+			for section_ in self.sections:
+				text_strings.extend(section_.getFB2())
+		text_strings.append('</section>\n')
+		return text_strings
 
 class NewFolder():
 	"""docstring for NewFolder"""
@@ -105,52 +143,116 @@ class NewFolder():
 		for i in self.folders:
 			text+=i.path+"\n"
 		return text
+	def printSections(self):
+		text=f"number of sections: {len(self.sections)}\n"
+		for i in self.sections:
+			text+=f"{i.title}\n[:{i.id}]\n"
+		return text
 	def popString(self):
 		string=self.file.pop(0)
 		return typeString(string),string
 	def fileSplit(self):
 		level=5
+		no_split=True
+		no_search=False
+		# численно более высокий уровень имеет меньшее значение
 		for string in self.file:
-			type_=typeString(string)
-			if re.match(r'h\d+',type_)!=None:
-				level_=int(type_[1:])
-				if level_<level:
-					level=level_
+			if re.match(r'^<section_of_head>$',string)!=None:
+				no_search=True
+			elif re.match(r'^</section_of_head>$',string)!=None:
+				no_search=False
+			if no_search!=True:
+				type_=typeString(string)
+				if re.match(r'h\d+',type_)!=None:
+					no_split=False
+					level_=int(type_[1:])
+					if level_<level:
+						level=level_
 		split_type='h'+str(level)
 		# теперь, когда уровень получен, можно разбивать
-		section_=NewSection()
-		mode={'give_id':False,'give_id_off':False} 
-		while len(self.file)>0:
-			# пока не будут выбраны все строки
-			type_,string=self.popString() # выбираем строку
-			if type_==split_type:
-				# строка нужного нам типа заголовок
-				if section_.bodyLen()==0 and section_.title=="":
-					# секция пока пуста
-					pass
-				else:
-					# если секция не пуста, создаём новую секцию
+		if no_split!=True:
+			section_=NewSection()
+			mode={'give_id':False,'give_id_off':False,'no_spliting':False} 
+			while len(self.file)>0:
+				# пока не будут выбраны все строки
+				type_,string=self.popString() # выбираем строку
+				if type_=="section_of_head-open":
+					section_.split() # похожий метод применяем к секции
 					self.sections.append(section_)
 					section_=NewSection()
-				section_.chAttr('title',getTitle(string))
-				mode['give_id']=True # включаем режим приёма ай-ди. Следующая строка может рассматриваться, как ай-ди
-				mode['give_id_off']=True
-			elif type_=='id':
-				# строка типа айди
-				if mode['give_id']==True:
-					section_.chAttr('id',getID(string))
+					mode['no_spliting']=True
+				elif mode['no_spliting']==False:
+					if type_==split_type:
+						# строка нужного нам типа заголовок
+						if section_.bodyLen()==0 and section_.title=="":
+							# секция пока пуста
+							pass
+						else:
+							# если секция не пуста, создаём новую секцию
+							section_.split() # похожий метод применяем к секции
+							self.sections.append(section_)
+							section_=NewSection()
+						section_.chAttr('title',getTitle(string))
+						mode['give_id']=True # включаем режим приёма ай-ди. Следующая строка может рассматриваться, как ай-ди
+						mode['give_id_off']=True
+					elif type_=='id':
+						# строка типа айди
+						if mode['give_id']==True:
+							section_.chAttr('id',getID(string))
+						else:
+							section_.addInBody(string)
+						mode['give_id_off']=True
+					else:
+						section_.addInBody(string)
+					# отключает режим приёма ай-ди только на второй проход после заголовка
+					if mode['give_id_off']==True:
+						mode['give_id_off']=False
+					else:
+						mode['give_id']=False
+				elif type_=="section_of_head-close":
+					section_.split() # похожий метод применяем к секции
+					self.sections.append(section_)
+					section_=NewSection()
+					mode['no_spliting']=False
 				else:
 					section_.addInBody(string)
-				mode['give_id_off']=True
-			else:
-				section.addInBody(string)
-			# отключает режим приёма ай-ди только на второй проход после заголовка
-			if mode['give_id_off']==True:
-				mode['give_id_off']=False
-			else:
-				mode['give_id']=False
-
-
+			if section_.bodyLen()!=0 or section_.title!="":
+				# когда мы перебрали все строки, а набираемая секция не пуста
+				section_.split() # похожий метод применяем к секции
+				self.sections.append(section_)
+	def getFB2(self,**args_):
+		text_strings=[]
+		if not "start" in args_:
+			args_["start"]=False
+		if args_["start"]:
+			open_='<body>\n'
+			close_='</body>\n'
+		elif len(self.sections)==0 and len(self.file)==0:
+			open_=f'<section id="{self.path}">\n'
+			close_='</section>\n'
+		else:
+			open_=''
+			close_=''
+		text_strings.append(open_)
+		# данный метод получает Структуру fb2-документа из содержимого папки
+		if len(self.sections)==0 and len(self.file)!=0:
+			# если в папке нет натуральных секций, значит весь файл является секцией
+			text_strings.append(f'<section id="{self.path}">\n')
+			text_strings.extend(self.file)
+			text_strings.append('</section>\n')
+		elif len(self.sections)==1:
+			text_strings.append(f'<section id="{self.sections[0].id}">\n')
+			text_strings.extend(self.sections[0].getFB2()[1:-1])
+			close_='</section>\n'
+		elif len(self.sections)!=0 and len(self.file)==0:
+			# может быть либо файл, либо секция, третьего не дано
+			for section_ in self.sections:
+				text_strings.extend(section_.getFB2())
+		if len(self.folders)!=0:
+			for folder_ in self.folders:
+				text_strings.extend(folder_.getFB2())
+		text_strings.append(close_)
+		return text_strings
 
 
 work_dir=os.getcwd()
@@ -165,7 +267,6 @@ book_info_dict=root_dict["book-info"] # словарь с информацией
 # создаём объект папка верхнего уровня
 roof_folder=NewFolder(folder_path)
 # теперь нам необходимо разматывать этот объект в секции
-
-	
-	
-	
+print(roof_folder.printSections())
+with open("export-2.xml",'w',encoding='utf-8') as export_file:
+	export_file.writelines(roof_folder.getFB2(start=True))
