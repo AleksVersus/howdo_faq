@@ -52,20 +52,34 @@ class NewSection():
 		level=5
 		no_split=True
 		no_search=False
+		section_of_head_in=False # присутствует ли section of head в секции
+		section_of_head_split=False
+		# print(f"Бьём секцию {self.id}")
 		# получаем наибольший уровень заголовка
 		for string in self.body:
 			if re.match(r'^\s*<section_of_head>\s*$',string)!=None:
 				no_search=True
+				section_of_head_in=True
+				# print(f"Найден open")
 			elif re.match(r'^\s*</section_of_head>\s*$',string)!=None:
 				no_search=False
+				# print(f"Найден close")
 			if no_search!=True:
 				type_=typeString(string)
 				if re.match(r'h\d+',type_)!=None:
+					# print(f"Найден заголовок {type_}")
 					no_split=False
 					level_=int(type_[1:])
 					if level_<level:
 						level=level_
+			# elif re.match(r'h\d+',typeString(string))!=None:
+				# print(f"НЕ НАЙДЕН ЗАГОЛОВОК {typeString(string)}")
 		split_type='h'+str(level)
+		if section_of_head_in==True and no_split==True:
+			# если кроме section of hed других заголовков нет
+			section_of_head_split=True # разрешаем разбивать
+			no_split=False
+			# print(f"Кроме SOH заголовки не найдены")
 		# разбиваем на секции только если есть возможность, т.е. найдены заголовки
 		if no_split!=True:
 			# теперь, когда уровень получен, можно разбивать
@@ -75,18 +89,26 @@ class NewSection():
 				# пока не будут выбраны все строки
 				type_,string=self.popString() # выбираем строку
 				if type_=="section_of_head-open":
-					section_.split() # похожий метод применяем к секции
-					self.sections.append(section_)
-					section_=NewSection()
+					# print("Найден SOH-open")
+					if section_of_head_split==True:
+						section_.split() # похожий метод применяем к секции
+						self.sections.append(section_)
+						section_=NewSection()
+						# print("Закрываем старую секцию, открываем новую")
+					else:
+						# print("Вносим SOH-open в текущю секцию")
+						section_.addInBody(string)
 					mode['no_spliting']=True
 				elif mode['no_spliting']==False:
 					if type_==split_type:
 						# строка нужного нам типа заголовок
+						# print("Найден заголовок верхнего уровня: ",type_)
 						if section_.bodyLen()==0 and section_.title=="":
 							# секция пока пуста
 							pass
 						else:
 							# если секция не пуста, создаём новую секцию
+							# print("разбиваем старую и создаём новую секцию")
 							section_.split() # похожий метод применяем к секции
 							self.sections.append(section_)
 							section_=NewSection()
@@ -108,11 +130,18 @@ class NewSection():
 					else:
 						mode['give_id']=False
 				elif type_=="section_of_head-close":
-					section_.split() # похожий метод применяем к секции
-					self.sections.append(section_)
-					section_=NewSection()
+					# print("Найден SOH-close")
+					if section_of_head_split==True:
+						# print("Закрываем его секцию, открываем новую")
+						section_.split() # похожий метод применяем к секции
+						self.sections.append(section_)
+						section_=NewSection()
+					else:
+						# print("добавляем close в текущую секцию")
+						section_.addInBody(string)
 					mode['no_spliting']=False
 				else:
+					# print("Закидываем строку",string,"в следующую секцию (soh)")
 					section_.addInBody(string)
 			if section_.bodyLen()!=0 or section_.title!="":
 				# когда мы перебрали все строки, а набираемая секция не пуста
@@ -193,20 +222,35 @@ class NewFolder():
 		level=5
 		no_split=True
 		no_search=False
+		section_of_head_in=False # показывает присутствие section_of_head в секции
+		section_of_head_split=False # разрешает работу с section_of_head
 		# численно более высокий уровень имеет меньшее значение
+		# print(f">>>Бьём папку {self.path}")
 		for string in self.file:
 			if re.match(r'^<section_of_head>$',string)!=None:
 				no_search=True
+				section_of_head_in=True
+				# print(f">>>Есть section_of_head-open")
 			elif re.match(r'^</section_of_head>$',string)!=None:
 				no_search=False
+				# print(f">>>Есть section_of_head-close")
 			if no_search!=True:
 				type_=typeString(string)
 				if re.match(r'h\d+',type_)!=None:
+					# print(f">>>найден заголовок {type_}")
 					no_split=False
 					level_=int(type_[1:])
 					if level_<level:
 						level=level_
+			# elif re.match(r'h\d+',typeString(string))!=None:
+				# print(f">>>НЕ найден заголовок {typeString(string)}")
 		split_type='h'+str(level)
+		# если кроме section_of_head иных заголовков не найдено
+		if no_split==True and section_of_head_in==True:
+			# разрешаем работу с section_of_head
+			# print("Кроме section of head иных заголовков не найдено")
+			section_of_head_split=True
+			no_split=False
 		# теперь, когда уровень получен, можно разбивать
 		if no_split!=True:
 			section_=NewSection()
@@ -215,18 +259,27 @@ class NewFolder():
 				# пока не будут выбраны все строки
 				type_,string=self.popString() # выбираем строку
 				if type_=="section_of_head-open":
-					section_.split() # похожий метод применяем к секции
-					self.sections.append(section_)
-					section_=NewSection()
-					mode['no_spliting']=True
+					# print(">>>Найден section_of_head-open")
+					if section_of_head_split==True:
+						# если мы встречаем section of head и нам разрешено с ним работать
+						# print(">>>Работаем с section_of_head создаём новую секцию для него")
+						section_.split() # похожий метод применяем к секции
+						self.sections.append(section_)
+						section_=NewSection()
+					else:
+						# print(">>>Просто закидываем его в текущую секцию")
+						section_.addInBody(string)
+					mode['no_spliting']=True # независимо выставляем режим, чтобы не разбирать секцию сейчас
 				elif mode['no_spliting']==False:
 					if type_==split_type:
 						# строка нужного нам типа заголовок
+						# print(">>>Найден заголовок верхнего уровня",string)
 						if section_.bodyLen()==0 and section_.title=="":
 							# секция пока пуста
 							pass
 						else:
 							# если секция не пуста, создаём новую секцию
+							# print(">>>разбиваем старую и создаём новую секцию")
 							section_.split() # похожий метод применяем к секции
 							self.sections.append(section_)
 							section_=NewSection()
@@ -248,11 +301,19 @@ class NewFolder():
 					else:
 						mode['give_id']=False
 				elif type_=="section_of_head-close":
-					section_.split() # похожий метод применяем к секции
-					self.sections.append(section_)
-					section_=NewSection()
+					# print(">>>Найден section_of_head-close")
+					if section_of_head_split==True:
+						# print(">>>Работаем с section_of_head закрываем его секцию и создаём новую")
+						# если мы встречаем section of head и нам разрешено с ним работать
+						section_.split() # похожий метод применяем к секции
+						self.sections.append(section_)
+						section_=NewSection()
+					else:
+						# print(">>>Закидываем close в следующую секцию")
+						section_.addInBody(string)
 					mode['no_spliting']=False
 				else:
+					# print(">>>Закидываем строку",string,"в следующую секцию (soh)")
 					section_.addInBody(string)
 			if section_.bodyLen()!=0 or section_.title!="":
 				# когда мы перебрали все строки, а набираемая секция не пуста
@@ -281,7 +342,7 @@ class NewFolder():
 				text_strings.append(f'<section id="{self.path}">\n')
 				text_strings.extend(self.file)
 				text_strings.append('</section>\n')
-			elif len(self.sections)==1:
+			elif len(self.sections)==1 and args_["start"]==False:
 				if self.sections[0].id!="":
 					id_=self.sections[0].id
 				else:
@@ -318,8 +379,7 @@ roof_folder=NewFolder(folder_path)
 body_fb2=roof_folder.getFB2(start=True)
 # теперь, когда объект размотан в список строк с секциями, можно начинать форматирование
 fb2output=convertationFB2(body_fb2)
-with open("fb2output.xml",'w',encoding='utf-8') as export_file:
-	export_file.writelines(fb2output)
+# собираем релизный файл
 fb2_file=[]
 fb2_file.append(f'<?xml version="1.0" encoding="utf-8"?>\n')
 fb2_file.append(f'<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0" xmlns:l="http://www.w3.org/1999/xlink">\n')

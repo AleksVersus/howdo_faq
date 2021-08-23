@@ -2,7 +2,7 @@
 [:link_list]
 Список ссылок на источники, по которым составлялся справочник, на дополнительные материалы и видео по указанным темам.
 Сборник различных полезных примеров: [MEGA.nz/QSP-Example](https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw)
-
+Страница справочника на github: [github/howdo_faq](https://aleksversus.github.io/howdo_faq/)
 =01. Чем отличается?=
 [:link_01]
 +1.1. В чём разница между `set x=10`, `let x=10` и `x=10`?+

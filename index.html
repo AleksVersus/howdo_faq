@@ -13,178 +13,26 @@
     <div class="em_AROUND">
         <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
         <div class="em_Warning">
-            <p>Внимание!!! Данная страница не относится к справочнику по самым часто задаваемым вопросам из темы "Как сделать?". Это просто страница-заглушка, подтянутая из мануала для Easy Math. Справочник будет создан позже. Пока что вы можете скачать офлайн-версию справочника:</p>
-            <p><a href="FAQ.QSP.2020.08.24.fb2">Скачать офлайн-справочник</a></p>
+            <p>Внимание!!! Онлайн версия справочника пока недоступна. Пока что вы можете скачать офлайн-версию справочника:</p>
+            <p><a href="release/FAQ.QSP.2021.08.23.fb2">Скачать офлайн-справочник</a></p>
         </div>
         <div class="em_Epigraph">
             <div>
-                <p>Здесь будет текст</p>
                 <p>По всем вопросам и предложениям обращаться:</p>
                 <ul class="em_TT">
                     <li>e-mails:                  
                         <ul class="em_TT">
                             <li>aleksversus@mail.ru</li>
-                            <li>aleksversus@yandex.ru</li>
                         </ul>
                     </li>
                     <li>Вконтакте: <a href="https://vk.com/id40090736" class="emHREFHH" target="_blank">id40090736</a></li>
                 </ul>
             </div>
         </div>
-        <div class="em_PAGE">
-            <p>Сопроводительный текст и инструкции для использования библиотеки.</p>
-            
-            <h2>Подключение и использование</h2>
-            
-            <p>Предполагается, что Вы читали <a href="http://wiki.qsp.su/" target="new">справку по QSP</a>, пробовали писать игры и уже знаете, что такое локации, подпрограммы (процедуры) и функции, чем отличаются текстовые и числовые переменные, что такое аргументы и для чего они нужны.</p>
-            <p>Чтобы использовать функции библиотеки при написании своей игры, сделайте следующее:</p>
-                <ol class="em_LI">
-                    <li>
-                        <p>
-                            скачайте архив с библиотекой <a href="https://github.com/AleksVersus/easy.math/releases/download/v.2.3.14/easy.math.2.3.14.rar" title="скачать архив easy.math.rar">отсюда</a>, и распакуйте в папку, где лежит ваша игра. В папке с вашей игрой должна появиться папка <span class="emFOLD">"lib"</span>.
-                        </p>
-                    </li>
-                    <li>
-                        <p>В своей игре на самой первой локации, в поле "выполнить при посещении" введите</p>
-                        <div class="Monokai-Code"><span class="Monokai-Operator">addqst</span> <span class="Monokai-String">'lib\easy.math.qsp'</span></div>
-                        <p>Если планируется использование библиотеки в играх на Quest Navigator необходимо так же прописать такую строку:</p>
-                        <div class="Monokai-Code">$AVS_PLAYERTYPE<span class="Monokai-Assign">=</span><span class="Monokai-String">'QN'</span></div>
-                    </li>
-                    <li>
-                        <p>теперь Вы можете пользоваться функциями библиотеки.</p>
-                    </li>
-                </ol>
-            <p>Все функции библиотеки вызываются с помощью ключевого слова
-                <span class="emFUNC">FUNC</span>( ) - для получения числовых значений, и
-                <span class="emFUNC">$FUNC</span>( ) - для получения текстовых значений.
-            </p>
-            <p>Исключением являются функции, результат которых записывается в массив. Такие функции вызываются оператором <span class="emOPRT">GOSUB</span>, или <span class="emOPRT">GS</span>.</p>
-            <p class="em_CODE">
-                <span class="emFUNC">$FUNC</span>(<span class="emTEXT">'#fnct#'</span>,<span class="emVAR">$args[</span>0<span class="emVAR">]</span>,<span class="emVAR">$args[</span>1<span class="emVAR">]</span>,<span class="emVAR">$args[</span>2<span class="emVAR">]</span>,<span class="emVAR">$args[</span>3<span class="emVAR">]</span>,<span class="emVAR">$args[</span>4<span class="emVAR">]</span>,<span class="emVAR">$args[</span>5<span class="emVAR">]</span>,<span class="emVAR">$args[</span>6<span class="emVAR">]</span>,<span class="emVAR">$args[</span>7<span class="emVAR">]</span>,<span class="emVAR">$args[</span>8<span class="emVAR">]</span>)
-            </p>
-            <p>Аргументы могут быть текстовыми или числовыми в зависимости от требований и назначения функции.</p>
-            <p>Библиотека работает с переменными, имена которых включают сочетание easy_math, чтобы избежать пересечений с именами переменных, которые Вы используете в своих играх.</p>
-            <p>Все переменные, использующиеся функциями, после - уничтожаются.</p><p>Если результат работы функции помещается в массив, одним из параметров функции указывается имя массива, в который должен быть помещён результат. Имена массивов, передаваемые в аргументах функций, должны записываться по общим правилам записи имён переменных для плеера: текстовые массивы - с символом <span class="emTEXT">$</span> перед именем, числовые - без символа <span class="emTEXT">$</span> перед именем. Само имя не должно содержать символа <span class="emTEXT">$</span>, и других запрещённых символов.</p>
-            
-            <h2>История версий</h2>
-            <!-- История версий -->
-            <p><a href="istoria_versij/0-46.html" title="История версий отдельной страницей">Просмотреть историю версий</a></p>
-            <!-- История версий -->
-            
-            <h2>Функции</h2>
-            <ol>
-                <li>
-                    <a id="integer"></a>
-                    <h3>Операции над целыми числами</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="operacii_s_celymi_chislami/0-57.html#even">#even#</a> - округление целых чисел до указанной разрядности</li>
-                        <li><a class="emHREFTT" href="operacii_s_celymi_chislami/0-57.html#sum">#sum#</a> - подсчёт суммы всех элементов массива.</li>
-                        <li><a class="emHREFTT" href="operacii_s_celymi_chislami/0-57.html#raz">#raz#</a> - получение разрядности целого числа</li>
-                        <li><a class="emHREFTT" href="operacii_s_celymi_chislami/0-57.html#quart">#^#</a> - возведение целого числа в степень.</li>
-                        <li><a class="emHREFTT" href="operacii_s_celymi_chislami/0-57.html#minus">#-#</a> - модуль от разности. <span class="em_BLCK">c=|a-b|</span></li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="logical"></a>
-                    <h3>Логические операции</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="logicheskie_operacii/0-58.html#add">#add#</a> - "логическое" сложение</li>
-                        <li><a class="emHREFTT" href="logicheskie_operacii/0-58.html#dev">#dev#</a> - "логическое" вычитание</li>
-                        <li><a class="emHREFTT" href="logicheskie_operacii/0-58.html#rtp">#rtp#</a> - перестановка значений</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="string"></a>
-                    <h3>Операции над текстом</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#zero">#zero#</a> - генерирует строку одинаковых символов</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#rndstr">#rndstr#</a> - генерирует строку случайных символов</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#chkobjword">#chk.obj.word#</a> - производит поиск предмета в "инвентаре"</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#chkarrayword">#chk.array.word#</a> - производит поиск элемента массива, содержащего строку, соответствующую регулярному выражению.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#strinarray">#str.inArray#</a> - из блока текста выбирает все строки между указанными разделителями и помещает их в указанный массив.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#widetrim">#widetrim#</a> - удаление прилегающих пробелов, символов табуляции и переводов строк, или символов преформатирования.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_tekstom/0-13.html#strthin">#str.thin#</a> - разрежение строки строкой-разделителем.</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="floating"></a>
-                    <h3>Операции над вещественными (дробными) числами</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#dz">#dz#</a> - отсечение нулей в дробной части числа</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#indiv">#indiv#</a> - рациональное частное от деления двух целых чисел</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#undiv">#undiv#</a> - превращает рациональное число в целое</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#razdiv">#razdiv#</a> - получает разрядность дробной части числа</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#rounddiv">#rounddiv#</a> - округляет рациональное число.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#plus">#+#</a> - вычисление суммы рациональных чисел.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#umn">#*#</a> - вычисление произведения рациональных чисел.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#del">#:#</a> - вычисление частного от деления рациональных чисел.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#sim">#sim#</a> - сравнение рациональных чисел.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#sqrt">#sqrt#</a> - вычисление корня квадратного.</li>
-                        <li><a class="emHREFTT" href="operacii_s_drobnymi_chislami/0-14.html#invert">#invert#</a> - инвертирование числа.</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="heximal"></a>
-                    <h3>Операции над шестнадцатеричными числами</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#hexdec">#hex-dec#</a> - перевод из шестнадцатеричной системы в десятеричную</li>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#dechex">#dec-hex#</a> - перевод из десятеричной системы в шестнадцатеричную</li>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#deccol">#dec-col#</a> - превращает десятеричное число в шестнадцатеричное</li>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#col">#+col#</a> - изменение цвета, записанного в шестнадцатеричном RGB.</li>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#colrgb">#col-rgb#</a> - преобразование цвета из формата RRGGBB в формат rgb понятный QSP.</li>
-                        <li><a class="emHREFTT" href="operacii_s_shestnadcaterichnymi_chislami/0-15.html#colinv">#col-inv#</a> - инвертирование цвета в формате RRGGBB, т.е. преобразование цвета к совершенно противоположному.</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="arrays"></a>
-                    <h3>Операции над массивами</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayrand">#array.rand#</a> - заполнение элементов массива случайными числами</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arraystrt">#array.strt#</a> - заполнение элементов массива подряд идущими числами.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayprnt">#array.prnt#</a> - вывод содержимого всех элементов массива в виде текста</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayprntfew">#array.prnt.few#</a> - вывод содержимого нескольких массивов.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arraysort">#array.sort#</a> - многофункциональная сортировка содержимого массива.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayrstd">#array.rstd#</a> - перетасовка элементов массива в соответствии с таблицей перестановки.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arraydsrt">#array.dsrt#</a> - операция обратная сортировке.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arraysimp">#array.simp#</a> - сравнение содержимого двух массивов.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayclr">#array.clr#</a> - удаление всех элементов массива, соответствующих указанному значению.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arraysrch">#array.srch#</a> - поиск максимального или минимального значения числового массива по указанной области и в заданных пределах.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#arrayins">#array.ins#</a> - вставка элемента в массив со сдвигом ячеек вправо.</li>
-                        <li><a class="emHREFTT" href="operacii_nad_massivami/0-16.html#emarrchtype">em.arr.chType</a> - изменение типа массива.</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="supporting"></a>
-                    <h3>Вспомогательные функции</h3>
-                    <ul>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#getwordinpos">get.word.inPos</a> - из строки вида <span class="emTEXT">aaa|bbb|ccc|...|yyy|zzz</span> вычленяется подстрока, стоящая в указанной позиции.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#gettagnum">get.tag.num</a> - получает значение одиночного тега.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#gettagcont">get.tag.cont</a> - получает значение сдвоенного тега.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#killvarolegus">kill.var.olegus</a> - процедура, нагло национализированная у Olegus'а. Удаляет элемент массива по его текстовому индексу.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#emmaxvar">em.maxVar</a> - поиск названия переменной среди перечисленных, которая содержит наибольшее значение.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#emminvar">em.minVar</a> - поиск названия переменной среди перечисленных, которая содержит наименьшее значение.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#emvargettype">em.var.getType</a> - получение типа переменной.</li>
-                        <li><a class="emHREFTT" href="vspomogatelnye_funkcii/0-47.html#rergb">#re.rgb#</a> - получает составляющие цвета на основе числового кода цвета QSP.</li>
-                    </ul>
-                </li>
-                <li>
-                    <a id="coords"></a>
-                    <h3>Работа с координатной сеткой</h3>
-                    <ul class="emLI">
-                        <li><a class="emHREFTT" href="koordinatnaja_setka/0-48.html#coordsget">#coords.get#</a> - определяет координаты ячейки по текущему номеру ячейки.</li>
-                    </ul>
-                </li>
-            </ol>
-            
-            <h2>Перспективы</h2>
-
-            <p>
-                Библиотека будет пополняться новыми функциями по мере необходимости, и если существование функции хоть как-то оправдано. Некоторые функции на сегодняшний день сделать невозможно - они будут либо слишком сложны, либо заметно снизят быстродействие игры. Вероятно, некоторые математические операции очень скоро будут встроены непосредственно в движок плеера, и необходимость в них отпадёт. Такие функции будут исключаться из последующих версий библиотеки. По возможности, алгоритмы будут упрощены и разгружены, а так же будут достраиваться необходимые для работы с функциями параметры.
-            </p>
-        </div>
+        
         <div class="em_Epigraph">
             <div class="em_subText">
-                <p>Aleks Versus'Easy Libraries'2013-2021</p>
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
                 <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
             </div>
         </div>
