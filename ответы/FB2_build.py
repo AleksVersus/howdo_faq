@@ -1,7 +1,7 @@
 # Builder fb2-файла 
 import sys, os, re, json # импорт необходимых модлулей
 import datetime
-from foo import *
+from FB2_foo import *
 
 class NewSection():
 	def __init__(self,**args_):
