@@ -1,7 +1,7 @@
 {
 	"project":
 	{
-		"export_folder":".\\pages",
+		"export_folder":"..\\pages",
 		"folder":"."
 	}
 }
