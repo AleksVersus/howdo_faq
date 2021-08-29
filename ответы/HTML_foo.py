@@ -103,6 +103,10 @@ def getTitle(string_):
 def getID(string_):
 	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
 
+def convertInParagraph(string):
+	# конвертируем строку в параграф
+	termins=re.match(r'^\s*?`.*?`(,\s*?`.*?`)*\s+—',string)
+	return string
 
 if __name__=="__main__":
 	pass
