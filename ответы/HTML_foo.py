@@ -61,13 +61,47 @@ def clearStringList(string_list):
 			if string_!="" and string_!=None:
 				new_string_list.append(string_) 
 		else:
-			# любая не пустая строка добавляется в новый список
-			if re.match(r'^\s+?$',string_)!=None:
-				# если строка состоит из одних пробелов, это пустая строка
-				string_=""
-			if string_!="" and string_!=None:
+			if string_!=None:
 				new_string_list.append(string_) 
 	return new_string_list
+def typeString(string):
+	if re.match(r'^==.*?==$',string)!=None:
+		return 'h1'
+	elif re.match(r'^=.*?=$',string)!=None:
+		return 'h2'
+	elif re.match(r'^--.*?--$',string)!=None:
+		return 'h3'
+	elif re.match(r'^-.*?-$',string)!=None:
+		return 'h4'
+	elif re.match(r'^\+\+.*?\+\+$',string)!=None:
+		return 'h5'
+	elif re.match(r'^\+.*?\+$',string)!=None:
+		return 'h6'
+	elif re.match(r'^\s*<section_of_head>\s*$',string)!=None:
+		return 'section_of_head-open'
+	elif re.match(r'^\s*</section_of_head>\s*$',string)!=None:
+		return 'section_of_head-close'
+	elif re.match(r'^\[:.*?\]$',string)!=None:
+		return 'id'
+	elif re.match(r'^\s*?\*\s+',string)!=None:
+		return 'ul'
+	elif re.match(r'^\s*?\d+\.\s+',string)!=None:
+		return 'ol'
+	elif re.match(r'^```\w*?',string)!=None:
+		return 'code'
+	elif re.match(r'^\s*?>>>\s*?$',string)!=None:
+		return 'quote'
+	elif re.match(r'^\s*?>\s+',string)!=None:
+		return 'quote-string'
+	elif re.match(r'^\s*?$',string)!=None:
+		return 'empty'
+	else:
+		return 'other'
+def getTitle(string_):
+	return re.findall(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$',string_)[0][1]
+
+def getID(string_):
+	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
 
 
 if __name__=="__main__":
