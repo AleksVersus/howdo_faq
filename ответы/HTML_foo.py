@@ -197,12 +197,31 @@ def getTitle(string_):
 def getID(string_):
 	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
 
+def ampersandReplace(string_):
+	# замена амперсандов в строках
+	while True:
+		if re.search(r'\&(?!\S+?;)',string_)!=None:
+			string_=re.sub(r'\&(?!\S+?;)','&amp;',string_)
+		else:
+			break
+	return string_
+
+def anglebrackReplace(string_):
+	string_=string_.replace('<','&lt;')
+	string_=string_.replace('>','&gt;')
+	return string_
+
+def replaceAll(string_):
+	string_=ampersandReplace(string_)
+	string_=anglebrackReplace(string_)
+	return string_
+
 class NewString():
 	def __init__(self,string_,type_,base_):
 		self.source=string_
 		self.type=type_
 		self.strings=[]
-		print(f"'type:{self.type},string: {string_}'")
+		print(f"'type:{self.type}, string:{string_}'")
 		if self.type=='string':
 			termins=re.match(r'^\s*?`.*?`(,\s+`.*?`)*\s*—',string_)
 			if termins!=None:
@@ -232,9 +251,18 @@ class NewString():
 			if re.match(r'^#',hl_href)!=None:
 				hl_href='#folder#'+base_.searchFile(section_id=hl_href[1:],result='file_id')+'.html'+hl_href
 			self.strings.append(NewString(hl_href,'href',base_)) # адрес в первой
+		elif self.type=='href':
+			# если тип строки href, дальше она не изменяется
+			pass
+		elif self.type=='name':
+			y_name,y_sub=re.findall(r'`([^`]+)`(\w+)\b',string_)[0]
+			self.strings.append(NewString(y_name,'authname',base_)) # текст ссылки в нулевой ячейке
+			self.strings.append(NewString(y_sub,'authsub',base_)) # текст ссылки в нулевой ячейке
 		else:
 			id_word=re.search(r'\[:[^\]]*?\]',string_)
 			link_word=re.search(r'\[.*?\]\(.*?\)',string_)
+			name_word=re.search(r'`[^`\s]+?`\w+\b',string_)
+			monotype_word=re.search(r'`[^`]+?`',string_)
 			if id_word!=None:
 				words=re.findall(r'\[:[^\]]*?\]',string_)
 				for word in words:
@@ -247,7 +275,7 @@ class NewString():
 					string_=string_[symbol+len(word):]
 				if len(string_)>0:
 					self.strings.append(NewString(string_,'',base_))
-			if link_word!=None:
+			elif link_word!=None:
 				words=re.findall(r'\[.*?\]\(.*?\)',string_)
 				for word in words:
 					symbol=string_.find(word)
@@ -259,6 +287,33 @@ class NewString():
 					string_=string_[symbol+len(word):]
 				if len(string_)>0:
 					self.strings.append(NewString(string_,'',base_))
+			elif name_word!=None:
+				words=re.findall(r'`[^`\s]+?`\w+\b',string_)
+				for word in words:
+					symbol=string_.find(word)
+					word1=string_[0:symbol]
+					word2=string_[symbol:symbol+len(word)]
+					if word1!="":
+						self.strings.append(NewString(word1,'',base_))
+					self.strings.append(NewString(word2,'name',base_))
+					string_=string_[symbol+len(word):]
+				if len(string_)>0:
+					self.strings.append(NewString(string_,'',base_))
+			elif monotype_word!=None:
+				words=re.findall(r'`[^`]+?`',string_)
+				for word in words:
+					symbol=string_.find(word)
+					word1=string_[0:symbol]
+					word2=string_[symbol:symbol+len(word)]
+					if word1!="":
+						self.strings.append(NewString(word1,'',base_))
+					self.strings.append(NewString(word2[1:-1],'monotype',base_))
+					string_=string_[symbol+len(word):]
+				if len(string_)>0:
+					self.strings.append(NewString(string_,'',base_))
+			else:
+				# если в строке не обнаружено вложений, она не разбивается
+				self.source=replaceAll(self.source)
 
 def convertString(string_,type_,base_):
 	# конвертируем строку в параграф
@@ -268,7 +323,7 @@ def convertString(string_,type_,base_):
 		
 
 if __name__=="__main__":
-	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при посещении" указанной локации, добавление в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
+	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при& посещении" указанной <локации>, добавление в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
 	roof_base=NewBD()
 	roof_base.addFile('path',section_id='faq_01_08')
 	NewString(string,'string',roof_base)
