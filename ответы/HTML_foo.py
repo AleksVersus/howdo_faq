@@ -103,17 +103,42 @@ def getTitle(string_):
 def getID(string_):
 	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
 
-def convertInParagraph(string):
+class NewString():
+	def __init__(self,string_,type_,base_):
+		self.source=string_
+		self.type=type_
+		self.strings=[]
+		print(f"'type:{self.type},string: {string_}'")
+		if self.type=='':
+			pass
+		elif self.type=='string':
+			termins=re.match(r'^\s*?`.*?`(,\s+`.*?`)*\s*—',string_)
+			if termins!=None:
+				word1=termins.group(0)
+				word2=string_[len(word1):]
+				self.strings.append(NewString(word1,'termins',base_))
+				self.strings.append(NewString(word2,'',base_))
+			else:
+				self.strings.append(NewString(string_,'',base_))
+		elif self.type=='termins':
+			termins=re.findall(r'`.+?`',string_)
+			for term in termins:
+				symbol=string_.find(term)
+				word1=string_[0:symbol]
+				word2=string_[symbol:symbol+len(term)]
+				if word1!="":
+					self.strings.append(NewString(word1,'',base_))
+				self.strings.append(NewString(word2[1:-1],'term',base_))
+				string_=string_[symbol+len(term):]
+			if len(string_)>0:
+				self.strings.append(NewString(string_,'',base_))
+def convertString(string_,type_,base_):
 	# конвертируем строку в параграф
-	mode={"termins_get":False}
-	while len(string):
-		if mode["termins_get"]==False:
-			termins=re.match(r'^\s*?`.*?`(,\s*?`.*?`)*\s+—',string)
-		if termins!=None:
-			mode["termins_get"]=True
-			termins=None
-			
+	roof_string=NewString(string_,type_,base_)
+
+
 		
 
 if __name__=="__main__":
-	pass
+	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при посещении" указанной локации, добавление в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
+	NewString(string,'string',[1,2,3])

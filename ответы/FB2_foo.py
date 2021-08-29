@@ -191,7 +191,8 @@ class NewString():
 					self.string_body.append(NewString(string_[0:symbol])) # простая строка
 					self.string_body.append(NewString(string_[symbol:symbol+len(link)],strtype='hyperlink')) # гиперссылка
 					string_=string_[symbol+len(link):]
-				if len(string_)>0: self.string_body.append(NewString(string_))
+				if len(string_)>0:
+					self.string_body.append(NewString(string_))
 			elif monotype!=None:
 				# если в тексте присутствует monotype разметка
 				# определяем, можно ли на лету перекрасить эту разметку

@@ -92,9 +92,10 @@ class NewSection():
 		return f"'{self.type},{self.id},{len(self.source)},{len(self.HTML)},{type(self)}'\n"
 	def convert2HTML(self,base):
 		if self.type=="":
+			type_='string'
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
 			for string in self.source:
-				self.HTML.append(convertInParagraph(string,base))
+				self.HTML.append(convertString(string,type_,base))
 
 class NewFile():
 	"""Каждый файл представляет собой список строк"""
@@ -106,7 +107,7 @@ class NewFile():
 		self.sections=[] # блоки, составляющие файл
 		self.HTML=[] # блоки с конвертацией уже в HTML
 		if base.proveAdd()==True:
-			self.source=base.addition+self.source
+			self.source=base.addition[:1]+self.source
 		if self.getFileName()=='00.txt-light':
 			# если это файл заголовка, этот заголовок будет добавляться ко всем последующим файлам
 			base.addAdd(self.source)
@@ -212,7 +213,8 @@ class NewFile():
 	def convert2HTML(self,base):
 		# перебираем список секций
 		for section_ in self.sections:
-			section_.convert2HTML(base)
+			pass
+			# section_.convert2HTML(base)
 	def printAll(self):
 		text=""
 		text+=f"'File Path: {self.path}'\n"
