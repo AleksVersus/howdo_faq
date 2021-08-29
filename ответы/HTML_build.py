@@ -212,7 +212,7 @@ class NewFile():
 	def convert2HTML(self,base):
 		# перебираем список секций
 		for section_ in self.sections:
-			section.convert2HTML(base)
+			section_.convert2HTML(base)
 	def printAll(self):
 		text=""
 		text+=f"'File Path: {self.path}'\n"

@@ -105,8 +105,15 @@ def getID(string_):
 
 def convertInParagraph(string):
 	# конвертируем строку в параграф
-	termins=re.match(r'^\s*?`.*?`(,\s*?`.*?`)*\s+—',string)
-	return string
+	mode={"termins_get":False}
+	while len(string):
+		if mode["termins_get"]==False:
+			termins=re.match(r'^\s*?`.*?`(,\s*?`.*?`)*\s+—',string)
+		if termins!=None:
+			mode["termins_get"]=True
+			termins=None
+			
+		
 
 if __name__=="__main__":
 	pass
