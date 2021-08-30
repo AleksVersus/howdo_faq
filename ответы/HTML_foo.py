@@ -179,6 +179,12 @@ def replaceAll(string_):
 	string_=ampersandReplace(string_)
 	string_=anglebrackReplace(string_)
 	return string_
+
+def replaceSpace(string_):
+	string_=string_.replace('\t','&nbsp;'*4)
+	string_=string_.replace(' ','&nbsp;')
+	return string_
+
 def convOPRT(string_):
 	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|act|if|elseif|else|loop|while|step|end|\*?(pl?|nl|clr|clear)))',string_)
 	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
@@ -191,6 +197,23 @@ def convOPRT(string_):
 		return f'<span class="emVAR">{string_}</span>'
 	else:
 		return string_
+
+def convKeyWord(string_):
+	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|\*?(pl?|nl|clr|clear)))',string_)
+	koprt=re.search(r'\s*?(?i:(act|if|elseif|else|loop|while|step|end))',string_)
+	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
+	varname=re.search(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string_)
+	if oprt!=None:
+		return f'<span class="Monokai-Operator">{string_}</span>'
+	elif koprt!=None:
+		return f'<span class="Monokai-Koperator">{string_}</span>'
+	elif func!=None:
+		return f'<span class="Monokai-Func">{string_}</span>'
+	elif varname!=None:
+		return f'<span class="Monokai-SysVar">{string_}</span>'
+	else:
+		return string_
+
 def convertMonotype(string_):
 	result=""
 	mode={"oprt":False}
@@ -349,13 +372,7 @@ class NewString():
 			else:
 				return self.source
 
-class NewCodeLine():
-	def __init__(self,string_,type_):
-		self.type=type_
-		self.source=string_
-		self.strings=[]
-		if self.type=='qsp':
-			
+
 
 def convertString(string_,type_,base_):
 	# конвертируем строку в параграф
@@ -365,8 +382,60 @@ def convertCodeBlock(string_list):
 	new_string_list=[]
 	# конвертируем блок кода в строку
 	type_code=re.findall(r'```(\w+)',string_list[0])[0] # получаем тип кода
+	text=""
+	for i in string_list[1:]:
+		text+=i
+	result=""
+	count=0
+	mode={"comment_open":False}
+	while len(text)>0:
+		if mode["comment_open"]==True:
+			# если включен режим извлечения комментария
+			comment_start=re.match(r'^.*?(?=(\{|\'|\"))',text).group(0) # получаем весь текст до открывающего символа
+			print(f'>>>{comment_start}')
+			if '\n' in comment_start:
+				# если 
+		else:
+			pref=re.match(r'^\s+',text)
+			oprt=re.match(r'^(\*|\$)?[a-zA-Z]\w+',text)
+			varname=re.match(r'^[a-zA-Zа-яА-я]\w+\b',text)
+			operacion=re.match(r'^\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&|<|>',text)
+			numeric=re.match(r'^\d+',text)
+			comment_sign=re.match(r'^!',text)
+			if pref!=None:
+				tab=pref.group(0)
+				text=text[len(tab):]
+				result+=replaceSpace(tab)
+			elif oprt!=None:
+				word=oprt.group(0)
+				text=text[len(word):]
+				result+=convKeyWord(word)
+			elif varname!=None:
+				word=varname.group(0)
+				text=text[len(word):]
+				result+=word
+			elif operacion!=None:
+				word=operacion.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-Operator">{word}</span>'
+			elif numeric!=None:
+				word=numeric.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-Numeric">{word}</span>'
+			elif comment_sign!=None:
+				mode["comment_open"]=True
+				word=comment_sign.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-Comment">{word}'
+		if count==25:
+			break
+		count+=1
+	print(f"'{result}'")
+	print(f"'{text}'")
 	print(type_code)
 	return new_string_list
+
+
 if __name__=="__main__":
 	# string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
 	# roof_base=NewBD()
