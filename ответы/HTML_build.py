@@ -3,6 +3,44 @@ import sys, os, re, json # импорт необходимых модлулей
 import datetime
 from HTML_foo import *
 
+class NewSection():
+	"""Части файла представляют собой блоки"""
+	def __init__(self):
+		self.type="" # тип блока
+		self.id="" # id блока
+		self.source=[] # список строк блока
+		self.HTML=[] # html форма секции
+	def addString(self,string):
+		self.source.append(string)
+	def changeType(self,type_):
+		self.type=type_
+	def changeID(self,id_):
+		self.id=id_
+	def getLen(self):
+		return len(self.source)
+	def getAttr(self,**args):
+		if not "attr" in args:
+			args["attr"]='source'
+		if args['attr']=='type':
+			return self.type
+		if args['attr']=='id':
+			return self.id
+		if args['attr']=='source':
+			return self.source
+	def getType(self):
+		return self.getAttr(attr='type')
+	def getSource(self):
+		return self.getAttr(attr='source')
+	def __str__(self):
+		return f"'{self.type},{self.id},{len(self.source)},{len(self.HTML)},{type(self)}'\n"
+	def convert2HTML(self,base):
+		if self.type=="":
+			type_='string'
+			# имеем дело с параграфом. Каждая строка - отдельный параграф
+			for string in self.source:
+				self.HTML.append(convertString(string,type_,base))
+		elif self.type=="":
+			
 
 class NewFile():
 	"""Каждый файл представляет собой список строк"""
@@ -120,8 +158,7 @@ class NewFile():
 	def convert2HTML(self,base):
 		# перебираем список секций
 		for section_ in self.sections:
-			pass
-			# section_.convert2HTML(base)
+			section_.convert2HTML(base)
 	def printAll(self):
 		text=""
 		text+=f"'File Path: {self.path}'\n"

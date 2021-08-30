@@ -70,42 +70,6 @@ class NewBD():
 	def changeID(self,path,section_id):
 		idx=self.searchFile(file_path=path,result='index')
 		self.base[idx][2]=section_id
-class NewSection():
-	"""Части файла представляют собой блоки"""
-	def __init__(self):
-		self.type="" # тип блока
-		self.id="" # id блока
-		self.source=[] # список строк блока
-		self.HTML=[] # html форма секции
-	def addString(self,string):
-		self.source.append(string)
-	def changeType(self,type_):
-		self.type=type_
-	def changeID(self,id_):
-		self.id=id_
-	def getLen(self):
-		return len(self.source)
-	def getAttr(self,**args):
-		if not "attr" in args:
-			args["attr"]='source'
-		if args['attr']=='type':
-			return self.type
-		if args['attr']=='id':
-			return self.id
-		if args['attr']=='source':
-			return self.source
-	def getType(self):
-		return self.getAttr(attr='type')
-	def getSource(self):
-		return self.getAttr(attr='source')
-	def __str__(self):
-		return f"'{self.type},{self.id},{len(self.source)},{len(self.HTML)},{type(self)}'\n"
-	def convert2HTML(self,base):
-		if self.type=="":
-			type_='string'
-			# имеем дело с параграфом. Каждая строка - отдельный параграф
-			for string in self.source:
-				self.HTML.append(convertString(string,type_,base))
 
 def remComment(string_):
 	mode_=False
@@ -215,13 +179,53 @@ def replaceAll(string_):
 	string_=ampersandReplace(string_)
 	string_=anglebrackReplace(string_)
 	return string_
+def convOPRT(string_):
+	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|act|if|elseif|else|loop|while|step|end|\*?(pl?|nl|clr|clear)))',string_)
+	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
+	varname=re.search(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string_)
+	if oprt!=None:
+		return f'<span class="emOPRT">{string_}</span>'
+	elif func!=None:
+		return f'<span class="emFUNC">{string_}</span>'
+	elif varname!=None:
+		return f'<span class="emVAR">{string_}</span>'
+	else:
+		return string_
+def convertMonotype(string_):
+	result=""
+	mode={"oprt":False}
+	while len(string_)>0:
+		if re.match(r'^\s*?(\*|\$)?[a-zA-Z]+',string_)!=None:
+			word=re.match(r'^\s*?(\*|\$)?[a-zA-Z]+',string_).group(0)
+			string_=string_[len(word):]
+			result+=convOPRT(word)
+			mode["oprt"]=True
+		elif mode["oprt"]==False and re.match(r'^\[.*\]$',string_)!=None:
+			word=re.match(r'^\s*?(\*|\$)?[a-zA-Z]+',string_).group(0)
+			string_=string_[len(word):]
+			result+=f'<span class="emTEXT">{word}</span>'
+		elif re.match(r'^(\'|\").*?\1',string_)!=None:
+			word=re.match(r'^(\'|\").*?\1',string_).group(0)
+			string_=string_[len(word):]
+			result+=f'<span class="emTEXT">{word}</span>'
+		elif re.match(r'^\[|\]|\(|\)|\{|\}|\&amp;',string_)!=None:
+			word=re.match(r'^\[|\]|\(|\)|\{|\}|\&amp;',string_).group(0)
+			string_=string_[len(word):]
+			result+=f'<span class="emOPRT">{word}</span>'
+		elif re.match(r'^\d+',string_)!=None:
+			word=re.match(r'^\d+',string_).group(0)
+			string_=string_[len(word):]
+			result+=f'<span class="emNUM">{word}</span>' 
+		else:
+			result+=string_
+			string_=""
+	return f'<span class="em_BLCK">{result}</span>'
 
 class NewString():
 	def __init__(self,string_,type_,base_):
 		self.source=string_
 		self.type=type_
 		self.strings=[]
-		print(f"'type:{self.type}, string:{string_}'")
 		if self.type=='string':
 			termins=re.match(r'^\s*?`.*?`(,\s+`.*?`)*\s*—',string_)
 			if termins!=None:
@@ -260,7 +264,7 @@ class NewString():
 			self.strings.append(NewString(y_sub,'authsub',base_)) # текст ссылки в нулевой ячейке
 		else:
 			id_word=re.search(r'\[:[^\]]*?\]',string_)
-			link_word=re.search(r'\[.*?\]\(.*?\)',string_)
+			link_word=re.search(r'\[[^\]]*?\]\(.*?\)',string_)
 			name_word=re.search(r'`[^`\s]+?`\w+\b',string_)
 			monotype_word=re.search(r'`[^`]+?`',string_)
 			if id_word!=None:
@@ -276,7 +280,7 @@ class NewString():
 				if len(string_)>0:
 					self.strings.append(NewString(string_,'',base_))
 			elif link_word!=None:
-				words=re.findall(r'\[.*?\]\(.*?\)',string_)
+				words=re.findall(r'\[[^\]]*?\]\(.*?\)',string_)
 				for word in words:
 					symbol=string_.find(word)
 					word1=string_[0:symbol]
@@ -313,17 +317,37 @@ class NewString():
 					self.strings.append(NewString(string_,'',base_))
 			else:
 				# если в строке не обнаружено вложений, она не разбивается
-				self.source=replaceAll(self.source)
-
+				self.source=replaceAll(self.source)	
+	def getHTML(self):
+		if len(self.strings)>0:
+			print(f"'type:{self.type},len:{len(self.strings)}'")
+			text=""
+			if self.type=="hyperlink":
+				# в нулевой ячейке лежит текст ссылки
+				text+=f'<a href="{self.strings[1].getHTML()}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML()}</a>'
+			elif self.type=="term":
+				for string in self.strings:
+					text+=string.getHTML()
+				text=f'<strong>{text}</strong>'
+			else:
+				for string in self.strings:
+					text+=string.getHTML()
+			return text
+		else:
+			print(f"'type:{self.type},src:{self.source}'")
+			if self.type=="monotype":
+				return convertMonotype(self.source)
+			elif self.type=="term":
+				return f'<strong>{self.source}</strong>'
+			else:
+				return self.source
 def convertString(string_,type_,base_):
 	# конвертируем строку в параграф
 	roof_string=NewString(string_,type_,base_)
-
-
-		
+	return roof_string.getHTML()
 
 if __name__=="__main__":
-	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при& посещении" указанной <локации>, добавление в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
+	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
 	roof_base=NewBD()
 	roof_base.addFile('path',section_id='faq_01_08')
-	NewString(string,'string',roof_base)
+	print(convertString(string,'string',roof_base))
