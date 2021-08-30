@@ -387,14 +387,74 @@ def convertCodeBlock(string_list):
 		text+=i
 	result=""
 	count=0
-	mode={"comment_open":False}
+	mode={"comment_open":False,"comment_quotes":False,"comment_brackets":False,"quotes-type":"","brackets-count":0}
 	while len(text)>0:
+		print(f'>>>comment_open:{mode["comment_open"]}')
 		if mode["comment_open"]==True:
 			# если включен режим извлечения комментария
-			comment_start=re.match(r'^.*?(?=(\{|\'|\"))',text).group(0) # получаем весь текст до открывающего символа
-			print(f'>>>{comment_start}')
-			if '\n' in comment_start:
-				# если 
+			if mode["comment_quotes"]==True:
+				# получаем весь текст до закрывающего символа
+				comment_start=re.match(r'^[\s\S]*?('+mode["quotes-type"]+'|$)',text)
+				# поскольку встречен закрывающий смивол, можно закрыть кавычку
+				print(f'>>> 2:{comment_start.group(0)}')
+				mode["comment_quotes"]=False
+				mode["quotes-type"]=""
+				word=comment_start.group(0)
+				text=text[len(word):]
+				result+=replaceSpace(word)
+			elif mode["comment_brackets"]==True:
+				# в этом режиме мы можем встретить как открывающий так и закрывающий символ
+				comment_start=re.match(r'^[\s\S]*?(\{|\}|\"|\'|$)',text)
+				print(f'>>> 3:{comment_start.group(0)},{comment_start.group(1)}')
+				if comment_start.group(1)=="'" or comment_start.group(1)=='"':
+					# если попадается кавычка, включаем режим распознавания кавычек.
+					mode["comment_quotes"]=True
+					mode["quotes-type"]=comment_start.group(1)
+					word=comment_start.group(0)
+					text=text[len(word):]
+					result+=replaceSpace(word)
+				elif comment_start.group(1)=="{":
+					# если попадается скобка, открываем новую скобку
+					mode["comment_brackets"]=True
+					word=comment_start.group(0)
+					text=text[len(word):]
+					result+=replaceSpace(word)
+					mode['brackets-count']+=1
+				elif comment_start.group(1)=="}":
+					word=comment_start.group(0)
+					text=text[len(word):]
+					result+=replaceSpace(word)
+					mode['brackets-count']-=1
+					if mode['brackets-count']<1:
+						mode["comment_brackets"]=False
+			elif mode["comment_quotes"]==False:
+				# получаем весь текст до открывающего символа
+				comment_start=re.match(r'^[^\'\"\{]*([\'\"\{]|$)',text)
+				print(f'>>> 0:{comment_start.group(0)}')
+				if '\n' in comment_start.group(0):
+					# если в строке есть переход на новую строку
+					# значит можно закрыть комментарий здесь
+					word=comment_start.group(0)
+					idx=word.index('\n')
+					word=word[:word.index('\n')+1]
+					print(f">>>word:{word},index:{idx}")
+					text=text[len(word):]
+					result+=f'{replaceSpace(word[:-1])}</span>{word[-1:]}'
+					mode["comment_open"]=False
+				else:
+					# если до кавычки/скобки не встретилось перехода на новую строку
+					if comment_start.group(1)=="'" or comment_start.group(1)=='"':
+						mode["comment_quotes"]=True
+						mode["quotes-type"]=comment_start.group(1)
+						word=comment_start.group(0)
+						text=text[len(word):]
+						result+=replaceSpace(word)
+					elif comment_start.group(1)=="{":
+						mode["comment_brackets"]=True
+						word=comment_start.group(0)
+						text=text[len(word):]
+						result+=replaceSpace(word)
+						mode['brackets-count']+=1
 		else:
 			pref=re.match(r'^\s+',text)
 			oprt=re.match(r'^(\*|\$)?[a-zA-Z]\w+',text)
@@ -430,6 +490,7 @@ def convertCodeBlock(string_list):
 		if count==25:
 			break
 		count+=1
+	result=result.replace('\n','<br>\n')
 	print(f"'{result}'")
 	print(f"'{text}'")
 	print(type_code)
