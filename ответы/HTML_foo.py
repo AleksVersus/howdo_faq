@@ -203,7 +203,7 @@ def convKeyWord(string_):
 	koprt=re.match(r'\s*?(?i:(act|if|elseif|else|loop|while|step|end))',string_)
 	func=re.match(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
 	varname=re.match(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string_)
-	print (f'{string_}:{oprt},{koprt},{func},{varname}')
+	# print (f'{string_}:{oprt},{koprt},{func},{varname}')
 	if oprt!=None:
 		return f'<span class="Monokai-Operator">{string_}</span>'
 	elif koprt!=None:
@@ -381,6 +381,7 @@ def convertString(string_,type_,base_):
 	return roof_string.getHTML()
 def convertCodeBlock(string_list):
 	new_string_list=[]
+	print(string_list)
 	# конвертируем блок кода в строку
 	type_code=re.findall(r'```(\w+)',string_list[0])[0] # получаем тип кода
 	text=""
@@ -512,9 +513,12 @@ def convertCodeBlock(string_list):
 				text=""
 				result+=word
 	result=result.replace('\n','<br>\n')
-	print(f"'{result}'")
-	print(f"'{text}'")
-	print(type_code)
+	new_string_list=result.split('\n')
+	index=0
+	while index<len(new_string_list):
+		new_string_list[index]+='\n'
+		index+=1
+	print(new_string_list)
 	return new_string_list
 
 
