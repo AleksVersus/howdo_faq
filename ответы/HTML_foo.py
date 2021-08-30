@@ -199,10 +199,11 @@ def convOPRT(string_):
 		return string_
 
 def convKeyWord(string_):
-	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|\*?(pl?|nl|clr|clear)))',string_)
-	koprt=re.search(r'\s*?(?i:(act|if|elseif|else|loop|while|step|end))',string_)
-	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
-	varname=re.search(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string_)
+	oprt=re.match(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|\*?(pl?|nl|clr|clear)))',string_)
+	koprt=re.match(r'\s*?(?i:(act|if|elseif|else|loop|while|step|end))',string_)
+	func=re.match(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string_)
+	varname=re.match(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string_)
+	print (f'{string_}:{oprt},{koprt},{func},{varname}')
 	if oprt!=None:
 		return f'<span class="Monokai-Operator">{string_}</span>'
 	elif koprt!=None:
@@ -386,17 +387,16 @@ def convertCodeBlock(string_list):
 	for i in string_list[1:]:
 		text+=i
 	result=""
-	count=0
 	mode={"comment_open":False,"comment_quotes":False,"comment_brackets":False,"quotes-type":"","brackets-count":0}
 	while len(text)>0:
-		print(f'>>>comment_open:{mode["comment_open"]}')
+		# print(f'>>>comment_open:{mode["comment_open"]}')
 		if mode["comment_open"]==True:
 			# если включен режим извлечения комментария
 			if mode["comment_quotes"]==True:
 				# получаем весь текст до закрывающего символа
 				comment_start=re.match(r'^[\s\S]*?('+mode["quotes-type"]+'|$)',text)
 				# поскольку встречен закрывающий смивол, можно закрыть кавычку
-				print(f'>>> 2:{comment_start.group(0)}')
+				# print(f'>>> 2:{comment_start.group(0)}')
 				mode["comment_quotes"]=False
 				mode["quotes-type"]=""
 				word=comment_start.group(0)
@@ -405,7 +405,7 @@ def convertCodeBlock(string_list):
 			elif mode["comment_brackets"]==True:
 				# в этом режиме мы можем встретить как открывающий так и закрывающий символ
 				comment_start=re.match(r'^[\s\S]*?(\{|\}|\"|\'|$)',text)
-				print(f'>>> 3:{comment_start.group(0)},{comment_start.group(1)}')
+				# print(f'>>> 3:{comment_start.group(0)},{comment_start.group(1)}')
 				if comment_start.group(1)=="'" or comment_start.group(1)=='"':
 					# если попадается кавычка, включаем режим распознавания кавычек.
 					mode["comment_quotes"]=True
@@ -430,14 +430,14 @@ def convertCodeBlock(string_list):
 			elif mode["comment_quotes"]==False:
 				# получаем весь текст до открывающего символа
 				comment_start=re.match(r'^[^\'\"\{]*([\'\"\{]|$)',text)
-				print(f'>>> 0:{comment_start.group(0)}')
+				# print(f'>>> 0:{comment_start.group(0)}')
 				if '\n' in comment_start.group(0):
 					# если в строке есть переход на новую строку
 					# значит можно закрыть комментарий здесь
 					word=comment_start.group(0)
 					idx=word.index('\n')
 					word=word[:word.index('\n')+1]
-					print(f">>>word:{word},index:{idx}")
+					# print(f">>>word:{word},index:{idx}")
 					text=text[len(word):]
 					result+=f'{replaceSpace(word[:-1])}</span>{word[-1:]}'
 					mode["comment_open"]=False
@@ -459,9 +459,13 @@ def convertCodeBlock(string_list):
 			pref=re.match(r'^\s+',text)
 			oprt=re.match(r'^(\*|\$)?[a-zA-Z]\w+',text)
 			varname=re.match(r'^[a-zA-Zа-яА-я]\w+\b',text)
-			operacion=re.match(r'^\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&|<|>',text)
+			operacion=re.match(r'^\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&|,|<|>',text)
 			numeric=re.match(r'^\d+',text)
 			comment_sign=re.match(r'^!',text)
+			string_sign=re.match(r'^(\"|\').*?\1',text)
+			location_start=re.match(r'^(\s*?#\s?.+)(\n|$)',text)
+			location_end=re.match(r'^(-.*?)(\n|$)',text)
+			unfunc=re.match(r'^\@[\w\.\#]+\b',text)
 			if pref!=None:
 				tab=pref.group(0)
 				text=text[len(tab):]
@@ -470,6 +474,10 @@ def convertCodeBlock(string_list):
 				word=oprt.group(0)
 				text=text[len(word):]
 				result+=convKeyWord(word)
+			elif unfunc!=None:
+				word=unfunc.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-UnFunc">{word}</span>'
 			elif varname!=None:
 				word=varname.group(0)
 				text=text[len(word):]
@@ -482,14 +490,27 @@ def convertCodeBlock(string_list):
 				word=numeric.group(0)
 				text=text[len(word):]
 				result+=f'<span class="Monokai-Numeric">{word}</span>'
+			elif string_sign!=None:
+				word=string_sign.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-String">{replaceSpace(word)}</span>'
+			elif location_start!=None:
+				word=location_start.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-StartLoc">{replaceSpace(location_start.group(1))}</span>\n'
+			elif location_end!=None:
+				word=location_end.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-EndLoc">{replaceSpace(location_end.group(1))}</span>\n'
 			elif comment_sign!=None:
 				mode["comment_open"]=True
 				word=comment_sign.group(0)
 				text=text[len(word):]
 				result+=f'<span class="Monokai-Comment">{word}'
-		if count==25:
-			break
-		count+=1
+			else:
+				word=replaceSpace(text)
+				text=""
+				result+=word
 	result=result.replace('\n','<br>\n')
 	print(f"'{result}'")
 	print(f"'{text}'")
