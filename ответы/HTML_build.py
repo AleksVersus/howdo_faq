@@ -35,12 +35,17 @@ class NewSection():
 		return f"'{self.type},{self.id},{len(self.source)},{len(self.HTML)},{type(self)}'\n"
 	def convert2HTML(self,base):
 		if self.type=="":
-			type_='string'
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
 			for string in self.source:
-				self.HTML.append(convertString(string,type_,base))
-		elif self.type=="":
-			
+				self.HTML.append(convertString(string,'string',base))
+		elif re.match(r'h\d+',self.type)!=None:
+			# имеем дело с заголовком
+			for string in self.source:
+				self.HTML.append(convertString(string,'string',base))
+		elif self.type=="code-block":
+			self.HTML.extend(convertCodeBlock(self.source))
+
+
 
 class NewFile():
 	"""Каждый файл представляет собой список строк"""
@@ -209,5 +214,5 @@ file_base=NewBD()
 # создаём объект папка верхнего уровня
 roof_folder=NewFolder(folder_path,file_base)
 # теперь разматываем папку и файлы, получая HTML
-print(roof_folder.printAll())
-print(file_base.getBase())
+# print(roof_folder.printAll())
+# print(file_base.getBase())

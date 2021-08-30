@@ -262,6 +262,8 @@ class NewString():
 			y_name,y_sub=re.findall(r'`([^`]+)`(\w+)\b',string_)[0]
 			self.strings.append(NewString(y_name,'authname',base_)) # текст ссылки в нулевой ячейке
 			self.strings.append(NewString(y_sub,'authsub',base_)) # текст ссылки в нулевой ячейке
+		elif self.type=='id':
+			pass
 		else:
 			id_word=re.search(r'\[:[^\]]*?\]',string_)
 			link_word=re.search(r'\[[^\]]*?\]\(.*?\)',string_)
@@ -275,7 +277,7 @@ class NewString():
 					word2=string_[symbol:symbol+len(word)]
 					if word1!="":
 						self.strings.append(NewString(word1,'',base_))
-					self.strings.append(NewString(word2,'id',base_))
+					self.strings.append(NewString(getID(word2),'id',base_))
 					string_=string_[symbol+len(word):]
 				if len(string_)>0:
 					self.strings.append(NewString(string_,'',base_))
@@ -320,11 +322,14 @@ class NewString():
 				self.source=replaceAll(self.source)	
 	def getHTML(self):
 		if len(self.strings)>0:
-			print(f"'type:{self.type},len:{len(self.strings)}'")
+			# print(f"'type:{self.type},len:{len(self.strings)}'")
 			text=""
 			if self.type=="hyperlink":
 				# в нулевой ячейке лежит текст ссылки
 				text+=f'<a href="{self.strings[1].getHTML()}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML()}</a>'
+			elif self.type=="name":
+				# в нулевой ячейке лежит текст ссылки
+				text+=f'<strong>{self.strings[0].getHTML()}</strong>\'{self.strings[1].getHTML()}'
 			elif self.type=="term":
 				for string in self.strings:
 					text+=string.getHTML()
@@ -339,15 +344,34 @@ class NewString():
 				return convertMonotype(self.source)
 			elif self.type=="term":
 				return f'<strong>{self.source}</strong>'
+			elif self.type=='id':
+				return f'<a id="{self.source}"></a>'
 			else:
 				return self.source
+
+class NewCodeLine():
+	def __init__(self,string_,type_):
+		self.type=type_
+		self.source=string_
+		self.strings=[]
+		if self.type=='qsp':
+			
+
 def convertString(string_,type_,base_):
 	# конвертируем строку в параграф
 	roof_string=NewString(string_,type_,base_)
 	return roof_string.getHTML()
-
+def convertCodeBlock(string_list):
+	new_string_list=[]
+	# конвертируем блок кода в строку
+	type_code=re.findall(r'```(\w+)',string_list[0])[0] # получаем тип кода
+	print(type_code)
+	return new_string_list
 if __name__=="__main__":
-	string=f'`Обработка локации`, `посещение локации` — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
-	roof_base=NewBD()
-	roof_base.addFile('path',section_id='faq_01_08')
-	print(convertString(string,'string',roof_base))
+	# string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
+	# roof_base=NewBD()
+	# roof_base.addFile('path',section_id='faq_01_08')
+	# print(convertString(string,'string',roof_base))
+	with open('.\\92_дополнительные тексты\\пример кода.qsps','r',encoding='utf-8') as file:
+		string_list=file.readlines()
+	convertCodeBlock(string_list)
