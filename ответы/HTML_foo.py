@@ -363,7 +363,7 @@ class NewString():
 					text+=string.getHTML()
 			return text
 		else:
-			print(f"'type:{self.type},src:{self.source}'")
+			# print(f"'type:{self.type},src:{self.source}'")
 			if self.type=="monotype":
 				return convertMonotype(self.source)
 			elif self.type=="term":
@@ -373,15 +373,32 @@ class NewString():
 			else:
 				return self.source
 
-
+def getLi(string_):
+	# конвертируем строку в тип списка уровень пункта и непосредственно строку
+	leveling=re.match(r'^(\s*?\*\s|\s*?\d+\.\s)([\s\S]*)',string_)
+	if leveling!=None:
+		marker=re.match(r'^(\s*?)\*\s',string_)
+		number=re.match(r'(\s*?)\d+\.\s',string_)
+		if marker!=None:
+			type_='marked'
+			level_=len(marker.group(1))
+		elif number!=None:
+			type_='numered'
+			level_=len(number.group(1))
+		string_=leveling.group(2)
+	else:
+		type_='none'
+		level_=-1
+	return type_,level_,string_
 
 def convertString(string_,type_,base_):
-	# конвертируем строку в параграф
+	# конвертируем строку в размченную
 	roof_string=NewString(string_,type_,base_)
 	return roof_string.getHTML()
+
 def convertCodeBlock(string_list):
 	new_string_list=[]
-	print(string_list)
+	#print(string_list)
 	# конвертируем блок кода в строку
 	type_code=re.findall(r'```(\w+)',string_list[0])[0] # получаем тип кода
 	text=""
@@ -518,8 +535,14 @@ def convertCodeBlock(string_list):
 	while index<len(new_string_list):
 		new_string_list[index]+='\n'
 		index+=1
-	print(new_string_list)
 	return new_string_list
+
+def convertListBlock(string_list):
+	# конвертируем блок списка в html-список
+	print(string_list)
+	for i in string_list:
+		print(getLi(i))
+
 
 
 if __name__=="__main__":
@@ -527,6 +550,6 @@ if __name__=="__main__":
 	# roof_base=NewBD()
 	# roof_base.addFile('path',section_id='faq_01_08')
 	# print(convertString(string,'string',roof_base))
-	with open('.\\92_дополнительные тексты\\пример кода.qsps','r',encoding='utf-8') as file:
+	with open('.\\92_дополнительные тексты\\пример списка.light-txt','r',encoding='utf-8') as file:
 		string_list=file.readlines()
-	convertCodeBlock(string_list)
+	convertListBlock(string_list)
