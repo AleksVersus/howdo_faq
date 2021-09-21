@@ -37,13 +37,16 @@ class NewSection():
 		if self.type=="":
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
 			for string in self.source:
-				self.HTML.append(convertString(string,'string',base))
+				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
 		elif re.match(r'h\d+',self.type)!=None:
 			# имеем дело с заголовком
 			for string in self.source:
 				self.HTML.append(convertString(string,'string',base))
 		elif self.type=="code-block":
+			# имеем дело с блоком кода
 			self.HTML.extend(convertCodeBlock(self.source))
+		elif self.type=="ul" or self.type=="ol":
+			self.HTML.extend(convertListBlock(self.source))
 
 
 
@@ -97,13 +100,15 @@ class NewFile():
 					if base.getID(self.path)=="":
 						base.changeID(self.path,getID(i))
 				elif typeString(i)=='ul':
-					if section_.getAttr(attr='type')!='ul':
+					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
+					if section_.getAttr(attr='type')!='ul' and section_.getAttr(attr='type')!='ol':
 						self.sections.append(section_)
 						section_=NewSection()
 						section_.changeType(typeString(i))
 					section_.addString(i)
 				elif typeString(i)=='ol':
-					if section_.getAttr(attr='type')!='ol':
+					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
+					if section_.getAttr(attr='type')!='ol' and section_.getAttr(attr='type')!='ul':
 						self.sections.append(section_)
 						section_=NewSection()
 						section_.changeType(typeString(i))
