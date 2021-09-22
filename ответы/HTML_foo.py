@@ -547,34 +547,41 @@ class NewLi():
 		for t,l,s in self.source:
 			if (level==None or level>l) and t!=None:
 				level=l
-			print([t,l,s])
+			# print([t,l,s])
+		buffer=[]
 		while len(self.source)>0:
 			t,l,s=self.source.pop(0)
-			if l==level:
-				pass
+			if level==l:
+				# если строка соответствует искомому уровню
+				if len(buffer)>1:
+					# если длина буфера больше одного
+					self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+				elif len(buffer)==1:
+					# если длина буфера лишь одна строка
+					self.include.append(buffer[0]) # добавляем эту строку в список
+				buffer=[[t,l,s]] # в буфер добавляем текущую
+			else:
+				# если строка не соответствует искомому уровню
+				buffer.append([t,l,s])
+	def __str__(self):
+		return f'type:{self.type} len:{self.include}'
 
-
-def convertListBlock(string_list,base_):
-	# конвертируем блок списка в html-список
-	# print(string_list)
-	string_array=[]
+def newLiBlocks(string_array):
 	level=None
-	for string in string_list:
-		t,l,s=getLi(string)
+	for t,l,s in string_array:
 		if (level==None or level>l) and t!=None:
 			level=l
-		string_array.append([t,l,s])
 	buffer=[]
 	tp=None
-	count=0
+	blocks=[]
 	for t,l,s in string_array:
 		# набираем первые блоки
-		# print([f'count:{count} type:{t}/{tp} level:{l}/{level} string:{s}'])
+		print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
 		if l==level:
 			# если уровни совпадают
 			if tp!=t and len(buffer)!=0:
 				# если типы не совпадают и в буфере что-то есть
-				block=NewLi(tp,buffer) # создаём блок из буфера
+				blocks.append(NewLi(tp,buffer)) # создаём блок из буфера
 				buffer=[[t,l,s]] # буфер теперь содержит лишь текущую строку
 				tp=t
 			elif tp!=t:
@@ -587,11 +594,22 @@ def convertListBlock(string_list,base_):
 		elif l!=level:
 			# если уровни не совпадают
 			buffer.append([t,l,s])
-		count+=1
 	# последний набранный буфер превращаем в блок
 	if len(buffer)!=0:
 		t,l,s=buffer[0]
-		block=NewLi(t,buffer)
+		blocks.append(NewLi(t,buffer))
+	return blocks
+
+
+def convertListBlock(string_list,base_):
+	# конвертируем блок списка в html-список
+	# print(string_list)
+	string_array=[]
+	level=None
+	for string in string_list:
+		t,l,s=getLi(string)
+		string_array.append([t,l,s])
+	blocks=newLiBlocks(string_array)
 
 
 
