@@ -387,7 +387,7 @@ def getLi(string_):
 			level_=len(number.group(1))
 		string_=leveling.group(2)
 	else:
-		type_='none'
+		type_=None
 		level_=-1
 	return type_,level_,string_
 
@@ -537,19 +537,69 @@ def convertCodeBlock(string_list):
 		index+=1
 	return new_string_list
 
-def convertListBlock(string_list):
+class NewLi():
+	def __init__(self,type_,source_list):
+		self.type=type_
+		self.source=source_list
+		self.include=[] # список вложенных объектов
+		print([f'len: {len(self.source)} type:{self.type}'])
+		level=None
+		for t,l,s in self.source:
+			if (level==None or level>l) and t!=None:
+				level=l
+			print([t,l,s])
+		while len(self.source)>0:
+			t,l,s=self.source.pop(0)
+			if l==level:
+				pass
+
+
+def convertListBlock(string_list,base_):
 	# конвертируем блок списка в html-список
-	print(string_list)
-	for i in string_list:
-		print(getLi(i))
+	# print(string_list)
+	string_array=[]
+	level=None
+	for string in string_list:
+		t,l,s=getLi(string)
+		if (level==None or level>l) and t!=None:
+			level=l
+		string_array.append([t,l,s])
+	buffer=[]
+	tp=None
+	count=0
+	for t,l,s in string_array:
+		# набираем первые блоки
+		# print([f'count:{count} type:{t}/{tp} level:{l}/{level} string:{s}'])
+		if l==level:
+			# если уровни совпадают
+			if tp!=t and len(buffer)!=0:
+				# если типы не совпадают и в буфере что-то есть
+				block=NewLi(tp,buffer) # создаём блок из буфера
+				buffer=[[t,l,s]] # буфер теперь содержит лишь текущую строку
+				tp=t
+			elif tp!=t:
+				# если типы не совпадают, но в буфере ничего нет
+				tp=t # выставляем новый тип
+				buffer.append([t,l,s]) # в буфер добавляем строку
+			else:
+				# если типы совпадают, просто добавляем строку в буфер
+				buffer.append([t,l,s])
+		elif l!=level:
+			# если уровни не совпадают
+			buffer.append([t,l,s])
+		count+=1
+	# последний набранный буфер превращаем в блок
+	if len(buffer)!=0:
+		t,l,s=buffer[0]
+		block=NewLi(t,buffer)
 
 
 
 if __name__=="__main__":
 	# string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
-	# roof_base=NewBD()
-	# roof_base.addFile('path',section_id='faq_01_08')
+	roof_base=NewBD()
+	roof_base.addFile('path',section_id='faq_01_08')
 	# print(convertString(string,'string',roof_base))
 	with open('.\\92_дополнительные тексты\\пример списка.light-txt','r',encoding='utf-8') as file:
 		string_list=file.readlines()
-	convertListBlock(string_list)
+	convertListBlock(string_list,roof_base)
