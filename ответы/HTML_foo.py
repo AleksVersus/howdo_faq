@@ -399,7 +399,7 @@ def getLi(string_):
 	return type_,level_,string_
 
 def getStringLevel(string_):
-	level_=0
+	level=0
 	leveling=re.match(r'^\s+',string_)
 	if leveling!=None:
 		level=len(leveling.group(0))
@@ -568,11 +568,30 @@ class NewLi():
 				if count==1 and self.source[0][1]==level:
 					# минимальный уровень находится только в нулевом исходнике
 					self.include.append(self.source.pop(0)) # нулевой исходник становится строкой
-					level,count=minLiLevel(self.source)
-				if level!=None:
-				
-
-
+				# оставшийся сорц бьётся на блоки/строки
+				self.include.extend(splitLiBlocks(self.source))
+				self.source=[]
+			else:
+				# если максимальный уровень не найден, разбить на блоки нельзя
+				self.include.extend(self.source)
+				self.source=[]
+	def getHTML(self,base_):
+		new_string_list=[]
+		new_string_list.append('<li>\n')
+		for els in self.include:
+			if type(els)==list:
+				# если типом является строка
+				t,l,s=els
+				if t==None:
+					br='<br>'
+				else:
+					br=''
+				new_string_list.append(br+convertString(s,'string',base_))
+			else:
+				# если тип элемента - NewLiBlock
+				new_string_list.extend(els.getHTML(base_))
+		new_string_list.append('</li>\n')
+		return new_string_list
 
 class NewLiBlock():
 	# секция списка!
@@ -610,7 +629,20 @@ class NewLiBlock():
 	def printAll(self):
 		pass
 	def getHTML(self,base_):
-		pass
+		new_string_list=[]
+		# Блоки бывают только двух типов, третьего не дано
+		if self.type=='marked':
+			new_string_list.append('<ul>\n')
+		elif self.type=='numered':
+			new_string_list.append('<ol>\n')
+		for li_point in self.include:
+			print(type(li_point))
+			new_string_list.extend(li_point.getHTML(base_))
+		if self.type=='marked':
+			new_string_list.append('</ul>\n')
+		elif self.type=='numered':
+			new_string_list.append('</ol>\n')
+		return new_string_list
 
 def minLiLevel(string_array):
 	level=None
@@ -629,7 +661,7 @@ def splitLiBlocks(string_array):
 	blocks=[]
 	for t,l,s in string_array:
 		# набираем первые блоки
-		# print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
+		print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
 		if t!=None:
 			# для строк с определённым типом
 			if l==level:
@@ -651,7 +683,10 @@ def splitLiBlocks(string_array):
 				buffer.append([t,l,s])
 		else:
 			# для строк с неопределённым типом
-			if getStringLevel(s)<level:
+			if level==None:
+				# если уровень получен не был, все строки являются строками с неопределённым типом
+				blocks.append([t,l,s])
+			elif getStringLevel(s)<level:
 				# если уровень такой строки меньше текущего, эта строка так же способствует разделению блока
 				if len(buffer)==0:
 					# буфер пуст, возвращаем строку
@@ -659,6 +694,7 @@ def splitLiBlocks(string_array):
 				else:
 					# буфер не пуст, превращаем буфер в блок, строку возвращаем
 					blocks.append(NewLiBlock(tp,buffer))
+					buffer=[]
 					blocks.append([t,l,s])
 			else:
 				# если уровень строки равен текущему или больше него, строка попадает в буфер
@@ -669,7 +705,6 @@ def splitLiBlocks(string_array):
 		blocks.append(NewLiBlock(t,buffer))
 	return blocks # возвращаем список блоков
 
-
 def convertListBlock(string_list,base_):
 	# конвертируем блок списка в html-список
 	# print(string_list)
@@ -679,12 +714,11 @@ def convertListBlock(string_list,base_):
 		t,l,s=getLi(string)
 		string_array.append([t,l,s])
 	blocks=splitLiBlocks(string_array)
-	# new_string_list=[]
+	new_string_list=[]
 	for block in blocks:
 		print(block)
-	 	# new_string_list.extend(block.getHTML(base_))
-	# 	block.printAll()
-	# return new_string_list
+		new_string_list.extend(block.getHTML(base_))
+	return new_string_list
 
 
 
@@ -696,5 +730,5 @@ if __name__=="__main__":
 	with open('.\\92_дополнительные тексты\\пример списка.light-txt','r',encoding='utf-8') as file:
 		string_list=file.readlines()
 	text_list=convertListBlock(string_list,roof_base)
-	# for i in text_list:
-	# 	print(i)
+	for i in text_list:
+	 	print(i)
