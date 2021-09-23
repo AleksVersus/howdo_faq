@@ -1,4 +1,11 @@
 import sys, os, re, json
+import random
+
+def randomString(length):
+	letters='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
+	letters+='ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'
+	result = ''.join(random.choice(letters) for i in range(length))
+	return result
 
 def dirList(folder_path):
 	# из пути к папке получаем её содержимое в виде списка файлов и папок
@@ -539,69 +546,91 @@ def convertCodeBlock(string_list):
 
 class NewLi():
 	def __init__(self,type_,source_list):
+		self.id=randomString(8)
 		self.type=type_
 		self.source=source_list
 		self.include=[] # список вложенных объектов
-		print([f'len: {len(self.source)} type:{self.type}'])
+		# print([f'len: {len(self.source)} type:{self.type}'])
 		level=None
 		for t,l,s in self.source:
 			if (level==None or level>l) and t!=None:
 				level=l
 			# print([t,l,s])
-		buffer=[]
-		while len(self.source)>0:
-			t,l,s=self.source.pop(0)
-			# print((t,l,s))
-			if level==l:
-				# если строка соответствует искомому уровню
-				if len(buffer)>1:
-					# если длина буфера больше одного
-					x,y,z=buffer[0]
-					if y==level:
-						self.include.append(buffer[0])
-						self.include.extend(newLiBlocks(buffer[1:])) # разбиваем буфер на блоки
+		if level!=None:
+			buffer=[]
+			while len(self.source)>0:
+				t,l,s=self.source.pop(0)
+				print(f"{self.id}\tпроход: ({t},{l},{s}) len_buffer:{len(buffer)}")
+				if level==l:
+					# если строка соответствует искомому уровню
+					print('good level')
+					if len(buffer)>1:
+						# если длина буфера больше одного
+						print('buffer>1')
+						x,y,z=buffer[0]
+						if y==level:
+							print(f'good level -> append string {z}')
+							buffer[0]=[None,-1,z]
+							print('other blocks')
+							self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+						else:
+							print('other level -> other blocks')
+							self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+					elif len(buffer)==1:
+						# если длина буфера лишь одна строка
+						print('buffer=1')
+						self.include.append(buffer[0]) # добавляем эту строку в список
 					else:
-						self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
-					# print(['buffer>1'])
-				elif len(buffer)==1:
-					# если длина буфера лишь одна строка
-					self.include.append(buffer[0]) # добавляем эту строку в список
-					# print(['buffer=1'])
-				buffer=[[t,l,s]] # в буфер добавляем текущую
-				# print(['new buffer'])
-			else:
-				# если строка не соответствует искомому уровню
-				buffer.append([t,l,s])
-				# print(['add in buffer'])
-		# print(['last buffer'])
-		if len(buffer)>1:
-			# если длина буфера больше одного
-			x,y,z=buffer[0]
-			if y==level:
-				self.include.append(buffer[0])
-				self.include.extend(newLiBlocks(buffer[1:])) # разбиваем буфер на блоки
-			else:
-				self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
-			# print(['buffer>1_'])
-		elif len(buffer)==1:
-			# если длина буфера лишь одна строка
-			self.include.append(buffer[0]) # добавляем эту строку в список
-			# print(['buffer=1_'])
-		# for include in self.include:
-		# 	print(include)
+						print('buffer is empty')
+					print('new buffer')
+					buffer=[[t,l,s]] # в буфер добавляем текущую
+				else:
+					# если строка не соответствует искомому уровню
+					print('add in buffer')
+					buffer.append([t,l,s])
+			# print(['last buffer'])
+			if len(buffer)>1:
+				# если длина буфера больше одного
+				x,y,z=buffer[0]
+				if y==level:
+					print(f'good level -> append string {z}')
+					buffer[0]=[None,-1,z]
+					print('other blocks')
+					self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+				else:
+					self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+				# print(['buffer>1_'])
+			elif len(buffer)==1:
+				# если длина буфера лишь одна строка
+				self.include.append(buffer[0]) # добавляем эту строку в список
+				# print(['buffer=1_'])
+		else:
+			# если подходящий уровень не найден, все строки - просто строки
+			while len(self.source)>0:
+				t,l,s=self.source.pop(0)
+				self.include.append([t,l,s])
 	def __str__(self):
-		return f'type:{self.type} len:{len(self.include)}'
+		text=f'type:{self.type} len:{len(self.include)}\n'
+		return text
+	def printAll(self):
+		print(f'id:{self.id}\ttype:{self.type}')
+		for include in self.include:
+			if type(include)==list:
+				# имеем дело со строкой
+				print(f'[{self.id}]\t{include[1]}:{include[2]}')
+			else:
+				include.printAll()
 	def getHTML(self,base_):
 		new_string_list=[]
 		if self.type=='marked':
 			new_string_list.append('<ul>\n')
 		elif self.type=='numered':
 			new_string_list.append('<ol>\n')
-		else:
-			new_string_list.append('<br/>\n')
 		for cell in self.include:
 			if self.type!=None:
 				new_string_list.append('\n<li>\n')
+			elif len(new_string_list)>0:
+				new_string_list.append('<br/>\n')
 			if type(cell)==list:
 				# в ячейке содержится строка, просто получаем её HTML
 				new_string_list.append(convertString(cell[2],'string',base_))
@@ -664,6 +693,7 @@ def convertListBlock(string_list,base_):
 	new_string_list=[]
 	for block in blocks:
 		new_string_list.extend(block.getHTML(base_))
+		block.printAll()
 	return new_string_list
 
 
