@@ -558,27 +558,36 @@ class NewLi():
 		# у пункта нет типа, это просто пункт
 		self.source=source_list
 		self.include=[] # вложенные объекты: другие списки или строки
+		print(f'[{self.id}]:\tlen.source:{len(self.source)}')
 		if len(self.source)==1:
 			# если мы передали только одну строку в исходнике, значит лишь эта строка и составляет пункт
+			print('>>\tпередана только одна строка. Она и является пунктом.')
 			self.include.append(self.source.pop(0))
 		else:	
 			# получаем минимальный уровень из исходников
 			level,count=minLiLevel(self.source)
+			print(f'>>\tlev:{level},count:{count}.')
 			if level!=None:
+				print(f'>>\tуровень определён')
 				if count==1 and self.source[0][1]==level:
+					print(f'>>\tминимальный уровень находится в нулевом исходнике. Вытаскиваем нулевой исходник в содержимое.')
 					# минимальный уровень находится только в нулевом исходнике
 					self.include.append(self.source.pop(0)) # нулевой исходник становится строкой
 				# оставшийся сорц бьётся на блоки/строки
+				print(f'>>\tдробим на блоки')
 				self.include.extend(splitLiBlocks(self.source))
 				self.source=[]
 			else:
 				# если максимальный уровень не найден, разбить на блоки нельзя
+				print(f'>>\tразбить на блоки нельзя, кидаем строки.')
 				self.include.extend(self.source)
 				self.source=[]
+			print(f'>>\tlen.include:{len(self.include)}')
 	def getHTML(self,base_):
 		new_string_list=[]
 		new_string_list.append('<li>\n')
 		for els in self.include:
+			print(els)
 			if type(els)==list:
 				# если типом является строка
 				t,l,s=els
@@ -592,6 +601,9 @@ class NewLi():
 				new_string_list.extend(els.getHTML(base_))
 		new_string_list.append('</li>\n')
 		return new_string_list
+	def __str__(self):
+		text=f'id:{self.id} include.len:{len(self.include)}'
+		return text
 
 class NewLiBlock():
 	# секция списка!
@@ -624,7 +636,7 @@ class NewLiBlock():
 					print('add in buffer')
 					buffer.append([t,l,s])
 	def __str__(self):
-		text=f'type:{self.type} source.len:{len(self.source)}'
+		text=f'id:{self.id} type:{self.type} source.len:{len(self.source)}'
 		return text
 	def printAll(self):
 		pass
@@ -636,7 +648,7 @@ class NewLiBlock():
 		elif self.type=='numered':
 			new_string_list.append('<ol>\n')
 		for li_point in self.include:
-			print(type(li_point))
+			print(li_point)
 			new_string_list.extend(li_point.getHTML(base_))
 		if self.type=='marked':
 			new_string_list.append('</ul>\n')
@@ -661,48 +673,66 @@ def splitLiBlocks(string_array):
 	blocks=[]
 	for t,l,s in string_array:
 		# набираем первые блоки
-		print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
+		print(f'> type:{t}/{tp} level:{l}/{level} string:{s[:-1]}')
 		if t!=None:
 			# для строк с определённым типом
+			# print(f'> тип определён')
 			if l==level:
 				# если уровни совпадают
+				# print(f'> уровни совпадают')
 				if tp!=t and len(buffer)!=0:
 					# если типы не совпадают и в буфере что-то есть
+					# print(f'> типы не совпадают, буфер наполнен.')
+					# print(f'> Буфер в блок')
 					blocks.append(NewLiBlock(tp,buffer)) # создаём блок из буфера
+					# print(f'> Создаём новый буфер со строкой, выставляем тип')
 					buffer=[[t,l,s]] # буфер теперь содержит лишь текущую строку
 					tp=t
 				elif tp!=t:
 					# если типы не совпадают, но в буфере ничего нет
+					# print(f'> типы не совпадают, буфер пуст. Выставляем тип, добавляем строку в буфер')
 					tp=t # выставляем новый тип
 					buffer.append([t,l,s]) # в буфер добавляем строку
 				else:
+					# print(f'> типы совпадают. Добавляем строку в буфер')
 					# если типы совпадают, просто добавляем строку в буфер
 					buffer.append([t,l,s])
 			elif l!=level:
 				# если уровни не совпадают
+				# print(f'> уровни не совпадают')
 				buffer.append([t,l,s])
 		else:
 			# для строк с неопределённым типом
+			# print(f'> тип строки не определён')
 			if level==None:
 				# если уровень получен не был, все строки являются строками с неопределённым типом
+				# print(f'> уровень не получен, строка возвращаетсявместо блока')
 				blocks.append([t,l,s])
 			elif getStringLevel(s)<level:
 				# если уровень такой строки меньше текущего, эта строка так же способствует разделению блока
+				# print(f'> уровень получен. Уровень строки меньше требуемого')
 				if len(buffer)==0:
 					# буфер пуст, возвращаем строку
+					# print(f'> буфер пуст, строку возвращаем вместо блока')
 					blocks.append([t,l,s])
 				else:
 					# буфер не пуст, превращаем буфер в блок, строку возвращаем
+					# print(f'> буфер не пуст. Создаём из буфера блок')
 					blocks.append(NewLiBlock(tp,buffer))
+					# print(f'> Буфер очищаем. Строка идёт вместо блока')
 					buffer=[]
 					blocks.append([t,l,s])
 			else:
 				# если уровень строки равен текущему или больше него, строка попадает в буфер
+				# print(f'> уровень получен, но уровень строки больше или равен требуемому')
+				# print(f'> добавляем строку в буфер.')
 				buffer.append([t,l,s])
 	# последний набранный буфер превращаем в блок
 	if len(buffer)!=0:
-		t,l,s=buffer[0]
-		blocks.append(NewLiBlock(t,buffer))
+		if tp!=None:
+			blocks.append(NewLiBlock(tp,buffer))
+		else:
+			blocks.extend(buffer)
 	return blocks # возвращаем список блоков
 
 def convertListBlock(string_list,base_):
