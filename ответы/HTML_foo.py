@@ -591,6 +591,31 @@ class NewLi():
 		# 	print(include)
 	def __str__(self):
 		return f'type:{self.type} len:{len(self.include)}'
+	def getHTML(self,base_):
+		new_string_list=[]
+		if self.type=='marked':
+			new_string_list.append('<ul>\n')
+		elif self.type=='numered':
+			new_string_list.append('<ol>\n')
+		else:
+			new_string_list.append('<br/>\n')
+		for cell in self.include:
+			if self.type!=None:
+				new_string_list.append('\n<li>\n')
+			if type(cell)==list:
+				# в ячейке содержится строка, просто получаем её HTML
+				new_string_list.append(convertString(cell[2],'string',base_))
+			else:
+				# в ячейке содержится блок, конвертим его
+				new_string_list.extend(cell.getHTML(base_))
+			if self.type!=None:
+				new_string_list.append('\n</li>\n')
+		if self.type=='marked':
+			new_string_list.append('\n</ul>\n')
+		elif self.type=='numered':
+			new_string_list.append('\n</ol>\n')
+		return new_string_list
+
 
 def newLiBlocks(string_array):
 	level=None
@@ -636,6 +661,10 @@ def convertListBlock(string_list,base_):
 		t,l,s=getLi(string)
 		string_array.append([t,l,s])
 	blocks=newLiBlocks(string_array)
+	new_string_list=[]
+	for block in blocks:
+		new_string_list.extend(block.getHTML(base_))
+	return new_string_list
 
 
 
@@ -646,4 +675,6 @@ if __name__=="__main__":
 	# print(convertString(string,'string',roof_base))
 	with open('.\\92_дополнительные тексты\\пример списка.light-txt','r',encoding='utf-8') as file:
 		string_list=file.readlines()
-	convertListBlock(string_list,roof_base)
+	text_list=convertListBlock(string_list,roof_base)
+	for i in text_list:
+		print(i)
