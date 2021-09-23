@@ -551,20 +551,46 @@ class NewLi():
 		buffer=[]
 		while len(self.source)>0:
 			t,l,s=self.source.pop(0)
+			# print((t,l,s))
 			if level==l:
 				# если строка соответствует искомому уровню
 				if len(buffer)>1:
 					# если длина буфера больше одного
-					self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+					x,y,z=buffer[0]
+					if y==level:
+						self.include.append(buffer[0])
+						self.include.extend(newLiBlocks(buffer[1:])) # разбиваем буфер на блоки
+					else:
+						self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+					# print(['buffer>1'])
 				elif len(buffer)==1:
 					# если длина буфера лишь одна строка
 					self.include.append(buffer[0]) # добавляем эту строку в список
+					# print(['buffer=1'])
 				buffer=[[t,l,s]] # в буфер добавляем текущую
+				# print(['new buffer'])
 			else:
 				# если строка не соответствует искомому уровню
 				buffer.append([t,l,s])
+				# print(['add in buffer'])
+		# print(['last buffer'])
+		if len(buffer)>1:
+			# если длина буфера больше одного
+			x,y,z=buffer[0]
+			if y==level:
+				self.include.append(buffer[0])
+				self.include.extend(newLiBlocks(buffer[1:])) # разбиваем буфер на блоки
+			else:
+				self.include.extend(newLiBlocks(buffer)) # разбиваем буфер на блоки
+			# print(['buffer>1_'])
+		elif len(buffer)==1:
+			# если длина буфера лишь одна строка
+			self.include.append(buffer[0]) # добавляем эту строку в список
+			# print(['buffer=1_'])
+		# for include in self.include:
+		# 	print(include)
 	def __str__(self):
-		return f'type:{self.type} len:{self.include}'
+		return f'type:{self.type} len:{len(self.include)}'
 
 def newLiBlocks(string_array):
 	level=None
@@ -576,7 +602,7 @@ def newLiBlocks(string_array):
 	blocks=[]
 	for t,l,s in string_array:
 		# набираем первые блоки
-		print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
+		# print([f'type:{t}/{tp} level:{l}/{level} string:{s}'])
 		if l==level:
 			# если уровни совпадают
 			if tp!=t and len(buffer)!=0:
