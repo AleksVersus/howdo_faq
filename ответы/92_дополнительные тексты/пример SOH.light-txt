@@ -1,406 +1,157 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="./res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="./res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="./res/css/qsp_code.css" />
-    <title>QSP: Как сделать?</title>
-</head>
-<body>
-    
-    <div class="em_AROUND">
-        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
-        <div class="em_Warning">
-            <p>Внимание!!! Онлайн версия справочника пока недоступна. Пока что вы можете скачать офлайн-версию справочника:</p>
-            <p><a href="release/FAQ.QSP.2021.08.23.fb2">Скачать офлайн-справочник</a></p>
-        </div>
-        <div class="em_Epigraph">
-            <div>
-                <p>По всем вопросам и предложениям обращаться:</p>
-                <ul class="em_TT">
-                    <li>e-mails:                  
-                        <ul class="em_TT">
-                            <li>aleksversus@mail.ru</li>
-                        </ul>
-                    </li>
-                    <li>Вконтакте: <a href="https://vk.com/id40090736" class="emHREFHH" target="_blank">id40090736</a></li>
-                </ul>
-            </div>
-        </div>
-   
-<div class="Monokai-Code">
-    ТЕСТ ГЕНЕРАЦИИ ПОДСВЕТКИ КОДА ДЛЯ HTML - ПРЕКРАСНО РАБОТАЕТ, КАК МОЖНО ВИДЕТЬ
-    
-    <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;ваза_на_столе<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;раз&nbsp;два&nbsp;три{&nbsp;четыре&nbsp;"&nbsp;пять&nbsp;шесть&nbsp;семь&nbsp;восемь<br>
-&nbsp;&nbsp;&nbsp;&nbsp;девять&nbsp;десять&nbsp;одиннадцать&nbsp;двенадцать<br>
-&nbsp;&nbsp;&nbsp;&nbsp;тринадцать&nbsp;четырнадцать&nbsp;"&nbsp;пятнадцать}&nbsp;шестн'адцать<br>
-&nbsp;&nbsp;&nbsp;&nbsp;привет&nbsp;привет&nbsp;'&nbsp;привет&nbsp;привет&nbsp;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;переменная-маркер&nbsp;ваза_на_столе&nbsp;равна&nbsp;1&nbsp;</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие&nbsp;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;вазу&nbsp;со&nbsp;стола"</span><span class="Monokai-Operator">:</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;действии&nbsp;изменяем&nbsp;значение&nbsp;переменной-маркера&nbsp;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ваза_на_столе<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Ваза"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-UnFunc">@foo</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'truaya'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;начало&nbsp;------</span><br>
-        </div>
+<section_of_head>
+==BODY==
 
-<!-- test list-->
-<p class="head_7">
-BODY
-</p>
-<p>
-Переходим к блоку "&lt;body&gt;...&lt;/body&gt;". Для этого блока в "skins/game.css" определены следующие настройки:
-
-</p>
-
-&nbsp;&nbsp;&nbsp;&nbsp;html<span class="Monokai-Operator">,</span>&nbsp;body&nbsp;<span class="Monokai-Operator">{</span>&nbsp;height<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Numeric">100</span>%;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&nbsp;}<br>
-
-
-
-<p>
+Переходим к блоку "<body>...</body>". Для этого блока в "skins/game.css" определены следующие настройки:
+```css
+	html, body { height: 100%; margin: 0px; padding: 0px; }
+```
 Данную строку лучше не менять, иначе при вёрстке у вас могут возникнуть проблемы с расположением остальных блоков. А вот строку:
-
-</p>
-
-&nbsp;&nbsp;&nbsp;&nbsp;body&nbsp;<span class="Monokai-Operator">{</span>&nbsp;margin<span class="Monokai-Operator">:</span><span class="Monokai-Numeric">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;padding:0;&nbsp;}<br>
-
-
-
-<p>
+```css
+	body { margin:0;	padding:0; }
+```
 ниже по коду "skins/game.css" можно удалить, так как она частично дублирует предыдущую.
 
-</p>
+В блоке "<body>...</body>" находится множество блоков div, которые и отвечают за отрисовывание всего оформления игры. Далее вместо того, чтобы произносить целиком "div с id (айди) skin-splashscreen-foreground", мы будем говорить просто "блок skin-splashscreen-foreground", и тому подобное. Поскольку вся оставшаяся часть HTML-кода состоит из блоков div, и так будет понятно, что мы говорим о блоках div.
 
-<p>
-В блоке "&lt;body&gt;...&lt;/body&gt;" находится множество блоков div, которые и отвечают за отрисовывание всего оформления игры. Далее вместо того, чтобы произносить целиком "div с id (айди) skin-splashscreen-foreground", мы будем говорить просто "блок skin-splashscreen-foreground", и тому подобное. Поскольку вся оставшаяся часть HTML-кода состоит из блоков div, и так будет понятно, что мы говорим о блоках div.
+=skin-splashscreen-foreground=
 
-</p>
-
-<p class="head_8">
-skin-splashscreen-foreground
-</p>
-<p>
 Два основных блока в "body" это "skin-splashscreen-foreground" и "skin-ui-wrapper". И для обоих основные стили прописаны непосредственно в "gameAwesomium.html". Это сделано для того, чтобы данные блоки отображались адекватно стилям ещё при загрузке страницы, даже если "skins/game.css" ещё не загрузился.
 
-</p>
-
-<p>
 Если запустить игру в Навигаторе, мы увидим "skin-splashscreen-foreground" на короткое время в виде простого белого экрана, затем он "погаснет", а вместо него отобразится блок "skin-ui-wrapper". Эти два основных блока рекомендую сохранить, они сменяют друг-друга (это происходит за счёт скриптов), создавая привлекательный переход, к тому же "skin-ui-wrapper" содержит все остальные блоки оформления.
 
-</p>
-
-<p>
 Непосредственно внутри блока "skin-splashscreen-foreground" вы можете разместить логотип или приветственную надпись, которые появятся на короткое время, сменившись экраном игры. (Рекомендую оставлять основной фон сплэшскрина белым)
 
-</p>
+=skin-ui-wrapper=
 
-<p class="head_8">
-skin-ui-wrapper
-</p>
-<p class="head_9">
-skin-back1
-</p>
-<p>
+--skin-back1--
+
 Далее мы будем рассматривать содержимое блока "skin-ui-wrapper". И первый блок, который нам тут встречается, это блок "skin-back1". Он пустой и служит для того, чтобы задавать затенение по краям страницы (а строго говоря он задаёт фон страницы). Все его стили задаются в "skins/game.css", таким образом вы легко можете отредактировать стилистику этого блока, чтобы задать собственную рамку по краям окна, или создать какой либо эффект на фоне, ну или просто удалите этот блок, если подобные эффекты вам не нужны. Удаление блока "skin-back1" не повлияет на работоспособность игры.
 
-</p>
+--skin-page--
 
-<p class="head_9">
-skin-page
-</p>
-<p>
 Следующий блок — это блок "skin-page". Собственно это вся страница целиком, где размещены блоки окон основного, дополнительного описаний, окна предметов, действий и строки ввода. Нет явных скриптов, которые работают с блоком "skin-page", однако удалять его не рекомендуется. Особенностью данного блока является то, что он перекрывает собой блок "skin-back1" (оно и понятно, ведь для отрисовки фона страницы используется именно "skin-back1"). Поэтому, если вы стилизуете "skin-page" каким-нибудь фоном, этот фон перекроет видимость блока "skin-back1".
 
-</p>
+-skin-back2-
 
-<p class="head_10">
-skin-back2
-</p>
-<p>
 В "skin-page" находится следующий блок, который мы рассмотрим, это блок "skin-back2". Это блок так называемого вторичного фона. Он снова растянут по всей ширине и высоте блока "skin-page", поэтому если поставить ему на фон сплошной цвет, это скроет видимость блока "skin-back1". Блок "skin-back2" нужен, чтобы отрисовать вертикальные полоски по краям окна в шаблоне "default". Если вы просто уберёте этот блок, функциональность игры не пострадает.
 
-</p>
+-skin-top-menu-wrapper-
 
-<p class="head_10">
-skin-top-menu-wrapper
-</p>
-<p>
 Следующий за "skin-back2" блок — это блок "skin-top-menu-wrapper", который отвечает за включение верхнего меню. Верхнее меню — это полоска с кнопками управления игрой и включения/выключения звука. Эта полоска появляется в двух случаях:
 
-</p>
-
-<ul>
-
-<li>
-
-если отключено окно предметов. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
-
-</li>
-
-</ul>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body<span class="Monokai-Operator">:</span><span class="Monokai-Func">not</span><span class="Monokai-Operator">(</span>.cover):not(.objs-visible)&nbsp;#skin-top-menu-wrapper<br>
-
-
-
-<ul>
-
-<li>
-
-если размер страницы меньше 481px. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
-
-</li>
-
-</ul>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body<span class="Monokai-Operator">:</span><span class="Monokai-Func">not</span><span class="Monokai-Operator">(</span>.cover)&nbsp;#skin-top-menu-wrapper<br>
-
-
-
-<p>
+	* если отключено окно предметов. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
+```css
+		body:not(.cover):not(.objs-visible) #skin-top-menu-wrapper
+```
+	* если размер страницы меньше 481px. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
+```css
+		body:not(.cover) #skin-top-menu-wrapper
+```
 Само собой вы можете написать общий стиль для обоих вариантов отображения.
 
-</p>
-
-<p>
 Блок "skin-top-menu-wrapper" выводится со свойством "display:table;", а вложенные блоки соответсвенно со свойствами "display:table-row;" и "display:table-cell;". Это сделано для того, чтобы обеспечить соответствующее выравнивание элементов внутри блоков.
 
-</p>
+++skin-top-menu-row, skin-user1, skin-user2++
 
-<p class="head_11">
-skin-top-menu-row, skin-user1, skin-user2
-</p>
-<p>
 Вложенный блок "skin-top-menu-row" нужен исключительно для того, чтобы создать аналог табличной строки, хотя и его вы можете стилизовать.
 
-</p>
-
-<p>
 Блоки "skin-user1" и "skin-user2" играют роль ячеек таблицы и в "skins/game.css" стилизованы по минимуму.
 
-</p>
++skin-user1-inner, skin-inv-toggle, skin-inv-caption+
 
-<p class="head_12">
-skin-user1-inner, skin-inv-toggle, skin-inv-caption
-</p>
-<p>
 Блок "skin-user1-inner" служит контейнером для двух нижележащих блоков, обёрнутых в одну гиперссылку. Вспомогательный блок для размещения вложенных блоков в одну линию.
 
-</p>
-
-<p>
 Нижележащие блоки, обёрнутые в ссылку — это блоки "skin-inv-toggle" и "skin-inv-caption", они располагаются в одну линию благодаря свойству "dysplay:inline-block;". При щелчке по любому из этих блоков выполняется JavaScript из гиперссылки:
-
-</p>
-
-&nbsp;&nbsp;&nbsp;&nbsp;skinToggleInv<span class="Monokai-Operator">(</span><span class="Monokai-Operator">)</span>;<br>
-
-
-
-<p>
+```js
+	skinToggleInv();
+```
 Данную функцию вы можете найти в файле "skins/js/game.js", она отвечает за плавное появление и пропадание окна с предметами, когда мы щёлкаем по слову инвентарь. Само собой размер страницы должен быть 480px и меньше.
 
-</p>
++skin-user-system, skin-user-music+
 
-<p class="head_12">
-skin-user-system, skin-user-music
-</p>
-<p>
 В блоке "skin-user2" располагаются два блока "skin-user-system" и "skin-user-music", которые соответственно отвечают за отображение кнопок "управление игрой" ("меню плеера") и "управление музыкой". Блок "skin-user2" отображается даже когда страница больше 480 пикселей шириной. Если удалить этот блок, оставив только кнопки, кнопки сместятся в правый верхний угол и "провалятся" под слой, станут некликабельными, пока размер страницы превышает 480 пикселей.
 
-</p>
+-skin-right-column-
 
-<p class="head_10">
-skin-right-column
-</p>
-<p>
 Блок "skin-right-column" занимает 30% от ширины страницы с правой стороны (при ширине страницы больше 480 пикселей). В этом блоке размещается окно предметов, а так же блок "skin-user2" (внизу), когда ширина страницы больше 480 пикселей.
 
-</p>
+++skin-right-column-background++
 
-<p class="head_11">
-skin-right-column-background
-</p>
-<p>
 В блоке "skin-right-column", по аналогии со "skin-page", находится блок, создающий фон под блоком окна предметов, это блок "skin-right-column-background". Он отображается только при ширине страницы более 480 пикселей и включённом окне предметов.
 
-</p>
+++qsp-wrapper-objs++
 
-<p class="head_11">
-qsp-wrapper-objs
-</p>
-<p>
 Следующий блок "qsp-wrapper-objs" является уже непосредственно блоком окна предметов. Он отображается и при ширине окна 480 пикселей, и выше, только меняет своё местоположение. Этот блок связан с различными скриптами, которые создают полосу прокрутки в окне предметов.
 
-</p>
++qsp-scroller-objs, skin-inv-wrapper, skin-inv-top, qsp-inv+
 
-<p class="head_12">
-qsp-scroller-objs, skin-inv-wrapper, skin-inv-top, qsp-inv
-</p>
-<p>
 Блок "qsp-scroller-objs" вложен в предыдущий и технически нужен для создания полосы прокрутки в окне предметов. Этот блок связан со скриптами полосы прокрутки. Следующий блок — блок "skin-inv-wrapper" — отвечает как раз за отображение предметов при изменении расширения. Именно с этим блоком работает скрипт, когда страница меньше 481 пикселя шириной, и мы щёлкаем по кнопке "Инвентарь".
 
-</p>
-
-<p>
 В "skin-inv-wrapper" вложены два блока. "skin-inv-top" — декоративный блок, разграничивающий кнопку инвентаря и окно предметов при ширине страницы меньше 481 пикселя. А вот "qsp-inv" — очень важный блок. Именно в этот блок, при его наличии, Quest Navigator отправляет список предметов. Если вы планируете использовать окно предметов, удалять этот блок нельзя, а лучше сохранить все блоки вложенные в "qsp-wrapper-objs".
 
-</p>
+-skin-left-column-
 
-<p class="head_10">
-skin-left-column
-</p>
-<p>
 Блок "skin-right-column" занимает 70% от ширины страницы с левой стороны (при ширине страницы больше 480 пикселей). В этом блоке размещаются: окно дополнительного описания, окно основного описания и окно действий. А так же разные вспомогательные блоки.
 
-</p>
+++skin-inv-bottom++
 
-<p class="head_11">
-skin-inv-bottom
-</p>
-<p>
 Блок "skin-inv-bottom" — декоративный блок, нижняя горизонтальная полоска инвентаря, когда ширина страницы не превышает 480 пикселей. Эта полоска видна и когда инвентарь раскрыт, и когда он свёрнут.
 
-</p>
+++skin-wrapper-main-outer, qsp-wrapper-main, qsp-scroller-main++
 
-<p class="head_11">
-skin-wrapper-main-outer, qsp-wrapper-main, qsp-scroller-main
-</p>
-<p>
 Блок "skin-wrapper-main-outer" является внешним контейнером для блоков всех окон (дополнительного и основного описания и действий). В него вложены блоки "qsp-wrapper-main" и "qsp-scroller-main", на основе которых построен скрипт, иммитирующий ios-подобный скроллбар.
 
-</p>
-
-<p>
 А уже здесь размещены блоки:
 
-</p>
++qsp-view+
 
-<p class="head_12">
-qsp-view
-</p>
-<p>
-"qsp-view" — отвечает за отображение окна предпросмотра (оператор <span class="em_BLCK"><span class="emOPRT">view</span></span>). [С этим блоком работают скрипты в api.js, однако его удаление не меняет функциональности оператора <span class="em_BLCK"><span class="emOPRT">view</span></span>.]
+"qsp-view" — отвечает за отображение окна предпросмотра (оператор `view`). [С этим блоком работают скрипты в api.js, однако его удаление не меняет функциональности оператора `view`.]
 
-</p>
++qsp-vars+
 
-<p class="head_12">
-qsp-vars
-</p>
-<p>
 "qsp-vars" — отвечает за отображение окна дополнительного описания. В дефолтном шаблоне это окно отображается выше окна основного описания
 
-</p>
++qsp-main+
 
-<p class="head_12">
-qsp-main
-</p>
-<p>
 "qsp-main" — отвечает за отображение окна основного описания. Этот блок нельзя удалять, однако вы можете вполне свободно стилизовать и настраивать его.
 
-</p>
++qsp-acts+
 
-<p class="head_12">
-qsp-acts
-</p>
-<p>
 "qsp-acts" — отвечает за отображение окна действий.
 
-</p>
+++qsp-input-line++
 
-<p class="head_11">
-qsp-input-line
-</p>
-<p>
-Блок "qsp-input-line", а так же вложенные в него блоки, нужны для отображения и стилизации строки ввода, реализованной через поле "&lt;input&gt;".
+Блок "qsp-input-line", а так же вложенные в него блоки, нужны для отображения и стилизации строки ввода, реализованной через поле "<input>".
 
-</p>
+=Диалоговые окна=
 
-<p class="head_8">
-Диалоговые окна
-</p>
-<p>
 Блоки диалоговых окон располагаются ниже блока "skin-page", чтобы при выведении на экран блоки диалоговых окон перекрывали блок "skin-page". Структура у всех диалоговых окон похожа, поэтому мы не будем подробно разбирать эти блоки.
 
-</p>
+--qsp-dialog-msg--
 
-<p class="head_9">
-qsp-dialog-msg
-</p>
-<p>
 Блок "qsp-dialog-msg" служит для вывода на экран диалогового окна при выполнении оператора msg.
 
-</p>
+--qsp-dialog-input--
 
-<p class="head_9">
-qsp-dialog-input
-</p>
-<p>
 Блок "qsp-dialog-input" служит для вывода на экран диалогового окна с полем ввода при выполнении функции $input.
 
-</p>
+--qsp-dialog-system-menu--
 
-<p class="head_9">
-qsp-dialog-system-menu
-</p>
-<p>
 Блок "qsp-dialog-system-menu" служит для вывода на экран диалогового окна меню управления игрой. Это пункты "Загрузить|Сохранить|Заново|Другие игры".
 
-</p>
+--qsp-dialog-save-slots--
 
-<p class="head_9">
-qsp-dialog-save-slots
-</p>
-<p>
 Блок "qsp-dialog-save-slots" служит для вывода диалогового окна со слотами сохранения.
 
-</p>
+--qsp-dialog-user-menu--
 
-<p class="head_9">
-qsp-dialog-user-menu
-</p>
-<p>
 Блок "qsp-dialog-user-menu" отвечает за вывод всплывающего меню при выполнении оператора menu.
 
-</p>
+--qsp-dialog-view--
 
-<p class="head_9">
-qsp-dialog-view
-</p>
-<p>
 Блок "qsp-dialog-view" отвечает за вывод блока с изображением (оператор view).
 
-</p>
+--qsp-dialog-error--
 
-<p class="head_9">
-qsp-dialog-error
-</p>
-<p>
 Блок "qsp-dialog-error" отвечает за вывод сообщений об ошибках в коде QSP.
-
-</p>
-
->>> 
-<!-- test list-->
-        
-        
-        <div class="em_Epigraph">
-            <div class="em_subText">
-                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
-                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+</section_of_head>
