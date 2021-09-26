@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.13. Как разредить текст пробелами?</h3><p>
+В: Как разредить текст пробелами?
+
+</p>
+<p>
+	Например, сделать разрежение текста через каждые три символа.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для того, чтобы сделать подобное, понадобятся функции для работы с текстом и цикл.
+
+</p>
+<p>
+Простой алгоритм для разрежения текста (отсчёт начинается от первого символа в строке)
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!$text&nbsp;-&nbsp;здесь&nbsp;лежит&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span>$text<span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!вырезаем&nbsp;первые&nbsp;три&nbsp;символа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$t=$mid($text,1,3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!убираем&nbsp;первые&nbsp;три&nbsp;символа&nbsp;из&nbsp;строки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text=$mid($text,4)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;составляем&nbsp;новую&nbsp;строку<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$print_text=$print_text+$t+'&nbsp;'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем&nbsp;процедуру<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Если разрежение необходимо производить через каждые три символа, начиная с последнего, немного меняем алгоритм:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span>$text<span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!вырезаем&nbsp;последние&nbsp;три&nbsp;символа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$t=$mid($text,len($text)-2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!убираем&nbsp;последние&nbsp;три&nbsp;символа&nbsp;из&nbsp;строки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text=$mid($text,1,len($text)-3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;составляем&nbsp;новую&nbsp;строку<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$print_text='&nbsp;'+$t+$print_text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем&nbsp;процедуру<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Легко заметить, что данные алгоритмы будут добавлять лишний символ пробела в конце или в начале строки. Но этот недостаток так же легко исправить:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span>$text<span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$t=$mid($text,1,3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text=$mid($text,4)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len($text)>0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$print_text=$print_text+$t+'&nbsp;'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$print_text=$print_text+$t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+В библиотеке "easy.math" присутствует готовая функция, разрежающая текст, с дополнительными возможностями и различными настройками. См. функцию <a href="http://aleksversus.narod.ru/index/operacii_nad_tekstom/0-13#strthin" style="text-decoration:none;" class="emFOLD">#str.thin#</a>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

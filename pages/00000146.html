@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.15. Как сделать так, чтобы на локацию можно было зайти только один раз?</h3><p>
+В: Как сделать так, чтобы на локацию можно было зайти только один раз?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Наиболее очевидный вариант: отмечать посещение локации в какой-нибудь переменной, а в действиях, которые ведут на эту локацию, проверять была ли эта локация посещена.
+
+</p>
+<p>
+Например, у нас есть две локации "Древний храм" и "Джунгли":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#&nbsp;Джунгли</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Я&nbsp;стою&nbsp;посреди&nbsp;диких&nbsp;джунглей,&nbsp;а&nbsp;передо&nbsp;мной&nbsp;в&nbsp;гуще&nbsp;зарослей&nbsp;высится&nbsp;древний&nbsp;храм."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;действие&nbsp;входа&nbsp;в&nbsp;храм</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Войти&nbsp;в&nbsp;древний&nbsp;храм"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;храм_посещён<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вход&nbsp;в&nbsp;храм&nbsp;завален&nbsp;камнями."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"Древний&nbsp;храм"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#&nbsp;Древний&nbsp;храм</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Я&nbsp;вхожу&nbsp;под&nbsp;своды&nbsp;древнего&nbsp;храма.&nbsp;Заросшая&nbsp;паутиной&nbsp;зала&nbsp;встречает&nbsp;глухой&nbsp;тишиной.&nbsp;Что-то&nbsp;щёлкает&nbsp;под&nbsp;ногами,&nbsp;и&nbsp;храм&nbsp;начинает&nbsp;рушиться"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отмечаем&nbsp;в&nbsp;переменной,&nbsp;что&nbsp;храм&nbsp;посещён</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;храм_посещён<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;действие&nbsp;выхода&nbsp;из&nbsp;храма</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сбежать&nbsp;из&nbsp;разрушающегося&nbsp;храма"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"Джунгли"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>3. Вопросы о MSG и $INPUT</h2><h3>3.3. Как прикрутить возможность выбора варианта к окну msg?</h3><p>
+В: Как прикрутить возможность выбора варианта к окну msg?
+
+</p>
+<p>
+В: Подскажите аналог команды <span class="em_BLCK">confirm</span> в QSP.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В классическом плеере у <span class="em_BLCK"><span class="emOPRT">msg</span></span> нет такой возможности, поскольку <span class="em_BLCK"><span class="emOPRT">msg</span></span> не возвращает значений. Вы можете использовать функцию <span class="em_BLCK"><span class="emOPRT">$input</span></span>, и ограничить для игрока возможные варианты ответов:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Koperator">loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;окошко&nbsp;с&nbsp;полем&nbsp;ввода,&nbsp;а&nbsp;результат,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;введёный&nbsp;игроком,&nbsp;возвращаем&nbsp;переменной&nbsp;$answer</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">$INPUT</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-String">'Хотите&nbsp;продолжить&nbsp;(д/н)?'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтобы&nbsp;не&nbsp;учитывать&nbsp;регистр,&nbsp;переводим&nbsp;значение&nbsp;в&nbsp;нижний&nbsp;регистр</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-Func">$LCASE</span><span class="Monokai-Operator">(</span>$answer<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем,&nbsp;правильный&nbsp;ли&nbsp;ответ&nbsp;ввёл&nbsp;игрок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;$answer&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'д'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;ответ&nbsp;"д"&nbsp;переходим&nbsp;к&nbsp;локации,&nbsp;продолжающей&nbsp;игру</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"далее"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSEIF</span>&nbsp;$answer&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'н'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;ответ&nbsp;"н"&nbsp;переходим&nbsp;к&nbsp;локации,&nbsp;прерывающей&nbsp;игру</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"конец"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;игрок&nbsp;ввёл&nbsp;неверный&nbsp;ответ,&nbsp;или&nbsp;не&nbsp;ввёл&nbsp;ничего</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;перепрыгиваем&nbsp;на&nbsp;метку&nbsp;loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">JUMP</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+Есть вариант использовать всплывающее меню в качестве диалогового окна, но это не очень хороший вариант, так как всплывающее меню появляется точно под курсором мышки и выглядит совсем не как диалоговое окно. Тем не менее вариант рабочий:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;следующей&nbsp;локации&nbsp;демонстрируется&nbsp;использование&nbsp;меню&nbsp;в&nbsp;качестве&nbsp;даилогового&nbsp;окна&nbsp;для&nbsp;выбора&nbsp;двух&nbsp;вариантов"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$dialog<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Сообщение:&nbsp;кошелёк&nbsp;или&nbsp;жизнь:dial_loc:?"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$dialog<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">">&nbsp;Кошелёк:dial_loc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$dialog<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">">&nbsp;Жизнь:dial_loc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Перейти&nbsp;в&nbsp;следующую&nbsp;локацию"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'room'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-&nbsp;start</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;room</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">refint</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;данная&nbsp;функция&nbsp;принудительно&nbsp;обновит&nbsp;содержимое&nbsp;окон&nbsp;плеера&nbsp;при&nbsp;входе&nbsp;на&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Koperator">loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$dialog'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;variant<span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-&nbsp;room</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;dial_loc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;данный&nbsp;пункт&nbsp;меню&nbsp;не&nbsp;работает</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;выбрали&nbsp;вариант&nbsp;кошелёк"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;variant<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;выбради&nbsp;вариант&nbsp;жизнь"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;variant<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-&nbsp;dial_loc</span><br>
+
+
+</div>
+<p>
+В Quest Navigator Вы можете самостоятельно написать такое окошко, даже не прибегая к помощи JavaScript.
+
+</p>
+<p>
+Далее следует готовое решение от <span class="em_BLCK"><span class="emOPRT">evp</span></span> с комментариями от <span class="em_BLCK">Aleks Versus</span>.
+
+</p>
+<p>
+В игре:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;не&nbsp;забываем&nbsp;включать&nbsp;html</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">USEHTML</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;следующая&nbsp;строка&nbsp;заставит&nbsp;плеер&nbsp;обратиться&nbsp;к&nbsp;элементу</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;&nbsp;с&nbsp;id&nbsp;openModal&nbsp;когда&nbsp;игрок&nbsp;щёлкнет&nbsp;по&nbsp;ссылке</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*nl</span><span class="Monokai-String">'<a&nbsp;href="#openModal">Открыть&nbsp;диалог</a>'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;переменную&nbsp;$life&nbsp;в&nbsp;виде&nbsp;текста&nbsp;вносим&nbsp;код,&nbsp;который</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;должен&nbsp;выполняться&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Жизнь"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$life&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'код,&nbsp;выполняемый&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Жизнь"'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;соответственно&nbsp;в&nbsp;переменную&nbsp;$money&nbsp;—&nbsp;код,&nbsp;который</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;должен&nbsp;выполняться&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Деньги"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$money&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'код,&nbsp;выполняемый&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Кошелёк"'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;"окошко",&nbsp;а&nbsp;вернее&nbsp;блок,&nbsp;стилизованный&nbsp;под&nbsp;окошко,&nbsp;с&nbsp;двумя&nbsp;кнопками</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;общий&nbsp;блок/затенение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;'<div&nbsp;class="modalDialog"&nbsp;id="openModal">'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;окошко<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<p>Жизнь&nbsp;или&nbsp;кошелёк?</p>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<button&nbsp;style="float:&nbsp;left;"><a&nbsp;href="EXEC:&nbsp;dynamic&nbsp;$life">Жизнь</a></button>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<button&nbsp;style="float:&nbsp;right;"><a&nbsp;href="EXEC:&nbsp;dynamic&nbsp;$money">Кошелёк</a></button>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'</div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;'</div>'<br>
+
+
+</div>
+<p>
+В game.css вашего шаблона:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">/</span><span class="Monokai-Operator">*</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;данный&nbsp;стиль&nbsp;описывает&nbsp;внешний&nbsp;вид&nbsp;общего&nbsp;блока<span class="Monokai-Operator">,</span>&nbsp;играющего&nbsp;в&nbsp;т.ч.&nbsp;роль&nbsp;затенения<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(обратите&nbsp;внимание,&nbsp;на&nbsp;какую&nbsp;область&nbsp;в&nbsp;вашем&nbsp;шаблоне&nbsp;распространяется&nbsp;затенение)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.modalDialog&nbsp;{&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;fixed;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;right:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;bottom:&nbsp;0;&nbsp;left:&nbsp;0;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;hsla(0,0%,0%,0.8);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index:&nbsp;50;&nbsp;/*&nbsp;выводится&nbsp;одним&nbsp;из&nbsp;верхних&nbsp;слоёв&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;0;&nbsp;/*&nbsp;видимость&nbsp;на&nbsp;нуле,&nbsp;чтобы&nbsp;игрок&nbsp;не&nbsp;видел&nbsp;содержимое&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition:&nbsp;opacity&nbsp;400ms&nbsp;ease-in;&nbsp;/*&nbsp;обеспечивает&nbsp;плавное&nbsp;появление&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;none;&nbsp;/*&nbsp;скрывает&nbsp;блок&nbsp;от&nbsp;курсора&nbsp;мыши&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;псевдокласс&nbsp;:target&nbsp;применяется&nbsp;к&nbsp;тому&nbsp;элементу<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;к&nbsp;которому&nbsp;обратился&nbsp;браузер/плеер&nbsp;по&nbsp;нажатию&nbsp;на&nbsp;ссылку&nbsp;(по&nbsp;id)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.modalDialog:target&nbsp;{&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;1;&nbsp;/*&nbsp;видимость&nbsp;повышается&nbsp;до&nbsp;100%&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;auto;&nbsp;/*&nbsp;с&nbsp;блоком&nbsp;снова&nbsp;может&nbsp;работать&nbsp;мышь&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;стилизация&nbsp;дочернего&nbsp;блока,&nbsp;т.е.&nbsp;непосредственно&nbsp;окошка&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.modalDialog&nbsp;>&nbsp;div&nbsp;{&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;400px;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;relative;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;10%&nbsp;auto;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;5px&nbsp;20px&nbsp;13px&nbsp;20px;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;10px;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#fff;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;-webkit-linear-gradient(#fff,&nbsp;#b8ecfb);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.19. Как сделать выпадение случайного действия на локации?</h3><p>
+В: Как сделать выпадение случайного действия на локации?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Нужно воспользоваться "действием по условию", но включить в код и функцию <span class="em_BLCK"><span class="emFUNC">rand</span></span>. В самом простом виде это делается так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выбрасываем&nbsp;случайное&nbsp;число&nbsp;от&nbsp;одного&nbsp;до&nbsp;пяти</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=rand(1,5)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;в&nbsp;зависимости&nbsp;от&nbsp;того,&nbsp;какое&nbsp;число&nbsp;выпало,&nbsp;выводим&nbsp;действие<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Сплясать&nbsp;Джигу":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Ноги&nbsp;сами&nbsp;пустились&nbsp;в&nbsp;пляс,&nbsp;голова&nbsp;завертелась&nbsp;волчком.&nbsp;Джигадрыгай&nbsp;и&nbsp;в&nbsp;профиль&nbsp;и&nbsp;в&nbsp;фас.&nbsp;Всё&nbsp;пучком!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;i=2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Вальсировать":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Раз,&nbsp;два,&nbsp;три...&nbsp;Раз,&nbsp;два,&nbsp;три..."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;i=3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Твист":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Первый&nbsp;окурок&nbsp;давим&nbsp;правым&nbsp;ботинком,&nbsp;второй&nbsp;окурок&nbsp;давим&nbsp;левым&nbsp;ботинком.&nbsp;А&nbsp;теперь&nbsp;оба&nbsp;окурка&nbsp;давим&nbsp;вместе."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;i=4:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Танцевать&nbsp;Пого":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Пели&nbsp;песни&nbsp;до&nbsp;утра,&nbsp;пого&nbsp;танцевали..."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;i=5:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Капуэйро":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Вжух-вжух!.."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Есть другой способ:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вносим&nbsp;действия&nbsp;в&nbsp;массив</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сплясать&nbsp;Джигу"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Ноги&nbsp;сами&nbsp;пустились&nbsp;в&nbsp;пляс,&nbsp;голова&nbsp;завертелась&nbsp;волчком.&nbsp;Джигадрыгай&nbsp;и&nbsp;в&nbsp;профиль&nbsp;и&nbsp;в&nbsp;фас.&nbsp;Всё&nbsp;пучком!"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вальсировать"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Раз,&nbsp;два,&nbsp;три...&nbsp;Раз,&nbsp;два,&nbsp;три..."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Твист"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Первый&nbsp;окурок&nbsp;давим&nbsp;правым&nbsp;ботинком,&nbsp;второй&nbsp;окурок&nbsp;давим&nbsp;левым&nbsp;ботинком.&nbsp;А&nbsp;теперь&nbsp;оба&nbsp;окурка&nbsp;давим&nbsp;вместе."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Танцевать&nbsp;Пого"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Пели&nbsp;песни&nbsp;до&nbsp;утра,&nbsp;пого&nbsp;танцевали..."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Капуэйро"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вжух-вжух!.."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выбрасываем&nbsp;случайное</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$i_act<span class="Monokai-Operator">[</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

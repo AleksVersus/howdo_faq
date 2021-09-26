@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>7. Вопросы о гиперссылках</h2><h3>7.3. Как помещать в гиперссылки сложный код?</h3><p>
+В: Как помещать в гиперссылки сложный код?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Большой кусок кода в гиперссылке будет трудно читать, к тому же это грозит ошибками. Ещё Quest Navigator очень не любит многострочный код в гиперссылках. Поэтому лучше избегать больших объёмов кода непосредственно в самих гиперссылках. Однако есть два решения, которые позволяют выполнять сколь угодно сложный код при щелчке по ссылке.
+
+</p>
+<p>
+Например, мы делаем покупку предметов через гиперссылки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='exec:&nbsp;'>Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля</a>"</span><br>
+
+
+</div>
+<p>
+И нам нужно, чтобы при щелчке по ссылке выполнялся такой вот код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;деньги<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Кружка&nbsp;имбирного&nbsp;эля'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;кружка_эля<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги<span class="Monokai-EndLoc">-=100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Я&nbsp;приобрёл&nbsp;куржку&nbsp;имбирного&nbsp;эля."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Мне&nbsp;не&nbsp;хватает&nbsp;денег&nbsp;на&nbsp;эль."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<ol>
+<li>
+Чтобы не совать весь код в гиперссылку, мы можем создать отдельную локацию, назвав её, например "купить_эль", разместить код в этой локации, а затем просто вызывать локацию из гиперссылки по <span class="em_BLCK"><span class="emOPRT">gosub</span></span>:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='exec:gosub&nbsp;"</span><span class="Monokai-String">"купить_эль"</span><span class="Monokai-String">"'>Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля</a>"</span><br>
+
+
+</div>
+<ol>
+<li>
+Можно не создавать отдельную локацию под кусок кода, а выделить для него отдельную переменную. То есть, поместим наш код в текстовую переменную:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;деньги<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Кружка&nbsp;имбирного&nbsp;эля'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;кружка_эля<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги<span class="Monokai-EndLoc">-=100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Я&nbsp;приобрёл&nbsp;куржку&nbsp;имбирного&nbsp;эля."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Мне&nbsp;не&nbsp;хватает&nbsp;денег&nbsp;на&nbsp;эль."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+
+
+</div>
+<p>
+	Теперь этот код можно будет выполнить в любой момент, используя оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='exec:dynamic&nbsp;$code'>Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля</a>"</span><br>
+
+
+</div>
+<p>
+Как видите, первый способ требует написания отдельной локации, а так же мы всё ещё можем неверно закрыть кавычки, прописывая команду для вызова этой локации. Во втором варианте этот риск минимален, однако нам приходится выделять для размещения кода переменную, которую нельзя уничтожать, пока игрок не щёлкнет по гиперссылке.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

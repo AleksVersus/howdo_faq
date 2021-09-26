@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>11. Вопросы об условиях</h2><h3>11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</h3><p>
+В: При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?
+
+</p>
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;ygrek<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;код</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+О:
+
+</p>
+<p>
+Дело в том, что как такового в QSP нет булевого типа данных. То есть операции сравнения возвращают не значения 'true' и 'false', а значения -1 (заменяет 'true') и 0 (заменяет 'false'). Это легко проверить:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br>
+
+
+</div>
+<p>
+Таким образом оператор if проверяет не булевое, а числовое значение. И для этого оператора есть два варианта:
+
+</p>
+<ol>
+<li>
+Если ему передаётся значение 0, значит условие не выполнено.
+</li>
+<li>
+Если ему передаётся не 0, значит условие выполнено.
+</li>
+</ol>
+<p>
+Именно поэтому когда Вы передаёте оператору if просто числовое значение, он работает с ним правильно, как должен.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ygrek<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">6</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;ygrek<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Условие&nbsp;верно"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;ygrek<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Условие&nbsp;всё&nbsp;равно&nbsp;верно"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ygrek<span class="Monokai-Operator">=</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;ygrek<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Условие&nbsp;верно"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Условие&nbsp;неверно"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<h6>В новом плеере</h6><p>
+Обратите внимание, такие функции, как <span class="em_BLCK"><span class="emFUNC">obj</span></span>, <span class="em_BLCK"><span class="emOPRT">isplay</span></span>, <span class="em_BLCK"><span class="emFUNC">isnum</span></span> и другие, возвращавшие в плеерах версии 5.7.0 и ниже в качестве 'true' и 'false': -1 и 0, — в плеерах версии 5.8.0 и выше будут возвращать значения 1 и 0 в качестве 'true' и 'false' соответственно.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.12. Как решить задачу по поиску случайного набора слагаемых?</h3><p>
+В: Как решить задачу по поиску случайного набора слагаемых?
+
+</p>
+<p>
+	Например, есть набор чисел 2,3,5 и 9, и нужно случайным образом выбрать из них несколько чисел (можно одинаковых), которые в сумме составляют 9. Как это реализовать?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для начала разберём алгоритм для этого конкретного случая, а затем попытаемся написать более универсальную процедуру.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;заполняем&nbsp;массив&nbsp;числами&nbsp;(они&nbsp;определены)&nbsp;-&nbsp;исходный&nbsp;массив</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">9</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;"сумму"&nbsp;выброшенных&nbsp;чисел&nbsp;=&nbsp;9</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;summ&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">9</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;далее&nbsp;начинается&nbsp;цикл.&nbsp;Метка:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выкидываем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;индекс</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><span class="Monokai-EndLoc">-1)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фиксируем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">=</span>mass<span class="Monokai-Operator">[</span>index<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем,&nbsp;возможно&nbsp;ли&nbsp;вычитание</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;summ&nbsp;<span class="Monokai-EndLoc">-&nbsp;number&nbsp;=&nbsp;0:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;при&nbsp;вычитании&nbsp;числа&nbsp;из&nbsp;summ&nbsp;получается&nbsp;0,&nbsp;значит&nbsp;мы&nbsp;нашли&nbsp;последнее&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;его</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;summ&nbsp;<span class="Monokai-EndLoc">-&nbsp;number&nbsp;<&nbsp;min('mass'):</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;разность&nbsp;summ&nbsp;и&nbsp;числа&nbsp;-&nbsp;меньше&nbsp;минимального&nbsp;значения&nbsp;в&nbsp;массиве,&nbsp;значит</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;число,&nbsp;которое&nbsp;мы&nbsp;вытянули,&nbsp;нам&nbsp;не&nbsp;подходит</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;не&nbsp;подойдёт,&nbsp;его&nbsp;можно&nbsp;убрать&nbsp;из&nbsp;исходного&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'mass'</span><span class="Monokai-Operator">,</span>index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записывать&nbsp;его&nbsp;не&nbsp;нужно,&nbsp;просто&nbsp;возвращаемся&nbsp;и&nbsp;повторяем&nbsp;цикл</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;во&nbsp;всех&nbsp;остальных&nbsp;случаях&nbsp;число&nbsp;нам&nbsp;подходит:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;его&nbsp;в&nbsp;конечный&nbsp;массив</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;уменьшаем&nbsp;summ&nbsp;на&nbsp;это&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;summ&nbsp;<span class="Monokai-EndLoc">-=&nbsp;number</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;повторяем&nbsp;цикл</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Как видим, алгоритм генерации случайного набора слагаемых довольно прост. Однако он предполагает, что нам изначально известны слагаемые, на которые может быть разложена исходная сумма.
+
+</p>
+<p>
+Можно написать универсальную процедуру для подобных случаев (назовём её "summ.break"):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#summ.breake</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;Сумма,&nbsp;для&nbsp;которой&nbsp;мы&nbsp;получаем&nbsp;набор&nbsp;слагаемых</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-String">','</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;набор&nbsp;слагаемых&nbsp;через&nbsp;запятую</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предварительно&nbsp;вытаскиваем&nbsp;в&nbsp;массив&nbsp;mass[]&nbsp;наши&nbsp;слагаемые</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Operator">price</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-String">","</span><span class="Monokai-Operator">)</span><span class="Monokai-EndLoc">-1))</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;его&nbsp;из&nbsp;строки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-String">","</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-String">","</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">''</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'price'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Теперь&nbsp;выполняем&nbsp;тот&nbsp;же&nbsp;алгоритм,&nbsp;что&nbsp;мы&nbsp;уже&nbsp;писали,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;только&nbsp;исключая&nbsp;лишние&nbsp;глобальные&nbsp;переменные&nbsp;&nbsp;(используем&nbsp;args)</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;начинается&nbsp;цикл.&nbsp;Метка:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;число&nbsp;(слагаемое)&nbsp;из&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;индекс</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'index'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><span class="Monokai-EndLoc">-1)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фиксируем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'number'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>mass<span class="Monokai-Operator">[</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'index'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем,&nbsp;возможно&nbsp;ли&nbsp;вычитание</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-EndLoc">-&nbsp;args['number']&nbsp;=&nbsp;0:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;при&nbsp;вычитании&nbsp;числа&nbsp;из&nbsp;args[0]&nbsp;получается&nbsp;0,&nbsp;значит&nbsp;мы&nbsp;нашли&nbsp;последнее&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;его</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'number'</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-EndLoc">-&nbsp;args['number']&nbsp;<&nbsp;min('mass'):</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;разность&nbsp;args[0]&nbsp;и&nbsp;числа&nbsp;-&nbsp;меньше&nbsp;минимального&nbsp;значения&nbsp;в&nbsp;массиве,&nbsp;значит</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;число,&nbsp;которое&nbsp;мы&nbsp;вытянули,&nbsp;нам&nbsp;не&nbsp;подходит</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;не&nbsp;подойдёт,&nbsp;его&nbsp;можно&nbsp;убрать&nbsp;из&nbsp;исходного&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'index'</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записывать&nbsp;его&nbsp;не&nbsp;нужно,&nbsp;просто&nbsp;возвращаемся&nbsp;и&nbsp;повторяем&nbsp;цикл</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;защита&nbsp;от&nbsp;дурака.&nbsp;Если&nbsp;размер&nbsp;массива&nbsp;mass&nbsp;упал&nbsp;до&nbsp;нуля,&nbsp;значит&nbsp;мы&nbsp;перебрали&nbsp;все</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;возможные&nbsp;варианты&nbsp;и&nbsp;значит&nbsp;изначальное&nbsp;условие&nbsp;задано&nbsp;неверно&nbsp;или</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;решение,&nbsp;которое&nbsp;начал&nbsp;подбирать&nbsp;алгоритм&nbsp;изначально&nbsp;неверно&nbsp;подбиралось</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;*pl&nbsp;'неверное&nbsp;решение'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$result&nbsp;=&nbsp;'false'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'endandexit'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;во&nbsp;всех&nbsp;остальных&nbsp;случаях&nbsp;число&nbsp;нам&nbsp;подходит:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;его&nbsp;в&nbsp;конечный&nbsp;массив</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;search<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'number'</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;уменьшаем&nbsp;args[0]&nbsp;на&nbsp;это&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-EndLoc">-=&nbsp;args['number']</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;повторяем&nbsp;цикл</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;результат&nbsp;прописывается&nbsp;в&nbsp;массив&nbsp;search</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;массив&nbsp;mass&nbsp;удаляем,&nbsp;он&nbsp;был&nbsp;временным</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Koperator">endandexit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'mass'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">exit</span><br>
+
+
+</div>
+<p>
+Вариант вызова для исходной задачи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'summ.break'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'2,3,5,9'</span><br>
+
+
+</div>
+<p>
+Данный алгоритм не включает в себя защиту от некоторых ошибок. Две очевидные:
+
+</p>
+<ul>
+<li>
+Вы не знаете изначально можно ли получить для данного числа хоть один набор слагаемых из тех, что даны.
+</li>
+<li>
+Перечень слагаемых включает числа, из которых можно получить набор слагаемых, но не во всех случаях.
+</li>
+</ul>
+<p>
+Обе эти ошибки не должны приводить к зацикливанию, но их всё равно стоит избегать.
+
+</p>
+<p>
+См. так же: <a href="#folder#00000140.html#faq_20_09" style="text-decoration:none;" class="emFOLD">тянем карту из колоды</a>, <a href="#folder#00000141.html#faq_20_10" style="text-decoration:none;" class="emFOLD">сортировка данных</a>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

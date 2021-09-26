@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>3. Вопросы о MSG и $INPUT</h2><h3>3.4. Как сделать ввод имени игроком?</h3><p>
+В: Как сделать ввод имени игроком?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для этого необходимо использовать функцию <span class="em_BLCK"><span class="emOPRT">$input</span></span>. В качестве аргумента этой функции указывается строка текста, которую мы хотим увидеть во всплывающем окошке. А возвращает функция текст, введённый игроком.
+
+</p>
+<p>
+Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$name<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Введите&nbsp;своё&nbsp;имя."</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Чтобы игрок не мог проигнорировать ввод имени, нужно зациклить выполнение данного кода, если <span class="em_BLCK"><span class="emOPRT">$input</span></span> возвращает пустую строку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Koperator">loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$name<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Введите&nbsp;своё&nbsp;имя."</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$name<span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">"loop"</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.4. Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?</h3><p>
+В: Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Проще всего написать отдельную локацию, и потом вызывать её всякий раз, когда понадобится добавить текст вверху окна основного описания. Локация будет называться "p.top":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#p.top</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;текст,&nbsp;который&nbsp;надо&nbsp;вывести&nbsp;сверху</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!запоминаем&nbsp;текст&nbsp;в&nbsp;окне&nbsp;основного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'maintxt'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$maintxt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;основного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;строку</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст,&nbsp;который&nbsp;был&nbsp;ранее</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;$args['maintxt']<br>
+
+
+</div>
+<p>
+Теперь, чтобы добавить текст сверху, в нужном месте:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'p.top'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Строка,&nbsp;которая&nbsp;выведется&nbsp;над&nbsp;основным&nbsp;описанием!'</span><br>
+
+
+</div>
+<p>
+Этот пример можно развить:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;текст,&nbsp;выводимый&nbsp;сверху</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"*pl"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;команда,&nbsp;с&nbsp;помощью&nbsp;которой&nbsp;нужно&nbsp;вывести&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;первый&nbsp;символ&nbsp;из&nbsp;команды</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"*"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;первый&nbsp;символ&nbsp;команды&nbsp;выведения&nbsp;текста&nbsp;*</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;значит&nbsp;нам&nbsp;нужен&nbsp;текст&nbsp;из&nbsp;окна&nbsp;основного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'text'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$maintxt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;противном&nbsp;случае</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;нам&nbsp;нужен&nbsp;текст&nbsp;из&nbsp;окна&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'text'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$stattxt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;с&nbsp;помощью&nbsp;dynamic&nbsp;повторяем&nbsp;действия&nbsp;из&nbsp;предыдущего&nbsp;примера:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<<$args[2]>>clr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<<$args[1]>>&nbsp;$args[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<<$args[2]>>p&nbsp;$args[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;",$args[0],$args['text']<br>
+
+
+</div>
+<p>
+Теперь можно выводить текст в окне основного и дополнительного описаний сверху разными способами:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'p.top'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Строка&nbsp;плюс&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;в&nbsp;окне&nbsp;основного&nbsp;описания'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'p.top'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Строка&nbsp;плюс&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;в&nbsp;окне&nbsp;дополнительного&nbsp;описания'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'pl'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'p.top'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;плюс&nbsp;строка&nbsp;в&nbsp;окне&nbsp;доп&nbsp;описания'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'nl'</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

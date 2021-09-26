@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.4. Хочу прописать игре собственный вид курсора, как это сделать?</h3><p>
+В: Хочу прописать игре собственный вид курсора, как это сделать?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Это можно сделать двумя способами. В файле "game.css" своего шаблона пропишите отдельный стиль для курсора:
+
+</p>
+<div class="Monokai-Code">
+.intCur&nbsp;{cursor:&nbsp;url(путь&nbsp;к&nbsp;файлу&nbsp;курсора/cursor.ani);}<br>
+
+
+</div>
+<p>
+Путь до файла курсора нужно указывать относительно файла "game.css", то есть файл курсора (в данном примере "cursor.ani") должен лежать на одном уровне с файлом "game.css", либо во вложенной папке. Чтобы применить стиль курсора в своей игре, используйте класс:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<p&nbsp;class='intCur'>Текст,&nbsp;при&nbsp;наведении&nbsp;на&nbsp;который&nbsp;курсор&nbsp;будет&nbsp;меняться&nbsp;на&nbsp;другой.</p>"</span><br>
+
+
+</div>
+<p>
+Второй способ — это прописать стиль курсора через атрибут style прямо в игре:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<p&nbsp;style='cursor:&nbsp;url('/путь&nbsp;к&nbsp;файлу&nbsp;курсора/cursor.ani');'>Текст,&nbsp;при&nbsp;наведении&nbsp;на&nbsp;который&nbsp;курсор&nbsp;будет&nbsp;меняться&nbsp;на&nbsp;твой</p>"</span><br>
+
+
+</div>
+<p>
+В этом случае файл курсора должен лежать на одном уровне с игрой или во вложенной папке, и путь до файла курсора указывается относительно файла игры.
+
+</p>
+<p>
+Примечание: твёрдого убеждения, что это будет работать у меня нет, я не проверял. Если есть уточнения по любому из этих способов пишите на <span class="em_BLCK">aleksversus@mail.ru</span>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

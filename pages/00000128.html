@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>19. Изыски</h2><h3>19.7. Как из под плеера выполнить произвольную строку кода?</h3><p>
+В: Как из под плеера выполнить произвольную строку кода?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В этом плане самое удобное — использовать строку ввода. Поскольку в неё можно ввести любой текст, соответственно и любой код можно будет выполнить из под неё. Для этого нам потребуется простейший отладчик.
+
+</p>
+<p>
+Простейший отладчик можно сделать самому. Для этого в самой первой локации игры делаем следующее:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;включаем&nbsp;отображение&nbsp;строки&nbsp;ввода:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;локацию-обработчик&nbsp;строки&nbsp;ввода:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$usercom</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"userCom"</span><br>
+
+
+</div>
+<p>
+Название локации, которую используем в качестве локации-обработчика строки ввода, может быть любым, но его необходимо обязательно присвоить переменной <span class="em_BLCK"><span class="emVAR">$usercom</span></span>, чтобы игра поняла, какую именно локацию использовать в качестве локации-обработчика строки ввода.
+
+</p>
+<p>
+Создаём локацию с именем "userCom" (либо с тем именем, что вы указали в <span class="em_BLCK"><span class="emVAR">$usercom</span></span>), где пишем следующее:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-Func">$user_text</span><br>
+
+
+</div>
+<p>
+Вот и всё. Теперь любая команда, введённая в строку ввода, будет выполнена, как обычный код. Например, если вам потребуется увидеть значение переменной, вы просто вводите название этой переменной в строку ввода и нажимаете "enter". Если необходимо срочно попасть на другую локацию во время теста игры, просто вводите в строку ввода
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"название_локации_на_которую_хотите_попасть"</span><br>
+
+
+</div>
+<p>
+и нажимаете клавишу "enter".
+
+</p>
+<p>
+Если вы хотите самостоятельно написать отладчик с более широкими возможностями, ознакомьтесь с видеоуроком от Aleks Versus <a href="https://www.youtube.com/watch?v=dVtRAlhLY2E&t=1967s" style="text-decoration:none;" class="emFOLD">"Отладчик"</a>.
+
+</p>
+<p>
+Так же можете воспользоваться уже готовым решением и скачать <a href="http://qsp.su/index.php?option=com_content&id=71&Itemid=56" style="text-decoration:none;" class="emFOLD">отладчик от WEREWOLF</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

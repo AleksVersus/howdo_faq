@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>5. Вопросы по $ONNEWLOC</h2><h3>5.3. Почему в <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> на локации-обработчике перехода на новую локацию уже есть данные?</h3><p>
+В: Почему в <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> на локации-обработчике перехода на новую локацию уже есть данные?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Таково устройство QSP. Если Вы передаёте аргументы при переходе на локацию с помощью оператора <span class="em_BLCK"><span class="emOPRT">goto</span></span>, <span class="em_BLCK"><span class="emOPRT">xgoto</span></span>, значения этих аргументов становятся доступны не только на текущей локации, на которую Вы перешли, но и на локации-обработчике перехода на новую локацию.
+
+</p>
+<p>
+Пример такой работы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"onNewLoc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"В&nbsp;комнату"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">"комната"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Мы&nbsp;не&nbsp;ожидали,&nbsp;что&nbsp;ходить&nbsp;придётся&nbsp;так&nbsp;много."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;начало&nbsp;---------------------------------</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;комната</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Мы&nbsp;вошли&nbsp;в&nbsp;комнату."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;комната&nbsp;---------------------------------</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;onNewLoc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;onNewLoc&nbsp;---------------------------------</span><br>
+
+
+</div>
+<p>
+Однако, обратите внимание: хотя на локацию, на которую был совершён переход, и на локацию-обработчик перехода на новую локацию передаются одинаковые данные, на обеих локациях с ними можно работать совершенно произвольно. То есть изменение <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> на локации "комната" не отразится на значении <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> в локации "onNewLoc" и туда всё равно будет передано исходное значение аргумента.
+
+</p>
+<p>
+Пример такого поведения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"onNewLoc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"В&nbsp;комнату"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">"комната"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Мы&nbsp;не&nbsp;ожидали,&nbsp;что&nbsp;ходить&nbsp;придётся&nbsp;так&nbsp;много."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;начало&nbsp;---------------------------------</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;комната</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Мы&nbsp;вошли&nbsp;в&nbsp;комнату."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Мы&nbsp;изменили&nbsp;значение&nbsp;args[0]."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;комната&nbsp;---------------------------------</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;onNewLoc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;onNewLoc&nbsp;---------------------------------</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

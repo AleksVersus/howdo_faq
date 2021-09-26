@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>19. Изыски</h2><h3>19.8. Как узнать, на каком устройстве запущена игра? Телефон, компьютер, планшет?</h3><p>
+В: Как узнать, на каком устройстве запущена игра? Телефон, компьютер, планшет?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В классической версии плеера это сделать невозможно. Существует только функция проверки номера базовой версии плеера <span class="em_BLCK"><span class="emOPRT">$QSPVER</span></span>.
+
+</p>
+<p>
+В Quest Navigator введена функция проверки платформы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$GETPLAYER<span class="Monokai-Operator">(</span><span class="Monokai-String">'platform'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Эта функция так же обладает рядом других возможностей, например, она может подсказать, в каком именно плеере запущена игра, однако пока что ею нельзя воспользоваться для адаптации игры одновременно к Навигатору и классическому плееру, так как и в Навигаторе с новой библиотекой, где есть эта функция, и в классическом плеере, где этой функции нет, <span class="em_BLCK"><span class="emOPRT">$QSPVER</span></span> вернёт вам версию плеера "5.7.0".
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

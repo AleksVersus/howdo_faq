@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>10. Интерфейс, дизайн, украшения</h2><h3>10.3. Как изменить формат части текста? Размер, цвет, наклон и т.д.?</h3><p>
+В: Как изменить формат части текста? Размер, цвет, наклон и т.д.?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для этого необходимо использовать HTML-форматирование.
+
+</p>
+<p>
+Чтобы включить распознавание HTML в плеере, необходимо системной переменной <span class="em_BLCK"><span class="emVAR">usehtml</span></span> присвоить значение отличное от нуля. Например, в самой первой локации в игре, пишем:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Далее, когда нужно изменить внешний вид части текста, пользуемся соответствующими HTML-тегами.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;курсивом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<i>написаны&nbsp;курсивом</i>."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;полужирным&nbsp;шрифтом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<b>написаны&nbsp;полужирным&nbsp;шрифтом</b>."</span><br>
+
+
+</div>
+<p>
+Чтобы изменить цвет, размер или непосредственно сам шрифт части текста, нужно использовать теги <span class="em_BLCK">&lt;font&gt;</span> и <span class="em_BLCK">&lt;/font&gt;</span> с соответствующими атрибутами:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;красным&nbsp;цветом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<font&nbsp;color=#ff0000>написаны&nbsp;красным&nbsp;цветом</font>."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;чуть&nbsp;большим&nbsp;шрифтом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;<font&nbsp;size=+2>будут&nbsp;крупнее</font>."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;другим&nbsp;шрифтом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<font&nbsp;face='Times&nbsp;New&nbsp;Roman'>написаны&nbsp;шрифтом&nbsp;Times&nbsp;New&nbsp;Roman</font>."</span><br>
+
+
+</div>
+<p>
+Теги и атрибуты можно комбинировать:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;курсивом&nbsp;и&nbsp;полужирным</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<b><i>написаны&nbsp;курсивом&nbsp;и&nbsp;полужирным</i></b>."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;часть&nbsp;текста&nbsp;красным&nbsp;и&nbsp;большим</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;этой&nbsp;строке&nbsp;несколько&nbsp;слов&nbsp;будут&nbsp;<font&nbsp;color=#ff0000&nbsp;size=+2>написаны&nbsp;красным&nbsp;цветом&nbsp;и&nbsp;будут&nbsp;крупнее</font>."</span><br>
+
+
+</div>
+<p>
+Обратите внимание: теги нужно закрывать в последовательности обратной открыванию.
+
+</p>
+<p>
+То есть, если сначала шёл открывающий тег <span class="em_BLCK">&lt;b&gt;</span>, а затем тег <span class="em_BLCK">&lt;i&gt;</span>, закрывающие теги должны идти в такой последовательности: сначала тег <span class="em_BLCK">&lt;/i&gt;</span>, затем <span class="em_BLCK">&lt;/b&gt;</span>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

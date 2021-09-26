@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.16. Как заставить действия выводиться в нужном мне порядке?</h3><p>
+В: Как заставить действия выводиться в нужном мне порядке?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы действия появлялись в нужном порядке, необходимо чётко понимать, как именно выводятся действия в QSP.
+
+</p>
+<p>
+В первую очередь выводятся базовые действия локации. Это те действия, которые мы добавляем при помощи специального окна в Quest Generator. Они выводятся в том порядке, в котором прописаны в этом окне.
+
+</p>
+<p>
+Во вторую очередь выводятся действия, прописанные в поле "выполнить при посещении" в Quest Generator с помощью оператора <span class="em_BLCK"><span class="emOPRT">act</span></span>. Точно так же они выводятся в том порядке, в каком вы их прописываете, то есть в порядке чтения кода плеером.
+
+</p>
+<p>
+Таким образом, чтобы действия выводились в нужном вам порядке, необходимо прямо в окне базовых действий и поле "выполнить при посещении" расположить их так, как вы хотите, чтобы они выводились.
+
+</p>
+<p>
+Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Первое&nbsp;действие"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;вверху&nbsp;списка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Второе&nbsp;действие"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;в&nbsp;середине&nbsp;списка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Третье&nbsp;действие"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;внизу&nbsp;списка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Если же вам нужно, чтобы порядок действий менялся динамически, например, выбранное игроком действие добавлялось в конец списка, то действия можно поместить в виде текстовых значений в переменные, или массив.
+
+</p>
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;действия&nbsp;в&nbsp;массив</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$act_array'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;непосредственно&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Первое&nbsp;действие"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Теперь&nbsp;порядок&nbsp;действий&nbsp;меняется.<br>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;самом&nbsp;действии&nbsp;есть&nbsp;код&nbsp;замены</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=arrpos('$id_array',"первое")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array[]=$act_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[]=$id_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$act_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$id_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;чтобы&nbsp;список&nbsp;обновился&nbsp;на&nbsp;экране<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;$curloc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;а&nbsp;здесь&nbsp;лежит&nbsp;идентификатор&nbsp;действия<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[0]="первое"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array[1]={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Второе&nbsp;действие":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text+="Раньше&nbsp;это&nbsp;действие&nbsp;было&nbsp;в&nbsp;середине&nbsp;списка.<br>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=arrpos('$id_array',"второе")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array[]=$act_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[]=$id_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$act_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$id_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;$curloc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[1]="второе"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array[2]={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Третье&nbsp;действие":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text+="Теперь&nbsp;действия&nbsp;меняются&nbsp;местами.<br>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=arrpos('$id_array',"третье")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$act_array[]=$act_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[]=$id_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$act_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$id_array',i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;$curloc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$id_array[2]="третье"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;действия<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$act_array'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;$act_array[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;$text<br>
+
+
+</div>
+<p>
+Работает всё очень просто. Сами действия в виде кода вписаны в массив, и воспроизводятся циклом через <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>. Параллельно с каждым действием в массив <span class="em_BLCK">$id_array</span> вписывается идентификатор действия. Именно по нему мы узнаём, в какой ячейке массива <span class="em_BLCK"><span class="emOPRT">$act</span>_array</span> лежит действие.
+
+</p>
+<p>
+Например, второе действие вписано в ячейку <span class="em_BLCK"><span class="emTEXT">[1]</span></span> массива <span class="em_BLCK"><span class="emOPRT">$act</span>_array</span>, идентификатор "второе" вписан в ячейку <span class="em_BLCK"><span class="emTEXT">[1]</span></span> массива <span class="em_BLCK">$id_array</span>. Когда мы щёлкаем по действию, выполняется код действия:
+
+</p>
+<ol>
+<li>
+Добавляем очередную строку к переменной для вывода на экран
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Раньше&nbsp;это&nbsp;действие&nbsp;было&nbsp;в&nbsp;середине&nbsp;списка.<br>"</span><br>
+
+
+</div>
+<ol>
+<li>
+Вычисляем, в какую ячейку вписан идентификатор данного действия:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=arrpos('$id_array',"второе")<br>
+
+
+</div>
+<ol>
+<li>
+Поскольку идентификатор вписан в ячейку <span class="em_BLCK"><span class="emTEXT">[1]</span></span> массива <span class="em_BLCK">$id_array</span>, значит и действие вписано в ячейку <span class="em_BLCK"><span class="emTEXT">[1]</span></span> массива <span class="em_BLCK"><span class="emOPRT">$act</span>_array</span>. Это значит, что теперь мы можем скопировать и действие и идентификатор в ячейки <span class="em_BLCK"><span class="emTEXT">[3]</span></span> массивов <span class="em_BLCK"><span class="emOPRT">$act</span>_arry</span> и <span class="em_BLCK">$id_array</span> соответственно:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$act_array<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>$act_array<span class="Monokai-Operator">[</span>i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$id_array[]=$id_array[i]<br>
+
+
+</div>
+<ol>
+<li>
+Остаётся удалить ячейки <span class="em_BLCK"><span class="emTEXT">[1]</span></span> из обоих массивов, чтоб действий не получилось <span class="em_BLCK"><span class="emNUM">4</span></span>:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$act_array'</span><span class="Monokai-Operator">,</span>i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$id_array',i<br>
+
+
+</div>
+<ol>
+<li>
+Ну и чтобы список обновился, а текст обновился на экране, перезаходим на локацию:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

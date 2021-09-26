@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>19. Изыски</h2><h3>19.5. Как задействовать клавиатуру в игре?</h3><p>
+В: Как задействовать клавиатуру в игре?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Первые девять действий привязываются к кнопкам на цифровой клавиатуре. То есть нажать любое из этих действий по факту можно, нажав по одному из чисел на цифровой клавиатуре.
+
+</p>
+<p>
+Таким образом, например, в игре "Серафим" от <span class="em_BLCK">Mioirel</span> организовано перемещение по карте. Перемещение на Север, Юг, Запад, Восток привязано соответственно к клавишам "8", "2", "4", "6".
+
+</p>
+<p>
+В Quest Navigator, используя JavaScript, вы можете привязывать к действиям вообще любые клавиши на клавиатуре. В классическом плеере подобное тоже можно реализовать, но через костыль:
+
+</p>
+<ol>
+<li>
+Игрок должен будет установить курсор в поле ввода
+</li>
+<li>
+При нажатии игроком клавиши с буквой, на локации-счётчик будет возвращаться значение из строки ввода с помощью функции <span class="em_BLCK">$user_text</span>. По этому значению выполняется некий код.
+</li>
+<li>
+Далее прямо с локации счётчик поле ввода очищается командой cmdclear, и игрок снова может вводить букву.
+</li>
+</ol>
+<p>
+Естественно у этого метода есть масса недостатков и применять его можно в случае крайней нужды.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

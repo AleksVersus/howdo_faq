@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.14. Можно ли выводить предметы не в окне предметов?</h3><p>
+В: Можно ли выводить предметы не в окне предметов?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Да, конечно можно. Названия предметов можно записывать в отдельный массив, а выводить в окно основного описания в виде гиперссылок:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предметы&nbsp;в&nbsp;массиве</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[0]="Отвёртка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[1]="Гаечный&nbsp;ключ"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[2]="Ножовка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[3]="Радиоактивный&nbsp;пепел"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[4]="Хрустальный&nbsp;шар"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предметы[5]="Апельсин"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;вывод&nbsp;списка&nbsp;предметов&nbsp;на&nbsp;экран:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$предметы'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;счётчик&nbsp;меньше&nbsp;размера&nbsp;массива<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;предмет&nbsp;в&nbsp;виде&nbsp;гиперссылки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"<a&nbsp;href=""EXEC:gosub&nbsp;'objClick','<<$предметы[i]>>'""><<$предметы[i]>></a>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Как видите, из гиперссылки идёт обращение к некоей локации "objClick". Эта локация будет заменять нам локацию-обработчик выделения предмета. И так же вы можете видеть, что название предмета на эту локацию передаётся в качестве аргумента. То есть искать его нужно в <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;код&nbsp;локации&nbsp;objClick</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;мало&nbsp;чем&nbsp;отличается&nbsp;от&nbsp;подобного&nbsp;кода&nbsp;в&nbsp;локации-обработчике&nbsp;выделения&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;щёлкнули&nbsp;по&nbsp;предмету&nbsp;"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;доп&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;описание&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Прекрасная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Отлично&nbsp;подойдёт&nbsp;для&nbsp;регулирования&nbsp;уровня&nbsp;громкости"</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;так&nbsp;далее&nbsp;для&nbsp;других&nbsp;предметов</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

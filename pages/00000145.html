@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.14. Как сделать записную книжку в игре?</h3><p>
+В: Как сделать записную книжку в игре?
+
+</p>
+<p>
+	То есть чтобы игрок мог делать записи, а когда нужно, мог их просматривать.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Хранить записи для записной книжки можно в массиве, саму же записную книжку можно сделать в виде предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Записная&nbsp;книжка"</span><br>
+
+
+</div>
+<p>
+Работу с предметом "Записная книжка" удобнее всего орагнизовать через всплывающее меню. Для всплывающего меню создаём две локации. Назовём их, например, "note.add" и "note.read". Первая будет служить для добавления записи в записную книжку, вторая — для воспроизведения записей из записной книжки.
+
+</p>
+<p>
+Код локации "note.add" достаточно прост:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предлагаем&nbsp;пользователю&nbsp;добавить&nbsp;запись</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$new_note<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Введите&nbsp;текст&nbsp;записи.'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;введён&nbsp;какой-либо&nbsp;текст,&nbsp;добавляем&nbsp;его&nbsp;в&nbsp;очередную&nbsp;ячейку&nbsp;массива&nbsp;note[]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$new_note<span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$note<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>$new_note<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;для&nbsp;верности&nbsp;удаляем&nbsp;пременную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'new_note'</span><br>
+
+
+</div>
+<p>
+Код локации "note.read":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;доп&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;счётчик</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;достиг&nbsp;размера&nbsp;массива&nbsp;note<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$note'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;запись<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pl&nbsp;$note[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Непосредственно при добавлении предмета, либо где-то ранее, прописываем пункты меню для записной книжки в массив:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_записная_книжка[0]="Добавить&nbsp;запись:note.add"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_записная_книжка[1]="Прочитать&nbsp;записи:note.read"<br>
+
+
+</div>
+<p>
+На локации-обработчике выделения предмета добавляем такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;"Записная&nbsp;книжка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Записная&nbsp;книжка'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вызываем&nbsp;меню</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$меню_записная_книжка'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;не&nbsp;забываем&nbsp;снять&nbsp;выделение&nbsp;в&nbsp;конце&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+
+
+</div>
+<p>
+Вот и всё. Теперь у нас есть предмет "Записная книжка", щелчок по которому вызовет всплывающее меню с двумя пунктами "Добавить запись" и "Прочитать записи".
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

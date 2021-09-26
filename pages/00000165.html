@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.9. Где в Quest Navigator править размер окна с игрой?</h3><p>
+В: Где в Quest Navigator править размер окна с игрой? Например мне надо, чтобы игра изначально открывалась в разрешении 1280х720.
+
+</p>
+<p>
+О: 
+
+</p>
+<p>
+Для этого вам потребуется использовать файл настроек "config.xml". За основу можно взять уже существующий файл, который находится в папке с установленным Quest Navigator`ом в подпапке "assets\standalone_content". Скопируйте файл "config.xml" в папку с вашей игрой, откройте любым текстовым редактором и отредактируйте атрибуты.
+
+</p>
+<p>
+Например, чтобы указать, что ваша игра должна изначально открываться в разрешении 1280х720, необходимо прописать соответствующие атрибуты <span class="em_BLCK">width</span> и <span class="em_BLCK">height</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator"><</span>game&nbsp;title<span class="Monokai-Operator">=</span><span class="Monokai-String">"Моя&nbsp;крутая&nbsp;Игра"</span>&nbsp;resizeable<span class="Monokai-Operator">=</span><span class="Monokai-String">"true"</span>&nbsp;standalone<span class="Monokai-Operator">=</span><span class="Monokai-String">"false"</span>&nbsp;width<span class="Monokai-Operator">=</span><span class="Monokai-String">"1280"</span>&nbsp;height<span class="Monokai-Operator">=</span><span class="Monokai-String">"720"</span><span class="Monokai-Operator">/</span><span class="Monokai-Operator">></span><br>
+
+
+</div>
+<p>
+О назначениях атрибутов и о том, какие значения они могут принимать по умолчанию, вы можете прочитать на QSP-wiki: <a href="http://wiki.qsp.su/help:fajl_nastroek_igry_v_quest_navigator" style="text-decoration:none;" class="emFOLD">wiki.qsp.su/файл настрое игры для Quest Navigator</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

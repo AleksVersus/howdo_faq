@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>3. Вопросы о MSG и $INPUT</h2><h3>3.5. Как сделать варианты для ответа через $input?</h3><p>
+В: Как увеличить число правильных ответов, которые может ввести игрок?
+
+</p>
+<p>
+В: Как сделать варианты для ответа через <span class="em_BLCK"><span class="emOPRT">$input</span></span>?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Можно воспользоваться сложным условием, где перечислены варианты ответа:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-Func">$TRIM</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$LCASE</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Цвет&nbsp;светофора&nbsp;бывает?..'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-String">'красный'</span>&nbsp;<span class="Monokai-Func">OR</span>&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-String">'желтый'</span>&nbsp;<span class="Monokai-Func">OR</span>&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-String">'зеленый'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'win'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Функция <span class="em_BLCK"><span class="emFUNC">$trim</span></span> обрежет прилегающие пробелы и символы табуляции в возвращённой строке.
+
+</p>
+<p>
+Функция <span class="em_BLCK"><span class="emFUNC">$lcase</span></span> переведёт все символы в нижний регистр.
+
+</p>
+<p>
+Этот код удобен, если вариантов немного. Однако, если строка условия получается слишком длинной, можно воспользоваться таким способом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;заранее&nbsp;вносим&nbsp;варианты&nbsp;ответа&nbsp;в&nbsp;массив:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer_var<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"красный"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer_var<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"желтый"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer_var<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"зеленый"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;ответ&nbsp;игрока</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$answer<span class="Monokai-Operator">=</span><span class="Monokai-Func">$trim</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$lcase</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Цвет&nbsp;светофора&nbsp;бывает?.."</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;проверяем,&nbsp;есть&nbsp;ли&nbsp;такой&nbsp;вариант&nbsp;в&nbsp;массиве</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"$answer_var"</span><span class="Monokai-Operator">,</span>$answer<span class="Monokai-Operator">)</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"win"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

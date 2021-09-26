@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.10. Не работает многострочный код. Как исправить?</h3><p>
+В: Не работает многострочный код. Как исправить?
+
+</p>
+<p>
+Пишу такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки_созрели<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;яблок."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сорвать&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;яблоко<span class="Monokai-Operator">=</span>яблоко<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Я&nbsp;сорвал&nbsp;яблоко&nbsp;и&nbsp;положил&nbsp;в&nbsp;консервную&nbsp;банку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Мне&nbsp;больше&nbsp;не&nbsp;нужны&nbsp;яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Плеер выдаёт ошибку.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Перепутаны назначения ключевых слов, очевидно от того, что вы не понимаете порядка работы оператора условия и оператора, создающего действие.
+
+</p>
+<p>
+Многострочная форма записи конструкции условия имеет три вида.
+
+</p>
+<p>
+Первый вид, это "простое" условие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+За ключевым словом <span class="em_BLCK"><span class="emOPRT">IF</span></span> следует выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span>, и если это выражение верно, плеер выполняет команды в последующих строках после двоеточия до ключевого слова <span class="em_BLCK"><span class="emOPRT">END</span></span>. Если выражение не верно, эти команды просто игнорируются плеером.
+
+</p>
+<p>
+Второй вид, это "сложное" условие. Эта запись позволяет нам задать наборы команд на случай, если выражение верно, и на случай, если выражение неверно:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+В этом случае, если выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> верно, выполняются команды, записанные в последующих строках после двоеточия и до ключевого слова <span class="em_BLCK"><span class="emOPRT">ELSE</span></span>. Т.е. команды <span class="em_BLCK"><span class="emTEXT">[команда 1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 2]</span></span> и <span class="em_BLCK"><span class="emTEXT">[команда 3]</span></span>. А если выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> не верно, выполняются команды, записанные в последующих строках после ключевого слова <span class="em_BLCK"><span class="emOPRT">ELSE</span></span> и до ключевого слова <span class="em_BLCK"><span class="emOPRT">END</span></span>. Т.е. команды <span class="em_BLCK"><span class="emTEXT">[команда 4]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 5]</span></span> и <span class="em_BLCK"><span class="emTEXT">[команда 6]</span></span>. При этом после <span class="em_BLCK"><span class="emOPRT">ELSE</span></span> не ставится двоеточие, и указать дополнительное условие проверки нельзя.
+
+</p>
+<p>
+Чтобы указать дополнительное условие, предусмотрен третий вид, это "расширенное" условие, и выглядит он так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSEIF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;2]:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+Теперь мы можем в одну конструкцию уместить несколько условий и для каждого написать свой набор команд. Если верно выражение <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span>, плеер выполнит команды в последующих строках после двоеточия и до первого <span class="em_BLCK"><span class="emOPRT">ELSEIF</span></span>, т.е. команды <span class="em_BLCK"><span class="emTEXT">[команда 1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 2]</span></span> и <span class="em_BLCK"><span class="emTEXT">[команда 3]</span></span>. Все остальные команды в конструкции условия будет проигнорированы.
+
+</p>
+<p>
+Однако, если выражение <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> неверно, тогда проверяется выражение <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span>, и если оно верно, то выполняются команды в последующих строках до <span class="em_BLCK"><span class="emOPRT">ELSE</span></span>, т.е. комнады <span class="em_BLCK"><span class="emTEXT">[команда 4]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 5]</span></span> и <span class="em_BLCK"><span class="emTEXT">[команда 6]</span></span>. И так далее.
+
+</p>
+<p>
+Как видно, когда мы пишем ключевое слово <span class="em_BLCK"><span class="emOPRT">ELSEIF</span></span>, к нему нужно указать и выражение, истинность которого следует проверить, и после выражения поставить двоеточие.
+
+</p>
+<p>
+Так выглядят три вида многострочной формы записи конструкции условий, но для многострочной записи действия предусмотрен только один вид.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">"Название&nbsp;действия"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+В многострочной форме записи действия нельзя использовать ключевое слово <span class="em_BLCK"><span class="emOPRT">ELSE</span></span>, или <span class="em_BLCK"><span class="emOPRT">ELSEIF</span></span>. Они относятся только к конструкциям условий.
+
+</p>
+<p>
+Тем не менее можно комбинировать различные конструкции, чтобы добиться правильной работы данного кода:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;открываем&nbsp;общее&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки_созрели<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;яблоки_созрели&nbsp;равно&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;яблок."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;соответствующее&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сорвать&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;далее&nbsp;следует&nbsp;код&nbsp;действия</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;открываем&nbsp;внутри&nbsp;действия&nbsp;условие,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяющее,&nbsp;сколько&nbsp;мы&nbsp;сорвали&nbsp;яблок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;сорвали&nbsp;больше&nbsp;трёх&nbsp;яблок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст,&nbsp;что&nbsp;нам&nbsp;больше&nbsp;не&nbsp;нужны&nbsp;яблоки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Мне&nbsp;больше&nbsp;не&nbsp;нужны&nbsp;яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иначе,&nbsp;если&nbsp;мы&nbsp;сорвали&nbsp;три&nbsp;или&nbsp;меньше&nbsp;яблок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;число&nbsp;сорванных&nbsp;яблок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;яблоко<span class="Monokai-Operator">=</span>яблоко<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст,&nbsp;что&nbsp;сорвали&nbsp;ещё&nbsp;яблоко</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Я&nbsp;сорвал&nbsp;яблоко&nbsp;и&nbsp;положил&nbsp;в&nbsp;консервную&nbsp;банку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие&nbsp;внутри&nbsp;действия</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;общее&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+От себя могу порекомендовать комментировать каждую строчку кода, если вы только начали изучать язык QSP. Это поможет более чётко и ясно понимать, как и что работает. Если вы не можете объяснить назначение той или иной строчки кода, то с ней следует разобраться. Она может быть банально лишней, а может вам ещё недостаёт знаний, чтобы правильно её применить.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

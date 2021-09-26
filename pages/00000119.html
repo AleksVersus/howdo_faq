@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>18. Вопросы о файлах и модулях</h2><h3>18.3. Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?</h3><p>
+В: Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+К сожалению, в QSP нет специальной функции, позволяющей проверять наличие файлов в папках. Если файл отсутствует, плеер, в зависимости от типа файла, либо проигнорирует его отсутствие, либо покажет на экране ошибку.
+
+</p>
+<p>
+Например, если плеер не найдёт файл музыки, он просто проигнорирует команду <span class="em_BLCK"><span class="emOPRT">play</span></span>. Если плеер не найдёт файл изображения, на экран будет выведена "битая картинка". Если плеер не найдёт файл модуля, он выведет ошибку 104: "указанный файл недоступен или не найден!".
+
+</p>
+<p>
+Определённо можно проверить наличие звукового файла, если сразу после запуска мелодии воспользоваться функцией <span class="em_BLCK"><span class="emOPRT">isplay</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'audio/coolmusic.mp3'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">isplay</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'audio/coolmusic.mp3'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Файл&nbsp;существует'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Файл&nbsp;не&nbsp;существует'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Поскольку воспроизведение отсутствующих звуковых файлов не вызывает ошибки, а команда попросту игнорируется плеером, мы можем использовать этот способ для определения наличия других файлов. Да, это будет костыль, но если вы боитесь забыть, скинули вы в папку нужный файл или нет, способ вам подойдёт.
+
+</p>
+<p>
+Смысл в чём.
+
+</p>
+<p>
+Параллельно определённому файлу храним звуковой файл без звука длительностью 1 секунда хотя бы. Этот файл у нас имеет точно то же название, что и файл, наличие которого мы хотим проверить. Сама проверка выглядит следующим образом: запускаем звуковой файл и проверяем его воспроизведение через <span class="em_BLCK"><span class="emOPRT">isplay</span></span>. Если файл отсутствует, то он просто не будет воспроизводиться и <span class="em_BLCK"><span class="emOPRT">isplay</span></span> выдаст 0. Из чего мы твёрдо делаем вывод, что и нужного нам файла нет.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'img/picture_000345.MP3'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">isplay</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'img/picture_000345.MP3'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'<img&nbsp;src="img/picture_000345.PNG">'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Художник&nbsp;забыл&nbsp;нарисовать&nbsp;картинку.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+<a href="https://mega.nz/file/2W5wgbJL#E1rCFrBpwVonlTlWHIC7xVdBWoFUoF5SFOpWcz2J2Xo" style="text-decoration:none;" class="emFOLD">Пример можно скачать отсюда</a>
+
+</p>
+<p>
+Так же вы можете организовать генерацию модуля со списком файлов в указанной папке. Вот метод, предложенный <span class="em_BLCK"><span class="emOPRT">evp</span></span>:
+
+</p>
+<blockquote>
+<p>
+	Некий исполняемый файл (это может быть даже bat-файл):
+
+</p>
+
+</blockquote>
+<ul>
+<li>
+составляет список файлов в указанной папке/папках;
+</li>
+<li>
+сохраняет результаты своей работы в текстовый документ, используя синтаксис txt2gam для формирования нужных переменных или массивов;
+</li>
+<li>
+конвертирует этот файл в .qsp, используя txt2gam.exe;
+</li>
+<li>
+запускает игру.
+</li>
+</ul>
+<p>
+	В самой игре используется функция ADDQST/ADDLIB/INCLIB для присоединения получившегося модуля.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

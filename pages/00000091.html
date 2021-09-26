@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.5. Как заменить один предмет на другой?</h3><p>
+В: Как заменить один предмет на другой?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы заменить один предмет на другой, нужно удалить старый предмет, а в позицию, которую он занимал, вписать новый предмет.
+
+</p>
+<p>
+Если вы знаете позицию предмета, который собираетесь удалить, то код довольно простой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;светящийся&nbsp;шар&nbsp;был&nbsp;помещён&nbsp;в&nbsp;третью&nbsp;позицию</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;светящийся&nbsp;шар</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Светящийся&nbsp;шар"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;"Тёмный&nbsp;шар"&nbsp;в&nbsp;третью&nbsp;позицию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Тёмный&nbsp;шар"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><br>
+
+
+</div>
+<p>
+Если вы не знаете заранее, в какой позиции окажется тот или иной предмет, придётся написать алгоритм, который будет находить позицию нужного предмета перед удалением:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!ищем&nbsp;позицию&nbsp;предмета&nbsp;по&nbsp;имени&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;1&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:loop&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;no&nbsp;i&nbsp;>&nbsp;countobj:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$getobj(i)="Светящийся&nbsp;шар":&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objnumber&nbsp;=&nbsp;i&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;"loop"&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;удаляем&nbsp;предмет&nbsp;по&nbsp;индексу&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;killobj&nbsp;objnumber<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;вставляем&nbsp;на&nbsp;его&nbsp;место&nbsp;новый&nbsp;предмет&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;"Тёмный&nbsp;шар","",objnumber<br>
+
+
+</div>
+<p>
+Функция <span class="em_BLCK"><span class="emFUNC">countobj</span></span> возвращает число предметов в инвентаре. Функция <span class="em_BLCK"><span class="emFUNC">$getobj</span></span> возвращает название предмета по его номеру.
+
+</p>
+<p>
+То есть, данный алгоритм сравнивает названия всех предметов в инвентаре по очереди, и если встречает такое же название, как мы указали, записывает номер в переменную <span class="em_BLCK"><span class="emFUNC">objnumber</span></span>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

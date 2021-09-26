@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>10. Интерфейс, дизайн, украшения</h2><h3>10.1. Для чего нужен оператор <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>, и как он работает?</h3><p>
+В: Для чего нужен оператор <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>, и как он работает?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+О том, для чего нужен оператор <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>, и как он работает, прямо написано в справке:
+
+</p>
+<blockquote>
+<p>
+&gt;	<span class="em_BLCK"><span class="emOPRT">REFINT</span></span> — обновление интерфейса (а также смена цветов, шрифта, назначенных с помощью системных переменных <span class="em_BLCK"><span class="emFUNC">BCOLOR</span></span>, <span class="em_BLCK"><span class="emFUNC">FCOLOR</span></span>, <span class="em_BLCK"><span class="emFUNC">LCOLOR</span></span>, <span class="em_BLCK"><span class="emVAR">FSIZE</span></span>, <span class="em_BLCK"><span class="emVAR">$FNAME</span></span>).
+
+</p>
+
+</blockquote>
+<p>
+И ещё:
+
+</p>
+<blockquote>
+<p>
+&gt;	Обновление настроек интерфейса происходит 2 раза в секунду (автоматически, по умолчанию), либо с помощью оператора <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>. Также см. оператор <span class="em_BLCK"><span class="emOPRT">SETTIMER</span></span>.
+
+</p>
+
+</blockquote>
+<p>
+Таким образом, оператор <span class="em_BLCK"><span class="emOPRT">REFINT</span></span> нужен для принудительного обновления настроек интерфейса.
+
+</p>
+<p>
+Есть ещё комментарий от разработчика:
+
+</p>
+<blockquote>
+<p>
+&gt;	<span class="em_BLCK"><span class="emOPRT">REFINT</span></span> принудительно выводит на экран текст, который находится в буфере вывода
+
+</p>
+
+</blockquote>
+<p>
+Это говорит о том, что перед тем, как вывести на экран текст, плеер помещает его в буфер, и только потом (после выполнения кода локации) выводит на экран. <span class="em_BLCK"><span class="emOPRT">REFINT</span></span> позволяет не только обновить настройки интерфейса, но и вывести часть текста, уже помещённую в буфер, на экран.
+
+</p>
+<p>
+Чтобы лучше понять, что делает <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>, напишите игру с таким кодом, и покликайте на действия:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showobjs</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"меняем&nbsp;настройки&nbsp;без&nbsp;refint"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">88</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<10000000:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"меняем&nbsp;настройки&nbsp;c&nbsp;refint":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showobjs&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcolor=rgb(0,88,88)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refint<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;j<10000000:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Не удивляйтесь подвисанию игры при клике по действию — цикл из десяти миллионов итераций выполняется долго.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

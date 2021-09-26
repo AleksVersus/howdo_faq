@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.18. Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?</h3><p>
+В: Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Решение данного вопроса состоит из двух частей.
+
+</p>
+<p>
+Первая часть — это непосредственно создание тайника. Тайник можно реализовать на отдельной локации.
+
+</p>
+<p>
+Создаём новую локацию и называем её "тайник". Затем, на локации, где мы располагаем тайник, нужно добавить действие или гиперссылку, которая ведёт на локацию тайник:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Открыть&nbsp;сейф"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"тайник"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Само собой на локации "тайник" необходимо создать гиперссылку или действие, ведущие на предыдущую локацию.
+
+</p>
+<p>
+На этом первая часть решения нашего вопроса окончена. Переходим ко второй части. Непосредственно сброс предметов на локации.
+
+</p>
+<p>
+Для того, чтобы игрок мог взаимодействовать с предметами, необходимо завести локацию-обработчик выделения предмета (более подробно об этом прочитайте в разделе "Предметы") и на этой локации прописать код взаимодействия. Тут тоже есть варианты. Вы можете организовать меню предметов, одним из пунктов которого может быть пункт "Выбросить", можете добавить в окно действий действие "Выбросить" на каждый предмет (если их не много), либо (если на локации "тайник" можно только сбрасывать предметы) воспользоваться нижеследующим решением, которое позволяет сбрасывать предметы по клику на них.
+
+</p>
+<p>
+Для того, чтобы каждый предмет на локации "тайник" сбрасывался по клику, на локации-обработчике выделения предмета необходимо прописать следующий код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"тайник"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;текущая&nbsp;локация&nbsp;—&nbsp;"тайник"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;текущий&nbsp;предмет&nbsp;в&nbsp;новую&nbsp;ячейку&nbsp;массива&nbsp;$secretbox</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$secretbox<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$selobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;предмет&nbsp;из&nbsp;списка</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-Func">$selobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;перезаходим&nbsp;на&nbsp;локацию&nbsp;тайник</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Чтобы сброшенные предметы воспроизводились на локации "тайник" в виде действий, нужно на локации "тайник" прописать такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$secretbox'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;значение&nbsp;счётчика&nbsp;не&nbsp;превысило&nbsp;номер&nbsp;последней&nbsp;ячейки&nbsp;массива<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;с&nbsp;помощью&nbsp;команды&nbsp;dynamic&nbsp;генерируем&nbsp;действие<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;'Поднять&nbsp;<<$secretbox[i]>>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;'<<$secretbox[i]>>'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;'$secretbox',<<i>><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;$curloc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Это универсальный код, позволяющий сбрасывать и поднимать любые предметы, если не требуется учитывать их количество.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.11. Как сделать проценты?</h3><p>
+В: Как сделать проценты?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Как таковые процентные вычисления в QSP не поддерживаются, равно как не поддерживаются дробные числа, однако выход из данной ситуации есть.
+
+</p>
+<p>
+Поскольку процент является сотой частью от исходного числа, можно составлять простые формулы для различных вычислений:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;двадцать&nbsp;процентов&nbsp;от&nbsp;числа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">percent</span><span class="Monokai-Operator">=</span>N*20/100<br>
+
+
+</div>
+<p>
+Обратите внимание, сначала производим операцию умножения, а лишь затем — деления. Это сделано потому, что QSP не поддерживает дробные числа. И если мы, например, захотим вычислить двадцать процентов от числа 80, то деление 80 на 100 даст в результате ноль, а значит и при умножении результата на 20 получится ноль. Но в нашем случае мы сначала умножаем 80 на 20, и получаем 1600, а затем делим на 100 и получаем 16. Число 16 — это 20 процентов от числа 80.
+
+</p>
+<p>
+Уменьшаем число на 25%:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;N=N-N*25/100<br>
+
+
+</div>
+<p>
+Увеличиваем число на 37%
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;N=N+N*37/100<br>
+
+
+</div>
+<p>
+Естественно при делении на 100 число теряет дробную часть и данное решение не даст нужной точности для маленьких чисел:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;N=25<br>
+&nbsp;&nbsp;&nbsp;&nbsp;N=N-N*50/100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;N<br>
+
+
+</div>
+<p>
+Для больших чисел неточность будет скрадываться.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;N=2500<br>
+&nbsp;&nbsp;&nbsp;&nbsp;N=N-N*37/100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;N<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

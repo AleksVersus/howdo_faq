@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.2. Как подключить свой шрифт к игре?</h3><p>
+В: Как подключить свой шрифт к игре?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Это делается через CSS. Используйте правило <span class="em_BLCK">@font-face</span>, чтобы импортировать шрифт в игру.
+
+</p>
+<p>
+В файле "game.css" вашего шаблона пропишите подобное правило:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-UnFunc">@font</span><span class="Monokai-EndLoc">-face&nbsp;{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font<span class="Monokai-EndLoc">-family:Versus&nbsp;New;&nbsp;/*&nbsp;Устанавливаем&nbsp;имя&nbsp;шрифта&nbsp;*/</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src<span class="Monokai-Operator">:</span>url<span class="Monokai-Operator">(</span>fonts<span class="Monokai-Operator">/</span>versus<span class="Monokai-EndLoc">-new.ttf);&nbsp;/*&nbsp;Указываем&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;со&nbsp;шрифтом&nbsp;*/</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+
+
+</div>
+<p>
+Применить шрифт можно, назначив стиль:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family:"Versus&nbsp;New";&nbsp;/*&nbsp;применяем&nbsp;шрифт&nbsp;к&nbsp;абзацам&nbsp;*/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+
+</div>
+<p>
+<strong>src:url();</strong> — это ссылка на файл шрифта. Ваш файл шрифта должен лежать на уровне файла "game.css" вашего шаблона, или во вложенной папке. Соответственно указываем относительный путь — относительно файла "game.css".
+
+</p>
+<p>
+P.S.: К сожалению, данный способ по факту работает только в стандалон-сборке. А ещё придётся поэкспериментировать с форматом шрифта, так как замечено, что Навигатор не справляется с truetype-шрифтами, но неплохо ест opentype ttf и woff. Поэтому, если вы заметили, что ваш шрифт не работает в Навигаторе, попробуйте сконвертировать его в другие форматы и подключить их.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

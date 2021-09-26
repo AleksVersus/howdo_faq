@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>2. Вопросы о $COUNTER</h2><h3>2.4. Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?</h3><p>
+В: Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?
+
+</p>
+<p>
+Дело в том, что в цикле много операций, и пока он не выполнится, игра висит. Можно ли сделать так, чтобы цикл выполнялся, но игра продолжалась?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В этом случае нужно использовать локацию-счётчик. Если игра может продолжаться даже пока цикл не выполнен, то локация-счётчик позволит распределить вычисления цикла во времени. Однако, <span class="em_BLCK">это вовсе не означает, что код локации-счётчика выполняется параллельно коду остальной игры</span>. Плеер только лишь прерывает выполнение основного кода (с определённой периодичностью) и выполняет код на локации-счётчике, затем продолжает выполнение основного кода.
+
+</p>
+<p>
+Для начала нужно создать локацию-счётчик:
+
+</p>
+<ul>
+<li>
+создаём локацию, название может быть любым, например "реалтайм".
+</li>
+<li>
+указываем плееру, какую локацию ему нужно использовать, как локацию-счётчик. Пишем, например на самой первой локации в игре:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"реалтайм"</span><br>
+
+
+</div>
+<p>
+По умолчанию обращение к локации-счётчику выполняется каждые пол секунды. Если нужно изменить период обращения, воспользуйтесь оператором <span class="em_BLCK"><span class="emOPRT">settimer</span></span>. В качестве аргумента этому оператору указывается период обращения к локации-счётчику в миллисекундах:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обращение&nbsp;к&nbsp;локации-счётчику&nbsp;каждые&nbsp;100&nbsp;мс.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
+
+
+</div>
+<p>
+На локации счётчике пишем непосредственно код для циклических вычислений:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтобы&nbsp;запустить&nbsp;выполнение&nbsp;цикла,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;необходимо&nbsp;переменной&nbsp;цикл_вкл&nbsp;присвоить&nbsp;единицу</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;цикл_вкл<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;цикл&nbsp;запущен</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;частоту&nbsp;обращения&nbsp;к&nbsp;локации-счётчику</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i<1000:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;значение&nbsp;счётчика&nbsp;не&nbsp;достигло&nbsp;предела<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выполняем&nbsp;требуемые&nbsp;операции<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;здесь&nbsp;заполняем&nbsp;массив<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data[i]=i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;увеличиваем&nbsp;счётчик<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;значение&nbsp;счётчика&nbsp;достигло&nbsp;предела<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;останавливаем&nbsp;выполнение&nbsp;цикла<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;цикл_вкл=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;уменьшаем&nbsp;частоту&nbsp;обращения&nbsp;к&nbsp;локации-счётчику<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settimer&nbsp;500<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.1. Как сделать меню предмета?</h3><p>
+В: Как сделать меню предмета?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы меню всплывало по щелчку на предмете, нужно задействовать локацию-обработчик выделения предмета. Для этого:
+
+</p>
+<ul>
+<li>
+создаём локацию и называем, например, "если_предмет_выбран". Название может быть любым.
+</li>
+<li>
+в самой первой локации в игре указываем плееру, какую локацию он должен использовать, как обработчик выделения предмета. Для этого в системную переменную <span class="em_BLCK"><span class="emFUNC">$onobjsel</span></span> вносим имя нашей новой локации:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выбран"</span><br>
+
+
+</div>
+<p>
+Теперь мы должны определиться с тем, сколько пунктов будет в нашем меню. Допустим, у нас есть предмет "Отвёртка" (добавленный где-то в игре с помощью <span class="em_BLCK"><span class="emOPRT">addobj</span> "Отвёртка"</span>), и мы хотим сделать три пункта:
+
+</p>
+<ul>
+<li>
+Осмотреть
+</li>
+<li>
+Использовать
+</li>
+<li>
+Выбросить
+</li>
+</ul>
+<p>
+На каждый пункт меню нам нужно создать отдельную локацию:
+
+</p>
+<ul>
+<li>
+Для пункта "Осмотреть" локация будет называться "info_screw"
+</li>
+<li>
+Для пункта "Использовать" локация будет называться "use_screw"
+</li>
+<li>
+Для пункта "Выбросить" локация будет называться "put_screw"
+</li>
+</ul>
+<p>
+Далее нам нужно завести массив, в котором мы пропишем все наши пункты меню. Назовём его, например, <span class="em_BLCK">$меню_отвёртка</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[0]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[1]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[2]="Выбросить:put_screw"<br>
+
+
+</div>
+<p>
+	(этот код можно прописать на самой первой локации в игре)
+
+</p>
+<p>
+Как видите, пункты нужно вписывать в массив, начиная с нулевой ячейки, по порядку. Каждый пункт состоит из двух частей:
+
+</p>
+<ul>
+<li>
+первая часть — название пункта меню
+</li>
+<li>
+вторая часть — название локации, которая отвечает за этот пункт меню.
+</li>
+</ul>
+<p>
+Части разделяются двоеточием.
+
+</p>
+<p>
+Теперь на локации-обработчике выделения предмета ("если_предмет_выбран") пишем такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;отвёртка</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вывести&nbsp;всплывающее&nbsp;меню</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">"$меню_отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;самом&nbsp;конце&nbsp;локации&nbsp;не&nbsp;забудьте&nbsp;снять&nbsp;выделение&nbsp;с&nbsp;предмета:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+
+
+</div>
+<p>
+В качестве аргумента оператору <span class="em_BLCK"><span class="emOPRT">menu</span></span> передаётся название массива, в который мы прописали пункты меню.
+
+</p>
+<p>
+Не забываем прописать код для каждой локации, которая отвечает за выполнение пункта меню:
+
+</p>
+<ul>
+<li>
+локация "info_screw":
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;описание&nbsp;отвёртки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Обыкновенная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Подойдёт&nbsp;для&nbsp;регулирования&nbsp;громкости"</span><br>
+
+
+</div>
+<ul>
+<li>
+локация "use_screw"
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;например&nbsp;изменяем&nbsp;значение&nbsp;переменной</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;громкость<span class="Monokai-Operator">=</span>громкость<span class="Monokai-EndLoc">-50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*nl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сунули&nbsp;отвёртку&nbsp;в&nbsp;ухо&nbsp;и&nbsp;звуки&nbsp;стали&nbsp;тише."</span><br>
+
+
+</div>
+<ul>
+<li>
+локация "put_screw"
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;выбросили&nbsp;отвёртку"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+
+
+</div>
+<p>
+Теперь осталось только попробовать, как всё работает.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

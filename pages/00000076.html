@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.3. Не работает <span class="em_BLCK"><span class="emOPRT">IIF</span></span>!</h3><p>
+В: Не работает <span class="em_BLCK"><span class="emOPRT">IIF</span></span>!
+
+</p>
+<p>
+Пишу такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">IIF</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">prprpr</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Operator">GOSUB</span>&nbsp;<span class="Monokai-String">'1'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Operator">prprpr</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Но плеер не выполняет команду GOSUB.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+<strong>IIF</strong> — это не оператор, это функция. Её преднаначение: ВОЗВРАЩАТЬ то или иное ЗНАЧЕНИЕ в зависимости от результата проверки условия.
+
+</p>
+<p>
+Внимательно читайте справку, прежде чем использовать какую-либо функцию или оператор:
+
+</p>
+<blockquote>
+<p>
+&gt;	IIF([#выражение],[выражение_да],[выражение_нет]) - ВОЗВРАЩАЕТ ЗНАЧЕНИЕ выражения [выражение_да], если [#выражение] верно, иначе значение выражения [выражение_нет].
+
+</p>
+
+</blockquote>
+<p>
+Функция позволяет существенно сократить запись некоторых условий.
+
+</p>
+<p>
+Например, у нас есть число <span class="em_BLCK">number</span> и нам нужно получить модуль этого числа <span class="em_BLCK">abs_number</span>. Если бы мы делали это с помощью оператора условий, то запись выглядела бы так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;number<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;abs_number<span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-number&nbsp;else&nbsp;abs_number=number</span><br>
+
+
+</div>
+<p>
+При использовании функции IIF, запись сокращается:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;abs_number<span class="Monokai-Operator">=</span><span class="Monokai-Func">IIF</span><span class="Monokai-Operator">(</span>number<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-EndLoc">-number,number)</span><br>
+
+
+</div>
+<p>
+Вообще, функция удобна там, где нам нужно получить один из двух вариантов значения.
+
+</p>
+<p>
+Например, мы делаем в игре отображение времени, и нам нужно, чтобы на экран выводилось время в формате 00:00. Т.е. например, четверть третьего ночи должны выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">02</span><span class="Monokai-Operator">:</span><span class="Monokai-Numeric">15</span><br>
+
+
+</div>
+<p>
+А пять минут двенадцатого днём так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">11</span><span class="Monokai-Operator">:</span><span class="Monokai-Numeric">05</span><br>
+
+
+</div>
+<p>
+При этом число минут мы считаем в переменной <span class="em_BLCK"><span class="emFUNC">minutes</span></span>, а число часов — в переменной <span class="em_BLCK">hours</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$IIF</span><span class="Monokai-Operator">(</span>hours<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0<<hours>>"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"<<hours>>"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-String">":"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$IIF</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">minutes</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0<<minutes>>"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"<<minutes>>"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Попробуйте записать это с помощью операторов условий.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

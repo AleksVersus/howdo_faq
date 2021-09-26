@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>6. Вопросы по звуковым файлам в QSP</h2><h3>6.3. Как при переходе на новую локацию прервать одну мелодию и запустить другую?</h3><p>
+В: Как при переходе на новую локацию прервать одну мелодию и запустить другую?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В QSP есть две команды для прерывания проигрывания файлов:
+
+</p>
+<ul>
+<li>
+CLOSE ALL — прерывает проигрывание всех звуков и музыки, которые были запущены в игре
+</li>
+<li>
+CLOSE "путь к файлу музыки/звук.mp3" - прерывает только выполнение указанного файла
+</li>
+</ul>
+<p>
+Например, на локации "комната" вы воспользовались командой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"music/relax.mp3"</span><br>
+
+
+</div>
+<p>
+Из "комнаты" есть переход на локацию "коридор", и здесь должна запуститься другая мелодия:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;мелодию&nbsp;"комнаты"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">CLOSE</span>&nbsp;<span class="Monokai-String">"music/relax.mp3"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запускаем&nbsp;мелодию&nbsp;коридора</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"music/triangle.mp3"</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.10. Как сделать два списка предметов?</h3><p>
+В: Как сделать два списка предметов? Например для игры за разных персонажей.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Списки предметов можно хранить в разных массивах. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;список&nbsp;предметов&nbsp;персонажа&nbsp;Вася</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$вася_предметы[0]="Отвёртка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$вася_предметы[1]="Гаечный&nbsp;ключ"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$вася_предметы[2]="Ножовка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;список&nbsp;предметов&nbsp;персонажа&nbsp;Петя<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$петя_предметы[0]="Радиоактивный&nbsp;пепел"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$петя_предметы[1]="Хрустальный&nbsp;шар"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$петя_предметы[2]="Апельсин"<br>
+
+
+</div>
+<p>
+Допустим, мы играем за персонаж Петя. Тогда добавление предметов должно выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;в&nbsp;окно&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Бутылка&nbsp;кетчупа"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;название&nbsp;предмета&nbsp;в&nbsp;массиве</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$петя_предметы[]="Бутылка&nbsp;кетчупа"<br>
+
+
+</div>
+<p>
+Пустые квадратные скобки после названия массива означают, что нужно записать значение в ячейку следующую за последней (в новую).
+
+</p>
+<p>
+Удаление предмета соответственно будет выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;предмет&nbsp;из&nbsp;окна&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Бутылка&nbsp;кетчупа"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;запись&nbsp;о&nbsp;предмете&nbsp;из&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">"$петя_предметы"</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"$петя_предметы"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Бутылка&nbsp;кетчупа"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Когда нам нужно сменить персонаж, мы делаем следующее:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;список&nbsp;предметов&nbsp;в&nbsp;окне&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;все&nbsp;предметы&nbsp;из&nbsp;списка&nbsp;другого&nbsp;персонажа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;с&nbsp;помощью&nbsp;цикла</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize("$вася_предметы"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысил&nbsp;номер&nbsp;последней&nbsp;ячейки&nbsp;массива<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;в&nbsp;окно&nbsp;предметов&nbsp;предмет,&nbsp;записанный&nbsp;в&nbsp;массив<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$вася_предметы[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;увеличиваем&nbsp;значение&nbsp;счётчика<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Можно написать универсальные локации для каждого из этих алгоритмов и использовать их, когда нужно. Для подробностей см. <a href="#folder#None.html#faq_80_02_gosub" style="text-decoration:none;" class="emFOLD">оператор <span class="em_BLCK"><span class="emOPRT">gosub</span></span></a>.
+
+</p>
+<p>
+Если вам нужно более двух списков предметов, то заводить отдельный массив на каждый неразумно. Проще завести два массива:
+
+</p>
+<ul>
+<li>
+в одном массиве прописывать сам предмет: <span class="em_BLCK">$предмет_название[0]="Бутылка кетчупа"</span>
+</li>
+<li>
+во втором массиве прописывать, кому принадлежит предмет (или где лежит): <span class="em_BLCK">$предмет_расположение[0]="Петя"</span>
+</li>
+</ul>
+<p>
+Добавление предмета немного усложнится:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;в&nbsp;окно&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Бутылка&nbsp;кетчупа"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;название&nbsp;в&nbsp;список&nbsp;и&nbsp;указываем,&nbsp;кому&nbsp;принадлежит</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предмет_название[]="Бутылка&nbsp;кетчупа"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$предмет_расположение[]="Петя"<br>
+
+
+</div>
+<p>
+Важно, чтобы предмет и его расположение прописывались в массивы под одним индексом. Тогда удаление:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;предмет&nbsp;из&nbsp;окна&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Бутылка&nbsp;кетчупа"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;и&nbsp;название&nbsp;предмета&nbsp;из&nbsp;списка&nbsp;и&nbsp;его&nbsp;расположение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=arrpos("$предмет_название","Бутылка&nbsp;кетчупа")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;"$предмет_название",i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;killvar&nbsp;"$предмет_расположение",i<br>
+
+
+</div>
+<p>
+Вывести все предметы текущего персонажа можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;где-то&nbsp;ранее&nbsp;мы&nbsp;написали&nbsp;имя&nbsp;персонажа&nbsp;в&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$персонаж_имя="Петя"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;очищаем&nbsp;окно&nbsp;предметов&nbsp;от&nbsp;предметов&nbsp;другого&nbsp;персонажа<br>
+&nbsp;&nbsp;&nbsp;&nbsp;killobj<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;предметы&nbsp;пети&nbsp;в&nbsp;окно&nbsp;предметов<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize("$предмет_название"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысил&nbsp;номер&nbsp;последней&nbsp;ячейки&nbsp;массива<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$предмет_расположение[i]=$персонаж_имя:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;предмет&nbsp;находится&nbsp;у&nbsp;пети<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;в&nbsp;окно&nbsp;предметов&nbsp;предмет,&nbsp;записанный&nbsp;в&nbsp;массив<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$предмет_название[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;увеличиваем&nbsp;значение&nbsp;счётчика<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

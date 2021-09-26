@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>9. Вопросы о изображениях</h2><h3>9.3. Как вставить картинку в действие?</h3><p>
+В: Как вставить картинку в действие?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+С помощью html-разметки изображения можно вставлять в названия действий, в названия предметов, выводить в окна основного и дополнительного описаний.
+
+</p>
+<p>
+Чтобы вставить картинку в название действия с помощью html-разметки, нужно включить в плеере распознавание html. Например, в самой первой локации в игре нужно написать такую команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Теперь в названия действий можно вставлять изображения с помощью тега <span class="em_BLCK">&lt;img&gt;</span>. В атрибуте <span class="em_BLCK">src</span> этого тега прописывается путь к файлу картинки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg'>&nbsp;Выйти&nbsp;на&nbsp;улицу."</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"улица"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Используя html, можно вставлять изображение как в начале названия действия, так и в конце:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Выйти&nbsp;на&nbsp;улицу.&nbsp;<img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg'>"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"улица"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Так же QSP умеет выводить изображение перед названием действия без использования html. Для этого путь к файлу картинки указывается вторым аргументом к оператору <span class="em_BLCK"><span class="emOPRT">act</span></span> (через запятую после названия действия):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Выйти&nbsp;на&nbsp;улицу"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"улица"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

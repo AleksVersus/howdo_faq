@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>16. Вопросы по вёрстке</h2><h3>16.10. Как работать с тегами MAP и AREA?</h3><p>
+В:	 Как разметить картинку на кликабельные зоны?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы выводить на экран изображение (тег <span class="em_BLCK">&lt;img&gt;</span>) и его разметку (теги <span class="em_BLCK">&lt;map&gt;</span> и <span class="em_BLCK">&lt;area&gt;</span>), необходимо в первую очередь включить распознавание HTML:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Далее с помощью тега <span class="em_BLCK">&lt;img&gt;</span> выводим на экран изображение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;"<img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;изображения/картинка.jpg'&nbsp;usemap='#groundit'>"<br>
+
+
+</div>
+<p>
+В атрибуте <span class="em_BLCK">src</span> тега указываем путь к файлу изображения, а в атрибуте <span class="em_BLCK"><span class="emOPRT">usemap</span></span> прописываем символ <span class="em_BLCK">#</span> (решётка) и значение, вписанное в атрибут <span class="em_BLCK">name</span> тега <span class="em_BLCK">&lt;map&gt;</span>, о котором далее. Атрибут <span class="em_BLCK"><span class="emOPRT">usemap</span></span> — это своего рода ссылка на соответствующий тег <span class="em_BLCK">&lt;map&gt;</span>. Таким образом вы можете разметить несколько изображений, ссылаясь из тегов <span class="em_BLCK">&lt;img&gt;</span> на соответстующие контейнеры <span class="em_BLCK">&lt;map&gt;</span> с помощью атрибута <span class="em_BLCK"><span class="emOPRT">usemap</span></span>.
+
+</p>
+<p>
+Теги <span class="em_BLCK">&lt;map&gt;</span> и <span class="em_BLCK">&lt;area&gt;</span> используются для разметки кликабельных областей на изображении. Тег <span class="em_BLCK">&lt;map&gt;</span> является контейнером, объединяющим кликабельные области, каждая из которых описывается отдельным тегом <span class="em_BLCK">&lt;area&gt;</span>.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;открываем&nbsp;контейнер&nbsp;MAP,&nbsp;не&nbsp;забывая&nbsp;указать&nbsp;значение&nbsp;атрибуту&nbsp;name</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;"<map&nbsp;name='groundit'>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;перечисляем&nbsp;кликабельные&nbsp;области&nbsp;в&nbsp;тегах&nbsp;AREA<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;размечаем&nbsp;прямоугольную&nbsp;область:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;"<area&nbsp;shape='rect'&nbsp;coords='50,50,350,200'&nbsp;href='EXEC:pl&nbsp;""Вы&nbsp;кликнули&nbsp;по&nbsp;прямоугольнику.""'>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;размечаем&nbsp;круглую&nbsp;область:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;"<area&nbsp;shape='circle'&nbsp;coords='475,325,75'&nbsp;href='EXEC:pl&nbsp;""Вы&nbsp;кликнули&nbsp;по&nbsp;круглой&nbsp;области.""'>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;размечаем&nbsp;область&nbsp;в&nbsp;форме&nbsp;звезды<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;"<area&nbsp;shape='poly'&nbsp;coords='100,420,139,333,80,285,160,285,180,240,197,285,260,285,211,327,245,420,171,360'&nbsp;href='EXEC:pl&nbsp;""Вы&nbsp;кликнули&nbsp;по&nbsp;полигону&nbsp;в&nbsp;форму&nbsp;звезды.""'>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;размечаем&nbsp;область&nbsp;в&nbsp;форме&nbsp;стрелки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;"<area&nbsp;shape='poly'&nbsp;coords='401,84,506,84,506,52,611,117,506,181,506,149,401,149'&nbsp;href='EXEC:pl&nbsp;""Вы&nbsp;кликнули&nbsp;по&nbsp;полигону&nbsp;в&nbsp;форму&nbsp;стрелки.""'>"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;закрываем&nbsp;контейнер&nbsp;MAP<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;"</map>"<br>
+
+
+</div>
+<p>
+Итак, каждый тег <span class="em_BLCK">&lt;area&gt;</span> используется, чтобы описать отдельную кликабельную область изображения. Здесь мы используем следующие атрибуты:
+
+</p>
+<ul>
+<li>
+<strong>shape</strong> — в этом атрибуте указываем форму кликабельной области. Можно указать такие значения:
+<ul>
+<li>
+<strong>rect</strong> — задаём прямоугольную кликабельную область. При выборе такого значения для <span class="em_BLCK"><span class="emOPRT">shape</span></span>, в атрибуте <span class="em_BLCK"><span class="emFUNC">coords</span></span> перечисляются координаты левого верхнего угла прямоугольника (X1,Y1) и координаты нижнего правого угла (X2,Y2):
+</li>
+</ul>
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;coords<span class="Monokai-Operator">=</span><span class="Monokai-String">'X1,Y1,X2,Y2'</span><br>
+
+
+</div>
+<ul>
+<li>
+<strong>circle</strong> — задаём круглую кликабельную область. При выборе этого значения, в атрибуте <span class="em_BLCK"><span class="emFUNC">coords</span></span> перечисляются значения: X1,Y1 — координаты центра круга; R1 — радиус в пикселях:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;coords<span class="Monokai-Operator">=</span><span class="Monokai-String">'X1,Y1,R1'</span><br>
+
+
+</div>
+<ul>
+<li>
+<strong>poly</strong> — задаём полигональную кликабельную область, то есть многоугольник. При выборе этого значения, в атрибуте <span class="em_BLCK"><span class="emFUNC">coords</span></span> можно прописывать довольно много значений точек, которые являются вершинами углов многоугольника, указывая координаты: X1, Y1, X2, Y2 и т.д.:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;coords<span class="Monokai-Operator">=</span><span class="Monokai-String">"X1,Y1,X2,Y2,X3,Y3,...,XN,YN"</span><br>
+
+
+</div>
+<ul>
+<li>
+<strong>coords</strong> — в этом атрибуте перечисляются координаты областей. Выше подробно описано, какие значения, для каких форм областей следует указывать. Координаты высчитываются в пикселях от верхнего левого угла изображения (0,0). Ось X — это горизонтальная ось координат (абсцисса), ось Y — вертикальная ось координат (ордината).
+</li>
+<li>
+<strong>href</strong> — в данном атрибуте в обыкновенном HTML-документе как правило прописывается адрес страницы в интернете (url), однако в QSP мы можем поместить сюда строку кода, который будет выполнен при клике на области. Для этого вписываем в начале значения атрибута ключевое слово <span class="em_BLCK"><span class="emOPRT">EXEC</span>:</span> (двоеточие обязательно), а после двоеточия пишем строку кода:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;href<span class="Monokai-Operator">=</span><span class="Monokai-String">"EXEC:*pl&nbsp;'Выводим&nbsp;текст&nbsp;при&nbsp;клике&nbsp;по&nbsp;области.'&nbsp;&&nbsp;!&nbsp;строка&nbsp;кода"</span><br>
+
+
+</div>
+<p>
+Если кликабельные области пересекаются, накладываются друг на друга, реагировать на клик будет та область, которая находится выше в HTML-коде.
+
+</p>
+<p>
+Обратите внимание, что в классическом QSP при наведении на кликабельную область курсор не будет менять свой вид.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

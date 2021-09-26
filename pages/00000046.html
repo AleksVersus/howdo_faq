@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>9. Вопросы о изображениях</h2><h3>9.4. Как поставить картинку фоном?</h3><p>
+В: Как поставить картинку фоном?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы поставить картинку фоном в окно основного описания, необходимо прописать путь к файлу картинки в переменную <span class="em_BLCK"><span class="emVAR">$backimage</span></span>.
+
+</p>
+<p>
+Например, файл вашей картинки называется "солнечный_день.jpg" и лежит в папке с игрой, тогда поставить её фоном можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"солнечный_день.jpg"</span><br>
+
+
+</div>
+<p>
+Или же вы создали в паке с игрой ещё одну папку и назвали её "background", а уже в неё поместили файл изображения. Тогда поставить её фоном можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"background/солнечный_день.jpg"</span><br>
+
+
+</div>
+<p>
+Чтобы заменить фон на другой, нужно в переменной <span class="em_BLCK"><span class="emVAR">$backimage</span></span> прописать путь к другой картинке.
+
+</p>
+<p>
+Чтобы совсем убрать фон, нужно переменной <span class="em_BLCK"><span class="emVAR">$backimage</span></span> присвоить пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

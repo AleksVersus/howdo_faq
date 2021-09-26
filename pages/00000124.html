@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>19. Изыски</h2><h3>19.3. Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?</h3><p>
+В: Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В самом простом виде это можно реализовать через цикл с задержкой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вносим&nbsp;текст&nbsp;в&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$stroka</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'А&nbsp;можно&nbsp;ли&nbsp;сделать&nbsp;так,&nbsp;чтобы&nbsp;текст&nbsp;появлялся&nbsp;постепенно?'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;счётчик</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<len($stroka)+1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;значение&nbsp;счётчика&nbsp;не&nbsp;превысило&nbsp;длину&nbsp;строки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;задержка&nbsp;250&nbsp;мс<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait&nbsp;250<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;следущую&nbsp;букву&nbsp;из&nbsp;нашей&nbsp;строки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;$mid($stroka,i,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Однако оператор <span class="em_BLCK"><span class="emOPRT">wait</span></span> "подвешивает" игру на время задержки, в результате чего игрок не может ничего сделать, пока текст не будет выведен полностью. Если нужно вывести текст побуквенно, но при этом сохранить для игрока возможность взаимодействовать с игрой, необходимо использовать локацию-счётчик.
+
+</p>
+<p>
+Для начала нужно создать локацию-счётчик (если ещё не создана):
+
+</p>
+<ul>
+<li>
+создаём локацию, название может быть любым, например "реалтайм".
+</li>
+<li>
+указываем плееру, какую локацию ему нужно использовать, как локацию-счётчик. Пишем, например, на самой первой локации в игре:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"реалтайм"</span><br>
+
+
+</div>
+<p>
+На локации-счётчик можно написать вот такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$stroka</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;в&nbsp;переменной&nbsp;строка&nbsp;есть&nbsp;какое&nbsp;либо&nbsp;значение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;контрольную&nbsp;переменную&nbsp;(она&nbsp;же&nbsp;значение&nbsp;таймера)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;control<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;период&nbsp;обращения&nbsp;к&nbsp;локации-счётчику</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;control<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;первую&nbsp;букву&nbsp;из&nbsp;оставшейся&nbsp;строки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;$mid($stroka,1,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;длина&nbsp;строки&nbsp;больше&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len($stroka)>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;вырезаем&nbsp;из&nbsp;неё&nbsp;все&nbsp;буквы,&nbsp;начиная&nbsp;со&nbsp;второй<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;и&nbsp;присваиваем&nbsp;той&nbsp;же&nbsp;переменной<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stroka=$mid($stroka,2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;иначе<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;перевод&nbsp;строки<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;присваиваем&nbsp;пустое&nbsp;значение<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$stroka=''<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;control=50:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;иначе&nbsp;если&nbsp;в&nbsp;контрольной&nbsp;переменной&nbsp;стоит&nbsp;значение&nbsp;50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;меняем&nbsp;значение&nbsp;контрольной&nbsp;переменной<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;control=500<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выставляем&nbsp;период&nbsp;обращения&nbsp;к&nbsp;локации-счётчику<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settimer&nbsp;control<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Теперь, чтобы строка вывелась побуквенно, достаточно присвоить текст переменной <span class="em_BLCK"><span class="emFUNC">$stroka</span></span> на любой локации:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$stroka</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"А&nbsp;можно&nbsp;ли&nbsp;сделать&nbsp;так,&nbsp;чтобы&nbsp;текст&nbsp;появлялся&nbsp;постепенно,&nbsp;но&nbsp;игрок&nbsp;продолжал&nbsp;взаимодействовать&nbsp;с&nbsp;игрой?"</span>&nbsp;<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

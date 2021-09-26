@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.2. Как удалить предмет из окна предметов?</h3><p>
+В: Как удалить предмет из окна предметов?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для того, чтобы удалить предмет из окна предметов, необходимо воспользоваться оператором <span class="em_BLCK"><span class="emOPRT">delobj</span></span>. Оператор <span class="em_BLCK"><span class="emOPRT">delobj</span></span> удаляет предмет по названию предмета, то есть в качестве аргумента этому оператору указываем название предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+
+
+</div>
+<p>
+Если вы выводили картинку в названии предмета с помощью html, то частью названия предмета является и html-тег <span class="em_BLCK">&lt;img&gt;</span>, а значит удалять предмет нужно точно так же, полностью указывая название:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"<img&nbsp;scr='img/screw.png'>&nbsp;Отвёртка"</span><br>
+
+
+</div>
+<p>
+Существует оператор, который удаляет предмет по индексу. Это оператор <span class="em_BLCK"><span class="emOPRT">killobj</span></span>. В качестве аргумента указываем номер предмета в списке:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
+
+
+</div>
+<p>
+Если не указывать аргумент оператору <span class="em_BLCK"><span class="emOPRT">killobj</span></span>, он удалит все предметы в списке:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

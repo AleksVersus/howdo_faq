@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.17. Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?</h3><p>
+В: Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+На самом деле это частный случай работы с предметами в игре.
+
+</p>
+<p>
+Подъём любого предмета пишется с помощью действий. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;книгу_поднял<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;книгу"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Старая&nbsp;книга"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;книгу_поднял<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Теперь, чтобы игрок имел возможность читать эту книгу, нужно завести локацию-обработчик выделения предмета, если у вас её ещё нет. Название может быть любым, но для примера я назову эту локацию "если_предмет_выделен".
+
+</p>
+<p>
+Чтобы плеер понял, какую локацию ему нужно использовать, как локацию-обработчик выделения предмета, необходимо прописать название этой локации в системную переменную $onobjsel, например на самой первой локации в игре:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выделен"</span><br>
+
+
+</div>
+<p>
+На самой вновь созданной локации пишем код для книги:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выбран&nbsp;предмет&nbsp;"Старая&nbsp;книга"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Старая&nbsp;книга"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст&nbsp;книги&nbsp;в&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Жил&nbsp;на&nbsp;юге&nbsp;человек,&nbsp;еще&nbsp;задолго&nbsp;до&nbsp;того&nbsp;времени,&nbsp;когда&nbsp;Тангбранд&nbsp;сын&nbsp;Вильбальдуса&nbsp;стал&nbsp;проповедовать&nbsp;Христа&nbsp;в&nbsp;Исландии.&nbsp;Звали&nbsp;этого&nbsp;человека&nbsp;Эйрик&nbsp;Светлоокий,&nbsp;сын&nbsp;Торгримура,&nbsp;и&nbsp;в&nbsp;те&nbsp;дни&nbsp;не&nbsp;было&nbsp;человека,&nbsp;равного&nbsp;ему&nbsp;по&nbsp;силе,&nbsp;красоте&nbsp;и&nbsp;смелости,&nbsp;во&nbsp;всем&nbsp;он&nbsp;был&nbsp;первый.&nbsp;Там&nbsp;же,&nbsp;на&nbsp;юге,&nbsp;жили&nbsp;две&nbsp;женщины,&nbsp;неподалеку&nbsp;от&nbsp;того&nbsp;места,&nbsp;где&nbsp;западные&nbsp;острова&nbsp;всплыли&nbsp;над&nbsp;морем.&nbsp;Одну&nbsp;звали&nbsp;Гудруда&nbsp;Прекрасная,&nbsp;другую&nbsp;—&nbsp;Сванхильда,&nbsp;прозванная&nbsp;Незнающей&nbsp;Отца.&nbsp;Они&nbsp;были&nbsp;сводные&nbsp;сестры,&nbsp;и&nbsp;не&nbsp;было&nbsp;равных&nbsp;им&nbsp;женщин&nbsp;в&nbsp;те&nbsp;дни:&nbsp;они&nbsp;были&nbsp;прекраснее&nbsp;всех.&nbsp;Однако&nbsp;между&nbsp;ними&nbsp;не&nbsp;было&nbsp;ничего&nbsp;общего,&nbsp;кроме&nbsp;крови&nbsp;и&nbsp;ненависти."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;снимаем&nbsp;выделение&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+
+
+</div>
+<p>
+Так же посмотрите раздел вопросов о создании меню, если хотите добавить больше действий с книгой для игрока.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

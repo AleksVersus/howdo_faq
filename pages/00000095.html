@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.9. Как снять выделение предмета?</h3><p>
+В: Как снять выделение предмета?
+
+</p>
+<p>
+В: Как сделать, чтобы выбранный предмет можно было кликнуть ещё раз?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Выделение с предмета снимается с помощью команды <span class="em_BLCK"><span class="emOPRT">unselect</span></span>. Обычно её прописывают в конце локации-обработчика выделения предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+
+
+</div>
+<p>
+Однако эта команда не успеет выполниться, если при щелчке по предмету происходит переход с помощью оператора `goto<strong>/</strong>'xgoto`. В этом случае можно воспользоваться таким решением:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;название&nbsp;выделенного&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-Func">$selobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;снимаем&nbsp;выделение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;далее&nbsp;работаем&nbsp;с&nbsp;сохранённым&nbsp;названием&nbsp;выделенного&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-String">"Камень&nbsp;телепортации"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;был&nbsp;выделен&nbsp;Камень&nbsp;телепортации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переходим&nbsp;на&nbsp;локацию&nbsp;Эверест</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"Эверест"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

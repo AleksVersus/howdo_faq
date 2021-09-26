@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>19. Изыски</h2><h3>19.10. Как сделать, чтобы текст выводился снизу вверх?</h3><p>
+В: Как сделать, чтобы текст выводился снизу вверх? Пробовал решить через выравнивание внутри ячейки таблицы, но ничего не получается.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В классическом плеере нет поддержки атрибута вертикального выравнивания <span class="em_BLCK"><span class="emFUNC">valign</span></span> для ячеек таблиц. Поэтому такой метод не сработает. К тому же атрибут <span class="em_BLCK">height</span> в классическом плеере так же не работает, и невозможно стилизовать ячейку, не говоря о блоке <span class="em_BLCK">&lt;div&gt;</span>. Поэтому в классическом плеере приходится использовать костыль: добивать пустые строки перед строкой, которая должна выводиться снизу.
+
+</p>
+<p>
+Для Quest Navigator решение существует, однако для его использования необходимо чётко понимать, как работает шаблон QuestNavigator<span class="em_BLCK">а, иметь представление о CSS и поведении блоков </span>&lt;div&gt;`. С помощью стилей ячейка растягивается по вертикали, а затем всё с помощью тех же стилей, текст в ячейке выравнивается относительно нижней границы.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

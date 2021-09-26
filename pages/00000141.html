@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.10. Как отсортировать данные?</h3><p>
+В: Как отсортировать данные? Например, список персонажей по алфавиту, или набор чисел от меньшего к большему.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Прежде всего такие данные должны лежать в одном массиве. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Петя'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Ваня'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Сева'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Саша'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Лёня'</span><br>
+
+
+</div>
+<p>
+Или:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">345</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">798</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">930</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">121</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">474</span><br>
+
+
+</div>
+<p>
+Далее можно воспользоваться простым алгоритмом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;копируем&nbsp;данные&nbsp;во&nbsp;временный&nbsp;массив,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтоб&nbsp;не&nbsp;затереть&nbsp;исходный</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'$personage'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;с&nbsp;помощью&nbsp;цикла&nbsp;выбираем&nbsp;элементы&nbsp;по&nbsp;одному</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;из&nbsp;временного&nbsp;массива,&nbsp;имеющие&nbsp;минимальное&nbsp;значение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;цикл&nbsp;будет&nbsp;работать,&nbsp;пока&nbsp;размер&nbsp;временного&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;больше&nbsp;нуля</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;минимальное&nbsp;значение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$varMax<span class="Monokai-Operator">=</span><span class="Monokai-Func">$min</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;определяем,&nbsp;в&nbsp;каком&nbsp;элементе&nbsp;лежит&nbsp;это&nbsp;значение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">,</span>$varMax<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;$varMax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;или&nbsp;запоминаем&nbsp;в&nbsp;другом&nbsp;массиве</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$personage_sort<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>$varMax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;элемент&nbsp;из&nbsp;временного&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">,</span>index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;повторяем</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Обратите внимание, при работе с текстовыми значениями меньшим считается то, которое идёт раньше согласно алфавитного порядка.
+
+</p>
+<p>
+Сортировка чисел ничем практически не отличается:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'number'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varMax<span class="Monokai-Operator">=</span><span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">,</span>varMax<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;varMax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_sort<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>varMax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">,</span>index<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Этот алгоритм достаточно быстр и прост для решения большинства задач. Он требует нескольких переменных и дополнительный массив для временного хранения данных. Если необходимо отсортировать данные сразу внутри массива, не прибегая к помощи дополнительного массива, можно воспользоваться методом сортировки "пузырьком":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;проходы<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span><span class="Monokai-Operator">prohody</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;проходы<span class="Monokai-Operator"><</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"сортируемый_массив"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;всплытия<span class="Monokai-Operator">=</span>проходы&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>bulbulkarasiki&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;всплытия<span class="Monokai-Operator"><</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"сортируемый_массив"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>проходы<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator"><</span>&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>всплытия<span class="Monokai-Operator">]</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;или,&nbsp;если&nbsp;нужен&nbsp;другой&nbsp;порядок:&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!if&nbsp;сортируемый_массив[проходы]&nbsp;>&nbsp;сортируемый_массив[всплытия]:&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;запоминальная_переменная&nbsp;<span class="Monokai-Operator">=</span>&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>проходы<span class="Monokai-Operator">]</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>проходы<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>всплытия<span class="Monokai-Operator">]</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сортируемый_массив<span class="Monokai-Operator">[</span>всплытия<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;запоминальная_переменная&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;всплытия<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'bulbulkarasiki'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;проходы<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'prohody'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Операции сравнения прекрасно работают и с текстовыми значениями по тому же принципу, что и функции <span class="em_BLCK"><span class="emFUNC">$max</span></span> и <span class="em_BLCK"><span class="emFUNC">$min</span></span>.
+
+</p>
+<p>
+Готовое решение по методу сортировки пузырьком есть в библиотеке "easy.math" с различными дополнительными возможностями. Смотрите функцию <a href="http://aleksversus.narod.ru/index/operacii_nad_massivami/0-72" style="text-decoration:none;" class="emFOLD">#array.sort#</a>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

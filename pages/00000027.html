@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>5. Вопросы по $ONNEWLOC</h2><h3>5.2. Как сделать кнопку "Назад", работающую на каждой локации?</h3><p>
+В: Как сделать кнопку "Назад", работающую на каждой локации?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы иметь возможность с любой локации вернуться на предыдущую, нужно использовать локацию-обработчик перехода на новую локацию. Допустим, мы создали локацию "при_переходе" и на самой первой локации в игре прописали:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_переходе"</span><br>
+
+
+</div>
+<p>
+Таким образом каждый раз при переходе на любую локацию с помощью <span class="em_BLCK"><span class="emOPRT">goto</span></span>, <span class="em_BLCK"><span class="emOPRT">xgoto</span></span> плеер будет выполнять и код локации "при_переходе".
+
+</p>
+<p>
+Теперь нам нужно прописать в локации "при_переходе" код, который будет запоминать последнюю локацию.
+
+</p>
+<p>
+Если мы напишем просто:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$current_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br>
+
+
+</div>
+<p>
+Эта строчка кода будет просто прописывать название текущей локации в переменную <span class="em_BLCK">$current_loc</span>. Например, если у нас есть две локации "комната" и "кухня", то при переходе в "комнату" в <span class="em_BLCK">$current_loc</span> запишется значение "комната", а при переходе из "комнаты" в "кухню" — значение "кухня".
+
+</p>
+<p>
+Значит, перед тем, как записать в <span class="em_BLCK">$current_loc</span> название текущей локации, мы должны предварительно сохранить значение из <span class="em_BLCK">$current_loc</span> в другой переменной. Таким образом наш код будет выглядеть вот так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;название&nbsp;локации,&nbsp;с&nbsp;которой&nbsp;ушли:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">=</span>$current_loc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;название&nbsp;локации,&nbsp;на&nbsp;которую&nbsp;пришли&nbsp;(текущая)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$current_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br>
+
+
+</div>
+<p>
+Теперь, когда мы зайдём в "комнату", в <span class="em_BLCK">$current_loc</span> запишется значение "комната". Если дальше мы перейдём в "кухню", значение "комната" из <span class="em_BLCK">$current_loc</span> пропишется в <span class="em_BLCK">$back_loc</span>, то есть в <span class="em_BLCK">$back_loc</span> окажется значение "комната", а в $current_loc запишется название текущей локации, т.е. значение "кухня".
+
+</p>
+<p>
+Осталось только привязать команду перехода, например, к действию. На той же локации "при_переходе" пишем это действие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$back_loc<span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">""</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;переменная&nbsp;$back_loc&nbsp;не&nbsp;пуста</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие&nbsp;для&nbsp;возврата</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Назад"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$back_loc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Данный код позволяет вернуться только на одну локацию назад. То есть, если мы перешли из "кухни" в "комнату", действие "Назад" вернёт нас из "комнаты" в "кухню", а из "кухни" снова в "комнату".
+
+</p>
+<p>
+Если мы хотим "запомнить" весь путь, а затем с помощью кнопки "Назад" воспроизвести его в обратном порядке, нужно воспользоваться более сложным кодом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Func">$curloc</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;back_act<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;в&nbsp;последнем&nbsp;элементе&nbsp;массива&nbsp;нет&nbsp;названия&nbsp;текущей&nbsp;локации&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;а&nbsp;так&nbsp;же&nbsp;если&nbsp;мы&nbsp;совершаем&nbsp;переход&nbsp;не&nbsp;по&nbsp;действию&nbsp;возврата&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!записываем&nbsp;в&nbsp;последний&nbsp;элемент&nbsp;массива&nbsp;название&nbsp;текущей&nbsp;локации&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обнуляем&nbsp;переменную&nbsp;back_act,&nbsp;чтобы&nbsp;разрешить&nbsp;запись&nbsp;в&nbsp;массив&nbsp;$back,&nbsp;если&nbsp;мы&nbsp;захотим&nbsp;перейти&nbsp;на&nbsp;новую&nbsp;локацию&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;back_act<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие&nbsp;возврата&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;только&nbsp;если&nbsp;есть&nbsp;куда&nbsp;возвращаться&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"шаг&nbsp;назад"</span><span class="Monokai-Operator">:</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;переменной-маркеру&nbsp;back_act&nbsp;значение&nbsp;1,&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтобы&nbsp;запретить&nbsp;запись&nbsp;в&nbsp;массив&nbsp;$back&nbsp;при&nbsp;возврате&nbsp;на&nbsp;предыдущую&nbsp;локацию&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;back_act<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;непосредственно&nbsp;переход&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;во&nbsp;временную&nbsp;переменную&nbsp;название&nbsp;предыдущей&nbsp;посещённой&nbsp;локации&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">)</span><span class="Monokai-EndLoc">-2]&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;из&nbsp;массива&nbsp;текущую&nbsp;локацию&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">)</span><span class="Monokai-EndLoc">-1&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переходим&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

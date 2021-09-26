@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.6. Как делать динамические/считаемые предметы?</h3><p>
+В: Как делать динамические/считаемые предметы?
+
+</p>
+<p>
+В: Как делать стакающиеся предметы?
+
+</p>
+<p>
+В: Как делать предметы, рядом с названиями которых выводится их количество?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Допустим, на разных локациях мы можем подбирать одинаковые предметы с названием "Грибочек". Если мы просто пропишем везде команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек"</span><br>
+
+
+</div>
+<p>
+, то наш инвентарь окажется захламлён множеством одинаковых "Грибочков". Чтобы избежать этого, обычно заводят переменную, которая ведёт подсчёт числа предметов, и тогда код каждого подъёма грибочков слегка усложняется:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;грибочек<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;ещё&nbsp;не&nbsp;собрали&nbsp;ни&nbsp;одного&nbsp;грибочка</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;число&nbsp;собранных&nbsp;грибочков&nbsp;на&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;грибочек<span class="Monokai-Operator">=</span>грибочек<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Затем можно выводить число грибочков на экран при щелчке по предмету "Грибочек".
+
+</p>
+<p>
+Но как же сделать, чтобы в окне инвентаря отображалась актуальная информация о числе "Грибочков", и нам не приходилось щёлкать по предмету?
+
+</p>
+<p>
+Мы можем добавить в окно инвентаря предмет, указав его количество прямо в названии:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;число&nbsp;грибочков</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;грибочек<span class="Monokai-Operator">=</span>грибочек<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;с&nbsp;указанным&nbsp;количеством</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек&nbsp;(<<грибочек>>&nbsp;шт.)"</span><br>
+
+
+</div>
+<p>
+А чтобы с экрана пропадал предмет со старым названием, необходимо его предварительно удалить с помощью оператора <span class="em_BLCK"><span class="emOPRT">delobj</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;старый&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Грибочек&nbsp;(<<грибочек>>&nbsp;шт.)"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;число&nbsp;грибочков</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;грибочек<span class="Monokai-Operator">=</span>грибочек<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;с&nbsp;новым&nbsp;количеством</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек&nbsp;(<<грибочек>>&nbsp;шт.)"</span><br>
+
+
+</div>
+<p>
+Иными словами, всякий раз, как мы изменяем количество, предмет со старым названием удаляется из инвентаря, а предмет с новым, актуальным названием добавляется в инвентарь.
+
+</p>
+<p>
+При этом у вас могут возникнуть сложности со взаимодействием с этим предметом, например, в локации-обработчике выделения предмета, поскольку теперь нельзя будет точно предсказать, в какой момент игры, какое будет у предмета название. Условие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Грибочек"</span><span class="Monokai-Operator">:</span><br>
+
+
+</div>
+<p>
+не сработает. В этом случае нужно проверять только часть названия, например с помощью функции <span class="em_BLCK"><span class="emFUNC">instr</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Грибочек"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

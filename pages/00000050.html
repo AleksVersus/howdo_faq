@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>9. Вопросы о изображениях</h2><h3>9.8. Как сделать вывод рандомного изображения?</h3><p>
+В: Как сделать вывод рандомного изображения?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Если у вас есть несколько изображений, имена которых различаются лишь порядковыми номерами, то вывод одного из них случайным образом довольно прост.
+
+</p>
+<p>
+Например, изображения с названиями от "pic_1.jpg" до "pic_10.jpg" лежат в папке с игрой. Вывести на экран случайное можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='pic_<<rand(1,10)>>.jpg'>"</span><br>
+
+
+</div>
+<p>
+Плеер встретит данную команду, и в первую очередь раскроет подвыражение. В подвыражении стоит функция <span class="em_BLCK"><span class="emFUNC">rand</span><span class="emOPRT">(</span><span class="emNUM">1</span>,10)</span>, которая вернёт случайное число от 1 до 10. Это число будет подставленно вместо подвыражения, и таким образом в атрибуте <span class="em_BLCK">src</span> получится полное название файла изображения. Плееру останется только вывести его на экран.
+
+</p>
+<p>
+Если же у вас есть изображения с названиями, которые различаются не только порядковыми номерами, или лежат в разных папках, вывести на экран одно случайное будет ненамного сложнее. Главное предварительно внести все пути изображений в массив:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"фон/солнечный_день.jpg"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"фон/пасмурный_вечер.png"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"image/opendoor.jpg"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"personage/чукча.gif"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"personage/жена&nbsp;чукчи.gif"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"arrow.png"</span><br>
+
+
+</div>
+<p>
+Затем уже выбранный случайный элемент массива подставляется в аттрибут <span class="em_BLCK">src</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='<<$pic_mass[rand(0,5)]>>'>"</span><br>
+
+
+</div>
+<p>
+Точно так же. Плеер попытается раскрыть подвыражение, в котором находится выражение <span class="em_BLCK"><span class="emOPRT">$pic</span>_mass[rand(0,5)]</span> — то есть плееру нужно получить значение некой ячейки массива <span class="em_BLCK"><span class="emOPRT">$pic</span>_mass</span>. Номер ячейки определяет функция <span class="em_BLCK"><span class="emFUNC">rand</span><span class="emOPRT">(</span><span class="emNUM">0</span>,5)</span> — то есть случайное число от 0 до 5 (таков номер последней заполненной ячейки массива). Плеер получит значение этой ячейки (а туда записан путь к изображению) и подставит вместо подвыражения. Таким образом в атрибуте <span class="em_BLCK">src</span> будет полный путь к изображению, плееру останется только вывести изображение на экран.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

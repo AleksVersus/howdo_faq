@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>21. Вопросы о Quest Generator (v.4.0.0 beta)</h2><h3>21.3. Как свернуть кусочек кода, написанный под комментарием?</h3><p>
+В: Как свернуть кусочек кода, написанный под комментарием? В идеале, чтоб остался один только комментарий.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;комментарий,&nbsp;до&nbsp;которого&nbsp;нужно&nbsp;свернуть&nbsp;код</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Строчка&nbsp;кода"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Ещё&nbsp;строчка&nbsp;кода"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=b<br>
+
+
+</div>
+<p>
+О:
+
+</p>
+<p>
+К сожалению Quest Generator не учитывает комментарии, когда высчитывает сворачиваемые участки кода, поэтому нельзя свернуть код до комментария. Можно использовать подобный костыль:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'свернём&nbsp;код&nbsp;до&nbsp;этой&nbsp;переменной'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'свернём&nbsp;код&nbsp;до&nbsp;этой&nbsp;переменной'</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;комментарий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Строчка&nbsp;кода"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Ещё&nbsp;строчка&nbsp;кода"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$args['свернём&nbsp;код&nbsp;до&nbsp;этой&nbsp;переменной']=$args['свернём&nbsp;код&nbsp;до&nbsp;этой&nbsp;переменной']<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com=com&nbsp;&&nbsp;!&nbsp;комментарий,&nbsp;до&nbsp;которого&nbsp;сворачиваем&nbsp;блок&nbsp;кода<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;комментарий<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Строчка&nbsp;кода"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Ещё&nbsp;строчка&nbsp;кода"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com=com&nbsp;&&nbsp;!&nbsp;комментарий,&nbsp;до&nbsp;которого&nbsp;сворачиваем&nbsp;блок&nbsp;кода<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

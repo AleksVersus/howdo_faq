@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>12. Вопросы о DYNAMIC</h2><h3>12.4. Почему не работает <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>?</h3><p>
+В:	Почему не работает <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>?
+
+</p>
+<p>
+	Пишу код в переменной, а потом <span class="em_BLCK"><span class="emOPRT">dynamic</span> "$var_name"</span>, но вместо того, чтобы выполнить код, плеер выводит этот код на экран. Почему?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для примера поместим некий код в переменную:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$var_name<span class="Monokai-Operator">=</span><span class="Monokai-String">"var_count=25"</span><br>
+
+
+</div>
+<p>
+Теперь попробуем использовать <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>, как в предложенном вопросе:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">"$var_name"</span><br>
+
+
+</div>
+<p>
+Что при этом произойдёт?
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emOPRT">dynamic</span></span> должен выполнить код, переданный ему в виде строки текста.
+
+</p>
+<p>
+Какую строку текста мы ему передаём?
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"$var_name"</span><br>
+
+
+</div>
+<p>
+Какой код содержится в этой строке?
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$var_name<br>
+
+
+</div>
+<p>
+Что делает этот код?
+
+</p>
+<p>
+Выводит на экран содержимое переменной <span class="em_BLCK">$var_name</span>. А какое у этой переменной содержимое?
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"var_count=25"</span><br>
+
+
+</div>
+<p>
+Эту строку мы и увидим на экране.
+
+</p>
+<p>
+Чтобы <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> выполнил код, записанный в переменную, нужно передать ему непосредственно значение переменной:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$var_name<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

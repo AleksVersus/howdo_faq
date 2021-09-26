@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>Зарезервированные слова, системные переменные и спецсимволы</h2><h3>Системные переменные</h3><h4>$BACKIMAGE</h4><p>
+<strong>$BACKIMAGE</strong> —  содержит путь к файлу фонового изображения для окна основного описания. Фон в окне основного описания отображается в том случае, если значение данной переменной отлично от '' (т.е. не пустая строка) и файл изображения удалось загрузить.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"img/bg.png"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;устанавливаем&nbsp;фоновым&nbsp;изображение,&nbsp;которое&nbsp;лежит&nbsp;в&nbsp;папке&nbsp;"img".</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;убираем&nbsp;изображение&nbsp;из&nbsp;фона&nbsp;окна&nbsp;основного&nbsp;описания.</span><br>
+
+
+</div>
+<h4>$COUNTER</h4><p>
+<strong>$COUNTER</strong> —  содержит название локации-счётчика. Локация-счётчик может использоваться для реалтаймовых событий (то есть событий, происходящих в действительном времени); например, плавное изменение цвета фона, постепенный вывод текста на экран, плейлист для постоянного проигрывания музыки и другие.
+
+</p>
+<p>
+	Локация-счетчик вызывается через одинаковые промежутки времени, по умолчанию каждые 500 мс, т.е. 2 раза в секунду. Автоматическое обновление интерфейса срабатывает с той же частотой. Промежутки задаются оператором <span class="em_BLCK"><span class="emOPRT">settimer</span></span> в миллисекундах.
+
+</p>
+<p>
+	Если ваша локация-счётчик называется "Счётчик", на самой первой локации в игре нужно написать:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Счётчик'</span><br>
+
+
+</div>
+<p>
+	Как правило, чтобы не путаться, локацию называют так же, как и служебную переменную — "Counter":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Counter'</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить выполнение локации-счётчика, нужно задать пустое значение переменной <span class="em_BLCK">$</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$FNAME</h4><p>
+<strong>$FNAME</strong> —  содержит название используемого в данный момент шрифта. Если равна <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустая строка), то используется шрифт, заданный в настройках программы.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;устанавливаем&nbsp;для&nbsp;всей&nbsp;игры&nbsp;шрифт&nbsp;Courier&nbsp;New</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$fname</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Courier&nbsp;New"</span><br>
+
+
+</div>
+<h4>$ONACTSEL</h4><p>
+<strong>$ONACTSEL</strong> —  содержит название локации-обработчика события "выделение действия". Иными словами, в этой переменной указывается название локации, код на которой срабатывает, когда одно из выведенных на экран действий выделено.
+
+</p>
+<p>
+	Следует помнить, что выделение действия происходит при наведении на него указателя мыши, а не при непосредственном нажатии.
+
+</p>
+<p>
+	Назначаем в качестве локации-обработчика события "выделение действия" локацию "on_mouse":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onactsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_mouse"</span><br>
+
+
+</div>
+<p>
+	Данная локация полезна, к примеру, для вывода изображений или проигрывания звуков при выборе действий. Получить название выбранного действия можно через функцию <span class="em_BLCK"><span class="emOPRT">$selact</span></span>.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">$selact</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'пойти'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'sounds\walk.mp3'</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить локацию-обработчик события "выделение действия", нужно задать переменной <span class="em_BLCK"><span class="emOPRT">$onactsel</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onactsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$ONGLOAD</h4><p>
+<strong>$ONGLOAD</strong> —  содержит название локации-обработчика события "загрузка состояния игры" (далее "обработчик загрузки состояния"). Иными словами, в эту переменную записывается название локации, код которой будет выполняться всякий раз после того, как был загружен файл сохранения состояния игры ("файл сохранения") с помощью команды opengame.
+
+</p>
+<p>
+	Назначаем в качестве обработчика загрузки состояния локацию "on_game_load":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$ongload</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_game_load"</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить обработчик загрузки состояния, нужно задать переменной <span class="em_BLCK"><span class="emVAR">$ongload</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$ongload</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<p>
+<span class="em_BLCK"><span class="emOPRT">$ONGSAVE</span></span> - содержит название локации-обработчика события "сохранение состояния игры" (далее "обработчик сохранения состояния"). Иными словами, в эту переменную записывается название локации, код которой будет выполняться всякий раз после того, как было записано состояние игры в новый или уже существующий файл сохранения состояния игры ("файл сохранения") с помощью команды <span class="em_BLCK"><span class="emOPRT">savegame</span></span>.
+
+</p>
+<p>
+	Назначаем в качестве обработчика сохранения состояния локацию "on_game_save":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$ongsave</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_game_save"</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить обработчик сохранения состояния, нужно задать переменной <span class="em_BLCK"><span class="emOPRT">$ongsave</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$ongsave</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$ONNEWLOC</h4><p>
+<strong>$ONNEWLOC</strong> —  содержит название локации-обработчика перехода на новую локацию (аналог локации "common" в URQ). Иными словами, в эту переменную записывается название локации, код которой выполняется каждый раз после выполнения кода локации, на которую был осуществлён переход с помощью операторов <span class="em_BLCK"><span class="emOPRT">goto</span></span> или <span class="em_BLCK"><span class="emOPRT">xgoto</span></span>. Управление игрой передаётся игроку уже после выполнения кода на этой локации-обработчике.
+
+</p>
+<p>
+	Назначаем в качестве обработчика перехода на новую локацию локацию "on_goto_newloc":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_goto_newloc"</span><br>
+
+
+</div>
+<p>
+	Получить название локации, на которую был осуществлён переход, можно с помощью функции <span class="em_BLCK"><span class="emFUNC">$curloc</span></span>.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$curloc</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'дом'</span><span class="Monokai-Operator">:</span>&nbsp;кошка&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить локацию-обработчик перехода на новую локацию, нужно задать переменной <span class="em_BLCK"><span class="emFUNC">$onnewloc</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$ONOBJADD</h4><p>
+<strong>$ONOBJADD</strong> —  содержит название локации-обработчика события "добавление предмета". Иными словами, в эту переменную записывается название локации, код которой выполняется всякий раз после добавления предмета в окно предметов с помощью команды <span class="em_BLCK"><span class="emOPRT">addobj</span></span>.
+
+</p>
+<p>
+	При добавлении предмета этой локации-обработчику передаются два аргумента, значения которых можно получить из <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> и <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span> соответственно:
+
+</p>
+<ul>
+<li>
+$ARGS[0] - название добавленного предмета
+</li>
+<li>
+$ARGS[1] - путь к картинке добавленного предмета
+</li>
+</ul>
+<p>
+	Данная локация полезна, к примеру, для ограничения вместительности рюкзака.
+
+</p>
+<p>
+	Назначаем в качестве локации-обработчика события "добавление предмета" локацию "on_object_add":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjadd</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_object_add"</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить локацию-обработчик события "добавление предмета", нужно задать переменной <span class="em_BLCK"><span class="emFUNC">$onobjadd</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjadd</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$ONOBJDEL</h4><p>
+<strong>$ONOBJDEL</strong> —  содержит название локации-обработчика события "удаление предмета". Иными словами, в эту переменную записывается название локации, код которой вполняется всякий раз при удалении предмета с помощью команды <span class="em_BLCK"><span class="emOPRT">delobj</span></span>. Если воспользоваться командой <span class="em_BLCK"><span class="emOPRT">killobj</span></span>, то это будет аналогично серии команд <span class="em_BLCK"><span class="emOPRT">delobj</span></span>, соответственно и локация-обработчик будет вызвана столько раз, сколько предметов будет удалено с помощью <span class="em_BLCK"><span class="emOPRT">killobj</span></span>.
+
+</p>
+<p>
+	При использовании команды <span class="em_BLCK"><span class="emOPRT">killall</span></span> локация-обработчик удаления предмета не вызывается, поскольку системная переменная <span class="em_BLCK"><span class="emFUNC">$onobjdel</span></span> уничтожается.
+
+</p>
+<p>
+	При удалении предмета этой локации-обработчику передаётся аргумент, значение которого можно получить из <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>:
+
+</p>
+<ul>
+<li>
+$ARGS[0] - название удалённого предмета
+</li>
+</ul>
+<p>
+	Назначаем в качестве локации-обработчика события "удаление предмета" локацию "on_object_del":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjdel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_object_del"</span><br>
+
+
+</div>
+<p>
+	Данная локация полезна, к примеру, для проверки возможности удаления предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;например&nbsp;есть&nbsp;предмет,&nbsp;который&nbsp;нам&nbsp;пригодится&nbsp;по&nbsp;сюжету</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Важный&nbsp;артефакт"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;восстанавливаем&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Чтобы отключить локацию-обработчик события "удаление предмета", нужно задать переменной <span class="em_BLCK"><span class="emFUNC">$onobjdel</span></span> пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjdel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<h4>$ONOBJSEL</h4><p>
+<strong>$ONOBJSEL</strong> —  содержит название локации-обработчика события "выделение предмета" (далее "локация-обработчик выделения предмета"). Иными словами, в этой переменной указывается название локации, код на которой выполняется всякий раз при выделении предмета. Выделение предмета происходит непосредственно при "нажатии" на предмет (щелчок мышью по предмету).
+
+</p>
+<p>
+	Назначаем в качестве локации-обработчика выделения предмета локацию "on_object_select":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"on_object_select"</span><br>
+
+
+</div>
+<p>
+	Данная локация полезна, к примеру, для выводаинформации о предмете, или меню предмета. Получить название выбранного предмета можно через функцию <span class="em_BLCK"><span class="emFUNC">$selobj</span></span>.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'чайник'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;'Cамый&nbsp;обычный&nbsp;чугунный&nbsp;чайник.'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+	При выборе играющим какого-либо предмета, он остаётся выделенным. Снять выделение можно командой <span class="em_BLCK"><span class="emOPRT">unselect</span></span>.
+
+</p>
+<h4>$USERCOM</h4><p>
+<strong>$USERCOM</strong> —  содержит название локации-обработчика строки ввода (поля ввода). Код данной локации-обработчика выполняется, если курсор установлен в строку ввода в момент нажатия клавиши "Enter" .
+
+</p>
+<p>
+	Назначаем в качестве локации-обработчика строки ввода локацию "user_command_line":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$usercom</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"user_command_line"</span><br>
+
+
+</div>
+<p>
+	Полезна при организации парсера (управление игрой с помощью строки ввода), или для организации отладчика. Пример кода для локации-обработчика:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;введённый&nbsp;текст&nbsp;соответствует&nbsp;названию&nbsp;существующей&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Func">loc</span>&nbsp;<span class="Monokai-Func">$user_text</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;осуществляем&nbsp;переход&nbsp;на&nbsp;эту&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$user_text</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<h4>ARGS ($ARGS)</h4><p>
+<strong>ARGS</strong> —  специфический системный массив, в который помещаются значения аргументов, передаваемых пользователем при обращении к локации или коду, записанному в виде текста. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"#array.srtd#"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"$mass"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"rug"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"$time_ar"</span><br>
+
+
+</div>
+<p>
+	Здесь на локацию "#array.srtd#" будут переданы три аргумента, которые поместятся в первые три ячейки массива <span class="em_BLCK"><span class="emOPRT">$args</span></span> соответсвенно. То есть в момент начала выполнения кода на локации "#array.srtd#" в <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> уже будет присутствовать значение "$mass", в <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span> — значение "rug", в <span class="em_BLCK"><span class="emOPRT">$args</span><span class="emOPRT">[</span><span class="emNUM">2</span><span class="emOPRT">]</span></span> — значение "$time_ar".
+
+</p>
+<p>
+	При использовании операторов <span class="em_BLCK"><span class="emOPRT">gosub</span></span>, <span class="em_BLCK"><span class="emOPRT">goto</span></span>, <span class="em_BLCK"><span class="emOPRT">xgoto</span></span>, <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> и функций <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>, <span class="em_BLCK"><span class="emFUNC">func</span></span> можно указать до девяти таких аргументов, и все они будут помещены в ячейки массива args с нулевой по восьмую. Однако, поскольку <span class="em_BLCK"><span class="emOPRT">args</span></span> — это всё же массив, вы можете работать с ним, как с обычным массивом, т.е. использовать больше десяти ячеек, назначать текстовые индексы и т.д.
+
+</p>
+<p>
+	Отличительной особенностью массива <span class="em_BLCK"><span class="emOPRT">args</span></span> является то, что для каждого отдельного блока кода создаётся свой собственный массив <span class="em_BLCK"><span class="emOPRT">args</span></span>. То есть если вы из локации 1 вызываете локацию 2, то на локации 1 действует собственный массив <span class="em_BLCK"><span class="emOPRT">args</span></span>, а на локации 2 — собственный, и значения в этих массивах не пересекаются.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;локация_1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"локация_2"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">34</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;локация_2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-</span><br>
+
+
+</div>
+<p>
+	Запустив этот код, вы увидите, что сначала будет выведено число 34, и только затем 23.
+
+</p>
+<p>
+	Более того, если вы сделаете рекурсивный вывод локации самой из себя, то для каждого вызова локации будет создан собственный набор массивов. Таким образом массив <span class="em_BLCK"><span class="emOPRT">args</span></span> является локальным для каждого отдельного вызова блока кода.
+
+</p>
+<p>
+	Отдельными блоками кода в QSP считаются:
+
+</p>
+<ul>
+<li>
+код локаций
+</li>
+<li>
+код действий
+</li>
+<li>
+код, передаваемый `dynamic<strong>/</strong>'dyneval`
+</li>
+<li>
+код в гиперссылках
+</li>
+</ul>
+<p>
+	Для каждой отдельной сессии таких блоков кода плеер будет создавать собственный массив <span class="em_BLCK"><span class="emOPRT">args</span></span>.
+
+</p>
+<h4>BCOLOR</h4><p>
+<strong>BCOLOR</strong> —  содержит цвет текущего фона. Если равна 0, то используется цвет, заданный в настройках программы. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чёрный&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16777216</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;красный&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16776961</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;белый&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1</span><br>
+
+
+</div>
+<p>
+	Поскольку цвет фона кодируется специальным числом, а вычислять это число самостоятельно неудобно, следует пользоваться функцией <span class="em_BLCK"><span class="emFUNC">rgb</span></span>, которой в качестве аргументов передаются три составляющие цвета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;цвет&nbsp;фона&nbsp;через&nbsp;функцию&nbsp;rgb(red,green,blue)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;синего&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;жёлтого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;оранжевого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">130</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;голубого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;малинового&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<h4>DEBUG</h4><p>
+<strong>DEBUG</strong> —  если значение переменной отлично от нуля, отключается проверка идентификатора игры при загрузке состояния. Иначе при каждом изменении файла игры нельзя будет использовать файлы сохранений, сделанные до изменения игры.
+
+</p>
+<p>
+	Совет: во время разработки и тестов игры значение переменной <span class="em_BLCK"><span class="emVAR">debug</span></span> всегда должно быть отлично от нуля, а когда вы выпускаете финальную версию игры (релиз), нужно выставить переменной <span class="em_BLCK"><span class="emVAR">debug</span></span> значение 0, чтобы игроки не смогли загрузить файлы сохранений от других игр.
+
+</p>
+<h4>DISABLESCROLL</h4><p>
+<strong>DISABLESCROLL</strong> —  если значение переменной отлично от нуля, автопрокрутка текста в окнах основного и дополнительного описаний отключается.
+
+</p>
+<p>
+	Довольно мутное поведение в классическом плеере - при некоторых обстоятельствах текст и так не прокручивается.
+
+</p>
+<h4>DISABLESUBEX</h4><p>
+<strong>DISABLESUBEX</strong> —  если значение переменной отлично от нуля, отключается вычисление подвыражений в строках. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">'<<var>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;$text&nbsp;будет&nbsp;присвоена&nbsp;строка&nbsp;'123'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'string&nbsp;<<var>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;'string&nbsp;123'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'<<5+6>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;'11'</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">disablesubex</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;отключаем&nbsp;вычисление&nbsp;подвыражений</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">'<<var>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;$text&nbsp;будет&nbsp;присвоена&nbsp;строка&nbsp;'<<var>>'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'string&nbsp;<<var>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;'string&nbsp;<<var>>'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'<<5+6>>'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;'<<5+6>>'</span><br>
+
+
+</div>
+<p>
+В плеерах версии 5.8.0 и выше эта переменная больше не используется.
+
+</p>
+<h4>FCOLOR</h4><p>
+<strong>FCOLOR</strong> —  содержит цвет используемого в данный момент шрифта. Если равна 0, то используется цвет, заданный в настройках программы. Изменение значения переменной меняет цвет всего текста игры, кроме гиперссылок и текста, цвет которого переназначен через HTML. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чёрный&nbsp;цвет&nbsp;текста</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16777216</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;красный&nbsp;цвет&nbsp;текста</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16776961</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;белый&nbsp;цвет&nbsp;текста</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1</span><br>
+
+
+</div>
+<p>
+	Поскольку цвет шрифта кодируется специальным числом, а вычислять это число самостоятельно неудобно, следует пользоваться функцией <span class="em_BLCK"><span class="emFUNC">rgb</span></span>, которой в качестве аргументов передаются три составляющие цвета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;цвет&nbsp;текста&nbsp;через&nbsp;функцию&nbsp;rgb(red,green,blue)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;текст&nbsp;чёрного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;текст&nbsp;белого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;текст&nbsp;красного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;текст&nbsp;зелёного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<h4>FSIZE</h4><p>
+<strong>FSIZE</strong> —  содержит размер используемого в данный момент шрифта. Если равна 0, то используется размер, заданный в настройках программы. Относительно данного значения в HTML-режиме вычисляются размеры шрифтов тега <span class="em_BLCK">&lt;font&gt;</span>. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fsize</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">18</span><br>
+
+
+</div>
+<p>
+	Размер шрифта устанавливается для всего текста в игре, кроме текста, размер которого переназначен через HTML.
+
+</p>
+<h4>LCOLOR</h4><p>
+<strong>LCOLOR</strong> —  содержит текущий цвет шрифта гиперссылок. Если равна 0, то используется цвет, заданный в настройках программы. Изменение значения переменной меняет цвет текста всех гиперссылок, кроме тех, цвет которых переназначен через HTML. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чёрный&nbsp;цвет&nbsp;гиперссылок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16777216</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;красный&nbsp;цвет&nbsp;гиперссылок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16776961</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;белый&nbsp;цвет&nbsp;гиперссылок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1</span><br>
+
+
+</div>
+<p>
+	Поскольку цвет в QSP кодируется специальным числом, а вычислять это число самостоятельно неудобно, следует пользоваться функцией <span class="em_BLCK"><span class="emFUNC">rgb</span></span>, которой в качестве аргументов передаются три составляющие цвета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;цвет&nbsp;&nbsp;гиперссылок&nbsp;через&nbsp;функцию&nbsp;rgb(red,green,blue)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;&nbsp;гиперссылки&nbsp;синего&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;гиперссылки&nbsp;жёлтого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;гиперссылки&nbsp;оранжевого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">130</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;гиперссылки&nbsp;голубого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;гиперссылки&nbsp;малинового&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<h4>NOSAVE</h4><p>
+<strong>NOSAVE</strong> —  если значение данной переменной отлично от 0, пункт меню плеера "Сохранить состояние игры" игроку становится недоступен, т.е. игрок не может самостоятельно сохранить игру. В то же время на уровне кода QSP продолжает работать оператор <span class="em_BLCK"><span class="emOPRT">savegame</span></span>. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отключаем&nbsp;возможность&nbsp;сохранения&nbsp;игры</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">nosave</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Бросить&nbsp;кости"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cubes<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;включаем&nbsp;возможность&nbsp;сохранений&nbsp;обратно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">nosave</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delact</span>&nbsp;<span class="Monokai-Func">$selact</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<h4>RESULT ($RESULT)</h4><p>
+<strong>RESULT</strong> —  специфическая системная переменная, предназначенная для получения значения в текущем блоке кода и передачи этого значения функции <span class="em_BLCK"><span class="emFUNC">func</span></span> или <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>. Иными словами, чтобы функции <span class="em_BLCK"><span class="emFUNC">func</span></span> или <span class="em_BLCK"><span class="emFUNC">dyneval</span></span> вернули какое-то значение, необходимо в вызываемом ими блоке кода присвоить значение переменной <span class="em_BLCK"><span class="emVAR">result</span></span>.
+
+</p>
+<p>
+	Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$dyneval</span>&nbsp;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;args[0]&nbsp;mod&nbsp;2&nbsp;=&nbsp;0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result='чётное&nbsp;число'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result='нечётное&nbsp;число'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",279<br>
+
+
+</div>
+<p>
+	Для каждого отдельного блока кода плеером создаётся собственная переменная <span class="em_BLCK"><span class="emVAR">result</span></span>. То есть если вы из локации 1 вызываете локацию 2, то на локации 1 создаётся собственная переменная <span class="em_BLCK"><span class="emVAR">result</span></span>, а на локации 2 — собственная, и значения в этих переменных не пересекаются (хотя в плеере 5.7.0. есть небольшая проблема с этим, и использовать переменную <span class="em_BLCK"><span class="emVAR">result</span></span> рекомендуется только в конце кода локации. В более новых версиях плееров, например в Quest Navigator, эту проблему исправили и <span class="em_BLCK"><span class="emVAR">result</span></span> можно использовать наравне с <span class="em_BLCK"><span class="emOPRT">args</span></span>). Таким образом переменная <span class="em_BLCK"><span class="emVAR">result</span></span> является локальной для каждого отдельного вызова блока кода.
+
+</p>
+<p>
+	Если при обработке блока кода были установлены и <span class="em_BLCK"><span class="emVAR">result</span></span>, и <span class="em_BLCK"><span class="emVAR">$result</span></span>, то предпочтение отдаётся строковому значению.
+
+</p>
+<h4>USEHTML</h4><p>
+<strong>USEHTML</strong> —  если значение данной переменной отлично от нуля, включается режим распознавания HTML. При этом HTML разметку можно использовать в названиях действий, предметов, в тексте, выводимом в окна основного и дополнтельного описаний, а так же в диалоговых окнах, вызываемых оператром <span class="em_BLCK"><span class="emOPRT">msg</span></span> и функцией <span class="em_BLCK"><span class="emOPRT">$input</span></span>.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;включение&nbsp;HTML</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вывод&nbsp;текста&nbsp;с&nbsp;HTML-разметкой</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<font&nbsp;color=#ff8888>Красный&nbsp;текст.</font>"</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.6. Как вставить разделитель в меню?</h3><p>
+В: Как вставить разделитель в меню?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Вставить разделитель в меню очень просто. Нужно просто в один из пунктов прописать такую строку "-:-". Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[0]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[1]="-:-"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[2]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[3]="Выбросить:put_screw"<br>
+
+
+</div>
+<p>
+Между пунктами "Осмотреть" и "Использовать" будет отображаться линия-разделитель.
+
+</p>
+<p>
+Разделитель нельзя кликнуть, однако поскольку он занимает одну позицию в массиве меню, номера всех остальных пунктов будут передаваться на локации-пункты меню в <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> с учётом разделителя. То есть, если Вы кликнете пункт "Выбросить", в этом примере, на локации "put_screw" <span class="em_BLCK"><span class="emOPRT">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> будет равно 4.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

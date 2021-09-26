@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.4. Пытаюсь сделать кликабельную картинку с помощью тегов <span class="em_BLCK"><span class="emOPRT">MAP</span></span> и <span class="em_BLCK">AREA</span>, но ничего не получается</h3><p>
+В: Пытаюсь сделать кликабельную картинку с помощью тегов <span class="em_BLCK"><span class="emOPRT">MAP</span></span> и <span class="em_BLCK">AREA</span>, но ничего не получается.
+
+</p>
+<p>
+Не выводится картинка, не работает область клика, область клика смещена.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы ответить на этот вопрос, пойдём по порядку.
+
+</p>
+<p>
+Во-первых, в вашей игре должна быть включена поддержка HTML, иначе вместо картинки вы увидите много HTML-тегов. Поддержку HTML включаем, прописывая в нужном месте (например, на самой первой локации в игре) следующую команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Во-вторых, все HTML-теги являются частью выводимого на экран текста, поэтому, чтобы выводить их на экран, нужно использовать те же самые операторы, что и для вывода всего остального текста. Таким образом и теги <span class="em_BLCK">&lt;MAP&gt;</span>, <span class="em_BLCK">&lt;AREA&gt;</span> и тег <span class="em_BLCK">&lt;img&gt;</span> нужно выводить с помощью операторов <span class="em_BLCK"><span class="emOPRT">*p</span></span> или <span class="em_BLCK"><span class="emOPRT">p</span></span>.
+
+</p>
+<p>
+В-третьих, если вам удобнее записывать каждый тег отдельной строкой, нужно помнить, что QSP не игнорирует переводы строк между тегами, и это может привести к созданию артефактов. Все теги должны выводиться одной строкой, поэтому для записи команд, выводящих теги, используйте именно операторы <span class="em_BLCK"><span class="emOPRT">*p</span></span> и <span class="em_BLCK"><span class="emOPRT">p</span></span>.
+
+</p>
+<p>
+Руководствуясь этими тремя правилами, создайте отдельный файл игры, и протестируйте в нём работу вашей картинки-карты.
+
+</p>
+<p>
+Вот пример картинки, в центре которой будет создана кликабельная область.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;включаем&nbsp;поддержку&nbsp;HTML</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;разметку&nbsp;карты</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;'<MAP&nbsp;name="KRUG">'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<AREA&nbsp;shape="circle"&nbsp;coords="200,200,175"&nbsp;href="exec:x=x+1&nbsp;&&nbsp;pl&nbsp;x">'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'</MAP>'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;изображение&nbsp;карты<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<img&nbsp;src="путь&nbsp;к&nbsp;файлу&nbsp;изображения/изображение.png"&nbsp;usemap="#KRUG">'<br>
+
+
+</div>
+<p>
+Обратите внимание, при наведении на кликабельную область в классическом плеере курсор не будет менять свой внешний вид.
+
+</p>
+<p>
+Более подробно о том, как работать с тегами <span class="em_BLCK"><span class="emOPRT">MAP</span></span> и <span class="em_BLCK">AREA</span> вы можете прочитать в разделе <a href="#folder#None.html#faq_16_10" style="text-decoration:none;" class="emFOLD">16.10. Как работать с тегами MAP и AREA?</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

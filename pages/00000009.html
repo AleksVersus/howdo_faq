@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>1. В чём разница?</h2><h3>1.8. Чем отличается <span class="em_BLCK"><span class="emOPRT">goto</span></span> от <span class="em_BLCK"><span class="emOPRT">gosub</span></span>?</h3><p>
+В: Чем отличается <span class="em_BLCK"><span class="emOPRT">goto</span></span> от <span class="em_BLCK"><span class="emOPRT">gosub</span></span>?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Разница между этими двумя командами заключается в том, как ведёт себя плеер при их выполнении.
+
+</p>
+<p>
+Команда <span class="em_BLCK"><span class="emOPRT">goto</span></span> осуществляет переход на указанную локацию:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"комната"</span><br>
+
+
+</div>
+<p>
+При этом происходит следующее:
+
+</p>
+<ol>
+<li>
+Плеер, выполняя какой-то код, встречает команду <span class="em_BLCK"><span class="emOPRT">goto</span></span> и видит название локации, указанное в качестве аргумента.
+</li>
+<li>
+Плеер "переходит" на указанную локацию. Технически это означает, что функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> будет возрващать название локации, на которую был осуществлён "переход".
+</li>
+<li>
+При переходе по <span class="em_BLCK"><span class="emOPRT">goto</span></span> плеер очищает окно основного описания и окно действий.
+</li>
+<li>
+Далее плеер выводит в окно основного описания "Базовое описание", а в окно действий — "базовые действия". После чего выполняет код из поля "Выполнить при посещении".
+</li>
+<li>
+Закончив выполнять код из поля "Выполнить при посещении", плеер (опционально) выполняет код из локации-обработчика события "переход на новую локацию" (см. <a href="#folder#None.html#faq_80_04_onnewloc" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emFUNC">onNewLoc</span></span></a>), а затем перестаёт что-либо делать и ждёт участия игрока.
+</li>
+</ol>
+<p>
+Таким образом, если после команды <span class="em_BLCK"><span class="emOPRT">goto</span></span> были написаны ещё какие-то команды, эти команды плеер не выполняет, так как уже "находится" на другой локации.
+
+</p>
+<p>
+Команда <span class="em_BLCK"><span class="emOPRT">gosub</span></span> не осуществляет перехода на указанную локацию, она осуществляет её вызов:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"комната"</span><br>
+
+
+</div>
+<p>
+Здесь плеер ведёт себя по-другому:
+
+</p>
+<ol>
+<li>
+Плеер, выполняя какой-то код, встречает команду <span class="em_BLCK"><span class="emOPRT">gosub</span></span> и видит название локации, указанное в качестве аргумента.
+</li>
+<li>
+Плеер прерывает выполнение текущего кода, и переходит к локации, указанной в качестве аргумента к <span class="em_BLCK"><span class="emOPRT">gosub</span></span>.
+</li>
+<li>
+При этом НЕ ПРОИСХОДИТ очистка окна основного описания и окна действий.
+</li>
+<li>
+В окно основного описания добавляется текст из "Базового описания", а в окно действий — "базовые действия" локации, указанной аргументом к <span class="em_BLCK"><span class="emOPRT">gosub</span></span>. Потом выполняется код этой локации из поля "Выполнить при посещении".
+</li>
+<li>
+Закончив выполнять код из поля "Выполнить при посещении", плеер возвращается к выполнению кода на той локации, где была встречена команда <span class="em_BLCK"><span class="emOPRT">gosub</span></span> и продолжает выполнение этого кода уже после команды <span class="em_BLCK"><span class="emOPRT">gosub</span></span>.
+</li>
+</ol>
+<p>
+Таким образом команда <span class="em_BLCK"><span class="emOPRT">gosub</span></span> позволяет использовать локации как подпрограммы. Плеер обрабатывает эти локации, но технически не "переходит" на них.
+
+</p>
+<p>
+Отличие же <span class="em_BLCK"><span class="emOPRT">xgoto</span></span> от <span class="em_BLCK"><span class="emOPRT">goto</span></span> заключается лишь в одном: при переходе по <span class="em_BLCK"><span class="emOPRT">xgoto</span></span> НЕ ПРОИСХОДИТ очистка окна основного описания.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

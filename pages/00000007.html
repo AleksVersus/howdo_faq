@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>1. В чём разница?</h2><h3>1.6. В чём разница между <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> и <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>?</h3><p>
+В: В чём разница между <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> и <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+	И <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>, и <span class="em_BLCK"><span class="emFUNC">dyneval</span></span> выполняют код, который мы передаём им в виде текста. Однако разница есть. И она заключается в том, что <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> — это оператор, а <span class="em_BLCK"><span class="emFUNC">dyneval</span></span> — это функция. Функция всегда возвращает результат. Сравните работу этих двух команд:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">"result=1&nbsp;&&nbsp;act&nbsp;'Прибавить&nbsp;единицу&nbsp;(0)':&nbsp;dyn=dyn+1"</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"result=2&nbsp;&&nbsp;act&nbsp;'Прибавить&nbsp;единицу&nbsp;(1)':&nbsp;dyn=dyn+1"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	Первая просто выведет действие в окно действий, а вторая выведет действие, и число <span class="em_BLCK"><span class="emNUM">2</span></span> на экран. Потому что результатом работы этой функции в данном случае станет <span class="em_BLCK"><span class="emNUM">2</span></span>.
+
+</p>
+<p>
+	Чтобы воспользоваться возможностями <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>, следует в конце вычислений присвоить результат переменной <span class="em_BLCK"><span class="emVAR">result</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"result=500*13/45"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	Подобно <span class="em_BLCK"><span class="emOPRT">gosub</span></span> и <span class="em_BLCK"><span class="emFUNC">func</span></span>, <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> и <span class="em_BLCK"><span class="emFUNC">dyneval</span></span> работают с аргументами:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;"hp=hp+args[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;hp>hp_max:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hp=hp_max<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;hp<0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hp=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end",23<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dyneval("result=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;args[1]>0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=result*args[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args[1]-=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end",57,3)<br>
+
+
+</div>
+<h6>В новых плеерах</h6><p>
+В плеерах версии 5.7.0 и ниже, если переданный в dyneval код не содержал переменной $result, при использовании неявного оператора на экран выводилась пустая строка. В плеерах версии 5.8.0 такая функция dyneval будет просто проигнорирована.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Первая&nbsp;строка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;старых&nbsp;плеерах&nbsp;вы&nbsp;увидите&nbsp;здесь&nbsp;пустую&nbsp;строку,&nbsp;в&nbsp;новых&nbsp;—&nbsp;пустой&nbsp;строки&nbsp;не&nbsp;будет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"HP=HP+34"</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Последняя&nbsp;строка"</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

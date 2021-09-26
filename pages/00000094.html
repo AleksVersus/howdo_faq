@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.8. Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?</h3><p>
+В: Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для начала нужно завести локацию-обработчик выделения предмета. Для этого:
+
+</p>
+<ul>
+<li>
+создаём локацию и называем, например, "если_предмет_выбран". Название может быть любым.
+</li>
+<li>
+в самой первой локации в игре указываем плееру, какую локацию он должен использовать, как обработчик выделения предмета. Для этого в системную переменную <span class="em_BLCK"><span class="emFUNC">$onobjsel</span></span> вносим имя нашей новой локации:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выбран"</span><br>
+
+
+</div>
+<p>
+Теперь код локации будет выполняться всякий раз, когда мы выделяем новый предмет.
+
+</p>
+<p>
+Функция <span class="em_BLCK"><span class="emFUNC">$selobj</span></span> возвращает нам название выделенного предмета, поэтому на локации-обработчике мы можем проверять, какой предмет выделен, и выполнять соответствующий код.
+
+</p>
+<p>
+Например, можно выводить описание предмета в окно дополнительного описания при щелчке по предмету:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;Отвёртка</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;доп&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;описание&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Прекрасная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Отлично&nbsp;подойдёт&nbsp;для&nbsp;регулирования&nbsp;уровня&nbsp;громкости"</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Или совершать переход на локацию:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Камень&nbsp;телепортации"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;Камень&nbsp;телепортации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переходим&nbsp;на&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"Эверест"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+В конце локации-обработчика не забывайте ставить команду <span class="em_BLCK"><span class="emOPRT">unselect</span></span>, чтобы снять выделение и дать игроку возможность повторно воспользоваться предметом.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

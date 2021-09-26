@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.13. Как сделать многоуровневый рюкзак?</h3><p>
+В: Как сделать многоуровневый рюкзак?
+
+</p>
+<p>
+В: Как сделать предметы в предметах?
+
+</p>
+<p>
+Например, щёлкаешь по предмету "Рюкзак", и в окне инвентаря появляется список предметов в рюкзаке.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Списки предметов можно хранить в разных массивах. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;верхний&nbsp;уровень&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур0_предметы[0]="Дневник&nbsp;заданий"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур0_предметы[1]="Рюкзак"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур0_предметы[2]="Книга&nbsp;заклинаний"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур0_предметы[3]="Кошелёк"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;предметы&nbsp;в&nbsp;рюкзаке<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур1_предметы[0]="Отвёртка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур1_предметы[1]="Хрустальный&nbsp;шар"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$ур1_предметы[2]="Агар-Агар"<br>
+
+
+</div>
+<p>
+С помощью цикла любой из этих списков можно вывести на экран.
+
+</p>
+<p>
+На локации-обработчике выделения предмета можно прописать примерно такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Рюкзак"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;кликнули&nbsp;по&nbsp;предмету&nbsp;рюкзак</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;список&nbsp;предметов&nbsp;верхнего&nbsp;уровня</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;предмет,&nbsp;позволяющий&nbsp;вернуться&nbsp;обратно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;к&nbsp;списку&nbsp;предметов&nbsp;верхнего&nbsp;уровня</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"...Назад..."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;предметы&nbsp;в&nbsp;рюкзаке</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$ур1_предметы'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$ур1_предметы[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$selobj="...Назад...":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;кликнули&nbsp;по&nbsp;предмету&nbsp;Назад<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;удаляем&nbsp;старый&nbsp;список&nbsp;с&nbsp;экрана<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killobj<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;новый&nbsp;(предметы&nbsp;верхнего&nbsp;уровня)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize('$ур0_предметы'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$ур0_предметы[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Если вам нужно более двух списков предметов, то заводить отдельный массив на каждый неразумно. Проще завести два массива:
+
+</p>
+<ul>
+<li>
+в одном массиве прописывать сам предмет: <span class="em_BLCK">$предмет_название[0]="Бутылка кетчупа"</span>
+</li>
+<li>
+во втором массиве прописывать, где этот предмет находится: <span class="em_BLCK">$предмет_расположение[0]="Рюкзак"</span>
+</li>
+</ul>
+<p>
+Важно, чтобы индексы и предмета, и его расположения, в каждом массиве совпадали.
+
+</p>
+<p>
+Вывести все предметы текущего уровня можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;где-то&nbsp;ранее&nbsp;мы&nbsp;написали,&nbsp;предметы&nbsp;какого&nbsp;уровня&nbsp;нам&nbsp;нужно&nbsp;вывести</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$уровень_вложений="Рюкзак"<br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;предметов&nbsp;от&nbsp;предметов&nbsp;другого&nbsp;уровня</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;предметы&nbsp;текущего&nbsp;уровня&nbsp;в&nbsp;окно&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<arrsize("$предмет_название"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысил&nbsp;номер&nbsp;последней&nbsp;ячейки&nbsp;массива<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$предмет_расположение[i]=$уровень_вложений:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;предмет&nbsp;находится&nbsp;на&nbsp;текущем&nbsp;уровне<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;в&nbsp;окно&nbsp;предметов&nbsp;предмет,&nbsp;записанный&nbsp;в&nbsp;массив<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$предмет_название[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;увеличиваем&nbsp;значение&nbsp;счётчика<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;повторяем<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

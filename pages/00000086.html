@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!</h3><p>
+В: Не работают десятичные дроби, дробные числа, числа с запятыми!
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Да, всё верно. Об этом написано в справке:
+
+</p>
+<blockquote>
+<p>
+&gt; QSP не поддерживает дробные числа, можно использовать только целые.
+
+</p>
+
+</blockquote>
+<p>
+Однако, если очень уж хочется использовать дробные числа, есть выход.
+
+</p>
+<p>
+Во-первых, все значения можно увеличить во столько раз, какая погрешность требуется.
+
+</p>
+<p>
+Например, мне нужно считать с точностью до сотых долей. Я увеличиваю значение в 100 раз.
+
+</p>
+<p>
+Было
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;здоровье<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br>
+
+
+</div>
+<p>
+, теперь
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;здоровье<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10000</span><br>
+
+
+</div>
+<p>
+Таким образом, если мне нужно вычесть пять сотых от этого значения, я просто вычитаю 5:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;здоровье<span class="Monokai-Operator">=</span>здоровье<span class="Monokai-EndLoc">-5</span><br>
+
+
+</div>
+<p>
+Однако, если мы попробуем вывести значение на экран как есть, это всё равно будет целое число, поэтому нам нужно "привести" его к требуемому виду. Это делается просто.
+
+</p>
+<p>
+Целую часть получаем делением числа на 100:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;здоровье<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">100</span><br>
+
+
+</div>
+<p>
+Дробную часть вычисляем, как остаток от деления на 100:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;здоровье&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
+
+
+</div>
+<p>
+Осталось показать на экране:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;"Здоровье:&nbsp;<<здоровье/100>>."+$iif((здоровье&nbsp;mod&nbsp;100<10),"0<<здоровье&nbsp;mod&nbsp;100>>",$str(здоровье&nbsp;mod&nbsp;100))+"/100"<br>
+
+
+</div>
+<p>
+Во-вторых, если вам лень увеличивать числа и приводить их к нужной погрешности, воспользуйтесь уже готовой библиотечкой <a href="http://aleksversus.narod.ru/index/easy_math_qsp/0-56" style="text-decoration:none;" class="emFOLD">easy.math</a>. Она научит QSP работать с дробными числами. Правда это повысит нагрузку на игру, и в случае больших вычислений игра будет притормаживать.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

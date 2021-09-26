@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.7. Не работает гиперссылка в AeroQSP</h3><p>
+В: Не работает гиперссылка в AeroQSP.
+
+</p>
+<p>
+Гиперссылка не появляется, или её область смещена.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Будьте очень аккуратны, когда работаете с блоками в AeroQSP. Необходимо помнить, что вся HTML-разметка должна выводиться одной строкой, особенно блоковые элементы, такие как <span class="em_BLCK">DIV</span> или заголовки.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;нельзя:&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'<div>.........</div>'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'<div>.........</div>'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;можно&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;'<div>.........</div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;'<div>.........</div>'<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;нельзя&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'<div>.........</div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'<div>.........</div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;можно&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$args[0]+='<div>.........</div>'&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$args[0]+='<div>.........</div>'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;$args[0]<br>
+
+
+</div>
+<p>
+Смещение областей гиперссылок происходит из-за того, что HTML-рендерер AeroQSP не игнорирует символы преформатирования в HTML, и обрабатывает их по-своему.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

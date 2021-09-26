@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>Важное предисловие</h2><p>
+В этом сборнике представлены наиболее часто задаваемые вопросы из темы "Как сделать ?" на форуме QSP.su. Статьи разбиты на тематические разделы для удобства навигации по вопросам. В конце справочника представлены ссылки на материалы по каждому вопросу, некоторые из них могут работать некорректно в связи с перемещением ряда вопросов в тему "Как сделать?". К сожалению это не подлежит исправлению, однако для удобства поиска к ссылкам добавлена информация об авторе, дате и номере сообщения в теме.
+
+</p>
+<p>
+Так же следует помнить, что все представленные в сборнике примеры даны в целях обучения. Не стоит тупо копировать их в свою игру, а потом бегать с претензиями типа "А вот я скопировал код отсюда, но он почему-то не работает", или "делает что-то не то". Важно прочитать статью и разобрать то, как работает пример. Ещё лучше, сначала самому попытаться решить поставленную задачу, а уже после обращаться к "F.A.Q". Данный сборник не является перечнем готовых решений.
+
+</p>
+<p>
+Если вы нашли ошибку, опечатку или неточность, а так же если у вас есть замечания к статьям, или желание написать более развёрнутую и подробную их версию, пишите на <span class="em_BLCK">aleksversus@mail.ru</span> , либо в "ВК" <a href="https://vk.com/id40090736" style="text-decoration:none;" class="emFOLD">https://vk.com/id40090736</a>.
+
+</p>
+<h6>Разъяснения и термины:</h6><p>
+<strong>Обработка локации</strong>, <strong>посещение локации</strong> — под этими терминами понимаются следующие процессы: выполнение кода из поля "Выполнить при посещении" указанной локации, добавление в окно основного описания базового описания указанной локации, а так же добавление в окно действий базовых действий указанной локации. Обработка локации происходит в двух случаях: в случае "перехода" на локацию с помощью операторов <span class="em_BLCK"><span class="emOPRT">goto</span></span> и <span class="em_BLCK"><span class="emOPRT">xgoto</span></span>, или в случае "вызова" локации с помощью операторов <span class="em_BLCK"><span class="emOPRT">gosub</span></span>, <span class="em_BLCK"><span class="emOPRT">menu</span></span>, функции <span class="em_BLCK"><span class="emFUNC">func</span></span> или в качестве обработчика события в автоматическом режиме. С понятиями "переход на локацию" и "вызов локации" вы можете подробнее ознакомиться в разделе <a href="#folder#None.html#faq_01_08" style="text-decoration:none;" class="emFOLD">"Разница между <span class="em_BLCK"><span class="emOPRT">goto</span></span> и <span class="em_BLCK"><span class="emOPRT">gosub</span></span>"</a>.
+
+</p>
+<p>
+<strong>индекс</strong> — в контексте данного справочника под индексом подразумевается указатель на какой-либо элемент. Например, у каждой ячейки массива есть собственный числовой индекс. Если массив состоит из пяти элементов, то его элементы нумеруются от нуля до четырёх — эти числа и являются индексами элементов. Для того, чтобы обратиться к какому-то конкретному элементу массива, нужно указать название этого массива, а за названием в квадратных скобках - индекс:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;значение&nbsp;элемента&nbsp;массива&nbsp;mass&nbsp;под&nbsp;индексом&nbsp;3</span><br>
+
+
+</div>
+<p>
+	У элементов массивов могут быть текстовые индексы: <span class="em_BLCK">mass<span class="emOPRT">[</span><span class="emTEXT">"35,56"</span><span class="emOPRT">]</span></span>.
+
+</p>
+<p>
+	Индексы есть практически у всех исчислимых элементов для удобства обращения. Например, каждый символ строки обладает собственным индексом (номером), каждый предмет, добавленный в окно предметов тоже. И т.д. Если вы встречаете фразу "элементы индексируются с единицы", это означает, что нумерация элементов начинается с числа 1. Элементы массивов индексируются с нуля.
+
+</p>
+<p>
+<strong>Переменная-маркер</strong> — это пользовательская (не системная) переменная, которую мы вводим, чтобы отмечать изменение события или состояния в игре. Например, переменной-маркером можно назвать переменную, обозначающую размещение предмета на локации:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;ваза_на_столе<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;переменная-маркер&nbsp;ваза_на_столе&nbsp;равна&nbsp;1</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;вазу&nbsp;со&nbsp;стола"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;действии&nbsp;изменяем&nbsp;значение&nbsp;переменной-маркера</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ваза_на_столе<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Ваза"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+<strong>Системная переменная</strong> — это зарезервированная в плеере переменная. Изменение её значения внутри игры изменяет настройки и поведение плеера. Например, системной является переменная nosave. Если её значение отлично от нуля, игрок не может пользоваться пунктами меню плеера "загрузить состояние игры" и "сохранить состояние игры":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">nosave</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Окна плеера могут называться по-разному:
+
+</p>
+<ul>
+<li>
+<span class="em_BLCK">Окно основного описания</span> может называться <span class="em_BLCK">основным окном</span>, <span class="em_BLCK">окном основных описаний</span>, <span class="em_BLCK">главным окном</span>, или <span class="em_BLCK">окном игрока</span>.
+</li>
+<li>
+<span class="em_BLCK">Окно дополнительного описания</span> может называться <span class="em_BLCK">дополнительным окном описаний</span>, <span class="em_BLCK">окном статистики</span> (статов), или <span class="em_BLCK">окном пользователя</span>.
+</li>
+<li>
+<span class="em_BLCK">Окно предметов</span> может называться <span class="em_BLCK">окном инвентаря</span>, <span class="em_BLCK">инвентарём</span>, <span class="em_BLCK">списком предметов</span>, или <span class="em_BLCK">рюкзаком</span>.
+</li>
+<li>
+<span class="em_BLCK">Окно действий</span> может называться <span class="em_BLCK">списком действий</span>.
+</li>
+<li>
+<span class="em_BLCK">Окно с полем ввода</span> может называться <span class="em_BLCK">полем ввода</span>, <span class="em_BLCK">строкой ввода</span> и пр.
+</li>
+<li>
+Диалоговое окно, вызываемое функцией <span class="em_BLCK"><span class="emOPRT">$input</span></span>, может называться <span class="em_BLCK">окном ввода</span>.
+</li>
+<li>
+Диалоговое окно, вызываемое оператором <span class="em_BLCK"><span class="emOPRT">msg</span></span>, может называться <span class="em_BLCK">окном сообщения</span>.
+</li>
+<li>
+Окно, в котором выводится изображение при использовании команды <span class="em_BLCK"><span class="emOPRT">view</span></span>, может называться <span class="em_BLCK">окном предпросмотра</span>, <span class="em_BLCK">окном просмотра изображения</span>.
+</li>
+</ul>
+<p>
+В разделе "Зарезервированные слова, переменные и спецсимволы" используются обозначения:	
+
+</p>
+<ul>
+<li>
+[выражение] - значение выражения, которое может быть как текстового, так и числового типа.
+</li>
+<li>
+[$выражение] - значение выражения, которое может быть только текстового (строкового) типа (но при необходимости движок автоматически переведёт число в строку).
+</li>
+<li>
+[#выражение] - значение выражения, которое может быть только числового типа (если возможно, движок автоматически переведёт строку в число).
+</li>
+</ul>
+<p>
+	Примечение. Символ <span class="em_BLCK">#</span> использован в справочнике только чтобы разделить выражения произвольного и числового типов. К синтаксису QSP данный символ отношения не имеет.
+
+</p>
+<p>
+В том же разделе: если для оператора или функции не указана общая запись, значит этот оператор или функцию нужно запускать без аргументов. Например, оператор <span class="em_BLCK"><span class="emOPRT">unselect</span></span>, функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span>.
+
+</p>
+<h6>Благодарности</h6><p>
+Спасибо всему сообществу QSP, подписчикам моего канала, а так же всем, кто задавал вопросы по изложенным в сборнике статьям.
+
+</p>
+<p>
+Отдельная благодарность <strong>Nex</strong>'у, <strong>NickoAilus</strong>'у, <span class="em_BLCK">Последнему из Гаяр</span>, <span class="em_BLCK"><span class="emOPRT">evp</span></span>, <strong>newsash</strong>'у, <span class="em_BLCK">Олегусу</span>, <strong>Storm</strong>'у, <strong>Svartberg</strong>'у, <strong>Oliver</strong>'у, <strong>mkir</strong>'у, <strong>svandrus</strong>'у, <strong>Lisichk</strong>'е, <strong>Ajent</strong>'е, <strong>ejikplains</strong>'у, <strong>Larson</strong>'у, <strong>dmvikar</strong>'у, и всем прочим авторам, чьи наработки, примеры и кусочки кода послужили материалом для этих статей. Прошу прощения, кого забыл упомянуть.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

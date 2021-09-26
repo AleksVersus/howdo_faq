@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.11. Инструкция от Nex'а, позволяющая сменить оформление из кода игры</h3><p>
+$BACKIMAGE в Навигаторе отключен, как и другие переменные оформления. Всё оформление в Навигаторе делается через HTML, CSS и Javascript.
+
+</p>
+<p>
+Переключение фонов я делаю так.
+
+</p>
+<ol>
+<li>
+В CSS прописываю стили для классов элемента <span class="em_BLCK">BODY</span>. Каждому классу соответствует свой фон.
+</li>
+<li>
+В Javascript-файле скина описываю функцию, которая меняет класс <span class="em_BLCK">BODY</span>.
+</li>
+<li>
+В игре, при заходе на локацию, проверяю, какой нужен фон, и вызываю функцию Javascript. В элементе <span class="em_BLCK">BODY</span> меняется класс, а за ним меняется и фон.
+</li>
+</ol>
+<p>
+Помимо фона, точно таким же образом можно менять и расположение окон, отступы от границ окна и прочие вещи. Это позволяет, например, красиво оформить "обложку" - заглавный экран игры.
+
+</p>
+<p>
+Найти данную инструкцию и много полезных сообщений можно здесь: <a href="http://qsp.su/index.php?option=com_agora&task=topic&id=633&p=9&prc=25&Itemid=57#p19887" style="text-decoration:none;" class="emFOLD">Quest Navigator для Windows</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

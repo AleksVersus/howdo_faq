@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>10. Интерфейс, дизайн, украшения</h2><h3>10.12. С предметов можно снимать выделение, а можно ли снять выделение с действия?</h3><p>
+В: С предметов можно снимать выделение, а можно ли снять выделение с действия?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В отличие от предметов действия выделяются не кликом, а наведением указателя мыши. Специальной команды для снятия выделения с действия нет. Однако можно использовать костыль:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фиксируем&nbsp;текущие&nbsp;действия&nbsp;в&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curacts</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;список&nbsp;действий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">cla</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;восстанавливаем&nbsp;список&nbsp;действий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$actlist<br>
+
+
+</div>
+<p>
+Если указатель мыши будет наведён на окно действий, само собой одно из действий вновь будет выделено.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

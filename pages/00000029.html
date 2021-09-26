@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>6. Вопросы по звуковым файлам в QSP</h2><h3>6.1. Как вставить музыку или звук в игру?</h3><p>
+В: Как вставить музыку или звук в игру?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Всё довольно просто:
+
+</p>
+<ul>
+<li>
+Скопируйте музыкальный файл в папку с вашей игрой, или во вложенную папку.
+</li>
+<li>
+В том месте в вашей игре, где должна запускаться музыка, воспользуйтесь оператором <span class="em_BLCK"><span class="emOPRT">PLAY</span></span>:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;звуковому&nbsp;файлу/звук.mp3"</span><br>
+
+
+</div>
+<p>
+Например, ваш файл называется "песня солнца.mp3" и вы скопировали его в папку с игрой. Чтобы музыка запустилась в какой-то локации, нужно в этой локации написать:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"песня&nbsp;солнца.mp3"</span><br>
+
+
+</div>
+<p>
+Другой пример. Вы создали в папке с вашей игрой ещё одну папку, и назвали "sound". В неё поместили звуковой файл "бадамс.wav". Вам нужно, чтобы этот файл проигрывался в момент нажатия действия. Делаем так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взорвать&nbsp;бомбу"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"sound/бадамс.wav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;какой-то&nbsp;другой&nbsp;код</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Не забывайте указывать расширения файлов (<span class="em_BLCK">.mp3</span>, <span class="em_BLCK">.wav</span>, <span class="em_BLCK">.ogg</span> и т.д.).
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

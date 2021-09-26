@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.1. Как добавить предмет в окно предметов?</h3><p>
+В: Как добавить предмет в окно предметов?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Всё очень просто. Для этого используется оператор <span class="em_BLCK"><span class="emOPRT">addobj</span></span>. В качестве аргумента оператору передаётся название предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+
+
+</div>
+<p>
+Если нужно добавить предмет с картинкой, то вторым аргументом указывается путь к файлу картинки.
+
+</p>
+<p>
+Например, файл картинки нашего предмета называется "screw.png" и лежит в папке "img", вложенной в папку с игрой, тогда предмет с картинкой можно добавить так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screw.png"</span><br>
+
+
+</div>
+<p>
+Ещё картинку можно вставлять прямо в название предмета, используя html. Для этого включаем поддержку html в плеере, прописав, например на самой первой локации в игре, команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Далее добавляем предмет с картинкой, используя тег <span class="em_BLCK">&lt;img&gt;</span>. В атрибуте <span class="em_BLCK">src</span> этого тега указываем путь к файлу картинки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"<img&nbsp;scr='img/screw.png'>&nbsp;Отвёртка"</span><br>
+
+
+</div>
+<p>
+Обратите внимание. Хотя при этом на экране мы будем видеть картинку и слово "Отвёртка", названием предмета будет вся строка "&lt;img scr='img/screw.png'&gt; Отвёртка".
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

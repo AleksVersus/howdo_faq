@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>Зарезервированные слова, системные переменные и спецсимволы</h2><h3>Операции</h3><p>
+<a id="faq_80_01_00"></a>Список операций для плеера версии 5.7.0 в порядке возрастания приоритета:
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emOPRT">&amp;</span></span>
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emFUNC">OR</span></span>
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emFUNC">AND</span></span>
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emFUNC">OBJ</span></span>, <span class="em_BLCK"><span class="emFUNC">LOC</span></span>, <span class="em_BLCK"><span class="emFUNC">NO</span></span>
+
+</p>
+<p>
+<span class="em_BLCK">=</span>, <span class="em_BLCK">&lt;</span>, <span class="em_BLCK">&gt;</span>, <span class="em_BLCK">!</span>, <span class="em_BLCK">&lt;&gt;</span>, <span class="em_BLCK">&lt;=</span>, <span class="em_BLCK">&gt;=</span>, <span class="em_BLCK">=&lt;</span>, <span class="em_BLCK">=&gt;</span>
+
+</p>
+<p>
+<span class="em_BLCK">+</span>, <span class="em_BLCK">-</span>
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emFUNC">MOD</span></span>
+
+</p>
+<p>
+<span class="em_BLCK">*</span>, <span class="em_BLCK">/</span>
+
+</p>
+<p>
+<span class="em_BLCK">+</span>, <span class="em_BLCK">-</span> (унарные)
+
+</p>
+<p>
+Операции записанные на одной строке имеют одинаковый приоритет и выполняются по порядку слева направо, если присутствуют на одном уровне в выражении.
+
+</p>
+<p>
+Операции в скобках имеют приоритет перед другими операциями.
+
+</p>
+<p>
+Вычисение значений функций имеет приоритет перед всеми операциями.
+
+</p>
+<p>
+Верным считается числовое выражение, значение которого отлично от 0. При значении 0 выражение считается ложным. Для значения "верно" настоятельно рекомендуется использовать -1, т.к. только в этом случае будут адекватно работать побитовые операторы в роли логических.
+
+</p>
+<p>
+В более новых версиях плеера приоритет некоторых операций изменён.
+
+</p>
+<h4>* (умножение)</h4><p>
+<strong>*</strong> — арифметическая операция "УМНОЖЕНИЕ". Перемножает два числа. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]*[#выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> — два любых числовых значения, или выражения. Результатом работы операции является произведение двух чисел.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">17</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;85</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">37</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">100</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;3700</span><br>
+
+
+</div>
+<h4>*= (умножение-присвоение)</h4><p>
+<strong>*=</strong> — операция "УМНОЖЕНИЕ-ПРИСВОЕНИЕ". Сочетает в себе операции присвоения и умножения. Умножает значение указанной переменной на определённое число и возвращает результат той же переменной. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">*</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK">ИМЯ_МАССИВА</span> — это название переменной (без кавычек), или название массива с указанием ячейки, а <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> — любое числовое значение или выражение.
+
+</p>
+<p>
+	Аналогично конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">=</span>ИМЯ_МАССИВА<span class="Monokai-Operator">*</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;мы&nbsp;заменяем&nbsp;две&nbsp;операции:&nbsp;присвоения&nbsp;и&nbsp;умножение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">=</span>warrior<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;умножение-присвоение&nbsp;(действие&nbsp;аналогично)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">*</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<h4>+ (сложение)</h4><p>
+<strong>+</strong> — арифметическая операция "СЛОЖЕНИЕ". Суммирует два числа. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">[</span>выражение&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[выражение 2]</span></span> — два любых значения, или выражения. Результатом работы операции является сумма двух значений.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;6</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">17</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;22</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">37</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">100</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;137</span><br>
+
+
+</div>
+<p>
+	Можно "суммировать" и текстовые значения. В этом случае операция работает как <a href="#folder#None.html#faq_80_01_concatenation" style="text-decoration:none;" class="emFOLD">конкатенация</a>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;"2627"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"26"</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"27"</span><br>
+
+
+</div>
+<h4>+= (сложение-присвоение)</h4><p>
+<strong>+= (инкремент)</strong> — операция "ИНКРЕМЕНТ", сочетающая в себе операции присвоения и сложения. Прибавляет к текущему значению переменной указанное значение. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK">ИМЯ_МАССИВА</span> — это название переменной (без кавычек), или название массива с указанием ячейки, а <span class="em_BLCK"><span class="emTEXT">[выражение 1]</span></span> — любое значение или выражение.
+
+</p>
+<p>
+	Аналогично конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">=</span>ИМЯ_МАССИВА<span class="Monokai-Operator">+</span><span class="Monokai-Operator">[</span>выражение&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;мы&nbsp;заменяем&nbsp;две&nbsp;операции:&nbsp;присвоения&nbsp;и&nbsp;сложения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">=</span>warrior<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">15</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;инкремент&nbsp;(действие&nbsp;аналогично)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><br>
+
+
+</div>
+<p>
+	Возможно так же проводить инкремент со строковыми значениями, работает как <a href="#folder#None.html#faq_80_01_concatenation" style="text-decoration:none;" class="emFOLD">конкатенация</a>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"&nbsp;(может&nbsp;быть&nbsp;тут&nbsp;что-то&nbsp;написано)"</span><br>
+
+
+</div>
+<p>
+	P.S.: Инкремент — во многих языках программирования это операция, которая выполняет увеличение переменной. Чаще всего под инкрементом подразумевается увеличение переменной на 1 единицу.
+
+</p>
+<h4>- (вычитание)</h4><p>
+<strong>-</strong> — арифметическая операция "ВЫЧИТАНИЕ". Вычитает одно число из другого. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-[выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[выражение 2]</span></span> — два любых значения, или выражения. Результатом работы операции является разность двух значений.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-EndLoc">-2&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-EndLoc">-2&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">17</span><span class="Monokai-EndLoc">-5&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;12</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">37</span><span class="Monokai-EndLoc">-100&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;-63</span><br>
+
+
+</div>
+<h4>-= (вычитание)</h4><p>
+<strong>-= (декремент)</strong> — операция "ДЕКРЕМЕНТ", сочетающая в себе операции присвоения и вычитания. Вычитает из текущего значения переменной указанное значение. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-EndLoc">-=[#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK">ИМЯ_МАССИВА</span> — это название переменной (без кавычек), или название массива с указанием ячейки, а <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> — любое числовое значение или выражение.
+
+</p>
+<p>
+	Аналогично конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">=</span>ИМЯ_МАССИВА<span class="Monokai-EndLoc">-[#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;мы&nbsp;заменяем&nbsp;две&nbsp;операции:&nbsp;присвоения&nbsp;и&nbsp;вычитания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">=</span>warrior<span class="Monokai-EndLoc">-15</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;декремент&nbsp;(действие&nbsp;аналогично)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-EndLoc">-=15</span><br>
+
+
+</div>
+<p>
+	P.S.: Декремент — во многих языках программирования это операция, которая выполняет уменьшение переменной. Чаще всего под декрементом подразумевается уменьшение переменной на 1 единицу. 
+
+</p>
+<h4>- и + (унарные)</h4><p>
+<strong>унарные + и -</strong> — унарные операции. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — любое числовое значение или выражение. Результатом работы этих операций является то же самое значение, только в случае с унарным минусом — с противоположным знаком.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-2&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;-2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-(3+6)&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;-9</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;9</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">-(-27)&nbsp;&&nbsp;!&nbsp;вернёт&nbsp;27</span><br>
+
+
+</div>
+<h4>/ (деление)</h4><p>
+<strong>/</strong> — арифметическая операция "ДЕЛЕНИЕ". Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]/[#выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> — два любых числовых значения, или выражения. Значение <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> не должно быть равным нулю. Результатом работы операции является частное от деления двух чисел.
+
+</p>
+<p>
+	Поскольку QSP поддерживает только целочисленные значения, деление производится так же нацело, без округления, с отсечением дробной части.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">17</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">37</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">100</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+
+
+</div>
+<h4>/= (деление-присвоение)</h4><p>
+<strong>/=</strong> — операция "ДЕЛЕНИЕ-ПРИСВОЕНИЕ". Сочетает в себе операции присвоения и деления. Делит значение указанной переменной на определённое число и возвращает результат той же переменной. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">/</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK">ИМЯ_МАССИВА</span> — это название переменной (без кавычек), или название массива с указанием ячейки, а <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> — любое числовое значение или выражение.
+
+</p>
+<p>
+	Аналогично конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">=</span>ИМЯ_МАССИВА<span class="Monokai-Operator">/</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]</span><br>
+
+
+</div>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;мы&nbsp;заменяем&nbsp;две&nbsp;операции:&nbsp;присвоения&nbsp;и&nbsp;деления</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">=</span>warrior<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;деление-присвоение&nbsp;(действие&nbsp;аналогично)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;warrior<span class="Monokai-Operator">/</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<h4>&lt; (меньше)</h4><p>
+<strong>&lt;</strong> — операция сравнения "МЕНЬШЕ".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> меньше значения выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое меньше второго.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;меньше&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;не&nbsp;меньше&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;не&nbsp;меньше&nbsp;3&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">3</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"a"</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"zz"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"aaaaaa"</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<h4>&lt;= (меньше либо равно)</h4><p>
+<strong>&lt;=</strong> — операция сравнения "МЕНЬШЕ ЛИБО РАВНО".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> меньше либо равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое меньше второго, либо равно ему.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;меньше&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;не&nbsp;меньше&nbsp;трёх&nbsp;и&nbsp;не&nbsp;равно&nbsp;ему</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+
+
+</div>
+<p>
+	Аналогично "=&lt;" и конструкциям:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"a"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"zz"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"aaaaaa"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<h4>&lt;&gt; (не равно)</h4><p>
+<strong>&lt;&gt;</strong> — операция сравнения "НЕ РАВНО". Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> не равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если выражения не равны.
+
+</p>
+<p>
+	Аналогично "!", или конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;равно&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">5</span><br>
+
+
+</div>
+<p>
+	Можно сравнивать и строковые значения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"abc"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">"def"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"abc"</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">"abc"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+
+
+</div>
+<h4>= (равно)</h4><p>
+<strong>=</strong> —  операция сравнения "РАВНО". Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если выражения равны.
+
+</p>
+<p>
+	Аналогично конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;равно&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	Можно сравнивать и строковые значения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-String">"abc"</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"def"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-String">"abc"</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"abc"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br>
+
+
+</div>
+<p>
+	Не путать с операцией присвоения.
+
+</p>
+<h4>= (присвоение)</h4><p>
+<strong>=</strong> — операция присвоения. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ИМЯ_МАССИВА<span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>значение<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK">ИМЯ_МАССИВА</span> — название переменной (не в кавычках), или название массива с указанием ячейки (не в кавычках), <span class="em_BLCK"><span class="emTEXT">[значение]</span></span> — любое значение или выражение.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;BOX&nbsp;присваиваем&nbsp;значение&nbsp;13</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;BOX<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">13</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;$text&nbsp;присваиваем&nbsp;значение&nbsp;"Строка&nbsp;текста"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">"Строка&nbsp;текста"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;нулевой&nbsp;ячейке&nbsp;массива&nbsp;day&nbsp;присваивается&nbsp;значение&nbsp;365</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;day<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">365</span><br>
+
+
+</div>
+<p>
+	Имена строковых переменных/массивов должны начинаться с символа <span class="em_BLCK">$</span>.
+
+</p>
+<p>
+	Внимание! Операцию присвоения не следует путать с операцией сравнения "РАВНО", хотя они очень похожи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;операция&nbsp;присвоения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;операция&nbsp;сравнения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span>alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	В этом случае плеер понимает, что внутри скобок находится операция сравнения, потому что скобки используются только для записи выражений. Запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"abc"</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"abc"</span><br>
+
+
+</div>
+<p>
+	синтаксически ошибочна. Плеер выдаст ошибку: недопустимое название переменной/массива. Так как в этом случае он не понимает, что это операция сравнения.
+
+</p>
+<p>
+	Если перед операцией сравнения стоит оператор, скобки можно не писать:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Не&nbsp;хватает&nbsp;сил"</span><br>
+
+
+</div>
+<h4>=&lt; (равно либо меньше)</h4><p>
+<strong>=&lt;</strong> — операция сравнения "РАВНО ЛИБО МЕНЬШЕ".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> меньше либо равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое меньше второго, либо равно ему.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;меньше&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;не&nbsp;меньше&nbsp;трёх&nbsp;и&nbsp;не&nbsp;равно&nbsp;ему</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br>
+
+
+</div>
+<p>
+	Аналогично "&lt;=" и конструкциям:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"a"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"zz"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"aaaaaa"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator"><</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<p>
+Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте "&lt;= (меньше либо равно)" вместо этого.
+
+</p>
+<h4>=&gt; (равно или больше)</h4><p>
+<strong>=&gt;</strong> — операция сравнения "РАВНО ИЛИ БОЛЬШЕ".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> больше либо равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое больше второго, либо равно ему.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;меньше&nbsp;и&nbsp;не&nbsp;равно&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;больше&nbsp;3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br>
+
+
+</div>
+<p>
+	Аналогично "&gt;=" и конструкциям:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-String">"a"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"zz"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-String">"aaaaaa"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">></span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<p>
+Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте "&gt;= (больше либо равно)" вместо этого.
+
+</p>
+<h4>&gt; (больше)</h4><p>
+<strong>&gt;</strong> — операция сравнения "БОЛЬШЕ".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> больше значения выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое больше второго.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;больше&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;не&nbsp;больше&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;больше&nbsp;3&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">></span><span class="Monokai-Numeric">3</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">></span><span class="Monokai-String">"a"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"zz"</span><span class="Monokai-Operator">></span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">></span><span class="Monokai-String">"aaaaaa"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<h4>&gt; (больше либо равно)</h4><p>
+<strong>&gt;=</strong> — операция сравнения "БОЛЬШЕ ЛИБО РАВНО".  Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> больше либо равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если первое больше второго, либо равно ему.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;меньше&nbsp;и&nbsp;не&nbsp;равно&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;7&nbsp;больше&nbsp;3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br>
+
+
+</div>
+<p>
+	Аналогично "=&gt;" и конструкциям:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Сравнивать можно и текстовые значения, при этом символы сравниваются поочерёдно, и большим считается символ, стоящий ближе к концу алфавита.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-String">"a"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"zz"</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-String">"aaaaaa"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"z"</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;верно</span><br>
+
+
+</div>
+<h4>! (не равно)</h4><p>
+<strong>!</strong> — операция сравнения "НЕ РАВНО". Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Comment">![выражение_2]</span><br>
+
+
+</div>
+<p>
+	Если значение выражения <span class="em_BLCK"><span class="emTEXT">[выражение_1]</span></span> не равно значению выражения <span class="em_BLCK"><span class="emTEXT">[выражение_2]</span></span> операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если выражения не равны.
+
+</p>
+<p>
+	Аналогично "&lt;&gt;", или конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Не путать с оператором комментария.
+
+</p>
+<p>
+	Для лучшей читаемости кода лучше использовать <span class="em_BLCK">&lt;&gt;</span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2&nbsp;не&nbsp;равно&nbsp;4&nbsp;—&nbsp;вернёт&nbsp;-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Comment">!4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Comment">!5</span><br>
+
+
+</div>
+<h4>&amp; (больше)</h4><p>
+<strong>&amp;</strong> — конкатенация, операция объединения строковых выражений. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>$выражение&nbsp;1]&nbsp;&&nbsp;[$выражение&nbsp;2]<br>
+
+
+</div>
+<p>
+	Не путайте с символом перечисления команд:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;данном&nbsp;случае&nbsp;на&nbsp;экран&nbsp;будут&nbsp;последовательно&nbsp;выведены&nbsp;строки&nbsp;"26"&nbsp;и&nbsp;"27"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"26"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">"27"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;данном&nbsp;случае&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;"2627"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-String">"26"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">"27"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	Не рекомендуется использовать данную операцию для объединения строк, поскольку строки можно объединять через <a href="#folder#None.html#faq_80_01_add" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK">+</span></a>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведена&nbsp;строка&nbsp;"2627"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"26"</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"27"</span><br>
+
+
+</div>
+<p>
+	Такая запись создаёт меньше путаницы и работает аналогичным образом.
+
+</p>
+<h4>AND</h4><p>
+<strong>AND</strong> — логическое "И" (побитовое "И"). Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]&nbsp;AND&nbsp;[#выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	Всё данное выражение будет верным, если верны выражения <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обе&nbsp;части&nbsp;выражения&nbsp;верны,&nbsp;значит&nbsp;и&nbsp;всё&nbsp;выражение&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Comment">!2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;-1&nbsp;(правда)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;одна&nbsp;часть&nbsp;выражения&nbsp;не&nbsp;верна,&nbsp;значит&nbsp;всё&nbsp;выражение&nbsp;неверно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Comment">!2)&nbsp;and&nbsp;(3!2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;0&nbsp;(ложь)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обе&nbsp;части&nbsp;выражения&nbsp;не&nbsp;верны,&nbsp;значит&nbsp;и&nbsp;всё&nbsp;выражение&nbsp;не&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Comment">!2)&nbsp;and&nbsp;(3=2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;0&nbsp;(ложь)</span><br>
+
+
+</div>
+<h4>LOC</h4><p>
+<strong>LOC</strong> — операция проверяет наличие локации и возвращает -1, если локация есть, и — 0, если локации нет. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">LOC</span>&nbsp;<span class="Monokai-Operator">[</span>$локация]<br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — название локации, наличие которой необходимо проверить в игре. Выражение верно, если локация существует в игре.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяет,&nbsp;есть&nbsp;ли&nbsp;в&nbsp;игре&nbsp;локация&nbsp;"начало"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">loc</span>&nbsp;<span class="Monokai-String">"начало"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;локация&nbsp;есть,&nbsp;возвращает&nbsp;-1</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;локация&nbsp;"улица"&nbsp;не&nbsp;добавлена&nbsp;в&nbsp;игру</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Func">loc</span>&nbsp;<span class="Monokai-String">"улица"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Выйти&nbsp;на&nbsp;улицу"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Я&nbsp;не&nbsp;могу&nbsp;выйти&nbsp;на&nbsp;улицу,&nbsp;дверь&nbsp;не&nbsp;отпирается."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<h4>MOD</h4><p>
+<strong>MOD</strong> — операция вычисляет остаток от деления двух чисел. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]&nbsp;MOD&nbsp;[#выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> — делимое, <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> — делитель.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;4&nbsp;делится&nbsp;на&nbsp;2&nbsp;нацело</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возвращает&nbsp;0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;5&nbsp;не&nbsp;делится&nbsp;на&nbsp;2&nbsp;нацело</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возвращает&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;13&nbsp;делится&nbsp;на&nbsp;10&nbsp;нацело</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">13</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возвращает&nbsp;3</span><br>
+
+
+</div>
+<p>
+	Остаток от деления отрицательного числа будет отрицательным числом.
+
+</p>
+<h4>NO</h4><p>
+<strong>NO</strong> — операция отрицания. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">NO</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br>
+
+
+</div>
+<p>
+	Если <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> верно, то всё выражение неверно, и наоборот.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;4&nbsp;равно&nbsp;4&nbsp;это&nbsp;верно,&nbsp;значит&nbsp;всё&nbsp;выражение&nbsp;неверно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Numeric">4</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0&nbsp;(ложь)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;можно&nbsp;читать&nbsp;как&nbsp;вопрос:&nbsp;четыре&nbsp;не&nbsp;равно&nbsp;четырём?&nbsp;Нет&nbsp;—&nbsp;ложь.</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;то,&nbsp;что&nbsp;5&nbsp;равно&nbsp;3,&nbsp;—&nbsp;неверно,&nbsp;значит&nbsp;всё&nbsp;выражение&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1&nbsp;(правда)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;можно&nbsp;читать&nbsp;как&nbsp;вопрос:&nbsp;пять&nbsp;не&nbsp;равно&nbsp;трём?&nbsp;Да&nbsp;—&nbsp;правда.</span><br>
+
+
+</div>
+<h4>OBJ</h4><p>
+<strong>OBJ</strong> — операция проверяет наличие предмета в инвентаре и возвращает -1, если предмет есть, и — 0, если предмета нет. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название]<br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> — название предмета, наличие которого необходимо проверить в окне предметов. Выражение верно, если предмет добавлен в окно предметов.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяет,&nbsp;добавлен&nbsp;ли&nbsp;в&nbsp;окно&nbsp;предметов&nbsp;предмет&nbsp;"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;предмет&nbsp;есть,&nbsp;возвращает&nbsp;-1</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;зависимости&nbsp;от&nbsp;наличия&nbsp;того&nbsp;или&nbsp;иного&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводится&nbsp;то&nbsp;или&nbsp;иное&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Полный&nbsp;кувшин"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Опустошить&nbsp;кувшин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Полный&nbsp;кувшин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Пустой&nbsp;квушин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Пустой&nbsp;кувшин"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Наполнить&nbsp;кувшин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Полный&nbsp;кувшин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Пустой&nbsp;квушин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<h4>OR</h4><p>
+<strong>OR</strong> — логическое "ИЛИ" (побитовое "ИЛИ"). Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1]&nbsp;OR&nbsp;[#выражение&nbsp;2]</span><br>
+
+
+</div>
+<p>
+	Всё данное выражение будет верным, если хотя бы одно из выражений <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> и <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> верно.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обе&nbsp;части&nbsp;выражения&nbsp;верны,&nbsp;значит&nbsp;и&nbsp;всё&nbsp;выражение&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Comment">!2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;-1&nbsp;(правда)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;одна&nbsp;часть&nbsp;выражения&nbsp;верна,&nbsp;значит&nbsp;всё&nbsp;выражение&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Comment">!2)&nbsp;or&nbsp;(3!2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;-1&nbsp;(правда)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обе&nbsp;части&nbsp;выражения&nbsp;не&nbsp;верны,&nbsp;значит&nbsp;и&nbsp;всё&nbsp;выражение&nbsp;не&nbsp;верно</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Comment">!2)&nbsp;or&nbsp;(3=2)&nbsp;&&nbsp;!&nbsp;выражение&nbsp;вернёт&nbsp;0&nbsp;(ложь)&nbsp;</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

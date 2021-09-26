@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>17. Вопросы о сохранениях</h2><h3>17.3. Как сделать чекпойнты в игре?</h3><p>
+В: Как сделать чекпойнты в игре?
+
+</p>
+<p>
+	Как сделать так, чтобы игру можно было начинать с последнего сохранения?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Прежде всего "последнее" сохранение мы всегда будем записывать в файл "autosave.sav". Делается это просто. Там, где нужно сохраниться пишем такую команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br>
+
+
+</div>
+<p>
+Вот и всё. Теперь у нас есть файл сохранения, к которому можно обратиться в самом начале игры, чтобы загрузить последнюю сохранённую точку. Для этого на самой первой локации в игре (например, она называется "начало") создаём действие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Продолжить&nbsp;игру"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Да, но мы хотим, чтобы данное действие появлялось лишь тогда, когда файл "autosave.sav" создан. То есть если игрок уже добрался до одной из контрольных точек. В противном случае, если игрок первый раз открыл игру, такое действие появляться не должно.
+
+</p>
+<p>
+Что ж, нам нужна некая переменная, которая будет означать наличие сохранения. Назовём эту переменную <span class="em_BLCK">savetrue</span> и обернём действие в условие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Продолжить&nbsp;игру"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Значение этой переменной на момент начала игры будет равно нулю, и должно измениться на 1 в момент сохранения. Но мы не можем загрузить сохранение, если не можем получить значение переменной, такое условие мы прописали. Что же делать?
+
+</p>
+<p>
+Ввести ещё один файл сохранения, назовём его "system.sav". Таким образом в момент сохранения игры мы будем писать два файла:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;переменной-маркера&nbsp;на&nbsp;единицу</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;игру&nbsp;в&nbsp;системный&nbsp;файл&nbsp;сохранения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"system.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;переменной-маркера&nbsp;на&nbsp;ноль</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;состояние&nbsp;чекпоинта</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br>
+
+
+</div>
+<p>
+Таким образом в момент сохранения игры мы создаём два файла сохранения: системный и непосредственно файл для продолжения игры с чекпоинта. Лучше оформить этот код на отдельной локации, назвать её например "checkpoint", а затем в нужном месте просто вызывать, используя <span class="em_BLCK"><span class="emOPRT">gosub</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"checkpoint"</span><br>
+
+
+</div>
+<p>
+Теперь мы можем загрузить сохранение "system.sav" и при этом получим значение переменной-маркера, равное единице, но так же при этом игрок окажется на той локации, где это сохранение было сделано, а нам нужно вернуть его к стартовой локации. Как сделать это?
+
+</p>
+<p>
+Нужно завести локацию-обработчик события "загрузка состояния игры". Создаём новую локацию и называем её, например, "при_загрузке". Далее указываем плееру, какую именно локацию ему нужно использовать, как локацию-обработчик загрузки состояния игры. Для этого в системную переменную <span class="em_BLCK"><span class="emVAR">$ongload</span></span> вносим название нашей вновь созданной локации (пишем на самой первой локации в игре):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$ongload</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_загрузке"</span><br>
+
+
+</div>
+<p>
+На локации "при_загрузке" пишем такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значение&nbsp;переменной-маркера&nbsp;равно&nbsp;единице</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;ещё&nbsp;одну&nbsp;переменную&nbsp;маркер</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">lock_resave</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;возвращаемся&nbsp;на&nbsp;стартовую&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"начало"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+А код на локации "начало" (самой первой локации в игре, стартовой локации) правим так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;проверки&nbsp;сохранения&nbsp;равно&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохранение&nbsp;есть,&nbsp;выводим&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Продолжить&nbsp;игру"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;<span class="Monokai-Func">lock_resave</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иначе&nbsp;если&nbsp;проверка&nbsp;сохранения&nbsp;не&nbsp;заблокирована</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;пытаемся&nbsp;открыть&nbsp;системное&nbsp;сохранение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"system.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Итак, что будет происходить при этом. Когда игрок первый раз запустит игру, обе переменные-маркеры будут равны нулю. Плеер попытается загрузить состояние "system.sav", но поскольку этот файл ещё не создан, плеер просто проигнорирует команду:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"system.sav"</span><br>
+
+
+</div>
+<p>
+По мере прохождения, игрок будет посещать "контрольные точки", где игра будет сохранять состояние автоматически, используя написанную нами процедуру "checkpoint". При этом перед сохранением состояния в условно-системный файл "system.sav" переменной-маркеру <span class="em_BLCK">savetrue</span> будет присваиваться значение <span class="em_BLCK"><span class="emNUM">1</span></span>, а перед сохранением состояния, которое мы будем использовать для загрузки "контрольной точки" ("autosave.sav"), этой переменной будет присваиваться значение <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+Теперь, если игрок повторно откроет игру, обе переменные-маркеры будут равны нулю. Плеер попытается загрузить состояние "system.sav", и поскольку оно теперь создано, загрузит его. Переменной-маркеру <span class="em_BLCK">savetrue</span> будет присвоено значение <span class="em_BLCK"><span class="emNUM">1</span></span>, так как это значение ей было присвоено перед сохранением "system.sav". Далее произойдёт автоматическое посещение локации-обработчика "при_загрузке".
+
+</p>
+<p>
+На этой локации произойдёт проверка условия, правда ли переменной <span class="em_BLCK">savetrue</span> присвоена единица, и это окажется правдой. Переменной-маркеру <span class="em_BLCK"><span class="emFUNC">lock</span>_resave</span> будет так же присвоена единица и команда <span class="em_BLCK"><span class="emOPRT">goto</span></span> отправит игрока на стартовую локацию.
+
+</p>
+<p>
+Теперь сработает условие, проверяющее, правда ли переменной <span class="em_BLCK">savetrue</span> присвоена единица, и игрок увидит на экране действие "Продолжить игру".
+
+</p>
+<p>
+А когда игрок выберет это действие, произойдёт загрузка состояния "autosave.sav", но поскольку в этом состоянии переменной-маркеру <span class="em_BLCK">savetrue</span> присвоен ноль, при обращении к локации "при_загрузке" условие не сработает и перезаход на стартовую локацию повторно не произойдёт.
+
+</p>
+<p>
+Используя условно-системный файл сохранения, Вы можете не только организовать систему чекпоинтов, но и упростить для игрока различные вступительные части игры и кат-сцены при повторном входе, восстанавливать различные параметры игры частично, а не полностью, и т.д.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

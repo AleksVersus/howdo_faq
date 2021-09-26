@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>9. Вопросы о изображениях</h2><h3>9.1. Как вставить картинку в игру?</h3><p>
+В: Как вставить картинку в игру?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Прежде всего изображение нужно скопировать в папку с игрой, или во вложенную папку. И далее воспользоваться одним из способов. Всего их 3.
+
+</p>
+<ol>
+<li>
+Изображение можно использовать как фоновый рисунок в окне основного описания. Поверх этого рисунка будет отображаться весь текст и элементы html-разметки, которые мы выводим в это окно. Чтобы вставить изображение фоном в окно основного описания, необходимо прописать путь к этому изображению в переменную <span class="em_BLCK"><span class="emVAR">$backimage</span></span>.
+</li>
+</ol>
+<p>
+	Например, файл вашей картинки называется "солнечный_день.jpg" и лежит в папке с игрой, тогда поставить её фоном можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"солнечный_день.jpg"</span><br>
+
+
+</div>
+<p>
+	Или же вы создали в паке с игрой ещё одну папку и назвали её "background", а уже в неё поместили файл изображения. Тогда поставить её фоном можно так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"background/солнечный_день.jpg"</span><br>
+
+
+</div>
+<p>
+	Чтобы заменить фон на другой, нужно в переменной <span class="em_BLCK"><span class="emVAR">$backimage</span></span> прописать путь к другой картинке.
+
+</p>
+<p>
+	Чтобы совсем убрать фон, нужно переменной <span class="em_BLCK"><span class="emVAR">$backimage</span></span> присвоить пустое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$backimage</span><span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+
+
+</div>
+<p>
+	(В "Quest Navigator" нельзя выводить изображения фоном, используя <span class="em_BLCK"><span class="emVAR">$backimage</span></span>. Воспользуйтесь решением, предложенным <strong>Nex</strong>'ом, чтобы менять фон игры в Quest Navigator: <a href="#folder#None.html#faq_22_11" style="text-decoration:none;" class="emFOLD">Инструкция по смене оформления из кода игры</a>)
+
+</p>
+<ol>
+<li>
+Изображение можно выводить в отдельном окне, которое называется "окно предпросмотра". Для этого нужно воспользоваться оператором <span class="em_BLCK"><span class="emOPRT">view</span></span>:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">view</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg"</span><br>
+
+
+</div>
+<p>
+	Чтобы закрыть окно предпросмотра, нужно сообщить оператору <span class="em_BLCK"><span class="emOPRT">view</span></span> пустую строку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">view</span>&nbsp;<span class="Monokai-String">""</span><br>
+
+
+</div>
+<p>
+	Чтобы не закрывать окно предпросмотра, но убрать из него изображение, заведите изображение размером в один пиксель, полностью прозрачное и выводите его с помощью оператора <span class="em_BLCK"><span class="emOPRT">view</span></span>, когда в окне предпросмотра должно быть пусто.
+
+</p>
+<ol>
+<li>
+Третий способ позволяет вставлять изображение в окно основного описания, в окно дополнительного описания, в названия предметов и действий. Этот способ использует возможности html-разметки.
+<br>	В первую очередь необходимо включить в плеере распознавание html. Для этого на самой первой локации в игре присваиваем переменной <span class="em_BLCK"><span class="emVAR">usehtml</span></span> значение отличное от нуля:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+	Изображения в html выводятся с помощью тега <span class="em_BLCK">&lt;img&gt;</span>. В атрибуте <span class="em_BLCK">src</span> этого тега прописывается путь к файлу картинки.
+
+</p>
+<p>
+	Например, мы хотим вывести изображение в окне основного описания:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg'>"</span><br>
+
+
+</div>
+<p>
+	Или мы хотим вывести изображение в окне дополнительного описания:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg'>"</span><br>
+
+
+</div>
+<p>
+	Мы можем вывести изображение в названии действия:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='images/open_door.png'>&nbsp;открыть&nbsp;дверь"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"комната"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Или в названии предмета:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='images/screwdriver.gif'>&nbsp;Отвёртка"</span><br>
+
+
+</div>
+<p>
+	Поверх выводимых таким образом изображений нельзя накладывать надписи и другие изображения.
+
+</p>
+<p>
+Плееры AeroQSP, qSpider и Quest Navigator имеют больше возможностей для работы с элементами оформления, в том числе и с изображениями.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

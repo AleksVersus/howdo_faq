@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>5. Вопросы по $ONNEWLOC</h2><h3>5.1. Как сделать так, чтобы не писать один и тот же код в каждой локации?</h3><p>
+В: Как сделать так, чтобы не писать один и тот же код в каждой локации?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В QSP есть возможность использовать различные служебные локации, которые позволяют автоматизировать выполнение определённых задач. В том числе и выполнение одинакового кода при переходе с локации на локацию.
+
+</p>
+<p>
+Допустим, нам нужно, чтобы при переходе на новую локацию в окне дополнительного описания выводилось её название. Чтобы сделать это, мы могли бы на каждой локации написать такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;название&nbsp;текущей&nbsp;локации&nbsp;в&nbsp;окно&nbsp;доп.описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+
+
+</div>
+<p>
+Но мы воспользуемся локацией-обработчиком перехода на новую локацию. Для этого, в первую очередь, необходимо создать саму локацию-обработчик. Создаём локацию, и называем её, например, "при_переходе". Название может быть совершенно любым, выбирайте то, которое вам удобней.
+
+</p>
+<p>
+Далее необходимо указать плееру, какую локацию он должен использовать как локацию-обработчик перехода на новую локацию. Для этого в системную переменную <span class="em_BLCK"><span class="emFUNC">$onnewloc</span></span> необходимо поместить название созданной нами локации. Пишем, например на самой первой локации в игре:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_переходе"</span><br>
+
+
+</div>
+<p>
+Теперь на локации "при_переходе" пишем наш код, и проверяем, как работает.
+
+</p>
+<p>
+Обратите внимание. Сначала выполняется код локации, на которую был осуществлён переход, а затем только код локации-обработчика перехода.
+
+</p>
+<p>
+Поэтому если в основной локации происходит вывод на экран значений, например так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье&nbsp;<<health>>."</span><br>
+
+
+</div>
+<p>
+А в локации-обработчике перехода на новую локацию стоит код, увеличивающий значение переменной <span class="em_BLCK">health</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;health<span class="Monokai-Operator"><</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;health<span class="Monokai-Operator">=</span>health<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+На экране появится старое значение переменной <span class="em_BLCK">health</span>, хотя по факту оно будет уже новым.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

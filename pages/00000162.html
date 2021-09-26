@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.6. Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?</h3><p>
+В: Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+На данный момент существует только костыльный способ, предложенный <span class="em_BLCK">newsash</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;t=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tort=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;t&nbsp;_<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;_<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Игра&nbsp;запущена&nbsp;на&nbsp;Quest&nbsp;Navigator"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Игра&nbsp;запущена&nbsp;на&nbsp;Классике"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Данный способ работает благодаря разнице в интерпретации однострочной команды, разбитой на несколько строк.
+
+</p>
+<p>
+В классическом плеере оператору условия передаётся имя переменной <span class="em_BLCK"><span class="emFUNC">tort</span></span>, тогда как в Quest Navigator это выражение
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;or&nbsp;t<br>
+
+
+</div>
+<p>
+, результат которого равен 1.
+
+</p>
+<p>
+В самом Quest Navigator есть встроенная функция <span class="em_BLCK"><span class="emOPRT">$GETPLAYER</span></span>, которая позволяет получить название плеера, на котором запущена игра:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$GETPLAYER<span class="Monokai-Operator">(</span><span class="Monokai-String">"player"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

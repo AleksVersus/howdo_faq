@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.2. Как проверить число на чётность?</h3><p>
+В: Как проверить число на чётность?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Задача довольно простая. В QSP есть функция, которая позволяет получить остаток от деления любого числа на любое.
+
+</p>
+<p>
+Чётные числа делятся на 2 нацело, это значит, что остаток от деления таких чисел на 2 равен 0. Поэтому код проверки чётности можно записать так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;m&nbsp;mod&nbsp;2&nbsp;=&nbsp;0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;число&nbsp;делится&nbsp;на&nbsp;2&nbsp;без&nbsp;остатка,&nbsp;оно&nbsp;чётное<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Чётное&nbsp;число"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;число&nbsp;не&nbsp;делится&nbsp;на&nbsp;2&nbsp;без&nbsp;остатка,&nbsp;оно&nbsp;нечётное<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Нечётное&nbsp;число"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Можно и покороче:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">(</span>m&nbsp;mod&nbsp;2)=0,"Чётное&nbsp;число","Нечётное&nbsp;число")<br>
+
+
+</div>
+<p>
+Таким образом можно проверять делимость любого числа на любое. Например, проверить, делится ли число на 3:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">(</span>m&nbsp;mod&nbsp;3)=0,"Делимое&nbsp;на&nbsp;3","Неделимое&nbsp;на&nbsp;3")<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

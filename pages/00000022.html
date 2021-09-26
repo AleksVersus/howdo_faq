@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.4. Как передавать локациям-пунктам меню аргументы?</h3><p>
+В: Как передавать локациям-пунктам меню аргументы?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+При выполнении кода локации, соответствующей пункту меню, непосредственно в массив args передаётся только номер пункта.
+
+</p>
+<p>
+Если у вас фиксированные меню, то Вы можете получить номер пункта из нулевой ячейки массива args и таким образом выполнение любого пункта меню можно разместить на одной локации:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[0]='Осмотреть:screw_menu'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[1]='Использовать:screw_menu'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[2]='Выбросить:screw_menu'<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;локация&nbsp;"screw_menu"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;args[0]=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;передано&nbsp;число&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;это&nbsp;пункт&nbsp;меню&nbsp;"Осмотреть"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pl&nbsp;"Обыкновенная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Подойдёт&nbsp;для&nbsp;регулирования&nbsp;громкости"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;args[0]=2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;передано&nbsp;число&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;это&nbsp;пункт&nbsp;"Использовать"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;громкость=громкость-50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*nl&nbsp;"Вы&nbsp;сунули&nbsp;отвёртку&nbsp;в&nbsp;ухо&nbsp;и&nbsp;звуки&nbsp;стали&nbsp;тише."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;args[0]=3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;передано&nbsp;число&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;это&nbsp;пункт&nbsp;"Выбросить"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pl&nbsp;"Вы&nbsp;выбросили&nbsp;отвёртку"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delobj&nbsp;"Отвёртка"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Однако, этот вариант не будет работать, если меню формируется динамически, т.е. пункты в него добавляются или удаляются по мере прохождения игры, или в зависимости от условий. Здесь придётся всё-таки заводить отдельную локацию на каждый пункт меню. Однако можно использовать одни и те же пункты для разных предметов:
+
+</p>
+<ul>
+<li>
+<a id="faq_04_04_01"></a>Формируем меню для предметов, например на самой первой локации в игре<a href="#folder#None.html#faq_04_04_02" style="text-decoration:none;" class="emFOLD">*</a>:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_предмет[]="Осмотреть:info"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_предмет[]="Использовать:use"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_предмет[]="Выбросить:put"<br>
+
+
+</div>
+<ul>
+<li>
+На локации-обработчике выделения предмета ($onobjsel) код может быть такой:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;название&nbsp;выделенного&nbsp;предмета&nbsp;в&nbsp;переменую</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-Func">$selobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сразу&nbsp;можно&nbsp;снять&nbsp;выделение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;это&nbsp;нужный&nbsp;нам&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вызываем&nbsp;меню</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">"$меню_предмет"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<ul>
+<li>
+На локациях-пунктах меню предметов используем условия, и по значению переменной <span class="em_BLCK"><span class="emFUNC">$object</span></span> определяем, какой предмет был выделен:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;для&nbsp;примера&nbsp;локация&nbsp;"info"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;"запомнили"&nbsp;предмет&nbsp;"Отвёртка"&nbsp;после&nbsp;выделения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;описание&nbsp;отвёртки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Обыкновенная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Подойдёт&nbsp;для&nbsp;регулирования&nbsp;громкости"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$object<span class="Monokai-Operator">=</span><span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;"запомнили"&nbsp;предмет&nbsp;"Апельсин"&nbsp;после&nbsp;выделения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;описание&nbsp;апельсина</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Рыжий&nbsp;сладкий&nbsp;апельсин.&nbsp;Много&nbsp;нас,&nbsp;а&nbsp;он&nbsp;один."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Таким образом через глобальные переменные мы можем передавать некоторые данные локациям-пунктам меню.
+
+</p>
+<h6>сноска</h6><p>
+<a href="#folder#None.html#faq_04_04_01" style="text-decoration:none;" class="emFOLD">↑</a> <a id="faq_04_04_02"></a>Запись <span class="em_BLCK">$меню_предмет[]=</span> означает, что данные будут записаны в следующую ячейку после последней. Это аналог записи <span class="em_BLCK">$меню_предмет[arrsize('$меню_предмет')]=</span>. См. <a href="#folder#00000022.html#faq_04_04" style="text-decoration:none;" class="emFOLD">Как сделать контекстное меню</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

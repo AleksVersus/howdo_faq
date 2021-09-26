@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.3. Как сделать шанс на выпадение определённой вещи?</h3><p>
+В: Как сделать шанс на выпадение определённой вещи? Например 25 процентный шанс на то, что в сундуке окажется золотая чаша?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В самом простом виде, когда мы имеем дело с одним конкретным предметом и приблизительно знаем шансы его выпадения, можно сделать весьма простой алгоритм:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;шанс&nbsp;выпадения&nbsp;предмета&nbsp;(якобы&nbsp;в&nbsp;процентах)&nbsp;—&nbsp;предел&nbsp;от&nbsp;1&nbsp;до&nbsp;...</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;выбрасываем&nbsp;случайное&nbsp;число&nbsp;от&nbsp;1&nbsp;до&nbsp;100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем&nbsp;попало&nbsp;ли&nbsp;выпавшее&nbsp;число&nbsp;в&nbsp;заданный&nbsp;нами&nbsp;предел</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выпавшее&nbsp;число&nbsp;меньше&nbsp;либо&nbsp;равно&nbsp;заданному</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Золотая&nbsp;чаша"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;нашли&nbsp;в&nbsp;сундуке&nbsp;золотую&nbsp;чашу."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;противном&nbsp;случае&nbsp;ничего&nbsp;не&nbsp;получаем</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;ничего&nbsp;не&nbsp;нашли&nbsp;в&nbsp;сундуке."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Чуть более сложной задачей становится выбор из нескольких вариантов предметов. Эта задача осложняется тем, что начинающие авторы продолжают применять подход с процентным значением шансов к большому набору предметов:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;Золотая&nbsp;чаша&nbsp;<span class="Monokai-EndLoc">-&nbsp;25%</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Кувшин&nbsp;<span class="Monokai-EndLoc">-&nbsp;25%</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Вострый&nbsp;меч&nbsp;—&nbsp;50%<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Убольшающее&nbsp;зелье&nbsp;—&nbsp;25%<br>
+
+
+</div>
+<p>
+Если сложить все процентные значения в этом случае, мы получаем 125% на все предметы, но такого не может быть.
+
+</p>
+<p>
+На самом деле данная запись означает вот что: золотая чаша, кувшин и убольшающее зелье имеют равные шансы для выпадения, но по сравнению с любым из них вострый меч должен выпадать чаще (приблизительно в два раза). Однако шанс выпадения вострого меча в этом случае на треть меньше, чем шанс выпадения золотой чаши, либо кувшина, либо убольшающего зелья.
+
+</p>
+<p>
+Всё это говорит нам о том, что мы имеем дело уже не с процентными соотношениями, а с коэффициентами соотношений. Начнём разбор этой ситуации с двух предметов:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;Вострый&nbsp;меч&nbsp;—&nbsp;50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Убольшающее&nbsp;зелье&nbsp;—&nbsp;25<br>
+
+
+</div>
+<p>
+Теперь мы знаем, что это не проценты, а коэффициенты соотношений шанса выпадения. Делим 50 на 25, и понимаем, что Вострый меч должен выпадать вдвое чаще, чем Убольшающее зелье. При условии, что хоть один предмет должен выпасть обязательно, составляем следующий алгоритм:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;максимальное&nbsp;значение&nbsp;случайного&nbsp;числа&nbsp;(складывается&nbsp;из&nbsp;коэффициентов)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;определяем&nbsp;отрезок&nbsp;для&nbsp;меча&nbsp;(от&nbsp;1&nbsp;до&nbsp;50)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_sword<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;определяем&nbsp;отрезок&nbsp;для&nbsp;зелья&nbsp;(от&nbsp;51&nbsp;до&nbsp;75)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_potion<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">75</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выбрасываем&nbsp;случайное&nbsp;число&nbsp;от&nbsp;1&nbsp;до&nbsp;bones_max</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>bones_max<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;используя&nbsp;сложное&nbsp;условие&nbsp;проверяем&nbsp;отрезки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_sword<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;уложились&nbsp;в&nbsp;отрезок&nbsp;для&nbsp;меча</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;меч</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Вострый&nbsp;меч"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_potion<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иначе&nbsp;если&nbsp;мы&nbsp;уложились&nbsp;в&nbsp;отрезок&nbsp;для&nbsp;зелья</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;зелье</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Убольшающее&nbsp;зелье"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Теперь можно составить алгоритм для случая с четырьмя предметами. Он не будет сильно отличаться от предыдущего:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;максимальное&nbsp;значение&nbsp;числа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;меча&nbsp;(1-50)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_sword<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;зелья&nbsp;(51-75)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_potion<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">75</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;кувшина&nbsp;(76-100)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_jug<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;чаши&nbsp;(101-125)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_cup<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">125</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выбрасываем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>bones_max<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;выпавший&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_sword<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Вострый&nbsp;меч"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_potion<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Убольшающее&nbsp;зелье"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_jug<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Кувшин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_cup<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Золотая&nbsp;чаша"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Что если мы хотим, чтобы в принципе предмет мог выпасть с 50% вероятностью, но между собой они делили шансы выпадения по-прежнему? Просто увеличиваем максимальное значение числа вдвое:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;максимальное&nbsp;значение&nbsp;числа</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones_max<span class="Monokai-Operator">=</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">50</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;меча&nbsp;(1-50)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_sword<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;зелья&nbsp;(51-75)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_potion<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">75</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;кувшина&nbsp;(76-100)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_jug<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отрезок&nbsp;чаши&nbsp;(101-125)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;chance_cup<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">125</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выбрасываем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>bones_max<span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;выпавший&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_sword<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Вострый&nbsp;меч"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_potion<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Убольшающее&nbsp;зелье"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_jug<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Кувшин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;bones<span class="Monokai-Operator"><</span><span class="Monokai-Operator">=</span>chance_cup<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Золотая&nbsp;чаша"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;или&nbsp;ничего&nbsp;не&nbsp;получаем</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;ничего&nbsp;не&nbsp;нашли"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Конечно же данное решение не является универсальным, и для более универсального решения рамок обычного F.A.Q не хватит, но в большинстве случаев для написания сносной системы случайного выпадения предметов хватает и данного решения. Главное помнить, что выбирая между разными предметами мы уже работаем не с чистой вероятностью выпадения, а с тем, насколько чаще один предмет выпадает по отношению к другим предметам.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>11. Вопросы об условиях</h2><h3>11.4. Как добавить текст, который будет выводиться только при выполнении определённого условия?</h3><p>
+В: Как добавить текст, который будет выводиться только при выполнении определённого условия?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Всё просто. Вместо того, чтобы писать текст в поле "Базовое описание", нужно ввести конструкцию условия в поле "Выполнить при посещении" в Quest Generator. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст,&nbsp;не&nbsp;зависящий&nbsp;от&nbsp;условия</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;"Ты&nbsp;посмотрел&nbsp;в&nbsp;зеркало&nbsp;и&nbsp;увидел,&nbsp;что&nbsp;одет&nbsp;в&nbsp;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;далее&nbsp;следует&nbsp;конструкция&nbsp;условия<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;кольчуга_надета=0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;если&nbsp;кольчуга&nbsp;не&nbsp;надета<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;соответствующий&nbsp;текст<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"рваную&nbsp;грязную&nbsp;рубаху."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;кольчуга_надета=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;иначе&nbsp;если&nbsp;кольчуга&nbsp;надета<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;другой&nbsp;текст<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"новенькую&nbsp;блестящую&nbsp;кольчугу."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Переменная "кольчуга_надета" в данном случае служит переменной-маркером.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

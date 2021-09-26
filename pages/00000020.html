@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.2. Как сделать разные меню для двух и более предметов?</h3><p>
+В: Как сделать разные меню для двух и более предметов?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+На каждый предмет, для которого нужно меню, необходимо завести собственный массив.
+
+</p>
+<p>
+Например, если у нас есть два предмета "Отвёртка" и "Апельсин":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;заводим&nbsp;массив&nbsp;с&nbsp;пунктами&nbsp;меню&nbsp;для&nbsp;отвёртки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[0]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[1]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[2]="Выбросить:put_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;заводим&nbsp;массив&nbsp;с&nbsp;пунктами&nbsp;меню&nbsp;для&nbsp;апельсина<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_апельсин[0]="Осмотреть:info_orange"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_апельсин[1]="Использовать:use_orange"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_апельсин[2]="Выбросить:put_orange"<br>
+
+
+</div>
+<p>
+Само собой необходимо создать локации для каждого из этих пунктов. И на каждой локации прописать нужный код (см. <a href="#folder#00000019.html#faq_04_01" style="text-decoration:none;" class="emFOLD">"Как сделать меню предмета?"</a>.
+
+</p>
+<p>
+Осталось только прописать вызов меню на локации-обработчике выделения предмета (название которой прописано в <span class="em_BLCK"><span class="emFUNC">$onobjsel</span></span>):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вызываем&nbsp;меню&nbsp;отвёртки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">"$меню_отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;"Апельсин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вызываем&nbsp;меню&nbsp;апельсина</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">"$меню_апельсин"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;...и&nbsp;так&nbsp;далее&nbsp;по&nbsp;каждому&nbsp;предмету</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;не&nbsp;забываем&nbsp;снять&nbsp;выделение&nbsp;с&nbsp;предмета&nbsp;в&nbsp;конце</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unselect</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

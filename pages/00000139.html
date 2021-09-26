@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.8. Как в QSP сравнить два массива?</h3><p>
+В: Как в QSP сравнить два массива?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+На первый взгляд вопрос кажется довольно простым, однако сравнение сравнению рознь. И если мы зададим вопрос: как именно мы хотим сравнить два массива, возникают совершенно разные решения для разных вариантов сравнения.
+
+</p>
+<p>
+Мы можем сравнить массивы по числу элементов:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass_1'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass_2'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Число&nbsp;элементов&nbsp;в&nbsp;массивах&nbsp;одинаковое.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Число&nbsp;элементов&nbsp;в&nbsp;массивах&nbsp;разное.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Довольно простая задача. Возьмём задачу посложнее: проверить массивы на идентичность. То есть значение каждого элемента одного массива должно совпадать со значением элемента другого массива под тем же индексом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a=arrsize('mass_1')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<a&nbsp;and&nbsp;$text='':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;mass_1[i]<>mass_2[i]:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text='Массивы&nbsp;не&nbsp;идентичны'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$text='':&nbsp;$text='Массивы&nbsp;идентичны'<br>
+
+
+</div>
+<p>
+Само собой проверять на идентичность массивы разного размера нет смысла.
+
+</p>
+<p>
+Третья задача несколько сложнее. Нужно проверить, присутствуют ли в массивах одни и те же значения, но при этом не важно, совпадают ли индексы элементов с этими значениями.
+
+</p>
+<p>
+Кажется, что она решается относительно просто:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a=arrsize('mass_1')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<a&nbsp;and&nbsp;$text='':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;arrpos('mass_2',mass_1[i])=-1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text='Массивы&nbsp;разнятся&nbsp;по&nbsp;содержимому'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;$text='':&nbsp;$text='Массивы&nbsp;состоят&nbsp;из&nbsp;одинаковых&nbsp;элементов'<br>
+
+
+</div>
+<p>
+Это решение может сработать, если в массивах, например, вот такое содержимое:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Но как быть, если в массивах вот такое содержимое
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Да, в них содержатся одинаковые значения, но встречаются они разное количество раз. А если при сравнении нам нужно учесть и количество?
+
+</p>
+<p>
+Задача становится чуть более сложной. И теперь её решение будет включать в себя несколько этапов:
+
+</p>
+<ol>
+<li>
+Сравнение массивов по размеру. Если размеры разные, то массивы в любом случае не равны.
+</li>
+<li>
+Копирование массивов во временные.
+</li>
+<li>
+Сортировка значений во временных массивах
+</li>
+<li>
+Сравнение временных массивов на идентичность
+</li>
+</ol>
+<p>
+Сортировка значений в массивах — это отдельный вопрос, и он представлен в смежном разделе (см. 20.10).
+
+</p>
+<p>
+Готовое решение для сравнения массивов на идентичность, на подобие (значения одинаковы но расположены в разном порядке), на совпадение хотя бы одного элемента есть в библиотеке <a href="https://github.com/AleksVersus/easy.math" style="text-decoration:none;" class="emFOLD">easy.math</a>, см. функцию <a href="http://aleksversus.narod.ru/index/operacii_nad_massivami/0-72#arraysimp" style="text-decoration:none;" class="emFOLD">#array.simp#</a>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.4. Как добавить предмет в определённую позицию в окне предметов?</h3><p>
+В: Как добавить предмет в определённую позицию в окне предметов?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Вы можете указать номер позиции, в которую хотите добавить предмет, третим аргументом оператору <span class="em_BLCK"><span class="emOPRT">addobj</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Название&nbsp;предмета"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.jpg"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><br>
+
+
+</div>
+<p>
+Можно добавлять предметы только в уже существующие позиции, либо в позицию сразу за последним предметом. Если вы укажете большее число, предмет не добавится:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;исходный&nbsp;список&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Гаечный&nbsp;ключ"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Радиоактивный&nbsp;пепел"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;без&nbsp;картинки&nbsp;в&nbsp;седьмую&nbsp;позицию,&nbsp;которой&nbsp;ещё&nbsp;нет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span><br>
+
+
+</div>
+<p>
+Обратите внимание, если вы добавляете предмет в уже существующую позицию, предмет, стоявший в этой позиции, а так же следующие за ним, будут смещены на позицию вниз. Т.е. замена предметов при добавлении в уже существующую позицию не происходит:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предмет&nbsp;в&nbsp;первой&nbsp;позиции</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предмет&nbsp;во&nbsp;второй&nbsp;позиции</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Гаечный&nbsp;ключ"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;предмет&nbsp;в&nbsp;третьей&nbsp;позиции</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Радиоактивный&nbsp;пепел"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;во&nbsp;вторую&nbsp;позицию,&nbsp;при&nbsp;этом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;гаечный&nbsp;ключ&nbsp;и&nbsp;радиоактивный&nbsp;пепел&nbsp;сместятся</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;позицию&nbsp;вниз</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

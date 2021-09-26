@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>10. Интерфейс, дизайн, украшения</h2><h3>10.10. Как сделать плавное появление текста?</h3><p>
+В:	Как сделать плавное появление текста?
+
+</p>
+<p>
+	Как сделать плавное изменение цвета фона?
+
+</p>
+<p>
+	Как сделать плавное изменение цвета текста?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы создать у игрока видимость плавного проявления текста, необходимо изначально задать одинаковый цвет и тексту и фону, а затем постепенно изменять значения цвета в сторону нужного.
+
+</p>
+<p>
+Ниже, в качестве примера, приведён код проявления чёрного текста на белом фоне для локации-счётчика:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;заданные&nbsp;изначально&nbsp;(например&nbsp;при&nbsp;переходе&nbsp;на&nbsp;локацию)&nbsp;составляющие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;font['red']=255&nbsp;&&nbsp;font['green']=255&nbsp;&&nbsp;font['blue']=255&nbsp;&&nbsp;!&nbsp;составляющие&nbsp;цвета&nbsp;шрифта</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;bg['red']=255&nbsp;&&nbsp;bg['green']=255&nbsp;&&nbsp;bg['blue']=255&nbsp;&&nbsp;!&nbsp;составляющие&nbsp;цвета&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;fcolor=rgb(font['red'],font['green'],font['blue'])</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;bcolor=rgb(bg['red'],bg['green'],bg['blue'])</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Текст&nbsp;будет&nbsp;проявляться&nbsp;примерно&nbsp;за&nbsp;600&nbsp;мс,&nbsp;нужно&nbsp;выставить&nbsp;settimer</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;settimer&nbsp;20</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтобы&nbsp;код&nbsp;не&nbsp;выполнялся&nbsp;даже&nbsp;когда&nbsp;текст&nbsp;полностью&nbsp;проявится,&nbsp;переменной&nbsp;count['font']</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;будет&nbsp;присвоена&nbsp;единица.&nbsp;Чтобы&nbsp;запустить&nbsp;выполнение&nbsp;кода,&nbsp;нужно&nbsp;присвоить&nbsp;этой&nbsp;переменной&nbsp;ноль</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;count['font']=0</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;непосредственно&nbsp;код</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;count<span class="Monokai-Operator">[</span><span class="Monokai-String">'font'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;коду&nbsp;разрешено&nbsp;выполняться</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;при&nbsp;каждом&nbsp;обращении&nbsp;к&nbsp;локации-счётчику&nbsp;вычитаем&nbsp;из&nbsp;значения&nbsp;составляющих&nbsp;цвета&nbsp;шрифта&nbsp;по&nbsp;8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'red'</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-=8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'green'</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-=8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'blue'</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-=8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значения&nbsp;достигли&nbsp;нуля,&nbsp;то&nbsp;они&nbsp;не&nbsp;могут&nbsp;опуститься&nbsp;ниже</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'red'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'red'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'green'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'green'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'blue'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'blue'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;так&nbsp;же&nbsp;если&nbsp;значения&nbsp;достигли&nbsp;нуля,&nbsp;значит&nbsp;больше&nbsp;коду&nbsp;незачем&nbsp;выполняться</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'red'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'green'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;font<span class="Monokai-Operator">[</span><span class="Monokai-String">'blue'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;count<span class="Monokai-Operator">[</span><span class="Monokai-String">'font'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;каждое&nbsp;обращение&nbsp;к&nbsp;локации-счётчику&nbsp;необходимо&nbsp;менять&nbsp;цвет&nbsp;шрифта</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>font<span class="Monokai-Operator">[</span><span class="Monokai-String">'red'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>font<span class="Monokai-Operator">[</span><span class="Monokai-String">'green'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>font<span class="Monokai-Operator">[</span><span class="Monokai-String">'blue'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обновляем&nbsp;настройки&nbsp;интерфейса</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">refint</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;не&nbsp;забываем&nbsp;закрывать&nbsp;многострочные&nbsp;условия</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Чтобы изменять скорость проявляения текста, можно менять период обращения к локации-счётчику через <span class="em_BLCK"><span class="emOPRT">settimer</span></span>, или заменить восьмёрку в моменте вычитания числа из составляющих на более подходящее число.
+
+</p>
+<p>
+Задачи по плавному изменению цвета фона, или текста решаются аналогичным образом.
+
+</p>
+<p>
+Использовать подобный код непосредственно на любой другой локации или в действии, в сочетании с <span class="em_BLCK"><span class="emOPRT">wait</span></span>, не рекомендуется, поскольку это намертво подвешивает игру. Многих игроков подобные "повисания" раздражают.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

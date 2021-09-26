@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.7. Есть несколько переменных с разными значениями. Как получить имя переменной, в которой находится наибольшее значение?</h3><p>
+В: Есть несколько переменных с разными значениями. Как получить имя переменной, в которой находится наибольшее значение?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+	Для примера возьмём несколько переменных и значений:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;VariableA<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;VariableB<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;VariableC<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;VariableD<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+
+
+</div>
+<ol>
+<li>
+Вносим названия этих переменных и их значения в два разных массива под одним индексом:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$varname<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"VariableA"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;varvalue<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>VariableA<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$varname<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"VariableB"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;varvalue<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>VariableB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$varname<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"VariableC"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;varvalue<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>VariableC<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$varname<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"VariableD"</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;varvalue<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>VariableВ<br>
+
+
+</div>
+<ol>
+<li>
+Теперь определяем максимальное значение в массиве varvalue:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;varmax<span class="Monokai-Operator">=</span><span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'varvalue'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<ol>
+<li>
+Осталось определить индекс элемента с этим значением:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;indexMax<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'varvalue'</span><span class="Monokai-Operator">,</span>varmax<span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<ol>
+<li>
+Имя переменной получить уже несложно:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Максимальное&nbsp;значение&nbsp;в&nbsp;переменной&nbsp;"</span><span class="Monokai-Operator">+</span>$varname<span class="Monokai-Operator">[</span>indexMax<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Можно написать функцию, которая будет возвращать название переменной с максимальным значением:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#maxVar</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$args[0]&nbsp;—&nbsp;$args[8]&nbsp;—&nbsp;названия&nbsp;переменных</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">"$varname[]='<<$args[args['i']]>>'&nbsp;&&nbsp;varvalue[]=<<$args[args['i']]>>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'max'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'varvalue'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'index'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'varvalue'</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'max'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$result</span><span class="Monokai-Operator">=</span>$varname<span class="Monokai-Operator">[</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'index'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'varvalue'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$varname'</span><br>
+
+
+</div>
+<p>
+	Вызов функции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'maxVar'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'VariableA'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'VariableB'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'VariableC'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'VariableD'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	Поскольку для работы данной функции в любом случае требуется цикл, можно несколько изменить алгоритм, чтобы не заводить лишние массивы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#varMax</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'max'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'args[9]'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">:</span>for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'max'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$dyneval</span><span class="Monokai-Operator">(</span>"if&nbsp;<<$args[args['i']]>>&nbsp;>&nbsp;<<$args['max']>>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result='<<$args[args['i']]>>'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result='<<$args['max']>>'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args['i']+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$result=$args['max']<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.10. Как выполнить JavaScript прямо из кода QSP?</h3><p>
+В: Как выполнить JavaScript прямо из кода QSP?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Для этого в QSP предусмотрен специальный оператор <span class="em_BLCK"><span class="emOPRT">EXEC</span></span>. Например, с помощью JavaScript поменяем цвет фона на бирюзовый:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#000041";'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+В качестве аргумента данному оператору передаётся строка текста. Левая часть — до двоеточия — показывает на тип выполняемой инструкции JS — JavaScript. Правая часть — после двоеточия — непосредственно инструкция на JavaScript, которая присваивает элементу <span class="em_BLCK">document.body</span> соответствующий цвет фона.
+
+</p>
+<p>
+Подобным образом можно выполнять и другие инструкции JavaScript прямо из кода QSP, однако следует помнить, что JavaScript выполняется только на уровне оформления и никак не влияет на код и состояния самой игры.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

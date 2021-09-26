@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>12. Вопросы о DYNAMIC</h2><h3>12.3. Создаю действия с помощью цикла, но они работают неправильно. Что делать?</h3><p>
+В: Создаю действия с помощью цикла, но они работают неправильно. Что делать?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Это классическая "грабля", с которой сталкиваются все новички из-за неполного понимания порядка работы кода.
+
+</p>
+<p>
+Допустим мы создаём действие:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Действие&nbsp;номер&nbsp;"+i:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Что мы при этом увидим на экране? Перед созданием действия переменной <span class="em_BLCK">i</span> присвоено значение 1. Значит название действия будет склеено из текста "Действие номер " и значения переменной <span class="em_BLCK">i</span>, то есть будет выглядеть так: "Действие номер 1".
+
+</p>
+<p>
+Однако код, который мы назначили действию, будет выполнен только в момент нажатия действия.
+
+</p>
+<p>
+То есть, если мы нажмём на действие, когда переменная <span class="em_BLCK">i</span> равна 1, мы увидим на экране текст: "Это действие номер 1". Но если переменную <span class="em_BLCK">i</span> изменить уже после создания действия, то когда мы нажмём на действие, мы увидим другой текст. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Действие&nbsp;номер&nbsp;"+i:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=2<br>
+
+
+</div>
+<p>
+В этом случае мы увидим на экране действие с названием "Действие номер 1", а текст, который оно выведет на экран при нажатии, будет такой: "Это действие номер 2".
+
+</p>
+<p>
+Теперь давайте посмотрим, что происходит при создании действий с помощью цикла:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<6:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;act&nbsp;"Действие&nbsp;номер&nbsp;"+i:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+В конце цикла значение переменной <span class="em_BLCK">i</span> будет равно 6, тогда как цикл создаст нам пять действий с названиями:
+
+</p>
+<blockquote>
+<p>
+&gt;	Действие номер 1
+
+</p>
+<p>
+&gt;	Действие номер 2
+
+</p>
+<p>
+&gt;	Действие номер 3
+
+</p>
+<p>
+&gt;	Действие номер 4
+
+</p>
+<p>
+&gt;	Действие номер 5
+
+</p>
+
+</blockquote>
+<p>
+При этом, какое бы действие мы не нажимали, поскольку значение переменной <span class="em_BLCK">i</span> будет равно 6, мы всегда при нажатии на действие будем видеть на экране строку текста: "Это действие номер 6".
+
+</p>
+<p>
+Однако, мы можем формировать действия с конкретными значениями с помощью оператора <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<6:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;'act&nbsp;"Действие&nbsp;номер&nbsp;"+<<i>>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+<<i>><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+<p>
+Теперь на каждом проходе цикла, когда плеер будет встречать оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>, этому оператору будет передаваться строка текста:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;'act&nbsp;"Действие&nbsp;номер&nbsp;"+<<i>>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+<<i>><br>
+&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+Перед выполнением оператора <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> плеер будет раскрывать подвыражения, подставляя вместо них значение <span class="em_BLCK">i</span>, соответствующее проходу. На первом проходе оператору <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> будет передан такой текст:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;'act&nbsp;"Действие&nbsp;номер&nbsp;"+1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+На втором проходе такой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;'act&nbsp;"Действие&nbsp;номер&nbsp;"+2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+И так далее.
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emOPRT">dynamic</span></span> выполняет код записанный в виде текста, и поскольку мы передаём ему команды для создания действий, будут созданы пять действий с конкретными числами в коде действий.
+
+</p>
+<p>
+Для лучшего понимания попробуйте запустить такой код, и объясните его работу:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;i=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<6:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;'act&nbsp;"Действие&nbsp;номер&nbsp;"+<<i>>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+<<i>><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Значение&nbsp;переменной&nbsp;i:&nbsp;"+i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>6. Вопросы по звуковым файлам в QSP</h2><h3>6.6. Как зациклить мелодию?</h3><p>
+В: Как зациклить мелодию?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Зациклить одну мелодию во всей игре довольно просто.
+
+</p>
+<ul>
+<li>
+Создаём локацию и называем её, например, "счётчик". Это будет наша локация-счётчик.
+</li>
+<li>
+В самой первой локации в игре указываем плееру, какую локацию он должен использовать, как локацию-счётчик, прописывая вот такую команду:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"счётчик"</span><br>
+
+
+</div>
+<ul>
+<li>
+На локации "счётчик" пишем код вроде этого:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">ISPLAY</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/мелодия.wav"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мелодия&nbsp;не&nbsp;воспроизводится&nbsp;(isplay&nbsp;возвращает&nbsp;0)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запускаем&nbsp;мелодию&nbsp;по-новой.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/мелодия.wav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Чтобы зацикливать определённую мелодию в пределах одной локации, а на другой локации зациклить другую мелодию, в локации-счётчике потребуется прописать более сложный код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"комната"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;на&nbsp;локации&nbsp;"комната"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запускаем&nbsp;воспроизведение&nbsp;мелодии,&nbsp;если&nbsp;она&nbsp;закончилась</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">ISPLAY</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/мелодия_комната.wav"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/мелодия_комната.wav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;не&nbsp;на&nbsp;локации&nbsp;комната,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;мелодию&nbsp;комнаты</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">CLOSE</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/мелодия_комната.wav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"коридор"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;на&nbsp;локации&nbsp;"коридор"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запускаем&nbsp;воспроизведение&nbsp;мелодии,&nbsp;если&nbsp;она&nbsp;закончилась</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">ISPLAY</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/музыка_коридор.mp3"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/музыка_коридор.mp3"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;не&nbsp;на&nbsp;локации&nbsp;"коридор",</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;мелодию&nbsp;коридора</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">CLOSE</span>&nbsp;<span class="Monokai-String">"путь&nbsp;к&nbsp;файлу/музыка_коридор.mp3"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	и т.д.
+
+</p>
+<p>
+Или воспользуйтесь уже готовым решением в виде гибкого плейлиста: <a href="http://qsp.su/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76" style="text-decoration:none;" class="emFOLD">открыть страницу в браузере</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

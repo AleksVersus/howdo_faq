@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.1. Как сделать возврат на предыдущую локацию?</h3><p>
+В: Как сделать возврат на предыдущую локацию?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В общем виде это делается так:
+
+</p>
+<ul>
+<li>
+"Запоминаем" название текущей локации в какой-нибудь переменной.
+</li>
+<li>
+При переходе на новую локацию создаём действие, гиперссылку или предмет, по нажатию на которые произойдёт переход на предыдущую локацию (которую мы "запомнили").
+</li>
+</ul>
+<p>
+Для примера рассмотрим пару частных случаев.
+
+</p>
+<p>
+Сделаем действие, которое будет появляться в каждой локации, и по нажатию на которое можно будет вернуться на предыдущую посещённую локацию.
+
+</p>
+<p>
+Для начала создадим локацию-обработчик перехода на новую локацию. Назвать её можно как угодно, например "при_переходе".
+
+</p>
+<p>
+Теперь нужно указать плееру, какую локацию он должен использовать как локацию-обработчик перехода на новую локацию. Для этого в переменную <span class="em_BLCK"><span class="emFUNC">$onnewloc</span></span> помещаем название нашей новой созданной локации. Пишем, например, на самой первой локации в игре:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_переходе"</span><br>
+
+
+</div>
+<p>
+Теперь всякий раз при переходе на локацию по <span class="em_BLCK"><span class="emOPRT">goto</span></span> или <span class="em_BLCK"><span class="emOPRT">xgoto</span></span> автоматически будет выполняться код локации "при_переходе". Вот на ней мы и пишем следующий код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#при_переходе</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;название&nbsp;предыдущей&nbsp;посещённой&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">=</span>$now_loc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;название&nbsp;текущей&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$now_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;если&nbsp;нам&nbsp;есть&nbsp;куда&nbsp;вернуться</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$back_loc<span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-String">""</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие&nbsp;возврата</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вернуться"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$back_loc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Вот такой короткий код позволит нам возвращаться на предыдущую локацию.
+
+</p>
+<p>
+К примеру, если игрок посетил сначала локацию "коридор", в <span class="em_BLCK"><span class="emFUNC">$now</span>_loc</span> записалось название "коридор". Затем он перешёл на локацию "спальня", в <span class="em_BLCK">$back_loc</span> записалось значение из <span class="em_BLCK"><span class="emFUNC">$now</span>_loc</span>, то есть "коридор", а в <span class="em_BLCK"><span class="emFUNC">$now</span>_loc</span> — "спальня". Если нажать действие "Вернуться", игрок вернётся на локацию "коридор".
+
+</p>
+<p>
+У этого кода есть ряд недостатков. Например, здесь не учтён случай, когда игрок совершает переход на текущую локацию. Так же, если игрок уже вернулся на локацию "коридор", то при нажатии действия "Вернуться", он вновь попадёт на локацию "спальня", и так это действие будет перекидывать его между двумя локациями.
+
+</p>
+<p>
+Если есть необходимость "пролистывать" локации в порядке обратном прохождению, можно немного модифицировать код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#при_переходе</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;в&nbsp;последней&nbsp;ячейке&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;ещё&nbsp;не&nbsp;записано&nbsp;название&nbsp;текущей&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вписываем</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;создаём&nbsp;действие&nbsp;возврата</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вернуться"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;размер&nbsp;массива</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'arrsize'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;последнюю&nbsp;ячейку</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'arrsize'</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переходим&nbsp;на&nbsp;предыдущую&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие&nbsp;возврата</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Данный код лишён недостатков предыдущего и удобен там, где может потребоваться возвращаться на несколько локаций назад. Например, в книгах-играх.
+
+</p>
+<p>
+Если нам нужен предмет, который будет работать, как действие "Вернуться", снова изменим код.
+
+</p>
+<p>
+Во-первых, нам понадобится ещё одна служебная локация — локация-обработчик выделения предмета. Опять же, название может быть любым, например, "предмет_выделен". И как и с локацией-обработчиком перехода на новую локацию, необходимо указать плееру, какую локацию ему следует использовать как локацию-обработчик выделения предмета. Пишем, например на самой первой локации в игре:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"предмет_выделен"</span><br>
+
+
+</div>
+<p>
+И добавляем в окно предметов предмет для возврата. Можно так же на самой первой локации:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Вернуться"</span><br>
+
+
+</div>
+<p>
+На локации "при_переходе" оставляем только эту часть:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!#при_переходе</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><</span><span class="Monokai-Operator">></span><span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+На локации "предмет_выделен" пишем следующее:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Вернуться"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;выделен&nbsp;предмет&nbsp;"Вернуться"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'arrsize'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$back_loc'</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'arrsize'</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc">-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Модифицируя и комбинируя эти способы, вы можете добиться нужного поведения кнопок для возврата на предыдущие локации.
+
+</p>
+<p>
+Так же почитайте тему "Как сделать?", там не раз задавлись подобные вопросы, наверняка вы найдёте подходящий вариант для себя.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

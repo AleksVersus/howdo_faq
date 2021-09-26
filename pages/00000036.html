@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>7. Вопросы о гиперссылках</h2><h3>7.2. Как менять цвет гиперссылки?</h3><p>
+В: Как менять цвет гиперссылки?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В классическом плеере цвет всех гиперссылок в игре можно изменить, задав значение системной переменной <span class="em_BLCK"><span class="emFUNC">lcolor</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаст&nbsp;тёмно-зелёный&nbsp;цвет&nbsp;гиперссылок</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">120</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+<strong>rgb</strong> — функция, которая преобразует три составляющие цвета в формат понятный QSP. Значения составляющих прописываем аргументами функции в порядке: красный, зелёный, синий.
+
+</p>
+<p>
+Если Вам нужно изменить цвет отдельной гиперссылки, не трогая цвета остальных, можно воспользоваться тегом <span class="em_BLCK">&lt;font&gt;</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='...'><font&nbsp;color=#008888>ссылка&nbsp;бирюзового&nbsp;цвета</font></a>"</span><br>
+
+
+</div>
+<p>
+Цвет указывается в формате шестнадцатеричного кода в атрибуте <span class="em_BLCK"><span class="emFUNC">color</span></span>. Те же значения составляющих: #RRGGBB (RR — красная составляющая, GG — зелёная, BB — синяя).
+
+</p>
+<p>
+В Quest Navigator необходимо заранее предопределить стили в "game.css" вашего шаблона для расцвечивания сразу всех гиперссылок. Сменить их цвет из игры, даже с помощью JS, вряд ли получится.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

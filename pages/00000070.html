@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>12. Вопросы о DYNAMIC</h2><h3>12.1. Зачем нужен оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>?</h3><p>
+В: Зачем нужен оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> предназначен для выполнения кода, записанного в виде текста.
+
+</p>
+<p>
+Например, у нас есть код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоко<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;одно&nbsp;яблоко."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;яблок."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;нет&nbsp;яблок."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Мы можем записать этот код в текстовом виде и передать оператору <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> в качестве аргумента. Оператор <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> выполнит код, записанный в виде текста, как обычный код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;'if&nbsp;яблоко=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;одно&nbsp;яблоко."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;яблоко>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+Это удобно, если нам нужно поместить кусочек кода в переменную, а затем вызывать в нужных местах:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span>'if&nbsp;яблоко=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;одно&nbsp;яблоко."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;яблоко>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;$code<br>
+
+
+</div>
+<p>
+Например, этот способ подходит, когда нужно поместить большой объём кода в гиперссылку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Кажется&nbsp;в&nbsp;моём&nbsp;рюкзаке&nbsp;были&nbsp;<a&nbsp;href='exec:dynamic&nbsp;$code'>яблоки</a>."</span><br>
+
+
+</div>
+<p>
+Так же, поскольку <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> выполняет код, записанный в виде текста, можно генерировать код на лету:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получаем&nbsp;набор&nbsp;значений&nbsp;(может&nbsp;быть&nbsp;сформирован&nbsp;задолго&nbsp;до&nbsp;прихода&nbsp;на&nbsp;локацию&nbsp;с&nbsp;dynamic)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоко<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;груша<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$var_word<span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$var_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'яблоко'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'яблок'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;действия,&nbsp;переключающие&nbsp;значения:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сколько&nbsp;у&nbsp;меня&nbsp;яблок"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$var_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'яблоко'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'яблок'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сколько&nbsp;у&nbsp;меня&nbsp;груш"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$var_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'груша'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$text_word<span class="Monokai-Operator">=</span><span class="Monokai-String">'груш'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;генерируем&nbsp;код,&nbsp;основываясь&nbsp;на&nbsp;значении&nbsp;заданных&nbsp;переменных</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span>'if&nbsp;<<$var_word>>=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;одно&nbsp;<<$var_word>>."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;(<<$var_word>>)>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;<<$text_word>>."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;<<$text_word>>."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выполняем&nbsp;сгенерированный&nbsp;код<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;code<br>
+
+
+</div>
+<p>
+Работает это так. После того как в переменные забиты изначальные значения, будет выполнен код, выводящий действия, и команда, которая присвоит переменной <span class="em_BLCK">$code</span> некое текстовое значение. В текстовом значении присутствуют вложенные выражения (двойные угловые скобки). Плеер раскроет вложенные выражения, т.е. вместо них подставит значения тех выражений, которые вписаны в двойные угловые скобки. Это либо значение переменной <span class="em_BLCK">$var_word</span> либо переменной <span class="em_BLCK">$text_word</span>. Таким образом при первом посещении в переменную <span class="em_BLCK">$code</span> будет вписан текст:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span>'if&nbsp;яблоко=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;одно&nbsp;яблоко."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;яблоко>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;яблок."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+Далее <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> просто выполнит получившийся код, записанный в переменную <span class="em_BLCK">$code</span>.
+
+</p>
+<p>
+Когда мы нажмём на действие "Сколько у меня груш", в переменные <span class="em_BLCK">$var_word</span> и <span class="em_BLCK">$text_word</span> впишутся соответственно значения "груша" и "груш", затем плеер перезайдёт на текущую локацию (команда <span class="em_BLCK"><span class="emOPRT">goto</span><span class="emFUNC"> $curloc</span></span>), снова выведет на экран оба действия, и выполнит команду, которая присваивает переменной <span class="em_BLCK">$code</span> значение. Плееру вновь потребуется раскрыть вложенные выражения, и он снова подставит значения переменных <span class="em_BLCK">$var_word</span> и <span class="em_BLCK">$text_word</span> вместо соответствующих подвыражений, таким образом переменной <span class="em_BLCK">$code</span> снова присвоится готовый текст:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span>'if&nbsp;груша=1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;одно&nbsp;груша."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif&nbsp;груша>1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;есть&nbsp;несколько&nbsp;груш."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;груш."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'<br>
+
+
+</div>
+<p>
+Далее <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> просто выполнит получившийся код, записанный в переменную <span class="em_BLCK">$code</span>.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

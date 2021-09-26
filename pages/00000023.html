@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.5. Как делать контекстное (динамическое) меню?</h3><p>
+В: Как делать контекстное (динамическое) меню?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Контекстное меню делать не сложнее, чем обыкновенное. Единственная сложность в том, чтобы добавлять в меню новые пункты, не отслеживая номеров.
+
+</p>
+<p>
+Любое меню записывается в массив, начиная с нулевой ячейки, и обычно мы это делаем так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[0]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[1]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[2]="Выбросить:put_screw"<br>
+
+
+</div>
+<p>
+Тем самым мы указываем плееру конкретные ячейки, в которые нужно прописать пункты меню. Однако мы можем писать и так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[]="Выбросить:put_screw"<br>
+
+
+</div>
+<p>
+Запись <span class="em_BLCK">$меню_отвёртка[]=</span> означает, что когда мы используем операцию присвоения, плеер создаст новую ячейку в массиве <span class="em_BLCK">$меню_отвёртка</span> с номером на 1 больше номера самой последней ячейки, и уже ей присвоит значение. Эта запись аналогична такой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[arrsize('$меню_предмет')]="Осмотреть:info_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[arrsize('$меню_предмет')]="Использовать:use_screw"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$меню_отвёртка[arrsize('$меню_предмет')]="Выбросить:put_screw"<br>
+
+
+</div>
+<p>
+Таким образом мы можем добавлять в массив меню новые пункты, не опасаясь, что одни пункты затрут другие.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

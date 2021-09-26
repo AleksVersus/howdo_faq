@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>15. Вопросы о строке ввода</h2><h3>15.2. Как задействовать строку ввода в игре?</h3><p>
+В: Как задействовать строку ввода в игре?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Начать следует с того, что любой текст, введённый игроком, можно получить в любой момент с помощью функции <span class="em_BLCK">$user_text</span>.
+
+</p>
+<p>
+Для примера попробуйте сделать следующее:
+
+</p>
+<ol>
+<li>
+Включите строку ввода:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<ol>
+<li>
+Создайте действие:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вывести&nbsp;текст&nbsp;из&nbsp;строки&nbsp;ввода"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$user_text</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<ol>
+<li>
+Теперь запустите игру, пробуйте вводить текст в поле ввода, а затем нажимать на действие. Текст из поля ввода будет появляться на экране.
+</li>
+</ol>
+<p>
+Далее обратимся к локации-обработчику строки ввода. Несмотря на то, что предназначение локации "обработчик строки ввода", сама по себе эта локация строку ввода не обрабатывает. Код этой системной локации выполняется, если установить курсор в поле ввода, а затем нажать клавишу "Enter".
+
+</p>
+<p>
+Для того, чтобы это проверить, проделайте следующее:
+
+</p>
+<ol>
+<li>
+Создайте новую локацию. Имя может быть любым, но для примера назовём её "обработчик_ввода".
+</li>
+<li>
+Чтобы плеер понял, какую локацию он должен использовать, как обработчик строки ввода, необходимо прописать название этой локации в переменной <span class="em_BLCK"><span class="emVAR">$usercom</span></span>. Например, на самой первой локации в игре пишем:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$usercom</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"обработчик_ввода"</span><br>
+
+
+</div>
+<ol>
+<li>
+На локации-обработчике строки ввода пишем такой код:
+</li>
+</ol>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;значение&nbsp;переменной&nbsp;на&nbsp;единицу</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;enter<span class="Monokai-Operator">=</span>enter<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;enter<br>
+
+
+</div>
+<ol>
+<li>
+Теперь, когда вы запустите игру и установите курсор в поле ввода, а затем нажмёте клавишу "Enter", вы увидите, что на экране появится число. С каждым нажатием клавиши "Enter" на экране будет появляться новое число.
+</li>
+</ol>
+<p>
+Объединив две эти возможности, можно задействовать строку ввода. Т.е. по нажатию клавиши "Enter", прямо на локации-обработчике строки ввода с помощью функции <span class="em_BLCK">$user_text</span> получаем текст, введённый игроком, и производим действия, в зависимости от того, что нам нужно:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;локация&nbsp;"обработчик_ввода"&nbsp;(usercom)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$user_text</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"войти&nbsp;в&nbsp;комнату"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;введён&nbsp;текст&nbsp;"войти&nbsp;в&nbsp;комнату"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;отправляем&nbsp;игрока&nbsp;на&nbsp;локацию&nbsp;"комната"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"комната"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

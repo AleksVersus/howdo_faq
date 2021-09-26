@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>10. Интерфейс, дизайн, украшения</h2><h3>10.2. Как изменить цвет фона в игре?</h3><p>
+В: Как изменить цвет фона в игре?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Чтобы изменить цвет фона в игре, необходимо изменить значение системной переменной <span class="em_BLCK"><span class="emFUNC">bcolor</span></span>.
+
+</p>
+<p>
+В QSP используется формат записи цвета из трёх составляющих: красная, зелёная, синяя. Любой цвет закодирован обычным числом. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чёрный&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16777216</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;красный&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-16776961</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;белый&nbsp;цвет&nbsp;фона</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1</span><br>
+
+
+</div>
+<p>
+Для нас такая запись числа очень непонятна, поэтому в QSP предусмотрена функция, которая позволяет нам задавать цвет более понятным образом. Это функция <span class="em_BLCK"><span class="emFUNC">rgb</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>red<span class="Monokai-Operator">,</span>green<span class="Monokai-Operator">,</span>blue<span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Вместо <span class="em_BLCK">red</span>, <span class="em_BLCK">green</span> и <span class="em_BLCK">blue</span> необходимо указать значения составляющих для цвета числами от 0 до 255 (<span class="em_BLCK">red</span> — красная, <span class="em_BLCK">green</span> — зелёная, <span class="em_BLCK">blue</span> — синяя). Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;чёрного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;белого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;красного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;зелёного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;синего&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;жёлтого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;оранжевого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">130</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;голубого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;малинового&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Чтобы сбросить цвет фона к значению по-умолчанию, необходимо присвоить переменной <span class="em_BLCK"><span class="emFUNC">bcolor</span></span> значение 0:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;по-умолчанию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+
+
+</div>
+<p>
+Данный способ не работает в Quest Navigator.
+
+</p>
+<p>
+Чтобы изменить цвет фона в Quest Navigator, необходимо воспользоваться вот такой командой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#RRGGBB";'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+, где вместо RR, GG и BB необходимо вписать красную, зелёную и синюю составляющую цвета в шестнадцатеричном формате. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;чёрного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#000000";'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;белого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#ffffff";'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;красного&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#ff0000";'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фон&nbsp;оранжевого&nbsp;цвета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#ff8200";'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

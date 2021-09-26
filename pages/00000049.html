@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>9. Вопросы о изображениях</h2><h3>9.7. Как сделать сменяемое изображение на локации?</h3><p>
+В: Как сделать сменяемое изображение на локации?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Смена изображения на локации делается весьма просто.
+
+</p>
+<p>
+В первую очередь необходимо подготовить два изображения и поместить их в папку с игрой, либо во вложенную папку. Например, у нас есть изображения "солнечный_день.jpg" и "пасмурный_вечер.png", мы создали в папке с игрой папку "фон", и поместили эти изображения туда.
+
+</p>
+<p>
+Выводить изображения мы будем с помощью html-тега <span class="em_BLCK">&lt;img&gt;</span>, а сменять с помощью действия "Сменить изображение".
+
+</p>
+<p>
+В поле "выполнить при посещении" локации, на которой мы хотим вывести изображения, нужно прописать код с условиями:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;"изображение"&nbsp;равно&nbsp;нулю</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;картинку&nbsp;"солнечный_день.jpg"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='фон/солнечный_день.jpg'>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иначе&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;"изображение"&nbsp;равно&nbsp;единице</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;картинку&nbsp;"пасмурный_вечер.png"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<img&nbsp;src='фон/пасмурный_вечер.png'>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Здесь же создаём действие, которое будет "менять" картинку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сменить&nbsp;пейзаж"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;самом&nbsp;деле&nbsp;действие&nbsp;меняет&nbsp;значение&nbsp;переменной</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;заставляет&nbsp;плеер&nbsp;перезайти&nbsp;на&nbsp;текущую&nbsp;локацию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Работает это следующим образом:
+
+</p>
+<ul>
+<li>
+Если переменная "изображение" не была заранее задана, её значение в момент посещения локации будет равно нулю, поэтому сработает первое условие, а значит на экране мы увидим картинку "солнечный_день.jpg".
+</li>
+<li>
+Когда мы нажмём на действие, в действии так же произойдёт проверка условия, и так как значение переменной "изображение" в момент нажатия действия будет равно нулю, этой переменной присвоится значение 1, после чего плеер перезайдёт на текущую локацию.
+</li>
+<li>
+Когда плеер повторно зайдёт на текущую локацию, он очистит окно основного описания, затем начнёт выполнять код из области "выполнить при посещении", и согласно значению переменной "изображение" сработает второе условие, а значит на экран будет выведена картинка "пасмурный_вечер.png".
+</li>
+<li>
+И так далее.
+</li>
+</ul>
+<p>
+Если вам нужно сделать изображения, которые меняются при щелчке непосредственно по ним, нужно просто завернуть эти изображения в гиперссылки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;"изображение"&nbsp;равно&nbsp;нулю</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;картинку&nbsp;"солнечный_день.jpg"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='exec:изображение=1&nbsp;&&nbsp;goto&nbsp;$curloc'><img&nbsp;src='фон/солнечный_день.jpg'></a>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;изображение<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иначе&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;"изображение"&nbsp;равно&nbsp;единице</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;картинку&nbsp;"пасмурный_вечер.png"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"<a&nbsp;href='exec:изображение=0&nbsp;&&nbsp;goto&nbsp;$curloc'><img&nbsp;src='фон/пасмурный_вечер.png'></a>"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

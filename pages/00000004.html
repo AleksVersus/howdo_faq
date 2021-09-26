@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>1. В чём разница?</h2><h3>1.3. В чём разница между <span class="em_BLCK"><span class="emTEXT">' '</span></span> (апострофы) и <span class="em_BLCK"><span class="emTEXT">" "</span></span> (кавычки)?</h3><p>
+В: В чём разница между <span class="em_BLCK"><span class="emTEXT">' '</span></span> (апострофы) и <span class="em_BLCK"><span class="emTEXT">" "</span></span> (кавычки)?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+В поведении двух этих групп символов нет никакой разницы. Они используются, чтобы дать понять плееру, где начинается и где заканчивается строковая константа.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Строка&nbsp;текста"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*nl</span>&nbsp;<span class="Monokai-String">'Ещё&nbsp;одна&nbsp;строка&nbsp;текста'</span><br>
+
+
+</div>
+<p>
+Две группы символов нужны для того, чтобы мы с вами могли выводить и те и другие на экран. Например:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'В&nbsp;кабачке&nbsp;"У&nbsp;Мо"&nbsp;сегодня&nbsp;весело&nbsp;и&nbsp;шумно.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Руг'Ста'Раг&nbsp;сказал:&nbsp;—&nbsp;Что&nbsp;ты&nbsp;хочешь,&nbsp;мора?&nbsp;Хочешь&nbsp;мухомора?"</span><br>
+
+
+</div>
+<p>
+Если в строке предполагается использовать обе группы символов, их можно экранировать дублированием:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;экранируем&nbsp;апострофы</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'По&nbsp;дороге&nbsp;в&nbsp;кабачок&nbsp;"У&nbsp;Мо"&nbsp;наш&nbsp;старый&nbsp;приятель&nbsp;Руг'</span><span class="Monokai-String">'Ста'</span><span class="Monokai-String">'Раг&nbsp;чуть&nbsp;не&nbsp;нарвался&nbsp;на&nbsp;неприятности.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;экранируем&nbsp;кавычки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"По&nbsp;дороге&nbsp;в&nbsp;кабачок&nbsp;"</span><span class="Monokai-String">"У&nbsp;Мо"</span><span class="Monokai-String">"&nbsp;наш&nbsp;старый&nbsp;приятель&nbsp;Руг'Ста'Раг&nbsp;чуть&nbsp;не&nbsp;нарвался&nbsp;на&nbsp;неприятности."</span><br>
+
+
+</div>
+<p>
+Если вам нужно вставить значение какого-либо выражения в строку, вы можете использовать так называемые вложенные выражения (я называю их "подвыражениями", но это не совсем корректно), используя продублированные угловые скобки.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">maxhealth</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">300</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье:&nbsp;<<health>>/<<maxhealth>>"</span><br>
+
+
+</div>
+<p>
+При этом, когда плеер начнёт выполнять команду <span class="em_BLCK"><span class="emOPRT">*pl</span></span>, он увидит, что в строке присутствуют вложенные выражения и постарается вычислить их значения. В данном случае он подставит вместо переменных их значения, и на экране мы увидим строку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;Ваше&nbsp;здоровье<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">300</span><br>
+
+
+</div>
+<p>
+Есть ещё третья группа символов — фигурные скобки, и вот их поведение отличается от двух предыдущих.
+
+</p>
+<ul>
+<li>
+В фигурных скобках нельзя оставлять открытыми апострофы или кавычки.
+</li>
+<li>
+В момент выполнения команды, в которой есть фигурные скобки, в фигурных скобках не "раскрываются" вложенные выражения.
+</li>
+</ul>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

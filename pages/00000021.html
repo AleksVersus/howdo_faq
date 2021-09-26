@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>4. Вопросы о меню</h2><h3>4.3. Как сделать меню в ссылках?</h3><p>
+В: Как сделать меню в ссылках?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Меню можно вызвать в любом месте игры, если воспользоваться оператором <span class="em_BLCK"><span class="emOPRT">menu</span></span>.
+
+</p>
+<p>
+Можно вызвать прямо из кода локации, можно вызвать при нажатии на действие, а значит можно вызвать и из гиперссылки.
+
+</p>
+<p>
+Обычно гиперссылка выводится на экран так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;выросло&nbsp;несколько&nbsp;<a&nbsp;href=''>яблок</a>."</span><br>
+
+
+</div>
+<p>
+В атрибуте <span class="em_BLCK">href</span>, если бы мы имели дело с html-документом, обычно пишется url — адресс страницы в интернете. Однако в QSP мы можем размещать внутри этого атрибута строки кода. В том числе и строку типа:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">"$меню_яблоко"</span><br>
+
+
+</div>
+<p>
+Само собой массив <span class="em_BLCK">$меню_яблоко[]</span> должен быть заполнен до вызова меню, например на самой первой локации в игре.
+
+</p>
+<p>
+Чтобы плеер понял, что в атрибуте <span class="em_BLCK">href</span> находится не url, а какой-то код, мы должны указать перед этим кодом ключевое слово <span class="em_BLCK"><span class="emOPRT">EXEC</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;выросло&nbsp;несколько&nbsp;<a&nbsp;href='exec:&nbsp;'>яблок</a>."</span><br>
+
+
+</div>
+<p>
+Теперь нам нужно вставить после EXEC: нашу строку кода с вызовом меню. Однако, мы уже использовали кавычки ("") для указания границ строки, и апострофы ('') для указания границ атрибута <span class="em_BLCK">href</span>. А в нашей строке кода тоже есть кавычки. Как быть?
+
+</p>
+<p>
+Мы можем экранировать кавычки кода от QSP с помощью дублирования:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;выросло&nbsp;несколько&nbsp;<a&nbsp;href='exec:menu&nbsp;"</span><span class="Monokai-String">"$меню_яблоко"</span><span class="Monokai-String">"'>яблок</a>."</span><br>
+
+
+</div>
+<p>
+Или, мы можем экранировать кавычки атрибута href от QSP с помощью того же дублирования:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;выросло&nbsp;несколько&nbsp;<a&nbsp;href="</span><span class="Monokai-String">"exec:menu&nbsp;'$меню_яблоко'"</span><span class="Monokai-String">">яблок</a>."</span><br>
+
+
+</div>
+<p>
+Эти два варианта равнозначны, используйте тот, что удобнее.
+
+</p>
+<p>
+Теперь, когда мы щёлкнем по слову "яблок", на экране появится меню.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

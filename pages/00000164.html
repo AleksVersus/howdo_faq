@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>22. Вопросы о Quest Navigator (v.0.0.28)</h2><h3>22.8. Как делать standalone-сборку на Навигаторе?</h3><p>
+В: Как делать standalone-сборку на Навигаторе?
+
+</p>
+<p>
+	Независимая сборка на Quest Navigator
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+! статья на QSP-wiki устарела 
+
+</p>
+<p>
+Нижеследующая инструкция будет актуальна, если вы уже начали разработку игры (или же закончили) и настроили шаблон оформления. В противном случае рекомендую создать шаблон оформления для игры по инструкции из раздела <a href="#folder#00000157.html#faq_22_01" style="text-decoration:none;" class="emFOLD">"шаблоны оформления для игр"</a>.
+
+</p>
+<p>
+Итак, у нас есть папка с игрой, которая называется, например, "myCoolGame", и в этой папке лежат:
+
+</p>
+<ul>
+<li>
+файл игры (имя может быть любым, расширение ".qsp");
+</li>
+<li>
+файл шаблона "gameAwesomium.html";
+</li>
+<li>
+папка "skins" с содержимым;
+</li>
+<li>
+файл "config.xml" (если нужен);
+</li>
+<li>
+другие файлы и папки (кроме файлов с расширением ".qsp", такой файл должен быть только один. Если у вас несколько таких файлов, удалите те, которые не используются в игре, а те, которые подключаются с помощью команды "inclib", разместите в одной из вложенных папок).
+</li>
+</ul>
+<ol>
+<li>
+Найдите на компьютере папку, в которую установлен Quest Navigator. Как правило она лежит по пути "C:\Program Files (x86)\QSP" (или "C:\Program Files\QSP" для 32-битных ОС) и называется "Quest Navigator".
+</li>
+<li>
+Полностью скопируйте папку "Quest Navigator" в какое-нибудь другое место на вашем компьютере, например, на рабочий стол.
+</li>
+<li>
+Откройте папку "Quest Navigator", в ней откройте папку "assets", а в ней — "standalone_content".
+</li>
+<li>
+Удалите содержимое папки "standalone_content".
+</li>
+<li>
+Скопируйте содержимое папки с вашей игрой (в нашем примере "myCoolGame") в папку "standalone_content".
+</li>
+</ol>
+<p>
+Вот и всё. Теперь в папке "Quest Navigator", размещённой на рабочем столе, находится полностью независимая сборка игры. При запуске плеера ("QuestNavigator.exe") из этой папки, ваша игра запустится автоматически. Эту папку можно распространять в виде архива, либо сделать инсталлятор.
+
+</p>
+<p>
+Смотри так же, как отредактировать файл настроек на <a href="http://wiki.qsp.su/help:fajl_nastroek_igry_v_quest_navigator" style="text-decoration:none;" class="emFOLD">wiki.qsp.su</a>
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

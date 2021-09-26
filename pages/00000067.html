@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>11. Вопросы об условиях</h2><h3>11.5. Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий?</h3><p>
+В: Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий? Чтобы при срабатывании одного или обоих условий текст в любом случае выводился?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Если условий не много, можно воспользоваться таким способом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$message<span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'яблоки,&nbsp;'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;груша<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'груши,&nbsp;'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;груша<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;есть:&nbsp;"</span><span class="Monokai-Operator">+</span>$messaga<span class="Monokai-Operator">+</span><span class="Monokai-String">"—&nbsp;и&nbsp;всё."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;ничего&nbsp;нет."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Если условий много, то при срабатывании хотя бы одного условия необходимо выставлять какую-нибудь переменную-маркер. Таким образом, не зависимо от того, сколько условий сработает, если сработает хотя бы одно, текст будет набран:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$message<span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоко<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'яблоки,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;груша<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'груши,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;слива<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'сливы,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;дыня<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'дыни,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;апельсин<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'апельсины,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;банан<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'бананы,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;арбуз<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'арбузы,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;масло<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'масло,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;киви<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'киви,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;песок<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;$messaga<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'песок,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;markvar<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;есть:&nbsp;"</span><span class="Monokai-Operator">+</span>$messaga<span class="Monokai-Operator">+</span><span class="Monokai-String">"—&nbsp;и&nbsp;всё."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;ничего&nbsp;нет."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

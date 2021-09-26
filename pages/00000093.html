@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>14. Вопросы о предметах</h2><h3>14.7. Как добавить предмет с картинкой но без названия?</h3><p>
+В: Как добавить предмет с картинкой но без названия?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Первое, что приходит на ум, это поставить вместо названия пробел, а вторым аргументом указать путь к названию картинки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"&nbsp;"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screw.png"</span><br>
+
+
+</div>
+<p>
+Однако этот способ не подходит, если необходимо как-то взаимодействовать с предметами, а их у вас несколько. В этом случае, нужно воспользоваться возможностями html. Для этого, например, в самой первой локации в игре включаем режим распознавания html командой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+И добавляем предметы, названия которых целиком представляют собой тег <span class="em_BLCK">&lt;img&gt;</span> со ссылкой на картинку в атрибуте <span class="em_BLCK">src</span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'<img&nbsp;src="img/screw.png">'</span><br>
+
+
+</div>
+<p>
+Если по какой-либо причине вы не хотите в названии использовать тег <span class="em_BLCK">&lt;img&gt;</span>, а картинку добавляете с помощью второго аргумента к <span class="em_BLCK"><span class="emOPRT">addobj</span></span>, при включенном html можно заворачивать название предмета в угловые скобки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"<Отвёртка>"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screw.png"</span><br>
+
+
+</div>
+<p>
+Этот способ не подходит для AeroQSP. Аэро очень не любит несуществующие теги, поэтому здесь код для добавления предмета может быть таким:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"<a&nbsp;title='Отвёртка'></a>"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screw.png"</span><br>
+
+
+</div>
+<p>
+Хотя проще вставить картинку тегом <span class="em_BLCK">&lt;img&gt;</span> прямо в название.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

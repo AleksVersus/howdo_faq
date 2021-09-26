@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>13. Не работает...</h2><h3>13.9. Не работает многострочное условие. Как исправить?</h3><p>
+В: Не работает многострочный код. Как исправить?
+
+</p>
+<p>
+Пишу такой код:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Но даже если <span class="em_BLCK">mark_var</span> равно нулю, второй и третий текст всё равно выводятся.
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Необходимо различать однострочную и многострочную формы записи конструкции условия.
+
+</p>
+<p>
+Вот так выглядит однострочная форма:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:&nbsp;[команды&nbsp;1]</span><br>
+
+
+</div>
+<p>
+Как видите, за ключевым словом <span class="em_BLCK"><span class="emOPRT">IF</span></span> следует выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span>, и если это выражение верно, тогда выполняется набор команд <span class="em_BLCK"><span class="emTEXT">[команды 1]</span></span>, который записан после двоеточия в той же строке, что и <span class="em_BLCK"><span class="emOPRT">IF</span></span>. При этом команды перечисляются через амперсанд (<span class="em_BLCK"><span class="emOPRT">&amp;</span></span>).
+
+</p>
+<p>
+Код из примера в однострочной форме должен будет выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br>
+
+
+</div>
+<p>
+Однострочную форму записи не требуется закрывать ключевым словом <span class="em_BLCK"><span class="emOPRT">END</span></span>, так как окончанием этой формы считается конец строки с <span class="em_BLCK"><span class="emOPRT">IF</span></span>.
+
+</p>
+<p>
+А вот так выглядит многострочная форма записи конструкции условия:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команды&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+Здесь после двоеточия в той же строке, где находится и ключевое слово <span class="em_BLCK"><span class="emOPRT">IF</span></span>, ничего не пишется. Именно так плеер понимает, что имеет дело с многострочной формой записи. И в этом случае, если выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> верно, плеер ищет соответствующие верному условию команды (<span class="em_BLCK"><span class="emTEXT">[команды 1]</span></span>) в следующей строке после двоеточия.
+
+</p>
+<p>
+Многострочная форма записи всегда закрывается ключевым словом <span class="em_BLCK"><span class="emOPRT">END</span></span>. Только так плеер может понять, что последующие команды уже не относятся к конструкции условия.
+
+</p>
+<p>
+Код из примера в многострочной форме записи должен выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Или так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Оба варианта являются многострочной формой записи конструкции условия.
+
+</p>
+<p>
+Теперь нетрудно догадаться, почему даже когда <span class="em_BLCK">mark_var</span> равно нулю в исходном примере второй и ттретий тексты всё равно выводились.
+
+</p>
+<p>
+Плеер встречает конструкцию:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span><br>
+
+
+</div>
+<p>
+и, поскольку за двоеточием в той же строке, где находится <span class="em_BLCK"><span class="emOPRT">IF</span></span>, идёт команда <span class="em_BLCK"><span class="emTEXT">'Первый текст.'</span></span>, плеер понимает, что это однострочная форма записи, а значит окончанием конструкции условия можно считать конец строки. Таким образом команды, расположенные в нижеследующих строках, для плеера попросту не относятся к конструкции условия, и он выполняет их в любом случае. <span class="em_BLCK"><span class="emOPRT">END</span></span> при этом игнорируется.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

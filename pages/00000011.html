@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>2. Вопросы о $COUNTER</h2><h3>2.2. Как сделать, чтобы из одной локации меня через пару секунд перебрасывало в другую локацию?</h3><p>
+В: Как сделать, чтобы из одной локации меня через пару секунд перебрасывало в другую локацию?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Вы можете написать любое событие, происходящее с течением действительного времени, если будете использовать локацию-счётчик.
+
+</p>
+<p>
+Для начала нужно создать локацию-счётчик:
+
+</p>
+<ul>
+<li>
+создаём локацию, название может быть любым, например "реалтайм".
+</li>
+<li>
+указываем плееру, какую локацию ему нужно использовать, как локацию-счётчик. Пишем, например на самой первой локации в игре:
+</li>
+</ul>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"реалтайм"</span><br>
+
+
+</div>
+<p>
+По умолчанию обращение к локации-счётчику выполняется каждые пол секунды. Если нужно изменить период обращения, воспользуйтесь оператором <span class="em_BLCK"><span class="emOPRT">settimer</span></span>. В качестве аргумента этому оператору указывается период обращения к локации-счётчику в миллисекундах:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;обращение&nbsp;к&nbsp;локации-счётчику&nbsp;каждые&nbsp;100&nbsp;мс.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
+
+
+</div>
+<p>
+Теперь на локации-счётчике пишем требуемый код. Например, данный код будет перебрасывать на локацию "комната" через 4 секунды после того, как игрок зашёл на локацию "коридор":
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фиксируем,&nbsp;в&nbsp;какое&nbsp;время&nbsp;обратились&nbsp;к&nbsp;локации-счётчику</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'time.now'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">msecscount</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"коридор"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;текущая&nbsp;локация&nbsp;"коридор"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;фиксируем&nbsp;в&nbsp;timer&nbsp;время,&nbsp;в&nbsp;какое&nbsp;должен&nbsp;произойти&nbsp;переход</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;timer<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;timer<span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'time.now'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">4000</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'time.now'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">></span><span class="Monokai-Operator">=</span>timer&nbsp;<span class="Monokai-Func">and</span>&nbsp;timer<span class="Monokai-Operator">></span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;текущее&nbsp;время&nbsp;достигло&nbsp;нужного</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;в&nbsp;переменную&nbsp;timer&nbsp;-1,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;чтобы&nbsp;больше&nbsp;этот&nbsp;код&nbsp;не&nbsp;исполнялся</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer<span class="Monokai-Operator">=</span><span class="Monokai-EndLoc">-1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;совершаем&nbsp;переход</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"комната"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Довольно простой код. Функция <span class="em_BLCK"><span class="emFUNC">msecscount</span></span> возвращает, сколько прошло миллисекунд с момента начала игры.
+
+</p>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

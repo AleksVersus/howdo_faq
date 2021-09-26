@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+<body>
+    
+    <div class="em_AROUND">
+        <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+        <!-- body start -->
+<h2>20. Конкретные задачи</h2><h3>20.5. Как можно удалить часть текста из описания?</h3><p>
+В: Как можно удалить часть текста из описания?
+
+</p>
+<p>
+О:
+
+</p>
+<p>
+Если вы точно знаете, какую часть описания вам нужно удалить, и она не повторяется несколько раз, можно использовать простой алгоритм:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;описание</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$description</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$maintxt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;С&nbsp;помощью&nbsp;функции&nbsp;$replace&nbsp;заменяем&nbsp;полученное&nbsp;значение&nbsp;на&nbsp;значение&nbsp;с&nbsp;удалённой&nbsp;строкой</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$description</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$replace</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$description</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"строка,&nbsp;которую&nbsp;хотим&nbsp;удалить"</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;стираем&nbsp;основное&nbsp;описание</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*clr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;новое</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span>p&nbsp;$description<br>
+
+
+</div>
+<p>
+Возможно вам понадобится удалить часть описания, которая несколько раз повторяется в тексте. Тогда придётся воспользоваться более сложным алгоритмом:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;строка,которую&nbsp;хотим&nbsp;удалить</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$killstr<span class="Monokai-Operator">=</span><span class="Monokai-String">"#F92672"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;запоминаем&nbsp;описание</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$description</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$maintxt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;с&nbsp;помощью&nbsp;цикла&nbsp;и&nbsp;функции&nbsp;instr,&nbsp;определяем,&nbsp;с&nbsp;какого&nbsp;символа&nbsp;начинается&nbsp;вхождение</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;iNum<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&</span>&nbsp;<span class="Monokai-Comment">!&nbsp;номер&nbsp;вхождения,&nbsp;которое&nbsp;хотим&nbsp;удалить</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0&nbsp;&&nbsp;!&nbsp;счётчик<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fromPos=0&nbsp;&&nbsp;!&nbsp;с&nbsp;какого&nbsp;символа&nbsp;начинать&nbsp;поиск&nbsp;вхождения<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in_str=instr(fromPos+1,$description,$killstr)&nbsp;&&nbsp;!&nbsp;с&nbsp;какого&nbsp;символа&nbsp;начинается&nbsp;вхождение<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;i<iNum&nbsp;and&nbsp;in_str<>fromPos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fromPos=in_str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i+=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;вырезаем&nbsp;первую&nbsp;часть&nbsp;до&nbsp;вхождения<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$part_1=$mid($description,1,fromPos-1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;вырезаем&nbsp;часть&nbsp;после&nbsp;вхождения<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$part_2=$mid($description,fromPos+len($killstr))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;собираем&nbsp;новое&nbsp;описание<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$description=$part_1+$part_2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;стираем&nbsp;основное&nbsp;описание<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*clr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;!&nbsp;выводим&nbsp;новое<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*p&nbsp;$description<br>
+
+
+</div>
+        <!-- body end -->
+        <div class="em_Epigraph">
+            <div class="em_subText">
+                <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
