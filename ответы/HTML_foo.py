@@ -38,12 +38,14 @@ class NewSection():
 				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
 		elif re.match(r'h\d+',self.type)!=None:
 			# имеем дело с заголовком
+			lev=int(re.search(r'\d+',self.type).group(0))
+			if lev<6: lev+=1
 			new_string_list=[]
 			for string in self.source:
 				new_string_list.append(convertString(string,'string',base))
-			self.HTML.append(f'<{self.type}>')
+			self.HTML.append(f'<h{lev}>')
 			self.HTML.extend(new_string_list)
-			self.HTML.append(f'</{self.type}>')
+			self.HTML.append(f'</h{lev}>')
 		elif self.type=="code-block":
 			# имеем дело с блоком кода
 			self.HTML.extend(convertCodeBlock(self.source))
@@ -52,6 +54,11 @@ class NewSection():
 		elif self.type=="section_of_head":
 			# имеем дело с секцией заголовков
 			self.HTML.extend(convertSOHBlock(self.source,base))
+		elif self.type=="quote-block":
+			self.HTML.append('<blockquote>\n')
+			for string in self.source:
+				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
+			self.HTML.append('\n</blockquote>\n')
 	def getHTML(self):
 		return self.HTML
 class NewQuazy():
@@ -315,6 +322,15 @@ class NewFolder():
 		base.delAdd() # удаляем дополнительные заголовки перед перебором файлов
 		for file in files_list:
 			self.files.append(NewFile(file,base))
+	def convert2HTML(self,base,path,header,footer):
+		for file in self.files:
+			if file.getFileName()!='00.txt-light':
+				html_strings=file.getHTML()
+				export_name=path+'\\'+base.searchFile(file_path=file.path,result='file_id')+'.html'
+				with open(export_name,'w',encoding='utf-8') as newfile:
+					newfile.writelines(header+html_strings+footer)
+		for folder in self.folders:
+			folder.convert2HTML(base,path,header,footer)
 	def printAll(self):
 		text=""
 		text+=f"'Folder Path: {self.path}'\n"
@@ -373,7 +389,7 @@ class NewBD():
 	def getBase(self):
 		return self.base
 	def searchFile(self,**args):
-		result=None
+		result=['None','None','None']
 		for file_path,file_id,section_id in self.base:
 			if ("section_id" in args) and (section_id==args["section_id"]):
 				result=[file_path,file_id,section_id]
@@ -556,7 +572,7 @@ def convertMonotype(string_):
 			result+=convOPRT(word)
 			mode["oprt"]=True
 		elif mode["oprt"]==False and re.match(r'^\[.*\]$',string_)!=None:
-			word=re.match(r'^\s*?(\*|\$)?[a-zA-Z]+',string_).group(0)
+			word=re.match(r'^\[.*\]$',string_).group(0)
 			string_=string_[len(word):]
 			result+=f'<span class="emTEXT">{word}</span>'
 		elif re.match(r'^(\'|\").*?\1',string_)!=None:
@@ -738,7 +754,11 @@ def convertCodeBlock(string_list):
 	new_string_list=[]
 	#print(string_list)
 	# конвертируем блок кода в строку
-	type_code=re.findall(r'```(\w+)',string_list[0])[0] # получаем тип кода
+	codemarker=re.findall(r'```(\w+)',string_list[0])
+	if len(codemarker)>0:
+		type_code=codemarker[0] # получаем тип кода
+	else:
+		type_code=""
 	text=""
 	for i in string_list[1:]:
 		text+=i
@@ -873,6 +893,8 @@ def convertCodeBlock(string_list):
 	while index<len(new_string_list):
 		new_string_list[index]+='\n'
 		index+=1
+	new_string_list.insert(0,'<div class="Monokai-Code">\n')
+	new_string_list.append('\n</div>\n')
 	return new_string_list
 
 class NewLi():
@@ -1043,7 +1065,10 @@ def convertListBlock(string_list,base_):
 	blocks=splitLiBlocks(string_array)
 	new_string_list=[]
 	for block in blocks:
-		new_string_list.extend(block.getHTML(base_))
+		if type(block)==list:
+			print(block)
+		else:	
+			new_string_list.extend(block.getHTML(base_))
 	return new_string_list
 
 def convertSOHBlock(string_list,base_):
@@ -1065,10 +1090,11 @@ def convertSOHBlock(string_list,base_):
 
 if __name__=="__main__":
 	# string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
-	roof_base=NewBD()
-	roof_base.addFile('path',section_id='faq_01_08')
-	with open('.\\92_дополнительные тексты\\пример SOH.light-txt','r',encoding='utf-8') as file:
-		string_list=file.readlines()
-	text_list=convertSOHBlock(string_list[1:-1],roof_base)
-	for i in text_list:
-	 	print(i)
+	# roof_base=NewBD()
+	# roof_base.addFile('path',section_id='faq_01_08')
+	# with open('.\\92_дополнительные тексты\\пример SOH.light-txt','r',encoding='utf-8') as file:
+	# 	string_list=file.readlines()
+	# text_list=convertSOHBlock(string_list[1:-1],roof_base)
+	# for i in text_list:
+	#  	print(i)
+	pass

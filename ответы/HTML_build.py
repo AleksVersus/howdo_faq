@@ -14,10 +14,15 @@ if __name__=="__main__":
 	# формируем название релизного файла
 	folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
 	export_path=os.path.abspath(project_dict["export_folder"]) # папка, в которую помещаем файлы
+	head_path=os.path.abspath(root_dict["head"])
+	foot_path=os.path.abspath(root_dict["foot"])
+	with open(head_path,'r',encoding='utf-8') as header:
+		head_strings=header.readlines()
+	with open(foot_path,'r',encoding='utf-8') as footer:
+		foot_strings=footer.readlines()
 	# создаём базу данных
 	file_base=NewBD()
 	# создаём объект папка верхнего уровня
 	roof_folder=NewFolder(folder_path,file_base)
 	# теперь разматываем папку и файлы, получая HTML
-	# print(roof_folder.printAll())
-	# print(file_base.getBase())
+	roof_folder.convert2HTML(file_base,export_path,head_strings,foot_strings)
