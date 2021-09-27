@@ -24,5 +24,6 @@ if __name__=="__main__":
 	file_base=NewBD()
 	# создаём объект папка верхнего уровня
 	roof_folder=NewFolder(folder_path,file_base)
+	# print(file_base.getBase())
 	# теперь разматываем папку и файлы, получая HTML
 	roof_folder.convert2HTML(file_base,export_path,head_strings,foot_strings)

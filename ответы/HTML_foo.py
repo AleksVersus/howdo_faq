@@ -43,7 +43,9 @@ class NewSection():
 			new_string_list=[]
 			for string in self.source:
 				new_string_list.append(convertString(string,'string',base))
-			self.HTML.append(f'<h{lev}>')
+			if self.id=='':
+				self.id=randomString(4)
+			self.HTML.append(f'<a id="{self.id}"></a><h{lev}>')
 			self.HTML.extend(new_string_list)
 			self.HTML.append(f'</h{lev}>')
 		elif self.type=="code-block":
@@ -95,9 +97,7 @@ class NewQuazy():
 				elif typeString(i)=='id' and mode["give_id"]==True:
 					section_.changeID(getID(i))
 					mode["give_id_off"]=False
-					# первый встреченный айдишник становится идентификатором файла
-					if base.getID(self.path)=="":
-						base.changeID(self.path,getID(i))
+					# айдишники квазифайла в базу не добавляем, так как не знаем, на какой файл они ссылаются.
 				elif typeString(i)=='ul':
 					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
 					if section_.getAttr(attr='type')!='ul' and section_.getAttr(attr='type')!='ol':
@@ -168,10 +168,21 @@ class NewQuazy():
 		# перебираем список секций
 		for section_ in self.sections:
 			section_.convert2HTML(base)
-	def getHTML(self):
+	def getHTML(self,base):
 		new_string_list=[]
 		for section_ in self.sections:
 			new_string_list.extend(section_.getHTML())
+		count=0
+		for string in new_string_list:
+			hrefs=re.findall(r'href="#folder-file##(\S+)#"',string)
+			if hrefs!=None:
+				if len(hrefs)>0:
+					for href in hrefs:
+						old_href=f'href="#folder-file##{href}#"'
+						file_name=f'{base.getFileName(href)}.html'
+						new_href=f'href="{file_name}#{href}"'
+						new_string_list[count]=new_string_list[count].replace(old_href,new_href)
+			count+=1
 		return new_string_list
 class NewFile():
 	"""Каждый файл представляет собой список строк"""
@@ -222,6 +233,8 @@ class NewFile():
 					# первый встреченный айдишник становится идентификатором файла
 					if base.getID(self.path)=="":
 						base.changeID(self.path,getID(i))
+					else:
+						base.addID(base.searchFile(file_path=self.path,result="file_id"),getID(i))
 				elif typeString(i)=='ul':
 					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
 					if section_.getAttr(attr='type')!='ul' and section_.getAttr(attr='type')!='ol':
@@ -291,23 +304,40 @@ class NewFile():
 		# перебираем список секций
 		for section_ in self.sections:
 			section_.convert2HTML(base)
-	def getHTML(self):
+	def getHTML(self,base):
+		this_file=base.searchFile(file_path=self.path,result="file_id")
+		prev_file_num=int(this_file)-1
+		next_file_num=int(this_file)+1
+		if not prev_file_num<0:
+			zero='0'*(8-len(str(prev_file_num)))+str(prev_file_num)
+			prev_file=f'<a href="{zero}.html">&lt; Назад, к странице {prev_file_num}</a>'
+		else:
+			prev_file="&nbsp;"
+		if not next_file_num>base.filecount:
+			zero='0'*(8-len(str(next_file_num)))+str(next_file_num)
+			next_file=f'<a href="{zero}.html">Вперёд, к странице {next_file_num} &gt;</a>'
+		else:
+			next_file="&nbsp;"
+		div=f'<div style="display:flex;justify-content:space-between;"><div>{prev_file}</div><div>{next_file}</div></div>\n'
 		new_string_list=[]
+		new_string_list.append(div)
 		for section_ in self.sections:
 			new_string_list.extend(section_.getHTML())
+		count=0
+		for string in new_string_list:
+			hrefs=re.findall(r'href="#folder-file##(\S+)#"',string)
+			if hrefs!=None:
+				if len(hrefs)>0:
+					for href in hrefs:
+						old_href=f'href="#folder-file##{href}#"'
+						file_name=base.getFileName(href)
+						if file_name=='':
+							file_name=this_file
+						new_href=f'href="{file_name}.html#{href}"'
+						new_string_list[count]=new_string_list[count].replace(old_href,new_href)
+			count+=1
+		new_string_list.append(div)
 		return new_string_list
-	def printAll(self):
-		text=""
-		text+=f"'File Path: {self.path}'\n"
-		for i in self.sections:
-			text+=f"'Type Section: {i.getAttr(attr='type')}, ID: {i.getAttr(attr='id')}, len: {i.getLen()}'\n"
-			if i.getAttr(attr='type')=='h1':
-				text+=f"'H1: "
-				for sec in i.getAttr():
-					text+=f"string: {sec},"
-				text+="'\n"
-		text+=f"'File End: {self.path}'\n"
-		return text
 
 class NewFolder():
 	"""Каждая папка включает в себя другие папки и файлы.
@@ -323,23 +353,27 @@ class NewFolder():
 		for file in files_list:
 			self.files.append(NewFile(file,base))
 	def convert2HTML(self,base,path,header,footer):
+		for i in header:
+			if re.match(r'^<header-header></header-header>',i)!=None:
+				soderzhanije=base.searchFile(section_id="soderzhanije",result="file_path")
+				if soderzhanije!='None':
+					with open(soderzhanije,'r',encoding='utf-8') as file_h:
+						strings_=file_h.readlines()
+					file_header=NewQuazy(strings_,base)
+					string_header=file_header.getHTML(base)
+					idx=header.index(i)
+					del header[idx]
+					while len(string_header)>0:
+						s=string_header.pop()
+						header.insert(idx,s)
 		for file in self.files:
 			if file.getFileName()!='00.txt-light':
-				html_strings=file.getHTML()
+				html_strings=file.getHTML(base)
 				export_name=path+'\\'+base.searchFile(file_path=file.path,result='file_id')+'.html'
 				with open(export_name,'w',encoding='utf-8') as newfile:
 					newfile.writelines(header+html_strings+footer)
 		for folder in self.folders:
 			folder.convert2HTML(base,path,header,footer)
-	def printAll(self):
-		text=""
-		text+=f"'Folder Path: {self.path}'\n"
-		for i in self.files:
-			text+=i.printAll()
-		for i in self.folders:
-			text+=i.printAll()
-		text+=f"'Folder End: {self.path}'\n"
-		return text
 
 def randomString(length):
 	letters='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
@@ -365,6 +399,7 @@ class NewBD():
 	путь, уникальный идентификатор, идентификатор в привязке к структуре"""
 	def __init__(self):
 		self.base=[] # сама по себе база является списком списков
+		self.id_dict={} # словарь section_id:file_id
 		self.filecount=0
 		self.addition=[] # добавочная секция в файл
 	def proveAdd(self):
@@ -417,6 +452,14 @@ class NewBD():
 	def changeID(self,path,section_id):
 		idx=self.searchFile(file_path=path,result='index')
 		self.base[idx][2]=section_id
+		self.addID(self.base[idx][1],section_id)
+	def addID(self,file_id,section_id):
+		self.id_dict[section_id]=file_id
+	def getFileName(self,section_id):
+		if section_id in self.id_dict:
+			return self.id_dict[section_id]
+		else:
+			return ''
 
 def remComment(string_):
 	mode_=False
@@ -624,7 +667,7 @@ class NewString():
 			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string_)[0]
 			self.strings.append(NewString(hl_text,'',base_)) # текст ссылки в нулевой ячейке
 			if re.match(r'^#',hl_href)!=None:
-				hl_href='#folder#'+base_.searchFile(section_id=hl_href[1:],result='file_id')+'.html'+hl_href
+				hl_href=f'#folder-file#{hl_href}#'
 			self.strings.append(NewString(hl_href,'href',base_)) # адрес в первой
 		elif self.type=='href':
 			# если тип строки href, дальше она не изменяется
@@ -976,8 +1019,6 @@ class NewLiBlock():
 	def __str__(self):
 		text=f'id:{self.id} type:{self.type} source.len:{len(self.source)}'
 		return text
-	def printAll(self):
-		pass
 	def getHTML(self,base_):
 		new_string_list=[]
 		# Блоки бывают только двух типов, третьего не дано
@@ -1075,7 +1116,7 @@ def convertSOHBlock(string_list,base_):
 	# конвертируем блок section of head в список
 	new_string_list=[]
 	quazy_file=NewQuazy(string_list,base_)
-	new_string_list=quazy_file.getHTML()
+	new_string_list=quazy_file.getHTML(base_)
 	i=0
 	for string in new_string_list:
 		metahead=re.match(r'^<(/?)(h\d+)>',string)
