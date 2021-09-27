@@ -17,6 +17,8 @@ body .em_AROUND{
 .em_btn {
     display:flex;
     justify-content: space-between;
+    position: sticky;
+    bottom: 0;
 }
 .soderzhanije {
     width:25%;
