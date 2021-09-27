@@ -179,7 +179,7 @@ class NewQuazy():
 				if len(hrefs)>0:
 					for href in hrefs:
 						old_href=f'href="#folder-file##{href}#"'
-						file_name=f'{base.getFileName(href)}.html'
+						file_name=f'https://aleksversus.github.io/howdo_faq/pages/{base.getFileName(href)}.html'
 						new_href=f'href="{file_name}#{href}"'
 						new_string_list[count]=new_string_list[count].replace(old_href,new_href)
 			count+=1
@@ -310,12 +310,12 @@ class NewFile():
 		next_file_num=int(this_file)+1
 		if not prev_file_num<0:
 			zero='0'*(8-len(str(prev_file_num)))+str(prev_file_num)
-			prev_file=f'<a href="{zero}.html">&lt; Назад, к странице {prev_file_num}</a>'
+			prev_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html">&lt; Назад, к странице {prev_file_num}</a>'
 		else:
 			prev_file="&nbsp;"
 		if not next_file_num>base.filecount:
 			zero='0'*(8-len(str(next_file_num)))+str(next_file_num)
-			next_file=f'<a href="{zero}.html">Вперёд, к странице {next_file_num} &gt;</a>'
+			next_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html">Вперёд, к странице {next_file_num} &gt;</a>'
 		else:
 			next_file="&nbsp;"
 		div=f'<div style="display:flex;justify-content:space-between;"><div>{prev_file}</div><div>{next_file}</div></div>\n'
@@ -333,7 +333,7 @@ class NewFile():
 						file_name=base.getFileName(href)
 						if file_name=='':
 							file_name=this_file
-						new_href=f'href="{file_name}.html#{href}"'
+						new_href=f'href="https://aleksversus.github.io/howdo_faq/pages/{file_name}.html#{href}"'
 						new_string_list[count]=new_string_list[count].replace(old_href,new_href)
 			count+=1
 		new_string_list.append(div)

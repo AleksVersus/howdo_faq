@@ -13,7 +13,6 @@ body .em_AROUND{
     display:flex;
     justify-content: center;
     align-items: flex-end;
-    background: #ffeeee;
 }
 .em_btn {
     display:flex;
