@@ -3,27 +3,30 @@ body {
     padding:0;
     margin:0;
 }
-body .em_AROUND{
-    max-width:840px;
-    position: sticky;
-    bottom: 0;
-}
+
 
 .em_Main {
     display:flex;
     justify-content: center;
     align-items: flex-end;
 }
+
+.soderzhanije {
+    width:25%;
+    padding:1em;
+    border:1px solid;
+    align-self:flex-start;
+}
+body .em_AROUND{
+    max-width:840px;
+    position: sticky;
+    bottom: 0;
+}
 .em_btn {
     display:flex;
     justify-content: space-between;
     position: sticky;
     bottom: 0;
-}
-.soderzhanije {
-    width:25%;
-    padding:1em;
-    border:1px solid;
 }
 /* прилипчивый блок внизу */
 .stickUP {
