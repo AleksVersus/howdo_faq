@@ -17,9 +17,21 @@
  border-radius: 3px;
 }
 .em_AROUND h1:hover {background-color:#ffffff56;}
-.em_AROUND h2 {color:#000088}
-.em_AROUND h3 {color:#008800}
-.em_AROUND h4 {color:#008888;}
+.em_AROUND h2 {color:#4f174d}
+.em_AROUND h3 {color:#6E206B}
+.em_AROUND h4 {color:#942b90;}
+.em_AROUND h5 {
+    color:#6f39b5;
+    font-size:1em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+.em_AROUND h6 {
+    color:#452370;
+    font-size:1em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
 
 .em_Warning {
  text-align: justify;

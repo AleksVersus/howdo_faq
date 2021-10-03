@@ -1,5 +1,6 @@
 /* ----------------- стили для офлайн ----------------- */
-body {
+html,body {
+    height:100%;
     padding:0;
     margin:0;
 }
@@ -7,20 +8,31 @@ body {
 
 .em_Main {
     display:flex;
+    overflow: hidden;
+    height:100%;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .soderzhanije {
+    overflow: auto;
+    box-sizing: border-box;
+    height:99%;
+    max-width:250px;
     width:25%;
     padding:1em;
     border:1px solid;
     align-self:flex-start;
 }
-body .em_AROUND{
+.stub {
+    max-width:250px;
+    width:25%;
+}
+.em_AROUND {
     max-width:840px;
-    position: sticky;
-    bottom: 0;
+    overflow: auto;
+    box-sizing: border-box;
+    height:99%;
 }
 .em_btn {
     display:flex;
@@ -28,6 +40,17 @@ body .em_AROUND{
     position: sticky;
     bottom: 0;
 }
+
+ .cmd > li {
+    background: #00000000;
+    transition: background 1s ease;
+    padding:3px;
+}
+.cmd > li:hover {
+    background: #ffffff11;
+    border-radius: 3px;
+}
+
 /* прилипчивый блок внизу */
 .stickUP {
     text-align: right;
@@ -36,5 +59,54 @@ body .em_AROUND{
 }
 .stickUP img {
     max-height:50px;
+}
+
+/* стилизация скроллов */
+/* полоса прокрутки (скроллбар) */
+.soderzhanije::-webkit-scrollbar {
+    background-color: #8BA02E22;
+    width:0.5em;
+    visibility: hidden;
+}
+
+/* ползунок скроллбара */
+.soderzhanije::-webkit-scrollbar-thumb {
+    background-color: #8BA02E88;
+    border-radius: 9em;
+    visibility: hidden;
+}
+.soderzhanije:hover::-webkit-scrollbar {
+    visibility: visible;
+    transition: visibility 1s ease;
+}
+
+/* ползунок скроллбара */
+.soderzhanije:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    transition: visibility 1s ease;
+}
+
+/* полоса прокрутки (скроллбар) */
+.em_AROUND::-webkit-scrollbar {
+    background-color: #8BA02E44;
+    width:0.5em;
+    transition: visibility 1s ease;
+    visibility: hidden;
+}
+
+/* ползунок скроллбара */
+.em_AROUND::-webkit-scrollbar-thumb {
+    background-color: #8BA02Eaa;
+    border-radius: 9em;
+    transition: visibility 1s ease;
+    visibility: hidden;
+}
+.em_AROUND:hover::-webkit-scrollbar {
+    visibility: visible;
+}
+
+/* ползунок скроллбара */
+.em_AROUND:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
 }
 /* ----------------- стили для офлайн ----------------- */
