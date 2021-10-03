@@ -313,7 +313,7 @@ class NewFile():
 			prev_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html" class="emHREFTT">&lt; Назад, к странице {prev_file_num}</a>'
 		else:
 			prev_file="&nbsp;"
-		if not next_file_num>base.filecount:
+		if not next_file_num>base.filecount-1:
 			zero='0'*(8-len(str(next_file_num)))+str(next_file_num)
 			next_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html" class="emHREFTT">Вперёд, к странице {next_file_num} &gt;</a>'
 		else:
