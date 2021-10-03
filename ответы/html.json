@@ -2,7 +2,7 @@
 	"project":
 	{
 		"export_folder":"..\\pages",
-		"folder":"."
+		"source_folder":"."
 	},
 	"head":".\\92_дополнительные тексты\\02_start.html",
 	"foot":".\\92_дополнительные тексты\\03_end.html"
