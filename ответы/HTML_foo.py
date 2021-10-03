@@ -310,12 +310,12 @@ class NewFile():
 		next_file_num=int(this_file)+1
 		if not prev_file_num<0:
 			zero='0'*(8-len(str(prev_file_num)))+str(prev_file_num)
-			prev_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html">&lt; Назад, к странице {prev_file_num}</a>'
+			prev_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html" class="emHREFTT">&lt; Назад, к странице {prev_file_num}</a>'
 		else:
 			prev_file="&nbsp;"
 		if not next_file_num>base.filecount:
 			zero='0'*(8-len(str(next_file_num)))+str(next_file_num)
-			next_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html">Вперёд, к странице {next_file_num} &gt;</a>'
+			next_file=f'<a href="https://aleksversus.github.io/howdo_faq/pages/{zero}.html" class="emHREFTT">Вперёд, к странице {next_file_num} &gt;</a>'
 		else:
 			next_file="&nbsp;"
 		div=f'<div style="display:flex;justify-content:space-between;"><div>{prev_file}</div><div>{next_file}</div></div>\n'
