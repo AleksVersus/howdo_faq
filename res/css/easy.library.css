@@ -98,7 +98,7 @@ a.emHREFTT {
     transition: background 1s ease;
 }
 a.emHREFHH {text-decoration:none; color:#884400;}
-a.emHREFTT:hover {background-color:#A69C3099;}
+a.emHREFTT:hover {background-color:#BFBA8399;}
 .emFUNC, .emOPRT, .emFOLD, .emTEXT, .emVAR, .emNUM, .emARR, .emCOMM, .em_MARKER, .emGS {font-weight:bold;font-family:monospace;}
 .emFUNC {color:#ff8800;} /*цвет выделения функций*/
 .emOPRT {color:#008899;} /*цвет выделения операторов*/
