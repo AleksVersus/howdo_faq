@@ -19,6 +19,9 @@ if __name__=="__main__":
 	with open(os.path.abspath(root_dict["foot"]),'r',encoding='utf-8') as footer:
 		foot_strings=footer.readlines()
 	file_base=NewDataBase() # создаём базу данных
+	file_base.addHeader(head_strings) # добавляем в базу верхнюю часть html-документа
+	file_base.addFooter(foot_strings) # добавляем в базу нижнюю часть html-документа
+	file_base.addExportPath(export_path) # добавляем экспортный путь в базу
 	roof_folder=NewFolder(folder_path,file_base) # создаём объект папка верхнего уровня
 	# теперь разматываем папку и файлы, получая HTML
-	roof_folder.convert2HTML(file_base,export_path,head_strings,foot_strings)
+	roof_folder.convert2HTML(file_base)

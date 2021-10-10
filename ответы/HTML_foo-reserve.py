@@ -375,91 +375,10 @@ class NewFolder():
 		for folder in self.folders:
 			folder.convert2HTML(base,path,header,footer)
 
-def randomString(length):
-	letters='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
-	letters+='ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮёйцукенгшщзхъфывапролджэячсмитьбю'
-	result = ''.join(random.choice(letters) for i in range(length))
-	return result
 
-def dirList(folder_path):
-	# из пути к папке получаем её содержимое в виде списка файлов и папок
-	files_list=[]
-	folders_list=[] # локальные переменные
-	# получаем список файлов и папок
-	paths_list=os.listdir(folder_path)
-	# обходим каждый адрес, проверяя является ли это файлом или папкой
-	for path in paths_list:
-		if os.path.isfile(folder_path+"\\"+path) and os.path.splitext(path)[1]=='.txt-light':
-			files_list.append(folder_path+"\\"+path)
-		elif os.path.isdir(folder_path+"\\"+path):
-			folders_list.append(folder_path+"\\"+path)
-	return files_list, folders_list
-class NewBD():
-	"""База данных представляет собой список файлов с их идентификаторами:
-	путь, уникальный идентификатор, идентификатор в привязке к структуре"""
-	def __init__(self):
-		self.base=[] # сама по себе база является списком списков
-		self.id_dict={} # словарь section_id:file_id
-		self.filecount=0
-		self.addition=[] # добавочная секция в файл
-	def proveAdd(self):
-		if len(self.addition)!=0:
-			return True
-		else:
-			return False
-	def addAdd(self,source):
-		self.addition.extend(source)
-	def delAdd(self):
-		self.addition=[]
-	def getLastID(self):
-		# получаем последний айди
-		return '0'*(8-len(str(self.filecount)))+str(self.filecount)
-	def addFile(self, path,**args):
-		# добавляем файл
-		if not "section_id" in args:
-			args["section_id"]=''
-		file=[path,self.getLastID(),args["section_id"]]
-		self.base.append(file)
-		self.filecount+=1
-	def getBase(self):
-		return self.base
-	def searchFile(self,**args):
-		result=['None','None','None']
-		for file_path,file_id,section_id in self.base:
-			if ("section_id" in args) and (section_id==args["section_id"]):
-				result=[file_path,file_id,section_id]
-				break
-			if ("file_id" in args) and (file_id==args["file_id"]):
-				result=[file_path,file_id,section_id]
-				break
-			if ("file_path" in args) and (file_path==args["file_path"]):
-				result=[file_path,file_id,section_id]
-				break
-		if "result" in args:
-			# если мы хотим получить какой-то определённый результат
-			if args["result"]=="file_path":
-				return result[0]
-			if args["result"]=="file_id":
-				return result[1]
-			if args["result"]=="section_id":
-				return result[2]
-			if args["result"]=="index":
-				return self.base.index(result)
-		else:
-			return result[0]
-	def getID(self,path):
-		return self.searchFile(file_path=path,result='section_id')
-	def changeID(self,path,section_id):
-		idx=self.searchFile(file_path=path,result='index')
-		self.base[idx][2]=section_id
-		self.addID(self.base[idx][1],section_id)
-	def addID(self,file_id,section_id):
-		self.id_dict[section_id]=file_id
-	def getFileName(self,section_id):
-		if section_id in self.id_dict:
-			return self.id_dict[section_id]
-		else:
-			return ''
+
+
+
 
 def remComment(string_):
 	mode_=False

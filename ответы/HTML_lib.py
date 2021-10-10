@@ -15,6 +15,9 @@ class NewDataBase():
 		self.anchors_dict={} # здесь связываем якоря и файлы, в которых они расположены
 		self.curfile="" # идентификатор текущего файла (файл, с которым мы работаем)
 		self.addition=[] # добавочная секция в файл
+		self.header_list=[] # верх страницы html
+		self.footer_list=[] # низ страницы html
+		self.export_folder_path="" # путь к папке для экспорта
 	def currentFile(self):
 		# получаем идентификатор текущего файла
 		return self.curfile
@@ -66,6 +69,19 @@ class NewDataBase():
 			return self.anchors_dict[anchor]
 		else:
 			return ''
+	def addHeader(self,string_list):
+		self.header_list=string_list[:]
+	def addFooter(self,string_list):
+		self.footer_list=string_list[:]
+	def getHeader(self):
+		return self.header_list[:]
+	def getFooter(self):
+		return self.footer_list[:]
+	def addExportPath(self,path):
+		self.export_folder_path=path
+	def getExportPath(self):
+		return self.export_folder_path
+
 
 class NewFolder():
 	"""
@@ -78,3 +94,12 @@ class NewFolder():
 		self.folders=[] # список вложенных папок
 		# получаем списки файлов и папок 
 		files_list, folders_list = dirList(path)
+		# создаём новые папки и помещаем их в список
+		for folder in folders_list:
+			self.folders.append(NewFolder(folder,base))
+		base.delAdd() # удаляем дополнительные заголовки перед перебором файлов
+		# создаём новые файлы и помещаем в другой список
+		for file in files_list:
+			self.files.append(NewFile(file,base))
+	def convert2HTML(self,base):
+		pass
