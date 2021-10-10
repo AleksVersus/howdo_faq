@@ -1,7 +1,7 @@
-# Builder fb2-файла 
+# Builder HTML-файла 
 import sys, os, re, json # импорт необходимых модлулей
 import datetime
-from HTML_foo import *
+from HTML_lib import *
 
 
 if __name__=="__main__":
