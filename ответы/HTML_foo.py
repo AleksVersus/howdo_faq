@@ -58,3 +58,10 @@ class NewDataBase():
 			if self.files_dict[key]==id_:
 				return key
 				break
+	def getFileName(self,anchor):
+		# получаем айди файла по содержащемуся в нём якорю
+		if anchor in self.anchors_dict:
+			return self.anchors_dict[anchor]
+		else:
+			return ''
+
