@@ -115,7 +115,7 @@ class NewFile():
 		# получаем список строк, это и есть файл
 		with open(path,'r',encoding='utf-8') as file:
 			self.source=file.readlines()
-		self.sections=[] # блоки составляющие файл
+		self.segments=[] # сегменты, составляющие файл
 		self.HTML=[] # список строк готового HTML-файла
 		if base.proveAdd():
 			self.source=base.getAdd()+self.source
@@ -125,14 +125,17 @@ class NewFile():
 		else:
 			# если это не файл заголовка
 			base.addFile(path) # добавляем файл в базу
-			self.sections.append(NewSection(self.source,'',base))
+			self.segments.append(NewSegment(self.source,'',base))
 			self.convert2HTML(base)
 	def getFileName(self):
 		# получаем имя файла, отсекая путь
 		return os.path.split(self.path)[1]
 	def convert2HTML(self,base):
 		# конвертируем секции файла в HTML
-		for section in self.sections:
-			section.convert2HTML(base)
+		for segment in self.segments:
+			segments.convert2HTML(base)
 	def getHTML(self,base):
 		pass
+
+class NewSegment():
+	# взять тело функции split из квазифайла и построчно сравнить с телом функции в нормальном файле. Вместо назначения айдишников файлу у нас теперь просто якоря привязанные к текущему файлу.
