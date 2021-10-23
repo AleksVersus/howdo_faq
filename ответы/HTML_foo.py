@@ -102,3 +102,7 @@ def getTitle(string):
 def getID(string):
 	# извлекает идентификатор (якорь) из строки
 	return re.findall(r'(\[:)(.+?)(\])',string)[0][1]
+
+def clearQuoteString(string):
+	# очищает строку от метки цитаты
+	return re.findall(r'^(\s*>\s*)(.+?)$',string)[0][1]

@@ -180,7 +180,10 @@ class NewSegment():
 			"SoH-open":('','quote-list','ul_ol-list','head-block'), # блоки, которые можно закрывать через SOH
 			"SoH-close":('section_of_head','quote-list','head-block'), # блоки, которые можно закрывать через SOH
 			"id":('head-block','quote-list'), # блоки, которые можно закрывать строкой с айди
-			"":()
+			"ul_ol":('','quote-list','head-block'),
+			"code":('','code-block','head-block','quote-list')
+			"quote-block":('','quote-block','head-block','quote-list')
+			"quote-string":('','head-block')
 		} #
 		# перебираем строки, разбивая на секции
 		for string in self.source:
@@ -232,7 +235,57 @@ class NewSegment():
 				else:
 					# во всех остальных случаях добавляем как обычную строку
 					section.addString(string)
-
+			elif typeString(string) in ('ul','ol'):
+				# если данная строка является строкой маркированного или нумерованного списка
+				if block_mode in manage_mode["ul_ol"]:
+					# если включен режим, который данная строка способна выключить
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					section.changeType(typeString(string)) # изменяем тип вновь созданной секции
+					section.addString(string)
+					block_mode="ul_ol-list" # переключаемся в режим добора строк в секцию списка
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
+			elif typeString(string)=='code':
+				# метки кода переключают режим. В данном случае включаем режим добора строк в секцию кода
+				if block_mode=='code-block':
+					# если работает режим добора в секцию кода
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					block_mode='' # выключаем режим добора в секцию кода
+				elif block_mode in manage_mode["code"]:
+					# если работает режим, который можно прервать переключением в режим кода
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					section.changeType('code-block')
+					section.addString(string)
+					block_mode="code-block" # включаем режим добора в секцию кода
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
+			elif typeString(string)=='quote':
+				# строка открывает блок цитаты
+				if block_mode=='quote-block':
+					# если работает режим добора в блок цитаты, выключаем
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					block_mode=""
+				elif block_mode in manage_mode["quote-block"]:
+					# если работает режим, который можно прервать по текущей строке
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					section.changeType('quote-block')
+					block_mode="quote-block"
+			elif typeString(string)=='quote-string':
+				if block_mode=="quote-list":
+					# режим уже включен, добавляем строку в блок
+					section.addString(clearQuoteString(string))
+					# строка является частью списка строк цитаты
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					section.changeType('quote-block')
+					block_mode["quote-list"]=True
 
 
 class NewSection():
