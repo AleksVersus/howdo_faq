@@ -130,15 +130,15 @@ class NewFile():
 			self.source=file.readlines()
 		self.segments=[] # сегменты, составляющие файл
 		self.HTML=[] # список строк готового HTML-файла
-		if base.proveAdd():
-			self.source=base.getAdd()+self.source
 		if self.getFileName()=='00.txt-light':
 			# если это файл заголовка, этот заголовок будет добавляться ко всем последующим файлам
 			base.addAdd(self.source)
 		else:
 			# если это не файл заголовка
 			base.addFile(path) # добавляем файл в базу
-			self.segments.append(NewSegment(self.source,'',base))
+			if base.proveAdd():
+				self.source=base.getAdd()+self.source
+			self.segments.append(NewSegment(self.source,'from_file',base))
 			self.convert2HTML(base)
 	def getFileName(self):
 		# получаем имя файла, отсекая путь
@@ -158,8 +158,8 @@ class NewSegment():
 	"""
 	# взять тело функции split из квазифайла и построчно сравнить с телом функции в нормальном файле. Вместо назначения айдишников файлу у нас теперь просто якоря привязанные к текущему файлу.
 	def __init__(self,source_list,type_,base):
-		# только пустой тип заставляет очищать от комментариев
-		self.source=(clearStringList(source_list) if type_=='' else source_list)
+		# только тип "из файла" заставляет очищать от комментариев
+		self.source=(clearStringList(source_list) if type_=='from_file' else source_list)
 		self.sections=[] # секции, составляющие сегмент
 		self.HTML=[] # строки с конвертированием уже в HTML
 		self.segmentSplit(base) # разбиваем на блоки
@@ -168,23 +168,25 @@ class NewSegment():
 		# если в секции есть хоть какое-то содержимое
 		if section.getLen()!=0:
 			self.sections.append(section)
+	def getLen(self):
+		return len(self.sections)
 	def segmentSplit(self,base):
 		# данный метод разбивает сегмент на секции
 		section=NewSection() # создаём новую пустую секцию
-		block_mode='' # выставляем режимы набора в секции
+		block_mode='' # выставляем режимы добора в секции
 		manage_mode={	
-			"give_id":False,
-			"give_id_off":False,
 			"head_list":('h1','h2','h3','h4','h5','h6'), # все типы строки для заголовков
 			"h1-h6":('','quote-list','ul_ol-list','head-block'), # блоки, которые можно закрывать строкой заголовка
 			"SoH-open":('','quote-list','ul_ol-list','head-block'), # блоки, которые можно закрывать через SOH
 			"SoH-close":('section_of_head','quote-list','head-block'), # блоки, которые можно закрывать через SOH
 			"id":('head-block','quote-list'), # блоки, которые можно закрывать строкой с айди
 			"ul_ol":('','quote-list','head-block'),
-			"code":('','code-block','head-block','quote-list')
-			"quote-block":('','quote-block','head-block','quote-list')
-			"quote-string":('','head-block')
-		} #
+			"code":('','code-block','head-block','quote-list'),
+			"quote-block":('','quote-block','head-block','quote-list'),
+			"quote-string":('','head-block'),
+			"empty":('head-block','quote-list','ul_ol-list'),
+			"other":('head-block','quote-list')
+		} # здесь храним инфу для управления
 		# перебираем строки, разбивая на секции
 		for string in self.source:
 			if typeString(string) in manage_mode["head_list"]:
@@ -216,6 +218,7 @@ class NewSegment():
 					# если сейчас работает один из режимов, которые можно прервать
 					self.addSection(section) # добавляем к списку секций предыдущую секцию
 					section=NewSection() # создаём новую секцию
+					block_mode='' # выключаем режим добора
 				else:
 					# для всех остальных режимов, строка добавляется в секцию как есть
 					section.addString(string)
@@ -227,11 +230,13 @@ class NewSegment():
 					section.changeID(getID(string)) # изменяем идентификатор секции
 					self.addSection(section) # добавляем к списку предыдущую секцию
 					section=NewSection() # создаём новую секцию
+					block_mode=''
 				elif block_mode in manage_mode["id"]:
 					# если работает режим секции, который можно прервать
 					self.addSection(section) # добавляем к списку предыдущую секцию
 					section=NewSection() # создаём новую секцию
 					section.addString(string) # добавляем строку в секцию, как обычную строку
+					block_mode=''
 				else:
 					# во всех остальных случаях добавляем как обычную строку
 					section.addString(string)
@@ -259,7 +264,7 @@ class NewSegment():
 					self.addSection(section) # добавляем к списку секций предыдущую секцию
 					section=NewSection() # создаём новую секцию
 					section.changeType('code-block')
-					section.addString(string)
+					section.addString(string) # начальная строка добавляется в блок, чтобы определять тип кода
 					block_mode="code-block" # включаем режим добора в секцию кода
 				else:
 					# в любом другом режиме строки добавляются как есть
@@ -277,15 +282,49 @@ class NewSegment():
 					section=NewSection()
 					section.changeType('quote-block')
 					block_mode="quote-block"
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
 			elif typeString(string)=='quote-string':
+				# тип строки - строка цитаты
 				if block_mode=="quote-list":
 					# режим уже включен, добавляем строку в блок
 					section.addString(clearQuoteString(string))
-					# строка является частью списка строк цитаты
+				elif block_mode in manage_mode["quote-string"]:
+					# если работает режим, который можно прервать данной строко
 					self.addSection(section) # добавляем к списку секций предыдущую секцию
 					section=NewSection()
 					section.changeType('quote-block')
-					block_mode["quote-list"]=True
+					section.addString(clearQuoteString(string))
+					block_mode="quote-list"
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
+			elif typeString(string)=='empty':
+				# пустая строка (может содержать пробелы)
+				if block_mode in manage_mode['empty']:
+					# если включен режим, который данная строка прерывает
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # генерим новую секцию
+					block_mode='' # выключаем режим
+				elif block_mode=='':
+					# если набираются параграфы, пустые строки между ними игнорируются
+					pass
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
+			else:
+				# любой иной тип строки
+				if block_mode in manage_mode["other"]:
+					# все строки прерывают режим добора строк в заголовок или режим списка строк цитаты
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # генерим новую секцию
+					block_mode='' # прерываем секцию
+				else:
+					# в любом другом режиме строки добавляются как есть
+					section.addString(string)
+		if section.getLen()!=0:
+			self.addSection(section)
 
 
 class NewSection():
