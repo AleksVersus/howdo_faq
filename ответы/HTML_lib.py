@@ -18,6 +18,13 @@ class NewDataBase():
 		self.header_list=[] # верх страницы html
 		self.footer_list=[] # низ страницы html
 		self.export_folder_path="" # путь к папке для экспорта
+		self.typesOfClass={
+			"base":NewDataBase,
+			"folder":NewFolder,
+			"file":NewFile,
+			"segment":NewSegment,
+			"section":NewSection
+		} # связка тип обекта указанного класса с ключом. Сразу прописываем нужные типы
 	def currentFile(self):
 		# получаем идентификатор текущего файла
 		return self.curfile
@@ -83,6 +90,12 @@ class NewDataBase():
 		self.export_folder_path=path
 	def getExportPath(self):
 		return self.export_folder_path
+	def addClassType(self,kw,type_):
+		self.typesOfClass[kw]=type_
+	def getClassType(kw):
+		return (self.typesOfClass[kw] if kw in self.typesOfClass else None)
+	def proveClassType(kw):
+		return (True if kw in self.typesOfClass else False)
 
 
 class NewFolder():
@@ -138,4 +151,191 @@ class NewFile():
 		pass
 
 class NewSegment():
+	"""
+	Сегмент - это объект, заменяющий Файлы и Квазифайлы предыдущей версии программы.
+	Сегмент разбивается на секции, а сами секции в свою очередь могут состоять из сегментов.
+	Фактически - сегмент это виртуальный контейнер, промежуточный элемент между файлом и секцией.
+	"""
 	# взять тело функции split из квазифайла и построчно сравнить с телом функции в нормальном файле. Вместо назначения айдишников файлу у нас теперь просто якоря привязанные к текущему файлу.
+	def __init__(self,source_list,type_,base):
+		# только пустой тип заставляет очищать от комментариев
+		self.source=(clearStringList(source_list) if type_=='' else source_list)
+		self.sections=[] # секции, составляющие сегмент
+		self.HTML=[] # строки с конвертированием уже в HTML
+		self.segmentSplit(base) # разбиваем на блоки
+	def addSection(self,section):
+		# функция добавляет секцию к списку секций
+		# если в секции есть хоть какое-то содержимое
+		if section.getLen()!=0:
+			self.sections.append(section)
+	def segmentSplit(self,base):
+		# данный метод разбивает сегмент на секции
+		section=NewSection() # создаём новую пустую секцию
+		block_mode={
+			"section_of_head":False,
+			"code-block":False,
+			"quote-block":False,
+			"quote-list":False,
+			"ul_ol-list":False,
+			"head-block":False
+		} # выставляем режимы набора в секции
+		manage_mode={	
+			"give_id":False,
+			"give_id_off":False,
+			"head_list":['h1','h2','h3','h4','h5','h6']
+		} #
+		# перебираем строки, разбивая на секции
+		for string in self.source:
+			if all(not block_mode[key] for key in block_mode):
+				# если ни один режим не включен, ищем среди строк начала новых блоков
+				if typeString(string)=='section_of_head-open':
+					# если тип строки "открывающая Секции Заголовков"
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					section.changeType('section_of_head') # изменяем тип вновь созданной секции
+					block_mode["section_of_head"]=True # переключаемся в режим добора строк в секцию заголовков
+				elif typeString(string)=='code':
+					# метки кода переключают режим. В данном случае включаем режим добора строк в секцию кода
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					section.changeType('code-block')
+					section.addString(string)
+					block_mode["code-block"]=True
+				elif typeString(string) in ('ul','ol'):
+					# строка является пунктом списка, значит она открывает блок списка
+					self.addSection(section) # добавляем секцию в сегмент
+					section=NewSection() # создаём новую секцию
+					section.changeType(typeString(string)) # изменяем тип новой секции на тип списка
+					section.addString(string) # добавляем строку в секцию
+					block_mode["ul_ol-list"]=True
+				elif typeString(string)=='quote':
+					# строка открывает блок цитаты
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					section.changeType('quote-block')
+					block_mode["quote-block"]=True
+				elif typeString(string)=='quote-string':
+					# строка является частью списка строк цитаты
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					section.changeType('quote-block')
+					block_mode["quote-list"]=True
+
+			elif block_mode["section_of_head"]==True:
+				# если включён режим добора строк в секцию Заголовков
+				if typeString(string)=='section_of_head-close':
+					# если тип строки "закрывающая Секции Заголовков"
+					self.addSection(section) # добавляем к списку секций набранную секцию
+					section=NewSection() # создаём новую секцию
+					block_mode["section_of_head"]=False # выключаем режим добора строк в секцию заголовков
+				else:
+					# все остальные строки закидываем в секцию
+					section.addString(string)
+
+			elif block_mode["code-block"]==True:
+				# если включён режим добора строк в секцию кода.
+				if typeString(string)=='code':
+					# метки кода переключают режим. В данном случае выключаем
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					block_mode["code-block"]=False
+				else:
+					# все остальные строки помещаются в секцию
+					section.addString(string)
+
+			elif block_mode["ul_ol-list"]==True:
+				# если включён режим добора строк в секцию списка
+				if typeString(string) in manage_mode["head_list"]:
+					# тип строки определяется, как заголовок
+					self.addSection(section) # добавляем секцию в сегмент
+					section=NewSection() # генерируем новую секцию
+					section.changeType(typeString(string)) # изменяем тип секции (он совпадает с типом строки)
+					section.addString(getTitle(string)) # извлекаем текст и передаём как строку
+					mode["give_id"]=True # включаем режим получения айди
+					mode["give_id_off"]=True # включаем режим контроля отключения получения айди
+					block_mode["ul_ol-list"]=False
+				elif typeString(string)=='empty':
+					# только пустая строка разрывает список
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					block_mode["ul_ol-list"]=False
+				else:
+					# все остальные строки помещаются в секцию
+					section.addString(string)
+			elif block_mode["quote-block"]==True:
+				# если включён режим добора строк в секцию цитат.
+				if typeString(string)=='quote':
+					# метки цитаты переключают режим. В данном случае выключаем
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					block_mode["quote-block"]=False
+				else:
+					# все остальные строки помещаются в секцию
+					section.addString(string)
+			elif block_mode["quote-list"]==True:
+				# если включён режим добора строк в секцию цитат.
+				# любой тип, отличный от quote-string прерывает цитату. Для заголовков особенное поведение
+				if typeString(string) in manage_mode["head_list"]:
+					# тип строки определяется, как заголовок
+					self.addSection(section) # добавляем секцию в сегмент
+					section=NewSection() # генерируем новую секцию
+					section.changeType(typeString(string)) # изменяем тип секции (он совпадает с типом строки)
+					section.addString(getTitle(string)) # извлекаем текст и передаём как строку
+					mode["give_id"]=True # включаем режим получения айди
+					mode["give_id_off"]=True # включаем режим контроля отключения получения айди
+					block_mode["quote-list"]=False
+				elif typeString(string)!='quote-string':
+					# любой тип отличный от quote-string прерывает цитату
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
+					section=NewSection()
+					block_mode["quote-list"]=False
+				else:
+					# quote-string добавляются в секцию
+					section.addString(string)
+
+			
+				
+				elif typeString(string)=='id' and mode["give_id"]==True: 
+					# если тип строки айди и включен режим приёма айди
+					section.changeID(getID(string)) # меняем идентификатор секции
+					base.addAnchor(getID(string)) # данный айдишник добавляем в базу, привязывая к файлу (якорь)
+					mode["give_id_off"]=False # выключаем режим контроля получения айди
+				
+				
+				
+
+class NewSection():
+	"""
+	Секция - это объект для хранения однотипных строк или сегментов (как правило одного).
+	HTML-разметка вычисляется исходя из секций. Секция всегда генерируется в пустом виде,
+	и лишь потом наполняется содержимым
+	"""
+	def __init__(self):
+		self.type="" # тип секции
+		self.id="" # id секции
+		self.source=[] # список строк секции или сегментов
+		self.HTML=[] # html форма секции
+	def getLen(self):
+		# возвращает условную длину секции
+		return len(self.source)
+	def changeType(self,string):
+		# изменяет тип секции на указанный
+		self.type=string
+	def addString(self,string):
+		# добавляет строку в исходник секции
+		self.source.append(string)
+	def changeID(self,string):
+		# изменяет идентификатор секции.
+		# Этот идентификатор потом может служить якорем
+		self.id=string
+	def getAttr(self,string):
+		# возвращает значение атрибута (поля)
+		args={
+			'source':self.source,
+			'type':self.type,
+			'id':self.id
+		}
+		return args[string]
+	def getType(self):
+		# возвращает значение атрибута type
+		return self.getAttr('type')

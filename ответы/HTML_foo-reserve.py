@@ -72,58 +72,58 @@ class NewQuazy():
 		self.fileSplit(base_) # разбиваем файл на блоки
 		self.convert2HTML(base_)
 	def fileSplit(self,base):
-		section_=NewSection()
-		mode={"give_id":False,
-			"give_id_off":False,
-			"section_of_head":False,
-			"code-block":False,
-			"quote-block":False}
+		# section_=NewSection()
+		# mode={"give_id":False,
+		# 	"give_id_off":False,
+		# 	"section_of_head":False,
+		# 	"code-block":False,
+		# 	"quote-block":False}
 		for i in self.source:
-			if typeString(i)=='section_of_head-open':
-				mode["section_of_head"]=True
-				self.sections.append(section_)
-				section_=NewSection()
-				section_.changeType('section_of_head')
+			# if typeString(i)=='section_of_head-open':
+			# 	mode["section_of_head"]=True
+			# 	self.sections.append(section_)
+			# 	section_=NewSection()
+			# 	section_.changeType('section_of_head')
 			elif mode["section_of_head"]==False:
-				if re.match(r'h\d+',typeString(i))!=None:
-					if section_.getLen()!=0:
-						# если по какой-то причине предыдущая секция не закрыта
-						self.sections.append(section_)
-						section_=NewSection()
-					section_.changeType(typeString(i))
-					section_.addString(getTitle(i))
-					mode["give_id"]=True
-					mode["give_id_off"]=True
-				elif typeString(i)=='id' and mode["give_id"]==True:
-					section_.changeID(getID(i))
-					mode["give_id_off"]=False
-					# айдишники квазифайла в базу не добавляем, так как не знаем, на какой файл они ссылаются.
-				elif typeString(i)=='ul':
-					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
-					if section_.getAttr(attr='type')!='ul' and section_.getAttr(attr='type')!='ol':
-						self.sections.append(section_)
-						section_=NewSection()
-						section_.changeType(typeString(i))
-					section_.addString(i)
-				elif typeString(i)=='ol':
-					# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
-					if section_.getAttr(attr='type')!='ol' and section_.getAttr(attr='type')!='ul':
-						self.sections.append(section_)
-						section_=NewSection()
-						section_.changeType(typeString(i))
-					section_.addString(i)
-				elif typeString(i)=='code':
-					# метки кода только переключают режим
-					if mode["code-block"]==False:
-						self.sections.append(section_)
-						section_=NewSection()
-						section_.changeType('code-block')
-						section_.addString(i) # необходимо добавить строку, чтоб определить, что за код
-						mode["code-block"]=True
-					else:
-						self.sections.append(section_)
-						section_=NewSection()
-						mode["code-block"]=False
+				# if re.match(r'h\d+',typeString(i))!=None:
+				# 	if section_.getLen()!=0:
+				# 		# если по какой-то причине предыдущая секция не закрыта
+				# 		self.sections.append(section_)
+				# 		section_=NewSection()
+				# 	section_.changeType(typeString(i))
+				# 	section_.addString(getTitle(i))
+				# 	mode["give_id"]=True
+				# 	mode["give_id_off"]=True
+				# elif typeString(i)=='id' and mode["give_id"]==True:
+				# 	section_.changeID(getID(i))
+				# 	mode["give_id_off"]=False
+				# 	# айдишники квазифайла в базу не добавляем, так как не знаем, на какой файл они ссылаются.
+				# elif typeString(i)=='ul':
+				# 	# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
+				# 	if section_.getAttr(attr='type')!='ul' and section_.getAttr(attr='type')!='ol':
+				# 		self.sections.append(section_)
+				# 		section_=NewSection()
+				# 		section_.changeType(typeString(i))
+				# 	section_.addString(i)
+				# elif typeString(i)=='ol':
+				# 	# маркированные и нумерованные списки идут в общую секцию, если следуют друг за другом 
+				# 	if section_.getAttr(attr='type')!='ol' and section_.getAttr(attr='type')!='ul':
+				# 		self.sections.append(section_)
+				# 		section_=NewSection()
+				# 		section_.changeType(typeString(i))
+				# 	section_.addString(i)
+				# elif typeString(i)=='code':
+				# 	# метки кода только переключают режим
+				# 	if mode["code-block"]==False:
+				# 		self.sections.append(section_)
+				# 		section_=NewSection()
+				# 		section_.changeType('code-block')
+				# 		section_.addString(i) # необходимо добавить строку, чтоб определить, что за код
+				# 		mode["code-block"]=True
+				# 	else:
+				# 		self.sections.append(section_)
+				# 		section_=NewSection()
+				# 		mode["code-block"]=False
 				elif typeString(i)=='quote':
 					# метки кода только переключают режим
 					if mode["quote-block"]==False:
@@ -151,11 +151,11 @@ class NewQuazy():
 					section_.addString(i)
 					if typeString(i)=='id':
 						mode["give_id_off"]=False
-			elif typeString(i)=='section_of_head-close':
-				mode["section_of_head"]=False
-				self.sections.append(section_)
-				section_=NewSection()
-				section_.changeType('section_of_head')
+			# elif typeString(i)=='section_of_head-close':
+			# 	mode["section_of_head"]=False
+			# 	self.sections.append(section_)
+			# 	section_=NewSection()
+			# 	section_.changeType('section_of_head')
 			else:
 				section_.addString(i)
 			if mode["give_id_off"]==True:
@@ -395,44 +395,10 @@ def remComment(string_):
 	return mode_,start_string+end_string
 
 
-def typeString(string):
-	if re.match(r'^==.*?==$',string)!=None:
-		return 'h1'
-	elif re.match(r'^=.*?=$',string)!=None:
-		return 'h2'
-	elif re.match(r'^--.*?--$',string)!=None:
-		return 'h3'
-	elif re.match(r'^-.*?-$',string)!=None:
-		return 'h4'
-	elif re.match(r'^\+\+.*?\+\+$',string)!=None:
-		return 'h5'
-	elif re.match(r'^\+.*?\+$',string)!=None:
-		return 'h6'
-	elif re.match(r'^\s*<section_of_head>\s*$',string)!=None:
-		return 'section_of_head-open'
-	elif re.match(r'^\s*</section_of_head>\s*$',string)!=None:
-		return 'section_of_head-close'
-	elif re.match(r'^\[:.*?\]$',string)!=None:
-		return 'id'
-	elif re.match(r'^\s*?\*\s+',string)!=None:
-		return 'ul'
-	elif re.match(r'^\s*?\d+\.\s+',string)!=None:
-		return 'ol'
-	elif re.match(r'^```\w*?',string)!=None:
-		return 'code'
-	elif re.match(r'^\s*?>>>\s*?$',string)!=None:
-		return 'quote'
-	elif re.match(r'^\s*?>\s+',string)!=None:
-		return 'quote-string'
-	elif re.match(r'^\s*?$',string)!=None:
-		return 'empty'
-	else:
-		return 'other'
-def getTitle(string_):
-	return re.findall(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$',string_)[0][1]
 
-def getID(string_):
-	return re.findall(r'(\[:)(.+?)(\])',string_)[0][1]
+
+
+
 
 def ampersandReplace(string_):
 	# замена амперсандов в строках
