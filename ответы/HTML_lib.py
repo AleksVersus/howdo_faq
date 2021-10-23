@@ -171,138 +171,69 @@ class NewSegment():
 	def segmentSplit(self,base):
 		# данный метод разбивает сегмент на секции
 		section=NewSection() # создаём новую пустую секцию
-		block_mode={
-			"section_of_head":False,
-			"code-block":False,
-			"quote-block":False,
-			"quote-list":False,
-			"ul_ol-list":False,
-			"head-block":False
-		} # выставляем режимы набора в секции
+		block_mode='' # выставляем режимы набора в секции
 		manage_mode={	
 			"give_id":False,
 			"give_id_off":False,
-			"head_list":['h1','h2','h3','h4','h5','h6']
+			"head_list":('h1','h2','h3','h4','h5','h6'), # все типы строки для заголовков
+			"h1-h6":('','quote-list','ul_ol-list','head-block'), # блоки, которые можно закрывать строкой заголовка
+			"SoH-open":('','quote-list','ul_ol-list','head-block'), # блоки, которые можно закрывать через SOH
+			"SoH-close":('section_of_head','quote-list','head-block'), # блоки, которые можно закрывать через SOH
+			"id":('head-block','quote-list'), # блоки, которые можно закрывать строкой с айди
+			"":()
 		} #
 		# перебираем строки, разбивая на секции
 		for string in self.source:
-			if all(not block_mode[key] for key in block_mode):
-				# если ни один режим не включен, ищем среди строк начала новых блоков
-				if typeString(string)=='section_of_head-open':
-					# если тип строки "открывающая Секции Заголовков"
+			if typeString(string) in manage_mode["head_list"]:
+				# строка является заголовком
+				if block_mode in manage_mode["h1-h6"]:
+					# если сейчас работает один из режимов, которые прерываются обнаружением строки-заголовка
+					self.addSection(section) # добавляем к списку предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					section.changeType(typeString(string)) # изменяем тип секции
+					section.addString(getTitle(string)) # добавляем в секцию строку
+					block_mode='head-block' # включаем режим работы блока
+				else:
+					# для всех остальных блоков строка заголовка - обычная строка
+					section.addString(string)
+			elif typeString(string)=='section_of_head-open':
+				# если тип строки "открывающая Секции Заголовков"
+				if block_mode in manage_mode["SoH-open"]:
+					# если сейчас работает один из режимов, которые можно прервать
 					self.addSection(section) # добавляем к списку секций предыдущую секцию
 					section=NewSection() # создаём новую секцию
 					section.changeType('section_of_head') # изменяем тип вновь созданной секции
-					block_mode["section_of_head"]=True # переключаемся в режим добора строк в секцию заголовков
-				elif typeString(string)=='code':
-					# метки кода переключают режим. В данном случае включаем режим добора строк в секцию кода
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					section.changeType('code-block')
+					block_mode="section_of_head" # переключаемся в режим добора строк в секцию заголовков
+				else:
+					# для всех остальных режимов, строка добавляется в секцию как есть
 					section.addString(string)
-					block_mode["code-block"]=True
-				elif typeString(string) in ('ul','ol'):
-					# строка является пунктом списка, значит она открывает блок списка
-					self.addSection(section) # добавляем секцию в сегмент
+			elif typeString(string)=='section_of_head-close':
+				# если тип строки "закрывающая Секции Заголовков"
+				if block_mode in manage_mode["SoH-close"]:
+					# если сейчас работает один из режимов, которые можно прервать
+					self.addSection(section) # добавляем к списку секций предыдущую секцию
 					section=NewSection() # создаём новую секцию
-					section.changeType(typeString(string)) # изменяем тип новой секции на тип списка
-					section.addString(string) # добавляем строку в секцию
-					block_mode["ul_ol-list"]=True
-				elif typeString(string)=='quote':
-					# строка открывает блок цитаты
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					section.changeType('quote-block')
-					block_mode["quote-block"]=True
-				elif typeString(string)=='quote-string':
-					# строка является частью списка строк цитаты
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					section.changeType('quote-block')
-					block_mode["quote-list"]=True
-
-			elif block_mode["section_of_head"]==True:
-				# если включён режим добора строк в секцию Заголовков
-				if typeString(string)=='section_of_head-close':
-					# если тип строки "закрывающая Секции Заголовков"
-					self.addSection(section) # добавляем к списку секций набранную секцию
+				else:
+					# для всех остальных режимов, строка добавляется в секцию как есть
+					section.addString(string)
+			elif typeString(string)=='id':
+				# тип строки идентификатор
+				base.addAnchor(getID(string)) # добавляем якорь в базу
+				if block_mode=='head-block':
+					# если работает режим заголовка
+					section.changeID(getID(string)) # изменяем идентификатор секции
+					self.addSection(section) # добавляем к списку предыдущую секцию
 					section=NewSection() # создаём новую секцию
-					block_mode["section_of_head"]=False # выключаем режим добора строк в секцию заголовков
+				elif block_mode in manage_mode["id"]:
+					# если работает режим секции, который можно прервать
+					self.addSection(section) # добавляем к списку предыдущую секцию
+					section=NewSection() # создаём новую секцию
+					section.addString(string) # добавляем строку в секцию, как обычную строку
 				else:
-					# все остальные строки закидываем в секцию
+					# во всех остальных случаях добавляем как обычную строку
 					section.addString(string)
 
-			elif block_mode["code-block"]==True:
-				# если включён режим добора строк в секцию кода.
-				if typeString(string)=='code':
-					# метки кода переключают режим. В данном случае выключаем
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					block_mode["code-block"]=False
-				else:
-					# все остальные строки помещаются в секцию
-					section.addString(string)
 
-			elif block_mode["ul_ol-list"]==True:
-				# если включён режим добора строк в секцию списка
-				if typeString(string) in manage_mode["head_list"]:
-					# тип строки определяется, как заголовок
-					self.addSection(section) # добавляем секцию в сегмент
-					section=NewSection() # генерируем новую секцию
-					section.changeType(typeString(string)) # изменяем тип секции (он совпадает с типом строки)
-					section.addString(getTitle(string)) # извлекаем текст и передаём как строку
-					mode["give_id"]=True # включаем режим получения айди
-					mode["give_id_off"]=True # включаем режим контроля отключения получения айди
-					block_mode["ul_ol-list"]=False
-				elif typeString(string)=='empty':
-					# только пустая строка разрывает список
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					block_mode["ul_ol-list"]=False
-				else:
-					# все остальные строки помещаются в секцию
-					section.addString(string)
-			elif block_mode["quote-block"]==True:
-				# если включён режим добора строк в секцию цитат.
-				if typeString(string)=='quote':
-					# метки цитаты переключают режим. В данном случае выключаем
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					block_mode["quote-block"]=False
-				else:
-					# все остальные строки помещаются в секцию
-					section.addString(string)
-			elif block_mode["quote-list"]==True:
-				# если включён режим добора строк в секцию цитат.
-				# любой тип, отличный от quote-string прерывает цитату. Для заголовков особенное поведение
-				if typeString(string) in manage_mode["head_list"]:
-					# тип строки определяется, как заголовок
-					self.addSection(section) # добавляем секцию в сегмент
-					section=NewSection() # генерируем новую секцию
-					section.changeType(typeString(string)) # изменяем тип секции (он совпадает с типом строки)
-					section.addString(getTitle(string)) # извлекаем текст и передаём как строку
-					mode["give_id"]=True # включаем режим получения айди
-					mode["give_id_off"]=True # включаем режим контроля отключения получения айди
-					block_mode["quote-list"]=False
-				elif typeString(string)!='quote-string':
-					# любой тип отличный от quote-string прерывает цитату
-					self.addSection(section) # добавляем к списку секций предыдущую секцию
-					section=NewSection()
-					block_mode["quote-list"]=False
-				else:
-					# quote-string добавляются в секцию
-					section.addString(string)
-
-			
-				
-				elif typeString(string)=='id' and mode["give_id"]==True: 
-					# если тип строки айди и включен режим приёма айди
-					section.changeID(getID(string)) # меняем идентификатор секции
-					base.addAnchor(getID(string)) # данный айдишник добавляем в базу, привязывая к файлу (якорь)
-					mode["give_id_off"]=False # выключаем режим контроля получения айди
-				
-				
-				
 
 class NewSection():
 	"""
