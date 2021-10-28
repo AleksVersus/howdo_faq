@@ -17,6 +17,8 @@ class NewDataBase():
 		self.addition=[] # добавочная секция в файл
 		self.header_list=[] # верх страницы html
 		self.footer_list=[] # низ страницы html
+		self.content_file_path="" # путь к файлу-оглавлению
+		self.content=[] # содержимое содержания
 		self.export_folder_path="" # путь к папке для экспорта
 		self.typesOfClass={
 			"base":NewDataBase,
@@ -31,18 +33,20 @@ class NewDataBase():
 	def setCurFile(self,id_):
 		# устанавливаем текущий файл. Выбираем его айди
 		self.curfile=id_
+
 	def proveAdd(self):
 		# присутствует ли в базе добавочная секция
 		return (True if len(self.addition)!=0 else False)
+	def getAdd(self):
+		# получаем из базы добавочную секцию
+		return self.addition[:1]
 	def addAdd(self,string_list):
 		# добавляем в базу добавочную секцию
 		self.addition.extend(string_list)
 	def delAdd(self):
 		# удаляем из базы добавочную секцию
 		self.addition=[]
-	def getAdd(self):
-		# получаем из базы добавочную секцию
-		return self.addition[:1]
+
 	def lastFileID(self):
 		# получаем последний айди файлов
 		if self.filecount==0:
@@ -58,12 +62,6 @@ class NewDataBase():
 		self.filecount+=1 # увеличиваем счётчик
 		self.files_dict[path]=id_ # вносим файл в словарь
 		self.curfile=id_ # текущим файлом становится добавленный
-	def addAnchor(self,anchor):
-		# добавляем якорь к файлу
-		if self.curfile!="":
-			self.anchors_dict[anchor]=self.curfile
-		else:
-			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен")
 	def getFileID(self,path):
 		# получаем айди файла по указанному пути
 		return (self.files_dict[path] if path in self.files_dict else None)
@@ -78,6 +76,14 @@ class NewDataBase():
 	def getFileName(self,anchor):
 		# получаем айди файла по содержащемуся в нём якорю
 		return (self.anchors_dict[anchor] if anchor in self.anchors_dict else None)
+
+	def addAnchor(self,anchor):
+		# добавляем якорь к файлу
+		if self.curfile!="":
+			self.anchors_dict[anchor]=self.curfile
+		else:
+			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен")
+
 	def addHeader(self,string_list):
 		self.header_list=string_list[:]
 	def addFooter(self,string_list):
@@ -90,6 +96,7 @@ class NewDataBase():
 		self.export_folder_path=path
 	def getExportPath(self):
 		return self.export_folder_path
+
 	def addClassType(self,kw,type_):
 		self.typesOfClass[kw]=type_
 	def getClassType(kw):
@@ -97,6 +104,18 @@ class NewDataBase():
 	def proveClassType(kw):
 		return (True if kw in self.typesOfClass else False)
 
+	def setContentFile(self,path):
+		# устанавливает путь к файлу с содержанием
+		self.content_file_path=path
+	def getContentFile(self,path):
+		# получает путь к файлу с содержанием
+		return self.content_file_path
+	def addContent(self,string_list):
+		# разметку HTML файла оглавления помещаем в базу
+		self.content_HTML=string_list[:]
+	def getContent(self):
+		# получаем оглавление в виде HTML разметки
+		return self.content_HTML
 
 class NewFolder():
 	"""
@@ -117,7 +136,10 @@ class NewFolder():
 		for file in files_list:
 			self.files.append(NewFile(file,base))
 	def convert2HTML(self,base):
-		pass
+		for file in self.files:
+			file.buildThis(base)
+		for folder in self.folders:
+			folder.convert2HTML(base)
 
 class NewFile():
 	"""
@@ -140,14 +162,27 @@ class NewFile():
 				self.source=base.getAdd()+self.source
 			self.segments.append(NewSegment(self.source,'from_file',base))
 			self.convert2HTML(base)
+			# если путь к текущему файлу совпадает с путём к содержанию
+			if base.getContentFile()==path:
+				# добавляем содержание в базу
+				base.addContent(self.HTML)
 	def getFileName(self):
 		# получаем имя файла, отсекая путь
 		return os.path.split(self.path)[1]
 	def convert2HTML(self,base):
-		# конвертируем секции файла в HTML
+		# конвертируем сегменты файла в HTML
 		for segment in self.segments:
-			segments.convert2HTML(base)
+			segment.convert2HTML(base)
+			self.HTML.extend(segment.getHTML(base))
 	def getHTML(self,base):
+		# возвращает полное содержимое файла
+		new_string_list=[]
+		header_list=base.getHeader()
+		footer_list=base.getFooter()
+		new_string_list=header_list+self.HTML+footer_list
+		return new_string_list
+	def buildThis(self,base):
+		# собираем готовый HTML-файл
 		pass
 
 class NewSegment():
@@ -169,7 +204,17 @@ class NewSegment():
 		if section.getLen()!=0:
 			self.sections.append(section)
 	def getLen(self):
+		# возвращает число секций в сегменте
 		return len(self.sections)
+	def convert2HTML(self,base):
+		# конвертирует все секции сегмента в HTML
+		# и добавляем готовые строки в атрибут HTML сегмента
+		for section in self.sections:
+			section.convert2HTML(base)
+			self.HTML.extend(section.getHTML(base))
+	def getHTML(self,base):
+		# возвращает HTML-содержимое сегмента
+		return self.HTML
 	def segmentSplit(self,base):
 		# данный метод разбивает сегмент на секции
 		section=NewSection() # создаём новую пустую секцию
@@ -344,21 +389,22 @@ class NewSection():
 	def changeType(self,string):
 		# изменяет тип секции на указанный
 		self.type=string
-	def addString(self,string):
-		# добавляет строку в исходник секции
-		self.source.append(string)
 	def changeID(self,string):
 		# изменяет идентификатор секции.
 		# Этот идентификатор потом может служить якорем
 		self.id=string
-	def getAttr(self,string):
-		# возвращает значение атрибута (поля)
-		args={
-			'source':self.source,
-			'type':self.type,
-			'id':self.id
-		}
-		return args[string]
 	def getType(self):
 		# возвращает значение атрибута type
-		return self.getAttr('type')
+		return self.type
+	def getID(self):
+		# возвращает значение атрибута ID
+		return self.id
+	def addString(self,string):
+		# добавляет строку в исходник секции
+		self.source.append(string)
+	def getHTML(self,base):
+		# возвращает список преобразованных в HTML строк
+		return self.HTML
+	def convert2HTML(self,base):
+		# конвертирование секции в HTML и добавление в атрибут HTML
+		pass

@@ -106,3 +106,7 @@ def getID(string):
 def clearQuoteString(string):
 	# очищает строку от метки цитаты
 	return re.findall(r'^(\s*>\s*)(.+?)$',string)[0][1]
+
+if __name__=="__main__":
+	files_list, folders_list = dirList("D:\\my\\projects\\howdo_faq\\ответы\\80_зарезервированные слова")
+	print (files_list, folders_list)
