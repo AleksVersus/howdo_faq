@@ -195,6 +195,7 @@ class NewSegment():
 	def __init__(self,source_list,type_,base):
 		# только тип "из файла" заставляет очищать от комментариев
 		self.source=(clearStringList(source_list) if type_=='from_file' else source_list)
+		self.type=type_ # тип сегмента
 		self.sections=[] # секции, составляющие сегмент
 		self.HTML=[] # строки с конвертированием уже в HTML
 		self.segmentSplit(base) # разбиваем на блоки
@@ -407,4 +408,36 @@ class NewSection():
 		return self.HTML
 	def convert2HTML(self,base):
 		# конвертирование секции в HTML и добавление в атрибут HTML
-		pass
+		if self.type in ('h1','h2','h3','h4','h5','h6'):
+			# имеем дело с заголовком
+			lev=int(self.type[1:])
+			if lev<6: lev+=1
+			new_string_list=[]
+			for string in self.source:
+				new_string_list.append(convertString(string,'string',base))
+			if self.id=='':
+				self.id=randomString(4)
+			self.HTML.append(f'<a id="{self.id}"></a><h{lev}>')
+			self.HTML.extend(new_string_list)
+			self.HTML.append(f'</h{lev}>\n')
+		elif self.type=="code-block":
+			# имеем дело с блоком кода
+			self.HTML.extend(convertCodeBlock(self.source))
+		elif self.type in ('ul','ol'):
+			# имеем дело со списком
+			self.HTML.extend(convertListBlock(self.source,base))
+		elif self.type=="section_of_head":
+			# имеем дело с секцией заголовков
+			self.HTML.extend(convertSOHBlock(self.source,base))
+		elif self.type=="quote-block":
+			self.HTML.append('<blockquote>\n')
+			segment=NewSegment(self.source,'quote-block',base)
+			segment.convert2HTML(base)
+			self.HTML.extend(segment.getHTML(base))
+			self.HTML.append('\n</blockquote>\n')
+		else:
+			# имеем дело с параграфом. Каждая строка - отдельный параграф
+			for string in self.source:
+				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
+
+
