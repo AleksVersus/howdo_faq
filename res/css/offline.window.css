@@ -85,7 +85,7 @@ html,body {
     visibility: visible;
     transition: visibility 1s ease;
 }
-
+.soderzhanije .emFOLD {font-weight:normal}
 /* полоса прокрутки (скроллбар) */
 .em_AROUND::-webkit-scrollbar {
     background-color: #8BA02E44;

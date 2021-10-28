@@ -98,11 +98,19 @@ a.emHREFTT {
     transition: background 1s ease;
 }
 a.emHREFHH {text-decoration:none; color:#884400;}
-a.emHREFTT:hover {background-color:#BFBA8399;}
-.emFUNC, .emOPRT, .emFOLD, .emTEXT, .emVAR, .emNUM, .emARR, .emCOMM, .em_MARKER, .emGS {font-weight:bold;font-family:monospace;}
+a.emHREFTT:hover {background:#BFBA8399;}
+.emFUNC, .emOPRT, .emFOLD, .emTEXT, .emVAR, .emNUM, .emARR, .emCOMM, .em_MARKER, .emGS, .em_VIOL, .em_BLU, .em_DBLU, .em_RED, .em_BLCK {
+    font-weight: bolder;
+    font-family: Consolas, monospace;
+}
+
 .emFUNC {color:#ff8800;} /*цвет выделения функций*/
 .emOPRT {color:#008899;} /*цвет выделения операторов*/
-.emFOLD {color:#000000;background:#F6F6BC;} /*цвет выделения папок*/
+.emFOLD {
+    color:#000000;
+    transition: background 1s ease;
+} /*цвет выделения папок*/
+.emFOLD:hover {background:#F6F6BC;}
 .emGS {
     color:#2a79aa;
     background:#e2e2e2;
@@ -112,12 +120,11 @@ a.emHREFTT:hover {background-color:#BFBA8399;}
 } /*цвет выделения пользовательских процедур и функций*/
 .emTEXT {color:#008800;} /*цвет выделения текстовых значений*/
 .emVAR {color:#aa0000;}
-.emNUM {color:#880088;font-size:1.2em;}
+.emNUM {color:#880088;}
 .emARR {color:#5c5c00;}
 .emCOMM {color:#888888;}
 .em_MARKER {color:#999900;}
 
-.em_VIOL, .em_BLU, .em_DBLU, .em_RED, .em_BLCK {font-family: monospace;}
 .em_VIOL {color:#880088;}
 .em_BLU {color:#008888;}
 .em_DBLU {color:#000088;}
@@ -135,7 +142,6 @@ a.emHREFTT:hover {background-color:#BFBA8399;}
 }
 .emVAR > .emNUM {
  color:#000000;
- font-size:1.0em;
  }
 .emOPRT > .emOPRT {
  color:#004444;

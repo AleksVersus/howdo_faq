@@ -414,7 +414,7 @@ class NewSection():
 			if lev<6: lev+=1
 			new_string_list=[]
 			for string in self.source:
-				new_string_list.append(convertString(string,'string',base))
+				new_string_list.append(self.convertString(string,'string',base))
 			if self.id=='':
 				self.id=randomString(4)
 			self.HTML.append(f'<a id="{self.id}"></a><h{lev}>')
@@ -438,6 +438,132 @@ class NewSection():
 		else:
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
 			for string in self.source:
-				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
+				self.HTML.append('<p>\n'+self.convertString(string,'string',base)+'\n</p>\n')
+	def convertString(self,string,type_,base):
+		# конвертируем строку в неразмеченную. Внёс функцию сюда, потому что
+		# строка может конвертироваться только при преобразовании секции
+		roof_string=NewString(string,type_,base)
+		return roof_string.getHTML()
 
+class NewString():
+	"""
+	Прилагательный класс Строка. Чтобы рекурсивно обрабатывать строку, приходится генерировать новый объект
+	"""
+	def __init__(self,string,type_,base):
+		self.source=string # исходная строка
+		self.type=type_ # тип строки
+		self.strings=[] # если строка бьётся на другие строки, в ней помимо исходника будут содержаться эти строки
+		if self.type=='string':
+			# корневой тип. Пока есть две вариации такой строки: термины и другие
+			termins=re.match(r'^\s*?`.*?`(,\s+`.*?`)*\s*—',string) # начинается ли строка с терминов
+			if termins!=None:
+				# да строка начинается с терминов, значит выделяем эти термины и остальные части строки в отдельные строки
+				termins=re.findall(r'`.+?`',re.match(r'^\s*?`.*?`(,\s+`.*?`)*',termins.group(0)).group(0))
+				for term in termins:
+					symbol=string.find(term)
+					word1=string[0:symbol]
+					word2=string[symbol:symbol+len(term)]
+					if len(word1)>0:
+						self.strings.append(NewString(word1,'',base))
+					self.strings.append(NewString(word2[1:-1],'term',base))
+					string=string[symbol+len(term):]
+				if len(string)>0:
+					self.strings.append(NewString(string,'',base))
+			else:
+				# строка начинается не с терминов, поэтому мы её рассматриваем как строку стандартного узлового типа
+				self.strings.append(NewString(string,'',base))
+		elif self.type=='term':
+			# это строка типа термин, её содержимое рассматривается как строка стандартного узлового типа
+			self.strings.append(NewString(string,'',base))
+		elif self.type=='href':
+			# если тип строки href, дальше она не изменяется
+			pass
+		elif self.type=='name':
+			y_name,y_sub=re.findall(r'`([^`]+)`(\w+)\b',string)[0]
+			self.strings.append(NewString(y_name,'authname',base)) # текст ссылки в нулевой ячейке
+			self.strings.append(NewString(y_sub,'authsub',base)) # текст ссылки в нулевой ячейке
+		elif self.type=='id':
+			# теперь, если к нам приходит идентификатор, мы можем
+			# этот идентификатор добавить в базу к текущему файлу
+			base.addAnchor(string)
+		elif self.type=="hyperlink":
+			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string)[0]
+			self.strings.append(NewString(hl_text,'',base)) # текст ссылки в нулевой ячейке
+			if re.match(r'^#',hl_href)!=None:
+				hl_href=f'#folder-file#{hl_href}#'
+			self.strings.append(NewString(hl_href,'href',base)) # адрес в первой
+		else:
+			# для всех прочих строк, в том числе и типа monotype
+			# описываем регулярки, как отдельные объекты
+			id_regex=re.compile(r'\[:[^\]]*?\]')
+			link_regex=re.compile(r'\[[^\]]*?\]\(.*?\)')
+			name_regex=re.compile(r'`[^`\s]+?`\w+\b')
+			mtp_regex=re.compile(r'`[^`]+?`')
+			regex_dict={
+				"id":[id_regex,lambda word:getID(word)],
+				"hyperlink":[link_regex,lambda word:word],
+				"name":[name_regex,lambda word:word],
+				"monotype":[mtp_regex,lambda word:word[1:-1]]
+			}
+			fp_count=0 # счётчик найденных вложений
+			for key in regex_dict:
+				# перебираем все регэкспы в словаре
+				find_pattern=regex_dict[key][0].search(string) # находим совпадения
+				if find_pattern!=None:
+					# совпадения найдены
+					fp_count+=1
+					words=regex_dict[key][0].findall(string) # извлекаем слова, подходящие под паттерн
+					for word in words:
+						# вытаскиваем все слова, подходящие под паттерн, остальное как ст.узловые строки
+						symbol=string.find(word)
+						word1=string[0:symbol]
+						word2=string[symbol:symbol+len(word)]
+						if word1!="":
+							self.strings.append(NewString(word1,'',base))
+						self.strings.append(NewString(regex_dict[key][1](word2),key,base))
+						string=string[symbol+len(word):]
+					if len(string)>0:
+						self.strings.append(NewString(string,'',base))
+					break # нам не нужно перебирать на все паттерны, потому что строка уже изменилась.
+			if fp_count==0:
+				# если в строке не обнаружено вложений, она не разбивается
+				self.source=replaceAll(self.source)
+	def getHTML(self):
+		if len(self.strings)>0:
+			text=""
+			if self.type=="hyperlink":
+				# имеем дело с гиперссылкой 0 - текст, 1 - линк
+				text+=f'<a href="{self.strings[1].getHTML()}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML()}</a>'
+			elif self.type=="name":
+				# имеем дело с именем 0 - имя, 1 - окончание
+				text+=f'<strong>{self.strings[0].getHTML()}</strong>\'{self.strings[1].getHTML()}'
+			elif self.type=="term":
+				# имеем дело с термином. Может включать в себя другие элементы
+				for string in self.strings:
+					text+=string.getHTML()
+				text=f'<strong>{text}</strong>'
+			else:
+				# любой другой тип строки
+				for string in self.strings:
+					text+=string.getHTML()
+			return text # всегда возвращаем только одну строку
+		else:
+			if self.type=="monotype":
+				# моноширинное слово
+				return convertMonotype(self.source)
+			elif self.type=="term":
+				# не разбитый термин
+				return f'<strong>{self.source}</strong>'
+			elif self.type=='id':
+				# идентификатор
+				return f'<a id="{self.source}"></a>'
+			else:
+				# любая другая строка
+				return self.source
 
+if __name__=="__main__":
+	db=NewDataBase()
+	db.setCurFile('00000000')
+	string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
+	string_obj=NewString(string,'string',db)
+	print(string_obj.getHTML())

@@ -1,5 +1,5 @@
 # вспомогательные функции, стандартные
-import os, random
+import os, random, re
 
 def dirList(folder_path):
 	# из пути к папке получаем её содержимое в виде списка файлов и папок
@@ -106,6 +106,78 @@ def getID(string):
 def clearQuoteString(string):
 	# очищает строку от метки цитаты
 	return re.findall(r'^(\s*>\s*)(.+?)$',string)[0][1]
+
+def ampersandReplace(string):
+	# замена амперсандов в строках
+	while True:
+		if re.search(r'\&(?!\S+?;)',string)!=None:
+			string=re.sub(r'\&(?!\S+?;)','&amp;',string)
+		else:
+			break
+	return string
+
+def anglebrackReplace(string):
+	string=string.replace('<','&lt;')
+	string=string.replace('>','&gt;')
+	return string
+
+def replaceAll(string):
+	string=ampersandReplace(string)
+	string=anglebrackReplace(string)
+	return string
+
+def convertMonotype(string):
+	# по сути функция преобразует строку, помеченную как моноширинная в 
+	# размеченный код, но по упрощённым правилам
+	result="" # сюда помещаем результат
+	mode={"oprt":False} # встретили ли мы оператор
+	# паттерны для удобства
+	oprt_regex=re.compile(r'^\s*?(\*|\$)?[a-zA-Z]+') # паттерн правильного оператора, переменной
+	sign_regex=re.compile(r'^\[.*\]$') # какой-то тег или другое значение в квадртаных скобках
+	text_regex=re.compile(r'^(\'|\").*?\1') # паттерн строкового значения
+	dlmt_regex=re.compile(r'^\[|\]|\(|\)|\{|\}|\&amp;') # патерн разделителя типа скобки
+	num_regex=re.compile(r'^\d+') # патерн числа
+	while len(string)>0:
+		# код выполняется, пока длина строки больше нуля
+		if oprt_regex.match(string)!=None:
+			# строка начинается с оператора или имени переменной
+			word=oprt_regex.match(string).group(0)
+			string=string[len(word):]
+			result+=convertOperator(word)
+			mode["oprt"]=True
+		elif mode["oprt"]==False and sign_regex.match(string)!=None:
+			word=sign_regex.match(string).group(0)
+			string=string[len(word):]
+			result+=f'<span class="emTEXT">{word}</span>'
+		elif text_regex.match(string)!=None:
+			word=text_regex.match(string).group(0)
+			string=string[len(word):]
+			result+=f'<span class="emTEXT">{word}</span>'
+		elif dlmt_regex.match(string)!=None:
+			word=dlmt_regex.match(string).group(0)
+			string=string[len(word):]
+			result+=f'<span class="emOPRT">{word}</span>'
+		elif num_regex.match(string)!=None:
+			word=num_regex.match(string).group(0)
+			string_=string_[len(word):]
+			result+=f'<span class="emNUM">{word}</span>' 
+		else:
+			result+=string_
+			string_=""
+	return f'<span class="em_BLCK">{result}</span>'
+
+def convertOperator(string):
+	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|act|if|elseif|else|loop|while|step|end|\*?(pl?|nl|clr|clear)))',string)
+	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string)
+	varname=re.search(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string)
+	if oprt!=None:
+		return f'<span class="emOPRT">{string}</span>'
+	elif func!=None:
+		return f'<span class="emFUNC">{string}</span>'
+	elif varname!=None:
+		return f'<span class="emVAR">{string}</span>'
+	else:
+		return string
 
 if __name__=="__main__":
 	files_list, folders_list = dirList("D:\\my\\projects\\howdo_faq\\ответы\\80_зарезервированные слова")
