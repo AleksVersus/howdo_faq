@@ -26,23 +26,23 @@ def clearStringList(string_list):
 	# фактически функция создаёт новый список строк, оставляя исходный без изменений
 	mode={"comment":False,"code":False}
 	new_string_list=[]
-	for string_ in string_list:
-		comment=re.match(r'(.*?/\*.*)|(.*?\*/.*)',string_)
-		code=re.match(r'^\s*?```\w*\s*$',string_)
+	for string in string_list:
+		comment=re.match(r'(.*?/\*.*)|(.*?\*/.*)',string)
+		code=re.match(r'^\s*?```\w*\s*$',string)
 		if mode["comment"]==True and comment==None:
 			pass # строки комментария не добавляются в новый список
 		elif mode["code"]==True and code==None:
 			# строки в блоках кода добавляются без изменений
-			new_string_list.append(string_) 
+			new_string_list.append(string) 
 		elif comment!=None and mode["code"]==False:
 			# если строка содержит комментарий, а режим кода выключен
 			# изменяем режим и получаем строку без комментария
-			mode["comment"],string_=remComment(string_)
-			if re.match(r'^\s+?$',string_)!=None:
+			mode["comment"],string=remComment(string)
+			if re.match(r'^\s+?$',string)!=None:
 				# если строка состоит из одних пробелов, это пустая строка
-				string_=""
-			if string_!="" and string_!=None:
-				new_string_list.append(string_) 
+				string=""
+			if string!="" and string!=None:
+				new_string_list.append(string) 
 		elif code!=None and mode["comment"]==False:
 			# если строка содержит границу блока кода, но не включён режим комментария
 			if mode["code"]==False:
@@ -50,15 +50,35 @@ def clearStringList(string_list):
 			else:
 				mode["code"]=False
 			# строка при этом добавляется в выходной список
-			if re.match(r'^\s+?$',string_)!=None:
+			if re.match(r'^\s+?$',string)!=None:
 				# если строка состоит из одних пробелов, это пустая строка
-				string_=""
-			if string_!="" and string_!=None:
-				new_string_list.append(string_) 
+				string=""
+			if string!="" and string!=None:
+				new_string_list.append(string) 
 		else:
-			if string_!=None:
-				new_string_list.append(string_) 
+			if string!=None:
+				new_string_list.append(string) 
 	return new_string_list
+
+def remComment(string):
+	# удаление части комментария (или всего) из строки
+	mode_=False
+	start_string=''
+	end_string=''
+	start_comment=re.match(r'.*?/\*.*',string)
+	if start_comment!=None:
+		start_string,comm,string=re.findall(r'(.*?)(/\*)(.*)',string)[0]
+		mode_=True
+	end_comment=re.match(r'.*?\*/.*',string)
+	if end_comment!=None:
+		string,comm,end_string=re.findall(r'(.*?)(\*/)(.*)',string)[0]
+		mode_=False
+	return mode_,start_string+end_string
+
+def replaceSpace(string):
+	string_=string.replace('\t','&nbsp;'*4)
+	string_=string.replace(' ','&nbsp;')
+	return string
 
 def typeString(string):
 	# определяем тип строки по содержимому
@@ -159,11 +179,11 @@ def convertMonotype(string):
 			result+=f'<span class="emOPRT">{word}</span>'
 		elif num_regex.match(string)!=None:
 			word=num_regex.match(string).group(0)
-			string_=string_[len(word):]
+			string=string[len(word):]
 			result+=f'<span class="emNUM">{word}</span>' 
 		else:
-			result+=string_
-			string_=""
+			result+=string
+			string=""
 	return f'<span class="em_BLCK">{result}</span>'
 
 def convertOperator(string):
@@ -178,6 +198,8 @@ def convertOperator(string):
 		return f'<span class="emVAR">{string}</span>'
 	else:
 		return string
+
+
 
 if __name__=="__main__":
 	files_list, folders_list = dirList("D:\\my\\projects\\howdo_faq\\ответы\\80_зарезервированные слова")
