@@ -9,46 +9,49 @@
     margin:0.4em 0;
 }
 .Monokai-Comment {
-    color:#75715e;
+    color:#75715e; /* Комментарии QSP, CSS, HTML */
 }
 .Monokai-Qbracket, .Monokai-Assign, .Monokai-Operator {
-    color:#66d9ef;
+    color:#66d9ef; /* Операторы и операции QSP */
 }
 .Monokai-Koperator {
-   color:#66d9ef;
+   color:#66d9ef; /* Конструкторный-оператор QSP */
    font-style:italic;
 }
 .Monokai-String {
-    color:#e6db74;
+    color:#e6db74; /* Строки QSP, значение атрибута HTML */
 }
 .Monokai-Numeric, .Monokai-StartLoc {
-    color:#ae81ff;
+    color:#ae81ff; /* Числа QSP, начало локации QSP, Значение свойства CSS */
 }
 .Monokai-EndLoc {
-   color:#fd971f;
+   color:#fd971f; /* Конец локации QSP */
    font-style:italic;
 }
 .Monokai-SysVar {
-   color:#ff3333;
+   color:#ff3333; /* Системная переменная QSP */
 }
 .Monokai-UnFunc {
-    color:#a6e22c;
+    color:#a6e22c; /* Неявная функция QSP */
     font-style:italic;
 }
 .Monokai-Func {
-    color:#fd9621;
+    color:#fd9621; /* Функция QSP */
 }
 .Monokai-Invalid {
     color:#f8f8f1;
     background-color:#f92472;
 }
 .Monokai-Construct {
-    color:#67d8ef;
+    color:#67d8ef;  /* Название свойства CSS */
     font-style:italic;
 }
 .Monokai-Command {
-    color:#bbffaa;
+    color:#bbffaa; /* Условность QSP, двоеточие и точка с запятой CSS */
 }
 .Monokai-Markup {
-    color:#a6e22e;
+    color:#a6e22e; /* метки QSP, селекторы CSS */
+}
+.Monokai-TagName {
+    color:#f92672; /* Имя тега HTML */
 }
