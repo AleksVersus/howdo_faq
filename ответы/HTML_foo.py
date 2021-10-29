@@ -210,6 +210,8 @@ def convertCodeBlock(string_list):
 		type_code=""
 	if type_code=="qsp":
 		new_string_list=convertCodeQSP(string_list[1:])
+	elif type_code=="css":
+		new_string_list=convertCodeCSS(string_list[1:])
 	else:
 		new_string_list=string_list[1:]
 	return new_string_list
@@ -314,7 +316,7 @@ def convertCodeQSP(string_list):
 			elif convention!=None:
 				word=convention.group(0)
 				text=text[len(word):]
-				result+=f'<span class="Monokai-UnFunc">{replaceSpace(word)}</span>'
+				result+=f'<span class="Monokai-Command">{replaceSpace(word)}</span>'
 			elif oprt!=None:
 				word=oprt.group(0)
 				text=text[len(word):]
@@ -396,9 +398,73 @@ def convKeyWord(string,mode):
 		else:
 			return None
 
+def convertCodeCSS(string_list):
+	# конвертер CSS-кода
+	text=""
+	for i in string_list:
+		text+=replaceAll(i)
+	result=""
+	mode={"open_selector":False}
+	while len(text)>0:
+		pref=re.match(r'^\s+',text)
+		comment_block=re.match(r'^\/\*[\s\S]*?\*\/',text)
+		if mode["open_selector"]==False:
+			selector=re.match(r'^([^\{]+)(\{)',text)
+			selector_end=None
+			prop=None
+		else:
+			selector=None
+			selector_end=re.match(r'^\}',text)
+			prop=re.match(r'^([^\s\:][^\:]+)(:)([^;]*)(;)',text)
+		if pref!=None:
+			tab=pref.group(0)
+			text=text[len(tab):]
+			result+=replaceSpace(tab)
+		elif comment_block!=None:
+			word=comment_block.group(0)
+			text=text[len(word):]
+			result+=f'<span class="Monokai-Comment">{replaceSpace(word)}</span>'
+		elif selector!=None:
+			word=selector.group(0)
+			text=text[len(word):]
+			sel=selector.group(1)
+			brack=selector.group(2)
+			result+=f'<span class="Monokai-Markup">{replaceSpace(sel)}</span>'
+			result+=f'{replaceSpace(brack)}'
+			mode["open_selector"]=True
+		elif selector_end!=None:
+			word=selector_end.group(0)
+			text=text[len(word):]
+			result+=f'{replaceSpace(word)}'
+			mode["open_selector"]=False
+		elif prop!=None:
+			word=prop.group(0)
+			ppty=prop.group(1)
+			ddot=prop.group(2)
+			volm=prop.group(3)
+			coma=prop.group(4)
+			text=text[len(word):]
+			result+=f'<span class="Monokai-Construct">{replaceSpace(ppty)}</span>'
+			result+=f'<span class="Monokai-Command">{replaceSpace(ddot)}</span>'
+			result+=f'<span class="Monokai-Numeric">{replaceSpace(volm)}</span>'
+			result+=f'<span class="Monokai-Command">{replaceSpace(coma)}</span>'
+		else:
+			word=replaceSpace(text)
+			text=""
+			result+=word
+	result=result.replace('\n','<br>\n')
+	new_string_list=result.split('\n')
+	index=0
+	while index<len(new_string_list):
+		new_string_list[index]+='\n'
+		index+=1
+	new_string_list.insert(0,'<div class="Monokai-Code">\n')
+	new_string_list.append('\n</div>\n')
+	return new_string_list
+
 if __name__=="__main__":
 	with open('.\\92_дополнительные тексты\\пример кода.qsps','r',encoding='utf-8') as file:
 		string_list=file.readlines()
-	text_list=convertCodeQSP(string_list[1:])
+	text_list=convertCodeCSS(string_list[1:])
 	for i in text_list:
 	 	print(i)
