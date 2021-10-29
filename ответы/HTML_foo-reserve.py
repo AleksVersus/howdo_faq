@@ -53,8 +53,14 @@ def convertCodeBlock(string_list):
 		type_code=codemarker[0] # получаем тип кода
 	else:
 		type_code=""
+	if type_code=="qsp":
+		new_string_list=convertCodeQSP(string_list[1:])
+	else:
+		new_string_list=string_list[1:]
+	
+def convertCodeQSP(string_list):
 	text=""
-	for i in string_list[1:]:
+	for i in string_list:
 		text+=i
 	result=""
 	mode={"comment_open":False,"comment_quotes":False,"comment_brackets":False,"quotes-type":"","brackets-count":0}
