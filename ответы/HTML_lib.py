@@ -414,7 +414,7 @@ class NewSection():
 			if lev<6: lev+=1
 			new_string_list=[]
 			for string in self.source:
-				new_string_list.append(self.convertString(string,'string',base))
+				new_string_list.append(convertString(string,'string',base))
 			if self.id=='':
 				self.id=randomString(4)
 			self.HTML.append(f'<a id="{self.id}"></a><h{lev}>')
@@ -438,17 +438,8 @@ class NewSection():
 		else:
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
 			for string in self.source:
-				self.HTML.append('<p>\n'+self.convertString(string,'string',base)+'\n</p>\n')
-	def convertString(self,string,type_,base):
-		# конвертируем строку в неразмеченную. Внёс функцию сюда, потому что
-		# строка может конвертироваться только при преобразовании секции
-		roof_string=NewString(string,type_,base)
-		return roof_string.getHTML(base)
-def convertString(string,type_,base):
-		# конвертируем строку в неразмеченную. Внёс функцию сюда, потому что
-		# строка может конвертироваться только при преобразовании секции
-		roof_string=NewString(string,type_,base)
-		return roof_string.getHTML(base)
+				self.HTML.append('<p>\n'+convertString(string,'string',base)+'\n</p>\n')
+
 class NewString():
 	"""
 	Прилагательный класс Строка. Чтобы рекурсивно обрабатывать строку, приходится генерировать новый объект
@@ -1194,6 +1185,11 @@ def convertCodeHTML(string_list):
 	new_string_list.insert(0,'<div class="Monokai-Code">\n')
 	new_string_list.append('\n</div>\n')
 	return new_string_list
+
+def convertString(string,type_,base):
+	# конвертируем строку в размеченную
+	roof_string=NewString(string,type_,base)
+	return roof_string.getHTML(base)
 
 def convertListBlock(string_list,base):
 	# конвертируем блок списка в html-список
