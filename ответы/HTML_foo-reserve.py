@@ -3,23 +3,6 @@ import random
 from HTML_lib import *
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def convertSOHBlock(string_list,base_):
 	# конвертируем блок section of head в список
 	new_string_list=[]

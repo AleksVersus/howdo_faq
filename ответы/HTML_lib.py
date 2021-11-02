@@ -584,14 +584,14 @@ class NewLiBlock():
 					# если совпадают уровни
 					if len(buffer)!=0:
 						# если в буфере что-то есть, отправляем буфер в пункт
-						self.include.append(NewLi(buffer))
+						self.include.append(NewLi(buffer,base))
 					# сам буфер теперь содержит только указанный исходник
 					buffer=[[t,l,s]]
 				else:
 					# если уровни не совпадают, добавляем в буфер исходник
 					buffer.append([t,l,s])
 			if len(buffer)!=0:
-				self.include.append(NewLi(buffer))
+				self.include.append(NewLi(buffer,base))
 	def __str__(self):
 		text=f'id:{self.id} type:{self.type} source.len:{len(self.source)}'
 		return text
@@ -631,9 +631,10 @@ class NewLi():
 				self.include.extend(splitLiBlocks(self.source))
 				self.source=[]
 			else:
-				# если максимальный уровень не найден, разбить на блоки нельзя
-				self.include.extend(self.source)
-				self.source=[]
+				# если минимальный уровень не найден, разбить на блоки нельзя, генерим сегмент из оставшихся строк
+				print(self.source)
+				# self.include.extend(self.source)
+				# self.source=[]
 	def getHTML(self,base_):
 		new_string_list=[]
 		br_off=True
