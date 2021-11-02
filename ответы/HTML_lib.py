@@ -612,10 +612,10 @@ class NewLiBlock():
 
 class NewLi():
 	# пункт списка
-	def __init__(self,source_list,base):
+	def __init__(self,source_array,base):
 		self.id=randomString(8)
 		# у пункта нет типа, это просто пункт
-		self.source=source_list
+		self.source=source_array
 		self.include=[] # вложенные объекты: другие списки или строки
 		if len(self.source)==1:
 			# если мы передали только одну строку в исходнике, значит лишь эта строка и составляет пункт
@@ -632,10 +632,9 @@ class NewLi():
 				self.source=[]
 			else:
 				# если минимальный уровень не найден, разбить на блоки нельзя, генерим сегмент из оставшихся строк
-				print(self.source)
-				# self.include.extend(self.source)
-				# self.source=[]
-	def getHTML(self,base_):
+				self.include.extend(self.source)
+				self.source=[]
+	def getHTML(self,base):
 		new_string_list=[]
 		br_off=True
 		new_string_list.append('<li>\n')
@@ -649,10 +648,13 @@ class NewLi():
 				else:
 					br=''
 					br_off=False
-				new_string_list.append(br+convertString(s,'string',base_))
+				new_string_list.append(br+convertString(s,'string',base))
+			elif type(els)==NewSegment:
+				els.convert2HTML(base)
+				new_string_list.extend(els.getHTML(base))
 			else:
 				# если тип элемента - NewLiBlock
-				new_string_list.extend(els.getHTML(base_))
+				new_string_list.extend(els.getHTML(base))
 				br_off=True
 		new_string_list.append('</li>\n')
 		return new_string_list
@@ -765,7 +767,7 @@ def typeString(string):
 		return 'ul'
 	elif re.match(r'^\s*?\d+\.\s+',string)!=None:
 		return 'ol'
-	elif re.match(r'^```\w*?',string)!=None:
+	elif re.match(r'^\s*```\w*?',string)!=None:
 		return 'code'
 	elif re.match(r'^\s*?>>>\s*?$',string)!=None:
 		return 'quote'
@@ -1295,6 +1297,18 @@ def splitLiBlocks(string_array,base):
 			blocks.append(NewLiBlock(tp,buffer,base))
 		else:
 			blocks.extend(buffer)
+	if len(blocks)!=1:
+		t=None
+		type_counter=0
+		for b in blocks:
+			if type(b)!=t:
+				t=type(b)
+				type_counter+=1
+		if type_counter==1 and t==list:
+			string_list=[]
+			for block in blocks:
+				string_list.append(block[2].strip(' \t'))
+			blocks=[NewSegment(string_list,'from_li',base)]
 	return blocks # возвращаем список блоков
 
 
