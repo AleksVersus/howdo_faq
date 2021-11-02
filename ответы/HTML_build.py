@@ -12,7 +12,7 @@ if __name__=="__main__":
 	project_dict=root_dict["project"] # словарь помещаем в переменную
 	folder_path=os.path.abspath(project_dict["source_folder"]) # папка, из которой подтягиваем файлы
 	export_path=os.path.abspath(project_dict["export_folder"]) # папка, в которую помещаем файлы
-	content_path=os.path.abspath(project_dict["head_contents"])
+	content_path=os.path.abspath(root_dict["head_contents"])
 	# получаем заготовку вершины html-документа
 	with open(os.path.abspath(root_dict["head"]),'r',encoding='utf-8') as header:
 		head_strings=header.readlines()
@@ -24,6 +24,7 @@ if __name__=="__main__":
 	file_base.addFooter(foot_strings) # добавляем в базу нижнюю часть html-документа
 	file_base.addExportPath(export_path) # добавляем экспортный путь в базу
 	file_base.setContentFile(content_path) # добавляем путь к файлу с содержанием
+	file_base.addCrossLink(project_dict["cross-link"])
 	roof_folder=NewFolder(folder_path,file_base) # создаём объект папка верхнего уровня
 	# теперь разматываем папку и файлы, получая HTML
 	roof_folder.convert2HTML(file_base)
