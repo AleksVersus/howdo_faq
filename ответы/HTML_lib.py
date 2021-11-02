@@ -567,7 +567,7 @@ class NewString():
 
 class NewLiBlock():
 	# секция списка!
-	def __init__(self,type_,source_list):
+	def __init__(self,type_,source_list,base):
 		self.id=randomString(8)
 		self.type=type_
 		self.source=source_list
@@ -628,7 +628,7 @@ class NewLi():
 					# минимальный уровень находится только в нулевом исходнике
 					self.include.append(self.source.pop(0)) # нулевой исходник становится строкой
 				# оставшийся сорц бьётся на блоки/строки
-				self.include.extend(splitLiBlocks(self.source))
+				self.include.extend(splitLiBlocks(self.source,base))
 				self.source=[]
 			else:
 				# если минимальный уровень не найден, разбить на блоки нельзя, генерим сегмент из оставшихся строк
@@ -1200,7 +1200,7 @@ def convertListBlock(string_list,base):
 		# перебираем строки и разбираем их по принципу: тип, уровень, строка
 		t,l,s=getLi(string)
 		string_array.append([t,l,s])
-	blocks=splitLiBlocks(string_array) # разбиваем список на блоки
+	blocks=splitLiBlocks(string_array,base) # разбиваем список на блоки
 	new_string_list=[]
 	for block in blocks:
 		# конвертируем блоки в строки HTML
@@ -1244,7 +1244,7 @@ def getLi(string):
 		level=-1
 	return tp,level,string
 
-def splitLiBlocks(string_array):
+def splitLiBlocks(string_array,base):
 	# функция разбивает список исходных строк на одноуровневые блоки
 	level,count=minLiLevel(string_array)
 	buffer=[]
@@ -1258,7 +1258,7 @@ def splitLiBlocks(string_array):
 				# если уровни совпадают
 				if tp!=t and len(buffer)!=0:
 					# если типы не совпадают и в буфере что-то есть
-					blocks.append(NewLiBlock(tp,buffer)) # создаём блок из буфера
+					blocks.append(NewLiBlock(tp,buffer,base)) # создаём блок из буфера
 					buffer=[[t,l,s]] # буфер теперь содержит лишь текущую строку
 					tp=t
 				elif tp!=t:
@@ -1283,7 +1283,7 @@ def splitLiBlocks(string_array):
 					blocks.append([t,l,s])
 				else:
 					# буфер не пуст, превращаем буфер в блок, строку возвращаем
-					blocks.append(NewLiBlock(tp,buffer))
+					blocks.append(NewLiBlock(tp,buffer,base))
 					buffer=[]
 					blocks.append([t,l,s])
 			else:
@@ -1292,7 +1292,7 @@ def splitLiBlocks(string_array):
 	# последний набранный буфер превращаем в блок
 	if len(buffer)!=0:
 		if tp!=None:
-			blocks.append(NewLiBlock(tp,buffer))
+			blocks.append(NewLiBlock(tp,buffer,base))
 		else:
 			blocks.extend(buffer)
 	return blocks # возвращаем список блоков
