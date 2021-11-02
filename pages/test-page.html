@@ -30,119 +30,376 @@
             <h6>Заголовок шестого уровня</h6>
             <!-- body start -->
 
-                <div class="Monokai-Code">
+                <a id="aQчИ"></a><p class="head_8">
+BODY
+</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;очищаем&nbsp;список&nbsp;предметов&nbsp;в&nbsp;окне&nbsp;предметов</span><br>
+<p>
+Переходим к блоку "&lt;body&gt;...&lt;/body&gt;". Для этого блока в "skins/game.css" определены следующие настройки:
 
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;все&nbsp;предметы&nbsp;из&nbsp;списка&nbsp;другого&nbsp;персонажа</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;с&nbsp;помощью&nbsp;цикла</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:for</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"$вася_предметы"</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысил&nbsp;номер&nbsp;последней&nbsp;ячейки&nbsp;массива</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;в&nbsp;окно&nbsp;предметов&nbsp;предмет,&nbsp;записанный&nbsp;в&nbsp;массив</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;$вася_предметы<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;значение&nbsp;счётчика</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">=</span>i<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;повторяем</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>
-
-
-</div>
-            
-           <div class="Monokai-Code">
-
-<br>
-
-<span class="Monokai-Comment">/*&nbsp;Устанавливаем<br>
-
-&nbsp;имя&nbsp;<br>
-
-&nbsp;шрифта&nbsp;*/</span><br>
-
-<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">@font-face&nbsp;</span>{<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">Versus&nbsp;New</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Comment">/*&nbsp;Устанавливаем&nbsp;имя&nbsp;шрифта&nbsp;*/</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">src</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">url(fonts/versus-new.ttf)</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Comment">/*&nbsp;Указываем&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;со&nbsp;шрифтом&nbsp;*/</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-
-<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">p&nbsp;</span>{<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">"Versus&nbsp;New"</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Comment">/*&nbsp;применяем&nbsp;шрифт&nbsp;к&nbsp;абзацам&nbsp;*/</span><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;}
-
-
-</div>
+</p>
 
 <div class="Monokai-Code">
 
-<span class="Monokai-Markup">.intCur&nbsp;</span>{<span class="Monokai-Construct">cursor</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;url(путь&nbsp;к&nbsp;файлу&nbsp;курсора/cursor.ani)</span><span class="Monokai-Command">;</span>}
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">html,&nbsp;body&nbsp;</span>{&nbsp;<span class="Monokai-Construct">height</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;100%</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Construct">margin</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;0px</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Construct">padding</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;0px</span><span class="Monokai-Command">;</span>&nbsp;}<br>
+
+
 
 
 </div>
-            <div class="Monokai-Code">
 
-<span class="Monokai-Markup">html,&nbsp;body&nbsp;</span>{&nbsp;<span class="Monokai-Construct">height</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;100%</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Construct">margin</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;0px</span><span class="Monokai-Command">;</span>&nbsp;<span class="Monokai-Construct">padding</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">&nbsp;0px</span><span class="Monokai-Command">;</span>&nbsp;}
+<p>
+Данную строку лучше не менять, иначе при вёрстке у вас могут возникнуть проблемы с расположением остальных блоков. А вот строку:
+
+</p>
+
+<div class="Monokai-Code">
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">body&nbsp;</span>{&nbsp;<span class="Monokai-Construct">margin</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">0</span><span class="Monokai-Command">;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span><span class="Monokai-Command">:</span><span class="Monokai-Numeric">0</span><span class="Monokai-Command">;</span>&nbsp;}<br>
 
 
-</div>
-       
-            <div class="Monokai-Code">
-
-&lt;<span class="Monokai-TagName">html</span>&nbsp;<span class="Monokai-Markup">lang</span>=<span class="Monokai-String">"ru"</span>&gt;<br>
-
-&lt;<span class="Monokai-TagName">head</span>&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">meta</span>&nbsp;<span class="Monokai-Markup">http-equiv</span>=<span class="Monokai-String">"content-type"</span>&nbsp;<span class="Monokai-Markup">content</span>=<span class="Monokai-String">"text/html;&nbsp;charset=utf-8"</span>&nbsp;/&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">id</span>=<span class="Monokai-String">"favicon"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"icon"</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"image/x-icon"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"../res/favicon.ico"</span>&nbsp;/&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"../res/css/easy.library.css"</span>&nbsp;/&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"../res/css/offline.window.css"</span>&nbsp;/&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"../res/css/qsp_code.css"</span>&nbsp;/&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="Monokai-TagName">title</span>&gt;QSP:&nbsp;Как&nbsp;сделать?&lt;/<span class="Monokai-TagName">title</span>&gt;<br>
-
-&lt;/<span class="Monokai-TagName">head</span>&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<br>
-
-<span class="Monokai-Comment">&lt;!--&nbsp;&lt;body&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="em_Main"&gt;<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class="soderzhanije"&gt;&nbsp;--&gt;</span><br>
-
-&lt;<span class="Monokai-TagName">a</span>&nbsp;<span class="Monokai-Markup">id</span>=<span class="Monokai-String">"soderzhanije"</span>&gt;&lt;/<span class="Monokai-TagName">a</span>&gt;&lt;<span class="Monokai-TagName">h2</span>&gt;Содержание&lt;/<span class="Monokai-TagName">h2</span>&gt;&lt;<span class="Monokai-TagName">a</span>&nbsp;<span class="Monokai-Markup">id</span>=<span class="Monokai-String">"OZoC"</span>&gt;&lt;/<span class="Monokai-TagName">a</span>&gt;&lt;<span class="Monokai-TagName">h6</span>&gt;1.&nbsp;В&nbsp;чём&nbsp;разница?&lt;/<span class="Monokai-TagName">h6</span>&gt;&lt;<span class="Monokai-TagName">p</span>&gt;<br>
-
-1.1.&nbsp;&lt;<span class="Monokai-TagName">a</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"https://aleksversus.github.io/howdo_faq/pages/00000002.html#faq_01_01"</span>&nbsp;<span class="Monokai-Markup">style</span>=<span class="Monokai-String">"text-decoration:none;"</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"emFOLD"</span>&gt;В&nbsp;чём&nbsp;разница&nbsp;между&nbsp;&lt;<span class="Monokai-TagName">span</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"em_BLCK"</span>&gt;&lt;<span class="Monokai-TagName">span</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"emOPRT"</span>&gt;set&lt;/<span class="Monokai-TagName">span</span>&gt;&nbsp;x=10&lt;/<span class="Monokai-TagName">span</span>&gt;,&nbsp;&lt;<span class="Monokai-TagName">span</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"em_BLCK"</span>&gt;&lt;<span class="Monokai-TagName">span</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"emOPRT"</span>&gt;let&lt;/<span class="Monokai-TagName">span</span>&gt;&nbsp;x=10&lt;/<span class="Monokai-TagName">span</span>&gt;&nbsp;и&nbsp;&lt;<span class="Monokai-TagName">span</span>&nbsp;<span class="Monokai-Markup">class</span>=<span class="Monokai-String">"em_BLCK"</span>&gt;x=10&lt;/<span class="Monokai-TagName">span</span>&gt;?&lt;/<span class="Monokai-TagName">a</span>&gt;
 
 
 </div>
+
+<p>
+ниже по коду "skins/game.css" можно удалить, так как она частично дублирует предыдущую.
+
+</p>
+
+<p>
+В блоке "&lt;body&gt;...&lt;/body&gt;" находится множество блоков div, которые и отвечают за отрисовывание всего оформления игры. Далее вместо того, чтобы произносить целиком "div с id (айди) skin-splashscreen-foreground", мы будем говорить просто "блок skin-splashscreen-foreground", и тому подобное. Поскольку вся оставшаяся часть HTML-кода состоит из блоков div, и так будет понятно, что мы говорим о блоках div.
+
+</p>
+
+<a id="nOюМ"></a><p class="head_9">
+skin-splashscreen-foreground
+</p>
+
+<p>
+Два основных блока в "body" это "skin-splashscreen-foreground" и "skin-ui-wrapper". И для обоих основные стили прописаны непосредственно в "gameAwesomium.html". Это сделано для того, чтобы данные блоки отображались адекватно стилям ещё при загрузке страницы, даже если "skins/game.css" ещё не загрузился.
+
+</p>
+
+<p>
+Если запустить игру в Навигаторе, мы увидим "skin-splashscreen-foreground" на короткое время в виде простого белого экрана, затем он "погаснет", а вместо него отобразится блок "skin-ui-wrapper". Эти два основных блока рекомендую сохранить, они сменяют друг-друга (это происходит за счёт скриптов), создавая привлекательный переход, к тому же "skin-ui-wrapper" содержит все остальные блоки оформления.
+
+</p>
+
+<p>
+Непосредственно внутри блока "skin-splashscreen-foreground" вы можете разместить логотип или приветственную надпись, которые появятся на короткое время, сменившись экраном игры. (Рекомендую оставлять основной фон сплэшскрина белым)
+
+</p>
+
+<a id="ЧгВE"></a><p class="head_9">
+skin-ui-wrapper
+</p>
+
+<a id="mPGК"></a><p class="head_10">
+skin-back1
+</p>
+
+<p>
+Далее мы будем рассматривать содержимое блока "skin-ui-wrapper". И первый блок, который нам тут встречается, это блок "skin-back1". Он пустой и служит для того, чтобы задавать затенение по краям страницы (а строго говоря он задаёт фон страницы). Все его стили задаются в "skins/game.css", таким образом вы легко можете отредактировать стилистику этого блока, чтобы задать собственную рамку по краям окна, или создать какой либо эффект на фоне, ну или просто удалите этот блок, если подобные эффекты вам не нужны. Удаление блока "skin-back1" не повлияет на работоспособность игры.
+
+</p>
+
+<a id="ФLEK"></a><p class="head_10">
+skin-page
+</p>
+
+<p>
+Следующий блок — это блок "skin-page". Собственно это вся страница целиком, где размещены блоки окон основного, дополнительного описаний, окна предметов, действий и строки ввода. Нет явных скриптов, которые работают с блоком "skin-page", однако удалять его не рекомендуется. Особенностью данного блока является то, что он перекрывает собой блок "skin-back1" (оно и понятно, ведь для отрисовки фона страницы используется именно "skin-back1"). Поэтому, если вы стилизуете "skin-page" каким-нибудь фоном, этот фон перекроет видимость блока "skin-back1".
+
+</p>
+
+<a id="юМЖК"></a><p class="head_11">
+skin-back2
+</p>
+
+<p>
+В "skin-page" находится следующий блок, который мы рассмотрим, это блок "skin-back2". Это блок так называемого вторичного фона. Он снова растянут по всей ширине и высоте блока "skin-page", поэтому если поставить ему на фон сплошной цвет, это скроет видимость блока "skin-back1". Блок "skin-back2" нужен, чтобы отрисовать вертикальные полоски по краям окна в шаблоне "default". Если вы просто уберёте этот блок, функциональность игры не пострадает.
+
+</p>
+
+<a id="XЬЪп"></a><p class="head_11">
+skin-top-menu-wrapper
+</p>
+
+<p>
+Следующий за "skin-back2" блок — это блок "skin-top-menu-wrapper", который отвечает за включение верхнего меню. Верхнее меню — это полоска с кнопками управления игрой и включения/выключения звука. Эта полоска появляется в двух случаях:
+
+</p>
+
+<ul>
+
+<li>
+
+если отключено окно предметов. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
+
+</li>
+
+</ul>
+
+<ul>
+
+</ul>
+
+<ul>
+
+<li>
+
+если размер страницы меньше 481px. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
+
+</li>
+
+</ul>
+
+<ul>
+
+</ul>
+
+<p>
+Блок "skin-top-menu-wrapper" выводится со свойством "display:table;", а вложенные блоки соответсвенно со свойствами "display:table-row;" и "display:table-cell;". Это сделано для того, чтобы обеспечить соответствующее выравнивание элементов внутри блоков.
+
+</p>
+
+<a id="NzЕч"></a><p class="head_12">
+skin-top-menu-row, skin-user1, skin-user2
+</p>
+
+<p>
+Вложенный блок "skin-top-menu-row" нужен исключительно для того, чтобы создать аналог табличной строки, хотя и его вы можете стилизовать.
+
+</p>
+
+<p>
+Блоки "skin-user1" и "skin-user2" играют роль ячеек таблицы и в "skins/game.css" стилизованы по минимуму.
+
+</p>
+
+<a id="ЕQнх"></a><p class="head_12">
+skin-user1-inner, skin-inv-toggle, skin-inv-caption
+</p>
+
+<p>
+Блок "skin-user1-inner" служит контейнером для двух нижележащих блоков, обёрнутых в одну гиперссылку. Вспомогательный блок для размещения вложенных блоков в одну линию.
+
+</p>
+
+<p>
+Нижележащие блоки, обёрнутые в ссылку — это блоки "skin-inv-toggle" и "skin-inv-caption", они располагаются в одну линию благодаря свойству "dysplay:inline-block;". При щелчке по любому из этих блоков выполняется JavaScript из гиперссылки:
+
+</p>
+
+	skinToggleInv();
+
+<p>
+Данную функцию вы можете найти в файле "skins/js/game.js", она отвечает за плавное появление и пропадание окна с предметами, когда мы щёлкаем по слову инвентарь. Само собой размер страницы должен быть 480px и меньше.
+
+</p>
+
+<a id="ФNjp"></a><p class="head_12">
+skin-user-system, skin-user-music
+</p>
+
+<p>
+В блоке "skin-user2" располагаются два блока "skin-user-system" и "skin-user-music", которые соответственно отвечают за отображение кнопок "управление игрой" ("меню плеера") и "управление музыкой". Блок "skin-user2" отображается даже когда страница больше 480 пикселей шириной. Если удалить этот блок, оставив только кнопки, кнопки сместятся в правый верхний угол и "провалятся" под слой, станут некликабельными, пока размер страницы превышает 480 пикселей.
+
+</p>
+
+<a id="bdЗy"></a><p class="head_11">
+skin-right-column
+</p>
+
+<p>
+Блок "skin-right-column" занимает 30% от ширины страницы с правой стороны (при ширине страницы больше 480 пикселей). В этом блоке размещается окно предметов, а так же блок "skin-user2" (внизу), когда ширина страницы больше 480 пикселей.
+
+</p>
+
+<a id="XАMh"></a><p class="head_12">
+skin-right-column-background
+</p>
+
+<p>
+В блоке "skin-right-column", по аналогии со "skin-page", находится блок, создающий фон под блоком окна предметов, это блок "skin-right-column-background". Он отображается только при ширине страницы более 480 пикселей и включённом окне предметов.
+
+</p>
+
+<a id="vdаB"></a><p class="head_12">
+qsp-wrapper-objs
+</p>
+
+<p>
+Следующий блок "qsp-wrapper-objs" является уже непосредственно блоком окна предметов. Он отображается и при ширине окна 480 пикселей, и выше, только меняет своё местоположение. Этот блок связан с различными скриптами, которые создают полосу прокрутки в окне предметов.
+
+</p>
+
+<a id="ЭгЭК"></a><p class="head_12">
+qsp-scroller-objs, skin-inv-wrapper, skin-inv-top, qsp-inv
+</p>
+
+<p>
+Блок "qsp-scroller-objs" вложен в предыдущий и технически нужен для создания полосы прокрутки в окне предметов. Этот блок связан со скриптами полосы прокрутки. Следующий блок — блок "skin-inv-wrapper" — отвечает как раз за отображение предметов при изменении расширения. Именно с этим блоком работает скрипт, когда страница меньше 481 пикселя шириной, и мы щёлкаем по кнопке "Инвентарь".
+
+</p>
+
+<p>
+В "skin-inv-wrapper" вложены два блока. "skin-inv-top" — декоративный блок, разграничивающий кнопку инвентаря и окно предметов при ширине страницы меньше 481 пикселя. А вот "qsp-inv" — очень важный блок. Именно в этот блок, при его наличии, Quest Navigator отправляет список предметов. Если вы планируете использовать окно предметов, удалять этот блок нельзя, а лучше сохранить все блоки вложенные в "qsp-wrapper-objs".
+
+</p>
+
+<a id="DiъД"></a><p class="head_11">
+skin-left-column
+</p>
+
+<p>
+Блок "skin-right-column" занимает 70% от ширины страницы с левой стороны (при ширине страницы больше 480 пикселей). В этом блоке размещаются: окно дополнительного описания, окно основного описания и окно действий. А так же разные вспомогательные блоки.
+
+</p>
+
+<a id="rеЫЗ"></a><p class="head_12">
+skin-inv-bottom
+</p>
+
+<p>
+Блок "skin-inv-bottom" — декоративный блок, нижняя горизонтальная полоска инвентаря, когда ширина страницы не превышает 480 пикселей. Эта полоска видна и когда инвентарь раскрыт, и когда он свёрнут.
+
+</p>
+
+<a id="lЭNS"></a><p class="head_12">
+skin-wrapper-main-outer, qsp-wrapper-main, qsp-scroller-main
+</p>
+
+<p>
+Блок "skin-wrapper-main-outer" является внешним контейнером для блоков всех окон (дополнительного и основного описания и действий). В него вложены блоки "qsp-wrapper-main" и "qsp-scroller-main", на основе которых построен скрипт, иммитирующий ios-подобный скроллбар.
+
+</p>
+
+<p>
+А уже здесь размещены блоки:
+
+</p>
+
+<a id="ЪХВФ"></a><p class="head_12">
+qsp-view
+</p>
+
+<p>
+"qsp-view" — отвечает за отображение окна предпросмотра (оператор <span class="em_BLCK"><span class="emOPRT">view</span></span>). [С этим блоком работают скрипты в api.js, однако его удаление не меняет функциональности оператора <span class="em_BLCK"><span class="emOPRT">view</span></span>.]
+
+</p>
+
+<a id="wopЦ"></a><p class="head_12">
+qsp-vars
+</p>
+
+<p>
+"qsp-vars" — отвечает за отображение окна дополнительного описания. В дефолтном шаблоне это окно отображается выше окна основного описания
+
+</p>
+
+<a id="СРhd"></a><p class="head_12">
+qsp-main
+</p>
+
+<p>
+"qsp-main" — отвечает за отображение окна основного описания. Этот блок нельзя удалять, однако вы можете вполне свободно стилизовать и настраивать его.
+
+</p>
+
+<a id="IчRс"></a><p class="head_12">
+qsp-acts
+</p>
+
+<p>
+"qsp-acts" — отвечает за отображение окна действий.
+
+</p>
+
+<a id="Nпiя"></a><p class="head_12">
+qsp-input-line
+</p>
+
+<p>
+Блок "qsp-input-line", а так же вложенные в него блоки, нужны для отображения и стилизации строки ввода, реализованной через поле "&lt;input&gt;".
+
+</p>
+
+<a id="ГЩпv"></a><p class="head_9">
+Диалоговые окна
+</p>
+
+<p>
+Блоки диалоговых окон располагаются ниже блока "skin-page", чтобы при выведении на экран блоки диалоговых окон перекрывали блок "skin-page". Структура у всех диалоговых окон похожа, поэтому мы не будем подробно разбирать эти блоки.
+
+</p>
+
+<a id="юхЪд"></a><p class="head_10">
+qsp-dialog-msg
+</p>
+
+<p>
+Блок "qsp-dialog-msg" служит для вывода на экран диалогового окна при выполнении оператора msg.
+
+</p>
+
+<a id="пEСЧ"></a><p class="head_10">
+qsp-dialog-input
+</p>
+
+<p>
+Блок "qsp-dialog-input" служит для вывода на экран диалогового окна с полем ввода при выполнении функции $input.
+
+</p>
+
+<a id="ЭмУp"></a><p class="head_10">
+qsp-dialog-system-menu
+</p>
+
+<p>
+Блок "qsp-dialog-system-menu" служит для вывода на экран диалогового окна меню управления игрой. Это пункты "Загрузить|Сохранить|Заново|Другие игры".
+
+</p>
+
+<a id="эwqu"></a><p class="head_10">
+qsp-dialog-save-slots
+</p>
+
+<p>
+Блок "qsp-dialog-save-slots" служит для вывода диалогового окна со слотами сохранения.
+
+</p>
+
+<a id="ДыaЁ"></a><p class="head_10">
+qsp-dialog-user-menu
+</p>
+
+<p>
+Блок "qsp-dialog-user-menu" отвечает за вывод всплывающего меню при выполнении оператора menu.
+
+</p>
+
+<a id="xрgя"></a><p class="head_10">
+qsp-dialog-view
+</p>
+
+<p>
+Блок "qsp-dialog-view" отвечает за вывод блока с изображением (оператор view).
+
+</p>
+
+<a id="ХИOю"></a><p class="head_10">
+qsp-dialog-error
+</p>
+
+<p>
+Блок "qsp-dialog-error" отвечает за вывод сообщений об ошибках в коде QSP.
+
+</p>
+            <blockquote>
+                 Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem
+            </blockquote>
             
             <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
                 Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
@@ -157,10 +414,10 @@
             </div>
             <div class="em_btn">
                 <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/">Главная</a>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
                 </div>
                 <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/pages/00000001.html">Содержание</a>
+                    <a href="https://aleksversus.github.io/howdo_faq/pages/00000001.html" class="emHREFTT">Содержание</a>
                 </div>
             </div>
         </div>

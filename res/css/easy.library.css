@@ -33,6 +33,15 @@
     margin-block-end: 1.33em;
 }
 
+.head_8 {color:#4f174d; font-size: 1.5em; font-weight: bold;}
+.head_9 {color:#6E206B; font-size: 1.25em; font-weight: bold;}
+.head_10 {color:#942b90; font-size: 1.0em; font-weight: bold;}
+.head_11 {color:#6f39b5; font-size: 1.0em; font-weight: bold;}
+.head_12 {color:#452370; font-size: 0.9em; font-weight: bold;}
+.head_13 {color:#391138; font-size: 0.8em; font-weight: bold;}
+.head_14 {color:#290c28; font-size: 0.7em; font-weight: bold;}
+.head_15 {color:#100510; font-size: 0.6em; font-weight: bold;}
+
 .em_Warning {
  text-align: justify;
  color: #ff0000;

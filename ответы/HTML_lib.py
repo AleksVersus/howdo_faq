@@ -203,10 +203,18 @@ class NewFile():
 					header_list.extend(base.getContent())
 				else:
 					header_list.append(header_string)
+			temp_list=[]
 			# собираем центральную часть файла
 			file_name+='.html'
 			body_list=prev_next[:] # список строк центральной части сайтf
-			temp_list=self.HTML[:]
+			body_list.extend(self.HTML[:])
+			body_list.extend(prev_next)
+			# собираем подвал
+			footer_list=base.getFooter()
+			# теперь склеиваем все три части и обрабатываем, заменяя ссылки
+			new_string_list=[] # сюда помещаем итоговый результат
+			# склеиваем все три части
+			temp_list=header_list+body_list+footer_list
 			for string in temp_list:
 				anchor=re.search(r'#folder\-file#(.*)#',string)
 				if anchor!=None:
@@ -216,18 +224,11 @@ class NewFile():
 						target_file=base.getFileName(target_anch[1:])+'.html'
 						link=base.getCrossLink()+target_file+target_anch
 						string=string.replace(anch,link)
-				body_list.append(string)
-			body_list.extend(prev_next)
-			# собираем подвал
-			footer_list=base.getFooter()
-			# склеиваем все три части
-			new_string_list=header_list+body_list+footer_list
+				new_string_list.append(string)
 			export_path=base.getExportPath()+'\\'+file_name
 			with open(export_path,'w',encoding='utf-8') as file:
 				file.writelines(new_string_list)
-			
-		
-
+				print(f"'Файл {export_path} успешно сгенерирован из {self.path}.'")
 
 class NewSegment():
 	"""
@@ -885,9 +886,9 @@ def convertMonotype(string):
 	return f'<span class="em_BLCK">{result}</span>'
 
 def convertOperator(string):
-	oprt=re.search(r'\s*?(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|act|if|elseif|else|loop|while|step|end|\*?(pl?|nl|clr|clear)))',string)
-	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))',string)
-	varname=re.search(r'\s*?(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))',string)
+	oprt=re.search(r'\s*?\b(?i:(exec|set|let|local|view|inclib|freelib|addqst|openqst|opengame|savegame|killqst|cmdclr|cmdclear|all|close|exit|play|settimer|menu|unsel|unselect|jump|copyarr|delact|wait|killall|dynamic|killvar|delobj|addobj|killobj|cls|cla|gs|xgt|gt|goto|gosub|xgoto|refint|showobjs|showstat|showacts|showinput|msg|act|if|elseif|else|loop|while|step|end|\*?\b(pl?|nl|clr|clear)))\b',string)
+	func=re.search(r'\s*?(?i:(obj|isplay|len|rgb|msecscount|no|and|mod|countobj|instr|isnum|val|loc|or|ra?nd|arrsize|arrpos|arrcomp|strcomp|strpos|\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))\b',string)
+	varname=re.search(r'\s*?\b(?i:(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|\$?\b(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))\b',string)
 	if oprt!=None:
 		return f'<span class="emOPRT">{string}</span>'
 	elif func!=None:
@@ -913,7 +914,9 @@ def convertCodeBlock(string_list):
 	elif type_code=="html":
 		new_string_list=convertCodeHTML(string_list[1:])
 	else:
-		new_string_list=string_list[1:]
+		new_string_list.append('<div class="Monokai-Code">\n')
+		new_string_list.extend(string_list[1:])
+		new_string_list.append('\n</div>\n')
 	return new_string_list
 	
 def convertCodeQSP(string_list):
@@ -992,11 +995,11 @@ def convertCodeQSP(string_list):
 						mode['brackets-count']+=1
 		else:
 			pref=re.match(r'^\s+',text)
-			convention=re.match(r'^(\[команда.*?\]|\[\#.*?\]|\[\$.*?\]|\[аргумент.*?\])',text)
+			convention=re.match(r'^(\[команда.*?\]|\[(\#|\$)?выражение.*?\]|\[\#.*?\]|\[\$.*?\]|\[аргумент.*?\]|\s*\.\.\.\s*)',text)
 			oprt=re.match(r'^(\*|\$)?[a-zA-Z]\w*',text)
 			if oprt!=None:
 				oprt=convKeyWord(oprt.group(0),'prove')
-			varname=re.match(r'^\$?[a-zA-Zа-яА-я]\w*\b',text)
+			varname=re.match(r'^(\$?[a-zA-Zа-яА-я]\w*\b|\s_)',text)
 			operacion=re.match(r'^\-|\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&amp;|,|&lt;|&gt;',text)
 			numeric=re.match(r'^\d+',text)
 			comment_sign=re.match(r'^!',text)
