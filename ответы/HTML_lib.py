@@ -1,7 +1,6 @@
 # основа конвертирования. Исключительные классы и функции для преобразования в HTML
 import sys, os, re, json
 import random
-from HTML_foo import * 
 
 class NewDataBase():
 	"""База данных — объект, содержащий описания якорей и секций
@@ -14,19 +13,13 @@ class NewDataBase():
 		self.files_dict={} # здесь связываем файлы и их идентификаторы
 		self.anchors_dict={} # здесь связываем якоря и файлы, в которых они расположены
 		self.curfile="" # идентификатор текущего файла (файл, с которым мы работаем)
+		self.crosslink="" # первая часть для кроссылок
 		self.addition=[] # добавочная секция в файл
 		self.header_list=[] # верх страницы html
 		self.footer_list=[] # низ страницы html
 		self.content_file_path="" # путь к файлу-оглавлению
 		self.content=[] # содержимое содержания
 		self.export_folder_path="" # путь к папке для экспорта
-		self.typesOfClass={
-			"base":NewDataBase,
-			"folder":NewFolder,
-			"file":NewFile,
-			"segment":NewSegment,
-			"section":NewSection
-		} # связка тип обекта указанного класса с ключом. Сразу прописываем нужные типы
 	def currentFile(self):
 		# получаем идентификатор текущего файла
 		return self.curfile
@@ -97,17 +90,10 @@ class NewDataBase():
 	def getExportPath(self):
 		return self.export_folder_path
 
-	def addClassType(self,kw,type_):
-		self.typesOfClass[kw]=type_
-	def getClassType(kw):
-		return (self.typesOfClass[kw] if kw in self.typesOfClass else None)
-	def proveClassType(kw):
-		return (True if kw in self.typesOfClass else False)
-
 	def setContentFile(self,path):
 		# устанавливает путь к файлу с содержанием
 		self.content_file_path=path
-	def getContentFile(self,path):
+	def getContentFile(self):
 		# получает путь к файлу с содержанием
 		return self.content_file_path
 	def addContent(self,string_list):
@@ -116,6 +102,11 @@ class NewDataBase():
 	def getContent(self):
 		# получаем оглавление в виде HTML разметки
 		return self.content_HTML
+
+	def addCrossLink(self,string):
+		self.crosslink=string
+	def getCrossLink(self):
+		return self.crosslink
 
 class NewFolder():
 	"""
@@ -176,14 +167,67 @@ class NewFile():
 			self.HTML.extend(segment.getHTML(base))
 	def getHTML(self,base):
 		# возвращает полное содержимое файла
+		return self.HTML
+	def getPgUpDn(self,base):
 		new_string_list=[]
-		header_list=base.getHeader()
-		footer_list=base.getFooter()
-		new_string_list=header_list+self.HTML+footer_list
+		prev_=int(base.getFileID(self.path))-1
+		next_=int(base.getFileID(self.path))+1
+		new_string_list.append('<div style="display:flex;justify-content:space-between;">')
+		new_string_list.append('<div>')
+		if not prev_<0:
+			prev_id='0'*(8-len(str(prev_)))+str(prev_)
+			new_string_list.append(f'<a href="https://aleksversus.github.io/howdo_faq/pages/{prev_id}.html" class="emHREFTT">&lt; Назад, к странице {prev_}</a>')
+		else:
+			new_string_list.append('&nbsp;')
+		new_string_list.append('</div>')
+		new_string_list.append('<div>')
+		if not next_>int(base.lastFileID()):
+			next_id='0'*(8-len(str(next_)))+str(next_)
+			new_string_list.append(f'<a href="https://aleksversus.github.io/howdo_faq/pages/{next_id}.html" class="emHREFTT">Вперёд, к странице {next_} &gt;</a>')
+		new_string_list.append('</div>')
+		new_string_list.append('</div>\n')
 		return new_string_list
 	def buildThis(self,base):
 		# собираем готовый HTML-файл
-		pass
+		file_name=base.getFileID(self.path) # пытаемся получить айди файла
+		if file_name!=None:
+			# если айди в базе присутствует, можно работать с файлом
+			# получаем ссылки переключения страниц
+			prev_next=self.getPgUpDn(base)
+			# собираем шапку файла
+			header_list=[] # список строк шапки файла
+			temp_list=base.getHeader() # временный список строк
+			for header_string in temp_list:
+				# если это подходящее место, вставляем содержание, в противном случае просто добавляем строку
+				if header_string=="<header-header></header-header>\n":
+					header_list.extend(base.getContent())
+				else:
+					header_list.append(header_string)
+			# собираем центральную часть файла
+			file_name+='.html'
+			body_list=prev_next[:] # список строк центральной части сайтf
+			temp_list=self.HTML[:]
+			for string in temp_list:
+				anchor=re.search(r'#folder\-file#(.*)#',string)
+				if anchor!=None:
+					anchors_list=re.findall(r'#folder\-file##?[^#]*#',string)
+					for anch in anchors_list:
+						target_anch=re.match(r'#folder\-file#(#?[^#]*)#',anch).group(1)
+						target_file=base.getFileName(target_anch[1:])+'.html'
+						link=base.getCrossLink()+target_file+target_anch
+						string=string.replace(anch,link)
+				body_list.append(string)
+			body_list.extend(prev_next)
+			# собираем подвал
+			footer_list=base.getFooter()
+			# склеиваем все три части
+			new_string_list=header_list+body_list+footer_list
+			export_path=base.getExportPath()+'\\'+file_name
+			with open(export_path,'w',encoding='utf-8') as file:
+				file.writelines(new_string_list)
+			
+		
+
 
 class NewSegment():
 	"""
@@ -528,7 +572,7 @@ class NewString():
 			text=""
 			if self.type=="hyperlink":
 				# имеем дело с гиперссылкой 0 - текст, 1 - линк
-				text+=f'<a href="{self.strings[1].getHTML(base)}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML()}</a>'
+				text+=f'<a href="{self.strings[1].getHTML(base)}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML(base)}</a>'
 			elif self.type=="name":
 				# имеем дело с именем 0 - имя, 1 - окончание
 				text+=f'<strong>{self.strings[0].getHTML(base)}</strong>\'{self.strings[1].getHTML(base)}'
@@ -1307,17 +1351,23 @@ def splitLiBlocks(string_array,base):
 			blocks=[NewSegment(string_list,'from_li',base)]
 	return blocks # возвращаем список блоков
 
-
-
-
-
-
-
-
+def convertSOHBlock(string_list,base):
+	# конвертируем блок section of head в новый блок заголовков
+	new_string_list=[]
+	quazy_file=NewSegment(string_list,'SOH',base)
+	quazy_file.convert2HTML(base)
+	new_string_list=quazy_file.getHTML(base)
+	i=0
+	for string in new_string_list:
+		metahead=re.search(r'<(\/?)(h\d+)>',string)
+		if metahead!=None:
+			lev=int(re.search(r'\d+',metahead.group(2)).group(0))+6
+			if metahead.group(1)!='/':
+				new_string_list[i]=new_string_list[i].replace(metahead.group(0),f'<p class="head_{lev}">')
+			else:
+				new_string_list[i]=new_string_list[i].replace(metahead.group(0),f'</p>')
+		i+=1
+	return new_string_list
 
 if __name__=="__main__":
-	db=NewDataBase()
-	db.setCurFile('00000000')
-	string=f'`Обработка локации`, `посещение локации` — под этими терминами[:faq_09_08] понимаются следующие процессы: выполнение кода из поля "Выполнить при\n `&` посещении" указанной <локации>, добавление `mass["35,56"]` в окно основного описания. `goto` `xgoto` Всякое такое. ["Разница между `goto` и `gosub`"](#faq_01_08). Спасибо `Nex`у. `Larson`у.'
-	string_obj=NewString(string,'string',db)
-	print(string_obj.getHTML())
+	pass

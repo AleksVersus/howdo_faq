@@ -2,7 +2,8 @@
 	"project":
 	{
 		"export_folder":"..\\pages",
-		"source_folder":"."
+		"source_folder":".",
+		"cross-link":"https://aleksversus.github.io/howdo_faq/pages/"
 	},
 	"head":".\\92_дополнительные тексты\\02_start.html",
 	"foot":".\\92_дополнительные тексты\\03_end.html",
