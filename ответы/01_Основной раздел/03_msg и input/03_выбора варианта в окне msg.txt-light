@@ -36,14 +36,14 @@
 	act "Перейти в следующую локацию":
 		goto 'room'
 	end
-	- start
+	-- start
 
 	# room
 	refint & ! данная функция принудительно обновит содержимое окон плеера при входе на локацию
 	:loop
 	menu '$dialog'
 	if variant<>1: jump 'loop'
-	- room
+	-- room
 
 	# dial_loc
 	if args[0]=1:
@@ -55,7 +55,7 @@
 		*pl "Вы выбради вариант жизнь"
 		variant=1
 	end
-	- dial_loc
+	-- dial_loc
 ```
 
 В Quest Navigator Вы можете самостоятельно написать такое окошко, даже не прибегая к помощи JavaScript.

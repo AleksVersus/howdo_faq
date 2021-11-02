@@ -1020,6 +1020,14 @@ def convertCodeQSP(string_list):
 				word=convention.group(0)
 				text=text[len(word):]
 				result+=f'<span class="Monokai-Command">{replaceSpace(word)}</span>'
+			elif location_start!=None:
+				word=location_start.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-StartLoc">{replaceSpace(location_start.group(1))}</span>\n'
+			elif location_end!=None:
+				word=location_end.group(0)
+				text=text[len(word):]
+				result+=f'<span class="Monokai-EndLoc">{replaceSpace(location_end.group(1))}</span>\n'
 			elif oprt!=None:
 				word=oprt.group(0)
 				text=text[len(word):]
@@ -1044,14 +1052,6 @@ def convertCodeQSP(string_list):
 				word=string_sign.group(0)
 				text=text[len(word):]
 				result+=f'<span class="Monokai-String">{replaceSpace(word)}</span>'
-			elif location_start!=None:
-				word=location_start.group(0)
-				text=text[len(word):]
-				result+=f'<span class="Monokai-StartLoc">{replaceSpace(location_start.group(1))}</span>\n'
-			elif location_end!=None:
-				word=location_end.group(0)
-				text=text[len(word):]
-				result+=f'<span class="Monokai-EndLoc">{replaceSpace(location_end.group(1))}</span>\n'
 			elif comment_sign!=None:
 				mode["comment_open"]=True
 				word=comment_sign.group(0)

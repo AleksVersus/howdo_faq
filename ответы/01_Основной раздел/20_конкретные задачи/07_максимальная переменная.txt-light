@@ -11,25 +11,26 @@
 	VariableC=3
 	VariableD=4
 ```
+
 	1. Вносим названия этих переменных и их значения в два разных массива под одним индексом:
-```qsp
-	$varname[0]="VariableA" & varvalue[0]=VariableA
-	$varname[1]="VariableB" & varvalue[1]=VariableB
-	$varname[2]="VariableC" & varvalue[2]=VariableC
-	$varname[3]="VariableD" & varvalue[3]=VariableВ
-```
+	```qsp
+		$varname[0]="VariableA" & varvalue[0]=VariableA
+		$varname[1]="VariableB" & varvalue[1]=VariableB
+		$varname[2]="VariableC" & varvalue[2]=VariableC
+		$varname[3]="VariableD" & varvalue[3]=VariableВ
+	```
 	2. Теперь определяем максимальное значение в массиве varvalue:
-```qsp
-	varmax=max('varvalue')
-```
+	```qsp
+		varmax=max('varvalue')
+	```
 	3. Осталось определить индекс элемента с этим значением:
-```qsp
-	indexMax=arrpos('varvalue',varmax)
-```
+	```qsp
+		indexMax=arrpos('varvalue',varmax)
+	```
 	4. Имя переменной получить уже несложно:
-```qsp
-	*pl "Максимальное значение в переменной "+$varname[indexMax]
-```
+	```qsp
+		*pl "Максимальное значение в переменной "+$varname[indexMax]
+	```
 
 	Можно написать функцию, которая будет возвращать название переменной с максимальным значением:
 

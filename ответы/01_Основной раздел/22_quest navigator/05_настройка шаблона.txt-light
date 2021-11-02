@@ -100,13 +100,13 @@
 Следующий за "skin-back2" блок — это блок "skin-top-menu-wrapper", который отвечает за включение верхнего меню. Верхнее меню — это полоска с кнопками управления игрой и включения/выключения звука. Эта полоска появляется в двух случаях:
 
 	* если отключено окно предметов. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
-```css
-		body:not(.cover):not(.objs-visible) #skin-top-menu-wrapper
-```
+	```css
+			body:not(.cover):not(.objs-visible) #skin-top-menu-wrapper
+	```
 	* если размер страницы меньше 481px. Тогда стили блоку "skin-top-menu-wrapper" можно задавать через строку:
-```css
-		body:not(.cover) #skin-top-menu-wrapper
-```
+	```css
+			body:not(.cover) #skin-top-menu-wrapper
+	```
 Само собой вы можете написать общий стиль для обоих вариантов отображения.
 
 Блок "skin-top-menu-wrapper" выводится со свойством "display:table;", а вложенные блоки соответсвенно со свойствами "display:table-row;" и "display:table-cell;". Это сделано для того, чтобы обеспечить соответствующее выравнивание элементов внутри блоков.
