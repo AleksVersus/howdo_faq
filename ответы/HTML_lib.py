@@ -20,6 +20,7 @@ class NewDataBase():
 		self.content_file_path="" # путь к файлу-оглавлению
 		self.content=[] # содержимое содержания
 		self.export_folder_path="" # путь к папке для экспорта
+		self.root_folder="" # название папки для страниц (для сайта)
 	def currentFile(self):
 		# получаем идентификатор текущего файла
 		return self.curfile
@@ -172,18 +173,19 @@ class NewFile():
 		new_string_list=[]
 		prev_=int(base.getFileID(self.path))-1
 		next_=int(base.getFileID(self.path))+1
+		fold_=base.getCrossLink()
 		new_string_list.append('<div style="display:flex;justify-content:space-between;">')
 		new_string_list.append('<div>')
 		if not prev_<0:
 			prev_id='0'*(8-len(str(prev_)))+str(prev_)
-			new_string_list.append(f'<a href="https://aleksversus.github.io/howdo_faq/pages/{prev_id}.html" class="emHREFTT">&lt; Назад, к странице {prev_}</a>')
+			new_string_list.append(f'<a href="{fold_}{prev_id}.html" class="emHREFTT">&lt; Назад, к странице {prev_}</a>')
 		else:
 			new_string_list.append('&nbsp;')
 		new_string_list.append('</div>')
 		new_string_list.append('<div>')
 		if not next_>int(base.lastFileID()):
 			next_id='0'*(8-len(str(next_)))+str(next_)
-			new_string_list.append(f'<a href="https://aleksversus.github.io/howdo_faq/pages/{next_id}.html" class="emHREFTT">Вперёд, к странице {next_} &gt;</a>')
+			new_string_list.append(f'<a href="{fold_}{next_id}.html" class="emHREFTT">Вперёд, к странице {next_} &gt;</a>')
 		new_string_list.append('</div>')
 		new_string_list.append('</div>\n')
 		return new_string_list
