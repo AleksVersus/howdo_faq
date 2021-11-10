@@ -914,8 +914,9 @@ def convertCodeBlock(string_list):
 	elif type_code=="html":
 		new_string_list=convertCodeHTML(string_list[1:])
 	else:
-		new_string_list.append('<div class="Monokai-Code">\n')
-		new_string_list.extend(string_list[1:])
+		for i in string_list[1:]:
+			new_string_list.append(replaceSpace(i.replace('\n','<br>\n')))
+		new_string_list.insert(0,'<div class="Monokai-Code">\n')
 		new_string_list.append('\n</div>\n')
 	return new_string_list
 	
@@ -999,7 +1000,7 @@ def convertCodeQSP(string_list):
 			oprt=re.match(r'^(\*|\$)?[a-zA-Z]\w*',text)
 			if oprt!=None:
 				oprt=convKeyWord(oprt.group(0),'prove')
-			varname=re.match(r'^(\$?[a-zA-Zа-яА-я]\w*\b|\s_)',text)
+			varname=re.match(r'^(\$?[a-zA-Zа-яА-я]\w*\b|_)',text)
 			operacion=re.match(r'^\-|\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&amp;|,|&lt;|&gt;',text)
 			numeric=re.match(r'^\d+',text)
 			comment_sign=re.match(r'^!',text)

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000001.html#preobrazovanije_tipov_qsp" style="text-decoration:none;" class="emFOLD">Преобразование типов в QSP</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="emFOLD">Новое в работе массивов в QSP 5.8.0</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000003.html#whats_news" style="text-decoration:none;" class="emFOLD">Что нового в QSP 5.8.0</a>
+</li>
+</ul>
+        </div>
+        <div class="em_AROUND">
+            <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="http://qsp.su/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="http://qsp.su/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/00000000.html" class="emHREFTT">&lt; Назад, к странице 0</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/00000002.html" class="emHREFTT">Вперёд, к странице 2 &gt;</a></div></div>
+<a id="preobrazovanije_tipov_qsp"></a><h2>Преобразование типов в QSP</h2>
+<p>
+Эта статья поможет вам разобраться в таком сложном вопросе, как преобразование типов в операции присвоения, или в выражениях.
+
+</p>
+<p>
+В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от -2147483648 до 2147483647; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
+
+</p>
+<p>
+Вот как выглядят такие значения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;числовые&nbsp;значения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">123</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">345</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">999</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!текстовые&nbsp;значения</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"строка&nbsp;текста"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Ещё&nbsp;одна&nbsp;строка&nbsp;текста'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Третья&nbsp;строка&nbsp;текста"</span><br>
+
+
+</div>
+<p>
+Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
+
+</p>
+<p>
+Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак = и число:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;box<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">13</span><br>
+
+
+</div>
+<p>
+Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак $.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">'Текстовое&nbsp;значение'</span><br>
+
+
+</div>
+<p>
+Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;эквивалентно</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Если мы попытаемся присвоить числовой переменной текстовое значение, плеер попытается преобразовать текстовое значение в числовое, но если преобразование невозможно, на экране появится ошибка.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;box<span class="Monokai-Operator">=</span><span class="Monokai-String">'134'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;тип&nbsp;будет&nbsp;преобразован,&nbsp;а&nbsp;в&nbsp;box&nbsp;запишется&nbsp;число&nbsp;134</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cell<span class="Monokai-Operator">=</span><span class="Monokai-String">'non&nbsp;cifer'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;тип&nbsp;не&nbsp;будет&nbsp;преобразован,&nbsp;плеер&nbsp;выдаст&nbsp;ошибку&nbsp;101</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;не&nbsp;эквивалентно</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;box<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'134'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;строка&nbsp;преобразуется&nbsp;в&nbsp;число,&nbsp;в&nbsp;box&nbsp;запишется&nbsp;число&nbsp;134</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cell<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'non&nbsp;cifer'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;строка&nbsp;не&nbsp;преобразуется&nbsp;в&nbsp;число,&nbsp;в&nbsp;cell&nbsp;запишется&nbsp;0</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;только&nbsp;для&nbsp;команды&nbsp;2&nbsp;не&nbsp;удастся&nbsp;выполнить&nbsp;преобразование&nbsp;типа</span><br>
+
+
+</div>
+<p>
+Всё становится гораздо интереснее, если мы имеем дело не с отдельными значениями, а с выражениями.
+
+</p>
+<p>
+Например, если мы попытаемся сложить два числа, то результатом сложения будет третье число:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">456</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;579</span><br>
+
+
+</div>
+<p>
+Если мы попытаемся «сложить» две строки, то мы их просто «склеим» (в программировании это называется конкатенация):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Hello"</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"World"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;строка&nbsp;"HelloWorld"</span><br>
+
+
+</div>
+<p>
+Но что будет, если мы попытаемся сложить число и строку?
+
+</p>
+<p>
+А тут произойдёт вот что.
+
+</p>
+<p>
+Если хотя бы одно из значений в выражении — числовое, плеер попытается все значения преобразовать в числовые и вычислить выражение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"456"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;579</span><br>
+
+
+</div>
+<p>
+Если преобразование не удастся, то выполняется конкатенация:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"d456"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;строка&nbsp;123d456</span><br>
+
+
+</div>
+<p>
+Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Hello"</span><span class="Monokai-Operator">-</span><span class="Monokai-String">"World"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;плеер&nbsp;выдаст&nbsp;ошибку&nbsp;101</span><br>
+
+
+</div>
+<p>
+Однако, если возможно преобразование всех строк в числа, то можно сделать так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"4560"</span><span class="Monokai-Operator">/</span><span class="Monokai-String">"3"</span><span class="Monokai-Operator">*</span><span class="Monokai-String">"9"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;13680</span><br>
+
+
+</div>
+<p>
+Таким образом, плеер обязательно преобразует тип к необходимому, если это возможно, особенно для операций присвоения.
+
+</p>
+<p>
+Вам не нужно строго следить за тем, какие типы значений вы используете в выражениях, однако старайтесь избегать выражений, в которых математические операции применяются к строкам.
+
+</p>
+<p>
+Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций $str и val:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1234</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;преобразует&nbsp;число&nbsp;в&nbsp;строку</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;получает&nbsp;строку,&nbsp;возвращает&nbsp;строку</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"string"</span><span class="Monokai-Operator">)</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"1234"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;преобразует&nbsp;строку&nbsp;в&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;не&nbsp;может&nbsp;преобразовать&nbsp;в&nbsp;число,&nbsp;возвращает&nbsp;ноль</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"string"</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Не забывайте пользоваться подвыражениями, если нужно вставить значение в строку:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;max_health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">350</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Здоровье:&nbsp;&lt;&lt;health&gt;&gt;/&lt;&lt;max_health&gt;&gt;."</span><br>
+
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/00000000.html" class="emHREFTT">&lt; Назад, к странице 0</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/00000002.html" class="emHREFTT">Вперёд, к странице 2 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/articles/00000000.html" class="emHREFTT">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+</body>
+</html>

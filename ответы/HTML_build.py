@@ -5,13 +5,20 @@ from HTML_lib import *
 
 
 if __name__=="__main__":
+	
+	# html_json="html.json" # название файла, из которого берём сборку
+	html_json="D:\\my\\projects\\howdo_faq\\готовые статьи\\html.json"
+
+
 	work_dir=os.getcwd() # получаем путь рабочей папки
 	# открываем файл проекта для чтения и получаем его структуру в переменную root
-	with open("html.json","r",encoding="utf-8") as project_file:
+	with open(html_json,"r",encoding="utf-8") as project_file:
 		root_dict=json.load(project_file)
 	project_dict=root_dict["project"] # словарь помещаем в переменную
 	folder_path=os.path.abspath(project_dict["source_folder"]) # папка, из которой подтягиваем файлы
 	export_path=os.path.abspath(project_dict["export_folder"]) # папка, в которую помещаем файлы
+	if os.path.exists(export_path)!=True:
+		os.makedirs(export_path)
 	content_path=os.path.abspath(root_dict["head_contents"])
 	# получаем заготовку вершины html-документа
 	with open(os.path.abspath(root_dict["head"]),'r',encoding='utf-8') as header:
