@@ -237,4 +237,10 @@ p.em_TERMIN {
 p.em_TERMIN > span:first-child {
  color:#440088;
 }
+.em_IMG {
+    max-width: 99%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
 /* ---------------------- easy.libraries -------------------------- */

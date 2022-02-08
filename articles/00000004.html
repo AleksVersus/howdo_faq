@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Статьи</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000001.html#preobrazovanije_tipov_qsp" style="text-decoration:none;" class="emFOLD">Преобразование типов в QSP</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="emFOLD">Новое в работе массивов в QSP 5.8.0</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/articles/00000003.html#whats_news" style="text-decoration:none;" class="emFOLD">Что нового в QSP 5.8.0</a>
+</li>
+</ul>
+        </div>
+        <div class="em_AROUND">
+            <h1>Статьи по разработке игр на QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/00000003.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div></div></div>
+<a id="qspider_0120"></a><h2>qSpider версии 0.12.0</h2>
+<p>
+qSpider — это QSP-плеер с поддержкой полноценной браузерной HTML-вёрстки, то есть в нём можно использовать такой же HTML-код, как в обычном браузере. Более того существует два варианта плеера: браузерный вариант (запускается непосредственно в браузере, и потому данный вариант можно использовать, например, для публикации игр на QSP в интернете) и десктопный вариант (для стационарных компьютеров, запускается без браузера). Изначально qSpider разрабатывался для поддержки AeroQSP игр (так как технология flash прекратила своё существование), однако позже плеер был переориентирован в основном на поддержку классических игр. Тем не менее возможность запуска игр AeroQSP сохранилась, хотя для их полноценной работы может понадобиться небольшая правка.
+
+</p>
+<p>
+Релиз последней версии плеера qSpider вы всегда можете найти по этой ссылке:
+
+</p>
+<p>
+<a href="https://github.com/qspfoundation/qspider/releases" style="text-decoration:none;" class="emFOLD">https://github.com/qspfoundation/qspider/releases</a>
+
+</p>
+<p>
+qSpider использует последнюю версию библиотеки qsplib, а значит игры, написанные на классический плеер с той же версией библиотеки, полностью совместимы с qSpider.
+
+</p>
+<p>
+Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье <a href="https://aleksversus.github.io/howdo_faq/articles/00000003.html#whats_news" style="text-decoration:none;" class="emFOLD">"Что нового в QSP 5.8.0"</a>.
+
+</p>
+<p>
+Демонстрацию работы плеера можно посмотреть здесь: <a href="https://qspfoundation.github.io/qspider/" style="text-decoration:none;" class="emFOLD">https://qspfoundation.github.io/qspider/</a>. Одна из представленных игр была написана для AeroQSP.
+
+</p>
+<a id="лНWн"></a><h4>Отличия qSpider от Классического плеера:</h4>
+<ul>
+<li>
+Полноценная поддержка HTML, как в браузере;
+</li>
+<li>
+Пути к ресурсам (картинкам/аудио файлам) регистрозависимы — то есть, если файл называется 'image.jpg', а в файле игры записано 'Image.jpg' или 'image.JPG', то плеер не сможет показать такую картинку;
+</li>
+<li>
+Для проигрования аудио используются встроенные средства браузера, поэтому рекомендованый формат для плеера — mp3 как самый поддерживаемый (хорошая альтернатива — webm, у него меньше размер при том же качестве, но чуть хуже с поддержкой браузеров);
+</li>
+<li>
+Есть возможность пропуска wait (кликом по странице);
+</li>
+<li>
+Сохранения хранятся в браузере.
+</li>
+</ul>
+<p>
+Как уже было отмечено выше, qSpider существует в двух вариантах: десктопный и браузерный (web-версия).
+
+</p>
+<a id="Жляё"></a><h3>Десктопная версия</h3>
+<a id="ЦУЗГ"></a><h4>Основные отличия desktop-версии от web-версии:</h4>
+<ul>
+<li>
+возможность открыть qsp-файл из папки (в отличии от web-версии, где можно открыть только архив);
+</li>
+<li>
+открытие игры через drag-n-drop — перетаскивание файла игры на окно плеера;
+</li>
+<li>
+открытие игры через консоль (с помошью параметра --file);
+</li>
+<li>
+загрузка файла конфига из папки с игрой;
+</li>
+<li>
+дополнительная секция в файле конфига для настройки окна desktop-плеера;
+</li>
+<li>
+автоматическое обновление desktop-плеера при выходе новой версии.
+</li>
+</ul>
+<a id="NхSм"></a><h4>Установка и запуск</h4>
+<p>
+Установка десктопного варианта будет несколько отличаться для разных операционных систем, но проблем у вас не возникнет, если вы хоть раз устанавливали программы на свой компьютер. Чтобы скачать требуемую версию, воспользуйтесь соответствующей ссылкой:
+
+</p>
+<ul>
+<li>
+<a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.msi" style="text-decoration:none;" class="emFOLD">Windows x64</a>
+</li>
+<li>
+<a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.dmg" style="text-decoration:none;" class="emFOLD">MacOs</a>
+</li>
+<li>
+Linux: <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.deb" style="text-decoration:none;" class="emFOLD">deb-пакет</a>, <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.AppImage" style="text-decoration:none;" class="emFOLD">AppImage-пакет</a>
+</li>
+</ul>
+<p>
+Если в процессе установки на "Windows 7" программа выдаст ошибку похожую на эту:
+
+</p>
+<p>
+<p><img src="https://i.ibb.co/8z8MHyp/image.png" class="em_IMG"></p>
+
+</p>
+<p>
+— попробуйте установить webview2 вручную (скачать можно <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" style="text-decoration:none;" class="emFOLD">с этой страницы</a>), а затем вновь запустите установку плеера.
+
+</p>
+<p>
+После установки запуск плеера ничем не отличается от запуска любой другой программы.
+
+</p>
+<a id="ЖLsR"></a><h4>Подключение плеера к QGen</h4>
+<p>
+Десктопную версию можно подключить к Quest Generator, однако из-за бага в используемой библиотеке сделать плеер напрямую совместимым с QGen не получилось. Пока что для запуска можно использовать простенький bat-файл:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">SET</span>&nbsp;QSPIDER<span class="Monokai-Operator">=</span>C<span class="Monokai-Markup">:\Program</span>&nbsp;Files\qSpider\qSpider.exe<br>
+SET&nbsp;DESTPATH=%~f1<br>
+start&nbsp;""&nbsp;"%QSPIDER%"&nbsp;"--file=%DESTPATH%"<br>
+
+
+</div>
+<p>
+Чтобы создать bat-файл откройте блокнот, скопируйте в него данный код и сохраните получившийся файл с расширением ".bat".
+
+</p>
+<p>
+Если у вас путь к qSpider отличается от стандартного, нужно поменять значение переменной QSPIDER в указанном коде. Далее нужно прописать путь к bat-файлу в QGen: в меню "Утилиты - Настройки" выбираете вкладку "Пути" и в поле "Путь к плееру" указываете путь до bat-файла.
+
+</p>
+<a id="wbъB"></a><h3>Браузерная версия, или web-версия</h3>
+<p>
+Данная версия плеера может быть использована вами для размещения игр онлайн, то есть в интернете, однако так же её можно запускать и на компьютере. 
+
+</p>
+<a id="QCEP"></a><h4>Установка и запуск плеера на компьютере</h4>
+<p>
+Прежде всего вам необходимо скачать архив с web-версией плеера на компьютер: <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qspider-player.zip" style="text-decoration:none;" class="emFOLD">ссылка на скачивание</a>. Содержимое архива распакуйте в любую папку, эта папка и будет местом расположения плеера.
+
+</p>
+<p>
+Из-за ограничений безопасности плеер нельзя запустить просто открыв файл "index.html" в браузере.
+
+</p>
+<p>
+Поэтому для запуска необходим локально запущенный сервер — можно использовать один из <a href="https://gist.github.com/willurd/5720255" style="text-decoration:none;" class="emFOLD">списка</a> или же расширение хрома <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" style="text-decoration:none;" class="emFOLD">"Web Server for Chrome"</a>.
+
+</p>
+<p>
+Дальнейшие инструкции ориентированы на использование расширения:
+
+</p>
+<ul>
+<li>
+устанавливаем <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" style="text-decoration:none;" class="emFOLD">"Web Server for Chrome"</a>
+</li>
+<li>
+в адресной строке в хроме пишем "chrome://apps/" и выбираем в списке "Web Server";
+</li>
+<li>
+в открывшемся попапе выбираем папку, в которую распаковали плеер и запускаем сревер
+</li>
+<li>
+там же в попапе будет ссылка на запуск сервера в окне браузера.
+</li>
+</ul>
+<a id="uнrК"></a><h4>Установка плеера на github</h4>
+<ol>
+<li>
+Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/00000004.html#addndelgames" style="text-decoration:none;" class="emFOLD">"добавление и удаление игр из списка"</a>.
+</li>
+<li>
+Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/00000004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>).
+</li>
+<li>
+Откройте github в браузере, зайдите в свой профиль и создайте новый публичный репозиторий с именем "username.github.io" (внимание! Это важно! Впоследствии репозиторий нужно будет переименовать, но пока что он должен называться так), где "username" — это ваш логин (ник) на github.
+</li>
+<li>
+В разделе "Code" репозитория нажмите кнопку "Add file" и выберите пункт "Upload files", откроется страница загрузки файлов на github. 
+</li>
+<li>
+Перетащите все распакованные файлы браузерной версии плеера в соответствующее поле на странице (в т.ч. папки "assets" и "game").
+</li>
+<li>
+Теперь по адресу "https://username.github.io" станет доступна страничка с вашими играми, однако таким образом в одном аккаунте сможет существовать лишь одна подобная страница. Нужно переименовать созданный репозиторий, чтобы в дальнейшем вы смогли добавлять в аккаунт и другие репозитории с подобными страницами. Зайдите в созданный репозиторий на github, найдите раздел "settings", подраздел "general". В поле "Repository name" введите новое имя репозитория, например "mygame", нажмите кнопку "rename", и таким образом страница с игрой станет доступна по адресу "https://username.github.io/mygame" (соответственно вместо "username" будет ваш ник на гитхабе, а вместо "mygame" — название репозитория, которое вы только что ввели).
+</li>
+</ol>
+<a id="addndelgames"></a><h4>Добавление и удаление игр из списка</h4>
+<p>
+По умолчанию вместе с плеером упакованы демонстрационные игры. Вы можете заменить их, или просто добавить свою игру к списку.
+
+</p>
+<p>
+Демонстрационные игры лежат в подпапке "game", там же лежит конфигурационный файл "game.cfg"
+
+</p>
+<p>
+Для добавления своей игры в список, нужно разместить игру в папке "game" одним из следующих способов:
+
+</p>
+<ul>
+<li>
+скопировать zip-архив с упакованной в него игрой в папку "game"
+</li>
+<li>
+скопировать папку с игрой в папку "game"
+</li>
+<li>
+если ваша игра имеет формат игры для AeroQSP, скопировать файл ".aqsp" вашей игры в папку "game"
+</li>
+</ul>
+<p>
+Чтобы игра отобразилась в списке, необходимо отредактировать файл "game.cfg". Конфигурация каждой игры в файле начинается с заголовка секции <span class="em_BLCK"><span class="emTEXT">[[game]]</span></span>, далее перечисляется несколько параметров:
+
+</p>
+<ul>
+<li>
+id — уникальный идентификатор игры (используется для сохранений);
+</li>
+<li>
+title — название игры (будет показано в заголовке плеера);
+</li>
+<li>
+description — необязательное краткое описание игры, аннотация;
+</li>
+<li>
+file — путь к файлу с игрой относительно папки "game";
+</li>
+<li>
+mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".
+</li>
+</ul>
+<p>
+Таким образом вам нужно добавить в файл "game.cfg" новую секцию для вашей игры примерно такого содержания:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">[</span><span class="Monokai-Operator">[</span>game<span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><br>
+id<span class="Monokai-Operator">=</span><span class="Monokai-String">"уникальный-идентификатор-может-быть-и-просто-числом"</span><br>
+title<span class="Monokai-Operator">=</span><span class="Monokai-String">"Название&nbsp;игры,&nbsp;отображаемое&nbsp;в&nbsp;виде&nbsp;загловка&nbsp;на&nbsp;странице"</span><br>
+description<span class="Monokai-Operator">=</span><span class="Monokai-String">""</span><span class="Monokai-String">"Красткое&nbsp;описание&nbsp;игры,&nbsp;которое&nbsp;будет&nbsp;отображаться&nbsp;на&nbsp;странице&nbsp;со&nbsp;списком&nbsp;игр.&nbsp;Аннотация."</span><span class="Monokai-String">""</span><br>
+file<span class="Monokai-Operator">=</span><span class="Monokai-String">"путь&nbsp;к&nbsp;файлу&nbsp;игры/mygame.qsp"</span><br>
+
+
+</div>
+<p>
+Если вы убрали демонстрационные игры из папки "game", не забудьте удалить соответствующие секции из файла "game.cfg".
+
+</p>
+<p>
+См. так же информацию в разделе <a href="https://aleksversus.github.io/howdo_faq/articles/00000004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>
+
+</p>
+<a id="cfgfile"></a><h3>Конфигурационный файл</h3>
+<p>
+Конфигурационный файл "game.cfg" определяет поведение плеера во время запуска той или иной игры.
+
+</p>
+<p>
+Для web-версии плеера он размещается в подпапке "game", которая находится в папке с плеером. Для десктопной версии плеера данный файл размещается рядом с файлом ".qsp" запускаемой игры.
+
+</p>
+<p>
+Если игра упакована в архив ".zip" или ".aqsp", конфигурационный файл так же должен быть упакован в тот же самый архив рядом с файлом ".qsp" самого верхнего уровня. 
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/00000003.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2013-2021</p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp">2021</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/articles/00000000.html" class="emHREFTT">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+</body>
+</html>

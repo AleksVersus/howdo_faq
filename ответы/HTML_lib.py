@@ -533,11 +533,13 @@ class NewString():
 			base.addAnchor(string)
 		elif self.type=="hyperlink":
 			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string)[0]
-			if hl_text==r"%image%":
-				# если в качестве названия ссылки указано такое вот слово
-				# мы имеем дело с изображением
-				self.strings.append(NewString(hl_href,'image',base)) # путь к изображению
+			print("текст: ",hl_text)
+			if hl_text==f"%image%":
+				print('изображение подтверждено')
+				# если текст %image% встречается в названии ссылки, это изображение
+				self.strings.append(NewString(hl_href,'image',base)) # добавляем только ссылку на изображение
 			else:
+				print('просто ссылка')
 				self.strings.append(NewString(hl_text,'',base)) # текст ссылки в нулевой ячейке
 				if re.match(r'^#',hl_href)!=None:
 					hl_href=f'#folder-file#{hl_href}#'
@@ -578,12 +580,19 @@ class NewString():
 			if fp_count==0:
 				# если в строке не обнаружено вложений, она не разбивается
 				self.source=replaceAll(self.source)
+	def getType(self):
+		return self.type
 	def getHTML(self,base):
 		if len(self.strings)>0:
 			text=""
 			if self.type=="hyperlink":
-				# имеем дело с гиперссылкой 0 - текст, 1 - линк
-				text+=f'<a href="{self.strings[1].getHTML(base)}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML(base)}</a>'
+				print(self.strings[0].getType())
+				if self.strings[0].getType()=="image":
+					# изображение
+					text+=f'<p><img src="{self.strings[0].getHTML(base)}" class="em_IMG"></p>'
+				else:
+					# имеем дело с гиперссылкой 0 - текст, 1 - линк
+					text+=f'<a href="{self.strings[1].getHTML(base)}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML(base)}</a>'
 			elif self.type=="name":
 				# имеем дело с именем 0 - имя, 1 - окончание
 				text+=f'<strong>{self.strings[0].getHTML(base)}</strong>\'{self.strings[1].getHTML(base)}'
@@ -607,9 +616,6 @@ class NewString():
 			elif self.type=='id':
 				# идентификатор
 				return f'<a id="{self.source}"></a>'
-			elif self.type=='image':
-				# идентификатор
-				return f'<img src="{self.source}" style="max-width:99%;">'
 			else:
 				# любая другая строка
 				return self.source
