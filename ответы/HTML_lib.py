@@ -533,13 +533,10 @@ class NewString():
 			base.addAnchor(string)
 		elif self.type=="hyperlink":
 			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string)[0]
-			print("текст: ",hl_text)
 			if hl_text==f"%image%":
-				print('изображение подтверждено')
 				# если текст %image% встречается в названии ссылки, это изображение
 				self.strings.append(NewString(hl_href,'image',base)) # добавляем только ссылку на изображение
 			else:
-				print('просто ссылка')
 				self.strings.append(NewString(hl_text,'',base)) # текст ссылки в нулевой ячейке
 				if re.match(r'^#',hl_href)!=None:
 					hl_href=f'#folder-file#{hl_href}#'
@@ -586,7 +583,6 @@ class NewString():
 		if len(self.strings)>0:
 			text=""
 			if self.type=="hyperlink":
-				print(self.strings[0].getType())
 				if self.strings[0].getType()=="image":
 					# изображение
 					text+=f'<p><img src="{self.strings[0].getHTML(base)}" class="em_IMG"></p>'
