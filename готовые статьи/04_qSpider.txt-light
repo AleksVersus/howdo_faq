@@ -344,6 +344,36 @@ minHeight = 768
 	* minWidth и minHeight дают возможность задать минимально возможные размеры, если игрок попытается изменить размеры окна;
 	* resizable — позволяет запретить изменения размера в принципе (автоматически включается в aero режиме).
 
+--Пример файла "game.cfg" для игры, запускаемой в десктопной версии плеера--
+
+```lua
+[[game]]
+id = "50458ae2-c07d-ca43-4a81-7bf480eedcf6"
+title = "Вереница миров, или Выводы из закона Мёрфи"
+description = """В Лаборатории Мерфи опять неприятности. Похищен опытный образец бета-аннигилятора, и похититель скрылся в Веренице Миров - сложной системе межпространственных порталов. Кому предстоит расхлёбывать это дельце? Ну конечно же вам, майор!"""
+file = "merphy_law.qn.qsp"
+
+[game.hotkeys]
+b = "back.varriors"
+"ctrl+shift+m"="карта"
+"up up down down left right left right" = "konami"
+
+[game.resources]
+styles = ["skins/qspidergame.css"]
+fonts=[
+	["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],
+	["AstronBold","skins/fonts/astron-bold.woff2"]
+]
+icon="skins/gfx/doctor.png"
+
+[game.window]
+width = 1280
+height = 720
+resizable = true
+minWidth = 848
+minHeight = 480
+```
+
 =Особенности работы игр AeroQSP на qSpider=
 [:aeroqspider]
 
