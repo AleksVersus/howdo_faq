@@ -520,6 +520,9 @@ class NewString():
 		elif self.type=='href':
 			# если тип строки href, дальше она не изменяется
 			pass
+		elif self.type=="image":
+			# если тип строки image, дальше она не изменяется
+			pass
 		elif self.type=='name':
 			y_name,y_sub=re.findall(r'`([^`]+)`(\w+)\b',string)[0]
 			self.strings.append(NewString(y_name,'authname',base)) # текст ссылки в нулевой ячейке
@@ -530,10 +533,15 @@ class NewString():
 			base.addAnchor(string)
 		elif self.type=="hyperlink":
 			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string)[0]
-			self.strings.append(NewString(hl_text,'',base)) # текст ссылки в нулевой ячейке
-			if re.match(r'^#',hl_href)!=None:
-				hl_href=f'#folder-file#{hl_href}#'
-			self.strings.append(NewString(hl_href,'href',base)) # адрес в первой
+			if hl_text==r"%image%":
+				# если в качестве названия ссылки указано такое вот слово
+				# мы имеем дело с изображением
+				self.strings.append(NewString(hl_href,'image',base)) # путь к изображению
+			else:
+				self.strings.append(NewString(hl_text,'',base)) # текст ссылки в нулевой ячейке
+				if re.match(r'^#',hl_href)!=None:
+					hl_href=f'#folder-file#{hl_href}#'
+				self.strings.append(NewString(hl_href,'href',base)) # адрес в первой
 		else:
 			# для всех прочих строк, в том числе и типа monotype
 			# описываем регулярки, как отдельные объекты
@@ -599,6 +607,9 @@ class NewString():
 			elif self.type=='id':
 				# идентификатор
 				return f'<a id="{self.source}"></a>'
+			elif self.type=='image':
+				# идентификатор
+				return f'<img src="{self.source}" style="max-width:99%;">'
 			else:
 				# любая другая строка
 				return self.source
