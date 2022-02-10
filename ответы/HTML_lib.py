@@ -585,7 +585,7 @@ class NewString():
 			if self.type=="hyperlink":
 				if self.strings[0].getType()=="image":
 					# изображение
-					text+=f'<p><img src="{self.strings[0].getHTML(base)}" class="em_IMG"></p>'
+					text+=f'<img src="{self.strings[0].getHTML(base)}" class="em_IMG">'
 				else:
 					# имеем дело с гиперссылкой 0 - текст, 1 - линк
 					text+=f'<a href="{self.strings[1].getHTML(base)}" style="text-decoration:none;" class="emFOLD">{self.strings[0].getHTML(base)}</a>'
