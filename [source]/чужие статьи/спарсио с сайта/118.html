@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
+<head>
+	<link href="/templates/coolness/css/template_css.css" rel="stylesheet" type="text/css" />	
+    
+	<style type="text/css">
+		#container { width: 965px; }
+		#content { float:left; width: 99.9%!important; width: auto; }
+		#maincol { margin-right: 15px; margin-left: 15px; position:relative!important; position:inherit; float:none!important; float:left; width: auto; overflow:hidden }
+		#leftcol { width: 200px!important;  width: 192px; float:left; margin: 0px 15px!important; margin:0px 15px 0 7px;  }
+		#rightcol { width: 280px!important; width: 272px; float:right; margin: 0px 15px!important; margin:0px 7px;   }
+		#multicol { width: 920px!important; width: 912px; margin: 0px 28px!important; margin:0px 15px 0px 7px;   }
+		#menusearch { background: #4A9CD5 url(/templates/coolness/images/head_foot.png) no-repeat 0 -611px; }
+		ul.menu a { color:#2a7190; }
+		ul.menu a:hover, #menu ul.menu li a, ul.menu li.active a, ul#mainlevel li.active a, ul#mainlevel a:hover, td.sectiontableheader, .sectiontableheader, #inner .dynamic-tab-pane-control .tab-row .tab.hover.selected, #inner .dynamic-tab-pane-control .tab-row .tab.selected, .jpcool_dialog_menu ul.menu li a:hover, .jpcool_dialog_menu ul.menu li.active a, .cbSSmenu ul:hover, .cbSSmenu a:hover, .cbSSmenu a:focus, .cbMenu a:hover, .cbMenu a:focus {  background:#4A9CD5; }
+		table.cb-tips-bg, legend  { background-color:#4A9CD5;  }
+		.createdate  { border-bottom: solid 1px #4A9CD5; }
+		.modifydate { border-top: solid 1px #4A9CD5; }
+		#header { border-bottom: solid 3px #4A9CD5; }
+		.inputbox, .cb-tips-fg, TEXTAREA, .cbMenu, .cbSSmenu { border: solid 1px #4A9CD5; }
+		#logo h1, #logo h1 a, a:link, a:visited, a:hover, #botmenu a:hover, .cbMenu a, .cbSSmenu a, .cbMenu a:link, .cbMenu a:visited, .cbMenu a:hover, .cbSSmenu a:link, .cbSSmenu a:visited, .cbSSmenu a:hover, .cbMenu, .cbSSmenu, table.adminform textarea { color:#2a7190; }
+		#leftcol div.module h3, #leftcol div.module, #leftcol div.module_menu { width: 200px;  }
+		#rightcol div.module h3, #rightcol div.module, #rightcol div.module_menu { width: 280px; }
+		#multicol div.module h3, #multicol div.module, #multicol div.module_menu { width: 920px; }
+	</style>
+    <!--[if IE 6]>
+    <style>
+		#menu ul li { padding: 3px 15px; margin: 0px; }
+		#menu ul li a { padding: 0px; height: auto; }
+		.jpcool_dialog .jpcool_content,.jpcool_dialog_menu .jpcool_content {zoom:1;overflow-y:hidden;}
+		.jpcool_dialog .jpcool_top,.jpcool_dialog_menu .jpcool_top {height:1600px; }
+    </style>
+    <![endif]-->
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NOODP, index, follow" />
+  <meta name="keywords" content="автоматы, автоматное программирование, состояния локаций" />
+  <meta name="title" content="Автоматное прогарммирование в QSP" />
+  <meta name="author" content="HIman" />
+  <meta name="description" content="Автоматное программирование игр на QSP
+" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Автоматное прогарммирование в QSP - QSP - Текстовые игры на любой вкус</title>
+  <link href="/index.php?option=com_jcomments&amp;task=rss&amp;object_id=118&amp;object_group=com_content&amp;format=raw" rel="alternate" type="application/rss+xml" title="Автоматное прогарммирование в QSP" />
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/components/com_jcomments/tpl/qsp/style.css?v=12" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/syntaxhighlighter/styles/shCore.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/syntaxhighlighter/styles/shThemeDefault.css" type="text/css" />
+  <link rel="stylesheet" href="http://qsp.su/plugins/content/attachments.css" type="text/css" />
+  <link rel="stylesheet" href="http://qsp.su/components/com_uddeim/templates/default/css/uddemodule.css" type="text/css" />
+  <script type="text/javascript" src="/components/com_jcomments/js/jcomments-v2.1.js?v=7"></script>
+  <script type="text/javascript" src="/components/com_jcomments/libraries/joomlatune/ajax.js?v=3"></script>
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/media/system/js/caption.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushAS3.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushBash.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCss.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushDiff.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushJava.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushPlain.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushSql.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushQsp.js"></script>
+
+</head>
+<body id="page_bg">
+<div align="center">
+	<div id="container">
+    	<div id="header">
+        	<div id="logo">
+				                    <h1><a href="/"><img src=./templates/coolness/images/headerlogo.png></a></h1>
+                			</div>
+        	<div id="sloganmenu">
+            	<div id="slogan"><h2>Текстовые игры на любой вкус</h2></div>
+                               <div id="menusearch">
+                	<div id="menu"><ul class="menu"><li class="item1"><a href="http://qsp.su/"><span>Главная</span></a></li><li class="item87"><a href="/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=87"><span>Скачать плеер</span></a></li><li class="item55"><a href="/index.php?option=com_sobi2&amp;Itemid=55"><span>Игры</span></a></li><li class="item64"><a href="/index.php?option=com_content&amp;view=article&amp;id=61&amp;Itemid=64"><span>Конкурсы</span></a></li><li id="current" class="active item56"><a href="/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=56"><span>Разработчикам</span></a></li><li class="item83"><a href="http://wiki.qsp.su"><span>Wiki</span></a></li><li class="item57"><a href="/index.php?option=com_agora&amp;Itemid=57"><span>Форум</span></a></li></ul><div class="toplogin"><a href="http://qsp.su/index.php?option=com_comprofiler&task=login">Войти</a> или <a href="http://qsp.su/index.php?option=com_comprofiler&task=registers">Зарегистрироваться</a></div></div>
+                    <div id="search"></div>
+                    <div class="clr"></div>
+                </div>
+                                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div id="content">
+            <div id="pathflags">
+             
+             </div>
+            
+            
+            
+
+			
+			
+			
+			
+			
+			
+			
+			
+<!--			
+            <div id="maincol">
+!!!! Nex's hack !!!!
+-->				
+<div id="maincol">
+
+
+<!--
+						-->
+						
+						
+
+				<div id="topcurve"><span>&nbsp;</span></div>
+                <div id="mainborders">
+						                        <div id="inner"><table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+				<a href="/index.php?option=com_content&amp;view=article&amp;id=118:-qsp&amp;catid=35:2009-02-19-06-11-10&amp;Itemid=76" class="contentpagetitle">
+			Автоматное прогарммирование в QSP</a>
+			</td>
+				
+		
+					</tr>
+</table>
+
+<table class="contentpaneopen">
+<tr>
+	<td valign="top">
+		<span class="small">
+			Автор: HIman		</span>
+		&nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td valign="top" class="createdate">
+		11.09.2011 21:06	</td>
+</tr>
+
+
+<tr>
+<td valign="top">
+<p><br /></p><p class="MsoNormal">Всем привет,</p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt">В этой статье хочу рассказать о
+новом подходе, структурировать программный код при написании игр на <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span>.<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>Казалось бы, в <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span><span lang="EN-US"> </span>и так
+присутствует вполне логическая структура локации: описание локации, действия на
+локации, пользовательский код при посещении локации. Но так бывает, что для
+одной локации нужно выводить несколько различных описаний локации, тем более,
+если эта локация посещается не раз и в ней, по сюжету, происходят новые
+действия, появляются персонажи или меняются условия.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p>Какие могут быть варианты решения?&nbsp;</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p>Вариант 1. В редакторе <span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">QSP</span><span lang="EN-US"> </span>нет ограничений по числу локаций,
+поэтому можно создать несколько вариантов одной и той же локаций на каждый
+новый случай. Получится список «комната1», «комната2», «комната3» и т.д. В
+каждой локации можно добавить уникальное действие, нового персонажа<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>или определенные условие при посещении.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Вариант 2. В одно локации «комната» в условии при посещении
+писать программный код учитывающий все возможные варианты которые могут
+происходить в локации. За частую, появляется много условий, и логическая
+составляющая кода усложняется на столько, что найти ошибку становиться очень
+проблематично.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">У вас есть свое решение? Обязательно поделитесь <span style="font-family:Wingdings;mso-ascii-font-family:" times="" new="" roman";="" mso-hansi-font-family:"times="" roman";mso-char-type:symbol;mso-symbol-font-family:="" wingdings"="" mce_style="font-family:Wingdings;mso-ascii-font-family:"><span style="mso-char-type:symbol;mso-symbol-font-family:Wingdings" mce_style="mso-char-type:symbol;mso-symbol-font-family:Wingdings">J</span></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Рассмотрим плюсы и минусы этих вариантов.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Вариант1.</p>
+
+<p class="MsoNormal">+ Каждая локации подчиняется изначальной структуре
+заложенной в <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span>.
+Описание локации в своем окне, действия в своем и код при посещении на месте.</p>
+
+<p class="MsoNormal">+ Простота кода при посещении, только тот код который в
+данный момент нужен на локации, нет нагромождения условий.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">- Увеличение числа локаций в дереве игры затрудняет
+ориентирование в редакторе.</p>
+
+<p class="MsoNormal">- В каждой локации присутствуют однотипный (общий) код при
+посещении, действия на локации, что увеличивает размер игры. А также
+потребность исправления во всех локация однотипных участков, если вдруг потребуется
+их изменить или что-то добавить.</p>
+
+<p class="MsoNormal">- В каждой локации будут уникальные переходы в действиях на
+смежные локации, которые также имеют свои «версии локации», что затрудняет
+навигацию по переходам между локациями. Т.е. в локации <a class="mceItemAnchor" name="OLE_LINK1">«комната1»
+будет действие «Выйти из комнаты»: </a><span style="mso-bookmark:OLE_LINK1" mce_style="mso-bookmark:OLE_LINK1"><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">goto</span><span lang="EN-US"> </span>«коридор1»</span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>в локации «комната2» будет действие «Выйти из
+комнаты»: <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">goto</span><span lang="EN-US"> </span>«коридор2» или может быть другой вариант и т.д. Таким
+образом, появляются ошибки: переходы могут либо совпасть, либо действие
+перехода никуда не ведет, либо отсутствует необходимое действие перехода
+совсем.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Резюме по варианту1. </p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt">Неплохой подход при написании
+игры, но требует предварительной работы по разбивки всего сюжета на локации и в
+свою очередь действий внутри локации на серию локаций. А также необходимость в
+четком дереве (графе) переходов между локациями. Не наглядное представление,
+куда можно перейти из локации.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Вариант2.</p>
+
+<p class="MsoNormal">+ Число локаций соответствует задумке автора, и если комната
+одна в доме, то и локация «комната» одна.</p>
+
+<p class="MsoNormal">+ Весь код на локации со всеми действиями, условиями и
+персонажами в одном месте.</p>
+
+<p class="MsoNormal">+Возможность «программировать на лету». Т.е. по мере
+появления потребности в переменных, условиях, персонажах и т.п. вставляется
+новый код или модифицируется код написанный.</p>
+
+<p class="MsoNormal">+ Вытекает из предыдущего плюса - широкое поле творчества,
+так как буквально все находиться в окне выполнение при посещении и тут полет
+фантазии ограничен только самой фантазией. </p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal">- Нагромождение кода в одном месте.</p>
+
+<p class="MsoNormal">- И вытекающее из предыдущих плюсов и минусов, разобраться в
+коде, с каждым новым добавлением, становиться все сложнее, а вернуться к
+написанию игры через продолжительный перерыв - невозможно.</p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal">Резюме по варианту2. </p>
+
+<p class="MsoNormal">Такой подход к написанию игр выбирается в большинстве
+случаев из-за «программирования на лету», годиться лишь для написания небольших
+игр и за один подход, иначе игра просто остается недописанной.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Что же делать?</p>
+
+<p class="MsoNormal"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt">На просторах интернета я нашел
+интересный метод программирования, который как нельзя лучше подходит под наши
+нужды, красивого писания игр на <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span>.
+Этот метод объединяет лучшие качества рассмотренных выше двух вариантов.
+Заключается он в дополнительной структуре программного кода, в результате чего
+программа выглядит сложенной из кирпичиков, однотипных блоков кода.</p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt">На рисунке изображено
+схематически что из чего следует.</p><p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt"><img mce_src="http://day0.narod.ru/stat/shema.PNG" src="http://day0.narod.ru/stat/shema.PNG" alt="схема" height="394" width="920"><br /></p><p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt"><br /></p>
+
+<p class="MsoNormal"><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter">
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0">
+  <v:f eqn="sum @0 1 0">
+  <v:f eqn="sum 0 0 @1">
+  <v:f eqn="prod @2 1 2">
+  <v:f eqn="prod @3 21600 pixelWidth">
+  <v:f eqn="prod @3 21600 pixelHeight">
+  <v:f eqn="sum @0 0 1">
+  <v:f eqn="prod @6 1 2">
+  <v:f eqn="prod @7 21600 pixelWidth">
+  <v:f eqn="sum @8 21600 0">
+  <v:f eqn="prod @7 21600 pixelHeight">
+  <v:f eqn="sum @10 21600 0">
+ </v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect">
+ <o:lock v:ext="edit" aspectratio="t">
+</o:lock></v:path></v:stroke></v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style="width:467.25pt;
+ height:200.25pt">
+ <v:imagedata src="file:///F:%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_image001.jpg" mce_src="file:///F:\Temp\msohtmlclip1\01\clip_image001.jpg" o:title="автоматы">
+</v:imagedata></v:shape></p>
+
+<p class="MsoNormal" style="text-indent:35.4pt" mce_style="text-indent:35.4pt">Проведем аналогии с <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span><span lang="EN-US"> </span>терминологией:</p>
+
+<p class="MsoNormal">Табл Автоматы – Перечень наших локаций то что мы видим в
+левой части <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">QSP</span><span lang="EN-US"> </span>редактора.</p>
+
+<p class="MsoNormal">Табл. Описание автомата – Описание на локации обратите
+внимание, описание зависит от состояния, т.е. у одной локации может быть
+несколько описаний локации.</p>
+
+<p class="MsoNormal">Табл. Описание состояния – Состояния локации, где могу быть
+свой код при посещении см Процедура, Обратите внимание, переходы (переходы
+между состояниями или локациями или ещё точнее между стояниями локаций) в
+каждом состоянии индивидуальны.</p>
+
+<p class="MsoNormal">Табл Описаний переходов – Наши действия с переходом <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">goto</span> «новая локация». Здесь
+могут быть условия перехода на картинке изображено блоком Булева функция, а так
+же номер нового состояние локации куда мы перейдем по выбора этого действия.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Пока выглядит немного запутано, но рассмотрим программный
+код, написанный по этому методу на примере игры «Дом пустоты».</p>
+
+<p class="MsoNormal"><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;<img mce_src="http://day0.narod.ru/stat/red.PNG" src="http://day0.narod.ru/stat/red.PNG"> </span><v:shape id="_x0000_i1026" type="#_x0000_t75" style="width:467.25pt;height:325.5pt">
+ <v:imagedata src="file:///F:%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_image003.png" mce_src="file:///F:\Temp\msohtmlclip1\01\clip_image003.png" o:title="">
+</v:imagedata></v:shape></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">В левой части мы видим перечень локаций. Каждая локация это
+наш автомат, который может иметь несколько состояний.</p>
+
+<p class="MsoNormal">В окне выполнить при посещении мы видим некие блоки которые
+начинаются комментарием, затем идет <span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">IF</span>, далее тело блока, и заканчивается <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">END</span>.</p>
+
+<p class="MsoNormal">Так как локация спальня у нас одна, по сюжету ГГ может
+посещать её несколько раз, то в окне «Выполнить при посещении» пишем шаблон:.</p>
+
+<ol style="margin-top:0cm" mce_style="margin-top:0cm" start="1" type="1">
+ <li class="MsoNormal" style="mso-list:l1 level1 lfo1" mce_style="mso-list:l1 level1 lfo1">Комментарий описывающий
+     состояние автомата – для себя чтобы быстро найти нужное состояние локации.</li>
+ <li class="MsoNormal" style="mso-list:l1 level1 lfo1" mce_style="mso-list:l1 level1 lfo1">Условие входа в локацию,
+     здесь переменная <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span><span lang="EN-US"> </span>будет отражать состояния локации спальня. Значение <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span><span lang="EN-US"> </span>=
+     0 первое появление ГГ в спальне, значение =1 – ГГ вышел из спальни и сразу
+     же вернулся, обратите внимание описание с первым посещением спальни
+     поменялось.</li>
+ <li class="MsoNormal" style="mso-list:l1 level1 lfo1" mce_style="mso-list:l1 level1 lfo1">Описание локации в нужном
+     состоянии локации</li>
+ <li class="MsoNormal" style="mso-list:l1 level1 lfo1" mce_style="mso-list:l1 level1 lfo1">Действия на входе в
+     состояние локации, это может быть переопределение переменных, или другие
+     функции которые должны выполниться при посещении, я для удобства разделили
+     переопределение переменных и вынес их в верх тела шаблона над описанием
+     локаций, а все функции идут ниже описания, но это не принципиально.</li>
+ <li class="MsoNormal" style="mso-list:l1 level1 lfo1" mce_style="mso-list:l1 level1 lfo1">Переходы из локации. Здесь
+     можно писать уникальные переходы или переходы появляющиеся по условию, а
+     также если в локации есть стандартный набор действий то его можно вынести
+     в соответствующее место и этот набор действий будет общим для всех
+     состояний локации.</li>
+</ol>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="text-indent:18.0pt" mce_style="text-indent:18.0pt"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="text-indent:18.0pt" mce_style="text-indent:18.0pt">Для удобства и наглядности может
+потребоваться ( и я настоятельно рекомендую применять) графическое
+представление.</p>
+
+<p class="MsoNormal">На листке бумаги нужно нарисовать граф нашей игры. Где узлы
+обозначим их точками или кружочками будут означать состояния локации, а линии
+со стрелками между узлами будут означать переходы между состояниями локаций. В
+интернете полно программ позволяющих упростить рисование таких графов,<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>одна из подобных программ которой пользуюсь я
+<span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">Explain</span>. Программка очень
+маленькая 1Мб, с минимальным, но вполне достаточным набором инструментов для
+наших целей.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Вот такой получился у меня граф для игры «Дом пустоты», (это
+только часть)</p>
+
+<p class="MsoNormal"><v:shape id="_x0000_i1027" type="#_x0000_t75" style="width:468pt;height:351pt">
+ <v:imagedata src="file:///F:%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_image005.png" mce_src="file:///F:\Temp\msohtmlclip1\01\clip_image005.png" o:title="">
+</v:imagedata></v:shape></p>
+
+<p class="MsoNormal"><o:p>&nbsp;<img mce_src="http://day0.narod.ru/stat/graf.PNG" src="http://day0.narod.ru/stat/graf.PNG"></o:p></p>
+
+<p class="MsoNormal">Хочу дать несколько советов.</p>
+
+<ol style="margin-top:0cm" mce_style="margin-top:0cm" start="1" type="1">
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo2" mce_style="mso-list:l0 level1 lfo2">Посмотрите на мой пример,
+     все состояния одной локации идут в столбик. Для локация «спальня» <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>0, sp1,sp2 …, для
+     локации «коридор» <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">kor</span>0,
+     <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">kor</span>1, <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">kor</span>2 и.т.д. При таком
+     расположении узлов можно сразу найти нужную локацию и все её состояния.
+     Здесь <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>0, <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>1 это наше
+     состояние<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>в коде можно увидеть <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">if</span><span lang="EN-US"> </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>=0… <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">if</span><span lang="EN-US"> </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>=1.</li>
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo2" mce_style="mso-list:l0 level1 lfo2">У переходов есть
+     направление, обозначается стрелочкой, если переход возможен обратно в
+     исходное состояние, то нужно соединить 2 узла 2 раза сначала в одну
+     сторону, а потом в другую.</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt">Переходы лучше писать в теле
+шаблона сразу после условия входа в состояние:</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">IF</span><span lang="EN-US"> </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">sp</span>=0:<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp; </span>- текущее состояние локации спальня</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">kor</span>=0 - переменная отвечающая за состояние локации коридор</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*<span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">p ‘ ………</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US"><span style="mso-tab-count:2" mce_style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>…</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">Exit</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>end</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt">А ниже в списке действий на
+локации всегда есть возможность выйти в коридор безусловным переходом <span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">gt</span> «коридор».</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt">В локации коридор мы попадает
+сразу в блок- состояния коридора со значением 0</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">IF</span><span lang="EN-US"> </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">kor</span>=0:<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp; </span>- текущее состояние локации коридор</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">sp</span>=1 - переменная отвечающая за состояние локации спальня</p>
+
+<p class="MsoNormal" style="margin-left:70.8pt" mce_style="margin-left:70.8pt"><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">zal</span>=0 - состояние локации зал</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*<span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">p</span> ‘ ………</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>…</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:
+EN-US" mce_style="mso-ansi-language:
+EN-US" lang="EN-US">Exit</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-tab-count:1" mce_style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-ansi-language:EN-US" mce_style="mso-ansi-language:EN-US" lang="EN-US">end</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><o:p>&nbsp;</o:p></p>
+
+<ol style="margin-top:0cm" mce_style="margin-top:0cm" start="3" type="1">
+ <li class="MsoNormal" style="mso-list:l0 level1 lfo2" mce_style="mso-list:l0 level1 lfo2">Если в локации ГГ находит
+     предмет или при переходе предмет теряется то удобно обозначать в тексте
+     узла или перехода «+ Имя предмета» предмет добавлен в инвентарь<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>или «– Имя предмета» предмет удален из
+     инвентаря. А также при использовании предмета «исп. Имя предмета»</li>
+</ol>
+
+<p class="MsoNormal" style="margin-left:36.0pt" mce_style="margin-left:36.0pt"><span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal">Графом может пользоваться и сценарист без знания принципов
+программирования, так как будет наглядно видеть все цепочки сюжета, и не
+запутаться откуда и куда ГГ должен попасть в данный конкретный момент.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Какие ещё выгоды при таком системном подходе можно получить,
+например можно не особо сложно локализовать игру на другие языки.</p>
+
+<p class="MsoNormal">Если весь текст<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;
+</span>вынесен за пределы шаблона в отдельную локацию, по одной локации для
+каждого языка.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:"> на программу Explain <a href="http://www.bestfree.ru/soft/graph/mindmap.php" mce_href="http://www.bestfree.ru/soft/graph/mindmap.php" target="_blank"><span style="color:#105289;text-decoration:none;text-underline:none" mce_style="color:#105289;text-decoration:none;text-underline:none">http://www.bestfree.ru/soft/graph/mindmap.php</span></a></span></span></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;
+font-family:" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;
+font-family:">Загрузить
+Explain с моей странички </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">http</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">://</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">day</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">0.</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">narod</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">.</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">ru</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">/</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">stat</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">/</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">Explain</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">.</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">zip</span></span></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:
+" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:
+" lang="EN-US"> </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">картинки схема http://day0.narod.ru/stat/shema.PNG</span></span></p><p class="MsoNormal">
+<span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:
+" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:
+" lang="EN-US"> </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">картинки редактор<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;
+&nbsp;</span>http://day0.narod.ru/stat/red.PNG</span></span>
+<span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">&nbsp;</span></span></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:
+" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:
+" lang="EN-US"> </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">картинки граф<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp;
+</span>http://day0.narod.ru/stat/graf.PNG</span></span></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:
+" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:
+" lang="EN-US"> </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">граф игры "Дом пустоты" для программы
+Explain<span style="mso-spacerun:yes" mce_style="mso-spacerun:yes">&nbsp; </span>http://day0.narod.ru/stat/dom8.txt</span></span></p>
+
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";color:black;="" background:#f9f9f9;mso-ansi-language:en-us"="" mce_style="font-size:9.5pt;font-family:" lang="EN-US">URL</span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:
+" verdana","sans-serif";color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:
+" lang="EN-US"> </span></span><span class="apple-style-span"><span style="font-size:9.5pt;font-family:" verdana","sans-serif";="" color:black;background:#f9f9f9"="" mce_style="font-size:9.5pt;font-family:">игры "Дом пустоты" http://day0.narod.ru/stat/b26.qsp</span></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p><p><br mce_bogus="1"></p><p><br /></p><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf ="/plugins/content/syntaxhighlighter/scripts/clipboard.swf";SyntaxHighlighter.config.stripBrs=true;
+		SyntaxHighlighter.all();
+	  </script></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+</div>
+                                               <div id="user7"><ul class="latestnews">
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=120:2012-03-21-03-39-37&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Чекпойнты - автоматическое сохранение</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=114:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Выбор случайных вариантов - тянем карты из колоды [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=112:2011-05-20-06-23-02&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Плавное изменение цвета фона [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=111:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Игровое время [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=107:2010-07-29-14-46-07&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Плавная остановка музыки в игре</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=106:2010-06-27-17-43-55&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Поиск кратчайшего пути между городами</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=105:2010-06-17-13-54-25&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Мини-игра &quot;Взорви зомби&quot; - пример использования локации-счётчика</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=84:qsp-demos-300&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Архив примеров кода - &quot;28 в 1&quot;</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=83:blackjack-lite-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			BlackJack Lite [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=82:fight-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Пример реализации боя [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=81:back-tutorial-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Back Tutorial [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=80:html-sample-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			HTML Sample [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Гибкий плейлист [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=78:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Использование Wiki разметки [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=77:-html-&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Использование в HTML специальных символов [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=76:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Оформление меню для игры [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=75:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Сапер [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=74:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Конь и ферзь [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=73:2010-04-05-12-05-15&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Жизнь 1.0</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=72:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Создание диалогов [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=70:qsp-inventory-advanced-lib-076&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Библиотечка дополняющая инвентарь 0.76</a>
+	</li>
+</ul></div>                        <div class="clr"></div>
+              	</div>
+
+                <div id="botcurve"><span>&nbsp;</span></div>
+
+            </div>
+
+			
+			
+<!--				
+!!!! Nex's hack !!!!
+-->				
+<!--				
+!!!! Nex's hack !!!!
+-->				
+
+
+  		</div>
+        <div class="clr_bot"></div>
+        <div id="foot">
+            <div id="footl">
+                <div id="botmenu"><ul class="menu"><li class="item73"><a href="/index.php?option=com_content&amp;view=article&amp;id=47&amp;Itemid=73"><span>FAQ</span></a></li><li class="item70"><a href="http://ifwiki.ru" target="_blank"><span>IFWiki</span></a></li><li class="item71"><a href="http://ifiction.ru"><span>IFiction</span></a></li><li class="item82"><a href="http://rilarhiv.ru/" target="_blank"><span>Архив текстовых игр</span></a></li><li class="item72"><a href="http://tinyurl.com/qsp-irc2"><span>#qsp</span></a></li><li class="item80"><a href="/index.php?option=com_content&amp;view=article&amp;id=115&amp;Itemid=80"><span>AeroQSP</span></a></li><li class="item84"><a href="https://github.com/QSPFoundation/qsp" target="_blank"><span>Исходный код</span></a></li><li class="item85"><a href="/index.php?option=com_jawards&amp;Itemid=85"><span>Доска почёта</span></a></li></ul></div>
+                <div id="copyright"></div>
+            </div>
+            <div id="footr">		<div class="moduletable_online">
+					<h3>Сейчас на сайте:</h3>
+					<ul class='mod_login_online'>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=311' class='mod_login_online'>Aleks Versus</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2442' class='mod_login_online'>dmvikar</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2695' class='mod_login_online'>jackett</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2341' class='mod_login_online'>Larkin</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2081' class='mod_login_online'>NickoAilus</a></li>
+</ul>
+		</div>
+			<div class="moduletable">
+					<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7014404-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>		</div>
+	</div>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

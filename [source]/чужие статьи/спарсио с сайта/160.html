@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
+<head>
+	<link href="/templates/coolness/css/template_css.css" rel="stylesheet" type="text/css" />	
+    
+	<style type="text/css">
+		#container { width: 965px; }
+		#content { float:left; width: 99.9%!important; width: auto; }
+		#maincol { margin-right: 15px; margin-left: 15px; position:relative!important; position:inherit; float:none!important; float:left; width: auto; overflow:hidden }
+		#leftcol { width: 200px!important;  width: 192px; float:left; margin: 0px 15px!important; margin:0px 15px 0 7px;  }
+		#rightcol { width: 280px!important; width: 272px; float:right; margin: 0px 15px!important; margin:0px 7px;   }
+		#multicol { width: 920px!important; width: 912px; margin: 0px 28px!important; margin:0px 15px 0px 7px;   }
+		#menusearch { background: #4A9CD5 url(/templates/coolness/images/head_foot.png) no-repeat 0 -611px; }
+		ul.menu a { color:#2a7190; }
+		ul.menu a:hover, #menu ul.menu li a, ul.menu li.active a, ul#mainlevel li.active a, ul#mainlevel a:hover, td.sectiontableheader, .sectiontableheader, #inner .dynamic-tab-pane-control .tab-row .tab.hover.selected, #inner .dynamic-tab-pane-control .tab-row .tab.selected, .jpcool_dialog_menu ul.menu li a:hover, .jpcool_dialog_menu ul.menu li.active a, .cbSSmenu ul:hover, .cbSSmenu a:hover, .cbSSmenu a:focus, .cbMenu a:hover, .cbMenu a:focus {  background:#4A9CD5; }
+		table.cb-tips-bg, legend  { background-color:#4A9CD5;  }
+		.createdate  { border-bottom: solid 1px #4A9CD5; }
+		.modifydate { border-top: solid 1px #4A9CD5; }
+		#header { border-bottom: solid 3px #4A9CD5; }
+		.inputbox, .cb-tips-fg, TEXTAREA, .cbMenu, .cbSSmenu { border: solid 1px #4A9CD5; }
+		#logo h1, #logo h1 a, a:link, a:visited, a:hover, #botmenu a:hover, .cbMenu a, .cbSSmenu a, .cbMenu a:link, .cbMenu a:visited, .cbMenu a:hover, .cbSSmenu a:link, .cbSSmenu a:visited, .cbSSmenu a:hover, .cbMenu, .cbSSmenu, table.adminform textarea { color:#2a7190; }
+		#leftcol div.module h3, #leftcol div.module, #leftcol div.module_menu { width: 200px;  }
+		#rightcol div.module h3, #rightcol div.module, #rightcol div.module_menu { width: 280px; }
+		#multicol div.module h3, #multicol div.module, #multicol div.module_menu { width: 920px; }
+	</style>
+    <!--[if IE 6]>
+    <style>
+		#menu ul li { padding: 3px 15px; margin: 0px; }
+		#menu ul li a { padding: 0px; height: auto; }
+		.jpcool_dialog .jpcool_content,.jpcool_dialog_menu .jpcool_content {zoom:1;overflow-y:hidden;}
+		.jpcool_dialog .jpcool_top,.jpcool_dialog_menu .jpcool_top {height:1600px; }
+    </style>
+    <![endif]-->
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NOODP, index, follow" />
+  <meta name="keywords" content="текстовые игры, квесты, QSP" />
+  <meta name="title" content="QSPCOMPO 2022: Вторая Жизнь" />
+  <meta name="author" content="NickoAilus" />
+  <meta name="description" content="QSP - платформа для создания текстовых игр" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>QSPCOMPO 2022: Вторая Жизнь - QSP - Текстовые игры на любой вкус</title>
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/plugins/content/syntaxhighlighter/styles/shCore.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/content/syntaxhighlighter/styles/shThemeDefault.css" type="text/css" />
+  <link rel="stylesheet" href="http://qsp.su/plugins/content/attachments.css" type="text/css" />
+  <link rel="stylesheet" href="http://qsp.su/components/com_uddeim/templates/default/css/uddemodule.css" type="text/css" />
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/media/system/js/caption.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushAS3.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushBash.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushCss.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushDiff.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushJava.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushPlain.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushSql.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="/plugins/content/syntaxhighlighter/scripts/shBrushQsp.js"></script>
+
+</head>
+<body id="page_bg">
+<div align="center">
+	<div id="container">
+    	<div id="header">
+        	<div id="logo">
+				                    <h1><a href="/"><img src=./templates/coolness/images/headerlogo.png></a></h1>
+                			</div>
+        	<div id="sloganmenu">
+            	<div id="slogan"><h2>Текстовые игры на любой вкус</h2></div>
+                               <div id="menusearch">
+                	<div id="menu"><ul class="menu"><li class="item1"><a href="http://qsp.su/"><span>Главная</span></a></li><li class="item87"><a href="/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=87"><span>Скачать плеер</span></a></li><li class="item55"><a href="/index.php?option=com_sobi2&amp;Itemid=55"><span>Игры</span></a></li><li class="item64"><a href="/index.php?option=com_content&amp;view=article&amp;id=61&amp;Itemid=64"><span>Конкурсы</span></a></li><li id="current" class="active item56"><a href="/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=56"><span>Разработчикам</span></a></li><li class="item83"><a href="http://wiki.qsp.su"><span>Wiki</span></a></li><li class="item57"><a href="/index.php?option=com_agora&amp;Itemid=57"><span>Форум</span></a></li></ul><div class="toplogin"><a href="http://qsp.su/index.php?option=com_comprofiler&task=login">Войти</a> или <a href="http://qsp.su/index.php?option=com_comprofiler&task=registers">Зарегистрироваться</a></div></div>
+                    <div id="search"></div>
+                    <div class="clr"></div>
+                </div>
+                                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div id="content">
+            <div id="pathflags">
+             
+             </div>
+            
+            
+            
+
+			
+			
+			
+			
+			
+			
+			
+			
+<!--			
+            <div id="maincol">
+!!!! Nex's hack !!!!
+-->				
+<div id="maincol">
+
+
+<!--
+						-->
+						
+						
+
+				<div id="topcurve"><span>&nbsp;</span></div>
+                <div id="mainborders">
+						                        <div id="inner"><table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+				<a href="/index.php?option=com_content&amp;view=article&amp;id=160%3Aqspcompo-2022-&amp;Itemid=56" class="contentpagetitle">
+			QSPCOMPO 2022: Вторая Жизнь</a>
+			</td>
+				
+		
+					</tr>
+</table>
+
+<table class="contentpaneopen">
+<tr>
+	<td valign="top">
+		<span class="small">
+			Автор: NickoAilus		</span>
+		&nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td valign="top" class="createdate">
+		07.03.2022 23:08	</td>
+</tr>
+
+
+<tr>
+<td valign="top">
+<p style="text-align: left;"><img mce_style="vertical-align: middle;" style="vertical-align: middle;" mce_src="https://ifwiki.ru/files/Compo-2022.png" src="https://ifwiki.ru/files/Compo-2022.png" width="400px"><br /></p><p style="text-align: left;">Здравствуйте, дорогие друзья! Очередной конкурс текстовых игр QSP-Compo с подзаголовком "Вторая Жизнь" официально объявляется открытым ^^ Вы всегда хотели создать собственный проект, который, возможно, игроки запомнят на долгие годы? Или же Вы давно этим занимаетесь и вновь желаете порадовать народ своими работами? Компо станет тем самым фестивалем, который поможет сплотить всех QSP-разработчиков в одном цветущем турнире. Творите, получайте удовольствие, соревнуйтесь и выигрывайте - мы рады каждому человеку, чья искра вдохновения привела его на путь девелопера <img src="http://qsp.su/components/com_agora/img/smilies/smile.png" mce_src="/components/com_agora/img/smilies/smile.png" alt="smile">&nbsp; Вас ждут денежные призы, возможность посостязаться с единомышленниками в искусстве и хорошее настроение))) Вперёд, к той второй жизни, которая столь крепко объединяет каждого из нас!
+<br /></p>
+<p style="text-align: left;"><br /><b>Сроки проведения мероприятия:</b>
+<br />- анонс: 6 марта
+<br />- крайний день сдачи: 25 июня
+<br />- публикация игр: 26 июня
+<br />- подведение итогов: 28 августа
+<br /></p>
+<p style="text-align: left;"><br />На текущий момент призовой фонд конкурса: 16 000 рублей.<br /><br /><b>Организатор конкурса в этом году:</b> De@th K!d
+</p><p style="text-align: left;"><br /><b>Подтверждённые члены жюри:</b> Enola, Larkin, 
+Khaelenmore ThaaL, tangarou, Виталий Блинов, Серый Волк, Aleks Versus. Список будет 
+дополняться! Логотип мероприятия в процессе создания <img src="http://qsp.su/components/com_agora/img/smilies/tongue.png" mce_src="/components/com_agora/img/smilies/tongue.png" alt="tongue"> 
+<br /></p>
+<p style="text-align: left;"><br />Присылайте ваши творения на следующий почтовый ящик: <b>d e a t h k i d @ m a i l . r u</b> (без пробелов). В теме письма обязательно укажите фразу "QSP-Compo")) В самом сообщении должно быть следующее:
+<br />а) название игры;
+<br />б) одиночный/коллективный никнейм либо имя автора (ежели разработчиков несколько, можно написать имена через запятую);
+<br />в) возрастной рейтинг проекта с расшифровкой;
+<br />г) на какой версии плеера QSP запускается (если структура игры отличается от обычной);
+<br />д) способ связи с автором (e-mail - наиболее оптимальный вариант);
+<br />е) архив с проектом и прохождение в текстовом виде.
+<br /></p>
+<p style="text-align: left;"><br />К участию в конкурсе допускаются любые игры, созданные на движке QSP и всех его вариациях. Тематика работ определяется автором. Победитель выявится через среднее арифметическое. Фанфики, то есть творчество по мотивам уже существующего фэндома, <b>разрешены</b>, поскольку являются мыслями создателя. Проекты также должны соответствовать <b>следующим требованиям</b>:
+<br />1) иметь как минимум один выбор в течение геймплея. Игра может 
+обладать линейной концовкой, но какая-никакая вариативность в ней 
+обязана присутствовать;
+<br />2) обладать проходимостью, то есть возможностью дойти до финала, и 
+давать игроку ясно понять, что данное приключение только что было им 
+завершено;
+<br />3) иметь грамотный литературный язык. От ошибок не застрахован 
+никто, но ежели игра буквально пестрит ими, она точно будет снята с 
+конкурса;
+<br />4) обладать предварительной эксклюзивностью. Работа должна 
+публиковаться впервые, не являться римейком либо ремастером уже 
+существующего проекта (в том числе от другого разработчика) и не 
+содержать в себе скопированные мысли других авторов (включая тех, кто не
+ был связан с interactive fiction);
+<br />5) не нарушать авторские права. Ежели на контент игры будет подана 
+жалоба от правообладателя, это станет серьёзным основанием для её 
+дисквалификации.
+<br /></p>
+<p style="text-align: left;"><br /><b>Организатор обязуется:</b>
+<br />1) принять все игры от потенциальных участников и проверить каждую из них на производительность;
+<br />2) коли проект физически непроходим либо имеет возрастной рейтинг 
+выше заявленного, связаться с автором в максимально кратчайшие сроки и 
+указать тому на ошибки (во втором случае с одобрения последнего 
+допускается увеличение рейтинга в более высокую сторону), дав 
+разработчику разумное время на исправление ошибок;
+<br />3) вовремя анонсировать, запустить и завершить конкурс текстовых игр "QSP-Compo 2022";
+<br />4) подвести итоги, базируясь на голосах от членов жюри, и распределить участников по местам, раздав первой тройке призовой фонд;
+<br />5) не принимать участие в оценивании игр и не быть ничьим тестером;
+<br />6) информировать о статусе мероприятия на форуме QSP и в сервере Discord.
+<br /></p>
+<p style="text-align: left;"><br /><b>Организатор имеет право:</b>
+<br />1) не принимать игру на конкурс либо дисквалифицировать её по 
+желанию разработчика с непременным уведомлением последнего. Причинами 
+для отказа могут быть:
+<br />а) стопроцентная линейность (проект не содержит выборов и всё, чего в
+ нём может делать игрок, это нажимать кнопку "далее" - так называемый 
+интерактивный рассказ);
+<br />б) копипаста (например, если автор взял текст из книги и перенёс его на движок QSP, отредактировав полностью или в части);
+<br />в) римейк или ремастер уже существующей игры, вне зависимости от 
+авторства и степени изменения контента, равно как и слишком ранняя 
+публикация в каталоге (после начала конкурса публикация допускается);
+<br />г) невозможность пройти работу даже с солюшеном (критические баги либо массовые ошибки кода, из-за которых играть очень сложно);
+<br />д) проект неграмотно написан, что делает затруднительным чтение текста в нём;
+<br />е) игра нарушает авторские права (только если правообладатель 
+напрямую заявит об этом организатору и данный вопрос будет существенно 
+изучен, а затем сей факт подтвердится);
+<br />ж) другие причины, связанные непосредственно с контентом;
+<br />2) сдвинуть сроки начала/завершения конкурса на некоторое время с 
+указанием причины на форуме QSP и в сервере Discord, не превышающее 
+месяца.
+<br /></p>
+<p style="text-align: left;"><br /><b>Члены жюри обязуются:</b>
+<br />1) пройти каждую из присланных работ как минимум один раз;
+<br />2) написать на все игры обзоры длиной не менее шести форумных строк 
+(от тысячи символов) и выставить им оценки от одного балла до десяти, 
+где единичка - это "очень плохо", а десятка символизирует маленький 
+шедевр РИЛ-сферы, после чего вовремя отослать их организатору либо 
+написать на форуме QSP. Все ревью будут опубликованы на данном форуме 
+для всеобщего обозрения;
+<br />3) оценивать проекты непредвзято и никому не подсуживая.
+<br /></p>
+<p style="text-align: left;"><br /><b>Члены жюри имеют право:</b>
+<br />1) утверждать свою собственную номинацию, выплачивая за неё денежное
+ либо вещное вознаграждение. К примеру, "игра, которая будет обладать 
+сюжетом, достойным хотя бы рассказа, получит от меня тысячу рублей и/или
+ набор сделанных вручную шоколадных конфет". Данная возможность 
+необязательна и реализуется исключительно по желанию члена жюри. 
+Ответственность об отправке такого вознаграждения ложится целиком на его
+ плечи;
+<br />2) быть тестером для участников конкурса (не забывая, впрочем, о пункте 3 предыдущего абзаца).
+<br /></p>
+<p style="text-align: left;"><br />Связаться с организатором мероприятия, то бишь мной, по тем либо иным вопросам можно в социальной сети ВКонтакте (<b>vk.com/deathkid8</b> - Никита Карташёв), в Дискорде (<b>@deathkid8</b>)
+ или прямо здесь, отправив ему личное сообщение. Не стесняйтесь и 
+спрашивайте о чём угодно)) Всего Вам наилучшего и... до встречи на 
+виртуальных просторах <img src="http://qsp.su/components/com_agora/img/smilies/wink.png" mce_src="/components/com_agora/img/smilies/wink.png" alt="wink"></p><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf ="/plugins/content/syntaxhighlighter/scripts/clipboard.swf";SyntaxHighlighter.config.stripBrs=true;
+		SyntaxHighlighter.all();
+	  </script></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+</div>
+                                               <div id="user7"><ul class="latestnews">
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=120:2012-03-21-03-39-37&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Чекпойнты - автоматическое сохранение</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=114:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Выбор случайных вариантов - тянем карты из колоды [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=112:2011-05-20-06-23-02&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Плавное изменение цвета фона [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=111:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Игровое время [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=107:2010-07-29-14-46-07&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Плавная остановка музыки в игре</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=106:2010-06-27-17-43-55&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Поиск кратчайшего пути между городами</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=105:2010-06-17-13-54-25&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Мини-игра &quot;Взорви зомби&quot; - пример использования локации-счётчика</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=84:qsp-demos-300&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Архив примеров кода - &quot;28 в 1&quot;</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=83:blackjack-lite-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			BlackJack Lite [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=82:fight-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Пример реализации боя [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=81:back-tutorial-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Back Tutorial [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=80:html-sample-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			HTML Sample [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Гибкий плейлист [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=78:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Использование Wiki разметки [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=77:-html-&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Использование в HTML специальных символов [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=76:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Оформление меню для игры [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=75:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Сапер [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=74:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Конь и ферзь [1.0]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=73:2010-04-05-12-05-15&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Жизнь 1.0</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=72:-11&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Создание диалогов [1.1]</a>
+	</li>
+	<li class="latestnews">
+		<a href="/index.php?option=com_content&amp;view=article&amp;id=70:qsp-inventory-advanced-lib-076&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" class="latestnews">
+			Библиотечка дополняющая инвентарь 0.76</a>
+	</li>
+</ul></div>                        <div class="clr"></div>
+              	</div>
+
+                <div id="botcurve"><span>&nbsp;</span></div>
+
+            </div>
+
+			
+			
+<!--				
+!!!! Nex's hack !!!!
+-->				
+<!--				
+!!!! Nex's hack !!!!
+-->				
+
+
+  		</div>
+        <div class="clr_bot"></div>
+        <div id="foot">
+            <div id="footl">
+                <div id="botmenu"><ul class="menu"><li class="item73"><a href="/index.php?option=com_content&amp;view=article&amp;id=47&amp;Itemid=73"><span>FAQ</span></a></li><li class="item70"><a href="http://ifwiki.ru" target="_blank"><span>IFWiki</span></a></li><li class="item71"><a href="http://ifiction.ru"><span>IFiction</span></a></li><li class="item82"><a href="http://rilarhiv.ru/" target="_blank"><span>Архив текстовых игр</span></a></li><li class="item72"><a href="http://tinyurl.com/qsp-irc2"><span>#qsp</span></a></li><li class="item80"><a href="/index.php?option=com_content&amp;view=article&amp;id=115&amp;Itemid=80"><span>AeroQSP</span></a></li><li class="item84"><a href="https://github.com/QSPFoundation/qsp" target="_blank"><span>Исходный код</span></a></li><li class="item85"><a href="/index.php?option=com_jawards&amp;Itemid=85"><span>Доска почёта</span></a></li></ul></div>
+                <div id="copyright"></div>
+            </div>
+            <div id="footr">		<div class="moduletable_online">
+					<h3>Сейчас на сайте:</h3>
+					<ul class='mod_login_online'>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=311' class='mod_login_online'>Aleks Versus</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2442' class='mod_login_online'>dmvikar</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2695' class='mod_login_online'>jackett</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2341' class='mod_login_online'>Larkin</a></li>
+<li><a href='http://qsp.su/index.php?option=com_comprofiler&amp;task=userprofile&amp;user=2081' class='mod_login_online'>NickoAilus</a></li>
+</ul>
+		</div>
+			<div class="moduletable">
+					<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7014404-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>		</div>
+	</div>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
