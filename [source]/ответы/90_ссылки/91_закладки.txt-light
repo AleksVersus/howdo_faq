@@ -3,3 +3,111 @@
 * [Локализация классического плеера QSP v.5.7.0](http://qsp.su/index.php?option=com_agora&task=topic&id=164&Itemid=57)
 * [Настройка окошек классического плеера с помощью qspgui.cfg](http://qsp.su/index.php?option=com_agora&task=topic&id=861&Itemid=57)
 * [Конвертер QSP at TXT2GAM](https://codepen.io/srg-kostyrko/pen/QWqdwxv)
+
+=Официальный сайт QSP=
+
+[QSP.ORG](https://qsp.org)
+http://qsp.org
+http://qsp.su
+https://qsp.su
+
+=Наша группа во Вконтакте=
+
+https://vk.com/qsplayer
+
+=Программы=
+
+Основные репозитории QSP: https://github.com/QSPFoundation
+
+--Плееры, редакторы, конвертеры, анализаторы--
+
+ПРОГРАММЫ (не все, архив Aleks Versus): https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A
+
+Сюда входят:
+
+Плееры:
+* Quest Soft Player (classic v.5.8.0, 5.7.0),
+* Quest Navigator v.0.0.28
+* QSPider (qSpider) v.0.12.0
+* Qqsp, QSP для Pocketbook, QSP CE и др.
+
+Редакторы:
+* Quest Generator (QGen) v.4.0.0
+* Редактор сохранений QSPSaveEditor 0.3.7
+
+QSP-Анализатор — программа для анализа кода
+
+Конвертеры:
+* TXT2GAM (v.0.11)
+* GamConv
+
+Пакет для Sublime Text: билдер + подсветка синтаксиса.
+
+=TXT2GAM | QSP2TXT | Converters=
+
+--Пакет qsp-конвертеров--
+
+https://www.npmjs.com/package/@qsp/converters
+
+Пакет для работы с текстовым и бинарным форматом qsp от Werewolf. Если кому-то захочется поиграться - там специально сделано что IO операции не часть пакета (чтобы его можно было в браузере(qspider) и в nodejs использовать), поэтому четние/запись файла нужно делать средствами nodejs.
+
+--qsp -> txt--
+
+Утилита `Werewolf`а для конвертирования QSP-файла в текстовый файл формата TXT2GAM
+
+ https://codepen.io/srg-kostyrko/full/QWqdwxv
+
+=Плеер | Различные версии плееров | Players=
+
+На официальном сайте:
+	[https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87](https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87)
+
+=Quest Player fork от SeedHartha для Android | Плеер для Андроид=
+
+Репозиторий: https://github.com/seedhartha/QuestPlayer
+Релизные версии: https://github.com/seedhartha/QuestPlayer/releases
+
+=Справка | Видеоуроки=
+
+Видео-уроки и другая справочная информация в видеоформате по QSP: https://www.youtube.com/c/aleksversus
+
+=Справка | Справочник "Как сделать?"=
+
+Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su: https://aleksversus.github.io/howdo_faq
+
+Офлайн-версию справочника можно скачать здесь: https://github.com/AleksVersus/howdo_faq/releases
+
+=Справка | wiki.qsp.org=
+
+Официальная справка: https://wiki.qsp.org
+Резервная копия официальной справки на 20 июня 2022 года: https://mega.nz/folder/vG4XzSoZ#gf0jU0FFdWHpgJnN8eAaGA
+
+=Examples | Примеры=
+
+Некоторые примеры: диалоги, как делать меню, календарь (время), работа с предметами, простые примеры, события по таймеру, шкалы и прогресс-бары
+
+https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw
+
+=Игры=
+
+Архив Крема (не только QSP-игры): https://db.crem.xyz/game
+Архив игр в библиотеке РИЛ (не полный): http://rilarhiv.ru/qsp.htm
+Игры QSP-Compo 2022 на Яндекс-диске: https://disk.yandex.ru/d/sPZYHymJiwjJkA
+Игры на QSP. Не все, но многие. Архив Aleks Versus: https://mega.nz/folder/7XgTQKqT#P4q_86iTd0mZulCWw-Vq9w
+
+--Вереница миров, или Выводы из закона Мерфи--
+книга-игра Ольги Голотвиной, реализованная на qSpider: https://aleksversus.github.io/merphy_law
+
+--Демка плеера qSpider--
+Демонстрация работы qSpider онлайн. Три игры:
+Сказочка на ночь, Куртуазная баллада, Город туманов
+https://qspfoundation.github.io/qspider
+
+=qSpider | Плеер=
+
+Отличается от классического плеера возможностью полноценно работать с HTML, назначать горячие клавиши, размещать игру онлайн у себя на сайте и другими интересными плюшками.
+
+Основной репозиторий qSpider — нового плеера от Werewolf: https://github.com/QSPFoundation/qspider
+Страница релизов нового плеера qSpider от Werewolf: https://github.com/QSPFoundation/qspider/releases
+
+
