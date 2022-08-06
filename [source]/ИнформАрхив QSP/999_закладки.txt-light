@@ -3,6 +3,8 @@
 * [Локализация классического плеера QSP v.5.7.0](http://qsp.su/index.php?option=com_agora&task=topic&id=164&Itemid=57)
 * [Настройка окошек классического плеера с помощью qspgui.cfg](http://qsp.su/index.php?option=com_agora&task=topic&id=861&Itemid=57)
 * [Конвертер QSP at TXT2GAM](https://codepen.io/srg-kostyrko/pen/QWqdwxv)
+* [IFWiki о русской интерактивной литературе (текстовых играх)](http://ifwiki.ru" href="http://ifwiki.ru)
+* [Библиотека URQ](https://urq.plut.info/texts)
 
 =Официальный сайт QSP=
 
@@ -110,10 +112,74 @@ https://qspfoundation.github.io/qspider
 Основной репозиторий qSpider — нового плеера от Werewolf: https://github.com/QSPFoundation/qspider
 Страница релизов нового плеера qSpider от Werewolf: https://github.com/QSPFoundation/qspider/releases
 
-=Темы и статьи с различными решениями=
+=Темы и статьи с различными решениями на QSP=
 	
 	* [F.A.Q общие вопросы и некоторые примеры](https://qsp.su/index.php?option=com_agora&task=topic&id=316&Itemid=57)
 	* [Календарь по методу счёта Юлианских дней](https://qsp.su/index.php?option=com_agora&task=topic&id=956&Itemid=57)
 	* [Гибкий плейлист 1.0](https://qsp.su/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
 	* [Библиотечка, дополняющая инвентарь]( https://qsp.su/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
 	* [Действие по условию](https://qsp.su/index.php?option=com_agora&task=topic&id=348&Itemid=57)
+
+=О лицензиях=
+
+	* О лицензии OFL: [http://ru.wikipedia.org/wiki/OFL](http://ru.wikipedia.org/wiki/OFL)
+	* [Лицензия Creative Commons, она же CC, и ее разновидности](https://creativecommons.org/licenses/?lang=ru)
+	* [Что такое Royalty-Free](https://qsp.su/index.php?option=com_agora&task=topic&id=398&Itemid=57)
+
+=Писательство=
+	
+	* [Пишите живее! Бесплатный курс по защите ваших текстов от словесной мертвечины](https://www.timuroki.ink/thewritingdead)
+	* [Семинар по общим вопросам. Стенограмма-2](https://web.archive.org/web/20161012025424/http://www.audag.org/?p=1521)
+
+=Бесплатная графика для игр=
+
+	* [Подборка цветовой гаммы (палитры) для оформления. Огромное количество сочетаний цветов.](https://color.adobe.com/ru/explore/most-popular/?time=month)
+	* [Real Colors](https://play.google.com/store/apps/details?id=com.macaw). Готовые палитры, но, кроме того, оно умеет снять фото (или взять картинку из галереи) и сгенерить палитру на его основе.
+	* Разложить картинку на цвета (для подбора палитры): [http://www.cssdrive.com/imagepalette/index.php](http://www.cssdrive.com/imagepalette/index.php)
+	* Онлайн-сервис по подбору и созданию иконок. [https://iconcrafts.com](https://iconcrafts.com)
+	* [https://pixabay.com/](https://pixabay.com/)
+	* [FREE CLIP ART YOU CAN USE FOR ANYTHING YOU LIKE](http://www.clker.com)
+	* [https://www.wpclipart.com](https://www.wpclipart.com)
+	* [http://www.tineye.com](http://www.tineye.com) - поиск изображений по фрагменту либо отредактированному изображению. Полезно, если нужно установить автора или найти картинку в полном масштабе.
+	* Сборник фотографий с лицензией CC0 (полностью свободная для любого использования): [http://www.pexels.com](http://www.pexels.com)
+	* Бесплатные тайлы для бэкграунда:
+		* [http://www.grsites.com/archive/textures](http://www.grsites.com/archive/textures)
+		* [http://patterns.ava7.com](http://patterns.ava7.com)
+		* [http://bgpatterns.com](http://bgpatterns.com)
+
+=Бесплатные шрифты=
+
+	* Отличный сайт со свободными шрифтами: [http://openfontlibrary.org](http://openfontlibrary.org)
+	* Ещё, конечно же, вот: [http://www.google.com/webfonts](http://www.google.com/webfonts)
+	* Бесплатные шрифты от ParaType - [http://www.paratype.ru/public](http://www.paratype.ru/public/)
+	* [Схема подборки шрифта](http://infogra.ru/hires/2012/03/11/1lyi6Fo.png)
+	* Сборник хороших русскоязычных шрифтов: [http://fonts4web.ru](http://fonts4web.ru)
+	* 36 бесплатных кириллических шрифтов [https://te-st.ru/2015/02/20/free-cyrillic-fonts](https://te-st.ru/2015/02/20/free-cyrillic-fonts)
+	* Топ моноширинных шрифтов [https://freebiesupply.com/blog/top-mono … evelopers](https://freebiesupply.com/blog/top-monospace-fonts-for-developers)
+
+=Бесплатные звуки и музыка для игр=
+
+	* ["Tunguska Electronic Music Society"](http://tunguskagrooves.com) - мелодичная инструментальная и электронная музыка, лицензия CC.
+	* [портал Флэш-игр "Newgrounds"](http://www.newgrounds.com/audio) - огромное количество разнообразной музыки, написанной в основном для игр, вся распространяется по лицензии CC-BY-NC-SA.
+	* Большая коллекция бесплатных звуков [https://www.freesound.org/](https://www.freesound.org/)
+	* AudioMicro - [бесплатная музыка](http://www.audiomicro.com/free-royalty-free-music) и [звуковые эффекты](http://www.audiomicro.com/free-sound-effects), которые предоставляются по принципу "Royalty-free".
+	* [incompetech](http://incompetech.com/m/c/royalty-free) - Каталог музыки, распространяемой по лицензии CC-BY. Есть сортировки по жанрам и настроению.
+	* [http://musopen.org](http://musopen.org) - Музыка, перешедшая в общественное достояние.
+	* [http://allsoundsaround.com](http://allsoundsaround.com) - лицензия указана для каждого файла;
+	* [http://wav-library.net](http://wav-library.net) - пишут что "все файлы свободны от авторских прав";
+	* [http://download-sounds.ru](http://download-sounds.ru) - все файлы проверенные, свободны от авторских прав.
+	* Нашёл канал с хорошей "фоновой" музыкой, всё бесплатно для любого использования. [https://www.youtube.com/user/CHUKImusic/about](https://www.youtube.com/user/CHUKImusic/about)
+	* Бесплатные [звуки](https://soundslibmp3.ru) для видеомонтажа в самых популярных форматах wav, mp3, ogg.
+
+=Платные Royalty-Free звуки и музыка для игр=
+
+В этой теме собираем ссылки на ресурсы, на которых есть платные звуки и музыка, которые можно легально использовать в своих играх, распространяемые по принципу Royalty-Free. Желательно давать краткое описание к ссылке.
+
+	* [Stock Music Site](http://www.stockmusicsite.com) -  Музыка, в т.ч. спец. раздел музыки для игр, и звуковые эффекты.
+	* [Twune](http://twune.myshopify.com) - Студия музыки для игр, продажа готовых треков и разработка на заказ.
+	* [Premium Beat](http://www.premiumbeat.com) - Большой и удобный каталог музыки и звуковых эффектов.
+	* [StockMusic.com](http://www.stockmusic.com) - Большой каталог музыки из звуковых эффектов. Сортировки по жанрам, инструментам, настроению.
+	* [NEO Sounds](http://www.neosounds.com) - Каталог музыки и звуковых эффектов. Сортировки по жанрам, инструментам, настроению, тематике.
+	* [Jamendo](http://www.jamendo.com/en/search)
+	* [AudioMicro](http://www.audiomicro.com) - Большой каталог музыки и звуковых эффектов. Есть сортировка по жанрам, с уточнением по тегам.
+	* [musicmedia tracks](http://www.musicmediatracks.com) - Каталог музыки, с сортировкой по жанрам и настроению.
