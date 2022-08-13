@@ -1,7 +1,7 @@
 что такое args
 ---------------------------------------------------------------------------------------
 =ShadowCat=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21391
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21391
 Доброго дня. 
 Можете ли мне объяснить как работает ARGS? 
 Я таки не могу сообразить( 
@@ -25,7 +25,7 @@ GS 'Приготовить', 'яичницу', 'с луком', 'на завтр
 
 -----------------------------------------------------------------------------------------
 =DeathSpace=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=158&prc=25&Itemid=57#p23143
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=158&prc=25&Itemid=57#p23143
 У меня ещё вопрос,что может делать массив ARGS? и пример если не сложно.
 
 =Aleks Versus=
@@ -61,7 +61,7 @@ gosub 'конец',14,15
 ```
 ----------------------------------------------------------------
 =Lisichka=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21828
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21828
 тогда вопрос по поводу вывода меню: я его вывожу вот так: 
 ```qsp
 if $args['название предмета']='<$Кинжал>': 
@@ -103,7 +103,7 @@ $название_предмета = $args['название предмета']
 А на локации !осмотр вместо $args['название предмета'] ставить $название_предмета.
 ---------------------------------------------------------------
 =oleksandrigo=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=216&prc=25&Itemid=57#p26876
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=216&prc=25&Itemid=57#p26876
 Всем привет, вопрос такой: почему args`ы не видны в актах? 
 Приведу пример. 
 
@@ -156,7 +156,7 @@ args не передаётся, потому что он и не должен п
 dynamic 'act("asdasdsdsada"): gs "<<$args[1]>>"'
 ```
 =Aleks Versus=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26370
 Почему же никто не пользуется поиском?
 Десять минут чтения выдачи расширенного поиска по запросу "ARGS" (по сообщениям): 
  Спойлер Show Spoiler Hide Spoiler
@@ -203,7 +203,7 @@ gosub 'конец',14,15
 ```
 Справка — Пользовательские функции и процедуры http://wiki.qsp.su/help:organizing
 
-Полезная тема: вложенные вызовы подпрограмм http://qsp.su/index.php?option=com_agora&task=topic&id=373&Itemid=57
+Полезная тема: вложенные вызовы подпрограмм https://qsp.org/index.php?option=com_agora&task=topic&id=373&Itemid=57
 
 Форум: Обсуждение и разработка игр 10.Апр.16 22:57:53 — тема "Как сделать?" 
 
@@ -213,7 +213,7 @@ goto 'Лес','Заяц',23
 ```
 , при выполнении этой команды будет осуществлён переход на локацию "Лес", при этом переменной $args[0] на локации "Лес" присвоится значение Заяц, а переменной args[1] - значение 23. 
 
-Если ты делаешь по этому http://qsp.su/index.php?option=com_content&view=article&id=72:-11&catid=36:2009-02-19-06-11-21&Itemid=76 примеру, можешь видеть, что переключение между ветками там задаётся как раз таки значением, которое получает args[0] при обращении к локации: 
+Если ты делаешь по этому https://qsp.org/index.php?option=com_content&view=article&id=72:-11&catid=36:2009-02-19-06-11-21&Itemid=76 примеру, можешь видеть, что переключение между ветками там задаётся как раз таки значением, которое получает args[0] при обращении к локации: 
 
 ```qsp
 gs 'Диалог_А',1 

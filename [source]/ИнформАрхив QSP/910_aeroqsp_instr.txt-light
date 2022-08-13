@@ -1,9 +1,9 @@
 ==Инструкция по использованию AeroQSP совместно с Quest Generator==
 [:aeroqsp_instr]
 
-	1. Скачиваем http://qsp.su/misc/aero/aerodev.zip
-	2. Скачиваем http://qsp.su/attachments/aeroshell.zip
-	3. Черновик документации по новым фичам - http://qsp.su/misc/aero/help.htm
+	1. Скачиваем https://qsp.org/misc/aero/aerodev.zip
+	2. Скачиваем https://qsp.org/attachments/aeroshell.zip
+	3. Черновик документации по новым фичам - https://qsp.org/misc/aero/help.htm
 	4. В файле "run_flash.bat" из "aerodev.zip" редактируем путь к "AeroQSP.exe" - AEROQSP.
 	5. В QGen указываем вместо "qspgui.exe" - файл "run_flash.bat"
 

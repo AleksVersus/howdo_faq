@@ -1,7 +1,7 @@
 статы
 --------------------------------------------------------------------------
 =BlackFox=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=144&prc=25&Itemid=57#p22092
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=144&prc=25&Itemid=57#p22092
 В каком разделе FAQ можно найти инфу о создании статов персонажа и изменение при взаимодействии  
 К примеру Голод:50 (варьируется от 0 до 100) 
 Действие покушать +45 к стату голода 
@@ -68,7 +68,7 @@ act 'Съесть шоколадку':
 end
 ------------------------------------------------------------------
 =Oliver=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22510
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22510
 Народ, вопрос. 
 Есть здоровье, и есть мана. Как сделать так, чтобы когда здоровье на максимуме, мана не использовалась при лечении, и не лечила не чего. Желательно в виде кода.
 
@@ -160,7 +160,7 @@ ELSEIF mp.all <= 0:
 END 
 -------------------------------------------------------------------------------------------
 =skunsss=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23757
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23757
 Привет всем.Я впервые начал делать игру на qsp.До этого с программированием  имел дело лет 20 назад- в школе. 
 Как прикрутить потребности(голод ,сон) / статистику в игру? Календарь(юлианский) и время я сумел сделать...А вот с потребностями в  у меня полный стопор получился.3дня мучаюсь - и ничего не получается.Извините, что спрашиваю, наверное ,такой банальный вопрос  cool
 
@@ -179,7 +179,7 @@ http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57
 очень просто. Там же, где у тебя меняется параметр времени, меняешь значение характеристики. 
 
 Временная система отсюда : 
-http://qsp.su/index.php?option=com_agor … ;Itemid=57
+https://qsp.org/index.php?option=com_agor … ;Itemid=57
 отсюда-то отсюда, но ты понимаешь, как она работает? )) 
 
 Текущее время хранится в переменной time. 
@@ -219,10 +219,10 @@ if голод < 0: голод = 0
 Код:
 gosub '!golod',5 & ! голод увеличился на 5 единиц 
 gosub '!golod',-15 & ! голод уменьшился на 15 единиц
-P.S. И ещё, просьба, помещай код в блок для кода, кнопка http://qsp.su/components/com_agora/img/agoraBBCode/code.png
+P.S. И ещё, просьба, помещай код в блок для кода, кнопка https://qsp.org/components/com_agora/img/agoraBBCode/code.png
 --------------------------------------------------------------
 =CH_B_L=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23825
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23825
 Здравствуйте! 
 (Я не особо шарю в программировании, так что скорее всего это будет немного глупый вопрос) 
 Я хочу сделать так, чтобы в дополнительном окне описания были статы и показатели моего персонажа, которые динамически бы отражали изменение какого-либо из указанных параметров. Пока что я сделал так: создал отдельную локацию "Статы персонажа" с кодом (просто пример): 
@@ -251,7 +251,7 @@ GS 'hp', -10
 В локации 'hp' изменить переменную и вызвать "stat".
 ---------------------------------------------------------------------------------------
 =Darvin432=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23922
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=175&prc=25&Itemid=57#p23922
 пасибо. очень помогло. Ещё вопрос:Как задать максимальное значение? То есть что бы здоровье нельзя было вылечить выше максимума? команда здоровье MAX=100 (это всё до чего я додумался) не работает
 
 =evp=
@@ -260,7 +260,7 @@ MAXhealth = 100
 if health < MAXhealth: act "Лечить": health = iif (health + 20 < MAXhealth, health + 20, MAXhealth)
 ---------------------------------------------------------------------------------------
 =Darvin432=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=196&prc=25&Itemid=57#p25161
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=196&prc=25&Itemid=57#p25161
 Помогите нубу) 
 Как задать максимальное колличество переменной? к примеру если здоровье=100 то выше этого значения подняться не может
 
@@ -276,7 +276,7 @@ Darvin432,
 if health>mhealth: health=mhealth
 ------------------------------------------------------------------------------------
 =Genryzz=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26783
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26783
 Ок. А как заставить переменные меняться? В том окне они статичны. 
 Т.е. 
 kol = 5 
@@ -343,7 +343,7 @@ $onNewLoc = 'onNewLoc'
 Насчет команды gosub или же gs. Она грузит локацию, но не переходит на нее. Это нужно как раз для таких ситуаций. Да и не только.
 ---------------------------------------------------------------------------
 =новичок=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=221&prc=25&Itemid=57#p26965
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=221&prc=25&Itemid=57#p26965
 только не смейтесь, хотя можете и смеяться. но как сделать начальные статы для гг и что бы они при каких-то действиях повышались. в этом вопросе вообще ничего не понимаю.
 
 =Последний из Гаяр=
@@ -366,5 +366,5 @@ http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=221&prc=25&Itemid=57
 
 =Aleks Versus=
 Может помогут вот эти сообщения:
-http://qsp.su/index.php?option=com_agora&task=topic&prc=25&p=145&id=40&Itemid=57#p22094
-http://qsp.su/index.php?option=com_agora&task=topic&prc=25&p=173&id=40&Itemid=57#p23825
+https://qsp.org/index.php?option=com_agora&task=topic&prc=25&p=145&id=40&Itemid=57#p22094
+https://qsp.org/index.php?option=com_agora&task=topic&prc=25&p=173&id=40&Itemid=57#p23825

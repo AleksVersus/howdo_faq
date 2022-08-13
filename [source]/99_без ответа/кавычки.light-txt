@@ -1,7 +1,7 @@
 кавычки
 -------------------------------------------------------------------------------------------
 =DeathSpace=
-http://qsp.su/index.php?option=com_agora&task=topic&id=40&p=161&prc=25&Itemid=57#p23251
+https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=161&prc=25&Itemid=57#p23251
 Ребят хотел из этого 
   
 if iditem[1] = 1:'<a href="exec:gs ''WeaponDefault'',1"><<$wea[1]>></a>.' 

@@ -55,4 +55,4 @@ AeroQSP ориентирован на работу со стилями, поэт
 ```qsp
 	*p "<div style='color:#333333;width:350px;border:12;'>Текст внутри блока</div>"
 ```
-Все поддерживаемые свойства перечисленны в сводной справке по AeroQSP [http://qsp.su/misc/aero/help.htm](http://qsp.su/misc/aero/help.htm)
+Все поддерживаемые свойства перечисленны в сводной справке по AeroQSP [https://qsp.org/misc/aero/help.htm](https://qsp.org/misc/aero/help.htm)

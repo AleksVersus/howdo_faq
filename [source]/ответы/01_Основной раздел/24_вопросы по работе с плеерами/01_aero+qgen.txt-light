@@ -3,14 +3,14 @@
 В: Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?
 
 О:
-Всё довольно просто. Вам необходимо воспользоваться инструкцией по этой ссылке http://qsp.su/misc/aero/readme.txt
+Всё довольно просто. Вам необходимо воспользоваться инструкцией по этой ссылке https://qsp.org/misc/aero/readme.txt
 
 Если что-то не получается, от себя лично могу посоветовать следующее:
 
 	1. Скачайте все три архива по этим ссылкам:
-		* [AeroShell](http://qsp.su/attachments/aeroshell.zip)
-		* [AeroDev](http://qsp.su/misc/aero/aerodev.zip)
-		* [QGen 4.0.0b](http://qsp.su/attachments/qgen400b1.zip)
+		* [AeroShell](https://qsp.org/attachments/aeroshell.zip)
+		* [AeroDev](https://qsp.org/misc/aero/aerodev.zip)
+		* [QGen 4.0.0b](https://qsp.org/attachments/qgen400b1.zip)
 	2. Распакуйте их содержимое в одну папку
 	3. Откройте файл "run_flash.bat" с помощью любого текстового редактора, найдите строку, содержащую `SET AEROQSP=` и после знака равенства замените путь к файлу "AeroQSP.exe" просто на "AeroQSP.exe", так как сейчас файл плеера лежит в той же папке, что и "run_flash.bat". То есть теперь строка должна выглядеть так:
 		```
