@@ -56,18 +56,24 @@
 Все примеры рекомендую испытать самостоятельно, побаловаться, изменяя значения, и посмотреть, что из этого выйдет. Теория без практики — мертва.
 
 </p>
-<a id="ОЗеД"></a><h3>Пробуем воду. Немного определений</h3>
-<a id="Эифк"></a><h4>Операторы</h4>
+<blockquote>
+<p>
+Обратите внимание. В статье приведены фрагменты кода QSP, некоторые из которых написаны в формате TXT2GAM. Такие фрагменты легко отличить, так как в них отдельными строками прописывается начало локации (<span class="em_BLCK"># start</span>) и её конец (<span class="em_BLCK">--- start ---</span>). Если вы работаете в редакторе Quest Generator, данные строчки прописывать в коде локаций не нужно, только содержимое между ними.
+</p>
+
+</blockquote>
+<a id="ШУэМ"></a><h3>Пробуем воду. Немного определений</h3>
+<a id="dщwu"></a><h4>Операторы</h4>
 <p>
 При написании QSP-кода мы всегда используем различные операторы. Например, мы используем оператор <span class="em_BLCK"><span class="emOPRT">*pl</span></span> для вывода текста в окно основного описания, или оператор <span class="em_BLCK"><span class="emOPRT">addobj</span></span> для добавления предмета, или например оператор <span class="em_BLCK"><span class="emOPRT">goto</span></span> для перехода между локациями. Иными словами операторы нужны нам, чтобы что-то <span class="em_BLCK">делать</span> с игрой или с плеером, выполнять какие-то процедуры.
 
 </p>
 <p>
-Если мы внимательно посмотрим на все эти операторы, то мы увидим, что для некоторых операторов, чтобы они что-то сделали, нужно обязательно указать какое-то значение. Например, чтобы оператор <span class="em_BLCK"><span class="emFUNC">adoobj</span></span> добавил предмет в окно предметов, мы должны указать название этого предмета для этого оператора:
+Если мы внимательно посмотрим на все эти операторы, то мы увидим, что для некоторых операторов, чтобы они что-то сделали, нужно обязательно указать какое-то значение. Например, чтобы оператор <span class="em_BLCK"><span class="emFUNC">adoobj</span></span> добавил предмет в окно предметов, мы должны указать название предмета для этого оператора:
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><br>
 
 
 </div>
@@ -84,7 +90,7 @@
 
 </p>
 <p>
-В случае с оператором <span class="em_BLCK"><span class="emOPRT">addobj</span></span> мы должны обязательно указать хотя бы один аргумент, но в QSP есть операторы, для которых совсем можно не указывать аргументы. Например, оператору <span class="em_BLCK"><span class="emOPRT">clear</span></span>, который очищает окно дополнительного описания, не нужны аргументы, он и так знает, что ему делать. Или оператор <span class="em_BLCK"><span class="emOPRT">killall</span></span>, ему тоже не нужен аргумент. Ещё, совсем без аргумента, может использоваться оператор <span class="em_BLCK"><span class="emOPRT">*pl</span></span>, тогда он просто выводит на экран пустую строку и совершает переход на новую строку в окне основного описания.
+В случае с оператором <span class="em_BLCK"><span class="emOPRT">addobj</span></span> мы должны обязательно указать хотя бы один аргумент, но в QSP есть операторы, для которых можно совсем не указывать аргументы. Например, оператору <span class="em_BLCK"><span class="emOPRT">clear</span></span>, который очищает окно дополнительного описания, не нужны аргументы, он и так знает, что ему делать. Или оператор <span class="em_BLCK"><span class="emOPRT">killall</span></span>, ему тоже не нужен аргумент. Ещё, совсем без аргумента, может использоваться оператор <span class="em_BLCK"><span class="emOPRT">*pl</span></span>, тогда он просто выводит на экран пустую строку и совершает переход на новую строку в окне основного описания.
 
 </p>
 <p>
@@ -92,7 +98,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"pic/orange.png"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"pic/orange.png"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><br>
 
 
 </div>
@@ -105,21 +111,21 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;два&nbsp;аргумента.&nbsp;Удаляем&nbsp;ячейку&nbsp;номер&nbsp;4&nbsp;из&nbsp;массива&nbsp;$mass</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$array'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;один&nbsp;аргумент.&nbsp;Удаляем&nbsp;весь&nbsp;массив&nbsp;$array</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;без&nbsp;аргументов.&nbsp;Удаляет&nbsp;все&nbsp;массивы&nbsp;и&nbsp;переменные&nbsp;в&nbsp;игре</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;два&nbsp;аргумента.&nbsp;Удаляем&nbsp;ячейку&nbsp;номер&nbsp;4&nbsp;из&nbsp;массива&nbsp;$mass</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$array'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;один&nbsp;аргумент.&nbsp;Удаляем&nbsp;весь&nbsp;массив&nbsp;$array</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;без&nbsp;аргументов.&nbsp;Удаляет&nbsp;все&nbsp;массивы&nbsp;и&nbsp;переменные&nbsp;в&nbsp;игре</span><br>
 
 
 </div>
 <p>
-Нужно помнить, сколько аргументов ожидает получить каждый оператор. Операторы типа <span class="em_BLCK"><span class="emOPRT">clear</span></span> и <span class="em_BLCK"><span class="emOPRT">killall</span></span> вообще не ждут аргументов, поэтому передавать им какие-либо значения бесполезно. Оперторы типа <span class="em_BLCK"><span class="emOPRT">addobj</span></span>, <span class="em_BLCK"><span class="emOPRT">goto</span></span> и <span class="em_BLCK">addact</span> ждут хотя бы один аргумент, но могут принимать больше. Если передать оператору больше аргументов, чем он может принять, или меньше, чем он ожидает, это приведёт к ошибке №120: "Неверное число аргументов оператора/функции", — поэтому будьте внимательны при написании кода и чаще сверяйтесь со справкой.
+Нужно помнить, сколько аргументов ожидает получить каждый оператор. Операторы типа <span class="em_BLCK"><span class="emOPRT">clear</span></span> и <span class="em_BLCK"><span class="emOPRT">killall</span></span> вообще не ждут аргументов, поэтому передавать им какие-либо значения бесполезно. Оперторы типа <span class="em_BLCK"><span class="emOPRT">addobj</span></span>, <span class="em_BLCK"><span class="emOPRT">goto</span></span> и <span class="em_BLCK"><span class="emOPRT">act</span></span> ждут хотя бы один аргумент, но могут принимать больше. Если передать оператору больше аргументов, чем он может принять, или меньше, чем он ожидает, это приведёт к ошибке №120: "Неверное число аргументов оператора/функции", — поэтому будьте внимательны при написании кода и чаще сверяйтесь со справкой.
 
 </p>
 <p>
 <img src="https://i.ibb.co/R6WQKpb/4.png" class="em_IMG">
 
 </p>
-<a id="ЩЫыщ"></a><h4>Функции</h4>
+<a id="zШIC"></a><h4>Функции</h4>
 <p>
 Помимо операторов в QSP есть ещё такие вещи, как <span class="em_BLCK">функции</span>. Функции тоже могут что-нибудь делать с игрой или плеером, но в основном они нужны, чтобы получать какие-либо значения.
 
@@ -129,7 +135,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;num<span class="Monokai-Operator">=</span><span class="Monokai-Func">rnd</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;переменную&nbsp;num&nbsp;запишется&nbsp;случайное&nbsp;число&nbsp;от&nbsp;1&nbsp;до&nbsp;1000</span><br>
+num<span class="Monokai-Operator">=</span><span class="Monokai-Func">rnd</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;переменную&nbsp;num&nbsp;запишется&nbsp;случайное&nbsp;число&nbsp;от&nbsp;1&nbsp;до&nbsp;1000</span><br>
 
 
 </div>
@@ -146,8 +152,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;num<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;аргументы&nbsp;функции&nbsp;rand&nbsp;заключены&nbsp;в&nbsp;скобки</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;аргументы&nbsp;оператора&nbsp;killvar&nbsp;не&nbsp;нужно&nbsp;заключать&nbsp;в&nbsp;скобки</span><br>
+num<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;аргументы&nbsp;функции&nbsp;rand&nbsp;заключены&nbsp;в&nbsp;скобки</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;аргументы&nbsp;оператора&nbsp;killvar&nbsp;не&nbsp;нужно&nbsp;заключать&nbsp;в&nbsp;скобки</span><br>
 
 
 </div>
@@ -156,14 +162,14 @@
 
 </p>
 <p>
-В QSP есть много разных функций, и так же, как и операторам, им можно передавать разное число аргументов. Есть функции, которым вообще не нужно передавать никаких аргументов, например <span class="em_BLCK"><span class="emFUNC">$selact</span></span>, <span class="em_BLCK">$curact</span>, <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> и т.д. А есть функции, которые требуют строго определённого числа аргументов, например <span class="em_BLCK"><span class="emFUNC">rgb</span></span>, которая ожидает всегда только три аргумента, не больше не меньше. Ну и конечно же есть функции, которым можно передавать разное число аргументов, и чьё поведение будет меняться в зависимости от числа аргументов:
+В QSP есть много разных функций, и так же, как и операторам, им можно передавать разное число аргументов. Есть функции, которым вообще не нужно передавать никаких аргументов, например <span class="em_BLCK"><span class="emFUNC">$selact</span></span>, <span class="em_BLCK">$curact</span>, <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> и т.д. А есть функции, которые требуют строго определённого числа аргументов, например <span class="em_BLCK"><span class="emFUNC">isnum</span></span>, которая ожидает всегда только один аргумент, не больше, не меньше. Ну и конечно же есть функции, которым можно передавать разное число аргументов, и чьё поведение будет меняться в зависимости от числа аргументов:
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;передан&nbsp;один&nbsp;строковый&nbsp;аргумент.&nbsp;Функция&nbsp;вернёт&nbsp;максимальное&nbsp;число&nbsp;из&nbsp;массива&nbsp;mass</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'gass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'dass'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;передано&nbsp;три&nbsp;строковых&nbsp;аргумента.&nbsp;Функция&nbsp;вернёт&nbsp;тот&nbsp;из&nbsp;них,&nbsp;который&nbsp;идёт&nbsp;позже&nbsp;в&nbsp;алфавитном&nbsp;порядке</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;данная&nbsp;строчка&nbsp;кода&nbsp;вызовет&nbsp;ошибку&nbsp;114</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">34</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;функция&nbsp;вернёт&nbsp;наибольшее&nbsp;из&nbsp;двух&nbsp;чисел&nbsp;(34)</span><br>
+<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;передан&nbsp;один&nbsp;строковый&nbsp;аргумент.&nbsp;Функция&nbsp;вернёт&nbsp;максимальное&nbsp;число&nbsp;из&nbsp;массива&nbsp;mass</span><br>
+<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'gass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'dass'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;передано&nbsp;три&nbsp;строковых&nbsp;аргумента.&nbsp;Функция&nbsp;вернёт&nbsp;тот&nbsp;из&nbsp;них,&nbsp;который&nbsp;идёт&nbsp;позже&nbsp;в&nbsp;алфавитном&nbsp;порядке</span><br>
+<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;данная&nbsp;строчка&nbsp;кода&nbsp;вызовет&nbsp;ошибку&nbsp;114</span><br>
+<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">34</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;функция&nbsp;вернёт&nbsp;наибольшее&nbsp;из&nbsp;двух&nbsp;чисел&nbsp;(34)</span><br>
 
 
 </div>
@@ -171,15 +177,15 @@
 <img src="https://i.ibb.co/CHdzh7k/function-get-gift.png" class="em_IMG">
 
 </p>
-<a id="гбDл"></a><h3>Плаваем у берега. Пользовательские функции и процедуры</h3>
+<a id="лвМя"></a><h3>Плаваем у берега. Пользовательские функции и процедуры</h3>
 <p>
 Как быть, когда нам не хватает функционала уже имеющихся в QSP функций и операторов? Что если нам нужно, например, постоянно выводить на экран значения некоторых переменных, причём не просто выводить, а выводить эти значения внутри определённой строки. Например, у нас есть вот такой набор переменных:
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$name<span class="Monokai-Operator">=</span><span class="Monokai-String">'Леголас'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;age<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$arms<span class="Monokai-Operator">=</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
+$name<span class="Monokai-Operator">=</span><span class="Monokai-String">'Леголас'</span><br>
+age<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
+$arms<span class="Monokai-Operator">=</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
 
 
 </div>
@@ -188,9 +194,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;Вас&nbsp;зовут&nbsp;Леголас.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вам&nbsp;137&nbsp;лет.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вы&nbsp;используете&nbsp;Лук&nbsp;и&nbsp;стрелы.<br>
+Вас&nbsp;зовут&nbsp;Леголас.<br>
+Вам&nbsp;137&nbsp;лет.<br>
+Вы&nbsp;используете&nbsp;Лук&nbsp;и&nbsp;стрелы.<br>
 
 </div>
 <p>
@@ -198,10 +204,10 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;pl_stat</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вас&nbsp;зовут&nbsp;&lt;&lt;$name&gt;&gt;."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вам&nbsp;&lt;&lt;age&gt;&gt;&nbsp;лет."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;используете&nbsp;&lt;&lt;$arms&gt;&gt;."</span><br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;pl_stat</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вас&nbsp;зовут&nbsp;&lt;&lt;$name&gt;&gt;."</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вам&nbsp;&lt;&lt;age&gt;&gt;&nbsp;лет."</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;используете&nbsp;&lt;&lt;$arms&gt;&gt;."</span><br>
 
 
 </div>
@@ -210,7 +216,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><br>
 
 
 </div>
@@ -223,8 +229,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;R<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
+R<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
 
 
 </div>
@@ -233,9 +239,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
+N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
+<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
 
 
 </div>
@@ -248,8 +254,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
+<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
 
 
 </div>
@@ -258,9 +264,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;R<span class="Monokai-Operator">=</span><span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
+N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
+R<span class="Monokai-Operator">=</span><span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
 
 
 </div>
@@ -269,8 +275,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
+N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;144</span><br>
 
 
 </div>
@@ -279,16 +285,16 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;start</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;число&nbsp;в&nbsp;переменную&nbsp;result</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">24</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;576</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;123</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;число&nbsp;в&nbsp;переменную&nbsp;result</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">24</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;576</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;123</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;square</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;square&nbsp;---</span><br>
+<span class="Monokai-StartLoc">#&nbsp;square</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span>N<br>
+<span class="Monokai-EndLoc">---&nbsp;square&nbsp;---</span><br>
 
 
 </div>
@@ -301,7 +307,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">)</span><br>
 
 
 </div>
@@ -310,9 +316,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число,&nbsp;которое&nbsp;мы&nbsp;отправляем&nbsp;на&nbsp;эту&nbsp;локацию</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вместо&nbsp;N&nbsp;мы&nbsp;теперь&nbsp;используем&nbsp;число&nbsp;из&nbsp;нулевой&nbsp;ячейки&nbsp;массива&nbsp;args</span><br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;square</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число,&nbsp;которое&nbsp;мы&nbsp;отправляем&nbsp;на&nbsp;эту&nbsp;локацию</span><br>
+<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;вместо&nbsp;N&nbsp;мы&nbsp;теперь&nbsp;используем&nbsp;число&nbsp;из&nbsp;нулевой&nbsp;ячейки&nbsp;массива&nbsp;args</span><br>
 
 
 </div>
@@ -321,16 +327,16 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;start</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;число&nbsp;в&nbsp;переменную&nbsp;result</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;576</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;123</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;записываем&nbsp;число&nbsp;в&nbsp;переменную&nbsp;result</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'square'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;576</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;123</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;square</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;поскольку&nbsp;выше&nbsp;мы&nbsp;передаём&nbsp;на&nbsp;square&nbsp;число&nbsp;24,&nbsp;то&nbsp;эта&nbsp;команда&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;24</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;square&nbsp;---</span><br>
+<span class="Monokai-StartLoc">#&nbsp;square</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;поскольку&nbsp;выше&nbsp;мы&nbsp;передаём&nbsp;на&nbsp;square&nbsp;число&nbsp;24,&nbsp;то&nbsp;эта&nbsp;команда&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;24</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+<span class="Monokai-EndLoc">---&nbsp;square&nbsp;---</span><br>
 
 
 </div>
@@ -343,8 +349,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;summ</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;summ</span><br>
+<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br>
 
 
 </div>
@@ -353,8 +359,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">89</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;262</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;45</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">89</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;262</span><br>
 
 
 </div>
@@ -363,8 +369,8 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;10</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;135</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;10</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'summ'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появится&nbsp;число&nbsp;135</span><br>
 
 
 </div>
@@ -377,19 +383,19 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;данный&nbsp;код&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;последовательно&nbsp;числа&nbsp;11,&nbsp;1507,&nbsp;19</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;start</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;это&nbsp;нулевая&nbsp;ячейка&nbsp;массива&nbsp;args&nbsp;на&nbsp;локации&nbsp;start,&nbsp;ей&nbsp;присваиваем&nbsp;19</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'foo'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;1507</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;19</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<span class="Monokai-Comment">!&nbsp;данный&nbsp;код&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;последовательно&nbsp;числа&nbsp;11,&nbsp;1507,&nbsp;19</span><br>
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;это&nbsp;нулевая&nbsp;ячейка&nbsp;массива&nbsp;args&nbsp;на&nbsp;локации&nbsp;start,&nbsp;ей&nbsp;присваиваем&nbsp;19</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'foo'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;1507</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;19</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;foo</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;локации&nbsp;foo&nbsp;собственный&nbsp;уникальный&nbsp;массив&nbsp;args,</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;который&nbsp;автоматически&nbsp;записываются&nbsp;значения,&nbsp;переданные&nbsp;на&nbsp;локацию&nbsp;в&nbsp;виде&nbsp;аргументов</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выше&nbsp;сюда&nbsp;было&nbsp;передано&nbsp;число&nbsp;11,&nbsp;вот&nbsp;его&nbsp;мы&nbsp;и&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">137</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;foo&nbsp;---</span><br>
+<span class="Monokai-StartLoc">#&nbsp;foo</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;локации&nbsp;foo&nbsp;собственный&nbsp;уникальный&nbsp;массив&nbsp;args,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;который&nbsp;автоматически&nbsp;записываются&nbsp;значения,&nbsp;переданные&nbsp;на&nbsp;локацию&nbsp;в&nbsp;виде&nbsp;аргументов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выше&nbsp;сюда&nbsp;было&nbsp;передано&nbsp;число&nbsp;11,&nbsp;вот&nbsp;его&nbsp;мы&nbsp;и&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">137</span><br>
+<span class="Monokai-EndLoc">---&nbsp;foo&nbsp;---</span><br>
 
 
 </div>
@@ -398,10 +404,10 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;pl_stat</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вас&nbsp;зовут&nbsp;&lt;&lt;$args[0]&gt;&gt;."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вам&nbsp;&lt;&lt;args[1]&gt;&gt;&nbsp;лет."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;используете&nbsp;&lt;&lt;$args[2]&gt;&gt;."</span><br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;pl_stat</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вас&nbsp;зовут&nbsp;&lt;&lt;$args[0]&gt;&gt;."</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вам&nbsp;&lt;&lt;args[1]&gt;&gt;&nbsp;лет."</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;используете&nbsp;&lt;&lt;$args[2]&gt;&gt;."</span><br>
 
 
 </div>
@@ -410,11 +416,11 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$name<span class="Monokai-Operator">=</span><span class="Monokai-String">'Леголас'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;age<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$arms<span class="Monokai-Operator">=</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;вызов&nbsp;локации&nbsp;"pl_stat"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"pl_stat"</span><span class="Monokai-Operator">,</span>$name<span class="Monokai-Operator">,</span>age<span class="Monokai-Operator">,</span>$arms<br>
+$name<span class="Monokai-Operator">=</span><span class="Monokai-String">'Леголас'</span><br>
+age<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
+$arms<span class="Monokai-Operator">=</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
+<span class="Monokai-Comment">!&nbsp;вызов&nbsp;локации&nbsp;"pl_stat"</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"pl_stat"</span><span class="Monokai-Operator">,</span>$name<span class="Monokai-Operator">,</span>age<span class="Monokai-Operator">,</span>$arms<br>
 
 
 </div>
@@ -423,9 +429,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;Вас&nbsp;зовут&nbsp;Леголас.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вам&nbsp;137&nbsp;лет.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вы&nbsp;используете&nbsp;Лук&nbsp;и&nbsp;стрелы.<br>
+Вас&nbsp;зовут&nbsp;Леголас.<br>
+Вам&nbsp;137&nbsp;лет.<br>
+Вы&nbsp;используете&nbsp;Лук&nbsp;и&nbsp;стрелы.<br>
 
 </div>
 <p>
@@ -433,7 +439,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"pl_stat"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Леголас'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">137</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"pl_stat"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Леголас'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">137</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Лук&nbsp;и&nbsp;стрелы'</span><br>
 
 
 </div>
@@ -442,9 +448,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Гимли'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">91</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Молот'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Арагорн'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">29</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Палаш'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Фродо&nbsp;Бэггинс'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Кольцо&nbsp;Всевластия'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Гимли'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">91</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Молот'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Арагорн'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">29</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Палаш'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'pl_stat'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Фродо&nbsp;Бэггинс'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Кольцо&nbsp;Всевластия'</span><br>
 
 
 </div>
@@ -453,22 +459,22 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;Вас&nbsp;зовут&nbsp;Гимли.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вам&nbsp;91&nbsp;лет.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вы&nbsp;используете&nbsp;Молот.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вас&nbsp;зовут&nbsp;Арагорн.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вам&nbsp;29&nbsp;лет.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вы&nbsp;используете&nbsp;палаш.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вас&nbsp;зовут&nbsp;Фродо&nbsp;Бэггинс.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вам&nbsp;19&nbsp;лет.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Вы&nbsp;используете&nbsp;Кольцо&nbsp;Всевластия.<br>
+Вас&nbsp;зовут&nbsp;Гимли.<br>
+Вам&nbsp;91&nbsp;лет.<br>
+Вы&nbsp;используете&nbsp;Молот.<br>
+Вас&nbsp;зовут&nbsp;Арагорн.<br>
+Вам&nbsp;29&nbsp;лет.<br>
+Вы&nbsp;используете&nbsp;палаш.<br>
+Вас&nbsp;зовут&nbsp;Фродо&nbsp;Бэггинс.<br>
+Вам&nbsp;19&nbsp;лет.<br>
+Вы&nbsp;используете&nbsp;Кольцо&nbsp;Всевластия.<br>
 
 </div>
 <p>
 <strong>Объявить переменную</strong> — для QSP значит записать в программе её имя. Когда мы присваиваем переменной какое-либо значение, мы тем самым автоматически объявляем переменную. Ещё это называется <span class="em_BLCK">инициализировать</span> переменную.
 
 </p>
-<a id="иДШt"></a><h3>Глубокое погружение. Тонкости и нюансы при написании собственных функций и процедур</h3>
+<a id="hгQе"></a><h3>Глубокое погружение. Тонкости и нюансы при написании собственных функций и процедур</h3>
 <p>
 Когда мы писали локации типа "square" и "summ", для удобства мы называли их функциями. И ещё мы говорили, что передаём им различные аргументы. Так мы говорили именно для упрощения понимания того, зачем нам нужны <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span> на локациях.
 
@@ -494,20 +500,20 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Начало&nbsp;супер-пупер-мега&nbsp;игры"</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Начать"</span><span class="Monokai-Operator">:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"комната"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"start"</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;комната</span><br>
+<span class="Monokai-StartLoc">#&nbsp;комната</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'start'</span><span class="Monokai-Operator">:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"История&nbsp;начинается.&nbsp;Вы&nbsp;только&nbsp;что&nbsp;пришли&nbsp;с&nbsp;локации&nbsp;'start',&nbsp;и&nbsp;это&nbsp;означает,&nbsp;что&nbsp;вас&nbsp;ждёт&nbsp;душещипательная&nbsp;катсцена."</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;пришли&nbsp;с&nbsp;любой&nbsp;другой&nbsp;локации.&nbsp;Это&nbsp;просто&nbsp;комната."</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
 
 
 </div>
@@ -520,23 +526,23 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;помещаем&nbsp;код&nbsp;в&nbsp;переменную&nbsp;для&nbsp;удобства</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:for</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'args'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+<span class="Monokai-Comment">!&nbsp;помещаем&nbsp;код&nbsp;в&nbsp;переменную&nbsp;для&nbsp;удобства</span><br>
+$code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:for</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'args'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'i'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выполняем&nbsp;код,&nbsp;передавая&nbsp;ему&nbsp;произвольное&nbsp;число&nbsp;аргументов</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'Апельсин'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'оранжевый'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">144</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'i'</span><br>
+<span class="Monokai-Operator">}</span><br>
+<span class="Monokai-Comment">!&nbsp;выполняем&nbsp;код,&nbsp;передавая&nbsp;ему&nbsp;произвольное&nbsp;число&nbsp;аргументов</span><br>
+<span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'Апельсин'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'оранжевый'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">144</span><br>
 
 
 </div>
@@ -545,7 +551,7 @@
 
 </p>
 <p>
-Поскольку <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> — это оператор, он не может возвращать нам никаких значений, чтобы иметь возможность получать значение из написанного таким образом кода, мы должны использовать функцию <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>. И тут действуют те же принципы, что и при написании кода для локаций. Чтобы функция вернула нам значение, мы должны это значение присвоить системной переменной <span class="em_BLCK"><span class="emVAR">result</span></span>.
+Поскольку <span class="em_BLCK"><span class="emOPRT">dynamic</span></span> — это оператор, он не может возвращать нам никаких значений. Чтобы иметь возможность получать значение из написанного таким образом кода, мы должны использовать функцию <span class="em_BLCK"><span class="emFUNC">dyneval</span></span>. И тут действуют те же принципы, что и при написании кода для локаций. Чтобы функция вернула нам значение, мы должны это значение присвоить системной переменной <span class="em_BLCK"><span class="emVAR">result</span></span>.
 
 </p>
 <p>
@@ -553,7 +559,7 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возводим&nbsp;число&nbsp;3&nbsp;в&nbsp;четвёртую&nbsp;степень</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возводим&nbsp;число&nbsp;3&nbsp;в&nbsp;четвёртую&nbsp;степень</span><br>
 
 
 </div>
@@ -562,20 +568,20 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$pow&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;args[0]&nbsp;—&nbsp;число,&nbsp;которое&nbsp;хотим&nbsp;возвести&nbsp;в&nbsp;степень</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;args[1]&nbsp;—&nbsp;степень,&nbsp;в&nbsp;которую&nbsp;хотим&nbsp;возвести&nbsp;число</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;сразу&nbsp;присваиваем&nbsp;результату&nbsp;единицу</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;с&nbsp;помощью&nbsp;цикла&nbsp;умножаем&nbsp;результат&nbsp;на&nbsp;указанное&nbsp;число</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;столько&nbsp;раз,&nbsp;каково&nbsp;значение&nbsp;степени.</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;т.е.&nbsp;само&nbsp;значение&nbsp;степени&nbsp;у&nbsp;нас&nbsp;будет&nbsp;счётчиком&nbsp;цикла</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:for</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">result</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+$pow&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;args[0]&nbsp;—&nbsp;число,&nbsp;которое&nbsp;хотим&nbsp;возвести&nbsp;в&nbsp;степень</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;args[1]&nbsp;—&nbsp;степень,&nbsp;в&nbsp;которую&nbsp;хотим&nbsp;возвести&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;сразу&nbsp;присваиваем&nbsp;результату&nbsp;единицу</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;с&nbsp;помощью&nbsp;цикла&nbsp;умножаем&nbsp;результат&nbsp;на&nbsp;указанное&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;столько&nbsp;раз,&nbsp;каково&nbsp;значение&nbsp;степени.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;т.е.&nbsp;само&nbsp;значение&nbsp;степени&nbsp;у&nbsp;нас&nbsp;будет&nbsp;счётчиком&nbsp;цикла</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:for</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">result</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">}</span><br>
 
 
 </div>
@@ -584,9 +590,9 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;81</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;64</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;387420489</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;81</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;64</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$pow<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;387420489</span><br>
 
 
 </div>
@@ -599,13 +605,13 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$result</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Первый'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$code<span class="Monokai-Operator">=</span><span class="Monokai-String">"if&nbsp;args[0]=2:&nbsp;$result='Второй'&nbsp;else&nbsp;$result='Никакой'"</span><br>
+<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
+<span class="Monokai-SysVar">$result</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Первый'</span><br>
+$code<span class="Monokai-Operator">=</span><span class="Monokai-String">"if&nbsp;args[0]=2:&nbsp;$result='Второй'&nbsp;else&nbsp;$result='Никакой'"</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$dyneval</span><span class="Monokai-Operator">(</span>$code<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;"Второй"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;123</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$result</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;"Первый"</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$dyneval</span><span class="Monokai-Operator">(</span>$code<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;"Второй"</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;123</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$result</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;"Первый"</span><br>
 
 
 </div>
@@ -618,11 +624,11 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:args[0]=37&nbsp;&amp;&nbsp;*pl&nbsp;args[0]&nbsp;&amp;&nbsp;!&nbsp;в&nbsp;гиперссылке&nbsp;собственные&nbsp;args'&gt;Нажми,&nbsp;чтобы&nbsp;вывести&nbsp;37&lt;/a&gt;"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:*pl&nbsp;args[0]&nbsp;&amp;&nbsp;!&nbsp;в&nbsp;гиперссылке&nbsp;собственные&nbsp;args'&gt;Нажми,&nbsp;чтобы&nbsp;вывести&nbsp;0&lt;/a&gt;"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;выведется&nbsp;137</span><br>
+<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:args[0]=37&nbsp;&amp;&nbsp;*pl&nbsp;args[0]&nbsp;&amp;&nbsp;!&nbsp;в&nbsp;гиперссылке&nbsp;собственные&nbsp;args'&gt;Нажми,&nbsp;чтобы&nbsp;вывести&nbsp;37&lt;/a&gt;"</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:*pl&nbsp;args[0]&nbsp;&amp;&nbsp;!&nbsp;в&nbsp;гиперссылке&nbsp;собственные&nbsp;args'&gt;Нажми,&nbsp;чтобы&nbsp;вывести&nbsp;0&lt;/a&gt;"</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;выведется&nbsp;137</span><br>
 
 
 </div>
@@ -631,17 +637,17 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">111</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;args[0]&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">222</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;2"</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">333</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">111</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;args[0]&nbsp;на&nbsp;локации</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">222</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;2"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">333</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
 
 
 </div>
@@ -658,21 +664,21 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;#&nbsp;#chk.obj.word#</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;инициализируем&nbsp;девятый&nbsp;элемент&nbsp;массива,&nbsp;чтоб&nbsp;не&nbsp;затереть&nbsp;аргументы</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;используем&nbsp;одну&nbsp;из&nbsp;ячеек&nbsp;массива&nbsp;args&nbsp;как&nbsp;локальную&nbsp;переменную</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:loop</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&gt;</span>&nbsp;<span class="Monokai-Func">countobj</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;цикл&nbsp;выполняется&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысит&nbsp;число&nbsp;предметов</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;как&nbsp;только&nbsp;в&nbsp;названии&nbsp;очередного&nbsp;предмета</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;встречается&nbsp;рассматриваемое&nbsp;слово</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!@&nbsp;возвращаем&nbsp;позицию</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!@&nbsp;закрываем&nbsp;функцию</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+<span class="Monokai-Comment">!&nbsp;#&nbsp;#chk.obj.word#</span><br>
+<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;инициализируем&nbsp;девятый&nbsp;элемент&nbsp;массива,&nbsp;чтоб&nbsp;не&nbsp;затереть&nbsp;аргументы</span><br>
+<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;используем&nbsp;одну&nbsp;из&nbsp;ячеек&nbsp;массива&nbsp;args&nbsp;как&nbsp;локальную&nbsp;переменную</span><br>
+<span class="Monokai-Markup">:loop</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&gt;</span>&nbsp;<span class="Monokai-Func">countobj</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;цикл&nbsp;выполняется&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысит&nbsp;число&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;как&nbsp;только&nbsp;в&nbsp;названии&nbsp;очередного&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!@&nbsp;встречается&nbsp;рассматриваемое&nbsp;слово</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!@&nbsp;возвращаем&nbsp;позицию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!@&nbsp;закрываем&nbsp;функцию</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+<span class="Monokai-Koperator">end</span><br>
 
 
 </div>
@@ -681,14 +687,14 @@
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Красный&nbsp;помидор"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;первый&nbsp;предмет</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Рыжий&nbsp;апельсин"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;второй&nbsp;предмет</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Зелёное&nbsp;яблоко"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;третий&nbsp;предмет</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Синий&nbsp;крокодил"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;четвёртый&nbsp;предмет</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;ищем&nbsp;предмет,&nbsp;название&nbsp;которого&nbsp;содержит&nbsp;слово&nbsp;"Зелён"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;pos<span class="Monokai-Operator">=</span><span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'#chk.obj.word#'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Зелён'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;можно&nbsp;вывести&nbsp;и&nbsp;позицию&nbsp;и&nbsp;название</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Мы&nbsp;нашли&nbsp;предмет&nbsp;под&nbsp;номером&nbsp;&lt;&lt;pos&gt;&gt;.&nbsp;Это&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span>pos<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"."</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Красный&nbsp;помидор"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;первый&nbsp;предмет</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Рыжий&nbsp;апельсин"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;второй&nbsp;предмет</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Зелёное&nbsp;яблоко"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;третий&nbsp;предмет</span><br>
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Синий&nbsp;крокодил"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;четвёртый&nbsp;предмет</span><br>
+<span class="Monokai-Comment">!&nbsp;ищем&nbsp;предмет,&nbsp;название&nbsp;которого&nbsp;содержит&nbsp;слово&nbsp;"Зелён"</span><br>
+pos<span class="Monokai-Operator">=</span><span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'#chk.obj.word#'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Зелён'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;можно&nbsp;вывести&nbsp;и&nbsp;позицию&nbsp;и&nbsp;название</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Мы&nbsp;нашли&nbsp;предмет&nbsp;под&nbsp;номером&nbsp;&lt;&lt;pos&gt;&gt;.&nbsp;Это&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span>pos<span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"."</span><br>
 
 
 </div>
@@ -697,11 +703,11 @@
 
 </p>
 <p>
-Если вы до сих пор пишете игру для плеера версии 5.7.0, вы просто вынуждены использовать массив <span class="em_BLCK"><span class="emVAR">args</span></span> вместо локальных переменных, либо вы вынуждены уничтожать переменные и массивы, используемые для временного хранения данных, вручную с помощью <span class="em_BLCK"><span class="emOPRT">killvar</span></span>. Всё изменилось с появлением плееров версии 5.8.0 и в частности qSpider!
+Если вы до сих пор пишете игру для плеера версии 5.7.0, вы просто вынуждены использовать массив <span class="em_BLCK"><span class="emVAR">args</span></span> вместо локальных переменных, либо вы вынуждены уничтожать переменные и массивы, используемые для временного хранения данных, вручную с помощью <span class="em_BLCK"><span class="emOPRT">killvar</span></span>. Всё изменилось с появлением плееров версии 5.8.0!
 
 </p>
-<a id="AрpМ"></a><h3>Бездна смотрит в тебя. Локальные переменные и неявный вызов пользовательских функций</h3>
-<a id="ЙЭIS"></a><h4>Локальные переменные</h4>
+<a id="MzDО"></a><h3>Бездна смотрит в тебя. Локальные переменные и неявный вызов пользовательских функций</h3>
+<a id="АПfв"></a><h4>Локальные переменные</h4>
 <p>
 В плеерах версии 5.8.0 и выше появилась возможность объявить любую переменную локальной, т.е. значения данной переменной будут действительны только для отдельного блока кода, а после выполнения этого блока кода все переменные, объявленные для него локальными, будут уничтожены. Для примера возьмём две локации: локацию "start" и локацию "foo":
 
@@ -729,7 +735,7 @@
 
 </p>
 <p>
-По своему поведению локальные переменные несколько отличаются от <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span>. Дело в том, что <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span> объявляются на каждой локации автоматически, и мы можем быть уверены, что всегда будем работать на каждой отдельной локации с уникальными (локальными) <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span>. Но что будет если локации 'foo' мы объявим локальную переменную, а затем вызовем из локации 'foo' локацию 'proc', на которой не будем эту переменную объявлять локальной? Какие значения примет переменная на каждой из этих локаций?
+По своему поведению локальные переменные несколько отличаются от <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span>. Дело в том, что <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span> объявляются на каждой локации автоматически, и мы можем быть уверены, что всегда будем работать на каждой отдельной локации с уникальными (локальными) <span class="em_BLCK"><span class="emVAR">args</span></span> и <span class="em_BLCK"><span class="emVAR">result</span></span>. Но что будет если на локации 'foo' мы объявим локальную переменную, а затем вызовем из локации 'foo' локацию 'proc', на которой не будем эту переменную объявлять локальной? Какие значения примет переменная на каждой из этих локаций?
 
 </p>
 <div class="Monokai-Code">
@@ -797,23 +803,23 @@ start.&nbsp;x&nbsp;после&nbsp;вызова&nbsp;foo:&nbsp;100<br>
 
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">111</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;args[0]&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">222</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;2"</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">333</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;3"</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;<span class="Monokai-SysVar">args</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;объявляем&nbsp;args&nbsp;локальным</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">999</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;только&nbsp;в&nbsp;действии,но&nbsp;не&nbsp;на&nbsp;локации</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">111</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выставляем&nbsp;значение&nbsp;args[0]&nbsp;на&nbsp;локации</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">222</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;2"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">333</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;не&nbsp;только&nbsp;в&nbsp;действии,&nbsp;а&nbsp;сразу&nbsp;на&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;3"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;<span class="Monokai-SysVar">args</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;объявляем&nbsp;args&nbsp;локальным</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">999</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;args[0]&nbsp;только&nbsp;в&nbsp;действии,но&nbsp;не&nbsp;на&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;значение&nbsp;args[0]:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
 
 
 </div>
@@ -844,7 +850,7 @@ start.&nbsp;x&nbsp;после&nbsp;вызова&nbsp;foo:&nbsp;100<br>
 
 
 </div>
-<a id="HаУJ"></a><h4>Неявный вызов функций</h4>
+<a id="йъцП"></a><h4>Неявный вызов функций</h4>
 <p>
 Как мы уже говорили ранее, сами по себе локации в действительности не являются функциями или процедурами. Мы используем оператор <span class="em_BLCK"><span class="emOPRT">gosub</span></span> или специальную функцию <span class="em_BLCK"><span class="emFUNC">func</span></span>, чтобы выполнить код той или иной локации. Функциями мы называли эти локации для удобства. И точно так же для удобства в QSP версии 5.8.0 была введена особая синтаксическая конструкция, которая позволяет не писать оператор <span class="em_BLCK"><span class="emOPRT">gosub</span></span> и функцию <span class="em_BLCK"><span class="emFUNC">func</span></span>.
 
@@ -908,13 +914,13 @@ start.&nbsp;x&nbsp;после&nbsp;вызова&nbsp;foo:&nbsp;100<br>
 
 
 </div>
-<a id="MЫMs"></a><h3>Заключение</h3>
+<a id="ГЦкА"></a><h3>Заключение</h3>
 <p>
 В данной статье мы попытались максимально подробно объяснить, что такое операторы, функции, как мы можем писать собственные функции и процедуры в QSP, что такое аргументы и зачем нужен массив <span class="em_BLCK"><span class="emVAR">args</span></span>. Вы узнали, что такое локальные переменные, и как массив <span class="em_BLCK"><span class="emVAR">args</span></span> заменяет локальные переменные в плеерах версии 5.7.0, и почему это больше не требуется в плеерах версии 5.8.0 и выше.
 
 </p>
 <p>
-Многие моменты остались за рамками данной статьи. Например, что за значения появляются в массиве <span class="em_BLCK"><span class="emVAR">args</span></span> на локациях-обработчиках пунктов пользовательского меню, или какие значения можно найти в массиве <span class="em_BLCK"><span class="emVAR">args</span></span> на локации <span class="em_BLCK"><span class="emFUNC">onNewLoc</span></span>, но на все эти вопросы, мы надеемся, вы найдёте ответы в большом справочнике по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su.
+Многие моменты остались за рамками данной статьи. Например, что за значения появляются в массиве <span class="em_BLCK"><span class="emVAR">args</span></span> на локациях-обработчиках пунктов пользовательского меню, или какие значения можно найти в массиве <span class="em_BLCK"><span class="emVAR">args</span></span> на локации <span class="em_BLCK"><span class="emFUNC">onNewLoc</span></span>, но на все эти вопросы, мы надеемся, вы найдёте ответы в большом <a href="https://aleksversus.github.io/howdo_faq" style="text-decoration:none;" class="emFOLD">справочнике по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.org</a>.
 
 </p>
 <p>
