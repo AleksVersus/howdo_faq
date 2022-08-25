@@ -7,7 +7,7 @@ from HTML_lib import *
 if __name__=="__main__":
 	
 	# html_json="html.json" # название файла, из которого берём сборку
-	html_json="D:\\my\\projects\\howdo_faq\\готовые статьи\\html.json"
+	html_json="..\\готовые статьи\\html.json"
 
 
 	work_dir=os.getcwd() # получаем путь рабочей папки
