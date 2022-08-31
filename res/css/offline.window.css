@@ -19,20 +19,38 @@ blockquote {
     align-items: flex-start;
 }
 
+#soderzhanije_outer {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding: 1em;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.87);
+    display:none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#soderzhanije_close {
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .soderzhanije {
+    background-color: white;
     overflow: auto;
     box-sizing: border-box;
-    height:99%;
-    max-width:250px;
-    width:25%;
+    max-height:90%;
+    min-width:50%;
     padding:1em;
     border:1px solid;
     align-self:flex-start;
 }
-.stub {
-    max-width:250px;
-    width:25%;
-}
+
 .em_AROUND {
     max-width:840px;
     overflow: auto;
