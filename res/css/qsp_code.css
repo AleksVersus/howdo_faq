@@ -10,7 +10,7 @@
     white-space: nowrap;
 }
 .Monokai-Comment {
-    color:#75715e; /* Комментарии QSP, CSS, HTML */
+    color:#ada78d; /* Комментарии QSP, CSS, HTML */
 }
 .Monokai-Qbracket, .Monokai-Assign, .Monokai-Operator {
     color:#66d9ef; /* Операторы и операции QSP */

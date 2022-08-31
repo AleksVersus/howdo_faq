@@ -19,7 +19,7 @@
 *PL 'Время: <<дни>> день, <<часы>>:<<минуты>>.'
 ```
 
-Пример реализации: [time.qsp](https://qsp.su/attachments/time.qsp)
+Пример реализации: [time.qsp](https://qsp.org/attachments/time.qsp)
 
 Также см. [Календарь по методу счёта Юлианских дней](#calend_jul)
 

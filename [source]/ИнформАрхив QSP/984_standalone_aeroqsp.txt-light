@@ -8,7 +8,7 @@
 Инструкция по использованию:
 
 	1. Скачать и установить Java - http://www.java.com/ru/
-	2. Скачать и распаковать архив [aero-build-stand-alone.zip](https://qsp.su/tools/upload/aero-build-stand-alone.zip) в любую папку, например "D:\aerobuild".
+	2. Скачать и распаковать архив [aero-build-stand-alone.zip](https://qsp.org/tools/upload/aero-build-stand-alone.zip) в любую папку, например "D:\aerobuild".
 	3. В эту же папку("D:\aerobuild") положить файл игры в формате .aqsp, он должен называться "game.aqsp"
 	4. В эту же папку("D:\aerobuild") положить "фон" - картинку в формате .png, он должен называться "background.png"
 	5. Запустить файл "build-stand-alone.cmd"
@@ -19,3 +19,7 @@ aero-build-stand-alone.zip, 61 мегабайт.
 
 АВТОР: NEX   
 27.07.2011 14:41
+
+-Примечание Aleks Versus:-
+	
+	> AeroQSP — плеер, работающий на устаревшей и отжившей своё технологии Flash. Adobe прекратила поддержку данной технологии, что означает, что AeroQSP стало невозможно использовать. Игры AeroQSP можно пробовать запустить на [qSpider](#qspider_0120), но это так же потребует танцев с бубнами. Лучше писать игры сразу для qSpider, не уповая на то, что он поддерживает AeroQSP.

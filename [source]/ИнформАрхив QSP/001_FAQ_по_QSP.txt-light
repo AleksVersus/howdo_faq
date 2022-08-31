@@ -16,7 +16,7 @@ QSP - это система разработки текстовых игр. Пр
 
 --Хочу написать свою текстовую игру, с чего начать?--
 
-1. Если у вас еще не установлен плеер QSP, скачайте и установите ["Набор игрока"](https://qsp.su/attachments/players_pack_2012_12_29.exe).
+1. Если у вас еще не установлен плеер QSP, скачайте и установите ["Набор игрока"](https://qsp.org/attachments/players_pack_2012_12_29.exe).
 
 2. Скачайте справку и редактор QGen со страницы ["Разработчикам"](https://qsp.org/index.php?option=com_content&view=article&id=57&Itemid=56).
 
@@ -82,7 +82,7 @@ qsp.dll, txt2gam, AeroQSP, справка - [https://github.com/QSPFoundation/qs
 
 Бой заканчивается, как только здоровье одного из противников станет нулевым или отрицательным.
 
-[Пример реализации боя 1.0](https://qsp.su/attachments/fight.zip)
+[Пример реализации боя 1.0](https://qsp.org/attachments/fight.zip)
 
 --Как сделать диалоги?--
 
@@ -95,7 +95,7 @@ qsp.dll, txt2gam, AeroQSP, справка - [https://github.com/QSPFoundation/qs
 Подготовил пример — WladySpb
 Чистка текста —  y4ndexx
 
-[Пример реализации трёх видов диалога](https://qsp.su/attachments/dialog.zip)
+[Пример реализации трёх видов диалога](https://qsp.org/attachments/dialog.zip)
 
 --Как использовать HTML?--
 
@@ -109,7 +109,7 @@ usehtml=1
 
 Список поддерживаемых HTML-тегов можно посмотреть на странице справки ["Список поддерживаемых HTML-тегов для классического плеера""](https://wiki.qsp.org/help:html_classic)
 
-Работу с HTML-тегами демонстрирует пример, который можно скачать [отсюда](https://qsp.su/attachments/html_sample.qsp)
+Работу с HTML-тегами демонстрирует пример, который можно скачать [отсюда](https://qsp.org/attachments/html_sample.qsp)
 
 --Как "зациклить" музыку, сделать плейлист?--
 
@@ -155,7 +155,7 @@ END
 Этот вопрос был рассмотрен множество раз в различных вариациях. Можете ознакомиться с соответствующей [статьёй](https://aleksversus.github.io/howdo_faq/pages/00000064.html#faq_11_02) в справочнике по самым часто задаваемым вопросам из темы
 "Как сделать?" на форуме [qsp.org](https://qsp.org).
 
-Так же есть [синтетическая статья](#ifacts) на основе темы ["Действие по условию"](https://qsp.su/index.php?option=com_agora&task=topic&id=348&Itemid=57).
+Так же есть [синтетическая статья](#ifacts) на основе темы ["Действие по условию"](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57).
 
 --Как вставить картинку?--
 
@@ -209,13 +209,13 @@ END
 
 Более подробный ответ на этот вопрос в статье ["Как сделать возврат на предыдущую локацию?"](https://aleksversus.github.io/howdo_faq/pages/00000132.html#faq_20_01).
 
-Ещё более подробный ответ на этот вопрос есть в соответствующей [теме](https://qsp.su/index.php?option=com_agora&task=topic&id=751&Itemid=57&p=2) на форуме.
+Ещё более подробный ответ на этот вопрос есть в соответствующей [теме](https://qsp.org/index.php?option=com_agora&task=topic&id=751&Itemid=57&p=2) на форуме.
 
 =Тёмная сторона силы=
 
 --Использование массивов, многомерные массивы--
 
-Для ответа на этот вопрос подготовлена [синтетическая статья](#usethemassive) на основе соответствующей [темы](https://qsp.su/index.php?option=com_agora&task=topic&id=93&Itemid=57).
+Для ответа на этот вопрос подготовлена [синтетическая статья](#usethemassive) на основе соответствующей [темы](https://qsp.org/index.php?option=com_agora&task=topic&id=93&Itemid=57).
 
 Так же смотри [статью о том, что такое массивы](http://aleksversus.narod.ru/index/peremennye_i_massivy_v_qsp/0-28) на сайте aleksversus.narod.ru.
 
@@ -259,7 +259,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 	* Выбирать, копировать и удалять строки таблицы (как все, так и по заданному фильтру).
 	* Получать число строк в таблице (как всех, так и по заданному фильтру).
 
-Более подробно можно о модуле можно почитать на форуме qsp.org в теме ["Модуль для работы с таблицами данных"](https://qsp.su/index.php?option=com_agora&task=topic&id=169&Itemid=57),
+Более подробно можно о модуле можно почитать на форуме qsp.org в теме ["Модуль для работы с таблицами данных"](https://qsp.org/index.php?option=com_agora&task=topic&id=169&Itemid=57),
 или на официальной странице модуля на форуме ifiction.ru в теме ["Модуль для работы с таблицами данных в QSP"](https://forum.ifiction.ru/viewtopic.php?id=1522).
 Полная документация на модуль [здесь](https://ifiction.ru/h/otg_lib_tables_help.html).
 
@@ -272,7 +272,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 	* Добавлять в меню пункты, появляющиеся в нём только при соблюдении ряда условий.
 	* Прописывать выполняемый код прямо в настройках пункта меню, без отсылки к другим локациям/функциям.
 
-Более подробно о модуле можно прочитать на форуме qsp.org в теме ["Модуль для работы с меню (расширение функционала оператора "menu")"](https://qsp.su/index.php?option=com_agora&task=topic&id=170&Itemid=57),
+Более подробно о модуле можно прочитать на форуме qsp.org в теме ["Модуль для работы с меню (расширение функционала оператора "menu")"](https://qsp.org/index.php?option=com_agora&task=topic&id=170&Itemid=57),
 или на официальной странице модуля на форуме ifiction.ru в теме ["Модуль для работы с меню (расширение функционала оператора "menu") в QSP"](https://forum.ifiction.ru/viewtopic.php?id=1527).
 Полная документация на модуль [здесь](https://ifiction.ru/h/otg_lib_menu_help.html).
 
@@ -288,7 +288,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 
 И можно отметить автоматическую расстановку длинных тире и правильных кавычек.
 
-Более подробно о модуле можно прочитать на форуме qsp.org в теме ["QSP:Типограф" — модуль для форматирования текста](https://qsp.su/index.php?option=com_agora&task=topic&id=191&Itemid=57),
+Более подробно о модуле можно прочитать на форуме qsp.org в теме ["QSP:Типограф" — модуль для форматирования текста](https://qsp.org/index.php?option=com_agora&task=topic&id=191&Itemid=57),
 или на официальной странице модуля на форуме ifiction.ru в теме ["QSP: Типограф" — модуль для форматирования текста](https://forum.ifiction.ru/viewtopic.php?id=1540).
 Полная документация на модуль [здесь](https://ifiction.ru/h/otg_lib_typograph_help.html).
 
@@ -306,15 +306,15 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 
 Важно: Помните, что ограничивая игроку время, вы можете попасть в одну из ловушек плохого гейм-дизайна. Игрок попросту ничего не успеет прочитать и сделать. А ведь это текстовые игры, в которых основное место должно занимать повествование, а не нервирование игрока. :)
 
-Статья на сайте qsp.org: [Мини-игра "Взорви зомби" - пример использования локации-счётчика](https://qsp.su/index.php?option=com_content&view=article&id=105:2010-06-17-13-54-25&catid=36:2009-02-19-06-11-21&Itemid=76)
+Статья на сайте qsp.org: [Мини-игра "Взорви зомби" - пример использования локации-счётчика](https://qsp.org/index.php?option=com_content&view=article&id=105:2010-06-17-13-54-25&catid=36:2009-02-19-06-11-21&Itemid=76)
 
-Скачать игру: [Взорви зомби.qsp](https://qsp.su/attachments/primer1.qsp)
+Скачать игру: [Взорви зомби.qsp](https://qsp.org/attachments/primer1.qsp)
 
 --Настройка окошек классического плеера с помощью qspgui.cfg--
 
 Подробную, но не полную, информацию по настройке окон классического плеера вы можете найти в статье [Структура конфигурационного файла классического плеера версии 5.7.0](https://aleksversus.github.io/howdo_faq/articles/00000005.html#classic_cfg)
 
-На форуме qsp.org так же существует тема [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.su/index.php?option=com_agora&task=topic&id=861&Itemid=57)
+На форуме qsp.org так же существует тема [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57)
 
 =Если не нашли ответа=
 
@@ -323,4 +323,4 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 АВТОР: `NEX`  
 19.02.2009 09:15
 
-Оригинал: [FAQ](https://qsp.su/index.php?option=com_agora&task=topic&id=316&Itemid=57)
+Оригинал: [FAQ](https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57)
