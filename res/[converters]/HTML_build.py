@@ -4,12 +4,7 @@ import datetime
 from HTML_lib import *
 
 
-if __name__=="__main__":
-	
-	# html_json="html.json" # название файла, из которого берём сборку
-	html_json="..\\готовые статьи\\html.json"
-
-
+def main(html_json):
 	work_dir=os.getcwd() # получаем путь рабочей папки
 	# открываем файл проекта для чтения и получаем его структуру в переменную root
 	with open(html_json,"r",encoding="utf-8") as project_file:
@@ -35,3 +30,11 @@ if __name__=="__main__":
 	roof_folder=NewFolder(folder_path,file_base) # создаём объект папка верхнего уровня
 	# теперь разматываем папку и файлы, получая HTML
 	roof_folder.convert2HTML(file_base)
+
+if __name__=="__main__":
+	
+	# название файла, из которого берём сборку
+	html_json="..\\..\\[source]\\готовые статьи\\html.json"
+
+	main(html_json)
+	
