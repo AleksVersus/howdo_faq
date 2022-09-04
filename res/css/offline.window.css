@@ -31,7 +31,6 @@ blockquote {
     display:none;
     justify-content: center;
     align-items: center;
-    
 }
 
 #soderzhanije_close {
@@ -45,7 +44,6 @@ blockquote {
     overflow: auto;
     box-sizing: border-box;
     max-height:90%;
-    min-width:50%;
     padding:1em;
     border:1px solid;
     align-self:flex-start;
@@ -65,7 +63,7 @@ blockquote {
     bottom: 0;
 }
 
- .cmd > li {
+.cmd > li {
     background: #00000000;
     transition: background 1s ease;
     padding:3px;
