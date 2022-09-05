@@ -15,6 +15,6 @@
     }
     // вешаем слушателей событий на элементы
     document.getElementById('section_content_open').addEventListener('click', open_content);
-    document.getElementById('section_content_close').addEventListener('click', close_content);
+    // document.getElementById('section_content_close').addEventListener('click', close_content);
     document.getElementById('soderzhanije_outer').addEventListener('click', close_content);
 }());

@@ -27,7 +27,6 @@ class NewDataBase():
 	def setCurFile(self,id_):
 		# устанавливаем текущий файл. Выбираем его айди
 		self.curfile=id_
-
 	def proveAdd(self):
 		# присутствует ли в базе добавочная секция
 		return (True if len(self.addition)!=0 else False)
@@ -68,16 +67,28 @@ class NewDataBase():
 				break
 		return result
 	def getFileName(self,anchor):
-		# получаем айди файла по содержащемуся в нём якорю
-		return (self.anchors_dict[anchor] if anchor in self.anchors_dict else None)
-
+		# раньше данная функция просто возвращала айди файла, который и использовался в качестве
+		# имени файла. Теперь Функция возвращает новое имя файла из уже существующего имени фала .txt-light
+		file_name=None # по умолчанию имя файла None
+		if anchor in self.anchors_dict:
+			# если якорь присутствует в списке якорей, перебираем словарь и отыскиваем нужное имя файла
+			for file in self.files_dict:
+				if self.files_dict[file]==self.anchors_dict[anchor]:
+					file_name=file
+					break
+		if file_name!=None:
+			file_name=os.path.split(file_name)[1] # отделяем путь к папке от файла
+			file_name=os.path.splitext(file_name)[0] # отделяем от файла расширение
+			instr=re.match(r'\d+_',file_name)
+			if instr!=None:
+				file_name=file_name[len(instr.group(0)):] # убираем из файла числа вначале
+		return file_name
 	def addAnchor(self,anchor):
 		# добавляем якорь к файлу
 		if self.curfile!="":
 			self.anchors_dict[anchor]=self.curfile
 		else:
 			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен")
-
 	def addHeader(self,string_list):
 		self.header_list=string_list[:]
 	def addFooter(self,string_list):
@@ -178,21 +189,31 @@ class NewFile():
 		new_string_list.append('<div>')
 		if not prev_<0:
 			prev_id='0'*(8-len(str(prev_)))+str(prev_)
-			new_string_list.append(f'<a href="{fold_}{prev_id}.html" class="emHREFTT">&lt; Назад, к странице {prev_}</a>')
+			prev_name=os.path.split(base.getFilePath(prev_id))[1]
+			prev_name=os.path.splitext(prev_name)[0]
+			instr=re.match(r'\d+_',prev_name)
+			if instr!=None:
+				prev_name=prev_name[len(instr.group(0)):] # убираем из файла числа вначале
+			new_string_list.append(f'<a href="{fold_}{prev_name}.html" class="emHREFTT">&lt; Назад, к странице {prev_}</a>')
 		else:
 			new_string_list.append('&nbsp;')
 		new_string_list.append('</div>')
 		new_string_list.append('<div>')
 		if not next_>int(base.lastFileID()):
 			next_id='0'*(8-len(str(next_)))+str(next_)
-			new_string_list.append(f'<a href="{fold_}{next_id}.html" class="emHREFTT">Вперёд, к странице {next_} &gt;</a>')
+			next_name=os.path.split(base.getFilePath(next_id))[1]
+			next_name=os.path.splitext(next_name)[0]
+			instr=re.match(r'\d+_',next_name)
+			if instr!=None:
+				next_name=next_name[len(instr.group(0)):]
+			new_string_list.append(f'<a href="{fold_}{next_name}.html" class="emHREFTT">Вперёд, к странице {next_} &gt;</a>')
 		new_string_list.append('</div>')
 		new_string_list.append('</div>\n')
 		return new_string_list
 	def buildThis(self,base):
 		# собираем готовый HTML-файл
-		file_name=base.getFileID(self.path) # пытаемся получить айди файла
-		if file_name!=None:
+		file_id=base.getFileID(self.path) # пытаемся получить айди файла
+		if file_id!=None:
 			# если айди в базе присутствует, можно работать с файлом
 			# получаем ссылки переключения страниц
 			prev_next=self.getPgUpDn(base)
@@ -207,12 +228,24 @@ class NewFile():
 					header_list.append(header_string)
 			temp_list=[]
 			# собираем центральную часть файла
-			file_name+='.html'
+			file_name=os.path.split(base.getFilePath(file_id))[1]
+			file_name=os.path.splitext(file_name)[0]
+			instr=re.match(r'\d+_',file_name)
+			if instr!=None:
+				file_name=file_name[len(instr.group(0)):]
 			body_list=prev_next[:] # список строк центральной части сайтf
 			body_list.extend(self.HTML[:])
 			body_list.extend(prev_next)
 			# собираем подвал
-			footer_list=base.getFooter()
+			footer_list=[] # список строк подвала файла
+			temp_list=base.getFooter() # временный список строк
+			for footer_string in temp_list:
+				# если это подходящее место, вставляем содержание, в противном случае просто добавляем строку
+				if footer_string=="<header-header></header-header>\n":
+					footer_list.extend(base.getContent())
+				else:
+					footer_list.append(footer_string)
+			temp_list=[]
 			# теперь склеиваем все три части и обрабатываем, заменяя ссылки
 			new_string_list=[] # сюда помещаем итоговый результат
 			# склеиваем все три части
@@ -227,7 +260,7 @@ class NewFile():
 						link=base.getCrossLink()+target_file+target_anch
 						string=string.replace(anch,link)
 				new_string_list.append(string)
-			export_path=base.getExportPath()+'\\'+file_name
+			export_path=base.getExportPath()+'\\'+file_name+".html"
 			with open(export_path,'w',encoding='utf-8') as file:
 				file.writelines(new_string_list)
 				print(f"'Файл {export_path} успешно сгенерирован из {self.path}.'")
