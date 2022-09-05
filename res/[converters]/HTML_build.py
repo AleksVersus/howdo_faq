@@ -32,9 +32,12 @@ def main(html_json):
 	roof_folder.convert2HTML(file_base)
 
 if __name__=="__main__":
-	
-	# название файла, из которого берём сборку
-	html_json="..\\..\\[source]\\готовые статьи\\html.json"
-
-	main(html_json)
+	# названия файлов, из которых берём сборку
+	html_json=[
+		"..\\..\\[source]\\готовые статьи\\html.json",
+		"..\\..\\[source]\\ответы\\html.json",
+		"..\\..\\[source]\\ИнформАрхив QSP\\html.json"
+	]
+	for path in html_json:
+		main(path)
 	
