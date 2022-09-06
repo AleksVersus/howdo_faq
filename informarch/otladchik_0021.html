@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
+<a id="debugger20"></a><h2>Отладчик 2.0 beta</h2>
+<p>
+Позволяет в любое время выполнить произвольный кусок кода или просмотреть значения переменных из указанного списка.
+
+</p>
+<p>
+Библиотечка была обновлена до версии 2.0beta
+
+</p>
+<p>
+Порядок использования:
+
+</p>
+<ul>
+<li>
+Распаковать архив в папку с игрой
+</li>
+<li>
+Добавить в первую локацию команду: <span class="em_BLCK"><span class="emOPRT">addqst</span> 'lib/debugger.qsp'</span>, для загрузки отладчика
+</li>
+<li>
+Включить отладочный режим: <span class="em_BLCK"><span class="emVAR">debug</span> = 1</span>, для плеера
+</li>
+<li>
+Добавить команду: <span class="em_BLCK"><span class="emOPRT">gs</span> 'debugger_init'</span>, для включения отладчика
+</li>
+</ul>
+<p>
+Основным недостатком первой версии было то, что команды можно было вводить только через строку ввода. Вызов команд из кода был затруднен, и создание новых команд требовало знания структуры и принципа отладчика. Кроме того у части команд был не совсем удобный вызов. В новой версии я постарался решить все эти проблемы.
+
+</p>
+<p>
+Для этого были сделаны следующие изменения:
+
+</p>
+<ul>
+<li>
+добавлена возможность вызвать команду отладчика из кода (в предыдущей версии вызов команды был тесно связан с строкой ввода и сделать это было довольно проблематично)
+<br>	например: <span class="em_BLCK"><span class="emOPRT">gs</span> 'debugger_process', 'addvar test'</span>
+</li>
+<li>
+обавлена возможность ввести несколько команд одновреммено разделив их &amp; (в предыдущей версии была бы отработана только первая команда)
+<br>	например: <span class="em_BLCK">addVar test &amp; test = 3 &amp; showVars</span>
+</li>
+<li>
+добавлена возможность ввода <span class="em_BLCK">&lt;&lt;</span> и <span class="em_BLCK">&gt;&gt;</span> (в предыдущей версии были проблемы с отображением и обработкой)
+</li>
+<li>
+добавлена возможность запланировать выполнение команды отладчика - для этого необходимо добавить перед командой &gt;
+<p>
+например: <span class="em_BLCK">&gt;showVars gs 'test_loc' &gt;showVars</span>
+
+</p>
+<p>
+здесь команды <span class="em_BLCK">showVars</span> будут выполнены не сразу после ввода, а только когда код будет запущен через run
+
+</p>
+</li>
+<li>
+в <span class="em_BLCK">addVar</span> и <span class="em_BLCK">delVar</span> теперь можно передавать несколько имен переменных разделенных пробелом
+<br>	например: <span class="em_BLCK">addvar test<span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span> test<span class="emOPRT">[</span><span class="emNUM">3</span><span class="emOPRT">]</span> $test</span>
+</li>
+<li>
+в <span class="em_BLCK">run</span> вторым параметром можно передать название переменной с кодом для выполнения (похоже на вызов <span class="em_BLCK">load $var &amp; run</span>, только код не загружается в список команд)
+</li>
+<li>
+добавлена команда clearVars для очистки списка переменных
+</li>
+<li>
+добавлены команды для отслеживания логических выражений <span class="em_BLCK">addCond</span>, <span class="em_BLCK">delCond</span>, <span class="em_BLCK">showCond</span>, <span class="em_BLCK">clearCond</span> (об этом писал на форуме <span class="em_BLCK">invertercant</span>)
+<br>	например: <span class="em_BLCK">addcond test<span class="emNUM">1</span> &gt; test2 &amp; showcond</span>
+</li>
+<li>
+в <span class="em_BLCK">help</span> вторым параметром можно передать название команды для просмотра информации по ней
+</li>
+<li>
+добавлены команды <span class="em_BLCK"><span class="emFUNC">createCommand</span></span>, <span class="em_BLCK"><span class="emFUNC">loadCommand</span></span>, <span class="em_BLCK"><span class="emFUNC">updateCommand</span></span> и <span class="em_BLCK"><span class="emFUNC">deleteCommand</span></span> для создания пользовательских команд
+<p>
+все параметры переданные после названия команды доступны в массиве <span class="em_BLCK">$debugger_args</span>
+
+</p>
+<p>
+в принципе с помощью <span class="em_BLCK"><span class="emFUNC">createCommand</span></span> можно перегрузить любую команду отладчика, но пользоваться этой возможностью нужно с осторожностью
+
+</p>
+</li>
+<li>
+добавлен "визуальный" режим для тех, кто не хочет учить команды:)
+<p>
+для его использования при вызове <span class="em_BLCK">debugger_init</span> первым параметром передайте <span class="em_BLCK"><span class="emNUM">1</span></span> в локацию-обработчик выбора предмета добавьте
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emOPRT">if</span><span class="emFUNC"> $selobj</span> = 'Отладчик': menu '$visual_main'</span>
+
+</p>
+</li>
+</ul>
+<p>
+При запущенной игре, команды передаются через строку ввода. Первой стоит запустить команду: <span class="em_BLCK">help</span>
+
+</p>
+<p>
+У команд в фигурных скобках указаны обязательные параметры, а в круглых необязательные.
+
+</p>
+<a id="юоэЬ"></a><h4>Основные команды и настройки</h4>
+<ul>
+<li>
+<span class="em_BLCK">debugger {0 | 1}</span> - Включение/отключение отладчика
+</li>
+<li>
+<span class="em_BLCK">showMode {msg | pl | p | *pl | *p}</span> - изменение режима вывода информации, по умолчанию msg
+</li>
+<li>
+<span class="em_BLCK">autoShow {0 | 1} (msg | pl | p | *pl | *p)</span> - Включение/отключение автоматического показа кода после каждого изменения, с помощью третьего аргумента можно изменить режим вывода
+</li>
+<li>
+<span class="em_BLCK">help (название команды)</span> - список команд или информация об определенной команде
+</li>
+</ul>
+<a id="YqMП"></a><h4>Список переменных для вывода</h4>
+<ul>
+<li>
+<span class="em_BLCK">addVar {название переменной}</span> - добавление переменной в список отображения (можно указывать несколько переменных через пробел)
+</li>
+<li>
+<span class="em_BLCK">delVar {название переменной}</span> - удаление переменной из списка отображения (можно указывать несколько переменных через пробел)
+</li>
+<li>
+<span class="em_BLCK">showVars</span> - отображение списка переменных, зависит от режима вывода информации
+</li>
+<li>
+<span class="em_BLCK">clearVars</span> - очистка списка переменных
+</li>
+</ul>
+<a id="ОDЖж"></a><h4>Список логических выражений для вывода</h4>
+<ul>
+<li>
+<span class="em_BLCK">addCond {название переменной}</span> - добавление логического выражения в список отображения
+</li>
+<li>
+<span class="em_BLCK">delCond {название переменной}</span> - удаление логического выражения из списка отображения
+</li>
+<li>
+<span class="em_BLCK">showCond</span> - отображение списка логических выражений, зависит от режима вывода информации
+</li>
+<li>
+<span class="em_BLCK">clearCond</span> - очистка списка логических выражений
+</li>
+</ul>
+<a id="ЫьшГ"></a><h4>Отладочный кусочек кода</h4>
+<ul>
+<li>
+<span class="em_BLCK">run (название переменной)</span> - Выполнение набраного кода(по умолчанию после выполнения код очищается) или кода из определенной переменной
+</li>
+<li>
+<span class="em_BLCK">clearCode</span> - Очистка набранного кода, по умолчанию вызывается при каждом выполнении кода
+</li>
+<li>
+<span class="em_BLCK">show </span>- Отображение введенного кода, отображение зависит от режима, по умолчанию происходит очистка окна отображения, если не используется msg
+</li>
+<li>
+<span class="em_BLCK">edit {номер строки} {строка кода}</span> - замена строки с определенным номером
+</li>
+<li>
+<span class="em_BLCK">delete {номер строки}</span> - удаление строки с определенным номером
+</li>
+<li>
+<span class="em_BLCK">delete {номер строки}-{номер строки}</span> - удаление группы строк
+</li>
+<li>
+<span class="em_BLCK">insert {строка кода}</span> - вставка кода в начало
+</li>
+<li>
+<span class="em_BLCK">insert {номер строки} {строка кода}</span> - вставка кода после определенной строки
+</li>
+</ul>
+<a id="БоJц"></a><h4>Сохранение и запись отладочного кода</h4>
+<ul>
+<li>
+<span class="em_BLCK">save (название переменной)</span> - сохранение кода в переменную, если переменная не указана, выполняется автосохранение, по умолчанию автосохранение выполняется при каждом выполнении кода до его очистки
+</li>
+<li>
+<span class="em_BLCK">load (название переменной)</span> - загрузка кода из переменной, если переменная не указана загружается автосохранение
+</li>
+</ul>
+<p>
+Скачать отладчик: <a href="https://qsp.org/attachments/debugger2beta.zip" style="text-decoration:none;" class="emFOLD">debugger2beta.zip</a>
+
+</p>
+<p>
+АВТОР: WEREWOLF   
+
+</p>
+<p>
+05.04.2010 13:34
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

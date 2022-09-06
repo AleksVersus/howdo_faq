@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html" class="emHREFTT">&lt; Назад, к странице 14</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="emHREFTT">Вперёд, к странице 16 &gt;</a></div></div>
+<a id="gametime"></a><h2>Игровое время [1.0]</h2>
+<p>
+Иногда автору нужен учет игрового времени - например, чтобы поставить срок игроку на выполнение какого-либо задания.
+
+</p>
+<p>
+Реализуется это таким образом:
+
+</p>
+<p>
+Заводим переменную-счетчик. В ней время будет храниться в минутах - это удобнее всего.
+
+</p>
+<p>
+Преобразовывать минуты в часы, дни нужно будет только при выводе:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;2440&nbsp;минут&nbsp;=&nbsp;1&nbsp;день&nbsp;+&nbsp;16&nbsp;часов&nbsp;+&nbsp;40&nbsp;минут</span><br>
+время&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">2440</span><br>
+<br>
+дни&nbsp;<span class="Monokai-Operator">=</span>&nbsp;время&nbsp;<span class="Monokai-Operator">/</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">)</span><br>
+часы&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span>время&nbsp;<span class="Monokai-Operator">-</span>&nbsp;дни<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">/</span>&nbsp;<span class="Monokai-Numeric">60</span><br>
+минуты&nbsp;<span class="Monokai-Operator">=</span>&nbsp;время&nbsp;<span class="Monokai-Operator">-</span>&nbsp;часы<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span>&nbsp;<span class="Monokai-Operator">-</span>&nbsp;дни<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><br>
+<span class="Monokai-Operator">*PL</span>&nbsp;<span class="Monokai-String">'Время:&nbsp;&lt;&lt;дни&gt;&gt;&nbsp;день,&nbsp;&lt;&lt;часы&gt;&gt;:&lt;&lt;минуты&gt;&gt;.'</span><br>
+
+
+</div>
+<p>
+Пример реализации: <a href="https://qsp.org/attachments/time.qsp" style="text-decoration:none;" class="emFOLD">time.qsp</a>
+
+</p>
+<p>
+Также см. <a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианских дней</a>
+
+</p>
+<p>
+АВТОР: NEX   
+
+</p>
+<p>
+18.03.2011 15:13
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html" class="emHREFTT">&lt; Назад, к странице 14</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="emHREFTT">Вперёд, к странице 16 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

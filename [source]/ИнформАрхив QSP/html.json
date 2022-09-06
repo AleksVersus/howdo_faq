@@ -1,0 +1,11 @@
+{
+	"project":
+	{
+		"export_folder":"..\\..\\informarch",
+		"source_folder":"..\\..\\[source]\\ИнформАрхив QSP",
+		"cross-link":"https://aleksversus.github.io/howdo_faq/informarch/"
+	},
+	"head":"..\\..\\[source]\\ИнформАрхив QSP\\add\\02_start.html",
+	"foot":"..\\..\\[source]\\ИнформАрхив QSP\\add\\03_end.html",
+	"head_contents":"..\\..\\[source]\\ИнформАрхив QSP\\000_soderzhanie_0000.txt-light"
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="emHREFTT">&lt; Назад, к странице 17</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">Вперёд, к странице 19 &gt;</a></div></div>
+<a id="ia_lib_ntropy"></a><h2>Библиотечка дополняющая инвентарь 0.76</h2>
+<p>
+Библиотечка для работы с инвентарём (<span class="em_BLCK">inventory_advanced.qsp</span>) + простой пример для демонстрации возможностей (<span class="em_BLCK">invadv_test.qsp</span>).
+
+</p>
+<p>
+Вы можете добавлять и удалять предметы (деньги или еще что-то), при этом их количество будет верно отображаться в инвентаре. Например, добавили 15 шишек, а пишется "шишка (15 шт.)", заботу об этом берёт библиотечка.
+
+</p>
+<p>
+Вы можете добавлять предметы в обход функций библиотечки, они не помешают её работе.
+
+</p>
+<p>
+Для получения описания функций библиотечки откройте её файл (<span class="em_BLCK">inventory_advanced.qsp</span>) в QSP-плеере.
+
+</p>
+<a id="НШжм"></a><h4>Описание</h4>
+<p>
+Локации могут вызываться как функции, так и как процедуры, например вызов func('ia_obj_count', 'шишки') возвращает количество шишек в инвентаре, а вызов процедуры gs 'ia_add_obj','шишки' добавляет одну шишку в инвентарь.
+
+</p>
+<ul>
+<li>
+<span class="em_BLCK">ia_add_obj, &lt;предмет&gt;, [&lt;тип предмета&gt;]</span>
+<br>    Функция для добавления предмета в инвентарь или увеличения счетчика на 1, тип предмета задает сокращение после количества, например "руб." или "шт."
+</li>
+<li>
+<span class="em_BLCK">ia_del_obj, &lt;предмет&gt;, [&lt;тип предмета&gt;]</span>
+<br>    Функция уменьшения счетчика на 1 или для удаления предмета из инвентаря (если количество равно нулю), тип предмета задает сокращение после количества, например "руб." или "шт."
+</li>
+<li>
+<span class="em_BLCK">ia_obj_count, &lt;предмет&gt;, [&lt;количество&gt;]</span>
+<br>    Функция для получения количества предметов или установки точного значения, если задано количество.
+</li>
+<li>
+<span class="em_BLCK">ia_obj_type, &lt;предмет&gt;</span>
+<br>    Функция для получения типа предмета (сокращение указываемое после количества, например "руб." или "шт.") или задание этого сокращения.
+</li>
+</ul>
+<p>
+При использовании библиотечки в своих проектах настаиваю на сохранении авторства.
+
+</p>
+<p>
+Ntropy ( ...@yandex.ru) 18.06.2009
+
+</p>
+<p>
+АВТОР: NTROPY   
+
+</p>
+<p>
+02.04.2010 12:50
+
+</p>
+<p>
+Оригинал статьи: https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=70:qsp-inventory-advanced-lib-076&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76
+
+</p>
+<p>
+Скачать модуль гибкого плейлиста можно здесь: <a href="https://qsp.org/attachments/inventory_advanced.zip" style="text-decoration:none;" class="emFOLD">inventory_advanced.zip</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="emHREFTT">&lt; Назад, к странице 17</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">Вперёд, к странице 19 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

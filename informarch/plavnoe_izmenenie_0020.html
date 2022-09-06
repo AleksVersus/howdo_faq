@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 19</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 21 &gt;</a></div></div>
+<a id="transformation"></a><h2>Плавное изменение цвета фона [1.0]</h2>
+<p>
+Плавное изменение цвета фона может придать Вашей игре больше атмосферности. Так же, это снизит напряжение на глаза при смене цвета фона (по сравнению с резким).
+
+</p>
+<p>
+Функция будет называться <span class="em_BLCK">!coloring</span> и вызываться так:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'!coloring'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><br>
+
+
+</div>
+<p>
+Где три числа соответственно цвета RGB от 0 до 255.
+
+</p>
+<p>
+Код локации <span class="em_BLCK">!coloring</span>
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!Вызов&nbsp;функции&nbsp;с&nbsp;передачей&nbsp;3-х&nbsp;аргументов,&nbsp;это&nbsp;3&nbsp;цвета&nbsp;RGB</span><br>
+<span class="Monokai-Comment">!Рекомендуется&nbsp;посылать&nbsp;значения&nbsp;кратные&nbsp;5</span><br>
+r2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+g2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+b2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+<span class="Monokai-Comment">!Начало&nbsp;цикла</span><br>
+<span class="Monokai-Markup">:!color</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span class="Monokai-Comment">!Всего&nbsp;3&nbsp;блока&nbsp;для&nbsp;каждого&nbsp;цвета.&nbsp;</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;r2<span class="Monokai-Operator">:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span class="Monokai-Comment">!Значения&nbsp;должны&nbsp;быть&nbsp;кратные&nbsp;5.&nbsp;Если&nbsp;хочется&nbsp;любые,&nbsp;то&nbsp;"+5"&nbsp;следует&nbsp;заменить&nbsp;на&nbsp;"+1"&nbsp;и&nbsp;"-5"&nbsp;на&nbsp;"-1"</span><br>
+<span class="Monokai-Koperator">elseif</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&gt;</span>r2<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<br>
+<span class="Monokai-Koperator">if</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;g2<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span class="Monokai-Koperator">elseif</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&gt;</span>g2<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<br>
+<span class="Monokai-Koperator">if</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;b2<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">elseif</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&gt;</span>b2<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Comment">!Установка&nbsp;цвета&nbsp;фона</span><br>
+<span class="Monokai-SysVar">bcolor</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>r1<span class="Monokai-Operator">,</span>g1<span class="Monokai-Operator">,</span>b1<span class="Monokai-Operator">)</span>&nbsp;<br>
+<span class="Monokai-Comment">!Проверка,&nbsp;достигнут&nbsp;ли&nbsp;нужный&nbsp;цвет?</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;r2&nbsp;<span class="Monokai-Func">and</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;g2&nbsp;<span class="Monokai-Func">and</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;b2&nbsp;<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b2<br>
+<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">wait</span>&nbsp;TIMEOFWAIT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'!color'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+ВНИМАНИЕ!
+
+</p>
+<p>
+Не забывайте, что нужно задать отличным от 0 TIMEOFWAIT и устанавливать цвет текста тёмным или светлым в зависимости от светлого-тёмного фона командой:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-SysVar">fcolor</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+где в скобках цвета в RGB
+
+</p>
+<p>
+Примечание: использование <span class="em_BLCK"><span class="emOPRT">WAIT</span></span> а не локации-счётчика <span class="em_BLCK"><span class="emVAR">COUNTER</span></span> обусловлено тем, что подразумевается, что смена цвета будет происходить быстро (рекомендуемое время TIMEOFWAIT = 5). Если автор хочет сделать плавную смену дня и ночи, лучше будет воспользоваться <strong>COUNTER</strong>'ом.
+
+</p>
+<p>
+АВТОР: ANTIPOD   
+
+</p>
+<p>
+20.05.2011 09:23
+
+</p>
+<p>
+Оригинал статьи: <a href="https://qsp.org/index.php?option=com_content&view=article&id=112:2011-05-20-06-23-02&catid=36:2009-02-19-06-11-21&Itemid=76" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона 1.0</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 19</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 21 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

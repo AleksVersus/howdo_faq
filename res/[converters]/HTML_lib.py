@@ -256,7 +256,7 @@ class NewFile():
 					anchors_list=re.findall(r'#folder\-file##?[^#]*#',string)
 					for anch in anchors_list:
 						target_anch=re.match(r'#folder\-file#(#?[^#]*)#',anch).group(1)
-						target_file=base.getFileName(target_anch[1:])+'.html'
+						target_file=str(base.getFileName(target_anch[1:]))+'.html'
 						link=base.getCrossLink()+target_file+target_anch
 						string=string.replace(anch,link)
 				new_string_list.append(string)

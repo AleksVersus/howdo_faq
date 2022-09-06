@@ -12,6 +12,7 @@ def main(html_json):
 	project_dict=root_dict["project"] # словарь помещаем в переменную
 	folder_path=os.path.abspath(project_dict["source_folder"]) # папка, из которой подтягиваем файлы
 	export_path=os.path.abspath(project_dict["export_folder"]) # папка, в которую помещаем файлы
+	# print(folder_path,export_path)
 	if os.path.exists(export_path)!=True:
 		os.makedirs(export_path)
 	content_path=os.path.abspath(root_dict["head_contents"])
@@ -41,3 +42,8 @@ if __name__=="__main__":
 	for path in html_json:
 		main(path)
 	
+"""
+
+	Пути в html.json должны записываться относительно папки, в которой расположен билдер HTML-файлов.
+
+"""

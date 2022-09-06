@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Как сделать?</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="emHREFTT">&lt; Назад, к странице 175</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="emHREFTT">Вперёд, к странице 177 &gt;</a></div></div>
+<a id="ТerC"></a><h2>Зарезервированные слова, системные переменные и спецсимволы</h2>
+<a id="faq_80_02"></a><h3>Операторы</h3>
+<a id="faq_80_02_comments"></a><h4>! (комментарий)</h4>
+<p>
+<strong>!</strong> — оператор комментария. То, что находится в строке после оператора комментария, и до конца строки игнорируется интерпретатором. Оператор комментария позволяет "закомментировать" (выключить) ненужный временно оператор / функцию во время отладки игры. Кроме того, написание комментариев к коду программы является одним из признаков хорошего стиля программирования.
+
+</p>
+<p>
+	Необходимо чётко понимать, что это именно оператор, поэтому если вы комментируете некую строку кода, то <span class="em_BLCK">!</span> должен стоять после <span class="em_BLCK"><span class="emOPRT">&amp;</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Hello,&nbsp;world!"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;комментарий</span><br>
+
+
+</div>
+<p>
+	Комментарии могут быть однострочными, то есть заканчиваться в той же строке, где стоит оператор комментария:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;однострочный&nbsp;комментарий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"строка&nbsp;текста"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;тоже&nbsp;однострочный&nbsp;комментарий</span><br>
+
+
+</div>
+<p>
+	Комментарии могут быть многострочными. Для этого после оператора комментария нужно записать кавычки, апострофы, или фигурные скобки. Например так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;"это&nbsp;первая&nbsp;строка&nbsp;коммантария<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;это&nbsp;вторая&nbsp;строка&nbsp;комментария<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;это&nbsp;третья&nbsp;строка&nbsp;комментария<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"</span><br>
+
+
+</div>
+<p>
+	Многострочные комментарии могут принимать самые разнообразные формы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;строка&nbsp;до&nbsp;&nbsp;кавычек&nbsp;"&nbsp;текст&nbsp;внутри&nbsp;кавычек<br>
+&nbsp;&nbsp;&nbsp;&nbsp;может&nbsp;переходить&nbsp;на&nbsp;другие&nbsp;строки&nbsp;"&nbsp;а&nbsp;так&nbsp;же&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;можно&nbsp;использовать&nbsp;другие&nbsp;группы&nbsp;символов,&nbsp;чтобы&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;продолжать&nbsp;многострочный&nbsp;комментарий<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;и&nbsp;комментарий&nbsp;не&nbsp;кончится,&nbsp;пока&nbsp;не&nbsp;кончится&nbsp;строка</span><br>
+
+
+</div>
+<a id="faq_80_02_sclr"></a><h4>*CLEAR (*CLR)</h4>
+<p>
+<strong>*CLEAR</strong> — очищает окно основного описания. Имеет краткую форму <span class="em_BLCK"><span class="emOPRT">*clr</span></span>.
+
+</p>
+<a id="faq_80_02_snl"></a><h4>*NL</h4>
+<p>
+<strong>*NL</strong> — переход на новую строку, затем вывод текста в окне основного описания. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*NL</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. Если <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> отсутствует, происходит просто переход на новую строку. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<a id="faq_80_02_sp"></a><h4>*P</h4>
+<p>
+<strong>*P</strong> — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после <span class="em_BLCK"><span class="emOPRT">*p</span></span> добавит новый текст сразу после текущего. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> может быть пустой строкой <span class="em_BLCK"><span class="emTEXT">''</span></span>, но не должен отсутствовать. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<a id="faq_80_02_spl"></a><h4>*pl</h4>
+<p>
+<strong>*PL</strong> — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*PL</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> может отсутствовать, тогда просто переход на новую строку. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<p>
+	Аналогичным образом можно вывести текст, просто написав нужное выражение вместо данного оператора. Например, строки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;$AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;находитесь&nbsp;в&nbsp;парке'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Преформатированная<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;строка'</span><br>
+
+
+</div>
+<p>
+	и:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Вы&nbsp;находитесь&nbsp;в&nbsp;парке'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Преформатированная<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;строка'</span><br>
+
+
+</div>
+<p>
+ 	сработают одинаково.
+
+</p>
+<a id="faq_80_02_act"></a><h4>ACT</h4>
+<p>
+<strong>ACT</strong> — создаёт и выводит в окно действий новое действие.
+
+</p>
+<p>
+	Общая запись в однострочной форме:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Command">[$название]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;файлу&nbsp;изображения]</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	Общая запись в многострочной форме:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Command">[$название]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;файлу&nbsp;изображения]</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+	К списку действий в окне действий добавляется новое с названием <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> и изображением, которое лежит по пути <span class="em_BLCK"><span class="emTEXT">[$путь к файлу изображения]</span></span>. При нажатии на действие выполняются заданные операторы.
+
+</p>
+<p>
+	Параметр <span class="em_BLCK"><span class="emTEXT">[$путь к файлу изображения]</span></span> может отсутствовать, при этом действие добавится без изображения.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;действие&nbsp;в&nbsp;однострочной&nbsp;форме&nbsp;записи</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сорвать&nbsp;с&nbsp;берёзы&nbsp;яблоко"</span><span class="Monokai-Operator">:</span>&nbsp;яблоко<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сорвали&nbsp;яблоко,&nbsp;спелое&nbsp;белое."</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;действие&nbsp;в&nbsp;многострочной&nbsp;форме&nbsp;записи,&nbsp;с&nbsp;изображением</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сорвать&nbsp;арбуз&nbsp;с&nbsp;куста"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/watermelon.png"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;арбуз<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сорвали&nbsp;арбуз&nbsp;с&nbsp;куста"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Если в списке действий уже есть действие с указанным названием, то новое действие не создаётся, и не заменяет собой уже существующее, плеер просто игнорирует команду <span class="em_BLCK"><span class="emOPRT">act</span></span>. Таким образом нельзя вывести действия с одинаковыми названиями. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;действие."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;действие."</span><br>
+
+
+</div>
+<p>
+	Однако, вы можете сымитировать действия с одинаковыми названиями в режиме распознавания HTML, добавив в названия действий несуществующий HTML-тег:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-old&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;действие."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-new&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;действие."</span><br>
+
+
+</div>
+<a id="faq_80_02_addobj"></a><h4>ADDOBJ</h4>
+<p>
+<strong>ADDOBJ</strong> — добавление нового предмета в окно предметов. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-Command">[$название]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[$путь&nbsp;к&nbsp;файлу&nbsp;изображения]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#позиция]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> — это название предмета, <span class="em_BLCK"><span class="emTEXT">[$путь к файлу изображения]</span></span> — это путь к файлу изображения предмета (отображается рядом с названием предмета), а <span class="em_BLCK"><span class="emTEXT">[#позиция]</span></span> — на какое место в инвентаре добавляется предмет. Параметр <span class="em_BLCK"><span class="emTEXT">[#позиция]</span></span> может отсутствовать. По умолчанию предметы добавляются в конец списка. Нумерация предметов в инвентаре ведётся с 1. Параметр <span class="em_BLCK"><span class="emTEXT">[$путь к файлу изображения]</span></span> может отсутствовать, значение по умолчанию - <span class="em_BLCK"><span class="emTEXT">''</span></span>, при этом предмет добавляется без изображения.
+
+</p>
+<p>
+	Допускается, но не рекомендуется, запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;ADD&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Command">[$название]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[$путь&nbsp;к&nbsp;файлу&nbsp;изображения]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#индекс]</span><br>
+
+
+</div>
+<p>
+	Можно добавлять предметы с одинаковым названием, однако если вы планируете добавлять много одинаковых предметов, то лучше использовать дополнительную переменную для подсчёта этих предметов, а в окно предметов добавить один предмет, чтобы не загромождать инвентарь списком из 137 предметов Рубль / Патрон:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">'Патроны'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;предмет&nbsp;"Патроны"&nbsp;уже&nbsp;добавлен,&nbsp;просто&nbsp;увеличиваем&nbsp;их&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;патроны<span class="Monokai-Operator">=</span>патроны<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;предмет&nbsp;"Патроны"&nbsp;ещё&nbsp;не&nbsp;добавлен,&nbsp;добавляем,&nbsp;и&nbsp;увеличиваем&nbsp;число</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Патроны'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;патроны<span class="Monokai-Operator">=</span>патроны<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Для хранения числа предметов можно использовать массивы, индексируемые через строки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'деньги'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">12</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'патроны'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">137</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Количество:&nbsp;&lt;&lt;objects[$getobj(countobj)]&gt;&gt;'</span><br>
+
+
+</div>
+<p>
+	Пример добавления предмета в самый верх списка (при этом все остальные предметы сместятся вниз):
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<a id="faq_80_02_addqst"></a><h4>ADDQST (INCLIB)</h4>
+<p>
+<strong>ADDQST</strong> — из заданного файла игры добавляет все локации, названия которых отсутствуют среди текущих игровых локаций. Загруженные локации полностью эквивалентны локациям из основного файла игры. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDQST</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;файлу&nbsp;игры]</span><br>
+
+
+</div>
+<p>
+	В более новых версиях библиотеки команда переименована в <span class="em_BLCK">addlib</span> (нигде не использовалось), затем в <span class="em_BLCK"><span class="emOPRT">inclib</span></span> (использовалась в Quest Navigator и будет использоваться в плеерах с библиотекой версии 5.8.0 и выше).
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addqst</span>&nbsp;<span class="Monokai-String">"lib/easy.math.qsp"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addqst</span>&nbsp;<span class="Monokai-String">"lib/easy.title.qsp"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addqst</span>&nbsp;<span class="Monokai-String">"res/drive.qsp"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addqst</span>&nbsp;<span class="Monokai-String">"res/base.qsp"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addqst</span>&nbsp;<span class="Monokai-String">"res/intro.qsp"</span><br>
+
+
+</div>
+<a id="faq_80_02_cla"></a><h4>CLA</h4>
+<p>
+<span class="em_BLCK"><span class="emOPRT">CLA</span></span> - очистка списка текущих действий (удаление всех действий из окна действий).
+
+</p>
+<a id="faq_80_02_clear"></a><h4>CLEAR (CLR)</h4>
+<p>
+<strong>CLEAR</strong> — очищает окно дополнительного описания. Имеет краткую форму <span class="em_BLCK"><span class="emOPRT">clr</span></span>.
+
+</p>
+<a id="faq_80_02_close"></a><h4>CLOSE</h4>
+<p>
+<strong>CLOSE</strong> — останавливает проигрывание указанного звукового файла. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">CLOSE</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;звуковому&nbsp;файлу]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$путь к звуковому файлу]</span></span> — путь к звуковому файлу относительно файла игры. Если параметр <span class="em_BLCK"><span class="emTEXT">[$путь к звуковому файлу]</span></span> не указан, происходит остановка воспроизведения всех звуковых файлов.
+
+</p>
+<a id="faq_80_02_closeall"></a><h4>CLOSE ALL</h4>
+<p>
+<strong>CLOSE ALL</strong> — остановка проигрывания всех активных звуковых файлов. Имеет краткую форму <span class="em_BLCK"><span class="emOPRT">close</span></span>.
+
+</p>
+<a id="faq_80_02_cls"></a><h4>CLS</h4>
+<p>
+<strong>CLS</strong> — очищает все окна кроме списка предметов. Эквивалентно конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cla</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cmdclear</span><br>
+
+
+</div>
+<a id="faq_80_02_cmdclear"></a><h4>CMDCLEAR (CMDCLR)</h4>
+<p>
+<strong>CMDCLEAR</strong> — очистка строки ввода. Имеет краткую форму <span class="em_BLCK"><span class="emOPRT">cmdclr</span></span>.
+
+</p>
+<a id="faq_80_02_copyarr"></a><h4>COPYARR</h4>
+<p>
+<strong>COPYARR</strong> — копирование содержимого одного массива в другой. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">COPYARR</span>&nbsp;<span class="Monokai-Command">[$приёмник]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[$источник]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#начало]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#количество]</span><br>
+
+
+</div>
+<p>
+	, где: <span class="em_BLCK"><span class="emTEXT">[$приёмник]</span></span> — это массив, в который производится копирование, размер и наполнение значения не имеют; <span class="em_BLCK"><span class="emTEXT">[$источник]</span></span> — это массив, из которого производится копирование; <span class="em_BLCK"><span class="emTEXT">[#начало]</span></span> — номер элемента, с которого нужно начинать копирование; <span class="em_BLCK"><span class="emTEXT">[#количество]</span></span> — сколько элементов нужно скопировать. Параметр <span class="em_BLCK"><span class="emTEXT">[#количество]</span></span> является необязательным; по умолчанию — до конца массива-источника. Параметр <span class="em_BLCK"><span class="emTEXT">[#начало]</span></span> является необязательным; по умолчанию — 0.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;копируем&nbsp;все&nbsp;элементы&nbsp;массива&nbsp;'$b'&nbsp;в&nbsp;массив&nbsp;'$a'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'$a'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'$b'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;при&nbsp;этом&nbsp;так&nbsp;же&nbsp;были&nbsp;скопированны&nbsp;все&nbsp;элементы&nbsp;массива&nbsp;'b'&nbsp;в&nbsp;массив&nbsp;'a'</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;копируем&nbsp;в&nbsp;массив&nbsp;'c'&nbsp;элементы&nbsp;массива&nbsp;'d',&nbsp;начиная&nbsp;с&nbsp;шестого</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'c'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'d'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;копируем&nbsp;шесть&nbsp;первых&nbsp;элементов&nbsp;массива&nbsp;'d'&nbsp;в&nbsp;массив&nbsp;'c'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'c'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'d'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><br>
+
+
+</div>
+<p>
+	В силу особенностей плеера при копировании, например, числового массива <span class="em_BLCK">mass<span class="emNUM">1</span></span> в <span class="em_BLCK">mass<span class="emNUM">2</span></span> копируется также текстовый массив <span class="em_BLCK">$mass<span class="emNUM">1</span></span> в <span class="em_BLCK">$mass<span class="emNUM">2</span></span>.
+
+</p>
+<p>
+	Другие примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;$arrname1<span class="Monokai-Operator">,</span>$arrname2<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'a&lt;&lt;$arrname1&gt;&gt;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'a&lt;&lt;$arrname2&gt;&gt;'</span><br>
+
+
+</div>
+<a id="faq_80_02_delact"></a><h4>DELACT</h4>
+<p>
+<strong>DELACT</strong> — удаляет действие из списка действий (если такое действие существует). Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-Command">[$название]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> — название действия, которое хотим удалить.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;действие&nbsp;с&nbsp;конкретным&nbsp;названием</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delact</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;вперед'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;выделенное&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delact</span>&nbsp;<span class="Monokai-Func">$selact</span><br>
+
+
+</div>
+<p>
+	Допустима, но не одобряется, форма записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;DEL&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Command">[$название]</span><br>
+
+
+</div>
+<a id="faq_80_02_delobj"></a><h4>DELOBJ</h4>
+<p>
+<strong>DELOBJ</strong> — удаление предмета из инвентаря по названию (если такой предмет существует). Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-Command">[$название]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> — название предмета, который хотим удалить.
+
+</p>
+<p>
+	Если в инвентаре присутствуют одинаковые предметы, команда удалит самый верхний с указанным индексом.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;предмет&nbsp;с&nbsp;конкретным&nbsp;названием</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;выделенный&nbsp;предмет</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-Func">$selobj</span><br>
+
+
+</div>
+<p>
+	Допустима, но не одобряется, форма записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;DEL&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Command">[$название]</span><br>
+
+
+</div>
+<a id="faq_80_02_dynamic"></a><h4>DYNAMIC</h4>
+<p>
+<strong>DYNAMIC</strong> — выполняет код, переданный в виде строки текста. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DYNAMIC</span><span class="Monokai-Operator">(</span><span class="Monokai-Command">[$код]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$код]</span></span> — это обычный код QSP, записанный в виде текста. Выполнение такого кода аналогично выполнению кода оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться внутри <span class="em_BLCK"><span class="emTEXT">[$код]</span></span>, их значения автоматически помещаются в переменные <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. После выполнения старые параметры <span class="em_BLCK"><span class="emVAR">args</span></span> восстанавливаются, затем продолжается выполнение кода со следующей команды после <span class="em_BLCK"><span class="emOPRT">dynamic</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">'$a="string&lt;&lt;$b&gt;&gt;"'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">'$a'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">'if&nbsp;$a="string":'</span><span class="Monokai-String">'text!'</span><span class="Monokai-String">''</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$args[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$args[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Текст'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Вилка'</span><br>
+
+
+</div>
+<p>
+	Нижеследующая информация справедлива и для функции <span class="em_BLCK"><span class="emFUNC">dyneval</span></span> (см. <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html#faq_80_03_dyneval" style="text-decoration:none;" class="emFOLD">соответствующий раздел</a>).
+
+</p>
+<p>
+	Важно! Если код задан с помощью одинарных (<span class="em_BLCK"><span class="emTEXT">''</span></span>) или двойных (<span class="em_BLCK"><span class="emTEXT">""</span></span>) кавычек, в тексте вычисляются подвыражения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'qwerty'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"&lt;&lt;$args[0]&gt;&gt;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;$args[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'12345'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span><span class="Monokai-String">'asdfg'</span><br>
+
+
+</div>
+<p>
+	В этом случае при задании переменной <span class="em_BLCK">$code</span> будет вычислено подвыражение, поэтому первой строкой выведется 'qwerty', второй строкой выведется 'asdfg'.
+
+</p>
+<p>
+	Фигурные скобки - третий вид кавычек используемый специально для написания динамического кода. Здесь поддерживается вложенность скобок, а перед выполнением кода не вычисляются подвыражения:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'qwerty'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"&lt;&lt;$args[0]&gt;&gt;"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">}</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span><span class="Monokai-String">'asdfg'</span><br>
+
+
+</div>
+<p>
+	В этом случае будут выведены две строки 'asdfg'.
+
+</p>
+<a id="faq_80_02_exit"></a><h4>EXIT</h4>
+<p>
+<strong>EXIT</strong> — завершение выполнения текущего блока кода (преждевременный выход из подпрограммы, функции, обработчика какого-либо события, и т.д.).
+
+</p>
+<p>
+	В качестве блока кода может выступать локация, действие, код, переданный <strong>dynamic</strong>'у или <strong>dyneval</strong>'у, или код в гиперссылке.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">exit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Внимание!!! В более новых версиях плеера (5.8.0 и выше) есть оператор цикла <span class="em_BLCK"><span class="emOPRT">loop</span></span>, и тело цикла так же считается отдельным блоком кода, однако оператор <span class="em_BLCK"><span class="emOPRT">exit</span></span> прерывает не только сам цикл, но и блок кода, в котором находится цикл.
+
+</p>
+<a id="faq_80_02_gosub"></a><h4>GOSUB (GS)</h4>
+<p>
+<strong>GOSUB</strong> — выполнение кода указанной локации без непосредственного перехода на неё.
+
+</p>
+<p>
+	Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOSUB</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. После обработки локации предыдущие значения <span class="em_BLCK"><span class="emVAR">args</span></span> восстанавливаются. Использование аргументов не обязательно.
+
+</p>
+<p>
+	При обращении к локации по <span class="em_BLCK"><span class="emOPRT">gosub</span></span> базовое описание локации добавляется к текущему описанию, базовые действия добавляются к текущим действиям, и происходит выполнение операторов в поле "Выполнить при посещении", затем возврат на исходную строку (продолжение выполнения кода после <span class="em_BLCK"><span class="emOPRT">gosub</span></span>).
+
+</p>
+<p>
+	Примеры вызова локаций по <span class="em_BLCK"><span class="emOPRT">gosub</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;"ход".&nbsp;Массив&nbsp;args[]&nbsp;пуст.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'ход'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;с&nbsp;названием&nbsp;из&nbsp;переменной&nbsp;$loc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Передаётся&nbsp;один&nbsp;параметр&nbsp;-&nbsp;args[0]&nbsp;равен&nbsp;1.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;$location<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;"ход"&nbsp;с&nbsp;передачей&nbsp;3-х&nbsp;параметров.&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$args[0]&nbsp;=&nbsp;$var&nbsp;(значению),&nbsp;args[1]&nbsp;=&nbsp;2,&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$args[2]&nbsp;=&nbsp;"данные".&nbsp;Обратите&nbsp;внимание&nbsp;на&nbsp;символы&nbsp;'$'.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'ход'</span><span class="Monokai-Operator">,</span>$var<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br>
+
+
+</div>
+<p>
+	Ещё пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;это&nbsp;код&nbsp;вызова&nbsp;локации&nbsp;"переход"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'переход'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'локация'</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;а&nbsp;это&nbsp;код&nbsp;самой&nbsp;локации&nbsp;"переход"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-StartLoc">#&nbsp;переход</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;выведется&nbsp;текст&nbsp;'локация'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;окне&nbsp;действий&nbsp;появится&nbsp;новое&nbsp;действие:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'перейти'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"улица"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">-</span>&nbsp;переход<br>
+
+
+</div>
+<p>
+	Оператор имеет краткую форму gs:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<a id="faq_80_02_goto"></a><h4>GOTO (GT)</h4>
+<p>
+<strong>GOTO</strong> — переход на указанную локацию. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — название локации, на которую должен быть осуществлён переход. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. Использование аргументов не обязательно.
+
+</p>
+<p>
+	При переходе на новую локацию при помощи <span class="em_BLCK"><span class="emOPRT">goto</span></span> очищается окно основного описания, а также список текущих действий, затем в окно основного описания выводится текст базового описания, в окно действий — базовые действия, а так же выполняется код из поля "Выполнить при посещении" локации <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span>. Так же при переходе на новую локацию изменяется значение, возвращаемое функцией <span class="em_BLCK"><span class="emFUNC">$curloc</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переход&nbsp;на&nbsp;локацию&nbsp;"дом".</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Массив&nbsp;args&nbsp;на&nbsp;локации&nbsp;"дом"&nbsp;будет&nbsp;пуст.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'дом'</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переход&nbsp;на&nbsp;локацию&nbsp;"улица"&nbsp;с&nbsp;передачей&nbsp;2-х&nbsp;параметров.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;локации&nbsp;"улица"&nbsp;args[0]&nbsp;равен&nbsp;1,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$args[1]&nbsp;содержит&nbsp;строку&nbsp;"данные".</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'улица'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br>
+
+
+</div>
+<p>
+	Оператор имеет краткую форму gt:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GT</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<a id="faq_80_02_if"></a><h4>IF (ELSE, ELSEIF)</h4>
+<p>
+<strong>IF</strong> — оператор условия. Собственно для того и нужен, чтобы проверять выполнение какого-либо условия. Имеет несколько форм записи.
+
+</p>
+<p>
+	Простая однострочная форма записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;1]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;2]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">...<br>
+</span>
+
+</div>
+<p>
+	Как видите, за ключевым словом <span class="em_BLCK"><span class="emOPRT">if</span></span> следует выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span>, и если это выражение верно, тогда выполняется набор команд <span class="em_BLCK"><span class="emTEXT">[команда 1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 2]</span></span>, и т.д., которые записаны после двоеточия в той же строке. При этом команды перечисляются через амперсанд (<span class="em_BLCK"><span class="emOPRT">&amp;</span></span>).
+
+</p>
+<p>
+	Именно по наличию команд сразу в той же строке после двоеточия плеер определяет, что это однострочная форма, и считает конец этой строки концом конструкции условия.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;сумма&nbsp;a&nbsp;и&nbsp;b&nbsp;равна&nbsp;двум,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;c&nbsp;присваивается&nbsp;значение&nbsp;30</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">:</span>&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">30</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Если&nbsp;в&nbsp;инвентаре&nbsp;нет&nbsp;апельсина,&nbsp;выводится&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;нет&nbsp;апельсина."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;это&nbsp;тоже&nbsp;простая&nbsp;однострочная&nbsp;форма</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span>c<span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">54</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span>b<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;c<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">'лопата'</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;$f<span class="Monokai-Operator">=</span>$vvv<span class="Monokai-Operator">+</span><span class="Monokai-String">'RRRRR'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'OK'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'Next'</span><br>
+
+
+</div>
+<p>
+	Сложная однострочная форма записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;д1]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;д2]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Koperator">ELSE</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;н1]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">[команда&nbsp;н2]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">...<br>
+</span>
+
+</div>
+<p>
+	Здесь снова за ключевым словом <span class="em_BLCK"><span class="emOPRT">if</span></span> следует <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span>, истиность которого требуется проверить. Если выражение верно, выполняется набор команд <span class="em_BLCK"><span class="emTEXT">[команда д1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда д2]</span></span> и т.д., от двоеточия до ключевого слова else. В противном случае, если выражение <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> неверно, выполняется набор команд <span class="em_BLCK"><span class="emTEXT">[команда н1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда н2]</span></span> и т.д., от <span class="em_BLCK"><span class="emOPRT">else</span></span> и до конца строки. Точно так же, как и для простой однострочной формы, концом конструкции условия считается конец строки.
+
+</p>
+<p>
+	Примеры сложной однострочной формы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;сумма&nbsp;a&nbsp;и&nbsp;b&nbsp;равна&nbsp;двум,&nbsp;переменной&nbsp;c&nbsp;присваивается&nbsp;значение&nbsp;30</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;противном&nbsp;случае&nbsp;(то&nbsp;есть&nbsp;если&nbsp;сумма&nbsp;a&nbsp;и&nbsp;b&nbsp;не&nbsp;равна&nbsp;двум)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переменной&nbsp;c&nbsp;присваивается&nbsp;значение&nbsp;10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">:</span>&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">30</span>&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;зависимости&nbsp;от&nbsp;того&nbsp;есть&nbsp;ли&nbsp;в&nbsp;инвентаре&nbsp;апельсин</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводится&nbsp;соответствующий&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;есть&nbsp;апельсин."</span>&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;нет&nbsp;апельсина."</span><br>
+
+
+</div>
+<p>
+	Простая многострочная форма записи в общем виде выглядит вот так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;1]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;2]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+	Как видите, она отличается от простой однострочной формы записи тем, что команды <span class="em_BLCK"><span class="emTEXT">[команда 1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда 2]</span></span> и т.д. записаны не сразу после двоеточия, а только в следующей строке. Именно так плеер понимает, что имеет дело с многострочной формой записи. Наличие или отсутствие пробелов или символов табуляции перед командами роли не играет, однако, чтобы плеер понял, где заканчивается конструкция условия, в конце на отдельной строке необходимо прописывать ключевое слово end, или end <span class="em_BLCK"><span class="emOPRT">if</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;библиотека&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;узнал_о_тусовке&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;библиотека_вернулся&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'библиотека'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">30</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Сложная многострочная форма в общей записи выглядит вот так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;д1]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;д2]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;н1]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">[команда&nbsp;н2]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+	Здесь так же комнады <span class="em_BLCK"><span class="emTEXT">[команда д1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда д2]</span></span> и т.д. записываются не сразу после двоеточия, а только в следующей строке. Ключевое слово else так же записывается в отдельной строке, и команды <span class="em_BLCK"><span class="emTEXT">[команда н1]</span></span>, <span class="em_BLCK"><span class="emTEXT">[команда н2]</span></span> и т.д. идут в последующих строках после <span class="em_BLCK"><span class="emOPRT">else</span></span>. Завершается конструкция условия ключевым словом <span class="em_BLCK"><span class="emOPRT">end</span></span> (или <span class="em_BLCK"><span class="emOPRT">end</span><span class="emOPRT"> if</span></span>), которое снова идёт отдельной строкой.
+
+</p>
+<p>
+	При верности выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> выполняется набор команд между двоеточием и <span class="em_BLCK"><span class="emOPRT">else</span></span>, а если <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> неверно, выполняется набор команд между <span class="em_BLCK"><span class="emOPRT">else</span></span> и <span class="em_BLCK"><span class="emOPRT">end</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">30</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;есть&nbsp;апельсин."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;нет&nbsp;апельсина."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span>$curtoken<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&gt;</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tokens<span class="Monokai-Operator">[</span>curtoken<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$curtoken<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tokens&nbsp;<span class="Monokai-Operator">=</span>&nbsp;curtoken&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tokens&nbsp;<span class="Monokai-Operator">=</span>&nbsp;curtoken<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Ещё одна форма записи работает только в многострочном варианте (обещали исправить в новых версиях). Это расширенная форма. Она позволяет размещать на одном уровне вложенности последовательно-исключающие условия. Общая форма записи такая:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение&nbsp;1]</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>набор&nbsp;команд&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">ELSEIF</span>&nbsp;<span class="Monokai-Command">[#выражение&nbsp;2]</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>набор&nbsp;команд&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">ELSEIF</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>последний&nbsp;набор&nbsp;команд<span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+	Правила записи такие же, как и для других видов многострочных условий. После двоеточия в той же строке, где находится оператор <span class="em_BLCK"><span class="emOPRT">if</span></span> или <span class="em_BLCK"><span class="emOPRT">elseif</span></span> не должно идти никаких команд, только со следующей строки. Вся конструкция должна заканчиваться оператором <span class="em_BLCK"><span class="emOPRT">end</span></span> (или <span class="em_BLCK"><span class="emOPRT">end</span><span class="emOPRT"> if</span></span>), стоящим в отдельной строке. В конструкции может как присутствовать, так и отсуствовать часть с <span class="em_BLCK"><span class="emOPRT">else</span></span>.
+
+</p>
+<p>
+	Работает это следующим образом. Если <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> верно, выполняются команды <span class="em_BLCK"><span class="emTEXT">[набор команд 1]</span></span>. Если <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> неверно, но верно <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span>, выполняются команды <span class="em_BLCK"><span class="emTEXT">[набор команд 2]</span></span>, и т.д. И только если неверны все выражения в текущей конструкции условия, выполнятся команды после <span class="em_BLCK"><span class="emOPRT">else</span></span>.
+
+</p>
+<p>
+	Как вы понимаете, верность выражения <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span> не исключает верности выражения <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span>, однако верность выражения <span class="em_BLCK"><span class="emTEXT">[#выражение 2]</span></span> исключает верность выражения <span class="em_BLCK"><span class="emTEXT">[#выражение 1]</span></span>. Поэтому я и назвал эту конструкцию конструкцией последовательно-исключающих условий.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;ОЧКИ<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">124</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'КОН3'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSEIF</span>&nbsp;ОЧКИ<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">99</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'КОН4'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'КОН5'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;вас&nbsp;&lt;&lt;money&gt;&gt;&nbsp;монета."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;<span class="Monokai-Operator">(</span>money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">20</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;вас&nbsp;&lt;&lt;money&gt;&gt;&nbsp;монеты."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">elseif</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span>money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;money&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">21</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;вас&nbsp;&lt;&lt;money&gt;&gt;&nbsp;монет."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Обратите внимание. Ключевым словом <span class="em_BLCK"><span class="emOPRT">end</span></span> заканчивается не каждый отдельный <span class="em_BLCK"><span class="emOPRT">elseif</span></span>, а вся конструкция условия.
+
+</p>
+<p>
+	Для многострочных форм записи допускается вложенность неограниченной глубины. Каждый уровень вложения должен заканчиваться своей строкой <span class="em_BLCK"><span class="emOPRT">end</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;y<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'A+B&lt;3&nbsp;или&nbsp;Y=8'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">nl</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;j<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">88</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'NEXT'</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$h<span class="Monokai-Operator">=</span><span class="Monokai-String">'ooo'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'loo'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'lll'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;a<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'abc1234'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'0'</span>&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;<span class="Monokai-String">'1'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;j<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">88</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'NEXT'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$h<span class="Monokai-Operator">=</span><span class="Monokai-String">'ooo'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'loo'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'lll'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'sample&nbsp;text'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Numeric">1234</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'01234'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">78</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+	Несколько примеров неверной записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;этом&nbsp;случае,&nbsp;если&nbsp;условие&nbsp;не&nbsp;будет&nbsp;выполнено,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;плеер&nbsp;проигнорирует&nbsp;только&nbsp;команду&nbsp;`k1=34`</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;поскольку&nbsp;посчитает,&nbsp;что&nbsp;это&nbsp;однострочное&nbsp;условие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;abcd<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span>&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">34</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">35</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;эта&nbsp;команда&nbsp;будет&nbsp;выполняться&nbsp;всегда</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k3<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">36</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;эта&nbsp;комнада&nbsp;будет&nbsp;выполняться&nbsp;всегда</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;этот&nbsp;end&nbsp;будет&nbsp;проигнорирован</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;данная&nbsp;строка&nbsp;выведет&nbsp;ошибку&nbsp;неизвестное&nbsp;действие</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;так&nbsp;как&nbsp;однострочные&nbsp;формы&nbsp;записи&nbsp;не&nbsp;должны&nbsp;оканчиваться&nbsp;end`ом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;abcd<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span>&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">34</span>&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span>&nbsp;<span class="Monokai-Koperator">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;данная&nbsp;запись&nbsp;приведёт&nbsp;к&nbsp;ошибке:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;"Неверная&nbsp;запись&nbsp;однострочного&nbsp;оператора"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;absd<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">34</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;absd<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<a id="faq_80_02_jump"></a><h4>JUMP</h4>
+<p>
+<strong>JUMP</strong> — переход в текущем блоке кода на указанную метку. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">JUMP</span>&nbsp;<span class="Monokai-Command">[$метка]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$метка]</span></span> — это метка ниже или выше по коду (см. раздел <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0179.html#faq_80_05_marks" style="text-decoration:none;" class="emFOLD">"Метки"</a>).
+
+</p>
+<p>
+	<span class="em_BLCK"><span class="emOPRT">jump</span></span> находит метку только в пределах текущего блока кода, то есть метки локальны.
+
+</p>
+<p>
+	Отдельными блоками кода в QSP являются:
+
+</p>
+<ul>
+<li>
+код "Выполнить при посещении" конкретной локации (каждая локация - отдельный блок кода),
+</li>
+<li>
+код действия даже если действие добавлено программно,
+</li>
+<li>
+код в гиперссылке,
+</li>
+<li>
+код `DYNAMIC<strong>/</strong>'DYNEVAL`
+</li>
+</ul>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'КонеЦ'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'Это&nbsp;сообщение&nbsp;не&nbsp;будет&nbsp;выведено'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:конец</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'А&nbsp;это&nbsp;сообщение&nbsp;пользователь&nbsp;увидит'</span><br>
+
+
+</div>
+<p>
+	С помощью оператора <span class="em_BLCK"><span class="emOPRT">jump</span></span> можно организовывать циклы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;s<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s<span class="Monokai-Operator">=</span>s<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'Всё!'</span><br>
+
+
+</div>
+<p>
+	Двойной цикл с одной меткой:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;y<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;x<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">"&lt;&lt;x&gt;&gt;&nbsp;-&nbsp;"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<span class="Monokai-Operator">=</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">":&lt;&lt;y&gt;&gt;"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y<span class="Monokai-Operator">=</span>y<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<a id="faq_80_02_killall"></a><h4>KILLALL</h4>
+<p>
+<strong>KILLALL</strong> — уничтожает все переменные и удаляет все предметы из окна предметов. Эквивалентен конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">killobj</span><br>
+
+
+</div>
+<p>
+	Обратите внимание, <span class="em_BLCK"><span class="emOPRT">killall</span></span> не эквивалентен конструкции:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">killvar</span><br>
+
+
+</div>
+<p>
+	поскольку в этом случае значения переменных удаляются после удаления предметов, а значит код локации-обработчика удаления предметов успевает выполниться (см. <span class="em_BLCK"><span class="emVAR">$onobjdel</span></span>).
+
+</p>
+<p>
+	Обычно <span class="em_BLCK"><span class="emOPRT">killall</span></span> используют в начале игры, если в конце игры предусмотрено действие "Начать заново".
+
+</p>
+<a id="faq_80_02_killobj"></a><h4>KILLOBJ</h4>
+<p>
+<strong>KILLOBJ</strong> — удаление предмета, расположенного в заданной позиции. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">KILLOBJ</span>&nbsp;<span class="Monokai-Command">[#номер]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#номер]</span></span> — номер предмета в окне инвентаря. Нумерация предметов начинается с 1. Если параметр <span class="em_BLCK"><span class="emTEXT">[#номер]</span></span> не указан, удаляются все предметы. При удалении каждого предмета с помощью <span class="em_BLCK"><span class="emOPRT">killobj</span></span>, происходит выполнение кода локации-обработчика удаления предметов (см. <span class="em_BLCK"><span class="emVAR">$onobjdel</span></span>).
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;самый&nbsp;верхний&nbsp;предмет&nbsp;в&nbsp;списке</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;самый&nbsp;нижний&nbsp;предмет&nbsp;в&nbsp;списке</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span>&nbsp;<span class="Monokai-Func">countobj</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;все&nbsp;предметы</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killobj</span><br>
+
+
+</div>
+<a id="faq_80_02_killqst"></a><h4>KILLQST</h4>
+<p>
+<strong>KILLQST</strong> — удаляет все локации, добавленные с помощью оператора <span class="em_BLCK"><span class="emOPRT">addqst</span></span>. В более новых версиях библиотеки команда переименована в <span class="em_BLCK">dellib</span>, затем в <span class="em_BLCK"><span class="emOPRT">freelib</span></span>.
+
+</p>
+<a id="faq_80_02_killvar"></a><h4>KILLVAR</h4>
+<p>
+<strong>KILLVAR</strong> — удаление указанного элемента массива. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-Command">[$название&nbsp;массива]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#индекс&nbsp;элемента]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$название массива]</span></span> — название массива, из которого хотим удалить элемент, а <span class="em_BLCK"><span class="emTEXT">[#индекс элемента]</span></span> — номер элемента в массиве, который хотим удалить. Нумерация элементов массивов начинается с 0.
+
+</p>
+<p>
+	Если индекс элемента не указан, то очищается весь массив. Если оператор вызван без аргументов, то удаляются все переменные и массивы.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'a'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;удалит&nbsp;из&nbsp;массива&nbsp;'a'&nbsp;элемент&nbsp;с&nbsp;индексом&nbsp;3.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'a'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;удаляет&nbsp;массив&nbsp;'a'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;удаляет&nbsp;все&nbsp;переменные,&nbsp;массивы</span><br>
+
+
+</div>
+<p>
+ 	При удалении элемента все следующие за ним элементы сдвигаются на позицию вверх.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'a'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;теперь&nbsp;массив&nbsp;выглядит&nbsp;так:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;a[0]=4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;a[1]=23</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;a[2]=15</span><br>
+
+
+</div>
+<a id="faq_80_02_let"></a><h4>LET</h4>
+<p>
+<strong>LET</strong> — устаревший оператор для установки значения переменной. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">LET</span>&nbsp;<span class="Monokai-Operator">[</span>название&nbsp;переменной<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Command">[выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[название переменной]</span></span> — это допустимое имя переменной, <span class="em_BLCK"><span class="emTEXT">[выражение]</span></span> — это допустимое для данной переменной значение.
+
+</p>
+<p>
+	Названия числовых переменных записываются без символа <span class="em_BLCK">$</span> в начале. Названия текстовых переменных записываются с символом <span class="em_BLCK">$</span> в начале. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;текстовую&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">let</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;числовую&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">let</span>&nbsp;abs<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
+
+
+</div>
+<p>
+	Данный оператор является устаревшим, как и оператор <span class="em_BLCK"><span class="emOPRT">set</span></span>, поскольку в настоящее время значение переменной устанавливается через присвоение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br>
+
+
+</div>
+<p>
+	Использование операторов <span class="em_BLCK"><span class="emOPRT">set</span></span> и <span class="em_BLCK"><span class="emOPRT">let</span></span> не рекомендуется.
+
+</p>
+<a id="faq_80_02_menu"></a><h4>MENU</h4>
+<p>
+<strong>MENU</strong> — в любом месте игры выводит на экран всплывающее меню, пункты которого прописаны в указанном массиве. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">MENU</span>&nbsp;<span class="Monokai-Command">[$название&nbsp;массива]</span><br>
+
+
+</div>
+<p>
+	Прежде, чем использовать данный оператор, необходимо заполнить массив, на основе содержимого которого будут формироваться пункты меню. Пункты меню — это строковые начения массива с особым форматом записи:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"название&nbsp;пункта&nbsp;меню:название&nbsp;локации:путь&nbsp;к&nbsp;файлу&nbsp;иконки"</span><br>
+
+
+</div>
+<p>
+	Название пункта меню — это то, что мы увидим на экране, когда меню будет выведено; название локации — это название локации, код которой будет выполняться при щелчке на соответствующем пункте меню; путь к файлу иконки — это путь к файлу изображения, которое будет выведено рядом с названием пункта меню.
+
+</p>
+<p>
+	Таким образом мы можем заполнить массив для того, чтоб создать наши пункты меню:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;камень:takestone'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Кинуть&nbsp;камень:throwstone'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;камень:lookstone'</span><br>
+
+
+</div>
+<p>
+	Поиск символов ":" начинается с конца строки, то есть название пункта меню может содержать двоеточия, однако тогда обязательно после названия локации должно стоять двоеточие, даже если вы не используете иконки для пунктов меню.
+
+</p>
+<p>
+	Если путь к файлу иконки не указан или указанный файл недоступен, то пункт меню отобразится без иконки.
+
+</p>
+<p>
+	Здесь название массива (<span class="em_BLCK">$stone</span>) - это название меню, а текстовые значения массива - действия, для которых указаны названия и названия локаций-обработчиков выбора пунктов меню. При выборе пункта "Взять камень" произойдёт обработка локации с названием "takestone". Аналогично будет происходить с другими пунктами.
+
+</p>
+<p>
+	Чтобы вызвать меню на экран нужно воспользоваться оператором menu:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$stone'</span><br>
+
+
+</div>
+<p>
+	Меню можно вызывать в любом месте игры, например, из гиперссылок:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&lt;a&nbsp;href="EXEC:&nbsp;menu&nbsp;'</span><span class="Monokai-String">'$stone'</span><span class="Monokai-String">'"&gt;Камень&lt;/a&gt;'</span><br>
+
+
+</div>
+<p>
+	В локацию-обработчик выбора пункта меню передаётся аргумент (<span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>) - позиция выбранного пункта. Позиции элементов меню нумеруются с 1.
+
+</p>
+<p>
+		Пример создания меню с иконками:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;нет&nbsp;иконки</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иконка&nbsp;задана&nbsp;gif-файлом</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Положить&nbsp;предмет:put_item:images/put_item.gif'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;иконка&nbsp;задана&nbsp;значением&nbsp;$icon_file</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item:&lt;&lt;$icon_file&gt;&gt;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;пункт&nbsp;меню&nbsp;задан&nbsp;3-мя&nbsp;переменными</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'&lt;&lt;$name&gt;&gt;:&lt;&lt;$location&gt;&gt;:&lt;&lt;$file&gt;&gt;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'usr_menu'</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;покажет&nbsp;меню&nbsp;из&nbsp;4-х&nbsp;пунктов</span><br>
+
+
+</div>
+<p>
+	Меню заканчивается на элементе массива со значением <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть','','Бросить', то 2 последних пункта меню не будут созданы:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">''</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;здесь&nbsp;пустое&nbsp;значение,&nbsp;плеер&nbsp;посчитает,&nbsp;что&nbsp;меню&nbsp;кончилось</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;не&nbsp;увидим</span><br>
+
+
+</div>
+<p>
+	Чтобы вставить разделитель в меню, вместо соответствующего элемента массива напишите <span class="em_BLCK"><span class="emTEXT">"-:-"</span></span>. Т.е. если нужно поставить разделитель вместо 3-го элемента:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'-:-'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span><br>
+
+
+</div>
+<a id="faq_80_02_msg"></a><h4>MSG</h4>
+<p>
+<strong>MSG</strong> — вывод указанного сообщения в диалоговом окне. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">MSG</span>&nbsp;<span class="Monokai-Operator">[</span>сообщение<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[сообщение]</span></span> — любая строка текста. число, выражение любого типа. Примеры:
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;простой&nbsp;вывод&nbsp;сообщения.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">'Много&nbsp;спелых&nbsp;груш.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;получим&nbsp;окно&nbsp;с&nbsp;сообщением&nbsp;'Много&nbsp;спелых&nbsp;груш'</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Пример&nbsp;сообщения&nbsp;в&nbsp;действии&nbsp;ACT.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Поесть&nbsp;груш'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">'Ммм&nbsp;груши&nbsp;очень&nbsp;вкусные.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Получим&nbsp;вывод&nbsp;сообщения&nbsp;при&nbsp;клике&nbsp;по&nbsp;действию&nbsp;"Поесть&nbsp;груш"</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Пример&nbsp;с&nbsp;условием.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$hlebgotov&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">msg</span>&nbsp;<span class="Monokai-String">'Похоже&nbsp;хлеб&nbsp;уже&nbsp;готов.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Получаем&nbsp;вывод&nbsp;сообщения&nbsp;когда&nbsp;условие&nbsp;$hlebgotov&nbsp;=&nbsp;1</span><br>
+
+
+</div>
+<a id="faq_80_02_nl"></a><h4>NL</h4>
+<p>
+<strong>NL</strong> — переход на новую строку, затем вывод текста в окне основногодополнительного описания. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">NL</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. Если <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> отсутствует, происходит просто переход на новую строку. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<a id="faq_80_02_opengame"></a><h4>OPENGAME</h4>
+<p>
+<strong>OPENGAME</strong> — загрузка указанного файла состояния игры. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">OPENGAME</span>&nbsp;<span class="Monokai-Command">[$путь]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$путь]</span></span> — путь к файлу сохранённого состояния игры. Если параметр <span class="em_BLCK"><span class="emTEXT">[$путь]</span></span> отсутствует, то вызывается окно загрузки состояния игры.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;загрузка&nbsp;состояния&nbsp;из&nbsp;файла&nbsp;1.sav</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"1.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;открываем&nbsp;окно&nbsp;загрузки&nbsp;состояния</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span><br>
+
+
+</div>
+<p>
+	См. также локацию-обработчик события загрузки состояния игры (<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongload" style="text-decoration:none;" class="emFOLD">$ongload</a>).
+
+</p>
+<a id="faq_80_02_openqst"></a><h4>OPENQST</h4>
+<p>
+<strong>OPENQST</strong> — открытие и запуск указанного файла игры. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">OPENQST</span>&nbsp;<span class="Monokai-Command">[$путь]</span><br>
+
+
+</div>
+<p>
+	, где [$путь] — путь к файлу игры, который требуется запустить. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">openqst</span>&nbsp;<span class="Monokai-String">"gamespool/cubesgame.qsp"</span><br>
+
+
+</div>
+<p>
+	При использовании данного оператора, не происходит удаления переменных, удаления предметов инвентаря, очистки дополнительного описания и строки ввода, а также остановки проигрываемых файлов. Если вам нужно очистить экран и значения всех переменных, можно прописать в начале загружаемого файла игры такие команды:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killall</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cls</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">close</span>&nbsp;<span class="Monokai-Operator">all</span><br>
+
+
+</div>
+<a id="faq_80_02_p"></a><h4>P</h4>
+<p>
+<strong>P</strong> — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после p добавит новый текст сразу после текущего. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">P</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> может быть пустой строкой '', но не должен отсутствовать. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<a id="faq_80_02_pl"></a><h4>PL</h4>
+<p>
+<strong>PL</strong> — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-Command">[$текст]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> — любая строка текста, число, или выражение любого типа. <span class="em_BLCK"><span class="emTEXT">[$текст]</span></span> может отсутствовать, тогда просто переход на новую строку. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br>
+
+
+</div>
+<a id="faq_80_02_play"></a><h4>PLAY</h4>
+<p>
+<strong>PLAY</strong> — проигрывание указанного звукового файла с заданной громкостью. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;звуковому&nbsp;файлу]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[#громкость]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$путь к звуковому файлу]</span></span> — путь к звуковому файлу относительно файла игры, <span class="em_BLCK"><span class="emTEXT">[#громкость]</span></span> — громкость воспроизведения в процентах от 0 до 100. Параметр <span class="em_BLCK"><span class="emTEXT">[#громкость]</span></span> может отсутствовать, при этом громкость принимается равной 100%. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Громкость&nbsp;100%</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'sound/music.mp3'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Громкость&nbsp;50%</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'sound/music.mp3'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">50</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Громкость&nbsp;0%&nbsp;(без&nbsp;звука)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'sound/music.mp3'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Проигрывание&nbsp;файла&nbsp;по&nbsp;адресу&nbsp;из&nbsp;переменной&nbsp;$file</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;с&nbsp;расширением&nbsp;'mid'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;громкостью&nbsp;volume</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'&lt;&lt;$file&gt;&gt;.mid'</span><span class="Monokai-Operator">,</span>volume<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;аналогично:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody.mid"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;$file<span class="Monokai-Operator">,</span>volume<br>
+
+
+</div>
+<p>
+	Если файл уже проигрывается, то изменяется громкость звучания без его "перезапуска". Поддерживается множество различных аудиоформатов и одновременное звучание до 32-х композиций.
+
+</p>
+<a id="faq_80_02_refint"></a><h4>REFINT</h4>
+<p>
+<strong>REFINT</strong> — принудительное обновление интерфейса (в т.ч. смена цветов, шрифтов, назначенных с помощью системных переменных).
+
+</p>
+<p>
+	По умолчанию обновление интерфейса происходит 2 раза в секунду (каждые 500 мс). Так же см. оператор settimer.
+
+</p>
+<a id="faq_80_02_savegame"></a><h4>SAVEGAME</h4>
+<p>
+<strong>SAVEGAME</strong> — сохранение состояния игры в указанный файл. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SAVEGAME</span>&nbsp;<span class="Monokai-Command">[$путь]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$путь]</span></span> — путь к создаваемому файлу сохранения состояния игры. Если параметр <span class="em_BLCK"><span class="emTEXT">[$путь]</span></span> отсутствует, то вызывается окно сохранения состояния игры.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;сохранение&nbsp;состояния&nbsp;в&nbsp;файл&nbsp;1.sav</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"1.sav"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;открываем&nbsp;окно&nbsp;сохранения&nbsp;состояния</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">savegame</span><br>
+
+
+</div>
+<p>
+	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongsave" style="text-decoration:none;" class="emFOLD">локацию-обработчик события сохранения состояния игры ($ongsave)</a>.
+
+</p>
+<a id="faq_80_02_set"></a><h4>SET</h4>
+<p>
+<strong>SET</strong> — устаревший оператор для установки значения переменной. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SET</span>&nbsp;<span class="Monokai-Operator">[</span>название&nbsp;переменной<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Command">[выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[название переменной]</span></span> — это допустимое имя переменной, <span class="em_BLCK"><span class="emTEXT">[выражение]</span></span> — это допустимое для данной переменной значение.
+
+</p>
+<p>
+	Названия числовых переменных записываются без символа <span class="em_BLCK">$</span> в начале. Названия текстовых переменных записываются с символом <span class="em_BLCK">$</span> в начале. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;текстовую&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">set</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;задаём&nbsp;числовую&nbsp;переменную</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">set</span>&nbsp;abs<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br>
+
+
+</div>
+<p>
+	Данный оператор является устаревшим, как и оператор <span class="em_BLCK"><span class="emOPRT">let</span></span>, поскольку в настоящее время значение переменной устанавливается через присвоение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br>
+
+
+</div>
+<p>
+	Использование операторов <span class="em_BLCK"><span class="emOPRT">set</span></span> и <span class="em_BLCK"><span class="emOPRT">let</span></span> не рекомендуется, так как они устарели.
+
+</p>
+<a id="faq_80_02_settimer"></a><h4>SETTIMER</h4>
+<p>
+<strong>SETTIMER</strong> — задаёт интервал обращения к локации-счётчику. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SETTIMER</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — период обращения к локации-счётчику в миллисекундах. По умолчанию плеер обращается к локации-счётчику каждые 500 мс., т.е. 2 раза в секунду.
+
+</p>
+<p>
+	Установка периода обращения к локации-счётчику влияет и на частоту автоматического обновления настроек интерфейса.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;локация-счётчик&nbsp;будет&nbsp;запускаться&nbsp;каждые&nbsp;2&nbsp;секунды:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">2000</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;локация-счётчик&nbsp;будет&nbsp;запускаться&nbsp;4&nbsp;раза&nbsp;в&nbsp;секунду:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">250</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;задаём&nbsp;частоту&nbsp;обращения&nbsp;(раз&nbsp;в&nbsp;секунду)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;frequency<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;десять&nbsp;раз&nbsp;в&nbsp;секунду</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">/</span>frequency<br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;задаём&nbsp;период&nbsp;обращения&nbsp;(через&nbsp;сколько&nbsp;секунд)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;period<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;каждые&nbsp;две&nbsp;секунды</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">*</span>period<br>
+
+
+</div>
+<p>
+	Минимальное значение периода таким образом может быть 1 миллисекунда:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+	Однако на практике минимальное значение ограничено мощностью вашего компьютера, и оно, как правило, выше 1 миллисекунды.
+
+</p>
+<a id="faq_80_02_showacts"></a><h4>SHOWACTS</h4>
+<p>
+<strong>SHOWACTS</strong> — управляет отображением окна действий на экране. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SHOWACTS</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — это число. Обычно используются значения 0 и 1. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> отлично от нуля, окно действий отображается. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> равно нулю, окно действий скрыто. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;список&nbsp;действий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;список&nbsp;действий</span><br>
+
+
+</div>
+<p>
+	Для удобства чтения кода можно заранее определить переменные on и off и использовать их:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showacts</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;список&nbsp;действий</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showacts</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;список&nbsp;действий</span><br>
+
+
+</div>
+<a id="faq_80_02_showinput"></a><h4>SHOWINPUT</h4>
+<p>
+<strong>SHOWINPUT</strong> — управляет отображением строки ввода на экране. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SHOWINPUT</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — это число. Обычно используются значения 0 и 1. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> отлично от нуля, строка ввода отображается. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> равно нулю, строка ввода скрыта. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;строку&nbsp;ввода</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;строку&nbsp;ввода</span><br>
+
+
+</div>
+<p>
+	Для удобства чтения кода можно заранее определить переменные on и off и использовать их:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;строку&nbsp;ввода</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showinput</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;строку&nbsp;ввода</span><br>
+
+
+</div>
+<a id="faq_80_02_showobjs"></a><h4>SHOWOBJS</h4>
+<p>
+<strong>SHOWOBJS</strong> — управляет отображением инвентаря на экране. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SHOWOBJS</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — это число. Обычно используются значения 0 и 1. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> отлично от нуля, инвентарь отображается. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> равно нулю, инвентарь скрыт. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showobjs</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;инвентарь</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showobjs</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;инвентарь</span><br>
+
+
+</div>
+<p>
+	Для удобства чтения кода можно заранее определить переменные <span class="em_BLCK">on</span> и <span class="em_BLCK">off</span> и использовать их:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showobjs</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;инвентарь</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showobjs</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;инвентарь</span><br>
+
+
+</div>
+<a id="faq_80_02_showstat"></a><h4>SHOWSTAT</h4>
+<p>
+<strong>SHOWSTAT</strong> — управляет отображением окна дополнительного описания на экране. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">SHOWSTAT</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> — это число. Обычно используются значения 0 и 1. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> отлично от нуля, окно дополнительного описания отображается. Если значение выражения <span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> равно нулю, окно дополнительного описания скрыто. Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+
+
+</div>
+<p>
+	Для удобства чтения кода можно заранее определить переменные <span class="em_BLCK">on</span> и <span class="em_BLCK">off</span> и использовать их:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;показывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">showstat</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+
+
+</div>
+<a id="faq_80_02_unsel"></a><h4>UNSELECT (UNSEL)</h4>
+<p>
+<strong>UNSELECT</strong> — отмена выделения предмета. Имеет краткую форму <span class="em_BLCK"><span class="emOPRT">unsel</span></span>.
+
+</p>
+<p>
+	При щелчке играющим по какому-либо предмету, он остаётся выделенным. Чтобы снять выделение с предмета используется данный оператор. Обычно его размещают на локации-обработчике выделения предмета.
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Апельсин'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;<span class="Monokai-String">'Вкусный&nbsp;сладкий&nbsp;апельсин.&nbsp;Много&nbsp;нас,&nbsp;а&nbsp;он&nbsp;один.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Чайник'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'Самый&nbsp;обычный&nbsp;чугунный&nbsp;чайник.'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Command">...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Отвёртка'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$screwdriver'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">unsel</span><br>
+
+
+</div>
+<a id="faq_80_02_view"></a><h4>VIEW</h4>
+<p>
+<strong>VIEW</strong> — выводит на экран указанное изображение. В классическом плеере изображение выводися в отдельном окошке (окно предпросмотра), в AeroQSP и Quest Navigator изображение выводится верхним слоем в общем окне. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">VIEW</span>&nbsp;<span class="Monokai-Command">[$путь&nbsp;к&nbsp;графическому&nbsp;файлу]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$путь к графическому файлу]</span></span> — путь к файлу картинки. Если параметр <span class="em_BLCK"><span class="emTEXT">[$путь к графическому файлу]</span></span> отсутствует, или задан как <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустая строка), окно предпросмотра закрывается.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;изображение&nbsp;в&nbsp;окне&nbsp;предпросмотра</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">view</span>&nbsp;<span class="Monokai-String">'content/monster.png'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;окно&nbsp;предпросмотра</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">view</span>&nbsp;<span class="Monokai-String">''</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;закрыть&nbsp;окно&nbsp;предпросмотра&nbsp;можно&nbsp;и&nbsp;так</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">view</span><br>
+
+
+</div>
+<a id="faq_80_02_wait"></a><h4>WAIT</h4>
+<p>
+<strong>WAIT</strong> — приостановка выполнения кода программы на указанное количество миллисекунд. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">WAIT</span>&nbsp;<span class="Monokai-Command">[#миллисекунды]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[#миллисекунды]</span></span> — время в миллисекундах, на какое следует остановить выполнение кода программы.
+
+</p>
+<p>
+	Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;остановка&nbsp;выполнения&nbsp;программы&nbsp;на&nbsp;5&nbsp;секунд</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">wait</span>&nbsp;<span class="Monokai-Numeric">5000</span><br>
+
+
+</div>
+<p>
+	Использовать данный оператор необходимо с осторожностью, поскольку приостановка выполнения кода блокирует для игрока возможность взаимодействовать с игрой.
+
+</p>
+<a id="faq_80_02_xgoto"></a><h4>XGOTO (XGT)</h4>
+<p>
+<strong>XGOTO</strong> — переход на указанную локацию без очистки окна основного описания. Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">XGOTO</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<p>
+	, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — название локации, на которую должен быть осуществлён переход. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. Использование аргументов не обязательно.
+
+</p>
+<p>
+	При переходе на новую локацию при помощи <span class="em_BLCK"><span class="emOPRT">xgoto</span></span> не очищается окно основного описания, а базовое описание новой локации добавляется к уже имеющемуся тексту в окне основного описания. Список действий очищается, затем в окно действий выводятся базовые действия, а так же выполняется код из поля "Выполнить при посещении" локации <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span>. Так же при переходе на новую локацию изменяется значение, возвращаемое функцией <span class="em_BLCK"><span class="emFUNC">$curloc</span></span>.
+
+</p>
+<p>
+	Примеры:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переход&nbsp;на&nbsp;локацию&nbsp;"дом".</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Массив&nbsp;args&nbsp;на&nbsp;локации&nbsp;"дом"&nbsp;будет&nbsp;пуст.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">xgoto</span>&nbsp;<span class="Monokai-String">'дом'</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;переход&nbsp;на&nbsp;локацию&nbsp;"улица"&nbsp;с&nbsp;передачей&nbsp;2-х&nbsp;параметров.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;локации&nbsp;"улица"&nbsp;args[0]&nbsp;равен&nbsp;1,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$args[1]&nbsp;содержит&nbsp;строку&nbsp;"данные".</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">xgoto</span>&nbsp;<span class="Monokai-String">'улица'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br>
+
+
+</div>
+<p>
+	Оператор имеет краткую форму xgt:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">XGT</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;8]</span><br>
+
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="emHREFTT">&lt; Назад, к странице 175</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="emHREFTT">Вперёд, к странице 177 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<a id="Зючz"></a><h6>1. В чём разница?</h6>
+<p>
+1.1. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_set_let_i_0002.html#faq_01_01" style="text-decoration:none;" class="emFOLD">В чём разница между <span class="em_BLCK"><span class="emOPRT">set</span> x=10</span>, <span class="em_BLCK"><span class="emOPRT">let</span> x=10</span> и <span class="em_BLCK">x=10</span>?</a>
+
+</p>
+<p>
+1.2. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_so_znakom_$_ili_bez_0003.html#faq_01_02" style="text-decoration:none;" class="emFOLD">В чём разница между переменной со знаком $ и без знака $?</a>
+
+</p>
+<p>
+1.3. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_kavychkami_i_apostrofami_0004.html#faq_01_03" style="text-decoration:none;" class="emFOLD">В чём разница между <span class="em_BLCK"><span class="emTEXT">' '</span></span> (апострофы) и <span class="em_BLCK"><span class="emTEXT">" "</span></span> (кавычки)?</a>
+
+</p>
+<p>
+1.4. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_s_zviozdochka-pl_i_bez_0005.html#faq_01_04" style="text-decoration:none;" class="emFOLD">В чём разница между <span class="em_BLCK"><span class="emOPRT">*pl</span> "строка"</span> и просто <span class="em_BLCK"><span class="emTEXT">" строка"</span> </span>?</a>
+
+</p>
+<p>
+1.5. <a href="https://aleksversus.github.io/howdo_faq/pages/chem_otlichajutsja_dve_komandy_0006.html#faq_01_05" style="text-decoration:none;" class="emFOLD">Чем отличаются эти две команды? <span class="em_BLCK"><span class="emOPRT">*pl</span> "&lt;&lt;$perem&gt;&gt;"</span> и <span class="em_BLCK"><span class="emOPRT">*pl</span> $perem</span></a> 
+
+</p>
+<p>
+1.6. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_dynamic_i_dyneval_0007.html#faq_01_06" style="text-decoration:none;" class="emFOLD">В чём разница между dynamic и dyneval?</a>
+
+</p>
+<p>
+1.7. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_goto_i_gt_0008.html#faq_01_07" style="text-decoration:none;" class="emFOLD">В чём разница между gt и goto?</a>
+
+</p>
+<p>
+1.8. <a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_goto_i_gosub_0009.html#faq_01_08" style="text-decoration:none;" class="emFOLD">Чем отличается goto от gosub?</a>
+
+</p>
+<p>
+18.1. <a href="https://aleksversus.github.io/howdo_faq/pages/addqst_i_openqst_0118.html#faq_18_01" style="text-decoration:none;" class="emFOLD">Чем отличаются команды <span class="em_BLCK"><span class="emOPRT">addqst</span></span> и <span class="em_BLCK"><span class="emOPRT">openqst</span></span>?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_01" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ГqяО"></a><h6>2. Вопросы о $COUNTER</h6>
+<p>
+2.1. <a href="https://aleksversus.github.io/howdo_faq/pages/izmenenie_peremennoj_s_techeniem_vremeni_0010.html#faq_02_01" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы значение переменной изменялось с течением времени?</a>
+
+</p>
+<p>
+2.2. <a href="https://aleksversus.github.io/howdo_faq/pages/otlozhennyj_perehod_0011.html#faq_02_02" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы из одной локации меня через пару секунд перебрасывало в другую локацию?</a>
+
+</p>
+<p>
+2.3. <a href="https://aleksversus.github.io/howdo_faq/pages/otlozhennoe_dejstvie_0012.html#faq_02_03" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?</a>
+
+</p>
+<p>
+2.4. <a href="https://aleksversus.github.io/howdo_faq/pages/raspredelionnye_vychislenija_0013.html#faq_02_04" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_02" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="vtчч"></a><h6>3. Вопросы о MSG и $INPUT</h6>
+<p>
+3.1. <a href="https://aleksversus.github.io/howdo_faq/pages/podskazhite_analog_alert_0014.html#faq_03_01" style="text-decoration:none;" class="emFOLD">Как вывести на экран отдельное окошко с текстом?</a> | Подскажите аналог команды alert в QSP.
+
+</p>
+<p>
+3.2. <a href="https://aleksversus.github.io/howdo_faq/pages/analog_prompt_0015.html#faq_03_02" style="text-decoration:none;" class="emFOLD">Как вывести на экран окошко, в котором игрок должен ввести текст?</a> | Подскажите аналог команды prompt в QSP.
+
+</p>
+<p>
+3.3. <a href="https://aleksversus.github.io/howdo_faq/pages/vybora_varianta_v_okne_msg_0016.html#faq_03_03" style="text-decoration:none;" class="emFOLD">Как прикрутить возможность выбора варианта к окну msg?</a> | Подскажите аналог команды confirm в QSP.
+
+</p>
+<p>
+3.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__vvod_imeni_igrokom_0017.html#faq_03_04" style="text-decoration:none;" class="emFOLD">Как сделать ввод имени игроком?</a>
+
+</p>
+<p>
+3.5. <a href="https://aleksversus.github.io/howdo_faq/pages/varianty_otveta_v_input_0018.html#faq_03_05" style="text-decoration:none;" class="emFOLD">Как увеличить число правильных ответов, которые может ввести игрок?</a> | Как сделать варианты для ответа через $input?
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_03" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ыMnp"></a><h6>4. Вопросы о меню</h6>
+<p>
+4.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__menju_predmeta_0019.html#faq_04_01" style="text-decoration:none;" class="emFOLD">Как сделать меню предмета?</a>
+
+</p>
+<p>
+4.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__raznye_menju_0020.html#faq_04_02" style="text-decoration:none;" class="emFOLD">Как сделать разные меню для двух и более предметов?</a>
+
+</p>
+<p>
+4.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__menju_v_ssylkah_0021.html#faq_04_03" style="text-decoration:none;" class="emFOLD">Как сделать меню в ссылках?</a>
+
+</p>
+<p>
+4.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_peredavat__lokatsijam-punktam_menju_argumenty_0022.html#faq_04_04" style="text-decoration:none;" class="emFOLD">Как передавать локациям-пунктам меню аргументы?</a>
+
+</p>
+<p>
+4.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__kontekstnoe_menju_0023.html#faq_04_05" style="text-decoration:none;" class="emFOLD">Как делать контекстное (динамическое) меню?</a>
+
+</p>
+<p>
+4.6. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__razdelitel__0024.html#faq_04_06" style="text-decoration:none;" class="emFOLD">Как вставить разделитель в меню?</a>
+
+</p>
+<p>
+4.7. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__kartinki_v_menju_0025.html#faq_04_07" style="text-decoration:none;" class="emFOLD">Как вставить картинки в меню?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_04" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="JiКy"></a><h6>5. Вопросы по $ONNEWLOC</h6>
+<p>
+5.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_ne_pisat__odin_i_tot_zhe_kod_v_kazhdoj_lokatsii_0026.html#faq_05_01" style="text-decoration:none;" class="emFOLD">Как сделать так, чтобы не писать один и тот же код в каждой локации?</a>
+
+</p>
+<p>
+5.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__knopku_nazad_0027.html#faq_05_02" style="text-decoration:none;" class="emFOLD">Как сделать кнопку "Назад", работающую на каждой локации?</a>
+
+</p>
+<p>
+5.3. <a href="https://aleksversus.github.io/howdo_faq/pages/peredacha_argumentov_v_onnewloc_0028.html#faq_05_03" style="text-decoration:none;" class="emFOLD">Почему в <span class="em_BLCK"><span class="emVAR">args</span></span> на локации-обработчике перехода на новую локацию уже есть данные?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_05" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="вЯIя"></a><h6>6. Вопросы по звуковым файлам в QSP</h6>
+<p>
+6.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__muzyku_ili_zvuk_v_igru_0029.html#faq_06_01" style="text-decoration:none;" class="emFOLD">Как вставить музыку или звук в игру?</a>
+
+</p>
+<p>
+6.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zapustit__dve_zvukovye_dorozhki_0030.html#faq_06_02" style="text-decoration:none;" class="emFOLD">Как запустить две звуковые дорожки?</a>
+
+</p>
+<p>
+6.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_pri_perehode_na_novuju_lokatsiju_prervat__odnu_melodiju_i_zapustit__druguju_0031.html#faq_06_03" style="text-decoration:none;" class="emFOLD">Как при переходе на новую локацию прервать одну мелодию и запустить другую?</a>
+
+</p>
+<p>
+6.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_perezapustit__zvukovuju_dorozhku_0032.html#faq_06_04" style="text-decoration:none;" class="emFOLD">Как перезапустить звуковую дорожку?</a>
+
+</p>
+<p>
+6.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_priglushit__muzyku_0033.html#faq_06_05" style="text-decoration:none;" class="emFOLD">Как приглушить музыку?</a>
+
+</p>
+<p>
+6.6. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zatsiklit__melodiju_0034.html#faq_06_06" style="text-decoration:none;" class="emFOLD">Как зациклить мелодию?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_06" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ВЩBъ"></a><h6>7. Вопросы о гиперссылках</h6>
+<p>
+7.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__giperssylki_0036.html#faq_07_01" style="text-decoration:none;" class="emFOLD">Как делать гиперссылки, по нажатию на которые выполняется код?</a> | Как делать кликабельный текст? | Как сделать, чтобы по нажатию на текст что-то происходило?
+
+</p>
+<p>
+7.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_giperssylok_0037.html#faq_07_02" style="text-decoration:none;" class="emFOLD">Как менять цвет гиперссылки?</a>
+
+</p>
+<p>
+7.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_pomeschat__v_giperssylki_slozhnyj_kod_0038.html#faq_07_03" style="text-decoration:none;" class="emFOLD">Как помещать в гиперссылки сложный код?</a>
+
+</p>
+<p>
+7.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__ssylki_bez_podchiorkivanija_0039.html#faq_07_04" style="text-decoration:none;" class="emFOLD">Как сделать гиперссылки без подчёркивания?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_07" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="узАЫ"></a><h6>8. Есть ли команда...</h6>
+<p>
+8.1. <a href="https://aleksversus.github.io/howdo_faq/pages/ochistit__okno_dopopisanija_0040.html#faq_08_01" style="text-decoration:none;" class="emFOLD">Какой командой можно очистить окно дополнительного описания?</a>
+
+</p>
+<p>
+8.2. <a href="https://aleksversus.github.io/howdo_faq/pages/poluchit__nazvanie_lokatsii_0041.html#faq_08_02" style="text-decoration:none;" class="emFOLD">Существует ли команда для того, чтобы получить название текущей локации?</a>
+
+</p>
+<p>
+8.3. <a href="https://aleksversus.github.io/howdo_faq/pages/vyvesti_tekst_v_okno_dop_opisanija_0042.html#faq_08_03" style="text-decoration:none;" class="emFOLD">Какой командой можно вывести текст в окно дополнительного описания?</a>
+
+</p>
+<p>
+8.4. <a href="https://aleksversus.github.io/howdo_faq/pages/komanda_dlja_vyhoda_iz_igry_0043.html#faq_08_04" style="text-decoration:none;" class="emFOLD">Есть ли команда, которая делает выход из игры?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_08" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ФAРO"></a><h6>9. Вопросы о изображениях</h6>
+<p>
+9.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__kartinku_v_igru_0044.html#faq_09_01" style="text-decoration:none;" class="emFOLD">Как вставить картинку в игру?</a>
+
+</p>
+<p>
+9.2. <a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_vstavit__v_igru_gif-fajl_0045.html#faq_09_02" style="text-decoration:none;" class="emFOLD">Можно ли вставить в игру gif-файл?</a>
+
+</p>
+<p>
+9.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__kartinku_v_dejstvie_0046.html#faq_09_03" style="text-decoration:none;" class="emFOLD">Как вставить картинку в действие?</a>
+
+</p>
+<p>
+9.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_postavit__kartinku_fonom_0047.html#faq_09_04" style="text-decoration:none;" class="emFOLD">Как поставить картинку фоном?</a>
+
+</p>
+<p>
+9.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vyvodit__izobrazhenija_poslojno_0048.html#faq_09_05" style="text-decoration:none;" class="emFOLD">Как выводить изображения послойно? Накладывать друг на друга?</a>
+
+</p>
+<p>
+9.6. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__klikabel_noe_izobrazhenie_0049.html#faq_09_06" style="text-decoration:none;" class="emFOLD">Как сделать кликабельное изображение?</a> | Как сделать так, чтобы при щелчке по изображению выполнялись какие-то действия?
+
+</p>
+<p>
+9.7. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__smenjaemoe_izobrazhenie_0050.html#faq_09_07" style="text-decoration:none;" class="emFOLD">Как сделать сменяемое изображение на локации?</a>
+
+</p>
+<p>
+9.8. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__vyvod_randomnogo_izobrazhenija_0051.html#faq_09_08" style="text-decoration:none;" class="emFOLD">Как сделать вывод рандомного изображения?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_09" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="МzяЙ"></a><h6>10. Интерфейс, дизайн, украшения</h6>
+<p>
+10.1. <a href="https://aleksversus.github.io/howdo_faq/pages/refint_0052.html#faq_10_01" style="text-decoration:none;" class="emFOLD">Для чего нужен оператор <span class="em_BLCK"><span class="emOPRT">REFINT</span></span>, и как он работает?</a>
+
+</p>
+<p>
+10.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_fona_v_igre_0053.html#faq_10_02" style="text-decoration:none;" class="emFOLD">Как изменить цвет фона в игре?</a>
+
+</p>
+<p>
+10.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__format_chasti_teksta_0054.html#faq_10_03" style="text-decoration:none;" class="emFOLD">Как изменить формат части текста? Размер, цвет, наклон и т.д.?</a>
+
+</p>
+<p>
+10.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__krasivyj_fon_v_klassicheskom_pleere_0055.html#faq_10_04" style="text-decoration:none;" class="emFOLD">Как сделать красивый фон в классическом плеере?</a>
+
+</p>
+<p>
+10.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_nastroit__okna_0056.html#faq_10_05" style="text-decoration:none;" class="emFOLD">Хочу, чтоб в игре окна располагались определённым образом. Как это сделать?</a>
+
+</p>
+<p>
+10.6. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zadavat__razmer_okon_iz_koda_igry_0057.html#faq_10_06" style="text-decoration:none;" class="emFOLD">Можно ли задавать размер окон из кода игры? Чтобы в одной локации были одни настройки, в другой — другие.</a>
+
+</p>
+<p>
+10.7. <a href="https://aleksversus.github.io/howdo_faq/pages/fiksatsija_okna_predprosmotra_0058.html#faq_10_07" style="text-decoration:none;" class="emFOLD">Настроил расположение окна предпросмотра, но когда выключаю его, другие окна смещаются, как это исправить?</a>
+
+</p>
+<p>
+10.8. <a href="https://aleksversus.github.io/howdo_faq/pages/tsvet_podsvetki_dejstvij_0059.html#faq_10_08" style="text-decoration:none;" class="emFOLD">Как изменить цвет подсветки действий?</a>
+
+</p>
+<p>
+10.9. <a href="https://aleksversus.github.io/howdo_faq/pages/tsvet_fona_otdel_nogo_okna_0060.html#faq_10_09" style="text-decoration:none;" class="emFOLD">Как изменить цвет фона для отдельного окна?</a>
+
+</p>
+<p>
+10.10. <a href="https://aleksversus.github.io/howdo_faq/pages/plavnoe_pojavlenie_0061.html#faq_10_10" style="text-decoration:none;" class="emFOLD">Как сделать плавное появление текста?</a> | Как сделать плавное изменение цвета фона? | Как сделать плавное изменение цвета текста?
+
+</p>
+<p>
+10.11. <a href="https://aleksversus.github.io/howdo_faq/pages/sobstvennyj_shrift_v_igre_0062.html#faq_10_11" style="text-decoration:none;" class="emFOLD">Как использовать в игре собственный шрифт?</a>
+
+</p>
+<p>
+10.12. <a href="https://aleksversus.github.io/howdo_faq/pages/snjat__vydelenie_s_dejstvij_0063.html#faq_10_12" style="text-decoration:none;" class="emFOLD">С предметов можно снимать выделение, а можно ли снять выделение с действия?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_10" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="РЫыМ"></a><h6>11. Вопросы об условиях</h6>
+<p>
+ 11.1. <a href="https://aleksversus.github.io/howdo_faq/pages/uslovie_bez_operatsij_sravnenija_0064.html#faq_11_01" style="text-decoration:none;" class="emFOLD">При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</a>
+
+</p>
+<p>
+11.2. <a href="https://aleksversus.github.io/howdo_faq/pages/dejstvie_po_usloviju_0065.html#faq_11_02" style="text-decoration:none;" class="emFOLD">Как сделать так, чтобы действие появлялось только при определённом условии?</a>
+
+</p>
+<p>
+11.3. <a href="https://aleksversus.github.io/howdo_faq/pages/dezaktiviruemye_dejstvija_0066.html#faq_11_03" style="text-decoration:none;" class="emFOLD">Видел в одной из игр, как после нажатия на действие, оно становится неактивным. Как это сделать?</a>
+
+</p>
+<p>
+11.4. <a href="https://aleksversus.github.io/howdo_faq/pages/tekst_po_usloviju_0067.html#faq_11_04" style="text-decoration:none;" class="emFOLD">Как добавить текст, который будет выводиться только при выполнении определённого условия?</a>
+
+</p>
+<p>
+11.5. <a href="https://aleksversus.github.io/howdo_faq/pages/uproschenie_uslovija_ili_0068.html#faq_11_05" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий? Чтобы при срабатывании одного или обоих условий текст в любом случае выводился? Логическое ИЛИ (OR).</a>
+
+</p>
+<p>
+11.6. <a href="https://aleksversus.github.io/howdo_faq/pages/uproschenie_uslovija_i_0069.html#faq_11_06" style="text-decoration:none;" class="emFOLD">Как упростить условие с логическим И (AND)?</a>
+
+</p>
+<p>
+11.7. <a href="https://aleksversus.github.io/howdo_faq/pages/xor_0070.html#faq_11_07" style="text-decoration:none;" class="emFOLD">Как упростить взаимоисключающие условия? Логическое XOR.</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_11" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ЙPбК"></a><h6>12. Вопросы о DYNAMIC</h6>
+<p>
+12.1. <a href="https://aleksversus.github.io/howdo_faq/pages/zachem_nuzhen_dynamic_0071.html#faq_12_01" style="text-decoration:none;" class="emFOLD">Зачем нужен оператор dynamic?</a>
+
+</p>
+<p>
+12.2. <a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_nazvanie_peremennoj_0072.html#faq_12_02" style="text-decoration:none;" class="emFOLD">Можно ли сделать переменную с рандомным (случайным) названием?</a>
+
+</p>
+<p>
+12.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sozdavat__dejstvija_cherez_tsikl_0073.html#faq_12_03" style="text-decoration:none;" class="emFOLD">Создаю действия с помощью цикла, но они работают неправильно. Что делать?</a>
+
+</p>
+<p>
+12.4. <a href="https://aleksversus.github.io/howdo_faq/pages/pochemu_ne_rabotaet_0074.html#faq_12_04" style="text-decoration:none;" class="emFOLD">Почему не работает dynamic?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_12" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="EMГА"></a><h6>13. Не работает...</h6>
+<p>
+13.1. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_height_0075.html#faq_13_01" style="text-decoration:none;" class="emFOLD">Рисую таблицу и хочу зафиксировать высоту, но атрибут height не работает.</a>
+
+</p>
+<p>
+13.2. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_teg_0076.html#faq_13_02" style="text-decoration:none;" class="emFOLD">Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?</a>
+
+</p>
+<p>
+13.3. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_iif_0077.html#faq_13_03" style="text-decoration:none;" class="emFOLD">Не работает IIF!</a>
+
+</p>
+<p>
+13.4. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotajut_tegi_map_i_area_0078.html#faq_13_04" style="text-decoration:none;" class="emFOLD">Пытаюсь сделать кликабельную картинку с помощью тегов MAP и AREA, но ничего не получается.</a> | Не выводится картинка, не работает область клика, область клика смещена.
+
+</p>
+<p>
+13.5. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_zviozdochka-pl_v_dejstvii_0079.html#faq_13_05" style="text-decoration:none;" class="emFOLD">Не работает *pl в действии с goto.</a>
+
+</p>
+<p>
+13.6. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_atribut_v_aeroqsp_0080.html#faq_13_06" style="text-decoration:none;" class="emFOLD">В AeroQSP не работает атрибут.</a>
+
+</p>
+<p>
+13.7. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_giperssylka_v_aeroqsp_0081.html#faq_13_07" style="text-decoration:none;" class="emFOLD">Не работает гиперссылка в AeroQSP.</a>
+
+</p>
+<p>
+13.8. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_jump_0082.html#faq_13_08" style="text-decoration:none;" class="emFOLD">Не работает оператор JUMP — не может найти метку.</a>
+
+</p>
+<p>
+13.9. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_(mnogostrochnoe)_0083.html#faq_13_09" style="text-decoration:none;" class="emFOLD">Не работает многострочный код. Как исправить?</a>
+
+</p>
+<p>
+13.10. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_mnogostrochnyj_kod_0084.html#faq_13_10" style="text-decoration:none;" class="emFOLD">Не работает многострочный код. Как исправить?</a>
+
+</p>
+<p>
+13.11. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_end_0085.html#faq_13_11" style="text-decoration:none;" class="emFOLD">Сколько END`ов нужно добавить?</a> 
+
+</p>
+<p>
+13.12. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_0086.html#faq_13_12" style="text-decoration:none;" class="emFOLD">Не работает условие. Как исправить? (<span class="em_BLCK"><span class="emOPRT">if</span> skrom&gt;10 and &lt;15</span>)</a>
+
+</p>
+<p>
+13.13. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotajut_drobnye_chisla_0087.html#faq_13_13" style="text-decoration:none;" class="emFOLD">Не работают десятичные дроби, дробные числа, числа с запятыми!</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_13" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="yоpм"></a><h6>14. Вопросы о предметах</h6>
+<p>
+14.1. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_dobavit__predmet_v_okno_predmetov_0088.html#faq_14_01" style="text-decoration:none;" class="emFOLD">Как добавить предмет в окно предметов?</a>
+
+</p>
+<p>
+14.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_udalit__predmet_0089.html#faq_14_02" style="text-decoration:none;" class="emFOLD">Как удалить предмет из окна предметов?</a>
+
+</p>
+<p>
+14.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_udalit__vse_predmety_0090.html#faq_14_03" style="text-decoration:none;" class="emFOLD">Как удалить все предметы?</a>
+
+</p>
+<p>
+14.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_dobavit__predmet_v_opredelionnuju_pozitsiju_0091.html#faq_14_04" style="text-decoration:none;" class="emFOLD">Как добавить предмет в определённую позицию в окне предметов?</a>
+
+</p>
+<p>
+14.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zamenit__odin_predmet_na_drugoj_0092.html#faq_14_05" style="text-decoration:none;" class="emFOLD">Как заменить один предмет на другой?</a>
+
+</p>
+<p>
+14.6. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__schitaeye_predmety_0093.html#faq_14_06" style="text-decoration:none;" class="emFOLD">Как делать динамические/считаемые предметы?</a> | Как делать стакающиеся предметы? | Как делать предметы рядом с названиями которых выводится их количество?
+
+</p>
+<p>
+14.7. <a href="https://aleksversus.github.io/howdo_faq/pages/predmet_v_vide_kartinki_0094.html#faq_14_07" style="text-decoration:none;" class="emFOLD">Как добавить предмет с картинкой но без названия?</a>
+
+</p>
+<p>
+14.8. <a href="https://aleksversus.github.io/howdo_faq/pages/vypolnenie_koda_pri_schelchke_po_predmetu_0095.html#faq_14_08" style="text-decoration:none;" class="emFOLD">Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?</a>
+
+</p>
+<p>
+14.9. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_snjat__vydelenie_0096.html#faq_14_09" style="text-decoration:none;" class="emFOLD">Как снять выделение предмета?</a> | Как сделать, чтобы выбранный предмет можно было кликнуть ещё раз?
+
+</p>
+<p>
+14.10. <a href="https://aleksversus.github.io/howdo_faq/pages/dva_spiska_predmetov_0097.html#faq_14_10" style="text-decoration:none;" class="emFOLD">Как сделать два списка предметов? Например для игры за разных персонажей.</a>
+
+</p>
+<p>
+14.11. <a href="https://aleksversus.github.io/howdo_faq/pages/avtomaticheskij_kod_pri_dobavlenii_predmeta_0098.html#faq_14_11" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?</a>
+
+</p>
+<p>
+14.12. <a href="https://aleksversus.github.io/howdo_faq/pages/raznye_predmety_s_odinakovymi_nazvanijami_0099.html#faq_14_12" style="text-decoration:none;" class="emFOLD">Как сделать два разных предмета с одинаковыми названиями?</a>
+
+</p>
+<p>
+14.13. <a href="https://aleksversus.github.io/howdo_faq/pages/mnogourovnevyj_rjukzak_0100.html#faq_14_13" style="text-decoration:none;" class="emFOLD">Как сделать многоуровневый рюкзак?</a> | Как сделать предметы в предметах?
+
+</p>
+<p>
+14.14. <a href="https://aleksversus.github.io/howdo_faq/pages/predmety_ne_v_okne_predmetov_0101.html#faq_14_14" style="text-decoration:none;" class="emFOLD">Можно ли выводить предметы не в окне предметов?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_14" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="Jжiщ"></a><h6>15. Вопросы о строке ввода</h6>
+<p>
+15.1. <a href="https://aleksversus.github.io/howdo_faq/pages/zachem_nuzhna_stroka_vvoda_0102.html#faq_15_01" style="text-decoration:none;" class="emFOLD">Зачем вообще нужна строка ввода (поле ввода)?</a>
+
+</p>
+<p>
+15.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zadejstvovat__stroku_vvoda_0103.html#faq_15_02" style="text-decoration:none;" class="emFOLD">Как задействовать строку ввода в игре?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_15" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ИчQD"></a><h6>16. Вопросы по вёрстке</h6>
+<p>
+16.1. <a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_pisat__poverh_vstavlennoj_kartinki_0104.html#faq_16_01" style="text-decoration:none;" class="emFOLD">Можно ли писать текст поверх вставленной картинки (не бэкграунда)?</a>
+
+</p>
+<p>
+16.2. <a href="https://aleksversus.github.io/howdo_faq/pages/plavnyj_perehod_mezhdu_lokatsijami_0105.html#faq_16_02" style="text-decoration:none;" class="emFOLD">Возможно ли сделать плавный переход между локациями?</a>
+
+</p>
+<p>
+16.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_raspolozhit__kartinku_i_tekst_na_stranitse_0106.html#faq_16_03" style="text-decoration:none;" class="emFOLD">Как расположить картинку справа, а текст слева?</a>
+
+</p>
+<p>
+16.4. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_ogranichit__razmer_vyvodimogo_izobrazhenija_0107.html#faq_16_04" style="text-decoration:none;" class="emFOLD">Как ограничить размер выводимого изображения?</a>
+
+</p>
+<p>
+16.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__ramku_okna_osnovnogo_opisanija_0108.html#faq_16_05" style="text-decoration:none;" class="emFOLD">Как сделать рамку окна основного описания?</a> | Как сделать, чтобы картинки шли по контуру основного окна?
+
+</p>
+<p>
+16.6. <a href="https://aleksversus.github.io/howdo_faq/pages/vyvod_tovarov_v_vide_tablitsy_0109.html#faq_16_06" style="text-decoration:none;" class="emFOLD">Как сделать вывод предметов магазина не длинным списком, а в виде таблицы?</a>
+
+</p>
+<p>
+16.7. <a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_zerkal_no_otrazit__kartinku_0110.html#faq_16_07" style="text-decoration:none;" class="emFOLD">Можно ли зеркально отразить картинку методами плеера?</a> | Можно ли задать максимальную или минимальную ширину элементу? | Можно ли вычислить доступное место в основном окне?
+
+</p>
+<p>
+16.8. <a href="https://aleksversus.github.io/howdo_faq/pages/pustye_stroki_posle_tablichki_0111.html#faq_16_08" style="text-decoration:none;" class="emFOLD">Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?</a>
+
+</p>
+<p>
+16.9. <a href="https://aleksversus.github.io/howdo_faq/pages/tekst_v_dva_stolbika_0112.html#faq_16_09" style="text-decoration:none;" class="emFOLD">Можно как нибудь вывести текст в два столба в классике? К примеру характеристики персонажей.</a>
+
+</p>
+<p>
+16.10. <a href="https://aleksversus.github.io/howdo_faq/pages/map_area_0113.html#faq_16_10" style="text-decoration:none;" class="emFOLD">Как работать с тегами MAP и AREA? Как разметить картинку на кликабельные зоны?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_16" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="zАцц"></a><h6>17. Вопросы о сохранениях</h6>
+<p>
+17.1. <a href="https://aleksversus.github.io/howdo_faq/pages/zapret_sohranenij_0114.html#faq_17_01" style="text-decoration:none;" class="emFOLD">Как запретить игроку самостоятельно сохранять игру?</a>
+
+</p>
+<p>
+17.2. <a href="https://aleksversus.github.io/howdo_faq/pages/ne_zagruzhajutsja_sohranenija_0115.html#faq_17_02" style="text-decoration:none;" class="emFOLD">Во время теста игры делал сохранения, затем внёс в игру несколько правок, но сохранения перестали загружаться. Почему так происходит, и что теперь делать?</a>
+
+</p>
+<p>
+17.3. <a href="https://aleksversus.github.io/howdo_faq/pages/chekpojnty_0116.html#faq_17_03" style="text-decoration:none;" class="emFOLD">Как сделать чекпойнты в игре?</a>
+
+</p>
+<p>
+17.4. <a href="https://aleksversus.github.io/howdo_faq/pages/dva_fajla_0117.html#faq_17_04" style="text-decoration:none;" class="emFOLD">Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_17" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="BеьЭ"></a><h6>18. Вопросы о файлах и модулях</h6>
+<p>
+18.1. <a href="https://aleksversus.github.io/howdo_faq/pages/addqst_i_openqst_0118.html#faq_18_01" style="text-decoration:none;" class="emFOLD">Чем отличаются команды <span class="em_BLCK"><span class="emOPRT">addqst</span></span> и <span class="em_BLCK"><span class="emOPRT">openqst</span></span>?</a>
+
+</p>
+<p>
+18.2. <a href="https://aleksversus.github.io/howdo_faq/pages/launcher_0119.html#faq_18_02" style="text-decoration:none;" class="emFOLD">Как сделать лаунчер?</a>
+
+</p>
+<p>
+18.3. <a href="https://aleksversus.github.io/howdo_faq/pages/est__li_fajl_0120.html#faq_18_03" style="text-decoration:none;" class="emFOLD">Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?</a>
+
+</p>
+<p>
+18.4. <a href="https://aleksversus.github.io/howdo_faq/pages/fajl_proekta_0121.html#faq_18_04" style="text-decoration:none;" class="emFOLD">Перенёс файл игры из одной папки в другую. В Quest Generator пропали все папки. Почему так происходит, и как этого избежать?</a>
+
+</p>
+<p>
+18.5. <a href="https://aleksversus.github.io/howdo_faq/pages/fajly_tmp_0122.html#faq_18_05" style="text-decoration:none;" class="emFOLD">В папке с игрой стали появляться файлы с расширением <span class="em_BLCK">.tmp</span>. Что это за файлы, нужны они, и как избавиться от их появления?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_18" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="RЫiL"></a><h6>19. Изыски</h6>
+<p>
+19.1. <a href="https://aleksversus.github.io/howdo_faq/pages/ascii_grafika_0123.html#faq_19_01" style="text-decoration:none;" class="emFOLD">Как использовать ASCII-графику в QSP?</a>
+
+</p>
+<p>
+19.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__video_v_igru_0124.html#faq_19_02" style="text-decoration:none;" class="emFOLD">Как вставить в игру видео?</a>
+
+</p>
+<p>
+19.3. <a href="https://aleksversus.github.io/howdo_faq/pages/tekst_pobukvenno_0125.html#faq_19_03" style="text-decoration:none;" class="emFOLD">Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?</a>
+
+</p>
+<p>
+19.4. <a href="https://aleksversus.github.io/howdo_faq/pages/zaschitit__ot_chita_0126.html#faq_19_04" style="text-decoration:none;" class="emFOLD">Как защитить игру от чита?</a>
+
+</p>
+<p>
+19.5. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zadejstvovat__klaviaturu_v_igre_0127.html#faq_19_05" style="text-decoration:none;" class="emFOLD">Как задействовать клавиатуру в игре?</a>
+
+</p>
+<p>
+19.6. <a href="https://aleksversus.github.io/howdo_faq/pages/propustit__glavy_0128.html#faq_19_06" style="text-decoration:none;" class="emFOLD">Как пропустить прохождение нескольких глав, чтобы протестировать вновь написанную главу и только её?</a>
+
+</p>
+<p>
+19.7. <a href="https://aleksversus.github.io/howdo_faq/pages/otladchik_0129.html#faq_19_07" style="text-decoration:none;" class="emFOLD">Как из под плеера выполнить произвольную строку кода?</a>
+
+</p>
+<p>
+19.8. <a href="https://aleksversus.github.io/howdo_faq/pages/na_kakom_ustrojstve_0130.html#faq_19_08" style="text-decoration:none;" class="emFOLD">Как узнать, на каком устройстве запущена игра? Телефон, компьютер, планшет?</a>
+
+</p>
+<p>
+19.9. <a href="https://aleksversus.github.io/howdo_faq/pages/obnovlenie_peremennyh_na_akrane_0131.html#faq_19_09" style="text-decoration:none;" class="emFOLD">Как обновлять переменные на экране?</a>
+
+</p>
+<p>
+19.10. <a href="https://aleksversus.github.io/howdo_faq/pages/tekst_snizu_vverh_0132.html#faq_19_10" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы текст выводился снизу вверх?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_19" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="еТPъ"></a><h6>20. Конкретные задачи</h6>
+<p>
+20.1. <a href="https://aleksversus.github.io/howdo_faq/pages/vozvrat_na_predyduschuju_lokatsiju_0133.html#faq_20_01" style="text-decoration:none;" class="emFOLD">Как сделать возврат на предыдущую локацию?</a>
+
+</p>
+<p>
+20.2. <a href="https://aleksversus.github.io/howdo_faq/pages/proverka_chiotnosti_0134.html#faq_20_02" style="text-decoration:none;" class="emFOLD">Как проверить число на чётность?</a>
+
+</p>
+<p>
+20.3. <a href="https://aleksversus.github.io/howdo_faq/pages/shans_vypadenija_0135.html#faq_20_03" style="text-decoration:none;" class="emFOLD">Как сделать шанс на выпадение определённой вещи? Например 25 процентный шанс на то, что в сундуке окажется золотая чаша?</a>
+
+</p>
+<p>
+20.4. <a href="https://aleksversus.github.io/howdo_faq/pages/vyvod_teksta_sverhu_0136.html#faq_20_04" style="text-decoration:none;" class="emFOLD">Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?</a>
+
+</p>
+<p>
+20.5. <a href="https://aleksversus.github.io/howdo_faq/pages/udalit__chast__teksta_0137.html#faq_20_05" style="text-decoration:none;" class="emFOLD">Как можно удалить часть текста из описания?</a>
+
+</p>
+<p>
+20.6. <a href="https://aleksversus.github.io/howdo_faq/pages/html_bez_otkljuchenija_html_0138.html#faq_20_06" style="text-decoration:none;" class="emFOLD">Как вывести на экран HTML-разметку, не отключая режим распознавания HTML? То есть при <span class="em_BLCK"><span class="emVAR">usehtml</span>=1</span>.</a>
+
+</p>
+<p>
+20.7. <a href="https://aleksversus.github.io/howdo_faq/pages/maksimal_naja_peremennaja_0139.html#faq_20_07" style="text-decoration:none;" class="emFOLD">Есть несколько переменных с разными значениями. Как получить имя переменной, в которой находится наибольшее значение?</a>
+
+</p>
+<p>
+20.8. <a href="https://aleksversus.github.io/howdo_faq/pages/sravnenie_massivov_0140.html#faq_20_08" style="text-decoration:none;" class="emFOLD">Как в QSP сравнить два массива?</a>
+
+</p>
+<p>
+20.9. <a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html#faq_20_09" style="text-decoration:none;" class="emFOLD">Как сделать вытягивание случайных карт из колоды? Карты вытягиваются несколько раз, но они не должны повторяться.</a>
+
+</p>
+<p>
+20.10. <a href="https://aleksversus.github.io/howdo_faq/pages/sortirovka_dannyh_0142.html#faq_20_10" style="text-decoration:none;" class="emFOLD">Как отсортировать данные? Например, список персонажей по алфавиту, или набор чисел от меньшего к большему.</a>
+
+</p>
+<p>
+20.11. <a href="https://aleksversus.github.io/howdo_faq/pages/protsenty_0143.html#faq_20_11" style="text-decoration:none;" class="emFOLD">Как сделать проценты?</a>
+
+</p>
+<p>
+20.12. <a href="https://aleksversus.github.io/howdo_faq/pages/razlozhenie_na_slagaemye_0144.html#faq_20_12" style="text-decoration:none;" class="emFOLD">Как решить задачу по поиску случайного набора слагаемых?</a>
+
+</p>
+<p>
+20.13. <a href="https://aleksversus.github.io/howdo_faq/pages/razrezhenie_teksta_0145.html#faq_20_13" style="text-decoration:none;" class="emFOLD">Как разредить текст пробелами?</a>
+
+</p>
+<p>
+20.14. <a href="https://aleksversus.github.io/howdo_faq/pages/zapisnaja_knizhka_0146.html#faq_20_14" style="text-decoration:none;" class="emFOLD">Как сделать записную книжку в игре?</a>
+
+</p>
+<p>
+20.15. <a href="https://aleksversus.github.io/howdo_faq/pages/odnorazovaja_lokatsija_0147.html#faq_20_15" style="text-decoration:none;" class="emFOLD">Как сделать так, чтобы на локацию можно было зайти только один раз?</a>
+
+</p>
+<p>
+20.16. <a href="https://aleksversus.github.io/howdo_faq/pages/porjadok_dejstvij_0148.html#faq_20_16" style="text-decoration:none;" class="emFOLD">Как заставить действия выводиться в нужном мне порядке?</a>
+
+</p>
+<p>
+20.17. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__knigu_v_igre_0149.html#faq_20_17" style="text-decoration:none;" class="emFOLD">Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?</a>
+
+</p>
+<p>
+20.18. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__sklad_sunduk_tajnik_0150.html#faq_20_18" style="text-decoration:none;" class="emFOLD">Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?</a>
+
+</p>
+<p>
+20.19. <a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_dejstvie_na_lokatsii_0151.html#faq_20_19" style="text-decoration:none;" class="emFOLD">Как сделать выпадение случайного действия на локации?</a>
+
+</p>
+<p>
+20.20. <a href="https://aleksversus.github.io/howdo_faq/pages/perehod_na_sluchajnuju_lokatsiju_0152.html#faq_20_20" style="text-decoration:none;" class="emFOLD">Как сделать перемещение на случайную локацию?</a>
+
+</p>
+<p>
+20.21. <a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnyj_predmet_0153.html#faq_20_21" style="text-decoration:none;" class="emFOLD">Как сделать случайный предмет?</a>
+
+</p>
+<p>
+20.22. <a href="https://aleksversus.github.io/howdo_faq/pages/skol_ko_peremennyh_0154.html#faq_20_22" style="text-decoration:none;" class="emFOLD">Как узнать, какие переменные есть в игре? Может для этого есть специальная команда?</a>
+
+</p>
+<p>
+20.23. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_ubrat__preformatirovanie_0155.html#faq_20_23" style="text-decoration:none;" class="emFOLD">Как убрать преформатирование из HTML-разметки?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_20" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="ыаRW"></a><h6>21. Вопросы по Quest Generator (v.4.0.0.Beta)</h6>
+<p>
+21.1. <a href="https://aleksversus.github.io/howdo_faq/pages/sochetanie_klavish_0156.html#faq_21_01" style="text-decoration:none;" class="emFOLD">Мне часто приходится вставлять одинаковые или почти одинаковые кусочки кода. Как автоматизировать этот процесс?</a>
+
+</p>
+<p>
+21.2. <a href="https://aleksversus.github.io/howdo_faq/pages/sochetanie_klavish_0157.html#faq_21_02" style="text-decoration:none;" class="emFOLD">Делаю преформатирование пробелами, чтобы появлялась вертикальная полоска, так нагляднее. Нет ли какой-то комбинации клавиш, чтобы не тыкать пробел по пять раз?</a>
+
+</p>
+<p>
+21.3. <a href="https://aleksversus.github.io/howdo_faq/pages/svorachivanie_koda_0158.html#faq_21_03" style="text-decoration:none;" class="emFOLD">Как свернуть кусочек кода, написанный под комментарием? В идеале, чтоб остался один только комментарий.</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_21" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="гФАs"></a><h6>22. Вопросы о Quest Navigator (v.0.0.28)</h6>
+<p>
+22.1. <a href="https://aleksversus.github.io/howdo_faq/pages/shablony_oformlenija_dlja_igr_0159.html#faq_22_01" style="text-decoration:none;" class="emFOLD">Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?</a>
+
+</p>
+<p>
+22.2. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_podkljuchit__svoj_shrift_0160.html#faq_22_02" style="text-decoration:none;" class="emFOLD">Как подключить свой шрифт к игре?</a>
+
+</p>
+<p>
+22.3. <a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_fona_0161.html#faq_22_03" style="text-decoration:none;" class="emFOLD">Пишу <span class="em_BLCK">&lt;strong&gt;bcolor=rgb(255,200,200)&lt;/strong&gt;</span>, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?</a>
+
+</p>
+<p>
+22.4. <a href="https://aleksversus.github.io/howdo_faq/pages/izmenit__kursor_0162.html#faq_22_04" style="text-decoration:none;" class="emFOLD">Хочу прописать игре собственный вид курсора, как это сделать?</a>
+
+</p>
+<p>
+22.5. <a href="https://aleksversus.github.io/howdo_faq/pages/nastrojka_shablona_0163.html#faq_22_05" style="text-decoration:none;" class="emFOLD">Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать? Не пойму, что за что отвечает.</a>
+
+</p>
+<p>
+22.6. <a href="https://aleksversus.github.io/howdo_faq/pages/proverka_pleera_0164.html#faq_22_06" style="text-decoration:none;" class="emFOLD">Как узнать, на каком плеере запущена игра, на классическом QSP, или на Quest Navigator?</a>
+
+</p>
+<p>
+22.7. <a href="https://aleksversus.github.io/howdo_faq/pages/video_0165.html#faq_22_07" style="text-decoration:none;" class="emFOLD">Как вставить видео в игру на Навигаторе?</a>
+
+</p>
+<p>
+22.8. <a href="https://aleksversus.github.io/howdo_faq/pages/standalone_0166.html#faq_22_08" style="text-decoration:none;" class="emFOLD">Как делать standalone-сборку на Навигаторе?</a> | Независимая сборка на Quest Navigator
+
+</p>
+<p>
+22.9. <a href="https://aleksversus.github.io/howdo_faq/pages/razmer_okna_igry_0167.html#faq_22_09" style="text-decoration:none;" class="emFOLD">Где в Quest Navigator править размер окна с игрой? Например мне надо, чтобы игра изначально открывалась в разрешении 1280х720.</a>
+
+</p>
+<p>
+22.10. <a href="https://aleksversus.github.io/howdo_faq/pages/vypolnenie_js_iz_qsp-koda_0168.html#faq_22_10" style="text-decoration:none;" class="emFOLD">Как выполнить JavaScript прямо из кода QSP?</a>
+
+</p>
+<p>
+22.11. <a href="https://aleksversus.github.io/howdo_faq/pages/instruktsija_po_smene_oformlenija_iz_koda_igry_0169.html#faq_22_11" style="text-decoration:none;" class="emFOLD">Инструкция посмене оформления из кода QSP?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_22" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="МЮЭl"></a><h6>23. Ограничения</h6>
+<p>
+23.1. <a href="https://aleksversus.github.io/howdo_faq/pages/podkljuchaemye_fajly_0170.html#faq_23_01" style="text-decoration:none;" class="emFOLD">Видел в справке ограничение на 100 подключаемых файлов? Это что, я не смогу использовать более ста файлов картинок и музыки?</a>
+
+</p>
+<p>
+23.2. <a href="https://aleksversus.github.io/howdo_faq/pages/vyvodimye_dejstvija_0171.html#faq_23_02" style="text-decoration:none;" class="emFOLD">Хочу разместить на локации около 100 действий. Это вообще возможно?</a>
+
+</p>
+<p>
+23.3. <a href="https://aleksversus.github.io/howdo_faq/pages/imena_peremennyh_0172.html#faq_23_03" style="text-decoration:none;" class="emFOLD">Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_23" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="wgлw"></a><h6>24. Вопросы по работе с плеерами</h6>
+<p>
+24.1. <a href="https://aleksversus.github.io/howdo_faq/pages/aero+qgen_0173.html#faq_24_01" style="text-decoration:none;" class="emFOLD">Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?</a>
+
+</p>
+<p>
+24.2. <a href="https://aleksversus.github.io/howdo_faq/pages/rasprostranjaemaja_standalon_sborka_na_klassike_0174.html#faq_24_02" style="text-decoration:none;" class="emFOLD">Как сделать StandAlone-сборку на классическом плеере?</a> | Можно ли сделать игру так, чтобы играть без плеера? | Как сделать пакетный файл запуска, чтобы игрок тыкал иконку start и сразу начинал играть?
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_24" style="text-decoration:none;" class="emFOLD">Источники и дополнительные материалы</a>
+
+</p>
+<a id="oСym"></a><h6>Зарезервированные слова, системные переменные, спецсимволы</h6>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html#faq_80_01" style="text-decoration:none;" class="emFOLD">Операции</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html#faq_80_02" style="text-decoration:none;" class="emFOLD">Операторы</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html#faq_80_03" style="text-decoration:none;" class="emFOLD">Функции</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04" style="text-decoration:none;" class="emFOLD">Системные переменные</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0179.html#faq_80_05" style="text-decoration:none;" class="emFOLD">Иные синтаксемы</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0180.html#faq_80_06" style="text-decoration:none;" class="emFOLD">Алфавитный указатель ключевых слов, спецсимволов, синтаксем</a>
+
+</p>
+<a id="бCyГ"></a><h6>Источники и дополнительные материалы</h6>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_01" style="text-decoration:none;" class="emFOLD">1. В чём разница?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_02" style="text-decoration:none;" class="emFOLD">2. Вопросы о $COUNTER</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_03" style="text-decoration:none;" class="emFOLD">3. Вопросы о MSG и $INPUT</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_04" style="text-decoration:none;" class="emFOLD">4. Вопросы о меню</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_05" style="text-decoration:none;" class="emFOLD">5. Вопросы по $ONNEWLOC</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_06" style="text-decoration:none;" class="emFOLD">6. Вопросы по звуковым файлам в QSP</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_07" style="text-decoration:none;" class="emFOLD">7. Вопросы о гиперссылках</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_08" style="text-decoration:none;" class="emFOLD">8. Есть ли команда...</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_09" style="text-decoration:none;" class="emFOLD">9. Вопросы о изображениях</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_10" style="text-decoration:none;" class="emFOLD">10. Интерфейс, дизайн, украшения</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_11" style="text-decoration:none;" class="emFOLD">11. Вопросы об условиях</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_12" style="text-decoration:none;" class="emFOLD">12. Вопросы о DYNAMIC</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_13" style="text-decoration:none;" class="emFOLD">13. Не работает...</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_14" style="text-decoration:none;" class="emFOLD">14. Вопросы о предметах</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_15" style="text-decoration:none;" class="emFOLD">15. Вопросы о строке ввода</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_16" style="text-decoration:none;" class="emFOLD">16. Вопросы по вёрстке</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_17" style="text-decoration:none;" class="emFOLD">17. Вопросы о сохранениях</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_18" style="text-decoration:none;" class="emFOLD">18. Вопросы о файлах и модулях</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_19" style="text-decoration:none;" class="emFOLD">19. Изыски</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_20" style="text-decoration:none;" class="emFOLD">20. Конкретные задачи</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_21" style="text-decoration:none;" class="emFOLD">21. Вопросы по Quest Generator (v.4.0.0.Beta)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_22" style="text-decoration:none;" class="emFOLD">22. Вопросы о Quest Navigator (v.0.0.28)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_23" style="text-decoration:none;" class="emFOLD">23. Ограничения</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_24" style="text-decoration:none;" class="emFOLD">24. Вопросы по работе с плеерами</a>
+</li>
+</ul>
+        </div>
+    </div>
+    <script src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

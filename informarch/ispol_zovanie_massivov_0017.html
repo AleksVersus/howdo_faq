@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="emHREFTT">&lt; Назад, к странице 16</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">Вперёд, к странице 18 &gt;</a></div></div>
+<a id="usethemassive"></a><h2>Использование массивов</h2>
+<p>
+Вкратце: в QSP есть возможность использовать массивы. Значит вместо одного значения одной переменной <span class="em_BLCK">x = 10</span>, можно сохранить несколько значение под одним именем, указывая в скобках после имени переменной код или индекс очередного значения вот так:
+
+</p>
+<div class="Monokai-Code">
+x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><br>
+x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">12</span><br>
+x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">9</span><br>
+
+
+</div>
+<p>
+Это удобно тем, что вместо прямого указания номера индекса мы можем подставить значение какой-нибудь переменной. Так, мы можем, например, произвести вывод всех значений массива, используя всего лишь один цикл:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">loop</span>&nbsp;<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'x'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;x<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+В качестве индекса или кода может использоваться и строка:
+
+</p>
+<div class="Monokai-Code">
+сила<span class="Monokai-Operator">[</span><span class="Monokai-String">'лебедь'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+сила<span class="Monokai-Operator">[</span><span class="Monokai-String">'рак'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
+$я&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'щука'</span><br>
+сила<span class="Monokai-Command">[$я]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<p>
+Значок <span class="em_BLCK"><span class="emTEXT">"$"</span></span> показывает что переменная строковая.
+
+</p>
+<p>
+Начиная с версии плеера 5.8.0 можно создавать многомерные массивы без использования строковых индексов:
+
+</p>
+<div class="Monokai-Code">
+x&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+y&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">2</span><br>
+$ячейка<span class="Monokai-Operator">[</span>x<span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"3х&nbsp;палубный"</span><br>
+$ячейка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"3х&nbsp;палубный"</span><br>
+$ячейка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"3х&nbsp;палубный"</span><br>
+
+
+</div>
+<p>
+Даже если названия (имена) динамические, и их количество может отличаться в разных случаях, то для хранения информации об объекте игры, или персонаже, также можно использовать массив. Например, для случая с расстояниями до врагов:
+
+</p>
+<div class="Monokai-Code">
+$я<span class="Monokai-Operator">=</span><span class="Monokai-String">"Кузнецов"</span><br>
+$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span>$я<br>
+$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Иванов"</span><br>
+$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Петров"</span><br>
+$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Сидоров"</span><br>
+расстояние<span class="Monokai-Command">[$я,$имя_персонажа[1]</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
+расстояние<span class="Monokai-Command">[$я,$имя_персонажа[2]</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">4</span><br>
+расстояние<span class="Monokai-Command">[$я,$имя_персонажа[3]</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+
+
+</div>
+<p>
+В этом примере, зная имена персонажей можно получать и изменять расстояния между ними.
+
+</p>
+<p>
+Также вместо имен можно использовать и их порядковые номера:
+
+</p>
+<div class="Monokai-Code">
+расстояние2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">6</span><br>
+расстояние2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
+расстояние2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">8</span><br>
+
+
+</div>
+<p>
+В этом примере у нас массив 2-х мерный. А измерений может быть и больше.
+
+</p>
+<p>
+АВТОР: Ntropy
+
+</p>
+<p>
+Отредактировал для соответствия версии библиотеке 5.8.0: Aleks Versus  
+
+</p>
+<p>
+26.Июл.10 12:08:22
+
+</p>
+<p>
+Оригинал в теме: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=93&Itemid=57" style="text-decoration:none;" class="emFOLD">Подробности использования массивов, все вопросы сюда</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="emHREFTT">&lt; Назад, к странице 16</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">Вперёд, к странице 18 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

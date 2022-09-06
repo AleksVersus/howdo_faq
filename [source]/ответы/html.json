@@ -1,11 +1,11 @@
 {
 	"project":
 	{
-		"export_folder":"..\\pages",
-		"source_folder":".",
+		"export_folder":"..\\..\\pages",
+		"source_folder":"..\\..\\[source]\\ответы",
 		"cross-link":"https://aleksversus.github.io/howdo_faq/pages/"
 	},
-	"head":".\\92_дополнительные тексты\\02_start.html",
-	"foot":".\\92_дополнительные тексты\\03_end.html",
-	"head_contents":".\\00_вступления\\01_soderzhanie_0001.txt-light"
+	"head":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\02_start.html",
+	"foot":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\03_end.html",
+	"head_contents":"..\\..\\[source]\\ответы\\00_вступления\\01_soderzhanie_0001.txt-light"
 }

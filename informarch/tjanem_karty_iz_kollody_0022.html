@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">&lt; Назад, к странице 21</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html" class="emHREFTT">Вперёд, к странице 23 &gt;</a></div></div>
+<a id="СWRЯ"></a><h2>Выбор случайных вариантов - тянем карты из колоды [1.0]</h2>
+<p>
+Если требуется выбрать случайный вариант однократно, то используется оператор RAND. Но если стоит задача сделать последовательный выбор случайных вариантов из заранее сформированного массива значений, то одним только RAND не обойтись. При каждом последующем выборе нужно будет "помнить", какие значения были уже выбраны.
+
+</p>
+<p>
+Эта задача схожа с последовательным вытягиванием карт из колоды.
+
+</p>
+<p>
+Решение, оформленное в виде пользовательской функции:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;Запрашиваем&nbsp;длину&nbsp;массива</span><br>
+_length&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">ARRSIZE</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$random'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;Если&nbsp;вариантов&nbsp;уже&nbsp;нет,&nbsp;возвращаем&nbsp;'ERROR'</span><br>
+<span class="Monokai-Koperator">IF</span>&nbsp;_length&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$RESULT</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'ERROR'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">EXIT</span><br>
+<span class="Monokai-Koperator">END</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Выбираем&nbsp;из&nbsp;массива&nbsp;случайный&nbsp;элемент,&nbsp;соотв.&nbsp;длине&nbsp;массива</span><br>
+_variant&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RAND</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;_length<span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;Запоминаем&nbsp;результат</span><br>
+<span class="Monokai-SysVar">$RESULT</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$random<span class="Monokai-Operator">[</span>_variant<span class="Monokai-Operator">]</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Удаляем&nbsp;отработанный&nbsp;элемент</span><br>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'$random'</span><span class="Monokai-Operator">,</span>&nbsp;_variant<br>
+
+
+</div>
+<p>
+Тестовый пример использования:
+
+</p>
+<div class="Monokai-Code">
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'A'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'B'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'C'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'D'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'E'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'F'</span><br>
+$random<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'G'</span><br>
+<br>
+i&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Markup">:loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$rand_&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Тянуть&nbsp;карту'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Шаг&nbsp;№&lt;&lt;i&gt;&gt;.&nbsp;Значение:&nbsp;&lt;&lt;$rand_&gt;&gt;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;<span class="Monokai-Operator">=</span>&nbsp;i&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">IF</span>&nbsp;i&nbsp;<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">JUMP</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+<span class="Monokai-Koperator">END</span><br>
+
+
+</div>
+<p>
+<a href="https://qsp.org/attachments/pullcard.qsp" style="text-decoration:none;" class="emFOLD">pullcard.qsp</a>
+
+</p>
+<p>
+АВТОР: NEX   
+
+</p>
+<p>
+29.05.2011 20:05
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">&lt; Назад, к странице 21</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html" class="emHREFTT">Вперёд, к странице 23 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

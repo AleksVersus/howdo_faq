@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
+<a id="localization"></a><h3>Локализация классического плеера QSP версии 5.7.0</h3>
+<blockquote>
+<p>
+Пишу на QSP полуигровой дипломный проект. Всё круто. Но научрука смущают пункты меню плеера вроде "квест", "игра". Понимаю, что можно поменять названия пунктов в файле языка "*.mo", но не понимаю как. По сему вопрос - Существуют ли способы создания своих файлов языка для интерфейса плеера? И если это как-то очевидно и я просмотрел, то заранее извиняюсь smile
+</p>
+
+</blockquote>
+<p>
+Этот вопрос на сайте нигде пока что не освещен, думаю, пора сделать спец. страничку, посвященную исходному коду и локализациям windows-плеера QSP, а также самой <span class="em_BLCK">qsp.dll</span>.
+
+</p>
+<p>
+Ответ на вопрос, как модифицировать файлы локализации:
+
+</p>
+<ol>
+<li>
+Качаем <a href="https://sourceforge.net/projects/poedit/" style="text-decoration:none;" class="emFOLD">poedit</a>, устанавливаем.
+</li>
+<li>
+Берем файл с русской локализацией, папка <span class="em_BLCK">QSP-плеера/langs/ru/qspgui.mo</span>
+</li>
+<li>
+Копируем в папку папка <span class="em_BLCK">poedit/bin</span>
+</li>
+<li>
+Заходим в эту папку и запускаем командную строку, в ней пишем
+<div class="Monokai-Code">
+msgunfmt&nbsp;qspgui.mo&nbsp;>&nbsp;qspgui.po<br>
+
+</div>
+</li>
+<li>
+Редактируем <span class="em_BLCK">qspgui.po</span> в <span class="em_BLCK">poedit</span>
+</li>
+<li>
+Сохраняем. При сохранении файл <span class="em_BLCK">qspgui.mo</span> сгенерируется автоматически(в настройках "по умолчанию" есть соответствующая галочка)
+</li>
+<li>
+Берем полученный <span class="em_BLCK">qspgui.mo</span> и записываем его в папка <span class="em_BLCK">QSP-плеера/langs/ru/qspgui.mo</span>
+</li>
+</ol>
+<p>
+Автор заметки: <span class="em_BLCK">Nex</span>.
+
+</p>
+<p>
+Тема на форуме: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57" style="text-decoration:none;" class="emFOLD">"Локализация QSP"</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

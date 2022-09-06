@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html" class="emHREFTT">&lt; Назад, к странице 5</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html" class="emHREFTT">Вперёд, к странице 7 &gt;</a></div></div>
+<a id="analyzer_qsp"></a><h2>Анализатор кода QSP</h2>
+<p>
+Анализатор выполняет проверку на двух уровнях:
+
+</p>
+<ol>
+<li>
+Проверка синтаксиса. Все ошибки, которые можно однозначно определить по соответствию синтаксическим правилам языка QSP.
+<br>	<span class="em_BLCK">Пример:</span> незакрытые многострочные операторы, незакрытые скобки, неверное количество аргументов функции и т.д.
+</li>
+<li>
+Предупреждения. Предположения об ошибках, основанные на анализе структуры игры - переменные, локации, предметы, действия.
+<br>	<span class="em_BLCK">Пример:</span> локации, на которые нет перехода, использование неинициализированных переменных, попытка удалить предмет, который нигде не добавляется, и т.д.
+</li>
+</ol>
+<p>
+Ссылка на проект, для тех, кому интересно: http://code.google.com/p/qsp-analyser/
+
+</p>
+<p>
+Главная ценность проекта - исходный код, который полностью открыт. Его я буду обновлять регулярно, по мере работы над проектом.
+
+</p>
+<p>
+Внимание: анализатор работает только с файлом текстового формата (TXT2GAM). Поэтому для проверки вам придётся экспортировать игру в кугене.
+
+</p>
+<p>
+Игра -&gt; Экспорт -&gt; Текстовый файл формата TXT2GAM.
+
+</p>
+<p>
+<a href="https://code.google.com/archive/p/qsp-analyser/downloads" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK">Скачать анализатор со страницы релизов</span></a>
+
+</p>
+<a id="KTXш"></a><h4>Экспорт текстовых констант в CSV-файл и перевод</h4>
+<p>
+Сделано для удобства перевода игры на другой язык. Работает так: открываем утилиту, выбираем исходный код квеста. Открываем вкладку "Конвертация". Жмем "Экспорт в CSV". Если в исходном файле нет ошибок, генерируется CSV-файл, в котором записана таблица из четырех колонок. В первой - номер строки таблицы и название локации, из которой взят текст. Во второй - исходный текст. В третьей - нужно вписать перевод. В четвертой можно писать любые комментарии, ее содержимое не учитывается.
+
+</p>
+<p>
+CSV-файл можно редактировать во многих офисных программах. Точно он поддерживается программами OpenOffice Calc и MS Excel. Когда перевод готов, нажимаем кнопку "Сделать перевод, используя CSV". Сгенерируется файл с именем таким как у исходного квеста + указанный суффикс(пример: исходный квест "game.txt", CSV-файл "game.csv", файл перевода "game_tr.txt"). Получили переведенную игру.
+
+</p>
+<p>
+Для чего это нужно? Во-первых, наглядное представление не даст пропустить непереведенных строк.
+
+</p>
+<p>
+Во-вторых, можно будет поручить перевод человеку, не знакомому с языком QSP.
+
+</p>
+<p>
+Ну и еще это может служить удобным средством для проверки орфографии, до тех пор пока она не будет-таки реализована в кугене.
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html" class="emHREFTT">&lt; Назад, к странице 5</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html" class="emHREFTT">Вперёд, к странице 7 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

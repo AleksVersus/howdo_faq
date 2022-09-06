@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<a id="flexible_playlist"></a><h2>Гибкий плейлист 1.0</h2>
+<p>
+Код гибкого плейлиста для воспроизведения фоновой музыки.
+
+</p>
+<p>
+Огромное спасибо Byte за помощь в доработке.
+
+</p>
+<p>
+Идея возникла в ходе работы по озвучке "Лабиринта страха", поскольку все скрипты плейлистов, которые я нашел, были недостаточно гибкими - по сути любой скрипт нужно было полностью переделывать под себя.
+
+</p>
+<p>
+После ряда эксперементов у меня получилось сделать код, который можно использовать в любом проекте.
+
+</p>
+<p>
+В основе плейлиста лежит понятие темы - списка файлов, которые проигрываются один за другим. Количество тем в игре и файлов в теме не ограничено. Плейлист также запоминает текущий файл в теме при смене темы и при выключении музыки. Поддерживаеться изменение громкости.
+
+</p>
+<p>
+Для использования плейлиста в игре нужно сделать следующее:
+
+</p>
+<ol>
+<li>
+В локацию-счетчик добавить код плеера (весь код из локации counter)
+</li>
+<li>
+Сделать списки файлов в темах. Для этого нужно для каждой темы создать маcсив с именем $tracklist_название темы. То есть для темы default название массива должно быть $tracklist_default. Примеры списков можно найти в локации init_music.
+</li>
+<li>
+Осталось только включить музыку и инициировать тему. Для этого в код добавляем
+<div class="Monokai-Code">
+music_on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+volume&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
+$music_theme&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'default'</span><br>
+
+
+</div>
+</li>
+</ol>
+<p>
+Переменная <span class="em_BLCK">music_on</span> отвечает за включение/выключение плейлиста. Выключить плейлист можно также с помощью <span class="em_BLCK">$music_theme = ''</span>.
+
+</p>
+<p>
+С помощью переменной <span class="em_BLCK">volume</span> изменяется громкость проигрывания.
+
+</p>
+<p>
+В переменной <span class="em_BLCK">$music_theme</span> хранится название текущей темы. При ее изменении останавливается проигрывание текущей темы (при этом запоминается файл, на котором было остановлено проигрывание) и начинается прогрывание следующей.
+
+</p>
+<p>
+АВТОР: WEREWOLF   
+
+</p>
+<p>
+06.04.2010 15:26
+
+</p>
+<p>
+Оригинал статьи: https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76
+
+</p>
+<p>
+Скачать модуль гибкого плейлиста можно здесь: <a href="https://qsp.org/attachments/playlist.zip" style="text-decoration:none;" class="emFOLD">playlist.zip</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

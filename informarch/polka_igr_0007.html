@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="emHREFTT">&lt; Назад, к странице 6</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html" class="emHREFTT">Вперёд, к странице 8 &gt;</a></div></div>
+<a id="ЬцkX"></a><h2>Полка игр</h2>
+<a id="сСОg"></a><h3>Что должно быть реализовано в полке игр</h3>
+<p>
+Обсуждали недавно с elmortem, каким бы хотелось видеть Classic-плеер в плане работы с играми. Вот к чему пришли.
+
+</p>
+<p>
+В HTMLTads есть "полка игр" - страница, которая появляется при запуске плеера(т.е. не при открытии конкретной игры, а при самостоятельном запуске), на которой содержатся ссылки на игры, открытые когда-либо игроком. Просто и удобно, открыл плеер, тыкнул на название игры, игра запустилась. Не надо даже в меню лезть.
+
+</p>
+<p>
+Вот такую "полку игр" хотелось бы видеть в Classic QSP, но этого - мало.
+
+</p>
+<p>
+Времена медленного интернета прошли, приложения все теснее интегрируются с Web, поэтому:
+
+</p>
+<p>
+Хотелось бы также видеть на "стартовой страничке" также список игр с сайта - Новые, Популярные, и т.д., в т.ч. список обновлений для уже установленных в системе игр, и ссылку на обновление версии плеера, если оно требуется. Возможно, это следует реализовать не отдельными списками, а одним с переключаемыми сортировками.
+
+</p>
+<p>
+Возможно, к этому добавится что-то еще - например, ссылки на новости сайта, комментарии к играм или сообщения на форуме.
+
+</p>
+<p>
+При такой интерактивной странице "Набор игрока"(напомню, он был введен временно) уже не будет нужен - будет просто инсталлятор плеера, в котором будет "стартовая страница", с которой можно будет загрузить и обновить любую игру одним кликом мышки.
+
+</p>
+<p>
+"Набор игрока" будет упразднен, в будущем он заменится "Коллекциями игр", т.е. списками, составленными по какому-то критерию. Например, серия "Боевики", "Фэнтези", "РПГ", "Ужасы". Возможно, это будет реализовано через теги для игр, которые все еще в планах.
+
+</p>
+<p>
+Разумеется, весь онлайн-контент нужно будет сделать с возможностью отключения в настройках. Одной галочки, пожалуй, будет достаточно. Само собой, при обновлении страницы он не должен блокировать доступ к списку локально загруженных игр.
+
+</p>
+<a id="ИёеТ"></a><h4>Плюсы:</h4>
+<ul>
+<li>
+Игрок всегда в курсе выхода новых игр и обновлений плеера.
+</li>
+<li>
+Любую игру, в которую он играл, можно сразу запустить одним кликом.
+</li>
+<li>
+Публикация информации с сайта в плеере(новости, сообщения на форуме, комментарии к играм) привлечет дополнительное внимание игрока к сайту.
+</li>
+<li>
+Процесс скачивания-запуска игры максимально упростится.
+</li>
+<li>
+Обновить игру до последней версии станет очень просто, и не нужно будет следить за обновлениями - плеер сам будет предлагать обновить игру.
+</li>
+<li>
+Можно будет примерно оценивать активную аудиторию игроков по статистике запросов со "стартовых страниц".
+</li>
+</ul>
+<a id="хиЩV"></a><h3>Требования к играм для попадания в полку игр на Android-плеере</h3>
+<p>
+Требования, которым должна соответствовать игра, чтобы у игрока была возможность нормально играть в нее через "полку игр".
+
+</p>
+<ul>
+<li>
+Игра должна быть упакована в архив zip.
+</li>
+<li>
+Главный(запускаемый) .qsp-файл должен находиться в корне архива, а не во вложенных папках.
+</li>
+<li>
+На одном уровне с главным .qsp-файлом не должно находиться других .qsp-файлов
+</li>
+<li>
+В архиве не должно быть папок и файлов с русскими буквами в имени.
+</li>
+</ul>
+<p>
+Автор: <span class="em_BLCK">Nex</span>
+
+</p>
+<p>
+26.Сен.10 11:29:12
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="emHREFTT">&lt; Назад, к странице 6</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html" class="emHREFTT">Вперёд, к странице 8 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

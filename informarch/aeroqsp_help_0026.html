@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<a id="aeroqsp_help"></a><h2>Справка по AeroQSP (в дополнение к основной справке QSP)</h2>
+<p>
+Для всех элементов оформления рекомендуется использовать формат картинок PNG, с поддержкой альфа-канала (регулируемая прозрачность). Кроме этого, HTML-движок и оператор VIEW поддерживают анимированные GIF-файлы.
+
+</p>
+<a id="ыNQд"></a><h3>Общие параметры</h3>
+<p>
+Здесь даётся список системных переменных для AeroQSP, которые отвечают за различные общие настройки.
+
+</p>
+<p>
+<strong>SCROLL_SPEED</strong> — скорость скроллирования. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">20</span></span>.
+
+</p>
+<p>
+<strong>$UP_ARROW_IMAGE</strong> — путь к изображению со стрелкой вверх (для скроллируемых элементов). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>$DOWN_ARROW_IMAGE</strong> — путь к изображению со стрелкой вниз (для скроллируемых элементов). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>HIDE_SCROLL_ARROWS</strong> — флаг, скрывать стрелки для скроллирования. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>LCOLOR</strong> — цвет ссылок по-умолчанию. Значение по-умолчанию: <span class="em_BLCK"><span class="emFUNC">RGB</span><span class="emOPRT">(</span><span class="emNUM">0</span>,0,255)</span>.
+
+</p>
+<p>
+<strong>FCOLOR</strong> — цвет шрифта по-умолчанию. Значение по-умолчанию: <span class="em_BLCK"><span class="emFUNC">RGB</span><span class="emOPRT">(</span><span class="emNUM">0</span>,0,0)</span>.
+
+</p>
+<p>
+<strong>$FNAME</strong> — название шрифта по-умолчанию. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"_sans"</span></span>.
+
+</p>
+<p>
+<strong>FSIZE</strong> — размер шрифта по-умолчанию. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">18</span></span>.
+
+</p>
+<p>
+<strong>$STYLESHEET</strong> — набор CSS-стилей. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>BCOLOR</strong> — цвет фона. Значение по-умолчанию: <span class="em_BLCK"><span class="emFUNC">RGB</span><span class="emOPRT">(</span><span class="emNUM">229</span>,229,229,204)</span>.
+
+</p>
+<p>
+<strong>USEHTML</strong> — флаг, использовать HTML для текста. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>DISABLESHADE</strong> — флаг, отключить затенение для WAIT и модальных окошек (INPUT, MSG, MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>DISABLESCROLL</strong> — флаг, отключить автоскроллирование для основного / доп. описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>DISABLEAUTOREF</strong> — флаг, отключить автообновление экрана при показе модальных окошек (INPUT, MSG, MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>$NEWLOC_EFFECT</strong> — название эффекта для перехода между локациями. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>NEWLOC_EFFECT_TIME</strong> — время эффекта для перехода между локациями (в миллисекундах). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">500</span></span>.
+
+</p>
+<p>
+<strong>NEWLOC_EFFECT_SEQ</strong> — флаг, использовать последовательное наложение эффектов для перехода между локациями. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<a id="ёIoL"></a><h3>Параметры основного экрана</h3>
+<p>
+Здесь даётся список системных переменных для AeroQSP, которые отвечают за различные настройки основного экрана.
+
+</p>
+<p>
+<strong>$BACKIMAGE</strong> — фоновая картинка для главного экрана. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>$TOPIMAGE</strong> — картинка, накладываемая поверх главного экрана. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>INTEGRATED_ACTIONS</strong> — флаг, использовать совмещенный с основным описанием список действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<a id="йыъk"></a><h4>Основное описание</h4>
+<p>
+<strong>MAINDESC_X</strong> — X-позиция основного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MAINDESC_Y</strong> — Y-позиция основного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MAINDESC_W</strong> — ширина основного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">589</span></span>.
+
+</p>
+<p>
+<strong>MAINDESC_H</strong> — высота основного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">389</span></span>.
+
+</p>
+<p>
+<strong>$MAIN_FORMAT</strong> — формат основного описания. служебное поле %TEXT%. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"%TEXT%"</span></span>.
+
+</p>
+<p>
+<strong>$MAINDESC_BACKIMAGE</strong> — фоновая картинка для основного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<a id="эPён"></a><h4>Дополнительное описание</h4>
+<p>
+<strong>STATDESC_X</strong> — X-позиция дополнительного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">596</span></span>.
+
+</p>
+<p>
+<strong>STATDESC_Y</strong> — Y-позиция дополнительного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">396</span></span>.
+
+</p>
+<p>
+<strong>STATDESC_W</strong> — ширина дополнительного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">200</span></span>.
+
+</p>
+<p>
+<strong>STATDESC_H</strong> — высота дополнительного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">200</span></span>.
+
+</p>
+<p>
+<strong>$STAT_FORMAT</strong> — формат дополнительного описания. служебное поле %TEXT%. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"%TEXT%"</span></span>.
+
+</p>
+<p>
+<strong>$STATDESC_BACKIMAGE</strong> — фоновая картинка для дополнительного описания. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<a id="иrйп"></a><h4>Список действий</h4>
+<p>
+<strong>ACTIONS_X</strong> — X-позиция списка действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>ACTIONS_Y</strong> — Y-позиция списка действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">396</span></span>.
+
+</p>
+<p>
+<strong>ACTIONS_W</strong> — ширина списка действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">589</span></span>.
+
+</p>
+<p>
+<strong>ACTIONS_H</strong> — высота списка действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">169</span></span>.
+
+</p>
+<p>
+<strong>$ACTION_FORMAT</strong> — формат действия. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>$SEL_ACTION_FORMAT</strong> — формат выделенного действия. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;color:#0000FF;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>$ACTIONS_BACKIMAGE</strong> — фоновая картинка для списка действий. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<a id="ЫVAt"></a><h4>Список предметов</h4>
+<p>
+<strong>OBJECTS_X</strong> — X-позиция списка предметов. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">596</span></span>.
+
+</p>
+<p>
+<strong>OBJECTS_Y</strong> — Y-позиция списка предметов. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>OBJECTS_W</strong> — ширина списка предметов. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">200</span></span>.
+
+</p>
+<p>
+<strong>OBJECTS_H</strong> — высота списка предметов. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">389</span></span>.
+
+</p>
+<p>
+<strong>$OBJECT_FORMAT</strong> — формат предмета. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>$SEL_OBJECT_FORMAT</strong> — формат выделенного предмета. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;color:#0000FF;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>$OBJECTS_BACKIMAGE</strong> — фоновая картинка для списка предметов. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<a id="Eосr"></a><h4>Строка ввода</h4>
+<p>
+<strong>USERINPUT_X</strong> — X-позиция строки ввода. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>USERINPUT_Y</strong> — Y-позиция строки ввода. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">568</span></span>.
+
+</p>
+<p>
+<strong>USERINPUT_W</strong> — ширина строки ввода. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">589</span></span>.
+
+</p>
+<p>
+<strong>USERINPUT_H</strong> — высота строки ввода. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">28</span></span>.
+
+</p>
+<a id="GjhI"></a><h4>Окно изображения VIEW</h4>
+<p>
+<strong>VIEW_X</strong> — X-позиция области картинки для оператора VIEW. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">250</span></span>.
+
+</p>
+<p>
+<strong>VIEW_Y</strong> — Y-позиция области картинки для оператора VIEW. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">150</span></span>.
+
+</p>
+<p>
+<strong>VIEW_W</strong> — ширина области картинки для VIEW. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">300</span></span>.
+
+</p>
+<p>
+<strong>VIEW_H</strong> — ширина области картинки для VIEW. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">300</span></span>.
+
+</p>
+<p>
+<strong>$VIEW_EFFECT</strong> — название эффекта для показа/скрытия картинок через VIEW. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>VIEW_EFFECT_TIME</strong> — время эффекта для VIEW (в миллисекундах). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">500</span></span>.
+
+</p>
+<p>
+<strong>ALWAYS_SHOW_VIEW</strong> — флаг, не скрывать картинку при клике на ней. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>$INPUT_BACKIMAGE</strong> — путь к фоновой картинке для диалога INPUT (задает размеры диалога). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<a id="XIГг"></a><h3>Параметры диалога ввода INPUT</h3>
+<p>
+Здесь даётся список системных переменных для AeroQSP, которые отвечают за различные настройки диалогового окна, вызываемого функцией <span class="em_BLCK"><span class="emFUNC">$INPUT</span></span>.
+
+</p>
+<p>
+<strong>INPUT_X</strong> — X-позиция диалога INPUT (если X или Y меньше 0, то показывает диалог в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">200</span></span>.
+
+</p>
+<p>
+<strong>INPUT_Y</strong> — Y-позиция диалога INPUT (если X или Y меньше 0, то показывает диалог в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">165</span></span>.
+
+</p>
+<p>
+<strong>$INPUT_FORMAT</strong> — формат описания в диалоге INPUT. служебное поле %TEXT%. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"%TEXT%"</span></span>.
+
+</p>
+<p>
+<strong>INPUT_TEXT_X</strong> — X-позиция описания в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>INPUT_TEXT_Y</strong> — Y-позиция описания в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>INPUT_TEXT_W</strong> — ширина описания в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">392</span></span>.
+
+</p>
+<p>
+<strong>INPUT_TEXT_H</strong> — высота описания в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">231</span></span>.
+
+</p>
+<p>
+<strong>INPUT_BAR_X</strong> — X-позиция строки ввода в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>INPUT_BAR_Y</strong> — Y-позиция строки ввода в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">238</span></span>.
+
+</p>
+<p>
+<strong>INPUT_BAR_W</strong> — ширина строки ввода в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">312</span></span>.
+
+</p>
+<p>
+<strong>INPUT_BAR_H</strong> — высота строки ввода в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">28</span></span>.
+
+</p>
+<p>
+<strong>$INPUT_OK_IMAGE</strong> — путь к картинке для кнопки OK в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>INPUT_OK_X</strong> — X-позиция кнопки OK в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">324</span></span>.
+
+</p>
+<p>
+<strong>INPUT_OK_Y</strong> — Y-позиция кнопки OK в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">239</span></span>.
+
+</p>
+<p>
+<strong>$INPUT_CANCEL_IMAGE</strong> — путь к картинке для кнопки CANCEL в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>INPUT_CANCEL_X</strong> — X-позиция кнопки CANCEL в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">362</span></span>.
+
+</p>
+<p>
+<strong>INPUT_CANCEL_Y</strong> — Y-позиция кнопки CANCEL в диалоге INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">239</span></span>.
+
+</p>
+<p>
+<strong>$INPUT_EFFECT</strong> — название эффекта для показа/скрытия диалога INPUT. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>INPUT_EFFECT_TIME</strong> — время эффекта для INPUT (в миллисекундах). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">500</span></span>.
+
+</p>
+<a id="ъhущ"></a><h3>Параметры диалога сообщения MSG</h3>
+<p>
+Здесь даётся список системных переменных для AeroQSP, которые отвечают за различные настройки диалогового окна, вызываемого оператором <span class="em_BLCK"><span class="emOPRT">MSG</span></span>.
+
+</p>
+<p>
+<strong>$MSG_BACKIMAGE</strong> — путь к фоновой картинке для диалога MSG (задает размеры диалога). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>MSG_X</strong> — X-позиция диалога MSG (если X или Y меньше 0, то показывает диалог в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">200</span></span>.
+
+</p>
+<p>
+<strong>MSG_Y</strong> — Y-позиция диалога MSG (если X или Y меньше 0, то показывает диалог в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">165</span></span>.
+
+</p>
+<p>
+<strong>$MSG_FORMAT</strong> — формат описания в диалоге MSG. служебное поле %TEXT%. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"%TEXT%"</span></span>.
+
+</p>
+<p>
+<strong>MSG_TEXT_X</strong> — X-позиция описания в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MSG_TEXT_Y</strong> — Y-позиция описания в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MSG_TEXT_W</strong> — ширина описания в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">392</span></span>.
+
+</p>
+<p>
+<strong>MSG_TEXT_H</strong> — высота описания в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">231</span></span>.
+
+</p>
+<p>
+<strong>$MSG_OK_IMAGE</strong> — путь к картинке для кнопки OK в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>MSG_OK_X</strong> — X-позиция кнопки OK в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">186</span></span>.
+
+</p>
+<p>
+<strong>MSG_OK_Y</strong> — Y-позиция кнопки OK в диалоге MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">239</span></span>.
+
+</p>
+<p>
+<strong>$MSG_EFFECT</strong> — название эффекта для показа/скрытия диалога MSG. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>MSG_EFFECT_TIME</strong> — время эффекта для MSG (в миллисекундах). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">500</span></span>.
+
+</p>
+<a id="KкЁД"></a><h3>Параметры меню MENU</h3>
+<p>
+Здесь даётся список системных переменных для AeroQSP, которые отвечают за различные настройки всплывающего меню, которое появляется при использовании оператором <span class="em_BLCK"><span class="emOPRT">MENU</span></span>.
+
+</p>
+<p>
+<strong>FIXED_SIZE_MENU</strong> — флаг, использовать фиксированную высоту всплывающего меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">0</span></span>.
+
+</p>
+<p>
+<strong>MENU_PADDING</strong> — отступ списка меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MENU_BORDER</strong> — толщина границы меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">1</span></span>.
+
+</p>
+<p>
+<strong>MENU_BORDER_COLOR</strong> — цвет границы меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emFUNC">RGB</span><span class="emOPRT">(</span><span class="emNUM">64</span>,64,64,150)</span>.
+
+</p>
+<p>
+<strong>$MENU_BACKIMAGE</strong> — путь к фоновой картинке для всплывающего меню (задает размеры меню при FIXED_SIZE_MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>MENU_X</strong> — X-позиция всплывающего меню (если X или Y меньше 0, то показывает меню в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK">-1</span>.
+
+</p>
+<p>
+<strong>MENU_Y</strong> — Y-позиция всплывающего меню (если X или Y меньше 0, то показывает меню в позиции курсора мыши). Значение по-умолчанию: <span class="em_BLCK">-1</span>.
+
+</p>
+<p>
+<strong>$MENU_FORMAT</strong> — формат пункта всплывающего меню. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>$SEL_MENU_FORMAT</strong> — формат выделенного пункта всплывающего меню. служебные поля %TEXT%, %IMAGE% (путь к файлу картинки). Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">"&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src='%IMAGE%'/&gt;&lt;/td&gt;&lt;td style='width:100%;color:#0000FF;'&gt;%TEXT%&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"</span></span>.
+
+</p>
+<p>
+<strong>MENU_LIST_X</strong> — X-позиция элементов списка меню (при FIXED_SIZE_MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MENU_LIST_Y</strong> — Y-позиция элементов списка меню (при FIXED_SIZE_MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">4</span></span>.
+
+</p>
+<p>
+<strong>MENU_LIST_W</strong> — ширина списка меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">153</span></span>.
+
+</p>
+<p>
+<strong>MENU_LIST_H</strong> — высота списка меню (при FIXED_SIZE_MENU). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">123</span></span>.
+
+</p>
+<p>
+<strong>$MENU_EFFECT</strong> — название эффекта для показа/скрытия всплывающего меню. Значение по-умолчанию: <span class="em_BLCK"><span class="emTEXT">""</span></span>.
+
+</p>
+<p>
+<strong>MENU_EFFECT_TIME</strong> — время эффекта для MENU (в миллисекундах). Значение по-умолчанию: <span class="em_BLCK"><span class="emNUM">500</span></span>.
+
+</p>
+<a id="DЫЦЛ"></a><h3>Список эффектов (для $NEWLOC_EFFECT, $VIEW_EFFECT, $INPUT_EFFECT, $MSG_EFFECT, $MENU_EFFECT)</h3>
+<ul>
+<li>
+fade
+</li>
+<li>
+quake
+</li>
+<li>
+blur
+</li>
+<li>
+h_blinds
+</li>
+<li>
+v_blinds
+</li>
+<li>
+l_slide
+</li>
+<li>
+r_slide
+</li>
+<li>
+u_slide
+</li>
+<li>
+d_slide
+</li>
+<li>
+iris
+</li>
+<li>
+photo
+</li>
+<li>
+pixels
+</li>
+<li>
+rotate
+</li>
+<li>
+v_squeeze
+</li>
+<li>
+h_squeeze
+</li>
+<li>
+zoom
+</li>
+<li>
+wipe1
+</li>
+<li>
+wipe2
+</li>
+<li>
+wipe3
+</li>
+<li>
+wipe4
+</li>
+</ul>
+<a id="UmTZ"></a><h3>Поддержка HTML</h3>
+<p>
+Текущая версия HTML-движка ориентирована на использование стилей, а не простых аттрибутов элементов.
+
+</p>
+<p>
+Поддерживаемые теги:
+
+</p>
+<ul>
+<li>
+DIV
+</li>
+<li>
+TABLE
+</li>
+<li>
+TR
+</li>
+<li>
+TD
+</li>
+<li>
+TH
+</li>
+<li>
+CENTER
+</li>
+<li>
+A
+</li>
+<li>
+IMG
+</li>
+<li>
+BR
+</li>
+<li>
+P
+</li>
+<li>
+B
+</li>
+<li>
+I
+</li>
+<li>
+U
+</li>
+<li>
+FONT
+</li>
+<li>
+SPAN
+</li>
+<li>
+LI
+</li>
+<li>
+OL
+</li>
+<li>
+UL
+</li>
+</ul>
+<p>
+Поддерживаемые свойства:
+
+</p>
+<ul>
+<li>
+width (проценты, пиксели)
+</li>
+<li>
+height (только пиксели)
+</li>
+<li>
+position ("absolute")
+</li>
+<li>
+left (пиксели)
+</li>
+<li>
+top (пиксели)
+</li>
+<li>
+border
+</li>
+<li>
+border-width
+</li>
+<li>
+border-style
+</li>
+<li>
+border-color
+</li>
+<li>
+display ("inline")
+</li>
+<li>
+float ("left")
+</li>
+<li>
+text-align ("left", "right", "center")
+</li>
+<li>
+vertical-align ("top", "middle", "bottom")
+</li>
+<li>
+font-family
+</li>
+<li>
+font-size
+</li>
+<li>
+font-style
+</li>
+<li>
+font-weight
+</li>
+<li>
+leading
+</li>
+<li>
+letter-spacing
+</li>
+<li>
+margin-left
+</li>
+<li>
+margin-right
+</li>
+<li>
+text-decoration
+</li>
+<li>
+text-indent
+</li>
+<li>
+color
+</li>
+<li>
+padding
+</li>
+<li>
+padding-left
+</li>
+<li>
+padding-top
+</li>
+<li>
+padding-right
+</li>
+<li>
+padding-bottom
+</li>
+<li>
+background-color
+</li>
+<li>
+background-image
+</li>
+</ul>
+<a id="BЖWЬ"></a><h3>Встраиваемые шрифты</h3>
+<p>
+AeroQSP поддерживает встраивание шрифтов в игру. Для этого необходимо swf-файл со встроенным шрифтом положить в zip-архив игры (в любую папку). Использование встроенного шрифта аналогично использованию обычного системного шрифта - там, где необходимо, указывается его имя. При наличии в архиве игры хотя бы одного встроенного шрифта, использование системных шрифтов запрещено.
+
+</p>
+<a id="GxШК"></a><h3>Звуки и музыка</h3>
+<p>
+Поддерживается воспроизведение MP3-файлов.
+
+</p>
+<a id="QQgf"></a><h3>Файл конфигурации</h3>
+<p>
+Конфигурация игры дополнительно настраивается в файле "config.xml", который необходимо разместить в архиве рядом с qsp-файлом. Пример файла "config.xml":
+
+</p>
+<div class="Monokai-Code">
+&lt;<span class="Monokai-TagName">game</span>&nbsp;<span class="Monokai-Markup">width</span>=<span class="Monokai-String">"504"</span>&nbsp;<span class="Monokai-Markup">height</span>=<span class="Monokai-String">"680"</span>&nbsp;<span class="Monokai-Markup">title</span>=<span class="Monokai-String">"Чашка&nbsp;кофе"</span>/&gt;<br>
+
+
+</div>
+<p>
+Здесь:
+
+</p>
+<p>
+<strong>width</strong> — указывает ширину экрана игры в пикселях
+
+</p>
+<p>
+<strong>height</strong> — указывает высоту экрана игры в пикселях
+
+</p>
+<p>
+<strong>title</strong> — название игры (отображается в заголовке окна)
+
+</p>
+<p>
+Кодировка файла - <span class="em_BLCK">UTF-8</span>.
+
+</p>
+<p>
+PS: По умолчанию размер экрана игры <span class="em_BLCK"><span class="emNUM">800</span>x<span class="emNUM">600</span></span> пикселей.
+
+</p>
+<a id="ЗbЦУ"></a><h5>Примечание Aleks Versus:</h5>
+<blockquote>
+<p>
+AeroQSP — плеер, работающий на устаревшей и отжившей своё технологии Flash. Adobe прекратила поддержку данной технологии, что означает, что AeroQSP стало невозможно использовать. Игры AeroQSP можно пробовать запустить на <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004#qspider_0120" style="text-decoration:none;" class="emFOLD">qSpider</a>, но это так же потребует танцев с бубнами. Лучше писать игры сразу для qSpider, не уповая на то, что он поддерживает AeroQSP.
+</p>
+
+</blockquote>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<a id="soderzhanije"></a><h2>Содержание</h2>
+<ul>
+<li>
+
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>
