@@ -10,4 +10,4 @@ stamp_gamrus.innerHTML = ds.getFullYear();
 /* Исправляем заголовок */
 var title = document.title;
 var head = document.body.getElementsByTagName('h2')[0];
-document.title = title + " - "+head;
+document.title = title + " - "+head.innerHTML;
