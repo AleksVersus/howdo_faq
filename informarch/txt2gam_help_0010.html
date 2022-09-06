@@ -6,7 +6,6 @@
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: ИнформАрхив</title>
 </head>
     
@@ -16,7 +15,7 @@
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
 <div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="emHREFTT">&lt; Назад, к странице 9</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">Вперёд, к странице 11 &gt;</a></div></div>
-<a id="txt2gam_manual"></a><h2>TXT2GAM. Краткое руководство</h2>
+<a id="informarch_txt2gam_manual"></a><h2>TXT2GAM. Краткое руководство</h2>
 <p>
 Утилита "TXT2GAM" ("txt2gam.exe") предназначена для конвертирования текстовых файлов, написанных в специальном формате, в файлы QSP-игр <span class="em_BLCK">.qsp</span>. Таким образом вы можете создавать игры в обычном текстовом редакторе, а затем конвертировать их в приемлемые для плееров файлы.
 
@@ -25,7 +24,7 @@
 <a href="https://qsp.org/attachments/txt2gam011.zip" style="text-decoration:none;" class="emFOLD">Скачать утилиту</a>
 
 </p>
-<a id="aеЭN"></a><h3>Формат TXT2GAM</h3>
+<a id="СГFЪ"></a><h3>Формат TXT2GAM</h3>
 <p>
 Файлы в формате TXT2GAM — это обычные текстовые файлы, в которых мы размещаем код QSP, при этом данный код нужно записывать по определённым правилам.
 
@@ -126,7 +125,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><b
 Внимание! Для формата TXT2GAM не предусмотрено редактирование базового описания и базовых действий. Поэтому при экспорте игры из Quest Generator в формат TXT2GAM будьте внимательны: все базовые описания и базовые действия будут экспортированы в основной код локаций. Если впоследствии вы импортируете игру обратно из TXT2GAM-файла в Quest Generator, то поля "Описание" и "Базовые действия" во всех локациях окажутся пустыми.
 
 </p>
-<a id="EщgA"></a><h3>Использование утилиты TXT2GAM</h3>
+<a id="сКщq"></a><h3>Использование утилиты TXT2GAM</h3>
 <p>
 TXT2GAM — это консольная утилита, т.е. она запускается командами из консоли, например из командной строки Windows. Ознакомиться с основными командами командной строки вы можете в обучающей статье <a href="https://sonikelf.ru/vvodnaya-statya-po-rabote-v-konsoli-chto-takoe-konsol-komandy-konsoli-i-prochee-takoe-raznoe-cmd/" style="text-decoration:none;" class="emFOLD">"Что такое консоль, команды и прочее такое разное — CMD"</a>.
 
@@ -194,8 +193,8 @@ txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp&nbsp;u<br>
 
 
 </div>
-<a id="ЕФОк"></a><h3>Дополнительные возможности утилиты</h3>
-<a id="ЕУJй"></a><h4>Использование</h4>
+<a id="Вшьi"></a><h3>Дополнительные возможности утилиты</h3>
+<a id="мbЗВ"></a><h4>Использование</h4>
 <p>
 Общий вид команды для консоли:
 
@@ -204,7 +203,7 @@ txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp&nbsp;u<br>
 txt2gam&nbsp;[txt&nbsp;file]&nbsp;[output&nbsp;file]&nbsp;[options]<br>
 
 </div>
-<a id="ЧBrД"></a><h4>Опции. [Options]</h4>
+<a id="eQFф"></a><h4>Опции. [Options]</h4>
 <p>
 a, A — режим ANSI. По-умолчанию утилита работает в режиме Unicode (UCS-2 / UTF-16).
 
@@ -237,7 +236,7 @@ t, T — извлечь строки из текста.
 q, Q - извлечь q-строки из текста.
 
 </p>
-<a id="дVyч"></a><h4>Примеры вызова:</h4>
+<a id="УчХw"></a><h4>Примеры вызова:</h4>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;pMyPassword<br>
 txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp<br>
@@ -252,7 +251,7 @@ txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;s@&nbsp;e~&nbsp;o<br>
 txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;t&nbsp;u<br>
 
 </div>
-<a id="eЁtа"></a><h3>Подключение утилиты к текстовому редактору</h3>
+<a id="PGpI"></a><h3>Подключение утилиты к текстовому редактору</h3>
 <p>
 При разработке игр в текстовом редакторе, очень полезным может оказаться создание специального действия / кнопки для автоматической компиляции файла в <span class="em_BLCK">.qsp</span> и запуска плеера сразу с редактируемым файлом.
 
@@ -347,7 +346,7 @@ txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;pMyPassword<br>
 txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;"pMy&nbsp;Pass&nbsp;word"<br>
 
 </div>
-<a id="РщРq"></a><h4>Примечания:</h4>
+<a id="ЦnJЫ"></a><h4>Примечания:</h4>
 <ol>
 <li>
 В настоящий момент общепринятым расширением для текстовых файлов формата TXT2GAM можно считать <span class="em_BLCK">.qsps</span>. "Просто потому что" (с) <a href="https://github.com/gretmn102/QSP-VSCode#допустим-я-хочу-попробовать" style="text-decoration:none;" class="emFOLD">Pseudopod</a>.
@@ -388,10 +387,122 @@ Werewolf разработал утилиту для конвертировани
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="soderzhanije"></a><h2>Содержание</h2>
+<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
+<a id="шlШm"></a><h3>Большой сборник полезных ссылок и закладок</h3>
 <ul>
 <li>
-
+<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
+</li>
+</ul>
+<a id="дхdJ"></a><h3>Что такое QSP</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
+</li>
+</ul>
+<a id="пХЮZ"></a><h3>Общие вопросы и решения</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
+</li>
+</ul>
+<a id="ЯfЙЗ"></a><h3>Продвинутый QSP</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
+</li>
+</ul>
+<a id="тедД"></a><h3>Работа в текстовом редакторе</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
+</li>
+</ul>
+<a id="ЦmHz"></a><h3>Вопросы по программированию</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
+</li>
+</ul>
+<a id="IЦцж"></a><h3>Обновления плеера</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
+</li>
+</ul>
+<a id="WхTl"></a><h3>Вопросы по AeroQSP</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
+</li>
+</ul>
+<a id="pбuF"></a><h3>Обзоры игр</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
 </li>
 </ul>
         </div>

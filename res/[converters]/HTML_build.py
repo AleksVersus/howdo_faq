@@ -35,8 +35,8 @@ def main(html_json):
 if __name__=="__main__":
 	# названия файлов, из которых берём сборку
 	html_json=[
-		"..\\..\\[source]\\готовые статьи\\html.json",
-		"..\\..\\[source]\\ответы\\html.json",
+		# "..\\..\\[source]\\готовые статьи\\html.json",
+		# "..\\..\\[source]\\ответы\\html.json",
 		"..\\..\\[source]\\ИнформАрхив QSP\\html.json"
 	]
 	for path in html_json:
