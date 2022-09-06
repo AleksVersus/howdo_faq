@@ -33,17 +33,12 @@ blockquote {
     align-items: center;
 }
 
-#soderzhanije_close {
-    display:flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
 .soderzhanije {
     background-color: white;
     overflow: auto;
     box-sizing: border-box;
     max-height:90%;
+    max-width:75%;
     padding:1em;
     border:1px solid;
     align-self:flex-start;
