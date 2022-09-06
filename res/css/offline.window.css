@@ -46,16 +46,35 @@ blockquote {
 
 .em_AROUND {
     max-width:840px;
+    width:100%;
     overflow: auto;
     box-sizing: border-box;
     height:99%;
+    background: #fff694;
+    padding:0.75em;
+    border: 2px solid #666;
+    border-radius: 5px;
+    font-family: Arial, serif;
 }
+
 .em_btn {
     display:flex;
-    background: rgba(255, 246, 148, 0.86);
+/*    rgba(255, 246, 148, 0.86)*/
+    background: rgba(251, 255, 148, 0.86);
     justify-content: space-between;
     position: sticky;
-    bottom: 0;
+    bottom: -0.6em;
+
+/*
+    border:solid 1px #00000055;
+    border-radius: 2px;
+*/
+}
+
+.em_btn > div {
+    border:solid 1px #00888855;
+    border-radius:2px;
+    box-shadow:0 0 0.25em 0.1em rgba(83, 40, 40, 0.94);
 }
 
 .cmd > li {
@@ -66,16 +85,6 @@ blockquote {
 .cmd > li:hover {
     background: #ffffff11;
     border-radius: 3px;
-}
-
-/* прилипчивый блок внизу */
-.stickUP {
-    text-align: right;
-    position: sticky;
-    bottom: 0;
-}
-.stickUP img {
-    max-height:50px;
 }
 
 /* стилизация скроллов */

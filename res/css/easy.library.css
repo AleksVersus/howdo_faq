@@ -1,14 +1,5 @@
 /* ---------------------- easy.libraries -------------------------- */
-.em_AROUND {
- box-sizing:border-box;
- color:#000000;
- background: #fff694;
- padding:0.75em;
- width:100%;
- border: 2px solid #666;
- border-radius: 5px;
- font-family: Arial, serif;
-}
+
 .em_AROUND h1 {
  padding:0.25em 0;
  text-align: center;
