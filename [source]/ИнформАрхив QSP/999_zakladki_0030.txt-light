@@ -1,27 +1,21 @@
 ==Подборка ссылок на различные ресурсы, справки и статьи==
 [:informarch_bookmarks]
 
-* [Локализация классического плеера QSP v.5.7.0](https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57)
-* [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57)
-* [Конвертер QSP at TXT2GAM](https://codepen.io/srg-kostyrko/pen/QWqdwxv)
-* [IFWiki о русской интерактивной литературе (текстовых играх)](http://ifwiki.ru" href="http://ifwiki.ru)
-* [Библиотека URQ](https://urq.plut.info/texts)
-
 =Официальный сайт QSP=
 
 [QSP.ORG](https://qsp.org)
 
 =Наша группа во Вконтакте=
 
-https://vk.com/qsplayer
+[vk.com/qsplayer](https://vk.com/qsplayer)
 
 =Программы=
 
-Основные репозитории QSP: https://github.com/QSPFoundation
+Основные репозитории QSP: [GitHub/QSPFoundation](https://github.com/QSPFoundation)
 
 --Плееры, редакторы, конвертеры, анализаторы--
 
-ПРОГРАММЫ (не все, архив Aleks Versus): https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A
+ПРОГРАММЫ (не все, архив Aleks Versus): [MEGA.nz/Programms](https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A)
 
 Сюда входят:
 
@@ -47,7 +41,7 @@ QSP-Анализатор — программа для анализа кода
 
 --Пакет qsp-конвертеров--
 
-https://www.npmjs.com/package/@qsp/converters
+[www.npmjs.com/qsp-converters](https://www.npmjs.com/package/@qsp/converters)
 
 Пакет для работы с текстовым и бинарным форматом qsp от Werewolf. Если кому-то захочется поиграться - там специально сделано что IO операции не часть пакета (чтобы его можно было в браузере(qspider) и в nodejs использовать), поэтому четние/запись файла нужно делать средствами nodejs.
 
@@ -55,68 +49,83 @@ https://www.npmjs.com/package/@qsp/converters
 
 Утилита `Werewolf`а для конвертирования QSP-файла в текстовый файл формата TXT2GAM
 
- https://codepen.io/srg-kostyrko/full/QWqdwxv
+ [codepen.io/qsp@txt2gam-converster](https://codepen.io/srg-kostyrko/full/QWqdwxv)
 
 =Плеер | Различные версии плееров | Players=
 
 На официальном сайте:
-	[https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87](https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87)
+	[https://qsp.org/index.php?...&Itemid=87](https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87)
 
 =Quest Player fork от SeedHartha для Android | Плеер для Андроид=
 
-Репозиторий: https://github.com/seedhartha/QuestPlayer
-Релизные версии: https://github.com/seedhartha/QuestPlayer/releases
+Репозиторий: [GitHub/seedhartha/QuestPlayer](https://github.com/seedhartha/QuestPlayer)
+Релизные версии: [GitHub/seedhartha/QuestPlayer/releases](https://github.com/seedhartha/QuestPlayer/releases)
 
 =Справка | Видеоуроки=
 
-Видео-уроки и другая справочная информация в видеоформате по QSP: https://www.youtube.com/c/aleksversus
+Видео-уроки и другая справочная информация в видеоформате по QSP: [youtube.com/aleksversus](https://www.youtube.com/c/aleksversus)
 
 =Справка | Справочник "Как сделать?"=
 
-Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su: https://aleksversus.github.io/howdo_faq
+[Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su](https://aleksversus.github.io/howdo_faq)
 
-Офлайн-версию справочника можно скачать здесь: https://github.com/AleksVersus/howdo_faq/releases
+Офлайн-версию справочника можно скачать здесь: [GitHub/howdo_faq/releases](https://github.com/AleksVersus/howdo_faq/releases)
 
 =Справка | wiki.qsp.org=
 
-Официальная справка: https://wiki.qsp.org
-Резервная копия официальной справки на 20 июня 2022 года: https://mega.nz/folder/vG4XzSoZ#gf0jU0FFdWHpgJnN8eAaGA
+Официальная справка: [wiki.qsp.org](https://wiki.qsp.org)
+Резервная копия официальной справки на 20 июня 2022 года: [MEGA.nz/official_helpful](https://mega.nz/folder/vG4XzSoZ#gf0jU0FFdWHpgJnN8eAaGA)
 
 =Examples | Примеры=
 
 Некоторые примеры: диалоги, как делать меню, календарь (время), работа с предметами, простые примеры, события по таймеру, шкалы и прогресс-бары
 
-https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw
+[MEGA.nz/Example](https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw)
 
 =Игры=
 
-Архив Крема (не только QSP-игры): https://db.crem.xyz/game
-Архив игр в библиотеке РИЛ (не полный): http://rilarhiv.ru/qsp.htm
-Игры QSP-Compo 2022 на Яндекс-диске: https://disk.yandex.ru/d/sPZYHymJiwjJkA
-Игры на QSP. Не все, но многие. Архив Aleks Versus: https://mega.nz/folder/7XgTQKqT#P4q_86iTd0mZulCWw-Vq9w
+Архив Крема (не только QSP-игры): [db.crem.xyz/game](https://db.crem.xyz/game)
+Архив игр в библиотеке РИЛ (не полный): [rilarhiv/qsp-game](http://rilarhiv.ru/qsp.htm)
+Игры QSP-Compo 2022: [На Яндекс-Диске](https://disk.yandex.ru/d/pT_rzlnpiLrb8A), [На Google-диске](https://drive.google.com/file/d/1k_arFi0zjEVjYp8fUNu-KIctbVAAJVhm/view)
+Игры на QSP. Не все, но многие. Архив Aleks Versus: [MEGA.nz/QSP-Game All](https://mega.nz/folder/7XgTQKqT#P4q_86iTd0mZulCWw-Vq9w)
 
 --Вереница миров, или Выводы из закона Мерфи--
-книга-игра Ольги Голотвиной, реализованная на qSpider: https://aleksversus.github.io/merphy_law
+книга-игра Ольги Голотвиной, реализованная на qSpider: [aleksversus.github.io/merphy_law](https://aleksversus.github.io/merphy_law)
 
 --Демка плеера qSpider--
 Демонстрация работы qSpider онлайн. Три игры:
 Сказочка на ночь, Куртуазная баллада, Город туманов
-https://qspfoundation.github.io/qspider
+
+[qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
 
 =qSpider | Плеер=
 
 Отличается от классического плеера возможностью полноценно работать с HTML, назначать горячие клавиши, размещать игру онлайн у себя на сайте и другими интересными плюшками.
 
-Основной репозиторий qSpider — нового плеера от Werewolf: https://github.com/QSPFoundation/qspider
-Страница релизов нового плеера qSpider от Werewolf: https://github.com/QSPFoundation/qspider/releases
+Основной репозиторий qSpider — нового плеера от Werewolf: [GitHub/QSPFoundation/qspider](https://github.com/QSPFoundation/qspider)
+Страница релизов нового плеера qSpider от Werewolf: [GitHub/QSPFoundation/qspider/releases](https://github.com/QSPFoundation/qspider/releases)
+Демка с тремя играми: [qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
 
-=Темы и статьи с различными решениями на QSP=
+Статья по работе с плеером: [vk.com/qSpider v.0.12.0](https://m.vk.com/@qsplayer-qspider-v-0120-svodnaya-statya?context=author_page_date&ref=author_page), [medium/qSpider v.0.12.0](https://discord.com/channels/373163463842725891/994958390524657685/994967462871306280)
+
+Видеоурок по работе с плеером: [https://youtu.be/bEjRzTDsPp4](https://youtu.be/bEjRzTDsPp4)
+
+=Инструмент для построения полного графа книг игр от Larkin=
+
+[quest-book.ru/forum/topic/3776](https://quest-book.ru/forum/topic/3776)
+Необходимо зайти на [сервер интерактивной литературы в дискорде](https://discord.gg/KYCXC2R2W6) и затем пройти по этой ссылке: [discord/getGraphTool](https://discord.com/channels/373163463842725891/373188009715040266/997120867769253939)
+
+=Темы и статьи с различными решениями на QSP (форум QSP.org)=
 	
 	* [F.A.Q общие вопросы и некоторые примеры](https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57)
 	* [Календарь по методу счёта Юлианских дней](https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57)
 	* [Гибкий плейлист 1.0](https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
-	* [Библиотечка, дополняющая инвентарь]( https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
+	* [Библиотечка, дополняющая инвентарь](https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
 	* [Действие по условию](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57)
+	* [Локализация классического плеера QSP v.5.7.0](https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57)
+	* [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57)
+	* [IFWiki о русской интерактивной литературе (текстовых играх)](http://ifwiki.ru)
+	* [Библиотека URQ](https://urq.plut.info/texts)
 
 =О лицензиях=
 
