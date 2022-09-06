@@ -60,7 +60,7 @@ blockquote {
 .em_btn {
     display:flex;
 /*    rgba(255, 246, 148, 0.86)*/
-    background: rgba(251, 255, 148, 0.86);
+    background: rgba(255, 246, 148, 0.86);
     justify-content: space-between;
     position: sticky;
     bottom: -0.6em;
