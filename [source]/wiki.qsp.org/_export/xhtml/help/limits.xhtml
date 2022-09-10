@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:limits</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,limits"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/limits"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/limits"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:limits","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h2 class="sectionedit1" id="ogranichenija_qsp">Ограничения QSP</h2>
+<div class="level2">
+
+<p>
+При написании игр на QSP необходимо учитывать следующие ограничения:
+</p>
+<ul>
+<li class="level1"><div class="li"> Максимальное число одновременно видимых действий на локации: 50 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число подключаемых файлов QSP (<a href="/help/modules" class="wikilink1" title="help:modules">модулей</a>): 100 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число аргументов: 10 </div>
+</li>
+<li class="level1"><div class="li"> Максимальная вложенность выражений: 30 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число операторов в выражении(на одном уровне вложенности): 100 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число пунктов всплывающего пользовательского меню: 100 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число предметов в инвентаре: 1000 </div>
+</li>
+<li class="level1"><div class="li"> Максимальное число одновременно проигрываемых звуков: 500 </div>
+</li>
+</ul>
+
+<p>
+Длина строки теоретически ограничена только объемом доступной оперативной памяти, либо размером типа &quot;int&quot;: 2 гигабайта текста. 
+</p>
+
+<p>
+Числовые переменные принимают значения от <strong>-2147483647</strong> до <strong>2147483647</strong>.
+</p>
+
+<p>
+Количество переменных ограничено 12800, при этом не допускается более 50 переменных с одинаковым <a href="http://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%81%D1%83%D0%BC%D0%BC%D0%B0" class="urlextern" title="http://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%81%D1%83%D0%BC%D0%BC%D0%B0"  rel="nofollow">хэшем</a> имени.
+</p>
+
+<p>
+Количество элементов массива ограничено размерностью &quot;int&quot;, в зависимости от того, как собрана библиотека, 32768 или <strong>2147483648</strong> соответственно.
+</p>
+
+<p>
+Количество локаций ограничено размером типа &quot;int&quot;. В зависимости от того, как собрана библиотека, &quot;int&quot; будет ограничивать либо 32768, либо <strong>2147483648</strong> локаций.
+</p>
+
+</div>
+</div>
+</body>
+</html>

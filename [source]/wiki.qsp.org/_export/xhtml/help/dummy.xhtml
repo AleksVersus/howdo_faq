@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:dummy</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,dummy"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/dummy"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/dummy"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:dummy","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<strong>Создание многомерного массива (вложенного):</strong>
+</p>
+
+<p>
+1) Использование массивов, индексируемых через строки.<pre class="brush: qsp">
+$карта_вещь[&#039;&lt;&lt;x&gt;&gt;_&lt;&lt;y&gt;&gt;&#039;] = &#039;палка&#039;
+карта_нпс[&#039;&lt;&lt;x&gt;&gt;,&lt;&lt;y&gt;&gt;,&lt;&lt;z&gt;&gt;&#039;] = 12
+</pre>
+2) Отображение многомерного массива на одномерный.<pre class="brush: qsp">
+$карта_вещь[x+y*ширина] = &#039;палка&#039;
+карта_нпс[x+y*ширина+z*ширина*высота] = 12
+</pre>
+</p>
+
+<p>
+<strong>Работа с массивом, название которого хранится в переменной:</strong>
+</p>
+
+<p>
+1) Временное перемещение в другой массив с помощью COPYARR с последующим возвратом (главное не забыть вернуть).<pre class="brush: qsp">
+$arr[] = &#039;test1&#039;
+$arr[] = &#039;test2&#039;
+$array_var = &#039;$arr&#039;
+copyarr &#039;$tmp_array&#039;, $array_var
+$tmp_array[] = &#039;test3&#039;
+copyarr $array_var, &#039;$tmp_array&#039;
+</pre>
+2) Динамическая генерация с помощью DYNEVAL и DYNAMIC:<pre class="brush: qsp">
+$arr[] = &#039;test1&#039;
+$arr[] = &#039;test2&#039;
+$array_var = &#039;$arr&#039;
+dynamic &quot;&lt;&lt;$array_var&gt;&gt;[] = &#039;test3&#039;&quot;
+!Нужно чётко представлять как будет выглядеть строка после замены подстрок.
+!Через DYNEVAL получаем первый элемент из предыдущего примера:
+$needed_data = dyneval(&quot;$result = &lt;&lt;$array_var&gt;&gt;[0]&quot;)
+</pre>
+</p>
+</div>
+</body>
+</html>

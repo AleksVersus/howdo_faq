@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:service_locations</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,service_locations"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/service_locations"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/service_locations"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:service_locations","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<a href="/help/principle" class="wikilink1" title="help:principle">Назад: Порядок работы интерпретатора</a>
+</p>
+
+<h2 class="sectionedit1" id="sluzhebnye_lokacii">Служебные локации</h2>
+<div class="level2">
+
+<p>
+В QSP есть возможность сделать так, что бы локация выполнялась каждый раз при возникновении определенного события. Для этого нужно присвоить название локации предназначенной для этого системной переменной. Выполнение локации происходит также, как при использовании оператора <a href="/help/organizing" class="wikilink1" title="help:organizing">GS</a>. Пример: <pre class="brush: qsp">
+$ONOBJSEL = &#039;ONOBJSEL&#039;
+$ONNEWLOC = &#039;перерисовка&#039;
+$ONOBJADD = &#039;&#039; &amp;! Убрали обработчик
+</pre>
+</p>
+<ul>
+<li class="level1"><div class="li"> Сохранения:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$ONGLOAD</strong> - сразу после загрузки состояния игры</div>
+</li>
+<li class="level2"><div class="li"> <strong>$ONGSAVE</strong> - непосредственно перед сохранением состояния игры</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Предметы:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$ONOBJADD</strong> - при добавлении предмета</div>
+<ul>
+<li class="level3"><div class="li"> $ARGS[0] - название добавленного предмета</div>
+</li>
+<li class="level3"><div class="li"> $ARGS[1] - путь к картинке добавленного предмета</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>$ONOBJDEL</strong> - при удалении предмета</div>
+<ul>
+<li class="level3"><div class="li"> $ARGS[0] - название удалённого предмета</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>$ONOBJSEL</strong> - при выборе предмета</div>
+<ul>
+<li class="level3"><div class="li"> Получить название выбранного предмета можно через функцию &quot;SELOBJ&quot;. <pre class="brush: qsp">
+IF $SELOBJ = &#039;чайник&#039;:
+  P &#039;Самый обычный чугунный чайник.&#039;
+END
+</pre></div>
+</li>
+<li class="level3"><div class="li"> При выборе играющим какого-либо предмета, он остаётся выделенным. Снять выделение можно командой UNSELECT или UNSEL. <pre class="brush: qsp">
+IF $SELOBJ = &#039;нож&#039;:
+  *P &#039;Нельзя убить этого человека&#039;
+END
+UNSEL
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Локации:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$ONNEWLOC</strong> - при переходе на новую локацию</div>
+<ul>
+<li class="level3"><div class="li"> Выполняется перед передачей управления игроку (после выполнения кода всех участвующих в переходах локаций)</div>
+</li>
+<li class="level3"><div class="li"> Получить название локации, на которую был осуществлён переход, можно с помощью функции &quot;CURLOC&quot;<pre class="brush: qsp">
+IF $CURLOC = &#039;дом&#039;: кошка = 1
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Действия:</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$ONACTSEL</strong> - при выборе действия.</div>
+<ul>
+<li class="level3"><div class="li"> Именно при выборе действия, а не при нажатии действия.</div>
+</li>
+<li class="level3"><div class="li"> Получить название выбранного действия можно через функцию&quot;SELACT&quot;.<pre class="brush: qsp">
+IF INSTR(1, $SELACT, &#039;Пойти&#039;): PLAY &#039;sounds\walk.mp3&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Время</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$COUNTER</strong> - локация-счетчик вызывается через одинаковые промежутки времени</div>
+<ul>
+<li class="level3"><div class="li"> По умолчанию промежутки 500мс, т.е. 2 раза в секунду</div>
+</li>
+<li class="level3"><div class="li"> Автоматическое обновление интерфейса срабатывает с той же частотой</div>
+</li>
+<li class="level3"><div class="li"> Промежутки задаются командой <strong>SETTIMER</strong> <em>[#период]</em> в миллисекундах <pre class="brush: qsp">
+SETTIMER 1000/частота_в_герцах
+</pre><pre class="brush: qsp">
+SETTIMER 1000*период_в_секундах
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Строка ввода</div>
+<ul>
+<li class="level2"><div class="li"> <strong>$USERCOM</strong> - по нажатию &quot;Enter&quot; в строке ввода</div>
+<ul>
+<li class="level3"><div class="li"> Подробнее по строке ввода см. <a href="/help/inputs" class="wikilink1" title="help:inputs">Ввод текста игроком</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<strong>Примечание:</strong> При использовании операторов &quot;KILLALL, KILLVAR&quot; очищаются также все системные переменные.
+</p>
+<hr />
+
+<p>
+<a href="/help/dynamical" class="wikilink1" title="help:dynamical">Вперёд: Динамический код</a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Служебные локации" [89-] --></div>
+</body>
+</html>

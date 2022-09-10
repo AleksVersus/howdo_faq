@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:dynamical</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,dynamical"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/dynamical"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/dynamical"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:dynamical","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<a href="/help/service_locations" class="wikilink1" title="help:service_locations">Назад: Служебные локации</a>
+</p>
+
+<h2 class="sectionedit1" id="dinamicheskij_kod">Динамический код</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>DYNAMIC </strong> <em>[$код]</em><strong>,</strong><em>[параметр 1]</em><strong>,</strong><em>[параметр 2]</em><strong>, …</strong> - выполняет код, указанный в виде строки текста. Выполнение кода <em>[$код]</em> здесь аналогично оператору GS:</div>
+<ul>
+<li class="level2"><div class="li"> Код, переданный оператору <strong>dynamic</strong>, выполняется в виде отдельного блока кода, в который можно передавать параметры (аргументы).</div>
+</li>
+<li class="level2"><div class="li"> Переданные параметры хранятся в массиве ARGS. Максимальное количество параметров - <strong>9</strong><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> После выполнения старые параметры ARGS восстанавливаются. То есть внутри выполняемого кода <strong>dynamic</strong> используется свой собственный массив ARGS, его значения не пересекаются со значениями ARGS на локации, из которой <strong>dynamic</strong> был вызван.</div>
+</li>
+<li class="level2"><div class="li"> Затем продолжается выполнения программы со следующей команды после <strong>dynamic</strong>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+DYNAMIC &#039;$a=&quot;string&lt;&lt;$b&gt;&gt;&quot;&#039;
+DYNAMIC &#039;$a&#039;
+DYNAMIC &#039;if $a=&quot;string&quot;:&#039;&#039;text!&#039;&#039;&#039;
+DYNAMIC &quot;
+$args[0]
+addobj $args[1]
+&quot;,&#039;Вы взяли вилку.&#039;,&#039;Вилка&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>DYNEVAL(</strong><em>[$код]</em><strong>,</strong><em>[параметр 1]</em><strong>,</strong><em>[параметр 2]</em><strong>, …)</strong> - выполняет код, указанный в виде строки текста, с получением результата. Выполнение кода <em>[$код]</em> здесь аналогично оператору FUNC:</div>
+<ul>
+<li class="level2"><div class="li"> Код, переданный функции <strong>dyneval</strong>, выполняется в виде отдельного блока кода, в который можно передавать параметры (аргументы).</div>
+</li>
+<li class="level2"><div class="li"> Переданные параметры хранятся в массиве ARGS. Максимальное количество параметров - <strong>9</strong><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> Результат функции равен значению <em>$RESULT</em> при возврате строкового значения, или <em>RESULT</em> при возврате числового значения. </div>
+</li>
+<li class="level2"><div class="li"> Если при выполнении кода были установлены и <em>RESULT</em>, и <em>$RESULT</em>, то предпочтение отдаётся строковому значению. </div>
+</li>
+<li class="level2"><div class="li"> После выполнения кода предыдущие значения ARGS и RESULT восстанавливаются. То есть внутри выполняемого кода <strong>dyneval</strong> используется свои собственные массивы ARGS и RESULT, и их значения не пересекаются со значениями ARGS и RESULT на локации, из которой <strong>dyneval</strong> был вызван. </div>
+</li>
+<li class="level2"><div class="li"> <strong>Внимание:</strong> при использовании в коде <em>[$код]</em> операторов GS/DYNAMIC переменные RESULT и $RESULT могут перезаписываться кодом, выполняемым этими операторами.</div>
+<ul>
+<li class="level3"><div class="li"> Исправлено в более новых версиях интерпретатора.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+DYNEVAL(&#039;result = 3+4&#039;)
+PL DYNEVAL(&#039;$result = mid(&quot;abcd&quot;,2,1)+&quot;qwerty&quot;&#039;)
+PL DYNEVAL($test + &#039; + val(&quot;&lt;&lt;$test&gt;&gt;&quot;)&#039;)
+проход=DYNEVAL(&quot;result = ($args[0] &lt;&gt; &#039;текст&#039;)&quot;, &#039;строка&#039;)
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Важно:</strong> если код задан с помощью одинарных (&#039; &#039;) или двойных (&quot; &quot;) кавычек, в тексте вычисляются подвыражения.</div>
+<ul>
+<li class="level2"><div class="li"> <em>Пример:</em><pre class="brush: qsp">
+$args[0]=&#039;qwerty&#039;
+$code = &#039;
+*pl &quot;&lt;&lt;$args[0]&gt;&gt;&quot;
+*pl $args[0]&#039;
+$args[0]=&#039;12345&#039;
+
+DYNAMIC $code,&#039;asdfg&#039;
+! при задании переменной $code будет вычислено подвыражение
+! поэтому первой строкой выведется &#039;qwerty&#039;
+! второй строкой выведется &#039;asdfg&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Фигурные скобки - третий вид кавычек используемый специально для написания динамического кода</div>
+<ul>
+<li class="level2"><div class="li"> Поддерживается вложенность скобок</div>
+</li>
+<li class="level2"><div class="li"> Перед выполнением кода не вычисляются подвыражения.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+$args[0]=&#039;qwerty&#039;
+$code = {
+  *pl &quot;&lt;&lt;$args[0]&gt;&gt;&quot;
+  *pl $args[0]
+}
+
+DYNAMIC $code,&#039;asdfg&#039;
+! будет выведено две строки &#039;asdfg&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Вполне допустимо использовать dynamic/dyneval внутри dynamic/dyneval, однако это сильно усложняет отладку кода и поиск ошибок.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/help/main" class="wikilink1" title="help:main">Вперёд: Основное окно описания</a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Динамический код" [74-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+, <sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+10 включая код</div>
+</div>
+</div>
+</body>
+</html>

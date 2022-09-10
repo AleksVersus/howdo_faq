@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:sozdanie_igr_na_quest_navigator</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,sozdanie_igr_na_quest_navigator"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/sozdanie_igr_na_quest_navigator"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/sozdanie_igr_na_quest_navigator"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:sozdanie_igr_na_quest_navigator","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#sozdanie_igr_dlja_pleera_quest_navigator">Создание игр для плеера Quest Navigator</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#otlichija_ot_aeroqsp">Отличия от AeroQSP</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ne_podderzhivajutsja_zadanija_css-atributov_bez_pikselov">Не поддерживаются задания CSS-атрибутов без пикселов.</a></div></li>
+<li class="level3"><div class="li"><a href="#ne_podderzhivajutsja_zadanija_css-atributa_backgound-image_bez_url">Не поддерживаются задания CSS-атрибута backgound-image без url().</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#otlichija_ot_klassicheskogo_pleera">Отличия от &quot;классического&quot; плеера</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ogranichennaja_podderzhka_formata_midi">Ограниченная поддержка формата MIDI.</a></div></li>
+<li class="level3"><div class="li"><a href="#vse_url_dlja_podkljuchenija_kartinok_css_i_js_fajlov_ukazyvajutsja_bez_slehsha_v_nachale">Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале.</a></div></li>
+<li class="level3"><div class="li"><a href="#ne_podderzhivaetsja_mnogostrochnyj_kod_v_exec">Не поддерживается многострочный код в &quot;EXEC:&quot;</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#oformlenie_igr_na_quest_navigator">Оформление игр на Quest Navigator</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/navigator_game_template" class="wikilink1" title="help:navigator_game_template">Назад: Шаблон игры на Quest Navigator</a>
+</p>
+
+<h1 class="sectionedit1" id="sozdanie_igr_dlja_pleera_quest_navigator">Создание игр для плеера Quest Navigator</h1>
+<div class="level1">
+
+<p>
+Основная информация о создании игр для плеера <a href="/help/navigator" class="wikilink1" title="help:navigator">Quest Navigator</a>, а также отличия от других плееров.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Создание игр для плеера Quest Navigator" [90-335] -->
+<h2 class="sectionedit2" id="otlichija_ot_aeroqsp">Отличия от AeroQSP</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT2 SECTION "Отличия от AeroQSP" [336-376] -->
+<h3 class="sectionedit3" id="ne_podderzhivajutsja_zadanija_css-atributov_bez_pikselov">Не поддерживаются задания CSS-атрибутов без пикселов.</h3>
+<div class="level3">
+
+<p>
+<code>left:1; top:2; width:100;</code>
+</p>
+
+<p>
+Следует записывать так:
+</p>
+
+<p>
+<code>left:1px; top:2px; width:100px;</code>
+</p>
+
+<p>
+<em class="u">Причина:</em> не соответствует стандартам браузера.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Не поддерживаются задания CSS-атрибутов без пикселов." [377-690] -->
+<h3 class="sectionedit4" id="ne_podderzhivajutsja_zadanija_css-atributa_backgound-image_bez_url">Не поддерживаются задания CSS-атрибута backgound-image без url().</h3>
+<div class="level3">
+
+<p>
+<code>background-image:image.png;</code>
+</p>
+
+<p>
+Следует записывать так:
+</p>
+
+<p>
+<code>background-image:url(image.png);</code>
+</p>
+
+<p>
+<em class="u">Причина:</em> не соответствует стандартам браузера.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Не поддерживаются задания CSS-атрибута backgound-image без url()." [691-1009] -->
+<h2 class="sectionedit5" id="otlichija_ot_klassicheskogo_pleera">Отличия от &quot;классического&quot; плеера</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 SECTION "Отличия от классического плеера" [1010-1084] -->
+<h3 class="sectionedit6" id="ogranichennaja_podderzhka_formata_midi">Ограниченная поддержка формата MIDI.</h3>
+<div class="level3">
+
+<p>
+В отличие от классического плеера, в Навигаторе MIDI-файлы не могут проигрываться несколько одновременно, только по одному. Также не поддерживается установка громкости, все MIDI-файлы проигрываются со 100% громкостью.
+</p>
+
+<p>
+Основные поддерживаемые форматы: OGG, MP3, WAV, MOD, S3M, XM, IT.
+</p>
+
+<p>
+При необходимости, MIDI конвертируется в MP3, OGG, или, если важен размер файла, то в IT с помощью <a href="http://sourceforge.net/projects/modplug/" class="urlextern" title="http://sourceforge.net/projects/modplug/"  rel="nofollow">Modplug Tracker</a>
+</p>
+
+<p>
+<em class="u">Причина:</em> используется не поддерживающая MIDI звуковая библиотека <a href="http://audiere.sourceforge.net/" class="urlextern" title="http://audiere.sourceforge.net/"  rel="nofollow">Audiere</a>.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Ограниченная поддержка формата MIDI." [1085-2041] -->
+<h3 class="sectionedit7" id="vse_url_dlja_podkljuchenija_kartinok_css_i_js_fajlov_ukazyvajutsja_bez_slehsha_v_nachale">Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале.</h3>
+<div class="level3">
+
+<p>
+В классическом плеере, равнозначны следующие записи:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>/images/valenok.jpg</code></div>
+</li>
+<li class="level1"><div class="li"> <code>images/valenok.jpg</code></div>
+</li>
+</ul>
+
+<p>
+В Навигаторе, разрешено использовать только вторую форму записи.
+</p>
+
+<p>
+<em class="u">Причина:</em> удобство разделения папок JS-<abbr title="Application Programming Interface">API</abbr> Навигатора и игры, соответствие стандарту загрузки с локальной файловой системы.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале." [2042-2695] -->
+<h3 class="sectionedit8" id="ne_podderzhivaetsja_mnogostrochnyj_kod_v_exec">Не поддерживается многострочный код в &quot;EXEC:&quot;</h3>
+<div class="level3">
+
+<p>
+Код в ссылках разрешается записывать только в одну строку.
+</p>
+
+<p>
+<em class="u">Причина:</em> Баг в Awesomium: при выполнении запроса из него исчезают символы перевода строки.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Не поддерживается многострочный код в EXEC:" [2696-3056] -->
+<h2 class="sectionedit9" id="oformlenie_igr_na_quest_navigator">Оформление игр на Quest Navigator</h2>
+<div class="level2">
+
+<p>
+<a href="/help/ispolzovanie_shriftov_v_quest_navigator" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Использование шрифтов в Quest Navigator</a>
+</p>
+
+<p>
+<a href="/help/fajl_nastroek_igry_v_quest_navigator" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры в Quest Navigator (&quot;config.xml&quot;)</a>
+</p>
+<hr />
+
+<p>
+<a href="/help/ispolzovanie_shriftov_v_quest_navigator" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Вперёд: Использование шрифтов в Quest Navigator</a>
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Оформление игр на Quest Navigator" [3057-] --></div>
+</body>
+</html>

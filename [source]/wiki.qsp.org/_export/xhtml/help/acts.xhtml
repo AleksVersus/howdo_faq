@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:acts</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,acts"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/acts"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/acts"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:acts","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#dejstvija">Действия</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#komandy">Команды</a></div></li>
+<li class="level3"><div class="li"><a href="#ogranichenija">Ограничения</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/msgbox" class="wikilink1" title="help:msgbox">Назад: Диалоговое окно</a>
+</p>
+
+<h2 class="sectionedit1" id="dejstvija">Действия</h2>
+<div class="level2">
+
+<p>
+Автор предлагает игроку варианты действий. Выбрав действие, игрок двигает игру дальше по сюжету - как правило, главный герой при этом совершает означенное действие. Например, убивает черепашку или проникает в чужой сад.
+</p>
+
+<p>
+В названиях действий не важен регистр букв, то есть &quot;Пойти&quot; и &quot;поЙти&quot; - одно и то же действие.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Действия" [59-655] -->
+<h3 class="sectionedit2" id="komandy">Команды</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>SHOWACTS</strong> <em>[#выражение]</em> - если значение выражения отлично от 0, то показывает список действий, иначе скрывает его.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>ACT</strong> <em>[$название]</em>,<em>[$путь к файлу изображения]</em>: <em>[операторы] </em> - добавление действия с описанием <em>[$название]</em> и изображением <em>[$путь к файлу изображения]</em> к существующим на локации.</div>
+<ul>
+<li class="level2"><div class="li"> При нажатии действия игроком выполнятся указанные операторы.</div>
+</li>
+<li class="level2"><div class="li"> Параметр <em>[$путь к файлу изображения]</em> может отсутствовать, при этом действие добавится без изображения.</div>
+</li>
+<li class="level2"><div class="li"> Также поддерживается многострочность:</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<pre class="brush: qsp">
+act [$название], [$путь к файлу изображения]:
+    [оператор]
+    [оператор]
+    [оператор]
+end
+</pre>
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>DELACT</strong> <em>[$название]</em> или <strong>DEL ACT</strong> <em>[$название]</em> - удаляет действие из списка действий на локации (если такое действие существует). </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>$CURACTS</strong> - данная функция возвращает текущий список действий в виде QSP-кода.</div>
+<ul>
+<li class="level2"><div class="li"> Действия сохраняются в виде набора операторов ACT с ответствующими параметрами и операциями.</div>
+</li>
+<li class="level2"><div class="li"> Сохранив действия в переменную, восстановить действия можно с помощью оператора &quot;<a href="/help/dynamical" class="wikilink1" title="help:dynamical">DYNAMIC</a>&quot;.</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>$SELACT</strong> - данная функция возвращает название выделенного действия в любом месте игры.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>CLA</strong> - очистка списка текущих действий.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CLS</strong> - эквивалентно конструкции &quot;CLEAR &amp; *CLEAR &amp; CLA &amp; CMDCLEAR&quot;, т.е. очищает все окна кроме списка предметов.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> См. <a href="/help/service_locations" class="wikilink1" title="help:service_locations">$ONACTSEL</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Команды" [656-2977] -->
+<h3 class="sectionedit3" id="ogranichenija">Ограничения</h3>
+<div class="level3">
+
+<p>
+Максимальное количество одновременно видимых действий на локации — 50
+</p>
+
+<p>
+Если прописан вывод действий с одинаковыми названиями, выводиться будет только первое из них.
+</p>
+<hr />
+
+<p>
+<a href="/help/objs" class="wikilink1" title="help:objs">Вперёд: Предметы (инвентарь)</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Ограничения" [2978-] --></div>
+</body>
+</html>

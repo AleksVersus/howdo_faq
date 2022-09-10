@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:qsp</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,qsp"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/qsp"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/qsp"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:qsp","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#chto_takoe_qsp">Что такое QSP?</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#vozmozhnosti_qsp">Возможности QSP</a></div></li>
+<li class="level3"><div class="li"><a href="#standartnyj_ehkran_qsp">Стандартный экран QSP</a></div></li>
+<li class="level3"><div class="li"><a href="#primery_vsplyvajuschix_okon_i_menju">Примеры всплывающих окон и меню</a></div></li>
+<li class="level3"><div class="li"><a href="#versii_pleera_qsp">Версии плеера QSP</a></div></li>
+<li class="level3"><div class="li"><a href="#isxodnyj_kod">Исходный код</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/start" class="wikilink1" title="start">Назад: Введение</a>
+</p>
+
+<h2 class="sectionedit1" id="chto_takoe_qsp">Что такое QSP?</h2>
+<div class="level2">
+
+<p>
+Платформа <strong>QSP</strong> - набор программ, с помощью которых можно создавать текстовые игры и играть в них. Расшифровывается как <strong>Quest Soft Player</strong>.
+</p>
+
+<p>
+Поскольку QSP на данный момент находится в подвешенном состоянии между старыми плеерами и новым, большинство статей будет написано для проигрывателя<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> QSP 5.70 и редактора игр QGen<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>, т.к. автору справки так проще. Плееры между собой довольно похожи, но в справке будут отдельные главы по отличиям других плееров, а позднее справка будет переработана под новый плеер.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Что такое QSP?" [42-1050] -->
+<h3 class="sectionedit2" id="vozmozhnosti_qsp">Возможности QSP</h3>
+<div class="level3">
+
+<p>
+Базовый функционал QSP<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>:
+</p>
+<ol>
+<li class="level1"><div class="li"> Два окна для вывода текста</div>
+</li>
+<li class="level1"><div class="li"> Окно с действиями</div>
+</li>
+<li class="level1"><div class="li"> Окно с предметами (инвентарём)</div>
+</li>
+<li class="level1"><div class="li"> Строка ввода (для реализации парсерных игр)</div>
+</li>
+<li class="level1"><div class="li"> Всплывающие сообщения пользователю, картинки</div>
+</li>
+<li class="level1"><div class="li"> Всплывающее окно для ввода текста пользователем</div>
+</li>
+<li class="level1"><div class="li"> Возможность создания меню для предметов и не только</div>
+</li>
+<li class="level1"><div class="li"> Проигрывание музыки и звуков</div>
+</li>
+<li class="level1"><div class="li"> Поддержка <abbr title="HyperText Markup Language">HTML</abbr></div>
+</li>
+<li class="level1"><div class="li"> Сохранения/загрузка</div>
+</li>
+<li class="level1"><div class="li"> Встроенный язык программирования со следующими особенностями:</div>
+<ul>
+<li class="level2"><div class="li"> Целочисленные и строковые переменные</div>
+</li>
+<li class="level2"><div class="li"> Поддержка массивов</div>
+</li>
+<li class="level2"><div class="li"> Продвинутая обработка строк и массивов (поддержка регулярных выражений)</div>
+</li>
+<li class="level2"><div class="li"> Условные выражения</div>
+</li>
+<li class="level2"><div class="li"> Метки и переходы по меткам (что позволяет легко организовывать циклы)</div>
+</li>
+<li class="level2"><div class="li"> Возможность привязки к реальному времени</div>
+</li>
+<li class="level2"><div class="li"> Возможность выполнения определенных действий при каждом переходе на новую локацию, при создании и удалении предметов, при выборе пункта меню и т.д.</div>
+</li>
+<li class="level2"><div class="li"> Возможность выносить часть кода в подключаемые файлы</div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+<!-- EDIT2 SECTION "Возможности QSP" [1051-2911] -->
+<h3 class="sectionedit3" id="standartnyj_ehkran_qsp">Стандартный экран QSP</h3>
+<div class="level3">
+
+<p>
+<a href="http://wiki.qsp.su/_media/help:qspblank.jpg" class="media" title="http://wiki.qsp.su/_media/help:qspblank.jpg"  rel="nofollow"><img src="/_media/help/qspblank2.jpg?w=500&amp;tok=223541" class="media" title="Экран QSP" alt="Экран QSP" width="500" /></a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Основное окно описания</div>
+</li>
+<li class="level1"><div class="li"> Область предметов (инвентаря)</div>
+</li>
+<li class="level1"><div class="li"> Область действий</div>
+</li>
+<li class="level1"><div class="li"> Дополнительное окно описания</div>
+</li>
+<li class="level1"><div class="li"> Текстовая строка ввода (используется крайне редко)</div>
+</li>
+</ol>
+
+<p>
+Интерфейс QSP отличается гибкостью. Все окна кроме основного окна описания могут отключаться. В разработке находится новый плеер с полной поддержкой <abbr title="HyperText Markup Language">HTML</abbr> и <abbr title="Cascading Style Sheets">CSS</abbr> и, как следствие, практически неограниченной гибкостью оформления.
+</p>
+
+<p>
+Ниже для примера приведены скриншоты игр &quot;Куртуазная баллада&quot; и &quot;Мировое сознание, 13 уровень&quot; (картинки кликабельны)
+</p>
+
+<p>
+<a href="/_media/help/ballad.jpg" class="media" title="help:ballad.jpg"><img src="/_media/help/ballad.jpg?w=300&amp;tok=828bed" class="media" title="Куртуазная баллада" alt="Куртуазная баллада" width="300" /></a> <a href="/_media/help/level13.jpg" class="media" title="help:level13.jpg"><img src="/_media/help/level13.jpg?w=342&amp;tok=f3998a" class="media" alt="" width="342" /></a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Стандартный экран QSP" [2912-4075] -->
+<h3 class="sectionedit4" id="primery_vsplyvajuschix_okon_i_menju">Примеры всплывающих окон и меню</h3>
+<div class="level3">
+
+<p>
+Примеры использования вывода сообщения в диалоговом окне посредством <a href="/help/msgbox" class="wikilink1" title="help:msgbox">MSG</a> и ввода текста в диалоговом окне игроком посредством <a href="/help/inputs" class="wikilink1" title="help:inputs">INPUT</a>
+</p>
+
+<p>
+<a href="/_detail/help/window_msg.png?id=help%3Aqsp" class="media" title="help:window_msg.png"><img src="/_media/help/window_msg.png?w=300&amp;tok=1861a3" class="media" title="сообщение в  диалоговом окне" alt="сообщение в  диалоговом окне" width="300" /></a> <a href="/_detail/help/input_window.png?id=help%3Aqsp" class="media" title="help:input_window.png"><img src="/_media/help/input_window.png?w=300&amp;tok=1b02f0" class="media" title="всплывающие окно со строкой ввода." alt="всплывающие окно со строкой ввода." width="300" /></a>
+</p>
+
+<p>
+Здесь должны быть → Скриншот VIEW; Три скриншота MENU (предмет, действие, ссылка)
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Примеры всплывающих окон и меню" [4076-4732] -->
+<h3 class="sectionedit5" id="versii_pleera_qsp">Версии плеера QSP</h3>
+<div class="level3">
+
+<p>
+Версии плеера под разные платформы :
+<a href="http://qsp.su/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" class="urlextern" title="http://qsp.su/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56"  rel="nofollow">здесь</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Версии плеера QSP" [4733-4926] -->
+<h3 class="sectionedit6" id="isxodnyj_kod">Исходный код</h3>
+<div class="level3">
+
+<p>
+<a href="http://github.com/QSPFoundation/qsp" class="urlextern" title="http://github.com/QSPFoundation/qsp"  rel="nofollow">Исходный код библиотеки интерпретатора QSP</a>
+</p>
+<hr />
+
+<p>
+<a href="/help/locations" class="wikilink1" title="help:locations">Вперёд: Локации и переходы</a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Исходный код" [4927-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Нужен, что бы играть</div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Нужен для разработки</div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+без дополнительных ухищрений, с ухищрениями - гораздо больше <img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" /></div>
+</div>
+</div>
+</body>
+</html>

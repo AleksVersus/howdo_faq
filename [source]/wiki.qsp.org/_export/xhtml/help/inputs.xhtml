@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:inputs</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,inputs"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/inputs"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/inputs"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:inputs","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#vvod_teksta_igrokom">Ввод текста игроком</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#stroka_vvoda">Строка ввода</a></div></li>
+<li class="level3"><div class="li"><a href="#dialogovoe_okno">Диалоговое окно</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/html" class="wikilink1" title="help:html">Назад: HTML</a>
+</p>
+
+<h2 class="sectionedit1" id="vvod_teksta_igrokom">Ввод текста игроком</h2>
+<div class="level2">
+
+<p>
+Ввод текста игроком можно сделать двумя способами: использовать <em class="u"><em>строку</em></em> ввода текста, либо <em><em class="u">диалоговое окно</em></em> для ввода.<br/>
+
+Рекомендуется использовать диалоговое окно кроме тех случаев, в которых требуется вводить текст много раз подряд, например, при реализации парсерной игры - в таких случаях рекомендуется использовать строку ввода.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Ввод текста игроком" [32-707] -->
+<h3 class="sectionedit2" id="stroka_vvoda">Строка ввода</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>SHOWINPUT</strong> <em>[#выражение]</em> - если значение выражения отлично от 0, то показывает строку ввода, иначе скрывает её.</div>
+</li>
+<li class="level1"><div class="li"> <strong>USER_TEXT</strong> или <strong>USRTXT</strong> - возвращают текст, находящийся в строке ввода.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CMDCLEAR</strong> или <strong>CMDCLR</strong> - очистка строки ввода.</div>
+</li>
+<li class="level1"><div class="li"> См. <a href="/help/service_locations" class="wikilink1" title="help:service_locations">$USER_COM</a></div>
+</li>
+<li class="level1"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+$text = $USER_TEXT
+CMDCLEAR
+SHOWINPUT 0
+</pre></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Строка ввода" [708-1261] -->
+<h3 class="sectionedit3" id="dialogovoe_okno">Диалоговое окно</h3>
+<div class="level3">
+
+<p>
+<strong>INPUT(</strong><em>[$текст]</em><strong>)</strong> - выводит окно ввода с приглашением <em>[$текст]</em>.<br/>
+
+Возвращает интерпретатору введённый игроком текст, либо &#039;&#039; (пустая строка), если была нажата кнопка &quot;Отмена&quot;.
+<pre class="brush: qsp">
+$name = $INPUT(&#039;Как звать тебя, герой?&#039;)
+</pre>
+</p>
+
+<p>
+Варианты реализации проверки правильности ввода текста игроком.
+</p>
+
+<p>
+<pre class="brush: qsp">
+! Вопрос с одним правильным ответом. 
+if $input (&#039;Что приходит после тьмы?&#039;) = &#039;свет&#039;:
+    msg &#039;Все верно.&#039;
+else
+    msg &#039;Ответ не верный.&#039;
+end
+</pre>
+</p>
+
+<p>
+<pre class="brush: qsp">
+! Пример реализации вопроса с несколькими вариантами ответа из которых любой будет правильным.
+$answer = $TRIM($LCASE($input(&#039;Ответить&#039;)))
+if $INSTR($answer,&#039;красный&#039;) OR $INSTR($answer,&#039;желтый&#039;) OR $INSTR($answer,&#039;зеленый&#039;): gt &#039;win&#039;
+! Введя красный или зеленый ил желтый произойдет переход на локацию &#039;win&#039;
+</pre>
+</p>
+<hr />
+
+<p>
+<a href="/help/modules" class="wikilink1" title="help:modules">Вперёд: Работа с файлами, использование модулей</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Диалоговое окно" [1262-] --></div>
+</body>
+</html>

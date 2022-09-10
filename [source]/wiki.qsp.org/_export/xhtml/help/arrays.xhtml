@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:arrays</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,arrays"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/arrays"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/arrays"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:arrays","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<a href="/help/coding" class="wikilink1" title="help:coding">Назад: Программный код</a>
+</p>
+
+<h2 class="sectionedit1" id="massivy">Массивы</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong><em>Массив</em></strong> - последовательный набор значений, имеющих один тип данных и обладающих одним названием.</div>
+</li>
+<li class="level1"><div class="li"> Элементы массива идентифицируются по индексам.</div>
+<ul>
+<li class="level2"><div class="li"> Индексация ведётся с нуля. Т.е. элемент с индексом <strong>0</strong> - <em>первый</em> элемент массива, <strong>1</strong> - <em>второй</em> и т.д.</div>
+</li>
+<li class="level2"><div class="li"> Максимальный индекс массива <strong>2147483647</strong>.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Обращение к элементу массива происходит так: сначала указывается название массива, затем в квадратных скобках - числовое выражение, равное индексу элемента, к которому производится обращение.</div>
+</li>
+<li class="level1"><div class="li"> На самом деле <em class="u"><em>каждая переменная</em></em> в QSP <em class="u"><em>является массивом</em></em>.<pre class="brush: qsp">
+яблоки = 0
+!эквивалентно
+яблоки[0] = 0
+</pre></div>
+</li>
+<li class="level1"><div class="li"> Соответственно для текстового массива нужно не забывать использовать символ &#039;<strong>$</strong>&#039; в имени.</div>
+</li>
+<li class="level1"><div class="li"> <em><strong>Примеры:</strong></em><pre class="brush: qsp">
+$яблоки[0]=&#039;антоновка&#039;
+$яблоки[1]=&#039;белый налив&#039;
+$яблоки[2]=&#039;астраханское&#039;
+$яблоки[3]=&#039;ранетка&#039;
+$яблоки[4]=&#039;симиренко&#039;
+
+сорт_яблока[0] = 1
+сорт_яблока[1] = 2
+сорт_яблока[2] = 4
+
+*pl $яблоки[сорт_яблока[номер_яблока]]
+</pre></div>
+</li>
+<li class="level1"><div class="li"> Массивы могут индексироваться через строки. Регистр символов данной строки не имеет значения. Примеры:<pre class="brush: qsp">
+$любимый_сорт[&#039;иван&#039;] = $яблоки[2]
+любимое_число[&#039;Алексей&#039;] = 5
+$item_loc[&#039;палка&#039;] = &#039;лес&#039;
+</pre></div>
+</li>
+<li class="level1"><div class="li"> Существует упрощённый синтаксис чтения последнего и добавления нового элемента в массив. Если индекс элемента не указан:</div>
+<ul>
+<li class="level2"><div class="li"> при записи будет выбран элемент, следующий за последним. Например: <pre class="brush: qsp">
+$objs[] = &#039;Напильник&#039; &amp;! Если массив был пустой, то
+$objs[] = &#039;Топор&#039;     &amp;! [0] = &#039;Напильник&#039;,
+$objs[] = &#039;Доска&#039;     &amp;! [1] = &#039;Топор&#039;, [2] = &#039;Доска&#039;</pre> </div>
+</li>
+<li class="level2"><div class="li"> при чтении будет выбран последний элемент. Например: <pre class="brush: qsp">
+$a = $objs[] &amp;! &#039;Доска&#039; из примера выше
+a = сорт_яблока[] &amp;! 4 из примера выше</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<strong>Примечание:</strong> При добавлении в массив элемента со строковым индексом<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> элемент добавляется в конец массива. <em>Настоятельно <em class="u">не</em> рекомендуется сочетать числовые и строковые индексы в пределах одного массива.</em>
+</p>
+
+<p>
+<strong>Примечание:</strong> В силу особенностей платформы числовые и текстовые массивы связаны между собой: добавление элемента в <em>&#039;массив&#039;</em> добавляет пустой элемент в <em>&#039;$массив&#039;</em> и наоборот со всеми вытекающими последствиями.
+</p>
+
+<p>
+<strong>Примечание:</strong> Настоятельно <em class="u">не</em> рекомендуется использовать большие числовые индексы без необходимости.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Массивы" [59-3940] -->
+<h3 class="sectionedit2" id="funkcii_i_operatory">Функции и операторы</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>KILLVAR</strong> <em>[$название массива]</em>,<em>[#индекс элемента]</em> - удаление элемента массива. </div>
+<ul>
+<li class="level2"><div class="li"> Если индекс элемента не указан, то удаляется весь массив. </div>
+</li>
+<li class="level2"><div class="li"> Если оператор вызван без аргументов, то удаляются все переменные</div>
+</li>
+<li class="level2"><div class="li"> <strong>KILLALL</strong> - оператор эквивалентен конструкции &quot;KILLVAR &amp; KILLOBJ&quot;<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup></div>
+</li>
+<li class="level2"><div class="li"> При удалении элемента все следующие за ним элементы сдвигаются на позицию вверх.<pre class="brush: qsp">
+a[0]=4
+a[1]=3
+a[2]=23
+a[3]=15
+KILLVAR &#039;a&#039;,1
+!теперь массив выглядит так:
+a[0]=4
+a[1]=23
+a[2]=15
+</pre></div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+KILLVAR &amp;! удаляет все переменные, массивы
+KILLVAR &#039;a&#039; &amp;! удаляет массив &#039;a&#039;
+KILLVAR &#039;a&#039;,3 &amp;! удалит из массива &#039;a&#039; элемент с индексом 3.
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>COPYARR</strong> <em>[$приёмник]</em><strong>,</strong><em>[$источник]</em><strong>,</strong><em>[#начало]</em><strong>,</strong><em>[#количество]</em> - копирование в массив-приёмник <em>[#количество]</em> элементов из массива-источника начиная с элемента под номером <em>[#начало]</em>. Размер массива-приёмника при копировании не имеет значения.</div>
+<ul>
+<li class="level2"><div class="li"> Параметр <em>[#количество]</em> является необязательным. По умолчанию - до конца массива-источника.</div>
+</li>
+<li class="level2"><div class="li"> Параметр <em>[#начало]</em> является необязательным. По умолчанию - 0</div>
+</li>
+<li class="level2"><div class="li"> В силу особенностей движка при копировании массива <em>&#039;массив1&#039;</em> в <em>&#039;массив2&#039;</em> копируется также <em>&#039;$массив1&#039;</em> в <em>&#039;$массив2&#039;</em>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+COPYARR &#039;$a&#039;,&#039;$b&#039;
+COPYARR &#039;a&#039;,&#039;b&#039;
+COPYARR $arrname1,$arrname2,10,5
+COPYARR &#039;a&lt;&lt;$arrname1&gt;&gt;&#039;,&#039;a&lt;&lt;$arrname2&gt;&gt;&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>ARRSIZE(</strong><em>[$имя]</em><strong>)</strong> - функция возвращает число элементов в массиве с названием <em>[$имя]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> В силу особенностей движка возвращается наибольшее из числа элементов &#039;<em>массива</em>&#039; и &#039;<em>$массива</em>&#039;.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+n = ARRSIZE(&#039;a&#039;)
+n = ARRSIZE(&#039;$a&#039;)
+!Результат будет одинаковый
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>ARRPOS(</strong><em>[#начало]</em>,<em>[$имя_массива]</em>,<em>[значение]</em><strong>)</strong> - возвращает индекс элемента массива, равного значению. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает <strong>-1</strong>.</div>
+<ul>
+<li class="level2"><div class="li"> Параметр <em>[#начало]</em> может отсутствовать, при этом он принимается равным <strong>0</strong>.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Важное примечание:</strong> при поиске в массиве нуля (или пустой строки для текстового массива), если в массиве не было задано ни одной ячейки, содержащей ноль, <strong>ARRPOS</strong> вернёт номер ячейки следующей за последней. <em>Пример:</em><pre class="brush: qsp">
+mass[0]=1
+mass[1]=2
+mass[2]=4
+arrpos(&#039;mass&#039;,0) &amp; ! вернёт значение 3
+</pre></div>
+</li>
+<li class="level2"><div class="li"> <strong>Важно:</strong> в более новых версиях (<em>Quest Navigator</em>) необязательный параметр <em>[#начало]</em> переставлен последним<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+!Поиск строки &#039;This&#039; в текстовом массиве &quot;$A&quot;
+ARRPOS(0,&#039;$A&#039;,&#039;This&#039;)
+!Поиск числа 65 в массиве &quot;A&quot; (два элемента массива игнорируются)
+ARRPOS(2,&#039;A&#039;,65)
+!Поиск строки &#039;test&#039; среди значений массива &quot;$B&quot;
+ARRPOS(&#039;$B&#039;,&#039;test&#039;)
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> См. также функции &quot;<strong>MAX</strong>, <strong>MIN</strong>&quot; (<a href="/help/coding?&amp;#bazovye_funkcii" class="wikilink1" title="help:coding">Программный код</a>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>ARRCOMP(</strong><em>[#начало]</em>,<em>[$имя_массива]</em>,<em>[$шаблон]</em><strong>)</strong> - возвращает индекс элемента массива, соответствующего <em><em class="u">регулярному выражению</em></em>. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает <strong>-1</strong>.</div>
+<ul>
+<li class="level2"><div class="li"> Поиск работает только по текстовым массивам (символ &#039;$&#039; в названии можно опустить).</div>
+</li>
+<li class="level2"><div class="li"> Параметр <em>[#начало]</em> может отсутствовать, при этом он принимается равным <strong>0</strong>.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Важно:</strong> в более новых версиях (<em>Quest Navigator</em>) необязательный параметр <em>[#начало]</em> переставлен последним<sup><a href="#fn__4" id="fnt__4" class="fn_top">4)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+!Поиск строки &#039;This&#039; среди элементов массива &quot;$A&quot;
+ARRCOMP(0,&#039;A&#039;,&#039;This&#039;)
+!&#039;Поиск строки, соответствующей регулярному выражению &quot;abc\d+&quot;
+(первые два элемента массива игнорируются)&#039;
+ARRCOMP(2,&#039;A&#039;,&#039;abc\d+&#039;)
+!&#039;аналогично предыдущему примеру, но поиск осуществляется
+по всем элементам массива&#039;
+ARRCOMP(0,&#039;A&#039;,&#039;.*string.*&#039;) 
+
+ARRCOMP(&#039;A&#039;,&#039;This&#039;) &amp;! эквивалентно 1му варианту
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+<p>
+См. также: <a href="/howto/arrays" class="wikilink1" title="howto:arrays">Продвинутое использование массивов</a>
+</p>
+<hr />
+
+<p>
+<a href="/help/strings" class="wikilink1" title="help:strings">Вперёд: Строки</a>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Функции и операторы" [3941-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+массив[&#039;строка&#039;] = значение</div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+обычно применяется в начале игры, чтобы при возврате в начальную локацию после неудачного прохождения какого-то этапа игры обнулить все переменные (в противном случае, может оказаться, что запертые двери уже открыты, жена похищена до свадьбы, а Баба-Яга уже отдала кому-то нужный клубочек) </div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<strong>ARRPOS(</strong><em>[$имя_массива]</em><strong>,</strong><em>[значение]</em><strong>,</strong><em>[#начало]</em><strong>)</strong></div>
+<div class="fn"><sup><a href="#fnt__4" id="fn__4" class="fn_bot">4)</a></sup> 
+<strong>ARRCOMP(</strong><em>[$имя_массива]</em><strong>,</strong><em>[$шаблон]</em><strong>,</strong><em>[#начало]</em><strong>)</strong></div>
+</div>
+</div>
+</body>
+</html>

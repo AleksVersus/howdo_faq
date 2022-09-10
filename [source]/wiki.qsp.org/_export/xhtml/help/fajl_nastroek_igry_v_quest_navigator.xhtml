@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:fajl_nastroek_igry_v_quest_navigator</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,fajl_nastroek_igry_v_quest_navigator"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/fajl_nastroek_igry_v_quest_navigator"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/fajl_nastroek_igry_v_quest_navigator"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:fajl_nastroek_igry_v_quest_navigator","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#fajl_nastroek_igry_v_quest_navigator">Файл настроек игры в Quest Navigator</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#redaktirovanie">Редактирование</a></div></li>
+<li class="level2"><div class="li"><a href="#spisok_nastroek">Список настроек</a></div></li>
+<li class="level2"><div class="li"><a href="#rezhim_standalone">Режим &quot;standalone&quot;</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/ispolzovanie_shriftov_v_quest_navigator" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Назад: Использование шрифтов в Quest Navigator</a>
+</p>
+
+<h1 class="sectionedit1" id="fajl_nastroek_igry_v_quest_navigator">Файл настроек игры в Quest Navigator</h1>
+<div class="level1">
+
+<p>
+Файл &quot;config.xml&quot; находится в корневой папке игры. Он содержит информацию о настройках игры. Плеер &quot;читает&quot; эту информацию перед тем, как загрузить игру. Исходя из этой информации плеер решает, как именно представлять эту игру пользователю. 
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Файл настроек игры в Quest Navigator" [145-643] -->
+<h2 class="sectionedit2" id="redaktirovanie">Редактирование</h2>
+<div class="level2">
+
+<p>
+Автор самостоятельно заполняет настройки в файле в формате XML. Файл можно редактировать обычным текстовым редактором, поддерживающим UTF-8, например Notepad++. Кодировка файла должна быть UTF-8 (без BOM). 
+</p>
+
+<p>
+Настройки перечисляются в файле как атрибуты корневого элемента &quot;game&quot;. Обязательных атрибутов нет. Любой не заполненный автором атрибут принимает значение по умолчанию.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Редактирование" [644-1352] -->
+<h2 class="sectionedit3" id="spisok_nastroek">Список настроек</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Атрибут </th><th class="col1"> Значение по умолчанию </th><th class="col2"> Описание </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> width </td><td class="col1"> 800 </td><td class="col2"> ширина </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> height </td><td class="col1"> 600 </td><td class="col2"> высота </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> minWidth </td><td class="col1"> 0 </td><td class="col2"> минимальная ширина </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> minHeight </td><td class="col1"> 0 </td><td class="col2"> минимальная высота </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> maxWidth </td><td class="col1"> 0 </td><td class="col2"> максимальная ширина </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> maxHeight </td><td class="col1"> 0 </td><td class="col2"> максимальная высота </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> title </td><td class="col1"> Имя файла </td><td class="col2"> название игры (заголовок окна) </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> resizeable </td><td class="col1"> true </td><td class="col2"> можно изменять размер окна </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> fullscreenAvailable </td><td class="col1"> true </td><td class="col2"> доступно переключение в полноэкранный режим </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> startFullscreen </td><td class="col1"> false </td><td class="col2"> запуск в полноэкранном режиме </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> skinName </td><td class="col1"> default </td><td class="col2"> тема оформления (выбор из стандартных тем) </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> standalone </td><td class="col1"> false </td><td class="col2"> включен режим &quot;standalone&quot; </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [1396-2296] -->
+</div>
+<!-- EDIT3 SECTION "Список настроек" [1353-2297] -->
+<h2 class="sectionedit5" id="rezhim_standalone">Режим &quot;standalone&quot;</h2>
+<div class="level2">
+
+<p>
+Режим &quot;standalone&quot; нужен для тех авторов, которые распространяют игру самостоятельно в виде <a href="/help/navigator_standalone" class="wikilink1" title="help:navigator_standalone">независимой сборки</a>.
+</p>
+
+<p>
+При включенном режиме &quot;standalone&quot;, используется системное меню с <code>id=&quot;qsp-dialog-system-menu-standalone&quot;</code>, если оно задано автором. Во всех остальных случаях используется системное меню с <code>id=&quot;qsp-dialog-system-menu&quot;</code>. Это позволяет использовать одну и ту же игру и для каталога QSP, и для самостоятельного распространения.
+</p>
+
+<p>
+Также, при включенном режиме &quot;standalone&quot; не вызывается обновление плеера. Таким образом, распространяемый вместе с игрой плеер всегда остаётся той версии, которую предоставил автор игры.
+</p>
+<hr />
+
+<p>
+<a href="/help/debugger" class="wikilink1" title="help:debugger">Вперёд: Отладчик</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Режим standalone" [2298-] --></div>
+</body>
+</html>

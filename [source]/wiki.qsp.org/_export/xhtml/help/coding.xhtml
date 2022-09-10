@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:coding</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,coding"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/coding"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/coding"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:coding","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#programmnyj_kod">Программный код</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#kommentarii">Комментарии</a></div></li>
+<li class="level3"><div class="li"><a href="#operatory_i_funkcii">Операторы и функции</a></div></li>
+<li class="level3"><div class="li"><a href="#bazovye_funkcii">Базовые функции</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/expressions" class="wikilink1" title="help:expressions">Назад: Выражения</a>
+</p>
+
+<h2 class="sectionedit1" id="programmnyj_kod">Программный код</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Команды выполняются одна за другой, последовательно.</div>
+</li>
+<li class="level1"><div class="li"> Новая команда пишется на следующей строке после предыдущей.</div>
+<ul>
+<li class="level2"><div class="li"> Для лучшей читаемости можно разбивать код на части пустыми строками.<pre class="brush: qsp">
+яблоко = 1
+груша = 1
+
+*pl &#039;Яблок&#039; + яблоко
+*pl &#039;Груш&#039; + груша
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> При необходимости можно написать несколько команд в одну строку.</div>
+<ul>
+<li class="level2"><div class="li"> Между командами ставится знак &#039;<strong>&amp;</strong>&#039;.</div>
+</li>
+<li class="level2"><div class="li"> <em>Пример:</em><pre class="brush: qsp">
+&#039;&lt;a href=&quot;EXEC: яблоко += 1 &amp; GT $CURLOC&quot;&gt;яблоко&lt;/a&gt;&#039;
+!При нажатии на ссылку выполнится код:
+яблоко += 1
+GT $CURLOC</pre></div>
+</li>
+<li class="level2"><div class="li"> Без необходимости делать так <em class="u">не</em> рекомендуется, так как:</div>
+<ul>
+<li class="level3"><div class="li"> Код может стать трудночитаемым</div>
+</li>
+<li class="level3"><div class="li"> Повышается вероятность допустить <a href="/help/bag" class="wikilink1" title="help:bag">баг</a>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Внутреннюю часть многострочных операторов рекомендуется сдвигать вправо 2-4 пробелами.</div>
+<ul>
+<li class="level2"><div class="li"> Это никак не влияет на выполнение, но делает код более читаемым:<pre class="brush: qsp">
+IF яблоки=0 :
+  ADDOBJ &#039;Яблоко&#039;
+  яблоки = 1
+END
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Крайне редко для повышения читаемости кода приходится разбивать строку на несколько.</div>
+<ul>
+<li class="level2"><div class="li"> Вместо разбиения строки рекомендуется видоизменить код так, чтобы это не требовалось.</div>
+</li>
+<li class="level2"><div class="li"> Строка будет разбита в коде на части, но будет восприниматься интерпретатором как единая. </div>
+</li>
+<li class="level2"><div class="li"> Чтобы следующая строка считалась частью текущей, нужно в конце строки дописать <strong>&#039; _&#039;</strong> (пробел и символ подчёркивания):<pre class="brush: qsp">
+if a&lt;5 and n-b&gt;4+5+h/7*2 or t=4: p &#039;TTTTTTTTT&#039; &amp; cla &amp; $f=&#039;Text Variable&#039; &amp; goto &#039;FFFF&#039;
+</pre> равнозначно <pre class="brush: qsp">
+if a&lt;5 and _
+    n-b&gt;4+5+h/7*2 or  _
+    t=4: p &#039;TTTTTTTTT&#039; _
+  &amp; cla &amp; $f=&#039;Text Variable&#039; _
+  &amp; goto &#039;FFFF&#039;
+</pre></div>
+</li>
+<li class="level2"><div class="li"> Группа строк, разделённых &quot; _&quot;, считается <strong><em>одной</em></strong> строкой (сообщения об ошибках также выводятся с учётом того, что это одна строка).</div>
+</li>
+<li class="level2"><div class="li"> После <strong>OR</strong> стоит не один, а <strong><em>два</em></strong> пробела - один пробел расходуется на &quot; _&quot;, получилось бы &quot;ort=4&quot; вмето &quot;or t=4&quot;.</div>
+<ul>
+<li class="level3"><div class="li"> Исправлено: в более новых версиях (<em>Quest Navigator</em>, возможно даже в <em>AeorQSP</em>) пробел сохраняется.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Программный код" [54-3178] -->
+<h3 class="sectionedit2" id="kommentarii">Комментарии</h3>
+<div class="level3">
+
+<p>
+Оператор комментария (символ &#039;<strong>!</strong>&#039;) служит для комментирования кода и позволяет оставлять &quot;заметки на полях&quot;, которые помогут впоследствии ориентироваться в коде. Комментарии игнорируются интерпретатором.
+<pre class="brush: qsp">
+  !Однострочный комментарий
+  яблоки = 0
+!&#039;Многострочный
+комментарий&#039;
+яблоки = 1
+  сыр = 5 &amp;  ! А здесь&quot;комментарий начинается
+  в той же строке, но&quot; заканчивается &#039;сильно
+  позже&#039;. Во всём виноваты {кавычки и скобки
+  }Кстати:
+  яблоки=0
+ !&#039;Комментарии рекомендуется писать всё-таки
+в отдельных строках, а не как с &quot;сыром&quot;&#039;
+</pre>
+</p>
+
+<p>
+<strong>Примечание:</strong> при выводе ошибок многострочные комментарии считаются интерпретатором за одну строку.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Комментарии" [3179-4351] -->
+<h3 class="sectionedit3" id="operatory_i_funkcii">Операторы и функции</h3>
+<div class="level3">
+
+<p>
+<strong>Оператор</strong> - ключевое слово (команда языка QSP), выполняющее какое-либо действие. Оператор может иметь параметры (аргументы), которые задаются выражениями. Операторы не возвращают результат выполнения.<br/>
+
+Как правило, операторы меняют состояние игры.
+</p>
+
+<p>
+<pre class="brush: qsp">
+!&#039;Общий вид вызова оператора
+    имя_оператора аргумент1, аргумент2, ...
+или
+    имя_оператора (аргумент1, аргумент2, ...)
+&#039;
+!Примеры вызовов операторов:
+ADDOBJ &#039;ключ&#039;,&#039;pics/key.png&#039;
+ADDOBJ (&#039;ключ&#039;,&#039;pics/key.png&#039;)
+PL (&#039;текст&#039;)
+CLEAR()
+</pre>
+</p>
+
+<p>
+<strong>Функция</strong> - ключевое слово, которое используется для того, чтобы что-нибудь узнать. Например, сколько предметов игрок несёт в рюкзаке. Для этого, в коде мы указываем функцию, и необходимые для расчёта параметры (аргументы функции). Результат, &quot;посчитанный&quot; этой функцией, подставляется на её место в выражении. На языке программистов это называется &quot;функция была вызвана и вернула значение&quot;.<br/>
+
+Как правило, при вызове функции состояние игры не меняется.
+</p>
+
+<p>
+<pre class="brush: qsp">
+!Примеры вызовов функций:
+X = MAX(1, 2, 4)
+A = RAND(4)
+B = COUNTOBJ 
+PL STR(43)
+PL $STR(43)
+!Последние два выражения эквивалентны
+</pre>
+</p>
+
+<p>
+<strong>Примечание:</strong> при использовании функций возвращающих текстовое значение настоятельно рекомендуется приписывать перед именем функции символ &#039;<strong>$</strong>&#039; для улучшения читаемости кода.
+</p>
+
+<p>
+<strong>Примечание:</strong> Максимальное количество аргументов равно <strong>10</strong>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Операторы и функции" [4352-6690] -->
+<h3 class="sectionedit4" id="bazovye_funkcii">Базовые функции</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>QSPVER</strong> - возвращает версию библиотеки интерпретатора в формате &quot;X.Y.Z&quot;.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CURLOC</strong> - возвращает название текущей локации.</div>
+</li>
+<li class="level1"><div class="li"> Математические функции</div>
+<ul>
+<li class="level2"><div class="li"> <strong>RAND(</strong><em>[#выр1]</em><strong>,</strong><em>[#выр2]</em><strong>)</strong> - возвращает случайное число между числами <em>[#выр]</em> и <em>[#выр2]</em>. </div>
+<ul>
+<li class="level3"><div class="li"> Параметр <em>[#выр2]</em> может отсутствовать, при этом он принимается равным 0.</div>
+<ul>
+<li class="level4"><div class="li"> В более поздних версиях библиотеки <em>[#выр2]</em> по умолчанию принимается за 1.</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+RAND(1,4) &amp;! вернёт случайное значение от 1 до 4
+RAND(4,1) &amp;! вернёт случайное значение от 1 до 4
+RAND(1000) &amp;! вернёт случайное значение от 0(1) до 1000
+RAND 1000 &amp;! вернёт случайное значение от 0(1) до 1000</pre></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>RND</strong> - возвращает случайное значение от 1 до 1000.</div>
+</li>
+<li class="level2"><div class="li"> <strong>MAX(</strong><em>[выр1]</em><strong>,</strong><em>[выр2]</em><strong>,</strong> …<strong>)</strong> - возвращает максимальное из значений выражений-аргументов.</div>
+<ul>
+<li class="level3"><div class="li"> Если передан один аргумент, то считается, что указано имя массива.</div>
+</li>
+<li class="level3"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+MAX(1,2,5,2,0) &amp;! вернёт 5
+MAX(a,b,c) &amp;! вернёт максимальное из значений переменных a,b,c
+MAX(&#039;aa&#039;,&#039;ab&#039;,&#039;zz&#039;) &amp;! вернёт &#039;zz&#039;
+MAX(&#039;a&#039;) &amp;! вернёт максимальное из значений элементов массива &quot;a&quot;
+MAX(&#039;$b&#039;) &amp;! вернёт максимальное из значений элементов массива &quot;$b&quot;</pre></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>MIN(</strong><em>[выр1]</em><strong>,</strong><em>[выр2]</em><strong>,</strong> …<strong>)</strong> - возвращает минимальное из значений выражений-аргументов.</div>
+<ul>
+<li class="level3"><div class="li"> Если передан один аргумент, то считается, что указано имя массива.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/help/arrays" class="wikilink1" title="help:arrays">Вперёд: Массивы</a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Базовые функции" [6691-] --></div>
+</body>
+</html>

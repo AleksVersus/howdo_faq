@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:navigator</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,navigator"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/navigator"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/navigator"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:navigator","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#quest_navigator">Quest Navigator</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#principialnye_otlichija">Принципиальные отличия</a></div></li>
+<li class="level3"><div class="li"><a href="#dostupen_na_platformax">Доступен на платформах</a></div></li>
+<li class="level3"><div class="li"><a href="#buduschie_platformy">Будущие платформы</a></div></li>
+<li class="level3"><div class="li"><a href="#isxodnyj_kod">Исходный код</a></div></li>
+<li class="level3"><div class="li"><a href="#stati_po_teme">Статьи по теме</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/aeroqsp" class="wikilink1" title="help:aeroqsp">Назад:AeroQSP</a>
+</p>
+
+<h2 class="sectionedit1" id="quest_navigator">Quest Navigator</h2>
+<div class="level2">
+
+<p>
+Плеер Quest Navigator создаётся как следующий шаг развития платформы QSP, на смену устаревшим классическому плееру и AeroQSP.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Quest Navigator" [37-273] -->
+<h3 class="sectionedit2" id="principialnye_otlichija">Принципиальные отличия</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Содержимое отрисовывается средствами браузера, благодаря этому есть полная поддержка <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr> и Javascript</div>
+</li>
+<li class="level1"><div class="li"> Оформление отделено от кода игры</div>
+</li>
+<li class="level1"><div class="li"> Облегчено портирование плеера благодаря перемещению платформонезависимой части логики в общий Javascript-фреймворк</div>
+</li>
+<li class="level1"><div class="li"> Поддержка мобильных платформ (Android, iOS)</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT2 SECTION "Принципиальные отличия" [274-866] -->
+<h3 class="sectionedit3" id="dostupen_na_platformax">Доступен на платформах</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Android</div>
+</li>
+<li class="level1"><div class="li"> iOS</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Доступен на платформах" [867-939] -->
+<h3 class="sectionedit4" id="buduschie_platformy">Будущие платформы</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Windows Phone 8 (разработка не начата)</div>
+</li>
+<li class="level1"><div class="li"> Десктопные версии Windows (в разработке)<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Будущие платформы" [940-1242] -->
+<h3 class="sectionedit5" id="isxodnyj_kod">Исходный код</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Универсальный плеер для Windows на движке Awesomium <a href="http://github.com/Nex-Otaku/quest-navigator-awesomium" class="urlextern" title="http://github.com/Nex-Otaku/quest-navigator-awesomium"  rel="nofollow">GitHub</a></div>
+</li>
+<li class="level1"><div class="li"> Ветка библиотеки QSP, модифицированная для Quest Navigator <a href="https://github.com/Nex-Otaku/qsplib-experimental" class="urlextern" title="https://github.com/Nex-Otaku/qsplib-experimental"  rel="nofollow">GitHub</a></div>
+</li>
+<li class="level1"><div class="li"> JS framework (ядро) <a href="https://github.com/Nex-Otaku/quest-navigator-core" class="urlextern" title="https://github.com/Nex-Otaku/quest-navigator-core"  rel="nofollow">GitHub</a></div>
+</li>
+<li class="level1"><div class="li"> Библиотечный проект для standalone-приложений Android <a href="https://github.com/Nex-Otaku/quest-navigator-library-android" class="urlextern" title="https://github.com/Nex-Otaku/quest-navigator-library-android"  rel="nofollow">GitHub</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Исходный код" [1243-1835] -->
+<h3 class="sectionedit6" id="stati_po_teme">Статьи по теме</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="/help/navigator_game_files" class="wikilink1" title="help:navigator_game_files">Файлы игры на Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/navigator_command_line" class="wikilink1" title="help:navigator_command_line">Параметры запуска Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/navigator_game_template" class="wikilink1" title="help:navigator_game_template">Шаблон игры на Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/sozdanie_igr_na_quest_navigator" class="wikilink1" title="help:sozdanie_igr_na_quest_navigator">Создание игр для плеера Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/ispolzovanie_shriftov_v_quest_navigator" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Использование шрифтов в Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/fajl_nastroek_igry_v_quest_navigator" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры в Quest Navigator</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/help/navigator_standalone" class="wikilink1" title="help:navigator_standalone">Независимая сборка игры для Quest Navigator</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/help/navigator_game_files" class="wikilink1" title="help:navigator_game_files">Вперёд:Файлы игры на Quest Navigator</a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Статьи по теме" [1836-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Тема на форуме - <a href="http://qsp.su/index.php?option=com_agora&amp;task=topic&amp;id=633" class="urlextern" title="http://qsp.su/index.php?option=com_agora&amp;task=topic&amp;id=633"  rel="nofollow">Quest Navigator для Windows</a></div>
+</div>
+</div>
+</body>
+</html>

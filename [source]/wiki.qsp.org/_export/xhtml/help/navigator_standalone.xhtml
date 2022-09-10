@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:navigator_standalone</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,navigator_standalone"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/navigator_standalone"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/navigator_standalone"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:navigator_standalone","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h1 class="sectionedit1" id="nezavisimaja_sborka_igry_dlja_quest_navigator">Независимая сборка игры для Quest Navigator</h1>
+<div class="level1">
+
+<p>
+Не все игры, созданные для Навигатора, будут распространяться через &quot;Полку игр&quot;. Например, автору захочется распространять игру в виде готового инсталлятора.
+</p>
+
+<p>
+Все средства для этого в Навигаторе предусмотрены.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Независимая сборка игры для Quest Navigator" [1-468] -->
+<h2 class="sectionedit2" id="sozdanie_nezavisimoj_sborki_igry">Создание независимой сборки игры</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Переименуйте файл игры в <code>start.qsp</code>.</div>
+</li>
+<li class="level1"><div class="li"> В <a href="/help/fajl_nastroek_igry_v_quest_navigator" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">файле настроек</a> укажите режим <code>standalone</code>.</div>
+</li>
+<li class="level1"><div class="li"> Скопируйте папку плеера целиком в отдельное место, допустим <code>D:\MyGames\CoolGame-release</code>.</div>
+</li>
+<li class="level1"><div class="li"> Удалите игру &quot;по умолчанию&quot; - <code>D:\MyGames\CoolGame-release\standalone_content\start.qsp</code>.</div>
+</li>
+<li class="level1"><div class="li"> Поместите все файлы своей игры в папку <code>D:\MyGames\CoolGame-release\standalone_content</code>.</div>
+</li>
+</ol>
+
+<p>
+Теперь в папке <code>D:\MyGames\CoolGame-release</code> находится полностью независимая сборка игры. При запуске плеера из этой папки, ваша игра запустится автоматически. Эту папку можно распространять в виде архива, либо сделать инсталлятор.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Создание независимой сборки игры" [469-] --></div>
+</body>
+</html>

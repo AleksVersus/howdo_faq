@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:txt2gam</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,txt2gam"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/txt2gam"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/txt2gam"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:txt2gam","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+Работа с утилитой TXT2GAM
+</p>
+
+<p>
+Top Previous Next
+</p>
+
+<p>
+Программа &quot;TXT2GAM&quot; (<code>&quot;txt2gam.exe&quot;</code>) предназначена для создания игр под платформу QSP в обычном текстовом редакторе.
+</p>
+
+<p>
+Формат файла, обрабатываемого утилитой, представлен ниже.
+</p>
+
+<p>
+Начало локации обозначается символом &quot;#&quot;, после которого пишут название локации. Затем, построчно, необходимые операторы, а заканчивается локация символом &quot;-&quot; (с новой строки), после которого может идти всё, что угодно (в том числе ничего). Следующая локация опять начинается с символа &quot;#&quot; и т.д.
+</p>
+
+<p>
+Пример исходного файла:
+</p>
+
+<p>
+<pre class="brush: qsp">#Начало
+
+&#039;It&#039;&#039;s only test of new utility.&#039;
+
+&#039;That is all.&#039;
+
+act &#039;Далее&#039;:
+
+goto &#039;next&#039;
+
+end
+
+- (конец локации)
+
+
+
+#next
+
+$s=&#039;Это последняя локация примера.&#039;
+
+i=1
+
+:loop
+
+if i&lt;=len($s):
+
+*p mid($s,i,1)
+
+wait 200
+
+i=i+1
+
+jump &#039;loop&#039;
+
+end
+
+*nl &amp; &#039;Это всё.&#039;
+
+-</pre>
+</p>
+
+<p>
+Пример запуска утилиты:
+</p>
+
+<p>
+<code>txt2gam.exe game.txt game.gam</code>
+</p>
+
+<p>
+Здесь: &quot;game.txt&quot; - имя исходного файла, &quot;game.gam&quot; - имя файла, в котором будет сохранена игра.
+</p>
+
+<p>
+PS:
+</p>
+<ol>
+<li class="level1"><div class="li"> Между локациями может находиться любой текст, не начинающийся с символа &quot;#&quot;. В результирующем файле данный текст присутствовать не будет.</div>
+</li>
+<li class="level1"><div class="li"> При указании параметра &quot;u&quot; в командной строке, исходный файл будет обрабатываться как Unicode-файл (кодировка UCS-2 LE / UTF-16 LE).</div>
+</li>
+<li class="level1"><div class="li"> Для получения дополнительной информации об утилите, запустите её в консоли без параметров.</div>
+</li>
+</ol>
+</div>
+</body>
+</html>

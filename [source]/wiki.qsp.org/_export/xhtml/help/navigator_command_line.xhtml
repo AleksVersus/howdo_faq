@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:navigator_command_line</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,navigator_command_line"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/navigator_command_line"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/navigator_command_line"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:navigator_command_line","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#parametry_zapuska_quest_navigator">Параметры запуска Quest Navigator</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#format_komandy">Формат команды</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#opcii">Опции</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#spisok_standartnyx_shablonov">Список стандартных шаблонов</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="parametry_zapuska_quest_navigator">Параметры запуска Quest Navigator</h1>
+<div class="level1">
+
+<p>
+Параметры запуска передаются в командной строке.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Параметры запуска Quest Navigator" [1-157] -->
+<h2 class="sectionedit2" id="format_komandy">Формат команды</h2>
+<div class="level2">
+
+<p>
+<code>&quot;Путь\к\QuestNavigator.exe&quot; [опции] [&quot;Другой\путь\Моя крутая игра&quot;]</code>
+</p>
+
+<p>
+Если путь к запускаемой игре не указан, открывается &quot;игра по умолчанию&quot;, расположенная в папке &quot;assets\standalone_content&quot; установочной директории плеера.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Формат команды" [158-566] -->
+<h3 class="sectionedit3" id="opcii">Опции</h3>
+<div class="level3">
+
+<p>
+<code>-enable-sound-cache</code>
+</p>
+
+<p>
+Включает кэширование звуковых файлов. При большом размере файла, в несколько мегабайт, на первом запуске трек включается с задержкой, около секунды (но небольшие звуковые файлы запускаются без задержек). Поэтому может возникнуть необходимость в кэшировании (предварительной загрузке) таких треков. Для кэширования, помимо опции запуска плеера, нужно включить в игру подобный код:
+<pre class="brush: qsp">
+! при старте игры
+PLAY &#039;1.mp3&#039;, 0
+PLAY &#039;2.mp3&#039;, 0
+PLAY &#039;3.mp3&#039;, 0
+CLOSE ALL
+</pre>
+При включенном кэшировании, если прервать трек на середине, потом запустить заново, слышен небольшой тихий щелчок. Поэтому по умолчанию кэширование отключено. 
+</p>
+
+<p>
+<code>-default-skin имя_шаблона</code>
+</p>
+
+<p>
+Указывает имя стандартного шаблона, выбираемого по умолчанию для игры, у которой нет своего шаблона, и не указан желаемый шаблон в <a href="/help/fajl_nastroek_igry_v_quest_navigator" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">файле настроек игры</a>. По умолчанию выбирается шаблон <code>default</code>.
+</p>
+
+<p>
+<code>-restart</code>
+</p>
+
+<p>
+Используется для перезапуска обновлённой версии игры. При указании этой опции, плеер находит окно с уже запущенной игрой, сообщает ему о необходимости перезапуска и завершает свою работу. Ранее запущенный плеер читает игру с диска заново, целиком и перезапускает.
+</p>
+
+<p>
+Таким образом, при последовательном вызове плеера с этой опцией, для одной и той же игры, всегда будет открыт только один экземпляр плеера. Это удобно для редактирования игры, так как без этой опции каждый запуск плеера создаёт новое окно, и приходится закрывать их вручную.
+</p>
+
+<p>
+При использовании этой опции, плеер всегда проверяет путь к игре. Если в ранее открытом окне плеера запущена другая игра, то его это никак не коснётся.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Опции" [567-3420] -->
+<h2 class="sectionedit4" id="spisok_standartnyx_shablonov">Список стандартных шаблонов</h2>
+<div class="level2">
+
+<p>
+<strong>classic</strong>
+</p>
+
+<p>
+Шаблон, имитирующий расположение окон в классическом плеере.
+</p>
+
+<p>
+<strong>default</strong>
+</p>
+
+<p>
+Шаблон, выбираемый по умолчанию для любой игры. Если у игры нет своего шаблона, и не указано, какой из стандартных использовать, будет выбран шаблон по умолчанию.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Список стандартных шаблонов" [3421-] --></div>
+</body>
+</html>

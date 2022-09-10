@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:stat</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,stat"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/stat"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/stat"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:stat","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#dopolnitelnoe_okno_opisanija">Дополнительное окно описания</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#komandy">Команды</a></div></li>
+<li class="level3"><div class="li"><a href="#primery">Примеры</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/main" class="wikilink1" title="help:main">Назад: Основное окно описания</a>
+</p>
+
+<h2 class="sectionedit1" id="dopolnitelnoe_okno_opisanija">Дополнительное окно описания</h2>
+<div class="level2">
+
+<p>
+Дополнительное окно описания очищается только программно и не очищается при смене локаций. Поэтому оно используется для текстов, которые меняются довольно редко и по смыслу должны быть отделены от основного описания, инвентаря и действий.<br/>
+
+Использование этого окна без необходимости считается дурным тоном, т.к. это перегружает интерфейс и создаёт проблемы отображения игры на Android и iOS.
+</p>
+
+<p>
+<strong>ВНИМАНИЕ!</strong> При написании кроссплатформенных игр использовать дополнительное окно описания настоятельно не рекомендуется Nex&#039;ом.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Дополнительное окно описания" [70-1089] -->
+<h3 class="sectionedit2" id="komandy">Команды</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"><strong>SHOWSTAT</strong> <em>[#выражение]</em> - если значение выражения отлично от 0, то показывает окно дополнительного описания, иначе скрывает его.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"><strong>P</strong> <em>[$текст]</em> - простой вывод текста</div>
+</li>
+<li class="level1"><div class="li"><strong>PL</strong> <em>[$текст]</em> - вывод текста, затем переход на новую строку</div>
+<ul>
+<li class="level2"><div class="li"> Если не указать <em>[$текст]</em>, то это будет переход на новую строку</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><strong>NL</strong> <em>[$текст]</em> - переход на новую строку, затем вывод текста</div>
+<ul>
+<li class="level2"><div class="li"> Если не указать <em>[$текст]</em>, то это будет переход на новую строку</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>DISABLESCROLL</strong> - если значение переменной не равно 0, то запрещает автопрокрутку текста при его выводе в основное или дополнительное окно описания локации.</div>
+<ul>
+<li class="level2"><div class="li"> <em>Довольно мутное поведение в классическом плеере - при некоторых обстоятельствах текст и так не прокручивается.</em></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>$STATTXT</strong> - функция, возвращающая текст дополнительного окна</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>CLEAR</strong> или <strong>CLR</strong> - очищает дополнительное окно описания.</div>
+</li>
+<li class="level1"><div class="li"> <strong>CLS</strong> - эквивалентно конструкции &quot;CLEAR &amp; *CLEAR &amp; CLA &amp; CMDCLEAR&quot;, т.е. очищает все окна кроме списка предметов.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Команды" [1090-2765] -->
+<h3 class="sectionedit3" id="primery">Примеры</h3>
+<div class="level3">
+
+<p>
+<pre class="brush: qsp">
+P &#039;1&#039;
+$txt = $STATTXT
+PL &#039;23&#039;
+NL &#039;456&#039;
+</pre>
+</p>
+
+<p>
+После выполнения кода в дополнительное окно описания будет выведено:
+<pre class="brush: qsp">
+123
+
+456
+</pre>
+Содержание <em>$txt</em> будет равносильно коду:
+<pre class="brush: qsp">
+$txt = &#039;1&#039;
+</pre>
+</p>
+<hr />
+
+<p>
+<a href="/help/msgbox" class="wikilink1" title="help:msgbox">Вперёд: Диалоговое окно</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Примеры" [2766-] --></div>
+</body>
+</html>

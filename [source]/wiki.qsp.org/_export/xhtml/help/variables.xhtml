@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:variables</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,variables"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/variables"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/variables"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:variables","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#peremennye">Переменные</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#zadanie_znachenija_peremennoj">Задание значения переменной</a></div></li>
+<li class="level3"><div class="li"><a href="#udalenie_peremennoj">Удаление переменной</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="/help/locations" class="wikilink1" title="help:locations">Назад: Локации и переходы</a>
+</p>
+
+<h2 class="sectionedit1" id="peremennye">Переменные</h2>
+<div class="level2">
+
+<p>
+Переменная - именованная &quot;ячейка памяти&quot;.
+</p>
+<ul>
+<li class="level1"><div class="li"> Переменные в QSP бывают двух типов:</div>
+<ul>
+<li class="level2"><div class="li"> <em class="u">Целочисленная</em></div>
+<ul>
+<li class="level3"><div class="li"> Значения переменной могут быть в пределах [-2147483648, 2147483647]</div>
+</li>
+<li class="level3"><div class="li"> Только целые числа</div>
+</li>
+<li class="level3"><div class="li"> Значение по умолчанию = 0</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em class="u">Строковая</em></div>
+<ul>
+<li class="level3"><div class="li"> Длина строки может быть в пределах от 0 (пустая строка) до 32 килобайт или 2 гигабайт в зависимости от того, как собрана библиотека. Превышать объём доступной оперативной памяти строка не может.</div>
+</li>
+<li class="level3"><div class="li"> Значение по умолчанию = <em>&#039;&#039;</em> (пустая строка).</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Название переменной должно отвечать следующим условиям:</div>
+<ul>
+<li class="level2"><div class="li"> Оно <em class="u">не</em> должно начинаться с цифры.</div>
+</li>
+<li class="level2"><div class="li"> Оно <em class="u">не</em> должно совпадать с ключевыми словами (См. <a href="/help/keywords" class="wikilink1" title="help:keywords">список ключевых слов</a>)</div>
+</li>
+<li class="level2"><div class="li"> В названии <em class="u">не</em> должны использоваться пробелы, символы табуляции и следующие символы:<br/>
+<strong>! : &amp; = &lt; &gt; + - * / , &#039; &quot; ( ) [ ] { }</strong></div>
+<ul>
+<li class="level3"><div class="li"> Вместо пробела в названиях рекомендуется использовать символ подчеркивания - &quot;_&quot;.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Регистр <em class="u">не</em> важен: &quot;деньги&quot; и &quot;ДеНьГи&quot; - одна и та же переменная.</div>
+</li>
+<li class="level2"><div class="li"> <em class="u">Не</em> рекомендуются названия длиннее 10-15 символов.</div>
+</li>
+<li class="level2"><div class="li"> <em class="u">Не</em> рекомендуется использовать в названии переменной одновременно и латинские, и кириллические символы.</div>
+</li>
+<li class="level2"><div class="li"> Названия <em class="u">строковых</em> переменных должны начинаться с символа &#039;$&#039;.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> При попытке использования <em class="u">несуществующей</em> переменной в выражении будет использовано <em class="u">значение по умолчанию</em>.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Переменные" [68-2424] -->
+<h3 class="sectionedit2" id="zadanie_znachenija_peremennoj">Задание значения переменной</h3>
+<div class="level3">
+
+<p>
+Переменная создаётся при первом задании её значения.<br/>
+
+Платформа допускает три равнозначных способа задания значения переменной:
+<pre class="brush: qsp">
+SET переменная = [выражение]
+LET переменная = [выражение]
+переменная = [выражение]
+</pre>
+Далее в справке будет использован последний способ, как наиболее удобный.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Задание значения переменной" [2425-3020] -->
+<h3 class="sectionedit3" id="udalenie_peremennoj">Удаление переменной</h3>
+<div class="level3">
+
+<p>
+<pre class="brush: qsp">
+KILLVAR &#039;переменная&#039;
+</pre>
+Более подробное описание оператора <strong>KILLVAR</strong> находится в статье про <a href="/help/arrays" class="wikilink1" title="help:arrays">массивы</a>.
+</p>
+
+<p>
+<strong>Внимание!</strong> В силу особенностей платформы числовые и строковые переменные связаны между собой: удаление переменной &quot;переменная&quot; повлечёт за собой удаление переменной &quot;$переменная&quot; и наоборот.
+</p>
+<hr />
+
+<p>
+<a href="/help/expressions" class="wikilink1" title="help:expressions">Вперёд: Выражения</a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Удаление переменной" [3021-] --></div>
+</body>
+</html>

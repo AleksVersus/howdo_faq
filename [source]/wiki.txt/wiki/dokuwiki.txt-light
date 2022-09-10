@@ -1,0 +1,65 @@
+
+DokuWiki
+
+[%image%](http://www.dokuwiki.org/wiki%3Adokuwiki) DokuWiki is a standards compliant, simple to use [Wiki](http://en.wikipedia.org/wiki/Wiki), mainly aimed at creating documentation of any kind. It is targeted at developer teams, workgroups and small companies. It has a simple but powerful [Formatting Syntax](../wiki/syntax.html) which makes sure the datafiles remain readable outside the Wiki and eases the creation of structured texts. All data is stored in plain text files – no database is required.
+
+Read the [DokuWiki Manual](http://www.dokuwiki.org/manual) to unleash the full power of DokuWiki.
+
+==Download==
+[:wiki_dokuwiki]
+
+[:download]
+
+DokuWiki is available at [http://www.splitbrain.org/go/dokuwiki](http://www.splitbrain.org/go/dokuwiki)
+
+Read More
+
+All documentation and additional information besides the [syntax description](../wiki/syntax.html) is maintained in the DokuWiki at [www.dokuwiki.org](http://www.dokuwiki.org/).
+
+`About DokuWiki`
+
+	*  [A feature list](http://www.dokuwiki.org/features) [%image%](../lib/images/smileys/icon_exclaim.gif)
+	*  [Happy Users](http://www.dokuwiki.org/users)
+	*  [Who wrote about it](http://www.dokuwiki.org/press)
+	*  [What Bloggers think](http://www.dokuwiki.org/blogroll)
+	*  [Compare it with other wiki software](http://www.wikimatrix.org/show/DokuWiki)
+`Installing DokuWiki`
+
+	*  [System Requirements](http://www.dokuwiki.org/requirements)
+	*  [Download DokuWiki](http://www.splitbrain.org/go/dokuwiki) [%image%](../lib/images/smileys/icon_exclaim.gif)
+	*  [Change Log](http://www.dokuwiki.org/changes)
+	*  [How to install or upgrade](http://www.dokuwiki.org/Install) [%image%](../lib/images/smileys/icon_exclaim.gif)
+	*  [Configuration](http://www.dokuwiki.org/config)
+`Using DokuWiki`
+
+	*  [Wiki Syntax](http://www.dokuwiki.org/syntax)
+	*  [The manual](http://www.dokuwiki.org/manual) [%image%](../lib/images/smileys/icon_exclaim.gif)
+	*  [Frequently Asked Questions (FAQ)](http://www.dokuwiki.org/FAQ)
+	*  [Glossary](http://www.dokuwiki.org/glossary)
+	*  [Search for DokuWiki help and documentation](http://search.dokuwiki.org)
+`Customizing DokuWiki`
+
+	*  [Tips and Tricks](http://www.dokuwiki.org/tips)
+	*  [How to create and use templates](http://www.dokuwiki.org/Template)
+	*  [Installing plugins](http://www.dokuwiki.org/plugins)
+	*  [Development Resources](http://www.dokuwiki.org/development)
+`DokuWiki Feedback and Community`
+
+	*  [Subscribe to the newsletter](http://www.dokuwiki.org/newsletter) [%image%](../lib/images/smileys/icon_exclaim.gif)
+	*  [Join the mailing list](http://www.dokuwiki.org/mailinglist)
+	*  [Check out the user forum](http://forum.dokuwiki.org)
+	*  [Talk to other users in the IRC channel](http://www.dokuwiki.org/irc)
+	*  [Submit bugs and feature wishes](http://bugs.splitbrain.org/index.php?project=1)
+	*  [Share your experiences in the WikiMatrix forum](http://www.wikimatrix.org/forum/viewforum.php?id=10)
+	*  [Some humble thanks](http://www.dokuwiki.org/thanks)
+Copyright
+
+2004-2013 © Andreas Gohr [andi@splitbrain.org](mailto:andi@splitbrain.org)[1)](#fn__1) and the DokuWiki Community
+
+The DokuWiki engine is licensed under [GNU General Public License](http://www.gnu.org/licenses/gpl.html) Version 2. If you use DokuWiki in your company, consider [donating](http://www.dokuwiki.org/donate) a few bucks [%image%](../lib/images/smileys/icon_wink.gif).
+
+Not sure what this means? See the [FAQ on the Licenses](http://www.dokuwiki.org/faq%3Alicense).
+
+[1)](#fnt__1) 
+Please do not contact me for help and support – use the [mailinglist](http://www.dokuwiki.org/mailinglist) or [forum](http://forum.dokuwiki.org) instead
+

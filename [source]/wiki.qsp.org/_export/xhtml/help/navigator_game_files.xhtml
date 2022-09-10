@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:navigator_game_files</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,navigator_game_files"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/navigator_game_files"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/navigator_game_files"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:navigator_game_files","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<a href="/help/navigator" class="wikilink1" title="help:navigator">Назад: Quest Navigator</a>
+</p>
+
+<h2 class="sectionedit1" id="fajly_igry_na_quest_navigator">Файлы игры на Quest Navigator</h2>
+<div class="level2">
+
+<p>
+В папке с игрой должны быть две папки:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>qsplib</strong> - стандартная папка для всех игр, содержащая часть игрового движка, лезть туда не советую, позже она перестанет быть обязательной, пока папку нужно скопировать из папки с плеером.</div>
+</li>
+<li class="level1"><div class="li"> <strong>standalone_content</strong> - здесь находится сама игра</div>
+</li>
+</ul>
+
+<p>
+Папка <strong>standalone_content</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>game.qsp</em> - файл игры QSP <sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup></div>
+</li>
+<li class="level1"><div class="li"> шаблоны оформления для разных игровых платформ:</div>
+<ul>
+<li class="level2"><div class="li"> <em><a href="/help/navigator_game_template" class="wikilink1" title="help:navigator_game_template">gameAwesomium.html</a></em> - устройства на Windows</div>
+</li>
+<li class="level2"><div class="li"> <em>gamePG-android.html</em> - устройства на Android</div>
+</li>
+<li class="level2"><div class="li"> <em>gamePG-ios.html</em> - устройства на iOS</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <em><a href="/help/fajl_nastroek_igry_v_quest_navigator" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">config.xml</a></em> - файл настроек игры</div>
+</li>
+<li class="level1"><div class="li"> <em><a href="/help/navigator_game_template" class="wikilink1" title="help:navigator_game_template">game.css</a></em> - файл стилей, от этого файла зависит внешний вид игры</div>
+</li>
+<li class="level1"><div class="li"> <em>game.js</em> - файл JS, в котором программируются дополнительные функции</div>
+</li>
+<li class="level1"><div class="li"> все остальные файлы.</div>
+</li>
+</ul>
+
+<p>
+<em>В корне папки <strong>standalone_content</strong> должны находиться файлы из первых трёх пунктов перечисления. Остальные можно и рекомендуется держать в подпапках для удобства.</em><br/>
+
+<em>Все дополнительные QSP файлы (подключаемые модули) должны <strong>обязательно</strong> быть в подпапках <sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.</em>
+</p>
+<hr />
+
+<p>
+<a href="/help/navigator_game_template" class="wikilink1" title="help:navigator_game_template">Вперёд: Шаблон игры на Quest Navigator</a>
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Файлы игры на Quest Navigator" [48-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+Вместо &quot;game&quot; может быть любое название игры</div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+Т.к. игра запускается из первого найденного файла .qsp в корне <strong>standalone_content</strong></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>Строки [Документация QSP]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,strings"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.html" title="Документация QSP"/>
+<link rel="start" href="../help/strings.html"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="../feed.html"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="../feed.html"/>
+<link rel="edit" title="Править страницу" href="../help/strings.html"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="../_export/xhtml/help/strings.xhtml"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/strings"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php.t.exportdokuwiki.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:strings","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php.t.exportdokuwiki.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../lib/tpl/exportdokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../lib/tpl/exportdokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_exportdokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">Перейти к содержанию</a></li>
+        </ul>
+
+        <h1><a href="../start.html"  accesskey="h" title="[H]"><img src="../wiki/logo.png" width="147" height="74" alt="" /> <span>Документация QSP</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Инструменты сайта</h3>
+                        <div class="mobileTools">
+                <form action="../doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="help:strings" /><select name="do" class="edit quickselect" title="Инструменты"><option value="">Инструменты</option><optgroup label="Инструменты страницы"></optgroup><optgroup label="Инструменты сайта"></optgroup><optgroup label="Инструменты пользователя"></optgroup></select><input type="submit" value="&gt;" /></div></form>            </div>
+            <ul>
+                            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Вы посетили:</span> <span class="bcsep">•</span> <bdi><a href="../help/qgen.html"  class="breadcrumbs" title="help:qgen">qgen</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/qsp.html"  class="breadcrumbs" title="help:qsp">Что такое QSP?</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/qsp_license.html"  class="breadcrumbs" title="help:qsp_license">Лицензионное соглашение Quest Soft Player</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/realtime.html"  class="breadcrumbs" title="help:realtime">Реальное время</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/regexp.html"  class="breadcrumbs" title="help:regexp">Регулярные выражения</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/service_locations.html"  class="breadcrumbs" title="help:service_locations">Служебные локации</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/sound.html"  class="breadcrumbs" title="help:sound">Звук</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/sozdanie_igr_na_quest_navigator.html"  class="breadcrumbs" title="help:sozdanie_igr_na_quest_navigator">Создание игр для плеера Quest Navigator</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/stat.html"  class="breadcrumbs" title="help:stat">Дополнительное окно описания</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="../help/strings.html"  class="breadcrumbs" title="help:strings">Строки</a></bdi></span></div>
+                    </div>
+    
+    <div class="notify">New release candidate 2 available: rc2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2020-07-29 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 3 available: 2020-06-09 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 2 available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22c "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22b "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22a "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2018-04-22 "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19g "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.7] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19f "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.6] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19e "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2017-02-19d "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2017-02-19c "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token and media manager: 2017-02-19b "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing install and media manager issues: 2017-02-19a "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2017-02-19 "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2016-06-26e "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2016-06-26d "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2016-06-26c "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token: 2016-06-26b "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing authad issues: 2016-06-26a "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2016-06-26 "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2015-08-10a "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2015-08-10 "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="error">Writing /var/www/qsp.su/public_html/wiki/data/meta/access.log failed</div>
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad include group">
+                    <h3 class="toggle">Боковая панель</h3>
+                    <div class="content">
+                                                                        <ul>
+<li class="level1"><div class="li"> <strong><span class="curid"><a href="../start.html" class="wikilink1" title="start">В начало</a></span></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/qsp.html" class="wikilink1" title="help:qsp">Что такое QSP?</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/locations.html" class="wikilink1" title="help:locations">Локации и переходы</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Программирование</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/variables.html" class="wikilink1" title="help:variables">Переменные</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/expressions.html" class="wikilink1" title="help:expressions">Выражения</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/coding.html" class="wikilink1" title="help:coding">Программный код</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/arrays.html" class="wikilink1" title="help:arrays">Массивы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/strings.html" class="wikilink1" title="help:strings">Строки</a></div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/regexp.html" class="wikilink1" title="help:regexp">Регулярные выражения</a></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <a href="../help/conditional.html" class="wikilink1" title="help:conditional">Условия</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/organizing.html" class="wikilink1" title="help:organizing">Пользовательские функции и процедуры</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/jump.html" class="wikilink1" title="help:jump">Переходы внутри локации, циклы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/principle.html" class="wikilink1" title="help:principle">Порядок работы интерпретатора</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/service_locations.html" class="wikilink1" title="help:service_locations">Служебные локации</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/dynamical.html" class="wikilink1" title="help:dynamical">Динамический код</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Вывод текста</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/main.html" class="wikilink1" title="help:main">Основное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/stat.html" class="wikilink1" title="help:stat">Дополнительное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/msgbox.html" class="wikilink1" title="help:msgbox">Диалоговое окно</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/acts.html" class="wikilink1" title="help:acts">Действия</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/objs.html" class="wikilink1" title="help:objs">Предметы (инвентарь)</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/menu.html" class="wikilink1" title="help:menu">Меню</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Оформление</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/sound.html" class="wikilink1" title="help:sound">Звук</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/graphics.html" class="wikilink1" title="help:graphics">Графика</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/fonts.html" class="wikilink1" title="help:fonts">Шрифты</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/html.html" class="wikilink1" title="help:html">HTML</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Расширенные возможности</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/inputs.html" class="wikilink1" title="help:inputs">Ввод текста игроком</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/modules.html" class="wikilink1" title="help:modules">Работа с файлами, использование модулей</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/realtime.html" class="wikilink1" title="help:realtime">Реальное время</a></div>
+</li>
+<li class="level2"><div class="li"> Нюансы написания игр под разные плееры</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/classic_qsp.html" class="wikilink1" title="help:classic_qsp">Классический плеер</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/aeroqsp.html" class="wikilink1" title="help:aeroqsp">AeroQSP</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/navigator.html" class="wikilink1" title="help:navigator">Quest Navigator</a></div>
+<ul>
+<li class="level4"><div class="li"> <a href="../help/navigator_command_line.html" class="wikilink1" title="help:navigator_command_line">Параметры запуска</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_files.html" class="wikilink1" title="help:navigator_game_files">Файлы игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_template.html" class="wikilink1" title="help:navigator_game_template">Шаблон игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/sozdanie_igr_na_quest_navigator.html" class="wikilink1" title="help:sozdanie_igr_na_quest_navigator">Создание игр</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/ispolzovanie_shriftov_v_quest_navigator.html" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Шрифты</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/fajl_nastroek_igry_v_quest_navigator.html" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_standalone.html" class="wikilink1" title="help:navigator_standalone">Независимая сборка</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Утилиты и средства разработки</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/debugger.html" class="wikilink1" title="help:debugger">Отладчик</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/analyzer.html" class="wikilink1" title="help:analyzer">Анализатор кода QSP</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../howto/start.html" class="wikilink1" title="howto:start">Как сделать</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/glossary.html" class="wikilink1" title="help:glossary">Cловарь терминов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/keywords.html" class="wikilink1" title="help:keywords">Список ключевых слов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/limits.html" class="wikilink1" title="help:limits">Ограничения QSP</a></strong></div>
+</li>
+</ul>
+                                            </div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+
+                <div class="pageId"><span>help:strings</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Содержание</h3>
+<div>
+
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stroki">Строки</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#konstanty">Константы</a></div></li>
+<li class="level3"><div class="li"><a href="#sravnenie_strok">Сравнение строк</a></div></li>
+<li class="level3"><div class="li"><a href="#podvyrazhenija">Подвыражения</a></div></li>
+<li class="level3"><div class="li"><a href="#funkcii">Функции</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../help/arrays.html" class="wikilink1" title="help:arrays">Назад: Массивы</a>
+</p>
+
+<h2 class="sectionedit1" id="stroki">Строки</h2>
+<div class="level2">
+
+<p>
+В QSP есть два типа данных: числовой и строковый.<br/>
+
+Строковый тип данных отличается тем, что в начале названия строковой переменной или массива должен быть символ &#039;<strong>$</strong>&#039;.<br/>
+
+Рекомендуется к названиям всех функций, возвращающих строковые значения, тоже приписывать символ &#039;<strong>$</strong>&#039; для улучшения читаемости кода.
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="../help/strings.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428443632" /><input type="hidden" name="summary" value="[Строки] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="45-620" /><input type="submit" value="Править" class="button" title="Строки" /></div></form></div>
+<h3 class="sectionedit2" id="konstanty">Константы</h3>
+<div class="level3">
+
+<p>
+Если с числовыми константами в QSP всё просто (просто записывается числом, например, 4593), то со строковыми есть несколько нюансов:
+</p>
+<ul>
+<li class="level1"><div class="li"> Текстовая константа берётся с двух сторон в кавычки</div>
+<ul>
+<li class="level2"><div class="li"> Кавычки могут быть двух видов: апострофы <strong>&#039; &#039;</strong> и прямые кавычки <strong>&quot; &quot;</strong></div>
+</li>
+<li class="level2"><div class="li"> Если нужно в константу включить кавычки того же вида, нужно написать кавычки два раза подряд:<pre class="brush: qsp">
+*PL &#039;Byte Soft&#039;&#039;s &quot;QSP&quot;&#039;
+*PL &quot;Byte Soft&#039;s &quot;&quot;QSP&quot;&quot;&quot;
+!Byte Soft&#039;s &quot;QSP&quot;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Для текстовых констант сохраняются переносы строк и отступы:<pre class="brush: qsp">
+&#039;Данный текст
+будет расположен на
+нескольких строках&#039;
+
+$a=&#039;И этот
+текст
+также&#039;
+
+a=2 &amp; act &#039;Многострочное
+название&#039;:gt &#039;next&#039;
+</pre></div>
+<ul>
+<li class="level2"><div class="li"> При выводе ошибок многострочная (префоматированная) текстовая константа считается за одну строку.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Текстовые константы и значения переменных можно объединять двумя способами:</div>
+<ul>
+<li class="level2"><div class="li"> С помощью оператора конкатенации <strong>&amp;</strong>. Выражение нужно брать в скобки, т.к. оператор <strong>&amp;</strong> также разделяет команды: <pre class="brush: qsp"> 
+$res = (&#039;x=&#039; &amp; x &amp; &#039; y=&#039; &amp; y) &amp;! Результат &#039;x=5 y=6&#039;
+$res = &#039;x=&#039; &amp; x &amp;!&#039;Результат &#039;x=&#039;, а &#039;5&#039; выведется
+в основное окно описания.&#039;
+</pre></div>
+</li>
+<li class="level2"><div class="li"> С помощью оператора сложения <strong>+</strong>: <pre class="brush: qsp">
+$res = &#039;x=&#039; + x + &#039; y=&#039; + y &amp;! Результат &#039;x=5 y=6&#039;
+</pre></div>
+<ul>
+<li class="level3"><div class="li"> Следует соблюдать осторожность, если одно из слагаемых числового типа: <pre class="brush: qsp">
+x = 1
+$res = &#039;1&#039; + x
+!Результат &#039;2&#039; вместо &#039;11&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="../help/strings.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428443632" /><input type="hidden" name="summary" value="[Константы] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="621-2817" /><input type="submit" value="Править" class="button" title="Константы" /></div></form></div>
+<h3 class="sectionedit3" id="sravnenie_strok">Сравнение строк</h3>
+<div class="level3">
+
+<p>
+Строки сравниваются посимвольно, начиная с крайнего левого символа.<pre class="brush: qsp">
+&#039;ac&#039; = &#039;ac&#039;
+&#039;bc&#039; &gt; &#039;ac&#039;  &amp;! &#039;b&#039; &gt; &#039;a&#039;
+&#039;ac&#039; &gt; &#039;ab&#039;  &amp;! &#039;c&#039; &gt; &#039;b&#039;
+&#039;b&#039;  &gt; &#039;ab&#039;  &amp;! &#039;b&#039; &gt; &#039;a&#039;
+&#039;ab&#039; &gt; &#039;a&#039;   &amp;! &#039;b&#039; &gt; &#039;&#039;
+</pre>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="../help/strings.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428443632" /><input type="hidden" name="summary" value="[Сравнение строк] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="2818-3114" /><input type="submit" value="Править" class="button" title="Сравнение строк" /></div></form></div>
+<h3 class="sectionedit4" id="podvyrazhenija">Подвыражения</h3>
+<div class="level3">
+
+<p>
+В строковые константы, в базовые описания локаций и названия базовых действий существует возможность вставлять значения выражений. Такие &quot;подвыражения&quot; должны находиться между двойных угловых скобок: &quot;<strong>&lt;&lt;</strong>&quot; и &quot;<strong>&gt;&gt;</strong>&quot;, до и после которых может идти любой текст, включая подобные &quot;подвыражения&quot;.
+</p>
+
+<p>
+<pre class="brush: qsp">
+pl &#039;i=&#039;+str(i)
+!эквивалентно
+pl &#039;i=&lt;&lt;i&gt;&gt;&#039;
+
+число_гоблинов=5
+&#039;Тебя окружили &lt;&lt;число_гоблинов&gt;&gt; гоблинов!&#039;
+
+pl &#039;Вас зовут &lt;&lt;$PlayerName&gt;&gt;, вы находитесь в &lt;&lt;$curloc&gt;&gt;.&#039;
+
+!Вложенные подвыражения:
+pl val(&#039;&lt;&lt;val(&quot;&lt;&lt;i&gt;&gt;&quot;)&gt;&gt;&lt;&lt;j&gt;&gt;&#039;)
+pl val(&#039;&lt;&lt;str(val(&quot;&lt;&lt;i&gt;&gt;&quot;))&gt;&gt;&#039;)
+!&#039;При использовании вложенных подвыражений
+необходимо использовать вложенные строковые константы&#039;
+</pre>
+</p>
+
+<p>
+Если нужно вывести последовательность &quot;<strong>&lt;&lt;</strong>&quot; на экран, можно использовать два способа:
+</p>
+<ul>
+<li class="level1"><div class="li"> Разбить &#039;<strong>&lt;&lt;</strong>&#039; на &#039;<strong>&lt;</strong>&#039;+&#039;<strong>&lt;</strong>&#039;: <pre class="brush: qsp">
+$text = &#039;&lt;&#039;+&#039;&lt;var&gt;&gt;&#039;
+&#039;string &lt;&#039;+&#039;&lt;var&gt;&gt;&#039;
+</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>DISABLESUBEX</strong> - системная переменная, &quot;выключающая&quot; подвыражения при неравенстве 0:<pre class="brush: qsp">
+DISABLESUBEX=1
+$text = &#039;&lt;&lt;var&gt;&gt;&#039;
+&#039;string &lt;&lt;var&gt;&gt;&#039;
+DISABLESUBEX=0
+</pre></div>
+</li>
+</ul>
+
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="../help/strings.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428443632" /><input type="hidden" name="summary" value="[Подвыражения] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="3115-4747" /><input type="submit" value="Править" class="button" title="Подвыражения" /></div></form></div>
+<h3 class="sectionedit5" id="funkcii">Функции</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>LEN(</strong><em>[$стр]</em><strong>)</strong> - возвращает длину строки <em>[$стр]</em>.</div>
+</li>
+<li class="level1"><div class="li"> <strong>MID(</strong><em>[$стр]</em><strong>,</strong><em>[#начало]</em><strong>,</strong><em>[#длина]</em><strong>)</strong> - вырезает из строки <em>[$стр]</em> строку, которая начинается с символа номер <em>[#начало]</em> и имеет длину <em>[#длина]</em>. Индексация символов в строке ведётся с 1.</div>
+<ul>
+<li class="level2"><div class="li"> Параметр <em>[#длина]</em> может отсутствовать, при этом вырезается вся строка, начиная с символа <em>[#начало]</em>. </div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+$MID(&#039;abcd&#039;, 1, 2) &amp;! &#039;ab&#039;
+$MID(&#039;abcd&#039;, 2, 3) &amp;! &#039;bcd&#039;
+$MID(&#039;abcd&#039;, 2)    &amp;! &#039;bcd&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>UCASE(</strong><em>[$стр]</em><strong>)</strong> - возвращает строку больших букв, полученную изменением регистра букв исходной строки <em>[$стр]</em>. <pre class="brush: qsp">$UCASE(&#039;TexT#&#039;) &amp;! &#039;TEXT#&#039;</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>LCASE(</strong><em>[$стр]</em><strong>)</strong> - возвращает строку маленьких букв, полученную изменением регистра букв исходной строки <em>[$стр]</em>. <pre class="brush: qsp">$LCASE(&#039;TExT#&#039;) &amp;! &#039;text#&#039;</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>TRIM(</strong><em>[$стр]</em><strong>)</strong> - удаляет прилегающие пробелы и символы табуляции из <em>[$стр]</em> и возвращает полученную строку. <pre class="brush: qsp">$TRIM(&#039; TRIM TEST &#039;) &amp;! &#039;TRIM TEST&#039;</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>REPLACE(</strong><em>[$стр]</em><strong>,</strong><em>[$поиск]</em><strong>,</strong><em>[$замена]</em><strong>)</strong> - заменяет в строке <em>[$стр]</em> все вхождения строки <em>[$поиск]</em> строкой <em>[$замена]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> Параметр <em>[$замена]</em> может отсутствовать и принимается равным пустой строке.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+$REPLACE(&#039;test&#039;, &#039;12&#039;, &#039;4&#039;) &amp;! &#039;test&#039;
+$REPLACE(&#039;test&#039;, &#039;e&#039;, &#039;s&#039;)  &amp;! &#039;tsst&#039;
+$REPLACE(&#039;test&#039;, &#039;t&#039;, &#039;34&#039;) &amp;! &#039;34es34&#039;
+$REPLACE(&#039;test&#039;, &#039;t&#039;)       &amp;! &#039;es&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>INSTR(</strong><em>[#начало]</em><strong>,</strong><em>[$строка]</em><strong>,</strong><em>[$поиск]</em><strong>)</strong> - возвращает номер позиции символа, с которого начинается вхождение строки <em>[$поиск]</em> в строку <em>[$строка]</em> (или 0, если такой строки нет). Поиск начинается с символа номер <em>[#начало]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> Параметр <em>[#начало]</em> может отсутствовать, при этом он принимается равным <strong>1</strong>.</div>
+</li>
+<li class="level2"><div class="li"> <strong>Важно:</strong> в более новых версиях (<em>Quest Navigator</em>) необязательный параметр <em>[#начало]</em> переставлен последним<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+INSTR(1,&#039;ABCDefgh&#039;,&#039;BC&#039;) &amp;! 2
+INSTR(1,&#039;ABCDefgh&#039;,&#039;Be&#039;) &amp;! 0
+INSTR(&#039;abcdef&#039;,&#039;abc&#039;)    &amp;! 1
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>ISNUM(</strong><em>[$строка]</em><strong>)</strong> - функция проверяет, является ли строка [$строка] числом. Функция возвращает 0 (ложь) или -1 (истина). <pre class="brush: qsp">
+ISNUM(&#039; 9999 &#039;) &amp;! -1
+ISNUM(&#039; -888&#039;)  &amp;! -1
+ISNUM(&#039;777a6&#039;)  &amp;! 0
+ISNUM(&#039;&#039;)       &amp;! -1, т.к. пустая строка считается нулём
+</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>VAL(</strong><em>[$стр]</em><strong>)</strong> - переводит строку цифр <em>[$стр]</em> в соответствующее число. При ошибке возвращается 0.<pre class="brush: qsp">яблоки = VAL($яблоки)</pre></div>
+</li>
+<li class="level1"><div class="li"> <strong>STR(</strong><em>[#число]</em><strong>)</strong> - переводит число (числовое выражение) в соответствующую строку. <pre class="brush: qsp">PL STR(56)</pre></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="funkcii_ispolzujuschie_reguljarnye_vyrazhenija">Функции использующие регулярные выражения</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <strong>STRCOMP(</strong><em>[$строка]</em><strong>,</strong><em>[$шаблон]</em><strong>)</strong> - проводит сравнение строки <em>[$строка]</em> на соответствие регулярному выражению <em>[$шаблон]</em>. Возвращает -1, если строка соответствует шаблону, иначе 0. Сравни с функцией &quot;STRFIND&quot;.</div>
+</li>
+<li class="level1"><div class="li"> <strong>STRFIND(</strong><em>[$строка]</em><strong>,</strong><em>[$шаблон]</em><strong>,</strong><em>[#номер]</em><strong>)</strong> - возвращает подстроку в строке <em>[$строка]</em>, соответствующую группе с номером <em>[#номер]</em> регулярного выражения <em>[$шаблон]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> Если подстрока с указанным номером отсутствует, то возвращается пустая строка.</div>
+</li>
+<li class="level2"><div class="li"> Нумерация групп подстрок начинается с 1.</div>
+</li>
+<li class="level2"><div class="li"> Если параметр [#номер] отсутствует или равен 0, то возвращаются подстрока, соответсвующая всему регулярному выражению.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+STRFIND(&#039; идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 0) &amp;! &#039;&#039;
+STRFIND(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 1)  &amp;! &#039;идти&#039;
+STRFIND(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 2)  &amp;! &#039;к&#039;
+STRFIND(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 3)  &amp;! &#039;пещере&#039;
+STRFIND(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;, 0) &amp;! &#039;к дому&#039; 
+STRFIND(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;)    &amp;! &#039;к дому&#039;
+STRFIND(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;, 1) &amp;! &#039;дому&#039;
+STRFIND(&#039;идти к своему дому&#039;, &#039;к\s(\S+)&#039;, 1) &amp;! &#039;своему&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>STRPOS(</strong><em>[$строка]</em><strong>,</strong><em>[$шаблон]</em><strong>,</strong><em>[#номер]</em><strong>)</strong> - возвращает позицию символа, с которого начинается вхождение подстроки в строку <em>[$строка]</em>, соответствующей группе с номером <em>[#номер]</em> регулярного выражения <em>[$шаблон]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> Если подстрока с указанным номером отсутствует, то возвращается 0.</div>
+</li>
+<li class="level2"><div class="li"> Нумерация групп подстрок начинается с 1.</div>
+</li>
+<li class="level2"><div class="li"> Если параметр <em>[#номер]</em> отсутствует или равен 0, то возвращается позиция символа, с которого начинается вхождение подстроки, соответствующей всему регулярному выражению.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+STRPOS(&#039; идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 0) &amp;! 0
+STRPOS(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 1)  &amp;! 1
+STRPOS(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 2)  &amp;! 6
+STRPOS(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)\s(\S+)$&#039;, 3)  &amp;! 8
+STRPOS(&#039;идти к пещере&#039;, &#039;^(\S+)\s(\S+)(\s(\S+))?$&#039;, 4) &amp;! 8
+STRPOS(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;, 0) &amp;! 6
+STRPOS(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;)    &amp;! 6
+STRPOS(&#039;идти к дому&#039;, &#039;к\s(\S+)&#039;, 1) &amp;! 8
+STRPOS(&#039;идти к своему дому&#039;, &#039;к\s(\S+)&#039;, 1) &amp;! 8
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="../help/regexp.html" class="wikilink1" title="help:regexp">Вперёд: Регулярные выражения</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_5'><form class="button btn_secedit" method="post" action="../help/strings.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1428443632" /><input type="hidden" name="summary" value="[Функции] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="4748-" /><input type="submit" value="Править" class="button" title="Функции" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<strong>INSTR(</strong><em>[$строка]</em><strong>,</strong><em>[$поиск]</em><strong>,</strong><em>[#начало]</em><strong>)</strong></div>
+</div>
+
+<script type='text/javascript'>
+  SyntaxHighlighter.autoloader(
+    'applescript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAppleScript.js',
+    'actionscript3 as3 /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAS3.js',
+    'bash shell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushBash.js',
+    'coldfusion cf /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushColdFusion.js',
+    'cpp c /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCpp.js',
+    'c# c-sharp csharp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCSharp.js',
+    'css /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCss.js',
+    'delphi pascal /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDelphi.js',
+    'diff patch pas /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDiff.js',
+    'erl erlang /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushErlang.js',
+    'groovy /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushGroovy.js',
+    'java /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJava.js',
+    'jfx javafx /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJavaFX.js',
+    'js jscript javascript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJScript.js',
+    'perl pl /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPerl.js',
+    'php /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPhp.js',
+    'text plain /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPlain.js',
+    'ps powershell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPowerShell.js',
+    'py python /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPython.js',
+    'ruby rails ror rb /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushRuby.js',
+    'sass scss /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSass.js',
+    'scala /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushScala.js',
+    'sql /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSql.js',
+    'vb vbnet /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushVb.js',
+    'xml xhtml xslt html /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js',
+    ' qsp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushQsp.js'
+  );
+  SyntaxHighlighter.all();
+</script>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>help/strings.txt</bdi> · Последние изменения: 2015/04/08 00:53 (внешнее изменение)</div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Инструменты страницы</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="Наверх [T]"><span>Наверх</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+<!--
+    <div class="buttons">
+                <a href="http://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="http://www.php.net" title="Powered by PHP" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+-->
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img  width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div>    <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
+</body>
+</html>

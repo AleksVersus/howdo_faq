@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>Динамический код [Документация QSP]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,dynamical"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.html" title="Документация QSP"/>
+<link rel="start" href="../help/dynamical.html"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="../feed.html"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="../feed.html"/>
+<link rel="edit" title="Править страницу" href="../help/dynamical.html"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="../_export/xhtml/help/dynamical.xhtml"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/dynamical"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php.t.exportdokuwiki.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:dynamical","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php.t.exportdokuwiki.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../lib/tpl/exportdokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../lib/tpl/exportdokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_exportdokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">Перейти к содержанию</a></li>
+        </ul>
+
+        <h1><a href="../start.html"  accesskey="h" title="[H]"><img src="../wiki/logo.png" width="147" height="74" alt="" /> <span>Документация QSP</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Инструменты сайта</h3>
+                        <div class="mobileTools">
+                <form action="../doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="help:dynamical" /><select name="do" class="edit quickselect" title="Инструменты"><option value="">Инструменты</option><optgroup label="Инструменты страницы"></optgroup><optgroup label="Инструменты сайта"></optgroup><optgroup label="Инструменты пользователя"></optgroup></select><input type="submit" value="&gt;" /></div></form>            </div>
+            <ul>
+                            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Вы посетили:</span> <span class="bcsep">•</span> <bdi><a href="../help/backimage.html"  class="breadcrumbs" title="help:backimage">backimage</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/main.html"  class="breadcrumbs" title="help:main">Основное окно описания</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/bag.html"  class="breadcrumbs" title="help:bag">Баг</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/classic_qsp.html"  class="breadcrumbs" title="help:classic_qsp">Классический плеер</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/coding.html"  class="breadcrumbs" title="help:coding">Программный код</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/conditional.html"  class="breadcrumbs" title="help:conditional">Условия</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/contents.html"  class="breadcrumbs" title="help:contents">Оглавление</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/debugger.html"  class="breadcrumbs" title="help:debugger">Отладчик</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/dummy.html"  class="breadcrumbs" title="help:dummy">dummy</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="../help/dynamical.html"  class="breadcrumbs" title="help:dynamical">Динамический код</a></bdi></span></div>
+                    </div>
+    
+    <div class="notify">New release candidate 2 available: rc2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2020-07-29 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 3 available: 2020-06-09 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 2 available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22c "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22b "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22a "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2018-04-22 "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19g "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.7] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19f "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.6] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19e "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2017-02-19d "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2017-02-19c "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token and media manager: 2017-02-19b "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing install and media manager issues: 2017-02-19a "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2017-02-19 "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2016-06-26e "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2016-06-26d "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2016-06-26c "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token: 2016-06-26b "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing authad issues: 2016-06-26a "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2016-06-26 "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2015-08-10a "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2015-08-10 "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="error">Writing /var/www/qsp.su/public_html/wiki/data/meta/access.log failed</div>
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad include group">
+                    <h3 class="toggle">Боковая панель</h3>
+                    <div class="content">
+                                                                        <ul>
+<li class="level1"><div class="li"> <strong><span class="curid"><a href="../start.html" class="wikilink1" title="start">В начало</a></span></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/qsp.html" class="wikilink1" title="help:qsp">Что такое QSP?</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/locations.html" class="wikilink1" title="help:locations">Локации и переходы</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Программирование</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/variables.html" class="wikilink1" title="help:variables">Переменные</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/expressions.html" class="wikilink1" title="help:expressions">Выражения</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/coding.html" class="wikilink1" title="help:coding">Программный код</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/arrays.html" class="wikilink1" title="help:arrays">Массивы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/strings.html" class="wikilink1" title="help:strings">Строки</a></div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/regexp.html" class="wikilink1" title="help:regexp">Регулярные выражения</a></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <a href="../help/conditional.html" class="wikilink1" title="help:conditional">Условия</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/organizing.html" class="wikilink1" title="help:organizing">Пользовательские функции и процедуры</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/jump.html" class="wikilink1" title="help:jump">Переходы внутри локации, циклы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/principle.html" class="wikilink1" title="help:principle">Порядок работы интерпретатора</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/service_locations.html" class="wikilink1" title="help:service_locations">Служебные локации</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/dynamical.html" class="wikilink1" title="help:dynamical">Динамический код</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Вывод текста</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/main.html" class="wikilink1" title="help:main">Основное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/stat.html" class="wikilink1" title="help:stat">Дополнительное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/msgbox.html" class="wikilink1" title="help:msgbox">Диалоговое окно</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/acts.html" class="wikilink1" title="help:acts">Действия</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/objs.html" class="wikilink1" title="help:objs">Предметы (инвентарь)</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/menu.html" class="wikilink1" title="help:menu">Меню</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Оформление</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/sound.html" class="wikilink1" title="help:sound">Звук</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/graphics.html" class="wikilink1" title="help:graphics">Графика</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/fonts.html" class="wikilink1" title="help:fonts">Шрифты</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/html.html" class="wikilink1" title="help:html">HTML</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Расширенные возможности</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/inputs.html" class="wikilink1" title="help:inputs">Ввод текста игроком</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/modules.html" class="wikilink1" title="help:modules">Работа с файлами, использование модулей</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/realtime.html" class="wikilink1" title="help:realtime">Реальное время</a></div>
+</li>
+<li class="level2"><div class="li"> Нюансы написания игр под разные плееры</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/classic_qsp.html" class="wikilink1" title="help:classic_qsp">Классический плеер</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/aeroqsp.html" class="wikilink1" title="help:aeroqsp">AeroQSP</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/navigator.html" class="wikilink1" title="help:navigator">Quest Navigator</a></div>
+<ul>
+<li class="level4"><div class="li"> <a href="../help/navigator_command_line.html" class="wikilink1" title="help:navigator_command_line">Параметры запуска</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_files.html" class="wikilink1" title="help:navigator_game_files">Файлы игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_template.html" class="wikilink1" title="help:navigator_game_template">Шаблон игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/sozdanie_igr_na_quest_navigator.html" class="wikilink1" title="help:sozdanie_igr_na_quest_navigator">Создание игр</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/ispolzovanie_shriftov_v_quest_navigator.html" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Шрифты</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/fajl_nastroek_igry_v_quest_navigator.html" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_standalone.html" class="wikilink1" title="help:navigator_standalone">Независимая сборка</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Утилиты и средства разработки</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/debugger.html" class="wikilink1" title="help:debugger">Отладчик</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/analyzer.html" class="wikilink1" title="help:analyzer">Анализатор кода QSP</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../howto/start.html" class="wikilink1" title="howto:start">Как сделать</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/glossary.html" class="wikilink1" title="help:glossary">Cловарь терминов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/keywords.html" class="wikilink1" title="help:keywords">Список ключевых слов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/limits.html" class="wikilink1" title="help:limits">Ограничения QSP</a></strong></div>
+</li>
+</ul>
+                                            </div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+
+                <div class="pageId"><span>help:dynamical</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    
+<p>
+<a href="../help/service_locations.html" class="wikilink1" title="help:service_locations">Назад: Служебные локации</a>
+</p>
+
+<h2 class="sectionedit1" id="dinamicheskij_kod">Динамический код</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>DYNAMIC </strong> <em>[$код]</em><strong>,</strong><em>[параметр 1]</em><strong>,</strong><em>[параметр 2]</em><strong>, …</strong> - выполняет код, указанный в виде строки текста. Выполнение кода <em>[$код]</em> здесь аналогично оператору GS:</div>
+<ul>
+<li class="level2"><div class="li"> Код, переданный оператору <strong>dynamic</strong>, выполняется в виде отдельного блока кода, в который можно передавать параметры (аргументы).</div>
+</li>
+<li class="level2"><div class="li"> Переданные параметры хранятся в массиве ARGS. Максимальное количество параметров - <strong>9</strong><sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> После выполнения старые параметры ARGS восстанавливаются. То есть внутри выполняемого кода <strong>dynamic</strong> используется свой собственный массив ARGS, его значения не пересекаются со значениями ARGS на локации, из которой <strong>dynamic</strong> был вызван.</div>
+</li>
+<li class="level2"><div class="li"> Затем продолжается выполнения программы со следующей команды после <strong>dynamic</strong>.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+DYNAMIC &#039;$a=&quot;string&lt;&lt;$b&gt;&gt;&quot;&#039;
+DYNAMIC &#039;$a&#039;
+DYNAMIC &#039;if $a=&quot;string&quot;:&#039;&#039;text!&#039;&#039;&#039;
+DYNAMIC &quot;
+$args[0]
+addobj $args[1]
+&quot;,&#039;Вы взяли вилку.&#039;,&#039;Вилка&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>DYNEVAL(</strong><em>[$код]</em><strong>,</strong><em>[параметр 1]</em><strong>,</strong><em>[параметр 2]</em><strong>, …)</strong> - выполняет код, указанный в виде строки текста, с получением результата. Выполнение кода <em>[$код]</em> здесь аналогично оператору FUNC:</div>
+<ul>
+<li class="level2"><div class="li"> Код, переданный функции <strong>dyneval</strong>, выполняется в виде отдельного блока кода, в который можно передавать параметры (аргументы).</div>
+</li>
+<li class="level2"><div class="li"> Переданные параметры хранятся в массиве ARGS. Максимальное количество параметров - <strong>9</strong><sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.</div>
+</li>
+<li class="level2"><div class="li"> Результат функции равен значению <em>$RESULT</em> при возврате строкового значения, или <em>RESULT</em> при возврате числового значения. </div>
+</li>
+<li class="level2"><div class="li"> Если при выполнении кода были установлены и <em>RESULT</em>, и <em>$RESULT</em>, то предпочтение отдаётся строковому значению. </div>
+</li>
+<li class="level2"><div class="li"> После выполнения кода предыдущие значения ARGS и RESULT восстанавливаются. То есть внутри выполняемого кода <strong>dyneval</strong> используется свои собственные массивы ARGS и RESULT, и их значения не пересекаются со значениями ARGS и RESULT на локации, из которой <strong>dyneval</strong> был вызван. </div>
+</li>
+<li class="level2"><div class="li"> <strong>Внимание:</strong> при использовании в коде <em>[$код]</em> операторов GS/DYNAMIC переменные RESULT и $RESULT могут перезаписываться кодом, выполняемым этими операторами.</div>
+<ul>
+<li class="level3"><div class="li"> Исправлено в более новых версиях интерпретатора.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+DYNEVAL(&#039;result = 3+4&#039;)
+PL DYNEVAL(&#039;$result = mid(&quot;abcd&quot;,2,1)+&quot;qwerty&quot;&#039;)
+PL DYNEVAL($test + &#039; + val(&quot;&lt;&lt;$test&gt;&gt;&quot;)&#039;)
+проход=DYNEVAL(&quot;result = ($args[0] &lt;&gt; &#039;текст&#039;)&quot;, &#039;строка&#039;)
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Важно:</strong> если код задан с помощью одинарных (&#039; &#039;) или двойных (&quot; &quot;) кавычек, в тексте вычисляются подвыражения.</div>
+<ul>
+<li class="level2"><div class="li"> <em>Пример:</em><pre class="brush: qsp">
+$args[0]=&#039;qwerty&#039;
+$code = &#039;
+*pl &quot;&lt;&lt;$args[0]&gt;&gt;&quot;
+*pl $args[0]&#039;
+$args[0]=&#039;12345&#039;
+
+DYNAMIC $code,&#039;asdfg&#039;
+! при задании переменной $code будет вычислено подвыражение
+! поэтому первой строкой выведется &#039;qwerty&#039;
+! второй строкой выведется &#039;asdfg&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Фигурные скобки - третий вид кавычек используемый специально для написания динамического кода</div>
+<ul>
+<li class="level2"><div class="li"> Поддерживается вложенность скобок</div>
+</li>
+<li class="level2"><div class="li"> Перед выполнением кода не вычисляются подвыражения.</div>
+</li>
+<li class="level2"><div class="li"> <em>Примеры:</em><pre class="brush: qsp">
+$args[0]=&#039;qwerty&#039;
+$code = {
+  *pl &quot;&lt;&lt;$args[0]&gt;&gt;&quot;
+  *pl $args[0]
+}
+
+DYNAMIC $code,&#039;asdfg&#039;
+! будет выведено две строки &#039;asdfg&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Вполне допустимо использовать dynamic/dyneval внутри dynamic/dyneval, однако это сильно усложняет отладку кода и поиск ошибок.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="../help/main.html" class="wikilink1" title="help:main">Вперёд: Основное окно описания</a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="../help/dynamical.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1652948067" /><input type="hidden" name="summary" value="[Динамический код] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="range" value="74-" /><input type="submit" value="Править" class="button" title="Динамический код" /></div></form></div><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+, <sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+10 включая код</div>
+</div>
+
+<script type='text/javascript'>
+  SyntaxHighlighter.autoloader(
+    'applescript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAppleScript.js',
+    'actionscript3 as3 /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAS3.js',
+    'bash shell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushBash.js',
+    'coldfusion cf /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushColdFusion.js',
+    'cpp c /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCpp.js',
+    'c# c-sharp csharp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCSharp.js',
+    'css /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCss.js',
+    'delphi pascal /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDelphi.js',
+    'diff patch pas /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDiff.js',
+    'erl erlang /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushErlang.js',
+    'groovy /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushGroovy.js',
+    'java /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJava.js',
+    'jfx javafx /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJavaFX.js',
+    'js jscript javascript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJScript.js',
+    'perl pl /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPerl.js',
+    'php /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPhp.js',
+    'text plain /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPlain.js',
+    'ps powershell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPowerShell.js',
+    'py python /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPython.js',
+    'ruby rails ror rb /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushRuby.js',
+    'sass scss /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSass.js',
+    'scala /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushScala.js',
+    'sql /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSql.js',
+    'vb vbnet /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushVb.js',
+    'xml xhtml xslt html /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js',
+    ' qsp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushQsp.js'
+  );
+  SyntaxHighlighter.all();
+</script>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>help/dynamical.txt</bdi> · Последние изменения: 2022/05/19 11:14  — <bdi>aleks_versus</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Инструменты страницы</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="Наверх [T]"><span>Наверх</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+<!--
+    <div class="buttons">
+                <a href="http://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="http://www.php.net" title="Powered by PHP" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+-->
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img  width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div>    <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>GNU GPL [Документация QSP]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,gnu_gpl_eng"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../lib/exe/opensearch.html" title="Документация QSP"/>
+<link rel="start" href="../help/gnu_gpl_eng.html"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="../feed.html"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="../feed.html"/>
+<link rel="edit" title="Править страницу" href="../help/gnu_gpl_eng.html"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="../_export/xhtml/help/gnu_gpl_eng.xhtml"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/gnu_gpl_eng"/>
+<link rel="stylesheet" type="text/css" href="../lib/exe/css.php.t.exportdokuwiki.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="../lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:gnu_gpl_eng","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../lib/exe/js.php.t.exportdokuwiki.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="../lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../lib/tpl/exportdokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../lib/tpl/exportdokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_exportdokuwiki    showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">Перейти к содержанию</a></li>
+        </ul>
+
+        <h1><a href="../start.html"  accesskey="h" title="[H]"><img src="../wiki/logo.png" width="147" height="74" alt="" /> <span>Документация QSP</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Инструменты сайта</h3>
+                        <div class="mobileTools">
+                <form action="../doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="help:gnu_gpl_eng" /><select name="do" class="edit quickselect" title="Инструменты"><option value="">Инструменты</option><optgroup label="Инструменты страницы"></optgroup><optgroup label="Инструменты сайта"></optgroup><optgroup label="Инструменты пользователя"></optgroup></select><input type="submit" value="&gt;" /></div></form>            </div>
+            <ul>
+                            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Вы посетили:</span> <span class="bcsep">•</span> <bdi><a href="../help/debugger.html"  class="breadcrumbs" title="help:debugger">Отладчик</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/dummy.html"  class="breadcrumbs" title="help:dummy">dummy</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/dynamical.html"  class="breadcrumbs" title="help:dynamical">Динамический код</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/expressions.html"  class="breadcrumbs" title="help:expressions">Выражения</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/fajl_nastroek_igry_v_quest_navigator.html"  class="breadcrumbs" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры в Quest Navigator</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/fonts.html"  class="breadcrumbs" title="help:fonts">Шрифты</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/func.html"  class="breadcrumbs" title="help:func">func</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/organizing.html"  class="breadcrumbs" title="help:organizing">Пользовательские функции и процедуры</a></bdi> <span class="bcsep">•</span> <bdi><a href="../help/glossary.html"  class="breadcrumbs" title="help:glossary">Словарь терминов</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="../help/gnu_gpl_eng.html"  class="breadcrumbs" title="help:gnu_gpl_eng">GNU GPL</a></bdi></span></div>
+                    </div>
+    
+    <div class="notify">New release candidate 2 available: rc2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2022-06-26 "Igor".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [52] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2020-07-29 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 3 available: 2020-06-09 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate 2 available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release candidate available: 2020-06-01 "Hogfather".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [51] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22c "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22b "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2018-04-22a "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2018-04-22 "Greebo".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [50] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19g "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.7] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19f "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.6] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2017-02-19e "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2017-02-19d "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2017-02-19c "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token and media manager: 2017-02-19b "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing install and media manager issues: 2017-02-19a "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2017-02-19 "Frusterick Manners".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [49] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2016-06-26e "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.5] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12979 and CVE-2017-12980: 2016-06-26d "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing CVE-2017-12583: 2016-06-26c "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.3] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing security token: 2016-06-26b "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.2] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available fixing authad issues: 2016-06-26a "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2016-06-26 "Elenor of Tsort".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [48] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">Hotfix release available: 2015-08-10a "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47.1] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="notify">New release available: 2015-08-10 "Detritus".
+          <a href="http://download.dokuwiki.org">upgrade now!</a> [47] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a></div><div class="error">Writing /var/www/qsp.su/public_html/wiki/data/meta/access.log failed</div>
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad include group">
+                    <h3 class="toggle">Боковая панель</h3>
+                    <div class="content">
+                                                                        <ul>
+<li class="level1"><div class="li"> <strong><span class="curid"><a href="../start.html" class="wikilink1" title="start">В начало</a></span></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/qsp.html" class="wikilink1" title="help:qsp">Что такое QSP?</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/locations.html" class="wikilink1" title="help:locations">Локации и переходы</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Программирование</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/variables.html" class="wikilink1" title="help:variables">Переменные</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/expressions.html" class="wikilink1" title="help:expressions">Выражения</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/coding.html" class="wikilink1" title="help:coding">Программный код</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/arrays.html" class="wikilink1" title="help:arrays">Массивы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/strings.html" class="wikilink1" title="help:strings">Строки</a></div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/regexp.html" class="wikilink1" title="help:regexp">Регулярные выражения</a></div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <a href="../help/conditional.html" class="wikilink1" title="help:conditional">Условия</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/organizing.html" class="wikilink1" title="help:organizing">Пользовательские функции и процедуры</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/jump.html" class="wikilink1" title="help:jump">Переходы внутри локации, циклы</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/principle.html" class="wikilink1" title="help:principle">Порядок работы интерпретатора</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/service_locations.html" class="wikilink1" title="help:service_locations">Служебные локации</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/dynamical.html" class="wikilink1" title="help:dynamical">Динамический код</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Вывод текста</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/main.html" class="wikilink1" title="help:main">Основное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/stat.html" class="wikilink1" title="help:stat">Дополнительное окно описания</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/msgbox.html" class="wikilink1" title="help:msgbox">Диалоговое окно</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/acts.html" class="wikilink1" title="help:acts">Действия</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/objs.html" class="wikilink1" title="help:objs">Предметы (инвентарь)</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/menu.html" class="wikilink1" title="help:menu">Меню</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Оформление</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/sound.html" class="wikilink1" title="help:sound">Звук</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/graphics.html" class="wikilink1" title="help:graphics">Графика</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/fonts.html" class="wikilink1" title="help:fonts">Шрифты</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/html.html" class="wikilink1" title="help:html">HTML</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Расширенные возможности</strong></div>
+<ul>
+<li class="level2"><div class="li"> <a href="../help/inputs.html" class="wikilink1" title="help:inputs">Ввод текста игроком</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/modules.html" class="wikilink1" title="help:modules">Работа с файлами, использование модулей</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../help/realtime.html" class="wikilink1" title="help:realtime">Реальное время</a></div>
+</li>
+<li class="level2"><div class="li"> Нюансы написания игр под разные плееры</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/classic_qsp.html" class="wikilink1" title="help:classic_qsp">Классический плеер</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/aeroqsp.html" class="wikilink1" title="help:aeroqsp">AeroQSP</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/navigator.html" class="wikilink1" title="help:navigator">Quest Navigator</a></div>
+<ul>
+<li class="level4"><div class="li"> <a href="../help/navigator_command_line.html" class="wikilink1" title="help:navigator_command_line">Параметры запуска</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_files.html" class="wikilink1" title="help:navigator_game_files">Файлы игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_game_template.html" class="wikilink1" title="help:navigator_game_template">Шаблон игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/sozdanie_igr_na_quest_navigator.html" class="wikilink1" title="help:sozdanie_igr_na_quest_navigator">Создание игр</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/ispolzovanie_shriftov_v_quest_navigator.html" class="wikilink1" title="help:ispolzovanie_shriftov_v_quest_navigator">Шрифты</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/fajl_nastroek_igry_v_quest_navigator.html" class="wikilink1" title="help:fajl_nastroek_igry_v_quest_navigator">Файл настроек игры</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="../help/navigator_standalone.html" class="wikilink1" title="help:navigator_standalone">Независимая сборка</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Утилиты и средства разработки</div>
+<ul>
+<li class="level3"><div class="li"> <a href="../help/debugger.html" class="wikilink1" title="help:debugger">Отладчик</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="../help/analyzer.html" class="wikilink1" title="help:analyzer">Анализатор кода QSP</a></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../howto/start.html" class="wikilink1" title="howto:start">Как сделать</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/glossary.html" class="wikilink1" title="help:glossary">Cловарь терминов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/keywords.html" class="wikilink1" title="help:keywords">Список ключевых слов</a></strong></div>
+</li>
+<li class="level1"><div class="li"> <strong><a href="../help/limits.html" class="wikilink1" title="help:limits">Ограничения QSP</a></strong></div>
+</li>
+</ul>
+                                            </div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+
+                <div class="pageId"><span>help:gnu_gpl_eng</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    
+<h2 class="sectionedit1" id="gnu_gpl">GNU GPL</h2>
+<div class="level2">
+
+<p>
+<a href="../help/gnu_gpl_rus.html" class="wikilink1" title="help:gnu_gpl_rus">Смотреть перевод лицензии на русский язык</a>
+</p>
+
+<p>
+Version 2, June 1991
+</p>
+
+<p>
+Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+</p>
+
+<p>
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+</p>
+
+<p>
+Everyone is permitted to copy and distribute verbatim copies
+</p>
+
+<p>
+of this license document, but changing it is not allowed.
+</p>
+
+<p>
+Preamble
+</p>
+
+<p>
+The licenses for most software are designed to take away your freedom to share and change it. By contrast, the GNU General Public License is intended to guarantee your freedom to share and change free software–to make sure the software is free for all its users. This General Public License applies to most of the Free Software Foundation&#039;s software and to any other program whose authors commit to using it. (Some other Free Software Foundation software is covered by the GNU Lesser General Public License instead.) You can apply it to your programs, too.
+</p>
+
+<p>
+When we speak of free software, we are referring to freedom, not price. Our General Public Licenses are designed to make sure that you have the freedom to distribute copies of free software (and charge for this service if you wish), that you receive source code or can get it if you want it, that you can change the software or use pieces of it in new free programs; and that you know you can do these things.
+</p>
+
+<p>
+To protect your rights, we need to make restrictions that forbid anyone to deny you these rights or to ask you to surrender the rights. These restrictions translate to certain responsibilities for you if you distribute copies of the software, or if you modify it.
+</p>
+
+<p>
+For example, if you distribute copies of such a program, whether gratis or for a fee, you must give the recipients all the rights that you have. You must make sure that they, too, receive or can get the source code. And you must show them these terms so they know their rights.
+</p>
+
+<p>
+We protect your rights with two steps: (1) copyright the software, and (2) offer you this license which gives you legal permission to copy, distribute and/or modify the software.
+</p>
+
+<p>
+Also, for each author&#039;s protection and ours, we want to make certain that everyone understands that there is no warranty for this free software. If the software is modified by someone else and passed on, we want its recipients to know that what they have is not the original, so that any problems introduced by others will not reflect on the original authors&#039; reputations.
+</p>
+
+<p>
+Finally, any free program is threatened constantly by software patents. We wish to avoid the danger that redistributors of a free program will individually obtain patent licenses, in effect making the program proprietary. To prevent this, we have made it clear that any patent must be licensed for everyone&#039;s free use or not licensed at all.
+</p>
+
+<p>
+The precise terms and conditions for copying, distribution and modification follow.
+</p>
+
+<p>
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+</p>
+
+<p>
+0. This License applies to any program or other work which contains a notice placed by the copyright holder saying it may be distributed under the terms of this General Public License. The &quot;Program&quot;, below, refers to any such program or work, and a &quot;work based on the Program&quot; means either the Program or any derivative work under copyright law: that is to say, a work containing the Program or a portion of it, either verbatim or with modifications and/or translated into another language. (Hereinafter, translation is included without limitation in the term &quot;modification&quot;.) Each licensee is addressed as &quot;you&quot;.
+</p>
+
+<p>
+Activities other than copying, distribution and modification are not covered by this License; they are outside its scope. The act of running the Program is not restricted, and the output from the Program is covered only if its contents constitute a work based on the Program (independent of having been made by running the Program). Whether that is true depends on what the Program does.
+</p>
+
+<p>
+1. You may copy and distribute verbatim copies of the Program&#039;s source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Program a copy of this License along with the Program.
+</p>
+
+<p>
+You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee.
+</p>
+
+<p>
+2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions:
+</p>
+
+<p>
+a) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.
+</p>
+
+<p>
+b) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License.
+</p>
+
+<p>
+c) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)
+</p>
+
+<p>
+These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works. But when you distribute the same sections as part of a whole which is a work based on the Program, the distribution of the whole must be on the terms of this License, whose permissions for other licensees extend to the entire whole, and thus to each and every part regardless of who wrote it.
+</p>
+
+<p>
+Thus, it is not the intent of this section to claim rights or contest your rights to work written entirely by you; rather, the intent is to exercise the right to control the distribution of derivative or collective works based on the Program.
+</p>
+
+<p>
+In addition, mere aggregation of another work not based on the Program with the Program (or with a work based on the Program) on a volume of a storage or distribution medium does not bring the other work under the scope of this License.
+</p>
+
+<p>
+3. You may copy and distribute the Program (or a work based on it, under Section 2) in object code or executable form under the terms of Sections 1 and 2 above provided that you also do one of the following:
+</p>
+
+<p>
+a) Accompany it with the complete corresponding machine-readable source code, which must be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange; or,
+</p>
+
+<p>
+b) Accompany it with a written offer, valid for at least three years, to give any third party, for a charge no more than your cost of physically performing source distribution, a complete machine-readable copy of the corresponding source code, to be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange; or,
+</p>
+
+<p>
+c) Accompany it with the information you received as to the offer to distribute corresponding source code. (This alternative is allowed only for noncommercial distribution and only if you received the program in object code or executable form with such an offer, in accord with Subsection b above.)
+</p>
+
+<p>
+The source code for a work means the preferred form of the work for making modifications to it. For an executable work, complete source code means all the source code for all modules it contains, plus any associated interface definition files, plus the scripts used to control compilation and installation of the executable. However, as a special exception, the source code distributed need not include anything that is normally distributed (in either source or binary form) with the major components (compiler, kernel, and so on) of the operating system on which the executable runs, unless that component itself accompanies the executable.
+</p>
+
+<p>
+If distribution of executable or object code is made by offering access to copy from a designated place, then offering equivalent access to copy the source code from the same place counts as distribution of the source code, even though third parties are not compelled to copy the source along with the object code.
+</p>
+
+<p>
+4. You may not copy, modify, sublicense, or distribute the Program except as expressly provided under this License. Any attempt otherwise to copy, modify, sublicense or distribute the Program is void, and will automatically terminate your rights under this License. However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
+</p>
+
+<p>
+5. You are not required to accept this License, since you have not signed it. However, nothing else grants you permission to modify or distribute the Program or its derivative works. These actions are prohibited by law if you do not accept this License. Therefore, by modifying or distributing the Program (or any work based on the Program), you indicate your acceptance of this License to do so, and all its terms and conditions for copying, distributing or modifying the Program or works based on it.
+</p>
+
+<p>
+6. Each time you redistribute the Program (or any work based on the Program), the recipient automatically receives a license from the original licensor to copy, distribute or modify the Program subject to these terms and conditions. You may not impose any further restrictions on the recipients&#039; exercise of the rights granted herein. You are not responsible for enforcing compliance by third parties to this License.
+</p>
+
+<p>
+7. If, as a consequence of a court judgment or allegation of patent infringement or for any other reason (not limited to patent issues), conditions are imposed on you (whether by court order, agreement or otherwise) that contradict the conditions of this License, they do not excuse you from the conditions of this License. If you cannot distribute so as to satisfy simultaneously your obligations under this License and any other pertinent obligations, then as a consequence you may not distribute the Program at all. For example, if a patent license would not permit royalty-free redistribution of the Program by all those who receive copies directly or indirectly through you, then the only way you could satisfy both it and this License would be to refrain entirely from distribution of the Program.
+</p>
+
+<p>
+If any portion of this section is held invalid or unenforceable under any particular circumstance, the balance of the section is intended to apply and the section as a whole is intended to apply in other circumstances.
+</p>
+
+<p>
+It is not the purpose of this section to induce you to infringe any patents or other property right claims or to contest validity of any such claims; this section has the sole purpose of protecting the integrity of the free software distribution system, which is implemented by public license practices. Many people have made generous contributions to the wide range of software distributed through that system in reliance on consistent application of that system; it is up to the author/donor to decide if he or she is willing to distribute software through any other system and a licensee cannot impose that choice.
+</p>
+
+<p>
+This section is intended to make thoroughly clear what is believed to be a consequence of the rest of this License.
+</p>
+
+<p>
+8. If the distribution and/or use of the Program is restricted in certain countries either by patents or by copyrighted interfaces, the original copyright holder who places the Program under this License may add an explicit geographical distribution limitation excluding those countries, so that distribution is permitted only in or among countries not thus excluded. In such case, this License incorporates the limitation as if written in the body of this License.
+</p>
+
+<p>
+9. The Free Software Foundation may publish revised and/or new versions of the General Public License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
+</p>
+
+<p>
+Each version is given a distinguishing version number. If the Program specifies a version number of this License which applies to it and &quot;any later version&quot;, you have the option of following the terms and conditions either of that version or of any later version published by the Free Software Foundation. If the Program does not specify a version number of this License, you may choose any version ever published by the Free Software Foundation.
+</p>
+
+<p>
+10. If you wish to incorporate parts of the Program into other free programs whose distribution conditions are different, write to the author to ask for permission. For software which is copyrighted by the Free Software Foundation, write to the Free Software Foundation; we sometimes make exceptions for this. Our decision will be guided by the two goals of preserving the free status of all derivatives of our free software and of promoting the sharing and reuse of software generally.
+</p>
+
+<p>
+NO WARRANTY
+</p>
+
+<p>
+11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+</p>
+
+<p>
+12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+</p>
+
+</div>
+
+<script type='text/javascript'>
+  SyntaxHighlighter.autoloader(
+    'applescript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAppleScript.js',
+    'actionscript3 as3 /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushAS3.js',
+    'bash shell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushBash.js',
+    'coldfusion cf /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushColdFusion.js',
+    'cpp c /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCpp.js',
+    'c# c-sharp csharp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCSharp.js',
+    'css /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushCss.js',
+    'delphi pascal /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDelphi.js',
+    'diff patch pas /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushDiff.js',
+    'erl erlang /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushErlang.js',
+    'groovy /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushGroovy.js',
+    'java /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJava.js',
+    'jfx javafx /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJavaFX.js',
+    'js jscript javascript /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushJScript.js',
+    'perl pl /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPerl.js',
+    'php /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPhp.js',
+    'text plain /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPlain.js',
+    'ps powershell /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPowerShell.js',
+    'py python /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushPython.js',
+    'ruby rails ror rb /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushRuby.js',
+    'sass scss /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSass.js',
+    'scala /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushScala.js',
+    'sql /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushSql.js',
+    'vb vbnet /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushVb.js',
+    'xml xhtml xslt html /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js',
+    ' qsp /lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushQsp.js'
+  );
+  SyntaxHighlighter.all();
+</script>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>help/gnu_gpl_eng.txt</bdi> · Последние изменения: 2013/10/09 13:14 (внешнее изменение)</div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Инструменты страницы</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="Наверх [T]"><span>Наверх</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+<!--
+    <div class="buttons">
+                <a href="http://www.dokuwiki.org/donate" title="Donate" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="http://www.php.net" title="Powered by PHP" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="../lib/tpl/exportdokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+-->
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img  width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div>    <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
+</body>
+</html>

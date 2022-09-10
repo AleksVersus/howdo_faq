@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>help:jump</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="help,jump"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Документация QSP"/>
+<link rel="start" href="/"/>
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="/feed.php?mode=list&amp;ns=help"/>
+<link rel="alternate" type="text/html" title="Простой HTML" href="/_export/xhtml/help/jump"/>
+<link rel="canonical" href="http://wiki.qsp.su/help/jump"/>
+<link rel="stylesheet" type="text/css" href="/lib/exe/css.php?t=exportdokuwiki&amp;tseed=f78b359cebbc2738e83150069e877c7f"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="/lib/plugins/syntaxhighlighter3/sxh3/styles/shThemeDefault.css"/>
+<script type="text/javascript">/*<![CDATA[*/var NS='help';var JSINFO = {"id":"help:jump","namespace":"help"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="/lib/exe/js.php?tseed=f78b359cebbc2738e83150069e877c7f&amp;template=exportdokuwiki"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shCore.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shAutoloader.js"></script>
+<script type="text/javascript" src="/lib/plugins/syntaxhighlighter3/sxh3/scripts/shBrushXml.js"></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+<p>
+<a href="/help/organizing" class="wikilink1" title="help:organizing">Назад: Пользовательские функции и процедуры</a>
+</p>
+
+<h2 class="sectionedit1" id="perexody_vnutri_lokacii_cikly">Переходы внутри локации, циклы</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>JUMP</strong> <em>[$метка]</em> - переход в текущем блоке кода на метку <em>[$метка]</em>.</div>
+<ul>
+<li class="level2"><div class="li"> Метка обозначается как &quot;:[название метки]&quot;. После описания метки (через &quot;&amp;&quot;) могут идти операторы.</div>
+</li>
+<li class="level2"><div class="li"> Отдельными блоками кода считаются:</div>
+<ul>
+<li class="level3"><div class="li"> Код &quot;Выполнить при посещении&quot; конкретной локации</div>
+<ul>
+<li class="level4"><div class="li"> Каждая локация - отдельный блок кода</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> Код действия даже если действие добавлено программно.</div>
+</li>
+<li class="level3"><div class="li"> Код в html-ссылке<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>.</div>
+</li>
+<li class="level3"><div class="li"> Код DYNAMIC/DYNEVAL</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>Пример:</em><pre class="brush: qsp">
+jump &#039;КонеЦ&#039;
+p &#039;Это сообщение не будет выведено&#039;
+:конец
+p &#039;А это сообщение пользователь увидит&#039;
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Переходы внутри локации, циклы" [103-1141] -->
+<h3 class="sectionedit2" id="cikly">Циклы</h3>
+<div class="level3">
+
+<p>
+С помощью оператора &quot;JUMP&quot; можно организовывать циклы:
+<pre class="brush: qsp">
+s=0
+:loop
+if s&lt;9:
+  s=s+1
+  pl s
+  jump &#039;loop&#039;
+end
+p &#039;Всё!&#039;
+</pre>
+</p>
+
+<p>
+Двойной цикл с одной меткой:
+<pre class="brush: qsp">
+:loop
+if y&lt;y0:
+  if x&lt;x0:
+    ............
+    x=x+1
+    jump &#039;loop&#039;
+  end
+  y=y+1
+  x=0
+  jump &#039;loop&#039;
+end
+</pre>
+</p>
+<hr />
+
+<p>
+<a href="/help/principle" class="wikilink1" title="help:principle">Вперёд: Порядок работы интерпретатора</a>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Циклы" [1142-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+&lt;a href=&quot;EXEC: !код&quot;&gt;ссылка&lt;/a&gt;</div>
+</div>
+</div>
+</body>
+</html>

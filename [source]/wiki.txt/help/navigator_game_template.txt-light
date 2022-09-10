@@ -1,0 +1,139 @@
+
+[Назад: Файлы игры на Quest Navigator](../help/navigator_game_files.html)
+
+==Шаблон игры на Quest Navigator==
+[:help_navigator_game_template]
+
+[:shablon_igry_na_quest_navigator]
+
+Шаблон игры отвечает за внешний вид игры. В шаблон игры входят: страницы html для соответствующих платформ, файлы стилей для соответствующих платформ [1)](#fn__1), файлы JavaScript для соответствующих платформ [2)](#fn__2) и другие файлы (например, изображения и шрифты).
+
+Файл шаблона рассмотрен на примере gameAwesomium.htm из одной из работающих игр .
+
+Файл шаблона игры в Quest Navigator
+
+=Заглоловок (head) страницы=
+[:zaglolovok_head_stranicy]
+
+<[head](http://december.com/html/4/element/head.html)>
+  <[meta](http://december.com/html/4/element/meta.html) charset="utf-8"> <[meta](http://december.com/html/4/element/meta.html) http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <[meta](http://december.com/html/4/element/meta.html) name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <[meta](http://december.com/html/4/element/meta.html) name="apple-mobile-web-app-capable" content="yes">
+  <[meta](http://december.com/html/4/element/meta.html) name="apple-mobile-web-app-status-bar-style" content="black">
+  <[meta](http://december.com/html/4/element/meta.html) name="format-detection" content="telephone=no">
+  <[link](http://december.com/html/4/element/link.html) type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../qsplib/js/core.js"></[script](http://december.com/html/4/element/script.html)>
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../qsplib/js/coreAwesomium.js"></[script](http://december.com/html/4/element/script.html)>
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"></[script](http://december.com/html/4/element/script.html)>
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../qsplib/js/api.js"></[script](http://december.com/html/4/element/script.html)>
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../standalone_content/folder/js/game.js"></[script](http://december.com/html/4/element/script.html)>
+  <[script](http://december.com/html/4/element/script.html) type="text/javascript">
+    $(document).ready(function(){
+        qspInitApi();
+      });
+  </[script](http://december.com/html/4/element/script.html)>
+</[head](http://december.com/html/4/element/head.html)>
+
+Я не буду разбирать каждую строчку, т.к. это излишне и я сам многого не понимаю. Нас интересуют только следующие строчки:
+
+<[link](http://december.com/html/4/element/link.html) type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
+<[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../standalone_content/folder/js/game.js"></[script](http://december.com/html/4/element/script.html)>
+
+В первой строке адрес [файла стилей (CSS)](../help/fajl_css_igry_v_quest_navigator) игры. Во второй адрес [файла JavaScript](../help/fajl_js_igry_v_quest_navigator) игры. Нужно следить, чтобы эти адреса соответствовали действительности. В данном примере файл game.css лежит по адресу folder/game.css, а файл game.js лежит по адресу folder/js/game.js относительно папки standalone_content.
+
+=Тело (body) страницы=
+[:telo_body_stranicy]
+
+А вот в структуре body без участия разработчика разобраться будет сложно. По моему мнению здесь стоило бы вставить табличку соответствия id↔назначение, а потом примеры популярных конструкций.
+
+<div id="qsp-main">Пример использования id</div>
+<div class="qsp-center">Пример использования class</div>
+
+Таблица id, используемых QSP Navigator'ом:
+
+idНазначение
+
+qsp-js-sandboxНе добавлять в body [3)](#fn__3), служебный [4)](#fn__4)
+
+qsp-back-imageКонтейнер для фонового изображения
+
+qsp-wrapper-main, qsp-scroller-main, qsp-mainКонтейнер для описания локации
+
+qsp-wrapper-acts, qsp-scroller-acts, qsp-actsКонтейнер для списка действий локации[5)](#fn__5)
+
+qsp-wrapper-objs, qsp-scroller-objs, qsp-invКонтейнер для инвентаря[6)](#fn__6)
+
+qsp-wrapper-vars, qsp-scroller-vars, qsp-varsКонтейнер для дополнительного описания[7)](#fn__7)
+
+qsp-input-line input Строка ввода [8)](#fn__8) [9)](#fn__9) 
+
+qsp-dialog-view, qsp-dialog-view-image-containerКонтейнер для просмотра картинок [10)](#fn__10)
+
+qsp-dialog-msg, qsp-wrapper-msg,
+qsp-scroller-msg, qsp-dialog-msg-contentКонтейнер для диалоговых окон
+
+qsp-dialog-error, qsp-dialog-error-contentКонтейнер для ошибок
+
+qsp-dialog-user-menuКонтейнер для пользовательского интерфейса
+
+qsp-dialog-inputКонтейнер диалога ввода
+
+qsp-dialog-input-contentТекст приглашения для ввода
+
+qsp-dialog-input-textПоле для ввода текста
+
+qsp-button-input-okКнопка подтверждения ввода текста
+
+qsp-dialog-system-menu 
+
+qsp-dialog-save-slots,
+qsp-dialog-save-slots-containerКонтейнер для меню сохранения/загрузки
+
+classНазначение
+
+qsp-center       автоматическое выравнивание по центру экрана
+
+qsp-skin-overlayоверлей для системного меню (system-menu)
+
+qsp-skin-dialog 
+
+qsp-save-slot-enabledНе добавлять в body[11)](#fn__11)
+
+qsp-save-slot-disabledНе добавлять в body[12)](#fn__12)
+
+qsp-user-menu-itemНе добавлять в body[13)](#fn__13)
+
+qsp-actionНе добавлять в body[14)](#fn__14)
+
+qsp-skin-buttonНе добавлять в body[15)](#fn__15). Используется для action и save-slot
+
+qsp-objectНе добавлять в body[16)](#fn__16)
+
+[Вперёд: Создание игр на Quest Navigator](../help/sozdanie_igr_na_quest_navigator.html)
+
+[1)](#fnt__1) 
+, [2)](#fnt__2) 
+чаще всего один файл на все платформы
+[3)](#fnt__3) 
+, [11)](#fnt__11) 
+, [12)](#fnt__12) 
+, [13)](#fnt__13) 
+, [14)](#fnt__14) 
+, [15)](#fnt__15) 
+, [16)](#fnt__16) 
+Генерируется автоматически
+[4)](#fnt__4) 
+используется для выполнения команды EXEC
+[5)](#fnt__5) 
+см. SHOWACTS
+[6)](#fnt__6) 
+см. SHOWOBJS
+[7)](#fnt__7) 
+см. SHOWSTATS
+[8)](#fnt__8) 
+обратите внимание - это должно быть <input class="qsp-input-line"> </input>, на данный момент поддержка этой области сильно ограничена
+[9)](#fnt__9) 
+см. SHOWINPUT
+[10)](#fnt__10) 
+см. VIEW
+
