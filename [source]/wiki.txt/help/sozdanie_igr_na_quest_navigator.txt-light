@@ -10,7 +10,7 @@
 
 [:otlichija_ot_aeroqsp]
 
-=Не поддерживаются задания CSS-атрибутов без пикселов.=
+=Не поддерживаются задания CSS-атрибутов без пикселов=
 [:ne_podderzhivajutsja_zadanija_css-atributov_bez_pikselov]
 
 left:1; top:2; width:100;
@@ -21,7 +21,7 @@ left:1px; top:2px; width:100px;
 
 Причина: не соответствует стандартам браузера.
 
-=Не поддерживаются задания CSS-атрибута backgound-image без url(../help/sozdanie_igr_na_quest_navigator.html).=
+=Не поддерживаются задания CSS-атрибута backgound-image без url(../help/sozdanie_igr_na_quest_navigator.html)=
 [:ne_podderzhivajutsja_zadanija_css-atributa_backgound-image_bez_url]
 
 background-image:image.png;
@@ -34,7 +34,7 @@ background-image:url(../image.png);
 
 Отличия от "классического" плеера
 
-=Ограниченная поддержка формата MIDI.=
+=Ограниченная поддержка формата MIDI=
 [:ogranichennaja_podderzhka_formata_midi]
 
 В отличие от классического плеера, в Навигаторе MIDI-файлы не могут проигрываться несколько одновременно, только по одному. Также не поддерживается установка громкости, все MIDI-файлы проигрываются со 100% громкостью.
@@ -45,7 +45,7 @@ background-image:url(../image.png);
 
 Причина: используется не поддерживающая MIDI звуковая библиотека [Audiere](http://audiere.sourceforge.net/).
 
-=Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале.=
+=Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале=
 [:vse_url_dlja_podkljuchenija_kartinok_css_i_js_fajlov_ukazyvajutsja_bez_slehsha_v_nachale]
 
 В классическом плеере, равнозначны следующие записи:
