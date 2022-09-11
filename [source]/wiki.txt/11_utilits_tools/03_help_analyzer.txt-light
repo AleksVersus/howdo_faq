@@ -20,7 +20,7 @@
 
 Строка указывается непосредственно в текстовом файле, все исправления вносятся в него через любой текстовый редактор.Для быстрого переключение к нужной строке используйте сочетание клавиш ctrl+g .
 
-Функция экспорт в qGen не работает, для конвертации файла, после всех исправлений, используйте утилиту [TXT2GAM](http://qsp.su/index.php?option=com_content&task=view&id=52&Itemid=56)
+Функция экспорт в qGen не работает, для конвертации файла, после всех исправлений, используйте утилиту [TXT2GAM](https://qsp.org/index.php?option=com_content&task=view&id=52&Itemid=56)
 
 =Импорт в CSV=
 [:import_v_csv]
@@ -56,7 +56,7 @@ GOTO $nextloc
 =Ссылки=
 [:ssylki]
 
-	*  [Тема на форуме.](http://qsp.su/index.php?option=com_agora&task=topic&id=365)
+	*  [Тема на форуме.](https://qsp.org/index.php?option=com_agora&task=topic&id=365)
 	*  [Сам проект.](https://code.google.com/p/qsp-analyser/)
 	*  [Скачать.](https://code.google.com/p/qsp-analyser/downloads/detail?name=QSP_Analyser.exe&can=2&q=)
 [1)](#fnt__1) 

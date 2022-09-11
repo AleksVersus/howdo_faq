@@ -38,7 +38,7 @@
 	*  596 - ADDLIB → INCLIB, DELLIB → FREELIB
 	*  618,619 - Необязательные аргументы INSTR, ARRPOS, ARRCOMP переставлены в конец.
 	*  640 - `DYNAMIC/DYNEVAL - теперь блок кода вместо верхнего уровня кода`
-	*  641 - Save RESULT value for GS/DYNAMIC too - багфикс [бага](http://qsp.su/index.php?option=com_agora&task=topic&id=636&Itemid=57#p14363)
+	*  641 - Save RESULT value for GS/DYNAMIC too - багфикс [бага](https://qsp.org/index.php?option=com_agora&task=topic&id=636&Itemid=57#p14363)
 	*  651 - Повышен приоритет операции & (конкатенации), теперь она важнее сравнения.
 	*  669 - RAND - второй параметр теперь по умолчанию 1 вместо 0
 	*  687 - Переход на VS2012
