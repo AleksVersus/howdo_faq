@@ -1,12 +1,13 @@
 
 	*  `[В начало](start.html)`
 	*  `[Что такое QSP?](help/qsp.html)`
-	*  `[Локации и переходы](help/locations.html)`
+	*  `[Локации](help/locations.html)`
 	*  `Вывод текста`
 		*  [Основное окно описания](help/main.html)
 		*  [Дополнительное окно описания](help/stat.html)
 		*  [Диалоговое окно](help/msgbox.html)
 	*  `[Действия](help/acts.html)`
+	*  `[Переходы](#goto)`
 	*  `[Предметы (инвентарь)](help/objs.html)`
 	*  `Программирование`
 		*  [Переменные](help/variables.html)
