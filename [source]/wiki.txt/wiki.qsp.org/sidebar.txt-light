@@ -7,12 +7,13 @@
 		*  [Дополнительное окно описания](help/stat.html)
 		*  [Диалоговое окно](help/msgbox.html)
 	*  `[Действия](help/acts.html)`
-	*  `[Переходы](#goto)`
+	*  `[Переходы](#goto)` <<<---------------------------------------
 	*  `[Предметы (инвентарь)](help/objs.html)`
 	*  `Программирование`
 		*  [Переменные](help/variables.html)
 		*  [Выражения](help/expressions.html)
 		*  [Программный код](help/coding.html)
+		*  [циклы](#help_cycle) <<<---------------------------------------
 		*  [Массивы](help/arrays.html)
 		*  [Строки](help/strings.html)
 			*  [Регулярные выражения](help/regexp.html)
@@ -22,9 +23,8 @@
 		*  [Порядок работы интерпретатора](help/principle.html)
 		*  [Служебные локации](help/service_locations.html)
 		*  [Динамический код](help/dynamical.html)
-	
-	*  `[Меню](help/menu.html)`
 	*  `Оформление`
+		*  [Меню](help/menu.html)
 		*  [Звук](help/sound.html)
 		*  [Графика](help/graphics.html)
 		*  [Шрифты](help/fonts.html)
@@ -33,21 +33,27 @@
 		*  [Ввод текста игроком](help/inputs.html)
 		*  [Работа с файлами, использование модулей](help/modules.html)
 		*  [Реальное время](help/realtime.html)
-		*  Нюансы написания игр под разные плееры
-			*  [Классический плеер](help/classic_qsp.html)
-			*  [AeroQSP](help/aeroqsp.html)
-			*  [Quest Navigator](help/navigator.html)
-				*  [Параметры запуска](help/navigator_command_line.html)
-				*  [Файлы игры](help/navigator_game_files.html)
-				*  [Шаблон игры](help/navigator_game_template.html)
-				*  [Создание игр](help/sozdanie_igr_na_quest_navigator.html)
-				*  [Шрифты](help/ispolzovanie_shriftov_v_quest_navigator.html)
-				*  [Файл настроек игры](help/fajl_nastroek_igry_v_quest_navigator.html)
-				*  [Независимая сборка](help/navigator_standalone.html)
-		*  Утилиты и средства разработки
-			*  [Отладчик](help/debugger.html)
-			*  [Анализатор кода QSP](help/analyzer.html)
-	*  `[Как сделать](howto/start.html)`
-	*  `[Cловарь терминов](help/glossary.html)`
-	*  `[Список ключевых слов](help/keywords.html)`
+	*  `Нюансы написания игр под разные плееры`
+		*  [Классический плеер](help/classic_qsp.html)
+		*  [AeroQSP](help/aeroqsp.html)
+		*  [Quest Navigator](help/navigator.html)
+			*  [Параметры запуска](help/navigator_command_line.html)
+			*  [Файлы игры](help/navigator_game_files.html)
+			*  [Шаблон игры](help/navigator_game_template.html)
+			*  [Создание игр](help/sozdanie_igr_na_quest_navigator.html)
+			*  [Шрифты](help/ispolzovanie_shriftov_v_quest_navigator.html)
+			*  [Файл настроек игры](help/fajl_nastroek_igry_v_quest_navigator.html)
+			*  [Независимая сборка](help/navigator_standalone.html)
+	*  `Утилиты и средства разработки`
+		*  [Quest Generator](#qgen) <<<---------------------------------------
+		*  [Отладчик](help/debugger.html)
+		*  [Работа с утилитой TXT2GAM](#txt2gam) <<<---------------------------------------
+		*  [Анализатор кода QSP](help/analyzer.html)
+	*  `Модули` <<<---------------------------------------
+		*  []
 	*  `[Ограничения QSP](help/limits.html)`
+	*  `[Как сделать?](howto/start.html)`
+	*  `[Cловарь терминов](help/glossary.html)`
+	*  `[Ключевые слова. Указатель](help/keywords.html)`
+	*  `[О лицензиях](#qsp_license)` <<<---------------------------------------
+	

@@ -187,8 +187,8 @@ def main_rename(folder):
 
 if __name__=="__main__":
 	counter=-1
-	folder = NewFolder("D:\\my\\projects\\howdo_faq\\[source]\\wiki.txt\\help")
-	folder.renameFiles(filt=r"(^.{3,}\.txt-light$|^[^0]{2}$)/re",mask="help_[N].[E]")
+	folder = NewFolder("D:\\my\\projects\\howdo_faq\\[source]\\wiki.txt\\11_utilits_tools")
+	folder.renameFiles(filt=r"(^.{3,}\.txt-light$|^[^0]{2}$)/re",mask="[CC]_[N4].[E]",level=1)
 	# main_rename(folder) # пакетное переименовывание всех файлов
 	# print(folder.foundCount(start=True,filt=r"(^.{3,}\.txt-light$|^[^0]{2}$)/re")) # поиск конечного счётчика
 	# print(folder.getFilesList(filt=r"(^.{3,}\.txt-light$|^[^0]{2}$)/re"))
