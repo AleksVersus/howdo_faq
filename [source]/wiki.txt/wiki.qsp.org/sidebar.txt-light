@@ -10,17 +10,17 @@
 	*  `[Переходы](#goto)` <<<---------------------------------------
 	*  `[Предметы (инвентарь)](help/objs.html)`
 	*  `Программирование`
+		*  [Порядок работы интерпретатора](help/principle.html)
 		*  [Переменные](help/variables.html)
 		*  [Выражения](help/expressions.html)
 		*  [Программный код](help/coding.html)
-		*  [циклы](#help_cycle) <<<---------------------------------------
+		*  [Циклы](#help_cycle) <<<---------------------------------------
 		*  [Массивы](help/arrays.html)
 		*  [Строки](help/strings.html)
 			*  [Регулярные выражения](help/regexp.html)
 		*  [Условия](help/conditional.html)
 		*  [Пользовательские функции и процедуры](help/organizing.html)
 		*  [Переходы внутри локации, циклы](help/jump.html)
-		*  [Порядок работы интерпретатора](help/principle.html)
 		*  [Служебные локации](help/service_locations.html)
 		*  [Динамический код](help/dynamical.html)
 	*  `Оформление`
@@ -33,6 +33,7 @@
 		*  [Ввод текста игроком](help/inputs.html)
 		*  [Работа с файлами, использование модулей](help/modules.html)
 		*  [Реальное время](help/realtime.html)
+		*  [Кортежи](#help_tuples) <<<---------------------------------------
 	*  `Нюансы написания игр под разные плееры`
 		*  [Классический плеер](help/classic_qsp.html)
 		*  [AeroQSP](help/aeroqsp.html)
