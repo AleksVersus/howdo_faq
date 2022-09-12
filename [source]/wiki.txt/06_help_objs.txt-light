@@ -62,7 +62,7 @@ END
 
 ```
 
-Cм. также служебные локации: [$ONOBJADD](../help/service_locations.html), [$ONOBJDEL](../help/service_locations.html), [$ONOBJSEL](../help/service_locations.html).
+Cм. также служебные локации: [$ONOBJADD](help:service_locations), [$ONOBJDEL](help:service_locations), [$ONOBJSEL](help:service_locations).
 
 [Вперёд: Меню](../help/menu.html)
 

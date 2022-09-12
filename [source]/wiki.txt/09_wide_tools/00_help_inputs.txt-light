@@ -16,7 +16,7 @@
 	*  `SHOWINPUT` [#выражение] - если значение выражения отлично от 0, то показывает строку ввода, иначе скрывает её.
 	*  `USER_TEXT` или `USRTXT` - возвращают текст, находящийся в строке ввода.
 	*  `CMDCLEAR` или `CMDCLR` - очистка строки ввода.
-	*  См. [$USER_COM](../help/service_locations.html)
+	*  См. [$USER_COM](help:service_locations)
 	*  Примеры:
 ```qsp
 

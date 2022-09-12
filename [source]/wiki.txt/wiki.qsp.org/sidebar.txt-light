@@ -8,7 +8,7 @@
 		*  [Диалоговое окно](help:msgbox)
 	*  `[Действия](help:acts)`
 	*  `[Переходы](#goto)` <<<---------------------------------------
-	*  `[Предметы (инвентарь)](help/objs.html)`
+	*  `[Предметы (инвентарь)](help:objs)`
 	*  `Программирование`
 		*  [Порядок работы интерпретатора](help/principle.html)
 		*  [Переменные](help/variables.html)
@@ -21,7 +21,7 @@
 		*  [Условия](help/conditional.html)
 		*  [Пользовательские функции и процедуры](help/organizing.html)
 		*  [Переходы внутри локации, циклы](help/jump.html)
-		*  [Служебные локации](help/service_locations.html)
+		*  [Служебные локации](help:service_locations)
 		*  [Динамический код](help/dynamical.html)
 	*  `Оформление`
 		*  [Меню](help/menu.html)
@@ -55,6 +55,6 @@
 	*  `[Ограничения QSP](help/limits.html)`
 	*  `[Как сделать?](howto/start.html)`
 	*  `[Cловарь терминов](help/glossary.html)`
-	*  `[Ключевые слова. Указатель](help/keywords.html)`
+	*  `[Ключевые слова. Указатель](help:keywords)`
 	*  `[О лицензиях](#qsp_license)` <<<---------------------------------------
 	
