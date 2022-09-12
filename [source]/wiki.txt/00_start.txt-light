@@ -12,7 +12,7 @@
 
 Ну а остальных милости просим в эту справку.
 
-	*  [Первая статья: что такое QSP?](help/qsp.html)
+	*  [Первая статья: что такое QSP?](help:qsp)
 	*  [Cловарь терминов](help/glossary.html)
 	*  [Список ключевых слов](help/keywords.html)
 	*  [Ограничения QSP](help/limits.html)
@@ -35,4 +35,4 @@
 	*  [FAQ для разработчиков](https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57)
 	*  [Онлайн-справочник по самым часто задаваемым вопросам по QSP](https://aleksversus.github.io/howdo_faq/)
 	
-[Вперёд: Что такое QSP?](help/qsp.html)
+[Вперёд: Что такое QSP?](help:qsp)

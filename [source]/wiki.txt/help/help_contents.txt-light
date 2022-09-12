@@ -10,10 +10,10 @@
 [:oglavlenie]
 
 	*  [Введение](../start.html)
-	*  [Что такое QSP?](../help/qsp.html)
+	*  [Что такое QSP?](../help:qsp)
 	*  [Cловарь терминов](../help/glossary.html)
 	*  [Список ключевых слов](../help/keywords.html)
-	*  [Локации и переходы](../help/locations.html)
+	*  [Локации и переходы](help:locations)
 	*  Программирование
 		*  [Переменные](../help/variables.html)
 		*  [Выражения](../help/expressions.html)
@@ -30,7 +30,7 @@
 	*  Вывод текста
 		*  [Основное окно описания](../help/main.html)
 		*  [Дополнительное окно описания](../help/stat.html)
-		*  [Диалоговое окно](../help/msgbox.html)
+		*  [Диалоговое окно](help:msgbox)
 	*  [Действия](../help/acts.html)
 	*  [Предметы (инвентарь)](../help/objs.html)
 	*  [Меню](../help/menu.html)

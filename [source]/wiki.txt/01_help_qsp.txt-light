@@ -1,5 +1,5 @@
 
-[Назад: Введение](../start.html)
+[Назад: Введение](start)
 
 ==Что такое QSP?==
 [:help_qsp]
@@ -66,7 +66,7 @@
 =Примеры всплывающих окон и меню=
 [:primery_vsplyvajuschix_okon_i_menju]
 
-Примеры использования вывода сообщения в диалоговом окне посредством [MSG](../help/msgbox.html), и ввода текста в диалоговом окне игроком посредством [INPUT](../help/inputs.html)
+Примеры использования вывода сообщения в диалоговом окне посредством [MSG](help:msgbox), и ввода текста в диалоговом окне игроком посредством [INPUT](../help/inputs.html)
 
 [%image%](../_detail/help/window_msg.png/help_qsp.html) [%image%](../_detail/help/input_window.png/help_qsp.html)
 
@@ -82,4 +82,4 @@
 
 [Исходный код библиотеки интерпретатора QSP](http://github.com/QSPFoundation/qsp)
 
-[Вперёд: Локации](../help/locations.html)
+[Вперёд: Локации](help:locations)
