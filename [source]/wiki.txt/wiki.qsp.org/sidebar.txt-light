@@ -10,7 +10,7 @@
 	*  `[Переходы](help:goto)`
 	*  `[Предметы (инвентарь)](help:objs)`
 	*  `Программирование`
-		*  [Порядок работы интерпретатора](help/principle.html)
+		*  [Порядок работы интерпретатора](help:principle)
 		*  [Переменные](help/variables.html)
 		*  [Выражения](help/expressions.html)
 		*  [Программный код](help/coding.html)

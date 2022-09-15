@@ -24,7 +24,7 @@
 		*  [Условия](../help/conditional.html)
 		*  [Пользовательские функции и процедуры](../help/organizing.html)
 		*  [Переходы внутри локации, циклы](../help/jump.html)
-		*  [Порядок работы интерпретатора](../help/principle.html)
+		*  [Порядок работы интерпретатора](help:principle)
 		*  [Служебные локации](help:service_locations)
 		*  [Динамический код](../help/dynamical.html)
 	*  Вывод текста
