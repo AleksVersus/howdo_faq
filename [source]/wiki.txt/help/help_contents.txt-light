@@ -15,8 +15,8 @@
 	*  [Список ключевых слов](help:keywords)
 	*  [Локации и переходы](help:locations)
 	*  Программирование
-		*  [Переменные](../help/variables.html)
-		*  [Выражения](../help/expressions.html)
+		*  [Переменные](help:variables)
+		*  [Выражения](help:expressions)
 		*  [Программный код](../help/coding.html)
 		*  [Массивы](../help/arrays.html)
 		*  [Строки](../help/strings.html)

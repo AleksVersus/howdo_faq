@@ -11,8 +11,8 @@
 	*  `[Предметы (инвентарь)](help:objs)`
 	*  `Программирование`
 		*  [Порядок работы интерпретатора](help:principle)
-		*  [Переменные](help/variables.html)
-		*  [Выражения](help/expressions.html)
+		*  [Переменные](help:variables)
+		*  [Выражения](help:expressions)
 		*  [Программный код](help/coding.html)
 		*  [Циклы](#help_cycle) <<<---------------------------------------
 		*  [Массивы](help/arrays.html)
