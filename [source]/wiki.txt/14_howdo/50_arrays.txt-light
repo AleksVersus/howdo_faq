@@ -76,7 +76,7 @@ end
 	*  ['IF [#условие]: [операторы] ELSE [операторы]'](../help/conditional.html)
 			*  ['*NL [$текст]'](../help/main.html)
 			*  ['JUMP [$метка]'](../help/jump.html)
-			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](../help/arrays.html)
+			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](help:arrays)
 =Двумерные массивы с текстовыми индексами=
 [:dvumernye_massivy_s_tekstovymi_indeksami]
 
@@ -194,9 +194,9 @@ if i1<i1_max : Jump 'ПрыгВыводМассива3'
 
 В данном примере использованы функции:
 
-	*  ['ARRSIZE([$имя])'](../help/arrays.html)
-			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](../help/arrays.html)
-			*  ['KILLVAR [$название массива],[#индекс элемента]'](../help/arrays.html)
+	*  ['ARRSIZE([$имя])'](help:arrays)
+			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](help:arrays)
+			*  ['KILLVAR [$название массива],[#индекс элемента]'](help:arrays)
 			*  ['VAL([$стр])'](../help/strings.html)
 			*  ['MID([$стр],[#начало],[#длина])'](../help/strings.html)
 			*  ['LEN([$стр])'](../help/strings.html)

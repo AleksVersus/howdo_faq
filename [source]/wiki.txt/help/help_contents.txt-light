@@ -18,7 +18,7 @@
 		*  [Переменные](help:variables)
 		*  [Выражения](help:expressions)
 		*  [Программный код](../help/coding.html)
-		*  [Массивы](../help/arrays.html)
+		*  [Массивы](help:arrays)
 		*  [Строки](../help/strings.html)
 			*  [Регулярные выражения](../help/regexp.html)
 		*  [Условия](../help/conditional.html)
