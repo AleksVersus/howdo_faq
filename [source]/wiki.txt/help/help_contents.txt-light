@@ -17,9 +17,9 @@
 	*  Программирование
 		*  [Переменные](help:variables)
 		*  [Выражения](help:expressions)
-		*  [Программный код](../help/coding.html)
+		*  [Программный код](help:coding)
 		*  [Массивы](help:arrays)
-		*  [Строки](../help/strings.html)
+		*  [Строки](help:strings)
 			*  [Регулярные выражения](../help/regexp.html)
 		*  [Условия](../help/conditional.html)
 		*  [Пользовательские функции и процедуры](../help/organizing.html)

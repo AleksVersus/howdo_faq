@@ -197,9 +197,9 @@ if i1<i1_max : Jump 'ПрыгВыводМассива3'
 	*  ['ARRSIZE([$имя])'](help:arrays)
 			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](help:arrays)
 			*  ['KILLVAR [$название массива],[#индекс элемента]'](help:arrays)
-			*  ['VAL([$стр])'](../help/strings.html)
-			*  ['MID([$стр],[#начало],[#длина])'](../help/strings.html)
-			*  ['LEN([$стр])'](../help/strings.html)
+			*  ['VAL([$стр])'](help:strings)
+			*  ['MID([$стр],[#начало],[#длина])'](help:strings)
+			*  ['LEN([$стр])'](help:strings)
 =Массив переменных=
 [:massiv_peremennyx]
 

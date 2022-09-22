@@ -1,12 +1,12 @@
 
-[Назад: Строки](../help/strings.html)
+[Назад: Строки](help:strings)
 
 ==Регулярные выражения==
 [:help_regexp]
 
 [:reguljarnye_vyrazhenija]
 
-Регулярные выражения в QSP используются при работе со [специальными функциями](../help/strings.html#funkcii_ispolzujuschie_reguljarnye_vyrazhenija).
+Регулярные выражения в QSP используются при работе со [специальными функциями](help:strings#funkcii_ispolzujuschie_reguljarnye_vyrazhenija).
 
 Также см. [Самоучитель по регулярным выражениям](../regex/start.html).
 
