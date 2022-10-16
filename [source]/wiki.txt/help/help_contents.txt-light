@@ -20,7 +20,7 @@
 		*  [Программный код](help:coding)
 		*  [Массивы](help:arrays)
 		*  [Строки](help:strings)
-			*  [Регулярные выражения](../help/regexp.html)
+			*  [Регулярные выражения](help:regexp)
 		*  [Условия](../help/conditional.html)
 		*  [Пользовательские функции и процедуры](../help/organizing.html)
 		*  [Переходы внутри локации, циклы](../help/jump.html)
