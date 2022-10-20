@@ -22,7 +22,7 @@
 		*  [Строки](help:strings)
 			*  [Регулярные выражения](help:regexp)
 		*  [Условия](help:conditional)
-		*  [Пользовательские функции и процедуры](../help/organizing.html)
+		*  [Пользовательские функции и процедуры](help:organizing)
 		*  [Переходы внутри локации, циклы](../help/jump.html)
 		*  [Порядок работы интерпретатора](help:principle)
 		*  [Служебные локации](help:service_locations)
