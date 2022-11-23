@@ -59,7 +59,7 @@
 [INSTR](help:strings#funkcii)
 [ISNUM](help:strings#funkcii)
 [ISPLAY](../help/sound.html)
-[JUMP](../help/jump.html)
+[JUMP](help:jump)
 [KILLALL](help:arrays#funkcii_i_operatory)
 [KILLOBJ](help:objs#komandy)
 [KILLQST](../help/modules.html)

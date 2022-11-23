@@ -75,7 +75,7 @@ end
 
 	*  ['IF [#условие]: [операторы] ELSE [операторы]'](help:conditional)
 			*  ['*NL [$текст]'](../help/main.html)
-			*  ['JUMP [$метка]'](../help/jump.html)
+			*  ['JUMP [$метка]'](help:jump)
 			*  ['ARRPOS([#начало],[$имя_массива],[значение])'](help:arrays)
 =Двумерные массивы с текстовыми индексами=
 [:dvumernye_massivy_s_tekstovymi_indeksami]

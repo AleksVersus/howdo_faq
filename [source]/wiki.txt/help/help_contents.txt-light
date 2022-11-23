@@ -23,7 +23,7 @@
 			*  [Регулярные выражения](help:regexp)
 		*  [Условия](help:conditional)
 		*  [Пользовательские функции и процедуры](help:organizing)
-		*  [Переходы внутри локации, циклы](../help/jump.html)
+		*  [Переходы внутри локации, циклы](help:jump)
 		*  [Порядок работы интерпретатора](help:principle)
 		*  [Служебные локации](help:service_locations)
 		*  [Динамический код](../help/dynamical.html)
