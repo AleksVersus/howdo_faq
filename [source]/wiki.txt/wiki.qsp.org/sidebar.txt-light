@@ -22,7 +22,7 @@
 		*  [Пользовательские функции и процедуры](help:organizing)
 		*  [Переходы внутри локации, циклы](help:jump)
 		*  [Служебные локации](help:service_locations)
-		*  [Динамический код](help/dynamical.html)
+		*  [Динамический код](help:dynamical)
 	*  `Оформление`
 		*  [Меню](help/menu.html)
 		*  [Звук](help/sound.html)
@@ -30,7 +30,7 @@
 		*  [Шрифты](help/fonts.html)
 		*  [HTML](help/html.html)
 	*  `Расширенные возможности`
-		*  [Ввод текста игроком](help/inputs.html)
+		*  [Ввод текста игроком](help:inputs)
 		*  [Работа с файлами, использование модулей](help/modules.html)
 		*  [Реальное время](help/realtime.html)
 		*  [Кортежи](#help_tuples) <<<---------------------------------------
