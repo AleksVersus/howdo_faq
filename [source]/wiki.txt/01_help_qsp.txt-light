@@ -66,7 +66,7 @@
 =Примеры всплывающих окон и меню=
 [:primery_vsplyvajuschix_okon_i_menju]
 
-Примеры использования вывода сообщения в диалоговом окне посредством [MSG](help:msgbox), и ввода текста в диалоговом окне игроком посредством [INPUT](../help/inputs.html)
+Примеры использования вывода сообщения в диалоговом окне посредством [MSG](help:msgbox), и ввода текста в диалоговом окне игроком посредством [INPUT](help:inputs)
 
 [%image%](../_detail/help/window_msg.png/help_qsp.html) [%image%](../_detail/help/input_window.png/help_qsp.html)
 
