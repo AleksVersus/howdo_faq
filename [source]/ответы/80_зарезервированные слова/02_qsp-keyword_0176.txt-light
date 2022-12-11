@@ -385,7 +385,6 @@
 		*pl "<<$args[0]>>"
 		*pl $args[0]
 	'
-	$args[0]='12345'
 	 
 	dynamic $code,'asdfg'
 ```	
