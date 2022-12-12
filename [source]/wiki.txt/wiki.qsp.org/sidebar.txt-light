@@ -24,8 +24,8 @@
 		*  [Служебные локации](help:service_locations)
 		*  [Динамический код](help:dynamical)
 	*  `Оформление`
-		*  [Меню](help/menu.html)
-		*  [Звук](help/sound.html)
+		*  [Меню](help:menu)
+		*  [Звук](help:sound)
 		*  [Графика](help/graphics.html)
 		*  [Шрифты](help/fonts.html)
 		*  [HTML](help/html.html)
