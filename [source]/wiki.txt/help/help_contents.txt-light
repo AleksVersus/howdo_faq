@@ -38,7 +38,7 @@
 		*  [Звук](help:sound)
 		*  [Графика](help:graphics)
 		*  [Шрифты](../help/fonts.html)
-		*  [HTML](../help/html.html)
+		*  [HTML](help:html)
 	*  Расширенные возможности
 		*  [Ввод текста игроком](help:inputs)
 		*  [Работа с файлами, использование модулей](../help/modules.html)
