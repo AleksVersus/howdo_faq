@@ -34,9 +34,10 @@
 		*  [Работа с файлами игр, модули](help:modules)
 		*  [Работа с файлами сохранений](help:savegame)
 		*  [Реальное время](help:realtime)
-		*  [Кортежи](#help_tuples) <<<---------------------------------------
+		*  [Кортежи](help:tuples) <<<---------------------------------------
 	*  `Нюансы написания игр под разные плееры`
 		*  [Классический плеер](help/classic_qsp.html)
+		*  [qSpider](help:qspider) <<<---------------------------------------
 		*  [AeroQSP](help/aeroqsp.html)
 		*  [Quest Navigator](help/navigator.html)
 			*  [Параметры запуска](help/navigator_command_line.html)
