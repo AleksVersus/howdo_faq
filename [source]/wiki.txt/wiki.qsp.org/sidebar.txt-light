@@ -36,7 +36,7 @@
 		*  [Реальное время](help:realtime)
 		*  [Кортежи](help:tuples)
 	*  `Нюансы написания игр под разные плееры`
-		*  [Классический плеер](help/classic_qsp.html)
+		*  [Классический плеер](help:classic_qsp)
 		*  [qSpider](help:qspider) <<<---------------------------------------
 		*  x [Quest Navigator](help:navigator)
 		*  x [AeroQSP](help/aeroqsp.html)
