@@ -1,12 +1,14 @@
 
-[Назад:AeroQSP](../help/aeroqsp.html)
+[Назад: qSpider](help:qpsider)
 
 ==Quest Navigator==
 [:help_navigator]
 
 [:quest_navigator]
 
-Плеер Quest Navigator создаётся как следующий шаг развития платформы QSP, на смену устаревшим классическому плееру и AeroQSP.
+Плеер Quest Navigator создавался как следующий шаг развития платформы QSP, на смену устаревшим классическому плееру и AeroQSP. Однако уже много лет Quest Navigator не обновляется и не развивается.
+
+В настоящий момент мы не рекомендуем пользоваться этим плеером, так как существует более современный, развивающийся плеер [qSpider](help:qpsider).
 
 =Принципиальные отличия=
 [:principialnye_otlichija]
@@ -24,7 +26,7 @@
 [:buduschie_platformy]
 
 	*  Windows Phone 8 (разработка не начата)
-	*  Десктопные версии Windows (в разработке)[1)](#fn__1)
+	*  Десктопные версии Windows (в разработке). Тема на форуме: [Quest Navigator для Windows](https://qsp.org/index.php?option=com_agora&task=topic&id=633)
 =Исходный код=
 [:isxodnyj_kod]
 
@@ -32,6 +34,7 @@
 	*  Ветка библиотеки QSP, модифицированная для Quest Navigator [GitHub](https://github.com/Nex-Otaku/qsplib-experimental)
 	*  JS framework (ядро) [GitHub](https://github.com/Nex-Otaku/quest-navigator-core)
 	*  Библиотечный проект для standalone-приложений Android [GitHub](https://github.com/Nex-Otaku/quest-navigator-library-android)
+
 =Статьи по теме=
 [:stati_po_teme]
 
@@ -42,8 +45,6 @@
 	*  [Использование шрифтов в Quest Navigator](../help/ispolzovanie_shriftov_v_quest_navigator.html)
 	*  [Файл настроек игры в Quest Navigator](../help/fajl_nastroek_igry_v_quest_navigator.html)
 	*  [Независимая сборка игры для Quest Navigator](../help/navigator_standalone.html)
-[Вперёд:Файлы игры на Quest Navigator](../help/navigator_game_files.html)
 
-[1)](#fnt__1) 
-Тема на форуме - [Quest Navigator для Windows](https://qsp.org/index.php?option=com_agora&task=topic&id=633)
+[Вперёд: AeroQSP](help:aeroqsp)
 

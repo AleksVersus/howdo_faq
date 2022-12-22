@@ -38,15 +38,8 @@
 	*  `Нюансы написания игр под разные плееры`
 		*  [Классический плеер](help/classic_qsp.html)
 		*  [qSpider](help:qspider) <<<---------------------------------------
-		*  [AeroQSP](help/aeroqsp.html)
-		*  [Quest Navigator](help/navigator.html)
-			*  [Параметры запуска](help/navigator_command_line.html)
-			*  [Файлы игры](help/navigator_game_files.html)
-			*  [Шаблон игры](help/navigator_game_template.html)
-			*  [Создание игр](help/sozdanie_igr_na_quest_navigator.html)
-			*  [Шрифты](help/ispolzovanie_shriftov_v_quest_navigator.html)
-			*  [Файл настроек игры](help/fajl_nastroek_igry_v_quest_navigator.html)
-			*  [Независимая сборка](help/navigator_standalone.html)
+		*  x [Quest Navigator](help/navigator.html)
+		*  x [AeroQSP](help/aeroqsp.html)
 	*  `Утилиты и средства разработки`
 		*  [Quest Generator](#qgen) <<<---------------------------------------
 		*  [Отладчик](help/debugger.html)
