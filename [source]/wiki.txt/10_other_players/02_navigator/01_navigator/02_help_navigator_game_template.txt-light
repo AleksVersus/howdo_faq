@@ -1,5 +1,5 @@
 
-[Назад: Файлы игры на Quest Navigator](../help/navigator_game_files.html)
+[Назад: Quest Navigator](help:navigator)
 
 ==Шаблон игры на Quest Navigator==
 [:help_navigator_game_template]
@@ -15,6 +15,7 @@
 =Заглоловок (head) страницы=
 [:zaglolovok_head_stranicy]
 
+```html
 <[head](http://december.com/html/4/element/head.html)>
   <[meta](http://december.com/html/4/element/meta.html) charset="utf-8"> <[meta](http://december.com/html/4/element/meta.html) http-equiv="Content-Type" content="text/html; charset=utf-8">
   <[meta](http://december.com/html/4/element/meta.html) name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -33,11 +34,14 @@
       });
   </[script](http://december.com/html/4/element/script.html)>
 </[head](http://december.com/html/4/element/head.html)>
+```
 
 Я не буду разбирать каждую строчку, т.к. это излишне и я сам многого не понимаю. Нас интересуют только следующие строчки:
 
+```html
 <[link](http://december.com/html/4/element/link.html) type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
 <[script](http://december.com/html/4/element/script.html) type="text/javascript" src="../standalone_content/folder/js/game.js"></[script](http://december.com/html/4/element/script.html)>
+```
 
 В первой строке адрес [файла стилей (CSS)](../help/fajl_css_igry_v_quest_navigator) игры. Во второй адрес [файла JavaScript](../help/fajl_js_igry_v_quest_navigator) игры. Нужно следить, чтобы эти адреса соответствовали действительности. В данном примере файл game.css лежит по адресу folder/game.css, а файл game.js лежит по адресу folder/js/game.js относительно папки standalone_content.
 
@@ -46,10 +50,12 @@
 
 А вот в структуре body без участия разработчика разобраться будет сложно. По моему мнению здесь стоило бы вставить табличку соответствия id↔назначение, а потом примеры популярных конструкций.
 
+```html
 <div id="qsp-main">Пример использования id</div>
 <div class="qsp-center">Пример использования class</div>
+```
 
-Таблица id, используемых QSP Navigator'ом:
+Таблица id, используемых QSP `Navigator`ом:
 
 idНазначение
 
@@ -109,7 +115,7 @@ qsp-skin-buttonНе добавлять в body[15)](#fn__15). Используе
 
 qsp-objectНе добавлять в body[16)](#fn__16)
 
-[Вперёд: Создание игр на Quest Navigator](../help/sozdanie_igr_na_quest_navigator.html)
+[Вперёд: Создание игр на Quest Navigator](help:sozdanie_igr_na_quest_navigator)
 
 [1)](#fnt__1) 
 , [2)](#fnt__2) 
@@ -137,3 +143,12 @@ qsp-objectНе добавлять в body[16)](#fn__16)
 [10)](#fnt__10) 
 см. VIEW
 
+`Другие статьи:`
+
+  *  [Файлы игры на Quest Navigator](help:navigator_game_files)
+  *  [Параметры запуска Quest Navigator](help:navigator_command_line)
+  *  Шаблон игры на Quest Navigator
+  *  [Создание игр для плеера Quest Navigator](help:sozdanie_igr_na_quest_navigator)
+  *  [Использование шрифтов в Quest Navigator](help:ispolzovanie_shriftov_v_quest_navigator)
+  *  [Файл настроек игры в Quest Navigator](help:fajl_nastroek_igry_v_quest_navigator)
+  *  [Независимая сборка игры для Quest Navigator](help:navigator_standalone)

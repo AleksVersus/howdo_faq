@@ -1,5 +1,5 @@
 
-[Назад: Создание игр на Quest Navigator](../help/sozdanie_igr_na_quest_navigator.html)
+[Назад: Quest Navigator](help:navigator)
 
 Использование шрифтов в Quest Navigator
 
@@ -29,5 +29,13 @@ body {
   font-family: Aksent;
 }
 
-[Вперёд: Файл настроек игры в Quest Navigator ("config.xml")](../help/fajl_nastroek_igry_v_quest_navigator.html)
+`Другие статьи:`
+
+  *  [Файлы игры на Quest Navigator](help:navigator_game_files)
+  *  [Параметры запуска Quest Navigator](help:navigator_command_line)
+  *  [Шаблон игры на Quest Navigator](help:navigator_game_template)
+  *  [Создание игр для плеера Quest Navigator](help:sozdanie_igr_na_quest_navigator)
+  *  Использование шрифтов в Quest Navigator
+  *  [Файл настроек игры в Quest Navigator](help:fajl_nastroek_igry_v_quest_navigator)
+  *  [Независимая сборка игры для Quest Navigator](help:navigator_standalone)
 

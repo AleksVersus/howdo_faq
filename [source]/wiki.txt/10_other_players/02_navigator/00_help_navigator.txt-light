@@ -13,20 +13,23 @@
 =Принципиальные отличия=
 [:principialnye_otlichija]
 
-	*  Содержимое отрисовывается средствами браузера, благодаря этому есть полная поддержка HTML, CSS и Javascript
-	*  Оформление отделено от кода игры
-	*  Облегчено портирование плеера благодаря перемещению платформонезависимой части логики в общий Javascript-фреймворк
-	*  Поддержка мобильных платформ (Android, iOS)
+	*  Содержимое отрисовывается средствами браузера, благодаря этому есть полная поддержка HTML, CSS и Javascript (к сожалению, HTML-движок `Quest Navigator`а морально устарел и не соответствует современным стандартам).
+	*  Оформление отделено от кода игры.
+	*  Облегчено портирование плеера благодаря перемещению платформонезависимой части логики в общий Javascript-фреймворк.
+	*  Поддержка мобильных платформ (Android, iOS).
+
 =Доступен на платформах=
 [:dostupen_na_platformax]
 
 	*  Android
 	*  iOS
+
 =Будущие платформы=
 [:buduschie_platformy]
 
 	*  Windows Phone 8 (разработка не начата)
 	*  Десктопные версии Windows (в разработке). Тема на форуме: [Quest Navigator для Windows](https://qsp.org/index.php?option=com_agora&task=topic&id=633)
+
 =Исходный код=
 [:isxodnyj_kod]
 
@@ -38,13 +41,27 @@
 =Статьи по теме=
 [:stati_po_teme]
 
-	*  [Файлы игры на Quest Navigator](../help/navigator_game_files.html)
-	*  [Параметры запуска Quest Navigator](../help/navigator_command_line.html)
-	*  [Шаблон игры на Quest Navigator](../help/navigator_game_template.html)
-	*  [Создание игр для плеера Quest Navigator](../help/sozdanie_igr_na_quest_navigator.html)
-	*  [Использование шрифтов в Quest Navigator](../help/ispolzovanie_shriftov_v_quest_navigator.html)
-	*  [Файл настроек игры в Quest Navigator](../help/fajl_nastroek_igry_v_quest_navigator.html)
-	*  [Независимая сборка игры для Quest Navigator](../help/navigator_standalone.html)
+	*  [Файлы игры на Quest Navigator](help:navigator_game_files)
+	*  [Параметры запуска Quest Navigator](help:navigator_command_line)
+	*  [Шаблон игры на Quest Navigator](help:navigator_game_template)
+	*  [Создание игр для плеера Quest Navigator](help:sozdanie_igr_na_quest_navigator)
+	*  [Использование шрифтов в Quest Navigator](help:ispolzovanie_shriftov_v_quest_navigator)
+	*  [Файл настроек игры в Quest Navigator](help:fajl_nastroek_igry_v_quest_navigator)
+	*  [Независимая сборка игры для Quest Navigator](help:navigator_standalone)
+
+=Ответы по Quest Navigator в F.A.Q.=
+
+	* [Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?](https://aleksversus.github.io/howdo_faq/pages/shablony_oformlenija_dlja_igr_0159.html#faq_22_01)
+	* [Как подключить свой шрифт к игре?](https://aleksversus.github.io/howdo_faq/pages/kak_podkljuchit__svoj_shrift_0160.html)
+	* [Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?](https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_fona_0161.html)
+	* [Хочу прописать игре собственный вид курсора, как это сделать?](https://aleksversus.github.io/howdo_faq/pages/izmenit__kursor_0162.html)
+	* [Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать?](https://aleksversus.github.io/howdo_faq/pages/nastrojka_shablona_0163.html)
+	* [Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?](https://aleksversus.github.io/howdo_faq/pages/proverka_pleera_0164.html)
+	* [Как вставить видео в игру на Навигаторе?](https://aleksversus.github.io/howdo_faq/pages/video_0165.html)
+	* [Как делать standalone-сборку на Навигаторе?](https://aleksversus.github.io/howdo_faq/pages/standalone_0166.html)
+	* [Где в Quest Navigator править размер окна с игрой?](https://aleksversus.github.io/howdo_faq/pages/razmer_okna_igry_0167.html)
+	* [Как выполнить JavaScript прямо из кода QSP?](https://aleksversus.github.io/howdo_faq/pages/vypolnenie_js_iz_qsp-koda_0168.html)
+	* [Инструкция от Nex'а, позволяющая сменить оформление из кода игры](https://aleksversus.github.io/howdo_faq/pages/instruktsija_po_smene_oformlenija_iz_koda_igry_0169.html)
 
 [Вперёд: AeroQSP](help:aeroqsp)
 

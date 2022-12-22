@@ -1,16 +1,16 @@
 
-[Назад: Шаблон игры на Quest Navigator](../help/navigator_game_template.html)
+[Назад: Quest Navigator](help:navigator)
 
-Создание игр для плеера Quest Navigator
+==Создание игр для плеера Quest Navigator==
 
-Основная информация о создании игр для плеера [Quest Navigator](../help/navigator.html), а также отличия от других плееров.
+Основная информация о создании игр для плеера [Quest Navigator](help:navigator), а также отличия от других плееров.
 
-==Отличия от AeroQSP==
+=Отличия от AeroQSP=
 [:help_sozdanie_igr_na_quest_navigator]
 
 [:otlichija_ot_aeroqsp]
 
-=Не поддерживаются задания CSS-атрибутов без пикселов=
+--Не поддерживаются задания CSS-атрибутов без пикселов--
 [:ne_podderzhivajutsja_zadanija_css-atributov_bez_pikselov]
 
 left:1; top:2; width:100;
@@ -21,7 +21,7 @@ left:1px; top:2px; width:100px;
 
 Причина: не соответствует стандартам браузера.
 
-=Не поддерживаются задания CSS-атрибута backgound-image без url(../help/sozdanie_igr_na_quest_navigator.html)=
+--Не поддерживаются задания CSS-атрибута backgound-image без url--
 [:ne_podderzhivajutsja_zadanija_css-atributa_backgound-image_bez_url]
 
 background-image:image.png;
@@ -34,7 +34,7 @@ background-image:url(../image.png);
 
 Отличия от "классического" плеера
 
-=Ограниченная поддержка формата MIDI=
+--Ограниченная поддержка формата MIDI--
 [:ogranichennaja_podderzhka_formata_midi]
 
 В отличие от классического плеера, в Навигаторе MIDI-файлы не могут проигрываться несколько одновременно, только по одному. Также не поддерживается установка громкости, все MIDI-файлы проигрываются со 100% громкостью.
@@ -45,7 +45,7 @@ background-image:url(../image.png);
 
 Причина: используется не поддерживающая MIDI звуковая библиотека [Audiere](http://audiere.sourceforge.net/).
 
-=Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале=
+--Все URL для подключения картинок, CSS и JS файлов указываются без слэша в начале--
 [:vse_url_dlja_podkljuchenija_kartinok_css_i_js_fajlov_ukazyvajutsja_bez_slehsha_v_nachale]
 
 В классическом плеере, равнозначны следующие записи:
@@ -56,7 +56,7 @@ background-image:url(../image.png);
 
 Причина: удобство разделения папок JS-API Навигатора и игры, соответствие стандарту загрузки с локальной файловой системы.
 
-=Не поддерживается многострочный код в "EXEC:"=
+--Не поддерживается многострочный код в "EXEC:"--
 [:ne_podderzhivaetsja_mnogostrochnyj_kod_v_exec]
 
 Код в ссылках разрешается записывать только в одну строку.
@@ -65,9 +65,12 @@ background-image:url(../image.png);
 
 Оформление игр на Quest Navigator
 
-[Использование шрифтов в Quest Navigator](../help/ispolzovanie_shriftov_v_quest_navigator.html)
+=Другие статьи:=
 
-[Файл настроек игры в Quest Navigator ("config.xml")](../help/fajl_nastroek_igry_v_quest_navigator.html)
-
-[Вперёд: Использование шрифтов в Quest Navigator](../help/ispolzovanie_shriftov_v_quest_navigator.html)
-
+	*  [Файлы игры на Quest Navigator](help:navigator_game_files)
+	*  [Параметры запуска Quest Navigator](help:navigator_command_line)
+	*  [Шаблон игры на Quest Navigator](help:navigator_game_template)
+	*  Создание игр для плеера Quest Navigator
+	*  [Использование шрифтов в Quest Navigator](help:ispolzovanie_shriftov_v_quest_navigator)
+	*  [Файл настроек игры в Quest Navigator](help:fajl_nastroek_igry_v_quest_navigator)
+	*  [Независимая сборка игры для Quest Navigator](help:navigator_standalone)

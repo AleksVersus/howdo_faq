@@ -1,11 +1,11 @@
 
-[Назад: Использование шрифтов в Quest Navigator](../help/ispolzovanie_shriftov_v_quest_navigator.html)
+[Назад: Quest Navigator](help:navigator)
 
-Файл настроек игры в Quest Navigator
+==Файл настроек игры в Quest Navigator==
 
 Файл "config.xml" находится в корневой папке игры. Он содержит информацию о настройках игры. Плеер "читает" эту информацию перед тем, как загрузить игру. Исходя из этой информации плеер решает, как именно представлять эту игру пользователю. 
 
-==Редактирование==
+=Редактирование=
 [:help_fajl_nastroek_igry_v_quest_navigator]
 
 [:redaktirovanie]
@@ -14,7 +14,7 @@
 
 Настройки перечисляются в файле как атрибуты корневого элемента "game". Обязательных атрибутов нет. Любой не заполненный автором атрибут принимает значение по умолчанию.
 
-Список настроек
+=Список настроек=
 
  Атрибут  Значение по умолчанию  Описание 
 
@@ -42,13 +42,21 @@
 
  standalone  false  включен режим "standalone" 
 
-Режим "standalone"
+=Режим "standalone"=
 
-Режим "standalone" нужен для тех авторов, которые распространяют игру самостоятельно в виде [независимой сборки](../help/navigator_standalone.html).
+Режим "standalone" нужен для тех авторов, которые распространяют игру самостоятельно в виде [независимой сборки](help:navigator_standalone).
 
 При включенном режиме "standalone", используется системное меню с id="qsp-dialog-system-menu-standalone", если оно задано автором. Во всех остальных случаях используется системное меню с id="qsp-dialog-system-menu". Это позволяет использовать одну и ту же игру и для каталога QSP, и для самостоятельного распространения.
 
 Также, при включенном режиме "standalone" не вызывается обновление плеера. Таким образом, распространяемый вместе с игрой плеер всегда остаётся той версии, которую предоставил автор игры.
 
-[Вперёд: Отладчик](../help/debugger.html)
+`Другие статьи:`
+
+    *  [Файлы игры на Quest Navigator](help:navigator_game_files)
+    *  [Параметры запуска Quest Navigator](help:navigator_command_line)
+    *  [Шаблон игры на Quest Navigator](help:navigator_game_template)
+    *  [Создание игр для плеера Quest Navigator](help:sozdanie_igr_na_quest_navigator)
+    *  [Использование шрифтов в Quest Navigator](help:ispolzovanie_shriftov_v_quest_navigator)
+    *  Файл настроек игры в Quest Navigator
+    *  [Независимая сборка игры для Quest Navigator](help:navigator_standalone)
 

@@ -46,8 +46,8 @@
 		*  Нюансы написания игр под разные плееры
 			*  [Классический плеер](../help/classic_qsp.html)
 			*  [AeroQSP](../help/aeroqsp.html)
-			*  [Quest Navigator](../help/navigator.html)
-				*  [Файлы игры](../help/navigator_game_files.html)
+			*  [Quest Navigator](help:navigator)
+				*  [Файлы игры](help:navigator_game_files)
 		*  Утилиты и средства разработки
 	*  [Как сделать](../howto/start.html)
 */
