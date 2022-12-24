@@ -43,7 +43,7 @@
 		*  x [Quest Navigator](help:navigator)
 		*  x [AeroQSP](help:aeroqsp)
 	*  `Утилиты и средства разработки`
-		*  [Quest Generator](#qgen) <<<---------------------------------------
+		*  [Quest Generator](help:qgen) <<<---------------------------------------
 		*  [Отладчик](help/debugger.html)
 		*  [Работа с утилитой TXT2GAM](#txt2gam) <<<---------------------------------------
 		*  [Анализатор кода QSP](help:analyzer)
