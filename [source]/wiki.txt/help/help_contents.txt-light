@@ -45,7 +45,7 @@
 		*  [Реальное время](help:realtime)
 		*  Нюансы написания игр под разные плееры
 			*  [Классический плеер](help:classic_qsp)
-			*  [AeroQSP](../help/aeroqsp.html)
+			*  [AeroQSP](help:aeroqsp)
 			*  [Quest Navigator](help:navigator)
 				*  [Файлы игры](help:navigator_game_files)
 		*  Утилиты и средства разработки

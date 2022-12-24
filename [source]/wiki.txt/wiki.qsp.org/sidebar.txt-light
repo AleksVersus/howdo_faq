@@ -37,14 +37,16 @@
 		*  [Кортежи](help:tuples)
 	*  `Нюансы написания игр под разные плееры`
 		*  [Классический плеер](help:classic_qsp)
-		*  [qSpider](help:qspider) <<<---------------------------------------
+		*  [qSpider](help:qspider)
+			* [Конфигурационный файл](help:qspider_gamecfg)
+			* [Особенности запуска AeroQSP-игр](help:qspider_aeroqsp)
 		*  x [Quest Navigator](help:navigator)
-		*  x [AeroQSP](help/aeroqsp.html)
+		*  x [AeroQSP](help:aeroqsp)
 	*  `Утилиты и средства разработки`
 		*  [Quest Generator](#qgen) <<<---------------------------------------
 		*  [Отладчик](help/debugger.html)
 		*  [Работа с утилитой TXT2GAM](#txt2gam) <<<---------------------------------------
-		*  [Анализатор кода QSP](help/analyzer.html)
+		*  [Анализатор кода QSP](help:analyzer)
 	*  `Модули` <<<---------------------------------------
 		*  []
 	*  `[Ограничения QSP](help/limits.html)`
