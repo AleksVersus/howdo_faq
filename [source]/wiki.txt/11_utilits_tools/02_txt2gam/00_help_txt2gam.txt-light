@@ -234,7 +234,7 @@ txt2gam.exe %1 %2 "pMy Pass word"
 	4. Подсветка синтаксиса для Sublime Text входит в [пакет JAD на QSP для Sublime Text](https://github.com/AleksVersus/JAD_for_QSP).
 	5. Существует подсветка для [Notepad++ от Олегуса](https://qsp.org/components/com_agora/img/members/20/notepad-qsp.zip). С этой подсветкой ассоциируются текстовые файлы с расширением `.tqsp`, однако вы можете отредактировать файл подсветки, указав нужное вам расширение.
 	6. Werewolf разработал утилиту для конвертирования QSP-файла в текстовый формат (аналог `qsp2txt`), которая работает онлайн: [https://codepen.io/srg-kostyrko/full/QWqdwxv](https://codepen.io/srg-kostyrko/full/QWqdwxv). Так же он разработал специальные пакеты для конвертирования файлов в любую сторону: [https://github.com/QSPFoundation/converters](https://github.com/QSPFoundation/converters).
-	7. Существует учебник по написанию игр на QSP, если вы начинаете сразу с работы в текстовом редакторе: [Пишем QSP-игру в текстовом редакторе](https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor).
+	7. Существует учебник по написанию игр на QSP, если вы начинаете сразу с работы в текстовом редакторе: [Пишем QSP-игру в текстовом редакторе](help:txt2gam_manual).
 	8. Можно дополнительно обрабатывать qsps-файлы специальными программами перед тем, как конвертировать в файл игры QSP. Эти программы называются препроцессорами. В 2010 году NTROPY написал статью на эту тему: ["Препроцессор при использовании `TXT2GAM`"](help:txt2gam_preprocessor)
 
 [Вперёд: Анализатор кода](help:analyzer)

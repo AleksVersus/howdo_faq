@@ -11,7 +11,7 @@
 
 	*  [Введение](../start.html)
 	*  [Что такое QSP?](../help:qsp)
-	*  [Cловарь терминов](../help/glossary.html)
+	*  [Cловарь терминов](help:glossary)
 	*  [Список ключевых слов](help:keywords)
 	*  [Локации и переходы](help:locations)
 	*  Программирование
@@ -49,5 +49,5 @@
 			*  [Quest Navigator](help:navigator)
 				*  [Файлы игры](help:navigator_game_files)
 		*  Утилиты и средства разработки
-	*  [Как сделать](../howto/start.html)
+	*  [Как сделать](howto:start)
 */
