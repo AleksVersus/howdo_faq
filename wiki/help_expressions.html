@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/txt2gam_linux.html" class="emHREFTT">&lt; Назад, к странице 28</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html" class="emHREFTT">Вперёд, к странице 30 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Назад: Переменные</a>
+
+</p>
+<a id="help_expressions"></a><h2>Выражения</h2>
+<p>
+<a id="vyrazhenija"></a>
+
+</p>
+<p>
+Выражение - это набор значений, констант, переменных, функций, связанных между собой различными операциями. Программа выполняет (интерпретирует) такое выражение, вычисляя его значение. Для изменения приоритета операций в выражении могут присутствовать круглые скобки.
+
+</p>
+<a id="oboznachenija"></a><h3>Обозначения</h3>
+<ul>
+<li>
+ [выр] - выражение может быть как текстового, так и числового типа.
+</li>
+<li>
+ [$выр] - выражение текстового (строкового) типа (но при необходимости движок автоматически переведёт число в строку).
+</li>
+<li>
+ [#выр] - выражение числового типа (если возможно, движок автоматически переведёт строку в число).
+</li>
+</ul>
+<p>
+<span class="em_BLCK">Примечение.</span> Символ '<span class="em_BLCK">#</span>' использован в справке только чтобы разделить выражения произвольного и числового типов. К синтаксису QSP данный символ отношения не имеет.
+
+</p>
+<a id="prioritet_operacij"></a><h3>Приоритет операций</h3>
+<p>
+Операции в выражении выполняются в порядке приоритета. Операции с одинаковым приоритетом выполняются по порядку слева направо.
+
+</p>
+<p>
+Вот список операций для плееров <span class="em_BLCK">QSP</span> версии 5.8.0 в порядке повышения приоритета (от меньшего к большему): 
+
+</p>
+<ul>
+<li>
+<span class="em_BLCK"><span class="emFUNC">OR</span></span>
+</li>
+<li>
+<span class="em_BLCK"><span class="emFUNC">AND</span></span>
+</li>
+<li>
+<span class="em_BLCK"><span class="emFUNC">NO</span></span>
+</li>
+<li>
+<span class="em_BLCK">=</span>, <span class="em_BLCK">&lt;</span>, <span class="em_BLCK">&gt;</span>, <span class="em_BLCK">!</span>, <span class="em_BLCK">&lt;&gt;</span>, <span class="em_BLCK">&lt;=</span>, <span class="em_BLCK">&gt;=</span>, <span class="em_BLCK">=&lt;</span>, <span class="em_BLCK">=&gt;</span> (операции сравнения)
+</li>
+<li>
+<span class="em_BLCK"><span class="emFUNC">OBJ</span></span>, <span class="em_BLCK"><span class="emFUNC">LOC</span></span>
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">&amp;</span></span> (конкатенация)
+</li>
+<li>
+<span class="em_BLCK">+</span>, <span class="em_BLCK">-</span> (сложение, вычитание)
+</li>
+<li>
+<span class="em_BLCK"><span class="emFUNC">MOD</span></span>
+</li>
+<li>
+<span class="em_BLCK">*</span>, <span class="em_BLCK">/</span> (умножение, деление)
+</li>
+<li>
+<span class="em_BLCK">-</span> (унарный минус)
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">(</span></span>[выр]<span class="em_BLCK"><span class="emOPRT">)</span></span> - выражения в скобках
+</li>
+</ul>
+<p>
+При записи, выражения в <span class="em_BLCK">QSP</span> должны удовлетворять следующим условиям:
+
+</p>
+<ul>
+<li>
+ Максимальная вложенность выражений - 30. Т.е. не глубже 30-ти открытых и вложенных друг в друга скобок.
+</li>
+<li>
+ Максимальное количество операторов на одном уровне вложенности - 100.
+</li>
+</ul>
+<a id="opisanie_operacij"></a><h3>Описание операций</h3>
+<p>
+<span class="em_BLCK">Важно!</span> Поскольку в <span class="em_BLCK">QSP</span> нет булевого типа данных, истинность или ложность выражения определяется по его числовому значению. Верным считается числовое выражение, значение которого отлично от <span class="em_BLCK"><span class="emNUM">0</span></span>. При значении <span class="em_BLCK"><span class="emNUM">0</span></span> выражение считается ложным. Для значения "верно" настоятельно рекомендуется использовать число <span class="em_BLCK"><span class="emNUM">1</span></span>, т.к. операции сравнения и логические операции возращают именно это значение в случае истинности выражения.
+
+</p>
+<a id="Вyтy"></a><h4>Математические операции</h4>
+<ul>
+<li>
+ <span class="em_BLCK">-</span>[#выр] - унарный минус. Можно поставить перед числовым выражением и таким образом поменять знак этого выражения на противопложный:
+<ul>
+<li>
+ <span class="em_BLCK">+</span> , <span class="em_BLCK">-</span> , <span class="em_BLCK">*</span>, <span class="em_BLCK">/</span> - сложение, вычитание, умножение, деление соответственно.
+<p>
+Операции записываются как <span class="em_BLCK"><span class="emTEXT">[#выр1] [операция] [#выр2]</span></span>:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Numeric">15</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;15+2*5&nbsp;=&nbsp;15+10&nbsp;=&nbsp;25</span><br>
+<span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;15*2+5&nbsp;=&nbsp;30+5&nbsp;=&nbsp;25</span><br>
+<span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;(15*5)/2&nbsp;=&nbsp;75/2&nbsp;=&nbsp;37</span><br>
+<span class="Monokai-Numeric">15</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;(15/2)*5&nbsp;=&nbsp;7*5&nbsp;=&nbsp;35</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+<li>
+ [#выр1] <span class="em_BLCK"><span class="emFUNC">MOD</span></span> [#выр2] - остаток от деления. Это операция, которой нас учат ещё в начальной школе. Если мы вычисляем, сколько раз число делится нацело на другое число, то в результате может остаться некая неучтённая часть. Например, если мы хотим разделить <span class="em_BLCK"><span class="emNUM">10</span></span> на <span class="em_BLCK"><span class="emNUM">3</span></span>, то число <span class="em_BLCK"><span class="emNUM">10</span></span> нацело делится на <span class="em_BLCK"><span class="emNUM">3</span></span> только три раза. Но <span class="em_BLCK"><span class="emNUM">3</span></span> умножить на <span class="em_BLCK"><span class="emNUM">3</span></span> - это <span class="em_BLCK"><span class="emNUM">9</span></span>. Значит, от десяти осталась часть, которая не делится на <span class="em_BLCK"><span class="emNUM">3</span></span>, это <span class="em_BLCK"><span class="emNUM">1</span></span> (<span class="em_BLCK"><span class="emNUM">10</span> - 9 = 1</span>). Эта часть и называется остатком от деления. Для числа <span class="em_BLCK"><span class="emNUM">12</span></span> остаток от деления на <span class="em_BLCK"><span class="emNUM">3</span></span> составляет ноль, поскольку двенадцать делится на <span class="em_BLCK"><span class="emNUM">3</span></span> ровно четыре раза. Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/2&nbsp;=&nbsp;5&nbsp;-&gt;&nbsp;2*5=10&nbsp;-&gt;&nbsp;10-10&nbsp;=&nbsp;0&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;2&nbsp;равен&nbsp;0</span><br>
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/3&nbsp;=&nbsp;3&nbsp;-&gt;&nbsp;3*3=9&nbsp;&nbsp;-&gt;&nbsp;10-9&nbsp;=&nbsp;1&nbsp;&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;3&nbsp;равен&nbsp;1</span><br>
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/4&nbsp;=&nbsp;2&nbsp;-&gt;&nbsp;4*2=8&nbsp;&nbsp;-&gt;&nbsp;10-8&nbsp;=&nbsp;2&nbsp;&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;4&nbsp;равен&nbsp;2</span><br>
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/5&nbsp;=&nbsp;2&nbsp;-&gt;&nbsp;5*2=10&nbsp;-&gt;&nbsp;10-10&nbsp;=&nbsp;0&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;5&nbsp;равен&nbsp;0</span><br>
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">6</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/6&nbsp;=&nbsp;1&nbsp;-&gt;&nbsp;6*1=6&nbsp;&nbsp;-&gt;&nbsp;10-6&nbsp;=&nbsp;4&nbsp;&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;6&nbsp;равен&nbsp;4</span><br>
+<span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;<span class="Monokai-Numeric">7</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;10/7&nbsp;=&nbsp;1&nbsp;-&gt;&nbsp;7*1=7&nbsp;&nbsp;-&gt;&nbsp;10-7&nbsp;=&nbsp;3&nbsp;&nbsp;-&gt;&nbsp;остаток&nbsp;от&nbsp;деления&nbsp;10&nbsp;на&nbsp;7&nbsp;равен&nbsp;3</span><br>
+
+
+</div>
+</li>
+</ul>
+<a id="ЯДёo"></a><h4>Операции сравнения</h4>
+<ul>
+<li>
+ [выр1] <span class="em_BLCK">=</span> [выр2] - операция <span class="em_BLCK">равно</span>. Верно, если значения рядом стоящих выражений равны. Данную операцию не стоит путать с операцией присваивания, хотя на первый взгляд они похожи. Чтобы операция <span class="em_BLCK">равно</span> корректно вернула значение, она должна быть записана после ключевого слова <span class="em_BLCK"><span class="emOPRT">IF</span></span>, <span class="em_BLCK"><span class="emOPRT">ELSEIF</span></span>, <span class="em_BLCK"><span class="emOPRT">WHILE</span></span> или в первом аргументе функции <span class="em_BLCK"><span class="emFUNC">IIF</span></span>, или стоять после явного оператора вывода текста вроде <span class="em_BLCK"><span class="emOPRT">*pl</span></span>, или если используется с неявным оператором, быть заключённой в скобки. Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;операция&nbsp;сравнения&nbsp;`равно`&nbsp;с&nbsp;явным&nbsp;указанием&nbsp;оператора&nbsp;перед&nbsp;ней:</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Numeric">6</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">12</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">6</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;6+12&nbsp;=&nbsp;6*3&nbsp;-&gt;&nbsp;18=18&nbsp;-&gt;&nbsp;на&nbsp;экране&nbsp;мы&nbsp;увидим&nbsp;число&nbsp;1,&nbsp;что&nbsp;означает,&nbsp;что&nbsp;значения&nbsp;выражений&nbsp;равны</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Numeric">226</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">15</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;226&nbsp;=&nbsp;15*15&nbsp;-&gt;&nbsp;226=225&nbsp;-&gt;&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;`0`,&nbsp;так&nbsp;как&nbsp;226&nbsp;не&nbsp;равно&nbsp;225.</span><br>
+<span class="Monokai-Comment">!&nbsp;операция&nbsp;сравнения&nbsp;`равно`&nbsp;с&nbsp;неявным&nbsp;оператором</span><br>
+<span class="Monokai-Operator">(</span><span class="Monokai-String">'ab'</span><span class="Monokai-Operator">+</span><span class="Monokai-String">'cd'</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'abc'</span><span class="Monokai-Operator">+</span><span class="Monokai-String">'d'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;1,&nbsp;так&nbsp;как&nbsp;'ab'+'cd'&nbsp;равно&nbsp;'abc'+'d'</span><br>
+<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">13</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">9</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">19</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;0,&nbsp;так&nbsp;как&nbsp;13*9&nbsp;не&nbsp;равно&nbsp;19*3</span><br>
+<span class="Monokai-Comment">!&nbsp;операция&nbsp;сравнения&nbsp;в&nbsp;условии</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;x&nbsp;<span class="Monokai-Operator">=</span>&nbsp;y<span class="Monokai-Operator">:</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Числа&nbsp;равны"</span><br>
+<span class="Monokai-Koperator">else</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Числа&nbsp;не&nbsp;равны"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+</li>
+<li>
+ [выр1] <span class="em_BLCK">&lt;</span> [выр2] - операция <span class="em_BLCK">меньше</span>. Верно, если значение выражения слева меньше значения выражения справа.
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Numeric">37</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">56</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;число&nbsp;1,&nbsp;так&nbsp;как&nbsp;37&nbsp;меньше&nbsp;56</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Numeric">45</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">23</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;число&nbsp;0,&nbsp;так&nbsp;как&nbsp;45&nbsp;не&nbsp;меньше&nbsp;23</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Numeric">45</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">45</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;число&nbsp;0,&nbsp;так&nbsp;как&nbsp;45&nbsp;не&nbsp;меньше&nbsp;45</span><br>
+
+
+</div>
+</li>
+</ul>
+<p>
+		if x &lt; y:
+
+</p>
+<p>
+			"X меньше Y"
+
+</p>
+<p>
+		elseif y &lt; x:
+
+</p>
+<p>
+			"Y меньше X"
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			"Числа равны"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[выр1]&nbsp;`>`&nbsp;[выр2]&nbsp;-&nbsp;операция&nbsp;`больше`.&nbsp;Верно,&nbsp;если&nbsp;значение&nbsp;выражения&nbsp;слева&nbsp;больше&nbsp;значения&nbsp;выражения&nbsp;справа.<br>
+
+</div>
+<p>
+		*pl 37&gt;56 &amp; ! на экране будет число 0, так как 37 не больше 56
+
+</p>
+<p>
+		*pl 45&gt;23 &amp; ! на экране будет число 1, так как 45 больше 23
+
+</p>
+<p>
+		*pl 45&gt;45 &amp; ! на экране будет число 0, так как 45 не больше 45
+
+</p>
+<p>
+		if x &gt; y:
+
+</p>
+<p>
+			"X больше Y"
+
+</p>
+<p>
+		elseif y &gt; x:
+
+</p>
+<p>
+			"Y больше X"
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			"Числа равны"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[выр1]&nbsp;`!`&nbsp;[выр2],&nbsp;[выр1]&nbsp;`<>`&nbsp;[выр2]&nbsp;-&nbsp;операция&nbsp;`не&nbsp;равно`.&nbsp;Верно,&nbsp;если&nbsp;значения&nbsp;рядом&nbsp;стоящих&nbsp;выражений&nbsp;не&nbsp;равны.<br>
+
+</div>
+<p>
+		! операция сравнения <span class="em_BLCK">равно</span> с явным указанием оператора перед ней:
+
+</p>
+<p>
+		*pl 6+12 ! 6*3 &amp; ! 6+12 = 6*3 -&gt; 18=18 -&gt; на экране мы увидим число 0, что означает, что значения выражений не равны
+
+</p>
+<p>
+		*pl 226 ! 15*15 &amp; ! 226 = 15*15 -&gt; 226=225 -&gt; на экране увидим <span class="em_BLCK"><span class="emNUM">1</span></span>, так как <span class="em_BLCK"><span class="emNUM">226</span></span> не равно <span class="em_BLCK"><span class="emNUM">225</span></span>.
+
+</p>
+<p>
+		! операция сравнения <span class="em_BLCK">равно</span> с неявным оператором
+
+</p>
+<p>
+		*pl 'ab'+'cd' &lt;&gt; 'abc'+'d' &amp; ! на экране увидим 0, так как 'ab'+'cd' равно 'abc'+'d'
+
+</p>
+<p>
+		*pl 13*9 &lt;&gt; 19*3 &amp; ! на экране увидим 1, так как 13*9 равно 19*3
+
+</p>
+<p>
+		! операция сравнения в условии
+
+</p>
+<p>
+		if x &lt;&gt; y:
+
+</p>
+<p>
+			*pl "Числа не равны"
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			*pl "Числа равны"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Примечание.`&nbsp;Во&nbsp;избежание&nbsp;путаницы&nbsp;с&nbsp;оператором&nbsp;комментария&nbsp;`!`&nbsp;лучше&nbsp;не&nbsp;использовать&nbsp;для&nbsp;записи&nbsp;операции&nbsp;`не&nbsp;равно`&nbsp;восклицательный&nbsp;знак.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[выр1]&nbsp;`<=`&nbsp;[выр2],&nbsp;[выр1]&nbsp;`=<`&nbsp;[выр2]&nbsp;-&nbsp;операция&nbsp;`меньше&nbsp;либо&nbsp;равно`.&nbsp;Верно,&nbsp;если&nbsp;значение&nbsp;выражения&nbsp;слева&nbsp;меньше&nbsp;или&nbsp;равно&nbsp;значению&nbsp;выражения&nbsp;справа.<br>
+
+</div>
+<p>
+		*pl 37&lt;=56 &amp; ! на экране будет число 1, так как 37 меньше 56
+
+</p>
+<p>
+		*pl 45&lt;=23 &amp; ! на экране будет число 0, так как 45 не меньше и не равно 23
+
+</p>
+<p>
+		*pl 45&lt;=45 &amp; ! на экране будет число 1, так как 45 равно 45
+
+</p>
+<p>
+		if x &lt;= y:
+
+</p>
+<p>
+			"X меньше либо равно Y"
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			"Y меньше X"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Примечание.`&nbsp;Запись&nbsp;`=>`&nbsp;редко&nbsp;применяется&nbsp;в&nbsp;других&nbsp;языках&nbsp;программирования,&nbsp;поэтому&nbsp;рекомендуем&nbsp;не&nbsp;привыкать&nbsp;к&nbsp;её&nbsp;использованию,&nbsp;хотя&nbsp;в&nbsp;`QSP`&nbsp;это&nbsp;ошибкой&nbsp;не&nbsp;будет.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[выр1]&nbsp;`>=`&nbsp;[выр2],&nbsp;[выр1]&nbsp;`=>`&nbsp;[выр2]&nbsp;-&nbsp;операция&nbsp;`больше&nbsp;либо&nbsp;равно`.&nbsp;Верно,&nbsp;если&nbsp;значение&nbsp;выражения&nbsp;слева&nbsp;больше&nbsp;или&nbsp;равно&nbsp;значению&nbsp;выражения&nbsp;справа.<br>
+
+</div>
+<p>
+		*pl 37&gt;=56 &amp; ! на экране будет число 0, так как 37 не больше и не равно 56
+
+</p>
+<p>
+		*pl 45&gt;=23 &amp; ! на экране будет число 1, так как 45 больше 23
+
+</p>
+<p>
+		*pl 45&gt;=45 &amp; ! на экране будет число 1, так как 45 равно 45
+
+</p>
+<p>
+		if x &gt;= y:
+
+</p>
+<p>
+			"X больше либо равно Y"
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			"Y больше X"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Примечание.`&nbsp;Запись&nbsp;`=>`&nbsp;редко&nbsp;применяется&nbsp;в&nbsp;других&nbsp;языках&nbsp;программирования,&nbsp;поэтому&nbsp;рекомендуем&nbsp;не&nbsp;привыкать&nbsp;к&nbsp;её&nbsp;использованию,&nbsp;хотя&nbsp;в&nbsp;`QSP`&nbsp;это&nbsp;ошибкой&nbsp;не&nbsp;будет.<br>
+<br>
+--Логические&nbsp;операции--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`OBJ`&nbsp;[$выр]&nbsp;-&nbsp;операция&nbsp;проверки&nbsp;наличия&nbsp;предмета&nbsp;в&nbsp;`Инвентаре`.&nbsp;Верно,&nbsp;если&nbsp;в&nbsp;`Окне&nbsp;предметов`&nbsp;есть&nbsp;предмет&nbsp;с&nbsp;названием&nbsp;[$выр].<br>
+
+</div>
+<p>
+		addobj "Отвёртка"
+
+</p>
+<p>
+		*pl obj "Отвёртка" &amp; ! на экране будет число 1, так как предмет <span class="em_BLCK">Отвёртка</span> есть в окне предметов
+
+</p>
+<p>
+		*pl obj "Апельсин" &amp;! на экране будет число 0, так как предмета <span class="em_BLCK">Апельсин</span> нет в окне предметов
+
+</p>
+<p>
+		if obj "Отвёртка":
+
+</p>
+<p>
+			*pl "У вас есть отвёртка."
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			*pl "У вас нет отвёртки."
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`LOC`&nbsp;[$выр]&nbsp;-&nbsp;операция&nbsp;проверки&nbsp;наличия&nbsp;локации&nbsp;в&nbsp;игре.&nbsp;Верно,&nbsp;если&nbsp;в&nbsp;игре&nbsp;есть&nbsp;локация&nbsp;с&nbsp;названием&nbsp;[$выр].<br>
+
+</div>
+<p>
+		! в игре создана локация "Густая чаща"
+
+</p>
+<p>
+		*pl loc "Густая чаща" &amp; ! на экране мы увидим число 1
+
+</p>
+<p>
+		if loc "Дом":
+
+</p>
+<p>
+			*pl "Вы можете войти в дом."
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			*pl "Вы не можете войти в дом."
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`NO`&nbsp;[#выр]&nbsp;-&nbsp;операция&nbsp;отрицания,&nbsp;логическое&nbsp;отрицание,&nbsp;или&nbsp;логическая&nbsp;инверсия.&nbsp;Если&nbsp;[#выр]&nbsp;верно,&nbsp;операция&nbsp;возвращает&nbsp;`0`,&nbsp;а&nbsp;если&nbsp;[#выр]&nbsp;не&nbsp;верно,&nbsp;операция&nbsp;возвращает&nbsp;`1`.&nbsp;Примеры:<br>
+
+</div>
+<p>
+		*pl no 1 &amp; ! на экране увидим 0, так как 1 соответвует верному выражению
+
+</p>
+<p>
+		*pl no 7 &amp; ! на экране увидим 0, так как 7 соответвует верному выражению
+
+</p>
+<p>
+		*pl no 0 &amp; ! на экране увидим 1, так как 0 соответствует неверному выражению
+
+</p>
+<p>
+		addobj "Отвёртка"
+
+</p>
+<p>
+		if no obj "Отвёртка":
+
+</p>
+<p>
+			"У вас нет отвёртки."
+
+</p>
+<p>
+		else
+
+</p>
+<p>
+			"У вас есть отвёртка."
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[#выр1]&nbsp;`OR`&nbsp;[#выр2]&nbsp;-&nbsp;операция&nbsp;логического&nbsp;"или".&nbsp;Всё&nbsp;выражение&nbsp;верно,&nbsp;если&nbsp;хотя&nbsp;бы&nbsp;одна&nbsp;из&nbsp;его&nbsp;частей&nbsp;верна:&nbsp;[#выр1]&nbsp;или&nbsp;[#выр2].&nbsp;Примеры:<br>
+
+</div>
+<p>
+		*pl 1 or 1 &amp; ! на экране увидим 1, так как обе части выражения равны 1
+
+</p>
+<p>
+		*pl 1 or 0 &amp; ! на экране увидим 1, так как левая часть равна 1
+
+</p>
+<p>
+		*pl 0 or 1 &amp; ! на экране увидим 1, так как правая часть равна 1
+
+</p>
+<p>
+		*pl 0 or 0 &amp; ! на экране увидим 0, так как обе части выражения равны 0
+
+</p>
+<p>
+		! обе части выражения верны, значит и всё выражение верно
+
+</p>
+<p>
+		(2=2) or (3&lt;&gt;2) &amp; ! выражение вернёт 1 (правда)
+
+</p>
+<p>
+		! одна часть выражения верна, значит всё выражение верно
+
+</p>
+<p>
+		(2&lt;&gt;2) or (3&lt;&gt;2) &amp; ! выражение вернёт 1 (правда)
+
+</p>
+<p>
+		! обе части выражения не верны, значит и всё выражение не верно
+
+</p>
+<p>
+		(2&lt;&gt;2) or (3=2) &amp; ! выражение вернёт 0 (ложь) 
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если&nbsp;[#выр1]&nbsp;верно,&nbsp;значение&nbsp;[#выр2]&nbsp;не&nbsp;вычисляется.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[#выр1]&nbsp;`AND`&nbsp;[#выр2]&nbsp;-&nbsp;операция&nbsp;побитового&nbsp;"и".&nbsp;Всё&nbsp;выражение&nbsp;верно,&nbsp;только&nbsp;если&nbsp;обе&nbsp;его&nbsp;части&nbsp;верны:&nbsp;и&nbsp;[#выр1],&nbsp;и&nbsp;[#выр2].&nbsp;Примеры:<br>
+
+</div>
+<p>
+		*pl 1 and 1 &amp; ! на экране увидим 1, так как обе части выражения равны 1
+
+</p>
+<p>
+		*pl 1 and 0 &amp; ! на экране увидим 0, так как только левая часть равна 1
+
+</p>
+<p>
+		*pl 0 and 1 &amp; ! на экране увидим 0, так как только правая часть равна 1
+
+</p>
+<p>
+		*pl 0 and 0 &amp; ! на экране увидим 0, так как обе части выражения равны 0
+
+</p>
+<p>
+		! обе части выражения верны, значит и всё выражение верно
+
+</p>
+<p>
+		(2=2) and (3&lt;&gt;2) &amp; ! выражение вернёт 1 (правда)
+
+</p>
+<p>
+		! одна часть выражения не верна, значит всё выражение неверно
+
+</p>
+<p>
+		(2&lt;&gt;2) and (3&lt;&gt;2) &amp; ! выражение вернёт 0 (ложь)
+
+</p>
+<p>
+		! обе части выражения не верны, значит и всё выражение не верно
+
+</p>
+<p>
+		(2&lt;&gt;2) and (3=2) &amp; ! выражение вернёт 0 (ложь)
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Если&nbsp;[#выр1]&nbsp;не&nbsp;верно,&nbsp;значение&nbsp;[#выр2]&nbsp;не&nbsp;вычисляется.<br>
+<br>
+--Операции&nbsp;со&nbsp;строками--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[$выр1]&nbsp;`&`&nbsp;[$выр2]&nbsp;-&nbsp;операция&nbsp;объединения&nbsp;строковых&nbsp;выражений.&nbsp;Подробнее&nbsp;см.&nbsp;[Строки](#help_strings).&nbsp;Не&nbsp;путайте&nbsp;с&nbsp;символом&nbsp;перечисления&nbsp;команд.&nbsp;Примеры:<br>
+
+</div>
+<p>
+		! в данном случае на экран будут последовательно выведены строки "26" и "27"
+
+</p>
+<p>
+		"26" &amp; "27"
+
+</p>
+<p>
+		! в данном случае на экран будет выведена строка "2627"
+
+</p>
+<p>
+		("26" &amp; "27")
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Во&nbsp;избежание&nbsp;путаницы&nbsp;для&nbsp;объединения&nbsp;строк&nbsp;используйте&nbsp;операцию&nbsp;`+`,&nbsp;она&nbsp;работает&nbsp;точно&nbsp;так&nbsp;же.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;[$выр1]&nbsp;`+`&nbsp;[$выр2]&nbsp;-&nbsp;операция&nbsp;объединения&nbsp;строковых&nbsp;выражений.&nbsp;Подробнее&nbsp;см.&nbsp;[Строки](#help_strings).&nbsp;Примеры:<br>
+
+</div>
+<p>
+		! в данном случае на экран будет выведена строка "2627"
+
+</p>
+<p>
+		"26" + "27"
+
+</p>
+<div class="Monokai-Code">
+<br>
+=Другие&nbsp;примеры=<br>
+[:primery]<br>
+<br>
+
+</div>
+<p>
+x=5
+
+</p>
+<p>
+y=6
+
+</p>
+<p>
+(x ! y) OR (x &lt;&gt; y)	&amp;! Результат 1
+
+</p>
+<p>
+x OR y			&amp;! Результат 1
+
+</p>
+<p>
+x AND y 		&amp;! Результат 1
+
+</p>
+<p>
+y MOD x			&amp;! 6/5 -&gt; остаток 1 Результат 1
+
+</p>
+<p>
+OBJ 'стул'		&amp;! Если в инвентаре есть предмет 'стул', то результат 1, если нет, то 0
+
+</p>
+<p>
+LOC 'дом'		&amp;! Если в игре есть локация 'дом', то результат 1, если нет, то 0
+
+</p>
+<p>
+res = x*y + y*-x/2	&amp;! (5*6) + (6*(-5)/2)=15  -&gt; в res запишется число 15
+
+</p>
+<p>
+res = NO x = y		&amp;! NO 5 = 6 -&gt; NO 0 -&gt; в res запишется число 1
+
+</p>
+<div class="Monokai-Code">
+<br>
+=Операции&nbsp;с&nbsp;присваиванием=<br>
+[:sokraschennye_operacii_s_prisvoeniem]<br>
+<br>
+Помимо&nbsp;обыкновенной&nbsp;[операции&nbsp;присваивания](#help_variables)&nbsp;в&nbsp;`QSP`&nbsp;существуют&nbsp;так&nbsp;же&nbsp;совмещённые&nbsp;математические&nbsp;операции&nbsp;с&nbsp;присваиванием.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`+=`&nbsp;—&nbsp;операция&nbsp;"сложение&nbsp;с&nbsp;присваиванием",&nbsp;сочетающая&nbsp;в&nbsp;себе&nbsp;операции&nbsp;присваивания&nbsp;и&nbsp;сложения.&nbsp;Прибавляет&nbsp;к&nbsp;текущему&nbsp;значению&nbsp;переменной&nbsp;указанное&nbsp;значение.&nbsp;Общая&nbsp;запись:<br>
+
+</div>
+<p>
+			имя_переменной+=[выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Эквивалентно&nbsp;конструкции:<br>
+
+</div>
+<p>
+			имя_переменной=имя имя_переменной+[выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+		! мы заменяем две операции: присвоения и сложения
+
+</p>
+<p>
+		warrior=warrior+15
+
+</p>
+<p>
+		! на одну (действие аналогично)
+
+</p>
+<p>
+		warrior+=15
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Примечание:&nbsp;данную&nbsp;операцию&nbsp;можно&nbsp;использовать&nbsp;и&nbsp;для&nbsp;склейки&nbsp;строк.&nbsp;При&nbsp;этом&nbsp;строка&nbsp;"приклеивается&nbsp;в&nbsp;конец&nbsp;уже&nbsp;существующей&nbsp;строки":<br>
+
+</div>
+<p>
+		$text='Вечное слово в остывшей'
+
+</p>
+<p>
+		$text+=' золе...'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`-=`&nbsp;—&nbsp;операция&nbsp;"вычитание&nbsp;с&nbsp;присваиванием",&nbsp;сочетающая&nbsp;в&nbsp;себе&nbsp;операции&nbsp;присваивания&nbsp;и&nbsp;вычитания.&nbsp;Вычитает&nbsp;из&nbsp;текущего&nbsp;значения&nbsp;переменной&nbsp;указанное&nbsp;значение.&nbsp;Общая&nbsp;запись:<br>
+
+</div>
+<p>
+			имя_переменной-=[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Эквивалентно&nbsp;конструкции:<br>
+
+</div>
+<p>
+			имя_переменной=имя имя_переменной-[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+		! мы заменяем две операции: присвоения и вычитания
+
+</p>
+<p>
+		warrior=warrior-15
+
+</p>
+<p>
+		! на одну (действие аналогично)
+
+</p>
+<p>
+		warrior-=15
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`/=`&nbsp;—&nbsp;операция&nbsp;"деление&nbsp;с&nbsp;присваиванием",&nbsp;сочетающая&nbsp;в&nbsp;себе&nbsp;операции&nbsp;присваивания&nbsp;и&nbsp;деления.&nbsp;Делит&nbsp;текущее&nbsp;значение&nbsp;переменной&nbsp;на&nbsp;указанное&nbsp;значение.&nbsp;Общая&nbsp;запись:<br>
+
+</div>
+<p>
+			имя_переменной/=[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Эквивалентно&nbsp;конструкции:<br>
+
+</div>
+<p>
+			имя_переменной=имя имя_переменной/[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+		! мы заменяем две операции: присвоения и деления
+
+</p>
+<p>
+		warrior=warrior/2
+
+</p>
+<p>
+		! на одну (действие аналогично)
+
+</p>
+<p>
+		warrior/=2
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`*=`&nbsp;—&nbsp;операция&nbsp;"умножение&nbsp;с&nbsp;присваиванием",&nbsp;сочетающая&nbsp;в&nbsp;себе&nbsp;операции&nbsp;присваивания&nbsp;и&nbsp;умножения.&nbsp;Умножает&nbsp;текущее&nbsp;значение&nbsp;переменной&nbsp;на&nbsp;указанное&nbsp;значение.&nbsp;Общая&nbsp;запись:<br>
+
+</div>
+<p>
+			имя_переменной*=[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Эквивалентно&nbsp;конструкции:<br>
+
+</div>
+<p>
+			имя_переменной=имя имя_переменной*[#выражение]
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+		! мы заменяем две операции: присвоения и умножения
+
+</p>
+<p>
+		warrior=warrior*2
+
+</p>
+<p>
+		! на одну (действие аналогично)
+
+</p>
+<p>
+		warrior*=2
+
+</p>
+<div class="Monokai-Code">
+<br>
+[Вперёд:&nbsp;Программный&nbsp;код](#help_coding)<br>
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/txt2gam_linux.html" class="emHREFTT">&lt; Назад, к странице 28</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html" class="emHREFTT">Вперёд, к странице 30 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

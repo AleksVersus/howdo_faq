@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qSpider.html" class="emHREFTT">&lt; Назад, к странице 14</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/start.html" class="emHREFTT">Вперёд, к странице 16 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">Назад: qSpider - основная информация</a>
+
+</p>
+<a id="cfgfile"></a><h2>Конфигурационный файл</h2>
+<p>
+Конфигурационный файл "game.cfg" определяет поведение плеера во время запуска той или иной игры.
+
+</p>
+<p>
+Данный файл нужно размещать рядом с файлом ".qsp" запускаемой игры. Если игра упакована в архив ".zip" или ".aqsp", конфигурационный файл должен быть упакован в тот же самый архив рядом с файлом ".qsp" самого верхнего уровня.
+
+</p>
+<p>
+Для web-версии плеера можно написать один конфигурационный файл для всех игр и разместить его в папке "game", при этом конфигурационные файлы, которые находятся рядом с файлами игр, будут иметь приоритет над общим.
+
+</p>
+<p>
+Конфигурационный файл (конфиг, конфиг-файл) состоит из секций, каждая из которых описывает одну игру. Таким образом в конфиге должна быть хотя бы одна секция, описывающая игру. Для десктопной версии плеера в конфиге указывается только одна секция игры.
+
+</p>
+<p>
+Секция, описывающая игру, начинается с заголовка <span class="em_BLCK"><span class="emTEXT">[[game]]</span></span> и заканчивается там, где начинается следующая секция, описывающая игру, либо заканчивается с концом файла. Заголовок секции пишется отдельной строкой. Структура конфиг-файла для трёх игр в браузерной версии плеера может выглядеть примерно так:
+
+</p>
+<div class="Monokai-Code">
+[[game]]<br>
+id&nbsp;=&nbsp;"7466df3b-4236-4668-b0df-2a70477da67b"<br>
+title&nbsp;=&nbsp;"Сказочка&nbsp;на&nbsp;ночь"<br>
+description&nbsp;=&nbsp;"""описание&nbsp;первой&nbsp;игры"""<br>
+file&nbsp;=&nbsp;"skazka/skazka.qsp"<br>
+<br>
+[[game]]<br>
+id&nbsp;=&nbsp;"30c8aebe-1690-4e6d-8b42-47c4be381748"<br>
+title&nbsp;=&nbsp;"Куртуазная&nbsp;Баллада"<br>
+description&nbsp;=&nbsp;"""описание&nbsp;второй&nbsp;игры"""<br>
+file&nbsp;=&nbsp;"ballad/ballad.zip"<br>
+<br>
+[[game]]<br>
+id&nbsp;=&nbsp;"c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"<br>
+mode&nbsp;=&nbsp;"aero"<br>
+title&nbsp;=&nbsp;"Город&nbsp;туманов"<br>
+description&nbsp;=&nbsp;"""описание&nbsp;третьей&nbsp;игры"""<br>
+file&nbsp;=&nbsp;"cityofmists.aqsp"<br>
+
+</div>
+<p>
+Как видно из приведённого примера, следом за заголовком секции идёт ряд параметров. Сначала записывается название параметра (ключ), затем ставится знак равенства, а после в кавычках указывается значение параметра. Если значение пишется в несколько строк, оно помещается в тройные кавычки.
+
+</p>
+<p>
+Для описания игры используются следующие параметры, ключи:
+
+</p>
+<ul>
+<li>
+id — уникальный идентификатор игры (используется для сохранений, поэтому технически можно использовать любой набор символов, однако лучше сгенерировать собственный уникальный айди по образцу из примера, воспользовавшись онлайн-генератором <a href="https://www.uuidgenerator.net" style="text-decoration:none;" class="emFOLD">https://www.uuidgenerator.net</a>);
+</li>
+<li>
+title — название игры (будет показано в заголовке плеера и на вкладке браузера);
+</li>
+<li>
+description — необязательное краткое описание игры, аннотация;
+</li>
+<li>
+file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp", для браузерной версии;
+</li>
+<li>
+mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".
+</li>
+</ul>
+<p>
+Для десктопной версии плеера все параметры, кроме "id", не обязательны. Тем не менее рекомендуется их проставлять для удобства чтения конфигурационного файла. Для игр, написанных для AeroQSP, параметр "mode" обязателен.
+
+</p>
+<p>
+Далее каждая секция игры может содержать подсекции, расширяющие возможности управления плеером и игрой.
+
+</p>
+<a id="iьfЬ"></a><h3>Назначение горячих клавиш [game.hotkeys]</h3>
+<p>
+Для каждой игры можно назначить собственные комбинации горячих клавиш. Для этого в секции игры прописываем подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.hotkeys]</span></span>. После заголовка перечисляем клавиши или их сочетания в качестве ключей, а в качестве значений прописываем названия локаций, код которых будет выполнен при нажатии на горячие клавиши. Пример:
+
+</p>
+<div class="Monokai-Code">
+[game.hotkeys]<br>
+i&nbsp;=&nbsp;"Инвентарь"<br>
+"ctrl+shift+m"&nbsp;=&nbsp;"карта"<br>
+"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"<br>
+
+</div>
+<p>
+Для одиночного нажатия клавиш в качестве ключа указывается её обозначение:
+
+</p>
+<div class="Monokai-Code">
+i="Инвентарь"<br>
+
+</div>
+<p>
+Для того, чтобы указать одновременное нажатие нескольких клавиш, их обозначения перечисляются через "+" (плюс):
+
+</p>
+<div class="Monokai-Code">
+"ctrl+shift+m"&nbsp;=&nbsp;"карта"<br>
+
+</div>
+<p>
+Для того, чтобы задействовать последовательное нажатие клавиш, их обозначения перечисляются через пробел:
+
+</p>
+<div class="Monokai-Code">
+"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"<br>
+
+</div>
+<p>
+Можно использовать следующие обозначения:
+
+</p>
+<a id="аЧuН"></a><h4>Клавиши-модификаторы</h4>
+<ul>
+<li>
+<span class="em_BLCK">shift</span>
+</li>
+<li>
+<span class="em_BLCK">ctrl</span>
+</li>
+<li>
+<span class="em_BLCK">alt</span>
+</li>
+<li>
+<strong>meta</strong> — для поддержки на macOs лучше использовать этот модификатор вместо ctrl
+</li>
+</ul>
+<a id="жЩБр"></a><h4>Специальные клавиши</h4>
+<ul>
+<li>
+<span class="em_BLCK">backspace</span>
+</li>
+<li>
+<span class="em_BLCK">tab</span>
+</li>
+<li>
+<span class="em_BLCK">enter</span>
+</li>
+<li>
+<span class="em_BLCK">capslock</span>
+</li>
+<li>
+<span class="em_BLCK">esc</span>
+</li>
+<li>
+<span class="em_BLCK">space</span>
+</li>
+<li>
+<span class="em_BLCK">pageup</span>
+</li>
+<li>
+<span class="em_BLCK">pagedown</span>
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">end</span></span>
+</li>
+<li>
+<span class="em_BLCK">home</span>
+</li>
+<li>
+<span class="em_BLCK">left</span>
+</li>
+<li>
+<span class="em_BLCK">up</span>
+</li>
+<li>
+<span class="em_BLCK">right</span>
+</li>
+<li>
+<span class="em_BLCK">down</span>
+</li>
+<li>
+<span class="em_BLCK">ins</span>
+</li>
+<li>
+<span class="em_BLCK">del</span>
+</li>
+<li>
+<span class="em_BLCK">plus</span>
+</li>
+<li>
+<span class="em_BLCK">f<span class="emNUM">1</span></span> - <span class="em_BLCK">f<span class="emNUM">19</span></span>
+</li>
+</ul>
+<p>
+Остальные клавиши можно определять просто по символу <span class="em_BLCK">a</span>, <span class="em_BLCK">$</span>, <span class="em_BLCK">*</span>, или <span class="em_BLCK">=</span>.
+
+</p>
+<a id="qspider_gameresource"></a><h3>Подключение дополнительных ресурсов [game.resources]</h3>
+<p>
+Есть возможность подключить к каждой отдельной игре дополнительные ресурсы. Например, собственные css-файлы, скрипты, шрифты и т.д. Для этого в секции игры нужно создать подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.resources]</span></span>. Пример:
+
+</p>
+<div class="Monokai-Code">
+[game.resources]<br>
+styles&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;"https://fonts.googleapis.com/css?family=Sofia",<br>
+&nbsp;&nbsp;"styles.css"<br>
+]<br>
+scripts&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;"script.js"<br>
+]<br>
+fonts&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"]<br>
+]<br>
+icon&nbsp;=&nbsp;"icon.png"<br>
+
+</div>
+<p>
+Для подключения css-файлов используем ключ "styles", значением которого выступает список ссылок на необходимые нам файлы css. Это могут быть как внешние ссылки, так и пути относительно файла "game.cfg".
+
+</p>
+<p>
+Список обязательно помещается в квадратные скобки! Его элементы разделяются запятыми. Отступы между элементами и скобками ни на что не влияют. За последним значением списка нельзя ставить запятую. Пример:
+
+</p>
+<div class="Monokai-Code">
+styles&nbsp;=&nbsp;["skins/game.css","lewis.css"]<br>
+
+</div>
+<p>
+К основным элементам интерфейса добавлен атрибут data-qsp (например, data-qsp="main", data-qsp="actions" и т.д.), который позволит вам стилизовать данные элементы, или взаимодействовать с ними через скрипты.
+
+</p>
+<p>
+Для подключения JavaScript используется ключ "scripts". Его значением так же выступает список ссылок на нужные скрипты. Поскольку нет возможности автоматически удалить JS код из памяти (при переключении на другую игру, например) — это надо делать вручную. Подробнее об этом можно почитать в <a href="https://ifhub.club/2021/05/23/qspider-0100.html" style="text-decoration:none;" class="emFOLD">статье Werewolf`а, посвящённой выходу qSpider 0.10.0</a>.
+
+</p>
+<p>
+Пример подключения скриптов:
+
+</p>
+<div class="Monokai-Code">
+scripts=["skins/js/game.js","skins/js/QspLibBrowserTest.js"]<br>
+
+</div>
+<p>
+Ключ "fonts" предназначен для подключения шрифтов к игре. Его значением является список, элементами которого являются другие списки — каждый такой отвечает за подключение одного шрифта. Пример подключения:
+
+</p>
+<div class="Monokai-Code">
+fonts=[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]<br>
+]<br>
+
+</div>
+<p>
+Как видите, в данном примере подключаются два шрифта. Здесь "GoodVibesPro" и "AstronBold" — это имена шрифтов, которые вы можете использовать при стилизации текста в вашей игре. Вы можете сами назначать эти имена. Вторым элементом для каждого из шрифтов указывается путь к конкретному файлу шрифта. Рекомендуемый формат — woff2, он поддерживается всеми современными браузерами. В сети полно онлайн конверторов из ttf в woff2.
+
+</p>
+<p>
+Если у шрифта есть Bold, Italic и BoldItalic варианты в отдельных файлах, то подключение может выглядеть так:
+
+</p>
+<div class="Monokai-Code">
+fonts&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"],<br>
+&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold.woff2",&nbsp;"bold"],<br>
+&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-italic.woff2",&nbsp;"normal",&nbsp;"italic"],<br>
+&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold-italic.woff2",&nbsp;"bold",&nbsp;"italic"]<br>
+]<br>
+
+</div>
+<p>
+Параметр "icon" дает возможность заменить иконку во вкладке браузера, так называемый "favicon". По умолчанию там находится логотип QSP. Пример использования:
+
+</p>
+<div class="Monokai-Code">
+icon="skins/gfx/doctor.png"<br>
+
+</div>
+<a id="пнцp"></a><h3>Поддержка игр AeroQSP [game.aero]</h3>
+<p>
+Как было сказано выше, для того, чтобы запускать AeroQSP-игру, нужно в секции игры выставить параметр "mode":
+
+</p>
+<div class="Monokai-Code">
+mode="aero"<br>
+
+</div>
+<p>
+Так же, если используется размер игры, отличающийся от дефолтного 800х600, необходимо добавить секцию <span class="em_BLCK"><span class="emTEXT">[game.aero]</span></span> с размерами:
+
+</p>
+<div class="Monokai-Code">
+[game.aero]<br>
+width&nbsp;=&nbsp;504<br>
+height&nbsp;=&nbsp;680<br>
+
+</div>
+<p>
+Смотрите так же раздел <a href="https://aleksversus.github.io/howdo_faq/helpful/qspider_qspider_aeroqsp.html#aeroqspider" style="text-decoration:none;" class="emFOLD">"Особенности работы игр AeroQSP на qSpider"</a>
+
+</p>
+<a id="йXmю"></a><h3>Настройка окна desktop-плеера [game.window]</h3>
+<p>
+Вы можете настраивать окно плеера в десктопной версии. Для этого в основной секции игры нужно объявить подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.window]</span></span>, и проставить необходимые параметры:
+
+</p>
+<div class="Monokai-Code">
+[game.window]<br>
+width&nbsp;=&nbsp;1280<br>
+height&nbsp;=&nbsp;960<br>
+resizable&nbsp;=&nbsp;true<br>
+minWidth&nbsp;=&nbsp;1024<br>
+minHeight&nbsp;=&nbsp;768<br>
+
+</div>
+<ul>
+<li>
+width и height задают размер окна при старте игры;
+</li>
+<li>
+minWidth и minHeight дают возможность задать минимально возможные размеры, если игрок попытается изменить размеры окна;
+</li>
+<li>
+resizable — позволяет запретить изменения размера в принципе (автоматически включается в aero режиме).
+</li>
+</ul>
+<a id="DбыЕ"></a><h3>Пример файла "game.cfg" для отдельной игры</h3>
+<div class="Monokai-Code">
+[[game]]<br>
+id&nbsp;=&nbsp;"50458ae2-c07d-ca43-4a81-7bf480eedcf6"<br>
+title&nbsp;=&nbsp;"Вереница&nbsp;миров,&nbsp;или&nbsp;Выводы&nbsp;из&nbsp;закона&nbsp;Мёрфи"<br>
+description&nbsp;=&nbsp;"""В&nbsp;Лаборатории&nbsp;Мерфи&nbsp;опять&nbsp;неприятности.&nbsp;Похищен&nbsp;опытный&nbsp;образец&nbsp;бета-аннигилятора,&nbsp;и&nbsp;похититель&nbsp;скрылся&nbsp;в&nbsp;Веренице&nbsp;Миров&nbsp;-&nbsp;сложной&nbsp;системе&nbsp;межпространственных&nbsp;порталов.&nbsp;Кому&nbsp;предстоит&nbsp;расхлёбывать&nbsp;это&nbsp;дельце?&nbsp;Ну&nbsp;конечно&nbsp;же&nbsp;вам,&nbsp;майор!"""<br>
+file&nbsp;=&nbsp;"merphy_law.qn.qsp"<br>
+<br>
+[game.hotkeys]<br>
+b&nbsp;=&nbsp;"back.varriors"<br>
+"ctrl+shift+m"="карта"<br>
+"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right"&nbsp;=&nbsp;"konami"<br>
+<br>
+[game.resources]<br>
+styles&nbsp;=&nbsp;["skins/qspidergame.css"]<br>
+fonts=[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]<br>
+]<br>
+icon="skins/gfx/doctor.png"<br>
+<br>
+[game.window]<br>
+width&nbsp;=&nbsp;1280<br>
+height&nbsp;=&nbsp;720<br>
+resizable&nbsp;=&nbsp;true<br>
+minWidth&nbsp;=&nbsp;848<br>
+minHeight&nbsp;=&nbsp;480<br>
+
+</div>
+<a id="аоГO"></a><h3>Другие статьи по <span class="em_BLCK">qSpider</span></h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK">qSpider</span> — общая информация</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска и работы игр AeroQSP на qSpider</a>
+</li>
+</ul>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qSpider.html" class="emHREFTT">&lt; Назад, к странице 14</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/start.html" class="emHREFTT">Вперёд, к странице 16 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

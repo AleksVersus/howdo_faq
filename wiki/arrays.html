@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html" class="emHREFTT">&lt; Назад, к странице 56</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html" class="emHREFTT">Вперёд, к странице 58 &gt;</a></div></div>
+<a id="howto_arrays"></a><h2>Продвинутое использование массивов</h2>
+<p>
+<a id="prodvinutoe_ispolzovanie_massivov"></a>
+
+</p>
+<a id="dvumernye_massivy_s_chislovymi_indeksami"></a><h3>Двумерные массивы с числовыми индексами</h3>
+<p>
+Пример симуляции двумерного массива
+
+</p>
+<div class="Monokai-Code">
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i1&nbsp;&nbsp;0..8</span><br>
+i1_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i2&nbsp;&nbsp;0..5</span><br>
+i2_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">6</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Заполнение&nbsp;данных&nbsp;массива&nbsp;</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгЗадатьМассив1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгЗадатьМассив2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ДвумерныйМассив<span class="Monokai-Operator">[</span>i1<span class="Monokai-Operator">*</span>i2_max<span class="Monokai-Operator">+</span>i2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'[&lt;&lt;i1&gt;&gt;,&lt;&lt;i2&gt;&gt;]'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив1'</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Вывод&nbsp;данных&nbsp;массива</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгВыводМассива1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгВыводМассива2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;$ДвумерныйМассив<span class="Monokai-Operator">[</span>i1<span class="Monokai-Operator">*</span>i2_max<span class="Monokai-Operator">+</span>i2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-String">'&nbsp;&nbsp;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива1'</span><br>
+<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+<br>
+<span class="Monokai-Comment">!{Результат&nbsp;<br>
+[0,0]&nbsp;&nbsp;[0,1]&nbsp;&nbsp;[0,2]&nbsp;&nbsp;[0,3]&nbsp;&nbsp;[0,4]&nbsp;&nbsp;[0,5]&nbsp;&nbsp;<br>
+[1,0]&nbsp;&nbsp;[1,1]&nbsp;&nbsp;[1,2]&nbsp;&nbsp;[1,3]&nbsp;&nbsp;[1,4]&nbsp;&nbsp;[1,5]&nbsp;&nbsp;<br>
+[2,0]&nbsp;&nbsp;[2,1]&nbsp;&nbsp;[2,2]&nbsp;&nbsp;[2,3]&nbsp;&nbsp;[2,4]&nbsp;&nbsp;[2,5]&nbsp;&nbsp;<br>
+[3,0]&nbsp;&nbsp;[3,1]&nbsp;&nbsp;[3,2]&nbsp;&nbsp;[3,3]&nbsp;&nbsp;[3,4]&nbsp;&nbsp;[3,5]&nbsp;&nbsp;<br>
+[4,0]&nbsp;&nbsp;[4,1]&nbsp;&nbsp;[4,2]&nbsp;&nbsp;[4,3]&nbsp;&nbsp;[4,4]&nbsp;&nbsp;[4,5]&nbsp;&nbsp;<br>
+[5,0]&nbsp;&nbsp;[5,1]&nbsp;&nbsp;[5,2]&nbsp;&nbsp;[5,3]&nbsp;&nbsp;[5,4]&nbsp;&nbsp;[5,5]&nbsp;&nbsp;<br>
+[6,0]&nbsp;&nbsp;[6,1]&nbsp;&nbsp;[6,2]&nbsp;&nbsp;[6,3]&nbsp;&nbsp;[6,4]&nbsp;&nbsp;[6,5]&nbsp;&nbsp;<br>
+[7,0]&nbsp;&nbsp;[7,1]&nbsp;&nbsp;[7,2]&nbsp;&nbsp;[7,3]&nbsp;&nbsp;[7,4]&nbsp;&nbsp;[7,5]&nbsp;&nbsp;<br>
+[8,0]&nbsp;&nbsp;[8,1]&nbsp;&nbsp;[8,2]&nbsp;&nbsp;[8,3]&nbsp;&nbsp;[8,4]&nbsp;&nbsp;[8,5]&nbsp;&nbsp;<br>
+}</span><br>
+<br>
+<span class="Monokai-Comment">!Получение&nbsp;индексов&nbsp;массива&nbsp;через&nbsp;функцию&nbsp;ARRPOS</span><br>
+<br>
+$Поиск<span class="Monokai-Operator">=</span><span class="Monokai-String">'[2,5]'</span><br>
+<br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$ДвумерныйМассив'</span><span class="Monokai-Operator">,</span>$Поиск<span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span>i2_max<br>
+i2<span class="Monokai-Operator">=</span><span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$ДвумерныйМассив'</span><span class="Monokai-Operator">,</span>$Поиск<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">mod</span>&nbsp;i2_max<br>
+<br>
+<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$ДвумерныйМассив'</span><span class="Monokai-Operator">,</span>$Поиск<span class="Monokai-Operator">)</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;$Поиск<span class="Monokai-Operator">+</span><span class="Monokai-String">'=[&lt;&lt;i1&gt;&gt;,&lt;&lt;i2&gt;&gt;]'</span>&nbsp;<br>
+<span class="Monokai-Koperator">else</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<span class="Monokai-String">'Элемент&nbsp;не&nbsp;найден'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Comment">!{Результат&nbsp;<br>
+[2,5]=[2,5]<br>
+}</span><br>
+<br>
+
+
+</div>
+<p>
+В данном примере использованы функции:
+
+</p>
+<ul>
+<li>
+ ['IF [#условие]: [операторы] ELSE [операторы]'](#help_conditional)
+<ul>
+<li>
+ ['*NL [$текст]'](../help/main.html)
+</li>
+<li>
+ ['JUMP [$метка]'](#help_jump)
+</li>
+<li>
+ ['ARRPOS([#начало],[$имя_массива],[значение])'](#help_arrays)
+</li>
+</ul>
+</li>
+</ul>
+<a id="dvumernye_massivy_s_tekstovymi_indeksami"></a><h3>Двумерные массивы с текстовыми индексами</h3>
+<p>
+Пример работы с массивом имеющим текстовые индексы
+
+</p>
+<div class="Monokai-Code">
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i1&nbsp;&nbsp;0..3</span><br>
+i1_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i2&nbsp;&nbsp;0..5</span><br>
+i2_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">6</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Заполнение&nbsp;данных&nbsp;массива&nbsp;</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгЗадатьМассив1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгЗадатьМассив2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Знак&nbsp;двоеточие&nbsp;используется&nbsp;как&nbsp;разделитель&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;между&nbsp;двумя&nbsp;численными&nbsp;индексами&nbsp;переведенными&nbsp;в&nbsp;текст</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ДвумерныйМассивТекстовыйИндекс<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'[&lt;&lt;i1&gt;&gt;,&lt;&lt;i2&gt;&gt;]'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;$МассивИндекс&nbsp;нужен&nbsp;для&nbsp;дальнейшего&nbsp;поиска&nbsp;через&nbsp;ARRPOS/ARRCOMP</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$МассивИндекс<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;МассивПорядок&nbsp;нужен&nbsp;для&nbsp;использования&nbsp;KILLVAR</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;МассивПорядок<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">ARRSIZE</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'МассивПорядок'</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;Добавлять&nbsp;новый&nbsp;элемент&nbsp;и&nbsp;удалять&nbsp;нужно&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!только&nbsp;одновременно&nbsp;в&nbsp;3х&nbsp;массивах</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив1'</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Вывод&nbsp;данных&nbsp;массива</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгВыводМассива1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгВыводМассива2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;$ДвумерныйМассивТекстовыйИндекс<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-String">'&nbsp;&nbsp;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива1'</span><br>
+<br>
+<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+<br>
+<span class="Monokai-Comment">!{&nbsp;Результат&nbsp;<br>
+[0,0]&nbsp;&nbsp;[0,1]&nbsp;&nbsp;[0,2]&nbsp;&nbsp;[0,3]&nbsp;&nbsp;[0,4]&nbsp;&nbsp;[0,5]&nbsp;&nbsp;<br>
+[1,0]&nbsp;&nbsp;[1,1]&nbsp;&nbsp;[1,2]&nbsp;&nbsp;[1,3]&nbsp;&nbsp;[1,4]&nbsp;&nbsp;[1,5]&nbsp;&nbsp;<br>
+[2,0]&nbsp;&nbsp;[2,1]&nbsp;&nbsp;[2,2]&nbsp;&nbsp;[2,3]&nbsp;&nbsp;[2,4]&nbsp;&nbsp;[2,5]&nbsp;&nbsp;<br>
+[3,0]&nbsp;&nbsp;[3,1]&nbsp;&nbsp;[3,2]&nbsp;&nbsp;[3,3]&nbsp;&nbsp;[3,4]&nbsp;&nbsp;[3,5]&nbsp;&nbsp;<br>
+}</span><br>
+<br>
+<span class="Monokai-Comment">!Получение&nbsp;индексов&nbsp;массива&nbsp;через&nbsp;функцию&nbsp;ARRPOS</span><br>
+$Поиск<span class="Monokai-Operator">=</span><span class="Monokai-String">'[3,0]'</span><br>
+<br>
+N<span class="Monokai-Operator">=</span><span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$ДвумерныйМассивТекстовыйИндекс'</span><span class="Monokai-Operator">,</span>$Поиск<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;N<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!Ищем&nbsp;разделитель&nbsp;':'&nbsp;&nbsp;в&nbsp;индексе</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;K<span class="Monokai-Operator">=</span><span class="Monokai-Func">STRPOS</span><span class="Monokai-Operator">(</span>$МассивИндекс<span class="Monokai-Operator">[</span>N<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-String">':'</span><span class="Monokai-Operator">)</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i1<span class="Monokai-Operator">=</span><span class="Monokai-Func">VAL</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">MID</span><span class="Monokai-Operator">(</span>$МассивИндекс<span class="Monokai-Operator">[</span>N<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>K<span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Func">VAL</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">MID</span><span class="Monokai-Operator">(</span>$МассивИндекс<span class="Monokai-Operator">[</span>N<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>K<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">LEN</span><span class="Monokai-Operator">(</span>$МассивИндекс<span class="Monokai-Operator">[</span>N<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">-</span>K<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*NL</span>&nbsp;$Поиск<span class="Monokai-Operator">+</span><span class="Monokai-String">'=[&lt;&lt;i1&gt;&gt;,&lt;&lt;i2&gt;&gt;]'</span><br>
+<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<span class="Monokai-String">'Элемент&nbsp;не&nbsp;найден'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<br>
+<span class="Monokai-Comment">!{&nbsp;Результат&nbsp;<br>
+[3,0]=[3,0]<br>
+}</span><br>
+<br>
+<span class="Monokai-Operator">*NL</span><br>
+<span class="Monokai-Comment">!Удаление&nbsp;элемента&nbsp;массива&nbsp;через&nbsp;текстовый&nbsp;индекс</span><br>
+$Удалить<span class="Monokai-Operator">=</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><br>
+<span class="Monokai-Operator">*NL</span>&nbsp;<span class="Monokai-String">'Удаляем&nbsp;элемент&nbsp;с&nbsp;индексом&nbsp;&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><br>
+<br>
+<span class="Monokai-Comment">!Получаем&nbsp;номер&nbsp;элемента</span><br>
+<br>
+N<span class="Monokai-Operator">=</span>МассивПорядок<span class="Monokai-Command">[$Удалить]</span><br>
+<br>
+<span class="Monokai-Comment">!Удаляем&nbsp;элемент</span><br>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'$ДвумерныйМассивТекстовыйИндекс'</span><span class="Monokai-Operator">,</span>&nbsp;N<br>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'$МассивИндекс'</span><span class="Monokai-Operator">,</span>&nbsp;N<br>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'МассивПорядок'</span><span class="Monokai-Operator">,</span>&nbsp;N<br>
+<br>
+<span class="Monokai-Comment">!Еще&nbsp;раз&nbsp;выводим&nbsp;данные&nbsp;массива</span><br>
+<br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгВыводМассива3</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгВыводМассива4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;$ДвумерныйМассивТекстовыйИндекс<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;$ДвумерныйМассивТекстовыйИндекс<span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i1&gt;&gt;:&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-String">'&nbsp;&nbsp;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*P</span>&nbsp;<span class="Monokai-String">'[DEL]&nbsp;&nbsp;'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива4'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива3'</span><br>
+<br>
+<span class="Monokai-Comment">!{&nbsp;Результат<br>
+Удаляем&nbsp;элемент&nbsp;с&nbsp;индексом&nbsp;3:0<br>
+[0,0]&nbsp;&nbsp;[0,1]&nbsp;&nbsp;[0,2]&nbsp;&nbsp;[0,3]&nbsp;&nbsp;[0,4]&nbsp;&nbsp;[0,5]&nbsp;&nbsp;<br>
+[1,0]&nbsp;&nbsp;[1,1]&nbsp;&nbsp;[1,2]&nbsp;&nbsp;[1,3]&nbsp;&nbsp;[1,4]&nbsp;&nbsp;[1,5]&nbsp;&nbsp;<br>
+[2,0]&nbsp;&nbsp;[2,1]&nbsp;&nbsp;[2,2]&nbsp;&nbsp;[2,3]&nbsp;&nbsp;[2,4]&nbsp;&nbsp;[2,5]&nbsp;&nbsp;<br>
+[DEL]&nbsp;&nbsp;[3,1]&nbsp;&nbsp;[3,2]&nbsp;&nbsp;[3,3]&nbsp;&nbsp;[3,4]&nbsp;&nbsp;[3,5]&nbsp;&nbsp;<br>
+}</span><br>
+<br>
+
+
+</div>
+<p>
+В данном примере использованы функции:
+
+</p>
+<ul>
+<li>
+ ['ARRSIZE([$имя])'](#help_arrays)
+<ul>
+<li>
+ ['ARRPOS([#начало],[$имя_массива],[значение])'](#help_arrays)
+</li>
+<li>
+ ['KILLVAR [$название массива],[#индекс элемента]'](#help_arrays)
+</li>
+<li>
+ ['VAL([$стр])'](#help_strings)
+</li>
+<li>
+ ['MID([$стр],[#начало],[#длина])'](#help_strings)
+</li>
+<li>
+ ['LEN([$стр])'](#help_strings)
+</li>
+</ul>
+</li>
+</ul>
+<a id="massiv_peremennyx"></a><h3>Массив переменных</h3>
+<p>
+Пример использования индекса в названии массива
+
+</p>
+<div class="Monokai-Code">
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i1&nbsp;&nbsp;0..5</span><br>
+i1_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Индексы&nbsp;i2&nbsp;&nbsp;0..2</span><br>
+i2_max<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Заполнение&nbsp;данных&nbsp;массива&nbsp;</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгЗадатьМассив1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгЗадатьМассив2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!названия&nbsp;заполняемых&nbsp;массивов&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!$МассивПеременных0&nbsp;,&nbsp;$МассивПеременных1&nbsp;,&nbsp;$МассивПеременных2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DYNAMIC</span>&nbsp;<span class="Monokai-Operator">{</span>$МассивПеременных<span class="Monokai-Operator">}</span><span class="Monokai-Operator">+</span>i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">{</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'[&lt;&lt;i1&gt;&gt;,&lt;&lt;i2&gt;&gt;]'</span>&nbsp;<span class="Monokai-Operator">}</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгЗадатьМассив1'</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;Вывод&nbsp;данных&nbsp;массива</span><br>
+i1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Markup">:ПрыгВыводМассива1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*Nl</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">:ПрыгВыводМассива2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DYNAMIC</span>&nbsp;<span class="Monokai-Operator">{</span><span class="Monokai-Operator">*P</span>&nbsp;$МассивПеременных<span class="Monokai-Operator">}</span><span class="Monokai-Operator">+</span>i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">{</span><span class="Monokai-Operator">[</span><span class="Monokai-String">'&lt;&lt;i2&gt;&gt;'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-String">'&nbsp;&nbsp;'</span><span class="Monokai-Operator">}</span>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;i2<span class="Monokai-Operator">&lt;</span>i2_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива2'</span><br>
+i1<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i1<span class="Monokai-Operator">&lt;</span>i1_max&nbsp;<span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">Jump</span>&nbsp;<span class="Monokai-String">'ПрыгВыводМассива1'</span><br>
+<br>
+<span class="Monokai-Comment">!{&nbsp;Результат&nbsp;<br>
+[0,0]&nbsp;&nbsp;[0,1]&nbsp;&nbsp;[0,2]&nbsp;&nbsp;<br>
+[1,0]&nbsp;&nbsp;[1,1]&nbsp;&nbsp;[1,2]&nbsp;&nbsp;<br>
+[2,0]&nbsp;&nbsp;[2,1]&nbsp;&nbsp;[2,2]&nbsp;&nbsp;<br>
+[3,0]&nbsp;&nbsp;[3,1]&nbsp;&nbsp;[3,2]&nbsp;&nbsp;<br>
+[4,0]&nbsp;&nbsp;[4,1]&nbsp;&nbsp;[4,2]&nbsp;&nbsp;<br>
+[5,0]&nbsp;&nbsp;[5,1]&nbsp;&nbsp;[5,2]&nbsp;&nbsp;&nbsp;<br>
+}</span><br>
+<br>
+
+
+</div>
+<p>
+В данном примере использованы функции:
+
+</p>
+<ul>
+<li>
+ ['DYNAMIC [$код],[параметр 1],[параметр 2], …'](#help_dynamical)
+</li>
+</ul>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html" class="emHREFTT">&lt; Назад, к странице 56</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html" class="emHREFTT">Вперёд, к странице 58 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

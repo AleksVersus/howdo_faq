@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qspider_qspider_aeroqsp.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Назад: Порядок работы интерпретатора</a>
+
+</p>
+<a id="help_variables"></a><h2>Переменные</h2>
+<p>
+<a id="peremennye"></a>
+
+</p>
+<p>
+Иногда в процессе игры нам требуется на время сохранить какую-либо информацию. Например, герой срывает с дерева яблоки, и нам нужно куда-то "записать", сколько яблок он сорвал. Или же в результате битвы погибает злодей, и нам нужно, чтобы плеер "запомнил", что злодей погиб. Для таких вот "записей", "запоминаний", и существуют переменные.
+
+</p>
+<p>
+<span class="em_BLCK">Переменная</span> - это именованная "ячейка памяти". То есть это некий кусочек памяти в программе, которому мы назначаем имя.
+
+</p>
+<p>
+Для удобства можно представлять переменную, как коробку, в которую мы что-нибудь "складываем", например число, или фрагмент текста.
+
+</p>
+<a id="CbкB"></a><h3>Типы переменных</h3>
+<p>
+Память программ работает совсем не так, как наша, и "запоминать" они могут только определённого типа значения. <span class="em_BLCK">QSP</span> умеет "запоминать" только <span class="em_BLCK">целочисленные</span> и <span class="em_BLCK">строковые</span> значения.
+
+</p>
+<p>
+Поэтому и переменные в <span class="em_BLCK">QSP</span> делятся на два типа:
+
+</p>
+<ul>
+<li>
+ Целочисленные
+</li>
+<li>
+ Строковые
+</li>
+</ul>
+<p>
+В целочисленных переменных (иногда для краткости их называют просто числовыми) мы можем хранить только <span class="em_BLCK">целые</span> числа в пределах от -2147483648 до 2147483647.
+
+</p>
+<p>
+Если мы не поместили никакого значения в целочисленную переменную, то считается, что она хранит значение 0. Это <span class="em_BLCK">значение по умолчанию</span> для числовых переменных.	
+
+</p>
+<p>
+В строковых переменных (иногда их называют текстовыми переменными) мы можем хранить целые строки текста, и длина таких строк может доходить до двух Гигабайт текста. Строка не может превысить объём оперативной памяти.
+
+</p>
+<p>
+Если мы не поместили никакого значения в строковую переменную, то считается, что она хранит пустую строку, т.е. строку совсем без символов. Это <span class="em_BLCK">значение по умолчанию</span> для строковых переменных.
+
+</p>
+<p>
+В переменной можно хранить значение только одного типа! Переменные <span class="em_BLCK">$яблоко</span> и <span class="em_BLCK">яблоко</span> — это одна и та же переменная, но с разным типом значения, которое в ней хранится.
+
+</p>
+<a id="мCуD"></a><h3>Создание переменных и изменение их значений</h3>
+<p>
+Чтобы создать переменную, мы должны задать ей значение. Это называется операцией <span class="em_BLCK">присваивания</span>.
+
+</p>
+<p>
+Операция присваивания в <span class="em_BLCK">QSP</span> записывается так:
+
+</p>
+<ul>
+<li>
+сначала пишется имя переменной
+</li>
+<li>
+затем ставится знак <span class="em_BLCK">равно</span> (<span class="em_BLCK">=</span>)
+</li>
+<li>
+после знака <span class="em_BLCK">равно</span> пишется значение, которое мы хотим "записать" в переменную.
+</li>
+</ul>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;переменной&nbsp;`яблоко`&nbsp;присваивается&nbsp;число&nbsp;`23`</span><br>
+яблоко<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+<span class="Monokai-Comment">!&nbsp;переменной&nbsp;`$скороговорка`&nbsp;присваивается&nbsp;строка&nbsp;`Ехал&nbsp;Грека&nbsp;Через&nbsp;Реку`</span><br>
+$скороговорка<span class="Monokai-Operator">=</span><span class="Monokai-String">'Ехал&nbsp;Грека&nbsp;Через&nbsp;Реку'</span><br>
+
+
+</div>
+<p>
+Как видите, в обоих случаях сначала ставится имя переменной, потом знак равенства, а потом значение. Вместо значения можно написать название другой переменной, название функции, или даже целое выражение. Плеер автоматически вычислит <span class="em_BLCK">значение</span> из выражения, функции или переменной, и присвоит это <span class="em_BLCK">значение</span> переменной, стоящей слева от знака <span class="em_BLCK">равно</span>.
+
+</p>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;переменной&nbsp;значение&nbsp;другой&nbsp;переменной</span><br>
+$скороговорка_про_Греку&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$скороговорка<br>
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;переменной&nbsp;значение&nbsp;выражения</span><br>
+яблоко&nbsp;<span class="Monokai-Operator">=</span>&nbsp;яблоки_в_кармане&nbsp;<span class="Monokai-Operator">+</span>&nbsp;яблоки_в_лукошке&nbsp;<span class="Monokai-Operator">+</span>&nbsp;яблоки_у_Лёшки<br>
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;переменной&nbsp;значение&nbsp;функции</span><br>
+случайное_число&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rnd</span><br>
+$текущая_локация&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+
+
+</div>
+<p>
+Не путайте операцию присваивания, и операцию сравнения. Их запись похожа, но операция сравнения обычно следует за ключевыми словами <span class="em_BLCK"><span class="emOPRT">IF</span></span>, <span class="em_BLCK"><span class="emOPRT">ELSEIF</span></span> или <span class="em_BLCK"><span class="emOPRT">WHILE</span></span> и позволяет сравнивать одно значение с другим.
+
+</p>
+<a id="дЛЫХ"></a><h4>Множественное присваивание</h4>
+<p>
+Вы можете одной командой присвоить значения сразу нескольким переменным (множественное присваивание). Для этого:
+
+</p>
+<ul>
+<li>
+сначала перечисляете через запятую несколько имён переменных
+</li>
+<li>
+затем ставите знак <span class="em_BLCK">равно</span> (<span class="em_BLCK">=</span>)
+</li>
+<li>
+после знака <span class="em_BLCK">равно</span> так же через запятую перечисляете значения, которые хотите назначить переменным.
+</li>
+</ul>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+яблоки_в_кармане<span class="Monokai-Operator">,</span>&nbsp;яблоки_в_лукошке<span class="Monokai-Operator">,</span>&nbsp;яблоки_у_Лёшки&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">58</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">19</span><br>
+$строка_1<span class="Monokai-Operator">,</span>&nbsp;$строка_2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ехал&nbsp;Грека&nbsp;Через&nbsp;Реку'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'Видит&nbsp;Грека&nbsp;В&nbsp;Реке&nbsp;Рак'</span><br>
+$name<span class="Monokai-Operator">,</span>&nbsp;count&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Старый&nbsp;меч'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<p>
+Во всех трёх командах слева от знака <span class="em_BLCK">равно</span> через запятую перечисляются переменные, которым мы присваиваем значения, а справа через запятую перечисляются значения, которые мы присваиваем переменным.
+
+</p>
+<p>
+Вместо прямого указания значений можно присваивать значения других переменных, выражений, функций:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;три&nbsp;переменные&nbsp;=&nbsp;три&nbsp;значения</span><br>
+red<span class="Monokai-Operator">,</span>green<span class="Monokai-Operator">,</span>blue&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;две&nbsp;переменные&nbsp;=&nbsp;два&nbsp;значения</span><br>
+яблоки_в_кармане<span class="Monokai-Operator">,</span>&nbsp;яблоки_в_лукошке&nbsp;<span class="Monokai-Operator">=</span>&nbsp;яблоки_у_Лёшки<span class="Monokai-Operator">,</span>&nbsp;яблоки_на_дереве<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">15</span><br>
+
+
+</div>
+<p>
+Присваивать значения одной командой очень удобно, если переменные близки по своему смыслу или назначению. Например, одной строкой можно задавать значения сразу нескольким системным переменным в начале игры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-SysVar">debug</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-SysVar">nosave</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-SysVar">lcolor</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-SysVar">fcolor</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Благодаря возможности одновременно присваивать значения сразу нескольким переменным, можно менять местами данные в двух переменных, не прибегая к помощи третьей:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;пременным&nbsp;`x`&nbsp;и&nbsp;`y`&nbsp;значения&nbsp;`12`&nbsp;и&nbsp;`99`</span><br>
+x<span class="Monokai-Operator">,</span>&nbsp;y&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">99</span><br>
+<span class="Monokai-Comment">!&nbsp;меняем&nbsp;местами&nbsp;значения.&nbsp;Теперь&nbsp;в&nbsp;`x`&nbsp;находится&nbsp;число&nbsp;`99`,&nbsp;а&nbsp;в&nbsp;`y`&nbsp;—&nbsp;12</span><br>
+x<span class="Monokai-Operator">,</span>&nbsp;y&nbsp;<span class="Monokai-Operator">=</span>&nbsp;y<span class="Monokai-Operator">,</span>&nbsp;x<br>
+
+
+</div>
+<p>
+<span class="em_BLCK">Важно помнить!</span> Слева от знака равенства должно быть столько же переменных, сколько справа значений. Число переменных, и число присваиваемых значений — должны совпадать. Такие записи неверны:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;три&nbsp;переменные,&nbsp;а&nbsp;значения&nbsp;только&nbsp;два</span><br>
+raz<span class="Monokai-Operator">,</span>&nbsp;dva<span class="Monokai-Operator">,</span>&nbsp;tri&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">24</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">67</span><br>
+<span class="Monokai-Comment">!&nbsp;одна&nbsp;переменная,&nbsp;и&nbsp;два&nbsp;значения</span><br>
+chetyre&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">89</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">21</span><br>
+
+
+</div>
+<p>
+Так же в одной команде можно использовать лишь один оператор присваивания:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;так&nbsp;неправильно:</span><br>
+raz<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">24</span><span class="Monokai-Operator">,</span>&nbsp;dva<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span>&nbsp;tri<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">89</span><br>
+<span class="Monokai-Comment">!&nbsp;а&nbsp;вот&nbsp;так&nbsp;правильно</span><br>
+raz<span class="Monokai-Operator">,</span>&nbsp;dva<span class="Monokai-Operator">,</span>&nbsp;tri&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">24</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">89</span><br>
+<span class="Monokai-Comment">!&nbsp;и&nbsp;вот&nbsp;так&nbsp;правильно,&nbsp;потому&nbsp;что&nbsp;здесь&nbsp;три&nbsp;команды&nbsp;записаны&nbsp;в&nbsp;одну&nbsp;строку</span><br>
+raz<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">24</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;dva<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">67</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;tri<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">89</span><br>
+
+
+</div>
+<a id="yИnc"></a><h4>Операторы <span class="em_BLCK"><span class="emOPRT">SET</span></span> и <span class="em_BLCK"><span class="emOPRT">LET</span></span></h4>
+<p>
+Из старых версий плеера перекочевали операторы <span class="em_BLCK"><span class="emOPRT">SET</span></span> и <span class="em_BLCK"><span class="emOPRT">LET</span></span>. Эти операторы явно указывают, что данная команда производит присваивание. Любой из этих операторов может быть поставлен перед операцией присваивания, это никак не влияет на работу переменных. В примере ниже все три варианта присваивания значения переменным равнозначны:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">SET</span>&nbsp;golden_axe_damage&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">120</span><br>
+<span class="Monokai-Operator">LET</span>&nbsp;golden_axe_damage&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">120</span><br>
+golden_axe_damage&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">120</span><br>
+
+
+</div>
+<p>
+Точно так же, как и в операции присваивания без операторов <span class="em_BLCK"><span class="emOPRT">SET</span></span> и <span class="em_BLCK"><span class="emOPRT">LET</span></span>, можно присваивать значения сразу нескольким переменным одной командой и с использованием операторов:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">set</span>&nbsp;яблоки_в_кармане<span class="Monokai-Operator">,</span>&nbsp;яблоки_в_лукошке<span class="Monokai-Operator">,</span>&nbsp;яблоки_у_Лёшки&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">58</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">19</span><br>
+<span class="Monokai-Operator">set</span>&nbsp;$строка_1<span class="Monokai-Operator">,</span>&nbsp;$строка_2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ехал&nbsp;Грека&nbsp;Через&nbsp;Реку'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'Видит&nbsp;Грека&nbsp;В&nbsp;Реке&nbsp;Рак'</span><br>
+<span class="Monokai-Operator">let</span>&nbsp;$name<span class="Monokai-Operator">,</span>&nbsp;count&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Старый&nbsp;меч'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<p>
+Для улучшения читаемости кода можно использовать оператор <span class="em_BLCK"><span class="emOPRT">SET</span></span>, или оператор <span class="em_BLCK"><span class="emOPRT">LET</span></span>, только для команд с множественным присваиванием.
+
+</p>
+<a id="lgЮu"></a><h4>Изменение типа переменной</h4>
+<p>
+Изменить тип переменной в <span class="em_BLCK">QSP</span> можно, просто присвоив ей значение другого типа. Например:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;переменной&nbsp;строковое&nbsp;значение</span><br>
+$яблоко&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Антоновка'</span><br>
+<span class="Monokai-Comment">!&nbsp;если&nbsp;мы&nbsp;попытаемся&nbsp;вывести&nbsp;на&nbsp;экран&nbsp;числовое&nbsp;значение&nbsp;этой&nbsp;переменной,</span><br>
+<span class="Monokai-Comment">!&nbsp;то&nbsp;увидим&nbsp;значение&nbsp;по&nbsp;умолчанию,&nbsp;то&nbsp;есть&nbsp;ноль:</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоко&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;`0`&nbsp;на&nbsp;экран</span><br>
+<span class="Monokai-Comment">!&nbsp;но&nbsp;мы&nbsp;можем&nbsp;изменить&nbsp;тип&nbsp;переменной,&nbsp;записав&nbsp;в&nbsp;неё&nbsp;число</span><br>
+яблоко&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">19</span><br>
+<span class="Monokai-Comment">!&nbsp;теперь,&nbsp;если&nbsp;мы&nbsp;попытаемся&nbsp;вывести&nbsp;на&nbsp;экран&nbsp;то&nbsp;же&nbsp;числовое&nbsp;значение</span><br>
+<span class="Monokai-Comment">!&nbsp;мы&nbsp;увидим&nbsp;число&nbsp;19</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоко&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;`19`&nbsp;на&nbsp;экран</span><br>
+<span class="Monokai-Comment">!&nbsp;а&nbsp;если&nbsp;мы&nbsp;попытаемся&nbsp;вывести&nbsp;на&nbsp;экран&nbsp;текстовое&nbsp;значение,</span><br>
+<span class="Monokai-Comment">!&nbsp;то&nbsp;ничего&nbsp;не&nbsp;увидим,&nbsp;потому&nbsp;что&nbsp;числовое&nbsp;значение&nbsp;затёрло&nbsp;текстовое</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;$яблоко<br>
+
+
+</div>
+<a id="хЛЫu"></a><h3>Наименование переменных</h3>
+<p>
+Чтобы не сбивать плеер с толку, названия переменных должны соответствовать следующим условиям:
+
+</p>
+<ul>
+<li>
+ Название переменной <span class="em_BLCK">не</span> должно <span class="em_BLCK">начинаться с цифры</span>.
+</li>
+<li>
+ Оно не должно совпадать с ключевыми словами (cм. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">список ключевых слов</a>).
+</li>
+<li>
+ В названии не должны использоваться пробелы, символы табуляции и следующие символы:
+<div class="Monokai-Code">
+!&nbsp;:&nbsp;&amp;&nbsp;=&nbsp;&lt;&nbsp;&gt;&nbsp;+&nbsp;-&nbsp;*&nbsp;/&nbsp;,&nbsp;'&nbsp;"&nbsp;(&nbsp;)&nbsp;[&nbsp;]&nbsp;{&nbsp;}<br>
+
+
+</div>
+</li>
+<li>
+ Названия строковых переменных должны начинаться с символа '$'.
+</li>
+<li>
+ Регистр в названии переменной не важен: <span class="em_BLCK">деньги</span> и <span class="em_BLCK">ДеНьГи</span> - одна и та же переменная.
+</li>
+</ul>
+<p>
+А вот несколько рекомендаций по тому, как правильно подбирать названия переменных
+
+</p>
+<ul>
+<li>
+ Вместо пробела в названиях можно использовать символ подчеркивания - "_".
+</li>
+<li>
+ Не рекомендуется делать названия длиннее 10-15 символов, это усложняет читаемость кода.
+</li>
+<li>
+ Не стоит использовать в названии переменной <span class="em_BLCK">одновременно</span> символы разных алфавитов, это может запутать вас, и вы допустите ошибку.
+</li>
+</ul>
+<p>
+Используйте краткие и ёмкие названия, указывающие на назначение переменной. При этом <span class="em_BLCK">QSP</span> разрешает пользоваться символами любого алфавита:
+
+</p>
+<div class="Monokai-Code">
+яблоки_в_кармане<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+$АмулетНаШее<span class="Monokai-Operator">=</span><span class="Monokai-String">"Ожерелье&nbsp;Гроз"</span><br>
+<br>
+money_count<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1037</span><br>
+$money_name<span class="Monokai-Operator">=</span><span class="Monokai-String">"RUB"</span><br>
+<br>
+我_拿_钥匙=1<br>
+$饭碗="Rice&nbsp;Bowl"<br>
+
+
+</div>
+<a id="udalenie_peremennoj"></a><h3>Удаление переменных</h3>
+<p>
+Удалить переменную можно с помощью оператора <span class="em_BLCK">KILVAR</span>.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'имя_переменной'</span><br>
+
+
+</div>
+<p>
+Имя переменной при этом должно помещаться в кавычки:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'яблоки_в_кармане'</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">"$АмулетНаШее"</span><br>
+
+
+</div>
+<p>
+Более подробное описание оператора <span class="em_BLCK"><span class="emOPRT">KILLVAR</span></span> находится в статье про <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">массивы</a>.
+
+</p>
+<a id="аFмU"></a><h3>Проверка существования переменной</h3>
+<p>
+В <span class="em_BLCK">QSP</span> нет специальной команды для проверки существования переменных, однако в силу особенностей движка можно использовать функцию получения размера <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">массива</a> <span class="em_BLCK"><span class="emFUNC">ARRSIZE</span></span>. Если функция вернёт единицу <span class="em_BLCK"><span class="emNUM">1</span></span>, значит переменная существует; если вернёт <span class="em_BLCK"><span class="emNUM">0</span></span>, значит переменная не существует.
+
+</p>
+<div class="Monokai-Code">
+яблоко<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;создана&nbsp;переменная&nbsp;`яблоко`</span><br>
+<span class="Monokai-Comment">!&nbsp;увидим&nbsp;на&nbsp;экране&nbsp;`Переменная&nbsp;"яблоко"&nbsp;существует`</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'яблоко'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Переменная&nbsp;"яблоко"&nbsp;существует'</span><br>
+<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Переменная&nbsp;"яблоко"&nbsp;не&nbsp;существует'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;переменную&nbsp;`груша`&nbsp;мы&nbsp;не&nbsp;создавали</span><br>
+<span class="Monokai-Comment">!&nbsp;увидим&nbsp;на&nbsp;экране&nbsp;`Переменная&nbsp;"груша"&nbsp;не&nbsp;существует`</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'груша'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Переменная&nbsp;"груша"&nbsp;существует'</span><br>
+<span class="Monokai-Koperator">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">'Переменная&nbsp;"груша"&nbsp;не&nbsp;существует'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Название переменной для функции <span class="em_BLCK"><span class="emFUNC">ARRSIZE</span></span> указывается внутри кавычек и помещается в круглые скобки. Указывать символ "$" перед названием переменной не обязательно. Вне зависимости от типа значения, которое в этой переменной хранится, <span class="em_BLCK"><span class="emFUNC">ARRSIZE</span></span> вернёт единицу, если переменная существует:
+
+</p>
+<div class="Monokai-Code">
+яблоко<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;переменную&nbsp;записано&nbsp;число</span><br>
+<span class="Monokai-Comment">!&nbsp;обе&nbsp;команды&nbsp;ниже&nbsp;вернут&nbsp;единицу,&nbsp;потому&nbsp;что</span><br>
+<span class="Monokai-Comment">!&nbsp;`яблоко`&nbsp;и&nbsp;`$яблоко`&nbsp;-&nbsp;это&nbsp;одна&nbsp;и&nbsp;та&nbsp;же&nbsp;переменная</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'яблоко'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$яблоко'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+О функции <span class="em_BLCK"><span class="emFUNC">ARRSIZE</span></span> так же можно подробнее почитать в разделе <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">"Массивы"</a>.
+
+</p>
+<a id="ХtFЫ"></a><h3>Локальные переменные</h3>
+<p>
+В <span class="em_BLCK">QSP</span> есть возможность сделать переменные локальными, то есть их значения будут сохраняться в пределах определённого блока кода, например, на только на определённой локации или в отдельном действии.
+
+</p>
+<p>
+Чтобы объявить переменную локальной, нужно использовать ключевое слово <span class="em_BLCK"><span class="emOPRT">local</span></span>. В общем виде объявление локальной переменной выглядит так:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">LOCAL</span>&nbsp;имя_переменной&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">[</span>значение<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+Здесь <span class="em_BLCK">имя_переменной</span> — это имя переменной, которую мы объявляем, а [значение] — это любое значение, которое мы этой переменной присваиваем. Пример:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;объявляем&nbsp;локальную&nbsp;переменную&nbsp;`tempora`&nbsp;со&nbsp;значением&nbsp;`12`</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;tempora&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">12</span><br>
+
+
+</div>
+<p>
+Эта запись очень похожа на объявление переменной через оператор <span class="em_BLCK"><span class="emOPRT">SET</span></span>, и точно так же, как для оператора <span class="em_BLCK"><span class="emOPRT">SET</span></span>, для оператора <span class="em_BLCK"><span class="emOPRT">LOCAL</span></span> существует возможность объявить сразу несколько локальных переменных:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;множественное&nbsp;объявление&nbsp;локальных&nbsp;переменных</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;x<span class="Monokai-Operator">,</span>&nbsp;y<span class="Monokai-Operator">,</span>&nbsp;$item&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">19</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">"Старый&nbsp;меч"</span><br>
+
+
+</div>
+<p>
+Как видите, сразу после оператора <span class="em_BLCK"><span class="emOPRT">local</span></span> через запятую перечислены имена объявляемых переменных, затем стоит знак равенства и после него перчислены значения, которые мы присваиваем этим переменным. Число переменных слева от знака <span class="em_BLCK">=</span> и число значений справа должны совпадать.
+
+</p>
+<p>
+Однако, в отличие от оператора <span class="em_BLCK"><span class="emOPRT">SET</span></span> оператор <span class="em_BLCK"><span class="emOPRT">LOCAL</span></span> позволяет нам назначить локальные переменные без присвоения им значений. Для этого достаточно просто перечислить после оператора <span class="em_BLCK"><span class="emOPRT">LOCAL</span></span> через запятую названия переменных:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">local</span>&nbsp;$название_предмета<span class="Monokai-Operator">,</span>&nbsp;количество<span class="Monokai-Operator">,</span>&nbsp;цена<br>
+
+
+</div>
+<p>
+Здесь оператор <span class="em_BLCK"><span class="emOPRT">LOCAL</span></span> работает без операции присваивания. Локальные переменные создаются, но содержат значения по умолчанию.
+
+</p>
+<p>
+Собственные локальные переменные можно создавать для таких блоков кода как:
+
+</p>
+<ul>
+<li>
+Локации сами со себе.
+</li>
+<li>
+Код, передаваемый оператору <span class="em_BLCK"><span class="emOPRT">DYNAMIC</span></span> или функции <span class="em_BLCK"><span class="emFUNC">DYNEVAL</span></span> в виде текста.
+</li>
+<li>
+Код, выполняемый при нажатии на гиперссылку.
+</li>
+<li>
+Код каждого отдельного Действия (<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">ACT</span></span></a>).
+</li>
+<li>
+Код каждого отдельного Цикла (<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">LOOP</span></span></a>)
+</li>
+</ul>
+<p>
+<span class="em_BLCK">Внимание!</span> У локальных переменных есть одна особенность, которую нужно очень чётко понимать. Значение объявленной в данном блоке кода локальной переменной транслируется и во все вложенные, или вызванные из данного, блоки кода. Например, если на локации объявлена локальная переменная, то её значение транслируется во все вызываемые с помощью <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> или <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> локации, в блоки кода для `DYNAMIC<strong>/</strong>'DYNEVAL`, в блоки циклов и так далее. Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+<span class="Monokai-Comment">!&nbsp;из&nbsp;этой&nbsp;локации&nbsp;мы&nbsp;будем&nbsp;вызывать&nbsp;локацию&nbsp;foo</span><br>
+i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;объявляем&nbsp;глобальную&nbsp;переменную</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'foo'</span><br>
+<span class="Monokai-Operator">*nl</span>&nbsp;i&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;число&nbsp;99</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<br>
+<span class="Monokai-StartLoc">#&nbsp;foo</span><br>
+<span class="Monokai-Comment">!&nbsp;на&nbsp;этой&nbsp;локации&nbsp;объявляем&nbsp;локальную&nbsp;переменную</span><br>
+<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Comment">!&nbsp;локальная&nbsp;переменная&nbsp;транслируется&nbsp;в&nbsp;цикл</span><br>
+<span class="Monokai-Koperator">loop</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">10</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;цикле&nbsp;мы&nbsp;вызываем&nbsp;локацию&nbsp;undo</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'undo'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;так&nbsp;же&nbsp;в&nbsp;цикле&nbsp;мы&nbsp;работаем&nbsp;с&nbsp;переменной,</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;объявленной&nbsp;на&nbsp;локации&nbsp;foo</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">*nl</span>&nbsp;i&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;число&nbsp;10</span><br>
+<span class="Monokai-EndLoc">---&nbsp;foo&nbsp;---</span><br>
+<br>
+<span class="Monokai-StartLoc">#&nbsp;undo</span><br>
+<span class="Monokai-Comment">!&nbsp;в&nbsp;эту&nbsp;локацию&nbsp;из&nbsp;цикла&nbsp;с&nbsp;локации&nbsp;foo</span><br>
+<span class="Monokai-Comment">!&nbsp;транслируется&nbsp;всё&nbsp;та&nbsp;же&nbsp;локальная&nbsp;переменная</span><br>
+<span class="Monokai-Comment">!&nbsp;объявленная&nbsp;на&nbsp;локации&nbsp;foo</span><br>
+i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;значение&nbsp;переменной,&nbsp;влияя&nbsp;на&nbsp;значение&nbsp;в&nbsp;foo</span><br>
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'undo:&lt;&lt;i&gt;&gt;,&nbsp;'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;появятся&nbsp;числа&nbsp;1,3,5,7,9&nbsp;с&nbsp;припиской&nbsp;`undo:`</span><br>
+<span class="Monokai-EndLoc">---&nbsp;undo&nbsp;---</span><br>
+
+
+</div>
+<p>
+Однако! Значения локальных переменных не транслируются в действия (в отличие от значений массива ARGS на текущей локации):
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'текущая&nbsp;локация'</span><br>
+<span class="Monokai-Operator">local</span>&nbsp;$var<span class="Monokai-Operator">=</span><span class="Monokai-String">'локальная&nbsp;переменная'</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;$var<br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вывести&nbsp;значения"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;$var<br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<a id="щzdЗ"></a><h4>Примеры назначения локальных переменных</h4>
+<p>
+Две локации, на каждой из которых собственная переменная <span class="em_BLCK">i</span>:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;локация&nbsp;1</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;значение&nbsp;переменной&nbsp;i&nbsp;задаётся&nbsp;лишь&nbsp;раз</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Глобальное&nbsp;i&nbsp;=&nbsp;&lt;&lt;i&gt;&gt;"</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"На&nbsp;локацию&nbsp;2"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'локация&nbsp;2'</span><br>
+<span class="Monokai-EndLoc">---&nbsp;локация&nbsp;1&nbsp;---</span><br>
+<br>
+<span class="Monokai-StartLoc">#&nbsp;локация&nbsp;2</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Глобальное&nbsp;i&nbsp;=&nbsp;&lt;&lt;i&gt;&gt;"</span><br>
+<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;значение&nbsp;переменной&nbsp;i&nbsp;задаётся&nbsp;лишь&nbsp;раз</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Локальное&nbsp;i&nbsp;=&nbsp;&lt;&lt;i&gt;&gt;"</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"На&nbsp;локацию&nbsp;1"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'локация&nbsp;1'</span><br>
+<span class="Monokai-EndLoc">---&nbsp;локация&nbsp;2&nbsp;---</span><br>
+
+
+</div>
+<p>
+Ещё пример с двумя локациями:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;этот&nbsp;код&nbsp;последовательно&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;числа&nbsp;12,&nbsp;549&nbsp;и&nbsp;99,&nbsp;549</span><br>
+<span class="Monokai-StartLoc">#&nbsp;start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;x<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;z<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4608</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'foo'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;x&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;z&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;выведутся&nbsp;числа&nbsp;99&nbsp;и&nbsp;549</span><br>
+<span class="Monokai-EndLoc">---&nbsp;start&nbsp;---</span><br>
+<br>
+<span class="Monokai-StartLoc">#&nbsp;foo</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;x&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;объявляем&nbsp;переменную&nbsp;x&nbsp;локальной&nbsp;для&nbsp;данной&nbsp;локации</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;x<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;изменяем&nbsp;значение&nbsp;переменной&nbsp;x</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;z<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">549</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;x&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;z&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;выведутся&nbsp;числа&nbsp;12&nbsp;и&nbsp;549</span><br>
+<span class="Monokai-EndLoc">---&nbsp;foo&nbsp;---</span><br>
+
+
+</div>
+<p>
+Пример объявления локальных переменных в коде для <span class="em_BLCK"><span class="emFUNC">DYNEVAL</span></span> и в цикле:
+
+</p>
+<div class="Monokai-Code">
+$chkObjWord<span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;это&nbsp;код,&nbsp;записанный&nbsp;в&nbsp;виде&nbsp;текста&nbsp;в&nbsp;переменную&nbsp;$chkObjWord</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;$word<span class="Monokai-Operator">=</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;локальную&nbsp;переменную&nbsp;$word&nbsp;записываем&nbsp;слово,&nbsp;по&nbsp;которому&nbsp;производим&nbsp;поиск</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">loop</span>&nbsp;<span class="Monokai-Operator">local</span>&nbsp;i&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;i&nbsp;<span class="Monokai-Operator">&gt;</span>&nbsp;<span class="Monokai-Func">countobj</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;используем&nbsp;локальную&nbsp;переменную&nbsp;i&nbsp;внутри&nbsp;цикла</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;цикл&nbsp;выполняется&nbsp;пока&nbsp;счётчик&nbsp;не&nbsp;превысит&nbsp;число&nbsp;предметов</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span>i<span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>$word<span class="Monokai-Operator">)</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;как&nbsp;только&nbsp;в&nbsp;названии&nbsp;очередного&nbsp;предмета</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Comment">!&nbsp;встречается&nbsp;рассматриваемое&nbsp;слово</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">result</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;возвращаем&nbsp;позицию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">exit</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;закрываем&nbsp;функцию</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">}</span><br>
+object_position<span class="Monokai-Operator">=</span><span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span>$chkObjWord<span class="Monokai-Operator">,</span><span class="Monokai-String">'граната'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Локальные переменные можно объявлять и внутри действий:
+
+</p>
+<div class="Monokai-Code">
+i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;с&nbsp;локальной&nbsp;i"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">449933</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;i<br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;с&nbsp;глобальной&nbsp;i"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;i<br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Вперёд: Выражения</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qspider_qspider_aeroqsp.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

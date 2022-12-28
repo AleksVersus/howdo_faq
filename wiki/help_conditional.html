@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html" class="emHREFTT">&lt; Назад, к странице 50</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html" class="emHREFTT">Вперёд, к странице 52 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Назад: Регулярные выражения</a>
+
+</p>
+<a id="help_conditional"></a><h2>Условия</h2>
+<p>
+<a id="uslovija"></a>
+
+</p>
+<p>
+Условия — это такие особые конструкции в <span class="em_BLCK">QSP</span>, которые позволят сделать вашу игру по настоящему интерактивной. Они позволяют разветвлять события, происходящие в игре в зависимости от уже сложившихся условий, и таким образом вносить разнообразие в игровой процесс. Операторы, которые используются для организации конструкций условий, в программировании называются <span class="em_BLCK">операторами ветвления</span>.
+
+</p>
+<a id="мzga"></a><h3>Операторы условий</h3>
+<ul>
+<li>
+ <strong>IF</strong> — основной оператор для записи конструкций условий. Конструкции, записываемые с помощью этого оператора (назовём их "простыми условиями"), имеют две формы: однострочную и многострочную, — и в общем виде выглядят так:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;однострочная&nbsp;форма&nbsp;записи</span><br>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Command">[#выражение]</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">{</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">}</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">{</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">}</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Command">...<br>
+</span>
+
+</div>
+</li>
+</ul>
+<p>
+    ! многострочная форма записи
+
+</p>
+<p>
+    IF [#выражение]:
+
+</p>
+<p>
+    {команда 1}
+
+</p>
+<p>
+    {команда 2}
+
+</p>
+<p>
+    ...
+
+</p>
+<p>
+    END
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;В&nbsp;данном&nbsp;случае,&nbsp;если&nbsp;верно&nbsp;условие&nbsp;[#выражение],&nbsp;выполняются&nbsp;команды&nbsp;{команда&nbsp;1},&nbsp;{команда&nbsp;2}&nbsp;и&nbsp;т.д.&nbsp;Для&nbsp;однострочной&nbsp;формы&nbsp;записи&nbsp;это&nbsp;будут&nbsp;только&nbsp;те&nbsp;команды,&nbsp;которые&nbsp;идут&nbsp;в&nbsp;той&nbsp;же&nbsp;строке,&nbsp;что&nbsp;и&nbsp;оператор&nbsp;`IF`&nbsp;до&nbsp;конца&nbsp;строки;&nbsp;а&nbsp;для&nbsp;многострочной&nbsp;формы&nbsp;записи&nbsp;это&nbsp;будут&nbsp;те&nbsp;команды,&nbsp;которые&nbsp;идут&nbsp;в&nbsp;последующих&nbsp;строках&nbsp;после&nbsp;двоеточия&nbsp;и&nbsp;до&nbsp;специального&nbsp;ключевого&nbsp;слова&nbsp;`END`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;В&nbsp;качестве&nbsp;условия&nbsp;могут&nbsp;выступать&nbsp;операции&nbsp;сравнения,&nbsp;логические&nbsp;операции&nbsp;и&nbsp;иные&nbsp;выражения,&nbsp;возвращающие&nbsp;числовые&nbsp;значения.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Ключевое&nbsp;слово&nbsp;`END`&nbsp;при&nbsp;многострочной&nbsp;форме&nbsp;записи&nbsp;должно&nbsp;стоять&nbsp;отдельной&nbsp;строкой.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Если&nbsp;условие&nbsp;[#выражение]&nbsp;не&nbsp;верно,&nbsp;команды&nbsp;выполнены&nbsp;не&nbsp;будут.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Примеры&nbsp;однострочной&nbsp;формы&nbsp;записи&nbsp;условий:<br>
+
+</div>
+<p>
+        ! если сумма a и b равна двум,
+
+</p>
+<p>
+        ! переменной c присваивается значение 30
+
+</p>
+<p>
+        if a+b=2: c=30
+
+</p>
+<p>
+        ! Если в инвентаре нет апельсина, выводится текст
+
+</p>
+<p>
+        if no obj "Апельсин": pl "У Вас нет апельсина."
+
+</p>
+<p>
+        ! это тоже простая однострочная форма
+
+</p>
+<p>
+        if ((a+b)/c)=45+54 or (b&lt;5 or c&gt;45) and no obj 'лопата' and $f=$vvv+'RRRRR': p 'OK' &amp; goto 'Next'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Примеры&nbsp;многострочной&nbsp;формы&nbsp;записи&nbsp;условий:<br>
+
+</div>
+<p>
+        if библиотека = 0:
+
+</p>
+<p>
+          узнал_о_тусовке = 0
+
+</p>
+<p>
+          библиотека_вернулся = 1
+
+</p>
+<p>
+          gt 'библиотека'
+
+</p>
+<p>
+        end
+
+</p>
+<p>
+        if a+b=2:
+
+</p>
+<p>
+          c=30
+
+</p>
+<p>
+        end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Обратите&nbsp;внимание!!!&nbsp;При&nbsp;многострочной&nbsp;форме&nbsp;записи&nbsp;после&nbsp;двоеточия&nbsp;в&nbsp;той&nbsp;же&nbsp;строке,&nbsp;в&nbsp;какой&nbsp;находится&nbsp;оператор&nbsp;`IF`,&nbsp;не&nbsp;должны&nbsp;идти&nbsp;никакие&nbsp;команды,&nbsp;иначе&nbsp;плеер&nbsp;посчитает&nbsp;такой&nbsp;оператор&nbsp;условия&nbsp;однострочным,&nbsp;и&nbsp;команды&nbsp;в&nbsp;последующих&nbsp;строках&nbsp;будут&nbsp;выполняться&nbsp;в&nbsp;любом&nbsp;случае,&nbsp;независимо&nbsp;от&nbsp;того,&nbsp;верным&nbsp;окажется&nbsp;условие&nbsp;или&nbsp;нет.&nbsp;Пример&nbsp;такой&nbsp;ошибочной&nbsp;записи:<br>
+
+</div>
+<p>
+        if библиотека = 0: узнал_о_тусовке = 0
+
+</p>
+<p>
+          библиотека_вернулся = 1 &amp;! эта строчка будет выполняться в независимости от верности условия
+
+</p>
+<p>
+          gt 'библиотека' &amp;! и эта
+
+</p>
+<p>
+        end &amp;! ключевое слово end - просто игнорируется
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`ELSE`&nbsp;—&nbsp;ключевое&nbsp;слово,&nbsp;использующееся&nbsp;совместно&nbsp;с&nbsp;оператором&nbsp;`IF`,&nbsp;и&nbsp;которое&nbsp;служит&nbsp;для&nbsp;предоставления&nbsp;альтернативы,&nbsp;если&nbsp;условие&nbsp;не&nbsp;выполнено.&nbsp;Условия&nbsp;с&nbsp;ключевым&nbsp;слвом&nbsp;`ELSE`&nbsp;(назовём&nbsp;это&nbsp;"сложным&nbsp;условием")&nbsp;так&nbsp;же&nbsp;имеют&nbsp;две&nbsp;формы&nbsp;записи:&nbsp;однострочную&nbsp;и&nbsp;многострочную,&nbsp;—&nbsp;и&nbsp;в&nbsp;общем&nbsp;виде&nbsp;выглядят&nbsp;так:<br>
+
+</div>
+<p>
+        ! однострочная форма записи
+
+</p>
+<p>
+        IF [#выражение]: {команда д1} &amp; {команда д2} &amp; ... ELSE {команда н1} &amp; {команда н2} &amp; ...
+
+</p>
+<p>
+        !многострочная форма записи
+
+</p>
+<p>
+        IF [#выражение]:
+
+</p>
+<p>
+            {команда д1}
+
+</p>
+<p>
+            {команда д2}
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        ELSE
+
+</p>
+<p>
+            {команда н1}
+
+</p>
+<p>
+            {команда н2}
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        END
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Здесь,&nbsp;если&nbsp;условие&nbsp;[#выражение]&nbsp;верно,&nbsp;выполняются&nbsp;команды&nbsp;от&nbsp;двоеточия&nbsp;до&nbsp;ключевого&nbsp;слова&nbsp;`ELSE`,&nbsp;а&nbsp;если&nbsp;условие&nbsp;[#выражение]&nbsp;не&nbsp;верно,&nbsp;выполняются&nbsp;команды&nbsp;от&nbsp;ключевого&nbsp;слова&nbsp;`ELSE`&nbsp;и&nbsp;до&nbsp;конца&nbsp;конструкции&nbsp;условия.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;При&nbsp;однострочной&nbsp;форме&nbsp;записи:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;и&nbsp;команды&nbsp;и&nbsp;ключевое&nbsp;слово&nbsp;`ELSE`&nbsp;должны&nbsp;быть&nbsp;записаны&nbsp;в&nbsp;одной&nbsp;строке<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ключевое&nbsp;слово&nbsp;`END`&nbsp;не&nbsp;нужно<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;окончанием&nbsp;конструкции&nbsp;условия&nbsp;является&nbsp;конец&nbsp;строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Примеры&nbsp;однострочной&nbsp;записи:<br>
+
+</div>
+<p>
+            ! если сумма a и b равна двум, переменной c присваивается значение 30
+
+</p>
+<p>
+            ! в противном случае (то есть если сумма a и b не равна двум)
+
+</p>
+<p>
+            ! переменной c присваивается значение 10
+
+</p>
+<p>
+            if a+b=2: c=30 else c=10
+
+</p>
+<p>
+            ! в зависимости от того есть ли в инвентаре апельсин
+
+</p>
+<p>
+            ! выводится соответствующий текст
+
+</p>
+<p>
+            if obj "Апельсин": pl "У Вас есть апельсин." else pl "У Вас нет апельсина."
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;При&nbsp;многострочной&nbsp;форме&nbsp;записи:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;все&nbsp;команды&nbsp;должны&nbsp;идти&nbsp;в&nbsp;последующих&nbsp;строках&nbsp;после&nbsp;двоеточия,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ключевое&nbsp;слово&nbsp;`ELSE`&nbsp;должно&nbsp;быть&nbsp;записано&nbsp;отдельной&nbsp;строкой,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;конструкция&nbsp;условия&nbsp;должна&nbsp;оканчиваться&nbsp;ключевым&nbsp;словом&nbsp;`END`,&nbsp;записанным&nbsp;отдельной&nbsp;строкой<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Примеры&nbsp;многострочной&nbsp;записи:<br>
+
+</div>
+<p>
+            if a+b=2:
+
+</p>
+<p>
+                c=30
+
+</p>
+<p>
+            else
+
+</p>
+<p>
+                c=10
+
+</p>
+<p>
+            end
+
+</p>
+<p>
+            if obj "Апельсин":
+
+</p>
+<p>
+                pl "У Вас есть апельсин."
+
+</p>
+<p>
+            else
+
+</p>
+<p>
+                pl "У Вас нет апельсина."
+
+</p>
+<p>
+            end
+
+</p>
+<p>
+            if len($curtoken) &gt; 0:
+
+</p>
+<p>
+                $tokens[curtoken_num] = $curtoken
+
+</p>
+<p>
+                tokens_count = curtoken_num + 1
+
+</p>
+<p>
+            else
+
+</p>
+<p>
+                tokens_count = curtoken_num
+
+</p>
+<p>
+            end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`ELSEIF`&nbsp;—&nbsp;ключевое&nbsp;слово,&nbsp;которое&nbsp;используется&nbsp;совместно&nbsp;с&nbsp;оператором&nbsp;`IF`&nbsp;и&nbsp;позволяет&nbsp;определять&nbsp;на&nbsp;одном&nbsp;уровне&nbsp;вложенности&nbsp;последовательно-исключающие&nbsp;условия.&nbsp;Пока&nbsp;что&nbsp;ключевое&nbsp;слово&nbsp;`ELSEIF`&nbsp;можно&nbsp;использовать&nbsp;только&nbsp;в&nbsp;многострочных&nbsp;конструкциях&nbsp;(это&nbsp;обещали&nbsp;исправить&nbsp;в&nbsp;более&nbsp;поздних&nbsp;версиях):<br>
+
+</div>
+<p>
+        IF [#выражение 1]:
+
+</p>
+<p>
+            {набор команд 1}
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        ELSEIF [#выражение 2]:
+
+</p>
+<p>
+            {набор команд 2}
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        ELSEIF ... :
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        ELSE
+
+</p>
+<p>
+            {последний набор команд}
+
+</p>
+<p>
+            ...
+
+</p>
+<p>
+        END
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Работает&nbsp;это&nbsp;следующим&nbsp;образом.&nbsp;Если&nbsp;`[#выражение&nbsp;1]`&nbsp;верно,&nbsp;выполняются&nbsp;команды&nbsp;`{набор&nbsp;команд&nbsp;1}`.&nbsp;Если&nbsp;`[#выражение&nbsp;1]`&nbsp;неверно,&nbsp;но&nbsp;верно&nbsp;`[#выражение&nbsp;2]`,&nbsp;выполняются&nbsp;команды&nbsp;`{набор&nbsp;команд&nbsp;2}`,&nbsp;и&nbsp;т.д.&nbsp;И&nbsp;только&nbsp;если&nbsp;неверны&nbsp;все&nbsp;выражения&nbsp;в&nbsp;текущей&nbsp;конструкции&nbsp;условия,&nbsp;выполнятся&nbsp;команды&nbsp;после&nbsp;`ELSE`.&nbsp;Верность&nbsp;выражения&nbsp;`[#выражение&nbsp;1]`&nbsp;не&nbsp;исключает&nbsp;верности&nbsp;выражения&nbsp;`[#выражение&nbsp;2]`,&nbsp;однако&nbsp;верность&nbsp;выражения&nbsp;`[#выражение&nbsp;2]`&nbsp;исключает&nbsp;верность&nbsp;выражения&nbsp;`[#выражение&nbsp;1]`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Правила&nbsp;записи&nbsp;такие&nbsp;же,&nbsp;как&nbsp;и&nbsp;для&nbsp;других&nbsp;видов&nbsp;многострочных&nbsp;условий:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;После&nbsp;двоеточия&nbsp;в&nbsp;той&nbsp;же&nbsp;строке,&nbsp;где&nbsp;находится&nbsp;оператор&nbsp;`IF`&nbsp;или&nbsp;`ELSEIF`&nbsp;не&nbsp;должно&nbsp;идти&nbsp;никаких&nbsp;команд,&nbsp;только&nbsp;со&nbsp;следующей&nbsp;строки.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Вся&nbsp;конструкция&nbsp;должна&nbsp;заканчиваться&nbsp;оператором&nbsp;`END`,&nbsp;стоящим&nbsp;в&nbsp;отдельной&nbsp;строке.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;В&nbsp;конструкции&nbsp;может&nbsp;как&nbsp;присутствовать,&nbsp;так&nbsp;и&nbsp;отсуствовать&nbsp;часть&nbsp;с&nbsp;`ELSE`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Примеры:<br>
+
+</div>
+<p>
+            IF ОЧКИ&gt;124:
+
+</p>
+<p>
+                GOTO 'КОН3'
+
+</p>
+<p>
+            ELSEIF ОЧКИ&gt;99:
+
+</p>
+<p>
+                GOTO 'КОН4'
+
+</p>
+<p>
+            ELSE
+
+</p>
+<p>
+                GOTO 'КОН5'
+
+</p>
+<p>
+            END
+
+</p>
+<div class="Monokai-Code">
+
+</div>
+<p>
+            if money mod 10=1 and money mod 100&lt;&gt;11:
+
+</p>
+<p>
+                *pl "У вас &lt;&lt;money&gt;&gt; монета."
+
+</p>
+<p>
+            elseif money mod 10&gt;1 and money mod 10&lt;5 and (money mod 100&lt;5 or money mod 100&gt;20):
+
+</p>
+<p>
+                *pl "У вас &lt;&lt;money&gt;&gt; монеты."
+
+</p>
+<p>
+            elseif money mod 10=0 or money mod 10&gt;4 or (money mod 100&gt;10 and money mod 100&lt;21):
+
+</p>
+<p>
+                *pl "У вас &lt;&lt;money&gt;&gt; монет."
+
+</p>
+<p>
+            end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`END`&nbsp;—&nbsp;ключевое&nbsp;слово,&nbsp;которое&nbsp;указывает&nbsp;на&nbsp;конец&nbsp;многострочной&nbsp;конструкции&nbsp;условия.&nbsp;Допускается&nbsp;запись&nbsp;`END&nbsp;IF`.&nbsp;Не&nbsp;используется&nbsp;для&nbsp;однострочных&nbsp;форм&nbsp;записи.<br>
+<br>
+Для&nbsp;многострочных&nbsp;форм&nbsp;записи&nbsp;допускается&nbsp;вложенность&nbsp;неограниченной&nbsp;глубины.&nbsp;Каждый&nbsp;уровень&nbsp;вложения&nbsp;должен&nbsp;заканчиваться&nbsp;своей&nbsp;строкой&nbsp;`END`.<br>
+<br>
+Некоторые&nbsp;примеры:<br>
+
+</div>
+<p>
+    if a+b&lt;3 or y=8:
+
+</p>
+<p>
+        p 'A+B&lt;3 или Y=8'
+
+</p>
+<p>
+        nl 
+
+</p>
+<p>
+        if j=88: nl &amp; p 'NEXT' 
+
+</p>
+<p>
+        if $h='ooo':
+
+</p>
+<p>
+            p 'loo' &amp; jump 'lll'
+
+</p>
+<p>
+        end
+
+</p>
+<p>
+    end
+
+</p>
+<div class="Monokai-Code">
+<br>
+
+</div>
+<p>
+    if a=0:
+
+</p>
+<p>
+        'abc1234'
+
+</p>
+<p>
+        if b=0: '0' else '1'
+
+</p>
+<p>
+        if j=88: nl &amp; p 'NEXT'
+
+</p>
+<p>
+        if $h='ooo':
+
+</p>
+<p>
+            p 'loo' &amp; jump 'lll'
+
+</p>
+<p>
+        else
+
+</p>
+<p>
+            p 'sample text'
+
+</p>
+<p>
+            v=8
+
+</p>
+<p>
+        end
+
+</p>
+<p>
+        1234
+
+</p>
+<p>
+    else
+
+</p>
+<p>
+        '01234'
+
+</p>
+<p>
+        g=78
+
+</p>
+<p>
+    end
+
+</p>
+<div class="Monokai-Code">
+<br>
+
+</div>
+<p>
+if ((a+b)/c)=45+54 or (b&lt;5 or c&gt;45) and no obj 'лопата' and $f=$vvv+'RRRRR': p 'OK' &amp; goto 'Next'
+
+</p>
+<p>
+if был_здесь[$curloc]: exit
+
+</p>
+<p>
+if a&lt;3: jump 'sss'
+
+</p>
+<p>
+if $имя = '': msg 'Введите имя!' &amp; jump 'ввод'
+
+</p>
+<p>
+if a+b=2:c=30 &amp; gt 'next' else c=10
+
+</p>
+<div class="Monokai-Code">
+<br>
+Пример&nbsp;реализации&nbsp;однострочного&nbsp;варианта&nbsp;`ELSEIF`&nbsp;с&nbsp;последовательным&nbsp;перечислением&nbsp;вложенных&nbsp;условий&nbsp;через&nbsp;`ELSE&nbsp;IF`:<br>
+<br>
+
+</div>
+<p>
+if n=0: *pl "Ноль" else if n=1: *pl "Один" else if n=2: *pl "Два"
+
+</p>
+<div class="Monokai-Code">
+<br>
+Несколько&nbsp;примеров&nbsp;неверной&nbsp;записи:<br>
+
+</div>
+<p>
+    ! в этом случае, если условие не будет выполнено,
+
+</p>
+<p>
+    ! плеер проигнорирует только команду <span class="em_BLCK">k<span class="emNUM">1</span>=34</span>
+
+</p>
+<p>
+    ! поскольку посчитает, что это однострочное условие
+
+</p>
+<p>
+    if abcd=3: k1=34
+
+</p>
+<p>
+        k2=35 &amp; ! эта команда будет выполняться всегда
+
+</p>
+<p>
+        k3=36 &amp; ! эта комнада будет выполняться всегда
+
+</p>
+<p>
+    end &amp; ! этот end будет проигнорирован
+
+</p>
+<div class="Monokai-Code">
+<br>
+
+</div>
+<p>
+    ! данная строка выведет ошибку "неизвестное действие"
+
+</p>
+<p>
+    ! так как однострочные формы записи не должны оканчиваться end`ом
+
+</p>
+<p>
+    if abcd=3: k1=34 else k1=25 end
+
+</p>
+<p>
+    ! данная запись приведёт к ошибке:
+
+</p>
+<p>
+    ! "Неверная запись однострочного оператора"
+
+</p>
+<p>
+    if absd=3:
+
+</p>
+<p>
+        k=34
+
+</p>
+<p>
+    else if absd=6:
+
+</p>
+<p>
+        k1=25
+
+</p>
+<p>
+    end
+
+</p>
+<div class="Monokai-Code">
+<br>
+=Функции&nbsp;обработки&nbsp;условий=<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`IIF(`[#выр]`,`[выр_да]`,`[выр_нет]`)`&nbsp;-&nbsp;возвращает&nbsp;значение&nbsp;выражения&nbsp;[выр_да],&nbsp;если&nbsp;[#выр]&nbsp;верно,&nbsp;иначе&nbsp;возвращает&nbsp;значение&nbsp;выражения&nbsp;[выр_нет].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Эта&nbsp;функция&nbsp;в&nbsp;`QSP`&nbsp;является&nbsp;аналогом&nbsp;`тернарного&nbsp;оператора`&nbsp;в&nbsp;других&nbsp;языках&nbsp;программирования.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Из&nbsp;выражений&nbsp;[выр_да]&nbsp;и&nbsp;[выр_нет]&nbsp;будет&nbsp;вычислено&nbsp;только&nbsp;одно,&nbsp;в&nbsp;зависимости&nbsp;от&nbsp;того,&nbsp;будет&nbsp;ли&nbsp;выполнено&nbsp;условие.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;Примеры:<br>
+
+</div>
+<p>
+        !Модуль числа
+
+</p>
+<p>
+        abs_x=iif(x&gt;0,x,-x)
+
+</p>
+<p>
+        !А следующая конструкция НЕ вызовет ошибку деления на ноль:
+
+</p>
+<p>
+        set x=0
+
+</p>
+<p>
+        y=iif(x=0,0,1/x)
+
+</p>
+<p>
+        ! типичное решение для вывода времени, чтобы не терять ноль на часах:
+
+</p>
+<p>
+        $iif(hour&gt;9,$str(hour),"0"+$str(hour))+":"+$iif(minute&gt;9,$str(minute),"0"+$str(minute))
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Эквивалентность&nbsp;конструкций&nbsp;условия&nbsp;с&nbsp;оператором&nbsp;`IF`&nbsp;и&nbsp;функции&nbsp;`IIF`:<br>
+
+</div>
+<p>
+        if number mod 2 = 0:
+
+</p>
+<p>
+            *pl "Число чётное"
+
+</p>
+<p>
+        else
+
+</p>
+<p>
+            *pl "Число нечётное"
+
+</p>
+<p>
+        end
+
+</p>
+<p>
+        ! эквивалентно
+
+</p>
+<p>
+        *pl $iif(number mod 2 = 0,"Число чётное","Число не чётное")
+
+</p>
+<div class="Monokai-Code">
+<br>
+[Вперёд:&nbsp;Пользовательские&nbsp;функции&nbsp;и&nbsp;процедуры](#help_organizing)<br>
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html" class="emHREFTT">&lt; Назад, к странице 50</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html" class="emHREFTT">Вперёд, к странице 52 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/arrays.html" class="emHREFTT">&lt; Назад, к странице 57</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/razbor_izmenenij_dvizhka.html" class="emHREFTT">Вперёд, к странице 59 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Вперёд: Анализатор кода</a>
+
+</p>
+<a id="help_limits"></a><h2>Ограничения QSP</h2>
+<p>
+<a id="ogranichenija_qsp"></a>
+
+</p>
+<p>
+<span class="em_BLCK">Актуализировано для плеера версии 5.8.0</span>
+
+</p>
+<p>
+При написании игр на QSP необходимо учитывать следующие ограничения:
+
+</p>
+<ul>
+<li>
+ Максимальное число одновременно видимых действий на локации: 50 
+</li>
+<li>
+ Максимальное число подключаемых файлов QSP (<a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">модулей</a>): 100 
+</li>
+<li>
+ Максимальное число передаваемых функции аргументов: 20
+<p>
+Например, функции <span class="em_BLCK"><span class="emFUNC">MAX</span></span> можно передать 20 чисел:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">13</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">14</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">15</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">16</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">17</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">18</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">20</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Нужно помнить, что при работе с локациями, имя локации так же является аргументом, поэтому при использовании таких операторов и функций, как <span class="em_BLCK"><span class="emOPRT">GOTO</span></span>, <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>, <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, на локацию можно передавать только девятнадцать аргументов.
+
+</p>
+<p>
+При работе с оператором <span class="em_BLCK"><span class="emOPRT">DYNAMIC</span></span> одним из аргументов является код, передаваемый оператору, поэтому в код тоже можно передавать не больше 19 аргументов. То же касается и функции <span class="em_BLCK"><span class="emFUNC">DYNEVAL</span></span>.
+
+</p>
+</li>
+<li>
+ Максимальная вложенность выражений: 30 
+</li>
+<li>
+ Максимальное число операторов в выражении (на одном уровне вложенности): 100 
+</li>
+<li>
+ Максимальное число пунктов всплывающего пользовательского меню: 100 
+</li>
+<li>
+ Максимальное число предметов в инвентаре: 1000 
+</li>
+<li>
+ Максимальное число одновременно проигрываемых звуков: 500
+</li>
+</ul>
+<p>
+Длина строки теоретически ограничена только объемом доступной оперативной памяти, либо размером типа "int": 2 гигабайта текста. 
+
+</p>
+<p>
+Числовые переменные принимают значения от <span class="em_BLCK">-2147483647</span> до <span class="em_BLCK"><span class="emNUM">2147483647</span></span>. Превышение предела уводит число к противоположному знаку.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2147483647</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">22</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Количество переменных ограничено 12800, при этом не допускается более 50 переменных с одинаковым <a href="http://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%81%D1%83%D0%BC%D0%BC%D0%B0" style="text-decoration:none;" class="emFOLD">хэшем</a> имени.
+
+</p>
+<p>
+Количество элементов массива ограничено размерностью "int", в зависимости от того, как собрана библиотека, 32768 или <span class="em_BLCK"><span class="emNUM">2147483648</span></span> соответственно.
+
+</p>
+<p>
+Количество локаций ограничено размером типа "int". В зависимости от того, как собрана библиотека, "int" будет ограничивать либо 32768, либо <span class="em_BLCK"><span class="emNUM">2147483648</span></span> локаций.
+
+</p>
+<a id="НЮАQ"></a><h3>F.A.Q. по ограничениям</h3>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/podkljuchaemye_fajly_0170.html#faq_23_01" style="text-decoration:none;" class="emFOLD">Видел в справке ограничение на 100 подключаемых файлов. Это что, я не смогу использовать более ста файлов картинок и музыки?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/vyvodimye_dejstvija_0171.html" style="text-decoration:none;" class="emFOLD">Хочу разместить на локации около 100 действий. Это вообще возможно?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/imena_peremennyh_0172.html" style="text-decoration:none;" class="emFOLD">Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?</a>
+</li>
+</ul>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/arrays.html" class="emHREFTT">&lt; Назад, к странице 57</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/razbor_izmenenij_dvizhka.html" class="emHREFTT">Вперёд, к странице 59 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

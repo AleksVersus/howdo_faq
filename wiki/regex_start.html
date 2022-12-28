@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_snippet.html" class="emHREFTT">&lt; Назад, к странице 67</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/sidebar.html" class="emHREFTT">Вперёд, к странице 69 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Назад: Регулярные выражения (справка)</a>
+
+</p>
+<a id="regex_start"></a><h2>Самоучитель по регулярным выражениям</h2>
+<p>
+<a id="samouchitel_po_reguljarnym_vyrazhenijam"></a>
+
+</p>
+<p>
+Здесь когда-нибудь будет самоучитель по регулярным выражениям, а пока копия текста из старой справки "как есть".
+
+</p>
+<p>
+Введение в регулярные выражения
+
+</p>
+<a id="vvedenie"></a><h3>Введение</h3>
+<p>
+QSP отличается наличием очень мощных и гибких механизмов для работы с двумя самыми часто используемыми типами данных: строками и массивами. Однако в QSP есть ещё один механизм обработки строк, который, ввиду своей сложности, был пропущен мною. Я говорю о механизме регулярных выражений (regular expressions). Настало время поговорить о них, потому что в дальнейшем нам, возможно, очень часто потребуется использовать их. Кроме того, использование регулярных выражений во многих ситуациях поможет вам заменить кучу кода всего одной строчкой. Единственная проблема, которая обычно возникает при работе с регулярными выражениями - их очень необычный, и, поначалу, совершенно непонятный синтаксис. Поэтому я постараюсь рассказать о синтаксисе регулярных выражений по возможности более просто и подробно.
+
+</p>
+<a id="obschaja_informacija"></a><h3>Общая информация</h3>
+<p>
+Регулярное выражение (regular expression, regexp, регэксп) - механизм, позволяющий задать шаблон для строки и осуществить поиск данных, соответствующих этому шаблону в заданном тексте. 
+
+</p>
+<p>
+Кроме того, дополнительные функции по работе с regexp''ами позволяют получить найденные данные в виде массива строк, произвести замену в тексте по шаблону, разбиение строки по шаблону и т.п. Однако главной их функцией, на которой основаны все остальные, является именно функция поиска в тексте данных, соответствующих шаблону, описанному в синтаксисе регулярных выражений.
+
+</p>
+<p>
+Очень часто регулярные выражения используются для того, чтобы проверить, является ли данная строка строкой в необходимом формате. Например, следующий regexp предназначен для проверки того, что строка содержит корректный e-mail адрес:
+
+</p>
+<p>
+ ^\w+([\.\w]+)*\w@\w((\.\w)*\w+)*\.\w{2,3}$ 
+
+</p>
+<p>
+Выглядит, на первый взгляд, довольно страшно <img src="../lib/images/smileys/icon_smile.gif" class="em_IMG"> Но, тем не менее, это работает, и работает очень хорошо. А когда вы научитесь писать и использовать regexp''ы в своем коде - это ещё будет и сильно облегчать вам жизнь.
+
+</p>
+<p>
+Регулярные выражения пришли к нам из Unix и Perl. Кстати, необходимо заметить, что полное описание синтаксиса регулярных выражений занимает более 50 килобайт, и, естественно, здесь мы не будем рассматривать весь синтаксис. Нам необходимы только основы, которые помогут вам понять, как именно пишутся регулярные выражения.
+
+</p>
+<p>
+Сутью механизма регулярных выражений является то, что они позволяют задать шаблон для <span class="em_BLCK">нечеткого</span> поиска по тексту. Например, если перед вами стоит задача найти в тексте определённое слово, то с этой задачей хорошо справляются и обычные функции работы со строками. Однако если вам нужно найти "то, не знаю что", о чем вы можете сказать только то, как <span class="em_BLCK">приблизительно</span> это должно выглядеть - то здесь без регулярных выражений просто не обойтись. Например, вам необходимо найти в тексте информацию, про которую вам известно только то, что это "3 или 4 цифры, после которых через пробел идёт 5 заглавных латинских букв", то вы сможете сделать это очень просто, воспользовавшись следующим регулярным выражением:
+
+</p>
+<p>
+ \d{3,4}\s[A-Z]{5} 
+
+</p>
+<a id="sintaksis_reguljarnyx_vyrazhenij"></a><h3>Синтаксис регулярных выражений</h3>
+<p>
+Основой синтаксиса регулярных выражений является тот факт, что некоторые символы, встречающиеся в строке, рассматриваются не как обычные символы, а как имеющие специальное значение (т.н. <span class="em_BLCK">метасимволы</span>). Именно это решение позволяет работать всему механизму регулярных выражений. Каждый метасимвол имеет свою собственную роль в синтаксисе регулярных выражений. Далее мы рассмотрим все эти метасимволы.
+
+</p>
+<p>
+Одним из самых важных метасимволов является символ обратного слэша ("\"). Если в строке встречается этот символ, то парсер рассматривает символ, непосредственно следующий за ним, двояко:
+
+</p>
+<p>
+Если следующий символ в обычном режиме имеет какое-либо специальное значение, то он теряет это свое специальное значение и рассматривается как обычный символ. Это совершенно необходимо для того, чтобы иметь возможность вставлять в строку специальные символы, как обычные. Например, метасимвол "." в обычном режиме означает "любой единичный символ", а "\." означает просто точку. Также можно лишить специального значения и сам этот символ: "\\".
+
+</p>
+<p>
+Если следующий символ в обычном режиме не имеет никакого специального значения, то он может получить такое значение, будучи соединённым с символом "\". К примеру символ "d" в обычном режиме воспринимается просто как буква, однако, будучи соединённой с обратным слэшем ("\d") становится метасимволом, означающим "любая цифра".
+
+</p>
+<p>
+Существует множество символов, которые образуют метасимволы в паре с обратным слэшем. Как правило, подобные пары используются для того, чтобы показать, что на этом месте в строке должен находиться символ с кодом, который не имеет соответствующего ему изображения или же символ, принадлежащий какой-то определённой группе символов.
+
+</p>
+<a id="metasimvoly_dlja_zadanija_simvolov_ne_imejuschix_izobrazhenija"></a><h3>Метасимволы для задания символов, не имеющих изображения</h3>
+<p>
+ <span class="em_BLCK">\n</span>  Символ перевода строки 
+
+</p>
+<p>
+ <span class="em_BLCK">\r</span>  Символ возврата каретки 
+
+</p>
+<p>
+ <span class="em_BLCK">\t</span>  Символ табуляции 
+
+</p>
+<a id="metasimvoly_dlja_zadanija_grupp_simvolov"></a><h3>Метасимволы для задания групп символов</h3>
+<p>
+ <span class="em_BLCK">\d</span>  Цифра (0-9) 
+
+</p>
+<p>
+ <span class="em_BLCK">\D</span>  Не цифра (любой символ кроме символов 0-9) 
+
+</p>
+<p>
+ <span class="em_BLCK">\s</span>  Пустой символ (обычно пробел и символ табуляции) 
+
+</p>
+<p>
+ <span class="em_BLCK">\S</span>  Непустой символ (всё, кроме символов, определяемых метасимволом <span class="em_BLCK">\s</span>) 
+
+</p>
+<p>
+ <span class="em_BLCK">\w</span>  "Словесный" символ (символ, который используется в словах. Обычно все буквы, все цифры и символ подчёркивания ("_")) 
+
+</p>
+<p>
+ <span class="em_BLCK">\W</span>  Всё, кроме символов, определяемых метасимволом <span class="em_BLCK">\w</span> 
+
+</p>
+<p>
+Приведу несколько простейших примеров для того, чтобы вы понимали, о чем идёт речь. Сразу оговорюсь, что примеры несколько громоздки и некрасивы, но лишь потому, что я не стал использовать в них метасимволы, о которых ещё не рассказал и которые сделали бы их намного проще.
+
+</p>
+<p>
+ <span class="em_BLCK">\d\d\d</span>  Любое трехзначное число ("123", "719", "001") 
+
+</p>
+<p>
+ <span class="em_BLCK">\w\s\d\d</span>  Буква, пробел (или табуляция) и двузначное число ("A 01", "z 45", "S 18") 
+
+</p>
+<p>
+ <span class="em_BLCK">\d and \d</span>  Любая из следующих строк: "1 and 2", "9 and 5", "3 and 4" 
+
+</p>
+<p>
+Синтаксис регулярных выражений имеет средства для определения собственных подмножеств символов. Например, вам может понадобиться задать условие, что в этом месте строки должна находиться шестнадцатеричная цифра или ещё что-то подобное. Для описания таких подмножеств применяются <span class="em_BLCK">символы квадратных скобок "[" и "]"</span>. Квадратные скобки, встреченные внутри регулярного выражения считаются одним символом, который может принимать значения, перечисленные внутри этих скобок.
+
+</p>
+<p>
+Есть небольшая тонкость в том, как работают метасимволы внутри квадратных скобок. Дело в том, что в синтаксисе регулярных выражений существует ещё множество метасимволов, но практически все они работают только <span class="em_BLCK">вне</span> секций описаний подмножеств. Единственные метасимволы, которые работают внутри этих секций это:
+
+</p>
+<p>
+ <span class="em_BLCK">Обратный слэш ("\")</span>  Т.е. все метасимволы из приведённой ранее таблицы будут работать. 
+
+</p>
+<p>
+ <span class="em_BLCK">Минус ("-")</span>  Используется для задания набора символов из одного промежутка (например, все цифры могут быть заданы как "0-9"). 
+
+</p>
+<p>
+ <span class="em_BLCK">Символ "^"</span>  Если этот символ стоит первым в секции задания подмножества символов (и только в этом случае!) он будет рассматриваться как символ отрицания. Т.о. можно задать все символы, которые не описаны в данной секции. 
+
+</p>
+<p>
+Несколько примеров, чтобы было понятно, как это работает:
+
+</p>
+<p>
+ <span class="em_BLCK"><span class="emTEXT">[0-9A-Fa-f]</span></span>  Цифра в шестнадцатеричной системе счисления 
+
+</p>
+<p>
+ <span class="em_BLCK"><span class="emTEXT">[\dA-Fa-f]</span></span>  То же самое, но с использованием метасимвола 
+
+</p>
+<p>
+ <span class="em_BLCK"><span class="emTEXT">[02468]</span></span>  Четная цифра 
+
+</p>
+<p>
+ <span class="em_BLCK"><span class="emTEXT">[^\d]</span></span>  Всё, кроме цифр (аналог метасимвола <span class="em_BLCK">\D</span>) 
+
+</p>
+<p>
+ <span class="em_BLCK"><span class="emTEXT">[a^b]</span></span>  Любой из символов "a", "b", "^". Заметьте, что здесь символ "^" не имеет какого-либо специального значения, потому что стоит не на первой позиции внутри квадратных скобок 
+
+</p>
+<a id="drugie_metasimvoly"></a><h3>Другие метасимволы</h3>
+<p>
+Теперь необходимо рассмотреть ещё несколько метасимволов. Как уже было сказано ранее, все они работают только вне секций описаний подмножеств символов (вне квадратных скобок).
+
+</p>
+<p>
+<span class="em_BLCK">Символы "^" и "$"</span>. Они используются для того, чтобы указать парсеру регулярных выражений на положение искомого текста в строке. Символ "<span class="em_BLCK">^</span>" указывает, что искомый текст должен находиться в начале строки, символ "<span class="em_BLCK">$</span>" наоборот, указывает, что искомый текст должен находиться в конце строки. Посмотрим, как это работает на примере:
+
+</p>
+<p>
+Допустим, у нас есть текст:
+
+</p>
+<p>
+12 aaa bbb
+
+</p>
+<p>
+aaa 27 ccc
+
+</p>
+<p>
+aaa aaa 45
+
+</p>
+<p>
+И регулярное выражение для поиска чисел в этом тексте: "(?m)\d\d" (не обращайте пока внимание на "(?m)"). Поиск по этому регулярному выражению вернёт нам 3 значения: "12", "27", "45". Теперь ограничим поиск, указав, где именно внутри строки должен располагаться текст: "(?m)^\d\d". Здесь результат будет только один - "12", потому что только это число располагается в начале строки. Аналогично, регулярное выражение "(?m)\d\d$" вернёт результат "45".
+
+</p>
+<p>
+<span class="em_BLCK">Символ точки (".")</span>. Этот метасимвол указывает, что на данном месте в строке может находиться любой символ (за исключением символа перевода строки). Очень удобно использовать его, если вам нужно "пропустить" какую-нибудь букву в слове при проверке. Например, регулярное выражение ".bc" найдёт в тексте и "abc" и "Abc" и "Zbc" и "5bc".
+
+</p>
+<p>
+<span class="em_BLCK">Символ вертикальной черты ("|")</span>. Используется для задания списка альтернатив. Например, регулярное выражение "(красное|зелёное) яблоко" найдёт в тексте все словосочетания "красное яблоко" и "зелёное яблоко". О значении круглых скобок в этом выражении см. далее.
+
+</p>
+<p>
+<span class="em_BLCK">Символы круглых скобок ("(" и ")")</span>. Эти символы позволяют получить из искомой строки дополнительную информацию. Обычно, если парсер регулярных выражений ищет в тексте информацию по заданному выражению и находит её - он просто возвращает найденную строку. Однако, если он встречает внутри регулярного выражения круглые скобки, то он рассматривает содержимое этих скобок как ещё одно регулярное выражение, по которому необходимо произвести поиск. Парсер рекурсивно вызывает сам себя для поиска по новому регулярному выражению и использует результаты поиска для дальнейшей обработки основного регулярного выражения. При этом, если поиск хотя бы по одному из внутренних регулярных выражений не увенчался успехом - поиск по всему регулярному выражению считается безуспешным.
+
+</p>
+<p>
+Чтобы было понятнее, о чем я только что рассказал - рассмотрим в качестве примера то, как работает парсер регулярных выражений в случае приведённого выше регулярного выражения о яблоках: "(красное|зелёное) яблоко".
+
+</p>
+<ul>
+<li>
+ Парсер начинает разбор регулярного выражения и встречает выражение в скобках: "(красное|зелёное)".
+</li>
+<li>
+ Парсер вызывает себя для поиска по найденному регулярному выражению.
+</li>
+<li>
+ Получив результаты поиска, парсер подставляет по очереди каждый из полученных результатов на место выражения в скобках и смотрит, удовлетворяет ли найденный результат всем условиям основного регулярного выражения (в данном случае смотрит, есть ли после найденного слова слово "яблоко").
+</li>
+<li>
+ Если всё в порядке - результаты поиска по каждому из имеющихся регулярных выражений для этого случая возвращаются, если нет - парсер просто переходит к следующему найденному фрагменту. Результат поиска внутреннего регулярного выражения для этого фрагмента при этом теряется.
+</li>
+</ul>
+<p>
+ яблоко красное и зелёное яблоко и ещё одно красное яблоко и ещё одно яблоко, зелёное 
+
+</p>
+<p>
+Поиск по внутреннему регулярному выражению даст 4 результата (выделены жирным шрифтом):
+
+</p>
+<p>
+ яблоко <span class="em_BLCK">красное</span> и <span class="em_BLCK">зелёное</span> яблоко и ещё одно <span class="em_BLCK">красное</span> яблоко и ещё одно яблоко, <span class="em_BLCK">зелёное</span> 
+
+</p>
+<p>
+Однако поиск по всему регулярному выражению даст всего 2 результата, потому как в остальных случаях условия основного регулярного выражения не выполняются:
+
+</p>
+<p>
+ яблоко красное и <span class="em_BLCK">зелёное яблоко</span> и ещё одно <span class="em_BLCK">красное яблоко</span> и ещё одно яблоко, зелёное 
+
+</p>
+<p>
+Необходимо заметить, что для этих двух случаев будет возвращён не только результат поиска по основному регулярному выражению, но и результат поиска по внутреннему регулярному выражению для каждого из найденных фрагментов. В большинстве случаев это полезно (пример - чуть позднее), но иногда наоборот, лучше избавиться от лишних результатов. В этом случае необходимо добавить <span class="em_BLCK">символы "?:"</span> непосредственно после открывающейся круглой скобки: "(?:красное|зелёное) яблоко".
+
+</p>
+<p>
+Теперь пример, когда получение результатов внутренних регулярных выражений может быть полезным. Допустим, нам необходимо проверить, является ли строка семизначным телефонным номером с указанием кода города, и получить из неё код города и номер телефона:
+
+</p>
+<p>
+ \((\d{3,5})\)\s+(\d{3}-\d{2}-\d{2}) 
+
+</p>
+<p>
+Некоторые из примененных здесь метасимволов вам ещё неизвестны и будут рассмотрены чуть позднее. Давайте рассмотрим этот regexp подробнее.
+
+</p>
+<p>
+Первая круглая скобка здесь теряет свое специальное значение и будет рассматриваться как обычный символ:
+
+</p>
+<p>
+ <span class="em_BLCK">\(</span>(\d{3,5})\)\s+(\d{3}-\d{2}-\d{2}) 
+
+</p>
+<p>
+Далее идёт регулярное выражение в скобках (проверка кода города):
+
+</p>
+<p>
+ \(<span class="em_BLCK"><span class="emOPRT">(</span>\d{3,5})</span>\)\s+(\d{3}-\d{2}-\d{2}) 
+
+</p>
+<p>
+После этого идёт закрывающая круглая скобка, которая также лишена своего специального значения из-за символа обратного слэша, стоящего перед ней:
+
+</p>
+<p>
+ \((\d{3,5})<span class="em_BLCK">\)</span>\s+(\d{3}-\d{2}-\d{2}) 
+
+</p>
+<p>
+Затем идёт пропуск пустого места:
+
+</p>
+<p>
+ \((\d{3,5})\)<span class="em_BLCK">\s+</span>(\d{3}-\d{2}-\d{2}) 
+
+</p>
+<p>
+И ещё одно регулярное выражение в скобках, которое проверяет номер телефона:
+
+</p>
+<p>
+ \((\d{3,5})\)\s+<span class="em_BLCK"><span class="emOPRT">(</span>\d{3}-\d{2}-\d{2})</span> 
+
+</p>
+<p>
+Как видите, здесь есть 3 регулярных выражения - основное и два внутренних. При этом основное выражение позволяет нам проверить, имеет ли строка необходимый нам формат, а два внутренних - получить соответственно код города и номер телефона. Т.е. одним регулярным выражением мы можем решить сразу несколько задач!
+
+</p>
+<p>
+Посмотрим, как работает это регулярное выражение. Пусть у нас есть строка: "My phone is (095) 123-45-67". 
+
+</p>
+<p>
+ Результатами поиска будут 3 строки:
+
+</p>
+<p>
+"(095) 123-45-67"
+
+</p>
+<p>
+"095"
+
+</p>
+<p>
+"123-45-67"
+
+</p>
+<p>
+Нам осталось рассмотреть ещё одну группу метасимволов, определяющих количественные показатели (т.н. <span class="em_BLCK">квантификаторы</span>). Как вы уже могли заметить ранее - очень часто бывает необходимо указать, что какой-то символ должен повторяться определённое количество раз. Конечно, можно просто указать его необходимое количество раз непосредственно в строке, но это, естественно не выход. Тем более, что очень часто встречаются ситуации, когда точное количество символов неизвестно. Поэтому синтаксис регулярных выражений содержит набор метасимволов, предназначенных именно для решения подобных задач. Каждый из описанных ниже метасимволов определяет количественную характеристику символа, который находится <span class="em_BLCK">непосредственно</span> перед ним.
+
+</p>
+<p>
+<span class="em_BLCK">Звездочка ("*")</span>. Указывает, что символ должен быть повторен 0 или более раз (т.е. символ может отсутствовать или присутствовать в любых количествах). Пример: выражение "ab*c" найдёт строки "ac", "abc", "abbc" и т.д.
+
+</p>
+<p>
+<span class="em_BLCK">Плюс ("+")</span>. Указывает, что символ должен быть повторен 1 или более раз (т.е. символ обязан присутствовать, и может присутствовать в любых количествах). Пример: выражение "ab+c" найдёт строки "abc", "abbc", "abbbc" и т.д., но не найдёт строку "ac".
+
+</p>
+<p>
+<span class="em_BLCK">Символ вопроса ("?")</span>. Указывает, что символ может как присутствовать, так и нет, но при этом не может повторяться более одного раза. Пример: выражение "ab?c" найдёт строки "ac" и "abc", но не найдёт строку "abbc".
+
+</p>
+<p>
+<span class="em_BLCK">Фигурные скобки ("{" и "}")</span>. Определяют количественную характеристику символа. Внутри скобок через запятую перечисляются минимальное и максимальное количество повторений символа. При этом любой из параметров может быть опущен, а, кроме того, можно задать точное количество повторений, указав только одно число.
+
+</p>
+<p>
+Примеры:
+
+</p>
+<ul>
+<li>
+ {2,4} - символ должен повториться минимум 2 раза, но не более 4.
+</li>
+<li>
+ {,5} - символ может отсутствовать (т.к. не задано минимальное количество повторений), но если присутствует, то не должен повторяться более 5 раз.
+</li>
+<li>
+ {3,} - символ должен повторяться минимум 3 раза, но может быть и больше.
+</li>
+<li>
+ {4} - символ должен повторяться ровно 4 раза.
+</li>
+</ul>
+<a id="modifikatory_reguljarnyx_vyrazhenij"></a><h3>Модификаторы регулярных выражений</h3>
+<p>
+Механизм регулярных выражений позволяет добавлять модификаторы, влияющие на обработку регулярного выражения.
+
+</p>
+<p>
+Запись модификаторов производится посредством указания последовательности "(?модификатор)". Для отмены действия модификатора используется запись "(?-модификатор)".
+
+</p>
+<p>
+ <span class="em_BLCK">i</span>  Включение режима case-insensitive, т.е. большие и маленькие буквы в выражении не различаются. 
+
+</p>
+<p>
+ <span class="em_BLCK">m</span>  Указывает на то, что текст, по которому ведётся поиск, должен рассматриваться как состоящий из нескольких строк. По умолчанию механизм регулярных выражений рассматривает текст как одну строку вне зависимости от того, чем она является на самом деле. Соответственно метасимволы "<span class="em_BLCK">^</span>" и "<span class="em_BLCK">$</span>" указывают на начало и конец всего текста. Если же этот модификатор указан, то они будут указывать соответственно на начало и конец каждой строки текста. 
+
+</p>
+<p>
+ <span class="em_BLCK">s</span>  По-умолчанию, метасимвол "." не включает в свое определение символ перевода строки. Т.е. для многострочного текста выражение ".+" вернёт только первую строку, а не весь текст, как ожидается. Указание этого модификатора снимает это ограничение. 
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Назад: Регулярные выражения (справка)</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_snippet.html" class="emHREFTT">&lt; Назад, к странице 67</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/sidebar.html" class="emHREFTT">Вперёд, к странице 69 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

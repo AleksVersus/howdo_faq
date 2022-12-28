@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_tuples.html" class="emHREFTT">&lt; Назад, к странице 45</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_fajl_nastroek_igry_v_quest_navigator.html" class="emHREFTT">Вперёд, к странице 47 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Назад: Программный код</a>
+
+</p>
+<a id="help_arrays"></a><h2>Массивы</h2>
+<p>
+<a id="massivy"></a>
+
+</p>
+<a id="ЪшЁJ"></a><h3>Зачем нужны массивы</h3>
+<p>
+Иногда нам становится неудобно хранить множество однотипных значений в разных переменных. Например, у нас есть двадцать "одноручных мечей" и для каждого мы прописали урон в двадцати разных переменных:
+
+</p>
+<div class="Monokai-Code">
+меч_одноручный_1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">23</span><br>
+меч_одноручный_2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">34</span><br>
+меч_одноручный_3&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">27</span><br>
+<span class="Monokai-Command">...<br>
+</span>меч_одноручный_19&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
+меч_одноручный_20&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">41</span><br>
+
+
+</div>
+<p>
+Даже для того, чтобы просто вывести на экран данную характеристику для каждого меча, нам придётся написать двадцать строчек кода, почти ничем не отличающихся:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№1.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный_1<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№2.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный_2<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№3.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный_3<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Command">...<br>
+</span><span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№19.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный_19<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№20.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный_20<span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+И всё бы ничего, но что если нам нужно найти среди всех этих переменных ту, которая содержимт максимальное число (мы ведь хотим пользоваться самым хорошим мечом)? Тут нам придётся городить огромную конструкцию условий, которая сравнивает каждую переменную со всеми остальными, и объём необходимого нам кода возрастает многократно.
+
+</p>
+<p>
+Да, есть некоторые варианты решения этих двух задач без использования массивов, но они тоже весьма сложны. Куда как проще работать с однотипными данными, если они представлены в форме массива.
+
+</p>
+<p>
+Если переменную мы можем вообразить в виде отдельной маленькой коробки, в которую можно положить лишь одно значение, то массив — это большой шкаф, со множеством пронумерованных ящиков (ячеек), в каждый из которых мы можем положить по одному значению.
+
+</p>
+<a id="ыгвя"></a><h3>Что такое массивы</h3>
+<p>
+<span class="em_BLCK">Массив</span> - в <span class="em_BLCK">QSP</span> это последовательный набор однотипных значений, записанных под одним общим именем. Например, вместо того, чтобы помещать урон каждого одноручного меча в отдельную переменную, мы заводим один массив, и размещаем каждое значение урона в отдельных ячейках этого самого одного единственного массива:
+
+</p>
+<div class="Monokai-Code">
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">23</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;нумерация&nbsp;ячеек&nbsp;массива&nbsp;начинается&nbsp;с&nbsp;нуля</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">34</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">27</span><br>
+<span class="Monokai-Command">...<br>
+</span>меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">18</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">41</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;значение&nbsp;для&nbsp;двадцатого&nbsp;меча&nbsp;лежит&nbsp;в&nbsp;ячейке&nbsp;под&nbsp;номером&nbsp;19</span><br>
+
+
+</div>
+<p>
+Как видно из примера, чтобы записать значение в отдельную ячейку массива, мы должны:
+
+</p>
+<ul>
+<li>
+написать имя массива
+</li>
+<li>
+затем без пробелов, не отступая от имени массива, в квадратных скобках написать номер ячейки, в которую хотим поместить значение
+</li>
+<li>
+затем поставить знак <span class="em_BLCK">=</span> (операция присвавивания)
+</li>
+<li>
+и уже после знака равно написать нужное значение.
+</li>
+</ul>
+<p>
+В нашем примере массив называется "меч_одноручный", а в квадратных скобках мы указываем номера ячеек этого массива.
+
+</p>
+<a id="хctЯ"></a><h4>Создание массива</h4>
+<p>
+Записывая значения хотя бы в одну ячейку массива, мы тем самым <span class="em_BLCK">создаём</span> (инициализируем) весь массив.
+
+</p>
+<ul>
+<li>
+Ячейки массива так же называются <span class="em_BLCK">элементами</span>.
+</li>
+<li>
+Каждый массив состоит из множества элементов, и у каждого элемента есть собственный номер.
+</li>
+<li>
+Номера элементов начинаются с нуля и не повторяются.
+</li>
+<li>
+Нумерация элементов массива не прерывается. То есть, например, не может в массиве существовать четвёртый элемент, но отсутствовать второй и третий элемент. Если мы создадим только нулевой и первый, а так же четвёртый, элементы массива, второй и третий элементы будут созданы автоматически:
+<div class="Monokai-Code">
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">13</span><br>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span><br>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+<span class="Monokai-Comment">!&nbsp;элементы&nbsp;mass[2]&nbsp;и&nbsp;mass[3]&nbsp;созданы&nbsp;автоматически&nbsp;и&nbsp;хранят&nbsp;значения&nbsp;по&nbsp;умолчанию</span><br>
+
+
+</div>
+</li>
+<li>
+Максимальный возможный номер ячейки массива <span class="em_BLCK"><span class="emNUM">2147483647</span></span>.
+</li>
+</ul>
+<a id="qЁsЬ"></a><h4>Типы данных в массивах</h4>
+<p>
+Массив можно представлять себе как список значений. Если вам нужно хранить только одно значение, достаточно обычной переменной, но если вам нужно сохранить множество значений, как некий список, то обязательно используйте массив. Например, вы можете вести список имён всех встреченных персонажей:
+
+</p>
+<div class="Monokai-Code">
+$встреченные_неписи<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Домовёнок&nbsp;Нафаня"</span><br>
+$встреченные_неписи<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Девочка&nbsp;Оля"</span><br>
+$встреченные_неписи<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Лариса&nbsp;Петровна"</span><br>
+$встреченные_неписи<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Баба&nbsp;Яга"</span><br>
+
+
+</div>
+<p>
+В данном примере мы помещали в массив строковые значения. Чтобы поместить в ячейку массива текстовое значение, нужно поставить перед именем массива символ <span class="em_BLCK">$</span>.
+
+</p>
+<p>
+То же самое и в случае, когда мы хотим получить значение из ячейки массива: если мы хотим получить числовое значение ячейки массива, символ <span class="em_BLCK">$</span> перед именем массива не ставится; если мы хотим получить строковое значение ячейки массива, нужно поставить символ <span class="em_BLCK">$</span> перед именем массива.
+
+</p>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'антоновка'</span><br>
+$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'белый&nbsp;налив'</span><br>
+$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'астраханское'</span><br>
+$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'ранетка'</span><br>
+$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'симиренко'</span><br>
+<br>
+сорт_яблока<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
+сорт_яблока<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">2</span><br>
+сорт_яблока<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">4</span><br>
+<br>
+<span class="Monokai-Operator">*pl</span>&nbsp;$яблоки<span class="Monokai-Operator">[</span>сорт_яблока<span class="Monokai-Operator">[</span>номер_яблока<span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+В одном массиве допускается хранить и строковые, и числовые значения, однако строго рекомендуется хранить в одном массиве только значения одного типа: либо строковые, либо числовые, — во избежание возможных <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_bag" style="text-decoration:none;" class="emFOLD">багов</a>.
+
+</p>
+<p>
+В одной ячейке массива можно хранить либо только строковое, либо только числовое значение! Если вы запишете в ячейку, хранящую строкове значение, числовое — это числовое значение "затрёт" строковое. И наоборот.
+
+</p>
+<a id="MЛqС"></a><h4>Обработка массивов</h4>
+<p>
+Преимущество работы с массивами по сравнению с обычными переменными раскрывается тогда, когда нам приходится много раз повторять одну и ту же операцию над однотипными значениями.
+
+</p>
+<p>
+В примере из начала статьи мы помещали наносимый одноручным мечом урон для двадцати разных мечей в двадцать отдельных переменных и видели, что даже такая простая операция, как вывод значений всех этих переменных на экран требует огромного количества кода. Совсем другое дело, когда мы поместили наши данные в массив, ведь мы можем перебрать весь массив с помощью простого цикла:
+
+</p>
+<div class="Monokai-Code">
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">23</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;нумерация&nbsp;ячеек&nbsp;массива&nbsp;начинается&nbsp;с&nbsp;нуля</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">34</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">27</span><br>
+<span class="Monokai-Command">...<br>
+</span>меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">18</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
+меч_одноручный<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">41</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;значение&nbsp;для&nbsp;двадцатого&nbsp;меча&nbsp;лежит&nbsp;в&nbsp;ячейке&nbsp;под&nbsp;номером&nbsp;19</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;список&nbsp;с&nbsp;помощью&nbsp;цикла</span><br>
+<span class="Monokai-Koperator">loop</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">20</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Меч&nbsp;одноручный&nbsp;№&lt;&lt;i+1&gt;&gt;.&nbsp;Урон:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+В этом примере для вывода на экран всех значений из всех двадцати ячеек массива нам потребовалось написать всего три строчки кода.
+
+</p>
+<p>
+А вот как выглядит поиск одноручного меча с наибольшим значением урона:
+
+</p>
+<div class="Monokai-Code">
+pos&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'меч_одноручный'</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'меч_одноручный'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Наибольший&nbsp;урон&nbsp;имеет&nbsp;Меч&nbsp;одноручный&nbsp;№&lt;&lt;pos+1&gt;&gt;:&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>меч_одноручный<span class="Monokai-Operator">[</span>pos<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+В обоих этих примерах вместо указания конкретного номера ячейки массива, при получении данных из массива, мы подставляли значение переменной. Именно эта возможность позволяет так легко и быстро обрабатывать множество данных в массивах, и делает работу с ними более удобной, чем с обычными переменными.
+
+</p>
+<a id="ФнVH"></a><h4>Индексирование элементов массива</h4>
+<p>
+Выше мы писали, что ячейки массивов нумеруются подряд, начиная с нуля, и нумерация эта не прерывается. Номер ячейки массива называется <span class="em_BLCK">числовым индексом ячейки массива</span>.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;ячейки&nbsp;массивов&nbsp;индексируются&nbsp;через&nbsp;числа</span><br>
+$любимый_сорт<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+любимое_число<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+$item_loc<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'лес'</span><br>
+
+
+</div>
+<p>
+<span class="em_BLCK">Важно!</span> Настоятельно не рекомендуется использовать большие числовые индексы без необходимости.
+
+</p>
+<p>
+<span class="em_BLCK">QSP</span> позволяет создавать для элементов массивов не только числовые, но и строковые индексы. Иными словами массивы могут индексироваться через строки. Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;ячейки&nbsp;массивов&nbsp;индексируются&nbsp;через&nbsp;строки</span><br>
+$любимый_сорт<span class="Monokai-Operator">[</span><span class="Monokai-String">'Иван'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
+любимое_число<span class="Monokai-Operator">[</span><span class="Monokai-String">'Алексей'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
+$item_loc<span class="Monokai-Operator">[</span><span class="Monokai-String">'палка'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'лес'</span><br>
+
+
+</div>
+<p>
+Регистр символов в строковом индексе массива значения не имеет:
+
+</p>
+<div class="Monokai-Code">
+$любимый_сорт<span class="Monokai-Operator">[</span><span class="Monokai-String">'иван'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Антоновка'</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;$любимый_сорт<span class="Monokai-Operator">[</span><span class="Monokai-String">'ИВАН'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;`Антоновка`</span><br>
+
+
+</div>
+<p>
+Есть небольшая хитрость в том, как назначаются строковые индексы ячейкам массивов. Когда вы инициализируете (создаёте; объявляете) новую ячейку массива со строковым индексом, происходит следующее:
+
+</p>
+<ul>
+<li>
+Плеер создаёт новую ячейку с новым числовым индексом, следующим по порядку. Например, если в массиве уже были созданы три ячейки, создаётся ячейка с числовым индексом <span class="em_BLCK"><span class="emNUM">3</span></span>.
+</li>
+<li>
+Затем плеер "прикрепляет" указанный строковый индекс к числовому.
+</li>
+</ul>
+<p>
+Поэтому, если вы создаёте ячейку со строковым индексом, вы можете получать из неё значения в том числе и по числовому индексу:
+
+</p>
+<div class="Monokai-Code">
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Паши'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">37</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Даши'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Лёши'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">11</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`37`</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`19`</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`11`</span><br>
+
+
+</div>
+<p>
+Настоятельно рекомендуется использовать для индексирования или только числовые индексы, или только строковые индексы.
+
+</p>
+<p>
+Текстовые индексы позволяют обойти ограничение массивов на начало нумерации только с нуля:
+
+</p>
+<div class="Monokai-Code">
+$item<span class="Monokai-Operator">[</span><span class="Monokai-String">'-2'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Палка'</span><br>
+$item<span class="Monokai-Operator">[</span><span class="Monokai-String">'-1'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Дрель'</span><br>
+$item<span class="Monokai-Operator">[</span><span class="Monokai-String">'0'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Радиоактивный&nbsp;пепел'</span><br>
+
+
+</div>
+<a id="Ькиа"></a><h4>Многомерные массивы</h4>
+<p>
+В <span class="em_BLCK">QSP</span> есть возможность создавать многомерные массивы, используя для этого специальные индексы:
+
+</p>
+<div class="Monokai-Code">
+$map<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'лес'</span><br>
+$map<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'лес'</span><br>
+$map<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'лес'</span><br>
+$map<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'река'</span><br>
+
+
+</div>
+<p>
+В данном примере в квадратных скобках вместо номера ячейки мы указываем числа, перечисляемые через запятую. Таким образом мы создаём ячейки <span class="em_BLCK">двумерного</span> массива.
+
+</p>
+<p>
+Числа в квадратных скобках — это строка значений, или <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK">кортеж</span></a>. Далее по тексту мы будем называть их строкой значений.
+
+</p>
+<p>
+Используя для индексации элементов массивов строку значений, мы можем создавать трёхмерные, четырёхмерные, и вообще сколькиугодно-мерные массивы:
+
+</p>
+<div class="Monokai-Code">
+$space<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'космический&nbsp;корабль'</span><br>
+value_time<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">33</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">366</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">137</span><br>
+макрокосмос_миллиардов_микрокосм<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">34</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">98</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">76</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">30</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">137</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">991112</span><br>
+
+
+</div>
+<p>
+Для многомерных индексов можно использовать не только числовые значения, но и строковые:
+
+</p>
+<div class="Monokai-Code">
+данные<span class="Monokai-Operator">[</span><span class="Monokai-String">'таблица_данных'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">73</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'Паша'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'левый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">91</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'Миша'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'правый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10</span><br>
+$map<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">14</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'слой_подземелья'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"стена"</span><br>
+
+
+</div>
+<p>
+Есть небольшая хитрость в том, как назначаются многомерные индексы ячейкам массивов. Когда вы инициализируете (создаёте; объявляете) новую ячейку массива с многомерным индексом, происходит следующее:
+
+</p>
+<ul>
+<li>
+Плеер создаёт новую ячейку с новым <span class="em_BLCK">числовым</span> индексом, следующим по порядку. Например, если в массиве уже были созданы семь ячеек, создаётся ячейка с числовым индексом <span class="em_BLCK"><span class="emNUM">7</span></span>.
+</li>
+<li>
+Затем плеер "прикрепляет" указанный многомерный индекс к числовому.
+</li>
+</ul>
+<p>
+Поэтому, если вы создаёте ячейку с многомерным индексом, вы можете получать из неё значения в том числе и по числовому индексу:
+
+</p>
+<div class="Monokai-Code">
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Паши'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'левый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">37</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Паши'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'правый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Лёши'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'левый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">11</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'у&nbsp;Лёши'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'правый&nbsp;карман'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">19</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`37`</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`5`</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`11`</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;число&nbsp;`19`</span><br>
+
+
+</div>
+<p>
+Настоятельно рекомендуется использовать для индексирования или только числовые индексы, или только многомерные индексы.
+
+</p>
+<a id="НЧХё"></a><h4>Упрощённый доступ к ячейкам массивов</h4>
+<p>
+На самом деле каждая переменная в QSP является массивом, состоящим из одной единственной ячейки:
+
+</p>
+<div class="Monokai-Code">
+яблоки&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Comment">!эквивалентно</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
+
+
+</div>
+<p>
+то есть, если мы создаём переменную с именем "яблоко", мы тем самым создаём массив с именем "яблоко", состоящий из одной ячейки.
+
+</p>
+<p>
+Таким образом вы всегда можете получить или присвоить данные нулевой ячейке массива, просто указав его имя:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;нулевой&nbsp;ячейке&nbsp;массива&nbsp;`$counter`&nbsp;строковое&nbsp;значение</span><br>
+<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'счётчик'</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем</span><br>
+<span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;нулевым&nbsp;ячейкам&nbsp;массивов&nbsp;red,&nbsp;green,&nbsp;blue&nbsp;значения</span><br>
+<span class="Monokai-Operator">set</span>&nbsp;red<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>green<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>blue<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">234</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">198</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">77</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"red:&nbsp;&lt;&lt;red&gt;&gt;,&nbsp;green:&nbsp;&lt;&lt;green&gt;&gt;,&nbsp;blue:&nbsp;&lt;&lt;blue&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;проверяем</span><br>
+
+
+</div>
+<p>
+Существует упрощённый синтаксис чтения последнего и добавления нового элемента в массив. Для этого квадратные скобки пишутся без указания индекса:
+
+</p>
+<ul>
+<li>
+ при записи значения в массив будет создан новый элемент сразу за последним. Например: 
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;Если&nbsp;массив&nbsp;был&nbsp;пустой,&nbsp;то</span><br>
+$objs<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Напильник'</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;$objs[0]&nbsp;=&nbsp;'Напильник'</span><br>
+$objs<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Топор'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;$objs[1]&nbsp;=&nbsp;'Топор'</span><br>
+$objs<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Доска'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;$objs[2]&nbsp;=&nbsp;'Доска'</span><br>
+
+
+</div>
+</li>
+<li>
+ при получении значенияиз массива будет выбран последний элемент. Например: 
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;$objs<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;'Доска'&nbsp;из&nbsp;примера&nbsp;выше</span><br>
+
+
+</div>
+</li>
+</ul>
+<a id="funkcii_i_operatory"></a><h3>Функции и операторы для работы с массивами</h3>
+<ul>
+<li>
+ <span class="em_BLCK"><span class="emOPRT">KILLVAR</span></span> [$имя_массива],[индекс_элемента] - удаление элемента с индексом [индекс_элемента] из массива с названием [$имя_массива]. Название массива всегда нужно
+<br>	```qsp
+<br>	! удаление по числовому индексу
+<br>	killvar 'яблоко',3
+<br>	! удаление элемента по строковому индексу
+<br>	killvar '$item_loc','палка'
+<br>	! удаление элемента по многомерному индексу
+<br>	killvar '$space',(0,-2,9)
+<br>	```
+<ul>
+<li>
+ Если индекс элемента не указан, то удаляется весь массив.
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;массив&nbsp;$map&nbsp;целиком</span><br>
+<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$map'</span><br>
+
+
+</div>
+</li>
+<li>
+ Если оператор вызван без аргументов, то удаляются все массивы и переменные в игре!
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;удаляем&nbsp;все&nbsp;массивы&nbsp;и&nbsp;переменные</span><br>
+<span class="Monokai-Operator">KILLVAR</span><br>
+
+
+</div>
+</li>
+<li>
+ При удалении элемента все следующие за ним элементы сдвигаются на позицию вверх.
+<div class="Monokai-Code">
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><br>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-String">'a'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Comment">!теперь&nbsp;массив&nbsp;выглядит&nbsp;так:</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><br>
+a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">KILLALL</span></span> - оператор эквивалентен конструкции "KILLVAR &amp; KILLOBJ", то есть удаляет все переменные, массивы в игре, а так же очищает Окно предметов. Обычно применяется в начале игры, чтобы при возврате в начальную локацию после неудачного прохождения какого-то этапа игры обнулить все переменные (в противном случае, может оказаться, что запертые двери уже открыты, жена похищена до свадьбы, а Баба-Яга уже отдала кому-то нужный клубочек).
+</li>
+<li>
+ <span class="em_BLCK"><span class="emOPRT">COPYARR</span></span> [$приёмник],[$источник],[#начало],[#количество] - копирование в массив-приёмник [#количество] элементов из массива-источника начиная с элемента под номером [#начало]. Размер массива-приёмника при копировании не имеет значения.
+<ul>
+<li>
+ Параметр [#количество] является необязательным. По умолчанию - до конца массива-источника.
+</li>
+<li>
+ Параметр [#начало] является необязательным. По умолчанию - 0
+</li>
+<li>
+ Не имеет значения, указываете ли вы <span class="em_BLCK">$</span> перед названием массива или нет. Копируются элементы и со строковыми, и с числовыми значениями.
+</li>
+<li>
+ Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Operator">COPYARR</span>&nbsp;<span class="Monokai-String">'$a'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'$b'</span><br>
+<span class="Monokai-Operator">COPYARR</span>&nbsp;<span class="Monokai-String">'a'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'b'</span><br>
+<span class="Monokai-Operator">COPYARR</span>&nbsp;$arrname1<span class="Monokai-Operator">,</span>$arrname2<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Operator">COPYARR</span>&nbsp;<span class="Monokai-String">'a&lt;&lt;$arrname1&gt;&gt;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'a&lt;&lt;$arrname2&gt;&gt;'</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">ARRSIZE</span></span>([$имя_массива]) - функция возвращает число элементов массива с названием [$имя_массива].
+<ul>
+<li>
+ Не имеет значения, указываете ли вы <span class="em_BLCK">$</span> перед названием массива или нет. Подсчитывается общее число ячеек и со строковыми, и с числовыми значениями.
+</li>
+<li>
+ Примеры:
+<div class="Monokai-Code">
+n&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">ARRSIZE</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">)</span><br>
+n&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">ARRSIZE</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$a'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!Результат&nbsp;будет&nbsp;одинаковый</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">ARRITEM</span></span>([$имя_массива],[индекс_элемента]) — возвращает значение элемента массива с названием [$имя_массива] по указанному индексу. То есть функция извлекает значение из указанной ячейки массива. Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;выводим&nbsp;значение&nbsp;элемента&nbsp;с&nbsp;индексом&nbsp;3</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;выводим&nbsp;значение&nbsp;элемента&nbsp;с&nbsp;текстовым&nbsp;индексом</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'Петя'</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!&nbsp;выводим&nbsp;значение&nbsp;элемента&nbsp;с&nbsp;многомерным&nbsp;индексом</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Эта функция может быть полезна для извлечения значений, если имя массива заранее не известно. Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;выводим&nbsp;содержимое&nbsp;нескольких&nbsp;массивов&nbsp;без&nbsp;использования&nbsp;dynamic:</span><br>
+$array_name<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'mass_1'</span><br>
+$array_name<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'mass_2'</span><br>
+$array_name<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'mass_3'</span><br>
+$array_name<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'mass_4'</span><br>
+$array_name<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'mass_5'</span><br>
+<span class="Monokai-Comment">!&nbsp;внешний&nbsp;цикл&nbsp;перебирает&nbsp;имена&nbsp;массивов</span><br>
+<span class="Monokai-Koperator">loop</span>&nbsp;<span class="Monokai-Operator">local</span>&nbsp;j<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;j<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$array_name'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;j<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+<span class="Monokai-Comment">!&nbsp;внутренний&nbsp;цикл&nbsp;выводит&nbsp;содержимое&nbsp;массивов</span><br>
+<span class="Monokai-Koperator">loop</span>&nbsp;<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Koperator">while</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span>$array_name<span class="Monokai-Operator">[</span>j<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Koperator">step</span>&nbsp;i<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">arritem</span><span class="Monokai-Operator">(</span>$array_name<span class="Monokai-Operator">[</span>j<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;i<span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">ARRPOS</span></span>([$имя_массива],[значение],[#начало]) - возвращает номер элемента массива с названием [$имя_массива], равного значению [значение]. Поиск начинается с элемента под номером [#начало]; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает <span class="em_BLCK">-1</span>.
+<ul>
+<li>
+ Параметр [#начало] может отсутствовать, при этом он принимается равным <span class="em_BLCK"><span class="emNUM">0</span></span>.
+</li>
+<li>
+ Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!Поиск&nbsp;строки&nbsp;'This'&nbsp;в&nbsp;текстовом&nbsp;массиве&nbsp;"$A"</span><br>
+<span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'This'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!Поиск&nbsp;числа&nbsp;65&nbsp;в&nbsp;массиве&nbsp;"A"&nbsp;(первые&nbsp;два&nbsp;элемента&nbsp;массива&nbsp;игнорируются)</span><br>
+<span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'A'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">65</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!Поиск&nbsp;строки&nbsp;'test'&nbsp;среди&nbsp;значений&nbsp;массива&nbsp;"$B"</span><br>
+<span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$B'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'test'</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+</li>
+<li>
+ Функция возвращает только числовой индекс элемента. Строковый или многомерный индекс с помощью данной функции получить нельзя.
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">MAX</span><span class="emOPRT">(</span></span>[выр1]<span class="em_BLCK">,</span>[выр2]<span class="em_BLCK">,</span> …<span class="em_BLCK"><span class="emOPRT">)</span></span> - возвращает максимальное из значений выражений-аргументов. Если передан один аргумент, то считается, что указано имя массива:
+<div class="Monokai-Code">
+<span class="Monokai-Func">MAX</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;числовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br>
+<span class="Monokai-Func">MAX</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;текстовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"$b"</span><br>
+
+
+</div>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">MIN</span><span class="emOPRT">(</span></span>[выр1]<span class="em_BLCK">,</span>[выр2]<span class="em_BLCK">,</span> …<span class="em_BLCK"><span class="emOPRT">)</span></span> - возвращает минимальное из значений выражений-аргументов. Если передан один аргумент, то считается, что указано имя массива:
+<div class="Monokai-Code">
+<span class="Monokai-Func">MIN</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;числовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br>
+<span class="Monokai-Func">MIN</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;текстовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"$b"</span><br>
+
+
+</div>
+</li>
+<li>
+ <span class="em_BLCK"><span class="emFUNC">ARRCOMP</span></span>([$имя_массива],[$шаблон],[#начало]) - возвращает номер элемента массива [$имя_массива], соответствующего регулярному выражению [$шаблон]. Поиск начинается с элемента с номером [#начало]; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает <span class="em_BLCK">-1</span>.
+<ul>
+<li>
+ Поиск работает только по текстовым массивам (символ '$' в названии массива можно опустить).
+</li>
+<li>
+ Параметр [#начало] может отсутствовать, при этом он принимается равным <span class="em_BLCK"><span class="emNUM">0</span></span>.
+</li>
+<li>
+ Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!Поиск&nbsp;строки&nbsp;'This'&nbsp;среди&nbsp;элементов&nbsp;массива&nbsp;"$A"</span><br>
+<span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'This'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!'Поиск&nbsp;строки,&nbsp;соответствующей&nbsp;регулярному&nbsp;выражению&nbsp;"abc\d+"<br>
+(первые&nbsp;два&nbsp;элемента&nbsp;массива&nbsp;игнорируются)'</span><br>
+<span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'abc\d+'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-Comment">!'аналогично&nbsp;предыдущему&nbsp;примеру,&nbsp;но&nbsp;поиск&nbsp;осуществляется<br>
+по&nbsp;всем&nbsp;элементам&nbsp;массива'</span><br>
+<span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'.*string.*'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span>&nbsp;<br>
+<span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'This'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;эквивалентно&nbsp;1му&nbsp;варианту</span><br>
+
+
+</div>
+</li>
+<li>
+ Функция возвращает только числовой индекс элемента. Строковый или многомерный индекс с помощью данной функции получить нельзя.
+</li>
+</ul>
+</li>
+</ul>
+<p>
+См. также: <a href="https://aleksversus.github.io/howdo_faq/helpful/arrays.html#howto_arrays" style="text-decoration:none;" class="emFOLD">Продвинутое использование массивов</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Вперёд: Строки</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_tuples.html" class="emHREFTT">&lt; Назад, к странице 45</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_fajl_nastroek_igry_v_quest_navigator.html" class="emHREFTT">Вперёд, к странице 47 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

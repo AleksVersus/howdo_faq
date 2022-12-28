@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html" class="emHREFTT">&lt; Назад, к странице 51</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html" class="emHREFTT">Вперёд, к странице 53 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Назад: Условия</a>
+
+</p>
+<a id="help_organizing"></a><h2>Пользовательские функции и процедуры</h2>
+<p>
+<a id="polzovatelskie_funkcii_i_procedury"></a>
+
+</p>
+<a id="ЙnFb"></a><h3>Общая информация о GOSUB и FUNC</h3>
+<p>
+Сам принцип написания игр на QSP предполагает, что игра будет состоять из отдельных блоков кода — локаций. Эти локации могут быть связаны между собой переходами с помощью операторов GOTO и XGOTO. Таким образом в QSP реализуется перемещение по игре, например, перемещение с места на место, или по главам интерактивной истории.
+
+</p>
+<p>
+Однако иногда нам необходимо использовать локации не как локации мест,  не как главы или страницы, а для того, чтобы иметь возможность выполнять повторяющиеся фрагменты кода. Например, мы пишем на нескольких разных локациях действие подъёма яблок. И нам нужно, чтобы это действие добавляло предмет "Яблоки", если мы не поднимали ещё ни одного яблока, увеличивало число яблок у нас в рюкзаке, и уменьшало на соответствующей локации.
+
+</p>
+<p>
+В принципе мы это можем сделать просто копируя на каждую локацию вот такое действие:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Но посмотрите, сколько строчек кода это действие занимает. Семь. Если мы скопируем такое действие два или три раза, это ещё ничего, но что, если нам придётся копировать действие сто раз? Это семь сотен строчек кода. Это попросту увеличивает объём нашей игры в десятки раз. А ведь у нас может быть не одно такое действие.
+
+</p>
+<p>
+Чтобы нам не приходилось писать одинаковый код множество и множество раз, в QSP предусмотрены специальный оператор GOSUB и специальная функция FUNC, которые позволяют нам превращать любые локации в свобственные процедуры и функции. В данном случае мы можем вынести код действия в отдельную локацию, назвать эту локацию "поднять_яблоко", а затем вызывать эту локацию из действия с помощью GOSUB.
+
+</p>
+<p>
+Локация "поднять_яблоко":
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;поднять_яблоко</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Действие, которое мы пишем на любой другой локации:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"поднять_яблоко"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Как видите, всё наше действие сократилось до трёх строчек кода, а сам код подъёма яблока написан нами всего один раз!
+
+</p>
+<p>
+(Подробнее о том, как работает оператор GOSUB вы можете прочитать в разделе ниже).
+
+</p>
+<p>
+Ну а если, предположим, нам нужно написать сразу три действия по подъёму яблок? И все три эти действия отличаются только числом яблок, которые мы поднимаем:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;одно&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;два&nbsp;яблока"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;пять&nbsp;яблок"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Вроде бы код здесь тоже повторяется, но не совсем. Что же делать?
+
+</p>
+<p>
+И для таких ситуаций в QSP уже предусмотрен специальный механизм. Дело в том, что оператор GOSUB позволяет передавать на локацию, которую мы с его помощью вызываем, различные значения. В данном случае нам нужно передавать на локацию "поднять_яблоко", которую мы писали в предыдущем примере, число яблок. В действиях это будет выглядеть вот так:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;одно&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"поднять_яблоко"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;два&nbsp;яблока"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"поднять_яблоко"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;пять&nbsp;яблок"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"поднять_яблоко"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Через запятую после названия локации мы можем перечислять различные значения (строковые и числовые), и эти значения будут переданы на указанную локацию. Однако где на локации "поднять_яблоко" нам искать эти переданные значения?
+
+</p>
+<p>
+Всё просто. Значения, которые мы передаём на локацию таким образом, автоматически помещаются в массив ARGS, в ячейки, начиная с нулевой. И получается, что нам надо искать наше значение в <span class="em_BLCK"><span class="emVAR">ARGS</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;поднять_яблоко</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+Можно передавать до девятнадцати любых значений на локацию и искать их на этой локации в массиве ARGS соответственно в ячейках с нулевой по восемнадцатую. Вот ещё пример передачи аргументов:
+
+</p>
+<p>
+Локация "Приготовить":
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;приготовить</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Я&nbsp;должен&nbsp;приготовить&nbsp;&lt;&lt;$args[0]&gt;&gt;,&nbsp;но&nbsp;не&nbsp;просто&nbsp;&lt;&lt;$args[0]&gt;&gt;,&nbsp;а&nbsp;&lt;&lt;$args[0]&gt;&gt;&nbsp;&lt;&lt;$args[1]&gt;&gt;,&nbsp;чтобы&nbsp;съесть&nbsp;&lt;&lt;$args[2]&gt;&gt;."</span><br>
+
+
+</div>
+<p>
+А вот пример вызова этой локации из действий:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Завтрак"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"Приготовить"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"яичницу"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"с&nbsp;луком"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"на&nbsp;завтрак"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Обед"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"Приготовить"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"гуляш"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"с&nbsp;овощами"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"в&nbsp;обед"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Ужин"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"Приготовить"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"салат"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"с&nbsp;креветками"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"на&nbsp;ужин"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<p>
+Иногда нам нужно не только передать данные на локацию, но и получить с неё какие-то данные назад. Для этого случая нужно воспользоваться специальной функцией FUNC.
+
+</p>
+<p>
+Как и GOSUB, эта функция вызывает локацию, чтобы выполнить на ней какой-то код, однако, в отличие от GOSUB, FUNC может вернуть значение из локации.
+
+</p>
+<p>
+Чтобы локация, вызванная с помощью FUNC, вернула какое-то значение, мы должны на этой локации присвоить это значение переменной RESULT. Например, мы хотим написать локацию, на которую будем передавать число, и чтобы эта локация возвращала нам квадрат переданного числа (то есть число умноженное на само себя). Назовём эту локацию "sqr":
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;sqr</span><br>
+<span class="Monokai-SysVar">result</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">*</span><span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+Как видите, на локации "sqr" мы умножаем число из <span class="em_BLCK"><span class="emVAR">ARGS</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> само на себя, а затем результат присваиваем переменной RESULT. Именно значение из переменной RESULT локация "sqr" вернёт с помощью функции FUNC на любой другой локации:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'sqr'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;4</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'sqr'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;9</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'sqr'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;16</span><br>
+
+
+</div>
+<p>
+Во всех приведённых примерах функцией является <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, а оператором — <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>, однако для удобства допустимо называть функциями именно локации, которые мы вызываем с помощью <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> или <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>. Например: «Я написал функцию "поднять_яблоко"».
+
+</p>
+<a id="вQLе"></a><h3>Описание GOSUB</h3>
+<p>
+<strong>GOSUB</strong> — выполнение кода указанной локации без непосредственного перехода на неё.
+
+</p>
+<p>
+Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOSUB</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;18]</span><br>
+
+
+</div>
+<p>
+, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Значения <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в ячейки массива <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. После обработки локации предыдущие значения <span class="em_BLCK"><span class="emVAR">ARGS</span></span> восстанавливаются. Использование аргументов не обязательно.
+
+</p>
+<p>
+Оператор имеет краткую форму <span class="em_BLCK"><span class="emOPRT">GS</span></span>:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;18]</span><br>
+
+
+</div>
+<p>
+Допустимо помещать название локации и аргументы в скобки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOSUB</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;18]</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+При вызове указанной локации с помощью <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> происходит следующее:
+
+</p>
+<ul>
+<li>
+ Плеер прерывает выполнение текущего кода (например, кода текущей локации), и обращается к указанной локации
+</li>
+<li>
+ Базовое описание и список действий указанной локации добавляются к описанию и действиям текущей локации.
+</li>
+<li>
+ Выполненяется код из поля <span class="em_BLCK">Выполнить при посещении</span>
+</li>
+<li>
+ Затем плеер возвращается к выполнению кода, который прервал, к команде сразу после оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>.
+</li>
+</ul>
+<p>
+На каждой локации автоматически создаётся собственный уникальный массив <span class="em_BLCK"><span class="emVAR">ARGS</span></span>, поэтому значения в этом массиве для каждой локации будут свои собственные. После выполнения кода локации, вызванной по <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>, массив <span class="em_BLCK"><span class="emVAR">ARGS</span></span> этой локации уничтожается.
+
+</p>
+<p>
+Обратите внимание! Значения из массива <span class="em_BLCK"><span class="emVAR">ARGS</span></span> с локации, вызванной через GOSUB, не транслируются в блоки <span class="em_BLCK"><span class="emOPRT">ACT</span></span>. В блоки <span class="em_BLCK"><span class="emOPRT">ACT</span></span> транслируются значения <span class="em_BLCK"><span class="emVAR">ARGS</span></span> из текущей локации, т.е. локации, на которую был осуществлён переход с помощью операторов `GOTO<strong>/</strong>'XGOTO`.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#начало</span><br>
+<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'локация&nbsp;начало'</span><br>
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'переход'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'локация&nbsp;переход'</span><br>
+<span class="Monokai-Operator">-</span><br>
+<br>
+<span class="Monokai-StartLoc">#переход</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;На&nbsp;экран&nbsp;выведется&nbsp;'локация&nbsp;переход'</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Перейти'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;если&nbsp;нажмётё&nbsp;действие,&nbsp;увидите&nbsp;текст&nbsp;'локация&nbsp;начало'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">-</span><br>
+
+
+</div>
+<p>
+Другие примеры:
+
+</p>
+<div class="Monokai-Code">
+<br>
+<span class="Monokai-Comment">!&nbsp;обработка&nbsp;локации&nbsp;"ход"</span><br>
+<span class="Monokai-Comment">!&nbsp;На&nbsp;локацию&nbsp;не&nbsp;переадются&nbsp;аргументы</span><br>
+<span class="Monokai-Comment">!&nbsp;массив&nbsp;ARGS&nbsp;пуст</span><br>
+<span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-String">'ход'</span><br>
+<br>
+<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;с&nbsp;названием&nbsp;из&nbsp;переменной&nbsp;$location</span><br>
+<span class="Monokai-Comment">!Передаётся&nbsp;один&nbsp;параметр&nbsp;-&nbsp;args[0]&nbsp;равен&nbsp;1.</span><br>
+<span class="Monokai-Operator">GS</span>&nbsp;$location<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br>
+<br>
+<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;"ход"&nbsp;с&nbsp;передачей&nbsp;3-х&nbsp;параметров.&nbsp;</span><br>
+<span class="Monokai-Comment">!&nbsp;$args[0]&nbsp;=&nbsp;$var&nbsp;(значению),&nbsp;args[1]&nbsp;=&nbsp;2,&nbsp;</span><br>
+<span class="Monokai-Comment">!&nbsp;$args[2]&nbsp;=&nbsp;"данные".&nbsp;Обратите&nbsp;внимание&nbsp;на&nbsp;символы&nbsp;'$'.</span><br>
+<span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-String">'ход'</span><span class="Monokai-Operator">,</span>$var<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br>
+
+
+</div>
+<a id="nКBч"></a><h3>Описание FUNC</h3>
+<p>
+<strong>FUNC</strong> —  выполнение кода указанной локации без непосредственного перехода на неё с возвращением значения.
+
+</p>
+<p>
+Общая запись:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;18]</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-Command">[$локация]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;0]</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;1]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Command">...&nbsp;</span><span class="Monokai-Operator">,</span><span class="Monokai-Command">[аргумент&nbsp;18]</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+, где <span class="em_BLCK"><span class="emTEXT">[$локация]</span></span> — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в ячейки массива <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. Название локации и аргументы должны обязательно заключаться в скобки.
+
+</p>
+<p>
+Чтобы <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> вернула строковый результат, на указанной локации нужно присвоить этот результат переменной <span class="em_BLCK"><span class="emVAR">$RESULT</span></span>. Для возвращения числового результата, он должен быть присвоен переменной <span class="em_BLCK"><span class="emVAR">RESULT</span></span>. Следует помнить, что <span class="em_BLCK"><span class="emVAR">$RESULT</span></span> и <span class="em_BLCK"><span class="emVAR">RESULT</span></span> — это одна и та же переменная, но разных типов, поэтому если вы определили на локации и $RESULT и RESULT, функция вернёт то значение, которое было записано в эту переменную последним.
+
+</p>
+<p>
+Если переменной <span class="em_BLCK"><span class="emVAR">RESULT</span></span> не было присвоено ни строковое, ни числовое значение, функция ничего не вернёт. И тут есть два варианта поведения плеера.
+
+</p>
+<ul>
+<li>
+ Если функция <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> стоит в каком либо выражении, вместо функции будет подставлено значение по умолчанию (пустая строка или ноль в зависимости от типа самого выражения).
+</li>
+<li>
+ Если функция <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> стоит сразу после неявного оператора, такой оператор будет проигнорирован, и на экран ничего выводиться не будет. Пример:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;локация_Н</span><br>
+N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">13</span><br>
+<span class="Monokai-Comment">!&nbsp;ни&nbsp;одно&nbsp;значение&nbsp;не&nbsp;присваивается&nbsp;переменной&nbsp;result</span><br>
+
+
+</div>
+<div class="Monokai-Code">
+<span class="Monokai-String">'строка&nbsp;1'</span><br>
+<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'локация_Н'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;ничего&nbsp;не&nbsp;выведется&nbsp;на&nbsp;экран</span><br>
+<span class="Monokai-String">'строка&nbsp;2'</span><br>
+<span class="Monokai-Numeric">56</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'локация_Н'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;функция&nbsp;стоит&nbsp;в&nbsp;выражении.&nbsp;Её&nbsp;значение&nbsp;=&nbsp;0</span><br>
+
+
+</div>
+</li>
+</ul>
+<p>
+Не обязательно, но рекомендуется, записывать ключевое слово <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> с символом <span class="em_BLCK">$</span>, если функция должна вернуть текстовое значение, и без символа <span class="em_BLCK">$</span>, если функция должна вернуть числовое значение:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">$func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'срез_строки'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Мы&nbsp;вышли&nbsp;из&nbsp;дома,&nbsp;когда&nbsp;во&nbsp;всех&nbsp;окнах&nbsp;погасли&nbsp;огни.'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'возвести_в_степень'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+При вызове указанной локации с помощью <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> происходит следующее:
+
+</p>
+<ul>
+<li>
+ Плеер прерывает выполнение текущего кода (например, кода текущей локации), и обращается к указанной локации
+</li>
+<li>
+ Базовое описание и список действий указанной локации добавляются к описанию и действиям текущей локации.
+</li>
+<li>
+ Выполненяется код из поля <span class="em_BLCK">Выполнить при посещении</span>
+</li>
+<li>
+ Затем плеер возвращается к выполнению кода, который прервал. То есть к вычислению выражения, в котором стоит данная функция.
+</li>
+</ul>
+<p>
+На каждой локации автоматически создаются свои собственные уникальные массивы <span class="em_BLCK"><span class="emVAR">ARGS</span></span> и <span class="em_BLCK"><span class="emVAR">RESULT</span></span>, поэтому значения в этих массивах для каждой локации будут свои собственные. После выполнения кода локации, вызванной по <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, массивы <span class="em_BLCK"><span class="emVAR">ARGS</span></span> и <span class="em_BLCK"><span class="emVAR">RESULT</span></span> этой локации уничтожаются.
+
+</p>
+<p>
+Обратите внимание! Значения из массивов <span class="em_BLCK"><span class="emVAR">ARGS</span></span> и <span class="em_BLCK"><span class="emVAR">RESULT</span></span> с локации, вызванной через <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, не транслируются в блоки <span class="em_BLCK"><span class="emOPRT">ACT</span></span>. В блоки <span class="em_BLCK"><span class="emOPRT">ACT</span></span> транслируются значения <span class="em_BLCK"><span class="emVAR">ARGS</span></span> и <span class="em_BLCK"><span class="emVAR">RESULT</span></span> из текущей локации, т.е. локации, на которую был осуществлён переход с помощью операторов `GOTO<strong>/</strong>'XGOTO`.
+
+</p>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!Обработка&nbsp;локации&nbsp;"поднять_яблоко"&nbsp;как&nbsp;функции.&nbsp;</span><br>
+<span class="Monokai-Comment">!Массив&nbsp;ARGS&nbsp;пуст.&nbsp;</span><br>
+<span class="Monokai-Comment">!Результат&nbsp;передается&nbsp;через&nbsp;RESULT</span><br>
+<span class="Monokai-Comment">!и&nbsp;записывается&nbsp;в&nbsp;переменную&nbsp;яблоки</span><br>
+яблоки&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'поднять_яблоко'</span><span class="Monokai-Operator">)</span><br>
+<br>
+<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;с&nbsp;названием&nbsp;в&nbsp;$name&nbsp;как&nbsp;функции.&nbsp;ARGS[0]&nbsp;равен&nbsp;1.</span><br>
+<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span>$name<span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">*</span>&nbsp;<span class="Monokai-Numeric">78</span><br>
+<br>
+<span class="Monokai-Comment">!обработка&nbsp;локации&nbsp;с&nbsp;названием&nbsp;в&nbsp;$name&nbsp;как&nbsp;функции.&nbsp;</span><br>
+<span class="Monokai-Comment">!$ARGS[0]&nbsp;содержит&nbsp;строку&nbsp;"строка",&nbsp;ARGS[1]&nbsp;равен&nbsp;2.</span><br>
+<span class="Monokai-Operator">MSG</span>&nbsp;<span class="Monokai-String">"text"</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span>$name<span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">"строка"</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><br>
+<br>
+
+
+</div>
+<a id="ЭЩгY"></a><h3>Ранний выход. Оператор <span class="em_BLCK"><span class="emOPRT">EXIT</span></span></h3>
+<p>
+Чтобы прервать выполнение текущего кода и выйти из вызванной с помощью <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> или <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> локации, используйте оператор <span class="em_BLCK"><span class="emOPRT">EXIT</span></span>.
+
+</p>
+<p>
+<span class="em_BLCK"><span class="emOPRT">EXIT</span></span> - завершение выполнения текущего кода (преждевременный выход из подпрограммы / обработчика какого-либо события).
+
+</p>
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">exit</span><br>
+
+
+</div>
+<a id="йтHX"></a><h3>Неявный вызов функции <span class="em_BLCK"><span class="emFUNC">FUNC</span></span></h3>
+<p>
+Вы можете не прописывать всякий раз функцию <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> явно. Можно использовать более простую запись. Вот как это выглядит в общем виде:
+
+</p>
+<div class="Monokai-Code">
+@[$локация]([аргумент&nbsp;0],[аргумент&nbsp;1],&nbsp;...&nbsp;,[аргумент&nbsp;18])<br>
+
+
+</div>
+<p>
+Здесь [$локация] — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы <span class="em_BLCK"><span class="emTEXT">[аргумент 0]</span></span>, <span class="em_BLCK"><span class="emTEXT">[аргумент 1]</span></span> и т.д. могут использоваться на этой локации, их значения автоматически помещаются в ячейки массива <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>, <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span>, и т.д. соответственно. То есть: пишем символ <span class="em_BLCK">@</span>, затем без пробелов название локации, и сразу за названием локации в скобках через запятую перечисляем аргументы.
+
+</p>
+<p>
+При такой записи необходимо соблюдать несколько правил:
+
+</p>
+<ul>
+<li>
+Название локации не должно содержать пробелов, символов математических операций и специальных символов (за исключением точки)
+</li>
+<li>
+Аргументы, передаваемые на локацию, всегда должны заключаться в скобки
+</li>
+<li>
+Если на локацию не нужно передавать аргументы, после её названия можно поставить пустые скобки, а можно не ставить
+</li>
+<li>
+Нельзя подставить вместо названия локации значение переменной!
+</li>
+</ul>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-UnFunc">@sqr</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;4</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-UnFunc">@sqr</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;9</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-UnFunc">@sqr</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;будет&nbsp;16</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;функция&nbsp;не&nbsp;принимает&nbsp;аргументов</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-UnFunc">@PI</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;можно&nbsp;указать&nbsp;пустые&nbsp;скобки</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-UnFunc">@PI</span>&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;можно&nbsp;не&nbsp;указывать&nbsp;пустые&nbsp;скобки</span><br>
+<br>
+степень&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-UnFunc">@возвести_в_степень</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><br>
+<br>
+<span class="Monokai-Comment">!&nbsp;пример&nbsp;вложения&nbsp;функций&nbsp;и&nbsp;участие&nbsp;их&nbsp;в&nbsp;выражениях</span><br>
+point&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-UnFunc">@queue.addPoint</span><span class="Monokai-Operator">(</span>$next<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>new_cost<span class="Monokai-Operator">+</span><span class="Monokai-UnFunc">@hevr.est</span><span class="Monokai-Operator">(</span>$next<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Если подобный неявный вызов сочетается с использованием неявного оператора, а на локации при этом НЕ присваивается значение переменной <span class="em_BLCK"><span class="emVAR">RESULT</span></span>, можно использовать неявный вызов функции заместо оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>:
+
+</p>
+<p>
+Локация "поднять_яблоко":
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!#&nbsp;поднять_яблоко</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоки"</span><br>
+<span class="Monokai-Koperator">end</span><br>
+яблоки<span class="Monokai-Operator">[</span><span class="Monokai-String">'рюкзак'</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+яблоки<span class="Monokai-Command">[$curloc]</span><span class="Monokai-Operator">-</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+
+
+</div>
+<p>
+Действие, которое мы пишем на любой другой локации:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Взять&nbsp;яблоко"</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-UnFunc">@поднять_яблоко</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;в&nbsp;данном&nbsp;случае&nbsp;поведение&nbsp;функции&nbsp;будет&nbsp;идентично&nbsp;поведению&nbsp;`GOSUB`</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+<a id="РнЕo"></a><h3>Локальные переменные</h3>
+<p>
+На любой локации вы можете назначать локальные пременные, которые будут существовать только в момент выполнения кода этих локаций, а после — автоматически уничтожатся. Значения в этих локальных переменных не пересекаются со значениями одноимённых переменных в других локациях.
+
+</p>
+<p>
+См. раздел "Локальные переменные" в разделе <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>.
+
+</p>
+<a id="fSTд"></a><h3>Заключение</h3>
+<p>
+Таким образом вы можете разбивать свой код на множество более мелких блоков, дабы избегать повторения одинаковых фрагментов. Это позволяет не только лучше структурировать код, но и улучшает его читаемость и позволяет разрабатывать его модульно, т.е. отдельными независимыми фрагментами. Это, в свою очередь, ускоряет отладку и написание больших и сложных механик для ваших игр.
+
+</p>
+<p>
+Так же см. <a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html" style="text-decoration:none;" class="emFOLD">большую статью по операторам, функциям и аргументам</a>.
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Вперёд: Переходы внутри локации</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html" class="emHREFTT">&lt; Назад, к странице 51</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html" class="emHREFTT">Вперёд, к странице 53 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

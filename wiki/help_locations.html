@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html" class="emHREFTT">&lt; Назад, к странице 30</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_msgbox.html" class="emHREFTT">Вперёд, к странице 32 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Назад: Что такое QSP?</a>
+
+</p>
+<a id="help_locations"></a><h2>Локации</h2>
+<p>
+<a id="lokacii"></a>
+
+</p>
+<p>
+<span class="em_BLCK">Локация</span> - элементарная единица игрового мира. Это может быть пещера, дом, комната, улица, большой город или даже целая планета.
+
+</p>
+<p>
+С точки зрения игрока он исследует игровой мир перемещаясь по локациям, но с точки зрения создателя игры понятие локации гораздо шире. В <span class="em_BLCK">QSP</span> локации — это отдельные блоки кода, и они могут использоваться не только для написания различных мест.
+
+</p>
+<p>
+Возможные назначения локаций:
+
+</p>
+<ul>
+<li>
+ <span class="em_BLCK">Игровые локации</span> - локации, по которым ходит игрок, основа игрового мира. Такие локации можно разделить по назначению:
+<ul>
+<li>
+ <span class="em_BLCK">локации мест</span> - локации, в которых описывается некоторый кусочек игрового мира. Комнаты, дома, города, пещеры, подземелья и т.д.
+</li>
+<li>
+ <span class="em_BLCK">информационные локации</span> - локации, на которых размещается информация об игре, своего рода страницы. Это могут быть: стартовый экран, страницы главного меню, страницы информации об авторе и об игре.
+</li>
+<li>
+ <span class="em_BLCK">локации главы, параграфы, или разделы</span> - локации, составляющие основу книг-игр. В книгах-играх игрок перемещается не столько по игровому миру, сколько между страницами интерактивной истории. Вот в такой роли и могут в данном случае выступать локации.
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Служебные локации</span> - локации, на которые игрок не может попасть, но которые необходимы для работы игры:
+<ul>
+<li>
+ <span class="em_BLCK">Локации-обработчики</span> - локации, обрабатывающие определенные события в игре (переходы между локациями, таймер, выбор предмета и т.п.).
+</li>
+<li>
+ <span class="em_BLCK">Локации-данные</span> - иногда удобно хранить игровые тексты в отдельных переменных, а переменные - в отдельной локации, чтобы не захламлять код.
+</li>
+<li>
+ <span class="em_BLCK">Локации-функции</span> - в QSP есть возможность сделать локацию-функцию.
+</li>
+<li>
+ <span class="em_BLCK">Локации с кодом</span> - иногда удобно вынести часть кода в отдельную локацию. Чаще всего это код, который используется в нескольких локациях.
+</li>
+</ul>
+</li>
+</ul>
+<p>
+Вы сами определяете назначение локации, для плеера абсолютно все локации равнозначны.
+
+</p>
+<p>
+Любая локация может состоять из трёх полей:
+
+</p>
+<ul>
+<li>
+ Базовое описание локации
+</li>
+<li>
+ Базовые действия локации
+</li>
+<li>
+ Код "Выполнить при посещении"
+</li>
+</ul>
+<p>
+Вы можете заполнять эти поля по своему усмотрению. Можно заполнить их все, или одно из них, или не заполнять ни одного, — всё зависит от того, какое назначение вы выбрали для вашей локации, и как вам удобнее воплощать вашу идею.
+
+</p>
+<p>
+Поля <span class="em_BLCK">Базовое описание локации</span> и <span class="em_BLCK">Базовые действия локации</span> доступны для заполнения только в редакторе <a href="https://aleksversus.github.io/howdo_faq/helpful/help_qgen.html#qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>, если вы работаете в обычном текстовом редакторе, весь код пишется только для поля <span class="em_BLCK">Выполнить при посещении</span>.
+
+</p>
+<a id="imenovanie_lokacij"></a><h3>Именование локаций</h3>
+<p>
+Имя локации в процессе игры не отображается и может быть любым. Вы сами решаете, как назвать вашу локацию и какие символы использовать для названия. Но есть общие рекомендации:
+
+</p>
+<ul>
+<li>
+ Имя локации должно соответствовать её смыслу - если локация описывает дом, то это может быть "Дом", "House", но никак не "Пещера".
+</li>
+<li>
+ Можно пользоваться префиксами в названии:
+<ul>
+<li>
+ <span class="em_BLCK">!название</span> или <span class="em_BLCK">$название</span> - служебная локация (не с базой данных)
+</li>
+<li>
+ <span class="em_BLCK">#название</span> - служебная локация с <a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary_data_base" style="text-decoration:none;" class="emFOLD">базой данных</a>
+</li>
+<li>
+ <span class="em_BLCK">^название</span> - локация, вложенная в предыдущую. Например, названия локаций через запятую: <span class="em_BLCK">Северная площадь</span>, <span class="em_BLCK">^Магазин игрушек</span>, <span class="em_BLCK">^^Продавец игрушек</span>, <span class="em_BLCK">^Магазин оружия</span>, <span class="em_BLCK">^^Мечи</span>, <span class="em_BLCK">^^Булавы</span>, <span class="em_BLCK">^^Оружейник</span>.
+<br>		Подобная маркировка префиксами была актуальна для старых версий <a href="https://aleksversus.github.io/howdo_faq/helpful/help_qgen.html#qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>, в которых не было возможности распределять локации по папкам. Сейчас такая маркировка менее актуальна, так как названия без префиксов использовать намного удобнее, а в <a href="https://aleksversus.github.io/howdo_faq/helpful/help_qgen.html#qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a> есть возможность размещать локации в отдельных папках.
+</li>
+</ul>
+</li>
+<li>
+ Названия локаций из нескольких слов можно писать любым удобным способом, например:
+<ul>
+<li>
+ <span class="em_BLCK">Дом с трубой</span>
+</li>
+<li>
+ <span class="em_BLCK">Дом_с_трубой</span>
+</li>
+<li>
+ <span class="em_BLCK">ДомСТрубой</span>
+</li>
+</ul>
+</li>
+<li>
+ Регистр букв не важен: "домструбой", "ДОМСТРУБОЙ" и "ДомСТрубой" - одна и та же локация.
+</li>
+<li>
+ Если вы пишете <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">локацию-функцию</a>, рекомендуется использовать в названии только буквы, цифры, символ подчёркивания и точку. Остальные символы могут поломать работу кода при упрощённом (неявном) вызове таких локаций-функций.
+</li>
+<li>
+ Рекомендуется выбирать названия локаций не совпадающие с <a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">ключевыми словами</a> <span class="em_BLCK">QSP</span>.
+</li>
+</ul>
+<a id="kЫxG"></a><h3>Команды для работы с локациями</h3>
+<a id="HAАц"></a><h4>Функции для обработки локаций</h4>
+<ul>
+<li>
+<strong>$CURLOC</strong> — данная функция возвращает название <span class="em_BLCK">текущей</span> ("активной") локации, т.е. локации на которой "находится" игрок.
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Func">$curloc</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;название&nbsp;текущей&nbsp;локации&nbsp;в&nbsp;Окно&nbsp;основного&nbsp;описания</span><br>
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Сколько&nbsp;раз&nbsp;перезашли:&nbsp;&lt;&lt;перезашёл&gt;&gt;"</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Перезайти&nbsp;на&nbsp;текущую&nbsp;локацию"</span><span class="Monokai-Operator">:</span><br>
+перезашёл<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br>
+<span class="Monokai-Koperator">end</span><br>
+
+
+</div>
+</li>
+</ul>
+<a id="АkKЯ"></a><h3>Порядок воспроизведения локаций</h3>
+<p>
+Автоматически при запуске игры воспроизводится только самая первая локация в игре, на все остальные локации нужно делать <a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">переходы</a>, или <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">вызывать</a> их иным образом.
+
+</p>
+<p>
+Так же, автоматически может выполняться код <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">служебных локаций</a>, отвечающих за обработку разных событий, и локации-счётчика.
+
+</p>
+<p>
+Подробнее о порядке воспроизведения локаций смотри статью <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">"Порядок работы интерпретатора"</a>.
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_main_w.html#help_main" style="text-decoration:none;" class="emFOLD">Вперёд: Окно основного описания</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html" class="emHREFTT">&lt; Назад, к странице 30</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_msgbox.html" class="emHREFTT">Вперёд, к странице 32 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

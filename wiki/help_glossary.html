@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html" class="emHREFTT">&lt; Назад, к странице 0</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html" class="emHREFTT">Вперёд, к странице 2 &gt;</a></div></div>
+<a id="help_glossary"></a><h2>Словарь терминов</h2>
+<p>
+<a id="slovar_terminov"></a>
+
+</p>
+<p>
+Если словарю не хватает какого-либо слова или в голову приходят более удобные формулировки, чем в статье, просьба обратиться на форум в тему <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=647&Itemid=57" style="text-decoration:none;" class="emFOLD">Новая справка по QSP</a>.
+
+</p>
+<p>
+<span class="em_BLCK">Словарь взят из обычной справки практически без изменений. Само собой его нужно сильно переработать</span>
+
+</p>
+<p>
+<span class="em_BLCK">QSP</span> = <span class="em_BLCK">Quest Soft Player</span> - это проигрыватель (интерпретатор) текстовых игр (одно из направлений - текстовые квесты / адвентюры), преимущественно с менюшным вводом, для проигрывания файлов в формате QSP. Кроме программы-проигрывателя также существует программа-редактор <span class="em_BLCK">QGen</span>, в которой можно самостоятельно создавать подобные игры.
+
+</p>
+<p>
+<span class="em_BLCK">Выражение</span> - набор констант, переменных, функций, связанных различными операциями. См. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>.
+
+</p>
+<p>
+<span class="em_BLCK">Интерпретатор</span> (языка программирования) - программа для непосредственного исполнения программ (производства вычислений, предписываемых этими программами) из исходного кода на определённом языке.
+
+</p>
+<p>
+<span class="em_BLCK">Константа</span> - фиксированное значение. Это может быть текстовая константа (заключается в кавычки - апострофы ('') или прямые кавычки (""): 'Text constant', "Text constant"), а может и числовая (записывается числом: 1234). QSP поддерживает только целочисленные константы.
+
+</p>
+<p>
+<span class="em_BLCK">Локация</span> - одно из базовых понятий текстовых игр. Локация - элементарная единица игрового мира. Это может быть комната, пещера, её часть, дом… Как правило, игрок исследует игровой мир посредством перемещений между локациями. См. также "Служебная локация".
+
+</p>
+<p>
+<span class="em_BLCK">Локация-счётчик</span> - служебная локация, название которой записано в переменной "$COUNTER". Выполнение операторов на ней, по умолчанию, происходит 2 раза в секунду (можно изменить с помощью оператора "SETTIMER").
+
+</p>
+<p>
+<span class="em_BLCK">Локация-обработчик строки ввода</span> - служебная локация, название которой записано в переменной "$USERCOM". Выполнение операторов на ней происходит после нажатия пользователем клавиши "Enter" в строке ввода.
+
+</p>
+<p>
+<span class="em_BLCK">Локации-обработчики событий загрузки и сохранения игры</span> - служебные локации, названия которых хранятся в переменных "$ONGLOAD" (для события загрузки) и "$ONGSAVE" (для события сохранения). Выполнение операторов на этих локациях происходит после загрузки состояния (для "$ONGLOAD") и перед сохранением состояния (для "$ONGSAVE").
+
+</p>
+<p>
+<span class="em_BLCK">Локация-обработчик перехода на новую локацию</span> - служебная локация, название которой хранится в переменной "$ONNEWLOC". Выполнение операторов на этой локации происходит при переходе на новую локацию посредством операторов "GOTO / XGOTO" (при серии "GOTO / XGOTO" - переходов, событие возникает только один раз для последней локации переходов).
+
+</p>
+<p>
+<span class="em_BLCK">Локации-обработчики событий выбора действий и предметов</span> - служебные локации, названия которых хранятся в переменных "$ONACTSEL" (для события выбора действия) и "$ONOBJSEL" (для события выбора предмета). Выполнение операторов на этих локациях происходит при выборе игроком действия / предмета в соответствующих списках.
+
+</p>
+<p>
+<span class="em_BLCK">Локация-обработчик события добавления предмета</span> - служебная локация, название которой хранится в переменной "$ONOBJADD". Выполнение операторов на ней происходит после добавления предмета в рюкзак (оператор "ADD OBJ / ADDOBJ").
+
+</p>
+<p>
+<span class="em_BLCK">Локация-обработчик события удаления предмета</span> - служебная локация, название которой хранится в переменной "$ONOBJDEL". Выполнение операторов на ней происходит после удаления предмета из рюкзака (операторы "DEL OBJ / DELOBJ / KILLOBJ / KILLALL").
+
+</p>
+<p>
+<span class="em_BLCK">Массив</span> - именованный типизированный список значений.
+
+</p>
+<p>
+<span class="em_BLCK">Оператор</span> - ключевое слово языка программирования, выполняющее какое-либо действие. Часто операторы имеют аргументы (параметры). Например, оператор "SET" имеет 2 аргумента: название переменной и её значение.
+
+</p>
+<p>
+<span class="em_BLCK">Переменная</span> - именованная "ячейка памяти". Переменная в QSP имеет название и 2 значения - текстовое и числовое. Для использования текстового значения переменной нужно перед её названием ставить символ "$". Для использования числового значения переменной достаточно указать её название. Все переменные в QSP одновременно являются массивами. Имена переменных не должны совпадать с зарезервированными именами (См. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">список ключевых слов</a>).
+
+</p>
+<p>
+<span class="em_BLCK">Синтаксис</span> - правила языка, по которым происходит составление текста программы.
+
+</p>
+<p>
+<span class="em_BLCK">Системные переменные</span> - переменные, заранее зарезервированные системой. Могут быть использованы пользователем для установки различных системных параметров (цвет текста, включение HTML-режима и т.п.).
+
+</p>
+<p>
+<span class="em_BLCK">Служебная локация</span> - локация, не предназначенная для явного перехода на неё. Т.е. она используется лишь как контейнер для группы операторов. Обработка служебных локаций по переменным-указателям просходит лишь в случае, если строковое значение переменной отлично от '' (не пустая строка).
+
+</p>
+<p>
+<span class="em_BLCK">Текстовый квест / адвентюра</span> - жанр игр, являющийся разновидностью Интерактивной Литературы (ИЛ).
+
+</p>
+<p>
+В самом широком понимании термина, ИЛ - это любая разновидность художественных произведений, сюжет которых не является фиксированным, а способен меняться в зависимости от действий читателя (в "компьютерном" варианте - пользователя). Например, популярные некогда книжки с нелинейным или "ветвящимся" сюжетом - это тоже вариант ИЛ.
+
+</p>
+<p>
+Здесь, однако, мы рассматриваем исключительно компьютерную разновидность ИЛ. К ней относятся любые интерактивные программы, которые преподносят пользователю информацию преимущественно в текстовом виде (не в виде графики, анимации, звука и т.п.), а часто (хотя это и не обязательно) также получают инструкции от пользователя в виде текстовых команд (составленных на языке, близком к естественному). Конечно, также обычно предполагается, что у произведения ИЛ имеется сюжет - чаще всего, это приключение какого-нибудь рода, в котором пользователь обычно участвует в качестве главного героя (протагониста). Наиболее известная и популярная разновидность ИЛ - это текстовые игры (они же "текстовые квесты", "игры с текстовым вводом" и т.п.), но нужно заметить, что понятие ИЛ все-таки несколько шире, и не ограничивается исключительно ими.
+
+</p>
+<p>
+Довольно близкими родственниками ИЛ можно считать разнообразные текстовые ролевые игры, MUDы и пр. (хотя в данном случае, конечно, упор обычно делается на интерактивность - а "литературность", в лучшем случае, является зачаточной).
+
+</p>
+<p>
+© Материал из "Wiki о русской интерактивной литературе (текстовых играх)"
+
+</p>
+<p>
+<span class="em_BLCK">Функции</span> - используются наравне с переменными и часто служат для их преобразований (например, из текстового значения переменной, содержащего набор цифр, получить число, т.е. преобразовать строку в число).
+
+</p>
+<p>
+<a id="help_glossary_data_base"></a>
+
+</p>
+<p>
+<strong>локация-база данных</strong> — вы можете создать отдельную локацию, на которой будет храниться различная информация, необходимая для игры, и вызывать эту локацию в нужный момент. Например, перед началом игры, как правило, требуется заполнить значениями множество переменных. Вы можете прописать значения для всех необходимых переменных на отдельной локации, назвать её например <span class="em_BLCK">#intro</span>, и вызвать в самом начале игры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'#intro'</span><br>
+
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html" class="emHREFTT">&lt; Назад, к странице 0</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html" class="emHREFTT">Вперёд, к странице 2 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

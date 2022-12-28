@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qspider_gamecfg.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/txt2gam_preprocessor.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<a id="BUгз"></a><h2>Справочная информация о платформе Quest Soft Player</h2>
+<p>
+Данный цикл статей - новая версия справки по QSP. Здесь будет собрано всё необходимое для освоения платформы.
+
+</p>
+<p>
+Обратная связь принимается на форуме: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=647&Itemid=57" style="text-decoration:none;" class="emFOLD">Новая справка по QSP</a>.
+
+</p>
+<p>
+<span class="em_BLCK">Есть желание приобщиться к текстовым играм, но пока нет идеи?</span> Скачайте "Набор игрока" с <a href="https://qsp.org/" style="text-decoration:none;" class="emFOLD">главной страницы сайта</a> и просто поиграйте, чтобы проникнуться идеей таких игр.
+
+</p>
+<p>
+<span class="em_BLCK">Есть желание начать писать текстовые игры, даже есть идея, но нет опыта программирования?</span> Смело открывайте <a href="https://qsp.org/index.php?option=com_content&task=view&id=59&Itemid=56" style="text-decoration:none;" class="emFOLD">учебник</a>, который специально создан для авторов, не имеющих опыта в программировании. Или заходите на канал <a href="https://www.youtube.com/c/aleksversus" style="text-decoration:none;" class="emFOLD">"Пишем игры на QSP"</a> на Ютубе, где можно ознакомиться с полным курсом видеоуроков для новичков.
+
+</p>
+<p>
+Ну а остальных милости просим в эту справку.
+
+</p>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Первая статья: что такое QSP?</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Список ключевых слов. Указатель</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>
+</li>
+</ul>
+<p>
+Если вам не хватает информации о какой либо команде, обратитесь к <a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Списку ключевых слов</a>, там вы найдёте ссылки на разделы в справочной форме с более подробными описаниями команд.
+
+</p>
+<p>
+В справке встречаются следующие обозначения:
+
+</p>
+<ul>
+<li>
+<span class="em_BLCK"><span class="emTEXT">[выражение]</span></span> - значение выражения, которое может быть как текстового, так и числового типа. Это может быть строка текста, число, значение переменной, результат вычисления математической операции, функции и т.п.
+</li>
+<li>
+<span class="em_BLCK"><span class="emTEXT">[$выражение]</span></span> - значение выражения, которое может быть только текстового (строкового) типа (но при необходимости движок автоматически переведёт число в строку).
+</li>
+<li>
+<span class="em_BLCK"><span class="emTEXT">[#выражение]</span></span> - значение выражения, которое может быть только числового типа (если возможно, движок автоматически переведёт строку в число).
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">{</span>оператор}</span> - любая команда или несколько команд, в зависимости от контекста
+</li>
+</ul>
+<p>
+<span class="em_BLCK">Внимание!</span> Это просто обозначения, а не настоящий QSP-код! Символ '<span class="em_BLCK">#</span>' использован в справке только чтобы разделить выражения произвольного и числового типов. К синтаксису QSP данный символ отношения не имеет, его не нужно писать перед названиями числовых переменных.
+
+</p>
+<p>
+Примеры:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-Operator">[</span>текст<span class="Monokai-Operator">]</span><br>
+
+
+</div>
+<p>
+В данном случае вместо <span class="em_BLCK"><span class="emTEXT">[текст]</span></span> может быть подставлено <span class="em_BLCK">любое</span> значение: строка, число, математическое выражение, значение функции или переменной и т.д.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-Command">[$название]</span><br>
+
+
+</div>
+<p>
+В этом случае вместо <span class="em_BLCK"><span class="emTEXT">[$название]</span></span> может быть подставлено любое <span class="em_BLCK">строковое</span> значение: просто строка текста, результат строкового типа, возвращаемый функцией, значение строковой переменной и т.д.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Command">[#число]</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Здесь вместо <span class="em_BLCK"><span class="emTEXT">[#число]</span></span> может быть подставлено любое <span class="em_BLCK">числовое</span> значение: просто число, результат вычисления математического выражения, значение числовой переменной и т.д.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">{</span>оператор&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">}</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">{</span>оператор&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">}</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">{</span>оператор&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">}</span><br>
+
+
+</div>
+<p>
+Здесь вместо <span class="em_BLCK"><span class="emOPRT">{</span>оператор 1}</span>, <span class="em_BLCK"><span class="emOPRT">{</span>оператор 2}</span> и <span class="em_BLCK"><span class="emOPRT">{</span>оператор 3}</span> могут стоять любые команды QSP. Например, операторы вывода текста, математические выражения, присвоение значений переменным и другие.
+
+</p>
+<a id="фAiО"></a><h4>Оффлайн-версия</h4>
+<p>
+Вы можете скачать документацию вики для просмотра в оффлайне: <a href="https://qsp.org/tools/offlinehelp/qspwiki.zip" style="text-decoration:none;" class="emFOLD">qspwiki.zip</a>. Архив обновляется ежедневно.
+
+</p>
+<a id="ПAПb"></a><h4>Документация по QSP вне этой вики</h4>
+<ul>
+<li>
+ <a href="https://qsp.org/index.php?option=com_content&task=view&id=59&Itemid=56" style="text-decoration:none;" class="emFOLD">Учебник по созданию игр в редакторе QGen</a>
+</li>
+<li>
+ <a href="https://www.youtube.com/c/aleksversus" style="text-decoration:none;" class="emFOLD">Канал на YouTube, посвящённый написанию игр на QSP</a>
+</li>
+<li>
+ <a href="https://qsp.org/index.php?option=com_content&view=article&id=57&Itemid=56" style="text-decoration:none;" class="emFOLD">Раздел "Разработчикам"</a>
+</li>
+<li>
+ <a href="https://qsp.org/index.php?option=com_agora&task=forum&id=1&Itemid=57" style="text-decoration:none;" class="emFOLD">Обсуждение и разработка игр на форуме</a>
+</li>
+<li>
+ Старая справка в формате <a href="https://qsp.org/attachments/qsp564help.zip" style="text-decoration:none;" class="emFOLD">zip</a>. Отличия новой от старой справки:
+<ul>
+<li>
+ В новой справке текст переработан для упрощения понимания и соответствия текущему синтаксису.
+</li>
+<li>
+ Отсутствуют статьи "Лицензионное соглашение", "Системные требования", "Благодарности"
+</li>
+<li>
+ Не вся информация из статей "Подсказки/советы" и "FAQ" вошла в справку.
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57" style="text-decoration:none;" class="emFOLD">FAQ для разработчиков</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/" style="text-decoration:none;" class="emFOLD">Онлайн-справочник по самым часто задаваемым вопросам по QSP</a>
+</li>
+</ul>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Вперёд: Что такое QSP?</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qspider_gamecfg.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/txt2gam_preprocessor.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

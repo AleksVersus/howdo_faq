@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Назад: Локации</a>
+
+</p>
+<a id="help_main"></a><h2>Окно основного описания</h2>
+<p>
+<a id="osnovnoe_okno_opisanija"></a>
+
+</p>
+<p>
+Это то самое окно, которое используется чаще всего. В него выводятся практически все тексты игры, и оно не отключается.
+
+</p>
+<p>
+<span class="em_BLCK">Окно основного описания</span> очищается автоматически, при переходе на локацию с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOTO</span></span></a> (<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GT</span></span></a>).
+
+</p>
+<p>
+Чтобы вывести текст в <span class="em_BLCK">Окно основного описания</span>, нужно воспользоваться одним из следующих способов:
+
+</p>
+<ul>
+<li>
+ Написать текст в поле "Описание" локации (Базовое описание локации) в Quest Generator. Тогда весь текст из этого поля автоматически будет выведен в <span class="em_BLCK">Окно основного описания</span> при переходе на локацию.
+</li>
+<li>
+ Воспользоваться одной из команд для вывода текста, прописав эту команду в поле <span class="em_BLCK">Выполнить при посещении</span> локации в <span class="em_BLCK">Quest<span class="emFUNC"> Generator</span></span>. При работе в текстовом редакторе у вас есть только этот способ.
+</li>
+</ul>
+<a id="komandy"></a><h3>Команды для работы с Окном основного описания</h3>
+<p>
+Под обозначением [$текст] ниже на странице понимается любая строка текста, число, значение выражения, переменной или функции.
+
+</p>
+<a id="ъыиЧ"></a><h4>Команды для вывода текста в Окно основного описания</h4>
+<ul>
+<li>
+<span class="em_BLCK"><span class="emOPRT">*P</span></span> [$текст] - простой вывод текста. Выводит текст в <span class="em_BLCK">Окно основного описания</span> без перехода на новую строку.
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'Шла'</span><br>
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'Саша'</span><br>
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'По'</span><br>
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'Шоссе'</span><br>
+
+
+</div>
+<p>
+После выполнения кода (если запустим игру) — в <span class="em_BLCK">Окне основного описания</span> мы увидим:
+
+</p>
+<div class="Monokai-Code">
+ШлаСашаПоШоссе<br>
+
+
+</div>
+</li>
+<li>
+<span class="em_BLCK"><span class="emOPRT">*PL</span></span> [$текст] - вывод текста, затем переход на новую строку.
+<br>	Пример:
+<br>	```qsp
+<br>	*p 'Шла' &amp; ! здесь выводим текст без перехода на новую строку
+<br>	*p 'Саша' &amp; ! и здесь тоже
+<br>	*pl 'По'
+<br>	*pl 'Шоссе'
+<br>	```
+<br>	После выполнения кода — в <span class="em_BLCK">Окне основного описания</span> мы увидим:
+<br>	```qsp
+<br>	ШлаСашаПо
+<br>	Шоссе
+<br>	```
+<ul>
+<li>
+ Если не указать [$текст], то команда просто создаст переход на новую строку:
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'Шла&nbsp;Саша'</span><br>
+<span class="Monokai-Operator">*pl</span><br>
+<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-String">'По&nbsp;шоссе'</span><br>
+
+
+</div>
+<p>
+В <span class="em_BLCK">Окне основного описания</span> мы увидим:
+
+</p>
+<div class="Monokai-Code">
+Шла&nbsp;Саша<br>
+По&nbsp;Шоссе<br>
+
+
+</div>
+</li>
+<li>
+Если не указать <span class="em_BLCK"><span class="emOPRT">*pl</span></span>, а указать только [$текст], работа такой команды почти не будет отличаться от работы команды с операторм <span class="em_BLCK"><span class="emOPRT">*pl</span></span>. Это называется <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_keywords_operator" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK">неявный оператор</span></a>:
+<div class="Monokai-Code">
+<span class="Monokai-String">'Во&nbsp;поле'</span><br>
+<span class="Monokai-String">'берёзка'</span><br>
+<span class="Monokai-String">'стояла'</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+		! эквивалентно
+
+</p>
+<p>
+		*pl 'Во поле'
+
+</p>
+<p>
+		*pl 'берёзка'
+
+</p>
+<p>
+		*pl 'стояла'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`*NL`&nbsp;[$текст]&nbsp;-&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку,&nbsp;а&nbsp;затем&nbsp;вывод&nbsp;текста.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+	*p 'Шла' &amp; ! здесь выводим текст без перехода на новую строку
+
+</p>
+<p>
+	*p 'Саша' &amp; ! и здесь тоже
+
+</p>
+<p>
+	*nl 'По'
+
+</p>
+<p>
+	*nl 'Шоссе'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;После&nbsp;выполнения&nbsp;кода&nbsp;—&nbsp;в&nbsp;`Окне&nbsp;основного&nbsp;описания`&nbsp;мы&nbsp;увидим:<br>
+
+</div>
+<p>
+	ШлаСаша
+
+</p>
+<p>
+	По
+
+</p>
+<p>
+	Шоссе
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;Если&nbsp;не&nbsp;указать&nbsp;[$текст],&nbsp;то&nbsp;команда&nbsp;просто&nbsp;совершит&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку:<br>
+
+</div>
+<p>
+		*p 'Шла Саша'
+
+</p>
+<p>
+		*nl
+
+</p>
+<p>
+		*p 'По Шоссе'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В&nbsp;`Окне&nbsp;основного&nbsp;описания`&nbsp;мы&nbsp;увидим:<br>
+
+</div>
+<p>
+		Шла Саша
+
+</p>
+<p>
+		По Шоссе
+
+</p>
+<div class="Monokai-Code">
+--Команды&nbsp;для&nbsp;очистки&nbsp;Окна&nbsp;основного&nbsp;описания--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`*CLEAR`&nbsp;или&nbsp;`*CLR`&nbsp;-&nbsp;очищает&nbsp;`Окно&nbsp;основного&nbsp;описания`.&nbsp;Пример:<br>
+
+</div>
+<p>
+	*p 'Шла'    &amp; ! выводим текст без перехода на новую строку
+
+</p>
+<p>
+	*pl 'Саша'  &amp; ! выводим текст и переходим на новую строку
+
+</p>
+<p>
+	*nl 'По'    &amp; ! переходим на новую строку и выводим текст
+
+</p>
+<p>
+	*nl 'Шоссе' &amp; ! переходим на новую строку и выводим текст
+
+</p>
+<p>
+	*clear      &amp; ! очищаем окно основного описания от всего текста
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;В&nbsp;результате&nbsp;работы&nbsp;этого&nbsp;кода&nbsp;`Окно&nbsp;основного&nbsp;описания`&nbsp;окажется&nbsp;пустым.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`CLS`&nbsp;-&nbsp;эквивалентно&nbsp;конструкции&nbsp;"CLEAR&nbsp;&&nbsp;*CLEAR&nbsp;&&nbsp;CLA&nbsp;&&nbsp;CMDCLEAR",&nbsp;т.е.&nbsp;очищает&nbsp;все&nbsp;окна,&nbsp;кроме&nbsp;списка&nbsp;предметов.<br>
+<br>
+--Функции&nbsp;для&nbsp;работы&nbsp;с&nbsp;Окном&nbsp;основного&nbsp;описания--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`$MAINTXT`&nbsp;-&nbsp;возвращает&nbsp;текст,&nbsp;выведенный&nbsp;в&nbsp;окно&nbsp;основного&nbsp;описания.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+	*p 'Ехал Грека Через Реку'
+
+</p>
+<p>
+	*nl 'Видит Грека В Реке Рак'
+
+</p>
+<p>
+	$text = $maintxt
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;В&nbsp;данном&nbsp;случае&nbsp;при&nbsp;выполнении&nbsp;кода&nbsp;в&nbsp;переменную&nbsp;`$text`&nbsp;запишутся&nbsp;две&nbsp;строки&nbsp;текста:<br>
+
+</div>
+<p>
+	Ехал Грека Через Реку
+
+</p>
+<p>
+	Видит Грека В Реке Рак
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`$DESC([$локация])`&nbsp;-&nbsp;возвращает&nbsp;текст&nbsp;базового&nbsp;описания&nbsp;локации&nbsp;с&nbsp;названием&nbsp;[$локация].&nbsp;Обратите&nbsp;внимание!&nbsp;Функция&nbsp;возвращает&nbsp;текст,&nbsp;написанный&nbsp;только&nbsp;в&nbsp;поле&nbsp;"Описание"&nbsp;(`Базовое&nbsp;описание`)&nbsp;редактора&nbsp;`Quest&nbsp;Generator`.&nbsp;При&nbsp;работе&nbsp;в&nbsp;текстовом&nbsp;редакторе&nbsp;данное&nbsp;поле&nbsp;вам&nbsp;недоступно&nbsp;и&nbsp;функция&nbsp;будет&nbsp;всегда&nbsp;возвращать&nbsp;пустую&nbsp;строку.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;В&nbsp;`Базовом&nbsp;описании`&nbsp;можно&nbsp;использовать&nbsp;[подвыражения](help:strings#podvyrazhenija),&nbsp;функция&nbsp;`$desc`&nbsp;автоматически&nbsp;"раскроет"&nbsp;их.<br>
+<br>
+--Системные&nbsp;переменные&nbsp;для&nbsp;управления&nbsp;Окном&nbsp;основного&nbsp;описания--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`DISABLESCROLL`&nbsp;-&nbsp;если&nbsp;значение&nbsp;переменной&nbsp;не&nbsp;равно&nbsp;0,&nbsp;то&nbsp;запрещает&nbsp;автопрокрутку&nbsp;текста&nbsp;при&nbsp;его&nbsp;выводе&nbsp;в&nbsp;окно&nbsp;основного&nbsp;или&nbsp;дополнительное&nbsp;описания.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Что&nbsp;это&nbsp;значит`.&nbsp;Предположим,&nbsp;мы&nbsp;вывели&nbsp;на&nbsp;экран&nbsp;большой&nbsp;объём&nbsp;текста,&nbsp;а&nbsp;затем&nbsp;при&nbsp;нажатии&nbsp;на&nbsp;`действие`&nbsp;у&nbsp;нас&nbsp;выводится&nbsp;ещё&nbsp;один&nbsp;фрагментик&nbsp;текста.&nbsp;Если&nbsp;`DISABLESCROLL&nbsp;=&nbsp;0`,&nbsp;этот&nbsp;фрагментик&nbsp;текста&nbsp;при&nbsp;выводе&nbsp;заставит&nbsp;экран&nbsp;прокрутиться&nbsp;вниз.&nbsp;Если&nbsp;мы&nbsp;не&nbsp;хотим,&nbsp;чтобы&nbsp;экран&nbsp;прокручивался&nbsp;вниз&nbsp;в&nbsp;этом&nbsp;случае,&nbsp;мы&nbsp;присваиваем&nbsp;переменной&nbsp;`DISABLESCROLL`&nbsp;единицу.&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`$BACKIMAGE`&nbsp;-&nbsp;содержит&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;фонового&nbsp;изображения&nbsp;для&nbsp;`Окна&nbsp;основного&nbsp;описания`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Фон&nbsp;в&nbsp;окне&nbsp;основного&nbsp;описания&nbsp;отображается&nbsp;в&nbsp;том&nbsp;случае,&nbsp;если&nbsp;значение&nbsp;данной&nbsp;переменной&nbsp;отлично&nbsp;от&nbsp;''&nbsp;(пустая&nbsp;строка)&nbsp;и&nbsp;файл&nbsp;изображения&nbsp;удалось&nbsp;загрузить.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Необходимо&nbsp;указывать&nbsp;путь&nbsp;к&nbsp;изображению&nbsp;относительно&nbsp;файла&nbsp;игры:<br>
+
+</div>
+<p>
+		! файл игры лежит в папке C:\QSP\myCoolGame
+
+</p>
+<p>
+		! файл изображения лежит в папке C:\QSP\myCoolGame\image и называется picture.png
+
+</p>
+<p>
+		! значит установить изображение фоном в окно основного описания мы можем так:
+
+</p>
+<p>
+		$backimage='image\picture.png'
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;При&nbsp;этом&nbsp;фон&nbsp;вписывается&nbsp;в&nbsp;границы&nbsp;`Окна&nbsp;основного&nbsp;описания`,&nbsp;и&nbsp;управлять&nbsp;им&nbsp;в&nbsp;классическом&nbsp;плеере&nbsp;нельзя.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Если&nbsp;вы&nbsp;хотите&nbsp;убрать&nbsp;фон,&nbsp;присвойте&nbsp;переменной&nbsp;`$BACKIMAGE`&nbsp;пустую&nbsp;строку:<br>
+
+</div>
+<p>
+		$backimage=''
+
+</p>
+<div class="Monokai-Code">
+=Другие&nbsp;примеры=<br>
+<br>
+
+</div>
+<p>
+*P '1'
+
+</p>
+<p>
+*PL '23'
+
+</p>
+<p>
+*NL '456'
+
+</p>
+<p>
+'78'
+
+</p>
+<div class="Monokai-Code">
+После&nbsp;выполнения&nbsp;кода&nbsp;в&nbsp;`Окно&nbsp;основного&nbsp;описания`&nbsp;будет&nbsp;выведено:<br>
+<br>
+
+</div>
+<p>
+123
+
+</p>
+<p>
+45678
+
+</p>
+<div class="Monokai-Code">
+<br>
+Можно&nbsp;выводить&nbsp;не&nbsp;только&nbsp;строки,&nbsp;но&nbsp;и&nbsp;числа,&nbsp;и&nbsp;значения&nbsp;переменных,&nbsp;функций&nbsp;и&nbsp;результаты&nbsp;вычисления&nbsp;выражений:<br>
+<br>
+
+</div>
+<p>
+*pl 'I♥QSP!'
+
+</p>
+<p>
+*pl 256/12*9
+
+</p>
+<p>
+137+(2*9)
+
+</p>
+<p>
+$curloc
+
+</p>
+<p>
+*nl rand(999)
+
+</p>
+<p>
+x=15
+
+</p>
+<p>
+*nl x
+
+</p>
+<div class="Monokai-Code">
+<br>
+[Вперёд:&nbsp;Окно&nbsp;дополнительного&nbsp;описания](#help_stat)<br>
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

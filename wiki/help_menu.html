@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_main_w.html" class="emHREFTT">&lt; Назад, к странице 5</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html" class="emHREFTT">Вперёд, к странице 7 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Назад: Динамический код</a>
+
+</p>
+<a id="help_menu"></a><h2>Меню</h2>
+<p>
+<a id="menju"></a>
+
+</p>
+<p>
+QSP позволяет в любом месте игры вызывать всплывающее меню. Такое меню удобно для расширения функционала различных частей игры. Например, (и это самый распространённый случай), всплывающее меню позволяет "привязать" различные действия к предметам.
+
+</p>
+<p>
+Меню можно вызвать в ЛЮБОМ МЕСТЕ игры. Т.е. нет никакого технического запрета, чтобы вызвать меню прямо из кода локации, или из действия, или из кода гиперссылки. Оператор используется один и тот же.
+
+</p>
+<a id="ншqД"></a><h3>Оператор <span class="em_BLCK"><span class="emOPRT">MENU</span></span></h3>
+<p>
+<span class="em_BLCK"><span class="emOPRT">MENU</span></span> [$имя_масива] - вызов "всплывающего" меню из массива с именем [$имя_массива].
+
+</p>
+<p>
+Прежде, чем использовать данный оператор, необходимо заполнить массив, на основе содержимого которого будут формироваться пункты меню. Пункты меню — это строковые начения массива с особым форматом записи:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-String">"название&nbsp;пункта&nbsp;меню:название&nbsp;локации:путь&nbsp;к&nbsp;файлу&nbsp;иконки"</span><br>
+
+
+</div>
+<ul>
+<li>
+Название пункта меню — это то, что мы увидим на экране, когда меню будет выведено;
+</li>
+<li>
+название локации — это название локации-обработчика пункта меню, код которой будет выполняться при щелчке на соответствующем пункте меню;
+</li>
+<li>
+путь к файлу иконки — это путь к файлу изображения, которое будет выведено рядом с названием пункта меню.
+</li>
+</ul>
+<p>
+Таким образом мы должны заполнить массив для того, чтоб создать наши пункты меню:
+
+</p>
+<div class="Monokai-Code">
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;камень:takestone'</span><br>
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Кинуть&nbsp;камень:throwstone'</span><br>
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;камень:lookstone'</span><br>
+
+
+</div>
+<p>
+Здесь название массива (<span class="em_BLCK">$stone</span>) - это название меню, а текстовые значения массива - действия, для которых указаны названия пунктов и названия локаций-обработчиков выбора пунктов меню. При выборе пункта "Взять камень" произойдёт вызов локации с названием "takestone". Аналогично будет происходить с другими пунктами.
+
+</p>
+<p>
+Чтобы вывести меню на экран, нужно воспользоваться оператором <span class="em_BLCK"><span class="emOPRT">MENU</span></span>:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$stone'</span><br>
+
+
+</div>
+<p>
+Поиск символов ":" в пунктах начинается с конца строки, то есть название пункта меню может содержать двоеточия, однако тогда обязательно после названия локации должно стоять двоеточие, даже если вы не используете иконки для пунктов меню.
+
+</p>
+<div class="Monokai-Code">
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Камень:&nbsp;взять:takestone:'</span><br>
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Камень:&nbsp;кинуть:throwstone:'</span><br>
+$stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Камень:&nbsp;осмотреть:lookstone:'</span><br>
+
+
+</div>
+<p>
+Если путь к файлу иконки не указан или указанный файл недоступен, то пункт меню отобразится без иконки.
+
+</p>
+<p>
+Пример создания меню с иконками:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;нет&nbsp;иконки</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span><br>
+<span class="Monokai-Comment">!&nbsp;иконка&nbsp;задана&nbsp;gif-файлом</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Положить&nbsp;предмет:put_item:images/put_item.gif'</span><br>
+<span class="Monokai-Comment">!&nbsp;иконка&nbsp;задана&nbsp;значением&nbsp;$icon_file</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item:&lt;&lt;$icon_file&gt;&gt;'</span><br>
+<span class="Monokai-Comment">!&nbsp;пункт&nbsp;меню&nbsp;задан&nbsp;3-мя&nbsp;переменными</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'&lt;&lt;$name&gt;&gt;:&lt;&lt;$location&gt;&gt;:&lt;&lt;$file&gt;&gt;'</span><br>
+<br>
+<span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'usr_menu'</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;покажет&nbsp;меню&nbsp;из&nbsp;4-х&nbsp;пунктов</span><br>
+
+
+</div>
+<p>
+Меню заканчивается на элементе массива со значением <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть','','Бросить', то 2 последних пункта не будут созданы:
+
+</p>
+<div class="Monokai-Code">
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;и&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;увидим&nbsp;на&nbsp;экране</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">''</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;здесь&nbsp;пустое&nbsp;значение,&nbsp;плеер&nbsp;посчитает,&nbsp;что&nbsp;меню&nbsp;кончилось</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;не&nbsp;увидим</span><br>
+
+
+</div>
+<p>
+Чтобы вставить разделитель в меню, вместо соответствующего элемента массива напишите <span class="em_BLCK"><span class="emTEXT">"-:-"</span></span>. Т.е. если нужно поставить разделитель вместо 3-го элемента:
+
+</p>
+<div class="Monokai-Code">
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;предмет:look_item'</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'-:-'</span><br>
+$usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span><br>
+
+
+</div>
+<p>
+Пример вызова меню из гиперсылки:
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&lt;a&nbsp;href="EXEC:&nbsp;menu&nbsp;'</span><span class="Monokai-String">'$stone'</span><span class="Monokai-String">'"&gt;Камень&lt;/a&gt;'</span><br>
+
+
+</div>
+<p>
+Более подробно о том, как делать меню, можно почитать в соответствующих статьях нашего F.A.Q:
+
+</p>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__menju_predmeta_0019.html" style="text-decoration:none;" class="emFOLD">Как сделать меню предмета?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__raznye_menju_0020.html" style="text-decoration:none;" class="emFOLD">Как сделать разные меню?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__menju_v_ssylkah_0021.html" style="text-decoration:none;" class="emFOLD">Как сделать меню в ссылках?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_peredavat__lokatsijam-punktam_menju_argumenty_0022.html" style="text-decoration:none;" class="emFOLD">Как передавать локациям-пунктам меню аргументы?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__kontekstnoe_menju_0023.html" style="text-decoration:none;" class="emFOLD">Как делать контекстное меню?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__razdelitel__0024.html" style="text-decoration:none;" class="emFOLD">Как вставлять разделители?</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__kartinki_v_menju_0025.html" style="text-decoration:none;" class="emFOLD">Как вставлять картинки в меню?</a>
+</li>
+</ul>
+<a id="ErЁC"></a><h3>Порядок работы оператора <span class="em_BLCK"><span class="emOPRT">MENU</span></span></h3>
+<p>
+Когда плеер встречает оператор <span class="em_BLCK"><span class="emOPRT">MENU</span></span> в коде, он выводит на экран всплывающее меню, сформированное на основе указанного массива, и прерывет выполнение кода, ожидая действий игрока.
+
+</p>
+<p>
+Пока ни один из пунктов меню не выбран, или пока игрок не щёлкнул в области за пределами меню, дальнейший код не выполняется.
+
+</p>
+<p>
+Если игрок щёлкнул по одному из пунктов меню, вызывается локация, соответствующая данному пункту меню. Эта локация назвается локцией-обработчиком выбранного пункта меню. При этом вызов локации осуществляется так же, как осуществлялся бы при вызове этой локации с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOSUB</span></span></a>.
+
+</p>
+<p>
+После вызова локации продолжается выполнение кода со следующей команды после <span class="em_BLCK"><span class="emOPRT">MENU</span></span>.
+
+</p>
+<p>
+В локацию-обработчик выбранного пункта меню передаётся аргумент - позиция выбранного пункта. Этот аргумент можно получить из <span class="em_BLCK"><span class="emVAR">ARGS</span><span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span>. Позиции пунктов меню нумеруются с 1.
+
+</p>
+<p>
+Если игрок не выбрал ни одного пункта меню и щёлкнул по области вне меню, просто продолжается выполнение кода со следующей команды после <span class="em_BLCK"><span class="emOPRT">MENU</span></span>.
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Вперёд: Звук</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_main_w.html" class="emHREFTT">&lt; Назад, к странице 5</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html" class="emHREFTT">Вперёд, к странице 7 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

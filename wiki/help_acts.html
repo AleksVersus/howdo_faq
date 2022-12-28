@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_sozdanie_igr_na_quest_navigator.html" class="emHREFTT">&lt; Назад, к странице 41</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_cycle.html" class="emHREFTT">Вперёд, к странице 43 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Назад: Диалоговое окно</a>
+
+</p>
+<a id="help_acts"></a><h2>Действия</h2>
+<p>
+<a id="dejstvija"></a>
+
+</p>
+<p>
+"Менюшные" игры с точки зрения геймплея, как правило, предоставляют игроку на выбор несколько вариантов действий, которыми он может воспользоваться. Выбрав действие, игрок двигает игру дальше по сюжету, и волне возможно, главный герой при этом совершает описанное действие. Например, съедает кусок пирога, или проникает в чужой сад.
+
+</p>
+<p>
+Обычно действия отделены от основного описания и представляют собой ряд кликабельных кнопок. В <span class="em_BLCK">QSP</span> для размещения действий есть отдельное окно, оно так и называется <span class="em_BLCK">Окно действий</span>, или <span class="em_BLCK">Список действий</span> (в плеере просто <span class="em_BLCK">Действия</span>). С этим окном, в зависимости от нужд вашей игры, вы можете проделывать разные манипуляции. Вы можете:
+
+</p>
+<ul>
+<li>
+Отключать и включать <span class="em_BLCK">Окно действий</span> по своему желанию
+</li>
+<li>
+Добавлять действия в <span class="em_BLCK">Окно действий</span>
+</li>
+<li>
+Удалять действия из <span class="em_BLCK">Окна действий</span>
+</li>
+<li>
+Полностью очищать <span class="em_BLCK">Окно действий</span>
+</li>
+</ul>
+<p>
+В названиях действий не важен регистр букв, то есть "Пойти" и "поЙти" - одно и то же действие.
+
+</p>
+<p>
+При создании действия, весь код, относящийся к действию, "прикрепляется" к этому действию, но не выполняется. Этот код будет выполнен только тогда, когда игрок нажмёт на действие (щёлкнет по нему мышью).
+
+</p>
+<a id="komandy"></a><h3>Команды для работы с Окном действий</h3>
+<a id="ОRъG"></a><h4>Включение и выключение Окна действий</h4>
+<ul>
+<li>
+ <span class="em_BLCK"><span class="emOPRT">SHOWACTS</span></span> [#выражение] - если значение выражения отлично от 0, то показывает <span class="em_BLCK">Список действий</span>, иначе скрывает его.
+<p>
+Пример:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;скрываем&nbsp;Окно&nbsp;действий</span><br>
+<span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выводим&nbsp;Окно&nbsp;действий&nbsp;на&nbsp;экран</span><br>
+
+
+</div>
+<p>
+Для удобства чтения кода можно заранее определить переменные <span class="em_BLCK">on</span> и <span class="em_BLCK">off</span> с соответствующими значениями:
+
+</p>
+<div class="Monokai-Code">
+on<span class="Monokai-Operator">,</span>off&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><br>
+<span class="Monokai-Operator">showacts</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;включаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+<span class="Monokai-Operator">showacts</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Comment">!&nbsp;выключаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br>
+
+
+</div>
+</li>
+</ul>
+<a id="jrзН"></a><h4>Команды для управления действиями</h4>
+<ul>
+<li>
+ <strong>ACT</strong> — данная команда добавляет в <span class="em_BLCK">Окно действий</span> кнопку действия.
+<ul>
+<li>
+У этой команды есть две формы записи:
+<ul>
+<li>
+Однострочная форма записи:
+<br>			```qsp
+<br>			ACT [$название], [$путь к файлу изображения]: {оператор 1} &amp; {оператор 2} &amp; {оператор 3}
+<br>			```
+<br>			Здесь [$название] — это надпись (название), которая будет выводиться на кнопке действия, а [$путь к файлу изображения] — путь к файлу изображения, которое так же будет выводиться на кнопке действия перед названием.
+<ul>
+<li>
+И команда <span class="em_BLCK"><span class="emOPRT">ACT</span></span> и название, и операторы после двоеточия при такой форме записи должны быть записаны в одну строку.
+</li>
+<li>
+Когда игрок нажмёт кнопку действия с указанным названием, будут выполнены перечисленные операторы.
+</li>
+<li>
+Параметр [$путь к файлу изображения] может отсутствовать, при этом действие добавится без изображения.
+</li>
+</ul>
+</li>
+<li>
+Многострочная форма записи:
+<br>			```qsp
+<br>			ACT [$название], [$путь к файлу изображения]:
+			END
+<br>			```
+<br>			Здесь точно так же будет создано действие с названием [$название], перед названием будет выводиться изображение, путь к которому мы указали с помощью параметра [$путь к файлу изображения], а когда игрок нажмёт на действие, будут выполнены перечисленные операторы. Обратите внимание:
+<ul>
+<li>
+При многострочной форме записи после двоеточия в той же строке, где находится команда <span class="em_BLCK"><span class="emOPRT">ACT</span></span> не должно быть ничего.
+</li>
+<li>
+Все операторы записываются со следующей строки после двоеточия
+</li>
+<li>
+Многострочная форма обязательно должна завершаться командой <span class="em_BLCK"><span class="emOPRT">END</span></span> или <span class="em_BLCK"><span class="emOPRT">END</span><span class="emOPRT"> ACT</span></span>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+Примеры:
+<div class="Monokai-Code">
+<span class="Monokai-Comment">!&nbsp;действие&nbsp;в&nbsp;однострочной&nbsp;форме&nbsp;записи</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Сорвать&nbsp;с&nbsp;берёзы&nbsp;яблоко"</span><span class="Monokai-Operator">:</span>&nbsp;яблоко<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сорвали&nbsp;яблоко,&nbsp;спелое&nbsp;белое."</span><br>
+
+
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+		! действие в многострочной форме записи, с изображением
+
+</p>
+<p>
+		act "Сорвать арбуз с куста","img/watermelon.png":
+
+</p>
+<p>
+			арбуз+=1
+
+</p>
+<p>
+			*pl "Вы сорвали арбуз с куста"
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`DELACT`&nbsp;[$название]&nbsp;-&nbsp;удаляет&nbsp;действие&nbsp;с&nbsp;указанным&nbsp;названием&nbsp;из&nbsp;списка&nbsp;действий&nbsp;на&nbsp;локации.&nbsp;Если&nbsp;действие&nbsp;с&nbsp;указанным&nbsp;названием&nbsp;не&nbsp;существует,&nbsp;ошибки&nbsp;не&nbsp;будет,&nbsp;плеер&nbsp;просто&nbsp;проигнорирует&nbsp;команду.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Примеры:<br>
+
+</div>
+<p>
+		! удаляем действие с конкретным названием
+
+</p>
+<p>
+		delact 'Идти вперед'
+
+</p>
+<p>
+		! удаляем выделенное действие
+
+</p>
+<p>
+		delact $selact
+
+</p>
+<div class="Monokai-Code">
+<br>
+--Команды&nbsp;очистки&nbsp;Окна&nbsp;действий--<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`CLA`&nbsp;-&nbsp;очистка&nbsp;списка&nbsp;текущих&nbsp;действий&nbsp;(удаление&nbsp;всех&nbsp;действий&nbsp;из&nbsp;окна&nbsp;действий).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+	! это действие при нажатии выведет текст
+
+</p>
+<p>
+	act "Действие 1":
+
+</p>
+<p>
+		*pl "Ехал Грека Через Реку"
+
+</p>
+<p>
+	end
+
+</p>
+<p>
+	! это действие при нажатии выведет текст и удалится
+
+</p>
+<p>
+	act "Действие 2":
+
+</p>
+<p>
+		*pl "Видит Грека В Реке Рак"
+
+</p>
+<p>
+		delact $selact
+
+</p>
+<p>
+	end
+
+</p>
+<p>
+	! это действие при нажатии удалит все действия
+
+</p>
+<p>
+	act "Очистить окно действий":
+
+</p>
+<p>
+		cla
+
+</p>
+<p>
+	end
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`CLS`&nbsp;-&nbsp;эквивалентно&nbsp;конструкции&nbsp;"CLEAR&nbsp;&&nbsp;*CLEAR&nbsp;&&nbsp;CLA&nbsp;&&nbsp;CMDCLEAR",&nbsp;т.е.&nbsp;очищает&nbsp;все&nbsp;окна&nbsp;кроме&nbsp;списка&nbsp;предметов.<br>
+<br>
+--Функции&nbsp;для&nbsp;обработки&nbsp;действий--<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`$CURACTS`&nbsp;-&nbsp;данная&nbsp;функция&nbsp;возвращает&nbsp;текущий&nbsp;список&nbsp;действий&nbsp;в&nbsp;виде&nbsp;QSP-кода.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;Действия&nbsp;сохраняются&nbsp;в&nbsp;виде&nbsp;набора&nbsp;операторов&nbsp;ACT&nbsp;с&nbsp;ответствующими&nbsp;параметрами&nbsp;и&nbsp;операциями.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;Записав&nbsp;возвращённое&nbsp;функцией&nbsp;значение&nbsp;в&nbsp;переменную,&nbsp;можно&nbsp;восстановить&nbsp;действия&nbsp;с&nbsp;помощью&nbsp;оператора&nbsp;[`DYNAMIC`](#help_dynamical)`.&nbsp;Пример:<br>
+
+</div>
+<p>
+		! записываем текущие действия в переменную
+
+</p>
+<p>
+		$actlist=$curacts
+
+</p>
+<p>
+		! восстанавливаем действия из переменной
+
+</p>
+<p>
+		dynamic $actlist
+
+</p>
+<div class="Monokai-Code">
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;`$SELACT`&nbsp;-&nbsp;данная&nbsp;функция&nbsp;возвращает&nbsp;название&nbsp;выделенного&nbsp;действия&nbsp;в&nbsp;любом&nbsp;месте&nbsp;игры.&nbsp;Пример:<br>
+
+</div>
+<p>
+		act "Съесть яблоко":
+
+</p>
+<p>
+			*pl "Это было очень вкусное яблоко. Жаль, что червивое."
+
+</p>
+<p>
+			здоровье=здоровье+100
+
+</p>
+<p>
+			delact $selact
+
+</p>
+<p>
+		end
+
+</p>
+<div class="Monokai-Code">
+<br>
+=Событие&nbsp;"Выделение&nbsp;действия"=<br>
+<br>
+Когда&nbsp;вы&nbsp;наводите&nbsp;курсор&nbsp;мыши&nbsp;на&nbsp;действие,&nbsp;в&nbsp;классическом&nbsp;плеере&nbsp;это&nbsp;действие&nbsp;подсвечивается&nbsp;голубым&nbsp;цветом,&nbsp;и&nbsp;это&nbsp;означает,&nbsp;что&nbsp;действие&nbsp;выделено.&nbsp;При&nbsp;этом&nbsp;функция&nbsp;`$SELACT`,&nbsp;вызванная&nbsp;в&nbsp;любом&nbsp;месте&nbsp;игры,&nbsp;будет&nbsp;возвращать&nbsp;название&nbsp;такого&nbsp;выделенного&nbsp;действия.<br>
+<br>
+`Выделение&nbsp;действия`&nbsp;—&nbsp;это&nbsp;событие,&nbsp;к&nbsp;которому&nbsp;вы&nbsp;можете&nbsp;привязать&nbsp;автоматическое&nbsp;выполнение&nbsp;кода.&nbsp;Делается&nbsp;это&nbsp;с&nbsp;помощью&nbsp;системной&nbsp;переменной&nbsp;`$ONACTSEL`:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`$ONACTSEL`&nbsp;—&nbsp;системная&nbsp;переменная,&nbsp;куда&nbsp;можно&nbsp;прописать&nbsp;название&nbsp;локации,&nbsp;код&nbsp;на&nbsp;которой&nbsp;будет&nbsp;выполняться&nbsp;при&nbsp;очередном&nbsp;выделении&nbsp;действия.<br>
+<br>
+Более&nbsp;подробная&nbsp;информация&nbsp;в&nbsp;разделе&nbsp;["Служебные&nbsp;локации"](#help_service_locations).<br>
+<br>
+=Локальные&nbsp;переменные&nbsp;в&nbsp;действии=<br>
+<br>
+Каждое&nbsp;действие&nbsp;в&nbsp;`QSP`&nbsp;вляется&nbsp;отдельным&nbsp;блоком&nbsp;кода,&nbsp;и&nbsp;потому&nbsp;для&nbsp;него&nbsp;можно&nbsp;назначить&nbsp;локальные&nbsp;переменные.&nbsp;Таким&nbsp;образом&nbsp;можно&nbsp;проводить&nbsp;различные&nbsp;расчёты&nbsp;внутри&nbsp;действия,&nbsp;не&nbsp;затрагивая&nbsp;переменные&nbsp;на&nbsp;локации.<br>
+<br>
+
+</div>
+<p>
+яблоки=245
+
+</p>
+<p>
+act "Наколдовать яблоки":
+
+</p>
+<p>
+	local яблоки
+
+</p>
+<p>
+	яблоки=val($input('Сколько вам нужно яблок?'))
+
+</p>
+<p>
+	яблоки_у_Миши+=яблоки
+
+</p>
+<p>
+	*pl "Наколдовано яблок: &lt;&lt;яблоки&gt;&gt;"
+
+</p>
+<p>
+end
+
+</p>
+<p>
+act "Сколько яблок на локации?":
+
+</p>
+<p>
+	! это действие работает с глобальной переменной
+
+</p>
+<p>
+	*pl "Яблок на локации: &lt;&lt;яблоки&gt;&gt;"
+
+</p>
+<p>
+end
+
+</p>
+<div class="Monokai-Code">
+<br>
+=Ограничения=<br>
+[:ogranichenija]<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Максимальное&nbsp;количество&nbsp;одновременно&nbsp;видимых&nbsp;действий&nbsp;на&nbsp;локации&nbsp;—&nbsp;50.&nbsp;То&nbsp;есть&nbsp;игрок&nbsp;не&nbsp;сможет&nbsp;увидеть&nbsp;больше&nbsp;пятидесяти&nbsp;действий&nbsp;на&nbsp;экране,&nbsp;сколько&nbsp;бы&nbsp;вы&nbsp;их&nbsp;не&nbsp;добавляли.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Если&nbsp;в&nbsp;списке&nbsp;действий&nbsp;уже&nbsp;есть&nbsp;действие&nbsp;с&nbsp;указанным&nbsp;названием,&nbsp;то&nbsp;новое&nbsp;действие&nbsp;не&nbsp;создаётся,&nbsp;и&nbsp;не&nbsp;заменяет&nbsp;собой&nbsp;уже&nbsp;существующее,&nbsp;плеер&nbsp;просто&nbsp;игнорирует&nbsp;команду&nbsp;`act`.&nbsp;Таким&nbsp;образом&nbsp;нельзя&nbsp;вывести&nbsp;действия&nbsp;с&nbsp;одинаковыми&nbsp;названиями.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Пример:<br>
+
+</div>
+<p>
+		act "Действие 1": *pl "Старое действие."
+
+</p>
+<p>
+		act "Действие 1": *pl "Новое действие."
+
+</p>
+<div class="Monokai-Code">
+<br>
+[Вперёд:&nbsp;Переходы](#help_goto)<br>
+
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_sozdanie_igr_na_quest_navigator.html" class="emHREFTT">&lt; Назад, к странице 41</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_cycle.html" class="emHREFTT">Вперёд, к странице 43 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

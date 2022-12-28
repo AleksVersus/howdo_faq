@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Справка по QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qSpider.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Назад: Отладчик</a>
+
+</p>
+<a id="help_txt2gam"></a><h2>TXT2GAM. Краткое руководство</h2>
+<p>
+Утилита "TXT2GAM" ("txt2gam.exe") предназначена для конвертирования текстовых файлов, написанных в специальном формате, в файлы QSP-игр "<span class="em_BLCK">.qsp</span>". Таким образом вы можете создавать игры в обычном текстовом редакторе, а затем конвертировать их в приемлемые для плееров файлы.
+
+</p>
+<p>
+<a href="https://qsp.org/attachments/txt2gam011.zip" style="text-decoration:none;" class="emFOLD">Скачать утилиту для Windows</a>
+
+</p>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_txt2gam_linux" style="text-decoration:none;" class="emFOLD">Сборка TXT2GAM на Linux</a>
+
+</p>
+<a id="аPbI"></a><h3>Формат <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> (<span class="em_BLCK">QSPS</span>)</h3>
+<p>
+Формат <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> так же называется форматом <span class="em_BLCK">QSPS</span>, а текстовые файлы, записанные в этом формате и имеющие расширение "<span class="em_BLCK">.qsps</span>", называются qsps-файлами.
+
+</p>
+<p>
+Использовать qsps-файлы предпочтительнее по трём причинам:
+
+</p>
+<ul>
+<li>
+воспроизведение таких файлов поддерживается плеером <span class="em_BLCK">qSpider</span>;
+</li>
+<li>
+расширение для <span class="em_BLCK">MS Visual Studio Code</span> поддерживает подсветку синтаксиса qsps-файлов;
+</li>
+<li>
+в пакете для <span class="em_BLCK">Sublime Text</span> встроена подсветка синтаксиса qsps-файлов.
+</li>
+</ul>
+<p>
+Как было отмечено выше, файлы в формате <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> — это обычные текстовые файлы, в которых мы размещаем код QSP, при этом данный код нужно записывать по определённым правилам.
+
+</p>
+<p>
+Начало локации отмечается символом <span class="em_BLCK">#</span> (решётка/диез), после которого должен стоять пробел и название локации. Например так:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
+
+
+</div>
+<p>
+Конец локации обозначается символом <span class="em_BLCK">-</span> (дефис) в отдельной строке. После этого символа в той же строке могут идти любые символы, например, снова название локации:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">-</span>&nbsp;начало<br>
+
+
+</div>
+<p>
+Между началом и концом локации записывается обычный код QSP, как если бы вы его писали в поле "Выполнить при посещении" редактора <span class="em_BLCK">Quest<span class="emFUNC"> Generator</span></span>. Вот пример кода в формате <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> с двумя локациями:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
+<span class="Monokai-String">'It'</span><span class="Monokai-String">'s&nbsp;only&nbsp;test&nbsp;of&nbsp;new&nbsp;utility.'</span><br>
+<span class="Monokai-String">'That&nbsp;is&nbsp;all.'</span><br>
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Далее'</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'next'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Operator">(</span>конец&nbsp;локации<span class="Monokai-Operator">)</span><br>
+&nbsp;<br>
+<span class="Monokai-StartLoc">#&nbsp;next</span><br>
+$s<span class="Monokai-Operator">=</span><span class="Monokai-String">'Это&nbsp;последняя&nbsp;локация&nbsp;примера.'</span><br>
+i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
+<span class="Monokai-Markup">:loop</span><br>
+<span class="Monokai-Koperator">if</span>&nbsp;i<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span>$s<span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span><br>
+&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*p</span>&nbsp;<span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span>$s<span class="Monokai-Operator">,</span>i<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">wait</span>&nbsp;<span class="Monokai-Numeric">200</span><br>
+&nbsp;&nbsp;&nbsp;i<span class="Monokai-Operator">=</span>i<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br>
+&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br>
+<span class="Monokai-Koperator">end</span><br>
+<span class="Monokai-Operator">*nl</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Это&nbsp;всё.'</span><br>
+<span class="Monokai-Operator">-</span><br>
+
+
+</div>
+<p>
+Между локациями в таком файле может быть записан любой текст, он не попадёт в конечный файл игры. Поэтому вы можете помещать туда различные комментарии, команды препроцессора и другой сопроводительный текст.
+
+</p>
+<p>
+Поскольку концом локации считается символ <span class="em_BLCK">-</span> в начале отдельно стоящей строки, могут возникнуть ошибки, если вы напишете команду, наподобие этой:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">-</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">)</span><br>
+
+
+</div>
+<p>
+Записанная в поле "Выполнить при посещении" редактора <span class="em_BLCK">Quest<span class="emFUNC"> Generator</span></span> данная команда будет нормально работать в итоговой игре, однако если эту команду записать в файле формата <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>, конвертер посчитает её окончанием локации, и все последующие за данной командой строки вплоть до начала следующей локации будут проигнорированы.
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
+<span class="Monokai-String">"Какой-то&nbsp;код.&nbsp;Много-много&nbsp;кода<br>
+Этот&nbsp;код&nbsp;попадёт&nbsp;в&nbsp;локацию"</span><br>
+<span class="Monokai-Comment">!&nbsp;пытаемся&nbsp;вывести&nbsp;произведение&nbsp;45&nbsp;и&nbsp;9&nbsp;умноженное&nbsp;на&nbsp;-1</span><br>
+<span class="Monokai-Operator">-</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span><br>
+<span class="Monokai-String">"А&nbsp;вот&nbsp;этот&nbsp;код&nbsp;не&nbsp;попадёт&nbsp;в&nbsp;локацию"</span><br>
+<span class="Monokai-Operator">-</span>&nbsp;начало&nbsp;<span class="Monokai-Operator">(</span>хотим<span class="Monokai-Operator">,</span>&nbsp;чтобы&nbsp;конец&nbsp;локации&nbsp;был&nbsp;здесь<span class="Monokai-Operator">)</span><br>
+Все&nbsp;строки&nbsp;от&nbsp;<span class="Monokai-Operator">-</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">)</span>&nbsp;будут&nbsp;проигнорированы<br>
+<br>
+<span class="Monokai-StartLoc">#&nbsp;локация&nbsp;2</span><br>
+<span class="Monokai-Comment">!&nbsp;какой-то&nbsp;код</span><br>
+<span class="Monokai-Operator">-</span>&nbsp;локация&nbsp;<span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<p>
+Если не закрыть локацию строкой начинающейся с <span class="em_BLCK">-</span>, новую локацию открыть будет нельзя, а значит строка, начинающаяся с символа <span class="em_BLCK">#</span> может вызвать ошибку "Неизвестное действие" в конечной игре:
+
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-StartLoc">#&nbsp;начало</span><br>
+<span class="Monokai-String">"Выводим&nbsp;текст"</span><br>
+<span class="Monokai-StartLoc">#&nbsp;локация&nbsp;2</span><br>
+<span class="Monokai-String">"Забыли&nbsp;закрыть&nbsp;локацию&nbsp;перед&nbsp;открытием&nbsp;новой"</span><br>
+<span class="Monokai-Operator">-</span>&nbsp;локация&nbsp;<span class="Monokai-Numeric">2</span><br>
+
+
+</div>
+<p>
+Внимание! Для формата <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> не предусмотрено редактирование базового описания и базовых действий. Поэтому при экспорте игры из <span class="em_BLCK">Quest<span class="emFUNC"> Generator</span></span> в формат <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> будьте внимательны: все базовые описания и базовые действия будут экспортированы в основной код локаций. Если впоследствии вы импортируете игру обратно из TXT2GAM-файла в <span class="em_BLCK">Quest<span class="emFUNC"> Generator</span></span>, то поля "Описание" и "Базовые действия" во всех локациях окажутся пустыми.
+
+</p>
+<a id="кGЪI"></a><h3>Использование утилиты TXT2GAM</h3>
+<p>
+<strong>TXT2GAM</strong> — это консольная утилита, т.е. она запускается командами из консоли, например из командной строки Windows.
+
+</p>
+<p>
+(Ознакомиться с основными командами командной строки вы можете в обучающей статье <a href="https://sonikelf.ru/vvodnaya-statya-po-rabote-v-konsoli-chto-takoe-konsol-komandy-konsoli-i-prochee-takoe-raznoe-cmd/" style="text-decoration:none;" class="emFOLD">"Что такое консоль, команды и прочее такое разное — CMD"</a>).
+
+</p>
+<p>
+Пример работы с утилитой:
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;game.txt&nbsp;game.qsp<br>
+
+</div>
+<p>
+Здесь: "<span class="em_BLCK">game.txt</span>" — исходный файл вашей игры, написанный в формате <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>; "<span class="em_BLCK">game.qsp</span>" — конечный файл, в котором будет сохранена ваша игра.
+
+</p>
+<p>
+Предположим, вы написали игру в текстовом редакторе, и теперь она у вас лежит в виде файла "<span class="em_BLCK">game.txt</span>" на диске "<span class="em_BLCK">D:</span>" в папке "<span class="em_BLCK">QSP\Games\myCoolGame</span>".
+
+</p>
+<p>
+Для удобства скопируйте утилиту <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> (т.е. файл "<span class="em_BLCK">txt<span class="emNUM">2</span>gam.exe</span>") в папку с игрой. Теперь для конвертирования игры вам нужно сделать следующее:
+
+</p>
+<ol>
+<li>
+Откройте консоль
+</li>
+<li>
+Перейдите на диск "<span class="em_BLCK">D:</span>", введя команду <span class="em_BLCK">D:</span> в командной строке и нажав клавишу "Enter".
+</li>
+<li>
+Перейдите в папку с вашей игрой с помощью команды <span class="em_BLCK">cd</span>. В нашем примере это делается так <span class="em_BLCK">cd "QSP\Games\myCoolGame"</span>
+</li>
+<li>
+Запустите утилиту <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>, указав в качестве параметров сначала исходный файл вашей игры (т.е. "<span class="em_BLCK">game.txt</span>"), а затем название файла, который хотите получить, например "<span class="em_BLCK">myCoolGame.qsp</span>":
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp<br>
+
+</div>
+</li>
+</ol>
+<p>
+Утилита поддерживает полные пути к файлам, поэтому вы можете использовать одну утилиту для конвертирования разных игр:
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;"D:\QSP\Games\myCoolGame\game.txt"&nbsp;"D:\QSP\releases\myCoolGame\myCoolGame.qsp"<br>
+
+</div>
+<p>
+Для получения дополнительной информации об утилите, запустите её в консоли без параметров:
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe<br>
+
+</div>
+<p>
+Если указать ключ <span class="em_BLCK">u</span>, исходный файл будет обрабатываться как Unicode-файл (кодировка UCS-2 LE / UTF-16 LE):
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp&nbsp;u<br>
+
+</div>
+<a id="sАPщ"></a><h3>Дополнительные возможности утилиты</h3>
+<a id="эюЬy"></a><h4>Использование</h4>
+<p>
+Общий вид команды для консоли:
+
+</p>
+<div class="Monokai-Code">
+txt2gam&nbsp;[txt&nbsp;file]&nbsp;[output&nbsp;file]&nbsp;[options]<br>
+
+</div>
+<a id="kyЗK"></a><h4>Опции. [Options]</h4>
+<p>
+a, A — режим ANSI. По-умолчанию утилита работает в режиме Unicode (UCS-2 / UTF-16).
+
+</p>
+<p>
+u, U — режим Unicode (UCS-2 LE/ UTF-16 LE).
+
+</p>
+<p>
+o, O — сохранить игру в старом формате ("<span class="em_BLCK">.gam</span>"). По умолчанию используется новый формат ("<span class="em_BLCK">.qsp</span>").
+
+</p>
+<p>
+s[char], S[char] — вместо [char] нужно указать символ, с которого начинаются ваши локации. Т.е. это символ, который вы можете использовать вместо <span class="em_BLCK">#</span>, если это необходимо.
+
+</p>
+<p>
+e[char], E[char] — вместо [char] нужно указать символ, которым будет отмечаться конец локации. Т.е. это символ, который вы можете использовать вместо <span class="em_BLCK">-</span>, если это необходимо.
+
+</p>
+<p>
+p[pass], P[pass] — вместо [pass] укажите пароль, который хотите установить на игру. По умолчанию <span class="em_BLCK"><span class="emFUNC">No</span></span>. Если пароль содержит пробелы, заключите его в кавычки.
+
+</p>
+<p>
+t, T — извлечь строки из текста.
+
+</p>
+<p>
+q, Q - извлечь q-строки из текста.
+
+</p>
+<a id="MПТт"></a><h4>Примеры вызова:</h4>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;pMyPassword<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;u<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;o&nbsp;pMyPassword<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;o&nbsp;e@&nbsp;pMyPassword<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;u&nbsp;o&nbsp;p"My&nbsp;Password"<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;o<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;o&nbsp;e@<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;s@&nbsp;e~<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;s@&nbsp;e~&nbsp;o<br>
+txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;t&nbsp;u<br>
+
+</div>
+<a id="БлУL"></a><h3>Подключение утилиты к текстовому редактору</h3>
+<p>
+При разработке игр в текстовом редакторе, очень полезным может оказаться создание специального действия / кнопки для автоматической компиляции файла в "<span class="em_BLCK">.qsp</span>" и запуска плеера сразу с редактируемым файлом.
+
+</p>
+<p>
+То есть пишете текст игры в редакторе, нажимаете некое сочетание клавиш и получаете запущенную в плеере игру.
+
+</p>
+<p>
+Данное руководство, на примере `<a href="http://www.emeditor.com" style="text-decoration:none;" class="emFOLD">EmEditor</a>`а , описывает, как это сделать.
+
+</p>
+<p>
+Для начала, создайте папку (допустим, "<span class="em_BLCK">D:\Games\QSP</span>"), распаковав в неё базовый архив плеера ("<span class="em_BLCK">qspgui.exe</span>" + все <strong>DLL</strong>'ки) и архив утилиты <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>.
+
+</p>
+<p>
+Далее, создайте в этой папке (рядом с "<span class="em_BLCK">qspgui.exe</span>", "<span class="em_BLCK">txt<span class="emNUM">2</span>gam.exe</span>") файл "<span class="em_BLCK">start.bat</span>" со следующим содержимым:
+
+</p>
+<div class="Monokai-Code">
+txt2gam&nbsp;%1&nbsp;%2<br>
+start&nbsp;qspgui&nbsp;%2<br>
+
+</div>
+<p>
+Теперь нужно в редакторе добавить действие/кнопку, при нажатии на которую будет запущен файл "<span class="em_BLCK">start.bat</span>" с двумя аргументами - указанием исходного TXT-файла и конечного "<span class="em_BLCK">.qsp</span>"-файла.
+
+</p>
+<ol>
+<li>
+Запустите EmEditor, выберите в меню <span class="em_BLCK">Tools / External Tools / Customize Tools...</span>
+</li>
+<li>
+В появившемся окошке нажмите кнопку <span class="em_BLCK">New</span>.
+</li>
+<li>
+В поле <span class="em_BLCK">Title</span> впишите название действия (например, "QSP").
+</li>
+<li>
+В поле <span class="em_BLCK"><span class="emFUNC">Command</span></span> строку <span class="em_BLCK">D:\Games\QSP\start.bat</span>
+</li>
+<li>
+В поле <span class="em_BLCK">Arguments</span> строку <span class="em_BLCK"><span class="emTEXT">"$(Path)"</span> "$(Dir)\$(Filename).gam"</span> (сохраняя кавычки)
+</li>
+<li>
+В поле <span class="em_BLCK">Initial Directory</span> строчку <span class="em_BLCK">D:\Games\QSP</span>
+</li>
+<li>
+Затем поставьте флажок напротив <span class="em_BLCK">Save File</span>, и нажмите <span class="em_BLCK">OK</span>.
+</li>
+<li>
+На панели инструментов появится новая кнопка с подписью "QSP", при нажатии на которую будут произведены требуемые действия.
+</li>
+</ol>
+<p>
+Теперь нужно назначить сочетание клавиш для кнопки.
+
+</p>
+<ol>
+<li>
+Выберите пункт меню <span class="em_BLCK">Help / Keyboard Map...</span>. В категории <span class="em_BLCK">External Tools</span> найдите пункт <span class="em_BLCK">QSP</span> (обычно, в самом низу) и щелкните по нему 2 раза.
+</li>
+<li>
+Установите курсор в поле <span class="em_BLCK">Press New Shortcut Key</span> и нажмите желаемое сочетание клавиш (к примеру, F1). Станет доступной кнопка <span class="em_BLCK">Assign</span>. Нажимаем.
+</li>
+<li>
+Далее жмём <span class="em_BLCK">OK</span> и пишем игры в формате TXT2GAM :-)
+</li>
+</ol>
+<p>
+Чтобы установить пароль на файл, создаваемый утилитой TXT2GAM, замените в файле <span class="em_BLCK">start.bat</span> строчку
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;%1&nbsp;%2<br>
+
+</div>
+<p>
+на
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;pMyPassword<br>
+
+</div>
+<p>
+где <span class="em_BLCK">MyPassword</span> - устанавливаемый пароль. Для задания паролей с пробелами, строчка pMyPassword должна быть указана в кавычках:
+
+</p>
+<div class="Monokai-Code">
+txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;"pMy&nbsp;Pass&nbsp;word"<br>
+
+</div>
+<a id="ОВяx"></a><h3>Дополнительная информация и полезные ссылки:</h3>
+<ol>
+<li>
+В настоящий момент общепринятым расширением для текстовых файлов формата <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span> можно считать "<span class="em_BLCK">.qsps</span>". "Просто потому что" (с) <a href="https://github.com/gretmn102/QSP-VSCode#допустим-я-хочу-попробовать" style="text-decoration:none;" class="emFOLD">Pseudopod</a>.
+</li>
+<li>
+Существует утилита <span class="em_BLCK">qsp<span class="emNUM">2</span>txt</span> для конвертирования игр в обратную сторону — из файлов игр "<span class="em_BLCK">.qsp</span>" в текстовые файлы формата <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>. Исходная ссылка утеряна, можно скачать в <a href="https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A" style="text-decoration:none;" class="emFOLD">архиве программ QSP от Aleks Versus</a>.
+</li>
+<li>
+Существовали разные <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=686&Itemid=57" style="text-decoration:none;" class="emFOLD">подсветки синтаксиса для <span class="em_BLCK">Notepad++</span> и <span class="em_BLCK">AkelPad</span></a>, но были утеряны.
+</li>
+<li>
+Подсветка синтаксиса для Sublime Text входит в <a href="https://github.com/AleksVersus/JAD_for_QSP" style="text-decoration:none;" class="emFOLD">пакет JAD на QSP для Sublime Text</a>.
+</li>
+<li>
+Существует подсветка для <a href="https://qsp.org/components/com_agora/img/members/20/notepad-qsp.zip" style="text-decoration:none;" class="emFOLD">Notepad++ от Олегуса</a>. С этой подсветкой ассоциируются текстовые файлы с расширением <span class="em_BLCK">.tqsp</span>, однако вы можете отредактировать файл подсветки, указав нужное вам расширение.
+</li>
+<li>
+Werewolf разработал утилиту для конвертирования QSP-файла в текстовый формат (аналог <span class="em_BLCK">qsp<span class="emNUM">2</span>txt</span>), которая работает онлайн: <a href="https://codepen.io/srg-kostyrko/full/QWqdwxv" style="text-decoration:none;" class="emFOLD">https://codepen.io/srg-kostyrko/full/QWqdwxv</a>. Так же он разработал специальные пакеты для конвертирования файлов в любую сторону: <a href="https://github.com/QSPFoundation/converters" style="text-decoration:none;" class="emFOLD">https://github.com/QSPFoundation/converters</a>.
+</li>
+<li>
+Существует учебник по написанию игр на QSP, если вы начинаете сразу с работы в текстовом редакторе: <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_txt2gam_manual" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>.
+</li>
+<li>
+Можно дополнительно обрабатывать qsps-файлы специальными программами перед тем, как конвертировать в файл игры QSP. Эти программы называются препроцессорами. В 2010 году NTROPY написал статью на эту тему: <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">"Препроцессор при использовании <span class="em_BLCK">TXT<span class="emNUM">2</span>GAM</span>"</a>
+</li>
+</ol>
+<p>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Вперёд: Анализатор кода</a>
+
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/qSpider.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<ul>
+<li>
+ `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+</li>
+<li>
+ <span class="em_BLCK">Вывод текста</span>
+<ul>
+<li>
+ <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+</li>
+<li>
+ <span class="em_BLCK">Программирование</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+</li>
+</ul>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Оформление</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Расширенные возможности</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+<ul>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+</li>
+<li>
+<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+</li>
+</ul>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+</li>
+<li>
+ x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+</li>
+</ul>
+</li>
+<li>
+ <span class="em_BLCK">Утилиты и средства разработки</span>
+<ul>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+</li>
+<li>
+ <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+</li>
+</ul>
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+</li>
+<li>
+ `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+</li>
+</ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

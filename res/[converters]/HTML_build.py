@@ -37,7 +37,7 @@ if __name__=="__main__":
 	html_json=[
 		# "..\\..\\[source]\\готовые статьи\\html.json",
 		# "..\\..\\[source]\\ответы\\html.json",
-		"..\\..\\[source]\\ИнформАрхив QSP\\html.json"
+		"..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:
 		main(path)
