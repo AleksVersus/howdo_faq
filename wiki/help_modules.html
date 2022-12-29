@@ -15,9 +15,9 @@
         <div class="em_AROUND">
             <h1>Справка по QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_html_classic.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator_game_files.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_html_classic.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator_game_files.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
 <p>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Назад: Ввод текста игроком</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Назад: Ввод текста игроком</a>
 
 </p>
 <a id="help_modules"></a><h2>Работа с файлами игр, использование модулей</h2>
@@ -38,7 +38,7 @@ QSP позволяет загружать в выполняемую игру д�
 </li>
 </ul>
 <p>
-Первый способ обычно используется для того, чтобы разбить игру на несколько частей и работать над каждой частью отдельно, а затем объединять эти части уже при запуске основного файла игры. Так, например, можно создать различные наборы <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">пользовательских функций и процедур</a> и повторно использовать их в разных играх.
+Первый способ обычно используется для того, чтобы разбить игру на несколько частей и работать над каждой частью отдельно, а затем объединять эти части уже при запуске основного файла игры. Так, например, можно создать различные наборы <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">пользовательских функций и процедур</a> и повторно использовать их в разных играх.
 
 </p>
 <p>
@@ -88,7 +88,7 @@ QSP позволяет загружать в выполняемую игру д�
 
 </div>
 <p>
-Обратите внимание! Несмотря на то, что с применением оператора <span class="em_BLCK"><span class="emOPRT">INCLIB</span></span> увеличивается список доступных для использования локаций, сама запущенная игра не изменяется и не заменяется. Это позволяет запускать сохранения при отключенном режиме отладки (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emVAR">DEBUG</span></span></a>) даже в тех случаях, когда вы изменяете подключаемые к игре модули. То есть вы можете написать основной файл игры, включающий всего одну локацию, на которой подключаются все прочие модули, и сохранения от вашей игры будет невозможно запустить в других играх; однако при этом вы спокойно можете изменять все подключаемые к игре модули (например, если выпускаете патчи на игру), не боясь, что старые сохранения не запустятся с новыми версиями модулей.
+Обратите внимание! Несмотря на то, что с применением оператора <span class="em_BLCK"><span class="emOPRT">INCLIB</span></span> увеличивается список доступных для использования локаций, сама запущенная игра не изменяется и не заменяется. Это позволяет запускать сохранения при отключенном режиме отладки (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emVAR">DEBUG</span></span></a>) даже в тех случаях, когда вы изменяете подключаемые к игре модули. То есть вы можете написать основной файл игры, включающий всего одну локацию, на которой подключаются все прочие модули, и сохранения от вашей игры будет невозможно запустить в других играх; однако при этом вы спокойно можете изменять все подключаемые к игре модули (например, если выпускаете патчи на игру), не боясь, что старые сохранения не запустятся с новыми версиями модулей.
 
 </p>
 </li>
@@ -106,7 +106,7 @@ QSP позволяет загружать в выполняемую игру д�
 </p>
 </li>
 <li>
-<strong>OPENQST</strong> — открывает и запускает указанный файл игры. То есть в сеансе плеера полностью очищается весь список локаций, затем добавляются локации из указанной игры, и на самую первую из них осуществляется переход, как если бы этот переход осуществлялся с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOTO</span></span></a>. Общая запись:
+<strong>OPENQST</strong> — открывает и запускает указанный файл игры. То есть в сеансе плеера полностью очищается весь список локаций, затем добавляются локации из указанной игры, и на самую первую из них осуществляется переход, как если бы этот переход осуществлялся с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/wiki/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOTO</span></span></a>. Общая запись:
 <div class="Monokai-Code">
 <span class="Monokai-Operator">OPENQST</span>&nbsp;<span class="Monokai-Command">[$путь]</span><br>
 
@@ -131,17 +131,17 @@ QSP позволяет загружать в выполняемую игру д�
 
 </div>
 <p>
-Обратите внимание! Загружаемая с помощью <span class="em_BLCK"><span class="emOPRT">OPENQST</span></span> игра — это совершенно другая игра, не та, из которой она была вызвана. Поэтому если вы из игры "1" запустили игру "2" и в игре "2" сделали сохранение, это сохранение не получится запустить из игры "1" при отключенном режиме отладки (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emVAR">DEBUG</span></span></a>).
+Обратите внимание! Загружаемая с помощью <span class="em_BLCK"><span class="emOPRT">OPENQST</span></span> игра — это совершенно другая игра, не та, из которой она была вызвана. Поэтому если вы из игры "1" запустили игру "2" и в игре "2" сделали сохранение, это сохранение не получится запустить из игры "1" при отключенном режиме отладки (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emVAR">DEBUG</span></span></a>).
 
 </p>
 <p>
-Внимание! Не путайте оператор <span class="em_BLCK"><span class="emOPRT">OPENQST</span></span> и <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">OPENGAME</span></span></a>.
+Внимание! Не путайте оператор <span class="em_BLCK"><span class="emOPRT">OPENQST</span></span> и <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">OPENGAME</span></span></a>.
 
 </p>
 </li>
 </ul>
 <a id="spisok_gotovyx_avtorskix_modulej"></a><h3>Список готовых авторских модулей</h3>
-<a id="Лцйl"></a><h4>Olegus</h4>
+<a id="QсNF"></a><h4>Olegus</h4>
 <ul>
 <li>
  <a href="http://forum.ifiction.ru/viewtopic.php?id=1613" style="text-decoration:none;" class="emFOLD">QSP:Экран</a> — модуль для управления отдельными HTML-областями на экране.
@@ -159,7 +159,7 @@ QSP позволяет загружать в выполняемую игру д�
  <a href="http://forum.ifiction.ru/viewtopic.php?id=1873" style="text-decoration:none;" class="emFOLD">QSP:Таймер</a> — модуль для управления событиями по таймеру.
 </li>
 </ul>
-<a id="БПцo"></a><h4>Werewolf</h4>
+<a id="iYМэ"></a><h4>Werewolf</h4>
 <ul>
 <li>
  <a href="https://qsp.org/index.php?option=com_content&id=71&Itemid=56" style="text-decoration:none;" class="emFOLD">Отладчик</a>
@@ -168,23 +168,23 @@ QSP позволяет загружать в выполняемую игру д�
  <a href="https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76" style="text-decoration:none;" class="emFOLD">Гибкий плейлист</a>
 </li>
 </ul>
-<a id="кщOP"></a><h4>Ntropy</h4>
+<a id="РКsf"></a><h4>Ntropy</h4>
 <ul>
 <li>
  <a href="https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76" style="text-decoration:none;" class="emFOLD">Библиотечка, дополняющая инвентарь</a>
 </li>
 </ul>
-<a id="mЁNg"></a><h4>Aleks Versus</h4>
+<a id="кнГf"></a><h4>Aleks Versus</h4>
 <ul>
 <li>
  <a href="https://github.com/AleksVersus/easy.math.3" style="text-decoration:none;" class="emFOLD">Easy.Math</a> — математический модуль, расширяющий возможности работы с числами. Вещественные числа, работа со строками и массивами и другие полезные функции.
 </li>
 </ul>
 <p>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Вперёд: Файлы сохранений</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Вперёд: Файлы сохранений</a>
 
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_html_classic.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator_game_files.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_html_classic.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator_game_files.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -212,10 +212,10 @@ QSP позволяет загружать в выполняемую игру д�
  `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
 </li>
 <li>
  <span class="em_BLCK">Вывод текста</span>
@@ -224,65 +224,65 @@ QSP позволяет загружать в выполняемую игру д�
  <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
 </li>
 </ul>
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
 </li>
 <li>
  <span class="em_BLCK">Программирование</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
 </li>
 </ul>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
 </li>
 </ul>
 </li>
@@ -290,19 +290,19 @@ QSP позволяет загружать в выполняемую игру д�
  <span class="em_BLCK">Оформление</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
 </li>
 </ul>
 </li>
@@ -310,19 +310,19 @@ QSP позволяет загружать в выполняемую игру д�
  <span class="em_BLCK">Расширенные возможности</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
 </li>
 </ul>
 </li>
@@ -330,24 +330,24 @@ QSP позволяет загружать в выполняемую игру д�
  <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
 <ul>
 <li>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
 </li>
 <li>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
 </li>
 </ul>
 </li>
 <li>
- x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+ x <a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
 </li>
 <li>
- x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+ x <a href="https://aleksversus.github.io/howdo_faq/wiki/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
 </li>
 </ul>
 </li>
@@ -355,30 +355,30 @@ QSP позволяет загружать в выполняемую игру д�
  <span class="em_BLCK">Утилиты и средства разработки</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
 </li>
 </ul>
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
 </li>
 </ul>
         </div>

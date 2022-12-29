@@ -15,9 +15,9 @@
         <div class="em_AROUND">
             <h1>Справка по QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator_command_line.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_qgen.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator_command_line.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_qgen.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
 <p>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Назад: Предметы</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Назад: Предметы</a>
 
 </p>
 <a id="help_principle"></a><h2>Порядок работы интерпретатора</h2>
@@ -51,7 +51,7 @@
 <ul>
 <li>
 <strong>Переход на локацию</strong> — это событие в игре, которое происходит при обращении к локации с помощью операторов <span class="em_BLCK"><span class="emOPRT">GOTO</span></span> или <span class="em_BLCK"><span class="emOPRT">XGOTO</span></span>. При этом локация становится "активной", или "текущей". Функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> возвращает название локации, на которую был совершён переход, а массив <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> этой локации сохраняет свои значения, пока снова не будет осуществлён переход на локацию (другую, или ту же самую). После добавления текста из поля "Базовое описание" в Окно основного описания, действий из поля "Базовые действия" в Окно действий, и выполнения кода из поля "Выполнить при посещении", плеер "останавливается" и ожидает участия игрока, при этом локация, на которую был осуществлён переход, остаётся "активной" ("текущей"), т.е. функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> в любой момент может вернуть название этой локации, а массив <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> сохраняет значения.
-<br>	Для переходов существуют только два оператора (подробнее см. статью <a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">"Переходы"</a>):
+<br>	Для переходов существуют только два оператора (подробнее см. статью <a href="https://aleksversus.github.io/howdo_faq/wiki/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">"Переходы"</a>):
 <ul>
 <li>
 <strong>GOTO</strong> — осуществляет переход на указанную локацию с автоматической очисткой Окна основного описания и Окна действий.
@@ -70,16 +70,16 @@
 <br>	Вызвать локацию можно разными способами:
 <ul>
 <li>
-Оператор <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> вызывает локацию без возвращения результата (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовательские функции и процедуры"</a>).
+Оператор <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> вызывает локацию без возвращения результата (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовательские функции и процедуры"</a>).
 </li>
 <li>
-Оператор <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> вызывает локацию с возвращением результата (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовательские функции и процедуры"</a>).
+Оператор <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> вызывает локацию с возвращением результата (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовательские функции и процедуры"</a>).
 </li>
 <li>
-Нажатием пункта всплывающего меню (см. статью <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">"Всплывающее меню"</a>)
+Нажатием пункта всплывающего меню (см. статью <a href="https://aleksversus.github.io/howdo_faq/wiki/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">"Всплывающее меню"</a>)
 </li>
 <li>
-Выполнением какого-либо события в игре, как то: "Выделение предмета", "Выделение действия", "Загрузка сохранения", "Ввод текста в поле ввода" и т.д. (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
+Выполнением какого-либо события в игре, как то: "Выделение предмета", "Выделение действия", "Загрузка сохранения", "Ввод текста в поле ввода" и т.д. (подробнее в статье <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
 </li>
 </ul>
 </li>
@@ -96,15 +96,15 @@
 Код, выполняемый при нажатии на гиперссылку.
 </li>
 <li>
-Код каждого отдельного Действия (<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">ACT</span></span></a>).
+Код каждого отдельного Действия (<a href="https://aleksversus.github.io/howdo_faq/wiki/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">ACT</span></span></a>).
 </li>
 <li>
-Код каждого отдельного Цикла (<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">LOOP</span></span></a>)
+Код каждого отдельного Цикла (<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_cycle" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">LOOP</span></span></a>)
 </li>
 </ul>
 </li>
 </ul>
-<a id="ЫUPK"></a><h3>Запуск игры</h3>
+<a id="XДАБ"></a><h3>Запуск игры</h3>
 <p>
 Каждая игра на <span class="em_BLCK">QSP</span> структурно представляет собой набор локаций, последовательно записанных в файл.
 
@@ -124,17 +124,17 @@
 Выполняется код из поля "Выполнить при посещении" локации.
 </li>
 <li>
-Если на Стартовой локации в переменную <span class="em_BLCK"><span class="emFUNC">$ONNEWLOC</span></span> было помещено название локации-обработчика события "Переход на новую локацию", произойдёт автоматический вызов этой самой локации-обработчика события "Переход на новую локацию" (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
+Если на Стартовой локации в переменную <span class="em_BLCK"><span class="emFUNC">$ONNEWLOC</span></span> было помещено название локации-обработчика события "Переход на новую локацию", произойдёт автоматический вызов этой самой локации-обработчика события "Переход на новую локацию" (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
 </li>
 <li>
 После того, как Стартовая локация была прочитана, плеер "останавливается" и ожидает действий от игрока. При этом локация остаётся "активной", т.е. функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> в любой момент может вернуть её название, а в массиве <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> данной локации сохраняются значения, которые на ней были выставлены, и эти значения могут использоваться, например, в действиях, выведенных в Окно действий.
 </li>
 </ul>
 <p>
-Если на Стартовой локации в переменную <span class="em_BLCK"><span class="emVAR">$COUNTER</span></span> было помещено название локации-счётчика, примерно через равные промежутки времени (по умолчанию раз в пол секунды) плеер будет вызывать локацию-счётчик (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
+Если на Стартовой локации в переменную <span class="em_BLCK"><span class="emVAR">$COUNTER</span></span> было помещено название локации-счётчика, примерно через равные промежутки времени (по умолчанию раз в пол секунды) плеер будет вызывать локацию-счётчик (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
 
 </p>
-<a id="TцtГ"></a><h3>Выполнение кода</h3>
+<a id="uйdq"></a><h3>Выполнение кода</h3>
 <p>
 Код в <span class="em_BLCK">QSP</span> всегда выполняется последовательно, команда за командой. Чтение команд происходит сверху вниз и справа налево:
 
@@ -215,7 +215,7 @@ example<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">37</
 При выполнении команды, которая содержит строки с вложенными выражениями
 
 </p>
-<a id="уатЕ"></a><h3>Переход на новую локацию</h3>
+<a id="МxRь"></a><h3>Переход на новую локацию</h3>
 <p>
 Переход на новую локацию может осуществляться с помощью двух операторов <span class="em_BLCK"><span class="emOPRT">GOTO</span></span> и <span class="em_BLCK"><span class="emOPRT">XGOTO</span></span>. Различие в их работе заключается в следующем:
 
@@ -243,14 +243,14 @@ example<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">37</
 Выполняется код из поля "Выполнить при посещении" локации.
 </li>
 <li>
-Если в переменную <span class="em_BLCK"><span class="emFUNC">$ONNEWLOC</span></span> было помещено название локации-обработчика события "Переход на новую локацию", произойдёт автоматический вызов этой самой локации-обработчика события "Переход на новую локацию" (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
+Если в переменную <span class="em_BLCK"><span class="emFUNC">$ONNEWLOC</span></span> было помещено название локации-обработчика события "Переход на новую локацию", произойдёт автоматический вызов этой самой локации-обработчика события "Переход на новую локацию" (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
 </li>
 <li>
 После этого плеер "останавливается" и ожидает действий от игрока. При этом локация остаётся "активной", т.е. функция <span class="em_BLCK"><span class="emFUNC">$curloc</span></span> в любой момент может вернуть её название, а в массиве <span class="em_BLCK"><span class="emVAR">args</span><span class="emOPRT">[</span><span class="emOPRT">]</span></span> данной локации сохраняются значения, которые на ней были выставлены, и эти значения могут использоваться, например, в действиях, выведенных в Окно действий.
 </li>
 </ul>
 <p>
-Если в переменную <span class="em_BLCK"><span class="emVAR">$COUNTER</span></span> было помещено название локации-счётчика, примерно через равные промежутки времени (по умолчанию раз в пол секунды) плеер будет вызывать локацию-счётчик (см. <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
+Если в переменную <span class="em_BLCK"><span class="emVAR">$COUNTER</span></span> было помещено название локации-счётчика, примерно через равные промежутки времени (по умолчанию раз в пол секунды) плеер будет вызывать локацию-счётчик (см. <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>).
 
 </p>
 <p>
@@ -270,9 +270,9 @@ P.S.: "Переход на новую локацию" — это устоявш�
 Поэтому, столкнувшись с выражением "Переход на новую локацию" помните, что оно может значить в том числе и переход на текущую локацию.
 
 </p>
-<a id="ЕkiС"></a><h3>Вызов локации</h3>
+<a id="сшнi"></a><h3>Вызов локации</h3>
 <p>
-Вызов локации может быть выполнен напрямую через оператор <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOSUB</span></span></a> или функцию <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emFUNC">FUNC</span></span></a> или в привязке к какому-либо <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">событию</a>.
+Вызов локации может быть выполнен напрямую через оператор <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">GOSUB</span></span></a> или функцию <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emFUNC">FUNC</span></span></a> или в привязке к какому-либо <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">событию</a>.
 
 </p>
 <p>
@@ -291,7 +291,7 @@ P.S.: "Переход на новую локацию" — это устоявш�
 </li>
 </ul>
 <p>
-Дополнительно, при вызове с помощью оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>, или функции <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, а так же с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">MENU</span></span></a>, осуществляется возврат к тому коду, из которого был осуществлён вызов, и продолжается выполнение этого кода. Например, если локация была вызвана из действия, то произойдёт возврат к выполнению кода действия.
+Дополнительно, при вызове с помощью оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span>, или функции <span class="em_BLCK"><span class="emFUNC">FUNC</span></span>, а так же с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/wiki/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD"><span class="em_BLCK"><span class="emOPRT">MENU</span></span></a>, осуществляется возврат к тому коду, из которого был осуществлён вызов, и продолжается выполнение этого кода. Например, если локация была вызвана из действия, то произойдёт возврат к выполнению кода действия.
 
 </p>
 <div class="Monokai-Code">
@@ -304,14 +304,14 @@ P.S.: "Переход на новую локацию" — это устоявш�
 
 </div>
 <p>
-Более подробно работа оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> и функции <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> освещена в разделе <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовтальские функции и процедуры"</a>.
+Более подробно работа оператора <span class="em_BLCK"><span class="emOPRT">GOSUB</span></span> и функции <span class="em_BLCK"><span class="emFUNC">FUNC</span></span> освещена в разделе <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">"Пользовтальские функции и процедуры"</a>.
 
 </p>
 <p>
-О работе оператора <span class="em_BLCK"><span class="emOPRT">MENU</span></span> более подробно можно почитать в разделе <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">"Меню"</a>.
+О работе оператора <span class="em_BLCK"><span class="emOPRT">MENU</span></span> более подробно можно почитать в разделе <a href="https://aleksversus.github.io/howdo_faq/wiki/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">"Меню"</a>.
 
 </p>
-<a id="ЧrфB"></a><h3>Обработка событий</h3>
+<a id="фЙaМ"></a><h3>Обработка событий</h3>
 <p>
 События, если смотреть на это понятие с точки зрения работы плеера, — это некое изменение состояния в написанной нами игре. Например, у нас все предметы были не выделены, и вот игрок щёлкает мышью по одному из предметов, и предмет оказывается выделен. То есть предмет изменил своё состояние с "не выделен", на "выделен". Это и есть <span class="em_BLCK">событие выделения предмета</span>.
 
@@ -340,7 +340,7 @@ P.S.: "Переход на новую локацию" — это устоявш�
 
 </p>
 <p>
-Подробнее о том, какая системная переменная за <span class="em_BLCK">связку</span> с каким событием отвечает, вы можете прочитать в статье <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>.
+Подробнее о том, какая системная переменная за <span class="em_BLCK">связку</span> с каким событием отвечает, вы можете прочитать в статье <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">"Служебные локации"</a>.
 
 </p>
 <p>
@@ -353,7 +353,7 @@ P.S.: "Переход на новую локацию" — это устоявш�
 
 
 </div>
-<a id="uмОЩ"></a><h3>Процессы в настоящем времени</h3>
+<a id="ЮDрS"></a><h3>Процессы в настоящем времени</h3>
 <p>
 Если была назначена локация-счётчик, то с приблизительно равной периодичностью будет происходить вызов указанной локации-счётчика. По умолчанию локация-счётчик вызывается 2 раза в секунду, то есть каждые 500 миллисекунд — это значение можно изменять с помощью оператора <span class="em_BLCK"><span class="emOPRT">SETTIMER</span></span>.
 
@@ -369,14 +369,14 @@ P.S.: "Переход на новую локацию" — это устоявш�
 
 </p>
 <p>
-Подробнее о локации-счётчике и создании игровых событий в реальном времени читайте в статье <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">"Реальное время"</a>.
+Подробнее о локации-счётчике и создании игровых событий в реальном времени читайте в статье <a href="https://aleksversus.github.io/howdo_faq/wiki/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">"Реальное время"</a>.
 
 </p>
 <p>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Вперёд: Переменные</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Вперёд: Переменные</a>
 
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator_command_line.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/helpful/help_qgen.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator_command_line.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/wiki/help_qgen.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -404,10 +404,10 @@ P.S.: "Переход на новую локацию" — это устоявш�
  `<a href="start.html" style="text-decoration:none;" class="emFOLD">В начало</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_qsp.html#help_qsp" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_locations.html#help_locations" style="text-decoration:none;" class="emFOLD">Локации</a>`
 </li>
 <li>
  <span class="em_BLCK">Вывод текста</span>
@@ -416,65 +416,65 @@ P.S.: "Переход на новую локацию" — это устоявш�
  <a href="help/main.html" style="text-decoration:none;" class="emFOLD">Основное окно описания</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_stat.html#help_stat" style="text-decoration:none;" class="emFOLD">Дополнительное окно описания</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_msgbox" style="text-decoration:none;" class="emFOLD">Диалоговое окно</a>
 </li>
 </ul>
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_acts.html#help_acts" style="text-decoration:none;" class="emFOLD">Действия</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_goto.html#help_goto" style="text-decoration:none;" class="emFOLD">Переходы</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_objs.html#help_objs" style="text-decoration:none;" class="emFOLD">Предметы (инвентарь)</a>`
 </li>
 <li>
  <span class="em_BLCK">Программирование</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_principle.html#help_principle" style="text-decoration:none;" class="emFOLD">Порядок работы интерпретатора</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_variables.html#help_variables" style="text-decoration:none;" class="emFOLD">Переменные</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_expressions.html#help_expressions" style="text-decoration:none;" class="emFOLD">Выражения</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_coding.html#help_coding" style="text-decoration:none;" class="emFOLD">Программный код</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_cycle" style="text-decoration:none;" class="emFOLD">Циклы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_arrays.html#help_arrays" style="text-decoration:none;" class="emFOLD">Массивы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_strings.html#help_strings" style="text-decoration:none;" class="emFOLD">Строки</a>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_regexp.html#help_regexp" style="text-decoration:none;" class="emFOLD">Регулярные выражения</a>
 </li>
 </ul>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_conditional.html#help_conditional" style="text-decoration:none;" class="emFOLD">Условия</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_organizing.html#help_organizing" style="text-decoration:none;" class="emFOLD">Пользовательские функции и процедуры</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_jump.html#help_jump" style="text-decoration:none;" class="emFOLD">Переходы внутри локации, циклы</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_service_locations.html#help_service_locations" style="text-decoration:none;" class="emFOLD">Служебные локации</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_dynamical.html#help_dynamical" style="text-decoration:none;" class="emFOLD">Динамический код</a>
 </li>
 </ul>
 </li>
@@ -482,19 +482,19 @@ P.S.: "Переход на новую локацию" — это устоявш�
  <span class="em_BLCK">Оформление</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_menu.html#help_menu" style="text-decoration:none;" class="emFOLD">Меню</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_sound.html#help_sound" style="text-decoration:none;" class="emFOLD">Звук</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_graphics.html#help_graphics" style="text-decoration:none;" class="emFOLD">Графика</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_interface" style="text-decoration:none;" class="emFOLD">Настройки интерфейса</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_html.html#help_html" style="text-decoration:none;" class="emFOLD">HTML</a>
 </li>
 </ul>
 </li>
@@ -502,19 +502,19 @@ P.S.: "Переход на новую локацию" — это устоявш�
  <span class="em_BLCK">Расширенные возможности</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_inputs.html#help_inputs" style="text-decoration:none;" class="emFOLD">Ввод текста игроком</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_modules.html#help_modules" style="text-decoration:none;" class="emFOLD">Работа с файлами игр, модули</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_savegame" style="text-decoration:none;" class="emFOLD">Работа с файлами сохранений</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_realtime.html#help_realtime" style="text-decoration:none;" class="emFOLD">Реальное время</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_tuples" style="text-decoration:none;" class="emFOLD">Кортежи</a>
 </li>
 </ul>
 </li>
@@ -522,24 +522,24 @@ P.S.: "Переход на новую локацию" — это устоявш�
  <span class="em_BLCK">Нюансы написания игр под разные плееры</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_classic_qsp.html#help_classic_qsp" style="text-decoration:none;" class="emFOLD">Классический плеер</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider" style="text-decoration:none;" class="emFOLD">qSpider</a>
 <ul>
 <li>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider_gamecfg" style="text-decoration:none;" class="emFOLD">Конфигурационный файл</a>
 </li>
 <li>
-<a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
+<a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qspider_aeroqsp" style="text-decoration:none;" class="emFOLD">Особенности запуска AeroQSP-игр</a>
 </li>
 </ul>
 </li>
 <li>
- x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
+ x <a href="https://aleksversus.github.io/howdo_faq/wiki/help_navigator.html#help_navigator" style="text-decoration:none;" class="emFOLD">Quest Navigator</a>
 </li>
 <li>
- x <a href="https://aleksversus.github.io/howdo_faq/helpful/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
+ x <a href="https://aleksversus.github.io/howdo_faq/wiki/help_aeroqsp.html#help_aeroqsp" style="text-decoration:none;" class="emFOLD">AeroQSP</a>
 </li>
 </ul>
 </li>
@@ -547,30 +547,30 @@ P.S.: "Переход на новую локацию" — это устоявш�
  <span class="em_BLCK">Утилиты и средства разработки</span>
 <ul>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_qgen" style="text-decoration:none;" class="emFOLD">Quest Generator</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_debugger.html#help_debugger" style="text-decoration:none;" class="emFOLD">Отладчик</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/help_txt2gam.html#help_txt2gam" style="text-decoration:none;" class="emFOLD">Работа с утилитой TXT2GAM</a>
 </li>
 <li>
- <a href="https://aleksversus.github.io/howdo_faq/helpful/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
+ <a href="https://aleksversus.github.io/howdo_faq/wiki/None.html#help_analyzer" style="text-decoration:none;" class="emFOLD">Анализатор кода QSP</a>
 </li>
 </ul>
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_limits.html#help_limits" style="text-decoration:none;" class="emFOLD">Ограничения QSP</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/howto_start.html#howto_start" style="text-decoration:none;" class="emFOLD">Как сделать?</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_glossary.html#help_glossary" style="text-decoration:none;" class="emFOLD">Cловарь терминов</a>`
 </li>
 <li>
- `<a href="https://aleksversus.github.io/howdo_faq/helpful/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
+ `<a href="https://aleksversus.github.io/howdo_faq/wiki/help_keywords.html#help_keywords" style="text-decoration:none;" class="emFOLD">Ключевые слова. Указатель</a>`
 </li>
 </ul>
         </div>
