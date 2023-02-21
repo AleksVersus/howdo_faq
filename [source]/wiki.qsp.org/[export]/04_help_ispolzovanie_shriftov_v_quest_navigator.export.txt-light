@@ -29,7 +29,7 @@ body {
   font-family: Aksent;
 }
 
-**Другие статьи:**
+===== Другие статьи =====
 
   *  [[help:navigator_game_files|Файлы игры на Quest Navigator]]
   *  [[help:navigator_command_line|Параметры запуска Quest Navigator]]

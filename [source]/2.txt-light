@@ -1,0 +1,82 @@
+|**тег**|**назначение**|**атрибуты**|
+|A  |[[http://htmlbook.ru/html/a|гиперссылка]] |NAME=[строка] |
+|:::|:::|HREF="EXEC:[строка_кода]" |
+|:::|:::| class="plain" (отключает подчёркивание ссылки)|
+|ADDRESS |[[http://htmlbook.ru/html/address|информация об авторе]]| |
+|AREA |[[http://htmlbook.ru/html/area|активные области изображения, которые являются ссылками]]. Используется вместе с тегом MAP| SHAPE=POLY |
+|:::|:::| SHAPE=CIRCLE |
+|:::|:::| SHAPE=RECT |
+|:::|:::| COORDS=[координаты] |
+|:::|:::| HREF=[ссылка] |
+|B|[[http://htmlbook.ru/html/b|делает текст жирнее]]| |
+|BIG|[[http://htmlbook.ru/html/big|делает текст чуть больше]]| |
+|BLOCKQUOTE |[[http://htmlbook.ru/html/blockquote|цитаты]]| |
+|BR|[[http://htmlbook.ru/html/br|перевод строки без разрыва абзаца]]| ALIGN=[выравнивание] |
+|CENTER|[[http://htmlbook.ru/html/center|выравнивание по центру]]| |
+|CITE|[[http://htmlbook.ru/html/cite|цитата или сноска на другой метериал]]| |
+|CODE|[[http://htmlbook.ru/html/code|выделение программного кода]]| |
+|DD|[[http://htmlbook.ru/html/dd|определение]]. Тег используется вместе с тегами DT и DL для создания списка определений| |
+|DIV|[[http://htmlbook.ru/html/div|выделение блока в документе]]| ALIGN=[выравнивание]|
+|DL|[[http://htmlbook.ru/html/dl|список определений]]. Тег используется вместе с тегами DT и DD для создания списка определений| |
+|DT|[[http://htmlbook.ru/html/dt|термин]]. Тег используется вместе с тегами DD и DL для создания списка определений| |
+|EM|[[http://htmlbook.ru/html/em|акцентирование]]| |
+|FONT|[[http://htmlbook.ru/html/font|изменение шрифта]]|COLOR=[цвет]|
+|:::|:::| SIZE=[-2,-1,+0,+1,+2,+3,+4 или 1,2,3,4,5,6,7] |
+|:::|:::| FACE=[список названий шрифтов] |
+|HR|[[http://htmlbook.ru/html/hr|горизонтальная линия]]|ALIGN=[выравнивание]|
+|:::|:::|SIZE=[пиксели]|
+|:::|:::|WIDTH=[проценты%%|%%пиксели]|
+|:::|:::|NOSHADE|
+|H1, H2, H3|[[http://htmlbook.ru/html/h1|заголовки]]| |
+|H4, H5, H6|:::|:::|
+|I|[[http://htmlbook.ru/html/i|выделение текста курсивом]]| |
+|IMG|[[http://htmlbook.ru/html/img|вставка изображения]]|SRC=[ссылка]|
+|:::|:::|WIDTH=[пиксели]|
+|:::|:::|HEIGHT=[пиксели]|
+|:::|:::|ALIGN=TEXTTOP|
+|:::|:::|ALIGN=CENTER|
+|:::|:::|ALIGN=ABSCENTER|
+|:::|:::|ALIGN=BOTTOM|
+|:::|:::|USEMAP=[ссылка]|
+|KBD|[[http://htmlbook.ru/html/kbd|текст на клавиатуре]]| |
+|LI|[[http://htmlbook.ru/html/li|элемент маркированного списка]]. Используется совместно с тегами UL или OL| |
+|MAP|[[http://htmlbook.ru/html/map|контейнер для элементов AREA]]|NAME=[строка]|
+|OL|[[http://htmlbook.ru/html/ol|нумерованный список]]. Пункты списка устанавливаются тегами LI| |
+|P|[[http://htmlbook.ru/html/p|абзац, параграф]]|ALIGN=[выравнивание]|
+|PRE|[[http://htmlbook.ru/html/pre|предварительно отформатированный текст]]| |
+|SAMP|[[http://htmlbook.ru/html/samp|результат вывода программы]]| |
+|SMALL|[[http://htmlbook.ru/html/small|немного уменьшает шрифт]]| |
+|SPAN|[[http://htmlbook.ru/html/span|форматирование части текста]]|STYLE=[свойства CSS] (Работают лишь некоторые свойства, например font-weight и color)|
+|STRIKE|[[http://htmlbook.ru/html/strike|перечёркнутый текст]] (В классическом плеере текст не перечёркивается, а подчёркивается)| |
+|STRONG|[[http://htmlbook.ru/html/strong|акцентирование текста]]. Жирный шрифт| |
+|SUB|[[http://htmlbook.ru/html/sub|нижний индекс]]| |
+|SUP|[[http://htmlbook.ru/html/sup|верхний индекс]]| |
+|TABLE|[[http://htmlbook.ru/html/table|таблица]]|ALIGN=[выравнивание]|
+|:::|:::|WIDTH=[проценты%%|%%пиксели]|
+|:::|:::|BORDER=[пиксели]|
+|:::|:::|VALIGN=[выравнивание]|
+|:::|:::|BGCOLOR=[цвет]|
+|:::|:::|CELLSPACING=[пиксели]|
+|:::|:::|CELLPADDING=[пиксели]|
+|TD|[[http://htmlbook.ru/html/td|ячейка таблицы]]|ALIGN=[выравнивание]|
+|:::|:::|VALIGN=[выравнивание]|
+|:::|:::|BGCOLOR=[цвет]|
+|:::|:::|WIDTH=[проценты%%|%%пиксели]|
+|:::|:::|COLSPAN=[количество]|
+|:::|:::|ROWSPAN=[количество]|
+|:::|:::|NOWRAP|
+|TH|[[http://htmlbook.ru/html/th|заголовок таблицы]]|ALIGN=[выравнивание]|
+|:::|:::|VALIGN=[выравнивание]|
+|:::|:::|BGCOLOR=[цвет]|
+|:::|:::|WIDTH=[проценты%%|%%пиксели]|
+|:::|:::|COLSPAN=[количество]|
+|:::|:::|ROWSPAN=[количество]|
+|TR|[[http://htmlbook.ru/html/tr|строка таблицы]]|ALIGN=[выравнивание]|
+|:::|:::|VALIGN=[выравнивание]|
+|:::|:::|BGCOLOR=[цвет]|
+|TT|[[http://htmlbook.ru/html/tt|моноширинный текст]]| |
+|U|[[http://htmlbook.ru/html/u|подчёркивание текста]]| |
+|UL|[[http://htmlbook.ru/html/ul|маркированный список]]. Пункты списка устанавливаются тегами LI| |
+
+----
+[[help:html|Назад: HTML]]
