@@ -6,11 +6,11 @@
 	Можно ли вычислить доступное место в основном окне?
 
 О:
-В классическом плеере таких возможностей нет. Используйте возможности Quest Navigator.
+В классическом плеере таких возможностей нет. Используйте возможности qSpider.
 
 Пример, как отразить картинку:
 ```qsp
-	! отражаем картинку зеркально
-	*p "<img src='mygreatpic.png' /> "
-	*p "<img src='mygreatpic.png' style='-webkit-transform: scaleX(-1);' />"
+! отражаем картинку зеркально
+*p "<img src='mygreatpic.png' /> "
+*p "<img src='mygreatpic.png' style='transform: scaleX(-1);' />"
 ```
