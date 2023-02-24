@@ -6,33 +6,33 @@
 О:
 Картинка должна выводиться с помощью html. То есть прежде всего необходимо включить распознавание html в игре. Для этого прописываем, например в самой первой локации, такую команду:
 ```qsp
-	usehtml=1
+usehtml=1
 ```
 Далее выводим картинку с помощью html-тега `<img>`. Путь к файлу картинки прописываем в атрибуте `src` этого тега:
 ```qsp
-	*pl "<img src='images/picture.png'>"
+*pl "<img src='images/picture.png'>"
 ```
 Чтобы картинка стала кликабельна, необходимо "обернуть" её в теги гиперссылки:
 ```qsp
-	*pl "<a href=''><img src='images/picture.png'></a>"
+*pl "<a href=''><img src='images/picture.png'></a>"
 ```
 В атрибуте `href` обычно прописывают url — адресс страницы в интернете. Однако в QSP мы можем размещать внутри этого атрибута строки кода. В том числе и строку типа:
 ```qsp
-	play "sound/opendoor.wav" & goto "улица"
+play "sound/opendoor.wav" & goto "улица"
 ```
 Чтобы плеер понял, что в атрибуте `href` находится не url, а какой-то код, мы должны указать перед этим кодом ключевое слово `EXEC:`:
 ```qsp
-	*pl "<a href='exec:'><img src='images/picture.png'></a>"
+*pl "<a href='exec:'><img src='images/picture.png'></a>"
 ```
 После `EXEC:` нам нужно вписать нашу строку кода. Однако, мы уже использовали кавычки (`""`) для указания границ строки, и апострофы (`''`) для указания границ атрибута `href`. А в нашей строке кода тоже есть кавычки. Как быть?
 
 Мы можем экранировать кавычки кода от QSP с помощью дублирования:
 ```qsp
-	*pl "<a href='exec:play ""sound/opendoor.wav"" & goto ""улица""'><img src='images/picture.png'></a>"
+*pl "<a href='exec:play ""sound/opendoor.wav"" & goto ""улица""'><img src='images/picture.png'></a>"
 ```
 Или, мы можем заключить в кавычки содержимое атрибута `href`, и экранировать от QSP эти кавычки:
 ```qsp
-	*pl "<a href=""exec:play 'sound/opendoor.wav' & goto 'улица'""><img src='images/picture.png'></a>"
+*pl "<a href=""exec:play 'sound/opendoor.wav' & goto 'улица'""><img src='images/picture.png'></a>"
 ```
 Эти два варианта равнозначны, используйте тот, что удобнее.
 

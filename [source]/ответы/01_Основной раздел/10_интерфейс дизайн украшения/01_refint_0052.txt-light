@@ -21,28 +21,22 @@
 
 Чтобы лучше понять, что делает `REFINT`, напишите игру с таким кодом, и покликайте на действия:
 ```qsp
-	showstat 0
-	showobjs 0
-	act "меняем настройки без refint":
-		showstat 1
-		bcolor=rgb(0,88,0)
-		i=0
-		:for
-		if i<10000000:
-			i+=1
-			jump 'for'
-		end
+showstat 0
+showobjs 0
+act "меняем настройки без refint":
+	showstat 1
+	bcolor=rgb(0,88,0)
+	loop local i=0 while i<10000000 step i+=1:
+		! пустой цикл
 	end
-	act "меняем настройки c refint":
-		showobjs 1
-		bcolor=rgb(0,88,88)
-		refint
-		j=0
-		:for
-		if j<10000000:
-			j+=1
-			jump 'for'
-		end
+end
+act "меняем настройки c refint":
+	showobjs 1
+	bcolor=rgb(0,88,88)
+	refint
+	loop local i=0 while i<10000000 step i+=1:
+		! пустой цикл
 	end
+end
 ```
 Не удивляйтесь подвисанию игры при клике по действию — цикл из десяти миллионов итераций выполняется долго.

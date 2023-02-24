@@ -14,3 +14,21 @@
 Вместо "#RRGGBB" необходимо указать цветовой код в шестнадцатеричной системе счисления, формата RGB.
 
 Таким же образом можно менять цвет фона других элементов страницы прямо из кода QSP.
+
+--Перенесено из FAQ--
+
+Чтобы изменить цвет фона в Quest Navigator, необходимо воспользоваться вот такой командой:
+```qsp
+EXEC('JS:document.body.style.backgroundColor="#RRGGBB";')
+```
+, где вместо RR, GG и BB необходимо вписать красную, зелёную и синюю составляющую цвета в шестнадцатеричном формате. Например:
+```qsp
+! фон чёрного цвета
+EXEC('JS:document.body.style.backgroundColor="#000000";')
+! фон белого цвета
+EXEC('JS:document.body.style.backgroundColor="#ffffff";')
+! фон красного цвета
+EXEC('JS:document.body.style.backgroundColor="#ff0000";')
+! фон оранжевого цвета
+EXEC('JS:document.body.style.backgroundColor="#ff8200";')
+```
