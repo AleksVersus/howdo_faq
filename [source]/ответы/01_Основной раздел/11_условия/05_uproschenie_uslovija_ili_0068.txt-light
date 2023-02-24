@@ -5,32 +5,32 @@
 О:
 Если условий не много, можно воспользоваться таким способом:
 ```qsp
-	$message=""
-	if яблоко>0: $messaga+='яблоки, ' 
-	if груша>0: $messaga+='груши, ' 
-	if яблоко>0 or груша>0:
-		msg "У меня есть: "+$messaga+"— и всё."
-	else
-		msg "У меня ничего нет."
-	end
+$message=""
+if яблоко>0: $messaga+='яблоки, ' 
+if груша>0: $messaga+='груши, ' 
+if яблоко>0 or груша>0:
+	msg "У меня есть: "+$messaga+"— и всё."
+else
+	msg "У меня ничего нет."
+end
 ```
 Если условий много, то при срабатывании хотя бы одного условия необходимо выставлять какую-нибудь переменную-маркер. Таким образом, не зависимо от того, сколько условий сработает, если сработает хотя бы одно, текст будет набран:
 ```qsp
-	$message=""
-	if яблоко>0: $messaga+='яблоки, ' & markvar=1
-	if груша>0: $messaga+='груши, ' & markvar=1
-	if слива>0: $messaga+='сливы, ' & markvar=1
-	if дыня>0: $messaga+='дыни, ' & markvar=1
-	if апельсин>0: $messaga+='апельсины, ' & markvar=1
-	if банан>0: $messaga+='бананы, ' & markvar=1
-	if арбуз>0: $messaga+='арбузы, ' & markvar=1
-	if масло>0: $messaga+='масло, ' & markvar=1
-	if киви>0: $messaga+='киви, ' & markvar=1
-	if песок>0: $messaga+='песок, ' & markvar=1
+$message=""
+if яблоко>0: $messaga+='яблоки, ' & markvar=1
+if груша>0: $messaga+='груши, ' & markvar=1
+if слива>0: $messaga+='сливы, ' & markvar=1
+if дыня>0: $messaga+='дыни, ' & markvar=1
+if апельсин>0: $messaga+='апельсины, ' & markvar=1
+if банан>0: $messaga+='бананы, ' & markvar=1
+if арбуз>0: $messaga+='арбузы, ' & markvar=1
+if масло>0: $messaga+='масло, ' & markvar=1
+if киви>0: $messaga+='киви, ' & markvar=1
+if песок>0: $messaga+='песок, ' & markvar=1
 
-	if markvar=1:
-		msg "У меня есть: "+$messaga+"— и всё."
-	else
-		msg "У меня ничего нет."
-	end
+if markvar=1:
+	msg "У меня есть: "+$messaga+"— и всё."
+else
+	msg "У меня ничего нет."
+end
 ```
