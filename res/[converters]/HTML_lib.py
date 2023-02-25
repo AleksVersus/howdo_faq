@@ -16,9 +16,9 @@ class TextToHTML():
 		self.output_path = os.path.abspath(self.project_dict["export_folder"])
 		self.content_file_path = os.path.abspath(self.root_dict["head_contents"])
 		with open(os.path.abspath(self.root_dict["head"]), 'r', encoding='utf-8') as header:
-			self.header_strings=header.readlines()
+			self.header_html_lines = header.readlines()
 		with open(os.path.abspath(self.root_dict["foot"]), 'r', encoding='utf-8') as footer:
-			self.footer_strings=footer.readlines()
+			self.footer_html_lines = footer.readlines()
 		self.data_base = None
 		self.root_folder = None
 
@@ -27,12 +27,12 @@ class TextToHTML():
 			os.makedirs(self.output_path)
 
 	def create_data_base(self):
-		self.data_base=NewDataBase() # создаём базу данных
-		self.data_base.addHeader(self.header_strings) # верхняя часть html-документа
-		self.data_base.addFooter(self.footer_strings) # нижняя часть html-документа
-		self.data_base.addExportPath(self.output_path) # выходная папка
-		self.data_base.setContentFile(self.content_file_path) # содержание
-		self.data_base.addCrossLink(self.project_dict["cross-link"]) # вид перекрёстных ссылок
+		self.data_base=NewDataBase()
+		self.data_base.add_header(self.header_html_lines) # верхняя часть html-документа
+		self.data_base.add_footer(self.footer_html_lines) # нижняя часть html-документа
+		self.data_base.add_output_path(self.output_path) # выходная папка
+		self.data_base.set_content_file(self.content_file_path) # содержание
+		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
 
 	def convert_to_html(self):
 		self.make_output_folder()
@@ -128,20 +128,20 @@ class NewDataBase():
 			self.anchors_dict[anchor]=self.curfile
 		else:
 			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен")
-	def addHeader(self,string_list):
-		self.header_list=string_list[:]
-	def addFooter(self,string_list):
+	def add_header(self,string_list):
+		self.header_list = string_list[:]
+	def add_footer(self,string_list):
 		self.footer_list=string_list[:]
 	def getHeader(self):
 		return self.header_list[:]
 	def getFooter(self):
 		return self.footer_list[:]
-	def addExportPath(self,path):
+	def add_output_path(self,path):
 		self.export_folder_path=path
 	def getExportPath(self):
 		return self.export_folder_path
 
-	def setContentFile(self,path):
+	def set_content_file(self,path):
 		# устанавливает путь к файлу с содержанием
 		self.content_file_path=path
 	def getContentFile(self):
@@ -154,7 +154,7 @@ class NewDataBase():
 		# получаем оглавление в виде HTML разметки
 		return self.content_HTML
 
-	def addCrossLink(self,string):
+	def add_crosslink_form(self, string):
 		self.crosslink=string
 	def getCrossLink(self):
 		return self.crosslink
