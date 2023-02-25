@@ -33,6 +33,7 @@ class TextToHTML():
 		self.data_base.add_output_path(self.output_path) # выходная папка
 		self.data_base.set_content_file(self.content_file_path) # содержание
 		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
+		print(self.data_base.get_last_file_id())
 
 	def convert_to_html(self):
 		self.make_output_folder()
@@ -63,9 +64,9 @@ class NewDataBase():
 	def currentFile(self):
 		# получаем идентификатор текущего файла
 		return self.curfile
-	def setCurFile(self,id_):
+	def setCurFile(self, id_):
 		# устанавливаем текущий файл. Выбираем его айди
-		self.curfile=id_
+		self.curfile = id_
 	def proveAdd(self):
 		# присутствует ли в базе добавочная секция
 		return (True if len(self.addition)!=0 else False)
@@ -79,12 +80,12 @@ class NewDataBase():
 		# удаляем из базы добавочную секцию
 		self.addition=[]
 
-	def lastFileID(self):
+	def get_last_file_id(self):
 		# получаем последний айди файлов
 		if self.filecount==0:
 			return None
 		else:
-			return '0'*(8-len(str(self.filecount-1)))+str(self.filecount-1)
+			return self.files_dict[list(self.files_dict.keys())[-1]]
 	def genNewFileID(self):
 		# генерируем айди из счётчика
 		return '0'*(8-len(str(self.filecount)))+str(self.filecount)
@@ -240,7 +241,7 @@ class NewFile():
 			new_string_list.append('&nbsp;')
 		new_string_list.append('</div>')
 		new_string_list.append('<div>')
-		if not next_>int(base.lastFileID()):
+		if not next_>int(base.get_last_file_id()):
 			next_id='0'*(8-len(str(next_)))+str(next_)
 			next_name=os.path.split(base.getFilePath(next_id))[1]
 			next_name=os.path.splitext(next_name)[0]
