@@ -2,6 +2,45 @@
 import sys, os, re, json
 import random
 
+class TextToHTML():
+	"""
+		Class of Converter Object. This Class get project, prepare
+		and convert list of source-files in html-files.
+	"""
+	def __init__(self, html_json_path):
+		self.project_file = os.path.abspath(html_json_path)
+		with open(self.project_file, "r", encoding="utf-8") as file:
+			self.root_dict = json.load(file)
+		self.project_dict = self.root_dict['project']
+		self.source_folder = os.path.abspath(self.project_dict["source_folder"])
+		self.output_path = os.path.abspath(self.project_dict["export_folder"])
+		self.content_file_path = os.path.abspath(self.root_dict["head_contents"])
+		with open(os.path.abspath(self.root_dict["head"]), 'r', encoding='utf-8') as header:
+			self.header_strings=header.readlines()
+		with open(os.path.abspath(self.root_dict["foot"]), 'r', encoding='utf-8') as footer:
+			self.footer_strings=footer.readlines()
+		self.data_base = None
+		self.root_folder = None
+
+	def make_output_folder(self):
+		if not os.path.exists(self.output_path):
+			os.makedirs(self.output_path)
+
+	def create_data_base(self):
+		self.data_base=NewDataBase() # создаём базу данных
+		self.data_base.addHeader(self.header_strings) # верхняя часть html-документа
+		self.data_base.addFooter(self.footer_strings) # нижняя часть html-документа
+		self.data_base.addExportPath(self.output_path) # выходная папка
+		self.data_base.setContentFile(self.content_file_path) # содержание
+		self.data_base.addCrossLink(self.project_dict["cross-link"]) # вид перекрёстных ссылок
+
+	def convert_to_html(self):
+		self.make_output_folder()
+		self.create_data_base()
+		self.root_folder = NewFolder(self.source_folder, self.data_base)
+		self.root_folder.convert_to_html(self.data_base)
+
+
 class NewDataBase():
 	"""База данных — объект, содержащий описания якорей и секций
 	в их привязке к файлам/секциям. Каждый файл обладает уникальным 
@@ -125,24 +164,26 @@ class NewFolder():
 	Каждая папка - объект, содержащий другие файлы и папки
 	Непосредственно сама папка для html-документов на структуру не влияет, влияет только наполнение.
 	"""
-	def __init__(self,path,base):
-		self.path=path # полный путь к папке является её уникальным идентификатором
-		self.files=[] # список вложенных файлов
-		self.folders=[] # список вложенных папок
+	def __init__(self, path, data_base):
+		self.path = path # полный путь к папке является её уникальным идентификатором
+		self.files = [] # список вложенных файлов
+		self.folders = [] # список вложенных папок
+		self.data_base = data_base
 		# получаем списки файлов и папок 
 		files_list, folders_list = dirList(path)
 		# создаём новые папки и помещаем их в список
 		for folder in folders_list:
-			self.folders.append(NewFolder(folder,base))
-		base.delAdd() # удаляем дополнительные заголовки перед перебором файлов
+			self.folders.append(NewFolder(folder, self.data_base))
+		self.data_base.delAdd() # удаляем дополнительные заголовки перед перебором файлов
 		# создаём новые файлы и помещаем в другой список
 		for file in files_list:
-			self.files.append(NewFile(file,base))
-	def convert2HTML(self,base):
+			self.files.append(NewFile(file, self.data_base))
+
+	def convert_to_html(self):
 		for file in self.files:
-			file.buildThis(base)
+			file.buildThis(self.data_base)
 		for folder in self.folders:
-			folder.convert2HTML(base)
+			folder.convert_to_html()
 
 class NewFile():
 	"""
@@ -164,7 +205,7 @@ class NewFile():
 			if base.proveAdd():
 				self.source=base.getAdd()+self.source
 			self.segments.append(NewSegment(self.source,'from_file',base))
-			self.convert2HTML(base)
+			self.convert_to_html(base)
 			# если путь к текущему файлу совпадает с путём к содержанию
 			if base.getContentFile()==path:
 				# добавляем содержание в базу
@@ -172,10 +213,10 @@ class NewFile():
 	def getFileName(self):
 		# получаем имя файла, отсекая путь
 		return os.path.split(self.path)[1]
-	def convert2HTML(self,base):
+	def convert_to_html(self,base):
 		# конвертируем сегменты файла в HTML
 		for segment in self.segments:
-			segment.convert2HTML(base)
+			segment.convert_to_html(base)
 			self.HTML.extend(segment.getHTML(base))
 	def getHTML(self,base):
 		# возвращает полное содержимое файла
@@ -287,11 +328,11 @@ class NewSegment():
 	def getLen(self):
 		# возвращает число секций в сегменте
 		return len(self.sections)
-	def convert2HTML(self,base):
+	def convert_to_html(self,base):
 		# конвертирует все секции сегмента в HTML
 		# и добавляем готовые строки в атрибут HTML сегмента
 		for section in self.sections:
-			section.convert2HTML(base)
+			section.convert_to_html(base)
 			self.HTML.extend(section.getHTML(base))
 	def getHTML(self,base):
 		# возвращает HTML-содержимое сегмента
@@ -486,7 +527,7 @@ class NewSection():
 	def getHTML(self,base):
 		# возвращает список преобразованных в HTML строк
 		return self.HTML
-	def convert2HTML(self,base):
+	def convert_to_html(self,base):
 		# конвертирование секции в HTML и добавление в атрибут HTML
 		if self.type in ('h1','h2','h3','h4','h5','h6'):
 			# имеем дело с заголовком
@@ -512,7 +553,7 @@ class NewSection():
 		elif self.type=="quote-block":
 			self.HTML.append('<blockquote>\n')
 			segment=NewSegment(self.source,'quote-block',base)
-			segment.convert2HTML(base)
+			segment.convert_to_html(base)
 			self.HTML.extend(segment.getHTML(base))
 			self.HTML.append('\n</blockquote>\n')
 		else:
@@ -734,7 +775,7 @@ class NewLi():
 					br_off=False
 				new_string_list.append(br+convertString(s,'string',base))
 			elif type(els)==NewSegment:
-				els.convert2HTML(base)
+				els.convert_to_html(base)
 				new_string_list.extend(els.getHTML(base))
 			else:
 				# если тип элемента - NewLiBlock
@@ -1407,7 +1448,7 @@ def convertSOHBlock(string_list,base):
 	# конвертируем блок section of head в новый блок заголовков
 	new_string_list=[]
 	quazy_file=NewSegment(string_list,'SOH',base)
-	quazy_file.convert2HTML(base)
+	quazy_file.convert_to_html(base)
 	new_string_list=quazy_file.getHTML(base)
 	i=0
 	for string in new_string_list:
