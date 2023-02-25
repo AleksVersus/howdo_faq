@@ -10,45 +10,37 @@
 
 Простой алгоритм для разрежения текста (отсчёт начинается от первого символа в строке)
 ```qsp
-	!$text - здесь лежит текст
-	:for
-	if len($text)>0:
-		!вырезаем первые три символа
-		$t=$mid($text,1,3)
-		!убираем первые три символа из строки
-		$text=$mid($text,4)
-		! составляем новую строку
-		$print_text=$print_text+$t+' '
-		! повторяем процедуру
-		jump 'for'
-	end
+!$text - здесь лежит текст
+loop while len($text)>0:
+	!вырезаем первые три символа
+	$t=$mid($text,1,3)
+	!убираем первые три символа из строки
+	$text=$mid($text,4)
+	! составляем новую строку
+	$print_text=$print_text+$t+' '
+end
 ```
 Если разрежение необходимо производить через каждые три символа, начиная с последнего, немного меняем алгоритм:
 ```qsp
-	:for
-	if len($text)>0:
-		!вырезаем последние три символа
-		$t=$mid($text,len($text)-2)
-		!убираем последние три символа из строки
-		$text=$mid($text,1,len($text)-3)
-		! составляем новую строку
-		$print_text=' '+$t+$print_text
-		! повторяем процедуру
-		jump 'for'
-	end
+loop while len($text)>0:
+	!вырезаем последние три символа
+	$t=$mid($text,len($text)-2)
+	!убираем последние три символа из строки
+	$text=$mid($text,1,len($text)-3)
+	! составляем новую строку
+	$print_text=' '+$t+$print_text
+end
 ```
 Легко заметить, что данные алгоритмы будут добавлять лишний символ пробела в конце или в начале строки. Но этот недостаток так же легко исправить:
 ```qsp
-	:for
+loop while len($text)>0:
+	$t=$mid($text,1,3)
+	$text=$mid($text,4)
 	if len($text)>0:
-		$t=$mid($text,1,3)
-		$text=$mid($text,4)
-		if len($text)>0:
-			$print_text=$print_text+$t+' '
-		else
-			$print_text=$print_text+$t
-		end
-		jump 'for'
+		$print_text=$print_text+$t+' '
+	else
+		$print_text=$print_text+$t
 	end
+end
 ```
-В библиотеке "easy.math" присутствует готовая функция, разрежающая текст, с дополнительными возможностями и различными настройками. См. функцию [#str.thin#](http://aleksversus.narod.ru/index/operacii_nad_tekstom/0-13#strthin).
+В библиотеке "easy.math" присутствует готовая функция, разрежающая текст, с дополнительными возможностями и различными настройками. См. функцию [em.str.thin](https://github.com/AleksVersus/easy.math.3).

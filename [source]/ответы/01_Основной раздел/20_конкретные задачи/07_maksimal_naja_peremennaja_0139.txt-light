@@ -3,78 +3,71 @@
 В: Есть несколько переменных с разными значениями. Как получить имя переменной, в которой находится наибольшее значение?
 
 О:
-	Для примера возьмём несколько переменных и значений:
+Для примера возьмём несколько переменных и значений:
 
 ```qsp
-	VariableA=1
-	VariableB=2
-	VariableC=3
-	VariableD=4
+VariableA=1
+VariableB=2
+VariableC=3
+VariableD=4
 ```
 
 	1. Вносим названия этих переменных и их значения в два разных массива под одним индексом:
 	```qsp
-		$varname[0]="VariableA" & varvalue[0]=VariableA
-		$varname[1]="VariableB" & varvalue[1]=VariableB
-		$varname[2]="VariableC" & varvalue[2]=VariableC
-		$varname[3]="VariableD" & varvalue[3]=VariableВ
+	$varname[0]="VariableA" & varvalue[0]=VariableA
+	$varname[1]="VariableB" & varvalue[1]=VariableB
+	$varname[2]="VariableC" & varvalue[2]=VariableC
+	$varname[3]="VariableD" & varvalue[3]=VariableВ
 	```
 	2. Теперь определяем максимальное значение в массиве varvalue:
 	```qsp
-		varmax=max('varvalue')
+	varmax=max('varvalue')
 	```
 	3. Осталось определить индекс элемента с этим значением:
 	```qsp
-		indexMax=arrpos('varvalue',varmax)
+	indexMax=arrpos('varvalue',varmax)
 	```
 	4. Имя переменной получить уже несложно:
 	```qsp
-		*pl "Максимальное значение в переменной "+$varname[indexMax]
+	*pl "Максимальное значение в переменной "+$varname[indexMax]
 	```
 
-	Можно написать функцию, которая будет возвращать название переменной с максимальным значением:
+Можно написать функцию, которая будет возвращать название переменной с максимальным значением:
 
 ```qsp
-	!#maxVar
-	! $args[0] — $args[8] — названия переменных
-	! 1
-	args['i']=0
-	:for
-	if $args[args['i']]<>'':
-		dynamic "$varname[]='<<$args[args['i']]>>' & varvalue[]=<<$args[args['i']]>>"
-		args['i']+=1
-		jump 'for'
-	end
-	! 2
-	args['max']=max('varvalue')
-	! 3
-	args['index']=arrpos('varvalue',args['max'])
-	! 4
-	$result=$varname[args['index']]
-	killvar 'varvalue'
-	killvar '$varname'
+!#maxVar
+! $args[0] — $args[8] — названия переменных
+! массивы для временного хранения названий переменных и их значений:
+local $varname, varvalue
+! 1
+loop local i=0 while $args[i]<>'' step i+=1:
+	dynamic "$varname[]='<<$args[i]>>' & varvalue[]=<<$args[i]>>"
+end
+! 2
+local max_=max('varvalue')
+! 3
+local index_=arrpos('varvalue',max_)
+! 4
+$result=$varname[index_]
 ```
 
-	Вызов функции:
+Вызов функции:
 
 ```qsp
-	$func('maxVar','VariableA','VariableB','VariableC','VariableD')
+@maxVar('VariableA','VariableB','VariableC','VariableD')
 ```
 
-	Поскольку для работы данной функции в любом случае требуется цикл, можно несколько изменить алгоритм, чтобы не заводить лишние массивы:
+Поскольку для работы данной функции в любом случае требуется цикл, можно несколько изменить алгоритм:
 
 ```qsp
-	!#varMax
-	$args['max']='args[9]'
-	:for
-	if $args[args['i']]<>'':
-		$args['max']=$dyneval("if <<$args[args['i']]>> > <<$args['max']>>:
-			$result='<<$args[args['i']]>>'
-		else
-			$result='<<$args['max']>>'
-		end")
-		args['i']+=1
-		jump 'for'
-	end
-	$result=$args['max']
+!#varMax
+local $max_='args[19]'
+loop local i=0 while $args[i]<>'' step i+=1:
+	$max_=$dyneval("if <<$args[i]>> > <<$max_>>:
+		$result='<<$args[i]>>'
+	else
+		$result='<<$max_>>'
+	end")
+end
+$result=$max_
 ```
