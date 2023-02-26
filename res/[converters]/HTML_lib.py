@@ -60,14 +60,14 @@ class NewDataBase():
 
 		}
 		self.current_file_id = ""
-		self.crosslink = "" # первая часть для кроссылок
-		self.addition = [] # добавочная секция в файл
-		self.header_html = [] # верх страницы html
-		self.footer_html = [] # низ страницы html
-		self.content_file_path = "" # путь к файлу-оглавлению
-		self.content_HTML = [] # содержимое оглавления
-		self.output_folder_path = "" # путь к папке для экспорта
-		self.root_folder="" # название папки для страниц (для сайта)
+		self.crosslink = "" # first part for crosslinks
+		self.addition_section = []
+		self.header_html = []
+		self.footer_html = []
+		self.content_file_path = ""
+		self.content_html = []
+		self.output_folder_path = ""
+		self.root_folder = ""
 
 	def get_current_file(self):
 		return self.current_file_id
@@ -76,16 +76,16 @@ class NewDataBase():
 		self.current_file_id = file_id
 
 	def prove_addition(self):
-		return (True if len(self.addition)!=0 else False)
+		return (True if len(self.addition_section)!=0 else False)
 
 	def get_addition(self):
-		return self.addition[:1]
+		return self.addition_section[:1]
 
 	def add_addition(self, source_lines):
-		self.addition.extend(source_lines)
+		self.addition_section.extend(source_lines)
 
 	def del_addition(self):
-		self.addition=[]
+		self.addition_section=[]
 
 	def get_last_file_id(self):
 		if self.files_count==0:
@@ -97,12 +97,11 @@ class NewDataBase():
 		return '0'*(8-len(str(self.files_count)))+str(self.files_count)
 
 	def append_file(self, file_path):
-		file_id = self.gen_file_id() # генерируем идентификатор файла
-		self.files_count += 1 # увеличиваем счётчик
-		# вносим файл в базу одновременно
+		file_id = self.gen_file_id()
+		self.files_count += 1
 		self.files_dict['files-paths'].append(file_path)
 		self.files_dict['files-ids'].append(file_id)
-		self.current_file_id = file_id # текущим файлом становится добавленный
+		self.current_file_id = file_id
 
 	def get_file_id(self, file_path):
 		if file_path in self.files_db['files-paths']:
@@ -121,20 +120,17 @@ class NewDataBase():
 			self.anchors_db['anchors'].append(anchor)
 			self.anchors_db['files-ids'].append(self.current_file_id)
 		else:
-			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен.")
+			print("Error! Current file is not set. Anchor <<anchor>> not append.")
 
 	def get_file_name(self, anchor):
-		# раньше данная функция просто возвращала айди файла, который и использовался в качестве
-		# имени файла. Теперь Функция возвращает новое имя файла из уже существующего имени фала .txt-light
 		if anchor in self.anchors_db:
-			# если якорь присутствует в списке якорей, перебираем словарь и отыскиваем нужное имя файла
 			file_id = self.anchors_db['files-ids'][self.anchors_db['anchors'].index(anchor)]
 			file_path = self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
-			full_file_name = os.path.split(file_path)[1] # отделяем путь к папке от файла
-			file_name = os.path.splitext(full_file_name)[0] # отделяем от файла расширение
+			full_file_name = os.path.split(file_path)[1]
+			file_name = os.path.splitext(full_file_name)[0]
 			instr=re.match(r'\d+_',file_name)
 			if instr!=None:
-				file_name=file_name[len(instr.group(0)):] # убираем из файла числа вначале
+				file_name=file_name[len(instr.group(0)):]
 			return file_name
 		else:
 			return None
@@ -142,31 +138,37 @@ class NewDataBase():
 	def add_header(self, html_lines):
 		self.header_html = html_lines[:]
 
-	def add_footer(self,html_lines):
+	def add_footer(self, html_lines):
 		self.footer_html = html_lines[:]
+
 	def get_header(self):
 		return self.header_html[:]
+
 	def get_footer(self):
 		return self.footer_html[:]
+
 	def add_output_path(self, folder_path):
 		self.output_folder_path = folder_path
+
 	def get_output_path(self):
 		return self.output_folder_path
 
-	def set_content_file_path(self, file_path):
-		# устанавливает путь к файлу с содержанием
-		self.content_file_path = file_path
-	def get_content_file_path(self):
-		# получает путь к файлу с содержанием
-		return self.content_file_path
-	def add_content_lines(self, html_lines):
-		self.content_HTML = html_lines[:]
-	def get_content_lines(self):
-		return self.content_HTML
+	def set_content_file_path(self, content_file_path):
+		self.content_file_path = content_file_path
 
-	def add_crosslink_form(self, string):
-		self.crosslink = string
-	def getCrossLink(self):
+	def get_content_file_path(self):
+		return self.content_file_path
+
+	def add_content_lines(self, html_lines):
+		self.content_html = html_lines[:]
+
+	def get_content_lines(self):
+		return self.content_html
+
+	def add_crosslink_form(self, crosslink_string):
+		self.crosslink = crosslink_string
+
+	def get_cross_link(self):
 		return self.crosslink
 
 class NewFolder():
@@ -235,7 +237,7 @@ class NewFile():
 		new_string_list=[]
 		prev_=int(base.get_file_id(self.path))-1
 		next_=int(base.get_file_id(self.path))+1
-		fold_=base.getCrossLink()
+		fold_=base.get_cross_link()
 		new_string_list.append('<div style="display:flex;justify-content:space-between;">')
 		new_string_list.append('<div>')
 		if not prev_<0:
@@ -308,7 +310,7 @@ class NewFile():
 					for anch in anchors_list:
 						target_anch=re.match(r'#folder\-file#(#?[^#]*)#',anch).group(1)
 						target_file=str(base.get_file_name(target_anch[1:]))+'.html'
-						link=base.getCrossLink()+target_file+target_anch
+						link=base.get_cross_link()+target_file+target_anch
 						string=string.replace(anch,link)
 				new_string_list.append(string)
 			export_path=base.get_output_path()+'\\'+file_name+".html"
