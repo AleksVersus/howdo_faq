@@ -99,9 +99,10 @@ class NewDataBase():
 	def append_file(self, file_path):
 		file_id = self.gen_file_id()
 		self.files_count += 1
-		self.files_dict['files-paths'].append(file_path)
-		self.files_dict['files-ids'].append(file_id)
+		self.files_db['files-paths'].append(file_path)
+		self.files_db['files-ids'].append(file_id)
 		self.current_file_id = file_id
+		return self.files_count-1
 
 	def get_file_id(self, file_path):
 		if file_path in self.files_db['files-paths']:
@@ -176,68 +177,66 @@ class NewFolder():
 	Каждая папка - объект, содержащий другие файлы и папки
 	Непосредственно сама папка для html-документов на структуру не влияет, влияет только наполнение.
 	"""
-	def __init__(self, path, data_base):
-		self.path = path # полный путь к папке является её уникальным идентификатором
+	def __init__(self, folder_path, data_base):
+		self.path = folder_path # полный путь к папке является её уникальным идентификатором
 		self.files = [] # список вложенных файлов
 		self.folders = [] # список вложенных папок
 		self.data_base = data_base
 		# получаем списки файлов и папок 
-		files_list, folders_list = dirList(path)
+		files_list, folders_list = dir_list(self.path)
 		# создаём новые папки и помещаем их в список
 		for folder in folders_list:
 			self.folders.append(NewFolder(folder, self.data_base))
 		self.data_base.del_addition() # удаляем дополнительные заголовки перед перебором файлов
-		# создаём новые файлы и помещаем в другой список
 		for file in files_list:
 			self.files.append(NewFile(file, self.data_base))
 
 	def convert_to_html(self):
 		for file in self.files:
-			file.buildThis(self.data_base)
+			file.buildThis()
 		for folder in self.folders:
 			folder.convert_to_html()
 
 class NewFile():
 	"""
-	Каждый файл представляет собой контейнер для секций.
+		Every file is conteiner for segments.
 	"""
-	def __init__(self,path,base):
-		self.path=path # путь к файлу является его уникальным идентификатором
-		# получаем список строк, это и есть файл
-		with open(path,'r',encoding='utf-8') as file:
-			self.source=file.readlines()
-		self.segments=[] # сегменты, составляющие файл
-		self.HTML=[] # список строк готового HTML-файла
+	def __init__(self, file_path, data_base):
+		self.path = file_path
+		self.data_base = data_base
+		self.file_number = None
+		with open(self.path, 'r', encoding='utf-8') as file:
+			self.source_lines = file.readlines()
+		self.segments = [] # сегменты, составляющие файл
+		self.html_lines = [] # список строк готового HTML-файла
 		if self.get_file_name()=='00.txt-light':
-			# если это файл заголовка, этот заголовок будет добавляться ко всем последующим файлам
-			base.add_addition(self.source)
+			self.base.add_addition(self.source_lines)
 		else:
-			# если это не файл заголовка
-			base.append_file(path) # добавляем файл в базу
-			if base.prove_addition():
-				self.source=base.get_addition()+self.source
-			self.segments.append(NewSegment(self.source,'from_file',base))
-			self.convert_to_html(base)
-			# если путь к текущему файлу совпадает с путём к содержанию
-			if base.get_content_file_path()==path:
-				# добавляем содержание в базу
-				base.add_content_lines(self.HTML)
+			self.file_number = self.data_base.append_file(self.path)
+			if self.data_base.prove_addition():
+				self.source_lines = self.data_base.get_addition() + self.source_lines
+			self.segments.append(NewSegment(self.source_lines, 'from_file', self.data_base))
+			self.convert_to_html()
+			if self.data_base.get_content_file_path()==self.path:
+				self.data_base.add_content_lines(self.html_lines)
+
 	def get_file_name(self):
-		# получаем имя файла, отсекая путь
 		return os.path.split(self.path)[1]
-	def convert_to_html(self,base):
-		# конвертируем сегменты файла в HTML
+
+	def convert_to_html(self):
 		for segment in self.segments:
-			segment.convert_to_html(base)
-			self.HTML.extend(segment.getHTML(base))
-	def getHTML(self,base):
-		# возвращает полное содержимое файла
-		return self.HTML
-	def getPgUpDn(self,base):
-		new_string_list=[]
-		prev_=int(base.get_file_id(self.path))-1
-		next_=int(base.get_file_id(self.path))+1
-		fold_=base.get_cross_link()
+			segment.convert_to_html()
+			self.html_lines.extend(segment.get_html_lines())
+
+	def get_html_lines(self):
+		return self.html_lines
+
+	def getPgUpDn(self):
+		new_string_list = []
+		prev_ = self.file_number-1
+		next_ = self.file_number+1
+		print(f"{prev_} - {next_}")
+		fold_=self.data_base.get_cross_link()
 		new_string_list.append('<div style="display:flex;justify-content:space-between;">')
 		new_string_list.append('<div>')
 		if not prev_<0:
@@ -325,13 +324,14 @@ class NewSegment():
 	Фактически - сегмент это виртуальный контейнер, промежуточный элемент между файлом и секцией.
 	"""
 	# взять тело функции split из квазифайла и построчно сравнить с телом функции в нормальном файле. Вместо назначения айдишников файлу у нас теперь просто якоря привязанные к текущему файлу.
-	def __init__(self,source_list,type_,base):
+	def __init__(self, source_list, type_, data_base):
 		# только тип "из файла" заставляет очищать от комментариев
 		self.source=(clearStringList(source_list) if type_=='from_file' else source_list)
 		self.type=type_ # тип сегмента
 		self.sections=[] # секции, составляющие сегмент
 		self.HTML=[] # строки с конвертированием уже в HTML
 		self.segmentSplit(base) # разбиваем на блоки
+		self.data_base = data_base
 	def addSection(self,section):
 		# функция добавляет секцию к списку секций
 		# если в секции есть хоть какое-то содержимое
@@ -340,16 +340,16 @@ class NewSegment():
 	def getLen(self):
 		# возвращает число секций в сегменте
 		return len(self.sections)
-	def convert_to_html(self,base):
+	def convert_to_html(self):
 		# конвертирует все секции сегмента в HTML
 		# и добавляем готовые строки в атрибут HTML сегмента
 		for section in self.sections:
-			section.convert_to_html(base)
-			self.HTML.extend(section.getHTML(base))
-	def getHTML(self,base):
+			section.convert_to_html(self.data_base)
+			self.HTML.extend(section.get_html_lines(base))
+	def get_html_lines(self):
 		# возвращает HTML-содержимое сегмента
 		return self.HTML
-	def segmentSplit(self,base):
+	def segmentSplit(self):
 		# данный метод разбивает сегмент на секции
 		section=NewSection() # создаём новую пустую секцию
 		block_mode='' # выставляем режимы добора в секции
@@ -536,7 +536,7 @@ class NewSection():
 	def addString(self,string):
 		# добавляет строку в исходник секции
 		self.source.append(string)
-	def getHTML(self,base):
+	def get_html_lines(self,base):
 		# возвращает список преобразованных в HTML строк
 		return self.HTML
 	def convert_to_html(self,base):
@@ -566,7 +566,7 @@ class NewSection():
 			self.HTML.append('<blockquote>\n')
 			segment=NewSegment(self.source,'quote-block',base)
 			segment.convert_to_html(base)
-			self.HTML.extend(segment.getHTML(base))
+			self.HTML.extend(segment.get_html_lines(base))
 			self.HTML.append('\n</blockquote>\n')
 		else:
 			# имеем дело с параграфом. Каждая строка - отдельный параграф
@@ -577,9 +577,10 @@ class NewString():
 	"""
 	Прилагательный класс Строка. Чтобы рекурсивно обрабатывать строку, приходится генерировать новый объект
 	"""
-	def __init__(self,string,type_,base):
+	def __init__(self,string,type_, data_base):
 		self.source=string # исходная строка
 		self.type=type_ # тип строки
+		self.data_base = data_base
 		self.strings=[] # если строка бьётся на другие строки, в ней помимо исходника будут содержаться эти строки
 		if self.type=='string':
 			# корневой тип. Пока есть две вариации такой строки: термины и другие
@@ -665,7 +666,7 @@ class NewString():
 				self.source=replaceAll(self.source)
 	def getType(self):
 		return self.type
-	def getHTML(self,base):
+	def get_html_lines(self,base):
 		if len(self.strings)>0:
 			text=""
 			if self.type=="hyperlink":
@@ -801,7 +802,7 @@ class NewLi():
 
 # функции
 
-def dirList(folder_path):
+def dir_list(folder_path):
 	# из пути к папке получаем её содержимое в виде списка файлов и папок
 	files_list=[]
 	folders_list=[] # локальные переменные
