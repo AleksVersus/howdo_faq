@@ -26,20 +26,17 @@ class TextToHTML():
 		if not os.path.exists(self.output_path):
 			os.makedirs(self.output_path)
 
-	def create_data_base(self):
-		self.data_base=NewDataBase()
-		self.data_base.add_header(self.header_html_lines) # верхняя часть html-документа
-		self.data_base.add_footer(self.footer_html_lines) # нижняя часть html-документа
-		self.data_base.add_output_path(self.output_path) # выходная папка
-		self.data_base.set_content_file_path(self.content_file_path) # содержание
-		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
-
-		self.data_base.print_data_base('json')
-		
+	# def create_data_base(self):
+	# 	self.data_base=NewDataBase()
+	# 	self.data_base.add_header(self.header_html_lines) # верхняя часть html-документа
+	# 	self.data_base.add_footer(self.footer_html_lines) # нижняя часть html-документа
+	# 	self.data_base.add_output_path(self.output_path) # выходная папка
+	# 	self.data_base.set_content_file_path(self.content_file_path) # содержание
+	# 	self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
 
 	def convert_to_html(self):
 		self.make_output_folder()
-		self.create_data_base()
+		# self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder, self.data_base)
 		# self.root_folder.convert_to_html()
 
@@ -206,8 +203,8 @@ class NewFolder():
 		for folder in folders_list:
 			self.folders.append(NewFolder(folder, self.data_base))
 		self.data_base.del_addition() # удаляем дополнительные заголовки перед перебором файлов <-------------
-		# for file in files_list:
-		# 	self.files.append(NewFile(file, self.data_base))
+		for file in files_list:
+			self.files.append(NewFile(file, self.data_base))
 
 	# def convert_to_html(self):
 	# 	for file in self.files:
@@ -215,11 +212,36 @@ class NewFolder():
 	# 	for folder in self.folders:
 	# 		folder.convert_to_html()
 
+class NewFile():
+	"""
+		NewFile - objects, contains file's contents
+	"""
+	def __init__(self, file_path, data_base):
+		self.path = file_path
+		self.data_base = data_base
+		self.file_number = None
+		# with open(self.path, 'r', encoding='utf-8') as file:
+		# 	self.source_lines = file.readlines()
+		# self.segments = [] # сегменты, составляющие файл
+		# self.html_lines = [] # список строк готового HTML-файла
+		if self.get_file_name()=='00.txt-light':
+			self.base.add_addition(self.source_lines)
+		else:
+			self.file_number = self.data_base.append_file(self.path)
+			if self.data_base.prove_addition():
+				self.source_lines = self.data_base.get_addition() + self.source_lines
+			self.segments.append(NewSegment(self.source_lines, 'from_file', self.data_base))
+			self.convert_to_html()
+			if self.data_base.get_content_file_path()==self.path:
+				self.data_base.add_content_lines(self.html_lines)
+
+	def get_file_name(self):
+		return os.path.split(self.path)[1]
+
 def dir_list(folder_path):
 	files_list = []
 	folders_list = []
 	paths_list = os.listdir(folder_path)
-	# обходим каждый адрес, проверяя является ли это нужным файлом или папкой
 	for path in paths_list:
 		if os.path.isfile(folder_path+"\\"+path) and os.path.splitext(path)[1]=='.txt-light':
 			files_list.append(folder_path+"\\"+path)
