@@ -31,132 +31,141 @@ class TextToHTML():
 		self.data_base.add_header(self.header_html_lines) # верхняя часть html-документа
 		self.data_base.add_footer(self.footer_html_lines) # нижняя часть html-документа
 		self.data_base.add_output_path(self.output_path) # выходная папка
-		self.data_base.set_content_file(self.content_file_path) # содержание
+		self.data_base.set_content_file_path(self.content_file_path) # содержание
 		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
-		print(self.data_base.get_last_file_id())
+		
 
 	def convert_to_html(self):
 		self.make_output_folder()
 		self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder, self.data_base)
-		self.root_folder.convert_to_html(self.data_base)
-
+		self.root_folder.convert_to_html()
 
 class NewDataBase():
-	"""База данных — объект, содержащий описания якорей и секций
-	в их привязке к файлам/секциям. Каждый файл обладает уникальным 
-	путём, и каждый якорь уникален, поэтому:
-	{file_path:file_id} - связка пути файла с его айди
-	{anchor_id:file_id} - связка якоря и файла"""
+	"""NewDataBase — object is include descriptions of anchors and sections
+	in connect with unique files/sections. Every file have unique path, 
+	and every anchor is unique.
+	"""
 	def __init__(self):
-		self.filecount=0 # счётчик файлов
-		self.files_dict={} # здесь связываем файлы и их идентификаторы
-		self.anchors_dict={} # здесь связываем якоря и файлы, в которых они расположены
-		self.curfile="" # идентификатор текущего файла (файл, с которым мы работаем)
-		self.crosslink="" # первая часть для кроссылок
-		self.addition=[] # добавочная секция в файл
-		self.header_list=[] # верх страницы html
-		self.footer_list=[] # низ страницы html
-		self.content_file_path="" # путь к файлу-оглавлению
-		self.content=[] # содержимое содержания
-		self.export_folder_path="" # путь к папке для экспорта
+		self.files_count = 0
+		self.files_db = {
+			# connect files paths and it's ids
+			"files-paths": [],
+			"files-ids": []
+		}
+		self.anchors_db = {
+			# connect anchors and it's file ids
+			"anchors": [],
+			"files-ids": []
+
+		}
+		self.current_file_id = ""
+		self.crosslink = "" # первая часть для кроссылок
+		self.addition = [] # добавочная секция в файл
+		self.header_html = [] # верх страницы html
+		self.footer_html = [] # низ страницы html
+		self.content_file_path = "" # путь к файлу-оглавлению
+		self.content_HTML = [] # содержимое оглавления
+		self.output_folder_path = "" # путь к папке для экспорта
 		self.root_folder="" # название папки для страниц (для сайта)
-	def currentFile(self):
-		# получаем идентификатор текущего файла
-		return self.curfile
-	def setCurFile(self, id_):
-		# устанавливаем текущий файл. Выбираем его айди
-		self.curfile = id_
-	def proveAdd(self):
-		# присутствует ли в базе добавочная секция
+
+	def get_current_file(self):
+		return self.current_file_id
+
+	def set_current_file(self, file_id):
+		self.current_file_id = file_id
+
+	def prove_addition(self):
 		return (True if len(self.addition)!=0 else False)
-	def getAdd(self):
-		# получаем из базы добавочную секцию
+
+	def get_addition(self):
 		return self.addition[:1]
-	def addAdd(self,string_list):
-		# добавляем в базу добавочную секцию
-		self.addition.extend(string_list)
-	def delAdd(self):
-		# удаляем из базы добавочную секцию
+
+	def add_addition(self, source_lines):
+		self.addition.extend(source_lines)
+
+	def del_addition(self):
 		self.addition=[]
 
 	def get_last_file_id(self):
-		# получаем последний айди файлов
-		if self.filecount==0:
+		if self.files_count==0:
 			return None
 		else:
-			return self.files_dict[list(self.files_dict.keys())[-1]]
-	def genNewFileID(self):
-		# генерируем айди из счётчика
-		return '0'*(8-len(str(self.filecount)))+str(self.filecount)
-	def addFile(self,path):
-		# добавление нового файла
-		id_=self.genNewFileID() # генерируем идентификатор файла
-		self.filecount+=1 # увеличиваем счётчик
-		self.files_dict[path]=id_ # вносим файл в словарь
-		self.curfile=id_ # текущим файлом становится добавленный
-	def getFileID(self,path):
-		# получаем айди файла по указанному пути
-		return (self.files_dict[path] if path in self.files_dict else None)
-	def getFilePath(self,id_):
-		# получаем путь к файлу по ай-ди
-		result=None
-		for key in self.files_dict:
-			if self.files_dict[key]==id_:
-				result=key
-				break
-		return result
-	def getFileName(self,anchor):
+			return self.files_db['files-ids'][-1]
+
+	def gen_file_id(self):
+		return '0'*(8-len(str(self.files_count)))+str(self.files_count)
+
+	def append_file(self, file_path):
+		file_id = self.gen_file_id() # генерируем идентификатор файла
+		self.files_count += 1 # увеличиваем счётчик
+		# вносим файл в базу одновременно
+		self.files_dict['files-paths'].append(file_path)
+		self.files_dict['files-ids'].append(file_id)
+		self.current_file_id = file_id # текущим файлом становится добавленный
+
+	def get_file_id(self, file_path):
+		if file_path in self.files_db['files-paths']:
+			self.files_db['files-ids'][self.files_db['files-paths'].index(file_path)]
+		else:
+			return None
+
+	def get_file_path(self, file_id):
+		if file_id in self.files_db['files-ids']:
+			self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
+		else:
+			return None
+
+	def add_anchor(self, anchor):
+		if self.current_file_id!="":
+			self.anchors_db['anchors'].append(anchor)
+			self.anchors_db['files-ids'].append(self.current_file_id)
+		else:
+			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен.")
+
+	def get_file_name(self, anchor):
 		# раньше данная функция просто возвращала айди файла, который и использовался в качестве
 		# имени файла. Теперь Функция возвращает новое имя файла из уже существующего имени фала .txt-light
-		file_name=None # по умолчанию имя файла None
-		if anchor in self.anchors_dict:
+		if anchor in self.anchors_db:
 			# если якорь присутствует в списке якорей, перебираем словарь и отыскиваем нужное имя файла
-			for file in self.files_dict:
-				if self.files_dict[file]==self.anchors_dict[anchor]:
-					file_name=file
-					break
-		if file_name!=None:
-			file_name=os.path.split(file_name)[1] # отделяем путь к папке от файла
-			file_name=os.path.splitext(file_name)[0] # отделяем от файла расширение
+			file_id = self.anchors_db['files-ids'][self.anchors_db['anchors'].index(anchor)]
+			file_path = self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
+			full_file_name = os.path.split(file_path)[1] # отделяем путь к папке от файла
+			file_name = os.path.splitext(full_file_name)[0] # отделяем от файла расширение
 			instr=re.match(r'\d+_',file_name)
 			if instr!=None:
 				file_name=file_name[len(instr.group(0)):] # убираем из файла числа вначале
-		return file_name
-	def addAnchor(self,anchor):
-		# добавляем якорь к файлу
-		if self.curfile!="":
-			self.anchors_dict[anchor]=self.curfile
+			return file_name
 		else:
-			print("Ошибка! Текущий Файл не определён. Якорь <<anchor>> не добавлен")
-	def add_header(self,string_list):
-		self.header_list = string_list[:]
-	def add_footer(self,string_list):
-		self.footer_list=string_list[:]
-	def getHeader(self):
-		return self.header_list[:]
-	def getFooter(self):
-		return self.footer_list[:]
-	def add_output_path(self,path):
-		self.export_folder_path=path
-	def getExportPath(self):
-		return self.export_folder_path
+			return None
 
-	def set_content_file(self,path):
+	def add_header(self, html_lines):
+		self.header_html = html_lines[:]
+
+	def add_footer(self,html_lines):
+		self.footer_html = html_lines[:]
+	def get_header(self):
+		return self.header_html[:]
+	def get_footer(self):
+		return self.footer_html[:]
+	def add_output_path(self, folder_path):
+		self.output_folder_path = folder_path
+	def get_output_path(self):
+		return self.output_folder_path
+
+	def set_content_file_path(self, file_path):
 		# устанавливает путь к файлу с содержанием
-		self.content_file_path=path
-	def getContentFile(self):
+		self.content_file_path = file_path
+	def get_content_file_path(self):
 		# получает путь к файлу с содержанием
 		return self.content_file_path
-	def addContent(self,string_list):
-		# разметку HTML файла оглавления помещаем в базу
-		self.content_HTML=string_list[:]
-	def getContent(self):
-		# получаем оглавление в виде HTML разметки
+	def add_content_lines(self, html_lines):
+		self.content_HTML = html_lines[:]
+	def get_content_lines(self):
 		return self.content_HTML
 
 	def add_crosslink_form(self, string):
-		self.crosslink=string
+		self.crosslink = string
 	def getCrossLink(self):
 		return self.crosslink
 
@@ -175,7 +184,7 @@ class NewFolder():
 		# создаём новые папки и помещаем их в список
 		for folder in folders_list:
 			self.folders.append(NewFolder(folder, self.data_base))
-		self.data_base.delAdd() # удаляем дополнительные заголовки перед перебором файлов
+		self.data_base.del_addition() # удаляем дополнительные заголовки перед перебором файлов
 		# создаём новые файлы и помещаем в другой список
 		for file in files_list:
 			self.files.append(NewFile(file, self.data_base))
@@ -197,21 +206,21 @@ class NewFile():
 			self.source=file.readlines()
 		self.segments=[] # сегменты, составляющие файл
 		self.HTML=[] # список строк готового HTML-файла
-		if self.getFileName()=='00.txt-light':
+		if self.get_file_name()=='00.txt-light':
 			# если это файл заголовка, этот заголовок будет добавляться ко всем последующим файлам
-			base.addAdd(self.source)
+			base.add_addition(self.source)
 		else:
 			# если это не файл заголовка
-			base.addFile(path) # добавляем файл в базу
-			if base.proveAdd():
-				self.source=base.getAdd()+self.source
+			base.append_file(path) # добавляем файл в базу
+			if base.prove_addition():
+				self.source=base.get_addition()+self.source
 			self.segments.append(NewSegment(self.source,'from_file',base))
 			self.convert_to_html(base)
 			# если путь к текущему файлу совпадает с путём к содержанию
-			if base.getContentFile()==path:
+			if base.get_content_file_path()==path:
 				# добавляем содержание в базу
-				base.addContent(self.HTML)
-	def getFileName(self):
+				base.add_content_lines(self.HTML)
+	def get_file_name(self):
 		# получаем имя файла, отсекая путь
 		return os.path.split(self.path)[1]
 	def convert_to_html(self,base):
@@ -224,14 +233,14 @@ class NewFile():
 		return self.HTML
 	def getPgUpDn(self,base):
 		new_string_list=[]
-		prev_=int(base.getFileID(self.path))-1
-		next_=int(base.getFileID(self.path))+1
+		prev_=int(base.get_file_id(self.path))-1
+		next_=int(base.get_file_id(self.path))+1
 		fold_=base.getCrossLink()
 		new_string_list.append('<div style="display:flex;justify-content:space-between;">')
 		new_string_list.append('<div>')
 		if not prev_<0:
 			prev_id='0'*(8-len(str(prev_)))+str(prev_)
-			prev_name=os.path.split(base.getFilePath(prev_id))[1]
+			prev_name=os.path.split(base.get_file_path(prev_id))[1]
 			prev_name=os.path.splitext(prev_name)[0]
 			instr=re.match(r'\d+_',prev_name)
 			if instr!=None:
@@ -243,7 +252,7 @@ class NewFile():
 		new_string_list.append('<div>')
 		if not next_>int(base.get_last_file_id()):
 			next_id='0'*(8-len(str(next_)))+str(next_)
-			next_name=os.path.split(base.getFilePath(next_id))[1]
+			next_name=os.path.split(base.get_file_path(next_id))[1]
 			next_name=os.path.splitext(next_name)[0]
 			instr=re.match(r'\d+_',next_name)
 			if instr!=None:
@@ -254,23 +263,23 @@ class NewFile():
 		return new_string_list
 	def buildThis(self,base):
 		# собираем готовый HTML-файл
-		file_id=base.getFileID(self.path) # пытаемся получить айди файла
+		file_id=base.get_file_id(self.path) # пытаемся получить айди файла
 		if file_id!=None:
 			# если айди в базе присутствует, можно работать с файлом
 			# получаем ссылки переключения страниц
 			prev_next=self.getPgUpDn(base)
 			# собираем шапку файла
 			header_list=[] # список строк шапки файла
-			temp_list=base.getHeader() # временный список строк
+			temp_list=base.get_header() # временный список строк
 			for header_string in temp_list:
 				# если это подходящее место, вставляем содержание, в противном случае просто добавляем строку
 				if header_string=="<header-header></header-header>\n":
-					header_list.extend(base.getContent())
+					header_list.extend(base.get_content_lines())
 				else:
 					header_list.append(header_string)
 			temp_list=[]
 			# собираем центральную часть файла
-			file_name=os.path.split(base.getFilePath(file_id))[1]
+			file_name=os.path.split(base.get_file_path(file_id))[1]
 			file_name=os.path.splitext(file_name)[0]
 			instr=re.match(r'\d+_',file_name)
 			if instr!=None:
@@ -280,11 +289,11 @@ class NewFile():
 			body_list.extend(prev_next)
 			# собираем подвал
 			footer_list=[] # список строк подвала файла
-			temp_list=base.getFooter() # временный список строк
+			temp_list=base.get_footer() # временный список строк
 			for footer_string in temp_list:
 				# если это подходящее место, вставляем содержание, в противном случае просто добавляем строку
 				if footer_string=="<header-header></header-header>\n":
-					footer_list.extend(base.getContent())
+					footer_list.extend(base.get_content_lines())
 				else:
 					footer_list.append(footer_string)
 			temp_list=[]
@@ -298,11 +307,11 @@ class NewFile():
 					anchors_list=re.findall(r'#folder\-file##?[^#]*#',string)
 					for anch in anchors_list:
 						target_anch=re.match(r'#folder\-file#(#?[^#]*)#',anch).group(1)
-						target_file=str(base.getFileName(target_anch[1:]))+'.html'
+						target_file=str(base.get_file_name(target_anch[1:]))+'.html'
 						link=base.getCrossLink()+target_file+target_anch
 						string=string.replace(anch,link)
 				new_string_list.append(string)
-			export_path=base.getExportPath()+'\\'+file_name+".html"
+			export_path=base.get_output_path()+'\\'+file_name+".html"
 			with open(export_path,'w',encoding='utf-8') as file:
 				file.writelines(new_string_list)
 				print(f"'Файл {export_path} успешно сгенерирован из {self.path}.'")
@@ -392,7 +401,7 @@ class NewSegment():
 					section.addString(string)
 			elif typeString(string)=='id':
 				# тип строки идентификатор
-				base.addAnchor(getID(string)) # добавляем якорь в базу
+				base.add_anchor(getID(string)) # добавляем якорь в базу
 				if block_mode=='head-block':
 					# если работает режим заголовка
 					section.changeID(getID(string)) # изменяем идентификатор секции
@@ -605,7 +614,7 @@ class NewString():
 		elif self.type=='id':
 			# теперь, если к нам приходит идентификатор, мы можем
 			# этот идентификатор добавить в базу к текущему файлу
-			base.addAnchor(string)
+			base.add_anchor(string)
 		elif self.type=="hyperlink":
 			hl_text,hl_href=re.findall(r'^\[(.*?)\]\((.*?)\)$',string)[0]
 			if hl_text==f"%image%":
