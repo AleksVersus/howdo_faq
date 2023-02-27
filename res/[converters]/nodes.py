@@ -27,6 +27,7 @@ class TextToHTML():
 			self.footer_html_lines = footer.readlines()
 		self.data_base = None
 		self.root_folder = None
+		self.root_node = None
 
 	def make_output_folder(self):
 		if not os.path.exists(self.output_path):
@@ -44,7 +45,7 @@ class TextToHTML():
 		self.make_output_folder()
 		# self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder)
-		print(self.root_folder.print_includes())
+		self.root_node = self.root_folder.return_node()
 		# self.root_folder.convert_to_html()
 
 
@@ -74,12 +75,31 @@ class NewFolder():
 		return files_list, folders_list
 
 	def print_includes(self, counter=1):
+		"""Function for control files-sctructure"""
 		text='\t'*counter + self.path+'\n'
 		for folder in self.folders:
 			text+=folder.print_includes(counter=counter+1)
 		for file in self.files:
 			text+="\t"*(counter+1)+file.path+'\n'
 		return text
+
+	def return_node(self):
+		if len(self.files)>0 or len(self.folders)>0:
+			node = NewNode(node_type='folder')
+			for file in self.files:
+				file_node = file.return_node()
+				if file_node is not None:
+					node.add_node(file_node)
+			for folder in self.folders:
+				folder_node = folder.return_node()
+				if folder_node is not None:
+					node.add_node(folder_node)
+			if node.get_nodes_count()!=0:
+				return node
+			else:
+				return None
+		else:
+			return None
 
 class NewFile():
 	"""
@@ -95,6 +115,108 @@ class NewFile():
 			return os.path.split(self.path)[1]
 		elif mode in ('short'):
 			return os.path.splitext(os.path.split(self.path)[1])[0]
+
+	def return_node(self):
+		node = None
+		if self.get_file_name()=='00.txt-light':
+			node = NewNode(node_type='head')
+		else:
+			node = NewNode(node_type='file')
+		node.add_source(self.source_lines)
+		node.source_to_nodes()
+
+class NewNode():
+	"""
+		NewNode - it is objects for convertation.
+		types:
+		folder - узел папки
+		file - узел файла
+		head - узел заголовка
+	"""
+	def __init__(self, node_type='file'):
+		self.node_type = node_type
+		self.includes_nodes = []
+		self.source_lines = []
+		self.attributes = {}
+
+	def add_node(self, node):
+		self.includes_nodes.append(node)
+
+	def add_source(self, source_lines):
+		if type(source_lines)==list:
+			self.source_lines.extend(source_lines)
+		elif type(source_lines)==str:
+			self.source_lines.append(source_lines)
+
+	def get_nodes_count(self):
+		return len(self.includes_nodes)
+
+	def source_to_nodes(self):
+		if self.node_type == 'head':
+			if len(self.source_lines)==2:
+				self.attributes['anchor']=self.extract_anchor(self.source_lines.pop())
+			if len(self.source_lines)==1:
+				string_line = self.source_lines.pop()
+				self.attributes['head-level']=self.get_head_level(string_line)
+				node = NewNode(node_type='string')
+				string_line = get_head_text(string_line)
+				node.add_source(string_line)
+				node.source_to_nodes()
+				self.add_node(node)
+				if not 'anchor' in self.attributes:
+					self.attributes['anchor']=self.translit_string(string_line)
+
+	# ------------------------------- static methods ---------------------------
+
+	@staticmethod
+	def extract_anchor(string_line):
+		return re.match(r'^(\[:)(.+?)(\])$', string_line).group(2)
+
+	@staticmethod
+	def get_head_text(string_line):
+		return re.match(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$', string_line).group(2)
+
+	@staticmethod
+	def get_head_level(string_line):
+		if re.match(r'^==.*?==$',string)!=None:
+			return 'h1'
+		elif re.match(r'^=.*?=$',string)!=None:
+			return 'h2'
+		elif re.match(r'^--.*?--$',string)!=None:
+			return 'h3'
+		elif re.match(r'^-.*?-$',string)!=None:
+			return 'h4'
+		elif re.match(r'^\+\+.*?\+\+$',string)!=None:
+			return 'h5'
+		elif re.match(r'^\+.*?\+$',string)!=None:
+			return 'h6'
+
+	@staticmethod
+	def translit_string(string_line, direct="cyr_to_lat"):
+		translator = {
+			"cyr" : [	
+				" ", "ъ", "ь", "щ", "ё", "ж", "ц", "ч", "ш", "ю", "я",
+				"а", "б", "в", "г", "д", "е", "з", 
+				"и", "й", "к", "л", "м", "н", "о", 
+				"п", "р", "с", "т", "у", "ф", "х", 
+				"ы", "э"
+			],
+			"lat" : [
+				"-", "_", "_", "sch", "io", "zh", "ts", "ch", "sh", "iu", "ia",
+				"a", "b", "v", "g", "d", "e", "z", 
+				"i", "j", "k", "l", "m", "n", "o", 
+				"p", "r", "s", "t", "u", "f", "h", 
+				"y", "e"
+			]
+		}
+		if direct == "cyr_to_lat":
+			i = 0
+			for letter in translator['cyr']:
+				string_line = string_line.replace(translator['cyr'][i], translator['lat'][i])
+				i+=1
+			string_line = re.sub(r'[^\w\-\s]', '', string_line)
+		return string_line
+
 
 def main():
 	# названия файлов, из которых берём сборку
