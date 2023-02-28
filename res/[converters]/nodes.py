@@ -152,19 +152,70 @@ class NewNode():
 		return len(self.includes_nodes)
 
 	def source_to_nodes(self):
-		if self.node_type == 'head':
-			if len(self.source_lines)==2:
+		if self.node_type == 'folder':
+			# folder-nodes have not sources
+			pass
+		elif self.node_type == 'file':
+			self.segment_stn()
+		elif self.node_type == 'head':
+			self.head_stn()
+
+	def create_node(self, string_lines, node_type='segment'):
+		if len(string_lines)>0:
+			node = NewNode(node_type='segment')
+			node.add_source(string_lines)
+			node.source_to_nodes()
+			string_lines = []
+			self.add_node(node)
+
+	def segment_stn(self):
+		# break node on big nodes
+		mode = {"code-block-open": False, "section-of-head-open": False}
+		string_lines = []
+		for line in self.string_lines:
+			string_type = self.string_type(line)
+			if string_type == 'section-of-head-open' and not mode['code-block-open']:
+				self.create_node(string_lines)
+				mode['section-of-head-open']=True
+			elif string_type == 'section-of-head-close' and mode['section-of-head-open']:
+				self.create_node(string_lines)
+				mode['section-of-head-open']=False
+			elif string_type == 'code' and not mode['section-of-head-open']:
+				string_lines.append(line)
+				mode['code-block-open'] = not mode['code-block-open']
+			else:
+				string_lines.append(line)
+
+		if len(string_lines)!=len(self.string_lines):
+			self.create_node(string_lines)
+		else:
+			# if node not broke on segments-nodes, break node in other types nodes
+			mode = {
+				"head-open": False,
+				"code-block-open": False,
+				"ul-open": False,
+				"ol-open": False,
+				"quote-open": False
+			}
+			string_lines = []
+			for line in self.string_lines:
+				string_type = self.string_type(line)
+
+
+
+	def head_stn(self):
+		if len(self.source_lines)==2:
 				self.attributes['anchor']=self.extract_anchor(self.source_lines.pop())
-			if len(self.source_lines)==1:
-				string_line = self.source_lines.pop()
-				self.attributes['head-level']=self.get_head_level(string_line)
-				node = NewNode(node_type='string')
-				string_line = get_head_text(string_line)
-				node.add_source(string_line)
-				node.source_to_nodes()
-				self.add_node(node)
-				if not 'anchor' in self.attributes:
-					self.attributes['anchor']=self.translit_string(string_line)
+		if len(self.source_lines)==1:
+			string_line = self.source_lines.pop()
+			self.attributes['head-level']=self.get_head_level(string_line)
+			node = NewNode(node_type='string')
+			string_line = get_head_text(string_line)
+			node.add_source(string_line)
+			node.source_to_nodes()
+			self.add_node(node)
+			if not 'anchor' in self.attributes:
+				self.attributes['anchor']=self.translit_string(string_line)
 
 	# ------------------------------- static methods ---------------------------
 
@@ -217,6 +268,30 @@ class NewNode():
 			string_line = re.sub(r'[^\w\-\s]', '', string_line)
 		return string_line
 
+	@staticmethod
+	def string_type(string_line):
+		if re.match(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$', string_line)!=None:
+			return 'head'
+		elif re.match(r'^\s*<section_of_head>\s*$', string_line)!=None:
+			return 'section-of-head-open'
+		elif re.match(r'^\s*</section_of_head>\s*$', string_line)!=None:
+			return 'section-of-head-close'
+		elif re.match(r'^\[:.*?\]$', string_line)!=None:
+			return 'id'
+		elif re.match(r'^\s*?\*\s+', string_line)!=None:
+			return 'ul-li'
+		elif re.match(r'^\s*?\d+\.\s+', string_line)!=None:
+			return 'ol-li'
+		elif re.match(r'^\s*```\w*?', string_line)!=None:
+			return 'code'
+		elif re.match(r'^\s*?>>>\s*?$', string_line)!=None:
+			return 'quote'
+		elif re.match(r'^\s*?>\s+', string_line)!=None:
+			return 'quote-line'
+		elif re.match(r'^\s*?$', string_line)!=None:
+			return 'empty'
+		else:
+			return 'other'
 
 def main():
 	# названия файлов, из которых берём сборку
