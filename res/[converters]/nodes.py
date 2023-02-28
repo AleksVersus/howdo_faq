@@ -159,6 +159,8 @@ class NewNode():
 			self.segment_stn()
 		elif self.node_type == 'segment':
 			self.segment_stn()
+		elif self.node_type == 'quote':
+			self.segment_stn()
 		elif self.node_type == 'head':
 			self.head_stn()
 
