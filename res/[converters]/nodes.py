@@ -157,12 +157,14 @@ class NewNode():
 			pass
 		elif self.node_type == 'file':
 			self.segment_stn()
+		elif self.node_type == 'segment':
+			self.segment_stn()
 		elif self.node_type == 'head':
 			self.head_stn()
 
 	def create_node(self, string_lines, node_type='segment'):
 		if len(string_lines)>0:
-			node = NewNode(node_type='segment')
+			node = NewNode(node_type=node_type)
 			node.add_source(string_lines)
 			node.source_to_nodes()
 			string_lines = []
@@ -189,18 +191,43 @@ class NewNode():
 		if len(string_lines)!=len(self.string_lines):
 			self.create_node(string_lines)
 		else:
-			# if node not broke on segments-nodes, break node in other types nodes
-			mode = {
-				"head-open": False,
-				"code-block-open": False,
-				"ul-open": False,
-				"ol-open": False,
-				"quote-open": False
-			}
-			string_lines = []
-			for line in self.string_lines:
-				string_type = self.string_type(line)
+			top_head_level = self.top_head_level(string_lines)
+			if top_head_level<7:
+				# break on sections
+				mode = {"code-block-open": False, 'head-block-open':False}
+				string_lines = []
+				for line in self.string_lines:
+					string_type = self.string_type(line)
+					if all((
+						string_type == 'head', # head
+						self.get_head_level(line, result_type='num')==top_head_level, # top level
+						not mode['code-block-open'] # non code
+					)):
+						if len(string_lines)>0:
+							if not mode['head-block-open']:
+								self.create_node(string_lines, node_type='segment')
+							else:
+								self.create_node(string_lines, node_type='head')
+						string_lines.append(line)
+						mode['head-block-open']=True
+					elif string_type == 'id' and mode['head-block-open']:
+						string_lines.append(line)
+						self.create_node(string_lines, node_type='head')
+						mode['head-block-open']=False
+					elif string_type == 'code':
+						string_lines.append(line)
+						mode['code-block-open'] = not mode['code-block-open']
+					elif mode['head-block-open']:
+						self.create_node(string_lines, node_type='head')
+						string_lines.append(line)
+						mode['head-block-open']=False
+					else:
+						string_lines.append(line)
 
+		if len(string_lines)!=len(self.string_lines):
+			self.create_node(string_lines)
+		else:
+			
 
 
 	def head_stn(self):
@@ -228,19 +255,22 @@ class NewNode():
 		return re.match(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$', string_line).group(2)
 
 	@staticmethod
-	def get_head_level(string_line):
-		if re.match(r'^==.*?==$',string)!=None:
-			return 'h1'
-		elif re.match(r'^=.*?=$',string)!=None:
-			return 'h2'
-		elif re.match(r'^--.*?--$',string)!=None:
-			return 'h3'
-		elif re.match(r'^-.*?-$',string)!=None:
-			return 'h4'
-		elif re.match(r'^\+\+.*?\+\+$',string)!=None:
-			return 'h5'
-		elif re.match(r'^\+.*?\+$',string)!=None:
-			return 'h6'
+	def get_head_level(string_line:str, result_type='tag'):
+		if not result_type in ('tag', 'num'): return None
+		if re.match(r'^==.*?==$',string_line)!=None:
+			return {'tag':'h1', 'num':1}[result_type]
+		elif re.match(r'^=.*?=$',string_line)!=None:
+			return {'tag':'h2', 'num':2}[result_type]
+		elif re.match(r'^--.*?--$',string_line)!=None:
+			return {'tag':'h3', 'num':3}[result_type]
+		elif re.match(r'^-.*?-$',string_line)!=None:
+			return {'tag':'h4', 'num':4}[result_type]
+		elif re.match(r'^\+\+.*?\+\+$',string_line)!=None:
+			return {'tag':'h5', 'num':5}[result_type]
+		elif re.match(r'^\+.*?\+$',string_line)!=None:
+			return {'tag':'h6', 'num':6}[result_type]
+		else:
+			return None
 
 	@staticmethod
 	def translit_string(string_line, direct="cyr_to_lat"):
@@ -269,7 +299,7 @@ class NewNode():
 		return string_line
 
 	@staticmethod
-	def string_type(string_line):
+	def string_type(string_line:str):
 		if re.match(r'^(={1,2}|-{1,2}|\+{1,2})(.+?)(\1)$', string_line)!=None:
 			return 'head'
 		elif re.match(r'^\s*<section_of_head>\s*$', string_line)!=None:
@@ -292,6 +322,22 @@ class NewNode():
 			return 'empty'
 		else:
 			return 'other'
+
+	@staticmethod
+	def all_modes_same(mode:dict, all_values=False):
+		return all(tuple([value==all_values for value in mode.values()]))
+
+	@staticmethod
+	def top_head_level(string_lines:list):
+		top_level = 7
+		mode = {"code-block-open": False}
+		for line in string_lines:
+			if self.string_type(line)=='head' and not mode['code-block-open']:
+				level = self.get_head_level(line, result_type='num')
+				top_level = (level if level < top_level else top_level)
+			elif self.string_type(line)=='code':
+				mode['code-block-open'] = not mode['code-block-open'] 
+		return top_level
 
 def main():
 	# названия файлов, из которых берём сборку
