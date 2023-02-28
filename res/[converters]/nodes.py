@@ -188,7 +188,7 @@ class NewNode():
 			else:
 				string_lines.append(line)
 
-		if len(string_lines)!=len(self.string_lines):
+		if not len(string_lines) in (len(self.string_lines), 0):
 			self.create_node(string_lines)
 		else:
 			top_head_level = self.top_head_level(string_lines)
@@ -224,10 +224,88 @@ class NewNode():
 					else:
 						string_lines.append(line)
 
-		if len(string_lines)!=len(self.string_lines):
+		if not len(string_lines) in (len(self.string_lines), 0):
 			self.create_node(string_lines)
 		else:
-			
+			# If node not broke on segments-nodes, break node in other types nodes.
+			# Manage information:
+			block_mode='' # выставляем режимы добора в секции
+			manage_mode={
+
+				# "string-type": ("block-types") 
+				"head":('','quote-list','ul-ol-list','head-block'), # блоки, которые можно закрывать строкой заголовка
+				"id": ('head-block','quote-list'), # блоки, которые можно закрывать строкой с айди
+				"ul-ol":('','quote-list','head-block'),
+				"code":('','code-block','head-block','quote-list'),
+				"quote":('','quote-block','head-block','quote-list'),
+				"quote-line":('','head-block'),
+				"empty":('head-block','quote-list','ul-ol-list'),
+				"other":('head-block','quote-list')
+			}
+			block_to_node = {
+				'': 'segment',
+				'head-block': 'head',
+				'quote-list': 'quote',
+				'quote-block': 'quote',
+				'ul-ol-list': 'list-node',
+				'code-block': 'code'
+			}
+			mode = {'code-block-open': False}
+			string_lines = []
+			for line in self.string_lines:
+				string_type = self.string_type(line)
+				if (string_type in ('ul-li','ol-li')):
+					if block_mode in manage_mode["ul_ol"]:
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode="ul-ol-list"
+					else:
+						string_lines.append(line)
+				elif string_type=='code':
+					if block_mode=='code-block':
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode=''
+					elif block_mode in manage_mode["code"]:
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode="code-block"
+					else:
+						string_lines.append(line)
+					mode['code-block-open'] = not mode['code-block-open']
+				elif string_type=='quote':
+					if block_mode=='quote-block':
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode=''
+					elif block_mode in manage_mode["quote-block"]:
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode="quote-block"
+					else:
+						string_lines.append(line)
+				elif string_type=='quote-line':
+					if block_mode=="quote-list":
+						string_lines.append(self.clear_quote_string(line))
+					elif block_mode in manage_mode["quote-line"]:
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						string_lines.append(self.clear_quote_string(line))
+						block_mode="quote-list"
+					else:
+						string_lines.append(line)
+				elif string_type=='empty':
+					if block_mode in manage_mode['empty'] and not mode['code-block-open']:
+						# empty line don't abort code-block in other blocks
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode=''
+					elif block_mode=='':
+						pass
+					else:
+						string_lines.append(line)
+				else:
+					if block_mode in manage_mode["other"]:
+						self.create_node(string_lines, node_type=block_to_node[block_mode])
+						block_mode=''
+					else:
+						string_lines.append(line)
+
+		if not len(string_lines) in (len(self.string_lines), 0):
+			self.create_node(string_lines)
 
 
 	def head_stn(self):
@@ -338,6 +416,10 @@ class NewNode():
 			elif self.string_type(line)=='code':
 				mode['code-block-open'] = not mode['code-block-open'] 
 		return top_level
+
+	@staticmethod
+	def clear_quote_string(string_line:str):
+		return re.findall(r'^(\s*>\s*)(.+?)$', string_line)[0][1]
 
 def main():
 	# названия файлов, из которых берём сборку
