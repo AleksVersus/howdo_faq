@@ -419,7 +419,7 @@ class NewNode():
 
 	@staticmethod
 	def clear_quote_string(string_line:str):
-		return re.findall(r'^(\s*>\s*)(.+?)$', string_line)[0][1]
+		return re.match(r'^(\s*>\s*)(.+?)$', string_line).group(2)
 
 def main():
 	# названия файлов, из которых берём сборку
