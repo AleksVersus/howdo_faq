@@ -306,7 +306,12 @@ class NewNode():
 
 		if not len(string_lines) in (len(self.string_lines), 0):
 			self.create_node(string_lines)
-
+		elif len(string_lines)>0:
+			# self.string_lines = string_lines and >0
+			# Each string is node!
+			while len(self.string_lines)>0:
+				line = self.string_lines.pop(0)
+				self.create_node([line], node_type='string')
 
 	def head_stn(self):
 		if len(self.source_lines)==2:
