@@ -163,6 +163,8 @@ class NewNode():
 			self.segment_stn()
 		elif self.node_type == 'head':
 			self.head_stn()
+		elif self.node_type == 'list-node':
+			self.list_stn()
 
 	def create_node(self, string_lines, node_type='segment'):
 		if len(string_lines)>0:
@@ -329,6 +331,34 @@ class NewNode():
 			if not 'anchor' in self.attributes:
 				self.attributes['anchor']=self.translit_string(string_line)
 
+	def list_stn(self):
+		string_lines = []
+		top_list_level = self.top_list_level(self.string_lines)
+		mode = {'ul-block-open': False, 'ol-block-open': False, 'code-block-open':False}
+		for line in self.string_lines:
+			string_type = self.string_type(line)
+			string_level = self.get_string_level(line)
+			if string_type in ('ul-li', 'ol-li') and string_level == top_list_level and not mode['code-block-open']:
+				if self.all_modes_same(mode):
+					if string_type=='ul-li':
+						mode['ul-block-open']=True
+						self.attributes['list-type']='ul-list'
+					if string_type=='ol-li':
+						mode['ol-block-open']=True
+						self.attributes['list-type']='ol-list'
+				self.create_node(string_lines)
+				string_lines.append(self.clear_li_string(line))
+			elif string_type == 'code':
+				string_lines.append(line)
+				mode['code-block-open'] = not mode['code-block-open']
+			else:
+				string_lines.append(line)
+		self.create_node(string_lines)
+
+
+
+
+
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
@@ -427,6 +457,24 @@ class NewNode():
 	@staticmethod
 	def clear_quote_string(string_line:str):
 		return re.match(r'^(\s*>\s*)(.+?)$', string_line).group(2)
+
+	@staticmethod
+	def get_string_level(string_line:str):
+		leveling=re.match(r'^\s+', string_line)
+		return (0 if (leveling is None) else len(leveling.group(0)))
+
+	@staticmethod
+	def top_list_level(string_lines:list, get_string_level=get_string_level, string_type=string_type):
+		top_level=999999
+		for line in string_lines:
+			if string_type(line) in ('ol-li', 'ul-li'):
+				level = get_string_level(line)
+				top_level = (level if level<top_level else top_level)
+		return top_level
+
+	@staticmethod
+	def clear_li_string(string_line:str):
+		return re.match(r'^(\s*(\*|\d+\.)\s+)(.+?)$', string_line).group(3)
 
 def main():
 	# названия файлов, из которых берём сборку
