@@ -16,3 +16,10 @@ real-head-level - действительный уровень заголовка
 :list-node
 
 list-type - тип списка ul-list или ol-list
+
+:tag
+
+name - название тега: anchor, image, hr, em, strong, tt, simple-string
+href - путь ссылки например
+src - путь к изображению
+alt - альтернативный текст к изображению, а также подпись
