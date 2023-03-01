@@ -93,13 +93,12 @@ class NewFolder():
 				file_node = file.return_node()
 				if file_node is not None:
 					node.add_node(file_node)
-					node.attributes['path']=file.path
 			for folder in self.folders:
 				folder_node = folder.return_node()
 				if folder_node is not None:
 					node.add_node(folder_node)
-					node.attributes['path']=folder.path
 			if node.get_nodes_count()!=0:
+				node.attributes['path']=self.path
 				return node
 			else:
 				return None
@@ -129,6 +128,8 @@ class NewFile():
 			node = NewNode(node_type='file')
 		node.add_source(self.source_lines)
 		node.source_to_nodes()
+		node.attributes['path']=self.path
+		return node
 
 class NewNode():
 	"""
@@ -178,7 +179,7 @@ class NewNode():
 			self.string_stn()
 		else:
 			# pass unknown types of nodes
-			print(f"Unknown type of node: {self.node_type}.")
+			print(f"[182] Unknown type of node: {self.node_type}.")
 
 	def create_node(self, string_lines, node_type='segment', attributes=None):
 		if len(string_lines)>0:
@@ -186,10 +187,10 @@ class NewNode():
 			node.add_source(string_lines)
 			node.source_to_nodes()
 			if attributes is not None: node.attributes.update(attributes)
-			string_lines = []
+			string_lines.clear()
 			self.add_node(node)
 
-	def creat_simple_string(self, string_line:str):
+	def create_simple_string(self, string_line:str):
 		if len(string_line)>0:
 			self.create_node([string_line], node_type='tag', attributes={'name': 'simple-string'})
 
@@ -200,10 +201,10 @@ class NewNode():
 		for line in self.source_lines:
 			string_type = self.string_type(line)
 			if string_type == 'section-of-head-open' and not mode['code-block-open']:
-				self.create_node(string_lines)
+				self.create_node(string_lines, attributes={'segment-class':'for-soh'})
 				mode['section-of-head-open']=True
 			elif string_type == 'section-of-head-close' and mode['section-of-head-open']:
-				self.create_node(string_lines)
+				self.create_node(string_lines, attributes={'segment-class':'for-soh'})
 				mode['section-of-head-open']=False
 			elif string_type == 'code' and not mode['section-of-head-open']:
 				string_lines.append(line)
@@ -212,9 +213,10 @@ class NewNode():
 				string_lines.append(line)
 
 		if not len(string_lines) in (len(self.source_lines), 0):
-			self.create_node(string_lines)
+			self.create_node(string_lines, attributes={'segment-class':'for-soh'})
+			self.source_lines = []
 		else:
-			top_head_level = self.top_head_level(string_lines)
+			top_head_level = self.top_head_level(self.source_lines)
 			if top_head_level<7:
 				# break on sections
 				mode = {"code-block-open": False, 'head-block-open':False}
@@ -228,7 +230,9 @@ class NewNode():
 					)):
 						if len(string_lines)>0:
 							if not mode['head-block-open']:
-								self.create_node(string_lines, node_type='segment')
+								self.create_node(
+									string_lines, node_type='segment',
+									attributes={'segment-class':'for-head'})
 							else:
 								self.create_node(string_lines, node_type='head')
 						string_lines.append(line)
@@ -248,7 +252,9 @@ class NewNode():
 						string_lines.append(line)
 
 		if not len(string_lines) in (len(self.source_lines), 0):
-			self.create_node(string_lines)
+			nt, at = (('head', {}) if mode['head-block-open'] else ('segment', {'segment-class':'for-head'}))
+			self.create_node(string_lines, node_type=nt, attributes=at)
+			self.source_lines = []
 		else:
 			# If node not broke on segments-nodes, break node in other types nodes.
 			# Manage information:
@@ -277,11 +283,15 @@ class NewNode():
 			string_lines = []
 			for line in self.source_lines:
 				string_type = self.string_type(line)
+				# print(f'[285] string_type {string_type} block_mode {block_mode} line {line}')
 				if (string_type in ('ul-li','ol-li')):
 					if block_mode in manage_mode["ul-ol"]:
+						# print('[288] set block_mode')
 						self.create_node(string_lines, node_type=block_to_node[block_mode])
 						block_mode="ul-ol-list"
+						string_lines.append(line)
 					else:
+						# print('[292] append string')
 						string_lines.append(line)
 				elif string_type=='code':
 					if block_mode=='code-block':
@@ -324,6 +334,7 @@ class NewNode():
 						block_mode=''
 					elif block_mode=='':
 						pass
+						# print('[335] empty passed')
 					else:
 						string_lines.append(line)
 				else:
@@ -332,9 +343,12 @@ class NewNode():
 						block_mode=''
 					else:
 						string_lines.append(line)
+			if not len(string_lines) in (len(self.source_lines), 0):
+				# print(f'[345] {block_to_node[block_mode]}')
+				self.create_node(string_lines, node_type=block_to_node[block_mode])
 
 		if not len(string_lines) in (len(self.source_lines), 0):
-			self.create_node(string_lines)
+			string_lines = self.create_node(string_lines, attributes={'segment-class':'for-blocks'})
 		elif len(string_lines)>0:
 			# self.source_lines = string_lines and >0
 			# Each string is node!
@@ -363,12 +377,15 @@ class NewNode():
 		for line in self.source_lines:
 			string_type = self.string_type(line)
 			string_level = self.get_string_level(line)
+			# print(f'[379] t: "{string_type}", l "{string_level}", line: {line}')
 			if all((
 					string_type in ('ul-li', 'ol-li'),
 					string_level == top_list_level,
 					not mode['code-block-open']
 				)):
+				# print('[385] all')
 				if self.all_modes_same(mode):
+					# print('[387] all all_modes_same')
 					if string_type=='ul-li':
 						mode['ul-block-open']=True
 						self.attributes['list-type']='ul-list'
@@ -382,7 +399,8 @@ class NewNode():
 				mode['code-block-open'] = not mode['code-block-open']
 			else:
 				string_lines.append(line)
-		self.create_node(string_lines)
+		nt = ('list-node' if (mode['ul-block-open'] or mode['ol-block-open']) else 'segment')
+		self.create_node(string_lines, node_type='segment')
 
 	def code_stn(self):
 		# Code-block is prepared node for convertion.
@@ -392,12 +410,22 @@ class NewNode():
 		while len(self.source_lines)>0:
 			line = self.source_lines.pop(0).replace('\t', ' '*4)
 			level = self.get_string_level(line)
-			top_level = (level if level<top_level else top_level)
+			string_type = self.string_type(line)
+			# print(f"[414] level {level} string_type {string_type}")
+			top_level = (level if (level < top_level and string_type!='empty') else top_level)
 			string_lines.append(line)
+		# print(r'[417] ^\s{'+str(top_level)+r'}([\s\S]*)')
 		regex = re.compile(r'^\s{'+str(top_level)+r'}([\s\S]*)')
 		while len(string_lines)>0:
-			line = re.match(regex, string_lines.pop(0)).group(1)
+			line = string_lines.pop(0)
+			string_type = self.string_type(line)
+			if string_type!='empty':
+				line = re.match(regex, line).group(1)
+			else:
+				line = '\n'
 			self.source_lines.append(line)
+		self.attributes['code-left-level']=top_level
+		print(self.source_lines)
 
 	def string_stn(self):
 		if len(self.source_lines)>0:
@@ -429,7 +457,7 @@ class NewNode():
 						self.source_lines.append(line)
 						line=''
 					elif scope_type=='hyperlink':
-						self.creat_simple_string(prev_line)
+						self.create_simple_string(prev_line)
 						text, href = self.extract_href(scope)
 						self.create_node(
 							[text],
@@ -437,7 +465,7 @@ class NewNode():
 							attributes={'name': 'hyperlink', 'href': href}
 						)
 					elif scope_type in ('tt-quote', 'back-apostroph'):
-						self.creat_simple_string(prev_line)
+						self.create_simple_string(prev_line)
 						scope = self.extract_tt_quote(scope, scope_type)
 						self.create_node(
 							[scope],
@@ -445,7 +473,7 @@ class NewNode():
 							attributes={'name': 'tt'}
 						)
 					elif scope_type=='bold-italic':
-						self.creat_simple_string(prev_line)
+						self.create_simple_string(prev_line)
 						scope = self.extract_bold_italic(scope)
 						self.create_node(
 							[scope],
@@ -453,7 +481,7 @@ class NewNode():
 							attributes={'name': 'bold-italic'}
 						)
 					elif scope_type=='bold':
-						self.creat_simple_string(prev_line)
+						self.create_simple_string(prev_line)
 						scope = self.extract_bold(scope)
 						self.create_node(
 							[scope],
@@ -461,7 +489,7 @@ class NewNode():
 							attributes={'name': 'bold'}
 						)
 					elif scope_type=='italic':
-						self.creat_simple_string(prev_line)
+						self.create_simple_string(prev_line)
 						scope = self.extract_italic(scope)
 						self.create_node(
 							[scope],
@@ -475,7 +503,7 @@ class NewNode():
 						self.source_lines.append(line)
 						line=''
 		else:
-			print(f"String is not exists.")
+			print(f"[490] String is not exists.")
 
 	def test_convert(self):
 		text = ""
@@ -698,8 +726,8 @@ class NewNode():
 
 	@staticmethod
 	def get_string_level(string_line:str):
-		leveling=re.match(r'^\s+', string_line)
-		return (0 if (leveling is None) else len(leveling.group(0)))
+		leveling=re.match(r'^(\s+)\S', string_line)
+		return (0 if (leveling is None) else len(leveling.group(1)))
 
 	@staticmethod
 	def top_list_level(string_lines:list, get_string_level=get_string_level, string_type=string_type):
@@ -723,7 +751,8 @@ class NewNode():
 def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
-		"..\\..\\[source]\\готовые статьи\\html.json",
+		"..\\..\\[source]\\example\\html.json",
+		# "..\\..\\[source]\\готовые статьи\\html.json",
 		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
