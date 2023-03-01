@@ -47,6 +47,9 @@ class TextToHTML():
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
 		# self.root_folder.convert_to_html()
+		output = self.root_node.test_convert()
+		with open('new.xml', 'w', encoding='utf-8') as file:
+			file.write(output)
 
 
 class NewFolder():
@@ -90,10 +93,12 @@ class NewFolder():
 				file_node = file.return_node()
 				if file_node is not None:
 					node.add_node(file_node)
+					node.attributes['path']=file.path
 			for folder in self.folders:
 				folder_node = folder.return_node()
 				if folder_node is not None:
 					node.add_node(folder_node)
+					node.attributes['path']=folder.path
 			if node.get_nodes_count()!=0:
 				return node
 			else:
@@ -169,13 +174,18 @@ class NewNode():
 			self.code_stn()
 		elif self.node_type == 'string':
 			self.string_stn()
+		elif self.node_type == 'tag':
+			self.string_stn()
+		else:
+			# pass unknown types of nodes
+			print(f"Unknown type of node: {self.node_type}.")
 
 	def create_node(self, string_lines, node_type='segment', attributes=None):
 		if len(string_lines)>0:
 			node = NewNode(node_type=node_type)
 			node.add_source(string_lines)
 			node.source_to_nodes()
-			if attributes in not None: node.attributes.update(attributes)
+			if attributes is not None: node.attributes.update(attributes)
 			string_lines = []
 			self.add_node(node)
 
@@ -187,7 +197,7 @@ class NewNode():
 		# break node on big nodes
 		mode = {"code-block-open": False, "section-of-head-open": False}
 		string_lines = []
-		for line in self.string_lines:
+		for line in self.source_lines:
 			string_type = self.string_type(line)
 			if string_type == 'section-of-head-open' and not mode['code-block-open']:
 				self.create_node(string_lines)
@@ -201,7 +211,7 @@ class NewNode():
 			else:
 				string_lines.append(line)
 
-		if not len(string_lines) in (len(self.string_lines), 0):
+		if not len(string_lines) in (len(self.source_lines), 0):
 			self.create_node(string_lines)
 		else:
 			top_head_level = self.top_head_level(string_lines)
@@ -209,7 +219,7 @@ class NewNode():
 				# break on sections
 				mode = {"code-block-open": False, 'head-block-open':False}
 				string_lines = []
-				for line in self.string_lines:
+				for line in self.source_lines:
 					string_type = self.string_type(line)
 					if all((
 						string_type == 'head', # head
@@ -237,7 +247,7 @@ class NewNode():
 					else:
 						string_lines.append(line)
 
-		if not len(string_lines) in (len(self.string_lines), 0):
+		if not len(string_lines) in (len(self.source_lines), 0):
 			self.create_node(string_lines)
 		else:
 			# If node not broke on segments-nodes, break node in other types nodes.
@@ -265,10 +275,10 @@ class NewNode():
 			}
 			mode = {'code-block-open': False, 'code-type': None}
 			string_lines = []
-			for line in self.string_lines:
+			for line in self.source_lines:
 				string_type = self.string_type(line)
 				if (string_type in ('ul-li','ol-li')):
-					if block_mode in manage_mode["ul_ol"]:
+					if block_mode in manage_mode["ul-ol"]:
 						self.create_node(string_lines, node_type=block_to_node[block_mode])
 						block_mode="ul-ol-list"
 					else:
@@ -293,7 +303,7 @@ class NewNode():
 					if block_mode=='quote-block':
 						self.create_node(string_lines, node_type=block_to_node[block_mode])
 						block_mode=''
-					elif block_mode in manage_mode["quote-block"]:
+					elif block_mode in manage_mode["quote"]:
 						self.create_node(string_lines, node_type=block_to_node[block_mode])
 						block_mode="quote-block"
 					else:
@@ -323,13 +333,13 @@ class NewNode():
 					else:
 						string_lines.append(line)
 
-		if not len(string_lines) in (len(self.string_lines), 0):
+		if not len(string_lines) in (len(self.source_lines), 0):
 			self.create_node(string_lines)
 		elif len(string_lines)>0:
-			# self.string_lines = string_lines and >0
+			# self.source_lines = string_lines and >0
 			# Each string is node!
-			while len(self.string_lines)>0:
-				line = self.string_lines.pop(0)
+			while len(self.source_lines)>0:
+				line = self.source_lines.pop(0)
 				self.create_node([line], node_type='string')
 
 	def head_stn(self):
@@ -339,7 +349,7 @@ class NewNode():
 			string_line = self.source_lines.pop()
 			self.attributes['head-level']=self.get_head_level(string_line)
 			node = NewNode(node_type='string')
-			string_line = get_head_text(string_line)
+			string_line = self.get_head_text(string_line)
 			node.add_source(string_line)
 			node.source_to_nodes()
 			self.add_node(node)
@@ -348,9 +358,9 @@ class NewNode():
 
 	def list_stn(self):
 		string_lines = []
-		top_list_level = self.top_list_level(self.string_lines)
+		top_list_level = self.top_list_level(self.source_lines)
 		mode = {'ul-block-open': False, 'ol-block-open': False, 'code-block-open':False}
-		for line in self.string_lines:
+		for line in self.source_lines:
 			string_type = self.string_type(line)
 			string_level = self.get_string_level(line)
 			if all((
@@ -379,21 +389,21 @@ class NewNode():
 		# Clear the strings from space.
 		top_level = 999999
 		string_lines = []
-		while len(self.string_lines)>0:
-			line = self.string_lines.pop(0).replace('\t', ' '*4)
+		while len(self.source_lines)>0:
+			line = self.source_lines.pop(0).replace('\t', ' '*4)
 			level = self.get_string_level(line)
 			top_level = (level if level<top_level else top_level)
 			string_lines.append(line)
 		regex = re.compile(r'^\s{'+str(top_level)+r'}([\s\S]*)')
 		while len(string_lines)>0:
 			line = re.match(regex, string_lines.pop(0)).group(1)
-			self.string_lines.append(line)
+			self.source_lines.append(line)
 
 	def string_stn(self):
-		if len(self.string_lines)>0:
-			line = self.string_lines.pop(0)
+		if len(self.source_lines)>0:
+			line = self.source_lines.pop(0)
 			while len(line)>0:
-				scope_type, scope, line = find_separate_scope(line)
+				scope_type, scope, line = self.find_separate_scope(line)
 				if scope_type=='anchor':
 					self.node_type='tag'
 					self.attributes={
@@ -416,7 +426,7 @@ class NewNode():
 						# simple-string
 						self.node_type='tag'
 						self.attributes={'name': 'simple-string'}
-						self.string_lines.append(line)
+						self.source_lines.append(line)
 						line=''
 					elif scope_type=='hyperlink':
 						self.creat_simple_string(prev_line)
@@ -462,11 +472,44 @@ class NewNode():
 						# simple-string
 						self.node_type='tag'
 						self.attributes={'name': 'simple-string'}
-						self.string_lines.append(line)
+						self.source_lines.append(line)
 						line=''
 		else:
 			print(f"String is not exists.")
 
+	def test_convert(self):
+		text = ""
+		attributes = ""
+		for key in self.attributes:
+			attributes += f' {key}="{self.attributes[key]}"'
+		if self.node_type == 'folder':
+			arround_tags = (f'<folder{attributes}>\n', '</folder>\n')
+		elif self.node_type == 'file':
+			arround_tags = (f'<file{attributes}>\n', '</file>\n')
+		elif self.node_type == 'segment':
+			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
+		elif self.node_type == 'quote':
+			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
+		elif self.node_type == 'head':
+			arround_tags = (f'<head{attributes}>\n', '</head>\n')
+		elif self.node_type == 'list-node':
+			arround_tags = (f'<list{attributes}>\n', '</list>\n')
+		elif self.node_type == 'code':
+			arround_tags = (f'<code{attributes}>\n', '</code>\n')
+		elif self.node_type == 'string':
+			arround_tags = (f'<p{attributes}>\n', '</p>\n')
+		elif self.node_type == 'tag':
+			arround_tags = (f'<tag{attributes}>\n', '</tag>\n')
+		else:
+			arround_tags = (f'<unknown class="{self.node_type}"{attributes}>\n', '</unknown>\n')
+		if len(self.includes_nodes)>0:
+			for node in self.includes_nodes:
+				text+=node.test_convert()
+		elif len(self.source_lines)>0:
+			text += '<br/>'.join(self.source_lines)
+		if text!="":
+			text = f"{arround_tags[0]}{text}{arround_tags[1]}"
+		return text
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
@@ -637,14 +680,15 @@ class NewNode():
 		return all(tuple([value==all_values for value in mode.values()]))
 
 	@staticmethod
-	def top_head_level(string_lines:list):
+	def top_head_level(string_lines:list,
+		string_type=string_type, get_head_level=get_head_level):
 		top_level = 7
 		mode = {"code-block-open": False}
 		for line in string_lines:
-			if self.string_type(line)=='head' and not mode['code-block-open']:
-				level = self.get_head_level(line, result_type='num')
+			if string_type(line)=='head' and not mode['code-block-open']:
+				level = get_head_level(line, result_type='num')
 				top_level = (level if level < top_level else top_level)
-			elif self.string_type(line)=='code':
+			elif string_type(line)=='code':
 				mode['code-block-open'] = not mode['code-block-open'] 
 		return top_level
 
@@ -672,13 +716,15 @@ class NewNode():
 
 	@staticmethod
 	def get_code_type(string_line:str):
-		return re.match(r'^\s*```(\w+)\s*$', string_line).group(1)
+		match_in = re.match(r'^\s*```(\w+)\s*$', string_line)
+		return (match_in.group(1) if match_in is not None else None)
+			
 
 def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
-		# "..\\..\\[source]\\готовые статьи\\html.json",
-		"..\\..\\[source]\\ответы\\html.json",
+		"..\\..\\[source]\\готовые статьи\\html.json",
+		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:
