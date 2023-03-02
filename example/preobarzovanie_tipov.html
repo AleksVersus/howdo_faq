@@ -1,32 +1,23 @@
-<folder path="D:\my\projects\howdo_faq\[source]\example">
-<file path="D:\my\projects\howdo_faq\[source]\example\preobarzovanie_tipov.txt-light">
-<head anchor="preobrazovanije_tipov_qsp" head-level="h1">
-<p>
-Преобразование типов в QSP</p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: Статьи</title>
 </head>
-<segment segment-class="for-head">
-<segment segment-class="for-head">
-<segment>
-<p>
-<tag name="simple-string">
-Эта </tag>
-<tag name="bold">
-статья</tag>
-<tag name="simple-string">
- поможет вам </tag>
-<tag name="tt">
-разобраться</tag>
-<tag name="simple-string">
- в таком </tag>
-<tag name="tt">
-<tag name="hyperlink" href="#linetest">
-<tag name="italic">
-сложном вопросе</tag>
-</tag>
-</tag>
-<tag name="simple-string">
-, как преобразование типов в операции присвоения, или в выражениях.
-</tag>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>Статьи по разработке игр на QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div>&nbsp;</div><div>&nbsp;</div></div>
+<h3 id="preobrazovanije_tipov_qsp">Преобразование типов в QSP</h3><p>
+Эта <strong>статья</strong> поможет вам <span class="em_BLCK">разобраться</span> в таком <span class="em_BLCK"><a href="#linetest" style="text-decoration:none;" class="emFOLD"><em>сложном вопросе</em></a></span>, как преобразование типов в операции присвоения, или в выражениях.
 </p>
 <p>
 В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от -2147483648 до 2147483647; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
@@ -34,8 +25,7 @@
 <p>
 Вот как выглядят такие значения:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 ! числовые значения
 <br/>123
 <br/>345
@@ -45,44 +35,36 @@
 <br/>"строка текста"
 <br/>'Ещё одна строка текста'
 <br/>"Третья строка текста"
-</code>
-<segment>
+</div>
 <p>
 Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
 </p>
 <p>
 Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак = и число:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 box=13
-</code>
-<segment>
+</div>
 <p>
 Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак $.
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 $text='Текстовое значение'
-</code>
-<segment>
+</div>
 <p>
 Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 $text=123
 <br/>
 <br/>! эквивалентно
 <br/>
 <br/>$text=$str(123)
-</code>
-<segment>
+</div>
 <p>
 Если мы попытаемся присвоить числовой переменной текстовое значение, плеер попытается преобразовать текстовое значение в числовое, но если преобразование невозможно, на экране появится ошибка.
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 box='134'         & ! тип будет преобразован, а в box запишется число 134
 <br/>cell='non cifer' & ! тип не будет преобразован, плеер выдаст ошибку 101
 <br/>
@@ -92,27 +74,22 @@ box='134'         & ! тип будет преобразован, а в box за
 <br/>cell=val('non cifer') & ! строка не преобразуется в число, в cell запишется 0
 <br/>
 <br/>! только для команды 2 не удастся выполнить преобразование типа
-</code>
-<segment>
+</div>
 <p>
 Всё становится гораздо интереснее, если мы имеем дело не с отдельными значениями, а с выражениями.
 </p>
 <p>
 Например, если мы попытаемся сложить два числа, то результатом сложения будет третье число:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 123+456 & ! результатом будет число 579
-</code>
-<segment>
+</div>
 <p>
 Если мы попытаемся «сложить» две строки, то мы их просто «склеим» (в программировании это называется конкатенация):
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 "Hello"+"World" & ! результатом будет строка "HelloWorld"
-</code>
-<segment>
+</div>
 <p>
 Но что будет, если мы попытаемся сложить число и строку?
 </p>
@@ -120,47 +97,29 @@ box='134'         & ! тип будет преобразован, а в box за
 А тут произойдёт вот что.
 </p>
 <p>
-<tag name="simple-string">
-Если хотя бы одно </tag>
-<tag name="bold">
-из значений</tag>
-<tag name="simple-string">
- в выражении — </tag>
-<tag name="tt">
-числовое</tag>
-<tag name="simple-string">
-, плеер попытается все значения преобразовать в числовые и вычислить выражение:
-</tag>
+Если хотя бы одно <strong>из значений</strong> в выражении — <span class="em_BLCK">числовое</span>, плеер попытается все значения преобразовать в числовые и вычислить выражение:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 123+"456" & ! результатом будет число 579
-</code>
-<segment>
+</div>
 <p>
 Если преобразование не удастся, то выполняется конкатенация:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 123+"d456" & ! результатом будет строка 123d456
-</code>
-<segment>
+</div>
 <p>
 Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 "Hello"-"World" & ! плеер выдаст ошибку 101
-</code>
-<segment>
+</div>
 <p>
 Однако, если возможно преобразование всех строк в числа, то можно сделать так:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 "4560"/"3"*"9" & ! результатом будет число 13680
-</code>
-<segment>
+</div>
 <p>
 Таким образом, плеер обязательно преобразует тип к необходимому, если это возможно, особенно для операций присвоения.
 </p>
@@ -170,8 +129,7 @@ box='134'         & ! тип будет преобразован, а в box за
 <p>
 Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций $str и val:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 $str(1234) & ! преобразует число в строку
 <br/>! если получает строку, возвращает строку
 <br/>$str("string")
@@ -179,55 +137,51 @@ $str(1234) & ! преобразует число в строку
 <br/>val("1234") & ! преобразует строку в число
 <br/>! если не может преобразовать в число, возвращает ноль
 <br/>val("string")
-</code>
-<segment>
+</div>
 <p>
 Не забывайте пользоваться подвыражениями, если нужно вставить значение в строку:
 </p>
-</segment>
-<code code-left-level="4" code-type="qsp">
+<div class="Monokai-Code">
 health=100
 <br/>max_health=350
 <br/>*pl "Здоровье: <<health>>/<<max_health>>."
-</code>
-</segment>
-<head anchor="post_scriptum_articles_0001" head-level="h4">
-<p>
-P.S.:</p>
-</head>
-<segment segment-class="for-head">
-<segment>
-<p>
+</div>
+<h4 id="post_scriptum_articles_0001">P.S.:</h4><p>
 Данную статью вы можете найти так же и на других ресурсах:
 </p>
-</segment>
-<list list-type="ul-list">
-<segment name="li">
-<p>
-<tag name="hyperlink" href="http://aleksversus.narod.ru/index/preobrazovanie_tipov_v_qsp/0-53">
-мой_сайт/преобразование_типов_в_QSP</tag>
-</p>
-</segment>
-<segment name="li">
-<p>
-<tag name="hyperlink" href="https://aleksversus.medium.com/преобразование-типов-в-qsp-8eec585f93e2">
-medium/Преобразование типов в QSP</tag>
-</p>
-</segment>
-<segment name="li">
-<p>
-<tag name="hyperlink" href="https://vk.com/@qsplayer-preobrazovanie-tipov-v-qsp">
-vk.com/Преобразование типов в QSP</tag>
-</p>
-</segment>
-<segment name="li">
-<p>
-<tag name="hyperlink" href="https://ifhub.club/2020/09/23/preobrazovanie-tipov-v-qsp.html">
-ifhub.club/Преобразование типов в QSP</tag>
-</p>
-</segment>
-</list>
-</segment>
-</segment>
-</file>
-</folder>
+<ul>
+<li><a href="http://aleksversus.narod.ru/index/preobrazovanie_tipov_v_qsp/0-53" style="text-decoration:none;" class="emFOLD">мой_сайт/преобразование_типов_в_QSP</a></li>
+<li><a href="https://aleksversus.medium.com/преобразование-типов-в-qsp-8eec585f93e2" style="text-decoration:none;" class="emFOLD">medium/Преобразование типов в QSP</a></li>
+<li><a href="https://vk.com/@qsplayer-preobrazovanie-tipov-v-qsp" style="text-decoration:none;" class="emFOLD">vk.com/Преобразование типов в QSP</a></li>
+<li><a href="https://ifhub.club/2020/09/23/preobrazovanie-tipov-v-qsp.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Преобразование типов в QSP</a></li>
+</ul>
+<div style="display:flex;justify-content:space-between;"><div>&nbsp;</div><div>&nbsp;</div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

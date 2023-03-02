@@ -47,7 +47,7 @@ class TextToHTML():
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
 		self.root_node.transport_data_base(self.data_base)
-		# self.root_node.convert_to_html()
+		self.root_node.convert_to_html()
 		output = self.root_node.test_convert()
 		with open('new.xml', 'w', encoding='utf-8') as file:
 			file.write(output)
@@ -561,7 +561,7 @@ class NewNode():
 					if string_type=='ol-li':
 						mode['ol-block-open']=True
 						self.attributes['list-type']='ol-list'
-				self.create_node(string_lines)
+				self.create_node(string_lines, node_type='segment', attributes={'name':'li'})
 				string_lines.append(self.clear_li_string(line))
 			elif string_type == 'code':
 				string_lines.append(line)
@@ -569,7 +569,7 @@ class NewNode():
 			else:
 				string_lines.append(line)
 		nt = ('list-node' if (mode['ul-block-open'] or mode['ol-block-open']) else 'segment')
-		self.create_node(string_lines, node_type='segment')
+		self.create_node(string_lines, node_type='segment', attributes={'name':'li'})
 
 	def code_stn(self):
 		# Code-block is prepared node for convertion.
@@ -727,13 +727,13 @@ class NewNode():
 		return file_name
 
 	def clear_file_name(self, file_name):
-		file_name = os.path.splitext(os.path.split(file_name))[0]
+		file_name = os.path.splitext(os.path.split(file_name)[1])[0]
 		instr = re.match(r'\d+_(.*)', file_name)
 		if instr is not None: file_name = instr.group(1)
 		return file_name
 
 	def get_turn_pages_html(self):
-		file_number = self.data_base.get_file_number(self.path)
+		file_number = self.data_base.get_file_number(self.attributes['path'])
 		prev_ = file_number-1
 		next_ = file_number+1
 		crosslink = self.data_base.get_crosslink()
@@ -742,7 +742,7 @@ class NewNode():
 			prev_link = f'<a href="{crosslink}{prev_name}.html" class="emHREFTT">&lt; Назад, к странице {prev_+1}</a>'
 		else:
 			prev_link = '&nbsp;'
-		if next_>-1:
+		if next_<len(self.data_base.files_db['files-paths']):
 			next_name = self.get_file_name_from_number(next_)
 			next_link = f'<a href="{crosslink}{next_name}.html" class="emHREFTT">&lt; Вперёд, к странице {next_+1}</a>'
 		else:
@@ -753,6 +753,7 @@ class NewNode():
 		return text
 
 	def convert_to_html(self, parent=None, deep_level=0):
+		text = ""
 		if self.node_type == 'folder':
 			self.data_base.refresh_deep_level()
 			if len(self.includes_nodes)>0:
@@ -776,10 +777,10 @@ class NewNode():
 			if instr is not None:
 				footer = footer.replace(instr.group(0), self.data_base.get_content_html_text())
 			output_text = header + turn_pages + central_text + turn_pages + footer
-			output_path = f"{self.data_base.get_output_path()}\\{self.clear_file_name(self.attributes['path'])}"
+			output_path = f"{self.data_base.get_output_path()}\\{self.clear_file_name(self.attributes['path'])}.html"
 			with open(output_path, 'w', encoding='utf-8') as file:
 				file.write(output_text)
-				print(f"[776] File {output_path} was been exist from {self.attributes['path']}")
+				print(f"'[776] File {output_path} was been exist from {self.attributes['path']}'")
 
 		elif self.node_type == 'segment':
 			text=""
@@ -801,11 +802,13 @@ class NewNode():
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += '<br/>'.join(self.source_lines)
 			if parent.node_type=='folder':
 				self.data_base.add_addition(f"<h2{anchor}>{text}</h2>")
 			else:
 				last_key = list(self.data_base.deep_level_head.keys())[-1]
-				last_head_level = re.match(r'h(\d+)', last_key).group(1)
+				last_head_level = int(re.match(r'h(\d+)', last_key).group(1))
 				if self.data_base.deep_level_head[last_key]<deep_level or last_key=='h2':
 					last_head_level+=1
 					if last_head_level>6: last_head_level=6
@@ -827,14 +830,20 @@ class NewNode():
 		elif self.node_type == 'code':
 			text = ""
 			text += '<br/>'.join(self.source_lines)
-			test = f'<div class="Monokai-Code">\n{text}</div>\n'
+			text = f'<div class="Monokai-Code">\n{text}</div>\n'
 
 		elif self.node_type == 'string':
 			text=""
+			not_p=False
+			if parent.node_type=='segment':
+				name = (parent.attributes['name'] if 'name' in parent.attributes else '')
+				not_p = (True if name=='li' else False)
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
-			if not parent.node_type in ('head'):
+			elif len(self.source_lines)>0:
+				text += '<br/>'.join(self.source_lines)
+			if not parent.node_type in ('head') and not not_p:
 				text = f'<p>\n{text}</p>\n'
 
 		elif self.node_type == 'tag':
@@ -842,6 +851,8 @@ class NewNode():
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += '<br/>'.join(self.source_lines)
 			if self.attributes['name']=='tt':
 				text = f'<span class="em_BLCK">{text}</span>'
 			elif self.attributes['name']=='hyperlink':
@@ -862,6 +873,8 @@ class NewNode():
 				text = f'<strong>{text}</strong>'
 			elif self.attributes['name']=='italic':
 				text = f'<em>{text}</em>'
+			elif self.attributes['name']=='simple-string':
+				text = text
 
 		else:
 			text=""
@@ -870,7 +883,6 @@ class NewNode():
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
 			elif len(self.source_lines)>0:
 				text += '<br/>'.join(self.source_lines)
-
 		return text
 
 	def transport_data_base(self, data_base):
@@ -1114,9 +1126,9 @@ class NewNode():
 def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
-		# "..\\..\\[source]\\example\\html.json",
+		"..\\..\\[source]\\example\\html.json",
 		# "..\\..\\[source]\\готовые статьи\\html.json",
-		"..\\..\\[source]\\ответы\\html.json",
+		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:
