@@ -39,7 +39,7 @@ class TextToHTML():
 		self.data_base.add_footer(self.footer_html_lines) # bottom-part html-doc
 		self.data_base.add_output_path(self.output_path) # output-folder path
 		self.data_base.set_content_file_path(self.content_file_path) # content of files
-		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # crosslinks start
+		self.data_base.add_crosslink(self.project_dict["cross-link"]) # crosslinks start
 
 	def convert_to_html(self):
 		self.make_output_folder()
@@ -203,13 +203,13 @@ class NewDataBase():
 	def add_content_html_text(self, html_text):
 		self.content_html_text = html_text
 
-	def get_content_html_lines(self):
+	def get_content_html_text(self):
 		return self.content_html_text
 
-	def add_crosslink_form(self, crosslink_html_string):
+	def add_crosslink(self, crosslink_html_string):
 		self.crosslink = crosslink_html_string
 
-	def get_cross_link(self):
+	def get_crosslink(self):
 		return self.crosslink
 
 class NewFolder():
@@ -730,7 +730,7 @@ class NewNode():
 		file_number = self.data_base.get_file_number(self.path)
 		prev_ = file_number-1
 		next_ = file_number+1
-		crosslink = self.data_base.get_cross_link()
+		crosslink = self.data_base.get_crosslink()
 		if prev_>-1:
 			prev_name = self.get_file_name_from_number(prev_)
 			prev_link = f'<a href="{crosslink}{prev_name}.html" class="emHREFTT">&lt; Назад, к странице {prev_+1}</a>'
@@ -752,6 +752,7 @@ class NewNode():
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
 					node.convert_to_html(parent=self, deep_level=deep_level+1)
+
 		elif self.node_type == 'file':
 			central_text=""
 			if len(self.includes_nodes)>0:
@@ -763,9 +764,20 @@ class NewNode():
 			header = ''.join(self.data_base.get_header())
 			instr = re.match(r'<header-header></header-header>', header)
 			if instr is not None:
-				header = header.replace()
+				header = header.replace(instr.group(0), self.data_base.get_content_html_text())
+			footer = ''.join(self.data_base.get_footer())
+			instr = re.match(r'<header-header></header-header>', footer)
+			if instr is not None:
+				footer = footer.replace(instr.group(0), self.data_base.get_content_html_text())
+			output_text = header + turn_pages + central_text + turn_pages + footer
+			output_path = f"{self.data_base.get_output_path()}\\{self.clear_file_name(self.attributes['path'])}"
+			with open(output_path, 'w', encoding='utf-8') as file:
+				file.write(output_text)
+				print(f"[776] File {output_path} was been exist from {self.attributes['path']}")
+
 		elif self.node_type == 'segment':
 			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
+
 		elif self.node_type == 'quote':
 			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
 		elif self.node_type == 'head':
