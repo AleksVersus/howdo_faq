@@ -2503,10 +2503,10 @@ usehtml=1</tag>
 </file>
 </folder>
 <folder path="D:\my\projects\howdo_faq\[source]\ответы\01_Основной раздел">
-<head anchor="how_do_faq" head-level="h1" path="D:\my\projects\howdo_faq\[source]\ответы\01_Основной раздел\00.txt-light">
-<p>
-Как сделать? Ча.Во. F.A.Q.</p>
-</head>
+    <head anchor="how_do_faq" head-level="h1" path="D:\my\projects\howdo_faq\[source]\ответы\01_Основной раздел\00.txt-light">
+    <p>
+    Как сделать? Ча.Во. F.A.Q.</p>
+    </head>
 <folder path="D:\my\projects\howdo_faq\[source]\ответы\01_Основной раздел\01_в чём разница">
 <head anchor="faq_01" head-level="h1" path="D:\my\projects\howdo_faq\[source]\ответы\01_Основной раздел\01_в чём разница\00.txt-light">
 <p>

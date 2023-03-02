@@ -169,12 +169,18 @@ class NewDataBase():
 			file_path = self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
 			full_file_name = os.path.split(file_path)[1]
 			file_name = os.path.splitext(full_file_name)[0]
-			instr=re.match(r'\d+_',file_name)
+			instr=re.match(r'\d+_(.*)',file_name)
 			if instr!=None:
-				file_name=file_name[len(instr.group(0)):]
+				file_name=instr.group(1)
 			return file_name
 		else:
 			return None
+
+	def get_full_link_to_anchor(self, anchor:str):
+		if anchor in self.anchors_db['anchors']:
+			return f"{self.get_crosslink()}{self.get_file_name(anchor)}.html#{anchor}"
+		else:
+			return f"#{anchor}"
 
 	def add_header(self, html_lines):
 		self.header_html_lines = html_lines[:]
@@ -776,10 +782,19 @@ class NewNode():
 				print(f"[776] File {output_path} was been exist from {self.attributes['path']}")
 
 		elif self.node_type == 'segment':
-			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
-
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if parent.node_type=='list-node':
+				text = f'<li>{text}</li>\n'
 		elif self.node_type == 'quote':
-			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			text = f'<blockquote>\n{text}</blockquote>\n'
+
 		elif self.node_type == 'head':
 			text=""
 			anchor = (f' id="{self.attributes["anchor"]}"' if 'anchor' in self.attributes else '')
@@ -798,23 +813,64 @@ class NewNode():
 					text = f"<h{last_head_level}{anchor}>{text}</h{last_head_level}>"
 				else:
 					text = f"<{last_key}{anchor}>{text}</{last_key}>"
+
 		elif self.node_type == 'list-node':
-			arround_tags = (f'<list{attributes}>\n', '</list>\n')
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if self.attributes['list-type']=='ol-list':
+				text = f'<ol>\n{text}</ol>\n'
+			elif self.attributes['list-type']=='ul-list':
+				text = f'<ul>\n{text}</ul>\n'
+
 		elif self.node_type == 'code':
-			arround_tags = (f'<code{attributes}>\n', '</code>\n')
-		elif self.node_type == 'string':
-			arround_tags = (f'<p{attributes}>\n', '</p>\n')
-		elif self.node_type == 'tag':
-			arround_tags = (f'<tag{attributes}>\n', '</tag>\n')
-		else:
-			arround_tags = (f'<unknown class="{self.node_type}"{attributes}>\n', '</unknown>\n')
-		if len(self.includes_nodes)>0:
-			for node in self.includes_nodes:
-				text+=node.test_convert()
-		elif len(self.source_lines)>0:
+			text = ""
 			text += '<br/>'.join(self.source_lines)
-		if text!="":
-			text = f"{arround_tags[0]}{text}{arround_tags[1]}"
+			test = f'<div class="Monokai-Code">\n{text}</div>\n'
+
+		elif self.node_type == 'string':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if not parent.node_type in ('head'):
+				text = f'<p>\n{text}</p>\n'
+
+		elif self.node_type == 'tag':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if self.attributes['name']=='tt':
+				text = f'<span class="em_BLCK">{text}</span>'
+			elif self.attributes['name']=='hyperlink':
+				href = (self.attributes['href'] if 'href' in self.attributes else '#')
+				if '#' in href:
+					if href.index('#')==0:
+						href = self.data_base.get_full_link_to_anchor(href[1:])
+				text = f'<a href="{href}" style="text-decoration:none;" class="emFOLD">{text}</a>'
+			elif self.attributes['name']=='anchor':
+				text = f'<a id="{self.attributes["anchor"]}" name="{self.attributes["anchor"]}"></a>'
+			elif self.attributes['name']=='hr':
+				text = '<hr class="em_HR" />'
+			elif self.attributes['name']=='image':
+				text = f'<img src="{self.attributes["src"]}" alt="AleksVersus-GAM-RUS" class="em_IMG" />'
+			elif self.attributes['name']=='bold-italic':
+				text = f'<strong><em>{text}</em></strong>'
+			elif self.attributes['name']=='bold':
+				text = f'<strong>{text}</strong>'
+			elif self.attributes['name']=='italic':
+				text = f'<em>{text}</em>'
+
+		else:
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += '<br/>'.join(self.source_lines)
+
 		return text
 
 	def transport_data_base(self, data_base):
