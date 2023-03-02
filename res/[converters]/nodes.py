@@ -76,7 +76,7 @@ class NewDataBase():
 		self.header_html_lines = []
 		self.footer_html_lines = []
 		self.content_file_path = ""
-		self.content_html_lines = []
+		self.content_html_text = []
 		self.output_folder_path = ""
 		self.deep_level_head = {'h1':0, 'h2':0}
 
@@ -92,7 +92,7 @@ class NewDataBase():
 			"header": self.header_html_lines,
 			"footer": self.footer_html_lines,
 			"content-path": self.content_file_path,
-			"content-html": self.content_html_lines,
+			"content-html": self.content_html_text,
 			"output-folder": self.output_folder_path,
 			"files-db": self.files_db,
 			"anchors-db": self.anchors_db
@@ -200,11 +200,11 @@ class NewDataBase():
 	def get_content_file_path(self):
 		return self.content_file_path
 
-	def add_content_lines(self, html_lines):
-		self.content_html_lines = html_lines[:]
+	def add_content_html_text(self, html_text):
+		self.content_html_text = html_text
 
-	def get_content_lines(self):
-		return self.content_html_lines
+	def get_content_html_lines(self):
+		return self.content_html_text
 
 	def add_crosslink_form(self, crosslink_html_string):
 		self.crosslink = crosslink_html_string
@@ -745,6 +745,7 @@ class NewNode():
 		text += f'<div>{prev_link}</div><div>{next_link}</div>'
 		text += '</div>\n'
 		return text
+
 	def convert_to_html(self, parent=None, deep_level=0):
 		if self.node_type == 'folder':
 			self.data_base.refresh_deep_level()
@@ -752,11 +753,17 @@ class NewNode():
 				for node in self.includes_nodes:
 					node.convert_to_html(parent=self, deep_level=deep_level+1)
 		elif self.node_type == 'file':
-			text=""
+			central_text=""
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
-					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
-
+					central_text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if self.attributes['path']==self.data_base.get_content_file_path():
+				self.data_base.add_content_html_text(central_text)
+			turn_pages = self.get_turn_pages_html()
+			header = ''.join(self.data_base.get_header())
+			instr = re.match(r'<header-header></header-header>', header)
+			if instr is not None:
+				header = header.replace()
 		elif self.node_type == 'segment':
 			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
 		elif self.node_type == 'quote':
@@ -768,7 +775,6 @@ class NewNode():
 				for node in self.includes_nodes:
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
 			if parent.node_type=='folder':
-				
 				self.data_base.add_addition(f"<h2{anchor}>{text}</h2>")
 			else:
 				last_key = list(self.data_base.deep_level_head.keys())[-1]
@@ -777,9 +783,9 @@ class NewNode():
 					last_head_level+=1
 					if last_head_level>6: last_head_level=6
 					self.data_base.deep_level_head[f"h{last_head_level}"]=deep_level
-					text = f"<h{last_head_level}>{text}</h{last_head_level}>"
+					text = f"<h{last_head_level}{anchor}>{text}</h{last_head_level}>"
 				else:
-					text = f"<{last_key}>{text}</{last_key}>"
+					text = f"<{last_key}{anchor}>{text}</{last_key}>"
 		elif self.node_type == 'list-node':
 			arround_tags = (f'<list{attributes}>\n', '</list>\n')
 		elif self.node_type == 'code':
