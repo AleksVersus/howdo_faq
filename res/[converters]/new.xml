@@ -1,21 +1,39 @@
 <folder path="D:\my\projects\howdo_faq\[source]\example">
 <file path="D:\my\projects\howdo_faq\[source]\example\preobarzovanie_tipov.txt-light">
 <head anchor="preobrazovanije_tipov_qsp" head-level="h1">
-<tag name="simple-string">
-Преобразование типов в QSP</tag>
+<p>
+Преобразование типов в QSP</p>
 </head>
 <segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
+<p>
 <tag name="simple-string">
-Эта статья поможет вам разобраться в таком сложном вопросе, как преобразование типов в операции присвоения, или в выражениях.
+Эта </tag>
+<tag name="bold">
+статья</tag>
+<tag name="simple-string">
+ поможет вам </tag>
+<tag name="tt">
+разобраться</tag>
+<tag name="simple-string">
+ в таком </tag>
+<tag name="tt">
+<tag name="hyperlink" href="#linetest">
+<tag name="italic">
+сложном вопросе</tag>
+</tag>
 </tag>
 <tag name="simple-string">
+, как преобразование типов в операции присвоения, или в выражениях.
+</tag>
+</p>
+<p>
 В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от -2147483648 до 2147483647; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 Вот как выглядят такие значения:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! числовые значения
@@ -29,28 +47,28 @@
 <br/>"Третья строка текста"
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак = и число:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 box=13
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак $.
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 $text='Текстовое значение'
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 $text=123
@@ -60,9 +78,9 @@ $text=123
 <br/>$text=$str(123)
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Если мы попытаемся присвоить числовой переменной текстовое значение, плеер попытается преобразовать текстовое значение в числовое, но если преобразование невозможно, на экране появится ошибка.
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 box='134'         & ! тип будет преобразован, а в box запишется число 134
@@ -76,72 +94,82 @@ box='134'         & ! тип будет преобразован, а в box за
 <br/>! только для команды 2 не удастся выполнить преобразование типа
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Всё становится гораздо интереснее, если мы имеем дело не с отдельными значениями, а с выражениями.
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 Например, если мы попытаемся сложить два числа, то результатом сложения будет третье число:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 123+456 & ! результатом будет число 579
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Если мы попытаемся «сложить» две строки, то мы их просто «склеим» (в программировании это называется конкатенация):
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 "Hello"+"World" & ! результатом будет строка "HelloWorld"
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Но что будет, если мы попытаемся сложить число и строку?
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 А тут произойдёт вот что.
-</tag>
+</p>
+<p>
 <tag name="simple-string">
-Если хотя бы одно из значений в выражении — числовое, плеер попытается все значения преобразовать в числовые и вычислить выражение:
+Если хотя бы одно </tag>
+<tag name="bold">
+из значений</tag>
+<tag name="simple-string">
+ в выражении — </tag>
+<tag name="tt">
+числовое</tag>
+<tag name="simple-string">
+, плеер попытается все значения преобразовать в числовые и вычислить выражение:
 </tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 123+"456" & ! результатом будет число 579
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Если преобразование не удастся, то выполняется конкатенация:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 123+"d456" & ! результатом будет строка 123d456
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 "Hello"-"World" & ! плеер выдаст ошибку 101
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Однако, если возможно преобразование всех строк в числа, то можно сделать так:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 "4560"/"3"*"9" & ! результатом будет число 13680
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Таким образом, плеер обязательно преобразует тип к необходимому, если это возможно, особенно для операций присвоения.
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 Вам не нужно строго следить за тем, какие типы значений вы используете в выражениях, однако старайтесь избегать выражений, в которых математические операции применяются к строкам.
-</tag>
-<tag name="simple-string">
+</p>
+<p>
 Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций $str и val:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 $str(1234) & ! преобразует число в строку
@@ -153,9 +181,9 @@ $str(1234) & ! преобразует число в строку
 <br/>val("string")
 </code>
 <segment>
-<tag name="simple-string">
+<p>
 Не забывайте пользоваться подвыражениями, если нужно вставить значение в строку:
-</tag>
+</p>
 </segment>
 <code code-left-level="4" code-type="qsp">
 health=100
@@ -164,14 +192,14 @@ health=100
 </code>
 </segment>
 <head anchor="post_scriptum_articles_0001" head-level="h4">
-<tag name="simple-string">
-P.S.:</tag>
+<p>
+P.S.:</p>
 </head>
 <segment segment-class="for-head">
 <segment>
-<tag name="simple-string">
+<p>
 Данную статью вы можете найти так же и на других ресурсах:
-</tag>
+</p>
 </segment>
 <list list-type="ul-list">
 <segment>

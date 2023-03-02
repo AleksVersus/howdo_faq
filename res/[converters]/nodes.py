@@ -425,13 +425,15 @@ class NewNode():
 				line = '\n'
 			self.source_lines.append(line)
 		self.attributes['code-left-level']=top_level
-		print(self.source_lines)
+		# print(self.source_lines)
 
 	def string_stn(self):
 		if len(self.source_lines)>0:
 			line = self.source_lines.pop(0)
+			source_line = line
 			while len(line)>0:
 				scope_type, scope, line = self.find_separate_scope(line)
+				# print(f"[435] scope_type {scope_type}, scope {scope}, line {line}")
 				if scope_type=='anchor':
 					self.node_type='tag'
 					self.attributes={
@@ -450,11 +452,20 @@ class NewNode():
 					}
 				else:
 					scope_type, prev_line, scope, line = self.find_overlap_scope(line)
+					# print(f"[454] scope_type {scope_type}, prev_line {prev_line}, scope {scope}, line {line}")
 					if scope_type is None:
 						# simple-string
-						self.node_type='tag'
-						self.attributes={'name': 'simple-string'}
-						self.source_lines.append(line)
+						if line == source_line:
+							if self.node_type!='string':
+								self.node_type='tag'
+								self.attributes={'name': 'simple-string'}
+							self.source_lines.append(line)
+						else:
+							self.create_node(
+								[line],
+								node_type='tag',
+								attributes={'name': 'simple-string'}
+							)
 						line=''
 					elif scope_type=='hyperlink':
 						self.create_simple_string(prev_line)
@@ -498,6 +509,7 @@ class NewNode():
 						)
 					else:
 						# simple-string
+						# print(f"[504] line:{line}, source:{source_lines}")
 						self.node_type='tag'
 						self.attributes={'name': 'simple-string'}
 						self.source_lines.append(line)
