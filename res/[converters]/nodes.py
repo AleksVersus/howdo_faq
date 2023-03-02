@@ -47,11 +47,10 @@ class TextToHTML():
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
 		self.root_node.transport_data_base(self.data_base)
-		self.data_base.print_data_base()
-		# self.root_folder.convert_to_html()
-		# output = self.root_node.test_convert()
-		# with open('new.xml', 'w', encoding='utf-8') as file:
-		# 	file.write(output)
+		# self.root_node.convert_to_html()
+		output = self.root_node.test_convert()
+		with open('new.xml', 'w', encoding='utf-8') as file:
+			file.write(output)
 
 class NewDataBase():
 	"""NewDataBase — object is include descriptions of anchors and sections
@@ -79,6 +78,10 @@ class NewDataBase():
 		self.content_file_path = ""
 		self.content_html_lines = []
 		self.output_folder_path = ""
+		self.deep_level_head = {'h1':0, 'h2':0}
+
+	def refresh_deep_level(self):
+		self.deep_level_head = {'h1':0, 'h2':0}
 
 	def print_data_base(self, mode=''):
 		temp_dic = {
@@ -110,10 +113,10 @@ class NewDataBase():
 		return (True if len(self.addition_section)!=0 else False)
 
 	def get_addition(self):
-		return self.addition_section[:1]
+		return self.addition_section #html_text
 
-	def add_addition(self, source_lines):
-		self.addition_section.extend(source_lines)
+	def add_addition(self, html_text):
+		self.addition_section = html_text
 
 	def del_addition(self):
 		self.addition_section=[]
@@ -137,9 +140,15 @@ class NewDataBase():
 
 	def get_file_id(self, file_path):
 		if file_path in self.files_db['files-paths']:
-			self.files_db['files-ids'][self.files_db['files-paths'].index(file_path)]
+			return self.files_db['files-ids'][self.files_db['files-paths'].index(file_path)]
 		else:
 			return None
+
+	def get_file_number(self, file_path):
+		if file_path in self.files_db['files-paths']:
+			return self.files_db['files-paths'].index(file_path)
+		else:
+			return -1
 
 	def get_file_path(self, file_id):
 		if file_id in self.files_db['files-ids']:
@@ -265,8 +274,8 @@ class NewFile():
 		with open(self.path, 'r', encoding='utf-8') as file:
 			self.source_lines = file.readlines()
 
-	def get_file_name(self, mode='short'):
-		if mode in ('full', ''):
+	def get_file_name(self, mode='full'):
+		if mode in ('full'):
 			return os.path.split(self.path)[1]
 		elif mode in ('short'):
 			return os.path.splitext(os.path.split(self.path)[1])[0]
@@ -331,7 +340,7 @@ class NewNode():
 			self.string_stn()
 		else:
 			# pass unknown types of nodes
-			print(f"[182] Unknown type of node: {self.node_type}.")
+			print(f"[333] Unknown type of node: {self.node_type}.")
 
 	def create_node(self, string_lines, node_type='segment', attributes=None):
 		if len(string_lines)>0:
@@ -509,18 +518,20 @@ class NewNode():
 				self.create_node([line], node_type='string')
 
 	def head_stn(self):
+		# print(f'[511] source_lines', self.source_lines)
+		if len(self.source_lines)>2:
+			self.source_lines = self.source_lines[0:2]
 		if len(self.source_lines)==2:
-				self.attributes['anchor']=self.extract_anchor(self.source_lines.pop())
+			self.attributes['anchor']=self.extract_anchor(self.source_lines.pop())
+		# print(f'[516] source_lines', self.source_lines)
 		if len(self.source_lines)==1:
 			string_line = self.source_lines.pop()
 			self.attributes['head-level']=self.get_head_level(string_line)
-			node = NewNode(node_type='string')
 			string_line = self.get_head_text(string_line)
-			node.add_source(string_line)
-			node.source_to_nodes()
-			self.add_node(node)
+			self.create_node([string_line], node_type='string')
 			if not 'anchor' in self.attributes:
 				self.attributes['anchor']=self.translit_string(string_line)
+		# print(f'[524] source_lines', self.source_lines)
 
 	def list_stn(self):
 		string_lines = []
@@ -684,6 +695,91 @@ class NewNode():
 			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
 		elif self.node_type == 'head':
 			arround_tags = (f'<head{attributes}>\n', '</head>\n')
+		elif self.node_type == 'list-node':
+			arround_tags = (f'<list{attributes}>\n', '</list>\n')
+		elif self.node_type == 'code':
+			arround_tags = (f'<code{attributes}>\n', '</code>\n')
+		elif self.node_type == 'string':
+			arround_tags = (f'<p{attributes}>\n', '</p>\n')
+		elif self.node_type == 'tag':
+			arround_tags = (f'<tag{attributes}>\n', '</tag>\n')
+		else:
+			arround_tags = (f'<unknown class="{self.node_type}"{attributes}>\n', '</unknown>\n')
+		if len(self.includes_nodes)>0:
+			for node in self.includes_nodes:
+				# if self.node_type == 'head': print(f"[700] ", print(node.source_lines, node.includes_nodes))
+				text+=node.test_convert()
+		elif len(self.source_lines)>0:
+			text += '<br/>'.join(self.source_lines)
+		if text!="":
+			text = f"{arround_tags[0]}{text}{arround_tags[1]}"
+		return text
+
+	def get_file_name_from_number(self, file_number):
+		file_name = self.data_base.files_db['files-paths'][file_number]
+		file_name = self.clear_file_name(file_name)
+		return file_name
+
+	def clear_file_name(self, file_name):
+		file_name = os.path.splitext(os.path.split(file_name))[0]
+		instr = re.match(r'\d+_(.*)', file_name)
+		if instr is not None: file_name = instr.group(1)
+		return file_name
+
+	def get_turn_pages_html(self):
+		file_number = self.data_base.get_file_number(self.path)
+		prev_ = file_number-1
+		next_ = file_number+1
+		crosslink = self.data_base.get_cross_link()
+		if prev_>-1:
+			prev_name = self.get_file_name_from_number(prev_)
+			prev_link = f'<a href="{crosslink}{prev_name}.html" class="emHREFTT">&lt; Назад, к странице {prev_+1}</a>'
+		else:
+			prev_link = '&nbsp;'
+		if next_>-1:
+			next_name = self.get_file_name_from_number(next_)
+			next_link = f'<a href="{crosslink}{next_name}.html" class="emHREFTT">&lt; Вперёд, к странице {next_+1}</a>'
+		else:
+			next_link = '&nbsp;'
+		text = '<div style="display:flex;justify-content:space-between;">'
+		text += f'<div>{prev_link}</div><div>{next_link}</div>'
+		text += '</div>\n'
+		return text
+	def convert_to_html(self, parent=None, deep_level=0):
+		if self.node_type == 'folder':
+			self.data_base.refresh_deep_level()
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					node.convert_to_html(parent=self, deep_level=deep_level+1)
+		elif self.node_type == 'file':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+
+		elif self.node_type == 'segment':
+			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
+		elif self.node_type == 'quote':
+			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
+		elif self.node_type == 'head':
+			text=""
+			anchor = (f' id="{self.attributes["anchor"]}"' if 'anchor' in self.attributes else '')
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
+			if parent.node_type=='folder':
+				
+				self.data_base.add_addition(f"<h2{anchor}>{text}</h2>")
+			else:
+				last_key = list(self.data_base.deep_level_head.keys())[-1]
+				last_head_level = re.match(r'h(\d+)', last_key).group(1)
+				if self.data_base.deep_level_head[last_key]<deep_level or last_key=='h2':
+					last_head_level+=1
+					if last_head_level>6: last_head_level=6
+					self.data_base.deep_level_head[f"h{last_head_level}"]=deep_level
+					text = f"<h{last_head_level}>{text}</h{last_head_level}>"
+				else:
+					text = f"<{last_key}>{text}</{last_key}>"
 		elif self.node_type == 'list-node':
 			arround_tags = (f'<list{attributes}>\n', '</list>\n')
 		elif self.node_type == 'code':
@@ -945,8 +1041,8 @@ def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
 		# "..\\..\\[source]\\example\\html.json",
-		"..\\..\\[source]\\готовые статьи\\html.json",
-		# "..\\..\\[source]\\ответы\\html.json",
+		# "..\\..\\[source]\\готовые статьи\\html.json",
+		"..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:
