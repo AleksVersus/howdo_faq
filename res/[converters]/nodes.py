@@ -33,24 +33,175 @@ class TextToHTML():
 		if not os.path.exists(self.output_path):
 			os.makedirs(self.output_path)
 
-	# def create_data_base(self):
-	# 	self.data_base=NewDataBase()
-	# 	self.data_base.add_header(self.header_html_lines) # верхняя часть html-документа
-	# 	self.data_base.add_footer(self.footer_html_lines) # нижняя часть html-документа
-	# 	self.data_base.add_output_path(self.output_path) # выходная папка
-	# 	self.data_base.set_content_file_path(self.content_file_path) # содержание
-	# 	self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # вид перекрёстных ссылок
+	def create_data_base(self):
+		self.data_base=NewDataBase()
+		self.data_base.add_header(self.header_html_lines) # top-part html-doc
+		self.data_base.add_footer(self.footer_html_lines) # bottom-part html-doc
+		self.data_base.add_output_path(self.output_path) # output-folder path
+		self.data_base.set_content_file_path(self.content_file_path) # content of files
+		self.data_base.add_crosslink_form(self.project_dict["cross-link"]) # crosslinks start
 
 	def convert_to_html(self):
 		self.make_output_folder()
-		# self.create_data_base()
+		self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
+		self.root_node.transport_data_base(self.data_base)
+		self.data_base.print_data_base()
 		# self.root_folder.convert_to_html()
-		output = self.root_node.test_convert()
-		with open('new.xml', 'w', encoding='utf-8') as file:
-			file.write(output)
+		# output = self.root_node.test_convert()
+		# with open('new.xml', 'w', encoding='utf-8') as file:
+		# 	file.write(output)
 
+class NewDataBase():
+	"""NewDataBase — object is include descriptions of anchors and sections
+	in connect with unique files/sections. Every file have unique path, 
+	and every anchor is unique.
+	"""
+	def __init__(self):
+		self.files_count = 0
+		self.files_db = {
+			# connect files paths and it's ids
+			"files-paths": [],
+			"files-ids": []
+		}
+		self.anchors_db = {
+			# connect anchors and it's file ids
+			"anchors": [],
+			"files-ids": []
+
+		}
+		self.current_file_id = ""
+		self.crosslink = "" # first part for crosslinks
+		self.addition_section = []
+		self.header_html_lines = []
+		self.footer_html_lines = []
+		self.content_file_path = ""
+		self.content_html_lines = []
+		self.output_folder_path = ""
+
+	def print_data_base(self, mode=''):
+		temp_dic = {
+			"files-count": self.files_count,
+			"current-file-id": self.current_file_id,
+			"crosslink": self.crosslink,
+			"addition-section": self.addition_section,
+			"header": self.header_html_lines,
+			"footer": self.footer_html_lines,
+			"content-path": self.content_file_path,
+			"content-html": self.content_html_lines,
+			"output-folder": self.output_folder_path,
+			"files-db": self.files_db,
+			"anchors-db": self.anchors_db
+		}
+		if mode in ('', 'print'):
+			print(temp_dic)
+		elif mode in ('json'):
+			with open('print_data_base.json', 'w', encoding='utf-8') as file:
+				json.dump(temp_dic, file, indent=4)
+
+	def get_current_file(self):
+		return self.current_file_id
+
+	def set_current_file(self, file_id):
+		self.current_file_id = file_id
+
+	def prove_addition(self):
+		return (True if len(self.addition_section)!=0 else False)
+
+	def get_addition(self):
+		return self.addition_section[:1]
+
+	def add_addition(self, source_lines):
+		self.addition_section.extend(source_lines)
+
+	def del_addition(self):
+		self.addition_section=[]
+
+	def get_last_file_id(self):
+		if self.files_count==0:
+			return None
+		else:
+			return self.files_db['files-ids'][-1]
+
+	def gen_file_id(self):
+		return '0'*(8-len(str(self.files_count)))+str(self.files_count)
+
+	def append_file(self, file_path):
+		file_id = self.gen_file_id()
+		self.files_count += 1
+		self.files_db['files-paths'].append(file_path)
+		self.files_db['files-ids'].append(file_id)
+		self.current_file_id = file_id
+		return self.files_count-1
+
+	def get_file_id(self, file_path):
+		if file_path in self.files_db['files-paths']:
+			self.files_db['files-ids'][self.files_db['files-paths'].index(file_path)]
+		else:
+			return None
+
+	def get_file_path(self, file_id):
+		if file_id in self.files_db['files-ids']:
+			self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
+		else:
+			return None
+
+	def add_anchor(self, anchor):
+		if self.current_file_id!="":
+			self.anchors_db['anchors'].append(anchor)
+			self.anchors_db['files-ids'].append(self.current_file_id)
+		else:
+			print("Error! Current file is not set. Anchor <<anchor>> not append.")
+
+	def get_file_name(self, anchor):
+		if anchor in self.anchors_db:
+			file_id = self.anchors_db['files-ids'][self.anchors_db['anchors'].index(anchor)]
+			file_path = self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
+			full_file_name = os.path.split(file_path)[1]
+			file_name = os.path.splitext(full_file_name)[0]
+			instr=re.match(r'\d+_',file_name)
+			if instr!=None:
+				file_name=file_name[len(instr.group(0)):]
+			return file_name
+		else:
+			return None
+
+	def add_header(self, html_lines):
+		self.header_html_lines = html_lines[:]
+
+	def add_footer(self, html_lines):
+		self.footer_html_lines = html_lines[:]
+
+	def get_header(self):
+		return self.header_html_lines[:]
+
+	def get_footer(self):
+		return self.footer_html_lines[:]
+
+	def add_output_path(self, folder_path):
+		self.output_folder_path = folder_path
+
+	def get_output_path(self):
+		return self.output_folder_path
+
+	def set_content_file_path(self, content_file_path):
+		self.content_file_path = content_file_path
+
+	def get_content_file_path(self):
+		return self.content_file_path
+
+	def add_content_lines(self, html_lines):
+		self.content_html_lines = html_lines[:]
+
+	def get_content_lines(self):
+		return self.content_html_lines
+
+	def add_crosslink_form(self, crosslink_html_string):
+		self.crosslink = crosslink_html_string
+
+	def get_cross_link(self):
+		return self.crosslink
 
 class NewFolder():
 	"""
@@ -144,6 +295,7 @@ class NewNode():
 		self.includes_nodes = []
 		self.source_lines = []
 		self.attributes = {}
+		self.data_base = None
 
 	def add_node(self, node):
 		self.includes_nodes.append(node)
@@ -550,6 +702,35 @@ class NewNode():
 		if text!="":
 			text = f"{arround_tags[0]}{text}{arround_tags[1]}"
 		return text
+
+	def transport_data_base(self, data_base):
+		self.data_base = data_base
+		if self.node_type == 'folder':
+			pass
+		elif self.node_type == 'file':
+			self.data_base.append_file(self.attributes['path'])
+		elif self.node_type == 'segment':
+			pass
+		elif self.node_type == 'quote':
+			pass
+		elif self.node_type == 'head':
+			pass
+		elif self.node_type == 'list-node':
+			pass
+		elif self.node_type == 'code':
+			pass
+		elif self.node_type == 'string':
+			pass
+		elif self.node_type == 'tag':
+			pass
+		else:
+			pass
+		if 'anchor' in self.attributes:
+			self.data_base.add_anchor(self.attributes['anchor'])
+		if len(self.includes_nodes)>0:
+			for node in self.includes_nodes:
+				node.transport_data_base(self.data_base)
+		
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
@@ -763,8 +944,8 @@ class NewNode():
 def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
-		"..\\..\\[source]\\example\\html.json",
-		# "..\\..\\[source]\\готовые статьи\\html.json",
+		# "..\\..\\[source]\\example\\html.json",
+		"..\\..\\[source]\\готовые статьи\\html.json",
 		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
