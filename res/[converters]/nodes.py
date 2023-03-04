@@ -926,28 +926,45 @@ class NewNode():
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
+	def replace_spaces(html_text:str):
+		# replace spaces on &nbsp; without tags
+		output_text = ""
+		while len(html_text)>0:
+			tag = re.search(r'<.*?>', html_text)
+			if tag is not None:
+				q = html_text.index(tag.group(0))
+				prev_text = html_text[:q]
+				post_text = html_text[q+len(tag.group(0)):]
+				output_text += prev_text.replace(' ', '&nbsp;')+tag.group(0)
+				html_text = post_text
+			else:
+				output_text += html_text.replace(' ', '&nbsp;')
+				html_text = ''
+		return output_text
+
+	@staticmethod
 	def stilization_html_code(code_text:str):
-	# convert code_text to html
-	output_text = ""
-	while len(code_text)>0:
-		scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_html_scope(code_text)
-		if scope_type=='tag':
-			output_text += prev_text
-			open_bracket = scope_regexp_obj.group(1)
-			close_bracket = scope_regexp_obj.group(4)
-			tag_name = scope_regexp_obj.group(2)
-			attributes_string = stilization_html_attributes(scope_regexp_obj.group(3))
-			output_text += f'{open_bracket}<span class="Monokai-TagName">{tag_name}</span>'
-			output_text += f'{attributes_string}{close_bracket}'
-			code_text = post_text
-		elif scope_type=='comment-block':
-			output_text += prev_text
-			output_text += f'<span class="Monokai-Comment">{scope_regexp_obj.group(0)}</span>'
-			code_text = post_text
-		else:
-			output_text += code_text
-			code_text = ''
-	return output_text.replace('\n','<br/>\n')
+		# convert code_text to html
+		output_text = ""
+		while len(code_text)>0:
+			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_html_scope(code_text)
+			if scope_type=='tag':
+				output_text += prev_text
+				open_bracket = scope_regexp_obj.group(1)
+				close_bracket = scope_regexp_obj.group(4)
+				tag_name = scope_regexp_obj.group(2)
+				attributes_string = stilization_html_attributes(scope_regexp_obj.group(3))
+				output_text += f'{open_bracket}<span class="Monokai-TagName">{tag_name}</span>'
+				output_text += f'{attributes_string}{close_bracket}'
+				code_text = post_text
+			elif scope_type=='comment-block':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Comment">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			else:
+				output_text += code_text
+				code_text = ''
+		return output_text.replace('\n','<br/>\n')
 
 	@staticmethod
 	def find_overlap_html_scope(string_line:str):
@@ -1011,6 +1028,162 @@ class NewNode():
 				output_text += string_line
 				string_line=''
 		return output_text
+
+	@staticmethod
+	def stilization_css_code(code_text:str):
+		# convert code_text to css
+		output_text = ""
+		count=0
+		while len(code_text)>0 and count<999:
+			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_css_scope(code_text)
+			if scope_type=='selectors':
+				output_text += prev_text
+				selectors_string = stilization_css_selectors(scope_regexp_obj.group(0))
+				output_text += f'{selectors_string}'
+				code_text = post_text
+			elif scope_type=='comment-block':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Comment">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='property-line':
+				output_text += prev_text
+				property_name = scope_regexp_obj.group(1)
+				property_value = scope_regexp_obj.group(4)
+				property_end = scope_regexp_obj.group(6)
+				output_text += f'<span class="Monokai-Construct">{property_name}</span>: '
+				output_text += f'<span class="Monokai-String">"{property_value}"</span>'
+				output_text += property_end
+				code_text = post_text
+			elif scope_type=='property-number':
+				output_text += prev_text
+				property_name = scope_regexp_obj.group(1)
+				property_value = scope_regexp_obj.group(3)
+				property_end = scope_regexp_obj.group(4)
+				output_text += f'<span class="Monokai-Construct">{property_name}</span>: '
+				output_text += f'<span class="Monokai-Numeric">{property_value}</span>'
+				output_text += property_end
+				code_text = post_text
+			elif scope_type=='property-url':
+				output_text += prev_text
+				property_name = scope_regexp_obj.group(1)
+				property_value = scope_regexp_obj.group(4)
+				property_end = scope_regexp_obj.group(7)
+				output_text += f'<span class="Monokai-Construct">{property_name}</span>: '
+				output_text += f'<span class="Monokai-Command">url(<span class="Monokai-String">{property_value}</span>)</span>'
+				output_text += property_end
+				code_text = post_text
+			else:
+				output_text += code_text
+				code_text = ''
+			count+=1
+		return output_text.replace('\n','<br/>\n')
+
+	@staticmethod
+	def find_overlap_css_scope(string_line:str):
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'comment-block',
+				'selectors',
+				"property-line",
+				"property-number",
+				"property-url"
+			],
+			"scope-regexp":
+			[
+				re.search(r'\/\*[\s\S]*?\*\/', string_line),
+				re.search(r'(\s*)([^\{\}\/]+)(?=\{)', string_line),
+				re.search(r'([\w\-]+)(\s*:\s*)("|\')([\s\S]*?)(\3)(\s*;|\s*\})', string_line, flags=re.MULTILINE),
+				re.search(r'([\w\-]+)(\s*:\s*)([\S\s]*?)(;|\})', string_line, flags=re.MULTILINE),
+				re.search(r'([\w\-]+)(\s*:\s*)(url)(\()([\s\S]*?)(\))(\s*;|\s*\})', string_line, flags=re.MULTILINE),
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
+
+	@staticmethod
+	def stilization_css_selectors(string_line:str):
+		output_text = ""
+		count=0
+		while len(string_line)>0 and count<999:
+			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_css_selectors_scope(string_line)
+			if scope_type in ('tag', 'rule', 'pointer'):
+				output_text += prev_text
+				output_text += f'<span class="Monokai-TagName">{scope_regexp_obj.group(0)}</span>'
+				string_line = post_text
+			elif scope_type in ('id', 'class'):
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Markup">{scope_regexp_obj.group(0)}</span>'
+				string_line = post_text
+			elif scope_type in ('pseudo-class', '90zxfr'):
+				output_text += prev_text
+				output_text += f'{scope_regexp_obj.group(0)}'
+				string_line = post_text
+			else:
+				output_text += string_line
+				string_line = ''
+			count+=1
+		return output_text
+
+	@staticmethod
+	def find_overlap_css_selectors_scope(string_line:str):
+		# Get string. Return scope_type, prev_line, scope_regexp_obj, post_line
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'tag',
+				'rule',
+				'id',
+				"class",
+				"pseudo-class",
+				"pointer"
+			],
+			"scope-regexp":
+			[
+				re.search(r'(?<!(\.|#))(\b\w+\b)', string_line),
+				re.search(r'(@\w+\b)', string_line),
+				re.search(r'(#[\w\-]+)', string_line),
+				re.search(r'(\.[\w\-]+)', string_line),
+				re.search(r'(\:[\w\-]+)', string_line),
+				re.search(r'(\&gt;|\+)', string_line)
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
 
 	@staticmethod
 	def extract_href(string_line:str):

@@ -112,19 +112,144 @@ box='134'         & ! тип будет преобразован, а в box за
 Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
 </p>
 <div class="Monokai-Code">
-  &lt;<span class="Monokai-TagName">game</span> <span class="Monokai-Markup">title</span>=<span class="Monokai-String">"Моя крутая Игра"</span> <span class="Monokai-Markup">resizeable</span>=<span class="Monokai-String">"true"</span> <span class="Monokai-Markup">standalone</span>=<span class="Monokai-String">"false"</span> <span class="Monokai-Markup">width</span>=<span class="Monokai-Numeric">1280</span> <span class="Monokai-Markup">height</span>=<span class="Monokai-Numeric">720</span> /&gt;<br/>
-&lt;<span class="Monokai-TagName">link</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span> <span class="Monokai-Markup">href</span>=<span class="Monokai-String">"skins/game.css"</span> <span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span> /&gt;&lt;<span class="Monokai-TagName">link</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span> <span class="Monokai-Markup">href</span>=<span class="Monokai-String">"avscss/coolstyle.css"</span> <span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span> /&gt;<br/>
-<span class="Monokai-Comment">&lt;!-- &lt;script type="text/javascript" src="../qsplib/js/core.js"&gt;&lt;/script&gt;<br/>
-&lt;script type="text/javascript" src="../qsplib/js/coreAwesomium.js"&gt;&lt;/script&gt;<br/>
-&lt;script type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"&gt;&lt;/script&gt; --&gt;</span><br/>
-&lt;<span class="Monokai-TagName">script</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/javascript"</span> <span class="Monokai-Markup">src</span>=<span class="Monokai-String">"../qsplib/js/api.js"</span>&gt;&lt;/<span class="Monokai-TagName">script</span>&gt;<br/>
-&lt;<span class="Monokai-TagName">script</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/javascript"</span> <span class="Monokai-Markup">src</span>=<span class="Monokai-String">"../standalone_content/skins/js/game.js"</span>&gt;&lt;/<span class="Monokai-TagName">script</span>&gt;<br/>
-</div>
-<p>
-Однако, если возможно преобразование всех строк в числа, то можно сделать так:
-</p>
-<div class="Monokai-Code">
-"4560"/"3"*"9" & ! результатом будет число 13680
+<span class="Monokai-Comment">/*&nbsp;-----------------&nbsp;стили&nbsp;для&nbsp;офлайн&nbsp;-----------------&nbsp;*/</span><br/>
+<span class="Monokai-TagName">html</span>,&nbsp;<span class="Monokai-TagName">body</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">0</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">margin</span>:&nbsp;<span class="Monokai-Numeric">0</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-TagName">blockquote</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-left</span>:&nbsp;<span class="Monokai-Numeric">4px&nbsp;solid&nbsp;rgba(0,&nbsp;196,&nbsp;255,&nbsp;0.43)</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">0.25em&nbsp;0.25em&nbsp;0.25em&nbsp;1em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">rgba(255,&nbsp;255,&nbsp;255,&nbsp;0.28)</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.em_Main</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">display</span>:&nbsp;<span class="Monokai-Numeric">flex</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">overflow</span>:&nbsp;<span class="Monokai-Numeric">hidden</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">justify-content</span>:&nbsp;<span class="Monokai-Numeric">center</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">align-items</span>:&nbsp;<span class="Monokai-Numeric">flex-start</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">#soderzhanije_outer</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">0</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">0</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">1em&nbsp;0</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">box-sizing</span>:&nbsp;<span class="Monokai-Numeric">border-box</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">rgba(0,&nbsp;0,&nbsp;0,&nbsp;0.87)</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">display</span>:&nbsp;<span class="Monokai-Numeric">none</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">justify-content</span>:&nbsp;<span class="Monokai-Numeric">center</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">align-items</span>:&nbsp;<span class="Monokai-Numeric">center</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.soderzhanije</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">white</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">overflow</span>:&nbsp;<span class="Monokai-Numeric">auto</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">box-sizing</span>:&nbsp;<span class="Monokai-Numeric">border-box</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">max-height</span>:&nbsp;<span class="Monokai-Numeric">90%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">max-width</span>:&nbsp;<span class="Monokai-Numeric">75%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">1em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border</span>:&nbsp;<span class="Monokai-Numeric">1px&nbsp;solid</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">align-self</span>:&nbsp;<span class="Monokai-Numeric">flex-start</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.em_AROUND</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">max-width</span>:&nbsp;<span class="Monokai-Numeric">840px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">overflow</span>:&nbsp;<span class="Monokai-Numeric">auto</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">box-sizing</span>:&nbsp;<span class="Monokai-Numeric">border-box</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">99%</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">#fff694</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">0.75em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border</span>:&nbsp;<span class="Monokai-Numeric">2px&nbsp;solid&nbsp;#666</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">5px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span>:&nbsp;<span class="Monokai-Numeric">Arial,&nbsp;serif</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.em_btn</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">display</span>:&nbsp;<span class="Monokai-Numeric">flex</span>;<br/>
+<span class="Monokai-Comment">/*&nbsp;&nbsp;&nbsp;&nbsp;rgba(255,&nbsp;246,&nbsp;148,&nbsp;0.86)*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">rgba(255,&nbsp;246,&nbsp;148,&nbsp;0.86)</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">justify-content</span>:&nbsp;<span class="Monokai-Numeric">space-between</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">sticky</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">bottom</span>:&nbsp;<span class="Monokai-Numeric">-0.6em</span>;<br/>
+<br/>
+<span class="Monokai-Comment">/*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;border:solid&nbsp;1px&nbsp;#00000055;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;2px;<br/>
+*/</span><br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.em_btn</span>&nbsp;<span class="Monokai-TagName">&gt;</span>&nbsp;<span class="Monokai-TagName">div</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border</span>:&nbsp;<span class="Monokai-Numeric">solid&nbsp;1px&nbsp;#00888855</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">2px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">box-shadow</span>:&nbsp;<span class="Monokai-Numeric">0&nbsp;0&nbsp;0.25em&nbsp;0.1em&nbsp;rgba(83,&nbsp;40,&nbsp;40,&nbsp;0.94)</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Markup">.cmd</span>&nbsp;<span class="Monokai-TagName">&gt;</span>&nbsp;<span class="Monokai-TagName">li</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">#00000000</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">transition</span>:&nbsp;<span class="Monokai-Numeric">background&nbsp;1s&nbsp;ease</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">3px</span>;<br/>
+}<br/>
+<span class="Monokai-Markup">.cmd</span>&nbsp;<span class="Monokai-TagName">&gt;</span>&nbsp;<span class="Monokai-TagName">li</span>:hover&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">#ffffff11</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">3px</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Comment">/*&nbsp;стилизация&nbsp;скроллов&nbsp;*/</span><br/>
+<span class="Monokai-Comment">/*&nbsp;полоса&nbsp;прокрутки&nbsp;(скроллбар)&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.soderzhanije</span>::-webkit-scrollbar&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">#8BA02E22</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">0.5em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">hidden</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Comment">/*&nbsp;ползунок&nbsp;скроллбара&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.soderzhanije</span>::-webkit-scrollbar-thumb&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">#8BA02E88</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">9em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">hidden</span>;<br/>
+}<br/>
+<span class="Monokai-Markup">.soderzhanije</span>:hover::-webkit-scrollbar&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">visible</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">transition</span>:&nbsp;<span class="Monokai-Numeric">visibility&nbsp;1s&nbsp;ease</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Comment">/*&nbsp;ползунок&nbsp;скроллбара&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.soderzhanije</span>:hover::-webkit-scrollbar-thumb&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">visible</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">transition</span>:&nbsp;<span class="Monokai-Numeric">visibility&nbsp;1s&nbsp;ease</span>;<br/>
+}<br/>
+<span class="Monokai-Markup">.soderzhanije</span>&nbsp;<span class="Monokai-Markup">.emFOLD</span>&nbsp;{<span class="Monokai-Construct">font-weight</span>:&nbsp;<span class="Monokai-Numeric">normal</span>}<br/>
+<span class="Monokai-Comment">/*&nbsp;полоса&nbsp;прокрутки&nbsp;(скроллбар)&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.em_AROUND</span>::-webkit-scrollbar&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">#8BA02E44</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">0.5em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">transition</span>:&nbsp;<span class="Monokai-Numeric">visibility&nbsp;1s&nbsp;ease</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">hidden</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Comment">/*&nbsp;ползунок&nbsp;скроллбара&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.em_AROUND</span>::-webkit-scrollbar-thumb&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background-color</span>:&nbsp;<span class="Monokai-Numeric">#8BA02Eaa</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">9em</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">transition</span>:&nbsp;<span class="Monokai-Numeric">visibility&nbsp;1s&nbsp;ease</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">hidden</span>;<br/>
+}<br/>
+<span class="Monokai-Markup">.em_AROUND</span>:hover::-webkit-scrollbar&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">visible</span>;<br/>
+}<br/>
+<br/>
+<span class="Monokai-Comment">/*&nbsp;ползунок&nbsp;скроллбара&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.em_AROUND</span>:hover::-webkit-scrollbar-thumb&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">visibility</span>:&nbsp;<span class="Monokai-Numeric">visible</span>;<br/>
+}<br/>
+<span class="Monokai-Comment">/*&nbsp;-----------------&nbsp;стили&nbsp;для&nbsp;офлайн&nbsp;-----------------&nbsp;*/</span><br/>
 </div>
 <p>
 Таким образом, плеер обязательно преобразует тип к необходимому, если это возможно, особенно для операций присвоения.
