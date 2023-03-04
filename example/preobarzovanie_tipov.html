@@ -112,7 +112,13 @@ box='134'         & ! тип будет преобразован, а в box за
 Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
 </p>
 <div class="Monokai-Code">
-"Hello"-"World" & ! плеер выдаст ошибку 101
+  &lt;<span class="Monokai-TagName">game</span> <span class="Monokai-Markup">title</span>=<span class="Monokai-String">"Моя крутая Игра"</span> <span class="Monokai-Markup">resizeable</span>=<span class="Monokai-String">"true"</span> <span class="Monokai-Markup">standalone</span>=<span class="Monokai-String">"false"</span> <span class="Monokai-Markup">width</span>=<span class="Monokai-Numeric">1280</span> <span class="Monokai-Markup">height</span>=<span class="Monokai-Numeric">720</span> /&gt;<br/>
+&lt;<span class="Monokai-TagName">link</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span> <span class="Monokai-Markup">href</span>=<span class="Monokai-String">"skins/game.css"</span> <span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span> /&gt;&lt;<span class="Monokai-TagName">link</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span> <span class="Monokai-Markup">href</span>=<span class="Monokai-String">"avscss/coolstyle.css"</span> <span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span> /&gt;<br/>
+<span class="Monokai-Comment">&lt;!-- &lt;script type="text/javascript" src="../qsplib/js/core.js"&gt;&lt;/script&gt;<br/>
+&lt;script type="text/javascript" src="../qsplib/js/coreAwesomium.js"&gt;&lt;/script&gt;<br/>
+&lt;script type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"&gt;&lt;/script&gt; --&gt;</span><br/>
+&lt;<span class="Monokai-TagName">script</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/javascript"</span> <span class="Monokai-Markup">src</span>=<span class="Monokai-String">"../qsplib/js/api.js"</span>&gt;&lt;/<span class="Monokai-TagName">script</span>&gt;<br/>
+&lt;<span class="Monokai-TagName">script</span> <span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/javascript"</span> <span class="Monokai-Markup">src</span>=<span class="Monokai-String">"../standalone_content/skins/js/game.js"</span>&gt;&lt;/<span class="Monokai-TagName">script</span>&gt;<br/>
 </div>
 <p>
 Однако, если возможно преобразование всех строк в числа, то можно сделать так:

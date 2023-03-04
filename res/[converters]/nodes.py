@@ -789,6 +789,7 @@ class NewNode():
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
 			if parent.node_type=='list-node':
 				text = f'<li>{text}</li>\n'
+
 		elif self.node_type == 'quote':
 			text=""
 			if len(self.includes_nodes)>0:
@@ -828,8 +829,17 @@ class NewNode():
 				text = f'<ul>\n{text}</ul>\n'
 
 		elif self.node_type == 'code':
+			code_type = (self.attributes['code-type'] if 'code-type' in self.attributes else None)
 			text = ""
-			text += '<br/>'.join(self.source_lines)
+			source_lines = [self.replace_specsymbols(line) for line in self.source_lines]
+			if code_type == 'qsp':
+				text = self.stilization_qsp_code(''.join(source_lines))
+			elif code_type == 'css':
+				text = self.stilization_css_code(''.join(source_lines))
+			elif code_type == 'html':
+				text = self.stilization_html_code(''.join(source_lines))
+			else:
+				text = '<br/>'.join(source_lines)
 			text = f'<div class="Monokai-Code">\n{text}</div>\n'
 
 		elif self.node_type == 'string':
@@ -914,6 +924,93 @@ class NewNode():
 				node.transport_data_base(self.data_base)
 		
 	# ------------------------------- static methods ---------------------------
+
+	@staticmethod
+	def stilization_html_code(code_text:str):
+	# convert code_text to html
+	output_text = ""
+	while len(code_text)>0:
+		scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_html_scope(code_text)
+		if scope_type=='tag':
+			output_text += prev_text
+			open_bracket = scope_regexp_obj.group(1)
+			close_bracket = scope_regexp_obj.group(4)
+			tag_name = scope_regexp_obj.group(2)
+			attributes_string = stilization_html_attributes(scope_regexp_obj.group(3))
+			output_text += f'{open_bracket}<span class="Monokai-TagName">{tag_name}</span>'
+			output_text += f'{attributes_string}{close_bracket}'
+			code_text = post_text
+		elif scope_type=='comment-block':
+			output_text += prev_text
+			output_text += f'<span class="Monokai-Comment">{scope_regexp_obj.group(0)}</span>'
+			code_text = post_text
+		else:
+			output_text += code_text
+			code_text = ''
+	return output_text.replace('\n','<br/>\n')
+
+	@staticmethod
+	def find_overlap_html_scope(string_line:str):
+		# Get string. Return scope_type, scope, other_string
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'comment-block',
+				'tag'
+			],
+			"scope-regexp":
+			[
+				re.search(r'\&lt;!--[\s\S]*?--\&gt;', string_line),
+				re.search(r'(\&lt;\/?)(\s*[A-Za-zА-Яа-я]\w*)(\s+[\s\S]+?(?=\/?\&gt;))?(\/?\&gt;)', string_line),
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
+
+	@staticmethod
+	def stilization_html_attributes(string_line:str):
+		output_text=""
+		string_line = (string_line if type(string_line)==str else '')
+		while len(string_line)>0:
+			match_in_string = re.search(r'(\w+)(\s*=\s*)("|\')(.*?)(\3)', string_line)
+			match_in_number = re.search(r'(\w+)(\s*=\s*)([^"\'\s]*)', string_line)
+			if match_in_string is not None:
+				instr = string_line.index(match_in_string.group(0))
+				prev_text = string_line[:instr]
+				post_text = string_line[instr+len(match_in_string.group(0)):]
+				output_text+=prev_text
+				output_text+= f'<span class="Monokai-Markup">{match_in_string.group(1)}</span>='
+				output_text+=f'<span class="Monokai-String">"{match_in_string.group(4)}"</span>'
+				string_line = post_text
+			elif match_in_number is not None:
+				instr = string_line.index(match_in_number.group(0))
+				prev_text = string_line[:instr]
+				post_text = string_line[instr+len(match_in_number.group(0)):]
+				output_text+=prev_text
+				output_text+= f'<span class="Monokai-Markup">{match_in_number.group(1)}</span>='
+				output_text+=f'<span class="Monokai-Numeric">{match_in_number.group(3)}</span>'
+				string_line = post_text
+			else:
+				output_text += string_line
+				string_line=''
+		return output_text
 
 	@staticmethod
 	def extract_href(string_line:str):
@@ -1121,7 +1218,18 @@ class NewNode():
 	def get_code_type(string_line:str):
 		match_in = re.match(r'^\s*```(\w+)\s*$', string_line)
 		return (match_in.group(1) if match_in is not None else None)
-			
+
+	@staticmethod
+	def replace_specsymbols(string_line:str):
+		# замена амперсандов в строках
+		while True:
+			if re.search(r'\&(?!\S+?;)',string_line)!=None:
+				string_line = re.sub(r'\&(?!\S+?;)','&amp;', string_line)
+			else:
+				break
+		string_line = string_line.replace('<','&lt;')
+		string_line = string_line.replace('>','&gt;')
+		return string_line			
 
 def main():
 	# названия файлов, из которых берём сборку
