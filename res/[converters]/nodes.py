@@ -964,7 +964,7 @@ class NewNode():
 			else:
 				output_text += code_text
 				code_text = ''
-		return output_text.replace('\n','<br/>\n')
+		return replace_spaces(output_text).replace('\n','<br/>\n')
 
 	@staticmethod
 	def find_overlap_html_scope(string_line:str):
@@ -1076,7 +1076,7 @@ class NewNode():
 				output_text += code_text
 				code_text = ''
 			count+=1
-		return output_text.replace('\n','<br/>\n')
+		return replace_spaces(output_text).replace('\n','<br/>\n')
 
 	@staticmethod
 	def find_overlap_css_scope(string_line:str):
