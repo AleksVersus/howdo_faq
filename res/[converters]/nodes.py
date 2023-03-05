@@ -922,38 +922,223 @@ class NewNode():
 		if len(self.includes_nodes)>0:
 			for node in self.includes_nodes:
 				node.transport_data_base(self.data_base)
-		
+
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
-	def replace_spaces(html_text:str):
-		# replace spaces on &nbsp; without tags
+	def stilization_qsp_code(code_text:str):
+		# convert code_text to css
 		output_text = ""
-		while len(html_text)>0:
-			tag = re.search(r'<.*?>', html_text)
-			if tag is not None:
-				q = html_text.index(tag.group(0))
-				prev_text = html_text[:q]
-				post_text = html_text[q+len(tag.group(0)):]
-				output_text += prev_text.replace(' ', '&nbsp;')+tag.group(0)
-				html_text = post_text
+		count=0
+		while len(code_text)>0 and count<999:
+			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_qsp_scope(code_text)
+			if scope_type=='comment':
+				output_text += prev_text
+				andamp = scope_regexp_obj.group(1)
+				excmark = scope_regexp_obj.group(2)
+				comment = scope_regexp_obj.group(3)
+				output_text += f'<span class="Monokai-Operator">{andamp}</span>'
+				output_text += f'<span class="Monokai-Comment">{excmark}{comment}</span>'
+				code_text = post_text
+			elif scope_type=='string':
+				output_text += prev_text
+				quot_opn = scope_regexp_obj.group(1)
+				quot_cls = scope_regexp_obj.group(3)
+				text = scope_regexp_obj.group(2)
+				output_text += f'<span class="Monokai-String">{quot_opn}{text}{quot_cls}</span>'
+				code_text = post_text
+			elif scope_type=='markup':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Markup">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='location-start':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-StartLoc">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='location-end':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-EndLoc">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='operacion':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Operator">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='operator':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Operator">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='koperator':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Koperator">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='function':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Func">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='varname':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-SysVar">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='hidefunc':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-UnFunc">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
+			elif scope_type=='number':
+				output_text += prev_text
+				output_text += f'<span class="Monokai-Numeric">{scope_regexp_obj.group(0)}</span>'
+				code_text = post_text
 			else:
-				output_text += html_text.replace(' ', '&nbsp;')
-				html_text = ''
-		return output_text
+				output_text += code_text
+				code_text = ''
+			count+=1
+		return NewNode.replace_spaces(output_text).replace('\n','<br/>\n')
+
+	@staticmethod
+	def find_overlap_qsp_scope(string_line:str):
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'comment',
+				'string',
+				'markup',
+				'location-start',
+				'operacion',
+				'operator',
+				'koperator',
+				'function',
+				'varname',
+				'hidefunc',
+				'number',
+				'location-end'
+			],
+			"scope-regexp":
+			[
+				NewNode.search_comment(string_line),
+				re.search(r'("|\')([\s\S]*?)(\1)', string_line, flags=re.MULTILINE),
+				re.search(r'(^\s*)(:[^\s\'\"\{\}\&][^\s\'\"\{\}\&]*?)(?=\s*($|\&amp;))', string_line, flags=re.MULTILINE),
+				re.search(r'^\s*#.*?$', string_line, flags=re.MULTILINE),
+				re.search(
+					r'\-\=|\+\=|\*\=|\/\=|&lt;\=|&gt;\=|\-|\=|\+|\*|\/|\[|\]|\{|\}|\(|\)|\:|\&amp;|,|&lt;|&gt;',
+					string_line, flags=re.MULTILINE),
+				re.search(r'(?i:(\bexec|\bset|\blet|\blocal|\bview|\binclib|\bfreelib|\baddqst|\bopenqst|\bopengame|\bsavegame|\bkillqst|\bcmdclr|\bcmdclear|\ball|\bclose|\bexit|\bplay|\bsettimer|\bmenu|\bunsel|\bunselect|\bjump|\bcopyarr|\bdelact|\bwait|\bkillall|\bdynamic|\bkillvar|\bdelobj|\baddobj|\bkillobj|\bcls|\bcla|\bgs|\bxgt|\bgt|\bgoto|\bgosub|\bxgoto|\brefint|\bshowobjs|\bshowstat|\bshowacts|\bshowinput|\bmsg|(?<!\w)\*?(pl?|nl|clr|clear)))\b', string_line, flags=re.MULTILINE),
+				re.search(r'\b(?i:(act|if|elseif|else|loop|while|step|end))\b', string_line, flags=re.MULTILINE),
+				re.search(r'(?i:(\bobj|\bisplay|\blen|\brgb|\bmsecscount|\bno|\band|\bmod|\bcountobj|\binstr|\bisnum|\bval|\bloc|\bor|\bra?nd|\barrsize|\barrpos|\barrcomp|\bstrcomp|\bstrpos|(?<!\w)\$?(input|user_text|usrtxt|desc|maintxt|stattxt|qspver|curloc|selobj|selact|curacts|mid|(u|l)case|trim|replace|getobj|str|strfind|iif|dyneval|func|max|min|arritem)))\b', string_line, flags=re.MULTILINE),
+				re.search(r'(?i:(\bnosave|\bdisablescroll|\bdisablesubex|\bdebug|\busehtml|\b(b|f|l)color|\bfsize|(?<!\w)\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))\b', string_line, flags=re.MULTILINE),
+				re.search(r'@[\w\.]+\b', string_line, flags=re.MULTILINE),
+				re.search(r'\b\d+\b', string_line, flags=re.MULTILINE),
+				re.search(r'(^\s*)(\-)(.*?$)', string_line, flags=re.MULTILINE)
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
+
+	@staticmethod
+	def search_comment(string_line:str):
+		temp_line = string_line
+		comment = ""
+		mode = {"comment-open": False}
+		while len(temp_line)>0:
+			comment_start = re.search(r'(^\s*|\&amp;\s*)(!)', temp_line, flags=re.MULTILINE)
+			if comment_start is not None and not mode["comment-open"]:
+				scope = comment_start.group(0)
+				comment += scope
+				q = temp_line.index(scope)
+				temp_line = temp_line[q+len(scope):]
+				mode["comment-open"]=True
+			elif mode["comment-open"]:
+				scope_type, prev_line, scope_regexp_obj, post_line = NewNode.find_overlap_comments_scope(temp_line)
+				if scope_type in ('single-string', 'single-quotes', 'single-apostrophes', 'single-scobe'):
+					scope = scope_regexp_obj.group(0)
+					comment += prev_line + scope
+					mode["comment-open"]=False
+					break # comment is enough
+				elif scope_type in ('quotes', 'apostrophes', 'scobe'):
+					comment += scope_regexp_obj.group(0)
+					temp_line = post_line
+				else:
+					#error
+					print('[240] Error')
+					return None
+			else:
+				# comment is not found
+				return None
+		if comment != "":
+			return re.search(r'(^\s*|\&amp;\s*)(!)([\s\S]*)', comment, flags=re.MULTILINE)
+
+	@staticmethod
+	def find_overlap_comments_scope(string_line:str):
+		# Get string. Return scope_type, prev_line, scope_regexp_obj, post_line
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'single-string',
+				'single-quotes',
+				'single-apostrophes',
+				'single-scobe',
+				'quotes',
+				'apostrophes',
+				'scobe'
+			],
+			"scope-regexp":
+			[
+				re.search(r'^[^"\'\{]*?$', string_line, flags=re.MULTILINE),
+				re.search(r'^[^"\n]*?"[^"]*?"[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
+				re.search(r'^[^\'\n]*?\'[^\']*?\'[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
+				re.search(r'^[^\{\n]*?\{[^\}]*?\}[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
+				re.search(r'^[^"\n]*?"[^"]*?"[^"\n]*?', string_line, flags=re.MULTILINE),
+				re.search(r'^[^\'\n]*?\'[^\']*?\'[^\'\n]*?', string_line, flags=re.MULTILINE),
+				re.search(r'^[^\{]*?\{[^\}]*?\}[^\{\n]*?', string_line, flags=re.MULTILINE),
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
 
 	@staticmethod
 	def stilization_html_code(code_text:str):
 		# convert code_text to html
 		output_text = ""
 		while len(code_text)>0:
-			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_html_scope(code_text)
+			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_html_scope(code_text)
 			if scope_type=='tag':
 				output_text += prev_text
 				open_bracket = scope_regexp_obj.group(1)
 				close_bracket = scope_regexp_obj.group(4)
 				tag_name = scope_regexp_obj.group(2)
-				attributes_string = stilization_html_attributes(scope_regexp_obj.group(3))
+				attributes_string = NewNode.stilization_html_attributes(scope_regexp_obj.group(3))
 				output_text += f'{open_bracket}<span class="Monokai-TagName">{tag_name}</span>'
 				output_text += f'{attributes_string}{close_bracket}'
 				code_text = post_text
@@ -964,7 +1149,7 @@ class NewNode():
 			else:
 				output_text += code_text
 				code_text = ''
-		return replace_spaces(output_text).replace('\n','<br/>\n')
+		return NewNode.replace_spaces(output_text).replace('\n','<br/>\n')
 
 	@staticmethod
 	def find_overlap_html_scope(string_line:str):
@@ -1035,10 +1220,10 @@ class NewNode():
 		output_text = ""
 		count=0
 		while len(code_text)>0 and count<999:
-			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_css_scope(code_text)
+			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_css_scope(code_text)
 			if scope_type=='selectors':
 				output_text += prev_text
-				selectors_string = stilization_css_selectors(scope_regexp_obj.group(0))
+				selectors_string = NewNode.stilization_css_selectors(scope_regexp_obj.group(0))
 				output_text += f'{selectors_string}'
 				code_text = post_text
 			elif scope_type=='comment-block':
@@ -1076,7 +1261,7 @@ class NewNode():
 				output_text += code_text
 				code_text = ''
 			count+=1
-		return replace_spaces(output_text).replace('\n','<br/>\n')
+		return NewNode.replace_spaces(output_text).replace('\n','<br/>\n')
 
 	@staticmethod
 	def find_overlap_css_scope(string_line:str):
@@ -1123,7 +1308,7 @@ class NewNode():
 		output_text = ""
 		count=0
 		while len(string_line)>0 and count<999:
-			scope_type, prev_text, scope_regexp_obj, post_text = find_overlap_css_selectors_scope(string_line)
+			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_css_selectors_scope(string_line)
 			if scope_type in ('tag', 'rule', 'pointer'):
 				output_text += prev_text
 				output_text += f'<span class="Monokai-TagName">{scope_regexp_obj.group(0)}</span>'
@@ -1353,15 +1538,14 @@ class NewNode():
 		return all(tuple([value==all_values for value in mode.values()]))
 
 	@staticmethod
-	def top_head_level(string_lines:list,
-		string_type=string_type, get_head_level=get_head_level):
+	def top_head_level(string_lines:list):
 		top_level = 7
 		mode = {"code-block-open": False}
 		for line in string_lines:
-			if string_type(line)=='head' and not mode['code-block-open']:
-				level = get_head_level(line, result_type='num')
+			if NewNode.string_type(line)=='head' and not mode['code-block-open']:
+				level = NewNode.get_head_level(line, result_type='num')
 				top_level = (level if level < top_level else top_level)
-			elif string_type(line)=='code':
+			elif NewNode.string_type(line)=='code':
 				mode['code-block-open'] = not mode['code-block-open'] 
 		return top_level
 
@@ -1375,11 +1559,11 @@ class NewNode():
 		return (0 if (leveling is None) else len(leveling.group(1)))
 
 	@staticmethod
-	def top_list_level(string_lines:list, get_string_level=get_string_level, string_type=string_type):
+	def top_list_level(string_lines:list):
 		top_level=999999
 		for line in string_lines:
-			if string_type(line) in ('ol-li', 'ul-li'):
-				level = get_string_level(line)
+			if NewNode.string_type(line) in ('ol-li', 'ul-li'):
+				level = NewNode.get_string_level(line)
 				top_level = (level if level<top_level else top_level)
 		return top_level
 
@@ -1402,7 +1586,24 @@ class NewNode():
 				break
 		string_line = string_line.replace('<','&lt;')
 		string_line = string_line.replace('>','&gt;')
-		return string_line			
+		return string_line
+
+	@staticmethod
+	def replace_spaces(html_text:str):
+		# replace spaces on &nbsp; without tags
+		output_text = ""
+		while len(html_text)>0:
+			tag = re.search(r'<.*?>', html_text)
+			if tag is not None:
+				q = html_text.index(tag.group(0))
+				prev_text = html_text[:q]
+				post_text = html_text[q+len(tag.group(0)):]
+				output_text += prev_text.replace(' ', '&nbsp;')+tag.group(0)
+				html_text = post_text
+			else:
+				output_text += html_text.replace(' ', '&nbsp;')
+				html_text = ''
+		return output_text
 
 def main():
 	# названия файлов, из которых берём сборку

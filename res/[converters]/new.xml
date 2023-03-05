@@ -54,28 +54,87 @@
 Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак = и число:
 </p>
 </segment>
-<code code-left-level="4" code-type="qsp">
-box=13
+<code code-left-level="0" code-type="css">
+/*
+<br/>    данный стиль описывает внешний вид общего блока, играющего в т.ч. роль затенения
+<br/>    (обратите внимание, на какую область в вашем шаблоне распространяется затенение)
+<br/>*/
+<br/>.modalDialog { 
+<br/>    position: fixed; 
+<br/>    top: 0;    right: 0;    bottom: 0; left: 0; 
+<br/>    background: hsla(0,0%,0%,0.8); 
+<br/>    z-index: 50; /* выводится одним из верхних слоёв */
+<br/>    opacity: 0; /* видимость на нуле, чтобы игрок не видел содержимое */
+<br/>    -webkit-transition: opacity 400ms ease-in; /* обеспечивает плавное появление */
+<br/>    pointer-events: none; /* скрывает блок от курсора мыши */
+<br/>} 
+<br/>/* 
+<br/>    псевдокласс :target применяется к тому элементу
+<br/>    к которому обратился браузер/плеер по нажатию на ссылку (по id)
+<br/>*/
+<br/>.modalDialog:target { 
+<br/>    opacity: 1; /* видимость повышается до 100% */
+<br/>    pointer-events: auto; /* с блоком снова может работать мышь */
+<br/>} 
+<br/>/* стилизация дочернего блока, т.е. непосредственно окошка */
+<br/>.modalDialog > div { 
+<br/>    width: 400px; 
+<br/>    position: relative; 
+<br/>    margin: 10% auto; 
+<br/>    padding: 5px 20px 13px 20px; 
+<br/>    border-radius: 10px; 
+<br/>    background: #fff; 
+<br/>    background: -webkit-linear-gradient(#fff, #b8ecfb); 
+<br/>}
 </code>
 <segment>
 <p>
 Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак $.
 </p>
 </segment>
-<code code-left-level="4" code-type="qsp">
-$text='Текстовое значение'
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>*pl "На следующей локации демонстрируется использование меню в качестве даилогового окна для выбора двух вариантов"
+<br/>$dialog[]="Сообщение: кошелёк или жизнь:dial_loc:?"
+<br/>$dialog[]="> Кошелёк:dial_loc"
+<br/>$dialog[]="> Жизнь:dial_loc"
+<br/>act "Перейти в следующую локацию":
+<br/>    goto 'room'
+<br/>end
+<br/>-- start
+<br/>
+<br/># room
+<br/>refint & ! данная функция принудительно обновит содержимое окон плеера при входе на локацию
+<br/>:loop
+<br/>menu '$dialog'
+<br/>if variant<>1: jump 'loop'
+<br/>-- room
+<br/>
+<br/># dial_loc
+<br/>if args[0]=1:
+<br/>    ! данный пункт меню не работает
+<br/>elseif args[0]=2:
+<br/>    *pl "Вы выбрали вариант кошелёк"
+<br/>    variant=1
+<br/>elseif args[0]=3:
+<br/>    *pl "Вы выбради вариант жизнь"
+<br/>    variant=1
+<br/>end
+<br/>-- dial_loc
 </code>
 <segment>
 <p>
 Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
 </p>
 </segment>
-<code code-left-level="4" code-type="qsp">
-$text=123
-<br/>
-<br/>! эквивалентно
-<br/>
-<br/>$text=$str(123)
+<code code-left-level="0" code-type="html">
+<game title="Моя крутая Игра" resizeable="true" standalone="false" width=1280 height=720 />
+<br/><link type="text/css" href="skins/game.css" rel="stylesheet" /><link type="text/css" href="avscss/coolstyle.css" rel="stylesheet" />
+<br/><!-- <script type="text/javascript" src="../qsplib/js/core.js"></script>
+<br/><script type="text/javascript" src="../qsplib/js/coreAwesomium.js"></script>
+<br/><script type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"></script> -->
+<br/><script type="text/javascript" src="../qsplib/js/api.js"></script>
+<br/><script type="text/javascript" src="../standalone_content/skins/js/game.js"></script>
 </code>
 <segment>
 <p>
