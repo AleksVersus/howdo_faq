@@ -1,9 +1,9 @@
 <folder path="D:\my\projects\howdo_faq\[source]\готовые статьи">
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\00_soderzhanie_0000.txt-light" id="soderzhanije">
-<head anchor="soderzhanije" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\00_soderzhanie_0000.txt-light">
+<header anchor="soderzhanije" head-level="h1">
 <p>
 Содержание</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <list list-type="ul-list">
 <segment name="li">
@@ -45,12 +45,12 @@ qSpider 0.12.0</tag>
 </list>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\01_preobrazovanie_tipov_v_qsp_0001.txt-light" id="preobrazovanije_tipov_qsp">
-<head anchor="preobrazovanije_tipov_qsp" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\01_preobrazovanie_tipov_v_qsp_0001.txt-light">
+<header anchor="preobrazovanije_tipov_qsp" head-level="h1">
 <p>
 Преобразование типов в QSP</p>
-</head>
-<segment segment-class="for-head" id="post_scriptum_articles_0001">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -133,13 +133,13 @@ $text=123
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-box='134'         & ! тип будет преобразован, а в box запишется число 134
-<br/>cell='non cifer' & ! тип не будет преобразован, плеер выдаст ошибку 101
+box='134'         &amp; ! тип будет преобразован, а в box запишется число 134
+<br/>cell='non cifer' &amp; ! тип не будет преобразован, плеер выдаст ошибку 101
 <br/>
 <br/>! не эквивалентно
 <br/>
-<br/>box=val('134')          & ! строка преобразуется в число, в box запишется число 134
-<br/>cell=val('non cifer') & ! строка не преобразуется в число, в cell запишется 0
+<br/>box=val('134')          &amp; ! строка преобразуется в число, в box запишется число 134
+<br/>cell=val('non cifer') &amp; ! строка не преобразуется в число, в cell запишется 0
 <br/>
 <br/>! только для команды 2 не удастся выполнить преобразование типа
 </code>
@@ -152,7 +152,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-123+456 & ! результатом будет число 579
+123+456 &amp; ! результатом будет число 579
 </code>
 <segment>
 <p>
@@ -160,7 +160,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-"Hello"+"World" & ! результатом будет строка "HelloWorld"
+"Hello"+"World" &amp; ! результатом будет строка "HelloWorld"
 </code>
 <segment>
 <p>
@@ -174,7 +174,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-123+"456" & ! результатом будет число 579
+123+"456" &amp; ! результатом будет число 579
 </code>
 <segment>
 <p>
@@ -182,7 +182,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-123+"d456" & ! результатом будет строка 123d456
+123+"d456" &amp; ! результатом будет строка 123d456
 </code>
 <segment>
 <p>
@@ -190,7 +190,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-"Hello"-"World" & ! плеер выдаст ошибку 101
+"Hello"-"World" &amp; ! плеер выдаст ошибку 101
 </code>
 <segment>
 <p>
@@ -198,7 +198,7 @@ box='134'         & ! тип будет преобразован, а в box за
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-"4560"/"3"*"9" & ! результатом будет число 13680
+"4560"/"3"*"9" &amp; ! результатом будет число 13680
 </code>
 <segment>
 <p>
@@ -222,11 +222,11 @@ val</tag>
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-$str(1234) & ! преобразует число в строку
+$str(1234) &amp; ! преобразует число в строку
 <br/>! если получает строку, возвращает строку
 <br/>$str("string")
 <br/>
-<br/>val("1234") & ! преобразует строку в число
+<br/>val("1234") &amp; ! преобразует строку в число
 <br/>! если не может преобразовать в число, возвращает ноль
 <br/>val("string")
 </code>
@@ -238,13 +238,13 @@ $str(1234) & ! преобразует число в строку
 <code code-left-level="4" code-type="qsp">
 health=100
 <br/>max_health=350
-<br/>*pl "Здоровье: <<health>>/<<max_health>>."
+<br/>*pl "Здоровье: &lt;&lt;health&gt;&gt;/&lt;&lt;max_health&gt;&gt;."
 </code>
 </segment>
-<head anchor="post_scriptum_articles_0001" head-level="h4">
+<header anchor="post_scriptum_articles_0001" head-level="h4">
 <p>
 P.S.:</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -280,19 +280,19 @@ ifhub.club/Преобразование типов в QSP</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\02_novoe_v_rabote_massivov_v_5.8.0_0002.txt-light" id="novoje_v_rabote_massivov">
-<head anchor="novoje_v_rabote_massivov" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\02_novoe_v_rabote_massivov_v_5.8.0_0002.txt-light">
+<header anchor="novoje_v_rabote_massivov" head-level="h1">
 <p>
 Массивы уже не те</p>
-</head>
-<segment segment-class="for-head" id="chto-mozhno-i-nuzhno-sdelat_">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 
 </segment>
-<head head-level="h2" anchor="kak-vedut-sebia-massivy-sejchas">
+<header head-level="h2" anchor="kak-vedut-sebia-massivy-sejchas">
 <p>
 Как ведут себя массивы сейчас</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -439,7 +439,7 @@ arrsize</tag>
 <p>
 Для тех, кто ещё не знает: пустые квадратные скобки после имени массива означают, что мы хотим работать с последним элементом массива, и нам не важен его номер.
 </p>
-</fquote>
+</quote>
 <segment>
 <p>
 И тут происходит интересная штука. В момент, когда мы пытаемся последнему элементу присвоить значение, плеер создаёт новый элемент указанного типа и уже ему присваивает значение. Таким образом каждая такая команда генерирует в массиве элементы обоих типов, но лишь одному присваивается значение:
@@ -494,10 +494,10 @@ arrsize</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="kak-massivy-budut-sebia-vesti">
+<header head-level="h2" anchor="kak-massivy-budut-sebia-vesti">
 <p>
 Как массивы будут себя вести</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -660,10 +660,10 @@ arrsize</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="chto-mozhno-i-nuzhno-sdelat_">
+<header head-level="h2" anchor="chto-mozhno-i-nuzhno-sdelat_">
 <p>
 Что можно и нужно сделать</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -722,6 +722,8 @@ $unit_name[0]='пехотинец'
 <p>
 Памятка по изменениям в работе массивов:
 </p>
+<tag name="image" src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg">
+</tag>
 <p>
 Статья написана по мотивам:
 </p>
@@ -748,7 +750,7 @@ Byte</tag>
 <tag name="simple-string">
 `а </tag>
 <tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=1290&Itemid=57">
-qsp.org/index.php...&Itemid=57</tag>
+qsp.org/index.php...&amp;Itemid=57</tag>
 </p>
 </segment>
 </list>
@@ -780,12 +782,12 @@ ifhub.club/Массивы уже не те</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\03_chto_novogo_v_qsp_0003.txt-light" id="chto-eschio">
-<head anchor="whats_news" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\03_chto_novogo_v_qsp_0003.txt-light">
+<header anchor="whats_news" head-level="h1">
 <p>
 Что нового в QSP</p>
-</head>
-<segment segment-class="for-head" id="bol_she-argumentov-dlia-funktsij">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -799,10 +801,10 @@ ifhub.club/Массивы уже не те</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="izmenenie-v-rabote-massivov">
+<header head-level="h2" anchor="izmenenie-v-rabote-massivov">
 <p>
 Изменение в работе массивов</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -834,21 +836,21 @@ ifhub.club/Массивы уже не те</tag>
 ! версия 5.7.0
 <br/>mass[1]=123
 <br/>$mass[1]='string'
-<br/>*pl mass[1]  & ! выведет число 123
-<br/>*pl $mass[1] & ! выведет строку 'string'
+<br/>*pl mass[1]  &amp; ! выведет число 123
+<br/>*pl $mass[1] &amp; ! выведет строку 'string'
 </code>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.8.0 и выше
 <br/>mass[1]=123
-<br/>$mass[1]='string' & ! затирает числовое значение
-<br/>*pl mass[1]  & ! попытка доступа к числовому значению вернёт 0
-<br/>*pl $mass[1] & ! выведет строку 'string'
+<br/>$mass[1]='string' &amp; ! затирает числовое значение
+<br/>*pl mass[1]  &amp; ! попытка доступа к числовому значению вернёт 0
+<br/>*pl $mass[1] &amp; ! выведет строку 'string'
 </code>
 </segment>
-<head head-level="h2" anchor="mnogomernye-massivy">
+<header head-level="h2" anchor="mnogomernye-massivy">
 <p>
 Многомерные массивы</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -878,10 +880,10 @@ ifhub.club/Массивы уже не те</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="izmeneniia-v-rabote-logicheskih-operatorov-i-funktsij">
+<header head-level="h2" anchor="izmeneniia-v-rabote-logicheskih-operatorov-i-funktsij">
 <p>
 Изменения в работе логических операторов и функций</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -920,12 +922,12 @@ True</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.7.0
-<br/>*pl (3>2 and 4>3) & ! AND вернёт -1
-<br/>*pl (3>2 or 4>3) & ! OR вернёт -1
-<br/>*pl no 0 & ! NO вернёт -1
-<br/>*pl (3<2 and 4>3) & ! AND вернёт 0
-<br/>*pl (3<2 or 4<3) & ! OR вернёт 0
-<br/>*pl no -1 & ! NO вернёт 0
+<br/>*pl (3&gt;2 and 4&gt;3) &amp; ! AND вернёт -1
+<br/>*pl (3&gt;2 or 4&gt;3) &amp; ! OR вернёт -1
+<br/>*pl no 0 &amp; ! NO вернёт -1
+<br/>*pl (3&lt;2 and 4&gt;3) &amp; ! AND вернёт 0
+<br/>*pl (3&lt;2 or 4&lt;3) &amp; ! OR вернёт 0
+<br/>*pl no -1 &amp; ! NO вернёт 0
 </code>
 <segment>
 <p>
@@ -952,12 +954,12 @@ False</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.8.0 и выше
-<br/>*pl (3>2 and 4>3) & ! AND вернёт 1
-<br/>*pl (3>2 or 4>3) & ! OR вернёт 1
-<br/>*pl no 0 & ! NO вернёт 1
-<br/>*pl (3<2 and 4>3) & ! AND вернёт 0
-<br/>*pl (3<2 or 4<3) & ! OR вернёт 0
-<br/>*pl no -1 & ! NO вернёт 0
+<br/>*pl (3&gt;2 and 4&gt;3) &amp; ! AND вернёт 1
+<br/>*pl (3&gt;2 or 4&gt;3) &amp; ! OR вернёт 1
+<br/>*pl no 0 &amp; ! NO вернёт 1
+<br/>*pl (3&lt;2 and 4&gt;3) &amp; ! AND вернёт 0
+<br/>*pl (3&lt;2 or 4&lt;3) &amp; ! OR вернёт 0
+<br/>*pl no -1 &amp; ! NO вернёт 0
 </code>
 <segment>
 <p>
@@ -985,20 +987,20 @@ False</tag>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.7.0
 <br/>addobj "Отвёртка"
-<br/>*pl obj("Отвёртка") & ! OBJ вернёт -1
-<br/>*pl obj("Оттка") & ! OBJ вернёт 0
+<br/>*pl obj("Отвёртка") &amp; ! OBJ вернёт -1
+<br/>*pl obj("Оттка") &amp; ! OBJ вернёт 0
 <br/>
-<br/>*pl isnum("123") & ! ISNUM вернёт -1
-<br/>*pl isnum("12d") & ! ISNUM вернёт 0
+<br/>*pl isnum("123") &amp; ! ISNUM вернёт -1
+<br/>*pl isnum("12d") &amp; ! ISNUM вернёт 0
 </code>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.8.0 и выше
 <br/>addobj "Отвёртка"
-<br/>*pl obj("Отвёртка") & ! OBJ вернёт 1
-<br/>*pl obj("Оттка") & ! OBJ вернёт 0
+<br/>*pl obj("Отвёртка") &amp; ! OBJ вернёт 1
+<br/>*pl obj("Оттка") &amp; ! OBJ вернёт 0
 <br/>
-<br/>*pl isnum("123") & ! ISNUM вернёт 1
-<br/>*pl isnum("12d") & ! ISNUM вернёт 0
+<br/>*pl isnum("123") &amp; ! ISNUM вернёт 1
+<br/>*pl isnum("12d") &amp; ! ISNUM вернёт 0
 </code>
 <segment>
 <p>
@@ -1024,9 +1026,9 @@ NO</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.7.0
-<br/>*pl (3 and 2) & ! AND вернёт 2
-<br/>*pl (4 or 6) & ! OR вернёт 6
-<br/>*pl no 7 & ! NO вернёт -8
+<br/>*pl (3 and 2) &amp; ! AND вернёт 2
+<br/>*pl (4 or 6) &amp; ! OR вернёт 6
+<br/>*pl no 7 &amp; ! NO вернёт -8
 </code>
 <segment>
 <p>
@@ -1045,9 +1047,9 @@ True</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! версия 5.8.0 и выше
-<br/>*pl (3 and 2) & ! AND вернёт 1
-<br/>*pl (4 or 6) & ! OR вернёт 1
-<br/>*pl no 7 & ! NO вернёт 0
+<br/>*pl (3 and 2) &amp; ! AND вернёт 1
+<br/>*pl (4 or 6) &amp; ! OR вернёт 1
+<br/>*pl no 7 &amp; ! NO вернёт 0
 </code>
 <segment>
 <p>
@@ -1087,10 +1089,10 @@ True</tag>
 <br/>end
 </code>
 </segment>
-<head head-level="h2" anchor="argumenty-peredavaemye-s-operatorami-goto-i-xgoto">
+<header head-level="h2" anchor="argumenty-peredavaemye-s-operatorami-goto-i-xgoto">
 <p>
 Аргументы, передаваемые с операторами GOTO и XGOTO</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1157,10 +1159,10 @@ ARGS</tag>
 <br/>--локация_2
 </code>
 </segment>
-<head head-level="h2" anchor="disablesubex-bol_she-net">
+<header head-level="h2" anchor="disablesubex-bol_she-net">
 <p>
 DISABLESUBEX больше нет</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1176,11 +1178,11 @@ DISABLESUBEX</tag>
 <code code-left-level="4" code-type="qsp">
 ! в версии 5.7.0
 <br/>health=100
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье 100'
 <br/>disablesubex=1
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье <<health>>'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье &lt;&lt;health&gt;&gt;'
 <br/>disablesubex=0
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье 100'
 </code>
 <segment>
 <p>
@@ -1190,11 +1192,11 @@ DISABLESUBEX</tag>
 <code code-left-level="4" code-type="qsp">
 ! в версии 5.8.0 и выше
 <br/>health=100
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье 100'
 <br/>disablesubex=1
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье 100'
 <br/>disablesubex=0
-<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;" &amp; ! выведет строку 'Здоровье 100'
 </code>
 <segment>
 <p>
@@ -1204,15 +1206,15 @@ DISABLESUBEX</tag>
 <code code-left-level="4" code-type="qsp">
 ! одинаково работает во всех версиях плеера
 <br/>health=100
-<br/>*pl "Здоровье <<health>>"    & ! выведет строку 'Здоровье 100'
-<br/>*pl {Здоровье <<health>>}    & ! выведет строку 'Здоровье <<health>>'
-<br/>*pl "Здоровье <<health>>"    & ! выведет строку 'Здоровье 100'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;"    &amp; ! выведет строку 'Здоровье 100'
+<br/>*pl {Здоровье &lt;&lt;health&gt;&gt;}    &amp; ! выведет строку 'Здоровье &lt;&lt;health&gt;&gt;'
+<br/>*pl "Здоровье &lt;&lt;health&gt;&gt;"    &amp; ! выведет строку 'Здоровье 100'
 </code>
 </segment>
-<head head-level="h2" anchor="izmeneniia-v-rabote-neiavnogo-operatora">
+<header head-level="h2" anchor="izmeneniia-v-rabote-neiavnogo-operatora">
 <p>
 Изменения в работе неявного оператора</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1232,8 +1234,8 @@ DISABLESUBEX</tag>
 <br/>
 <br/>! эквивалентно:
 <br/>
-<br/>456        & ! здесь для вывода используется неявный оператор
-<br/>"text"    & ! и здесь для вывода используется неявный оператор
+<br/>456        &amp; ! здесь для вывода используется неявный оператор
+<br/>"text"    &amp; ! и здесь для вывода используется неявный оператор
 </code>
 <segment>
 <p>
@@ -1277,10 +1279,10 @@ DISABLESUBEX</tag>
 <br/>Строка текста
 </code>
 </segment>
-<head head-level="h2" anchor="neiavnyj-vyzov-pol_zovatel_skih-funktsij">
+<header head-level="h2" anchor="neiavnyj-vyzov-pol_zovatel_skih-funktsij">
 <p>
 Неявный вызов пользовательских функций</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1303,8 +1305,8 @@ FUNC</tag>
 <code code-left-level="4" code-type="qsp">
 ! работает во всех версиях плеера
 <br/># start
-<br/>gosub 'proced'            & ! вызов без возвращения результата
-<br/>*pl func('foo',23,45)    & ! вызов с возвращением результата
+<br/>gosub 'proced'            &amp; ! вызов без возвращения результата
+<br/>*pl func('foo',23,45)    &amp; ! вызов с возвращением результата
 <br/>--start
 <br/>
 <br/># proced
@@ -1325,8 +1327,8 @@ FUNC</tag>
 <code code-left-level="4" code-type="qsp">
 ! работает только в 5.8.0 и выше
 <br/># start
-<br/>@proced            & ! вызов без возвращения результата
-<br/>*pl @foo(23,45)    & ! вызов с возвращением результата
+<br/>@proced            &amp; ! вызов без возвращения результата
+<br/>*pl @foo(23,45)    &amp; ! вызов с возвращением результата
 <br/>--start
 <br/>
 <br/># proced
@@ -1358,10 +1360,10 @@ func</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="novaia-funktsiia-arritem">
+<header head-level="h2" anchor="novaia-funktsiia-arritem">
 <p>
 Новая функция ARRITEM</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1442,10 +1444,10 @@ $mass["text index"]="text string"
 <br/>*pl $arritem('$mass','text index')
 </code>
 </segment>
-<head head-level="h2" anchor="killvar-udaliaet-po-tekstovomu-indeksu">
+<header head-level="h2" anchor="killvar-udaliaet-po-tekstovomu-indeksu">
 <p>
 KILLVAR удаляет по текстовому индексу</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1468,7 +1470,7 @@ KILLVAR</tag>
 <br/>
 <br/>! удаление по числовому индексу
 <br/>killvar '$mass',2
-<br/>*pl $mass[2] & ! выведет на экран строку 'строка 3'
+<br/>*pl $mass[2] &amp; ! выведет на экран строку 'строка 3'
 </code>
 <segment>
 <p>
@@ -1491,13 +1493,13 @@ KILLVAR</tag>
 <br/>
 <br/>! удаление по числовому индексу
 <br/>killvar '$mass','text index'
-<br/>*pl $mass[3] & ! выведет на экран строку 'строка 4'
+<br/>*pl $mass[3] &amp; ! выведет на экран строку 'строка 4'
 </code>
 </segment>
-<head head-level="h2" anchor="operatory-addqst-i-killqst-pereimenovany">
+<header head-level="h2" anchor="operatory-addqst-i-killqst-pereimenovany">
 <p>
 Операторы ADDQST и KILLQST переименованы</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1543,10 +1545,10 @@ inclib 'module.qsp'
 <br/>freelib
 </code>
 </segment>
-<head head-level="h2" anchor="izmenenie-v-rabote-operatora-set">
+<header head-level="h2" anchor="izmenenie-v-rabote-operatora-set">
 <p>
 Изменение в работе оператора SET</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1576,9 +1578,9 @@ SET</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! работает в плеерах любых версий
-<br/>set mass=45 & set daz=65 & set zaz=79
+<br/>set mass=45 &amp; set daz=65 &amp; set zaz=79
 <br/>! эквивалентно:
-<br/>mass=45 & daz=65 & zaz=79
+<br/>mass=45 &amp; daz=65 &amp; zaz=79
 </code>
 <segment>
 <p>
@@ -1644,10 +1646,10 @@ SET</tag>
 <br/>j,y=y,j
 </code>
 </segment>
-<head head-level="h2" anchor="novyj-operator-local">
+<header head-level="h2" anchor="novyj-operator-local">
 <p>
 Новый оператор LOCAL</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1713,10 +1715,10 @@ local i=45
 <br/>local f=123, d=45, $g='string'
 </code>
 </segment>
-<head head-level="h2" anchor="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos">
+<header head-level="h2" anchor="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos">
 <p>
 Изменения в работе функций INSTR, ARRCOMP, ARRPOS</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1762,10 +1764,10 @@ ARRPOS</tag>
 <br/>arrcomp('$objectbox','\S{2}\s\S{6}',5)
 </code>
 </segment>
-<head head-level="h2" anchor="novyj-operator-tsikla-loop">
+<header head-level="h2" anchor="novyj-operator-tsikla-loop">
 <p>
 Новый оператор цикла LOOP</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1841,17 +1843,17 @@ END</tag>
 </segment>
 <code code-left-level="4" code-type="qsp">
 ! выведет на экран таблицу умножения на 12
-<br/>loop local i=1 while i<11 step i+=1:
-<br/>    *pl "12 * <<i>> = <<12*i>>"
+<br/>loop local i=1 while i&lt;11 step i+=1:
+<br/>    *pl "12 * &lt;&lt;i&gt;&gt; = &lt;&lt;12*i&gt;&gt;"
 <br/>end
 </code>
 <code code-left-level="4" code-type="qsp">
 ! поиск всех позиций элементов массива, содержащих число 3
 <br/>loop local i,pos,true=0,-1,1 while true:
 <br/>    pos=arrpos('mass',3,pos+1)
-<br/>    if (pos<>-1 and i<>pos) or pos=0:
+<br/>    if (pos&lt;&gt;-1 and i&lt;&gt;pos) or pos=0:
 <br/>        i=pos
-<br/>        *pl "mass[<<pos>>] = 3"
+<br/>        *pl "mass[&lt;&lt;pos&gt;&gt;] = 3"
 <br/>    else
 <br/>        true=0
 <br/>    end
@@ -1860,12 +1862,12 @@ END</tag>
 <code code-left-level="4" code-type="qsp">
 ! нарезаем неповторяющиеся символы из строки
 <br/>$string='long long long string'
-<br/>loop while len($string)>0:
+<br/>loop while len($string)&gt;0:
 <br/>    $a=$mid($string,1,1)
 <br/>    if arrpos('$letters',$a)=-1:
 <br/>        $letters[]=$a
 <br/>    end
-<br/>    if len($string)>1:
+<br/>    if len($string)&gt;1:
 <br/>        $string=$mid($string,2)
 <br/>    else
 <br/>        $string=''
@@ -1873,15 +1875,15 @@ END</tag>
 <br/>end
 <br/>*pl
 <br/>! выводим на экран
-<br/>loop local i,s=0,arrsize('$letters') while i<s step i+=1:
+<br/>loop local i,s=0,arrsize('$letters') while i&lt;s step i+=1:
 <br/>    *p $letters[i]+", "
 <br/>end
 </code>
 </segment>
-<head head-level="h2" anchor="izmeneniia-v-chtenii-dlinnyh-strok-razbityh-na-neskol_ko">
+<header head-level="h2" anchor="izmeneniia-v-chtenii-dlinnyh-strok-razbityh-na-neskol_ko">
 <p>
 Изменения в чтении длинных строк, разбитых на несколько</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -1944,10 +1946,10 @@ t=1
 <br/>end
 </code>
 </segment>
-<head head-level="h2" anchor="izmeneniia-v-rabote-funktsii-rand">
+<header head-level="h2" anchor="izmeneniia-v-rabote-funktsii-rand">
 <p>
 Изменения в работе функции RAND</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2001,26 +2003,26 @@ RAND</tag>
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
-RAND(100) & ! в 5.7.0 вернёт значение от 0 до 100
-<br/>RAND(100) & ! в 5.8.0 вернёт значение от 1 до 100
+RAND(100) &amp; ! в 5.7.0 вернёт значение от 0 до 100
+<br/>RAND(100) &amp; ! в 5.8.0 вернёт значение от 1 до 100
 <br/>
-<br/>RAND(10) & ! в 5.7.0 вернёт значение от 0 до 10
-<br/>RAND(10) & ! в 5.8.0 вернёт значение от 1 до 10
+<br/>RAND(10) &amp; ! в 5.7.0 вернёт значение от 0 до 10
+<br/>RAND(10) &amp; ! в 5.8.0 вернёт значение от 1 до 10
 <br/>
-<br/>RAND(5) & ! в 5.7.0 вернёт значение от 0 до 5
-<br/>RAND(5) & ! в 5.8.0 вернёт значение от 1 до 5
+<br/>RAND(5) &amp; ! в 5.7.0 вернёт значение от 0 до 5
+<br/>RAND(5) &amp; ! в 5.8.0 вернёт значение от 1 до 5
 <br/>
-<br/>RAND(0) & ! в 5.7.0 вернёт значение 0
-<br/>RAND(0) & ! в 5.8.0 вернёт значение от 1 до 0
+<br/>RAND(0) &amp; ! в 5.7.0 вернёт значение 0
+<br/>RAND(0) &amp; ! в 5.8.0 вернёт значение от 1 до 0
 <br/>
-<br/>RAND(1) & ! в 5.7.0 вернёт значение от 0 до 1
-<br/>RAND(1) & ! в 5.8.0 вернёт значение 1
+<br/>RAND(1) &amp; ! в 5.7.0 вернёт значение от 0 до 1
+<br/>RAND(1) &amp; ! в 5.8.0 вернёт значение 1
 </code>
 </segment>
-<head head-level="h2" anchor="povyshenie-prioriteta-funktsij-loc-i-obj">
+<header head-level="h2" anchor="povyshenie-prioriteta-funktsij-loc-i-obj">
 <p>
 Повышение приоритета функций LOC и OBJ</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2081,10 +2083,10 @@ LOC</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="bol_she-argumentov-dlia-funktsij">
+<header head-level="h2" anchor="bol_she-argumentov-dlia-funktsij">
 <p>
 Больше аргументов для функций</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2117,11 +2119,11 @@ MIN</tag>
 </code>
 </segment>
 </segment>
-<head head-level="h1" anchor="starye-novosti-o-kotoryh-vy-mogli-ne-znat_">
+<header head-level="h1" anchor="starye-novosti-o-kotoryh-vy-mogli-ne-znat_">
 <p>
 Старые новости, о которых вы могли не знать</p>
-</head>
-<segment segment-class="for-head" id="peredacha-argumentov-v-onnewloc">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2129,10 +2131,10 @@ MIN</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="ignorirovanie-otritsatel_nyh-indeksov">
+<header head-level="h2" anchor="ignorirovanie-otritsatel_nyh-indeksov">
 <p>
 Игнорирование отрицательных индексов</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2142,22 +2144,22 @@ MIN</tag>
 <code code-left-level="4" code-type="qsp">
 ! версии ниже 5.6.5
 <br/>mass[0]=123
-<br/>*pl mass[-1]    & ! на экране увидим 123
+<br/>*pl mass[-1]    &amp; ! на экране увидим 123
 <br/>mass[-1]=456
-<br/>*pl mass[0]        & ! на экране увидим 456
+<br/>*pl mass[0]        &amp; ! на экране увидим 456
 </code>
 <code code-left-level="4" code-type="qsp">
 ! версии 5.6.5 и выше
 <br/>mass[0]=123
-<br/>*pl mass[-1]    & ! на экране увидим 0
+<br/>*pl mass[-1]    &amp; ! на экране увидим 0
 <br/>mass[-1]=456
-<br/>*pl mass[0]        & ! на экране увидим 123
+<br/>*pl mass[0]        &amp; ! на экране увидим 123
 </code>
 </segment>
-<head head-level="h2" anchor="dobavlenie-predmeta-v-opredelionnuiu-pozitsiiu">
+<header head-level="h2" anchor="dobavlenie-predmeta-v-opredelionnuiu-pozitsiiu">
 <p>
 Добавление предмета в определённую позицию</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2185,15 +2187,15 @@ addobj</tag>
 <br/>addobj 'Второй предмет'
 <br/>addobj 'Третий предмет'
 <br/>addobj 'Четвёртый предмет'
-<br/>addobj 'Пятый предмет','',5 & ! предмет будет добавлен в конец списка
-<br/>addobj 'Седьмой предмет','',7 & ! предмет не будет добавлен
-<br/>addobj 'Нулевой предмет','',0 & ! предмет не будет добавлен
+<br/>addobj 'Пятый предмет','',5 &amp; ! предмет будет добавлен в конец списка
+<br/>addobj 'Седьмой предмет','',7 &amp; ! предмет не будет добавлен
+<br/>addobj 'Нулевой предмет','',0 &amp; ! предмет не будет добавлен
 </code>
 </segment>
-<head head-level="h2" anchor="kopirovanie-chasti-massiva-v-copyarr">
+<header head-level="h2" anchor="kopirovanie-chasti-massiva-v-copyarr">
 <p>
 Копирование части массива в COPYARR</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2215,10 +2217,10 @@ addobj</tag>
 <br/>copyarr 'mass','array',3,6
 </code>
 </segment>
-<head head-level="h2" anchor="peredacha-argumentov-v-onnewloc">
+<header head-level="h2" anchor="peredacha-argumentov-v-onnewloc">
 <p>
 Передача аргументов в ONNEWLOC</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2285,11 +2287,11 @@ XGOTO</tag>
 </code>
 </segment>
 </segment>
-<head head-level="h1" anchor="chto-eschio">
+<header head-level="h1" anchor="chto-eschio">
 <p>
 Что ещё?</p>
-</head>
-<segment segment-class="for-head" id="post_scriptum_articles_0003">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2303,10 +2305,10 @@ wiki.qsp.org</tag>
 </p>
 </segment>
 </segment>
-<head anchor="post_scriptum_articles_0003" head-level="h4">
+<header anchor="post_scriptum_articles_0003" head-level="h4">
 <p>
 P.S.:</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2342,13 +2344,13 @@ ifhub.club/Что нового в QSP 5.8.0?</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\04_qspider_0004.txt-light" id="qspider_0120">
-<head anchor="qspider_0120" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\04_qspider_0004.txt-light">
+<header anchor="qspider_0120" head-level="h1">
 <p>
 qSpider версии 0.12.0</p>
-</head>
-<segment segment-class="for-head" id="zakliuchenie">
-<segment segment-class="for-head" id="otlichiia-qspider-ot-klassicheskogo-pleera">
+</header>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2387,10 +2389,10 @@ https://qspfoundation.github.io/qspider/</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="otlichiia-qspider-ot-klassicheskogo-pleera">
+<header head-level="h3" anchor="otlichiia-qspider-ot-klassicheskogo-pleera">
 <p>
 Отличия qSpider от Классического плеера:</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <list list-type="ul-list">
 <segment name="li">
@@ -2428,18 +2430,18 @@ https://qspfoundation.github.io/qspider/</tag>
 </segment>
 </segment>
 </segment>
-<head head-level="h2" anchor="desktopnaia-versiia">
+<header head-level="h2" anchor="desktopnaia-versiia">
 <p>
 Десктопная версия</p>
-</head>
-<segment segment-class="for-head" id="podkliuchenie-pleera-k-qgen">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 
 </segment>
-<head head-level="h3" anchor="osnovnye-otlichiia-desktop-versii-ot-web-versii">
+<header head-level="h3" anchor="osnovnye-otlichiia-desktop-versii-ot-web-versii">
 <p>
 Основные отличия desktop-версии от web-версии:</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <list list-type="ul-list">
 <segment name="li">
@@ -2468,10 +2470,10 @@ https://qspfoundation.github.io/qspider/</tag>
 </segment>
 </list>
 </segment>
-<head head-level="h3" anchor="ustanovka-i-zapusk">
+<header head-level="h3" anchor="ustanovka-i-zapusk">
 <p>
 Установка и запуск</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2508,6 +2510,8 @@ AppImage-пакет</tag>
 <p>
 Если в процессе установки на "Windows 7" программа выдаст ошибку похожую на эту:
 </p>
+<tag name="image" src="https://i.ibb.co/8z8MHyp/image.png">
+</tag>
 <p>
 <tag name="simple-string">
 — попробуйте установить webview2 вручную (скачать можно </tag>
@@ -2522,10 +2526,10 @@ AppImage-пакет</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="podkliuchenie-pleera-k-qgen">
+<header head-level="h3" anchor="podkliuchenie-pleera-k-qgen">
 <p>
 Подключение плеера к QGen</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2547,11 +2551,11 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 </segment>
 </segment>
 </segment>
-<head head-level="h2" anchor="brauzernaia-versiia-ili-web-versiia">
+<header head-level="h2" anchor="brauzernaia-versiia-ili-web-versiia">
 <p>
 Браузерная версия, или web-версия</p>
-</head>
-<segment segment-class="for-head" id="addndelgames">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2559,10 +2563,10 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="ustanovka-i-zapusk-pleera-na-komp_iutere">
+<header head-level="h3" anchor="ustanovka-i-zapusk-pleera-na-komp_iutere">
 <p>
 Установка и запуск плеера на компьютере</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2617,12 +2621,12 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 </segment>
 </list>
 </segment>
-<head head-level="h3" anchor="ustanovka-pleera-na-github">
+<header head-level="h3" anchor="ustanovka-pleera-na-github">
 <p>
 Установка плеера на github</p>
-</head>
+</header>
 <segment segment-class="for-head">
-<list list-type="ol-list" li-count="6">
+<list list-type="ol-list">
 <segment name="li">
 <p>
 <tag name="simple-string">
@@ -2661,10 +2665,10 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 </segment>
 </list>
 </segment>
-<head anchor="addndelgames" head-level="h3">
+<header anchor="addndelgames" head-level="h3">
 <p>
 Добавление и удаление игр из списка</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2771,11 +2775,11 @@ CORS заголовки</tag>
 </list>
 </segment>
 </segment>
-<head anchor="cfgfile" head-level="h2">
+<header anchor="cfgfile" head-level="h2">
 <p>
 Конфигурационный файл</p>
-</head>
-<segment segment-class="for-head" id="primer-fajla-gamecfg-dlia-otdel_noj-igry">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2859,11 +2863,11 @@ mode — если ваша игра написана для AeroQSP, данно�
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="naznachenie-goriachih-klavish-gamehotkeys">
+<header head-level="h3" anchor="naznachenie-goriachih-klavish-gamehotkeys">
 <p>
 Назначение горячих клавиш [game.hotkeys]</p>
-</head>
-<segment segment-class="for-head" id="spetsial_nye-klavishi">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2912,10 +2916,10 @@ i="Инвентарь"
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="klavishi-modifikatory">
+<header head-level="h4" anchor="klavishi-modifikatory">
 <p>
 Клавиши-модификаторы</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <list list-type="ul-list">
 <segment name="li">
@@ -2946,10 +2950,10 @@ meta</tag>
 </segment>
 </list>
 </segment>
-<head head-level="h4" anchor="spetsial_nye-klavishi">
+<header head-level="h4" anchor="spetsial_nye-klavishi">
 <p>
 Специальные клавиши</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <list list-type="ul-list">
 <segment name="li">
@@ -3090,10 +3094,10 @@ $</tag>
 </segment>
 </segment>
 </segment>
-<head anchor="qspider_gameresource" head-level="h3">
+<header anchor="qspider_gameresource" head-level="h3">
 <p>
 Подключение дополнительных ресурсов [game.resources]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3187,10 +3191,10 @@ fonts = [
 icon="skins/gfx/doctor.png"
 </code>
 </segment>
-<head head-level="h3" anchor="podderzhka-igr-aeroqsp-gameaero">
+<header head-level="h3" anchor="podderzhka-igr-aeroqsp-gameaero">
 <p>
 Поддержка игр AeroQSP [game.aero]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3228,10 +3232,10 @@ mode="aero"
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="nastrojka-okna-desktop-pleera-gamewindow">
+<header head-level="h3" anchor="nastrojka-okna-desktop-pleera-gamewindow">
 <p>
 Настройка окна desktop-плеера [game.window]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3267,10 +3271,10 @@ resizable — позволяет запретить изменения разм�
 </segment>
 </list>
 </segment>
-<head head-level="h3" anchor="primer-fajla-gamecfg-dlia-otdel_noj-igry">
+<header head-level="h3" anchor="primer-fajla-gamecfg-dlia-otdel_noj-igry">
 <p>
 Пример файла "game.cfg" для отдельной игры</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <code code-left-level="0" code-type="lua">
 [[game]]
@@ -3301,11 +3305,11 @@ resizable — позволяет запретить изменения разм�
 </code>
 </segment>
 </segment>
-<head anchor="aeroqspider" head-level="h2">
+<header anchor="aeroqspider" head-level="h2">
 <p>
 Особенности работы игр AeroQSP на qSpider</p>
-</head>
-<segment segment-class="for-head" id="vazhnoe-primechanie-ot-werewolfa">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3378,10 +3382,10 @@ width=100%</tag>
 </segment>
 </list>
 </segment>
-<head head-level="h3" anchor="primer-podkliucheniia">
+<header head-level="h3" anchor="primer-podkliucheniia">
 <p>
 Пример подключения</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3411,22 +3415,22 @@ mode="aero"</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h3" anchor="vazhnoe-primechanie-ot-werewolfa">
+<header head-level="h3" anchor="vazhnoe-primechanie-ot-werewolfa">
 <p>
 Важное примечание от Werewolf''а</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <quote>
 <p>
 Я не собираюсь развивать и поддерживать (кроме багфиксов) формат AeroQSP, поэтому не советую начинать новые игры с его использованием.</p>
-</fquote>
+</quote>
 </segment>
 </segment>
-<head head-level="h2" anchor="zakliuchenie">
+<header head-level="h2" anchor="zakliuchenie">
 <p>
 Заключение</p>
-</head>
-<segment segment-class="for-head" id="post_scriptum_articles_0004">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3496,10 +3500,10 @@ qSpider 0.12.0 - полноценная desktop-версия</tag>
 </segment>
 </list>
 </segment>
-<head anchor="post_scriptum_articles_0004" head-level="h4">
+<header anchor="post_scriptum_articles_0004" head-level="h4">
 <p>
 P.S.:</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3530,12 +3534,12 @@ vk.com/qSpider 0.12.0</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\05_classic.config_0005.txt-light" id="classic_cfg">
-<head anchor="classic_cfg" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\05_classic.config_0005.txt-light">
+<header anchor="classic_cfg" head-level="h1">
 <p>
 Структура конфигурационного файла классического плеера версии 5.7.0</p>
-</head>
-<segment segment-class="for-head" id="post-scriptum">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3567,7 +3571,7 @@ qspgui.cfg</tag>
 Официального, задокументированного способа сделать это — нет. Но есть небольшой трюк, позволяющий добиться нужного эффекта:
 </p>
 </segment>
-<list list-type="ol-list" li-count="5">
+<list list-type="ol-list">
 <segment name="li">
 <p>
 Запускаем в плеере свою игру.</p>
@@ -3653,10 +3657,10 @@ qspgui.cfg</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="sektsiia-nastroek-tsveta-colors">
+<header head-level="h2" anchor="sektsiia-nastroek-tsveta-colors">
 <p>
 Секция настроек цвета [Colors]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3722,10 +3726,10 @@ RED + GREEN*256 + BLUE*256*256
 <br/>LinkColor=16711680
 </code>
 </segment>
-<head head-level="h2" anchor="sektsiia-nastroek-shrifta-font">
+<header head-level="h2" anchor="sektsiia-nastroek-shrifta-font">
 <p>
 Секция настроек шрифта [Font]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3773,11 +3777,11 @@ UseFontSize</tag>
 <br/>UseFontSize=0
 </code>
 </segment>
-<head head-level="h2" anchor="sektsiia-osnovnyh-nastroek-general">
+<header head-level="h2" anchor="sektsiia-osnovnyh-nastroek-general">
 <p>
 Секция основных настроек [General]</p>
-</head>
-<segment segment-class="for-head" id="dock_size">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3837,10 +3841,10 @@ en_GB</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="panels">
+<header head-level="h4" anchor="panels">
 <p>
 Panels</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3862,10 +3866,10 @@ Panels=layout2|
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="name">
+<header head-level="h4" anchor="name">
 <p>
 name</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3907,10 +3911,10 @@ input</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="caption">
+<header head-level="h4" anchor="caption">
 <p>
 caption</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3929,10 +3933,10 @@ caption=Objects;
 caption=;
 </code>
 </segment>
-<head head-level="h4" anchor="state">
+<header head-level="h4" anchor="state">
 <p>
 state</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3985,10 +3989,10 @@ state=769;
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="dir">
+<header head-level="h4" anchor="dir">
 <p>
 dir</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4143,10 +4147,10 @@ pos</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="layer">
+<header head-level="h4" anchor="layer">
 <p>
 layer</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4164,10 +4168,10 @@ dir</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="raw">
+<header head-level="h4" anchor="raw">
 <p>
 raw</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4189,10 +4193,10 @@ dir</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="pos">
+<header head-level="h4" anchor="pos">
 <p>
 pos</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4210,10 +4214,10 @@ dir</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="prop">
+<header head-level="h4" anchor="prop">
 <p>
 prop</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4227,10 +4231,10 @@ prop</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="bestw-besth-minw-minh-maxw-maxh">
+<header head-level="h4" anchor="bestw-besth-minw-minh-maxw-maxh">
 <p>
 bestw, besth, minw, minh, maxw, maxh</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4278,10 +4282,10 @@ minh</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="floatx-floaty-floatw-floath">
+<header head-level="h4" anchor="floatx-floaty-floatw-floath">
 <p>
 floatx, floaty, floatw, floath</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4323,10 +4327,10 @@ floath</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h4" anchor="dock_size">
+<header head-level="h4" anchor="dock_size">
 <p>
 dock_size</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4341,10 +4345,10 @@ dock_size</tag>
 </segment>
 </segment>
 </segment>
-<head head-level="h2" anchor="sektsiia-nastroek-okna-pleera-pos">
+<header head-level="h2" anchor="sektsiia-nastroek-okna-pleera-pos">
 <p>
 Секция настроек окна плеера [Pos]</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4398,10 +4402,10 @@ Maximize</tag>
 <br/>Maximize=0
 </code>
 </segment>
-<head head-level="h2" anchor="post-scriptum">
+<header head-level="h2" anchor="post-scriptum">
 <p>
 Post Scriptum</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4430,12 +4434,12 @@ Nex</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\06_operatory_funktsii_argumenty_0006.txt-light" id="gosub_func_args">
-<head anchor="gosub_func_args" head-level="h1">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\06_operatory_funktsii_argumenty_0006.txt-light">
+<header anchor="gosub_func_args" head-level="h1">
 <p>
 Операторы, функции, аргументы. GOSUB, FUNC, ARGS</p>
-</head>
-<segment segment-class="for-head" id="zakliuchenie">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4444,6 +4448,8 @@ Nex</tag>
 <p>
 Эта статья является попыткой ответить на данный вопрос максимально просто, точно и подробно, насколько это в принципе будет возможно.
 </p>
+<tag name="image" src="https://i.ibb.co/0q9D7Jb/QSP.png">
+</tag>
 <p>
 Все примеры рекомендую испытать самостоятельно, побаловаться, изменяя значения, и посмотреть, что из этого выйдет. Теория без практики — мертва.
 </p>
@@ -4461,20 +4467,20 @@ Nex</tag>
 <tag name="simple-string">
 ). Если вы работаете в редакторе Quest Generator, данные строчки прописывать в коде локаций не нужно, только содержимое между ними.</tag>
 </p>
-</fquote>
+</quote>
 </segment>
-<head head-level="h2" anchor="probuem-vodu-nemnogo-opredelenij">
+<header head-level="h2" anchor="probuem-vodu-nemnogo-opredelenij">
 <p>
 Пробуем воду. Немного определений</p>
-</head>
-<segment segment-class="for-head" id="funktsii">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 
 </segment>
-<head head-level="h3" anchor="operatory">
+<header head-level="h3" anchor="operatory">
 <p>
 Операторы</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4512,6 +4518,8 @@ addobj</tag>
 addobj "Апельсин"
 </code>
 <segment>
+<tag name="image" src="https://i.ibb.co/XCyNJqv/image.png">
+</tag>
 <p>
 <tag name="simple-string">
 Такое указание значения в программировании называется </tag>
@@ -4575,9 +4583,9 @@ addobj "Апельсин","pic/orange.png",4
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-killvar '$mass',4    & ! два аргумента. Удаляем ячейку номер 4 из массива $mass
-<br/>killvar '$array'    & ! один аргумент. Удаляем весь массив $array
-<br/>killvar                & ! без аргументов. Удаляет все массивы и переменные в игре
+killvar '$mass',4    &amp; ! два аргумента. Удаляем ячейку номер 4 из массива $mass
+<br/>killvar '$array'    &amp; ! один аргумент. Удаляем весь массив $array
+<br/>killvar                &amp; ! без аргументов. Удаляет все массивы и переменные в игре
 </code>
 <segment>
 <p>
@@ -4605,12 +4613,14 @@ act</tag>
  ждут хотя бы один аргумент, но могут принимать больше. Если передать оператору больше аргументов, чем он может принять, или меньше, чем он ожидает, это приведёт к ошибке №120: "Неверное число аргументов оператора/функции", — поэтому будьте внимательны при написании кода и чаще сверяйтесь со справкой.
 </tag>
 </p>
+<tag name="image" src="https://i.ibb.co/R6WQKpb/4.png">
+</tag>
 </segment>
 </segment>
-<head head-level="h3" anchor="funktsii">
+<header head-level="h3" anchor="funktsii">
 <p>
 Функции</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4633,7 +4643,7 @@ rnd</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-num=rnd    & ! в переменную num запишется случайное число от 1 до 1000
+num=rnd    &amp; ! в переменную num запишется случайное число от 1 до 1000
 </code>
 <segment>
 <p>
@@ -4653,13 +4663,15 @@ num=rnd    & ! в переменную num запишется случайное
 .
 </tag>
 </p>
+<tag name="image" src="https://i.ibb.co/tbwMRvc/image.png">
+</tag>
 <p>
 Точно так же, как оператор, функция может принимать аргументы, однако аргументы, которые мы хотим передать функции, нужно заключать в круглые скобки, в отличие от операторов, которым такие скобки не нужны.
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-num=rand(1,1000)    & ! аргументы функции rand заключены в скобки
-<br/>killvar '$mass',9    & ! аргументы оператора killvar не нужно заключать в скобки
+num=rand(1,1000)    &amp; ! аргументы функции rand заключены в скобки
+<br/>killvar '$mass',9    &amp; ! аргументы оператора killvar не нужно заключать в скобки
 </code>
 <segment>
 <p>
@@ -4706,17 +4718,21 @@ isnum</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-max('mass')    & ! передан один строковый аргумент. Функция вернёт максимальное число из массива mass
-<br/>max('mass','gass','dass')    & ! передано три строковых аргумента. Функция вернёт тот из них, который идёт позже в алфавитном порядке
-<br/>max(12)    & ! данная строчка кода вызовет ошибку 114
-<br/>max(12,34)    & ! функция вернёт наибольшее из двух чисел (34)
+max('mass')    &amp; ! передан один строковый аргумент. Функция вернёт максимальное число из массива mass
+<br/>max('mass','gass','dass')    &amp; ! передано три строковых аргумента. Функция вернёт тот из них, который идёт позже в алфавитном порядке
+<br/>max(12)    &amp; ! данная строчка кода вызовет ошибку 114
+<br/>max(12,34)    &amp; ! функция вернёт наибольшее из двух чисел (34)
 </code>
+<segment>
+<tag name="image" src="https://i.ibb.co/CHdzh7k/function-get-gift.png">
+</tag>
 </segment>
 </segment>
-<head head-level="h2" anchor="plavaem-u-berega-pol_zovatel_skie-funktsii-i-protsedury">
+</segment>
+<header head-level="h2" anchor="plavaem-u-berega-pol_zovatel_skie-funktsii-i-protsedury">
 <p>
 Плаваем у берега. Пользовательские функции и процедуры</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4745,9 +4761,9 @@ $name='Леголас'
 </segment>
 <code code-left-level="0" code-type="qsp">
 ! # pl_stat
-<br/>*pl "Вас зовут <<$name>>."
-<br/>*pl "Вам <<age>> лет."
-<br/>*pl "Вы используете <<$arms>>."
+<br/>*pl "Вас зовут &lt;&lt;$name&gt;&gt;."
+<br/>*pl "Вам &lt;&lt;age&gt;&gt; лет."
+<br/>*pl "Вы используете &lt;&lt;$arms&gt;&gt;."
 </code>
 <segment>
 <p>
@@ -4795,7 +4811,7 @@ func</tag>
 <code code-left-level="0" code-type="qsp">
 N=12
 <br/>func('square')
-<br/>*pl R    & ! на экране появится число 144
+<br/>*pl R    &amp; ! на экране появится число 144
 </code>
 <segment>
 <p>
@@ -4837,7 +4853,7 @@ result</tag>
 <code code-left-level="0" code-type="qsp">
 N=12
 <br/>R=func('square')
-<br/>*pl R    & ! на экране появится число 144
+<br/>*pl R    &amp; ! на экране появится число 144
 </code>
 <segment>
 <p>
@@ -4846,7 +4862,7 @@ N=12
 </segment>
 <code code-left-level="0" code-type="qsp">
 N=12
-<br/>*pl func('square')    & ! на экране появится число 144
+<br/>*pl func('square')    &amp; ! на экране появится число 144
 </code>
 <segment>
 <p>
@@ -4873,10 +4889,10 @@ result</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 # start
-<br/>result=123    & ! записываем число в переменную result
+<br/>result=123    &amp; ! записываем число в переменную result
 <br/>N=24
-<br/>*pl func('square')    & ! выведет на экран 576
-<br/>*pl result    & ! выведет на экран 123
+<br/>*pl func('square')    &amp; ! выведет на экран 576
+<br/>*pl result    &amp; ! выведет на экран 123
 <br/>--- start ---
 <br/>
 <br/># square
@@ -4923,8 +4939,8 @@ args</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 ! # square
-<br/>*pl args[0]    & ! выведет на экран число, которое мы отправляем на эту локацию
-<br/>result=args[0]*args[0]    & ! вместо N мы теперь используем число из нулевой ячейки массива args
+<br/>*pl args[0]    &amp; ! выведет на экран число, которое мы отправляем на эту локацию
+<br/>result=args[0]*args[0]    &amp; ! вместо N мы теперь используем число из нулевой ячейки массива args
 </code>
 <segment>
 <p>
@@ -4933,13 +4949,13 @@ args</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 # start
-<br/>result=123    & ! записываем число в переменную result
-<br/>*pl func('square',24)    & ! выведет на экран 576
-<br/>*pl result    & ! выведет на экран 123
+<br/>result=123    &amp; ! записываем число в переменную result
+<br/>*pl func('square',24)    &amp; ! выведет на экран 576
+<br/>*pl result    &amp; ! выведет на экран 123
 <br/>--- start ---
 <br/>
 <br/># square
-<br/>*pl args[0]     & ! поскольку выше мы передаём на square число 24, то эта команда выведет на экран число 24
+<br/>*pl args[0]     &amp; ! поскольку выше мы передаём на square число 24, то эта команда выведет на экран число 24
 <br/>result=args[0]*args[0]
 <br/>--- square ---
 </code>
@@ -4961,8 +4977,8 @@ args</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-*pl func('summ',1,2,3,4,5,6,7,8,9)    & ! на экране появится число 45
-<br/>*pl func('summ',23,45,67,89,0,11,23,5,-1)    & ! на экране появится число 262
+*pl func('summ',1,2,3,4,5,6,7,8,9)    &amp; ! на экране появится число 45
+<br/>*pl func('summ',23,45,67,89,0,11,23,5,-1)    &amp; ! на экране появится число 262
 </code>
 <segment>
 <p>
@@ -4976,8 +4992,8 @@ args</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-*pl func('summ',1,2,3,4)    & ! на экране появится число 10
-<br/>*pl func('summ',23,45,67)    & ! на экране появится число 135
+*pl func('summ',1,2,3,4)    &amp; ! на экране появится число 10
+<br/>*pl func('summ',23,45,67)    &amp; ! на экране появится число 135
 </code>
 <segment>
 <p>
@@ -5022,15 +5038,15 @@ args</tag>
 <code code-left-level="0" code-type="qsp">
 ! данный код выведет на экран последовательно числа 11, 1507, 19
 <br/># start
-<br/>args[0]=19    & ! это нулевая ячейка массива args на локации start, ей присваиваем 19
-<br/>*pl func('foo',11)    & ! выведет на экран 1507
-<br/>*pl args[0]    & ! выведет на экран 19
+<br/>args[0]=19    &amp; ! это нулевая ячейка массива args на локации start, ей присваиваем 19
+<br/>*pl func('foo',11)    &amp; ! выведет на экран 1507
+<br/>*pl args[0]    &amp; ! выведет на экран 19
 <br/>--- start ---
 <br/>
 <br/># foo
 <br/>! на локации foo собственный уникальный массив args,
 <br/>! в который автоматически записываются значения, переданные на локацию в виде аргументов
-<br/>*pl args[0]    & ! выше сюда было передано число 11, вот его мы и увидим на экране
+<br/>*pl args[0]    &amp; ! выше сюда было передано число 11, вот его мы и увидим на экране
 <br/>result = args[0] * 137
 <br/>--- foo ---
 </code>
@@ -5041,9 +5057,9 @@ args</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 ! # pl_stat
-<br/>*pl "Вас зовут <<$args[0]>>."
-<br/>*pl "Вам <<args[1]>> лет."
-<br/>*pl "Вы используете <<$args[2]>>."
+<br/>*pl "Вас зовут &lt;&lt;$args[0]&gt;&gt;."
+<br/>*pl "Вам &lt;&lt;args[1]&gt;&gt; лет."
+<br/>*pl "Вы используете &lt;&lt;$args[2]&gt;&gt;."
 </code>
 <segment>
 <p>
@@ -5129,10 +5145,10 @@ gosub 'pl_stat','Гимли',91,'Молот'
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="glubokoe-pogruzhenie-tonkosti-i-niuansy-pri-napisanii-sobstvennyh-funktsij-i-protsedur">
+<header head-level="h2" anchor="glubokoe-pogruzhenie-tonkosti-i-niuansy-pri-napisanii-sobstvennyh-funktsij-i-protsedur">
 <p>
 Глубокое погружение. Тонкости и нюансы при написании собственных функций и процедур</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -5253,8 +5269,8 @@ dyneval</tag>
 <br/>$code = {
 <br/>    i=0
 <br/>    :for
-<br/>    if i<arrsize('args'):
-<br/>        if $args[i]<>'':
+<br/>    if i&lt;arrsize('args'):
+<br/>        if $args[i]&lt;&gt;'':
 <br/>            *pl $args[i]
 <br/>        else:
 <br/>            *pl args[i]
@@ -5321,7 +5337,7 @@ $pow</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-*pl dyneval($pow,3,4) & ! возводим число 3 в четвёртую степень
+*pl dyneval($pow,3,4) &amp; ! возводим число 3 в четвёртую степень
 </code>
 <segment>
 <p>
@@ -5338,12 +5354,12 @@ args</tag>
 $pow = {
 <br/>    ! args[0] — число, которое хотим возвести в степень
 <br/>    ! args[1] — степень, в которую хотим возвести число
-<br/>    result=1    & ! сразу присваиваем результату единицу
+<br/>    result=1    &amp; ! сразу присваиваем результату единицу
 <br/>    ! теперь с помощью цикла умножаем результат на указанное число
 <br/>    ! столько раз, каково значение степени.
 <br/>    ! т.е. само значение степени у нас будет счётчиком цикла
 <br/>    :for
-<br/>    if args[1]>0:
+<br/>    if args[1]&gt;0:
 <br/>        result=result*args[0]
 <br/>        args[1]-=1
 <br/>        jump 'for'
@@ -5356,9 +5372,9 @@ $pow = {
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-*pl dyneval($pow,3,4)    & ! выведет число 81
-<br/>*pl dyneval($pow,4,3)    & ! выведет число 64
-<br/>*pl dyneval($pow,9,9)    & ! выведет число 387420489
+*pl dyneval($pow,3,4)    &amp; ! выведет число 81
+<br/>*pl dyneval($pow,4,3)    &amp; ! выведет число 64
+<br/>*pl dyneval($pow,9,9)    &amp; ! выведет число 387420489
 </code>
 <segment>
 <p>
@@ -5421,9 +5437,9 @@ args[0]=123
 <br/>$result='Первый'
 <br/>$code="if args[0]=2: $result='Второй' else $result='Никакой'"
 <br/>
-<br/>*pl $dyneval($code,2)     & ! выведет на экран строку `Второй` 
-<br/>*pl args[0]    & ! выведет на экран число 123
-<br/>*pl $result & ! выведет на экран строку `Первый` 
+<br/>*pl $dyneval($code,2)     &amp; ! выведет на экран строку `Второй` 
+<br/>*pl args[0]    &amp; ! выведет на экран число 123
+<br/>*pl $result &amp; ! выведет на экран строку `Первый` 
 </code>
 <segment>
 <p>
@@ -5456,9 +5472,9 @@ dyneval</tag>
 <code code-left-level="0" code-type="qsp">
 usehtml=1
 <br/>args[0]=137
-<br/>*pl "<a href='exec:args[0]=37 & *pl args[0] & ! в гиперссылке собственные args'>Нажми, чтобы вывести 37</a>"
-<br/>*pl "<a href='exec:*pl args[0] & ! в гиперссылке собственные args'>Нажми, чтобы вывести 0</a>"
-<br/>*pl args[0] & ! на экран выведется 137
+<br/>*pl "&lt;a href='exec:args[0]=37 &amp; *pl args[0] &amp; ! в гиперссылке собственные args'&gt;Нажми, чтобы вывести 37&lt;/a&gt;"
+<br/>*pl "&lt;a href='exec:*pl args[0] &amp; ! в гиперссылке собственные args'&gt;Нажми, чтобы вывести 0&lt;/a&gt;"
+<br/>*pl args[0] &amp; ! на экран выведется 137
 </code>
 <segment>
 <p>
@@ -5480,15 +5496,15 @@ args</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-args[0]=111    & ! выставляем значение args[0] на локации
+args[0]=111    &amp; ! выставляем значение args[0] на локации
 <br/>act "Действие 1":
 <br/>    *pl "Старое значение args[0]: "+$str(args[0])
-<br/>    args[0]=222    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    args[0]=222    &amp; ! изменяем значение args[0] не только в действии, а сразу на локации
 <br/>    *pl "Новое значение args[0]: "+$str(args[0])
 <br/>end
 <br/>act "Действие 2":
 <br/>    *pl "Старое значение args[0]: "+$str(args[0])
-<br/>    args[0]=333    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    args[0]=333    &amp; ! изменяем значение args[0] не только в действии, а сразу на локации
 <br/>    *pl "Новое значение args[0]: "+$str(args[0])
 <br/>end
 </code>
@@ -5527,16 +5543,16 @@ easy.math</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 ! # #chk.obj.word#
-<br/>$args[9]=$args[9]    & ! инициализируем девятый элемент массива, чтоб не затереть аргументы
-<br/>args['i'] = 1    & ! используем одну из ячеек массива args как локальную переменную
+<br/>$args[9]=$args[9]    &amp; ! инициализируем девятый элемент массива, чтоб не затереть аргументы
+<br/>args['i'] = 1    &amp; ! используем одну из ячеек массива args как локальную переменную
 <br/>:loop
-<br/>if no args['i'] > countobj:
+<br/>if no args['i'] &gt; countobj:
 <br/>    !@ цикл выполняется пока счётчик не превысит число предметов
-<br/>    if instr($getobj(args['i']),$args[0])<>0:
+<br/>    if instr($getobj(args['i']),$args[0])&lt;&gt;0:
 <br/>        !@ как только в названии очередного предмета
 <br/>        !@ встречается рассматриваемое слово
-<br/>        result = args['i']    & !@ возвращаем позицию
-<br/>        exit    & !@ закрываем функцию
+<br/>        result = args['i']    &amp; !@ возвращаем позицию
+<br/>        exit    &amp; !@ закрываем функцию
 <br/>    end
 <br/>    args['i']+=1
 <br/>    jump 'loop'
@@ -5548,14 +5564,14 @@ easy.math</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-addobj "Красный помидор"    & ! первый предмет
-<br/>addobj "Рыжий апельсин"    & ! второй предмет
-<br/>addobj "Зелёное яблоко"    & ! третий предмет
-<br/>addobj "Синий крокодил"    & ! четвёртый предмет
+addobj "Красный помидор"    &amp; ! первый предмет
+<br/>addobj "Рыжий апельсин"    &amp; ! второй предмет
+<br/>addobj "Зелёное яблоко"    &amp; ! третий предмет
+<br/>addobj "Синий крокодил"    &amp; ! четвёртый предмет
 <br/>! ищем предмет, название которого содержит слово `Зелён`
 <br/>pos=func('#chk.obj.word#','Зелён')
 <br/>! можно вывести и позицию и название
-<br/>*pl "Мы нашли предмет под номером <<pos>>. Это "+$getobj(pos)+"."
+<br/>*pl "Мы нашли предмет под номером &lt;&lt;pos&gt;&gt;. Это "+$getobj(pos)+"."
 </code>
 <segment>
 <p>
@@ -5586,18 +5602,18 @@ killvar</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="bezdna-smotrit-v-tebia-lokal_nye-peremennye-i-neiavnyj-vyzov-pol_zovatel_skih-funktsij">
+<header head-level="h2" anchor="bezdna-smotrit-v-tebia-lokal_nye-peremennye-i-neiavnyj-vyzov-pol_zovatel_skih-funktsij">
 <p>
 Бездна смотрит в тебя. Локальные переменные и неявный вызов пользовательских функций</p>
-</head>
-<segment segment-class="for-head" id="neiavnyj-vyzov-funktsij">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 
 </segment>
-<head head-level="h3" anchor="lokal_nye-peremennye">
+<header head-level="h3" anchor="lokal_nye-peremennye">
 <p>
 Локальные переменные</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -5610,14 +5626,14 @@ killvar</tag>
 <br/>x=99
 <br/>z=4608
 <br/>gosub 'foo'
-<br/>*pl x & *pl z    & ! на экран выведутся числа 99 и 549
+<br/>*pl x &amp; *pl z    &amp; ! на экран выведутся числа 99 и 549
 <br/>--- start ---
 <br/>
 <br/># foo
-<br/>local x & ! объявляем переменную x локальной для данной локации
-<br/>x=12    & ! изменяем значение переменной x
+<br/>local x &amp; ! объявляем переменную x локальной для данной локации
+<br/>x=12    &amp; ! изменяем значение переменной x
 <br/>z=549
-<br/>*pl x & *pl z    & ! на экран выведутся числа 12 и 549
+<br/>*pl x &amp; *pl z    &amp; ! на экран выведутся числа 12 и 549
 <br/>--- foo ---
 </code>
 <segment>
@@ -5670,23 +5686,23 @@ result</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 # start
-<br/>x=100    & ! объявляем переменную
-<br/>*pl "start. x до вызова foo: <<x>>"
+<br/>x=100    &amp; ! объявляем переменную
+<br/>*pl "start. x до вызова foo: &lt;&lt;x&gt;&gt;"
 <br/>gosub 'foo'
-<br/>*pl "start. x после вызова foo: <<x>>"
+<br/>*pl "start. x после вызова foo: &lt;&lt;x&gt;&gt;"
 <br/>--- start ---
 <br/>
 <br/># foo
 <br/>local x=333
-<br/>*pl "foo. x до вызова proc: <<x>>"
+<br/>*pl "foo. x до вызова proc: &lt;&lt;x&gt;&gt;"
 <br/>gosub 'proc'
-<br/>*pl "foo. x после вызова proc: <<x>>"
+<br/>*pl "foo. x после вызова proc: &lt;&lt;x&gt;&gt;"
 <br/>--- foo ---
 <br/>
 <br/># proc
-<br/>*pl "proc. x до изменения: <<x>>"
+<br/>*pl "proc. x до изменения: &lt;&lt;x&gt;&gt;"
 <br/>x=9091
-<br/>*pl "proc. x после изменения: <<x>>"
+<br/>*pl "proc. x после изменения: &lt;&lt;x&gt;&gt;"
 <br/>--- proc ---
 </code>
 <segment>
@@ -5694,7 +5710,7 @@ result</tag>
 Что мы увидим при выполнении этого кода? Давайте посмотрим.
 </p>
 </segment>
-<list list-type="ol-list" li-count="6">
+<list list-type="ol-list">
 <segment name="li">
 <p>
 <tag name="simple-string">
@@ -5845,21 +5861,21 @@ args</tag>
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-args[0]=111    & ! выставляем значение args[0] на локации
+args[0]=111    &amp; ! выставляем значение args[0] на локации
 <br/>act "Действие 1":
 <br/>    *pl "Старое значение args[0]: "+$str(args[0])
-<br/>    args[0]=222    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    args[0]=222    &amp; ! изменяем значение args[0] не только в действии, а сразу на локации
 <br/>    *pl "Новое значение args[0]: "+$str(args[0])
 <br/>end
 <br/>act "Действие 2":
 <br/>    *pl "Старое значение args[0]: "+$str(args[0])
-<br/>    args[0]=333    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    args[0]=333    &amp; ! изменяем значение args[0] не только в действии, а сразу на локации
 <br/>    *pl "Новое значение args[0]: "+$str(args[0])
 <br/>end
 <br/>act "Действие 3":
-<br/>    local args    & ! объявляем args локальным
+<br/>    local args    &amp; ! объявляем args локальным
 <br/>    *pl "Старое значение args[0]: "+$str(args[0])
-<br/>    args[0]=999    & ! изменяем значение args[0] только в действии,но не на локации
+<br/>    args[0]=999    &amp; ! изменяем значение args[0] только в действии,но не на локации
 <br/>    *pl "Новое значение args[0]: "+$str(args[0])
 <br/>end
 </code>
@@ -5879,23 +5895,23 @@ args</tag>
 </segment>
 <code code-left-level="0" code-type="qsp">
 ! # #chk.obj.word#
-<br/>local $word=$args[0] & ! в локальную переменную $word записываем слово, по которому производим поиск
-<br/>local i = 1    & ! используем локальную переменную i в качестве счётчика цикла
-<br/>loop while no i > countobj step i+=1:
+<br/>local $word=$args[0] &amp; ! в локальную переменную $word записываем слово, по которому производим поиск
+<br/>local i = 1    &amp; ! используем локальную переменную i в качестве счётчика цикла
+<br/>loop while no i &gt; countobj step i+=1:
 <br/>    !@ цикл выполняется пока счётчик не превысит число предметов
-<br/>    if instr($getobj(i),$word)<>0:
+<br/>    if instr($getobj(i),$word)&lt;&gt;0:
 <br/>        !@ как только в названии очередного предмета
 <br/>        !@ встречается рассматриваемое слово
-<br/>        result = i    & !@ возвращаем позицию
-<br/>        exit    & !@ закрываем функцию
+<br/>        result = i    &amp; !@ возвращаем позицию
+<br/>        exit    &amp; !@ закрываем функцию
 <br/>    end
 <br/>end
 </code>
 </segment>
-<head head-level="h3" anchor="neiavnyj-vyzov-funktsij">
+<header head-level="h3" anchor="neiavnyj-vyzov-funktsij">
 <p>
 Неявный вызов функций</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -5949,16 +5965,16 @@ func</tag>
 <code code-left-level="0" code-type="qsp">
 # start
 <br/>! возводим числа в степень
-<br/>*pl @pow(3,4)    & ! выведет число 81
-<br/>*pl @pow(4,3)    & ! выведет число 64
-<br/>*pl @pow(9,9)    & ! выведет число 387420489
+<br/>*pl @pow(3,4)    &amp; ! выведет число 81
+<br/>*pl @pow(4,3)    &amp; ! выведет число 64
+<br/>*pl @pow(9,9)    &amp; ! выведет число 387420489
 <br/>--- start ---
 <br/>
 <br/># pow
 <br/>! функция возведения числа в степень.
 <br/>! Мы писали её для dyneval, а теперь оформляем в отдельной локации
 <br/>result=1
-<br/>loop while args[1]>0 step args[1]-=1:
+<br/>loop while args[1]&gt;0 step args[1]-=1:
 <br/>    result=result*args[0]
 <br/>end
 <br/>--- pow ---
@@ -5999,17 +6015,17 @@ gosub</tag>
 <br/>--- start ---
 <br/>
 <br/># pl_stat
-<br/>*pl "Вас зовут <<$args[0]>>."
-<br/>*pl "Вам <<args[1]>> лет."
-<br/>*pl "Вы используете <<$args[2]>>."
+<br/>*pl "Вас зовут &lt;&lt;$args[0]&gt;&gt;."
+<br/>*pl "Вам &lt;&lt;args[1]&gt;&gt; лет."
+<br/>*pl "Вы используете &lt;&lt;$args[2]&gt;&gt;."
 <br/>--- pl_stat ---
 </code>
 </segment>
 </segment>
-<head head-level="h2" anchor="zakliuchenie">
+<header head-level="h2" anchor="zakliuchenie">
 <p>
 Заключение</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -6097,12 +6113,12 @@ onNewLoc</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\07_stylization_manifest_0007.txt-light" id="manifest-ob-organizatsii-koda-v-qsp">
-<head head-level="h1" anchor="manifest-ob-organizatsii-koda-v-qsp">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\07_stylization_manifest_0007.txt-light">
+<header head-level="h1" anchor="manifest-ob-organizatsii-koda-v-qsp">
 <p>
 Манифест об организации кода в QSP</p>
-</head>
-<segment segment-class="for-head" id="imenovanie-peremennyh">
+</header>
+<segment segment-class="for-head">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -6116,10 +6132,10 @@ onNewLoc</tag>
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="zapis_-komand">
+<header head-level="h2" anchor="zapis_-komand">
 <p>
 Запись команд</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -6139,7 +6155,7 @@ square = a * b
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-square = a * b   &   volume = square * height
+square = a * b   &amp;   volume = square * height
 </code>
 <segment>
 <p>
@@ -6150,7 +6166,7 @@ square = a * b   &   volume = square * height
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-square = a * b   &   volume = square * height  &   space = volume * 23 + dev   &  *pl space/square  &  *nl  &  *p "end of math."   &  ! ещё и комментарий
+square = a * b   &amp;   volume = square * height  &amp;   space = volume * 23 + dev   &amp;  *pl space/square  &amp;  *nl  &amp;  *p "end of math."   &amp;  ! ещё и комментарий
 </code>
 <segment>
 <p>
@@ -6158,10 +6174,10 @@ square = a * b   &   volume = square * height  &   space = volume * 23 + dev   &
 </p>
 </segment>
 <code code-left-level="0" code-type="qsp">
-$id[0]='0001' & $object[0]='Старый меч' & power[0]=100    & stam[0]=255
-<br/>$id[1]='0002' & $object[1]='Старый нож' & power[1]=50    & stam[1]=137
-<br/>$id[2]='0003' & $object[2]='Старый ган' & power[2]=99    & stam[2]=123
-<br/>$id[3]='0004' & $object[3]='Клиган-бой' & power[3]=9999 & stam[3]=999
+$id[0]='0001' &amp; $object[0]='Старый меч' &amp; power[0]=100    &amp; stam[0]=255
+<br/>$id[1]='0002' &amp; $object[1]='Старый нож' &amp; power[1]=50    &amp; stam[1]=137
+<br/>$id[2]='0003' &amp; $object[2]='Старый ган' &amp; power[2]=99    &amp; stam[2]=123
+<br/>$id[3]='0004' &amp; $object[3]='Клиган-бой' &amp; power[3]=9999 &amp; stam[3]=999
 </code>
 <segment>
 <p>
@@ -6169,10 +6185,10 @@ $id[0]='0001' & $object[0]='Старый меч' & power[0]=100    & stam[0]=255
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="odnostrochnye-i-mnogostrochnye-konstruktsii">
+<header head-level="h2" anchor="odnostrochnye-i-mnogostrochnye-konstruktsii">
 <p>
 Однострочные и многострочные конструкции</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -6180,10 +6196,10 @@ $id[0]='0001' & $object[0]='Старый меч' & power[0]=100    & stam[0]=255
 </p>
 </segment>
 </segment>
-<head head-level="h2" anchor="imenovanie-peremennyh">
+<header head-level="h2" anchor="imenovanie-peremennyh">
 <p>
 Именование переменных</p>
-</head>
+</header>
 <segment segment-class="for-head">
 <segment>
 <p>

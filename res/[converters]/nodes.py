@@ -1,6 +1,7 @@
 import sys, os, re, json
 import random
 import datetime
+from bs4 import BeautifulSoup
 
 """
 	Здесь мы создаём систему узлов, которую в дальнейшем можно обрабатывать в различном виде.
@@ -67,6 +68,7 @@ class TextToHTML():
 			footer = file.read()
 		with open(f"{self.output_path}\\{self.output_file_name}", 'w', encoding='utf-8') as file:
 			file.write(header+output_fb2+footer)
+
 		output = self.root_node.test_convert()
 		with open('new.xml', 'w', encoding='utf-8') as file:
 			file.write(output)
@@ -75,10 +77,12 @@ class TextToHTML():
 		when=datetime.datetime.now()
 		if not 'mode' in args:
 			args['mode']=''
+		month = (str(when.month) if len(str(when.month))==2 else f'0{when.month}')
+		day = (str(when.day) if len(str(when.day))==2 else f'0{when.day}')
 		if args['mode']!='xml':
-			time=f"{when.year}.{when.month}.{when.day}"
+			time=f"{when.year}.{month}.{day}"
 		else:
-			time=f"{when.year}-{when.month}-{when.day}"
+			time=f"{when.year}-{month}-{day}"
 		return time
 
 class NewDataBase():
@@ -727,9 +731,9 @@ class NewNode():
 		elif self.node_type == 'segment':
 			arround_tags = (f'<segment{attributes}>\n', '</segment>\n')
 		elif self.node_type == 'quote':
-			arround_tags = (f'<quote{attributes}>\n', '</fquote>\n')
+			arround_tags = (f'<quote{attributes}>\n', '</quote>\n')
 		elif self.node_type == 'head':
-			arround_tags = (f'<head{attributes}>\n', '</head>\n')
+			arround_tags = (f'<header{attributes}>\n', '</header>\n')
 		elif self.node_type == 'list-node':
 			arround_tags = (f'<list{attributes}>\n', '</list>\n')
 		elif self.node_type == 'code':
@@ -745,9 +749,8 @@ class NewNode():
 				# if self.node_type == 'head': print(f"[700] ", print(node.source_lines, node.includes_nodes))
 				text+=node.test_convert()
 		elif len(self.source_lines)>0:
-			text += '<br/>'.join(self.source_lines)
-		if text!="":
-			text = f"{arround_tags[0]}{text}{arround_tags[1]}"
+			text += '<br/>'.join([self.replace_specsymbols(line) for line in self.source_lines])
+		text = f"{arround_tags[0]}{text}{arround_tags[1]}"
 		return text
 
 	def get_file_name_from_number(self, file_number):
@@ -953,124 +956,186 @@ class NewNode():
 				node.transport_data_base(self.data_base)
 
 	def convert_to_fb2(self, parent=None, deep_level=0):
-		text = ""
-		if self.node_type == 'folder':
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text += node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
-			text = f'<section{anchor}>{text}</section>'
+		soup = BeautifulSoup(self.test_convert(), 'lxml')
 
-		elif self.node_type == 'file':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
-			text = f'<section{anchor}>{text}</section>'
+		for t in soup.find_all('code'):
+			for child in t.contents:
+				if child.name==None:
+					child.string = self.replace_spaces(str(child))
+					child.wrap(soup.new_tag('code')).wrap(soup.new_tag('p'))
+			for br in t.find_all('br'):
+				br.unwrap()
+			t.unwrap()
 
-		elif self.node_type == 'segment':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			if parent.node_type=='list-node' and parent.attributes['list-type']=='ol-list':
-				li_num = (parent.attributes['li-count'] if 'li-count' in parent.attributes else 0)+1
-				text = f'<p>{li_num}. {text}</p>\n'
-				parent.attributes['li-count']=li_num
-			elif parent.node_type=='list-node' and parent.attributes['list-type']=='ul-list':
-				text = f'<p>*. {text}</p>\n'
+		for quote in soup.find_all('quote'):
+			quote.name = 'cite'
+
+		for list_olul in soup.find_all('list'):
+			if list_olul['list-type']=='ol-list':
+				count=0
+				for segment in list_olul.find_all('segment', {'name':'li'}):
+					segment.p.insert(0, f"{count+1}. ")
+					segment.unwrap()
+			if list_olul['list-type']=='ul-list':
+				for segment in list_olul.find_all('segment', {'name':'li'}):
+					segment.p.insert(0, f"* ")
+					segment.unwrap()
+			list_olul.unwrap()
+
+
+		for t in soup.find_all('tag'):
+			if t['name']=='hyperlink':
+				t.name = 'a'
+				t['l:href']=t['href']
+				del t['name']
+				del t['href']
+			elif t['name']=='tt':
+				t.name = 'code'
+				del t['name']
+			elif t['name']=='hr':
+				t.string = '---'
+				t.name = 'p'
+				del t['name']
+			elif t['name']=='simple-string':
+				t.unwrap()
+			elif t['name']=='bold':
+				t.name = 'strong'
+				del t['name']
+			elif t['name']=='italic':
+				t.name = 'emphasis'
+				del t['name']
+			elif t['name']=='bold-italic':
+				t.name = 'emphasis'
+				t.wrap(soup.new_tag('strong'))
+				del t['name']
+			elif t['name']=='image':
+				t.name = 'p'
+				t.string = 'Изображение: '
+				new_tag = soup.new_tag('a')
+				new_tag['l:href'] = t["src"]
+				new_tag.string = t["src"]
+				t.append(new_tag)
+				del t['name']
+				del t['src']
+
+		for file in soup.find_all('file'):
+			title = file.header
+			file['id']=title['anchor']
+			del file['path']
+			main_segment = file.segment
+			main_segment['type']='files-segment'
+			for segment in main_segment.find_all('segment', {'segment-class': 'for-head'}):
+				t = segment.find_previous_sibling()
+				if t is not None and t.name=='header':
+					t.name='title'
+					segment['id']=t['anchor']
+					del t['anchor']
+					del t['head-level']
+					segment.insert(0, t)
+				segment.name = 'section'
+				for s in segment.find_all('segment'):
+					s.unwrap()
+				del segment['segment-class']
+			main_segment.unwrap()
+			title.name = 'title'
+			del title['anchor']
+			file.name = 'section'
+
+		for folder in soup.find_all('folder'):
+			if folder.header is not None:
+				folder['id'] = folder.header['anchor']
+				folder.header.name = 'title'
+			del folder['path']
+			folder.name = 'section'
+
+		text = str(soup)
+
+		output_text = ""
+		while len(text)>0:
+			match_in = re.search(r'(<code>)([\s\S]*?)(</code>)', text)
+			if match_in is not None:
+				scope = match_in.group(0)
+				q = text.index(scope)
+				prev_line = text[0:q]
+				post_line = text[q+len(scope):]
+				output_text += prev_line
+				output_text += f'<code>{match_in.group(2).strip()}</code>'
+				text = post_line
 			else:
-				anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
-				paragraph = re.search(r'<p>[\s\S]*</p>', text)
-				if anchor != '':
-					text = f'<section{anchor}>{text}</section>'
-				elif paragraph is None:
-					text = f'<p>{text}</p>\n'
+				output_text += text
+				text = ''
+		text = output_text
 
-		elif self.node_type == 'quote':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			text = f'<cite>\n{text}</cite>\n'
+		output_text = ""
+		while len(text)>0:
+			match_in = re.search(r'(</p>)([\s\n\t]*)(<p>)', text)
+			if match_in is not None:
+				scope = match_in.group(0)
+				q = text.index(scope)
+				prev_line = text[0:q]
+				post_line = text[q+len(scope):]
+				output_text += prev_line
+				output_text += f'</p>\n<p>'
+				text = post_line
+			else:
+				output_text += text
+				text = ''
+		text = output_text
 
-		elif self.node_type == 'head':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			elif len(self.source_lines)>0:
-				text += ''.join([f"<p>{line}</p>\n" for line in self.source_lines])
-			if 'anchor' in self.attributes:
-				parent.attributes['id'] = self.attributes["anchor"]
-			text = f"<title>{text}</title>"
+		output_text = ""
+		while len(text)>0:
+			match_in = re.search(r'(<p>)([\s\S]*?)(</p>)', text)
+			if match_in is not None:
+				scope = match_in.group(0)
+				q = text.index(scope)
+				prev_line = text[0:q]
+				post_line = text[q+len(scope):]
+				output_text += prev_line
+				output_text += f'<p>{match_in.group(2).strip()}</p>'
+				text = post_line
+			else:
+				output_text += text
+				text = ''
+		text = output_text
 
-		elif self.node_type == 'list-node':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+		output_text = ""
+		while len(text)>0:
+			match_in = re.search(r'(>)([\s\n\t]*[\.\;\,\:\)\(]+)', text)
+			if match_in is not None:
+				scope = match_in.group(0)
+				q = text.index(scope)
+				prev_line = text[0:q]
+				post_line = text[q+len(scope):]
+				output_text += prev_line
+				output_text += f'>{match_in.group(2).strip()}'
+				text = post_line
+			else:
+				output_text += text
+				text = ''
+		text = output_text
 
-		elif self.node_type == 'code':
-			text = ''.join([f"<p><code>{line}</code></p>\n" for line in self.source_lines])
-
-		elif self.node_type == 'string':
-			text=""
-			not_p=False
-			if parent.node_type=='segment':
-				name = (parent.attributes['name'] if 'name' in parent.attributes else '')
-				not_p = (True if name=='li' else False)
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			elif len(self.source_lines)>0:
-				text += ''.join(self.source_lines)
-			if not parent.node_type in ('head') and not not_p:
-				text = f'<p>\n{text}</p>\n'
-
-		elif self.node_type == 'tag':
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			elif len(self.source_lines)>0:
-				if parent.node_type not in ('hyperlink'):
-					tags = ('<p>', '</p>')
-				else:
-					tags = ('', '')
-				text += ''.join([f"{tags[0]}{line}{tags[1]}\n" for line in self.source_lines])
-			if self.attributes['name']=='tt':
-				text = f'<code>{text}</code>'
-			elif self.attributes['name']=='hyperlink':
-				href = (self.attributes['href'] if 'href' in self.attributes else '#')
-				text = f'<a l:href="{href}">{text}</a>'
-			elif self.attributes['name']=='anchor':
-				parent.attributes['id'] = self.attributes["anchor"]
-			elif self.attributes['name']=='hr':
-				text = '---'
-			elif self.attributes['name']=='image':
-				text = f'image: {self.attributes["src"]}'
-			elif self.attributes['name']=='bold-italic':
-				text = f'<strong><emphasis>{text}</emphasis></strong>'
-			elif self.attributes['name']=='bold':
-				text = f'<strong>{text}</strong>'
-			elif self.attributes['name']=='italic':
-				text = f'<emphasis>{text}</emphasis>'
-			elif self.attributes['name']=='simple-string':
-				text = text
-
-		else:
-			text=""
-			if len(self.includes_nodes)>0:
-				for node in self.includes_nodes:
-					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
-			elif len(self.source_lines)>0:
-				text += ''.join([f"<p>{line}</p>\n" for line in self.source_lines])
-
+		output_text = ""
+		while len(text)>0:
+			match_in = re.search(r'<(\w+) .*?>([\s\n\t]*?)</\1>', text)
+			if match_in is not None:
+				scope = match_in.group(0)
+				q = text.index(scope)
+				prev_line = text[0:q]
+				post_line = text[q+len(scope):]
+				output_text += prev_line
+				output_text += f''
+				text = post_line
+			else:
+				output_text += text
+				text = ''
+		text = output_text
+		text = text.replace('<html>','').replace('</html>','')
+		text = text.replace('<body>','').replace('</body>','')
 		return text
 
 	# ------------------------------- static methods ---------------------------
+
+
 
 	@staticmethod
 	def stilization_qsp_code(code_text:str):
