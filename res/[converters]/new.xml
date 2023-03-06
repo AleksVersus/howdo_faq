@@ -1,5 +1,5 @@
 <folder path="D:\my\projects\howdo_faq\[source]\готовые статьи">
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\00_soderzhanie_0000.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\00_soderzhanie_0000.txt-light" id="soderzhanije">
 <head anchor="soderzhanije" head-level="h1">
 <p>
 Содержание</p>
@@ -45,12 +45,12 @@ qSpider 0.12.0</tag>
 </list>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\01_preobrazovanie_tipov_v_qsp_0001.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\01_preobrazovanie_tipov_v_qsp_0001.txt-light" id="preobrazovanije_tipov_qsp">
 <head anchor="preobrazovanije_tipov_qsp" head-level="h1">
 <p>
 Преобразование типов в QSP</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="post_scriptum_articles_0001">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -280,12 +280,12 @@ ifhub.club/Преобразование типов в QSP</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\02_novoe_v_rabote_massivov_v_5.8.0_0002.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\02_novoe_v_rabote_massivov_v_5.8.0_0002.txt-light" id="novoje_v_rabote_massivov">
 <head anchor="novoje_v_rabote_massivov" head-level="h1">
 <p>
 Массивы уже не те</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="chto-mozhno-i-nuzhno-sdelat_">
 <segment segment-class="for-head">
 
 </segment>
@@ -780,12 +780,12 @@ ifhub.club/Массивы уже не те</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\03_chto_novogo_v_qsp_0003.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\03_chto_novogo_v_qsp_0003.txt-light" id="chto-eschio">
 <head anchor="whats_news" head-level="h1">
 <p>
 Что нового в QSP</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="bol_she-argumentov-dlia-funktsij">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2121,7 +2121,7 @@ MIN</tag>
 <p>
 Старые новости, о которых вы могли не знать</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="peredacha-argumentov-v-onnewloc">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2289,7 +2289,7 @@ XGOTO</tag>
 <p>
 Что ещё?</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="post_scriptum_articles_0003">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2342,13 +2342,13 @@ ifhub.club/Что нового в QSP 5.8.0?</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\04_qspider_0004.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\04_qspider_0004.txt-light" id="qspider_0120">
 <head anchor="qspider_0120" head-level="h1">
 <p>
 qSpider версии 0.12.0</p>
 </head>
-<segment segment-class="for-head">
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="zakliuchenie">
+<segment segment-class="for-head" id="otlichiia-qspider-ot-klassicheskogo-pleera">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2432,7 +2432,7 @@ https://qspfoundation.github.io/qspider/</tag>
 <p>
 Десктопная версия</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="podkliuchenie-pleera-k-qgen">
 <segment segment-class="for-head">
 
 </segment>
@@ -2551,7 +2551,7 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 <p>
 Браузерная версия, или web-версия</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="addndelgames">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2622,7 +2622,7 @@ SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
 Установка плеера на github</p>
 </head>
 <segment segment-class="for-head">
-<list list-type="ol-list">
+<list list-type="ol-list" li-count="6">
 <segment name="li">
 <p>
 <tag name="simple-string">
@@ -2775,7 +2775,7 @@ CORS заголовки</tag>
 <p>
 Конфигурационный файл</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="primer-fajla-gamecfg-dlia-otdel_noj-igry">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -2863,7 +2863,7 @@ mode — если ваша игра написана для AeroQSP, данно�
 <p>
 Назначение горячих клавиш [game.hotkeys]</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="spetsial_nye-klavishi">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3305,7 +3305,7 @@ resizable — позволяет запретить изменения разм�
 <p>
 Особенности работы игр AeroQSP на qSpider</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="vazhnoe-primechanie-ot-werewolfa">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3426,7 +3426,7 @@ mode="aero"</tag>
 <p>
 Заключение</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="post_scriptum_articles_0004">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3530,12 +3530,12 @@ vk.com/qSpider 0.12.0</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\05_classic.config_0005.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\05_classic.config_0005.txt-light" id="classic_cfg">
 <head anchor="classic_cfg" head-level="h1">
 <p>
 Структура конфигурационного файла классического плеера версии 5.7.0</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="post-scriptum">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -3567,7 +3567,7 @@ qspgui.cfg</tag>
 Официального, задокументированного способа сделать это — нет. Но есть небольшой трюк, позволяющий добиться нужного эффекта:
 </p>
 </segment>
-<list list-type="ol-list">
+<list list-type="ol-list" li-count="5">
 <segment name="li">
 <p>
 Запускаем в плеере свою игру.</p>
@@ -3777,7 +3777,7 @@ UseFontSize</tag>
 <p>
 Секция основных настроек [General]</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="dock_size">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4430,12 +4430,12 @@ Nex</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\06_operatory_funktsii_argumenty_0006.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\06_operatory_funktsii_argumenty_0006.txt-light" id="gosub_func_args">
 <head anchor="gosub_func_args" head-level="h1">
 <p>
 Операторы, функции, аргументы. GOSUB, FUNC, ARGS</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="zakliuchenie">
 <segment segment-class="for-head">
 <segment>
 <p>
@@ -4467,7 +4467,7 @@ Nex</tag>
 <p>
 Пробуем воду. Немного определений</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="funktsii">
 <segment segment-class="for-head">
 
 </segment>
@@ -5590,7 +5590,7 @@ killvar</tag>
 <p>
 Бездна смотрит в тебя. Локальные переменные и неявный вызов пользовательских функций</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="neiavnyj-vyzov-funktsij">
 <segment segment-class="for-head">
 
 </segment>
@@ -5694,7 +5694,7 @@ result</tag>
 Что мы увидим при выполнении этого кода? Давайте посмотрим.
 </p>
 </segment>
-<list list-type="ol-list">
+<list list-type="ol-list" li-count="6">
 <segment name="li">
 <p>
 <tag name="simple-string">
@@ -6097,12 +6097,12 @@ onNewLoc</tag>
 </segment>
 </segment>
 </file>
-<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\07_stylization_manifest_0007.txt-light">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\07_stylization_manifest_0007.txt-light" id="manifest-ob-organizatsii-koda-v-qsp">
 <head head-level="h1" anchor="manifest-ob-organizatsii-koda-v-qsp">
 <p>
 Манифест об организации кода в QSP</p>
 </head>
-<segment segment-class="for-head">
+<segment segment-class="for-head" id="imenovanie-peremennyh">
 <segment segment-class="for-head">
 <segment>
 <p>

@@ -1,5 +1,6 @@
 import sys, os, re, json
 import random
+import datetime
 
 """
 	Здесь мы создаём систему узлов, которую в дальнейшем можно обрабатывать в различном виде.
@@ -17,17 +18,22 @@ class TextToHTML():
 		self.project_file = os.path.abspath(html_json_path)
 		with open(self.project_file, "r", encoding="utf-8") as file:
 			self.root_dict = json.load(file)
+		self.source_folder = os.path.abspath(self.root_dict["source-folder"])
+		self.output_path = os.path.abspath(self.root_dict["output-folder"])
+
 		# HTML-project
-		self.project_dict = self.root_dict['project-html']
-		self.source_folder = os.path.abspath(self.project_dict["source_folder"])
-		self.output_path = os.path.abspath(self.project_dict["export_folder"])
-		self.content_file_path = os.path.abspath(self.root_dict["head_contents"])
-		with open(os.path.abspath(self.root_dict["head"]), 'r', encoding='utf-8') as header:
+		self.project_html = self.root_dict['project-html']
+		self.content_file_path = os.path.abspath(self.project_html["head-contents"])
+		with open(os.path.abspath(self.project_html["head"]), 'r', encoding='utf-8') as header:
 			self.header_html_lines = header.readlines()
-		with open(os.path.abspath(self.root_dict["foot"]), 'r', encoding='utf-8') as footer:
+		with open(os.path.abspath(self.project_html["foot"]), 'r', encoding='utf-8') as footer:
 			self.footer_html_lines = footer.readlines()
 
-		
+		# FB2-project
+		self.project_fb2 = self.root_dict['project-fb2']
+		self.output_file_name = self.project_fb2["output-file"].replace('%TIME%',self.get_date())
+		self.book_info = self.project_fb2["book-info"]
+		self.binary = self.project_fb2['binary']
 
 		self.data_base = None
 		self.root_folder = None
@@ -43,18 +49,37 @@ class TextToHTML():
 		self.data_base.add_footer(self.footer_html_lines) # bottom-part html-doc
 		self.data_base.add_output_path(self.output_path) # output-folder path
 		self.data_base.set_content_file_path(self.content_file_path) # content of files
-		self.data_base.add_crosslink(self.project_dict["cross-link"]) # crosslinks start
+		self.data_base.add_crosslink(self.project_html["cross-link"]) # crosslinks start
 
-	def convert_to_html(self):
+	def convert_to(self):
 		self.make_output_folder()
 		self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
 		self.root_node.transport_data_base(self.data_base)
 		self.root_node.convert_to_html()
+
+		with open(self.book_info, 'r', encoding='utf-8') as file:
+			header_lines = file.readlines()
+		header = ''.join([line.replace(r'%TIME%', self.get_date()).replace(r'%DATE%', self.get_date(mode='xml')) for line in header_lines])
+		output_fb2 = self.root_node.convert_to_fb2()
+		with open(self.binary, 'r', encoding='utf-8') as file:
+			footer = file.read()
+		with open(f"{self.output_path}\\{self.output_file_name}", 'w', encoding='utf-8') as file:
+			file.write(header+output_fb2+footer)
 		output = self.root_node.test_convert()
 		with open('new.xml', 'w', encoding='utf-8') as file:
 			file.write(output)
+
+	def get_date(self, **args):
+		when=datetime.datetime.now()
+		if not 'mode' in args:
+			args['mode']=''
+		if args['mode']!='xml':
+			time=f"{when.year}.{when.month}.{when.day}"
+		else:
+			time=f"{when.year}-{when.month}-{when.day}"
+		return time
 
 class NewDataBase():
 	"""NewDataBase — object is include descriptions of anchors and sections
@@ -927,6 +952,120 @@ class NewNode():
 			for node in self.includes_nodes:
 				node.transport_data_base(self.data_base)
 
+	def convert_to_fb2(self, parent=None, deep_level=0):
+		text = ""
+		if self.node_type == 'folder':
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text += node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
+			text = f'<section{anchor}>{text}</section>'
+
+		elif self.node_type == 'file':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
+			text = f'<section{anchor}>{text}</section>'
+
+		elif self.node_type == 'segment':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			if parent.node_type=='list-node' and parent.attributes['list-type']=='ol-list':
+				li_num = (parent.attributes['li-count'] if 'li-count' in parent.attributes else 0)+1
+				text = f'<p>{li_num}. {text}</p>\n'
+				parent.attributes['li-count']=li_num
+			elif parent.node_type=='list-node' and parent.attributes['list-type']=='ul-list':
+				text = f'<p>*. {text}</p>\n'
+			else:
+				anchor = (f' id="{self.attributes["id"]}"' if 'id' in self.attributes else '')
+				paragraph = re.search(r'<p>[\s\S]*</p>', text)
+				if anchor != '':
+					text = f'<section{anchor}>{text}</section>'
+				elif paragraph is None:
+					text = f'<p>{text}</p>\n'
+
+		elif self.node_type == 'quote':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			text = f'<cite>\n{text}</cite>\n'
+
+		elif self.node_type == 'head':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += ''.join([f"<p>{line}</p>\n" for line in self.source_lines])
+			if 'anchor' in self.attributes:
+				parent.attributes['id'] = self.attributes["anchor"]
+			text = f"<title>{text}</title>"
+
+		elif self.node_type == 'list-node':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+
+		elif self.node_type == 'code':
+			text = ''.join([f"<p><code>{line}</code></p>\n" for line in self.source_lines])
+
+		elif self.node_type == 'string':
+			text=""
+			not_p=False
+			if parent.node_type=='segment':
+				name = (parent.attributes['name'] if 'name' in parent.attributes else '')
+				not_p = (True if name=='li' else False)
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += ''.join(self.source_lines)
+			if not parent.node_type in ('head') and not not_p:
+				text = f'<p>\n{text}</p>\n'
+
+		elif self.node_type == 'tag':
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += ''.join([f"<p><code>{line}</code></p>\n" for line in self.source_lines])
+			if self.attributes['name']=='tt':
+				text = f'<code>{text}</code>'
+			elif self.attributes['name']=='hyperlink':
+				href = (self.attributes['href'] if 'href' in self.attributes else '#')
+				text = f'<a l:href="{href}">{text}</a>'
+			elif self.attributes['name']=='anchor':
+				parent.attributes['id'] = self.attributes["anchor"]
+			elif self.attributes['name']=='hr':
+				text = '---'
+			elif self.attributes['name']=='image':
+				text = f'image: {self.attributes["src"]}'
+			elif self.attributes['name']=='bold-italic':
+				text = f'<strong><emphasis>{text}</emphasis></strong>'
+			elif self.attributes['name']=='bold':
+				text = f'<strong>{text}</strong>'
+			elif self.attributes['name']=='italic':
+				text = f'<emphasis>{text}</emphasis>'
+			elif self.attributes['name']=='simple-string':
+				text = text
+
+		else:
+			text=""
+			if len(self.includes_nodes)>0:
+				for node in self.includes_nodes:
+					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
+			elif len(self.source_lines)>0:
+				text += ''.join([f"<p>{line}</p>\n" for line in self.source_lines])
+
+		return text
+
 	# ------------------------------- static methods ---------------------------
 
 	@staticmethod
@@ -1619,12 +1758,12 @@ def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
 		# "..\\..\\[source]\\example\\html.json",
-		"..\\..\\[source]\\готовые статьи\\html.json",
+		"..\\..\\[source]\\готовые статьи\\build-project.json",
 		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:
-		TextToHTML(path).convert_to_html()
+		TextToHTML(path).convert_to()
 
 if __name__=="__main__":
 	main()

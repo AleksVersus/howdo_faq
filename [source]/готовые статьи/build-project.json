@@ -1,0 +1,20 @@
+{
+	"source-folder": "..\\..\\\\[source]\\готовые статьи",
+	"output-folder": "..\\..\\articles",
+
+	"project-html":
+	{
+		"cross-link": "https://aleksversus.github.io/howdo_faq/articles/",
+		"head": "..\\..\\[source]\\готовые статьи\\add\\02_start.html",
+		"foot": "..\\..\\[source]\\готовые статьи\\add\\03_end.html",
+		"head-contents": "..\\..\\[source]\\готовые статьи\\00_soderzhanie_0000.txt-light"
+	},
+	
+
+	"project-fb2":
+	{
+		"output-file":"Articles.%TIME%.fb2",
+		"book-info": "..\\..\\[source]\\готовые статьи\\add\\fb2_head.xml",
+		"binary": "..\\..\\[source]\\готовые статьи\\add\\fb2_footer.xml"
+	}
+}

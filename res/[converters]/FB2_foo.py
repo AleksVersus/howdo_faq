@@ -1,15 +1,7 @@
 import sys, os, re, json
 import datetime
 
-def getDate(**args):
-	when=datetime.datetime.now()
-	if not 'mode' in args:
-		args['mode']=''
-	if args['mode']!='xml':
-		time=f"{when.year}.{when.month}.{when.day}"
-	else:
-		time=f"{when.year}-{when.month}-{when.day}"
-	return time
+
 
 def typeString(string_):
 	if re.match(r'^==.*?==$',string_)!=None:

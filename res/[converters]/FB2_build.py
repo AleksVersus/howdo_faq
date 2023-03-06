@@ -367,18 +367,7 @@ generate_id=0
 # открываем файл проекта для чтения и получаем его структуру в переменную root
 with open("fb2.json","r",encoding="utf-8") as project_file:
 	root_dict=json.load(project_file)
-project_dict=root_dict["project"] # словарь помещаем в переменную
-# формируем название релизного файла
-export_file_path=os.path.abspath(project_dict["export_file"].replace('%TIME%',getDate()))
-folder_path=os.path.abspath(project_dict["folder"]) # папка, из которой подтягиваем файлы
-book_info_dict=root_dict["book-info"] # словарь с информацией о книге
-document_info=root_dict["document-info"]
-# создаём объект папка верхнего уровня
-roof_folder=NewFolder(folder_path)
-# теперь нам необходимо разматывать этот объект в секции
-body_fb2=roof_folder.getFB2(start=True)
-# теперь, когда объект размотан в список строк с секциями, можно начинать форматирование
-fb2output=convertationFB2(body_fb2)
+
 # собираем релизный файл
 fb2_file=[]
 fb2_file.append(f'<?xml version="1.0" encoding="utf-8"?>\n')
