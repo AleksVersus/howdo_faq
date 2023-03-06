@@ -1035,7 +1035,11 @@ class NewNode():
 				for node in self.includes_nodes:
 					text+=node.convert_to_fb2(parent=self, deep_level=deep_level+1)
 			elif len(self.source_lines)>0:
-				text += ''.join([f"<p><code>{line}</code></p>\n" for line in self.source_lines])
+				if parent.node_type not in ('hyperlink'):
+					tags = ('<p>', '</p>')
+				else:
+					tags = ('', '')
+				text += ''.join([f"{tags[0]}{line}{tags[1]}\n" for line in self.source_lines])
 			if self.attributes['name']=='tt':
 				text = f'<code>{text}</code>'
 			elif self.attributes['name']=='hyperlink':
