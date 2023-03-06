@@ -17,7 +17,8 @@ class TextToHTML():
 		self.project_file = os.path.abspath(html_json_path)
 		with open(self.project_file, "r", encoding="utf-8") as file:
 			self.root_dict = json.load(file)
-		self.project_dict = self.root_dict['project']
+		# HTML-project
+		self.project_dict = self.root_dict['project-html']
 		self.source_folder = os.path.abspath(self.project_dict["source_folder"])
 		self.output_path = os.path.abspath(self.project_dict["export_folder"])
 		self.content_file_path = os.path.abspath(self.root_dict["head_contents"])
@@ -25,6 +26,9 @@ class TextToHTML():
 			self.header_html_lines = header.readlines()
 		with open(os.path.abspath(self.root_dict["foot"]), 'r', encoding='utf-8') as footer:
 			self.footer_html_lines = footer.readlines()
+
+		
+
 		self.data_base = None
 		self.root_folder = None
 		self.root_node = None
