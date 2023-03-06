@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Статьи</title>
 </head>
@@ -15,347 +15,268 @@
         <div class="em_AROUND">
             <h1>Статьи по разработке игр на QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 1</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 3 &gt;</a></div></div>
-<a id="novoje_v_rabote_massivov"></a><h2>Массивы уже не те</h2>
-<a id="юиvz"></a><h3>Как ведут себя массивы сейчас</h3>
-<p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 2</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 4 &gt;</a></div></div>
+<h4 id="novoje_v_rabote_massivov">Массивы уже не те</h4><h4 id="kak-vedut-sebia-massivy-sejchas">Как ведут себя массивы сейчас</h4><p>
 Начать следует с того, что в «классическом» плеере версии 5.7.0 и ниже, а так же в Quest Navigator 0.0.28 и AeroQSP, в одном элементе массива можно хранить как текстовое, так и числовое значение. Вот как это выглядит:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
 </div>
 <p>
 При этом мы спокойно можем получить и числовое, и текстовое значение по указанному индексу:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br>
-
-
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
 </div>
 <p>
 Правда это создаёт ряд дополнительных трудностей. Например, каков будет размер массива в нашем примере?
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В обоих случаях <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> выдаст ответ <span class="em_BLCK"><span class="emNUM">2</span></span>. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
-
+В обоих случаях <span class="em_BLCK">arrsize</span> выдаст ответ <span class="em_BLCK">2</span>. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"слива"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"апельсин"</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"слива"</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"апельсин"</span><br/>
+<br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В этом примере оба <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> вернут <span class="em_BLCK"><span class="emNUM">4</span></span>. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию <span class="em_BLCK"><span class="emNUM">0</span></span>, для текстовых — <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустая строка).
-
+В этом примере оба <span class="em_BLCK">arrsize</span> вернут <span class="em_BLCK">4</span>. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию <span class="em_BLCK">0</span>, для текстовых — <span class="em_BLCK">""</span> (пустая строка).
 </p>
 <p>
 Такое поведение массива весьма просто представить в виде таблицы:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'слива'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'апельсин'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'слива'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'апельсин'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
 <p>
 Для удобства восприятия мы не внесли в таблицу значения элементов, которые не были явно заданы. Однако, как было сказано выше, при попытке использовать значения этих элементов, мы получим значения по умолчанию. В данном случае для числовых элементов это будут нули.
-
 </p>
 <p>
 Может показаться, что такое поведение массива не только правильно, но и удобно, поскольку позволяет использовать одно имя для хранения и текстовых и числовых значений. Некоторые авторы, знающие о таком поведении, делали, например, такие вещи:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;$unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'пехотинец'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'гвардеец'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;670&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;'лучник'&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'артиллерист'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;$unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'пехотинец'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'гвардеец'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;670&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;'лучник'&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'артиллерист'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
 <p>
 То есть в одном массиве хранили и наименования юнитов, и их количество.
-
 </p>
 <p>
 Однако данным способом Вы могли пользоваться, только когда явно указывали числовой индекс элемента массива. Если написать такой код:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
+<br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-— уверенность в том, какое значение вернёт <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> пропадает.
-
+— уверенность в том, какое значение вернёт <span class="em_BLCK">arrsize</span> пропадает.
 </p>
 <blockquote>
 <p>
 Для тех, кто ещё не знает: пустые квадратные скобки после имени массива означают, что мы хотим работать с последним элементом массива, и нам не важен его номер.
-
 </p>
-
 </blockquote>
 <p>
 И тут происходит интересная штука. В момент, когда мы пытаемся последнему элементу присвоить значение, плеер создаёт новый элемент указанного типа и уже ему присваивает значение. Таким образом каждая такая команда генерирует в массиве элементы обоих типов, но лишь одному присваивается значение:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
 <p>
-Мы снова не вписали в таблицу значения элементов, которые не задавали, однако <span class="em_BLCK">mass<span class="emOPRT">[</span><span class="emNUM">0</span><span class="emOPRT">]</span></span> и <span class="em_BLCK">mass<span class="emOPRT">[</span><span class="emNUM">2</span><span class="emOPRT">]</span></span> вернут нам нули, если мы попробуем их использовать, а <span class="em_BLCK">$mass<span class="emOPRT">[</span><span class="emNUM">1</span><span class="emOPRT">]</span></span> и <span class="em_BLCK">$mass<span class="emOPRT">[</span><span class="emNUM">3</span><span class="emOPRT">]</span></span> вернут пустые строки (это соответствует их значениям по умолчанию).
-
+Мы снова не вписали в таблицу значения элементов, которые не задавали, однако <span class="em_BLCK">mass[0]</span> и <span class="em_BLCK">mass[2]</span> вернут нам нули, если мы попробуем их использовать, а <span class="em_BLCK">$mass[1]</span> и <span class="em_BLCK">$mass[3]</span> вернут пустые строки (это соответствует их значениям по умолчанию).
 </p>
 <p>
-Таким образом оба <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> вернут нам значение <span class="em_BLCK"><span class="emNUM">4</span></span>, хотя мы явно задавали только два числовых и два текстовых элемента.
-
+Таким образом оба <span class="em_BLCK">arrsize</span> вернут нам значение <span class="em_BLCK">4</span>, хотя мы явно задавали только два числовых и два текстовых элемента.
 </p>
-<a id="Qкtj"></a><h3>Как массивы будут себя вести</h3>
-<p>
+<h4 id="kak-massivy-budut-sebia-vesti">Как массивы будут себя вести</h4><p>
 Новая версия плеера ещё не вышла, но всё ниже следующее будет работать в ней так. (Уже работает в плеере qSpider)
-
 </p>
 <p>
 Теперь под одним индексом можно хранить либо только текстовое, либо только числовое значение. Мы своего рода объединили столбцы нашей таблицы:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;$mass&nbsp;или&nbsp;mass&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;-----------\&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|&nbsp;&nbsp;-----------/&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;значение&nbsp;в&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;$mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;mass&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;$mass&nbsp;или&nbsp;mass&nbsp;|
+<br/>|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;-----------\&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'яблоко'&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|&nbsp;&nbsp;-----------/&nbsp;&nbsp;|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'груша'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
 <p>
 Это означает, что код:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
+<br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
 будет работать так же, как и работал. Т.е. каждая операция присвоения создаёт новый элемент в массиве, которому мы присваиваем либо строку, либо текст. И в данном случае мы создадим четыре разных элемента массива, два из которых будут текстового типа, два — числового.
-
 </p>
 <p>
 Немного по-другому поведёт себя наш изначальный код:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
+<br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> вернёт <span class="em_BLCK"><span class="emNUM">2</span></span> в обеих командах.
-
+Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — <span class="em_BLCK">arrsize</span> вернёт <span class="em_BLCK">2</span> в обеих командах.
 </p>
 <p>
 Чтобы закрепить новые знания, рассмотрим другой наш пример:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"слива"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"апельсин"</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br>
-
-
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
+mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"слива"</span><br/>
+$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"апельсин"</span><br/>
+<br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов <span class="em_BLCK"><span class="emNUM">0</span></span> и <span class="em_BLCK"><span class="emNUM">1</span></span>, а в элементах <span class="em_BLCK"><span class="emNUM">2</span></span> и <span class="em_BLCK"><span class="emNUM">3</span></span> будут текстовые значения. Соответственно обе команды <span class="em_BLCK"><span class="emFUNC">arrsize</span></span> вернут значение <span class="em_BLCK"><span class="emNUM">4</span></span>.
-
+Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов <span class="em_BLCK">0</span> и <span class="em_BLCK">1</span>, а в элементах <span class="em_BLCK">2</span> и <span class="em_BLCK">3</span> будут текстовые значения. Соответственно обе команды <span class="em_BLCK">arrsize</span> вернут значение <span class="em_BLCK">4</span>.
 </p>
 <p>
 В виде таблицы мы можем представить это так:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;$mass&nbsp;или&nbsp;mass&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'слива'&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'апельсин'&nbsp;&nbsp;|<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;$mass&nbsp;или&nbsp;mass&nbsp;|
+<br/>|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'слива'&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|----------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'апельсин'&nbsp;&nbsp;|
 </div>
 <p>
-Если мы попытаемся использовать текстовые значения элементов <span class="em_BLCK"><span class="emNUM">0</span></span> и <span class="em_BLCK"><span class="emNUM">1</span></span>, то получим значения по-умолчанию, то есть — <span class="em_BLCK"><span class="emTEXT">''</span></span> (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов <span class="em_BLCK"><span class="emNUM">2</span></span> и <span class="em_BLCK"><span class="emNUM">3</span></span>, то получим числовые значения по-умолчанию — <span class="em_BLCK"><span class="emNUM">0</span></span> (нули).
-
+Если мы попытаемся использовать текстовые значения элементов <span class="em_BLCK">0</span> и <span class="em_BLCK">1</span>, то получим значения по-умолчанию, то есть — <span class="em_BLCK">""</span> (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов <span class="em_BLCK">2</span> и <span class="em_BLCK">3</span>, то получим числовые значения по-умолчанию — <span class="em_BLCK">0</span> (нули).
 </p>
 <p>
 Возможно пока Вы этого не заметили, но это очень масштабное изменение, которое потребует от некоторых авторов существенно изменить свои привычки в программировании на QSP.
-
 </p>
-<a id="tэtц"></a><h3>Что можно и нужно сделать</h3>
-<p>
+<h4 id="chto-mozhno-i-nuzhno-sdelat_">Что можно и нужно сделать</h4><p>
 Автор этой статьи уже ощутил на себе вес изменений в работе массивов.
-
 </p>
 <p>
-Протестировав «Вереницу миров или выводы из закона Мёрфи» на плеере qSpider, который уже использует новую версию библиотеки, я (не без помощи <strong>Werewolf</strong>'а и <strong>Byte</strong>'а) обнаружил ошибки логики в коде, которые скрадывались в плеерах версии 5.7.0. именно благодаря тому, что под одним индексом в массиве можно было хранить и текстовое, и числовое значение. К счастью, эти ошибки легко поправить.
-
+Протестировав «Вереницу миров или выводы из закона Мёрфи» на плеере qSpider, который уже использует новую версию библиотеки, я (не без помощи <strong>Werewolf</strong>`а и <strong>Byte</strong>`а) обнаружил ошибки логики в коде, которые скрадывались в плеерах версии 5.7.0. именно благодаря тому, что под одним индексом в массиве можно было хранить и текстовое, и числовое значение. К счастью, эти ошибки легко поправить.
 </p>
 <p>
 Если Вы где-либо использовали запись в массив под одним индексом и числовых и текстовых значений, Вам так же следует исправить это. Особенно критично исправить в проектах, разработка которых затянется на ближайшие год-два.
-
 </p>
 <p>
 Предложенный пример, где названия и количество юнитов хранились в одном массиве, больше работать не будет.
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;$unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'пехотинец'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'гвардеец'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;670&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;'лучник'&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|----------|---------------|------------|<br>
-&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'артиллерист'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;!!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;так&nbsp;делать&nbsp;нельзя&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!!!<br>
-
+|&nbsp;&nbsp;индекс&nbsp;&nbsp;|&nbsp;&nbsp;значение&nbsp;в&nbsp;&nbsp;&nbsp;|&nbsp;значение&nbsp;в&nbsp;|
+<br/>|&nbsp;элемента&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;$unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'пехотинец'&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;'гвардеец'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;670&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;'лучник'&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;1500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>|----------|---------------|------------|
+<br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'артиллерист'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+<br/>
+<br/>!!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;так&nbsp;делать&nbsp;нельзя&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!!!
 </div>
 <p>
 И наш совет таков: не используйте и текстовые, и числовые значения элементов в одном массиве. Лучше завести два массива. Отдельно для текстовых и числовых значений:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;$unit_name<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'пехотинец'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;unit_count<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">337</span><br>
-
-
+$unit_name<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'пехотинец'</span><br/>
+unit_count<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">337</span><br/>
 </div>
 <p>
 Помимо изменений в массивах нас ждёт ещё целый ряд изменений, но они менее глобальны, и о них мы поговорим в следующих статьях.
-
 </p>
 <p>
 Всем успехов в написании игр, и не бойтесь кажущейся сложности!
-
 </p>
 <p>
 Памятка по изменениям в работе массивов:
-
 </p>
-<p>
-<img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" class="em_IMG">
-
-</p>
-<p>
+<img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" alt="AleksVersus-GAM-RUS" class="em_IMG" /><p>
 Статья написана по мотивам:
-
 </p>
 <ul>
-<li>
-статьи Pseudopod`а <a href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri" style="text-decoration:none;" class="emFOLD">trello.com/.../одновременное-использование-arri-и-arri</a>
-</li>
-<li>
-и поста Byte`а <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=1290&Itemid=57" style="text-decoration:none;" class="emFOLD">qsp.org/index.php...&amp;Itemid=57</a>
-</li>
+<li>статьи <strong>Pseudopod</strong>`а <a href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri" style="text-decoration:none;" class="emFOLD">trello.com/.../одновременное-использование-arri-и-arri</a></li>
+<li>и поста <strong>Byte</strong>`а <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=1290&Itemid=57" style="text-decoration:none;" class="emFOLD">qsp.org/index.php...&Itemid=57</a></li>
 </ul>
 <p>
 Статья доступна и на других ресурсах:
-
 </p>
 <ul>
-<li>
-<a href="http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54" style="text-decoration:none;" class="emFOLD">мой сайт/Массивы уже не те</a>
-</li>
-<li>
-<a href="https://vk.com/@qsplayer-massivy-uzhe-ne-te" style="text-decoration:none;" class="emFOLD">vk.com/Массивы уже не те</a>
-</li>
-<li>
-<a href="https://ifhub.club/2020/10/17/massivy-uzhe-ne-te-ili-izmenenie-v-logike-raboty-massivov-v-qsp.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Массивы уже не те</a>
-</li>
+<li><a href="http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54" style="text-decoration:none;" class="emFOLD">мой сайт/Массивы уже не те</a></li>
+<li><a href="https://vk.com/@qsplayer-massivy-uzhe-ne-te" style="text-decoration:none;" class="emFOLD">vk.com/Массивы уже не те</a></li>
+<li><a href="https://ifhub.club/2020/10/17/massivy-uzhe-ne-te-ili-izmenenie-v-logike-raboty-massivov-v-qsp.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Массивы уже не те</a></li>
 </ul>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 1</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 3 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 2</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 4 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -378,27 +299,7 @@
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="soderzhanije"></a><h2>Содержание</h2>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html#preobrazovanije_tipov_qsp" style="text-decoration:none;" class="emFOLD">Преобразование типов в QSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="emFOLD">Новое в работе массивов в QSP 5.8.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html#whats_news" style="text-decoration:none;" class="emFOLD">Что нового в QSP 5.8.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#qspider_0120" style="text-decoration:none;" class="emFOLD">qSpider 0.12.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html#classic_cfg" style="text-decoration:none;" class="emFOLD">Содержимое qspgui.cfg для QSP v.5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html#gosub_func_args" style="text-decoration:none;" class="emFOLD">Операторы, функции, аргументы. GOSUB, FUNC, ARGS</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

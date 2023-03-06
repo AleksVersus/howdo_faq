@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Статьи</title>
 </head>
@@ -15,722 +15,450 @@
         <div class="em_AROUND">
             <h1>Статьи по разработке игр на QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html" class="emHREFTT">Вперёд, к странице 5 &gt;</a></div></div>
-<a id="qspider_0120"></a><h2>qSpider версии 0.12.0</h2>
-<p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
+<h4 id="qspider_0120">qSpider версии 0.12.0</h4><p>
 qSpider — это QSP-плеер с поддержкой полноценной браузерной HTML-вёрстки, то есть в нём можно использовать такой же HTML-код, как в обычном браузере. Более того существует два варианта плеера: браузерный вариант (запускается непосредственно в браузере, и потому данный вариант можно использовать, например, для публикации игр на QSP в интернете) и десктопный вариант (для стационарных компьютеров, запускается без браузера). Изначально qSpider разрабатывался для поддержки AeroQSP игр (так как технология flash прекратила своё существование), однако позже плеер был переориентирован в основном на поддержку классических игр. Тем не менее возможность запуска игр AeroQSP сохранилась, хотя для их полноценной работы может понадобиться небольшая правка.
-
 </p>
 <p>
 Релиз последней версии плеера qSpider вы всегда можете найти по этой ссылке:
-
 </p>
 <p>
 <a href="https://github.com/qspfoundation/qspider/releases" style="text-decoration:none;" class="emFOLD">https://github.com/qspfoundation/qspider/releases</a>
-
 </p>
 <p>
 qSpider использует последнюю версию библиотеки qsplib, а значит игры, написанные на классический плеер с той же версией библиотеки, полностью совместимы с qSpider.
-
 </p>
 <p>
-Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье <a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html#whats_news" style="text-decoration:none;" class="emFOLD">"Что нового в QSP 5.8.0"</a>.
-
+Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#whats_news" style="text-decoration:none;" class="emFOLD">"Что нового в QSP 5.8.0"</a>.
 </p>
 <p>
 Демонстрацию работы плеера можно посмотреть здесь: <a href="https://qspfoundation.github.io/qspider/" style="text-decoration:none;" class="emFOLD">https://qspfoundation.github.io/qspider/</a>. Одна из представленных игр была написана для AeroQSP.
-
 </p>
-<a id="рцPI"></a><h4>Отличия qSpider от Классического плеера:</h4>
-<ul>
-<li>
-Полноценная поддержка HTML, как в браузере, в том числе встраивание видео(!);
-</li>
-<li>
-Пути к ресурсам (картинкам/аудио файлам) регистрозависимы — то есть, если файл называется 'image.jpg', а в файле игры записано 'Image.jpg' или 'image.JPG', то плеер не сможет показать такую картинку;
-</li>
-<li>
-Для проигрывания аудио используются встроенные средства браузера, поэтому рекомендованный формат для плеера — mp3 как самый поддерживаемый (хорошая альтернатива — webm, у него меньше размер при том же качестве, но чуть хуже с поддержкой браузеров);
-</li>
-<li>
-Есть возможность пропуска wait (кликом по странице);
-</li>
-<li>
-Сохранения хранятся в браузере;
-</li>
-<li>
-Можно открывать игры, упакованные в zip-архив или в aqsp-архив.
-</li>
+<h5 id="otlichiia-qspider-ot-klassicheskogo-pleera">Отличия qSpider от Классического плеера:</h5><ul>
+<li>Полноценная поддержка HTML, как в браузере, в том числе встраивание видео(!);</li>
+<li>Пути к ресурсам (картинкам/аудио файлам) регистрозависимы — то есть, если файл называется 'image.jpg', а в файле игры записано 'Image.jpg' или 'image.JPG', то плеер не сможет показать такую картинку;</li>
+<li>Для проигрывания аудио используются встроенные средства браузера, поэтому рекомендованный формат для плеера — mp3 как самый поддерживаемый (хорошая альтернатива — webm, у него меньше размер при том же качестве, но чуть хуже с поддержкой браузеров);</li>
+<li>Есть возможность пропуска wait (кликом по странице);</li>
+<li>Сохранения хранятся в браузере;</li>
+<li>Можно открывать игры, упакованные в zip-архив или в aqsp-архив.</li>
 </ul>
 <p>
 Обратите внимание: для загрузки архива qsp-файл игры должен находится в корне архива (не в подпапке) и должен быть только один qsp-файл в корне (если используются дополнительные qsp-файлы, то они должны быть расположены в подпапках).
-
 </p>
 <p>
 Как уже было отмечено выше, qSpider существует в двух вариантах: десктопный и браузерный (web-версия).
-
 </p>
-<a id="ЮTВь"></a><h3>Десктопная версия</h3>
-<a id="jхДs"></a><h4>Основные отличия desktop-версии от web-версии:</h4>
-<ul>
-<li>
-возможность открыть qsp-файл из папки (в отличии от web-версии, где можно открыть только архив);
-</li>
-<li>
-открытие игры через drag-n-drop — перетаскивание файла игры на окно плеера;
-</li>
-<li>
-открытие игры через консоль (с помощью параметра --file);
-</li>
-<li>
-загрузка файла конфига из папки с игрой;
-</li>
-<li>
-дополнительная секция в файле конфига для настройки окна desktop-плеера;
-</li>
-<li>
-автоматическое обновление desktop-плеера при выходе новой версии.
-</li>
+<h5 id="desktopnaia-versiia">Десктопная версия</h5><h5 id="osnovnye-otlichiia-desktop-versii-ot-web-versii">Основные отличия desktop-версии от web-версии:</h5><ul>
+<li>возможность открыть qsp-файл из папки (в отличии от web-версии, где можно открыть только архив);</li>
+<li>открытие игры через drag-n-drop — перетаскивание файла игры на окно плеера;</li>
+<li>открытие игры через консоль (с помощью параметра --file);</li>
+<li>загрузка файла конфига из папки с игрой;</li>
+<li>дополнительная секция в файле конфига для настройки окна desktop-плеера;</li>
+<li>автоматическое обновление desktop-плеера при выходе новой версии.</li>
 </ul>
-<a id="ёrТл"></a><h4>Установка и запуск</h4>
-<p>
+<h5 id="ustanovka-i-zapusk">Установка и запуск</h5><p>
 Установка десктопного варианта будет несколько отличаться для разных операционных систем, но проблем у вас не возникнет, если вы хоть раз устанавливали программы на свой компьютер. Чтобы скачать требуемую версию, воспользуйтесь соответствующей ссылкой:
-
 </p>
 <ul>
-<li>
-<a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.msi" style="text-decoration:none;" class="emFOLD">Windows x64</a>
-</li>
-<li>
-<a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.dmg" style="text-decoration:none;" class="emFOLD">MacOs</a>
-</li>
-<li>
-Linux: <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.deb" style="text-decoration:none;" class="emFOLD">deb-пакет</a>, <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.AppImage" style="text-decoration:none;" class="emFOLD">AppImage-пакет</a>
-</li>
+<li><a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.msi" style="text-decoration:none;" class="emFOLD">Windows x64</a></li>
+<li><a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.dmg" style="text-decoration:none;" class="emFOLD">MacOs</a></li>
+<li>Linux: <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.deb" style="text-decoration:none;" class="emFOLD">deb-пакет</a>, <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.AppImage" style="text-decoration:none;" class="emFOLD">AppImage-пакет</a></li>
 </ul>
 <p>
 Если в процессе установки на "Windows 7" программа выдаст ошибку похожую на эту:
-
 </p>
-<p>
-<img src="https://i.ibb.co/8z8MHyp/image.png" class="em_IMG">
-
-</p>
-<p>
+<img src="https://i.ibb.co/8z8MHyp/image.png" alt="AleksVersus-GAM-RUS" class="em_IMG" /><p>
 — попробуйте установить webview2 вручную (скачать можно <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" style="text-decoration:none;" class="emFOLD">с этой страницы</a>), а затем вновь запустите установку плеера.
-
 </p>
 <p>
 После установки запуск плеера ничем не отличается от запуска любой другой программы.
-
 </p>
-<a id="ХvkА"></a><h4>Подключение плеера к QGen</h4>
-<p>
+<h5 id="podkliuchenie-pleera-k-qgen">Подключение плеера к QGen</h5><p>
 Десктопную версию можно подключить к Quest Generator, однако из-за бага в используемой библиотеке сделать плеер напрямую совместимым с QGen не получилось. Пока что для запуска можно использовать простенький bat-файл:
-
 </p>
 <div class="Monokai-Code">
-SET&nbsp;QSPIDER=C:\Program&nbsp;Files\qSpider\qSpider.exe<br>
-SET&nbsp;DESTPATH=%~f1<br>
-start&nbsp;""&nbsp;"%QSPIDER%"&nbsp;"--file=%DESTPATH%"<br>
-
+SET&nbsp;QSPIDER=C:\Program&nbsp;Files\qSpider\qSpider.exe
+<br/>SET&nbsp;DESTPATH=%~f1
+<br/>start&nbsp;""&nbsp;"%QSPIDER%"&nbsp;"--file=%DESTPATH%"
 </div>
 <p>
 Чтобы создать bat-файл откройте блокнот, скопируйте в него данный код и сохраните получившийся файл с расширением ".bat".
-
 </p>
 <p>
 Если у вас путь к qSpider отличается от стандартного, нужно поменять значение переменной QSPIDER в указанном коде. Далее нужно прописать путь к bat-файлу в QGen: в меню "Утилиты - Настройки" выбираете вкладку "Пути" и в поле "Путь к плееру" указываете путь до bat-файла.
-
 </p>
-<a id="ЪfNB"></a><h3>Браузерная версия, или web-версия</h3>
-<p>
+<h5 id="brauzernaia-versiia-ili-web-versiia">Браузерная версия, или web-версия</h5><p>
 Данная версия плеера может быть использована вами для размещения игр онлайн, то есть в интернете, однако так же её можно запускать и на компьютере. 
-
 </p>
-<a id="aIЮЛ"></a><h4>Установка и запуск плеера на компьютере</h4>
-<p>
+<h5 id="ustanovka-i-zapusk-pleera-na-komp_iutere">Установка и запуск плеера на компьютере</h5><p>
 Прежде всего вам необходимо скачать архив с web-версией плеера на компьютер: <a href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qspider-player.zip" style="text-decoration:none;" class="emFOLD">ссылка на скачивание</a>. Содержимое архива распакуйте в любую папку, эта папка и будет местом расположения плеера.
-
 </p>
 <p>
 Из-за ограничений безопасности плеер нельзя запустить просто открыв файл "index.html" в браузере.
-
 </p>
 <p>
 Поэтому для запуска необходим локально запущенный сервер — можно использовать один из <a href="https://gist.github.com/willurd/5720255" style="text-decoration:none;" class="emFOLD">списка</a> или же расширение хрома <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" style="text-decoration:none;" class="emFOLD">"Web Server for Chrome"</a>.
-
 </p>
 <p>
 Дальнейшие инструкции ориентированы на использование расширения:
-
 </p>
 <ul>
-<li>
-устанавливаем <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" style="text-decoration:none;" class="emFOLD">"Web Server for Chrome"</a>
-</li>
-<li>
-в адресной строке в хроме пишем "chrome://apps/" и выбираем в списке "Web Server";
-</li>
-<li>
-в открывшемся попапе выбираем папку, в которую распаковали плеер и запускаем сервер;
-</li>
-<li>
-там же в попапе будет ссылка на запуск сервера в окне браузера.
-</li>
+<li>устанавливаем <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" style="text-decoration:none;" class="emFOLD">"Web Server for Chrome"</a></li>
+<li>в адресной строке в хроме пишем "chrome://apps/" и выбираем в списке "Web Server";</li>
+<li>в открывшемся попапе выбираем папку, в которую распаковали плеер и запускаем сервер;</li>
+<li>там же в попапе будет ссылка на запуск сервера в окне браузера.</li>
 </ul>
-<a id="Хиьы"></a><h4>Установка плеера на github</h4>
-<ol>
-<li>
-Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#addndelgames" style="text-decoration:none;" class="emFOLD">"добавление и удаление игр из списка"</a>.
-</li>
-<li>
-Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>).
-</li>
-<li>
-Откройте github в браузере, зайдите в свой профиль и создайте новый публичный репозиторий с именем "username.github.io" (внимание! Это важно! Впоследствии репозиторий нужно будет переименовать, но пока что он должен называться так), где "username" — это ваш логин (ник) на github.
-</li>
-<li>
-В разделе "Code" репозитория нажмите кнопку "Add file" и выберите пункт "Upload files", откроется страница загрузки файлов на github. 
-</li>
-<li>
-Перетащите все распакованные файлы браузерной версии плеера в соответствующее поле на странице (в т.ч. папки "assets" и "game").
-</li>
-<li>
-Теперь по адресу "https://username.github.io" станет доступна страничка с вашими играми, однако таким образом в одном аккаунте сможет существовать лишь одна подобная страница. Нужно переименовать созданный репозиторий, чтобы в дальнейшем вы смогли добавлять в аккаунт и другие репозитории с подобными страницами. Зайдите в созданный репозиторий на github, найдите раздел "settings", подраздел "general". В поле "Repository name" введите новое имя репозитория, например "mygame", нажмите кнопку "rename", и таким образом страница с игрой станет доступна по адресу "https://username.github.io/mygame" (соответственно вместо "username" будет ваш ник на гитхабе, а вместо "mygame" — название репозитория, которое вы только что ввели).
-</li>
+<h5 id="ustanovka-pleera-na-github">Установка плеера на github</h5><ol>
+<li>Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#addndelgames" style="text-decoration:none;" class="emFOLD">"добавление и удаление игр из списка"</a>.</li>
+<li>Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>).</li>
+<li>Откройте github в браузере, зайдите в свой профиль и создайте новый публичный репозиторий с именем "username.github.io" (внимание! Это важно! Впоследствии репозиторий нужно будет переименовать, но пока что он должен называться так), где "username" — это ваш логин (ник) на github.</li>
+<li>В разделе "Code" репозитория нажмите кнопку "Add file" и выберите пункт "Upload files", откроется страница загрузки файлов на github. </li>
+<li>Перетащите все распакованные файлы браузерной версии плеера в соответствующее поле на странице (в т.ч. папки "assets" и "game").</li>
+<li>Теперь по адресу "https://username.github.io" станет доступна страничка с вашими играми, однако таким образом в одном аккаунте сможет существовать лишь одна подобная страница. Нужно переименовать созданный репозиторий, чтобы в дальнейшем вы смогли добавлять в аккаунт и другие репозитории с подобными страницами. Зайдите в созданный репозиторий на github, найдите раздел "settings", подраздел "general". В поле "Repository name" введите новое имя репозитория, например "mygame", нажмите кнопку "rename", и таким образом страница с игрой станет доступна по адресу "https://username.github.io/mygame" (соответственно вместо "username" будет ваш ник на гитхабе, а вместо "mygame" — название репозитория, которое вы только что ввели).</li>
 </ol>
-<a id="addndelgames"></a><h4>Добавление и удаление игр из списка</h4>
-<p>
+<h5 id="addndelgames">Добавление и удаление игр из списка</h5><p>
 По умолчанию вместе с плеером упакованы демонстрационные игры. Вы можете заменить их, или просто добавить свою игру к списку.
-
 </p>
 <p>
 Демонстрационные игры лежат в подпапке "game", там же лежит конфигурационный файл "game.cfg"
-
 </p>
 <p>
 Для добавления своей игры в список, нужно разместить игру в папке "game" одним из следующих способов:
-
 </p>
 <ul>
-<li>
-скопировать zip-архив с упакованной в него игрой в папку "game"
-</li>
-<li>
-скопировать папку с игрой в папку "game"
-</li>
-<li>
-если ваша игра имеет формат игры для AeroQSP, скопировать файл ".aqsp" вашей игры в папку "game"
-</li>
+<li>скопировать zip-архив с упакованной в него игрой в папку "game"</li>
+<li>скопировать папку с игрой в папку "game"</li>
+<li>если ваша игра имеет формат игры для AeroQSP, скопировать файл ".aqsp" вашей игры в папку "game"</li>
 </ul>
 <p>
-Чтобы игра отобразилась в списке, необходимо отредактировать файл "game.cfg". Конфигурация каждой игры в файле начинается с заголовка секции <span class="em_BLCK"><span class="emTEXT">[[game]]</span></span>, далее перечисляется несколько параметров:
-
+Чтобы игра отобразилась в списке, необходимо отредактировать файл "game.cfg". Конфигурация каждой игры в файле начинается с заголовка секции <span class="em_BLCK">[[game]]</span>, далее перечисляется несколько параметров:
 </p>
 <ul>
-<li>
-id — уникальный идентификатор игры (используется для сохранений);
-</li>
-<li>
-title — название игры (будет показано в заголовке плеера);
-</li>
-<li>
-description — необязательное краткое описание игры, аннотация;
-</li>
-<li>
-file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp";
-</li>
-<li>
-mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".
-</li>
+<li>id — уникальный идентификатор игры (используется для сохранений);</li>
+<li>title — название игры (будет показано в заголовке плеера);</li>
+<li>description — необязательное краткое описание игры, аннотация;</li>
+<li>file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp";</li>
+<li>mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".</li>
 </ul>
 <p>
 Таким образом вам нужно добавить в файл "game.cfg" новую секцию для вашей игры примерно такого содержания:
-
 </p>
 <div class="Monokai-Code">
-[[game]]<br>
-id="уникальный-идентификатор-может-быть-и-просто-числом"<br>
-title="Название&nbsp;игры,&nbsp;отображаемое&nbsp;в&nbsp;виде&nbsp;заголовка&nbsp;на&nbsp;странице"<br>
-description="""Краткое&nbsp;описание&nbsp;игры,&nbsp;которое&nbsp;будет&nbsp;отображаться&nbsp;на&nbsp;странице&nbsp;со&nbsp;списком&nbsp;игр.&nbsp;Аннотация."""<br>
-file="путь&nbsp;к&nbsp;файлу&nbsp;игры/mygame.qsp"<br>
-
+[[game]]
+<br/>id="уникальный-идентификатор-может-быть-и-просто-числом"
+<br/>title="Название&nbsp;игры,&nbsp;отображаемое&nbsp;в&nbsp;виде&nbsp;заголовка&nbsp;на&nbsp;странице"
+<br/>description="""Краткое&nbsp;описание&nbsp;игры,&nbsp;которое&nbsp;будет&nbsp;отображаться&nbsp;на&nbsp;странице&nbsp;со&nbsp;списком&nbsp;игр.&nbsp;Аннотация."""
+<br/>file="путь&nbsp;к&nbsp;файлу&nbsp;игры/mygame.qsp"
 </div>
 <p>
 Если вы убрали демонстрационные игры из папки "game", не забудьте удалить соответствующие секции из файла "game.cfg".
-
 </p>
 <p>
-См. так же информацию в разделе <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>
-
+См. так же информацию в разделе <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>
 </p>
 <p>
 Обратите внимание! Если вы указываете путь к внешнему файлу игры, нужно помнить о ряде ограничений, накладываемых браузером:
-
 </p>
 <ul>
-<li>
-с https страницы нельзя загрузить http ссылку;
-</li>
-<li>
-у сервера, где находится игра, должны быть настроены <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/CORS" style="text-decoration:none;" class="emFOLD">CORS заголовки</a>.
-</li>
+<li>с https страницы нельзя загрузить http ссылку;</li>
+<li>у сервера, где находится игра, должны быть настроены <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/CORS" style="text-decoration:none;" class="emFOLD">CORS заголовки</a>.</li>
 </ul>
-<a id="cfgfile"></a><h3>Конфигурационный файл</h3>
-<p>
+<h5 id="cfgfile">Конфигурационный файл</h5><p>
 Конфигурационный файл "game.cfg" определяет поведение плеера во время запуска той или иной игры. Данный файл размещается рядом с файлом ".qsp" запускаемой игры. Если игра упакована в архив ".zip" или ".aqsp", конфигурационный файл так же должен быть упакован в тот же самый архив рядом с файлом ".qsp" самого верхнего уровня. Для web-версии плеера можно написать один конфигурационный файл для всех игр и разместить его в папке "game", при этом конфигурационные файлы, которые находятся рядом с файлами игр, будут иметь приоритет над общим.
-
 </p>
 <p>
 Конфигурационный файл (конфиг, конфиг-файл) состоит из секций, каждая из которых описывает одну игру. Таким образом в конфиге должна быть хотя бы одна секция, описывающая игру. Для десктопной версии плеера в конфиге указывается только одна секция игры.
-
 </p>
 <p>
-Секция, описывающая игру, начинается с заголовка <span class="em_BLCK"><span class="emTEXT">[[game]]</span></span> и заканчивается там, где начинается следующая секция, описывающая игру, либо с концом файла. Заголовок секции пишется отдельной строкой. Структура конфиг-файла для трёх игр в браузерной версии плеера может выглядеть примерно так:
-
+Секция, описывающая игру, начинается с заголовка <span class="em_BLCK">[[game]]</span> и заканчивается там, где начинается следующая секция, описывающая игру, либо с концом файла. Заголовок секции пишется отдельной строкой. Структура конфиг-файла для трёх игр в браузерной версии плеера может выглядеть примерно так:
 </p>
 <div class="Monokai-Code">
-[[game]]<br>
-id&nbsp;=&nbsp;"7466df3b-4236-4668-b0df-2a70477da67b"<br>
-title&nbsp;=&nbsp;"Сказочка&nbsp;на&nbsp;ночь"<br>
-description&nbsp;=&nbsp;"""описание&nbsp;первой&nbsp;игры"""<br>
-file&nbsp;=&nbsp;"skazka/skazka.qsp"<br>
-<br>
-[[game]]<br>
-id&nbsp;=&nbsp;"30c8aebe-1690-4e6d-8b42-47c4be381748"<br>
-title&nbsp;=&nbsp;"Куртуазная&nbsp;Баллада"<br>
-description&nbsp;=&nbsp;"""описание&nbsp;второй&nbsp;игры"""<br>
-file&nbsp;=&nbsp;"ballad/ballad.zip"<br>
-<br>
-[[game]]<br>
-id&nbsp;=&nbsp;"c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"<br>
-mode&nbsp;=&nbsp;"aero"<br>
-title&nbsp;=&nbsp;"Город&nbsp;туманов"<br>
-description&nbsp;=&nbsp;"""описание&nbsp;третьей&nbsp;игры"""<br>
-file&nbsp;=&nbsp;"cityofmists.aqsp"<br>
-
+[[game]]
+<br/>id&nbsp;=&nbsp;"7466df3b-4236-4668-b0df-2a70477da67b"
+<br/>title&nbsp;=&nbsp;"Сказочка&nbsp;на&nbsp;ночь"
+<br/>description&nbsp;=&nbsp;"""описание&nbsp;первой&nbsp;игры"""
+<br/>file&nbsp;=&nbsp;"skazka/skazka.qsp"
+<br/>
+<br/>[[game]]
+<br/>id&nbsp;=&nbsp;"30c8aebe-1690-4e6d-8b42-47c4be381748"
+<br/>title&nbsp;=&nbsp;"Куртуазная&nbsp;Баллада"
+<br/>description&nbsp;=&nbsp;"""описание&nbsp;второй&nbsp;игры"""
+<br/>file&nbsp;=&nbsp;"ballad/ballad.zip"
+<br/>
+<br/>[[game]]
+<br/>id&nbsp;=&nbsp;"c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"
+<br/>mode&nbsp;=&nbsp;"aero"
+<br/>title&nbsp;=&nbsp;"Город&nbsp;туманов"
+<br/>description&nbsp;=&nbsp;"""описание&nbsp;третьей&nbsp;игры"""
+<br/>file&nbsp;=&nbsp;"cityofmists.aqsp"
 </div>
 <p>
 Как видно из приведённого примера, следом за заголовком секции идёт ряд параметров. Сначала записывается название параметра (ключ), затем ставится знак равенства, а после в кавычках указывается значение параметра. Если значение пишется в несколько строк, оно помещается в тройные кавычки.
-
 </p>
 <p>
 Для описания игры используются следующие параметры, ключи:
-
 </p>
 <ul>
-<li>
-id — уникальный идентификатор игры (используется для сохранений, поэтому технически можно использовать любой набор символов, однако лучше сгенерировать собственный уникальный айди по образцу из примера, воспользовавшись онлайн-генератором <a href="https://www.uuidgenerator.net" style="text-decoration:none;" class="emFOLD">https://www.uuidgenerator.net</a>);
-</li>
-<li>
-title — название игры (будет показано в заголовке плеера и на вкладке браузера);
-</li>
-<li>
-description — необязательное краткое описание игры, аннотация;
-</li>
-<li>
-file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp", для браузерной версии;
-</li>
-<li>
-mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".
-</li>
+<li>id — уникальный идентификатор игры (используется для сохранений, поэтому технически можно использовать любой набор символов, однако лучше сгенерировать собственный уникальный айди по образцу из примера, воспользовавшись онлайн-генератором <a href="https://www.uuidgenerator.net" style="text-decoration:none;" class="emFOLD">https://www.uuidgenerator.net</a>);</li>
+<li>title — название игры (будет показано в заголовке плеера и на вкладке браузера);</li>
+<li>description — необязательное краткое описание игры, аннотация;</li>
+<li>file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp", для браузерной версии;</li>
+<li>mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".</li>
 </ul>
 <p>
 Для десктопной версии плеера все параметры, кроме "id", не обязательны. Тем не менее рекомендуется их проставлять для удобства чтения конфигурационного файла. Для игр, написанных для AeroQSP, параметр "mode" обязателен.
-
 </p>
 <p>
 Далее каждая секция игры может содержать подсекции, расширяющие возможности управления плеером и игрой.
-
 </p>
-<a id="КLыy"></a><h4>Назначение горячих клавиш [game.hotkeys]</h4>
-<p>
-Для каждой игры можно назначить собственные комбинации горячих клавиш. Для этого в секции игры прописываем подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.hotkeys]</span></span>. После заголовка перечисляем клавиши или их сочетания в качестве ключей, а в качестве значений прописываем названия локаций, код которых будет выполнен при нажатии на горячие клавиши. Пример:
-
+<h5 id="naznachenie-goriachih-klavish-gamehotkeys">Назначение горячих клавиш [game.hotkeys]</h5><p>
+Для каждой игры можно назначить собственные комбинации горячих клавиш. Для этого в секции игры прописываем подсекцию с заголовком <span class="em_BLCK">[game.hotkeys]</span>. После заголовка перечисляем клавиши или их сочетания в качестве ключей, а в качестве значений прописываем названия локаций, код которых будет выполнен при нажатии на горячие клавиши. Пример:
 </p>
 <div class="Monokai-Code">
-[game.hotkeys]<br>
-i&nbsp;=&nbsp;"Инвентарь"<br>
-"ctrl+shift+m"&nbsp;=&nbsp;"карта"<br>
-"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"<br>
-
+[game.hotkeys]
+<br/>i&nbsp;=&nbsp;"Инвентарь"
+<br/>"ctrl+shift+m"&nbsp;=&nbsp;"карта"
+<br/>"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"
 </div>
 <p>
 Для одиночного нажатия клавиш в качестве ключа указывается её обозначение:
-
 </p>
 <div class="Monokai-Code">
-i="Инвентарь"<br>
-
+i="Инвентарь"
 </div>
 <p>
 Для того, чтобы указать одновременное нажатие нескольких клавиш, их обозначения перечисляются через "+" (плюс):
-
 </p>
 <div class="Monokai-Code">
-"ctrl+shift+m"&nbsp;=&nbsp;"карта"<br>
-
+"ctrl+shift+m"&nbsp;=&nbsp;"карта"
 </div>
 <p>
 Для того, чтобы задействовать последовательное нажатие клавиш, их обозначения перечисляются через пробел:
-
 </p>
 <div class="Monokai-Code">
-"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"<br>
-
+"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right&nbsp;b&nbsp;a"&nbsp;=&nbsp;"konami"
 </div>
 <p>
 Можно использовать следующие обозначения:
-
 </p>
-<a id="NСзя"></a><h5>Клавиши-модификаторы</h5>
-<ul>
-<li>
-<span class="em_BLCK">shift</span>
-</li>
-<li>
-<span class="em_BLCK">ctrl</span>
-</li>
-<li>
-<span class="em_BLCK">alt</span>
-</li>
-<li>
-<strong>meta</strong> — для поддержки на macOs лучше использовать этот модификатор вместо ctrl
-</li>
+<h6 id="klavishi-modifikatory">Клавиши-модификаторы</h6><ul>
+<li><span class="em_BLCK">shift</span></li>
+<li><span class="em_BLCK">ctrl</span></li>
+<li><span class="em_BLCK">alt</span></li>
+<li><span class="em_BLCK">meta</span> — для поддержки на macOs лучше использовать этот модификатор вместо ctrl</li>
 </ul>
-<a id="ЕЙХw"></a><h5>Специальные клавиши</h5>
-<ul>
-<li>
-<span class="em_BLCK">backspace</span>
-</li>
-<li>
-<span class="em_BLCK">tab</span>
-</li>
-<li>
-<span class="em_BLCK">enter</span>
-</li>
-<li>
-<span class="em_BLCK">capslock</span>
-</li>
-<li>
-<span class="em_BLCK">esc</span>
-</li>
-<li>
-<span class="em_BLCK">space</span>
-</li>
-<li>
-<span class="em_BLCK">pageup</span>
-</li>
-<li>
-<span class="em_BLCK">pagedown</span>
-</li>
-<li>
-<span class="em_BLCK"><span class="emOPRT">end</span></span>
-</li>
-<li>
-<span class="em_BLCK">home</span>
-</li>
-<li>
-<span class="em_BLCK">left</span>
-</li>
-<li>
-<span class="em_BLCK">up</span>
-</li>
-<li>
-<span class="em_BLCK">right</span>
-</li>
-<li>
-<span class="em_BLCK">down</span>
-</li>
-<li>
-<span class="em_BLCK">ins</span>
-</li>
-<li>
-<span class="em_BLCK">del</span>
-</li>
-<li>
-<span class="em_BLCK">plus</span>
-</li>
-<li>
-<span class="em_BLCK">f<span class="emNUM">1</span></span> - <span class="em_BLCK">f<span class="emNUM">19</span></span>
-</li>
+<h6 id="spetsial_nye-klavishi">Специальные клавиши</h6><ul>
+<li><span class="em_BLCK">backspace</span></li>
+<li><span class="em_BLCK">tab</span></li>
+<li><span class="em_BLCK">enter</span></li>
+<li><span class="em_BLCK">capslock</span></li>
+<li><span class="em_BLCK">esc</span></li>
+<li><span class="em_BLCK">space</span></li>
+<li><span class="em_BLCK">pageup</span></li>
+<li><span class="em_BLCK">pagedown</span></li>
+<li><span class="em_BLCK">end</span></li>
+<li><span class="em_BLCK">home</span></li>
+<li><span class="em_BLCK">left</span></li>
+<li><span class="em_BLCK">up</span></li>
+<li><span class="em_BLCK">right</span></li>
+<li><span class="em_BLCK">down</span></li>
+<li><span class="em_BLCK">ins</span></li>
+<li><span class="em_BLCK">del</span></li>
+<li><span class="em_BLCK">plus</span></li>
+<li><span class="em_BLCK">f1</span> - <span class="em_BLCK">f19</span></li>
 </ul>
 <p>
 Остальные клавиши можно определять просто по имени <span class="em_BLCK">a</span>, <span class="em_BLCK">$</span>, <span class="em_BLCK">*</span>, или <span class="em_BLCK">=</span>.
-
 </p>
-<a id="qspider_gameresource"></a><h4>Подключение дополнительных ресурсов [game.resources]</h4>
-<p>
-Есть возможность подключить к каждой отдельной игре дополнительные ресурсы. Например, собственные css-файлы, скрипты, шрифты и т.д. Для этого в секции игры нужно создать подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.resources]</span></span>. Пример:
-
+<h6 id="qspider_gameresource">Подключение дополнительных ресурсов [game.resources]</h6><p>
+Есть возможность подключить к каждой отдельной игре дополнительные ресурсы. Например, собственные css-файлы, скрипты, шрифты и т.д. Для этого в секции игры нужно создать подсекцию с заголовком <span class="em_BLCK">[game.resources]</span>. Пример:
 </p>
 <div class="Monokai-Code">
-[game.resources]<br>
-styles&nbsp;=&nbsp;[<br>
-&nbsp;&nbsp;"https://fonts.googleapis.com/css?family=Sofia",<br>
-&nbsp;&nbsp;"styles.css"<br>
-]<br>
-scripts&nbsp;=&nbsp;[<br>
-&nbsp;&nbsp;"script.js"<br>
-]<br>
-fonts&nbsp;=&nbsp;[<br>
-&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"]<br>
-]<br>
-icon&nbsp;=&nbsp;"icon.png"<br>
-
+[game.resources]
+<br/>styles&nbsp;=&nbsp;[
+<br/>&nbsp;&nbsp;"https://fonts.googleapis.com/css?family=Sofia",
+<br/>&nbsp;&nbsp;"styles.css"
+<br/>]
+<br/>scripts&nbsp;=&nbsp;[
+<br/>&nbsp;&nbsp;"script.js"
+<br/>]
+<br/>fonts&nbsp;=&nbsp;[
+<br/>&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"]
+<br/>]
+<br/>icon&nbsp;=&nbsp;"icon.png"
 </div>
 <p>
 Для подключения css-файлов используем ключ "styles", значением которого выступает список ссылок на необходимые нам файлы css. Это могут быть как внешние ссылки, так и пути относительно файла "game.cfg".
-
 </p>
 <p>
 Список обязательно помещается в квадратные скобки! Его элементы разделяются запятыми. Отступы между элементами и скобками ни на что не влияют. За последним значением списка нельзя ставить запятую. Пример:
-
 </p>
 <div class="Monokai-Code">
-styles&nbsp;=&nbsp;["skins/game.css","lewis.css"]<br>
-
+styles&nbsp;=&nbsp;["skins/game.css","lewis.css"]
 </div>
 <p>
 К основным элементам интерфейса добавлен атрибут data-qsp (например, data-qsp="main", data-qsp="actions" и т.д.), который позволит вам стилизовать данные элементы, или взаимодействовать с ними через скрипты.
-
 </p>
 <p>
 Для подключения JavaScript используется ключ "scripts". Его значением так же выступает список ссылок на нужные скрипты. Поскольку нет возможности автоматически удалить JS код из памяти (при переключении на другую игру, например) — это надо делать вручную. Подробнее об этом можно почитать в <a href="https://ifhub.club/2021/05/23/qspider-0100.html" style="text-decoration:none;" class="emFOLD">статье Werewolf`а, посвящённой выходу qSpider 0.10.0</a>.
-
 </p>
 <p>
 Пример подключения скриптов:
-
 </p>
 <div class="Monokai-Code">
-scripts=["skins/js/game.js","skins/js/QspLibBrowserTest.js"]<br>
-
+scripts=["skins/js/game.js","skins/js/QspLibBrowserTest.js"]
 </div>
 <p>
 Ключ "fonts" предназначен для подключения шрифтов к игре. Его значением является список, элементами которого являются другие списки — каждый такой отвечает за подключение одного шрифта. Пример подключения:
-
 </p>
 <div class="Monokai-Code">
-fonts=[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]<br>
-]<br>
-
+fonts=[
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]
+<br/>]
 </div>
 <p>
 Как видите, в данном примере подключаются два шрифта. Здесь "GoodVibesPro" и "AstronBold" — это имена шрифтов, которые вы можете использовать при стилизации текста в вашей игре. Вы можете сами назначать эти имена. Вторым элементом для каждого из шрифтов указывается путь к конкретному файлу шрифта. Рекомендуемый формат — woff2, он поддерживается всеми современными браузерами. В сети полно онлайн конверторов из ttf в woff2.
-
 </p>
 <p>
 Если у шрифта есть Bold, Italic и BoldItalic варианты в отдельных файлах, то подключение может выглядеть так:
-
 </p>
 <div class="Monokai-Code">
-fonts&nbsp;=&nbsp;[<br>
-&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"],<br>
-&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold.woff2",&nbsp;"bold"],<br>
-&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-italic.woff2",&nbsp;"normal",&nbsp;"italic"],<br>
-&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold-italic.woff2",&nbsp;"bold",&nbsp;"italic"]<br>
-]<br>
-
+fonts&nbsp;=&nbsp;[
+<br/>&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter.woff2"],
+<br/>&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold.woff2",&nbsp;"bold"],
+<br/>&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-italic.woff2",&nbsp;"normal",&nbsp;"italic"],
+<br/>&nbsp;&nbsp;["Shelter",&nbsp;"fonts/shelter-bold-italic.woff2",&nbsp;"bold",&nbsp;"italic"]
+<br/>]
 </div>
 <p>
 Параметр "icon" дает возможность заменить иконку во вкладке браузера, так называемый "favicon". По умолчанию там находится логотип QSP. Пример использования:
-
 </p>
 <div class="Monokai-Code">
-icon="skins/gfx/doctor.png"<br>
-
+icon="skins/gfx/doctor.png"
 </div>
-<a id="вТфщ"></a><h4>Поддержка игр AeroQSP [game.aero]</h4>
-<p>
+<h6 id="podderzhka-igr-aeroqsp-gameaero">Поддержка игр AeroQSP [game.aero]</h6><p>
 Как было сказано выше, для того, чтобы запускать AeroQSP-игру, нужно в секции игры выставить параметр "mode":
-
 </p>
 <div class="Monokai-Code">
-mode="aero"<br>
-
+mode="aero"
 </div>
 <p>
-Так же, если используется размер игры, отличающийся от дефолтного 800х600, необходимо добавить секцию <span class="em_BLCK"><span class="emTEXT">[game.aero]</span></span> с размерами:
-
+Так же, если используется размер игры, отличающийся от дефолтного 800х600, необходимо добавить секцию <span class="em_BLCK">[game.aero]</span> с размерами:
 </p>
 <div class="Monokai-Code">
-[game.aero]<br>
-width&nbsp;=&nbsp;504<br>
-height&nbsp;=&nbsp;680<br>
-
+[game.aero]
+<br/>width&nbsp;=&nbsp;504
+<br/>height&nbsp;=&nbsp;680
 </div>
 <p>
-Смотрите так же раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#aeroqspider" style="text-decoration:none;" class="emFOLD">"Особенности работы игр AeroQSP на qSpider"</a>
-
+Смотрите так же раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#aeroqspider" style="text-decoration:none;" class="emFOLD">"Особенности работы игр AeroQSP на qSpider"</a>
 </p>
-<a id="ЦПКб"></a><h4>Настройка окна desktop-плеера [game.window]</h4>
-<p>
-Вы можете настраивать окно плеера в десктопной версии. Для этого в основной секции игры нужно объявить подсекцию с заголовком <span class="em_BLCK"><span class="emTEXT">[game.window]</span></span>, и проставить необходимые параметры:
-
+<h6 id="nastrojka-okna-desktop-pleera-gamewindow">Настройка окна desktop-плеера [game.window]</h6><p>
+Вы можете настраивать окно плеера в десктопной версии. Для этого в основной секции игры нужно объявить подсекцию с заголовком <span class="em_BLCK">[game.window]</span>, и проставить необходимые параметры:
 </p>
 <div class="Monokai-Code">
-[game.window]<br>
-width&nbsp;=&nbsp;1280<br>
-height&nbsp;=&nbsp;960<br>
-resizable&nbsp;=&nbsp;true<br>
-minWidth&nbsp;=&nbsp;1024<br>
-minHeight&nbsp;=&nbsp;768<br>
-
+[game.window]
+<br/>width&nbsp;=&nbsp;1280
+<br/>height&nbsp;=&nbsp;960
+<br/>resizable&nbsp;=&nbsp;true
+<br/>minWidth&nbsp;=&nbsp;1024
+<br/>minHeight&nbsp;=&nbsp;768
 </div>
 <ul>
-<li>
-width и height задают размер окна при старте игры;
-</li>
-<li>
-minWidth и minHeight дают возможность задать минимально возможные размеры, если игрок попытается изменить размеры окна;
-</li>
-<li>
-resizable — позволяет запретить изменения размера в принципе (автоматически включается в aero режиме).
-</li>
+<li>width и height задают размер окна при старте игры;</li>
+<li>minWidth и minHeight дают возможность задать минимально возможные размеры, если игрок попытается изменить размеры окна;</li>
+<li>resizable — позволяет запретить изменения размера в принципе (автоматически включается в aero режиме).</li>
 </ul>
-<a id="ахтE"></a><h4>Пример файла "game.cfg" для отдельной игры</h4>
-<div class="Monokai-Code">
-[[game]]<br>
-id&nbsp;=&nbsp;"50458ae2-c07d-ca43-4a81-7bf480eedcf6"<br>
-title&nbsp;=&nbsp;"Вереница&nbsp;миров,&nbsp;или&nbsp;Выводы&nbsp;из&nbsp;закона&nbsp;Мёрфи"<br>
-description&nbsp;=&nbsp;"""В&nbsp;Лаборатории&nbsp;Мерфи&nbsp;опять&nbsp;неприятности.&nbsp;Похищен&nbsp;опытный&nbsp;образец&nbsp;бета-аннигилятора,&nbsp;и&nbsp;похититель&nbsp;скрылся&nbsp;в&nbsp;Веренице&nbsp;Миров&nbsp;-&nbsp;сложной&nbsp;системе&nbsp;межпространственных&nbsp;порталов.&nbsp;Кому&nbsp;предстоит&nbsp;расхлёбывать&nbsp;это&nbsp;дельце?&nbsp;Ну&nbsp;конечно&nbsp;же&nbsp;вам,&nbsp;майор!"""<br>
-file&nbsp;=&nbsp;"merphy_law.qn.qsp"<br>
-<br>
-[game.hotkeys]<br>
-b&nbsp;=&nbsp;"back.varriors"<br>
-"ctrl+shift+m"="карта"<br>
-"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right"&nbsp;=&nbsp;"konami"<br>
-<br>
-[game.resources]<br>
-styles&nbsp;=&nbsp;["skins/qspidergame.css"]<br>
-fonts=[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]<br>
-]<br>
-icon="skins/gfx/doctor.png"<br>
-<br>
-[game.window]<br>
-width&nbsp;=&nbsp;1280<br>
-height&nbsp;=&nbsp;720<br>
-resizable&nbsp;=&nbsp;true<br>
-minWidth&nbsp;=&nbsp;848<br>
-minHeight&nbsp;=&nbsp;480<br>
-
+<h6 id="primer-fajla-gamecfg-dlia-otdel_noj-igry">Пример файла "game.cfg" для отдельной игры</h6><div class="Monokai-Code">
+[[game]]
+<br/>id&nbsp;=&nbsp;"50458ae2-c07d-ca43-4a81-7bf480eedcf6"
+<br/>title&nbsp;=&nbsp;"Вереница&nbsp;миров,&nbsp;или&nbsp;Выводы&nbsp;из&nbsp;закона&nbsp;Мёрфи"
+<br/>description&nbsp;=&nbsp;"""В&nbsp;Лаборатории&nbsp;Мерфи&nbsp;опять&nbsp;неприятности.&nbsp;Похищен&nbsp;опытный&nbsp;образец&nbsp;бета-аннигилятора,&nbsp;и&nbsp;похититель&nbsp;скрылся&nbsp;в&nbsp;Веренице&nbsp;Миров&nbsp;-&nbsp;сложной&nbsp;системе&nbsp;межпространственных&nbsp;порталов.&nbsp;Кому&nbsp;предстоит&nbsp;расхлёбывать&nbsp;это&nbsp;дельце?&nbsp;Ну&nbsp;конечно&nbsp;же&nbsp;вам,&nbsp;майор!"""
+<br/>file&nbsp;=&nbsp;"merphy_law.qn.qsp"
+<br/>
+<br/>[game.hotkeys]
+<br/>b&nbsp;=&nbsp;"back.varriors"
+<br/>"ctrl+shift+m"="карта"
+<br/>"up&nbsp;up&nbsp;down&nbsp;down&nbsp;left&nbsp;right&nbsp;left&nbsp;right"&nbsp;=&nbsp;"konami"
+<br/>
+<br/>[game.resources]
+<br/>styles&nbsp;=&nbsp;["skins/qspidergame.css"]
+<br/>fonts=[
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;["AstronBold","skins/fonts/astron-bold.woff2"]
+<br/>]
+<br/>icon="skins/gfx/doctor.png"
+<br/>
+<br/>[game.window]
+<br/>width&nbsp;=&nbsp;1280
+<br/>height&nbsp;=&nbsp;720
+<br/>resizable&nbsp;=&nbsp;true
+<br/>minWidth&nbsp;=&nbsp;848
+<br/>minHeight&nbsp;=&nbsp;480
 </div>
-<a id="aeroqspider"></a><h3>Особенности работы игр AeroQSP на qSpider</h3>
-<p>
+<h6 id="aeroqspider">Особенности работы игр AeroQSP на qSpider</h6><p>
 HTML-движок в флеш версии AeroQSP достаточно специфичен и не всегда совпадает с тем, как работает браузер, поэтому при запуске AeroQSP-игр на qSpider будут наблюдаться некоторые отличия в поведении игр.
-
 </p>
 <p>
 Вот список особенностей и отличий:
-
 </p>
 <ul>
-<li>
-несколько игр использовали синтаксис, который поменялся в 5.8.0 (порядок аргументов в INSTR, ARRCOMP, ARRPOS), и в qSpider эти игры будут выдавать ошибку о несовпадении типов данных;
-</li>
-<li>
-в AeroQSP шрифты подключались в формате swf, использовать такой формат больше нет возможности, поэтому если игра использует нестандартные шрифты — их необходимо будет подключать через файл конфига в секции <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#qspider_gameresource" style="text-decoration:none;" class="emFOLD">game.resources</a>;
-</li>
-<li>
-в qSpider не поддерживаются эффекты <span class="em_BLCK">pixels</span>, <span class="em_BLCK">h_blinds</span> и <span class="em_BLCK">v_blinds</span>, остальные эффекты могут немного отличаться от того, как работала флеш-версия;
-</li>
-<li>
-не поддерживается переменная <span class="em_BLCK">SCROLL_SPEED</span> (впрочем, скорее всего нет игр, в которых она бы использовалась);
-</li>
-<li>
-обработка клика в флеше отличается от браузера — если на блоке нет обработчика, то он не перехватывает клик, даже если размещен поверх другого. В ряде игр это привело к тому, что неспрятанные панельки (пустые и не видимые) в qSpider блокируют клики по линкам под ними. Пример — игра "Новогодние сказки", где кнопка "Играть" почти полностью перекрыта пустой на этот момент панелькой действий. Лечится небольшими изменениями игры — отключением неиспользуемых панелей.
-</li>
-<li>
-в флеше тег <span class="em_BLCK">center</span> внутри таблиц растягивает таблицу на всю ширину, при этом еще размеры ячеек без явно указанной ширины в этом случае считаются не как в браузере. Чаще всего это заметно в действиях — для форматирования по умолчанию используется таблица, и если в названии действия использовать тег center, то в флеш-версии текст будет посередине панели, а в qSpider — нет. Лечится добавлением <span class="em_BLCK">width=100%</span> в такую таблицу. Не было возможности сделать это на уровне плеера, поскольку в ряде игр это ломало отображение.
-</li>
+<li>несколько игр использовали синтаксис, который поменялся в 5.8.0 (порядок аргументов в INSTR, ARRCOMP, ARRPOS), и в qSpider эти игры будут выдавать ошибку о несовпадении типов данных;</li>
+<li>в AeroQSP шрифты подключались в формате swf, использовать такой формат больше нет возможности, поэтому если игра использует нестандартные шрифты — их необходимо будет подключать через файл конфига в секции <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#qspider_gameresource" style="text-decoration:none;" class="emFOLD">game.resources</a>;</li>
+<li>в qSpider не поддерживаются эффекты <span class="em_BLCK">pixels</span>, <span class="em_BLCK">h_blinds</span> и <span class="em_BLCK">v_blinds</span>, остальные эффекты могут немного отличаться от того, как работала флеш-версия;</li>
+<li>не поддерживается переменная <span class="em_BLCK">SCROLL_SPEED</span> (впрочем, скорее всего нет игр, в которых она бы использовалась);</li>
+<li>обработка клика в флеше отличается от браузера — если на блоке нет обработчика, то он не перехватывает клик, даже если размещен поверх другого. В ряде игр это привело к тому, что неспрятанные панельки (пустые и не видимые) в qSpider блокируют клики по линкам под ними. Пример — игра "Новогодние сказки", где кнопка "Играть" почти полностью перекрыта пустой на этот момент панелькой действий. Лечится небольшими изменениями игры — отключением неиспользуемых панелей.</li>
+<li>в флеше тег <span class="em_BLCK">center</span> внутри таблиц растягивает таблицу на всю ширину, при этом еще размеры ячеек без явно указанной ширины в этом случае считаются не как в браузере. Чаще всего это заметно в действиях — для форматирования по умолчанию используется таблица, и если в названии действия использовать тег center, то в флеш-версии текст будет посередине панели, а в qSpider — нет. Лечится добавлением <span class="em_BLCK">width=100%</span> в такую таблицу. Не было возможности сделать это на уровне плеера, поскольку в ряде игр это ломало отображение.</li>
 </ul>
-<a id="VCOh"></a><h4>Пример подключения</h4>
-<p>
+<h6 id="primer-podkliucheniia">Пример подключения</h6><p>
 Для подключения AeroQSP игры через конфиг — необходимо в основной секции добавить <span class="em_BLCK">mode="aero"</span>, и если используется размер экрана игры, отличающийся от дефолтного 800х600, — добавить секцию с размерами:
-
 </p>
 <div class="Monokai-Code">
-[[game]]<br>
-id&nbsp;=&nbsp;"c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"<br>
-title&nbsp;=&nbsp;"Чашка&nbsp;кофе"<br>
-mode&nbsp;=&nbsp;"aero"<br>
-file&nbsp;=&nbsp;"aero_coffee.aqsp"<br>
-<br>
-[game.aero]<br>
-width&nbsp;=&nbsp;504<br>
-height&nbsp;=&nbsp;680<br>
-
+[[game]]
+<br/>id&nbsp;=&nbsp;"c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"
+<br/>title&nbsp;=&nbsp;"Чашка&nbsp;кофе"
+<br/>mode&nbsp;=&nbsp;"aero"
+<br/>file&nbsp;=&nbsp;"aero_coffee.aqsp"
+<br/>
+<br/>[game.aero]
+<br/>width&nbsp;=&nbsp;504
+<br/>height&nbsp;=&nbsp;680
 </div>
 <p>
 При этом можно использовать как aqsp-архив, так и распаковать его и прописать ссылку на qsp-файл в папке.
-
 </p>
-<a id="УДяR"></a><h4>Важное примечание от Werewolf`а</h4>
-<blockquote>
+<h6 id="vazhnoe-primechanie-ot-werewolfa">Важное примечание от Werewolf''а</h6><blockquote>
 <p>
-Я не собираюсь развивать и поддерживать (кроме багфиксов) формат AeroQSP, поэтому не советую начинать новые игры с его использованием.
-</p>
-
+Я не собираюсь развивать и поддерживать (кроме багфиксов) формат AeroQSP, поэтому не советую начинать новые игры с его использованием.</p>
 </blockquote>
-<a id="ДTшl"></a><h3>Заключение</h3>
-<p>
+<h6 id="zakliuchenie">Заключение</h6><p>
 Werewolf продолжает развивать и модернизировать qSpider, добавляя в него всё новые и новые возможности. Ждите обновлений, проводите побольше тестов свежих версий плеера и пишите побольше игр.
-
 </p>
 <p>
 Обо всех ошибках и странностях в поведении при работе плеера просьба сообщать прямо на канал <a href="https://discord.gg/CXyrrznR" style="text-decoration:none;" class="emFOLD">#qsp_dev</a> на сервере интерактивной литературы в дискорде.
-
 </p>
 <p>
-Данная статья собрана из статей, написанных Werewolf`ом для <a href="https://ifhub.club" style="text-decoration:none;" class="emFOLD">ifhub.club</a>:
-
+Данная статья собрана из статей, написанных Werewolf''ом для <a href="https://ifhub.club" style="text-decoration:none;" class="emFOLD">ifhub.club</a>:
 </p>
 <ul>
-<li>
-<a href="https://ifhub.club/2020/10/11/qspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html" style="text-decoration:none;" class="emFOLD">qSpider - плеер для запуска QSP игр в браузере</a>
-</li>
-<li>
-<a href="https://ifhub.club/2020/10/11/qspider-hotkeys.html" style="text-decoration:none;" class="emFOLD">qSpider HotKeys - горячие клавиши</a>
-</li>
-<li>
-<a href="https://ifhub.club/2020/10/18/qspider-090.html" style="text-decoration:none;" class="emFOLD">qSpider 0.9.0 - список игр в конфиге</a>
-</li>
-<li>
-<a href="https://ifhub.club/2020/11/01/qspider-091.html" style="text-decoration:none;" class="emFOLD">qSpider 0.9.1 - загрузка игр из zip</a>
-</li>
-<li>
-<a href="https://ifhub.club/2021/05/23/qspider-0100.html" style="text-decoration:none;" class="emFOLD">qSpider 0.10.0 - подключение дополнительных ресурсов</a>
-</li>
-<li>
-<a href="https://ifhub.club/2021/10/22/qspider-0110.html" style="text-decoration:none;" class="emFOLD">qSpider 0.11.0 - поддержка игр в AeroQSP-формате</a>
-</li>
-<li>
-<a href="https://ifhub.club/2022/02/06/qspider-0120.html" style="text-decoration:none;" class="emFOLD">qSpider 0.12.0 - полноценная desktop-версия</a>
-</li>
+<li><a href="https://ifhub.club/2020/10/11/qspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html" style="text-decoration:none;" class="emFOLD">qSpider - плеер для запуска QSP игр в браузере</a></li>
+<li><a href="https://ifhub.club/2020/10/11/qspider-hotkeys.html" style="text-decoration:none;" class="emFOLD">qSpider HotKeys - горячие клавиши</a></li>
+<li><a href="https://ifhub.club/2020/10/18/qspider-090.html" style="text-decoration:none;" class="emFOLD">qSpider 0.9.0 - список игр в конфиге</a></li>
+<li><a href="https://ifhub.club/2020/11/01/qspider-091.html" style="text-decoration:none;" class="emFOLD">qSpider 0.9.1 - загрузка игр из zip</a></li>
+<li><a href="https://ifhub.club/2021/05/23/qspider-0100.html" style="text-decoration:none;" class="emFOLD">qSpider 0.10.0 - подключение дополнительных ресурсов</a></li>
+<li><a href="https://ifhub.club/2021/10/22/qspider-0110.html" style="text-decoration:none;" class="emFOLD">qSpider 0.11.0 - поддержка игр в AeroQSP-формате</a></li>
+<li><a href="https://ifhub.club/2022/02/06/qspider-0120.html" style="text-decoration:none;" class="emFOLD">qSpider 0.12.0 - полноценная desktop-версия</a></li>
 </ul>
-<a id="post_scriptum_articles_0004"></a><h5>P.S.:</h5>
-<p>
+<h6 id="post_scriptum_articles_0004">P.S.:</h6><p>
 Данную статью вы можете найти так же и на других ресурсах:
-
 </p>
 <ul>
-<li>
-<a href="http://aleksversus.narod.ru/blog/qspider_v_0_12_0_svodnaja_statja/2022-02-15-25" style="text-decoration:none;" class="emFOLD">мой_сайт/qSpider 0.12.0</a>
-</li>
-<li>
-<a href="https://aleksversus.medium.com/qspider-v-0-12-0-сводная-статья-1d76af7d4f27" style="text-decoration:none;" class="emFOLD">medium/qSpider 0.12.0</a>
-</li>
-<li>
-<a href="https://vk.com/@qsplayer-qspider-v-0120-svodnaya-statya" style="text-decoration:none;" class="emFOLD">vk.com/qSpider 0.12.0</a>
-</li>
+<li><a href="http://aleksversus.narod.ru/blog/qspider_v_0_12_0_svodnaja_statja/2022-02-15-25" style="text-decoration:none;" class="emFOLD">мой_сайт/qSpider 0.12.0</a></li>
+<li><a href="https://aleksversus.medium.com/qspider-v-0-12-0-сводная-статья-1d76af7d4f27" style="text-decoration:none;" class="emFOLD">medium/qSpider 0.12.0</a></li>
+<li><a href="https://vk.com/@qsplayer-qspider-v-0120-svodnaya-statya" style="text-decoration:none;" class="emFOLD">vk.com/qSpider 0.12.0</a></li>
 </ul>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html" class="emHREFTT">Вперёд, к странице 5 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">&lt; Назад, к странице 4</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html" class="emHREFTT">Вперёд, к странице 6 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -753,27 +481,7 @@ Werewolf продолжает развивать и модернизироват
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="soderzhanije"></a><h2>Содержание</h2>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html#preobrazovanije_tipov_qsp" style="text-decoration:none;" class="emFOLD">Преобразование типов в QSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="emFOLD">Новое в работе массивов в QSP 5.8.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html#whats_news" style="text-decoration:none;" class="emFOLD">Что нового в QSP 5.8.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#qspider_0120" style="text-decoration:none;" class="emFOLD">qSpider 0.12.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/classic.config_0005.html#classic_cfg" style="text-decoration:none;" class="emFOLD">Содержимое qspgui.cfg для QSP v.5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html#gosub_func_args" style="text-decoration:none;" class="emFOLD">Операторы, функции, аргументы. GOSUB, FUNC, ARGS</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

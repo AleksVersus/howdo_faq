@@ -744,7 +744,7 @@ class NewNode():
 			prev_link = '&nbsp;'
 		if next_<len(self.data_base.files_db['files-paths']):
 			next_name = self.get_file_name_from_number(next_)
-			next_link = f'<a href="{crosslink}{next_name}.html" class="emHREFTT">&lt; Вперёд, к странице {next_+1}</a>'
+			next_link = f'<a href="{crosslink}{next_name}.html" class="emHREFTT">Вперёд, к странице {next_+1} &gt;</a>'
 		else:
 			next_link = '&nbsp;'
 		text = '<div style="display:flex;justify-content:space-between;">'
@@ -839,7 +839,7 @@ class NewNode():
 			elif code_type == 'html':
 				text = self.stilization_html_code(''.join(source_lines))
 			else:
-				text = '<br/>'.join(source_lines)
+				text = '<br/>'.join([self.replace_spaces(line) for line in source_lines])
 			text = f'<div class="Monokai-Code">\n{text}</div>\n'
 
 		elif self.node_type == 'string':
@@ -1416,7 +1416,7 @@ class NewNode():
 		mini_data_base = {
 			"scope-name": [
 				'tt-quote',
-				'back-apostroph',
+				# 'back-apostroph',
 				'bold-italic',
 				'bold',
 				'italic',
@@ -1424,8 +1424,8 @@ class NewNode():
 			],
 			"scope-regexp":
 			[
-				re.search(r'(\'\')(.*?)(\1)', string_line),
-				re.search(r'(`)(.*?)(\1)', string_line),
+				re.search(r'(\'\')((?<!\s).*?(?!\s))(\1)', string_line),
+				# re.search(r'(`)(.*?)(\1)', string_line),
 				re.search(r'(\*\*\*)(.*?)(\1)', string_line),
 				re.search(r'(\*\*)(.*?)(\1)', string_line),
 				re.search(r'(\*)(.*?)(\1)', string_line),
@@ -1608,8 +1608,8 @@ class NewNode():
 def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
-		"..\\..\\[source]\\example\\html.json",
-		# "..\\..\\[source]\\готовые статьи\\html.json",
+		# "..\\..\\[source]\\example\\html.json",
+		"..\\..\\[source]\\готовые статьи\\html.json",
 		# "..\\..\\[source]\\ответы\\html.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]

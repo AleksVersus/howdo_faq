@@ -1,5 +1,51 @@
-<folder path="D:\my\projects\howdo_faq\[source]\example">
-<file path="D:\my\projects\howdo_faq\[source]\example\preobarzovanie_tipov.txt-light">
+<folder path="D:\my\projects\howdo_faq\[source]\готовые статьи">
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\00_soderzhanie_0000.txt-light">
+<head anchor="soderzhanije" head-level="h1">
+<p>
+Содержание</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#preobrazovanije_tipov_qsp">
+Преобразование типов в QSP</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#novoje_v_rabote_massivov">
+Новое в работе массивов в QSP 5.8.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#whats_news">
+Что нового в QSP 5.8.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#qspider_0120">
+qSpider 0.12.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#classic_cfg">
+Содержимое qspgui.cfg для QSP v.5.7.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="#gosub_func_args">
+Операторы, функции, аргументы. GOSUB, FUNC, ARGS</tag>
+</p>
+</segment>
+</list>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\01_preobrazovanie_tipov_v_qsp_0001.txt-light">
 <head anchor="preobrazovanije_tipov_qsp" head-level="h1">
 <p>
 Преобразование типов в QSP</p>
@@ -8,28 +54,20 @@
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="simple-string">
-Эта </tag>
-<tag name="bold">
-статья</tag>
-<tag name="simple-string">
- поможет вам </tag>
-<tag name="tt">
-разобраться</tag>
-<tag name="simple-string">
- в таком </tag>
-<tag name="tt">
-<tag name="hyperlink" href="#linetest">
-<tag name="italic">
-сложном вопросе</tag>
-</tag>
-</tag>
-<tag name="simple-string">
-, как преобразование типов в операции присвоения, или в выражениях.
-</tag>
+Эта статья поможет вам разобраться в таком сложном вопросе, как преобразование типов в операции присвоения, или в выражениях.
 </p>
 <p>
-В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от -2147483648 до 2147483647; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
+<tag name="simple-string">
+В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от </tag>
+<tag name="tt">
+-2147483648</tag>
+<tag name="simple-string">
+ до </tag>
+<tag name="tt">
+2147483647</tag>
+<tag name="simple-string">
+; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
+</tag>
 </p>
 <p>
 Вот как выглядят такие значения:
@@ -51,90 +89,43 @@
 Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
 </p>
 <p>
-Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак = и число:
+<tag name="simple-string">
+Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак </tag>
+<tag name="tt">
+=</tag>
+<tag name="simple-string">
+ и число:
+</tag>
 </p>
 </segment>
-<code code-left-level="0" code-type="css">
-/*
-<br/>    данный стиль описывает внешний вид общего блока, играющего в т.ч. роль затенения
-<br/>    (обратите внимание, на какую область в вашем шаблоне распространяется затенение)
-<br/>*/
-<br/>.modalDialog { 
-<br/>    position: fixed; 
-<br/>    top: 0;    right: 0;    bottom: 0; left: 0; 
-<br/>    background: hsla(0,0%,0%,0.8); 
-<br/>    z-index: 50; /* выводится одним из верхних слоёв */
-<br/>    opacity: 0; /* видимость на нуле, чтобы игрок не видел содержимое */
-<br/>    -webkit-transition: opacity 400ms ease-in; /* обеспечивает плавное появление */
-<br/>    pointer-events: none; /* скрывает блок от курсора мыши */
-<br/>} 
-<br/>/* 
-<br/>    псевдокласс :target применяется к тому элементу
-<br/>    к которому обратился браузер/плеер по нажатию на ссылку (по id)
-<br/>*/
-<br/>.modalDialog:target { 
-<br/>    opacity: 1; /* видимость повышается до 100% */
-<br/>    pointer-events: auto; /* с блоком снова может работать мышь */
-<br/>} 
-<br/>/* стилизация дочернего блока, т.е. непосредственно окошка */
-<br/>.modalDialog > div { 
-<br/>    width: 400px; 
-<br/>    position: relative; 
-<br/>    margin: 10% auto; 
-<br/>    padding: 5px 20px 13px 20px; 
-<br/>    border-radius: 10px; 
-<br/>    background: #fff; 
-<br/>    background: -webkit-linear-gradient(#fff, #b8ecfb); 
-<br/>}
+<code code-left-level="4" code-type="qsp">
+box=13
 </code>
 <segment>
 <p>
-Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак $.
+<tag name="simple-string">
+Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак </tag>
+<tag name="tt">
+$</tag>
+<tag name="simple-string">
+.
+</tag>
 </p>
 </segment>
-<code code-left-level="0" code-type="qsp">
-# start
-<br/>*pl "На следующей локации демонстрируется использование меню в качестве даилогового окна для выбора двух вариантов"
-<br/>$dialog[]="Сообщение: кошелёк или жизнь:dial_loc:?"
-<br/>$dialog[]="> Кошелёк:dial_loc"
-<br/>$dialog[]="> Жизнь:dial_loc"
-<br/>act "Перейти в следующую локацию":
-<br/>    goto 'room'
-<br/>end
-<br/>-- start
-<br/>
-<br/># room
-<br/>refint & ! данная функция принудительно обновит содержимое окон плеера при входе на локацию
-<br/>:loop
-<br/>menu '$dialog'
-<br/>if variant<>1: jump 'loop'
-<br/>-- room
-<br/>
-<br/># dial_loc
-<br/>if args[0]=1:
-<br/>    ! данный пункт меню не работает
-<br/>elseif args[0]=2:
-<br/>    *pl "Вы выбрали вариант кошелёк"
-<br/>    variant=1
-<br/>elseif args[0]=3:
-<br/>    *pl "Вы выбради вариант жизнь"
-<br/>    variant=1
-<br/>end
-<br/>-- dial_loc
+<code code-left-level="4" code-type="qsp">
+$text='Текстовое значение'
 </code>
 <segment>
 <p>
 Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
 </p>
 </segment>
-<code code-left-level="0" code-type="html">
-<game title="Моя крутая Игра" resizeable="true" standalone="false" width=1280 height=720 />
-<br/><link type="text/css" href="skins/game.css" rel="stylesheet" /><link type="text/css" href="avscss/coolstyle.css" rel="stylesheet" />
-<br/><!-- <script type="text/javascript" src="../qsplib/js/core.js"></script>
-<br/><script type="text/javascript" src="../qsplib/js/coreAwesomium.js"></script>
-<br/><script type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"></script> -->
-<br/><script type="text/javascript" src="../qsplib/js/api.js"></script>
-<br/><script type="text/javascript" src="../standalone_content/skins/js/game.js"></script>
+<code code-left-level="4" code-type="qsp">
+$text=123
+<br/>
+<br/>! эквивалентно
+<br/>
+<br/>$text=$str(123)
 </code>
 <segment>
 <p>
@@ -179,17 +170,7 @@ box='134'         & ! тип будет преобразован, а в box за
 А тут произойдёт вот что.
 </p>
 <p>
-<tag name="simple-string">
-Если хотя бы одно </tag>
-<tag name="bold">
-из значений</tag>
-<tag name="simple-string">
- в выражении — </tag>
-<tag name="tt">
-числовое</tag>
-<tag name="simple-string">
-, плеер попытается все значения преобразовать в числовые и вычислить выражение:
-</tag>
+Если хотя бы одно из значений в выражении — числовое, плеер попытается все значения преобразовать в числовые и вычислить выражение:
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
@@ -227,7 +208,17 @@ box='134'         & ! тип будет преобразован, а в box за
 Вам не нужно строго следить за тем, какие типы значений вы используете в выражениях, однако старайтесь избегать выражений, в которых математические операции применяются к строкам.
 </p>
 <p>
-Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций $str и val:
+<tag name="simple-string">
+Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций </tag>
+<tag name="tt">
+$str</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+val</tag>
+<tag name="simple-string">
+:
+</tag>
 </p>
 </segment>
 <code code-left-level="4" code-type="qsp">
@@ -286,6 +277,5953 @@ ifhub.club/Преобразование типов в QSP</tag>
 </p>
 </segment>
 </list>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\02_novoe_v_rabote_massivov_v_5.8.0_0002.txt-light">
+<head anchor="novoje_v_rabote_massivov" head-level="h1">
+<p>
+Массивы уже не те</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+
+</segment>
+<head head-level="h2" anchor="kak-vedut-sebia-massivy-sejchas">
+<p>
+Как ведут себя массивы сейчас</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Начать следует с того, что в «классическом» плеере версии 5.7.0 и ниже, а так же в Quest Navigator 0.0.28 и AeroQSP, в одном элементе массива можно хранить как текстовое, так и числовое значение. Вот как это выглядит:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[0]="яблоко"
+<br/>mass[0]=12
+<br/>$mass[1]="груша"
+<br/>mass[1]=45
+</code>
+<segment>
+<p>
+При этом мы спокойно можем получить и числовое, и текстовое значение по указанному индексу:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+*pl $mass[1]
+<br/>*pl mass[1]
+</code>
+<segment>
+<p>
+Правда это создаёт ряд дополнительных трудностей. Например, каков будет размер массива в нашем примере?
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В обоих случаях </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ выдаст ответ </tag>
+<tag name="tt">
+2</tag>
+<tag name="simple-string">
+. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[0]="яблоко"
+<br/>mass[0]=12
+<br/>$mass[1]="груша"
+<br/>mass[1]=45
+<br/>$mass[2]="слива"
+<br/>$mass[3]="апельсин"
+<br/>
+<br/>arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В этом примере оба </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ вернут </tag>
+<tag name="tt">
+4</tag>
+<tag name="simple-string">
+. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+, для текстовых — </tag>
+<tag name="tt">
+""</tag>
+<tag name="simple-string">
+ (пустая строка).
+</tag>
+</p>
+<p>
+Такое поведение массива весьма просто представить в виде таблицы:
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  | значение в | значение в |
+<br/>| элемента |   $mass    |    mass    |
+<br/>|----------|------------|------------|
+<br/>|     0    |  'яблоко'  |     12     |
+<br/>|----------|------------|------------|
+<br/>|     1    |  'груша'   |     45     |
+<br/>|----------|------------|------------|
+<br/>|     2    |  'слива'   |            |
+<br/>|----------|------------|------------|
+<br/>|     3    | 'апельсин' |            |
+</code>
+<segment>
+<p>
+Для удобства восприятия мы не внесли в таблицу значения элементов, которые не были явно заданы. Однако, как было сказано выше, при попытке использовать значения этих элементов, мы получим значения по умолчанию. В данном случае для числовых элементов это будут нули.
+</p>
+<p>
+Может показаться, что такое поведение массива не только правильно, но и удобно, поскольку позволяет использовать одно имя для хранения и текстовых и числовых значений. Некоторые авторы, знающие о таком поведении, делали, например, такие вещи:
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  |  значение в   | значение в |
+<br/>| элемента |    $unit      |    unit    |
+<br/>|----------|---------------|------------|
+<br/>|     0    |  'пехотинец'  |    300     |
+<br/>|----------|---------------|------------|
+<br/>|     1    |  'гвардеец'   |    670     |
+<br/>|----------|---------------|------------|
+<br/>|     2    |   'лучник'    |   1500     |
+<br/>|----------|---------------|------------|
+<br/>|     3    | 'артиллерист' |     10     |
+</code>
+<segment>
+<p>
+То есть в одном массиве хранили и наименования юнитов, и их количество.
+</p>
+<p>
+Однако данным способом Вы могли пользоваться, только когда явно указывали числовой индекс элемента массива. Если написать такой код:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[]="яблоко"
+<br/>mass[]=12
+<br/>$mass[]="груша"
+<br/>mass[]=45
+<br/>
+<br/>arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+— уверенность в том, какое значение вернёт </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ пропадает.
+</tag>
+</p>
+</segment>
+<quote>
+<p>
+Для тех, кто ещё не знает: пустые квадратные скобки после имени массива означают, что мы хотим работать с последним элементом массива, и нам не важен его номер.
+</p>
+</fquote>
+<segment>
+<p>
+И тут происходит интересная штука. В момент, когда мы пытаемся последнему элементу присвоить значение, плеер создаёт новый элемент указанного типа и уже ему присваивает значение. Таким образом каждая такая команда генерирует в массиве элементы обоих типов, но лишь одному присваивается значение:
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  | значение в | значение в |
+<br/>| элемента |   $mass    |    mass    |
+<br/>|----------|------------|------------|
+<br/>|     0    |  'яблоко'  |            |
+<br/>|----------|------------|------------|
+<br/>|     1    |            |     12     |
+<br/>|----------|------------|------------|
+<br/>|     2    |  'груша'   |            |
+<br/>|----------|------------|------------|
+<br/>|     3    |            |     45     |
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Мы снова не вписали в таблицу значения элементов, которые не задавали, однако </tag>
+<tag name="tt">
+mass[0]</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+mass[2]</tag>
+<tag name="simple-string">
+ вернут нам нули, если мы попробуем их использовать, а </tag>
+<tag name="tt">
+$mass[1]</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+$mass[3]</tag>
+<tag name="simple-string">
+ вернут пустые строки (это соответствует их значениям по умолчанию).
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Таким образом оба </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ вернут нам значение </tag>
+<tag name="tt">
+4</tag>
+<tag name="simple-string">
+, хотя мы явно задавали только два числовых и два текстовых элемента.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="kak-massivy-budut-sebia-vesti">
+<p>
+Как массивы будут себя вести</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Новая версия плеера ещё не вышла, но всё ниже следующее будет работать в ней так. (Уже работает в плеере qSpider)
+</p>
+<p>
+Теперь под одним индексом можно хранить либо только текстовое, либо только числовое значение. Мы своего рода объединили столбцы нашей таблицы:
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  | значение в | значение в |                |  индекс  |   значение в   |
+<br/>| элемента |   $mass    |    mass    |                | элемента | $mass или mass |
+<br/>|----------|------------|------------|            \   |----------|----------------|
+<br/>|     0    |  'яблоко'  |            |  -----------\  |     0    |    'яблоко'    |
+<br/>|----------|------------|------------|              \ |----------|----------------|
+<br/>|     1    |            |     12     |              / |     1    |       12       |
+<br/>|----------|------------|------------|  -----------/  |----------|----------------|
+<br/>|     2    |  'груша'   |            |            /   |     2    |    'груша'     |
+<br/>|----------|------------|------------|                |----------|----------------|
+<br/>|     3    |            |     45     |                |     3    |       45       |
+</code>
+<segment>
+<p>
+Это означает, что код:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[]="яблоко"
+<br/>mass[]=12
+<br/>$mass[]="груша"
+<br/>mass[]=45
+<br/>
+<br/>arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+будет работать так же, как и работал. Т.е. каждая операция присвоения создаёт новый элемент в массиве, которому мы присваиваем либо строку, либо текст. И в данном случае мы создадим четыре разных элемента массива, два из которых будут текстового типа, два — числового.
+</p>
+<p>
+Немного по-другому поведёт себя наш изначальный код:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[0]="яблоко"
+<br/>mass[0]=12
+<br/>$mass[1]="груша"
+<br/>mass[1]=45
+<br/>
+<br/>arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ вернёт </tag>
+<tag name="tt">
+2</tag>
+<tag name="simple-string">
+ в обеих командах.
+</tag>
+</p>
+<p>
+Чтобы закрепить новые знания, рассмотрим другой наш пример:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass[0]="яблоко"
+<br/>mass[0]=12
+<br/>$mass[1]="груша"
+<br/>mass[1]=45
+<br/>$mass[2]="слива"
+<br/>$mass[3]="апельсин"
+<br/>
+<br/>arrsize('$mass')
+<br/>arrsize('mass')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+, а в элементах </tag>
+<tag name="tt">
+2</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+3</tag>
+<tag name="simple-string">
+ будут текстовые значения. Соответственно обе команды </tag>
+<tag name="tt">
+arrsize</tag>
+<tag name="simple-string">
+ вернут значение </tag>
+<tag name="tt">
+4</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+В виде таблицы мы можем представить это так:
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  |   значение в   |
+<br/>| элемента | $mass или mass |
+<br/>|----------|----------------|
+<br/>|     0    |       12       |
+<br/>|----------|----------------|
+<br/>|     1    |       45       |
+<br/>|----------|----------------|
+<br/>|     2    |     'слива'    |
+<br/>|----------|----------------|
+<br/>|     3    |    'апельсин'  |
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Если мы попытаемся использовать текстовые значения элементов </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+, то получим значения по-умолчанию, то есть — </tag>
+<tag name="tt">
+""</tag>
+<tag name="simple-string">
+ (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов </tag>
+<tag name="tt">
+2</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+3</tag>
+<tag name="simple-string">
+, то получим числовые значения по-умолчанию — </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ (нули).
+</tag>
+</p>
+<p>
+Возможно пока Вы этого не заметили, но это очень масштабное изменение, которое потребует от некоторых авторов существенно изменить свои привычки в программировании на QSP.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="chto-mozhno-i-nuzhno-sdelat_">
+<p>
+Что можно и нужно сделать</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Автор этой статьи уже ощутил на себе вес изменений в работе массивов.
+</p>
+<p>
+<tag name="simple-string">
+Протестировав «Вереницу миров или выводы из закона Мёрфи» на плеере qSpider, который уже использует новую версию библиотеки, я (не без помощи </tag>
+<tag name="bold">
+Werewolf</tag>
+<tag name="simple-string">
+`а и </tag>
+<tag name="bold">
+Byte</tag>
+<tag name="simple-string">
+`а) обнаружил ошибки логики в коде, которые скрадывались в плеерах версии 5.7.0. именно благодаря тому, что под одним индексом в массиве можно было хранить и текстовое, и числовое значение. К счастью, эти ошибки легко поправить.
+</tag>
+</p>
+<p>
+Если Вы где-либо использовали запись в массив под одним индексом и числовых и текстовых значений, Вам так же следует исправить это. Особенно критично исправить в проектах, разработка которых затянется на ближайшие год-два.
+</p>
+<p>
+Предложенный пример, где названия и количество юнитов хранились в одном массиве, больше работать не будет.
+</p>
+</segment>
+<code code-left-level="4" code-type="None">
+|  индекс  |  значение в   | значение в |
+<br/>| элемента |    $unit      |    unit    |
+<br/>|----------|---------------|------------|
+<br/>|     0    |  'пехотинец'  |    300     |
+<br/>|----------|---------------|------------|
+<br/>|     1    |  'гвардеец'   |    670     |
+<br/>|----------|---------------|------------|
+<br/>|     2    |   'лучник'    |   1500     |
+<br/>|----------|---------------|------------|
+<br/>|     3    | 'артиллерист' |     10     |
+<br/>
+<br/>!!!       так делать нельзя           !!!
+</code>
+<segment>
+<p>
+И наш совет таков: не используйте и текстовые, и числовые значения элементов в одном массиве. Лучше завести два массива. Отдельно для текстовых и числовых значений:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$unit_name[0]='пехотинец'
+<br/>unit_count[0]=337
+</code>
+<segment>
+<p>
+Помимо изменений в массивах нас ждёт ещё целый ряд изменений, но они менее глобальны, и о них мы поговорим в следующих статьях.
+</p>
+<p>
+Всем успехов в написании игр, и не бойтесь кажущейся сложности!
+</p>
+<p>
+Памятка по изменениям в работе массивов:
+</p>
+<p>
+Статья написана по мотивам:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="simple-string">
+статьи </tag>
+<tag name="bold">
+Pseudopod</tag>
+<tag name="simple-string">
+`а </tag>
+<tag name="hyperlink" href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri">
+trello.com/.../одновременное-использование-arri-и-arri</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+и поста </tag>
+<tag name="bold">
+Byte</tag>
+<tag name="simple-string">
+`а </tag>
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=1290&Itemid=57">
+qsp.org/index.php...&Itemid=57</tag>
+</p>
+</segment>
+</list>
+<segment>
+<p>
+Статья доступна и на других ресурсах:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54">
+мой сайт/Массивы уже не те</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://vk.com/@qsplayer-massivy-uzhe-ne-te">
+vk.com/Массивы уже не те</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2020/10/17/massivy-uzhe-ne-te-ili-izmenenie-v-logike-raboty-massivov-v-qsp.html">
+ifhub.club/Массивы уже не те</tag>
+</p>
+</segment>
+</list>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\03_chto_novogo_v_qsp_0003.txt-light">
+<head anchor="whats_news" head-level="h1">
+<p>
+Что нового в QSP</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Пока готовится выход нового плеера версии 5.8.0 (или выше), мы решили рассказать о грядущих нововведениях. Всё (или почти всё), что будет представлено в этой статье, вы уже можете пощупать в плеере </tag>
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=1291&Itemid=57">
+"qSpider" от Werewolf`а</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="izmenenie-v-rabote-massivov">
+<p>
+Изменение в работе массивов</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Это, пожалуй, самое основное из грядущих изменений, и о нём мы подробно писали в статье </tag>
+<tag name="hyperlink" href="#novoje_v_rabote_massivov">
+"Массивы уже не те"</tag>
+<tag name="simple-string">
+. Здесь же изложим кратко.
+</tag>
+</p>
+<p>
+Теперь в массиве будет нельзя под одним индексом хранить и текстовое и числовое значение. Если вы запишете в ячейку числовое значение, а потом запишете в ту же ячейку текстовое значение, текстовое значение затрёт числовое.
+</p>
+<p>
+<tag name="simple-string">
+При этом, если вы попытаетесь получить из ячейки со строковым значением числовое значение, плеер вернёт значение по-умолчанию, то есть </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+. И наоборот: если попытаться из ячейки с числовым значением получить строковое, плеер вернёт пустую строку.
+</tag>
+</p>
+<p>
+Примеры:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.7.0
+<br/>mass[1]=123
+<br/>$mass[1]='string'
+<br/>*pl mass[1]  & ! выведет число 123
+<br/>*pl $mass[1] & ! выведет строку 'string'
+</code>
+<code code-left-level="4" code-type="qsp">
+! версия 5.8.0 и выше
+<br/>mass[1]=123
+<br/>$mass[1]='string' & ! затирает числовое значение
+<br/>*pl mass[1]  & ! попытка доступа к числовому значению вернёт 0
+<br/>*pl $mass[1] & ! выведет строку 'string'
+</code>
+</segment>
+<head head-level="h2" anchor="mnogomernye-massivy">
+<p>
+Многомерные массивы</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Чтобы организовать многомерный массив, в плеерах версии 5.7.0 (и более ранних) приходилось использовать текстовые индексы. Например:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий:
+<br/>$unit_coords["3,1"]="Пехотинец"
+<br/>$unit_coords["2,7"]="Артилерист"
+<br/>$unit_coords["10,0"]="Танк"
+</code>
+<segment>
+<p>
+Но в новых версиях плеера (начиная с 5.8.0 и выше) можно не использовать текстовые индексы, а указывать несколько нужных значений через запятую:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.8.0 и выше
+<br/>$unit_coords[3,1]="Пехотинец"
+<br/>$unit_coords[2,7]="Артилерист"
+<br/>$unit_coords[10,0]="Танк"
+</code>
+<segment>
+<p>
+Это намного упрощает работу с многомерными массивами.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="izmeneniia-v-rabote-logicheskih-operatorov-i-funktsij">
+<p>
+Изменения в работе логических операторов и функций</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Все мы знаем, что QSP не поддерживает булевые (логические) типы данных, а вместо них в плеерах версии 5.7.0. использовались числа </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+-1</tag>
+<tag name="simple-string">
+. 
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Здесь </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ означало Ложь (False), а </tag>
+<tag name="tt">
+-1</tag>
+<tag name="simple-string">
+ означало Правду (</tag>
+<tag name="tt">
+True</tag>
+<tag name="simple-string">
+). Соответственно и все логические операции возвращали нам эти значения. 
+</tag>
+</p>
+<p>
+Например:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.7.0
+<br/>*pl (3>2 and 4>3) & ! AND вернёт -1
+<br/>*pl (3>2 or 4>3) & ! OR вернёт -1
+<br/>*pl no 0 & ! NO вернёт -1
+<br/>*pl (3<2 and 4>3) & ! AND вернёт 0
+<br/>*pl (3<2 or 4<3) & ! OR вернёт 0
+<br/>*pl no -1 & ! NO вернёт 0
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В новых версиях плеера все логические операции будут возвращать </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+ в случае Правды (</tag>
+<tag name="tt">
+True</tag>
+<tag name="simple-string">
+), и </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ в случае Лжи (</tag>
+<tag name="tt">
+False</tag>
+<tag name="simple-string">
+):
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.8.0 и выше
+<br/>*pl (3>2 and 4>3) & ! AND вернёт 1
+<br/>*pl (3>2 or 4>3) & ! OR вернёт 1
+<br/>*pl no 0 & ! NO вернёт 1
+<br/>*pl (3<2 and 4>3) & ! AND вернёт 0
+<br/>*pl (3<2 or 4<3) & ! OR вернёт 0
+<br/>*pl no -1 & ! NO вернёт 0
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Соответственно и различные функции, возвращавшие "логические" значения, будут возвращать либо </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+ (Правда, </tag>
+<tag name="tt">
+True</tag>
+<tag name="simple-string">
+), либо </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ (Ложь, </tag>
+<tag name="tt">
+False</tag>
+<tag name="simple-string">
+):
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.7.0
+<br/>addobj "Отвёртка"
+<br/>*pl obj("Отвёртка") & ! OBJ вернёт -1
+<br/>*pl obj("Оттка") & ! OBJ вернёт 0
+<br/>
+<br/>*pl isnum("123") & ! ISNUM вернёт -1
+<br/>*pl isnum("12d") & ! ISNUM вернёт 0
+</code>
+<code code-left-level="4" code-type="qsp">
+! версия 5.8.0 и выше
+<br/>addobj "Отвёртка"
+<br/>*pl obj("Отвёртка") & ! OBJ вернёт 1
+<br/>*pl obj("Оттка") & ! OBJ вернёт 0
+<br/>
+<br/>*pl isnum("123") & ! ISNUM вернёт 1
+<br/>*pl isnum("12d") & ! ISNUM вернёт 0
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Ещё одно изменение в работе логических операций заключается в том, что теперь они на самом деле будут логическими. Да, оказывается в плеерах версий 5.7.0 и старше операции </tag>
+<tag name="tt">
+AND</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+OR</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+NO</tag>
+<tag name="simple-string">
+ не были логическими — они были побитовыми. Это означает, что данные операции могли выполнять сравнение чисел по отдельным битам и возвращать результат этого сравнения.
+</tag>
+</p>
+<p>
+Например:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.7.0
+<br/>*pl (3 and 2) & ! AND вернёт 2
+<br/>*pl (4 or 6) & ! OR вернёт 6
+<br/>*pl no 7 & ! NO вернёт -8
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Теперь же, не имеет значения, какое число мы передаём логическому оператору. Если это число отлично от нуля, логический оператор будет воспринимать его как </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+, то есть Правду (</tag>
+<tag name="tt">
+True</tag>
+<tag name="simple-string">
+).
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версия 5.8.0 и выше
+<br/>*pl (3 and 2) & ! AND вернёт 1
+<br/>*pl (4 or 6) & ! OR вернёт 1
+<br/>*pl no 7 & ! NO вернёт 0
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+И это логично, ведь именно по такому принципу и работали операторы проверки условия </tag>
+<tag name="tt">
+if</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+elseif</tag>
+<tag name="simple-string">
+. Если этим операторам передавалось значение отличное от </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+, то это означало, что условие верно (Правда, </tag>
+<tag name="tt">
+True</tag>
+<tag name="simple-string">
+).
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! одинаково для всех версий плеера:
+<br/>if 0:
+<br/>    *pl "условие выполнено"
+<br/>else
+<br/>    *pl "условие не выполнено"
+<br/>end
+<br/>
+<br/>if 3:
+<br/>    *pl "условие выполнено"
+<br/>else
+<br/>    *pl "условие не выполнено"
+<br/>end
+</code>
+</segment>
+<head head-level="h2" anchor="argumenty-peredavaemye-s-operatorami-goto-i-xgoto">
+<p>
+Аргументы, передаваемые с операторами GOTO и XGOTO</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Теперь аргументы (параметры, данные), передаваемые с операторами </tag>
+<tag name="tt">
+GOTO</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+XGOTO</tag>
+<tag name="simple-string">
+, и которые мы можем получить из массива </tag>
+<tag name="tt">
+ARGS</tag>
+<tag name="simple-string">
+ на локации, однозначно можно будет использовать в действиях, созданных на этой локации.
+</tag>
+</p>
+<p>
+Раньше это тоже можно было делать, однако в плеере присутствовал досадный баг, который периодически ломал всё это дело. Этот баг исправили, и теперь всё прекрасно работает:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+# локация_1
+<br/>goto "локация_2","текст"
+<br/>--локация_1
+<br/>
+<br/># локация_2
+<br/>act "Действие":
+<br/>    *pl $args[0]
+<br/>end
+<br/>--локация_2
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Обратите внимание, </tag>
+<tag name="tt">
+ARGS</tag>
+<tag name="simple-string">
+ ведёт себя на текущей локации, как обычный глобальный массив. Т.е., если вы изменяете значения </tag>
+<tag name="tt">
+ARGS</tag>
+<tag name="simple-string">
+ в одном из действий, эти же значения будут использоваться в других действиях.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+# локация_1
+<br/>goto "локация_2","из аргументов"
+<br/>--локация_1
+<br/>
+<br/># локация_2
+<br/>act "Действие - 1":
+<br/>    *pl $args[0]
+<br/>    $args[0]="Из действия 1"
+<br/>end
+<br/>act "Действие - 2":
+<br/>    *pl $args[0]
+<br/>    $args[0]="Из действия 2"
+<br/>end
+<br/>--локация_2
+</code>
+</segment>
+<head head-level="h2" anchor="disablesubex-bol_she-net">
+<p>
+DISABLESUBEX больше нет</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Системная переменная </tag>
+<tag name="tt">
+DISABLESUBEX</tag>
+<tag name="simple-string">
+ была предназначена для того, чтобы отключать обработку вложенных выражений. Например, если вы хотели вывести строку, в которой присутствуют вложенные выражения, без изменений, вы могли воспользоваться данной переменной:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! в версии 5.7.0
+<br/>health=100
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>disablesubex=1
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье <<health>>'
+<br/>disablesubex=0
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+</code>
+<segment>
+<p>
+В плеерах более новых версий это не сработает:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! в версии 5.8.0 и выше
+<br/>health=100
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>disablesubex=1
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+<br/>disablesubex=0
+<br/>*pl "Здоровье <<health>>" & ! выведет строку 'Здоровье 100'
+</code>
+<segment>
+<p>
+Чтобы вывести строку с подвыражениями без обработки таких вложенных выражений в новых версиях плеера, можно использовать фигурные скобки:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! одинаково работает во всех версиях плеера
+<br/>health=100
+<br/>*pl "Здоровье <<health>>"    & ! выведет строку 'Здоровье 100'
+<br/>*pl {Здоровье <<health>>}    & ! выведет строку 'Здоровье <<health>>'
+<br/>*pl "Здоровье <<health>>"    & ! выведет строку 'Здоровье 100'
+</code>
+</segment>
+<head head-level="h2" anchor="izmeneniia-v-rabote-neiavnogo-operatora">
+<p>
+Изменения в работе неявного оператора</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Неявный оператор — это оператор, который мы не указываем. В 5.7.0 он делал примерно то же, что делал и оператор </tag>
+<tag name="tt">
+*pl</tag>
+<tag name="simple-string">
+. То есть выводил на экран значение, добавляя после этого значения перевод строки:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий
+<br/>*pl 456
+<br/>*pl "text"
+<br/>
+<br/>! эквивалентно:
+<br/>
+<br/>456        & ! здесь для вывода используется неявный оператор
+<br/>"text"    & ! и здесь для вывода используется неявный оператор
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Если мы вызывали какую-то функцию, но она не возвращала никакого результата, неявный оператор, как и оператор </tag>
+<tag name="tt">
+*pl</tag>
+<tag name="simple-string">
+, выводил на экран пустую строку и добавлял к ней перевод строки:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+# loc1
+<br/>"Строка текста"
+<br/>func('foo')
+<br/>"Строка текста"
+<br/>--loc1
+<br/>
+<br/># foo
+<br/>N=R*L
+<br/>--foo
+</code>
+<segment>
+<p>
+Вот что мы увидим на экране в плеерах версии 5.7.0:
+</p>
+</segment>
+<code code-left-level="0" code-type="None">
+Строка текста
+<br/>
+<br/>Строка текста
+</code>
+<segment>
+<p>
+В новых версиях плеера, если неявный оператор не получит никакого значения от функции, он просто ничего не будет делать. Вот что мы увидим на экране в плеерах версии 5.8.0 и выше:
+</p>
+</segment>
+<code code-left-level="0" code-type="None">
+Строка текста
+<br/>Строка текста
+</code>
+</segment>
+<head head-level="h2" anchor="neiavnyj-vyzov-pol_zovatel_skih-funktsij">
+<p>
+Неявный вызов пользовательских функций</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 и более ранних вы могли написать собственную функцию и затем вызвать её без возвращения результата, используя оператор </tag>
+<tag name="tt">
+GOSUB</tag>
+<tag name="simple-string">
+, или с возвращением результата, используя функцию </tag>
+<tag name="tt">
+FUNC</tag>
+<tag name="simple-string">
+. В плеерах версии 5.8.0 и выше эта возможность конечно же сохраняется.
+</tag>
+</p>
+<p>
+Пример:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает во всех версиях плеера
+<br/># start
+<br/>gosub 'proced'            & ! вызов без возвращения результата
+<br/>*pl func('foo',23,45)    & ! вызов с возвращением результата
+<br/>--start
+<br/>
+<br/># proced
+<br/>act "Action":
+<br/>    *pl 'text'
+<br/>end
+<br/>--proced
+<br/>
+<br/># foo
+<br/>result=args[0]+args[1]
+<br/>--foo
+</code>
+<segment>
+<p>
+Однако в плеерах версии 5.8.0 и выше вы можете использовать сокращённую запись вызова таких функций:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает только в 5.8.0 и выше
+<br/># start
+<br/>@proced            & ! вызов без возвращения результата
+<br/>*pl @foo(23,45)    & ! вызов с возвращением результата
+<br/>--start
+<br/>
+<br/># proced
+<br/>act "Action":
+<br/>    *pl 'text'
+<br/>end
+<br/>--proced
+<br/>
+<br/># foo
+<br/>result=args[0]+args[1]
+<br/>--foo
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+То есть вместо того, чтобы использовать явное указание оператора gosub или функции </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+, можно писать символ </tag>
+<tag name="tt">
+@</tag>
+<tag name="simple-string">
+, а после него без пробелов записывать название локации. Само название вызываемой таким образом локации/функции так же не должно содержать пробелов.
+</tag>
+</p>
+<p>
+Если такой функции нужно передать значения, после названия локации ставим скобки и перечисляем нужные аргументы.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="novaia-funktsiia-arritem">
+<p>
+Новая функция ARRITEM</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Функция </tag>
+<tag name="tt">
+ARRITEM</tag>
+<tag name="simple-string">
+ возвращает значение указанной ячейки массива. Это новая функция, и введена она по большей части для того, чтобы упразднять подвыражения при использовании </tag>
+<tag name="tt">
+DYNAMIC</tag>
+<tag name="simple-string">
+/</tag>
+<tag name="tt">
+DYNEVAL</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Примеры:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+massive[123]=256
+<br/>! работает в любой версии плеера:
+<br/>xvar = massive[123]
+<br/>
+<br/>! работает только в 5.8.0 и выше:
+<br/>xvar = arritem('massive',123)
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Обе команды присваивают переменной </tag>
+<tag name="tt">
+xvar</tag>
+<tag name="simple-string">
+ значение из ячейки </tag>
+<tag name="tt">
+123</tag>
+<tag name="simple-string">
+ массива </tag>
+<tag name="tt">
+'massive</tag>
+<tag name="simple-string">
+', однако во втором случае мы указываем название в виде строкового значения. Таким образом мы, не прибегая к помощи </tag>
+<tag name="tt">
+DYNAMIC</tag>
+<tag name="simple-string">
+/</tag>
+<tag name="tt">
+DYNEVAL</tag>
+<tag name="simple-string">
+ можем динамически формировать названия массива при получении значения.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! $stringarray[345]='text out'
+<br/>$mass[0]='string'
+<br/>$mass[1]='array'
+<br/>*pl $arritem('$'+$mass[0]+$mass[1],345)
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Так же </tag>
+<tag name="tt">
+ARRITEM</tag>
+<tag name="simple-string">
+ позволяет получить значение из ячейки с текстовым индексом:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+$mass["text index"]="text string"
+<br/>*pl $arritem('$mass','text index')
+</code>
+</segment>
+<head head-level="h2" anchor="killvar-udaliaet-po-tekstovomu-indeksu">
+<p>
+KILLVAR удаляет по текстовому индексу</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 и ниже оператор </tag>
+<tag name="tt">
+KILLVAR</tag>
+<tag name="simple-string">
+ умел удалять элементы массивов только по числовому индексу:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий
+<br/>$mass[0]='строка 0'
+<br/>$mass[1]='строка 1'
+<br/>$mass[2]='строка 2'
+<br/>$mass["text index"]='строка 3'
+<br/>$mass[4]='строка 4'
+<br/>
+<br/>! удаление по числовому индексу
+<br/>killvar '$mass',2
+<br/>*pl $mass[2] & ! выведет на экран строку 'строка 3'
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.8.0 и выше </tag>
+<tag name="tt">
+KILLVAR</tag>
+<tag name="simple-string">
+ умеет удалять элементы массивов не только по числовому, но и по текстовому индексу:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает только в 5.8.0 и выше
+<br/>$mass[0]='строка 0'
+<br/>$mass[1]='строка 1'
+<br/>$mass[2]='строка 2'
+<br/>$mass["text index"]='строка 3'
+<br/>$mass[4]='строка 4'
+<br/>
+<br/>! удаление по числовому индексу
+<br/>killvar '$mass','text index'
+<br/>*pl $mass[3] & ! выведет на экран строку 'строка 4'
+</code>
+</segment>
+<head head-level="h2" anchor="operatory-addqst-i-killqst-pereimenovany">
+<p>
+Операторы ADDQST и KILLQST переименованы</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 (за исключением Quest Navigator) используются операторы </tag>
+<tag name="tt">
+ADDQST</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+KILLQST</tag>
+<tag name="simple-string">
+. В плеерах более новых версий (5.8.0 и выше) данные операторы заменены на </tag>
+<tag name="tt">
+INCLIB</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+FREELIB</tag>
+<tag name="simple-string">
+ соответственно.
+</tag>
+</p>
+<p>
+<tag name="tt">
+INCLIB</tag>
+<tag name="simple-string">
+ добавляет локации из подключаемого модуля QSP к основной игре.
+</tag>
+</p>
+<p>
+<tag name="tt">
+FREELIB</tag>
+<tag name="simple-string">
+ удаляет все локации ранее подключённых модулей QSP из основной игры.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+inclib 'module.qsp'
+<br/>inclib 'drive.qsp'
+<br/>inclib 'base.qsp'
+<br/>freelib
+</code>
+</segment>
+<head head-level="h2" anchor="izmenenie-v-rabote-operatora-set">
+<p>
+Изменение в работе оператора SET</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Для явного объявления переменных в QSP используется оператор </tag>
+<tag name="tt">
+SET</tag>
+<tag name="simple-string">
+. В плеерах версии 5.7.0 и ниже с помощью этого оператора вы могли объявить лишь одну переменную:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий
+<br/>set mass=45
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Если требовалось объявить несколько переменных, приходилось писать несколько команд </tag>
+<tag name="tt">
+SET</tag>
+<tag name="simple-string">
+:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий
+<br/>set mass=45 & set daz=65 & set zaz=79
+<br/>! эквивалентно:
+<br/>mass=45 & daz=65 & zaz=79
+</code>
+<segment>
+<p>
+В плеерах версии 5.8.0. и выше вы можете объявить несколько переменных одной командой:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в 5.8.0 и выше:
+<br/>set mass, daz, zaz = 45, 65, 79
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Обратите внимание на форму записи. Здесь лишь один знак </tag>
+<tag name="tt">
+=</tag>
+<tag name="simple-string">
+. Переменные и их значения перечислены через запятую соответственно слева и справа от знака </tag>
+<tag name="tt">
+=</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Более того. С помощью оператора </tag>
+<tag name="tt">
+SET</tag>
+<tag name="simple-string">
+ вы можете не только назначать переменным определённые значения, но и присваивать значения других переменных:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в 5.8.0 и выше:
+<br/>set a, b, c = x, y, z
+</code>
+<segment>
+<p>
+В том числе и менять значения переменных местами не прибегая к помощи третьей переменной:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в 5.8.0 и выше:
+<br/>set j,y=y,j
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Само собой, как и в плеерах версии 5.7.0, оператор </tag>
+<tag name="tt">
+SET</tag>
+<tag name="simple-string">
+ указывать не обязательно:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в 5.8.0 и выше:
+<br/>mass, daz, zaz = 45, 65, 79
+<br/>a, b, c = x, y, z
+<br/>j,y=y,j
+</code>
+</segment>
+<head head-level="h2" anchor="novyj-operator-local">
+<p>
+Новый оператор LOCAL</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.8.0 и выше, а так же в Quest Navigator появился новый оператор, который позволяет объявить указанные переменные локальными для отдельного блока кода (локации, действия, код в </tag>
+<tag name="tt">
+DYNAMIC</tag>
+<tag name="simple-string">
+/</tag>
+<tag name="tt">
+DYNEVAL</tag>
+<tag name="simple-string">
+). После того, как блок кода выполнен, значения переменных восстанавливаются к предыдущим:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+# start
+<br/>i=99
+<br/>*pl i
+<br/>gosub 'foo'
+<br/>*pl i
+<br/>--start
+<br/>
+<br/># foo
+<br/>local i
+<br/>i=45
+<br/>*pl i
+<br/>--foo
+</code>
+<segment>
+<p>
+Можно объявить локальную переменную и сразу присвоить ей значение:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+local i=45
+</code>
+<segment>
+<p>
+Можно объявить сразу несколько локальных переменных:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! объявляем локальные переменные 
+<br/>local i, j, k
+<br/>! объявляем локальные переменные и присваиваем им значения
+<br/>local f, d, $g = 123, 45, 'string'
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Обратите внимание на последнюю форму записи. Сначала мы перечисляем объявляемые переменные через запятую, затем ставим один знак </tag>
+<tag name="tt">
+=</tag>
+<tag name="simple-string">
+, а после него перечисляем через запятую значения, которые хотим присвоить переменным. Неправильно делать такую запись:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! Данная строчка кода вызовет ошибку "Несоответствие типов данных":
+<br/>local f=123, d=45, $g='string'
+</code>
+</segment>
+<head head-level="h2" anchor="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos">
+<p>
+Изменения в работе функций INSTR, ARRCOMP, ARRPOS</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Необязательные аргументы функций </tag>
+<tag name="tt">
+INSTR</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+ARRCOMP</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+ARRPOS</tag>
+<tag name="simple-string">
+ в плеерах 5.8.0 и выше, а так же в Quest Navigator переставлены в конец. В плеерах версии 5.7.0. и ниже эти аргументы шли в начале.
+</tag>
+</p>
+<p>
+Примеры для версий плеера 5.7.0 и ниже:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! поиск подстроки в строке, начиная с 7го символа
+<br/>instr(7,"В корзине 23 красных и 47 синих яблок.", "красн")
+<br/>! поиск среди элементов массива элемента, который содержит число 23, начиная с 13 элемента
+<br/>arrpos(13,'mass',23)
+<br/>! поиск среди элементов массива элемента, который соответствует регулярному выражению, начиная с пятого элемента
+<br/>arrcomp(5,'$objectbox','\S{2}\s\S{6}')
+</code>
+<segment>
+<p>
+Те же самые примеры для плееров версии 5.8.0 и выше и Quest Navigator`а:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! поиск подстроки в строке, начиная с 7го символа
+<br/>instr("В корзине 23 красных и 47 синих яблок.", "красн",7)
+<br/>! поиск среди элементов массива элемента, который содержит число 23, начиная с 13 элемента
+<br/>arrpos('mass',23,13)
+<br/>! поиск среди элементов массива элемента, который соответствует регулярному выражению, начиная с пятого элемента
+<br/>arrcomp('$objectbox','\S{2}\s\S{6}',5)
+</code>
+</segment>
+<head head-level="h2" anchor="novyj-operator-tsikla-loop">
+<p>
+Новый оператор цикла LOOP</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версий 5.7.0 и старше, для организации циклов приходилось использовать метки. Начиная с версии 5.8.0. у нас появляется отдельный оператор циклов </tag>
+<tag name="tt">
+LOOP</tag>
+<tag name="simple-string">
+. Вот как он записывается в общем виде:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! многострочная форма:
+<br/>LOOP [команды 1] WHILE [условие] STEP [команды 2]:
+<br/>    [команды 3]
+<br/>END
+<br/>! однострочная форма:
+<br/>LOOP [команды 1] WHILE [условие] STEP [команды 2]: [команды 3]
+</code>
+<segment>
+<p>
+Здесь, как вы видите, есть целых три ключевых слова:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="tt">
+LOOP</tag>
+<tag name="simple-string">
+ — это ключевое слово объявляет, что начинается цикл, оно обязательно. После </tag>
+<tag name="tt">
+LOOP</tag>
+<tag name="simple-string">
+ могут идти некоторые однострочные операторы. Например, здесь мы можем объявить локальные переменные, которые будут считаться локальными только для данного цикла.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+WHILE</tag>
+<tag name="simple-string">
+ — после этого ключевого слова должно стоять условие, и пока выполняется это условие, цикл тоже будет выполняться.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+STEP</tag>
+<tag name="simple-string">
+ — это ключевое слово не является обязательным, однако оно удобно, чтобы перечислить однострочные операторы, не относящиеся напрямую к телу цикла. Например, здесь можно указать изменение счётчика.</tag>
+</p>
+</segment>
+</list>
+<segment>
+<p>
+<tag name="simple-string">
+Непосредственно тело цикла, то есть его основные команды пишутся после двоеточия. Для однострочной формы — в той же строке, что и </tag>
+<tag name="tt">
+loop</tag>
+<tag name="simple-string">
+, а для многострочной формы — в последующих строках сразу после двоеточия. Многострочную форму необходимо завершать ключевым словом </tag>
+<tag name="tt">
+END</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Несколько примеров:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! выведет на экран таблицу умножения на 12
+<br/>loop local i=1 while i<11 step i+=1:
+<br/>    *pl "12 * <<i>> = <<12*i>>"
+<br/>end
+</code>
+<code code-left-level="4" code-type="qsp">
+! поиск всех позиций элементов массива, содержащих число 3
+<br/>loop local i,pos,true=0,-1,1 while true:
+<br/>    pos=arrpos('mass',3,pos+1)
+<br/>    if (pos<>-1 and i<>pos) or pos=0:
+<br/>        i=pos
+<br/>        *pl "mass[<<pos>>] = 3"
+<br/>    else
+<br/>        true=0
+<br/>    end
+<br/>end
+</code>
+<code code-left-level="4" code-type="qsp">
+! нарезаем неповторяющиеся символы из строки
+<br/>$string='long long long string'
+<br/>loop while len($string)>0:
+<br/>    $a=$mid($string,1,1)
+<br/>    if arrpos('$letters',$a)=-1:
+<br/>        $letters[]=$a
+<br/>    end
+<br/>    if len($string)>1:
+<br/>        $string=$mid($string,2)
+<br/>    else
+<br/>        $string=''
+<br/>    end
+<br/>end
+<br/>*pl
+<br/>! выводим на экран
+<br/>loop local i,s=0,arrsize('$letters') while i<s step i+=1:
+<br/>    *p $letters[i]+", "
+<br/>end
+</code>
+</segment>
+<head head-level="h2" anchor="izmeneniia-v-chtenii-dlinnyh-strok-razbityh-na-neskol_ko">
+<p>
+Изменения в чтении длинных строк, разбитых на несколько</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Для того, чтобы разбивать длинные строки на несколько (для удобства чтения) в QSP используется сочетание символов </tag>
+<tag name="tt">
+" _"</tag>
+<tag name="simple-string">
+ (пробел и символ нижнего подчёркивания). В плеерах версии 5.7.0 и ниже (кроме Quest Navigator 0.0.28) при разборе данной конструкции движок оставлял строки, как есть. Для примера возьмём такую конструкцию:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+if t _
+<br/>or _
+<br/>t:
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 символы преформатирования будут исключены, при интерпретации, а строка, разбитая с помощью </tag>
+<tag name="tt">
+" _"</tag>
+<tag name="simple-string">
+ будет объединена, как есть, то есть будет равнозначна строке:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+if tort:
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах же версии 5.8.0 и выше данная строка будет объединена с добавлением пробела вместо каждого сочетания </tag>
+<tag name="tt">
+" _"</tag>
+<tag name="simple-string">
+, то есть будет равнозначна строке:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+if t or t:
+</code>
+<segment>
+<p>
+Данное отличие в прочтении строк используется, как костыль, чтобы отличить классический плеер версии 5.7.0 от Quest Navigator версии 0.0.28:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+t=1
+<br/>tort=0
+<br/>if t _
+<br/>    or _
+<br/>    t:
+<br/>    "Игра запущена на Quest Navigator"
+<br/>else
+<br/>    "Игра запущена на Классике"
+<br/>end
+</code>
+</segment>
+<head head-level="h2" anchor="izmeneniia-v-rabote-funktsii-rand">
+<p>
+Изменения в работе функции RAND</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 и ниже второй параметр функции </tag>
+<tag name="tt">
+RAND</tag>
+<tag name="simple-string">
+ по умолчанию был </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+. Например, если вы указывали число </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+ в качестве аргумента функции </tag>
+<tag name="tt">
+RAND</tag>
+<tag name="simple-string">
+, то эта функция возвращала случайное число от </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ до </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+. В плеерах версии 5.8.0 и выше, а так же в Quest Navigator, второй параметр по умолчанию равен </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+. То есть если вы укажете лишь одно число, например </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+, функция </tag>
+<tag name="tt">
+RAND</tag>
+<tag name="simple-string">
+ вернёт случайное значение от </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+ до </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+RAND(100) & ! в 5.7.0 вернёт значение от 0 до 100
+<br/>RAND(100) & ! в 5.8.0 вернёт значение от 1 до 100
+<br/>
+<br/>RAND(10) & ! в 5.7.0 вернёт значение от 0 до 10
+<br/>RAND(10) & ! в 5.8.0 вернёт значение от 1 до 10
+<br/>
+<br/>RAND(5) & ! в 5.7.0 вернёт значение от 0 до 5
+<br/>RAND(5) & ! в 5.8.0 вернёт значение от 1 до 5
+<br/>
+<br/>RAND(0) & ! в 5.7.0 вернёт значение 0
+<br/>RAND(0) & ! в 5.8.0 вернёт значение от 1 до 0
+<br/>
+<br/>RAND(1) & ! в 5.7.0 вернёт значение от 0 до 1
+<br/>RAND(1) & ! в 5.8.0 вернёт значение 1
+</code>
+</segment>
+<head head-level="h2" anchor="povyshenie-prioriteta-funktsij-loc-i-obj">
+<p>
+Повышение приоритета функций LOC и OBJ</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 (и ниже) у функций </tag>
+<tag name="tt">
+LOC</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+OBJ</tag>
+<tag name="simple-string">
+ приоритет был ниже, чем у операций сравнения. Это могло быть неочевидным для выражений такого рода:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+(obj 'Отвёртка'=obj 'Верёвка')
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Кажется, что данное выражение должно выполняться так: проверяется наличие предмета "Отвёртка", проверяется наличие предмета "Верёвка", и лишь потом значения сравниваются. Однако в 5.7.0 у операции сравнения приоритет выше, чем у </tag>
+<tag name="tt">
+OBJ</tag>
+<tag name="simple-string">
+. Поэтому сначала выполняется операция сранения, и лишь потом функция </tag>
+<tag name="tt">
+OBJ</tag>
+<tag name="simple-string">
+. Таким образом в плеерах версии 5.7.0 данное выражение всегда возвращает </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.8.0 (и выше) приоритет у функций </tag>
+<tag name="tt">
+OBJ</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+LOC</tag>
+<tag name="simple-string">
+ выше, чем у операций сравнения, поэтому данное выражение будет вычисляться именно так, как мы предположили: сначала проверяется наличие обоих предметов и лишь потом сравниваются полученные значения. В плеерах 5.8.0 (и выше) данное выражение будет возвращать </tag>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+, если оба предмета или отсутствуют, или присутствуют, и </tag>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+, если одни предмет присутствует, а другой отсутствует.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="bol_she-argumentov-dlia-funktsij">
+<p>
+Больше аргументов для функций</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В плеерах версии 5.7.0 (и ниже) максимальное число аргументов, которое вы могли передавать операторам и функциям, было </tag>
+<tag name="tt">
+10</tag>
+<tag name="simple-string">
+. Таким образом, например функции </tag>
+<tag name="tt">
+MAX</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+MIN</tag>
+<tag name="simple-string">
+ могли производить поиск значений лишь среди десяти значений. В плеерах версии 5.8.0 и выше максимальное число аргументов, передаваемых функциям и операторам, — </tag>
+<tag name="tt">
+20</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! работает в плеерах любых версий
+<br/>max('a','b','c','d','e','f','g','h','i','j')
+<br/>! работает лишь в плеерах версии 5.8.0 и выше
+<br/>max('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t')
+</code>
+</segment>
+</segment>
+<head head-level="h1" anchor="starye-novosti-o-kotoryh-vy-mogli-ne-znat_">
+<p>
+Старые новости, о которых вы могли не знать</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Здесь мы осветим пару изменений, которые появились в плеере версии 5.7.0 (или раньше), но которые прошли не очень заметно.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="ignorirovanie-otritsatel_nyh-indeksov">
+<p>
+Игнорирование отрицательных индексов</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+В плеерах версий ниже 5.6.5 отрицательные индексы приводились к нулю, а в плеерах более новых версий, они просто напросто игнорируются:
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версии ниже 5.6.5
+<br/>mass[0]=123
+<br/>*pl mass[-1]    & ! на экране увидим 123
+<br/>mass[-1]=456
+<br/>*pl mass[0]        & ! на экране увидим 456
+</code>
+<code code-left-level="4" code-type="qsp">
+! версии 5.6.5 и выше
+<br/>mass[0]=123
+<br/>*pl mass[-1]    & ! на экране увидим 0
+<br/>mass[-1]=456
+<br/>*pl mass[0]        & ! на экране увидим 123
+</code>
+</segment>
+<head head-level="h2" anchor="dobavlenie-predmeta-v-opredelionnuiu-pozitsiiu">
+<p>
+Добавление предмета в определённую позицию</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Начиная с версии 5.6.5 вы можете добавлять предмет в указанную позицию в окне предметов. При этом, если на текущей позиции уже находится предмет, он сдвигается вниз (вправо) по списку, и все стоящие за ним предметы так же сдвигаются на одну позицию вниз (вправо).
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версии 5.6.5 и выше
+<br/>addobj 'Отвёртка','путь к файлу картинки/картинка.png',4
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Индексация предметов в списке начинается с единицы. Можно указать индекс численно больший на один, чем число предметов, тогда предмет добавится в конец списка. Однако, если указать индекс числом больше числа предметов плюс один, или индекс меньше единицы, команда </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+ будет проигнорирована:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версии 5.6.5 и выше
+<br/>addobj 'Первый предмет'
+<br/>addobj 'Второй предмет'
+<br/>addobj 'Третий предмет'
+<br/>addobj 'Четвёртый предмет'
+<br/>addobj 'Пятый предмет','',5 & ! предмет будет добавлен в конец списка
+<br/>addobj 'Седьмой предмет','',7 & ! предмет не будет добавлен
+<br/>addobj 'Нулевой предмет','',0 & ! предмет не будет добавлен
+</code>
+</segment>
+<head head-level="h2" anchor="kopirovanie-chasti-massiva-v-copyarr">
+<p>
+Копирование части массива в COPYARR</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Начиная с версии 5.7.0 вы можете копировать часть массива в другой массив, используя не обязательные параметры: начальный индекс и количество. В следующем примере в массив </tag>
+<tag name="tt">
+'mass</tag>
+<tag name="simple-string">
+' будут скопированы шесть элементов массива </tag>
+<tag name="tt">
+'array</tag>
+<tag name="simple-string">
+', начиная с третьего:
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+! версии 5.7.0 и выше
+<br/>copyarr 'mass','array',3,6
+</code>
+</segment>
+<head head-level="h2" anchor="peredacha-argumentov-v-onnewloc">
+<p>
+Передача аргументов в ONNEWLOC</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Начиная с версии 5.7.0 аргументы, которые передаются на локацию при переходе на эту локацию с помощью операторов </tag>
+<tag name="tt">
+GOTO</tag>
+<tag name="simple-string">
+ или </tag>
+<tag name="tt">
+XGOTO</tag>
+<tag name="simple-string">
+, передаются так же и на локацию-обработчик перехода на новую локацию (прописанную в переменной </tag>
+<tag name="tt">
+$ONNEWLOC</tag>
+<tag name="simple-string">
+). При этом, даже если значения в массиве </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ будут изменены на локации, на которую был осуществлён переход, на локацию, прописанную в переменной </tag>
+<tag name="tt">
+$ONNEWLOC</tag>
+<tag name="simple-string">
+, будут переданы исходные значения, переданные с </tag>
+<tag name="tt">
+GOTO</tag>
+<tag name="simple-string">
+/</tag>
+<tag name="tt">
+XGOTO</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+<code code-left-level="4" code-type="qsp">
+# start
+<br/>$onnewloc='onNewLoc'
+<br/>goto 'next','old text',345
+<br/>--start
+<br/>
+<br/># next
+<br/>''
+<br/>'next:'
+<br/>! значения, переданные с GOTO
+<br/>*pl $args[0]
+<br/>*pl args[1]
+<br/>! меняем значения на текущей локации
+<br/>args[1]=678
+<br/>$args[0]='new text'
+<br/>! изменённые значения
+<br/>*pl $args[0]
+<br/>*pl args[1]
+<br/>--next
+<br/>
+<br/># onNewLoc
+<br/>''
+<br/>'onNewLoc:'
+<br/>! значения, переданные с GOTO
+<br/>*pl $args[0]
+<br/>*pl args[1]
+<br/>--onNewLoc
+</code>
+</segment>
+</segment>
+<head head-level="h1" anchor="chto-eschio">
+<p>
+Что ещё?</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Плеер продолжает развиваться и совершенствоваться, а значит мы можем ждать ещё много изменений в работе, которые непременно будут отражены в новых статьях, а так же в онлайн-справке </tag>
+<tag name="hyperlink" href="https://wiki.qsp.org/">
+wiki.qsp.org</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+</segment>
+<head anchor="post_scriptum_articles_0003" head-level="h4">
+<p>
+P.S.:</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Данную статью вы можете найти так же и на других ресурсах:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="http://aleksversus.narod.ru/index/novovvedenija_v_qsp_5_8_0/0-71">
+мой_сайт/Что нового в QSP 5.8.0?</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://aleksversus.medium.com/нововведения-в-qsp-5-8-0-633e6eeb187e">
+medium/Что нового в QSP 5.8.0?</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://vk.com/@qsplayer-novovvedeniya-v-qsp-580">
+vk.com/Что нового в QSP 5.8.0?</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2021/06/11/novovvedeniya-v-qsp-580.html">
+ifhub.club/Что нового в QSP 5.8.0?</tag>
+</p>
+</segment>
+</list>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\04_qspider_0004.txt-light">
+<head anchor="qspider_0120" head-level="h1">
+<p>
+qSpider версии 0.12.0</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+qSpider — это QSP-плеер с поддержкой полноценной браузерной HTML-вёрстки, то есть в нём можно использовать такой же HTML-код, как в обычном браузере. Более того существует два варианта плеера: браузерный вариант (запускается непосредственно в браузере, и потому данный вариант можно использовать, например, для публикации игр на QSP в интернете) и десктопный вариант (для стационарных компьютеров, запускается без браузера). Изначально qSpider разрабатывался для поддержки AeroQSP игр (так как технология flash прекратила своё существование), однако позже плеер был переориентирован в основном на поддержку классических игр. Тем не менее возможность запуска игр AeroQSP сохранилась, хотя для их полноценной работы может понадобиться небольшая правка.
+</p>
+<p>
+Релиз последней версии плеера qSpider вы всегда можете найти по этой ссылке:
+</p>
+<p>
+<tag name="hyperlink" href="https://github.com/qspfoundation/qspider/releases">
+https://github.com/qspfoundation/qspider/releases</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+qSpider использует последнюю версию библиотеки qsplib, а значит игры, написанные на классический плеер с той же версией библиотеки, полностью совместимы с qSpider.
+</p>
+<p>
+<tag name="simple-string">
+Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье </tag>
+<tag name="hyperlink" href="#whats_news">
+"Что нового в QSP 5.8.0"</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Демонстрацию работы плеера можно посмотреть здесь: </tag>
+<tag name="hyperlink" href="https://qspfoundation.github.io/qspider/">
+https://qspfoundation.github.io/qspider/</tag>
+<tag name="simple-string">
+. Одна из представленных игр была написана для AeroQSP.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="otlichiia-qspider-ot-klassicheskogo-pleera">
+<p>
+Отличия qSpider от Классического плеера:</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ul-list">
+<segment name="li">
+<p>
+Полноценная поддержка HTML, как в браузере, в том числе встраивание видео(!);</p>
+</segment>
+<segment name="li">
+<p>
+Пути к ресурсам (картинкам/аудио файлам) регистрозависимы — то есть, если файл называется 'image.jpg', а в файле игры записано 'Image.jpg' или 'image.JPG', то плеер не сможет показать такую картинку;</p>
+</segment>
+<segment name="li">
+<p>
+Для проигрывания аудио используются встроенные средства браузера, поэтому рекомендованный формат для плеера — mp3 как самый поддерживаемый (хорошая альтернатива — webm, у него меньше размер при том же качестве, но чуть хуже с поддержкой браузеров);</p>
+</segment>
+<segment name="li">
+<p>
+Есть возможность пропуска wait (кликом по странице);</p>
+</segment>
+<segment name="li">
+<p>
+Сохранения хранятся в браузере;</p>
+</segment>
+<segment name="li">
+<p>
+Можно открывать игры, упакованные в zip-архив или в aqsp-архив.</p>
+</segment>
+</list>
+<segment>
+<p>
+Обратите внимание: для загрузки архива qsp-файл игры должен находится в корне архива (не в подпапке) и должен быть только один qsp-файл в корне (если используются дополнительные qsp-файлы, то они должны быть расположены в подпапках).
+</p>
+<p>
+Как уже было отмечено выше, qSpider существует в двух вариантах: десктопный и браузерный (web-версия).
+</p>
+</segment>
+</segment>
+</segment>
+<head head-level="h2" anchor="desktopnaia-versiia">
+<p>
+Десктопная версия</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+
+</segment>
+<head head-level="h3" anchor="osnovnye-otlichiia-desktop-versii-ot-web-versii">
+<p>
+Основные отличия desktop-версии от web-версии:</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ul-list">
+<segment name="li">
+<p>
+возможность открыть qsp-файл из папки (в отличии от web-версии, где можно открыть только архив);</p>
+</segment>
+<segment name="li">
+<p>
+открытие игры через drag-n-drop — перетаскивание файла игры на окно плеера;</p>
+</segment>
+<segment name="li">
+<p>
+открытие игры через консоль (с помощью параметра --file);</p>
+</segment>
+<segment name="li">
+<p>
+загрузка файла конфига из папки с игрой;</p>
+</segment>
+<segment name="li">
+<p>
+дополнительная секция в файле конфига для настройки окна desktop-плеера;</p>
+</segment>
+<segment name="li">
+<p>
+автоматическое обновление desktop-плеера при выходе новой версии.</p>
+</segment>
+</list>
+</segment>
+<head head-level="h3" anchor="ustanovka-i-zapusk">
+<p>
+Установка и запуск</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Установка десктопного варианта будет несколько отличаться для разных операционных систем, но проблем у вас не возникнет, если вы хоть раз устанавливали программы на свой компьютер. Чтобы скачать требуемую версию, воспользуйтесь соответствующей ссылкой:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.msi">
+Windows x64</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qSpider_0.12.0_x64.dmg">
+MacOs</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Linux: </tag>
+<tag name="hyperlink" href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.deb">
+deb-пакет</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="hyperlink" href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/q-spider_0.12.0_amd64.AppImage">
+AppImage-пакет</tag>
+</p>
+</segment>
+</list>
+<segment>
+<p>
+Если в процессе установки на "Windows 7" программа выдаст ошибку похожую на эту:
+</p>
+<p>
+<tag name="simple-string">
+— попробуйте установить webview2 вручную (скачать можно </tag>
+<tag name="hyperlink" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/">
+с этой страницы</tag>
+<tag name="simple-string">
+), а затем вновь запустите установку плеера.
+</tag>
+</p>
+<p>
+После установки запуск плеера ничем не отличается от запуска любой другой программы.
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="podkliuchenie-pleera-k-qgen">
+<p>
+Подключение плеера к QGen</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Десктопную версию можно подключить к Quest Generator, однако из-за бага в используемой библиотеке сделать плеер напрямую совместимым с QGen не получилось. Пока что для запуска можно использовать простенький bat-файл:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+SET QSPIDER=C:\Program Files\qSpider\qSpider.exe
+<br/>SET DESTPATH=%~f1
+<br/>start "" "%QSPIDER%" "--file=%DESTPATH%"
+</code>
+<segment>
+<p>
+Чтобы создать bat-файл откройте блокнот, скопируйте в него данный код и сохраните получившийся файл с расширением ".bat".
+</p>
+<p>
+Если у вас путь к qSpider отличается от стандартного, нужно поменять значение переменной QSPIDER в указанном коде. Далее нужно прописать путь к bat-файлу в QGen: в меню "Утилиты - Настройки" выбираете вкладку "Пути" и в поле "Путь к плееру" указываете путь до bat-файла.
+</p>
+</segment>
+</segment>
+</segment>
+<head head-level="h2" anchor="brauzernaia-versiia-ili-web-versiia">
+<p>
+Браузерная версия, или web-версия</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Данная версия плеера может быть использована вами для размещения игр онлайн, то есть в интернете, однако так же её можно запускать и на компьютере. 
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="ustanovka-i-zapusk-pleera-na-komp_iutere">
+<p>
+Установка и запуск плеера на компьютере</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Прежде всего вам необходимо скачать архив с web-версией плеера на компьютер: </tag>
+<tag name="hyperlink" href="https://github.com/QSPFoundation/qspider/releases/download/v0.12.0/qspider-player.zip">
+ссылка на скачивание</tag>
+<tag name="simple-string">
+. Содержимое архива распакуйте в любую папку, эта папка и будет местом расположения плеера.
+</tag>
+</p>
+<p>
+Из-за ограничений безопасности плеер нельзя запустить просто открыв файл "index.html" в браузере.
+</p>
+<p>
+<tag name="simple-string">
+Поэтому для запуска необходим локально запущенный сервер — можно использовать один из </tag>
+<tag name="hyperlink" href="https://gist.github.com/willurd/5720255">
+списка</tag>
+<tag name="simple-string">
+ или же расширение хрома </tag>
+<tag name="hyperlink" href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">
+"Web Server for Chrome"</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Дальнейшие инструкции ориентированы на использование расширения:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="simple-string">
+устанавливаем </tag>
+<tag name="hyperlink" href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">
+"Web Server for Chrome"</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+в адресной строке в хроме пишем "chrome://apps/" и выбираем в списке "Web Server";</p>
+</segment>
+<segment name="li">
+<p>
+в открывшемся попапе выбираем папку, в которую распаковали плеер и запускаем сервер;</p>
+</segment>
+<segment name="li">
+<p>
+там же в попапе будет ссылка на запуск сервера в окне браузера.</p>
+</segment>
+</list>
+</segment>
+<head head-level="h3" anchor="ustanovka-pleera-na-github">
+<p>
+Установка плеера на github</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ol-list">
+<segment name="li">
+<p>
+<tag name="simple-string">
+Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел </tag>
+<tag name="hyperlink" href="#addndelgames">
+"добавление и удаление игр из списка"</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел </tag>
+<tag name="hyperlink" href="#cfgfile">
+"Конфигурационный файл"</tag>
+<tag name="simple-string">
+).</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+Откройте github в браузере, зайдите в свой профиль и создайте новый публичный репозиторий с именем "username.github.io" (внимание! Это важно! Впоследствии репозиторий нужно будет переименовать, но пока что он должен называться так), где "username" — это ваш логин (ник) на github.</p>
+</segment>
+<segment name="li">
+<p>
+В разделе "Code" репозитория нажмите кнопку "Add file" и выберите пункт "Upload files", откроется страница загрузки файлов на github. </p>
+</segment>
+<segment name="li">
+<p>
+Перетащите все распакованные файлы браузерной версии плеера в соответствующее поле на странице (в т.ч. папки "assets" и "game").</p>
+</segment>
+<segment name="li">
+<p>
+Теперь по адресу "https://username.github.io" станет доступна страничка с вашими играми, однако таким образом в одном аккаунте сможет существовать лишь одна подобная страница. Нужно переименовать созданный репозиторий, чтобы в дальнейшем вы смогли добавлять в аккаунт и другие репозитории с подобными страницами. Зайдите в созданный репозиторий на github, найдите раздел "settings", подраздел "general". В поле "Repository name" введите новое имя репозитория, например "mygame", нажмите кнопку "rename", и таким образом страница с игрой станет доступна по адресу "https://username.github.io/mygame" (соответственно вместо "username" будет ваш ник на гитхабе, а вместо "mygame" — название репозитория, которое вы только что ввели).</p>
+</segment>
+</list>
+</segment>
+<head anchor="addndelgames" head-level="h3">
+<p>
+Добавление и удаление игр из списка</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+По умолчанию вместе с плеером упакованы демонстрационные игры. Вы можете заменить их, или просто добавить свою игру к списку.
+</p>
+<p>
+Демонстрационные игры лежат в подпапке "game", там же лежит конфигурационный файл "game.cfg"
+</p>
+<p>
+Для добавления своей игры в список, нужно разместить игру в папке "game" одним из следующих способов:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+скопировать zip-архив с упакованной в него игрой в папку "game"</p>
+</segment>
+<segment name="li">
+<p>
+скопировать папку с игрой в папку "game"</p>
+</segment>
+<segment name="li">
+<p>
+если ваша игра имеет формат игры для AeroQSP, скопировать файл ".aqsp" вашей игры в папку "game"</p>
+</segment>
+</list>
+<segment>
+<p>
+<tag name="simple-string">
+Чтобы игра отобразилась в списке, необходимо отредактировать файл "game.cfg". Конфигурация каждой игры в файле начинается с заголовка секции </tag>
+<tag name="tt">
+[[game]]</tag>
+<tag name="simple-string">
+, далее перечисляется несколько параметров:
+</tag>
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+id — уникальный идентификатор игры (используется для сохранений);</p>
+</segment>
+<segment name="li">
+<p>
+title — название игры (будет показано в заголовке плеера);</p>
+</segment>
+<segment name="li">
+<p>
+description — необязательное краткое описание игры, аннотация;</p>
+</segment>
+<segment name="li">
+<p>
+file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp";</p>
+</segment>
+<segment name="li">
+<p>
+mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".</p>
+</segment>
+</list>
+<segment>
+<p>
+Таким образом вам нужно добавить в файл "game.cfg" новую секцию для вашей игры примерно такого содержания:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[[game]]
+<br/>id="уникальный-идентификатор-может-быть-и-просто-числом"
+<br/>title="Название игры, отображаемое в виде заголовка на странице"
+<br/>description="""Краткое описание игры, которое будет отображаться на странице со списком игр. Аннотация."""
+<br/>file="путь к файлу игры/mygame.qsp"
+</code>
+<segment>
+<p>
+Если вы убрали демонстрационные игры из папки "game", не забудьте удалить соответствующие секции из файла "game.cfg".
+</p>
+<p>
+<tag name="simple-string">
+См. так же информацию в разделе </tag>
+<tag name="hyperlink" href="#cfgfile">
+"Конфигурационный файл"</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+Обратите внимание! Если вы указываете путь к внешнему файлу игры, нужно помнить о ряде ограничений, накладываемых браузером:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+с https страницы нельзя загрузить http ссылку;</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+у сервера, где находится игра, должны быть настроены </tag>
+<tag name="hyperlink" href="https://developer.mozilla.org/ru/docs/Web/HTTP/CORS">
+CORS заголовки</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+</list>
+</segment>
+</segment>
+<head anchor="cfgfile" head-level="h2">
+<p>
+Конфигурационный файл</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Конфигурационный файл "game.cfg" определяет поведение плеера во время запуска той или иной игры. Данный файл размещается рядом с файлом ".qsp" запускаемой игры. Если игра упакована в архив ".zip" или ".aqsp", конфигурационный файл так же должен быть упакован в тот же самый архив рядом с файлом ".qsp" самого верхнего уровня. Для web-версии плеера можно написать один конфигурационный файл для всех игр и разместить его в папке "game", при этом конфигурационные файлы, которые находятся рядом с файлами игр, будут иметь приоритет над общим.
+</p>
+<p>
+Конфигурационный файл (конфиг, конфиг-файл) состоит из секций, каждая из которых описывает одну игру. Таким образом в конфиге должна быть хотя бы одна секция, описывающая игру. Для десктопной версии плеера в конфиге указывается только одна секция игры.
+</p>
+<p>
+<tag name="simple-string">
+Секция, описывающая игру, начинается с заголовка </tag>
+<tag name="tt">
+[[game]]</tag>
+<tag name="simple-string">
+ и заканчивается там, где начинается следующая секция, описывающая игру, либо с концом файла. Заголовок секции пишется отдельной строкой. Структура конфиг-файла для трёх игр в браузерной версии плеера может выглядеть примерно так:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[[game]]
+<br/>id = "7466df3b-4236-4668-b0df-2a70477da67b"
+<br/>title = "Сказочка на ночь"
+<br/>description = """описание первой игры"""
+<br/>file = "skazka/skazka.qsp"
+<br/>
+<br/>[[game]]
+<br/>id = "30c8aebe-1690-4e6d-8b42-47c4be381748"
+<br/>title = "Куртуазная Баллада"
+<br/>description = """описание второй игры"""
+<br/>file = "ballad/ballad.zip"
+<br/>
+<br/>[[game]]
+<br/>id = "c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"
+<br/>mode = "aero"
+<br/>title = "Город туманов"
+<br/>description = """описание третьей игры"""
+<br/>file = "cityofmists.aqsp"
+</code>
+<segment>
+<p>
+Как видно из приведённого примера, следом за заголовком секции идёт ряд параметров. Сначала записывается название параметра (ключ), затем ставится знак равенства, а после в кавычках указывается значение параметра. Если значение пишется в несколько строк, оно помещается в тройные кавычки.
+</p>
+<p>
+Для описания игры используются следующие параметры, ключи:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="simple-string">
+id — уникальный идентификатор игры (используется для сохранений, поэтому технически можно использовать любой набор символов, однако лучше сгенерировать собственный уникальный айди по образцу из примера, воспользовавшись онлайн-генератором </tag>
+<tag name="hyperlink" href="https://www.uuidgenerator.net">
+https://www.uuidgenerator.net</tag>
+<tag name="simple-string">
+);</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+title — название игры (будет показано в заголовке плеера и на вкладке браузера);</p>
+</segment>
+<segment name="li">
+<p>
+description — необязательное краткое описание игры, аннотация;</p>
+</segment>
+<segment name="li">
+<p>
+file — путь к файлу с игрой относительно файла "game.cfg", или внешняя ссылка (например file = "qspfoundation.github.io/qspider/game/skazka/skazka.qsp", для браузерной версии;</p>
+</segment>
+<segment name="li">
+<p>
+mode — если ваша игра написана для AeroQSP, данному параметру назначается значение "aero".</p>
+</segment>
+</list>
+<segment>
+<p>
+Для десктопной версии плеера все параметры, кроме "id", не обязательны. Тем не менее рекомендуется их проставлять для удобства чтения конфигурационного файла. Для игр, написанных для AeroQSP, параметр "mode" обязателен.
+</p>
+<p>
+Далее каждая секция игры может содержать подсекции, расширяющие возможности управления плеером и игрой.
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="naznachenie-goriachih-klavish-gamehotkeys">
+<p>
+Назначение горячих клавиш [game.hotkeys]</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Для каждой игры можно назначить собственные комбинации горячих клавиш. Для этого в секции игры прописываем подсекцию с заголовком </tag>
+<tag name="tt">
+[game.hotkeys]</tag>
+<tag name="simple-string">
+. После заголовка перечисляем клавиши или их сочетания в качестве ключей, а в качестве значений прописываем названия локаций, код которых будет выполнен при нажатии на горячие клавиши. Пример:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[game.hotkeys]
+<br/>i = "Инвентарь"
+<br/>"ctrl+shift+m" = "карта"
+<br/>"up up down down left right left right b a" = "konami"
+</code>
+<segment>
+<p>
+Для одиночного нажатия клавиш в качестве ключа указывается её обозначение:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+i="Инвентарь"
+</code>
+<segment>
+<p>
+Для того, чтобы указать одновременное нажатие нескольких клавиш, их обозначения перечисляются через "+" (плюс):
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+"ctrl+shift+m" = "карта"
+</code>
+<segment>
+<p>
+Для того, чтобы задействовать последовательное нажатие клавиш, их обозначения перечисляются через пробел:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+"up up down down left right left right b a" = "konami"
+</code>
+<segment>
+<p>
+Можно использовать следующие обозначения:
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="klavishi-modifikatory">
+<p>
+Клавиши-модификаторы</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="tt">
+shift</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+ctrl</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+alt</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+meta</tag>
+<tag name="simple-string">
+ — для поддержки на macOs лучше использовать этот модификатор вместо ctrl</tag>
+</p>
+</segment>
+</list>
+</segment>
+<head head-level="h4" anchor="spetsial_nye-klavishi">
+<p>
+Специальные клавиши</p>
+</head>
+<segment segment-class="for-head">
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="tt">
+backspace</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+tab</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+enter</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+capslock</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+esc</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+space</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+pageup</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+pagedown</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+end</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+home</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+left</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+up</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+right</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+down</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+ins</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+del</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+plus</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="tt">
+f1</tag>
+<tag name="simple-string">
+ - </tag>
+<tag name="tt">
+f19</tag>
+</p>
+</segment>
+</list>
+<segment>
+<p>
+<tag name="simple-string">
+Остальные клавиши можно определять просто по имени </tag>
+<tag name="tt">
+a</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+$</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+*</tag>
+<tag name="simple-string">
+, или </tag>
+<tag name="tt">
+=</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+</segment>
+</segment>
+<head anchor="qspider_gameresource" head-level="h3">
+<p>
+Подключение дополнительных ресурсов [game.resources]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Есть возможность подключить к каждой отдельной игре дополнительные ресурсы. Например, собственные css-файлы, скрипты, шрифты и т.д. Для этого в секции игры нужно создать подсекцию с заголовком </tag>
+<tag name="tt">
+[game.resources]</tag>
+<tag name="simple-string">
+. Пример:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[game.resources]
+<br/>styles = [
+<br/>  "https://fonts.googleapis.com/css?family=Sofia",
+<br/>  "styles.css"
+<br/>]
+<br/>scripts = [
+<br/>  "script.js"
+<br/>]
+<br/>fonts = [
+<br/>  ["Shelter", "fonts/shelter.woff2"]
+<br/>]
+<br/>icon = "icon.png"
+</code>
+<segment>
+<p>
+Для подключения css-файлов используем ключ "styles", значением которого выступает список ссылок на необходимые нам файлы css. Это могут быть как внешние ссылки, так и пути относительно файла "game.cfg".
+</p>
+<p>
+Список обязательно помещается в квадратные скобки! Его элементы разделяются запятыми. Отступы между элементами и скобками ни на что не влияют. За последним значением списка нельзя ставить запятую. Пример:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+styles = ["skins/game.css","lewis.css"]
+</code>
+<segment>
+<p>
+К основным элементам интерфейса добавлен атрибут data-qsp (например, data-qsp="main", data-qsp="actions" и т.д.), который позволит вам стилизовать данные элементы, или взаимодействовать с ними через скрипты.
+</p>
+<p>
+<tag name="simple-string">
+Для подключения JavaScript используется ключ "scripts". Его значением так же выступает список ссылок на нужные скрипты. Поскольку нет возможности автоматически удалить JS код из памяти (при переключении на другую игру, например) — это надо делать вручную. Подробнее об этом можно почитать в </tag>
+<tag name="hyperlink" href="https://ifhub.club/2021/05/23/qspider-0100.html">
+статье Werewolf`а, посвящённой выходу qSpider 0.10.0</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Пример подключения скриптов:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+scripts=["skins/js/game.js","skins/js/QspLibBrowserTest.js"]
+</code>
+<segment>
+<p>
+Ключ "fonts" предназначен для подключения шрифтов к игре. Его значением является список, элементами которого являются другие списки — каждый такой отвечает за подключение одного шрифта. Пример подключения:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+fonts=[
+<br/>    ["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],
+<br/>    ["AstronBold","skins/fonts/astron-bold.woff2"]
+<br/>]
+</code>
+<segment>
+<p>
+Как видите, в данном примере подключаются два шрифта. Здесь "GoodVibesPro" и "AstronBold" — это имена шрифтов, которые вы можете использовать при стилизации текста в вашей игре. Вы можете сами назначать эти имена. Вторым элементом для каждого из шрифтов указывается путь к конкретному файлу шрифта. Рекомендуемый формат — woff2, он поддерживается всеми современными браузерами. В сети полно онлайн конверторов из ttf в woff2.
+</p>
+<p>
+Если у шрифта есть Bold, Italic и BoldItalic варианты в отдельных файлах, то подключение может выглядеть так:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+fonts = [
+<br/>  ["Shelter", "fonts/shelter.woff2"],
+<br/>  ["Shelter", "fonts/shelter-bold.woff2", "bold"],
+<br/>  ["Shelter", "fonts/shelter-italic.woff2", "normal", "italic"],
+<br/>  ["Shelter", "fonts/shelter-bold-italic.woff2", "bold", "italic"]
+<br/>]
+</code>
+<segment>
+<p>
+Параметр "icon" дает возможность заменить иконку во вкладке браузера, так называемый "favicon". По умолчанию там находится логотип QSP. Пример использования:
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+icon="skins/gfx/doctor.png"
+</code>
+</segment>
+<head head-level="h3" anchor="podderzhka-igr-aeroqsp-gameaero">
+<p>
+Поддержка игр AeroQSP [game.aero]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Как было сказано выше, для того, чтобы запускать AeroQSP-игру, нужно в секции игры выставить параметр "mode":
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+mode="aero"
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Так же, если используется размер игры, отличающийся от дефолтного 800х600, необходимо добавить секцию </tag>
+<tag name="tt">
+[game.aero]</tag>
+<tag name="simple-string">
+ с размерами:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[game.aero]
+<br/>width = 504
+<br/>height = 680
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Смотрите так же раздел </tag>
+<tag name="hyperlink" href="#aeroqspider">
+"Особенности работы игр AeroQSP на qSpider"</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="nastrojka-okna-desktop-pleera-gamewindow">
+<p>
+Настройка окна desktop-плеера [game.window]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Вы можете настраивать окно плеера в десктопной версии. Для этого в основной секции игры нужно объявить подсекцию с заголовком </tag>
+<tag name="tt">
+[game.window]</tag>
+<tag name="simple-string">
+, и проставить необходимые параметры:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[game.window]
+<br/>width = 1280
+<br/>height = 960
+<br/>resizable = true
+<br/>minWidth = 1024
+<br/>minHeight = 768
+</code>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+width и height задают размер окна при старте игры;</p>
+</segment>
+<segment name="li">
+<p>
+minWidth и minHeight дают возможность задать минимально возможные размеры, если игрок попытается изменить размеры окна;</p>
+</segment>
+<segment name="li">
+<p>
+resizable — позволяет запретить изменения размера в принципе (автоматически включается в aero режиме).</p>
+</segment>
+</list>
+</segment>
+<head head-level="h3" anchor="primer-fajla-gamecfg-dlia-otdel_noj-igry">
+<p>
+Пример файла "game.cfg" для отдельной игры</p>
+</head>
+<segment segment-class="for-head">
+<code code-left-level="0" code-type="lua">
+[[game]]
+<br/>id = "50458ae2-c07d-ca43-4a81-7bf480eedcf6"
+<br/>title = "Вереница миров, или Выводы из закона Мёрфи"
+<br/>description = """В Лаборатории Мерфи опять неприятности. Похищен опытный образец бета-аннигилятора, и похититель скрылся в Веренице Миров - сложной системе межпространственных порталов. Кому предстоит расхлёбывать это дельце? Ну конечно же вам, майор!"""
+<br/>file = "merphy_law.qn.qsp"
+<br/>
+<br/>[game.hotkeys]
+<br/>b = "back.varriors"
+<br/>"ctrl+shift+m"="карта"
+<br/>"up up down down left right left right" = "konami"
+<br/>
+<br/>[game.resources]
+<br/>styles = ["skins/qspidergame.css"]
+<br/>fonts=[
+<br/>    ["GoodVibesPro","skins/fonts/good-vibes-pro.woff2"],
+<br/>    ["AstronBold","skins/fonts/astron-bold.woff2"]
+<br/>]
+<br/>icon="skins/gfx/doctor.png"
+<br/>
+<br/>[game.window]
+<br/>width = 1280
+<br/>height = 720
+<br/>resizable = true
+<br/>minWidth = 848
+<br/>minHeight = 480
+</code>
+</segment>
+</segment>
+<head anchor="aeroqspider" head-level="h2">
+<p>
+Особенности работы игр AeroQSP на qSpider</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+HTML-движок в флеш версии AeroQSP достаточно специфичен и не всегда совпадает с тем, как работает браузер, поэтому при запуске AeroQSP-игр на qSpider будут наблюдаться некоторые отличия в поведении игр.
+</p>
+<p>
+Вот список особенностей и отличий:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+несколько игр использовали синтаксис, который поменялся в 5.8.0 (порядок аргументов в INSTR, ARRCOMP, ARRPOS), и в qSpider эти игры будут выдавать ошибку о несовпадении типов данных;</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+в AeroQSP шрифты подключались в формате swf, использовать такой формат больше нет возможности, поэтому если игра использует нестандартные шрифты — их необходимо будет подключать через файл конфига в секции </tag>
+<tag name="hyperlink" href="#qspider_gameresource">
+game.resources</tag>
+<tag name="simple-string">
+;</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+в qSpider не поддерживаются эффекты </tag>
+<tag name="tt">
+pixels</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+h_blinds</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+v_blinds</tag>
+<tag name="simple-string">
+, остальные эффекты могут немного отличаться от того, как работала флеш-версия;</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+не поддерживается переменная </tag>
+<tag name="tt">
+SCROLL_SPEED</tag>
+<tag name="simple-string">
+ (впрочем, скорее всего нет игр, в которых она бы использовалась);</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+обработка клика в флеше отличается от браузера — если на блоке нет обработчика, то он не перехватывает клик, даже если размещен поверх другого. В ряде игр это привело к тому, что неспрятанные панельки (пустые и не видимые) в qSpider блокируют клики по линкам под ними. Пример — игра "Новогодние сказки", где кнопка "Играть" почти полностью перекрыта пустой на этот момент панелькой действий. Лечится небольшими изменениями игры — отключением неиспользуемых панелей.</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+в флеше тег </tag>
+<tag name="tt">
+center</tag>
+<tag name="simple-string">
+ внутри таблиц растягивает таблицу на всю ширину, при этом еще размеры ячеек без явно указанной ширины в этом случае считаются не как в браузере. Чаще всего это заметно в действиях — для форматирования по умолчанию используется таблица, и если в названии действия использовать тег center, то в флеш-версии текст будет посередине панели, а в qSpider — нет. Лечится добавлением </tag>
+<tag name="tt">
+width=100%</tag>
+<tag name="simple-string">
+ в такую таблицу. Не было возможности сделать это на уровне плеера, поскольку в ряде игр это ломало отображение.</tag>
+</p>
+</segment>
+</list>
+</segment>
+<head head-level="h3" anchor="primer-podkliucheniia">
+<p>
+Пример подключения</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Для подключения AeroQSP игры через конфиг — необходимо в основной секции добавить </tag>
+<tag name="tt">
+mode="aero"</tag>
+<tag name="simple-string">
+, и если используется размер экрана игры, отличающийся от дефолтного 800х600, — добавить секцию с размерами:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="lua">
+[[game]]
+<br/>id = "c2cb4b5b-6a1c-482e-bb47-9ef207fb0dcd"
+<br/>title = "Чашка кофе"
+<br/>mode = "aero"
+<br/>file = "aero_coffee.aqsp"
+<br/>
+<br/>[game.aero]
+<br/>width = 504
+<br/>height = 680
+</code>
+<segment>
+<p>
+При этом можно использовать как aqsp-архив, так и распаковать его и прописать ссылку на qsp-файл в папке.
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="vazhnoe-primechanie-ot-werewolfa">
+<p>
+Важное примечание от Werewolf''а</p>
+</head>
+<segment segment-class="for-head">
+<quote>
+<p>
+Я не собираюсь развивать и поддерживать (кроме багфиксов) формат AeroQSP, поэтому не советую начинать новые игры с его использованием.</p>
+</fquote>
+</segment>
+</segment>
+<head head-level="h2" anchor="zakliuchenie">
+<p>
+Заключение</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Werewolf продолжает развивать и модернизировать qSpider, добавляя в него всё новые и новые возможности. Ждите обновлений, проводите побольше тестов свежих версий плеера и пишите побольше игр.
+</p>
+<p>
+<tag name="simple-string">
+Обо всех ошибках и странностях в поведении при работе плеера просьба сообщать прямо на канал </tag>
+<tag name="hyperlink" href="https://discord.gg/CXyrrznR">
+#qsp_dev</tag>
+<tag name="simple-string">
+ на сервере интерактивной литературы в дискорде.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Данная статья собрана из статей, написанных Werewolf''ом для </tag>
+<tag name="hyperlink" href="https://ifhub.club">
+ifhub.club</tag>
+<tag name="simple-string">
+:
+</tag>
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2020/10/11/qspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html">
+qSpider - плеер для запуска QSP игр в браузере</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2020/10/11/qspider-hotkeys.html">
+qSpider HotKeys - горячие клавиши</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2020/10/18/qspider-090.html">
+qSpider 0.9.0 - список игр в конфиге</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2020/11/01/qspider-091.html">
+qSpider 0.9.1 - загрузка игр из zip</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2021/05/23/qspider-0100.html">
+qSpider 0.10.0 - подключение дополнительных ресурсов</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2021/10/22/qspider-0110.html">
+qSpider 0.11.0 - поддержка игр в AeroQSP-формате</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://ifhub.club/2022/02/06/qspider-0120.html">
+qSpider 0.12.0 - полноценная desktop-версия</tag>
+</p>
+</segment>
+</list>
+</segment>
+<head anchor="post_scriptum_articles_0004" head-level="h4">
+<p>
+P.S.:</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Данную статью вы можете найти так же и на других ресурсах:
+</p>
+</segment>
+<list list-type="ul-list">
+<segment name="li">
+<p>
+<tag name="hyperlink" href="http://aleksversus.narod.ru/blog/qspider_v_0_12_0_svodnaja_statja/2022-02-15-25">
+мой_сайт/qSpider 0.12.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://aleksversus.medium.com/qspider-v-0-12-0-сводная-статья-1d76af7d4f27">
+medium/qSpider 0.12.0</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="hyperlink" href="https://vk.com/@qsplayer-qspider-v-0120-svodnaya-statya">
+vk.com/qSpider 0.12.0</tag>
+</p>
+</segment>
+</list>
+</segment>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\05_classic.config_0005.txt-light">
+<head anchor="classic_cfg" head-level="h1">
+<p>
+Структура конфигурационного файла классического плеера версии 5.7.0</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Классический плеер QSP версии 5.7.0 хранит все настройки отображения и расположения окон в файле </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+. Данный файл создаётся автоматически при первом запуске плеера и перезаписывается всякий раз, когда игрок плеер закрывает. Таким образом, чтобы сбросить настройки плеера, нужно просто удалить файл </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+ из папки с плеером.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Если файл </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+ найден в папке с игрой, то применяются настройки из него. Если в папке с игрой такой файл не найден, применяются настройки из файла, который лежит рядом с плеером.
+</tag>
+</p>
+<p>
+Это позволяет для каждой отдельной игры задавать собственные настройки оформления.
+</p>
+<p>
+Официального, задокументированного способа сделать это — нет. Но есть небольшой трюк, позволяющий добиться нужного эффекта:
+</p>
+</segment>
+<list list-type="ol-list">
+<segment name="li">
+<p>
+Запускаем в плеере свою игру.</p>
+</segment>
+<segment name="li">
+<p>
+Вручную "расставляем" окна так, как нам нужно, в том числе задавая размер.</p>
+</segment>
+<segment name="li">
+<p>
+Закрываем плеер.</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Открываем папку плеера (где находится </tag>
+<tag name="tt">
+qspgui.exe</tag>
+<tag name="simple-string">
+) и копируем оттуда файл </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+ в папку с игрой.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Ставим на файле </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+ в папке с игрой атрибут "только для чтения".</tag>
+</p>
+</segment>
+</list>
+<segment>
+<p>
+Теперь игра будет открываться с нужным расположением и размером окон.
+</p>
+<p>
+<tag name="simple-string">
+Если не выполнить пункт </tag>
+<tag name="tt">
+5</tag>
+<tag name="simple-string">
+, то игрок сможет изменить расположение и размер окон, и новые настройки сохранятся у него для текущей игры после закрытия плеера.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Некоторых особо хитрых комбинаций расположения окон можно добиться только самостоятельным редактированием </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+. И опять же, нет никакой подробной официальной документации по этому файлу. Все сведения, приведённые в данной статье, получены экспериментальным путём.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Конфигурационный файл </tag>
+<tag name="tt">
+qspgui.cfg</tag>
+<tag name="simple-string">
+ состоит из нескольких секций настроек. Каждая секция объявляется заголовком, заключённым в квадратные скобки.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Настройки представляют собой пары типа </tag>
+<tag name="tt">
+Переменная=Значение</tag>
+<tag name="simple-string">
+. Если какую-то из настроек удалить, при запуске плеера будет применена настройка по-умолчанию, после чего эта настройка будет восстановлена в конфигурационном файле.
+</tag>
+</p>
+<p>
+На каждую игру можно создать собственный конфигурационный файл, который будет иметь приоритет перед основным конфигурационным файлом плеера.
+</p>
+<p>
+Если на конфигурационном файле не стоит атрибут "только для чтения", после закрытия плеера все данные в конфигурационном файле будут перезаписаны в соответствии с новыми настройками плеера.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="sektsiia-nastroek-tsveta-colors">
+<p>
+Секция настроек цвета [Colors]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Данная секция объявляется заголовком </tag>
+<tag name="tt">
+[Colors]</tag>
+<tag name="simple-string">
+. В неё помещаются три настройки, каждая из которых должна располагаться на отдельной строке:
+</tag>
+</p>
+<p>
+<tag name="tt">
+BackColor</tag>
+<tag name="simple-string">
+ — цвет фона плеера.
+</tag>
+</p>
+<p>
+<tag name="tt">
+FontColor</tag>
+<tag name="simple-string">
+ — цвет шрифта плеера.
+</tag>
+</p>
+<p>
+<tag name="tt">
+LinkColor</tag>
+<tag name="simple-string">
+ — цвет ссылок плеера.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Цвет задаётся целочисленным цветовым кодом, который вычисляется из трёх цветовых составляющих: </tag>
+<tag name="tt">
+RED</tag>
+<tag name="simple-string">
+ (красная), </tag>
+<tag name="tt">
+GREEN</tag>
+<tag name="simple-string">
+ (зелёная) и </tag>
+<tag name="tt">
+BLUE</tag>
+<tag name="simple-string">
+ (синяя). Вычислить необходимый цветовой код можно по формуле:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+RED + GREEN*256 + BLUE*256*256
+</code>
+<segment>
+<p>
+Пример настроек цветов для плеера (стандартные):
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+[Colors]
+<br/>BackColor=14737632
+<br/>FontColor=0
+<br/>LinkColor=16711680
+</code>
+</segment>
+<head head-level="h2" anchor="sektsiia-nastroek-shrifta-font">
+<p>
+Секция настроек шрифта [Font]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Данная секция объявляется заголовком </tag>
+<tag name="tt">
+[Font]</tag>
+<tag name="simple-string">
+. В неё помещаются три настройки, каждая на отдельной строке:
+</tag>
+</p>
+<p>
+<tag name="tt">
+FontSize</tag>
+<tag name="simple-string">
+ — утанавливает предпочтительный размер шрифта в плеере. Это основной размер шрифта так же и для HTML-разметки. Может принимать значения от 1 до 72 (или сколько позволит система). Если выставить число ноль, то будет применён размер шрифта по-умолчанию, т.е. 12.
+</tag>
+</p>
+<p>
+<tag name="tt">
+FontName</tag>
+<tag name="simple-string">
+ — устанавливает имя предпочтительного шрифта в плеере. Можно указывать названия шрифтов, установленных в системе. Если указать несуществующий в системе шрифт, будет восстановлена настройка по-умолчанию, шрифт </tag>
+<tag name="tt">
+Segoe UI</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="tt">
+UseFontSize</tag>
+<tag name="simple-string">
+ — эта настройка запрещает использовать иной размер шрифта, кроме указанного в секции настроек. Т.е. переменная fsize в игре перестаёт действовать. Можно указывать значение 0 — отключает принудительное использование системного размера шрифта, 1 — включает принудительное использование системного размера шрифта.
+</tag>
+</p>
+<p>
+Пример настроек шрифта для плеера (стандартный):
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+[Font]
+<br/>FontSize=12
+<br/>FontName=Segoe UI
+<br/>UseFontSize=0
+</code>
+</segment>
+<head head-level="h2" anchor="sektsiia-osnovnyh-nastroek-general">
+<p>
+Секция основных настроек [General]</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Данная секция объявляется заголовком </tag>
+<tag name="tt">
+[General]</tag>
+<tag name="simple-string">
+. В неё помещается множество настроек.
+</tag>
+</p>
+<p>
+<tag name="tt">
+Volume</tag>
+<tag name="simple-string">
+ — данная настройка выставляет уровень громкости звуков в плеере. Принимает значения от 0 до 100 (проценты громкости). Пишется отдельной строкой.
+</tag>
+</p>
+<p>
+<tag name="tt">
+ShowHotkeys</tag>
+<tag name="simple-string">
+ — данная настройка отвечает за отображение подсказок по горячим клавишам действий. Принимает значения: 0 — горячие клавиши действий не отображаются, 1 — горячие клавиши действий отображаются. Пишется отдельной строкой
+</tag>
+</p>
+<p>
+<tag name="tt">
+Language</tag>
+<tag name="simple-string">
+ — данная настройка отвечает за выбор языка локализации плеера. Можно выбрать один из пяти языков: </tag>
+<tag name="tt">
+de_DE</tag>
+<tag name="simple-string">
+ - немецкий, </tag>
+<tag name="tt">
+en_GB</tag>
+<tag name="simple-string">
+ — английский, ru_RU — русский, uk_UA — украинский, eo — эсперанто. Можно заменить один из языков на свой собственный, используя инструкцию отсюда: </tag>
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57">
+Локализация классического плеера QSP</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Далее следуют настройки, перечисляемые в одну строку. Лучше всего их записывать по порядку, как есть, без лишних пробелов. Данные настройки разделяются на группы. Каждая группа закрывается вертикальной чертой </tag>
+<tag name="tt">
+|</tag>
+<tag name="simple-string">
+. Последняя группа так же должна быть закрыта вертикальной чертой. Внутри группы настройки закрываются точкой с запятой </tag>
+<tag name="tt">
+;</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="panels">
+<p>
+Panels</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Первая группа состоит из одной настройки Panels. Её значение всегда сбрасывается к </tag>
+<tag name="tt">
+layout2</tag>
+<tag name="simple-string">
+, поэтому особого смысла менять её нет. Но если всё же измените на другую, пропорции панелей сбросятся к виду с приоритетом площади у окна основного описания.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+Panels=layout2|
+</code>
+<segment>
+<p>
+Следующие шесть групп настроек определяют размещение шести разных окон плеера. У всех окон настройки одинаковые, поэтому рассмотрим их вне привязки к какой либо группе. Если поведение окна будет отличаться от прочих при изменении какой либо настройки, об этом будет сказано отдельно.
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="name">
+<p>
+name</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Первая переменная служебная и не относится непосредственно к настройкам плеера. Она нужна, чтобы плеер понимал для какого окна ему применить все последующие настройки. Это системное название окна:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+name=imgview;
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Данной переменной можно передавать только шесть значений — системные названия окон плеера. Это значения: </tag>
+<tag name="tt">
+imgview</tag>
+<tag name="simple-string">
+ (окно предпросмотра изображений), </tag>
+<tag name="tt">
+desc</tag>
+<tag name="simple-string">
+ (окно основного описания), </tag>
+<tag name="tt">
+objs</tag>
+<tag name="simple-string">
+ (окно предметов), </tag>
+<tag name="tt">
+acts</tag>
+<tag name="simple-string">
+ (окно действий), </tag>
+<tag name="tt">
+vars</tag>
+<tag name="simple-string">
+ (окно дополнительного описания), </tag>
+<tag name="tt">
+input</tag>
+<tag name="simple-string">
+ (окно пользовательского ввода, поле ввода). Именно по значению в этой переменной вы можете понять, к настройкам какого окна относится данная группа настроек.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="caption">
+<p>
+caption</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Следующей переменной бесполезно прописывать какие-либо настройки, так как значения в неё подтягиваются из текущей локализации. Это названия окон. Поэтому значения могут быть любыми в зависимости от локализации. Вот так выглядит эта "настройка" для окна предметов в английской локализации:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+caption=Objects;
+</code>
+<segment>
+<p>
+У окна основного описания нет своей подписи, поэтому и значение в данную переменную прописывается пустое:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+caption=;
+</code>
+</segment>
+<head head-level="h4" anchor="state">
+<p>
+state</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Переменная </tag>
+<tag name="tt">
+state</tag>
+<tag name="simple-string">
+ отвечает за внешний вид и поведение окна. Можете поэкспериментировать с этой настройкой, задавая разные значения, но по-умолчанию всеми окнами используются лишь несколько значений, определяющих поведение:
+</tag>
+</p>
+<p>
+<tag name="tt">
+768</tag>
+<tag name="simple-string">
+ — это значение предопределяет поведение окна, как у окна основного описания по-умолчанию. Например, при этом значении отсутствует заголовок окна.
+</tag>
+</p>
+<p>
+<tag name="tt">
+6293500</tag>
+<tag name="simple-string">
+ — это значение предопределяет поведение окна, как у окон действий, предметов и дополнительного описания по-умолчанию. При этом значении обязательно присутствует заголовок окна.
+</tag>
+</p>
+<p>
+<tag name="tt">
+2099196</tag>
+<tag name="simple-string">
+ — это значение предопределяет поведение окна, как у окна ввода по-умолчанию. Заголовок окна присутствует.
+</tag>
+</p>
+<p>
+<tag name="tt">
+1080035324</tag>
+<tag name="simple-string">
+ — это значение предопределяет поведение окна, как у окна предпросмотра по-умолчанию.
+</tag>
+</p>
+<p>
+Увеличение любого из этих значений на единицу сделает любое из окон независимым от основного окна плеера, то есть плавающим. Например окно основного описания можно сделать плавающим, прописав такую настройку:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+state=769;
+</code>
+<segment>
+<p>
+Увеличение любого из этих значений на 2 — скрывает окно, однако его можно вернуть обратно через меню плеера.
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="dir">
+<p>
+dir</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Переменная </tag>
+<tag name="tt">
+dir</tag>
+<tag name="simple-string">
+ отвечает за расположение и поведение окна. Можете так же поэкспериментировать с этой настройкой, задавая разные значения. Всего таких значений можно указать шесть: от 0 до 5. Если указать иное значение, окно появится в верхнем левом углу плеера в нерабочем виде. Название пременной очевидно происходит от слова "direction" — т.е. "направление". В зависимости от выбранного направления выстраиваются и прочие блоки.
+</tag>
+</p>
+<p>
+<tag name="tt">
+0</tag>
+<tag name="simple-string">
+ — полностью скрывает окно из виду, а вернее сворачивает до небольшой полоски в левом верхнем углу.
+</tag>
+</p>
+<p>
+<tag name="tt">
+1</tag>
+<tag name="simple-string">
+ — окно располагается в подвижный блок </tag>
+<tag name="tt">
+Top</tag>
+<tag name="simple-string">
+ (то есть типа </tag>
+<tag name="tt">
+верх</tag>
+<tag name="simple-string">
+). При выборе данного направления, слои (</tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+) располагаются и нумеруются снизу вверх. В одном слое ряды (</tag>
+<tag name="tt">
+row</tag>
+<tag name="simple-string">
+) располагаются и нумеруются сверху вниз. В одном ряду (или слое) позиции (</tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направо.
+</tag>
+</p>
+<p>
+<tag name="tt">
+2</tag>
+<tag name="simple-string">
+ — окно располагается в подвижный блок </tag>
+<tag name="tt">
+Right</tag>
+<tag name="simple-string">
+ (то есть типа </tag>
+<tag name="tt">
+право</tag>
+<tag name="simple-string">
+). При выборе данного направления, слои (</tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направо. В одном слое ряды (</tag>
+<tag name="tt">
+row</tag>
+<tag name="simple-string">
+) располагаются и нумеруются справа налево. В одном ряду (или слое) позиции (</tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+) располагаются и нумеруются сверху вниз.
+</tag>
+</p>
+<p>
+<tag name="tt">
+3</tag>
+<tag name="simple-string">
+ — окно располагается в подвижный блок </tag>
+<tag name="tt">
+Bottom</tag>
+<tag name="simple-string">
+ (то есть типа </tag>
+<tag name="tt">
+низ</tag>
+<tag name="simple-string">
+). При выборе данного направления, слои (</tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+) располагаются и нумеруются сверху вниз. В одном слое ряды (</tag>
+<tag name="tt">
+row</tag>
+<tag name="simple-string">
+) располагаются и нумеруются снизу вверх. В одном ряду (или слое) позиции (</tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направо.
+</tag>
+</p>
+<p>
+<tag name="tt">
+4</tag>
+<tag name="simple-string">
+ — окно располагается в подвижный блок </tag>
+<tag name="tt">
+Left</tag>
+<tag name="simple-string">
+ (то есть типа </tag>
+<tag name="tt">
+лево</tag>
+<tag name="simple-string">
+). При выборе данного направления, слои (</tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+) располагаются и нумеруются справа налево. В одном слое ряды (</tag>
+<tag name="tt">
+row</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направо. В одном ряду (или слое) позиции (</tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+) располагаются и нумеруются сверху вниз.
+</tag>
+</p>
+<p>
+<tag name="tt">
+5</tag>
+<tag name="simple-string">
+ — окно располагается в неподвижный блок </tag>
+<tag name="tt">
+Center</tag>
+<tag name="simple-string">
+. При выборе данного направления, слои (</tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направа. В одном слое ряды (</tag>
+<tag name="tt">
+row</tag>
+<tag name="simple-string">
+) располагаются и нумеруются слева направо. В одном ряду (или слое) позиции (</tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+) располагаются и нумеруются сверху вниз.
+</tag>
+</p>
+<p>
+Можно разместить все окна в одном блоке, однако при этом нужно учитывать, как ведут себя окна в соответствии с другими настройками.
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="layer">
+<p>
+layer</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Значение переменной </tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+ определяет номер слоя, в котором будет располагаться окно. Может принимать значения от 0 до 5. Слои выстравиваются в определённом порядке в зависимости от выбранного направления (переменная </tag>
+<tag name="tt">
+dir</tag>
+<tag name="simple-string">
+).
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="raw">
+<p>
+raw</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Значения переменной </tag>
+<tag name="tt">
+raw</tag>
+<tag name="simple-string">
+ определяет номер ряда, в котором будет располагаться окно. Ряды выстравиваются в определённом порядке внутри слоя (переменная </tag>
+<tag name="tt">
+layer</tag>
+<tag name="simple-string">
+), в зависимости от выбранного направления (переменная </tag>
+<tag name="tt">
+dir</tag>
+<tag name="simple-string">
+).
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="pos">
+<p>
+pos</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Значения переменной </tag>
+<tag name="tt">
+pos</tag>
+<tag name="simple-string">
+ определяет номер позиции, в которой будет располагаться окно. Позиции располагаются определённым образом внутри ряда или слоя, в зависимости от выбранного направления (переменная </tag>
+<tag name="tt">
+dir</tag>
+<tag name="simple-string">
+).
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="prop">
+<p>
+prop</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Переменная </tag>
+<tag name="tt">
+prop</tag>
+<tag name="simple-string">
+ устанавливает пропорции между окнами внутри ряда. Значения указываются от 100000 в одну или другую сторону.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="bestw-besth-minw-minh-maxw-maxh">
+<p>
+bestw, besth, minw, minh, maxw, maxh</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Переменные </tag>
+<tag name="tt">
+bestw</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+besth</tag>
+<tag name="simple-string">
+ — это предпочтительные ширина и высота окна соответственно. Эти параметры будут применяться в зависимости от того, в каком направлении размещено окно, и как изменено значение переменной </tag>
+<tag name="tt">
+prop</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Переменные </tag>
+<tag name="tt">
+maxw</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+maxh</tag>
+<tag name="simple-string">
+ — это максимальные ширина и высота окна соответственно. Эти параметры могут не работать, в зависимости от того, как скомбинированы окна. 
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Переменные </tag>
+<tag name="tt">
+minw</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+minh</tag>
+<tag name="simple-string">
+ — это минимальные ширина и высота окна соответственно. Эти параметры могут не работать, в зависимости от того, как скомбинированы окна.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="floatx-floaty-floatw-floath">
+<p>
+floatx, floaty, floatw, floath</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Переменные </tag>
+<tag name="tt">
+floatx</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+floaty</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+floatw</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+floath</tag>
+<tag name="simple-string">
+ отвечают за расположение и размеры окна, когда окно откреплено от окна плеера, т.е. когда оно переключено в режим плавающего окошка. </tag>
+<tag name="tt">
+floatx</tag>
+<tag name="simple-string">
+ — отступ от левой границы экрана, </tag>
+<tag name="tt">
+floaty</tag>
+<tag name="simple-string">
+ — отступ от верхней границы экрана, </tag>
+<tag name="tt">
+floatw</tag>
+<tag name="simple-string">
+ — ширина плавающего окна, </tag>
+<tag name="tt">
+floath</tag>
+<tag name="simple-string">
+ — высота плавающего окна.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h4" anchor="dock_size">
+<p>
+dock_size</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В конце секции основных настроек прописываются несколько групп </tag>
+<tag name="tt">
+dock_size</tag>
+<tag name="simple-string">
+, количество которых совпадает с числом окон, размещённых в направлениях top, right, bottom и left. Изменение значений этих настроек не влияют на отображение окон, это служебные значения.
+</tag>
+</p>
+</segment>
+</segment>
+</segment>
+<head head-level="h2" anchor="sektsiia-nastroek-okna-pleera-pos">
+<p>
+Секция настроек окна плеера [Pos]</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Данная секция объявляется заголовком </tag>
+<tag name="tt">
+[Pos]</tag>
+<tag name="simple-string">
+. Здесь расположены пять настроек, каждая из которых записывается отдельной строкой.
+</tag>
+</p>
+<p>
+<tag name="tt">
+Left</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+Top</tag>
+<tag name="simple-string">
+ — определяют отступ от левой и верхней границ экрана.
+</tag>
+</p>
+<p>
+<tag name="tt">
+Width</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+Height</tag>
+<tag name="simple-string">
+ — определяют ширину и высоту окна соответственно.
+</tag>
+</p>
+<p>
+<tag name="tt">
+Maximize</tag>
+<tag name="simple-string">
+ — определяет развернётся ли окно плеера на всю свободную ширину и высоту экрана, или откроется в окне с размерами, указанными в настройках Left, Top, Width, Height. Может принимать значения 0 (окно с указанными размерами) и 1 (развёрнутое окно).
+</tag>
+</p>
+<p>
+Пример настроек окна плеера (стандартные):
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+[Pos]
+<br/>Left=10
+<br/>Top=10
+<br/>Width=850
+<br/>Height=650
+<br/>Maximize=0
+</code>
+</segment>
+<head head-level="h2" anchor="post-scriptum">
+<p>
+Post Scriptum</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Для более полного понимания работы настроек рекомендуется ознакомиться с документацией по </tag>
+<tag name="hyperlink" href="https://ru.wikipedia.org/wiki/WxWidgets">
+wxWidgets</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Вводная часть статьи взята из инструкции за авторством </tag>
+<tag name="bold">
+Nex</tag>
+<tag name="simple-string">
+`а в теме </tag>
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57">
+Настройка окошек классического плеера с помощью qspgui.cfg</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+</segment>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\06_operatory_funktsii_argumenty_0006.txt-light">
+<head anchor="gosub_func_args" head-level="h1">
+<p>
+Операторы, функции, аргументы. GOSUB, FUNC, ARGS</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Очень часто новички, пришедшие в QSP, задают вопрос: что такое ARGS, и как их использовать? И хотя информации по данному вопросу очень много, вся она довольно разрознена, отвечает на вопрос слишком общо, или слишком конкретно, вплоть до одного единственного примера.
+</p>
+<p>
+Эта статья является попыткой ответить на данный вопрос максимально просто, точно и подробно, насколько это в принципе будет возможно.
+</p>
+<p>
+Все примеры рекомендую испытать самостоятельно, побаловаться, изменяя значения, и посмотреть, что из этого выйдет. Теория без практики — мертва.
+</p>
+</segment>
+<quote>
+<p>
+<tag name="simple-string">
+Обратите внимание. В статье приведены фрагменты кода QSP, некоторые из которых написаны в формате TXT2GAM. Такие фрагменты легко отличить, так как в них отдельными строками прописывается начало локации (</tag>
+<tag name="tt">
+# start</tag>
+<tag name="simple-string">
+) и её конец (</tag>
+<tag name="tt">
+--- start ---</tag>
+<tag name="simple-string">
+). Если вы работаете в редакторе Quest Generator, данные строчки прописывать в коде локаций не нужно, только содержимое между ними.</tag>
+</p>
+</fquote>
+</segment>
+<head head-level="h2" anchor="probuem-vodu-nemnogo-opredelenij">
+<p>
+Пробуем воду. Немного определений</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+
+</segment>
+<head head-level="h3" anchor="operatory">
+<p>
+Операторы</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+При написании QSP-кода мы всегда используем различные операторы. Например, мы используем оператор </tag>
+<tag name="tt">
+*pl</tag>
+<tag name="simple-string">
+ для вывода текста в окно основного описания, или оператор </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+ для добавления предмета, или например оператор </tag>
+<tag name="tt">
+goto</tag>
+<tag name="simple-string">
+ для перехода между локациями. Иными словами операторы нужны нам, чтобы что-то </tag>
+<tag name="tt">
+делать</tag>
+<tag name="simple-string">
+ с игрой или с плеером, выполнять какие-то процедуры.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Если мы внимательно посмотрим на все эти операторы, то мы увидим, что для некоторых операторов, чтобы они что-то сделали, нужно обязательно указать какое-то значение. Например, чтобы оператор </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+ добавил предмет в окно предметов, мы должны указать название предмета для этого оператора:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+addobj "Апельсин"
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Такое указание значения в программировании называется </tag>
+<tag name="tt">
+передачей значения</tag>
+<tag name="simple-string">
+ оператору. Оператор принимает от нас указанное значение и что-то с ним делает. Например, создаёт предмет с указанным названием. Само значение, которое мы передаём оператору, нередко называют </tag>
+<tag name="tt">
+аргументом</tag>
+<tag name="simple-string">
+ или </tag>
+<tag name="tt">
+параметром</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Поэтому если вы встречаете где-то такое выражение "передаю параметры оператору", или "указываю аргументы для оператора", это значит, что оператору передаются какие-то значения, которые он принимает и обрабатывает.
+</p>
+<p>
+<tag name="simple-string">
+В случае с оператором </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+ мы должны обязательно указать хотя бы один аргумент, но в QSP есть операторы, для которых можно совсем не указывать аргументы. Например, оператору </tag>
+<tag name="tt">
+clear</tag>
+<tag name="simple-string">
+, который очищает окно дополнительного описания, не нужны аргументы, он и так знает, что ему делать. Или оператор </tag>
+<tag name="tt">
+killall</tag>
+<tag name="simple-string">
+, ему тоже не нужен аргумент. Ещё, совсем без аргумента, может использоваться оператор </tag>
+<tag name="tt">
+*pl</tag>
+<tag name="simple-string">
+, тогда он просто выводит на экран пустую строку и совершает переход на новую строку в окне основного описания.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Некоторым операторам можно передавать больше одного аргумента. Если взглянуть на тот же оператор </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+, мы можем передавать ему и два и три аргумента:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+addobj "Апельсин","pic/orange.png",4
+</code>
+<segment>
+<p>
+В данном случае мы передаём оператору три аргумента: название предмета, картинку предмета, и позицию в окне предметов, в которую мы данный предмет хотим поместить. Аргументы перечисляются через запятую.
+</p>
+<p>
+В зависимости от числа принимаемых аргументов, операторы могут вести себя по-разному:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+killvar '$mass',4    & ! два аргумента. Удаляем ячейку номер 4 из массива $mass
+<br/>killvar '$array'    & ! один аргумент. Удаляем весь массив $array
+<br/>killvar                & ! без аргументов. Удаляет все массивы и переменные в игре
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Нужно помнить, сколько аргументов ожидает получить каждый оператор. Операторы типа </tag>
+<tag name="tt">
+clear</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+killall</tag>
+<tag name="simple-string">
+ вообще не ждут аргументов, поэтому передавать им какие-либо значения бесполезно. Оперторы типа </tag>
+<tag name="tt">
+addobj</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+goto</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+act</tag>
+<tag name="simple-string">
+ ждут хотя бы один аргумент, но могут принимать больше. Если передать оператору больше аргументов, чем он может принять, или меньше, чем он ожидает, это приведёт к ошибке №120: "Неверное число аргументов оператора/функции", — поэтому будьте внимательны при написании кода и чаще сверяйтесь со справкой.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h3" anchor="funktsii">
+<p>
+Функции</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Помимо операторов в QSP есть ещё такие вещи, как </tag>
+<tag name="tt">
+функции</tag>
+<tag name="simple-string">
+. Функции тоже могут что-нибудь делать с игрой или плеером, но в основном они нужны, чтобы получать какие-либо значения.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Например, с помощью функции </tag>
+<tag name="tt">
+rnd</tag>
+<tag name="simple-string">
+ мы можем получить случайное число от 1 до 1000:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+num=rnd    & ! в переменную num запишется случайное число от 1 до 1000
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В этом и заключается основное отличие функции от оператора, функция умеет </tag>
+<tag name="tt">
+возвращать значение</tag>
+<tag name="simple-string">
+. Значение, возвращаемое функцией, ещё называют </tag>
+<tag name="tt">
+результатом</tag>
+<tag name="simple-string">
+, поэтому можно сказать, что </tag>
+<tag name="tt">
+функция возвращает результат</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Точно так же, как оператор, функция может принимать аргументы, однако аргументы, которые мы хотим передать функции, нужно заключать в круглые скобки, в отличие от операторов, которым такие скобки не нужны.
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+num=rand(1,1000)    & ! аргументы функции rand заключены в скобки
+<br/>killvar '$mass',9    & ! аргументы оператора killvar не нужно заключать в скобки
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Таким образом функция </tag>
+<tag name="tt">
+принимает аргументы</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+возвращает результат</tag>
+<tag name="simple-string">
+. Или </tag>
+<tag name="tt">
+получает параметры</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+возвращает значение</tag>
+<tag name="simple-string">
+. Говорите, как вам удобнее, главное, чтобы вы понимали, что все эти слова значат.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+В QSP есть много разных функций, и так же, как и операторам, им можно передавать разное число аргументов. Есть функции, которым вообще не нужно передавать никаких аргументов, например </tag>
+<tag name="tt">
+$selact</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+$curact</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+$curloc</tag>
+<tag name="simple-string">
+ и т.д. А есть функции, которые требуют строго определённого числа аргументов, например </tag>
+<tag name="tt">
+isnum</tag>
+<tag name="simple-string">
+, которая ожидает всегда только один аргумент, не больше, не меньше. Ну и конечно же есть функции, которым можно передавать разное число аргументов, и чьё поведение будет меняться в зависимости от числа аргументов:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+max('mass')    & ! передан один строковый аргумент. Функция вернёт максимальное число из массива mass
+<br/>max('mass','gass','dass')    & ! передано три строковых аргумента. Функция вернёт тот из них, который идёт позже в алфавитном порядке
+<br/>max(12)    & ! данная строчка кода вызовет ошибку 114
+<br/>max(12,34)    & ! функция вернёт наибольшее из двух чисел (34)
+</code>
+</segment>
+</segment>
+<head head-level="h2" anchor="plavaem-u-berega-pol_zovatel_skie-funktsii-i-protsedury">
+<p>
+Плаваем у берега. Пользовательские функции и процедуры</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Как быть, когда нам не хватает функционала уже имеющихся в QSP функций и операторов? Что если нам нужно, например, постоянно выводить на экран значения некоторых переменных, причём не просто выводить, а выводить эти значения внутри определённой строки. Например, у нас есть вот такой набор переменных:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+$name='Леголас'
+<br/>age=137
+<br/>$arms='Лук и стрелы'
+</code>
+<segment>
+<p>
+И мы хотим периодически видеть на экране что-то вроде:
+</p>
+</segment>
+<code code-left-level="0" code-type="None">
+Вас зовут Леголас.
+<br/>Вам 137 лет.
+<br/>Вы используете Лук и стрелы.
+</code>
+<segment>
+<p>
+Для этой ситуации в QSP предусмотрено создание собственных аналогов функций и операторов. Для этого мы должны создать отдельную локацию и написать на ней нужный код. В нашем случае локация будет называться "pl_stat":
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # pl_stat
+<br/>*pl "Вас зовут <<$name>>."
+<br/>*pl "Вам <<age>> лет."
+<br/>*pl "Вы используете <<$arms>>."
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+И теперь, когда у нас есть такая локация, нам достаточно вызвать её с помощью оператора </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+ в любом месте нашей игры, и мы увидим на экране нужный текст со вставленной информацией из наших переменных.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+gosub 'pl_stat'
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Очевидно, что работа данной локации стала похожа на работу некоей расширенной версии оператора </tag>
+<tag name="tt">
+*pl</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Что же дальше? А дальше нам хотелось бы написать какой-нибудь аналог функции, например, чтобы посчитать квадрат числа N. И мы можем это сделать. Создадим локацию "square" и на ней напишем следующий код:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # square
+<br/>R=N*N
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Вот такой простой код. Если мы вызовем данную локацию с помощью </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+, то в переменную R у нас запишется результат возведения в квадрат числа N.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+N=12
+<br/>func('square')
+<br/>*pl R    & ! на экране появится число 144
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Однако с таким же успехом мы можем вызывать данную локацию через </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+, ведь результат вычислений всё равно пишется в переменную R прямо на локации "square". Зачем нам здесь использовать </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+? Действительно незачем. Сейчас наша локация просто вычисляет значение и записывает его в переменную, однако мы можем заставить её </tag>
+<tag name="tt">
+возвращать значение</tag>
+<tag name="simple-string">
+! То есть она будет работать почти как полноценная функция QSP.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Чтобы заставить нашу локацию возвращать значение, мы должны результат вычислений записать в специальную системную переменную </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # square
+<br/>result=N*N
+</code>
+<segment>
+<p>
+Теперь наша локация будет возвращать нам значение аналогично любой встроенной в QSP функции. А значит мы можем присвоить значение переменной уже в той локации, из которой вызвали локацию "square":
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+N=12
+<br/>R=func('square')
+<br/>*pl R    & ! на экране появится число 144
+</code>
+<segment>
+<p>
+Или вообще не использовать промежуточную переменную:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+N=12
+<br/>*pl func('square')    & ! на экране появится число 144
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Уникальность переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ заключается в том, что она действительно уникальная на каждой локации, из которой мы её вызываем. То есть, если мы на локации "start" (для примера) записали в переменную </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ какое-либо значение, то, если мы вызовем из локации "start" локацию "square", где мы тоже используем </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+, на локации "start" значение в переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ не изменится. Это легко проверить:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>result=123    & ! записываем число в переменную result
+<br/>N=24
+<br/>*pl func('square')    & ! выведет на экран 576
+<br/>*pl result    & ! выведет на экран 123
+<br/>--- start ---
+<br/>
+<br/># square
+<br/>result = N * N 
+<br/>--- square ---
+</code>
+<segment>
+<p>
+И всё-таки наш код не такой удобный, как бы нам хотелось, ведь функциям QSP мы просто передаём аргументы, и не заполняем заранее разные переменные перед тем, как вызвать ту или иную функцию. Что же делать?
+</p>
+<p>
+А всё очень просто. Разработчик QSP предусмотрел такую необходимость, и мы можем передавать нашей локации до девяти аргументов (в плеере версии 5.7.0). Просто берём и внутри круглых скобок ставим запятую после названия нашей локации "square" и указываем значение, которое хотим передать локации:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+*pl func('square',25)
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Вот и всё. На локацию "square" передан </tag>
+<tag name="tt">
+параметр</tag>
+<tag name="simple-string">
+, или иными словами локация "square" </tag>
+<tag name="tt">
+получила в качестве аргумента</tag>
+<tag name="simple-string">
+ значение </tag>
+<tag name="tt">
+25</tag>
+<tag name="simple-string">
+. Но как же это значение использовать на локации "square", ведь теперь мы не вносили его ни в одну переменную. А вся хитрость в том, что данное значение плеер сам автоматически вносит в специальный системный массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+. В данном случае число </tag>
+<tag name="tt">
+25</tag>
+<tag name="simple-string">
+ нужно искать в нулевой ячейке этого массива на локации "square".
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # square
+<br/>*pl args[0]    & ! выведет на экран число, которое мы отправляем на эту локацию
+<br/>result=args[0]*args[0]    & ! вместо N мы теперь используем число из нулевой ячейки массива args
+</code>
+<segment>
+<p>
+Попробуйте запустить код из предыдущего примера, но теперь без переменной N:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>result=123    & ! записываем число в переменную result
+<br/>*pl func('square',24)    & ! выведет на экран 576
+<br/>*pl result    & ! выведет на экран 123
+<br/>--- start ---
+<br/>
+<br/># square
+<br/>*pl args[0]     & ! поскольку выше мы передаём на square число 24, то эта команда выведет на экран число 24
+<br/>result=args[0]*args[0]
+<br/>--- square ---
+</code>
+<segment>
+<p>
+Итак, мы знаем, что можем передавать на нашу локацию-функцию до девяти аргументов. Мы нашли, где искать аргумент, если он один. А где же искать все остальные? Всё очень просто. Каждый последующий аргумент будет автоматически помещаться в следующую ячейку массива args. Таким образом, если мы передадим на локацию все девять аргументов, мы сможем их найти в массиве args, в ячейках с нулевой по восьмую.
+</p>
+<p>
+Давайте напишем функцию, которая будет складывать девять чисел, передаваемых ей в качестве аргументов. Для этого создаём локацию "summ":
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # summ
+<br/>result=args[0]+args[1]+args[2]+args[3]+args[4]+args[5]+args[6]+args[7]+args[8]
+</code>
+<segment>
+<p>
+А вот примеры вызова этой локации "summ". Мы передаём на эту локацию девять слагаемых, а она возвращает нам сумму всех девяти слагаемых:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+*pl func('summ',1,2,3,4,5,6,7,8,9)    & ! на экране появится число 45
+<br/>*pl func('summ',23,45,67,89,0,11,23,5,-1)    & ! на экране появится число 262
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Если мы укажем не все аргументы, значения несуществующих ячеек массива </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ на локации "summ" окажутся равны нулю:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+*pl func('summ',1,2,3,4)    & ! на экране появится число 10
+<br/>*pl func('summ',23,45,67)    & ! на экране появится число 135
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+С массивом </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ можно работать, как с обычным массивом QSP. Т.е. вы легко можете добавлять в него новые ячейки, или удалять с помощью </tag>
+<tag name="tt">
+killvar</tag>
+<tag name="simple-string">
+. Однако у этого массива есть одна особенность, которая роднит его с переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+. Для каждой отдельной локации массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ уникален. То есть вы можете помещать в него любые значения, увеличивать или уменьшать его размер, это никак не повлияет на массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ в других локациях.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Более того. После того, как код локации, на которой вы работали с массивом </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+, будет выполнен, этот уникальный массив будет полностью уничтожен, а значит он уже не будет занимать место в оперативной памяти. Но, надо понимать, что в других работающих локациях свои собственные массивы </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ продолжат существовать.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! данный код выведет на экран последовательно числа 11, 1507, 19
+<br/># start
+<br/>args[0]=19    & ! это нулевая ячейка массива args на локации start, ей присваиваем 19
+<br/>*pl func('foo',11)    & ! выведет на экран 1507
+<br/>*pl args[0]    & ! выведет на экран 19
+<br/>--- start ---
+<br/>
+<br/># foo
+<br/>! на локации foo собственный уникальный массив args,
+<br/>! в который автоматически записываются значения, переданные на локацию в виде аргументов
+<br/>*pl args[0]    & ! выше сюда было передано число 11, вот его мы и увидим на экране
+<br/>result = args[0] * 137
+<br/>--- foo ---
+</code>
+<segment>
+<p>
+Давайте вернёмся к локации "pl_stat", она, как вы помните, выводила на экран значения определённых переменных. Теперь мы можем переписать и её, чтобы она работала не с конкретными переменными, а с аргументами, которые мы на эту локацию передаём.
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # pl_stat
+<br/>*pl "Вас зовут <<$args[0]>>."
+<br/>*pl "Вам <<args[1]>> лет."
+<br/>*pl "Вы используете <<$args[2]>>."
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Как видите, мы подставляем в строки данные из </tag>
+<tag name="tt">
+$args[0]</tag>
+<tag name="simple-string">
+, </tag>
+<tag name="tt">
+args[1]</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+$args[2]</tag>
+<tag name="simple-string">
+, где соответсвенно мы должны найти имя, возраст и оружие персонажа. Значит и передавать на "pl_stat" аргументы мы должны в той же последовательности:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+$name='Леголас'
+<br/>age=137
+<br/>$arms='Лук и стрелы'
+<br/>! вызов локации `pl_stat`
+<br/>gosub "pl_stat",$name,age,$arms
+</code>
+<segment>
+<p>
+Это даст на экране всё тот же текст:
+</p>
+</segment>
+<code code-left-level="0" code-type="None">
+Вас зовут Леголас.
+<br/>Вам 137 лет.
+<br/>Вы используете Лук и стрелы.
+</code>
+<segment>
+<p>
+Само собой, если нет необходимости, заранее объявлять переменные не обязательно:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+gosub "pl_stat",'Леголас',137,'Лук и стрелы'
+</code>
+<segment>
+<p>
+И теперь, один раз написанная локация позволяет нам выводить текст с нужными вставками сколько угодно раз:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+gosub 'pl_stat','Гимли',91,'Молот'
+<br/>gosub 'pl_stat','Арагорн',29,'Палаш'
+<br/>gosub 'pl_stat','Фродо Бэггинс',19,'Кольцо Всевластия'
+</code>
+<segment>
+<p>
+Вот результат таких вызовов:
+</p>
+</segment>
+<code code-left-level="0" code-type="None">
+Вас зовут Гимли.
+<br/>Вам 91 лет.
+<br/>Вы используете Молот.
+<br/>Вас зовут Арагорн.
+<br/>Вам 29 лет.
+<br/>Вы используете палаш.
+<br/>Вас зовут Фродо Бэггинс.
+<br/>Вам 19 лет.
+<br/>Вы используете Кольцо Всевластия.
+</code>
+<segment>
+<p>
+<tag name="tt">
+Объявить переменную</tag>
+<tag name="simple-string">
+ — для QSP значит записать в программе её имя. Когда мы присваиваем переменной какое-либо значение, мы тем самым автоматически объявляем переменную. Ещё это называется </tag>
+<tag name="tt">
+инициализировать</tag>
+<tag name="simple-string">
+ переменную.
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="glubokoe-pogruzhenie-tonkosti-i-niuansy-pri-napisanii-sobstvennyh-funktsij-i-protsedur">
+<p>
+Глубокое погружение. Тонкости и нюансы при написании собственных функций и процедур</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Когда мы писали локации типа "square" и "summ", для удобства мы называли их функциями. И ещё мы говорили, что передаём им различные аргументы. Так мы говорили именно для упрощения понимания того, зачем нам нужны </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ на локациях.
+</tag>
+</p>
+<p>
+На самом деле ни одна локация в QSP фактически не является функцией, несмотря на то, что мы действительно передаём на неё аргументы, и можем вернуть из неё некий результат.
+</p>
+<p>
+<tag name="simple-string">
+Функцией является только функция </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+, и как не сложно догадаться, эта функция всегда ждёт минимум один аргумент — название локации, которую она должна выполнить. Именно функция </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+ выполняет код указанной локации, и именно она транслирует на эту локацию в массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ все прочие аргументы, "передаваемые на локацию".
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+То же самое касается и оператора </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+. Этот оператор вызвает указанную в качестве первого для него аргумента локацию, и транслирует все остальные аргументы в массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ на этой локации.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Всё это следует понимать, потому что не только оператор </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+ и функция </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+ могут принимать дополнительные аргументы и транслировать их в код вашей локации в виде значений в массиве </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+. На это способны так же операторы </tag>
+<tag name="tt">
+goto</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+xgoto</tag>
+<tag name="simple-string">
+. Да, представьте себе. При переходе на новую локацию с помощью </tag>
+<tag name="tt">
+goto</tag>
+<tag name="simple-string">
+ вы можете сразу передать на эту локацию разные данные с предыдущей локации. Например, так вы можете отслеживать, с какой именно локации на текущую был осуществлён переход.
+</tag>
+</p>
+<p>
+В качестве примера привожу код локации "start", на которой реализовано действие перехода с передачей аргумента, и код локации "комната", где в зависимости от того, какое значение мы отправили на эту локацию, выводится разный текст:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>"Начало супер-пупер-мега игры"
+<br/>act "Начать":
+<br/>    goto "комната","start"
+<br/>end
+<br/>--- start ---
+<br/>
+<br/># комната
+<br/>if $args[0]='start':
+<br/>    "История начинается. Вы только что пришли с локации 'start', и это означает, что вас ждёт душещипательная катсцена."
+<br/>else:
+<br/>    "Вы пришли с любой другой локации. Это просто комната."
+<br/>end
+<br/>--- комната ---
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Но и это ещё не всё. Можно передавать аргументы не только в код локаций, но и в код, который выполняется с помощью </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+ или </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Для примера я напишу код, который будет выводить содержимое всех переданных аргументов, с помощью цикла:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! помещаем код в переменную для удобства
+<br/>$code = {
+<br/>    i=0
+<br/>    :for
+<br/>    if i<arrsize('args'):
+<br/>        if $args[i]<>'':
+<br/>            *pl $args[i]
+<br/>        else:
+<br/>            *pl args[i]
+<br/>        end
+<br/>        i+=1
+<br/>        jump 'for'
+<br/>    end
+<br/>    killvar 'i'
+<br/>}
+<br/>! выполняем код, передавая ему произвольное число аргументов
+<br/>dynamic $code, 'Апельсин', 12, 'оранжевый', 144
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+На примере кода, помещённого в переменную, видно, что мы работаем с </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+, как с обычными массивом. Т.е. мы можем получить его размер, и обойти все ячейки поочерёдно с помощью цикла. Но значения в массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ помещаются автоматически в момент передачи аргументов оператору </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+. Для этого оператора первым и обязательным аргументом является код QSP, записанный в виде строки текста. Все остальные аргументы не обязательны и транслируются в массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+, который мы можем использовать уже непосредственно внутри написанного нами кода.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Поскольку </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+ — это оператор, он не может возвращать нам никаких значений. Чтобы иметь возможность получать значение из написанного таким образом кода, мы должны использовать функцию </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+. И тут действуют те же принципы, что и при написании кода для локаций. Чтобы функция вернула нам значение, мы должны это значение присвоить системной переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+С помощью </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+ напишем функцию, которая возводит число в степень. Прежде всего мы должны представить себе, как будет выглядеть вызов такой функции. Саму функцию мы поместим в переменную </tag>
+<tag name="tt">
+$pow</tag>
+<tag name="simple-string">
+, и будем пердавать в неё два аргумента: само число и степень, в которую мы хотим это число возвести. То есть вызов нашей функции будет выглядеть так:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+*pl dyneval($pow,3,4) & ! возводим число 3 в четвёртую степень
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Таким образом в коде функции мы будем использовать два аргумента, значения которых можно получить из массива </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+$pow = {
+<br/>    ! args[0] — число, которое хотим возвести в степень
+<br/>    ! args[1] — степень, в которую хотим возвести число
+<br/>    result=1    & ! сразу присваиваем результату единицу
+<br/>    ! теперь с помощью цикла умножаем результат на указанное число
+<br/>    ! столько раз, каково значение степени.
+<br/>    ! т.е. само значение степени у нас будет счётчиком цикла
+<br/>    :for
+<br/>    if args[1]>0:
+<br/>        result=result*args[0]
+<br/>        args[1]-=1
+<br/>        jump 'for'
+<br/>    end
+<br/>}
+</code>
+<segment>
+<p>
+Нам осталось только протестировать работу функции, чтобы проверить результаты:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+*pl dyneval($pow,3,4)    & ! выведет число 81
+<br/>*pl dyneval($pow,4,3)    & ! выведет число 64
+<br/>*pl dyneval($pow,9,9)    & ! выведет число 387420489
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+И снова обращаю ваше внимание, что называю содержимое переменной </tag>
+<tag name="tt">
+$pow</tag>
+<tag name="simple-string">
+ функцией исключительно для удобства. На самом деле функцией здесь является </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+, именно она принимает все аргументы, в том числе и код, записанный в переменную </tag>
+<tag name="tt">
+$pow</tag>
+<tag name="simple-string">
+ (именно поэтому в круглые скобки мы заключаем и значение переменной </tag>
+<tag name="tt">
+$pow</tag>
+<tag name="simple-string">
+ и все последующие аргументы), а затем выполняет этот код, передавая на него все оставшиеся значения аргументов. Эти значения мы затем можем использовать в коде, благодаря тому, что они автоматически записываются в массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ в ячейки, начиная с нулевой. И именно </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+ забирает из переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ значение и возвращает его нам.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+И точно так же, как это происходило на локациях, можно увидеть, что в коде, который мы передаём оператору </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+, или функции </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+, создаётся свой собственный уникальный массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и своя собственная уникальная переменная </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+, которые уничтожаются сразу после выполнения кода.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+args[0]=123
+<br/>$result='Первый'
+<br/>$code="if args[0]=2: $result='Второй' else $result='Никакой'"
+<br/>
+<br/>*pl $dyneval($code,2)     & ! выведет на экран строку `Второй` 
+<br/>*pl args[0]    & ! выведет на экран число 123
+<br/>*pl $result & ! выведет на экран строку `Первый` 
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В программировании такие переменные и массивы, как </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ называются локальными. То есть они действительны только для определённого блока кода, а после выполнения этого блока кода уничтожаются.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+В нашем случае отдельным блоком кода можно считать локацию или код, который мы передаём оператору </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+ или функции </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+. А ещё код, который выполняется при нажатии на гиперссылку.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+usehtml=1
+<br/>args[0]=137
+<br/>*pl "<a href='exec:args[0]=37 & *pl args[0] & ! в гиперссылке собственные args'>Нажми, чтобы вывести 37</a>"
+<br/>*pl "<a href='exec:*pl args[0] & ! в гиперссылке собственные args'>Нажми, чтобы вывести 0</a>"
+<br/>*pl args[0] & ! на экран выведется 137
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Отдельными блоками кода можно считать так же код действия. Однако для этих блоков кода не создаются свои собственные </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+. В них транслируются значения </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ из того уже запущенного блока кода, который их вызывает. Для примера можно посмотреть, как изменяется значение </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ на локации с помощью действий.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+args[0]=111    & ! выставляем значение args[0] на локации
+<br/>act "Действие 1":
+<br/>    *pl "Старое значение args[0]: "+$str(args[0])
+<br/>    args[0]=222    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    *pl "Новое значение args[0]: "+$str(args[0])
+<br/>end
+<br/>act "Действие 2":
+<br/>    *pl "Старое значение args[0]: "+$str(args[0])
+<br/>    args[0]=333    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    *pl "Новое значение args[0]: "+$str(args[0])
+<br/>end
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+В дальнейшем я буду говорить только про локации и действия, но следует помнить, что всё, что справедливо для кода локаций, справедливо так же и для кода, передаваемого оператору </tag>
+<tag name="tt">
+dynamic</tag>
+<tag name="simple-string">
+ или функции </tag>
+<tag name="tt">
+dyneval</tag>
+<tag name="simple-string">
+, а так же для кода в гиперссылке. И ровно так же то, что справедливо для действий, справедливо для циклов в QSP версии 5.8.0.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Поскольку на каждой локации создаётся свой собственный, локальный массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+, этот массив можно использовать для замены любых необходимых локальных переменных.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+В качестве примера приведу код локации "#chk.obj.word#" из моей библиотечки </tag>
+<tag name="hyperlink" href="https://github.com/AleksVersus/easy.math">
+easy.math</tag>
+<tag name="simple-string">
+, которая ищет в списке предметов предмет, содержащий в названии указанное слово. Функция принимает в качестве аргумента это самое слово, а затем возвращает позицию предмета в списке предметов:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # #chk.obj.word#
+<br/>$args[9]=$args[9]    & ! инициализируем девятый элемент массива, чтоб не затереть аргументы
+<br/>args['i'] = 1    & ! используем одну из ячеек массива args как локальную переменную
+<br/>:loop
+<br/>if no args['i'] > countobj:
+<br/>    !@ цикл выполняется пока счётчик не превысит число предметов
+<br/>    if instr($getobj(args['i']),$args[0])<>0:
+<br/>        !@ как только в названии очередного предмета
+<br/>        !@ встречается рассматриваемое слово
+<br/>        result = args['i']    & !@ возвращаем позицию
+<br/>        exit    & !@ закрываем функцию
+<br/>    end
+<br/>    args['i']+=1
+<br/>    jump 'loop'
+<br/>end
+</code>
+<segment>
+<p>
+Вот пример работы данной функции:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+addobj "Красный помидор"    & ! первый предмет
+<br/>addobj "Рыжий апельсин"    & ! второй предмет
+<br/>addobj "Зелёное яблоко"    & ! третий предмет
+<br/>addobj "Синий крокодил"    & ! четвёртый предмет
+<br/>! ищем предмет, название которого содержит слово `Зелён`
+<br/>pos=func('#chk.obj.word#','Зелён')
+<br/>! можно вывести и позицию и название
+<br/>*pl "Мы нашли предмет под номером <<pos>>. Это "+$getobj(pos)+"."
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Используя массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ не только для получения переданных на локацию аргументов, но и в качестве локальных переменных, вы избавляетесь от необходимости следить, не забыли ли вы удалить какие-то промежуточные данные, которые вам требовались для вычислений исключительно на одной локации, исключительно в отдельном блоке кода. Плеер сам уничтожит массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+, когда код будет выполнен.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Если вы до сих пор пишете игру для плеера версии 5.7.0, вы просто вынуждены использовать массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ вместо локальных переменных, либо вы вынуждены уничтожать переменные и массивы, используемые для временного хранения данных, вручную с помощью </tag>
+<tag name="tt">
+killvar</tag>
+<tag name="simple-string">
+. Всё изменилось с появлением плееров версии 5.8.0!
+</tag>
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="bezdna-smotrit-v-tebia-lokal_nye-peremennye-i-neiavnyj-vyzov-pol_zovatel_skih-funktsij">
+<p>
+Бездна смотрит в тебя. Локальные переменные и неявный вызов пользовательских функций</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+
+</segment>
+<head head-level="h3" anchor="lokal_nye-peremennye">
+<p>
+Локальные переменные</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+В плеерах версии 5.8.0 и выше появилась возможность объявить любую переменную локальной, т.е. значения данной переменной будут действительны только для отдельного блока кода, а после выполнения этого блока кода все переменные, объявленные для него локальными, будут уничтожены. Для примера возьмём две локации: локацию "start" и локацию "foo":
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! этот код последовательно выведет на экран числа 12, 549 и 99, 549
+<br/># start
+<br/>x=99
+<br/>z=4608
+<br/>gosub 'foo'
+<br/>*pl x & *pl z    & ! на экран выведутся числа 99 и 549
+<br/>--- start ---
+<br/>
+<br/># foo
+<br/>local x & ! объявляем переменную x локальной для данной локации
+<br/>x=12    & ! изменяем значение переменной x
+<br/>z=549
+<br/>*pl x & *pl z    & ! на экран выведутся числа 12 и 549
+<br/>--- foo ---
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Если запустите этот код, то увидите, что значение, присвоенное переменной </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+, на локации "start" до вызова локации "foo", сохраняется и после вызова локации "foo", так как на локации "foo" мы объявили собственную уникальную переменную </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+. А вот переменную </tag>
+<tag name="tt">
+z</tag>
+<tag name="simple-string">
+ мы не объявляли локальной на локации "foo", а значит, если мы меняем её значение на локации "foo", то оно меняется для всех локаций. Что мы и видим.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+По своему поведению локальные переменные несколько отличаются от </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+. Дело в том, что </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ объявляются на каждой локации автоматически, и мы можем быть уверены, что всегда будем работать на каждой отдельной локации с уникальными (локальными) </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+. Но что будет если на локации 'foo' мы объявим локальную переменную, а затем вызовем из локации 'foo' локацию 'proc', на которой не будем эту переменную объявлять локальной? Какие значения примет переменная на каждой из этих локаций?
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>x=100    & ! объявляем переменную
+<br/>*pl "start. x до вызова foo: <<x>>"
+<br/>gosub 'foo'
+<br/>*pl "start. x после вызова foo: <<x>>"
+<br/>--- start ---
+<br/>
+<br/># foo
+<br/>local x=333
+<br/>*pl "foo. x до вызова proc: <<x>>"
+<br/>gosub 'proc'
+<br/>*pl "foo. x после вызова proc: <<x>>"
+<br/>--- foo ---
+<br/>
+<br/># proc
+<br/>*pl "proc. x до изменения: <<x>>"
+<br/>x=9091
+<br/>*pl "proc. x после изменения: <<x>>"
+<br/>--- proc ---
+</code>
+<segment>
+<p>
+Что мы увидим при выполнении этого кода? Давайте посмотрим.
+</p>
+</segment>
+<list list-type="ol-list">
+<segment name="li">
+<p>
+<tag name="simple-string">
+На локации "start" мы объявили переменную </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ со значением </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+ и вывели это значение в строке. То есть на экране мы увидим строку с числом </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Затем мы вызвали локацию "foo", на которой объявили локальную переменную </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ со значением </tag>
+<tag name="tt">
+333</tag>
+<tag name="simple-string">
+ и вывели это значение в строке. То есть на экране мы увидели строку с числом </tag>
+<tag name="tt">
+333</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Затем мы вызвали локацию "proc", и здесь не объявляли переменную </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ локальной, но вывели её значение в строке. И вот тут мы обнаруживаем отличие в поведении локальных переменных от </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ и </tag>
+<tag name="tt">
+proc</tag>
+<tag name="simple-string">
+. Значение, которое мы увидим в строке будет равно тоже </tag>
+<tag name="tt">
+333</tag>
+<tag name="simple-string">
+. То есть в переменную </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ на локации "proc" транслируется значение этой переменной из локации "foo", а вернее транслируется сама переменная. Таким образом и локация "proc" и локация "foo" работают по сути с одной и той же переменной. Именно поэтому...</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+... когда мы изменяем значение </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ на локации "proc" и ожидаемо видим в выводимой строке число </tag>
+<tag name="tt">
+9091</tag>
+<tag name="simple-string">
+, мы изменяем значение </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ и для локации "foo" в том числе. И поэтому...</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+... когда плеер возвращается к выполнению кода на локации "foo", переменная </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+ уже изменена, и мы видим в выводимой строке всё то же число </tag>
+<tag name="tt">
+9091</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+<segment name="li">
+<p>
+<tag name="simple-string">
+Когда плеер заканчивает выполнение кода локации "foo" и возвращается к выполнению кода на локации "start", локальная переменная </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+, созданная на локации "foo", автоматически уничтожается, и плеер в дальнейшем продолжает работать с переменной </tag>
+<tag name="tt">
+x</tag>
+<tag name="simple-string">
+, созданной на локации "start". А значит на экране в выводимой строке мы увидим число </tag>
+<tag name="tt">
+100</tag>
+<tag name="simple-string">
+.</tag>
+</p>
+</segment>
+</list>
+<code code-left-level="0" code-type="None">
+start. x до вызова foo: 100
+<br/>foo. x до вызова proc: 333
+<br/>proc. x до изменения: 333
+<br/>proc. x после изменения: 9091
+<br/>foo. x после вызова proc: 9091
+<br/>start. x после вызова foo: 100
+</code>
+<segment>
+<p>
+<tag name="simple-string">
+Не трудно заметить, что локальные переменные ведут себя на локациях, как </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ в действиях. Всё потому что </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ автоматически объявляется на локациях, но не в действиях, а локальные переменные необходимо объявлять вручную везде, если вам нужно, чтобы они работали как локальные.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Мы можем вручную объявить </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ локальным в действии, и тогда действие уже не будет работать со значениями </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ действующими на текущей локации:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+args[0]=111    & ! выставляем значение args[0] на локации
+<br/>act "Действие 1":
+<br/>    *pl "Старое значение args[0]: "+$str(args[0])
+<br/>    args[0]=222    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    *pl "Новое значение args[0]: "+$str(args[0])
+<br/>end
+<br/>act "Действие 2":
+<br/>    *pl "Старое значение args[0]: "+$str(args[0])
+<br/>    args[0]=333    & ! изменяем значение args[0] не только в действии, а сразу на локации
+<br/>    *pl "Новое значение args[0]: "+$str(args[0])
+<br/>end
+<br/>act "Действие 3":
+<br/>    local args    & ! объявляем args локальным
+<br/>    *pl "Старое значение args[0]: "+$str(args[0])
+<br/>    args[0]=999    & ! изменяем значение args[0] только в действии,но не на локации
+<br/>    *pl "Новое значение args[0]: "+$str(args[0])
+<br/>end
+</code>
+<segment>
+<p>
+И точно так же, если мы вручную не объявим на локации локальную переменную, мы будем работать с той переменной, которая была объявлена последней до вызова этой локации. Если мы вообще не объявляли локальную переменную, значит будем работать с переменной общей для всей игры — с глобальной переменной.
+</p>
+<p>
+<tag name="simple-string">
+Имея в наличии такой удобный инструмент, как локальные переменные, мы оказываемся избавлены от необходимости использовать </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ для замены этих самых локальных переменных, и можем использовать его только по прямому назначению, то есть получать из этого массива переданные на локацию аргументы. Посмотрите, насколько чище и понятнее при этом выглядит код:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! # #chk.obj.word#
+<br/>local $word=$args[0] & ! в локальную переменную $word записываем слово, по которому производим поиск
+<br/>local i = 1    & ! используем локальную переменную i в качестве счётчика цикла
+<br/>loop while no i > countobj step i+=1:
+<br/>    !@ цикл выполняется пока счётчик не превысит число предметов
+<br/>    if instr($getobj(i),$word)<>0:
+<br/>        !@ как только в названии очередного предмета
+<br/>        !@ встречается рассматриваемое слово
+<br/>        result = i    & !@ возвращаем позицию
+<br/>        exit    & !@ закрываем функцию
+<br/>    end
+<br/>end
+</code>
+</segment>
+<head head-level="h3" anchor="neiavnyj-vyzov-funktsij">
+<p>
+Неявный вызов функций</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Как мы уже говорили ранее, сами по себе локации в действительности не являются функциями или процедурами. Мы используем оператор </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+ или специальную функцию </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+, чтобы выполнить код той или иной локации. Функциями мы называли эти локации для удобства. И точно так же для удобства в QSP версии 5.8.0 была введена особая синтаксическая конструкция, которая позволяет не писать оператор </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+ и функцию </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Фактически мы теперь всегда вызываем все локации с помощью функции </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+, но имеем возможность не указывать само ключевое слово </tag>
+<tag name="tt">
+func</tag>
+<tag name="simple-string">
+. И такая запись данной функции называется </tag>
+<tag name="tt">
+неявным вызовом</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Неявный вызов делается так: мы пишем символ </tag>
+<tag name="tt">
+@</tag>
+<tag name="simple-string">
+ и сразу после него без пробелов указываем название локации, которую хотим использовать как функцию. Если нам нужно передать на локацию аргументы, мы перечисляем эти аргументы внутри круглых скобок сразу после названия локации:
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>! возводим числа в степень
+<br/>*pl @pow(3,4)    & ! выведет число 81
+<br/>*pl @pow(4,3)    & ! выведет число 64
+<br/>*pl @pow(9,9)    & ! выведет число 387420489
+<br/>--- start ---
+<br/>
+<br/># pow
+<br/>! функция возведения числа в степень.
+<br/>! Мы писали её для dyneval, а теперь оформляем в отдельной локации
+<br/>result=1
+<br/>loop while args[1]>0 step args[1]-=1:
+<br/>    result=result*args[0]
+<br/>end
+<br/>--- pow ---
+</code>
+<segment>
+<p>
+Таким образом наш код становится ещё более наглядным и читаемым, и мы легко отделяем визуально передаваемые на локацию аргументы от названия самой локации.
+</p>
+<p>
+В остальном всё работет, как прежде.
+</p>
+<p>
+<tag name="simple-string">
+Если на локации мы присваиваем значение переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+, значит функция вернёт нам это значение.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Если на локации переменной </tag>
+<tag name="tt">
+result</tag>
+<tag name="simple-string">
+ не присваивается никакое значение, функция ничего не возвращает, и тогда её поведение ничем не отличается от поведения </tag>
+<tag name="tt">
+gosub</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+# start
+<br/>@pl_stat('Леголас',137,'Лук и стрелы')
+<br/>--- start ---
+<br/>
+<br/># pl_stat
+<br/>*pl "Вас зовут <<$args[0]>>."
+<br/>*pl "Вам <<args[1]>> лет."
+<br/>*pl "Вы используете <<$args[2]>>."
+<br/>--- pl_stat ---
+</code>
+</segment>
+</segment>
+<head head-level="h2" anchor="zakliuchenie">
+<p>
+Заключение</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+В данной статье мы попытались максимально подробно объяснить, что такое операторы, функции, как мы можем писать собственные функции и процедуры в QSP, что такое аргументы и зачем нужен массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+. Вы узнали, что такое локальные переменные, и как массив </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ заменяет локальные переменные в плеерах версии 5.7.0, и почему это больше не требуется в плеерах версии 5.8.0 и выше.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Многие моменты остались за рамками данной статьи. Например, что за значения появляются в массиве </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ на локациях-обработчиках пунктов пользовательского меню, или какие значения можно найти в массиве </tag>
+<tag name="tt">
+args</tag>
+<tag name="simple-string">
+ на локации </tag>
+<tag name="tt">
+onNewLoc</tag>
+<tag name="simple-string">
+, но на все эти вопросы, мы надеемся, вы найдёте ответы в большом </tag>
+<tag name="hyperlink" href="https://aleksversus.github.io/howdo_faq">
+справочнике по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.org</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+<tag name="simple-string">
+Онлайн-версию справочника, а так же полный текст данной статьи вы можете найти </tag>
+<tag name="hyperlink" href="https://aleksversus.github.io/howdo_faq/">
+вот по этой ссылке</tag>
+<tag name="simple-string">
+.
+</tag>
+</p>
+<p>
+Если прочтение статьи не прибавило ясности, попробуйте ознакомиться с материалом следующих видеороликов:
+</p>
+<p>
+<tag name="hyperlink" href="https://youtu.be/701GnjpRGU0">
+Уроки по QSP. Номер 11. Операторы, функции и аргументы</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+<tag name="hyperlink" href="https://youtu.be/TGUhW-2l1gM">
+Уроки по QSP. Номер 21. Пользовательские служебные локации. Часть 1</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+<tag name="hyperlink" href="https://youtu.be/701GnjpRGU0">
+Уроки по QSP. Номер 21. Пользовательские служебные локации. Часть 2</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=aEdgMuqTlH8&list=PLcAHO4WsUl2RLdiV5Lfi4d_yyHpl7zTJA&index=31&t=4517s">
+Что нового в QSP 5.8.0. Объявление локальных переменных</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+<p>
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=aEdgMuqTlH8&t=3080s">
+Что нового в QSP 5.8.0. Неявный вызов функций</tag>
+<tag name="simple-string">
+
+</tag>
+</p>
+</segment>
+</segment>
+</segment>
+</file>
+<file path="D:\my\projects\howdo_faq\[source]\готовые статьи\07_stylization_manifest_0007.txt-light">
+<head head-level="h1" anchor="manifest-ob-organizatsii-koda-v-qsp">
+<p>
+Манифест об организации кода в QSP</p>
+</head>
+<segment segment-class="for-head">
+<segment segment-class="for-head">
+<segment>
+<p>
+Этот манифест объявляю исключительно я, Aleks Versus. Следовать ему или не следовать, ваше право, поскольку каждый стилизует код под себя. Однако, если вы разрабатываете модуль, использование которого предполагается другими людьми, или совместно работаете над игрой, необходимо вывести стандартные правила оформления кода.
+</p>
+<p>
+Здесь я предлагаю вам положиться на мой авторитет, поскольку я написал и перечитал неимоверное количество кода, и некоторые из нижеизложенных рекомендаций почерпнуты мной из чужих наработок и успешно внедрены в собственный стиль.
+</p>
+<p>
+Повторюсь. Это лишь рекомендации по оформлению. Строго следовать им не нужно. В каждом конкретном случае подходите к написанию с умом и старайтесь делать код более читаемым. Хотя бы для себя.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="zapis_-komand">
+<p>
+Запись команд</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Команды следует писать в отдельных строках. Допустимо объединять в одной строке две-три команды, если они очень короткие.
+</p>
+<p>
+Правильно:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+square = a * b
+<br/>volume = square * height
+</code>
+<segment>
+<p>
+Допустимо:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+square = a * b   &   volume = square * height
+</code>
+<segment>
+<p>
+Как видите, подобное перечисление уже трудно читать, приходиться обрамлять дополнительными пробелами разделитель команд. Что уж говорить про перечисление большего количества команд в одной строке.
+</p>
+<p>
+Недопустимо, потому что нечитаемо:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+square = a * b   &   volume = square * height  &   space = volume * 23 + dev   &  *pl space/square  &  *nl  &  *p "end of math."   &  ! ещё и комментарий
+</code>
+<segment>
+<p>
+Так же допустимо объединять команды при заполнении каких-то структурных данных. Например, вы заполняете таблицу, разнося её по массивам. Тогда имеет смысл объединять в одной строке несколько команд, чтобы таблица была наглядной:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+$id[0]='0001' & $object[0]='Старый меч' & power[0]=100    & stam[0]=255
+<br/>$id[1]='0002' & $object[1]='Старый нож' & power[1]=50    & stam[1]=137
+<br/>$id[2]='0003' & $object[2]='Старый ган' & power[2]=99    & stam[2]=123
+<br/>$id[3]='0004' & $object[3]='Клиган-бой' & power[3]=9999 & stam[3]=999
+</code>
+<segment>
+<p>
+В этом случае приходится обрамлять разделители команд дополнительными пробелами, чтобы выровнять "столбцы".
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="odnostrochnye-i-mnogostrochnye-konstruktsii">
+<p>
+Однострочные и многострочные конструкции</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+Конструкции условий, действий и циклов поддерживают формы как многострочной, так и однострочной записи. В догонку предыдущему пункту: если в конструкции предполагается выполнение более одной команды, используйте многострочную форму.
+</p>
+</segment>
+</segment>
+<head head-level="h2" anchor="imenovanie-peremennyh">
+<p>
+Именование переменных</p>
+</head>
+<segment segment-class="for-head">
+<segment>
+<p>
+<tag name="simple-string">
+Однобуквенные переменные, в т.ч. переменные типа </tag>
+<tag name="tt">
+$y</tag>
+<tag name="simple-string">
+ или </tag>
+<tag name="tt">
+$z</tag>
+<tag name="simple-string">
+, никогда не используются как глобальные.
+</tag>
+</p>
+<p>
+Если нужна многобуквенная локальная переменная в конце её названия ставим символ нижнего подчёркивания так мы сразу будем понимать, что используемая в коде переменная является локальной.
+</p>
+<p>
+Поскольку типы кортежей и строк фактически неразличимы необходимо начинать названия переменных кортежей с символа нижнего подчёркивания.
+</p>
+<p>
+Примеры:
+</p>
+</segment>
+<code code-left-level="0" code-type="qsp">
+! объявляем локальные переменные числового и текстового типов
+<br/>local x, $z, $many_letter_
+<br/>! объявляем кортеж (глобальный)
+<br/>$_tuple = ("Вася",34,182,90,"боксёр")
+<br/>! объявляем локальный кортеж
+<br/>local $_personage_ = $_tuple
+</code>
+<segment>
+<p>
+Аналоги констант и игровые переменные для хранения глобальных настроек пишутся заглавными буквами.
+</p>
+<p>
+https://pythonworld.ru/osnovy/pep-8-rukovodstvo-po-napisaniyu-koda-na-python.html#section-30</p>
+</segment>
 </segment>
 </segment>
 </file>
