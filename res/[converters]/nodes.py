@@ -987,6 +987,10 @@ class NewNode():
 				output_text += prev_text
 				output_text += f'<span class="Monokai-Numeric">{scope_regexp_obj.group(0)}</span>'
 				code_text = post_text
+			elif scope_type in ('var', 'spaces'):
+				output_text += prev_text
+				output_text += f'{scope_regexp_obj.group(0)}'
+				code_text = post_text
 			else:
 				output_text += code_text
 				code_text = ''
@@ -1009,7 +1013,8 @@ class NewNode():
 				'varname',
 				'hidefunc',
 				'number',
-				'location-end'
+				'location-end',
+				'var'
 			],
 			"scope-regexp":
 			[
@@ -1026,7 +1031,8 @@ class NewNode():
 				re.search(r'(?i:(\bnosave|\bdisablescroll|\bdisablesubex|\bdebug|\busehtml|\b(b|f|l)color|\bfsize|(?<!\w)\$?(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)))\b', string_line, flags=re.MULTILINE),
 				re.search(r'@[\w\.]+\b', string_line, flags=re.MULTILINE),
 				re.search(r'\b\d+\b', string_line, flags=re.MULTILINE),
-				re.search(r'(^\s*)(\-)(.*?$)', string_line, flags=re.MULTILINE)
+				re.search(r'(^\s*)(\-)(.*?$)', string_line, flags=re.MULTILINE),
+				re.search(r'\b[A-Za-zА-Яа-я_0-9][\w\.]*?\b', string_line, flags=re.MULTILINE)
 			],
 			"scope-instring":
 			[]
@@ -1088,20 +1094,20 @@ class NewNode():
 		maximal = len(string_line)+1
 		mini_data_base = {
 			"scope-name": [
-				'single-string',
 				'single-quotes',
 				'single-apostrophes',
 				'single-scobe',
+				'single-string',
 				'quotes',
 				'apostrophes',
 				'scobe'
 			],
 			"scope-regexp":
 			[
-				re.search(r'^[^"\'\{]*?$', string_line, flags=re.MULTILINE),
 				re.search(r'^[^"\n]*?"[^"]*?"[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
 				re.search(r'^[^\'\n]*?\'[^\']*?\'[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
 				re.search(r'^[^\{\n]*?\{[^\}]*?\}[^\'"\{\n]*?$', string_line, flags=re.MULTILINE),
+				re.search(r'(^[^"\'\{]*?$)', string_line, flags=re.MULTILINE),
 				re.search(r'^[^"\n]*?"[^"]*?"[^"\n]*?', string_line, flags=re.MULTILINE),
 				re.search(r'^[^\'\n]*?\'[^\']*?\'[^\'\n]*?', string_line, flags=re.MULTILINE),
 				re.search(r'^[^\{]*?\{[^\}]*?\}[^\{\n]*?', string_line, flags=re.MULTILINE),
@@ -1578,7 +1584,7 @@ class NewNode():
 
 	@staticmethod
 	def replace_specsymbols(string_line:str):
-		# замена амперсандов в строках
+		# replace ampersand in string
 		while True:
 			if re.search(r'\&(?!\S+?;)',string_line)!=None:
 				string_line = re.sub(r'\&(?!\S+?;)','&amp;', string_line)

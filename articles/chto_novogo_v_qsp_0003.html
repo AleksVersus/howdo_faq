@@ -36,14 +36,14 @@
 mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'string'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;число&nbsp;123</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'string'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'string'</span><br/>
 </div>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версия&nbsp;5.8.0&nbsp;и&nbsp;выше</span><br/>
 mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'string'</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;затирает&nbsp;числовое&nbsp;значение</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;попытка&nbsp;доступа&nbsp;к&nbsp;числовому&nbsp;значению&nbsp;вернёт&nbsp;0</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'string'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'string'</span><br/>
 </div>
 <h4 id="mnogomernye-massivy">Многомерные массивы</h4><p>
 Чтобы организовать многомерный массив, в плеерах версии 5.7.0 (и более ранних) приходилось использовать текстовые индексы. Например:
@@ -201,7 +201,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 <span class="Monokai-SysVar">disablesubex</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;&lt;&lt;health&gt;&gt;'</span><br/>
 <span class="Monokai-SysVar">disablesubex</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'Здоровье&nbsp;100'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
 </div>
 <p>
 В плеерах более новых версий это не сработает:
@@ -213,7 +213,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 <span class="Monokai-SysVar">disablesubex</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
 <span class="Monokai-SysVar">disablesubex</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'Здоровье&nbsp;100'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
 </div>
 <p>
 Чтобы вывести строку с подвыражениями без обработки таких вложенных выражений в новых версиях плеера, можно использовать фигурные скобки:
@@ -221,9 +221,9 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;одинаково&nbsp;работает&nbsp;во&nbsp;всех&nbsp;версиях&nbsp;плеера</span><br/>
 health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'Здоровье&nbsp;100'</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Operator">{</span>Здоровье&nbsp;<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&lt;</span>health<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'Здоровье&nbsp;&lt;&lt;health&gt;&gt;'</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;строку&nbsp;<span class="Monokai-String">'Здоровье&nbsp;100'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Operator">{</span>Здоровье&nbsp;<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&lt;</span>health<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;&lt;&lt;health&gt;&gt;'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
 </div>
 <h4 id="izmeneniia-v-rabote-neiavnogo-operatora">Изменения в работе неявного оператора</h4><p>
 Неявный оператор — это оператор, который мы не указываем. В 5.7.0 он делал примерно то же, что делал и оператор <span class="em_BLCK">*pl</span>. То есть выводил на экран значение, добавляя после этого значения перевод строки:
@@ -249,8 +249,8 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 --loc1</span><span class="Monokai-StartLoc"><br/>
 <br/>
 #&nbsp;foo</span><br/>
-N<span class="Monokai-Operator">=</span>R<span class="Monokai-Operator">*</span>L<br/>
-<span class="Monokai-Operator">-</span><span class="Monokai-Operator">-</span>foo<br/>
+N<span class="Monokai-Operator">=</span>R<span class="Monokai-Operator">*</span>L<span class="Monokai-EndLoc"><br/>
+--foo</span><br/>
 </div>
 <p>
 Вот что мы увидим на экране в плеерах версии 5.7.0:
@@ -334,7 +334,7 @@ xvar&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func
 Обе команды присваивают переменной <span class="em_BLCK">xvar</span> значение из ячейки <span class="em_BLCK">123</span> массива <span class="em_BLCK">'massive</span>', однако во втором случае мы указываем название в виде строкового значения. Таким образом мы, не прибегая к помощи <span class="em_BLCK">DYNAMIC</span>/<span class="em_BLCK">DYNEVAL</span> можем динамически формировать названия массива при получении значения.
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator"></span><span class="Monokai-Comment">!</span>&nbsp;$stringarray<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">345</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'text&nbsp;out'</span><br/>
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;$stringarray[345]='text&nbsp;out'</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'string'</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'array'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$'</span><span class="Monokai-Operator">+</span>$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span>$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">345</span><span class="Monokai-Operator">)</span><br/>
@@ -359,7 +359,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 <br/>
 </span><span class="Monokai-Comment">!&nbsp;удаление&nbsp;по&nbsp;числовому&nbsp;индексу</span><br/>
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;<span class="Monokai-String">'строка&nbsp;3'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;'строка&nbsp;3'</span><br/>
 </div>
 <p>
 В плеерах версии 5.8.0 и выше <span class="em_BLCK">KILLVAR</span> умеет удалять элементы массивов не только по числовому, но и по текстовому индексу:
@@ -374,7 +374,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 <br/>
 </span><span class="Monokai-Comment">!&nbsp;удаление&nbsp;по&nbsp;числовому&nbsp;индексу</span><br/>
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'text&nbsp;index'</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!</span>&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;<span class="Monokai-String">'строка&nbsp;4'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;'строка&nbsp;4'</span><br/>
 </div>
 <h4 id="operatory-addqst-i-killqst-pereimenovany">Операторы ADDQST и KILLQST переименованы</h4><p>
 В плеерах версии 5.7.0 (за исключением Quest Navigator) используются операторы <span class="em_BLCK">ADDQST</span> и <span class="em_BLCK">KILLQST</span>. В плеерах более новых версий (5.8.0 и выше) данные операторы заменены на <span class="em_BLCK">INCLIB</span> и <span class="em_BLCK">FREELIB</span> соответственно.
@@ -448,14 +448,14 @@ j<span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">=</span>
 i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;i<br/>
 <span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'foo'</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;i<br/>
-<span class="Monokai-Operator">-</span><span class="Monokai-Operator">-</span>start<br/>
-<span class="Monokai-StartLoc"><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;i<span class="Monokai-EndLoc"><br/>
+--start</span><span class="Monokai-StartLoc"><br/>
+<br/>
 #&nbsp;foo</span><br/>
 <span class="Monokai-Operator">local</span>&nbsp;i<br/>
 i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
-<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;i<br/>
-<span class="Monokai-Operator">-</span><span class="Monokai-Operator">-</span>foo<br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;i<span class="Monokai-EndLoc"><br/>
+--foo</span><br/>
 </div>
 <p>
 Можно объявить локальную переменную и сразу присвоить ей значение:
@@ -468,15 +468,15 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;объявляем&nbsp;локальные&nbsp;переменные&nbsp;</span><br/>
-<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">,</span>&nbsp;j<span class="Monokai-Operator">,</span>&nbsp;k<br/>
-<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;объявляем&nbsp;локальные&nbsp;переменные&nbsp;и&nbsp;присваиваем&nbsp;им&nbsp;значения</span><br/>
+<span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">,</span>&nbsp;j<span class="Monokai-Operator">,</span>&nbsp;k<span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;объявляем&nbsp;локальные&nbsp;переменные&nbsp;и&nbsp;присваиваем&nbsp;им&nbsp;значения</span><br/>
 <span class="Monokai-Operator">local</span>&nbsp;f<span class="Monokai-Operator">,</span>&nbsp;d<span class="Monokai-Operator">,</span>&nbsp;$g&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'string'</span><br/>
 </div>
 <p>
 Обратите внимание на последнюю форму записи. Сначала мы перечисляем объявляемые переменные через запятую, затем ставим один знак <span class="em_BLCK">=</span>, а после него перечисляем через запятую значения, которые хотим присвоить переменным. Неправильно делать такую запись:
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator"></span><span class="Monokai-Comment">!</span>&nbsp;Данная&nbsp;строчка&nbsp;кода&nbsp;вызовет&nbsp;ошибку&nbsp;<span class="Monokai-String">"Несоответствие&nbsp;типов&nbsp;данных"</span><span class="Monokai-Operator">:</span><br/>
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;Данная&nbsp;строчка&nbsp;кода&nbsp;вызовет&nbsp;ошибку&nbsp;"Несоответствие&nbsp;типов&nbsp;данных":</span><br/>
 <span class="Monokai-Operator">local</span>&nbsp;f<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span>&nbsp;d<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span>&nbsp;$g<span class="Monokai-Operator">=</span><span class="Monokai-String">'string'</span><br/>
 </div>
 <h4 id="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos">Изменения в работе функций INSTR, ARRCOMP, ARRPOS</h4><p>
@@ -592,7 +592,7 @@ t<span class="Monokai-Operator">:</span><br/>
 </p>
 <div class="Monokai-Code">
 t<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
-t<span class="Monokai-Func">or</span>t<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
+tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
 <span class="Monokai-Koperator">if</span>&nbsp;t&nbsp;_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">or</span>&nbsp;_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;t<span class="Monokai-Operator">:</span><br/>
