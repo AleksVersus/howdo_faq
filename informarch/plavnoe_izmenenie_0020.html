@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
@@ -14,104 +15,86 @@
         <div class="em_AROUND">
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 19</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 21 &gt;</a></div></div>
-<a id="informarch_transformation"></a><h2>Плавное изменение цвета фона [1.0]</h2>
-<p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 21</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 23 &gt;</a></div></div>
+<h5 id="informarch_transformation">Плавное изменение цвета фона [1.0]</h5><p>
 Плавное изменение цвета фона может придать Вашей игре больше атмосферности. Так же, это снизит напряжение на глаза при смене цвета фона (по сравнению с резким).
-
 </p>
 <p>
-Функция будет называться <span class="em_BLCK">!coloring</span> и вызываться так:
-
+Функция будет называться `!coloring` и вызываться так:
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'!coloring'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><br>
-
-
+<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'!coloring'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><br/>
 </div>
 <p>
 Где три числа соответственно цвета RGB от 0 до 255.
-
 </p>
 <p>
-Код локации <span class="em_BLCK">!coloring</span>
-
+Код локации `!coloring`
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Comment">!Вызов&nbsp;функции&nbsp;с&nbsp;передачей&nbsp;3-х&nbsp;аргументов,&nbsp;это&nbsp;3&nbsp;цвета&nbsp;RGB</span><br>
-<span class="Monokai-Comment">!Рекомендуется&nbsp;посылать&nbsp;значения&nbsp;кратные&nbsp;5</span><br>
-r2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-g2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-b2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br>
-<span class="Monokai-Comment">!Начало&nbsp;цикла</span><br>
-<span class="Monokai-Markup">:!color</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-<span class="Monokai-Comment">!Всего&nbsp;3&nbsp;блока&nbsp;для&nbsp;каждого&nbsp;цвета.&nbsp;</span><br>
-<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;r2<span class="Monokai-Operator">:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-<span class="Monokai-Comment">!Значения&nbsp;должны&nbsp;быть&nbsp;кратные&nbsp;5.&nbsp;Если&nbsp;хочется&nbsp;любые,&nbsp;то&nbsp;"+5"&nbsp;следует&nbsp;заменить&nbsp;на&nbsp;"+1"&nbsp;и&nbsp;"-5"&nbsp;на&nbsp;"-1"</span><br>
-<span class="Monokai-Koperator">elseif</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&gt;</span>r2<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-<span class="Monokai-Koperator">end</span><br>
-<br>
-<span class="Monokai-Koperator">if</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;g2<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-<span class="Monokai-Koperator">elseif</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&gt;</span>g2<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-<span class="Monokai-Koperator">end</span><br>
-<br>
-<span class="Monokai-Koperator">if</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;b2<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-<span class="Monokai-Koperator">elseif</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&gt;</span>b2<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-<span class="Monokai-Koperator">end</span><br>
-<span class="Monokai-Comment">!Установка&nbsp;цвета&nbsp;фона</span><br>
-<span class="Monokai-SysVar">bcolor</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>r1<span class="Monokai-Operator">,</span>g1<span class="Monokai-Operator">,</span>b1<span class="Monokai-Operator">)</span>&nbsp;<br>
-<span class="Monokai-Comment">!Проверка,&nbsp;достигнут&nbsp;ли&nbsp;нужный&nbsp;цвет?</span><br>
-<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;r2&nbsp;<span class="Monokai-Func">and</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;g2&nbsp;<span class="Monokai-Func">and</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;b2&nbsp;<span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b2<br>
-<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">wait</span>&nbsp;TIMEOFWAIT<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'!color'</span><br>
-<span class="Monokai-Koperator">end</span><br>
-
-
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!Вызов&nbsp;функции&nbsp;с&nbsp;передачей&nbsp;3-х&nbsp;аргументов,&nbsp;это&nbsp;3&nbsp;цвета&nbsp;RGB</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!Рекомендуется&nbsp;посылать&nbsp;значения&nbsp;кратные&nbsp;5</span><br/>
+r2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+g2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+b2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar">ARGS</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!Начало&nbsp;цикла</span><span class="Monokai-Markup"><br/>
+:!color</span><span class="Monokai-Operator">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+</span><span class="Monokai-Comment">!Всего&nbsp;3&nbsp;блока&nbsp;для&nbsp;каждого&nbsp;цвета.&nbsp;</span><br/>
+<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;r2<span class="Monokai-Operator">:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+</span><span class="Monokai-Comment">!Значения&nbsp;должны&nbsp;быть&nbsp;кратные&nbsp;5.&nbsp;Если&nbsp;хочется&nbsp;любые,&nbsp;то&nbsp;"+5"&nbsp;следует&nbsp;заменить&nbsp;на&nbsp;"+1"&nbsp;и&nbsp;"-5"&nbsp;на&nbsp;"-1"</span><br/>
+<span class="Monokai-Koperator">elseif</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">&gt;</span>r2<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r1<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+<span class="Monokai-Koperator">end</span><br/>
+<br/>
+<span class="Monokai-Koperator">if</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;g2<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+<span class="Monokai-Koperator">elseif</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">&gt;</span>g2<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g1<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+<span class="Monokai-Koperator">end</span><br/>
+<br/>
+<span class="Monokai-Koperator">if</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;b2<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
+<span class="Monokai-Koperator">elseif</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">&gt;</span>b2<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b1<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+<span class="Monokai-Koperator">end</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!Установка&nbsp;цвета&nbsp;фона</span><br/>
+<span class="Monokai-SysVar">bcolor</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>r1<span class="Monokai-Operator">,</span>g1<span class="Monokai-Operator">,</span>b1<span class="Monokai-Operator">)</span><span class="Monokai-Operator">&nbsp;<br/>
+</span><span class="Monokai-Comment">!Проверка,&nbsp;достигнут&nbsp;ли&nbsp;нужный&nbsp;цвет?</span><br/>
+<span class="Monokai-Koperator">if</span>&nbsp;r1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;r2&nbsp;<span class="Monokai-Func">and</span>&nbsp;g1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;g2&nbsp;<span class="Monokai-Func">and</span>&nbsp;b1&nbsp;<span class="Monokai-Operator">=</span>&nbsp;b2&nbsp;<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="Monokai-Operator">=</span>r2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;g1<span class="Monokai-Operator">=</span>g2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;b1<span class="Monokai-Operator">=</span>b2<br/>
+<span class="Monokai-Koperator">else</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">wait</span>&nbsp;TIMEOFWAIT<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'!color'</span><br/>
+<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
 ВНИМАНИЕ!
-
 </p>
 <p>
 Не забывайте, что нужно задать отличным от 0 TIMEOFWAIT и устанавливать цвет текста тёмным или светлым в зависимости от светлого-тёмного фона командой:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-SysVar">fcolor</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">)</span><br>
-
-
+<span class="Monokai-SysVar">fcolor</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">200</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
 где в скобках цвета в RGB
-
 </p>
 <p>
-Примечание: использование <span class="em_BLCK"><span class="emOPRT">WAIT</span></span> а не локации-счётчика <span class="em_BLCK"><span class="emVAR">COUNTER</span></span> обусловлено тем, что подразумевается, что смена цвета будет происходить быстро (рекомендуемое время TIMEOFWAIT = 5). Если автор хочет сделать плавную смену дня и ночи, лучше будет воспользоваться <strong>COUNTER</strong>'ом.
-
+Примечание: использование `WAIT` а не локации-счётчика `COUNTER` обусловлено тем, что подразумевается, что смена цвета будет происходить быстро (рекомендуемое время TIMEOFWAIT = 5). Если автор хочет сделать плавную смену дня и ночи, лучше будет воспользоваться `COUNTER`ом.
 </p>
 <p>
-АВТОР: ANTIPOD   
-
+Автор: `ANTIPOD`
 </p>
 <p>
 20.05.2011 09:23
-
 </p>
 <p>
 Оригинал статьи: <a href="https://qsp.org/index.php?option=com_content&view=article&id=112:2011-05-20-06-23-02&catid=36:2009-02-19-06-11-21&Itemid=76" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона 1.0</a>
-
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 19</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 21 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="emHREFTT">&lt; Назад, к странице 21</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html" class="emHREFTT">Вперёд, к странице 23 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -134,124 +117,7 @@ b2&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-SysVar
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
-<a id="ъqна"></a><h3>Большой сборник полезных ссылок и закладок</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
-</li>
-</ul>
-<a id="КЯgР"></a><h3>Что такое QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
-</li>
-</ul>
-<a id="Ybкф"></a><h3>Общие вопросы и решения</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
-</li>
-</ul>
-<a id="иbКw"></a><h3>Продвинутый QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
-</li>
-</ul>
-<a id="Фымy"></a><h3>Работа в текстовом редакторе</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
-</li>
-</ul>
-<a id="HБыU"></a><h3>Вопросы по программированию</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
-</li>
-</ul>
-<a id="ХNуA"></a><h3>Обновления плеера</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
-</li>
-</ul>
-<a id="xBfq"></a><h3>Вопросы по AeroQSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
-</li>
-</ul>
-<a id="PxцТ"></a><h3>Обзоры игр</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

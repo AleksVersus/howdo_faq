@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
@@ -14,161 +15,132 @@
         <div class="em_AROUND">
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">&lt; Назад, к странице 18</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">Вперёд, к странице 20 &gt;</a></div></div>
-<a id="informarch_ifacts"></a><h2>Действие по условию</h2>
-<p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
+<h5 id="informarch_ifacts">Действие по условию</h5><p>
 Иногда требуется сделать, чтобы действие "появлялось" только при выполнении определенного условия.
-
 </p>
 <p>
 Делается это так.
-
 </p>
 <ol>
-<li>
-Все действия, которые могут быть "отключены" по каким-либо условиям, переносим в область "Выполнить при посещении"
-</li>
-<li>
-В конце каждого действия, в котором есть влияние на любое из этих условий(!), ставим "GOTO $CURLOC".
-</li>
-<li>
-Помещаем действия внутрь соотв. блоков IF, с проверками на условия.
-</li>
-<li>
-При написании кода "Выполнить при посещении" локации учитываем, что код будет выполняться более одного раза.
-</li>
+<li>Все действия, которые могут быть "отключены" по каким-либо условиям, переносим в область "Выполнить при посещении"</li>
+<li>В конце каждого действия, в котором есть влияние на любое из этих условий(!), ставим "GOTO $CURLOC".</li>
+<li>Помещаем действия внутрь соотв. блоков IF, с проверками на условия.</li>
+<li>При написании кода "Выполнить при посещении" локации учитываем, что код будет выполняться более одного раза.</li>
 </ol>
 <p>
 Также внутрь блока IF удобно внести часть описания, относящуюся к показываемому действию.
-
 </p>
 <p>
-<span class="em_BLCK">Пример:</span>
-
+`Пример:`
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-String">'Вы&nbsp;находитесь&nbsp;в&nbsp;пустой&nbsp;комнате.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;ключ<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'На&nbsp;полу&nbsp;лежит&nbsp;ключ.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Взять&nbsp;ключ'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ключ&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'ключ'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-
-
+<span class="Monokai-String">'Вы&nbsp;находитесь&nbsp;в&nbsp;пустой&nbsp;комнате.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;ключ<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'На&nbsp;полу&nbsp;лежит&nbsp;ключ.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Взять&nbsp;ключ'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ключ&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'ключ'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Второй пример</span>. Допустим, в игре можно что-то покупать за деньги. Количество денег хранится в переменной "деньги". Когда денег становится мало, нам нужно, чтобы игроку были недоступны некоторые покупки. Если не выполнять проверку, то количество денег игрока уйдет в минус, и покупать можно будет бесконечно. Проверку можно реализовать двумя способами, на усмотрение автора.
-
+`Второй пример`. Допустим, в игре можно что-то покупать за деньги. Количество денег хранится в переменной "деньги". Когда денег становится мало, нам нужно, чтобы игроку были недоступны некоторые покупки. Если не выполнять проверку, то количество денег игрока уйдет в минус, и покупать можно будет бесконечно. Проверку можно реализовать двумя способами, на усмотрение автора.
 </p>
 <p>
 Первый - действие по условию, как в предыдущем примере. Если условие не выполняется, то действие не показывается вообще. Игрок видит в списке действий только те вещи, на которые у него хватает денег.
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плащ&nbsp;(100)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;плащ&nbsp;за&nbsp;100&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'плащ'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;хлеб&nbsp;(10)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">10</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;хлеб&nbsp;за&nbsp;10&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;хлеб&nbsp;<span class="Monokai-Operator">=</span>&nbsp;хлеб&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">200</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;меч&nbsp;(200)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">200</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;меч&nbsp;за&nbsp;200&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'меч'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-
-
+<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плащ&nbsp;(100)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;100</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;плащ&nbsp;за&nbsp;100&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'плащ'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;хлеб&nbsp;(10)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;10</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;хлеб&nbsp;за&nbsp;10&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;хлеб&nbsp;<span class="Monokai-Operator">=</span>&nbsp;хлеб&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">200</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;меч&nbsp;(200)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;200</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;меч&nbsp;за&nbsp;200&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'меч'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
 </div>
 <p>
 Второй способ - условие внутри действия. При выполнении действия выполняется проверка, и если денег недостаточно, выдается соответствующее сообщение. Игрок видит весь список вещей, но купить может только те, на которые хватает денег.
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плащ&nbsp;(100)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">100</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;плащ&nbsp;за&nbsp;100&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'плащ'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;хлеб&nbsp;(10)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">10</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;хлеб&nbsp;за&nbsp;10&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;хлеб&nbsp;<span class="Monokai-Operator">=</span>&nbsp;хлеб&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;меч&nbsp;(200)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">200</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">200</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;меч&nbsp;за&nbsp;200&nbsp;монет.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'меч'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-
-
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плащ&nbsp;(100)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;100</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;плащ&nbsp;за&nbsp;100&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'плащ'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;хлеб&nbsp;(10)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;10</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;хлеб&nbsp;за&nbsp;10&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;хлеб&nbsp;<span class="Monokai-Operator">=</span>&nbsp;хлеб&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;меч&nbsp;(200)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">200</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;200</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'Вы&nbsp;купили&nbsp;меч&nbsp;за&nbsp;200&nbsp;монет.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'меч'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Func">$CURLOC</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ELSE</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-String">'У&nbsp;вас&nbsp;нехватает&nbsp;денег.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Третий пример.</span>
-
+`Третий пример.`
 </p>
 <p>
 Допустим, в игре для продвижения по сюжету нам нужно что-то узнать. Кто-то рассказывает нам, что в библиотеке замка есть потайной ход. Когда мы это узнали, то при посещении библиотеки у нас появится соответствующее действие. Пока игрок не выяснил про потайной ход, действие скрыто.
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Comment">!&nbsp;Локация&nbsp;"Слепой&nbsp;старец"</span><br>
-<span class="Monokai-String">'Старец&nbsp;усмехнулся.&nbsp;-&nbsp;Они&nbsp;лишили&nbsp;меня&nbsp;зрения,&nbsp;но&nbsp;память&nbsp;осталась&nbsp;при&nbsp;мне.&nbsp;Я&nbsp;расскажу&nbsp;тебе,&nbsp;как&nbsp;добраться&nbsp;до&nbsp;сокровищницы.&nbsp;В&nbsp;библиотеке&nbsp;есть&nbsp;потайной&nbsp;ход:&nbsp;загляни&nbsp;в&nbsp;книгу,&nbsp;четырнадцатую&nbsp;от&nbsp;окна&nbsp;на&nbsp;нижней&nbsp;полке.'</span><br>
-<span class="Monokai-Comment">!&nbsp;Меняем&nbsp;состояние&nbsp;игры&nbsp;-&nbsp;отмечаем,&nbsp;что&nbsp;игрок&nbsp;узнал&nbsp;секрет.</span><br>
-потайной_ход&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-<br>
-<span class="Monokai-Comment">!&nbsp;Локация&nbsp;"Библиотека"</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;потайной_ход&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Заглянуть&nbsp;в&nbsp;четырнадцатую&nbsp;книгу'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Потайной&nbsp;ход'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-
-
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;Локация&nbsp;"Слепой&nbsp;старец"</span><br/>
+<span class="Monokai-String">'Старец&nbsp;усмехнулся.&nbsp;-&nbsp;Они&nbsp;лишили&nbsp;меня&nbsp;зрения,&nbsp;но&nbsp;память&nbsp;осталась&nbsp;при&nbsp;мне.&nbsp;Я&nbsp;расскажу&nbsp;тебе,&nbsp;как&nbsp;добраться&nbsp;до&nbsp;сокровищницы.&nbsp;В&nbsp;библиотеке&nbsp;есть&nbsp;потайной&nbsp;ход:&nbsp;загляни&nbsp;в&nbsp;книгу,&nbsp;четырнадцатую&nbsp;от&nbsp;окна&nbsp;на&nbsp;нижней&nbsp;полке.'</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;Меняем&nbsp;состояние&nbsp;игры&nbsp;-&nbsp;отмечаем,&nbsp;что&nbsp;игрок&nbsp;узнал&nbsp;секрет.</span><br/>
+потайной_ход&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator"><br/>
+<br/>
+</span><span class="Monokai-Comment">!&nbsp;Локация&nbsp;"Библиотека"</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;потайной_ход&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Заглянуть&nbsp;в&nbsp;четырнадцатую&nbsp;книгу'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Потайной&nbsp;ход'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
 </div>
 <p>
-АВТОР: Nex   
-
+Автор: `Nex`
 </p>
 <p>
 26.Июл.11 06:51:46
-
 </p>
 <p>
 Оригинал в теме: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">&lt; Назад, к странице 18</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">Вперёд, к странице 20 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="emHREFTT">&lt; Назад, к странице 20</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="emHREFTT">Вперёд, к странице 22 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -191,124 +163,7 @@
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
-<a id="ъqна"></a><h3>Большой сборник полезных ссылок и закладок</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
-</li>
-</ul>
-<a id="КЯgР"></a><h3>Что такое QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
-</li>
-</ul>
-<a id="Ybкф"></a><h3>Общие вопросы и решения</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
-</li>
-</ul>
-<a id="иbКw"></a><h3>Продвинутый QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
-</li>
-</ul>
-<a id="Фымy"></a><h3>Работа в текстовом редакторе</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
-</li>
-</ul>
-<a id="HБыU"></a><h3>Вопросы по программированию</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
-</li>
-</ul>
-<a id="ХNуA"></a><h3>Обновления плеера</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
-</li>
-</ul>
-<a id="xBfq"></a><h3>Вопросы по AeroQSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
-</li>
-</ul>
-<a id="PxцТ"></a><h3>Обзоры игр</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

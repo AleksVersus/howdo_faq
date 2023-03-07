@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
+<h5 id="faq_24_02">24.2. Как сделать StandAlone-сборку на классическом плеере?</h5><p>
+В:	Как сделать StandAlone-сборку на классическом плеере?
+</p>
+<p>
+	Можно ли сделать игру так, чтобы играть без плеера?
+</p>
+<p>
+	Как сделать пакетный файл запуска, чтобы игрок тыкал иконку `start` и сразу начинал играть?
+</p>
+<p>
+О:
+</p>
+<p>
+Непосредственно без плеера ни одна игра QSP не запустится.
+</p>
+<p>
+Но если вам лень объяснять всем и каждому, что игры QSP запускаются на специальном плеере, что надо отдельно качать плеер, отдельно — игры, то есть специальная инструкция по упаковке и файла плеера и файла игры в самораспаковывающийся sfx-архив, который заменит привычный для игрока установщик.
+</p>
+<p>
+Ниже будет ссылка на изначальную версию данной инструкции, мы же сейчас рассмотрим вариант распространяемой standalone-сборки, включающий как изначальную версию, так и работу с пакетным файлом .bat, который позволит игроку запускать игру одним кликом (прямо с рабочего стола).
+</p>
+<p>
+Для того, чтобы проделать нижеследующие шаги, вам потребуется заранее установить на компьютер программу WinRAR. Она условно-бесплатная. После того, как установите WinRAR, выполните следующее:
+</p>
+<ol>
+<li>В первую очередь необходимо завести отдельную папку, назовём её "Standalone". Можете создать её прямо на рабочем столе, это папка, в которую мы скопируем все необходимые нам файлы, чтобы затем создать sfx-архив.</li>
+<li>Если вы хотите добавить оригинальную иконку на сам sfx-архив и на ярлык, с которого будет запускаться игра, скопируйте файлы иконок в папку "Standalone". Далее в инструкции будет указано, что и где прописать, чтобы эти иконки задействовать.</li>
+<li>Скопируйте игру и все сопутствующие ей файлы и папки в папку "Standalone". Например, файл игры называется "moonlight.qsp", он должен оказаться в папке "Standalone".</li>
+<li>Создайте в папке "Standalone" папку "Player"</li>
+<li>Скачайте архив с плеером и распакуйте в папку "Player" всё содержимое архива. Таким образом в папке "Player" будет "qspgui.exe" и другие файлы и папки.</li>
+<li>Создаём в папке "Standalone" текстовый файл, называем его "Start", а вместо расширения ".txt" пишем расширение ".bat"</li>
+<li><p>
+Открываем файл "Start.bat" с помощью любого текстового редактора. В этом файле прописываем такую команду:</p>
+<div class="Monokai-Code">
+start&nbsp;"Player/qspgui.exe"&nbsp;"moonlight.qsp"
+</div>
+<p>
+		start — это команда, запускающая исполняемый файл,
+</p>
+<p>
+		первым аргументом указываем путь к исполняемому файлу, то есть к нашему плееру,
+</p>
+<p>
+		вторым аргументом — путь к игре.
+</p>
+<p>
+		Поскольку плеер лежит во вложенной папке, а файл игры в той же папке, что и "start.bat" можно указывать относительные пути. Но если вы точно знаете, в какие папки будут распакованы игра и плеер, можете указать и абсолютные пути.
+</p>
+</li>
+<li>Теперь в папке "Standalone" выделяем папку "Player", выделяем игру ("moonlight.qsp") и все сопутствующие ей файлы и папки, выделяем файл "start.bat", щёлкаем правой кнопкой мыши по любому из выделенных файлов и из всплывающего контекстного меню выбираем пункт "Добавить в архив..."</li>
+<li>Откроется диалоговое окно по добавлению файлов в архив. Указываем имя архива. Можно написать например "moonline_setup".</li>
+<li>На вкладке "Дополнительно" заходим в "параметры SFX".</li>
+<li><p>
+На вкладке "Общие" указываем путь для распаковки. Рекомендую указывать абсолютный путь, так как неизвестно, откуда игрок запустит ваш "установщик". Например, можно прописать такой путь:</p>
+<div class="Monokai-Code">
+C:\QSP_Games\MoonLight
+</div>
+</li>
+<li><p>
+На вкладке "Дополнительно" можно добавить ярлык:</p>
+<ul>
+<li>Нажимаем кнопку "Добавить ярлык...", откроетя диалоговое окно.</li>
+<li>Отмечаем в списке "Место создания ярлыка" пункт "На рабочем столе".</li>
+<li><p>
+В поле "Имя файла для которого будет создан ярлык" пишем:</p>
+<div class="Monokai-Code">
+start.bat
+</div>
+</li>
+<li>В поле "Имя ярлыка" можно написать название игры ("MoonLight").</li>
+<li>В поле "Значок ярлыка" прописываем абсолютный путь к файлу иконки, которую мы хотим увидеть на ярлыке (эта иконка лежит у нас в папке "Standalone").</li>
+<li>Нажимаем "ОК".</li>
+</ul>
+</li>
+<li>На вкладке "Текст и графика" можно прописать некоторые данные. Например, вы можете установить свой логотип, написать текст приветствия для игрока и заголовок окна. Если вы подготовили оригинальный значок/иконку для своего sfx-архива, на этой вкладке можно указать путь к файлу этого значка (эта иконка опять же у нас уже лежит в папке "Standalone").</li>
+<li>На вкладке "Обновление" отмечаем пункты "извлечь и заменить файлы" и "перезаписывать файлы без запроса".</li>
+<li>Нажимаем кнопку "ОК", и снова "ОК" в основном окне.</li>
+</ol>
+<p>
+В папке "Satndalone" должен появиться файл с расширением ".exe" ("moonline_setup.exe"). Остаётся только проверить, как данный "установщик" работает, и можно распространять игру среди друзей и знакомых.
+</p>
+<h5 id="link_24_02">23.2.  Как сделать StandAlone-сборку на классическом плеере?</h5><p>
+Смотреть ответ на ютубе: <a href="https://youtu.be/Ca4ynD_1BqQ" style="text-decoration:none;" class="emFOLD">https://youtu.be/Ca4ynD_1BqQ</a>
+</p>
+<p>
+Genryzz. #3912 21.Фев.16 21:30:40: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065" style="text-decoration:none;" class="emFOLD">как сделать пусковой файл?</a>
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html" class="emHREFTT">&lt; Назад, к странице 8</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html" class="emHREFTT">Вперёд, к странице 10 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

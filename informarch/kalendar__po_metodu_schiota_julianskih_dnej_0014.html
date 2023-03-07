@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
@@ -14,239 +15,195 @@
         <div class="em_AROUND">
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
-<a id="informarch_calend_jul"></a><h2>Календарь по методу счёта Юлианский дней</h2>
-<p>
-Календарь по рецепту <span class="em_BLCK">evp</span>. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57" style="text-decoration:none;" class="emFOLD">серии сообщений</a>.
-
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<h5 id="informarch_calend_jul">Календарь по методу счёта Юлианский дней</h5><p>
+Календарь по рецепту `evp`. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57" style="text-decoration:none;" class="emFOLD">серии сообщений</a>.
 </p>
 <p>
 Давным-давно были разработаны формулы для вычисления точной календарной даты из Юлианской даты. Юлианская дата — это число, показывающее, сколько точно прошло дней, начиная с полудня понедельника 24 ноября 4714 года до нашей эры.
-
 </p>
 <p>
 Для тех, кто интересуется теорией, на википедии есть замечательная <a href="https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0" style="text-decoration:none;" class="emFOLD">статья, всё подробно разъясняющая</a>. Нас же интересуют непосредственно формулы, и что мы из них можем получить.
-
 </p>
 <p>
-<span class="em_BLCK">evp</span> уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации <span class="em_BLCK"><span class="emTEXT">"calendar"</span></span>.
-
+`evp` уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации `"calendar"`.
 </p>
 <div class="Monokai-Code">
-JDN&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDNStart&nbsp;<span class="Monokai-Operator">+</span>&nbsp;time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1440</span><br>
-hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span>time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">24</span><br>
-minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;time&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">60</span><br>
-weekday&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span>JDN&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-<br>
-JDa&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDN&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">32044</span><br>
-JDb&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">*</span>JDa&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">146097</span><br>
-JDc&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDa&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">146097</span><span class="Monokai-Operator">*</span>JDb<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span><br>
-JDd&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">*</span>JDc&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1461</span><br>
-JDe&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDc&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">1461</span><span class="Monokai-Operator">*</span>JDd<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">4</span><br>
-JDm&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">*</span>JDe&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">153</span><br>
-<br>
-day&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDe&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">153</span><span class="Monokai-Operator">*</span>JDm<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-month&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDm&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">12</span><span class="Monokai-Operator">*</span><span class="Monokai-Operator">(</span>JDm<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">)</span><br>
-year&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">*</span>JDb&nbsp;<span class="Monokai-Operator">+</span>&nbsp;JDd&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">4800</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;JDm<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">10</span><br>
-$hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>hour&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;hour&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;hour&gt;&gt;'</span><span class="Monokai-Operator">)</span><br>
-$minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>minut&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">)</span><br>
-
-
+JDN&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDNStart&nbsp;<span class="Monokai-Operator">+</span>&nbsp;time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1440</span><br/>
+hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span>time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">24</span><br/>
+minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;time&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">60</span><br/>
+weekday&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span>JDN&nbsp;<span class="Monokai-Func">MOD</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+<br/>
+JDa&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDN&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">32044</span><br/>
+JDb&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">*</span>JDa&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">146097</span><br/>
+JDc&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDa<span class="Monokai-EndLoc">&nbsp;-&nbsp;(146097*JDb/4)</span><br/>
+JDd&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">*</span>JDc&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1461</span><br/>
+JDe&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDc<span class="Monokai-EndLoc">&nbsp;-&nbsp;1461*JDd/4</span><br/>
+JDm&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">*</span>JDe&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">153</span><br/>
+<br/>
+day&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDe<span class="Monokai-EndLoc">&nbsp;-&nbsp;(153*JDm+2)/5&nbsp;+&nbsp;1</span><br/>
+month&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDm&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-EndLoc">&nbsp;-&nbsp;12*(JDm/10)</span><br/>
+year&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">100</span><span class="Monokai-Operator">*</span>JDb&nbsp;<span class="Monokai-Operator">+</span>&nbsp;JDd<span class="Monokai-EndLoc">&nbsp;-&nbsp;4800&nbsp;+&nbsp;JDm/10</span><br/>
+$hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>hour&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;hour&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;hour&gt;&gt;'</span><span class="Monokai-Operator">)</span><br/>
+$minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>minut&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В самом начале игры нам нужно задать переменные <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span>. Именно эти переменные будут хранить точное значение времени в нашей игре.
-
+В самом начале игры нам нужно задать переменные `JDNStart` и `time`. Именно эти переменные будут хранить точное значение времени в нашей игре.
 </p>
 <p>
-<span class="em_BLCK">JDNStart</span> показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
-
+`JDNStart` показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
 </p>
 <p>
 К примеру, наша игра должна начаться 7 ноября 1917 года, в среду. Открываем <a href="https://promenade.imcce.fr/en/pages2/278.html" style="text-decoration:none;" class="emFOLD">калькулятор</a>. Подставляем в нужные поля дату 7 ноября 1917, а время пишем 12 часов 00 минут 00 секунд. Юлианский день начинается с полудня! И получаем число 2421540. Точное, без дробной части, число дней.
-
 </p>
 <p>
-Это самое число и есть наш <span class="em_BLCK">JDNStart</span>, вот и записываем 2421540 в переменную.
-
+Это самое число и есть наш `JDNStart`, вот и записываем 2421540 в переменную.
 </p>
 <p>
-А в переменную <span class="em_BLCK">time</span> мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную <span class="em_BLCK">time</span> записать число <span class="em_BLCK"><span class="emNUM">15</span>*60+37</span>.
-
+А в переменную `time` мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную `time` записать число `15*60+37`.
 </p>
 <p>
 Итого мы будем иметь две строчки кода на самой первой локации в нашей игре, описывающие время:
-
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2421540</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><br>
-
-
+JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2421540</span><br/>
+time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><br/>
 </div>
 <p>
-Помимо <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span> на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
-
+Помимо `JDNStart` и `time` на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
 </p>
 <div class="Monokai-Code">
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Вторник'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Среда'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Четверг'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Пятница'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Суббота'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Воскресенье'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Январь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Февраль'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Март'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Апрель'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Май'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июнь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июль'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Август'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Сентябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Октябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ноябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Декабрь'</span><br>
-
-
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Вторник'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Среда'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Четверг'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Пятница'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Суббота'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Воскресенье'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Январь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Февраль'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Март'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Апрель'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Май'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июнь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июль'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Август'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Сентябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Октябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ноябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Декабрь'</span><br/>
 </div>
 <p>
 И вот теперь всё готово для того, чтобы мы могли пользоваться полноценным календарём в нашей игре.
-
 </p>
 <p>
-Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной <span class="em_BLCK">time</span>. Например:
-
+Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной `time`. Например:
 </p>
 <div class="Monokai-Code">
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-
-
+<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+=</span>&nbsp;<span class="Monokai-Numeric">45</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br/>
+<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-Нажав на действие, мы изменим значение переменной <span class="em_BLCK">time</span>, т.е. переместимся во времени на 45 минут, и с помощью оператора <span class="em_BLCK"><span class="emOPRT">goto</span></span> переместимся на локацию <span class="em_BLCK"><span class="emTEXT">"smolny"</span></span>.
-
+Нажав на действие, мы изменим значение переменной `time`, т.е. переместимся во времени на 45 минут, и с помощью оператора `goto` переместимся на локацию `"smolny"`.
 </p>
 <p>
-Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации <span class="em_BLCK"><span class="emTEXT">"calendar"</span></span>, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
-
+Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации `"calendar"`, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><br>
-<span class="Monokai-Operator">*nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">','</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br>
-
-
+<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">','</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
 </div>
 <p>
-Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации <span class="em_BLCK"><span class="emTEXT">"calendar"</span></span>:
-
+Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации `"calendar"`:
 </p>
 <div class="Monokai-Code">
-$year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>year&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;-year+1&gt;&gt;&nbsp;г.&nbsp;до&nbsp;н.э.'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;year&gt;&gt;&nbsp;г.'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br>
-
-
+$year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>year&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;-year+1&gt;&gt;&nbsp;г.&nbsp;до&nbsp;н.э.'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;year&gt;&gt;&nbsp;г.'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
 Это становится необходимым, если вы действительно хотите, чтобы отображение дат полностью соответствовало Григорианскому календарю. Дело тут в том, что алгоритм вычисляет астрономический счет лет, при котором за -1-м годом следует нулевой год, а затем 1-й год. В Григорианском же календаре принято, что первому году н.э. предшествовал 1-й год до н.э. Нулевого года в Григорианском календаре нет.
-
 </p>
 <p>
 Для закрепления понимания того, как это всё работает, напишите несколько локаций:
-
 </p>
 <p>
-<span class="em_BLCK">Локация "smolny"</span>
-
+`Локация "smolny"`
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">*nl</span><span class="Monokai-String">'Смольный'</span><br>
-<span class="Monokai-Operator">*nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;на&nbsp;вокзал'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'station'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-
-
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Смольный'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;на&nbsp;вокзал'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+=</span>&nbsp;<span class="Monokai-Numeric">45</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'station'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Локация "station"</span>
-
+`Локация "station"`
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">*nl</span><span class="Monokai-String">'Вокзал'</span><br>
-<span class="Monokai-Operator">*nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">45</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Москву&nbsp;(время&nbsp;в&nbsp;пути&nbsp;1&nbsp;сутки,&nbsp;3&nbsp;часа)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1620</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'moscow'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-
-
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Вокзал'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+=</span>&nbsp;<span class="Monokai-Numeric">45</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Москву&nbsp;(время&nbsp;в&nbsp;пути&nbsp;1&nbsp;сутки,&nbsp;3&nbsp;часа)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+=</span>&nbsp;<span class="Monokai-Numeric">1620</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'moscow'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Локация "moscow"</span>
-
+`Локация "moscow"`
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">*nl</span><span class="Monokai-String">'Москва'</span><br>
-<span class="Monokai-Operator">*nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Питер&nbsp;(время&nbsp;в&nbsp;пути&nbsp;1&nbsp;сутки,&nbsp;3&nbsp;часа&nbsp;45&nbsp;минут)'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1665</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'station'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br>
-
-
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Москва'</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">',&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Питер&nbsp;(время&nbsp;в&nbsp;пути&nbsp;1&nbsp;сутки,&nbsp;3&nbsp;часа&nbsp;45&nbsp;минут)'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;<span class="Monokai-Operator">+=</span>&nbsp;<span class="Monokai-Numeric">1665</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'station'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
 В стартовой локации напишите этот код:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Comment">!&nbsp;задаём&nbsp;начальное&nbsp;время</span><br>
-JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2421540</span><br>
-time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><br>
-<span class="Monokai-Comment">!&nbsp;прописываем&nbsp;в&nbsp;массив&nbsp;названия&nbsp;месяцев&nbsp;и&nbsp;дней&nbsp;недели</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Вторник'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Среда'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Четверг'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Пятница'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Суббота'</span><br>
-$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Воскресенье'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Январь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Февраль'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Март'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Апрель'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Май'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июнь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июль'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Август'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Сентябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Октябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ноябрь'</span><br>
-$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Декабрь'</span><br>
-<span class="Monokai-Comment">!&nbsp;пересчитываем&nbsp;значения&nbsp;времени</span><br>
-<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><br>
-<span class="Monokai-Comment">!&nbsp;переносимся&nbsp;&nbsp;в&nbsp;Смольный</span><br>
-<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br>
-
-
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;задаём&nbsp;начальное&nbsp;время</span><br/>
+JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2421540</span><br/>
+time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;прописываем&nbsp;в&nbsp;массив&nbsp;названия&nbsp;месяцев&nbsp;и&nbsp;дней&nbsp;недели</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Вторник'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Среда'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Четверг'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Пятница'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Суббота'</span><br/>
+$weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Воскресенье'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Январь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Февраль'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Март'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Апрель'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Май'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июнь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Июль'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Август'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Сентябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Октябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">11</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Ноябрь'</span><br/>
+$month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Декабрь'</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;пересчитываем&nbsp;значения&nbsp;времени</span><br/>
+<span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;переносимся&nbsp;&nbsp;в&nbsp;Смольный</span><br/>
+<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'smolny'</span><br/>
 </div>
 <p>
 Пробуйте запустить и следите за датой 🙂
-
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -269,124 +226,7 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
-<a id="ъqна"></a><h3>Большой сборник полезных ссылок и закладок</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
-</li>
-</ul>
-<a id="КЯgР"></a><h3>Что такое QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
-</li>
-</ul>
-<a id="Ybкф"></a><h3>Общие вопросы и решения</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
-</li>
-</ul>
-<a id="иbКw"></a><h3>Продвинутый QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
-</li>
-</ul>
-<a id="Фымy"></a><h3>Работа в текстовом редакторе</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
-</li>
-</ul>
-<a id="HБыU"></a><h3>Вопросы по программированию</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
-</li>
-</ul>
-<a id="ХNуA"></a><h3>Обновления плеера</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
-</li>
-</ul>
-<a id="xBfq"></a><h3>Вопросы по AeroQSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
-</li>
-</ul>
-<a id="PxцТ"></a><h3>Обзоры игр</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

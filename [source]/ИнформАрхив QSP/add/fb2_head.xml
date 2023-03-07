@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FictionBook xmlns="http://www.gribuser.ru/xml/fictionbook/2.0" xmlns:l="http://www.w3.org/1999/xlink">
+ <description>
+  <title-info>
+   <genre>ref_ref</genre>
+   <genre>comp_programming</genre>
+   <author>
+    <first-name>Алексей</first-name>
+    <middle-name>Олегович</middle-name>
+    <last-name>Шпак</last-name>
+   </author>
+   <book-title>Информархив QSP</book-title>
+   <annotation>
+    <p>Сборник устаревших статей по программированию на QSP. Новости, эссе, теория, описание плееров.</p>
+    <p>редакция от <strong>%TIME% г.</strong></p>
+   </annotation>
+   <date value="%DATE%">07 марта 2023</date>
+   <coverpage>
+    <image l:href="#cover.png"/></coverpage>
+   <lang>ru</lang>
+  </title-info>
+  <document-info>
+   <author>
+    <first-name>Aleks</first-name>
+    <last-name>Versus</last-name>
+   </author>
+   <program-used>build_fb2.py, FictionBook Editor Release 2.6.6</program-used>
+   <date value="%DATE%">%DATE%</date>
+   <id>5b03c14f-7c11-4306-8c20-291b6b9e72cf</id>
+   <version>2.0</version>
+   <history>
+    <p>1.0 — создание файла</p>
+    <p>2.0 — полное обновление файла</p>
+   </history>
+  </document-info>
+ </description>
+ <body>

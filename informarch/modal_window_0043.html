@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/instruktsija_po_smene_oformlenija_iz_koda_igry_0042.html" class="emHREFTT">&lt; Назад, к странице 35</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html" class="emHREFTT">Вперёд, к странице 37 &gt;</a></div></div>
+<h6 id="faq_22_11">22.11. Модальное окошко с вариантами выбора</h6><p>
+В Quest Navigator Вы можете самостоятельно написать такое окошко, даже не прибегая к помощи JavaScript.
+</p>
+<p>
+Далее следует готовое решение от `evp` с комментариями от `Aleks Versus`.
+</p>
+<p>
+В игре:
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;не&nbsp;забываем&nbsp;включать&nbsp;html</span><br/>
+<span class="Monokai-SysVar">USEHTML</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;следующая&nbsp;строка&nbsp;заставит&nbsp;плеер&nbsp;обратиться&nbsp;к&nbsp;элементу</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;&nbsp;с&nbsp;id&nbsp;openModal&nbsp;когда&nbsp;игрок&nbsp;щёлкнет&nbsp;по&nbsp;ссылке</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'&lt;a&nbsp;href="#openModal"&gt;Открыть&nbsp;диалог&lt;/a&gt;'</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;в&nbsp;переменную&nbsp;$life&nbsp;в&nbsp;виде&nbsp;текста&nbsp;вносим&nbsp;код,&nbsp;который</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;должен&nbsp;выполняться&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Жизнь"</span><br/>
+$life&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'код,&nbsp;выполняемый&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Жизнь"'</span><br/>
+<span class="Monokai-Operator">}</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;соответственно&nbsp;в&nbsp;переменную&nbsp;$money&nbsp;—&nbsp;код,&nbsp;который</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;должен&nbsp;выполняться&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Деньги"</span><br/>
+$money&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">{</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'код,&nbsp;выполняемый&nbsp;при&nbsp;выборе&nbsp;варианта&nbsp;"Кошелёк"'</span><br/>
+<span class="Monokai-Operator">}</span><span class="Monokai-Operator">&nbsp;<br/>
+</span><span class="Monokai-Comment">!&nbsp;выводим&nbsp;на&nbsp;экран&nbsp;"окошко",&nbsp;а&nbsp;вернее&nbsp;блок,&nbsp;стилизованный&nbsp;под&nbsp;окошко,&nbsp;с&nbsp;двумя&nbsp;кнопками</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;общий&nbsp;блок/затенение</span><br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;div&nbsp;class="modalDialog"&nbsp;id="openModal"&gt;'</span><span class="Monokai-Operator"><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;окошко</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;div&gt;'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;p&gt;Жизнь&nbsp;или&nbsp;кошелёк?&lt;/p&gt;'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;button&nbsp;style="float:&nbsp;left;"&gt;&lt;a&nbsp;href="EXEC:&nbsp;dynamic&nbsp;$life"&gt;Жизнь&lt;/a&gt;&lt;/button&gt;'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;button&nbsp;style="float:&nbsp;right;"&gt;&lt;a&nbsp;href="EXEC:&nbsp;dynamic&nbsp;$money"&gt;Кошелёк&lt;/a&gt;&lt;/button&gt;'</span>&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'&lt;/div&gt;'</span>&nbsp;<br/>
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'&lt;/div&gt;'</span><br/>
+</div>
+<p>
+В game.css вашего шаблона:
+</p>
+<div class="Monokai-Code">
+/*
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;данный&nbsp;стиль&nbsp;описывает&nbsp;внешний&nbsp;вид&nbsp;общего&nbsp;блока,&nbsp;играющего&nbsp;в&nbsp;т.ч.&nbsp;роль&nbsp;затенения
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;(обратите&nbsp;внимание,&nbsp;на&nbsp;какую&nbsp;область&nbsp;в&nbsp;вашем&nbsp;шаблоне&nbsp;распространяется&nbsp;затенение)
+<br/>&nbsp;*/
+<br/>.modalDialog&nbsp;{&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;fixed;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;right:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;bottom:&nbsp;0;&nbsp;left:&nbsp;0;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;hsla(0,0%,0%,0.8);&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;z-index:&nbsp;50;&nbsp;/*&nbsp;выводится&nbsp;одним&nbsp;из&nbsp;верхних&nbsp;слоёв&nbsp;*/
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;0;&nbsp;/*&nbsp;видимость&nbsp;на&nbsp;нуле,&nbsp;чтобы&nbsp;игрок&nbsp;не&nbsp;видел&nbsp;содержимое&nbsp;*/
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition:&nbsp;opacity&nbsp;400ms&nbsp;ease-in;&nbsp;/*&nbsp;обеспечивает&nbsp;плавное&nbsp;появление&nbsp;*/
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;none;&nbsp;/*&nbsp;скрывает&nbsp;блок&nbsp;от&nbsp;курсора&nbsp;мыши&nbsp;*/
+<br/>}&nbsp;
+<br/>/*&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;псевдокласс&nbsp;:target&nbsp;применяется&nbsp;к&nbsp;тому&nbsp;элементу
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;к&nbsp;которому&nbsp;обратился&nbsp;браузер/плеер&nbsp;по&nbsp;нажатию&nbsp;на&nbsp;ссылку&nbsp;(по&nbsp;id)
+<br/>*/
+<br/>.modalDialog:target&nbsp;{&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;1;&nbsp;/*&nbsp;видимость&nbsp;повышается&nbsp;до&nbsp;100%&nbsp;*/
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;auto;&nbsp;/*&nbsp;с&nbsp;блоком&nbsp;снова&nbsp;может&nbsp;работать&nbsp;мышь&nbsp;*/
+<br/>}&nbsp;
+<br/>/*&nbsp;стилизация&nbsp;дочернего&nbsp;блока,&nbsp;т.е.&nbsp;непосредственно&nbsp;окошка&nbsp;*/
+<br/>.modalDialog&nbsp;&gt;&nbsp;div&nbsp;{&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;400px;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;relative;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;10%&nbsp;auto;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;5px&nbsp;20px&nbsp;13px&nbsp;20px;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;10px;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#fff;&nbsp;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;-webkit-linear-gradient(#fff,&nbsp;#b8ecfb);&nbsp;
+<br/>}
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/instruktsija_po_smene_oformlenija_iz_koda_igry_0042.html" class="emHREFTT">&lt; Назад, к странице 35</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html" class="emHREFTT">Вперёд, к странице 37 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

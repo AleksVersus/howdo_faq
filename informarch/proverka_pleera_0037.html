@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html" class="emHREFTT">&lt; Назад, к странице 29</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/video_0038.html" class="emHREFTT">Вперёд, к странице 31 &gt;</a></div></div>
+<h6 id="faq_22_06">22.6. Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?</h6><p>
+В: Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?
+</p>
+<p>
+О:
+</p>
+<p>
+На данный момент существует только костыльный способ, предложенный `newsash`:
+</p>
+<div class="Monokai-Code">
+t<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
+tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
+<span class="Monokai-Koperator">if</span>&nbsp;t&nbsp;_<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Func">or</span>&nbsp;_<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;t<span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Игра&nbsp;запущена&nbsp;на&nbsp;Quest&nbsp;Navigator"</span><br/>
+<span class="Monokai-Koperator">else</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Игра&nbsp;запущена&nbsp;на&nbsp;Классике"</span><br/>
+<span class="Monokai-Koperator">end</span><br/>
+</div>
+<p>
+Данный способ работает благодаря разнице в интерпретации однострочной команды, разбитой на несколько строк.
+</p>
+<p>
+В классическом плеере оператору условия передаётся имя переменной `tort`, тогда как в Quest Navigator это выражение
+</p>
+<div class="Monokai-Code">
+t&nbsp;<span class="Monokai-Func">or</span>&nbsp;t<br/>
+</div>
+<p>
+, результат которого равен 1.
+</p>
+<p>
+В самом Quest Navigator есть встроенная функция `$GETPLAYER`, которая позволяет получить название плеера, на котором запущена игра:
+</p>
+<div class="Monokai-Code">
+$GETPLAYER<span class="Monokai-Operator">(</span><span class="Monokai-String">"player"</span><span class="Monokai-Operator">)</span><br/>
+</div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html" class="emHREFTT">&lt; Назад, к странице 29</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/video_0038.html" class="emHREFTT">Вперёд, к странице 31 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

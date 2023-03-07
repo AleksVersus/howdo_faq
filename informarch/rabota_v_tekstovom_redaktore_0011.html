@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
@@ -14,590 +15,509 @@
         <div class="em_AROUND">
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 10</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 12 &gt;</a></div></div>
-<a id="informarch_game_in_texteditor"></a><h2>Пишем QSP-игру в текстовом редакторе</h2>
-<p>
-Для того, чтобы написать свой текстовый квест, понадобится любой текстовый редактор и программа <a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM</a>. Для более удобного использования этой программы существует специальная оболочка <a href="https://qsp.org/index.php?option=com_content&task=view&id=53&Itemid=56" style="text-decoration:none;" class="emFOLD">GAMConv</a>, которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится <a href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56" style="text-decoration:none;" class="emFOLD">QSP-плеер</a>.
-
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
+<h5 id=" informarch_game_in_texteditor">Пишем QSP-игру в текстовом редакторе</h5><p>
+Для того, чтобы написать свой текстовый квест, понадобится любой текстовый редактор и программа <a href="https://aleksversus.github.io/howdo_faq/informarch/None.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM</a>. Для более удобного использования этой программы существует специальная оболочка <a href="https://qsp.org/index.php?option=com_content&task=view&id=53&Itemid=56" style="text-decoration:none;" class="emFOLD">GAMConv</a>, которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится <a href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56" style="text-decoration:none;" class="emFOLD">QSP-плеер</a>.
 </p>
 <p>
 В примерах будут использоваться комментарии - строки, которые игрок не увидит и которые служат для того, чтобы можно было делать в коде игры различные заметки. Комментарий начинается с восклицательного знака «!».
-
 </p>
 <p>
 Пример:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Comment">!&nbsp;эта&nbsp;строка&nbsp;видна&nbsp;только&nbsp;создателю&nbsp;квеста,&nbsp;игрок&nbsp;её&nbsp;не&nbsp;увидит</span><br>
-
-
+<span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;эта&nbsp;строка&nbsp;видна&nbsp;только&nbsp;создателю&nbsp;квеста,&nbsp;игрок&nbsp;её&nbsp;не&nbsp;увидит</span><br/>
 </div>
-<a id="uкхs"></a><h3>Урок 1. Локации, Действия, Переходы</h3>
-<p>
+<h5 id="urok-1-lokatsii-dejstviia-perehody">Урок 1. Локации, Действия, Переходы</h5><p>
 Текстовый квест в QSP состоит из отдельных локаций (кадров, сцен, эпизодов), на которых могут выполняться различные игровые действия. Каждая локация имеет начало (тут же указывается имя локации), код локации (середину) и конец (знак «-», минус).
-
 </p>
 <p>
 Пример:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Имя_локации</span><br>
-<span class="Monokai-Comment">!&nbsp;тут&nbsp;идёт&nbsp;код&nbsp;локации</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Имя_локации</span><span class="Monokai-Operator"><br/>
+</span><span class="Monokai-Comment">!&nbsp;тут&nbsp;идёт&nbsp;код&nbsp;локации</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
 Проигрывание квеста начинается с самой первой локации. Традиционно эта локация называется "Начало". Для того, чтобы вывести в игре текст, вы просто пишете строку в коде локации, заключённую в кавычки ('' или "").
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">1</span>.txt</span>):
-
+Пример ("`1.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'Привет&nbsp;мир!'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'Привет&nbsp;мир!'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
 Сохраните эти строки в текстовый файл, отконвертируйте с помощью GamConv или напрямую через txt2gam и откройте получившийся квест в QSPGUI. В основном окне вы должны увидеть текст «Привет мир!».
-
 </p>
 <p>
 Но это совсем не похоже на текстовый квест. Ведь если мы будем просто выводить текст, то у нас получится какая-то книга, а не игра.
-
 </p>
 <p>
 Игра — это прежде всего интерактивность. От этого и название жанра Интерактивная Литература.
-
 </p>
 <p>
 Чтобы добавить интерактивности давайте сделаем вторую локацию и дадим возможность игроку перейти из одной локации в другую. Для этого нужно создать на первой локации действие, которое будет осуществлять переход в другую локацию.
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">2</span>.txt</span>):
-
+Пример ("`2.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'Привет&nbsp;мир!'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перейти&nbsp;в&nbsp;другую&nbsp;локацию'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Вторая_локация'</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Вторая_локация</span><br>
-<span class="Monokai-String">'Вы&nbsp;только&nbsp;что&nbsp;совершили&nbsp;переход&nbsp;в&nbsp;другую&nbsp;локацию.'</span><br>
-<span class="Monokai-String">'Этот&nbsp;текст&nbsp;начинается&nbsp;с&nbsp;новой&nbsp;строки.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Вернуться&nbsp;обратно'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Начало'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'Привет&nbsp;мир!'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перейти&nbsp;в&nbsp;другую&nbsp;локацию'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Вторая_локация'</span><br/>
+<span class="Monokai-Koperator">END</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Вторая_локация</span><br/>
+<span class="Monokai-String">'Вы&nbsp;только&nbsp;что&nbsp;совершили&nbsp;переход&nbsp;в&nbsp;другую&nbsp;локацию.'</span><br/>
+<span class="Monokai-String">'Этот&nbsp;текст&nbsp;начинается&nbsp;с&nbsp;новой&nbsp;строки.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Вернуться&nbsp;обратно'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Начало'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
 Вторая локация создаётся точно так же, как и первая. Как можно заметить, действие создаётся командой «ACT», после которой идёт название действия в виде заключённой в кавычки строки и двоеточие. После двоеточия пишутся инструкции которые игра выполнит при выборе игроком нашего действие. После одной или нескольких инструкций ставится команда «END», которая означает конец действия.
-
 </p>
 <p>
 Если инструкция одна, то мы можем писать её сразу после двоеточия, на той же строке, в этом случае «END» ставить не обязательно (см. Вторая_локация).
-
 </p>
 <p>
 В нашем случае инструкциями является переход на другую локацию. Он осуществляется командой «GOTO», после которой идёт имя новой локации, заключённой в кавычки. Как вы уже заметили, все строки в QSP заключены в кавычки ('' или ""), это специфика синтаксиса, которую необходимо соблюдать.
-
 </p>
 <p>
 Отконвертировав этот пример, вы сможете походить по двум локациям.
-
 </p>
 <p>
 Это основа всех квестов на QSP. Дальше мы попробуем не спеша сделать небольшой квест, в каждом новом уроке добавляя ему новые элементы, пока не охватим все возможности QSP.
-
 </p>
-<a id="WxдV"></a><h3>Урок 2. Переменные, Условия</h3>
-<p>
+<h5 id="urok-2-peremennye-usloviia">Урок 2. Переменные, Условия</h5><p>
 Пусть у нас будет игра из трёх локаций. В одной локации игрок сможет зарабатывать деньги, в другой - тратить их на различные предметы, в третьей - дарить эти предметы различным людям. К этим трём добавим ещё одну, стартовую, локацию, в которой будет объясняться задача игрока.
-
 </p>
 <p>
 Напишем каркас.
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">3</span>.txt</span>):
-
+Пример ("`3.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Работа</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Магазин</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Дом</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Работа</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Магазин</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Дом</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
 Откомпилируйте пример и проверьте как работает, походите по городу.
-
 </p>
 <p>
 Теперь нам нужно добавить игроку деньги и механизм их зарабатывания. Деньги мы реализуем с помощью переменных. Переменные бывают двух типов: строковые, в которые можно записать любой текст, и числовые, куда можно записать любое целое число. В нашем случае мы будем пользоваться числовыми переменными. Чтобы присвоить переменной какое-либо значение, нужно написать её имя, поставить знак равно и указать значение, которое мы хотим записать в переменную.
-
 </p>
 <p>
 Пример:
-
 </p>
 <div class="Monokai-Code">
-Имя_переменной&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><br>
-
-
+Имя_переменной&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><br/>
 </div>
 <p>
 Сам механизм зарабатывания денег будет у нас очень простым. Нужно будет перенести 3 ящика и тогда бригадир будет давать игроку 5 монет. Для этого нужно будет сделать ещё одну переменную, в которой будет указано число перенесённых игроком ящиков и если их 3, то добавлять игроку деньги, и очищать счётчик ящиков. Наш квест станет таким:
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">4</span>.txt</span>):
-
+Пример ("`4.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Работа</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Магазин</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Дом</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Работа</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">END</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Магазин</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Дом</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
-Для того, чтобы в тексте локации вывести значение переменной используется конструкция <span class="em_BLCK"><span class="emTEXT">'&lt;&lt;Имя_переменной&gt;&gt;'</span></span>. Обратите внимание в каждой локации выводится количество монет у игрока. К тому же, в локации «Порт» показывается количество ящиков, которое нужно перенести, чтобы получить деньги.
-
+Для того, чтобы в тексте локации вывести значение переменной используется конструкция `'<<Имя_переменной>>'`. Обратите внимание в каждой локации выводится количество монет у игрока. К тому же, в локации «Порт» показывается количество ящиков, которое нужно перенести, чтобы получить деньги.
 </p>
 <p>
-Ветвления в QSP задаются командой <span class="em_BLCK"><span class="emOPRT">IF</span></span>, после которой идёт условие и ставится двоеточие. Затем идут инструкции, которые выполняются, если условие верное и ставится завершающая команда <span class="em_BLCK"><span class="emOPRT">END</span></span>.
-
+Ветвления в QSP задаются командой `IF`, после которой идёт условие и ставится двоеточие. Затем идут инструкции, которые выполняются, если условие верное и ставится завершающая команда `END`.
 </p>
 <p>
-В нашем случае мы проверяем, равна ли переменная <span class="em_BLCK">Ящик</span> 3-м (все ли ящики перенесли). Если равна, то мы увеличиваем переменную «Деньги» на 5 (наш заработок) и сбрасываем переменную <span class="em_BLCK">Ящик</span> в 0, чтобы можно заново таскать ящики и зарабатывать деньги.
-
+В нашем случае мы проверяем, равна ли переменная `Ящик` 3-м (все ли ящики перенесли). Если равна, то мы увеличиваем переменную «Деньги» на 5 (наш заработок) и сбрасываем переменную `Ящик` в 0, чтобы можно заново таскать ящики и зарабатывать деньги.
 </p>
 <p>
 Чтобы текст игры обновился и игрок увидел новые значения переменных, нужно перейти на ту же локацию.
-
 </p>
 <p>
 Отконвертируйте и запустите пример, теперь игрок сможет зарабатывать деньги переноской ящиков.
-
 </p>
-<a id="aaьД"></a><h3>Урок 3. Инвентарь</h3>
-<p>
+<h5 id="urok-3-inventar_">Урок 3. Инвентарь</h5><p>
 Теперь добавим игроку возможность покупать различные предметы в магазине и затем дарить. Для предметов очень хорошо подходит «Инвентарь». Теперь купленные предметы игрок сможет носить с собой и дарить своим близким, когда захочет.
-
 </p>
 <p>
-Чтобы добавить предмет в инвентарь, есть команда <span class="em_BLCK"><span class="emOPRT">ADDOBJ</span></span>, после которой идёт имя предмета. А для того, чтобы удалить предмет, есть команда <span class="em_BLCK"><span class="emOPRT">DELOBJ</span></span>, после которой идёт имя удаляемого предмета.
-
+Чтобы добавить предмет в инвентарь, есть команда `ADDOBJ`, после которой идёт имя предмета. А для того, чтобы удалить предмет, есть команда `DELOBJ`, после которой идёт имя удаляемого предмета.
 </p>
 <p>
-Пример (5.txt):
-
+Пример ("`5.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Работа</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Магазин</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Дом</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Работа</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">END</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Магазин</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;3</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;7</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Дом</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
 С помощью условий мы заранее проверяем, есть ли у игрока достаточно денег, чтобы купить тот или иной предмет. И если денег хватает - добавляем действие покупки этого предмета. Когда игрок выбирает действие купить что-либо, мы забираем у него монеты, добавляем в его инвентарь предмет и делаем переход на ту же локацию («Магазин»), чтобы вывелось обновлённое количество денег.
-
 </p>
 <p>
 Следующим важным моментом будет механизм «дарения» предметов. Он будет реализован в локации «Дом».
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">6</span>.txt</span>):
-
+Пример ("`6.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Работа</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Магазин</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Дом</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;конструктор.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;плюшевый&nbsp;медведь.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;вязальный&nbsp;набор.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сынок.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;инструменты.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сын.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Ваша&nbsp;цель&nbsp;-&nbsp;зарабатывать&nbsp;деньги,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;подарки&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;близким.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Начать&nbsp;игру'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Работа</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;деньги&nbsp;за&nbsp;помощь.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;&lt;3-Ящик&gt;&gt;&nbsp;ящика.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">END</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Магазин</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;3</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;7</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Дом</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;&lt;Деньги&gt;&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;конструктор.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;плюшевый&nbsp;медведь.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;вязальный&nbsp;набор.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сынок.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;инструменты.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сын.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
-Конструкция <span class="em_BLCK"><span class="emOPRT">IF</span><span class="emFUNC"> OBJ</span> 'имя_предмета'</span> проверяет, есть ли у игрока в инвентаре указанный предмет. В нашем случае мы проверяем наличие тех предметов, которые мы можем купить в магазине. И если у игрока есть такие предметы - создаём действие «дарения» этих предметов. Когда игрок совершит действие, мы заберем у него тот предмет, который он хочет подарить и выводим диалог благодарности за подарок. К тому же, мы используем команду <span class="em_BLCK"><span class="emOPRT">DELACT</span></span>, которой удаляем действие, указанное после этой команды.
-
+Конструкция `IF OBJ 'имя_предмета'` проверяет, есть ли у игрока в инвентаре указанный предмет. В нашем случае мы проверяем наличие тех предметов, которые мы можем купить в магазине. И если у игрока есть такие предметы - создаём действие «дарения» этих предметов. Когда игрок совершит действие, мы заберем у него тот предмет, который он хочет подарить и выводим диалог благодарности за подарок. К тому же, мы используем команду `DELACT`, которой удаляем действие, указанное после этой команды.
 </p>
-<a id="ЁЪйц"></a><h3>Урок 4. Настройки, Форматирование</h3>
-<p>
+<h5 id="urok-4-nastrojki-formatirovanie">Урок 4. Настройки, Форматирование</h5><p>
 В этом уроке рассмотрим, как сделать наш квест более привлекательным. В первую очередь следует настроить интерфейс так, чтобы в нём не оставалось ничего лишнего, отвлекающего от игры. Если вы сейчас запустите наш пример, то увидите, что мы не используем "поле дополнительного описания" (справа внизу) и "командную строку" (внизу). Чтобы они нам не мешали, их нужно отключить. Делается это следующим образом:
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">7</span>.txt</span>):
-
+Пример ("`7.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-Operator">SHOWSTAT</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-<span class="Monokai-Operator">SHOWINPUT</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-Operator">SHOWSTAT</span>&nbsp;<span class="Monokai-Numeric">0</span><br/>
+<span class="Monokai-Operator">SHOWINPUT</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
-Мы вызываем инструкцию <span class="em_BLCK"><span class="emOPRT">SHOWSTAT</span></span> с параметром <span class="em_BLCK"><span class="emNUM">0</span></span> для того, чтобы отключить "поле дополнительного описания". Если бы мы передали <span class="em_BLCK"><span class="emNUM">1</span></span> (или число отличное от <span class="em_BLCK"><span class="emNUM">0</span></span>), то поле было бы видимым. То же самое и с <span class="em_BLCK"><span class="emOPRT">SHOWINPUT</span></span> (командная строка). Так же мы можем отключить инвентарь - <span class="em_BLCK"><span class="emOPRT">SHOWOBJS</span></span>, и список действий - <span class="em_BLCK"><span class="emOPRT">SHOWACTS</span></span>.
-
+Мы вызываем инструкцию `SHOWSTAT` с параметром `0` для того, чтобы отключить "поле дополнительного описания". Если бы мы передали `1` (или число отличное от `0`), то поле было бы видимым. То же самое и с `SHOWINPUT` (командная строка). Так же мы можем отключить инвентарь - `SHOWOBJS`, и список действий - `SHOWACTS`.
 </p>
 <p>
 Теперь нам нужно сделать так, чтобы наш текст был более подходящим для нашего квеста. Для этого есть 4 переменные.
-
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">8</span>.txt</span>):
-
+Пример ("`8.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-SysVar">BCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
-<span class="Monokai-SysVar">FCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br>
-<span class="Monokai-SysVar">FSIZE</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">14</span><br>
-<span class="Monokai-SysVar">$FNAME</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Arial'</span><br>
-<span class="Monokai-String">'Этот&nbsp;текст&nbsp;написан&nbsp;красным&nbsp;цветом,&nbsp;четырнадцатым&nbsp;размером&nbsp;и&nbsp;шрифтом&nbsp;Arial&nbsp;на&nbsp;чёрном&nbsp;фоне.'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-SysVar">BCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-SysVar">FCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-SysVar">FSIZE</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">14</span><br/>
+<span class="Monokai-SysVar">$FNAME</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Arial'</span><br/>
+<span class="Monokai-String">'Этот&nbsp;текст&nbsp;написан&nbsp;красным&nbsp;цветом,&nbsp;четырнадцатым&nbsp;размером&nbsp;и&nbsp;шрифтом&nbsp;Arial&nbsp;на&nbsp;чёрном&nbsp;фоне.'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
-Цвет в QSP задаётся с помощью функции <span class="em_BLCK"><span class="emFUNC">RGB</span></span>, в которую мы передаём значения его отдельных компонент - красного (Red), зелёного (Green) и синего (Blue). Отсюда и название функции.
-
+Цвет в QSP задаётся с помощью функции `RGB`, в которую мы передаём значения его отдельных компонент - красного (Red), зелёного (Green) и синего (Blue). Отсюда и название функции.
 </p>
 <p>
-Если вы не знакомы с таким способом задания цветов, то вам может помочь программа MS Paint, которая входит в стандартную поставку Windows. Для этого запустите программу, щёлкните два раза по любому цвету в палитре (внизу) и затем нажмите кнопку "Определить цвет". Появится расширенная палитра, на которой можно выбрать нужный вам цвет. Под палитрой снизу будет 3 поля (Красный, Зелёный, Синий), значениями из этих полей вам и нужно заполнить функцию <span class="em_BLCK"><span class="emFUNC">RGB</span></span>.
-
+Если вы не знакомы с таким способом задания цветов, то вам может помочь программа MS Paint, которая входит в стандартную поставку Windows. Для этого запустите программу, щёлкните два раза по любому цвету в палитре (внизу) и затем нажмите кнопку "Определить цвет". Появится расширенная палитра, на которой можно выбрать нужный вам цвет. Под палитрой снизу будет 3 поля (Красный, Зелёный, Синий), значениями из этих полей вам и нужно заполнить функцию `RGB`.
 </p>
 <p>
-Переменная <span class="em_BLCK"><span class="emFUNC">BCOLOR</span></span> устанавливает цвет заднего фона, <span class="em_BLCK"><span class="emFUNC">FCOLOR</span></span> - цвет текста.
-
+Переменная `BCOLOR` устанавливает цвет заднего фона, `FCOLOR` - цвет текста.
 </p>
 <p>
-Следует учесть, что если присвоить переменной цвета значение <span class="em_BLCK"><span class="emNUM">0</span></span> (к примеру, <span class="em_BLCK"><span class="emFUNC">BCOLOR</span> = 0</span>), то проигрыватель квестов заменит указанный цвет на цвет из настроек самого плеера, т.е. цвет фона <span class="em_BLCK"><span class="emNUM">0</span></span> это прозрачный цвет.
-
+Следует учесть, что если присвоить переменной цвета значение `0` (к примеру, `BCOLOR = 0`), то проигрыватель квестов заменит указанный цвет на цвет из настроек самого плеера, т.е. цвет фона `0` это прозрачный цвет.
 </p>
 <p>
-Чтобы изменить размер текста, используется переменная <span class="em_BLCK"><span class="emVAR">FSIZE</span></span>, шрифт текста задётся строковой переменной <span class="em_BLCK"><span class="emVAR">$FNAME</span></span>.
-
+Чтобы изменить размер текста, используется переменная `FSIZE`, шрифт текста задётся строковой переменной `$FNAME`.
 </p>
 <p>
 Многие игроки не любят, когда автор задаёт свои визуальные параметры для текстовых квестов. "На вкус и цвет фломастеры разные", кто-то привык читать зелёные буквы на чёрном фоне, а кто-то предпочитает классический вариант чёрного на белом. У кого-то большой монитор - маленькие буквы читать на нём неудобно и т.д. Проигрыватель квестов QSP позволяет настроить такие параметры индивидуально для каждого игрока, но только в том случае, если автор игры не заменил их на свои. Поэтому рекомендуется с осторожностью менять эти настройки для вашего квеста.
-
 </p>
 <p>
-Есть ещё один, способ сделать ваш текст внешне более привлекательным. Использование HTML. Язык гипертекстовой разметки документов очень хорошо подходит для этой цели. С помощью него можно не только задавать цвет, размер и шрифт текста, но и делать это для отдельных слов, фраз или даже букв, а так же позиционировать текст на экране. Например, можно расположить заголовки по центру строки, или справа. Для этого нужно переменной <span class="em_BLCK"><span class="emVAR">USEHTML</span></span> задать значение <span class="em_BLCK"><span class="emNUM">1</span></span> (или любое отличное от <span class="em_BLCK"><span class="emNUM">0</span></span>). В следующем примере я приведу лишь небольшую часть возможностей, которых, впрочем, будет достаточно для оформления игры.
-
+Есть ещё один, способ сделать ваш текст внешне более привлекательным. Использование HTML. Язык гипертекстовой разметки документов очень хорошо подходит для этой цели. С помощью него можно не только задавать цвет, размер и шрифт текста, но и делать это для отдельных слов, фраз или даже букв, а так же позиционировать текст на экране. Например, можно расположить заголовки по центру строки, или справа. Для этого нужно переменной `USEHTML` задать значение `1` (или любое отличное от `0`). В следующем примере я приведу лишь небольшую часть возможностей, которых, впрочем, будет достаточно для оформления игры.
 </p>
 <p>
-Пример (<span class="em_BLCK"><span class="emNUM">9</span>.txt</span>):
-
+Пример ("`9.txt`"):
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Начало</span><br>
-<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-<span class="Monokai-SysVar">BCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br>
-<span class="Monokai-String">'&lt;center&gt;&lt;font&nbsp;size="20"&nbsp;color="#FF0000"&nbsp;face="Times&nbsp;New&nbsp;Roman"&gt;&lt;b&gt;Текстовый&nbsp;квест&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;&lt;br&gt;'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;&lt;b&gt;Ваша&nbsp;цель&lt;/b&gt;&nbsp;-&nbsp;зарабатывать&nbsp;&lt;i&gt;деньги&lt;/i&gt;,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;&lt;i&gt;подарки&lt;/i&gt;&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;&lt;i&gt;близким&lt;/i&gt;.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'&lt;b&gt;Начать&nbsp;игру&lt;/b&gt;'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Работа</span><br>
-<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Порт&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;&lt;i&gt;деньги&lt;/i&gt;&nbsp;за&nbsp;помощь.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;font&nbsp;size="16"&nbsp;color="#00AA00"&gt;&lt;b&gt;&lt;&lt;3-Ящик&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;ящика.'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Магазин</span><br>
-<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Магазин&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">3</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">-</span>&nbsp;<span class="Monokai-Numeric">7</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Operator">-</span><br>
-<span class="Monokai-StartLoc">#&nbsp;Дом</span><br>
-<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Дом&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br>
-<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;конструктор.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;плюшевый&nbsp;медведь.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;вязальный&nbsp;набор.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сынок.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><span class="Monokai-Operator">:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;инструменты.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сын.'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">END</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br>
-<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Markup">:GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br>
-<span class="Monokai-Operator">-</span><br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
+<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
+<span class="Monokai-SysVar">BCOLOR</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br/>
+<span class="Monokai-String">'&lt;center&gt;&lt;font&nbsp;size="20"&nbsp;color="#FF0000"&nbsp;face="Times&nbsp;New&nbsp;Roman"&gt;&lt;b&gt;Текстовый&nbsp;квест&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;&lt;br&gt;'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;&lt;b&gt;Ваша&nbsp;цель&lt;/b&gt;&nbsp;-&nbsp;зарабатывать&nbsp;&lt;i&gt;деньги&lt;/i&gt;,&nbsp;покупать&nbsp;на&nbsp;них&nbsp;&lt;i&gt;подарки&lt;/i&gt;&nbsp;и&nbsp;дарить&nbsp;своим&nbsp;&lt;i&gt;близким&lt;/i&gt;.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'&lt;b&gt;Начать&nbsp;игру&lt;/b&gt;'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Работа</span><br/>
+<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Порт&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Порт&nbsp;находится&nbsp;на&nbsp;самой&nbsp;южной&nbsp;окраине&nbsp;города.&nbsp;Здесь&nbsp;постоянно&nbsp;загружаются&nbsp;и&nbsp;разгружаются&nbsp;различные&nbsp;суда.&nbsp;Рабочих&nbsp;рук&nbsp;не&nbsp;хватает&nbsp;и&nbsp;складской&nbsp;бригадир&nbsp;всегда&nbsp;рад&nbsp;заплатить&nbsp;&lt;i&gt;деньги&lt;/i&gt;&nbsp;за&nbsp;помощь.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Вам&nbsp;нужно&nbsp;перенести&nbsp;&lt;font&nbsp;size="16"&nbsp;color="#00AA00"&gt;&lt;b&gt;&lt;&lt;3-Ящик&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;ящика.'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Перенести&nbsp;ящик'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">IF</span>&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ящик&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">0</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">END</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Магазин</span><br/>
+<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Магазин&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Магазин&nbsp;небольшой,&nbsp;но&nbsp;тут&nbsp;обычно&nbsp;есть&nbsp;всё,&nbsp;что&nbsp;нужно&nbsp;простому&nbsp;горожанину.&nbsp;Витрины&nbsp;заставлены&nbsp;различными&nbsp;товарами.&nbsp;У&nbsp;кассы&nbsp;стоит&nbsp;полная&nbsp;женщина&nbsp;и&nbsp;хмуро&nbsp;смотрит&nbsp;на&nbsp;вас.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;конструктор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;3</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">5</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;плюшевого&nbsp;медведя'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;5</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;Деньги&nbsp;<span class="Monokai-Operator">&gt;=</span>&nbsp;<span class="Monokai-Numeric">7</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Купить&nbsp;инструменты'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Деньги&nbsp;<span class="Monokai-Operator">=</span>&nbsp;Деньги<span class="Monokai-EndLoc">&nbsp;-&nbsp;7</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;домой'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Дом'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><span class="Monokai-EndLoc"><br/>
+-</span><span class="Monokai-StartLoc"><br/>
+#&nbsp;Дом</span><br/>
+<span class="Monokai-String">'&lt;center&gt;&lt;b&gt;Дом&lt;/b&gt;&lt;/center&gt;&lt;br&gt;'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;Дома&nbsp;всегда&nbsp;очень&nbsp;уютно.&nbsp;И&nbsp;вкусно&nbsp;пахнет&nbsp;едой.&nbsp;Мама,&nbsp;сидя&nbsp;в&nbsp;кресле,&nbsp;вяжет&nbsp;носки.&nbsp;Отец&nbsp;с&nbsp;вашим&nbsp;братом&nbsp;чинит&nbsp;скворечник.&nbsp;Сестра&nbsp;хлопочет&nbsp;на&nbsp;кухне.&nbsp;Дома&nbsp;всегда&nbsp;хорошо.'</span><br/>
+<span class="Monokai-String">'&nbsp;&nbsp;&nbsp;У&nbsp;вас&nbsp;&lt;font&nbsp;size="16"&gt;&lt;b&gt;&lt;&lt;Деньги&gt;&gt;&lt;/b&gt;&lt;/font&gt;&nbsp;монет.'</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Конструктор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;конструктор.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;конструктор&nbsp;брату'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Плюшевый&nbsp;медведь'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;плюшевый&nbsp;медведь.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;брат.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;медведя&nbsp;сестре'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Вязальный&nbsp;набор'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;вязальный&nbsp;набор.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сынок.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;набор&nbsp;маме'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><span class="Monokai-Operator">:</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-String">'Инструменты'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Вот&nbsp;тебе&nbsp;инструменты.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'&nbsp;-&nbsp;Спасибо,&nbsp;сын.'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-String">'Подарить&nbsp;инструменты&nbsp;отцу'</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">END</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;порт'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Работа'</span><br/>
+<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
+-</span><br/>
 </div>
 <p>
-АВТОР: ELMORTEM   
-
+Автор: `ELMORTEM`
 </p>
 <p>
-14.04.2010 15:16
-
+14.04.2010 15: 16
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 10</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 12 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -620,124 +540,7 @@
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
-<a id="ъqна"></a><h3>Большой сборник полезных ссылок и закладок</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
-</li>
-</ul>
-<a id="КЯgР"></a><h3>Что такое QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
-</li>
-</ul>
-<a id="Ybкф"></a><h3>Общие вопросы и решения</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
-</li>
-</ul>
-<a id="иbКw"></a><h3>Продвинутый QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
-</li>
-</ul>
-<a id="Фымy"></a><h3>Работа в текстовом редакторе</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
-</li>
-</ul>
-<a id="HБыU"></a><h3>Вопросы по программированию</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
-</li>
-</ul>
-<a id="ХNуA"></a><h3>Обновления плеера</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
-</li>
-</ul>
-<a id="xBfq"></a><h3>Вопросы по AeroQSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
-</li>
-</ul>
-<a id="PxцТ"></a><h3>Обзоры игр</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html" class="emHREFTT">&lt; Назад, к странице 42</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ne_rabotaet_giperssylka_v_aeroqsp_0045.html" class="emHREFTT">Вперёд, к странице 44 &gt;</a></div></div>
+<h6 id="faq_13_06">13.6. В AeroQSP не работает атрибут</h6><p>
+В: В AeroQSP не работает атрибут.
+</p>
+<p>
+Например, `border=1`, `bgcolor=#557700`.
+</p>
+<p>
+О:
+</p>
+<p>
+AeroQSP ориентирован на работу со стилями, поэтому для стилизации различных элементов пользуйтесь возможностями CSS.
+</p>
+<p>
+Собственную таблицу стилей можно вписать в переменную `$STYLESHEET`. Вот пример из игры "Один в снегах" от `Lisichk`и:
+</p>
+<div class="Monokai-Code">
+$<span class="Monokai-TagName">STYLESHEET</span>='<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">.main</span>&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">330px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">500px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">0px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">text-align</span>:&nbsp;<span class="Monokai-Numeric">center</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">.stat1</span>&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">600px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">210px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">50</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">right</span>:&nbsp;<span class="Monokai-Numeric">650</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">text-align</span>:&nbsp;<span class="Monokai-Numeric">center</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">.stat2</span>&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">600px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">200px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">750px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">50</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">text-align</span>:&nbsp;<span class="Monokai-Numeric">center</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">.roof</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">400px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">5px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">440px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">text-align</span>:&nbsp;<span class="Monokai-Numeric">center</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Markup">.radio</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">absolute</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">300px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">50px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">300px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">800px</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">text-align</span>:&nbsp;<span class="Monokai-Numeric">center</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}'<br/>
+</div>
+<p>
+Стили для отдельного элемента можно прописать в атрибуте `style`:
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"&lt;div&nbsp;style='color:#333333;width:350px;border:12;'&gt;Текст&nbsp;внутри&nbsp;блока&lt;/div&gt;"</span><br/>
+</div>
+<p>
+Все поддерживаемые свойства перечисленны в сводной справке по AeroQSP <a href="https://qsp.org/misc/aero/help.htm" style="text-decoration:none;" class="emFOLD">https://qsp.org/misc/aero/help.htm</a>
+</p>
+<h6 id="link_13_06">13.6. В AeroQSP не работает атрибут</h6><p>
+Смотреть ответ на ютубе: <a href="https://www.youtube.com/watch?v=TCve-b6AQMs&t=18s" style="text-decoration:none;" class="emFOLD">https://www.youtube.com/watch?v=TCve-b6AQMs&</a>
+</p>
+<p>
+Storm. #2828 10.Май.15 18:33:19: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941" style="text-decoration:none;" class="emFOLD">В классическом плеере и в Quest Navigator`е свойство "border" работает, а в Aero нет.</a>
+</p>
+<p>
+Вета. #3784 24.Янв.16 14:50:18: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22645" style="text-decoration:none;" class="emFOLD">как в аере задать ячейке таблицы цвет? С bgcolor не работает что-то...</a>
+</p>
+<p>
+DeathSpace. #4212 02.Апр.16 13:52:20: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23639" style="text-decoration:none;" class="emFOLD">перевожу игру на AeroQSP но не показывает таблицы который были в классической версии плеера</a>
+</p>
+<p>
+DeathSpace. #4313 01.Май.16 02:05:59: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23838" style="text-decoration:none;" class="emFOLD">Ребят кто знает как в AeroQSP строить таблицы?</a>
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html" class="emHREFTT">&lt; Назад, к странице 42</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/ne_rabotaet_giperssylka_v_aeroqsp_0045.html" class="emHREFTT">Вперёд, к странице 44 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>

@@ -57,6 +57,7 @@ class TextToHTML():
 		self.create_data_base()
 		self.root_folder = NewFolder(self.source_folder)
 		self.root_node = self.root_folder.return_node()
+
 		self.root_node.transport_data_base(self.data_base)
 		self.root_node.convert_to_html()
 

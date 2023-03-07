@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
     <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
@@ -14,159 +15,117 @@
         <div class="em_AROUND">
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 11</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 13 &gt;</a></div></div>
-<a id="informarch_txt2gam_preprocessor"></a><h2>Тем, кто применяет TXT2GAM (использование препроцессора)</h2>
-<p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
+<h5 id="informarch_txt2gam_preprocessor">Тем, кто применяет TXT2GAM (использование препроцессора)</h5><p>
 При написании игры без использования QGen, исходный текст не зашифрован и может редактироваться любым текстовым редактором.
-
 </p>
 <p>
 Это также дает возможность обработать текстовый файл игры перед тем, как он будет превращен в QSP-файл - например, удалить отладочный код или неиспользуемые фрагменты текста, а также собрать один файл из нескольких мелких.
-
 </p>
 <p>
 В мире программирования на Си эта возможность называется "препроцессинг" и выполняется утилитой cpp, которая идет в пакете с компиляторами C.
-
 </p>
 <p>
 В нашем случае удобно использовать утилиту, которая не привязана к языку С и и может быть использована отдельно от компилятора — GPP для Win32.
-
 </p>
 <p>
 Чтобы воспользоваться этим, нужно добавить в текст специальные инструкции и обработать текст утилитой GPP. После такой обработки текст уже не будет содержать инструкции и может быть преобразован в QSP-файл без ошибок.
-
 </p>
-<a id="хLEA"></a><h3>Инструкции (основные)</h3>
-<p>
-<strong>#mode quote</strong> — отключает обработку символа "\" как служебного, рекомендуется поставить первой строчкой файла
-
+<h5 id="instruktsii-osnovnye">Инструкции (основные)</h5><p>
+`#mode quote` — отключает обработку символа "\" как служебного, рекомендуется поставить первой строчкой файла
 </p>
 <p>
-<span class="em_BLCK">#define</span> &lt;имя&gt; — определить флажок, на который можно будет позже ссылаться
-
+`#define` <имя> — определить флажок, на который можно будет позже ссылаться
 </p>
 <p>
-<span class="em_BLCK">#define</span> &lt;имя&gt; &lt;значение&gt; — определить значение, на которое можно будет позже ссылаться
-
+`#define` <имя> <значение> — определить значение, на которое можно будет позже ссылаться
 </p>
 <p>
-<span class="em_BLCK">#undef</span> &lt;имя&gt; — удаление значения или флажка
-
+`#undef` <имя> — удаление значения или флажка
 </p>
 <p>
-<span class="em_BLCK">#ifdef</span> &lt;имя&gt; — если флаг или значение определены, то весь текст после этого условия до <span class="em_BLCK">#endif</span> или до <span class="em_BLCK">#else</span> будет выведен в итоговый файл
-
+`#ifdef` <имя> — если флаг или значение определены, то весь текст после этого условия до `#endif` или до `#else` будет выведен в итоговый файл
 </p>
 <p>
-<strong>#else</strong> — окончание фрагмента, регулируемого инструкцией <span class="em_BLCK">#ifdef</span> - последующий текст выводится, если условие в <span class="em_BLCK">#ifdef</span> не выполнено
-
+`#else` — окончание фрагмента, регулируемого инструкцией `#ifdef` - последующий текст выводится, если условие в `#ifdef` не выполнено
 </p>
 <p>
-<strong>#endif</strong> — окончание фрагмента, регулируемого инструкцией <span class="em_BLCK">#ifdef</span> или <span class="em_BLCK">#else</span>
-
+`#endif` — окончание фрагмента, регулируемого инструкцией `#ifdef` или `#else`
 </p>
 <p>
-<strong>#ifndef</strong> — аналогично <span class="em_BLCK">#ifdef,</span> однако проверяется, что флаг или значение не определены - весь текст после этого условия до <span class="em_BLCK">#endif</span> или до <span class="em_BLCK">#else</span> будет выведен в итоговый файл
-
+`#ifndef` — аналогично `#ifdef,` однако проверяется, что флаг или значение не определены - весь текст после этого условия до `#endif` или до `#else` будет выведен в итоговый файл
 </p>
 <p>
-<span class="em_BLCK">#include</span> "&lt;имя файла&gt;" — в выходной файл вставляет текст из указанного файла (из той же папки) - если файл содержит инструкции, то он также будет обработан
-
+`#include` "<имя файла>" — в выходной файл вставляет текст из указанного файла (из той же папки) - если файл содержит инструкции, то он также будет обработан
 </p>
 <p>
-Поскольку в <span class="em_BLCK">txt<span class="emNUM">2</span>gam</span>, по умолчанию, для обозначения начала локации используется символ "#", то важно, чтобы имена локаций не назывались по имени инструкции (<span class="em_BLCK">define</span>, <span class="em_BLCK">ifdef</span>, и т.п.). Также не стоит включать инструкции в комментарии и строки, лучше их записывать на отдельных строчках.
-
+Поскольку в `txt2gam`, по умолчанию, для обозначения начала локации используется символ "#", то важно, чтобы имена локаций не назывались по имени инструкции (`define`, `ifdef`, и т.п.). Также не стоит включать инструкции в комментарии и строки, лучше их записывать на отдельных строчках.
 </p>
 <p>
 Доступны также и другие инструкции, о них можно узнать в документации или спросить на форуме.
-
 </p>
 <p>
 Для запуска текста игры на обработку нужно открыть консоль и набрать команду:
-
 </p>
 <p>
-gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
-
+gpp.exe <входной файл> -o <выходной файл>
 </p>
 <p>
 Другие ключи запуска можно узнать, запустив как: gpp.exe --help
-
 </p>
-<a id="ОуDЙ"></a><h3>Пример использования</h3>
-<p>
+<h5 id="primer-ispol_zovaniia">Пример использования</h5><p>
 Исходный файл:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#define&nbsp;HTML</span><br>
-<br>
-<span class="Monokai-StartLoc">#&nbsp;Start</span><br>
-<br>
-<span class="Monokai-StartLoc">#ifdef&nbsp;HTML</span><br>
-<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-<span class="Monokai-StartLoc">#endif</span><br>
-<br>
-<span class="Monokai-Operator">-</span>&nbsp;Start<br>
-
-
+<span class="Monokai-StartLoc">#define&nbsp;HTML</span><span class="Monokai-StartLoc"><br/>
+<br/>
+#&nbsp;Start</span><span class="Monokai-StartLoc"><br/>
+<br/>
+#ifdef&nbsp;HTML</span><br/>
+<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-StartLoc"><br/>
+#endif</span><span class="Monokai-EndLoc"><br/>
+<br/>
+-&nbsp;Start</span><br/>
 </div>
 <p>
 После обработки в выходной файл запишется:
-
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Start</span><br>
-<br>
-<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br>
-<br>
-<span class="Monokai-Operator">-</span>&nbsp;Start<br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Start</span><br/>
+<br/>
+<span class="Monokai-SysVar">USEHTML</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-EndLoc"><br/>
+<br/>
+-&nbsp;Start</span><br/>
 </div>
 <p>
-Если же убрать инструкцию <span class="em_BLCK">#define</span> - например, заменив на <span class="em_BLCK">#undef,</span> то после обработки в выходной файл запишется:
-
+Если же убрать инструкцию `#define` - например, заменив на `#undef,` то после обработки в выходной файл запишется:
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-StartLoc">#&nbsp;Start</span><br>
-<br>
-<span class="Monokai-Operator">-</span>&nbsp;Start<br>
-
-
+<span class="Monokai-StartLoc">#&nbsp;Start</span><span class="Monokai-EndLoc"><br/>
+<br/>
+-&nbsp;Start</span><br/>
 </div>
 <p>
-То есть текст, регулируемый инструкцией <span class="em_BLCK">#ifdef,</span> был удален из конечного результата.
-
+То есть текст, регулируемый инструкцией `#ifdef,` был удален из конечного результата.
 </p>
 <p>
 Прошу задавать вопросы на форуме.
-
 </p>
 <p>
 Ссылки:
-
 </p>
 <ul>
-<li>
-<a href="http://yumbrik.ru/gpp-2.24.o1.win32.zip" style="text-decoration:none;" class="emFOLD">Скачать GPP</a>
-</li>
-<li>
-<a href="http://files.nothingisreal.com/software/gpp/gpp.html" style="text-decoration:none;" class="emFOLD">Документация на английском</a>
-</li>
-<li>
-<a href="http://en.nothingisreal.com/wiki/GPP" style="text-decoration:none;" class="emFOLD">Домашний сайт GPP</a>
-</li>
+<li><a href="http://yumbrik.ru/gpp-2.24.o1.win32.zip" style="text-decoration:none;" class="emFOLD">Скачать GPP</a></li>
+<li><a href="http://files.nothingisreal.com/software/gpp/gpp.html" style="text-decoration:none;" class="emFOLD">Документация на английском</a></li>
+<li><a href="http://en.nothingisreal.com/wiki/GPP" style="text-decoration:none;" class="emFOLD">Домашний сайт GPP</a></li>
 </ul>
 <p>
-АВТОР: <span class="em_BLCK">NTROPY</span>  
-
+АВТОР: `NTROPY`  
 </p>
 <p>
 07.04.2010 18:47
-
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 11</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 13 &gt;</a></div></div>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
 <!-- body end -->
             <div class="em_Epigraph">
                 <div class="em_subText">
@@ -189,124 +148,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
     </div>
     <div id="soderzhanije_outer">
         <div class="soderzhanije">
-<a id="informarch_soderzhanije"></a><h2>Содержание</h2>
-<a id="ъqна"></a><h3>Большой сборник полезных ссылок и закладок</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/zakladki_0030.html#informarch_bookmarks" style="text-decoration:none;" class="emFOLD">Сборник ссылок и закладок по QSP</a>
-</li>
-</ul>
-<a id="КЯgР"></a><h3>Что такое QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/faq_po_qsp_0001.html#informarch_faq" style="text-decoration:none;" class="emFOLD">Список наиболее часто задаваемых вопросов и ответы на них</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/informatsija_o_qsp_0002.html#informarch_qspinfo" style="text-decoration:none;" class="emFOLD">Что такое QSP?</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/nash_put__0003.html#informarch_ourway" style="text-decoration:none;" class="emFOLD">Наш путь</a>
-</li>
-</ul>
-<a id="Ybкф"></a><h3>Общие вопросы и решения</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html#informarch_qgen_teach" style="text-decoration:none;" class="emFOLD">Учебник по QSP для редактора QGen</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/lokalizatsija_qsp_0005.html#informarch_localization" style="text-decoration:none;" class="emFOLD">Локализация классического плеера версии 5.7.0</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html#informarch_analyzer_qsp" style="text-decoration:none;" class="emFOLD">Анализатор кода</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/polka_igr_0007.html#informarch_gameshelf" style="text-decoration:none;" class="emFOLD">Полка игр</a>
-</li>
-</ul>
-<a id="иbКw"></a><h3>Продвинутый QSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/konsol_nyj_qsp-pleer_0008.html#informarch_consoleplayer" style="text-decoration:none;" class="emFOLD">Простой консольный QSP-плеер</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html#informarch_automateprogs" style="text-decoration:none;" class="emFOLD">Автоматное программирование в QSP</a>
-</li>
-</ul>
-<a id="Фымy"></a><h3>Работа в текстовом редакторе</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM. Краткое руководство</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html#informarch_game_in_texteditor" style="text-decoration:none;" class="emFOLD">Пишем QSP-игру в текстовом редакторе</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html#informarch_txt2gam_preprocessor" style="text-decoration:none;" class="emFOLD">Использование препроцессора</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html#informarch_forlinux" style="text-decoration:none;" class="emFOLD">TXT2GAM. Сборка для Linux</a>
-</li>
-</ul>
-<a id="HБыU"></a><h3>Вопросы по программированию</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/kalendar__po_metodu_schiota_julianskih_dnej_0014.html#informarch_calend_jul" style="text-decoration:none;" class="emFOLD">Календарь по методу счёта Юлианский дней</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html#informarch_gametime" style="text-decoration:none;" class="emFOLD">Игровое время (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html#informarch_flexible_playlist" style="text-decoration:none;" class="emFOLD">Гибкий плейлист (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html#informarch_usethemassive" style="text-decoration:none;" class="emFOLD">Использование массивов</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html#informarch_ia_lib_ntropy" style="text-decoration:none;" class="emFOLD">Библиотечка дополняющая инвентарь 0.76</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html#informarch_ifacts" style="text-decoration:none;" class="emFOLD">Действие по условию</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html#informarch_transformation" style="text-decoration:none;" class="emFOLD">Плавное изменение цвета фона (1.0)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/otladchik_0021.html#informarch_debugger20" style="text-decoration:none;" class="emFOLD">Отладчик 2.0 beta</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html#informarch_randomizer" style="text-decoration:none;" class="emFOLD">Выбор случайных вариантов - тянем карты из колоды (1.0)</a>
-</li>
-</ul>
-<a id="ХNуA"></a><h3>Обновления плеера</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html#informarch_update570" style="text-decoration:none;" class="emFOLD">Обновление QSP (5.7.0) и QGen (4.0.0b)</a>
-</li>
-</ul>
-<a id="xBfq"></a><h3>Вопросы по AeroQSP</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_0024.html#informarch_aeroqsp_wtfit" style="text-decoration:none;" class="emFOLD">Общая информация по AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_instr_0025.html#informarch_aeroqsp_instr" style="text-decoration:none;" class="emFOLD">Инструкция по использованию AeroQSP совместно с Quest Generator</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_help_0026.html#informarch_aeroqsp_help" style="text-decoration:none;" class="emFOLD">Справка по AeroQSP (в дополнение к основной справке QSP)</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/standalone_aeroqsp_0027.html#informarch_standalone_aeroqsp" style="text-decoration:none;" class="emFOLD">Stand-alone сборка игр на AeroQSP</a>
-</li>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/aeroqsp_uchebnik_0028.html#informarch_aeroqspguide" style="text-decoration:none;" class="emFOLD">Учебник по AeroQSP и QGen</a>
-</li>
-</ul>
-<a id="PxцТ"></a><h3>Обзоры игр</h3>
-<ul>
-<li>
-<a href="https://aleksversus.github.io/howdo_faq/informarch/obzory_qsp-compo_2010_0029.html#informarch_compo10" style="text-decoration:none;" class="emFOLD">Обзоры игр с QSP-Compo 2010</a>
-</li>
-</ul>
+<header-header></header-header>
         </div>
     </div>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>

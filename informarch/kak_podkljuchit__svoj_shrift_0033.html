@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
+    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
+    <title>QSP: ИнформАрхив</title>
+</head>
+    
+<body>
+    <div class="em_Main">
+        <div class="em_AROUND">
+            <h1>ИнформАрхив QSP</h1>
+            <!-- body start -->
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<h5 id="faq_22_02">22.2. Как подключить свой шрифт к игре?</h5><p>
+В: Как подключить свой шрифт к игре?
+</p>
+<p>
+О:
+</p>
+<p>
+Это делается через CSS. Используйте правило `@font-face`, чтобы импортировать шрифт в игру.
+</p>
+<p>
+В файле "game.css" вашего шаблона пропишите подобное правило:
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-TagName">@font</span>-<span class="Monokai-TagName">face</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span>:&nbsp;<span class="Monokai-Numeric">Versus&nbsp;New</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;Устанавливаем&nbsp;имя&nbsp;шрифта&nbsp;*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">src</span>:&nbsp;<span class="Monokai-Numeric">url(fonts/versus-new.ttf)</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;Указываем&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;со&nbsp;шрифтом&nbsp;*/</span><br/>
+}<br/>
+</div>
+<p>
+Применить шрифт можно, назначив стиль:
+</p>
+<div class="Monokai-Code">
+<span class="Monokai-TagName">p</span>&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span>:&nbsp;<span class="Monokai-String">"Versus&nbsp;New"</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;применяем&nbsp;шрифт&nbsp;к&nbsp;абзацам&nbsp;*/</span><br/>
+}<br/>
+</div>
+<p>
+`src:url();` — это ссылка на файл шрифта. Ваш файл шрифта должен лежать на уровне файла "game.css" вашего шаблона, или во вложенной папке. Соответственно указываем относительный путь — относительно файла "game.css".
+</p>
+<p>
+P.S.: К сожалению, данный способ по факту работает только в стандалон-сборке. А ещё придётся поэкспериментировать с форматом шрифта, так как замечено, что Навигатор не справляется с truetype-шрифтами, но неплохо ест opentype ttf и woff. Поэтому, если вы заметили, что ваш шрифт не работает в Навигаторе, попробуйте сконвертировать его в другие форматы и подключить их.
+</p>
+<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html" class="emHREFTT">&lt; Назад, к странице 25</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="emHREFTT">Вперёд, к странице 27 &gt;</a></div></div>
+<!-- body end -->
+            <div class="em_Epigraph">
+                <div class="em_subText">
+                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
+                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+                </div>
+            </div>
+            <div class="em_btn">
+                <div>
+                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+                </div>
+                <div>
+                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
+                </div>
+            </div>
+        </div>
+        <div class="stub">
+            &nbsp;
+        </div>
+    </div>
+    <div id="soderzhanije_outer">
+        <div class="soderzhanije">
+<header-header></header-header>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
+    <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
+</body>
+</html>
