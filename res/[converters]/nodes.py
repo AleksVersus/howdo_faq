@@ -978,6 +978,7 @@ class NewNode():
 				for segment in list_olul.find_all('segment', {'name':'li'}):
 					segment.p.insert(0, f"{count+1}. ")
 					segment.unwrap()
+					count+=1
 			if list_olul['list-type']=='ul-list':
 				for segment in list_olul.find_all('segment', {'name':'li'}):
 					segment.p.insert(0, f"* ")
