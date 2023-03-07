@@ -29,7 +29,7 @@ qSpider — это QSP-плеер с поддержкой полноценной
 qSpider использует последнюю версию библиотеки qsplib, а значит игры, написанные на классический плеер с той же версией библиотеки, полностью совместимы с qSpider.
 </p>
 <p>
-Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#whats_news" style="text-decoration:none;" class="emFOLD">"Что нового в QSP 5.8.0"</a>.
+Версия qSpider 0.12.0 использует qsplib версии 5.8.0. О существенных изменениях, произошедших в новой версии библиотеки можно почитать в статье <a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html#whats_news" style="text-decoration:none;" class="emFOLD">"Что нового в QSP 5.8.0"</a>.
 </p>
 <p>
 Демонстрацию работы плеера можно посмотреть здесь: <a href="https://qspfoundation.github.io/qspider/" style="text-decoration:none;" class="emFOLD">https://qspfoundation.github.io/qspider/</a>. Одна из представленных игр была написана для AeroQSP.
@@ -109,8 +109,8 @@ SET&nbsp;QSPIDER=C:\Program&nbsp;Files\qSpider\qSpider.exe
 <li>там же в попапе будет ссылка на запуск сервера в окне браузера.</li>
 </ul>
 <h5 id="ustanovka-pleera-na-github">Установка плеера на github</h5><ol>
-<li>Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#addndelgames" style="text-decoration:none;" class="emFOLD">"добавление и удаление игр из списка"</a>.</li>
-<li>Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>).</li>
+<li>Ознакомьтесь с порядком установки плеера на компьютер. Лучше выделить отдельную папку и распаковать браузерную версию плеера туда. Затем открыть подпапку "game" и удалить из неё ненужные файлы игр, и добавить свои, которые хотите разместить на гитхабе (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#addndelgames" style="text-decoration:none;" class="emFOLD">"добавление и удаление игр из списка"</a>.</li>
+<li>Отредактируйте файл "game.cfg" так, чтобы в нём присутствовали все секции на каждую из размещаемых игр (см. раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>).</li>
 <li>Откройте github в браузере, зайдите в свой профиль и создайте новый публичный репозиторий с именем "username.github.io" (внимание! Это важно! Впоследствии репозиторий нужно будет переименовать, но пока что он должен называться так), где "username" — это ваш логин (ник) на github.</li>
 <li>В разделе "Code" репозитория нажмите кнопку "Add file" и выберите пункт "Upload files", откроется страница загрузки файлов на github. </li>
 <li>Перетащите все распакованные файлы браузерной версии плеера в соответствующее поле на странице (в т.ч. папки "assets" и "game").</li>
@@ -154,7 +154,7 @@ SET&nbsp;QSPIDER=C:\Program&nbsp;Files\qSpider\qSpider.exe
 Если вы убрали демонстрационные игры из папки "game", не забудьте удалить соответствующие секции из файла "game.cfg".
 </p>
 <p>
-См. так же информацию в разделе <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>
+См. так же информацию в разделе <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#cfgfile" style="text-decoration:none;" class="emFOLD">"Конфигурационный файл"</a>
 </p>
 <p>
 Обратите внимание! Если вы указываете путь к внешнему файлу игры, нужно помнить о ряде ограничений, накладываемых браузером:
@@ -352,7 +352,7 @@ mode="aero"
 <br/>height&nbsp;=&nbsp;680
 </div>
 <p>
-Смотрите так же раздел <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#aeroqspider" style="text-decoration:none;" class="emFOLD">"Особенности работы игр AeroQSP на qSpider"</a>
+Смотрите так же раздел <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#aeroqspider" style="text-decoration:none;" class="emFOLD">"Особенности работы игр AeroQSP на qSpider"</a>
 </p>
 <h6 id="nastrojka-okna-desktop-pleera-gamewindow">Настройка окна desktop-плеера [game.window]</h6><p>
 Вы можете настраивать окно плеера в десктопной версии. Для этого в основной секции игры нужно объявить подсекцию с заголовком <span class="em_BLCK">[game.window]</span>, и проставить необходимые параметры:
@@ -405,7 +405,7 @@ HTML-движок в флеш версии AeroQSP достаточно спец
 </p>
 <ul>
 <li>несколько игр использовали синтаксис, который поменялся в 5.8.0 (порядок аргументов в INSTR, ARRCOMP, ARRPOS), и в qSpider эти игры будут выдавать ошибку о несовпадении типов данных;</li>
-<li>в AeroQSP шрифты подключались в формате swf, использовать такой формат больше нет возможности, поэтому если игра использует нестандартные шрифты — их необходимо будет подключать через файл конфига в секции <a href="https://aleksversus.github.io/howdo_faq/articles/None.html#qspider_gameresource" style="text-decoration:none;" class="emFOLD">game.resources</a>;</li>
+<li>в AeroQSP шрифты подключались в формате swf, использовать такой формат больше нет возможности, поэтому если игра использует нестандартные шрифты — их необходимо будет подключать через файл конфига в секции <a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html#qspider_gameresource" style="text-decoration:none;" class="emFOLD">game.resources</a>;</li>
 <li>в qSpider не поддерживаются эффекты <span class="em_BLCK">pixels</span>, <span class="em_BLCK">h_blinds</span> и <span class="em_BLCK">v_blinds</span>, остальные эффекты могут немного отличаться от того, как работала флеш-версия;</li>
 <li>не поддерживается переменная <span class="em_BLCK">SCROLL_SPEED</span> (впрочем, скорее всего нет игр, в которых она бы использовалась);</li>
 <li>обработка клика в флеше отличается от браузера — если на блоке нет обработчика, то он не перехватывает клик, даже если размещен поверх другого. В ряде игр это привело к тому, что неспрятанные панельки (пустые и не видимые) в qSpider блокируют клики по линкам под ними. Пример — игра "Новогодние сказки", где кнопка "Играть" почти полностью перекрыта пустой на этот момент панелькой действий. Лечится небольшими изменениями игры — отключением неиспользуемых панелей.</li>

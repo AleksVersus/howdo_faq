@@ -198,7 +198,7 @@ class NewDataBase():
 			print("Error! Current file is not set. Anchor <<anchor>> not append.")
 
 	def get_file_name(self, anchor):
-		if anchor in self.anchors_db:
+		if anchor in self.anchors_db['anchors']:
 			file_id = self.anchors_db['files-ids'][self.anchors_db['anchors'].index(anchor)]
 			file_path = self.files_db['files-paths'][self.files_db['files-ids'].index(file_id)]
 			full_file_name = os.path.split(file_path)[1]
@@ -211,6 +211,7 @@ class NewDataBase():
 			return None
 
 	def get_full_link_to_anchor(self, anchor:str):
+		print(f"[214] {anchor}")
 		if anchor in self.anchors_db['anchors']:
 			return f"{self.get_crosslink()}{self.get_file_name(anchor)}.html#{anchor}"
 		else:
