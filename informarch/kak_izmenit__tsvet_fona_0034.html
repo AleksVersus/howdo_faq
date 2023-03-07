@@ -16,20 +16,20 @@
             <h1>ИнформАрхив QSP</h1>
             <!-- body start -->
 <div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_podkljuchit__svoj_shrift_0033.html" class="emHREFTT">&lt; Назад, к странице 26</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/izmenit__kursor_0035.html" class="emHREFTT">Вперёд, к странице 28 &gt;</a></div></div>
-<h5 id="faq_22_03">22.3. Пишу `bcolor=rgb(255,200,200)`, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?</h5><p>
-В: Пишу `bcolor=rgb(255,200,200)`, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?
+<h5 id="faq_22_03">22.3. Пишу <span class="em_BLCK">bcolor=rgb(255,200,200)</span>, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?</h5><p>
+В: Пишу <span class="em_BLCK">bcolor=rgb(255,200,200)</span>, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?
 </p>
 <p>
 О:
 </p>
 <p>
-Для этого придётся запустить JavaScript прямо из кода, используя специальный оператор `EXEC`:
+Для этого придётся запустить JavaScript прямо из кода, используя специальный оператор <span class="em_BLCK">EXEC</span>:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">EXEC</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'JS:document.body.style.backgroundColor="#RRGGBB";'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В качестве аргумента данному оператору передаётся строка текста. Левая часть — до двоеточия — показывает на тип выполняемой инструкции JS — JavaScript. Правая часть — после двоеточия — непосредственно инструкция на JavaScript, которая присваивает элементу `document.body` соответствующий цвет фона.
+В качестве аргумента данному оператору передаётся строка текста. Левая часть — до двоеточия — показывает на тип выполняемой инструкции JS — JavaScript. Правая часть — после двоеточия — непосредственно инструкция на JavaScript, которая присваивает элементу <span class="em_BLCK">document.body</span> соответствующий цвет фона.
 </p>
 <p>
 Вместо "#RRGGBB" необходимо указать цветовой код в шестнадцатеричной системе счисления, формата RGB.

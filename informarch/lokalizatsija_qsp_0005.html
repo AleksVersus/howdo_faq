@@ -21,27 +21,27 @@
 Пишу на QSP полуигровой дипломный проект. Всё круто. Но научрука смущают пункты меню плеера вроде "квест", "игра". Понимаю, что можно поменять названия пунктов в файле языка "*.mo", но не понимаю как. По сему вопрос - Существуют ли способы создания своих файлов языка для интерфейса плеера? И если это как-то очевидно и я просмотрел, то заранее извиняюсь smile</p>
 </blockquote>
 <p>
-Этот вопрос на сайте нигде пока что не освещен, думаю, пора сделать спец. страничку, посвященную исходному коду и локализациям windows-плеера QSP, а также самой `qsp.dll`.
+Этот вопрос на сайте нигде пока что не освещен, думаю, пора сделать спец. страничку, посвященную исходному коду и локализациям windows-плеера QSP, а также самой <span class="em_BLCK">qsp.dll</span>.
 </p>
 <p>
 Ответ на вопрос, как модифицировать файлы локализации:
 </p>
 <ol>
 <li>Качаем <a href="https://sourceforge.net/projects/poedit/" style="text-decoration:none;" class="emFOLD">poedit</a>, устанавливаем.</li>
-<li>Берем файл с русской локализацией, папка `QSP-плеера/langs/ru/qspgui.mo`</li>
-<li>Копируем в папку папка `poedit/bin`</li>
+<li>Берем файл с русской локализацией, папка <span class="em_BLCK">QSP-плеера/langs/ru/qspgui.mo</span></li>
+<li>Копируем в папку папка <span class="em_BLCK">poedit/bin</span></li>
 <li><p>
 Заходим в эту папку и запускаем командную строку, в ней пишем</p>
 <div class="Monokai-Code">
 msgunfmt&nbsp;qspgui.mo&nbsp;&gt;&nbsp;qspgui.po
 </div>
 </li>
-<li>Редактируем `qspgui.po` в `poedit`</li>
-<li>Сохраняем. При сохранении файл `qspgui.mo` сгенерируется автоматически(в настройках "по умолчанию" есть соответствующая галочка)</li>
-<li>Берем полученный `qspgui.mo` и записываем его в папка `QSP-плеера/langs/ru/qspgui.mo`</li>
+<li>Редактируем <span class="em_BLCK">qspgui.po</span> в <span class="em_BLCK">poedit</span></li>
+<li>Сохраняем. При сохранении файл <span class="em_BLCK">qspgui.mo</span> сгенерируется автоматически(в настройках "по умолчанию" есть соответствующая галочка)</li>
+<li>Берем полученный <span class="em_BLCK">qspgui.mo</span> и записываем его в папка <span class="em_BLCK">QSP-плеера/langs/ru/qspgui.mo</span></li>
 </ol>
 <p>
-Автор заметки: `Nex`.
+Автор заметки: <strong>Nex</strong>.
 </p>
 <p>
 Тема на форуме: <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57" style="text-decoration:none;" class="emFOLD">"Локализация QSP"</a>

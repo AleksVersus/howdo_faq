@@ -17,7 +17,7 @@
             <!-- body start -->
 <div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
 <h5 id="informarch_calend_jul">Календарь по методу счёта Юлианский дней</h5><p>
-Календарь по рецепту `evp`. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57" style="text-decoration:none;" class="emFOLD">серии сообщений</a>.
+Календарь по рецепту <strong>evp</strong>. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57" style="text-decoration:none;" class="emFOLD">серии сообщений</a>.
 </p>
 <p>
 Давным-давно были разработаны формулы для вычисления точной календарной даты из Юлианской даты. Юлианская дата — это число, показывающее, сколько точно прошло дней, начиная с полудня понедельника 24 ноября 4714 года до нашей эры.
@@ -26,7 +26,7 @@
 Для тех, кто интересуется теорией, на википедии есть замечательная <a href="https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0" style="text-decoration:none;" class="emFOLD">статья, всё подробно разъясняющая</a>. Нас же интересуют непосредственно формулы, и что мы из них можем получить.
 </p>
 <p>
-`evp` уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации `"calendar"`.
+<strong>evp</strong> уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации <span class="em_BLCK">"calendar"</span>.
 </p>
 <div class="Monokai-Code">
 JDN&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDNStart&nbsp;<span class="Monokai-Operator">+</span>&nbsp;time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1440</span><br/>
@@ -48,19 +48,19 @@ $hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Fun
 $minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>minut&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В самом начале игры нам нужно задать переменные `JDNStart` и `time`. Именно эти переменные будут хранить точное значение времени в нашей игре.
+В самом начале игры нам нужно задать переменные <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span>. Именно эти переменные будут хранить точное значение времени в нашей игре.
 </p>
 <p>
-`JDNStart` показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
+<span class="em_BLCK">JDNStart</span> показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
 </p>
 <p>
 К примеру, наша игра должна начаться 7 ноября 1917 года, в среду. Открываем <a href="https://promenade.imcce.fr/en/pages2/278.html" style="text-decoration:none;" class="emFOLD">калькулятор</a>. Подставляем в нужные поля дату 7 ноября 1917, а время пишем 12 часов 00 минут 00 секунд. Юлианский день начинается с полудня! И получаем число 2421540. Точное, без дробной части, число дней.
 </p>
 <p>
-Это самое число и есть наш `JDNStart`, вот и записываем 2421540 в переменную.
+Это самое число и есть наш <span class="em_BLCK">JDNStart</span>, вот и записываем 2421540 в переменную.
 </p>
 <p>
-А в переменную `time` мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную `time` записать число `15*60+37`.
+А в переменную <span class="em_BLCK">time</span> мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную <span class="em_BLCK">time</span> записать число <span class="em_BLCK">15*60+37</span>.
 </p>
 <p>
 Итого мы будем иметь две строчки кода на самой первой локации в нашей игре, описывающие время:
@@ -70,7 +70,7 @@ JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">242
 time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><br/>
 </div>
 <p>
-Помимо `JDNStart` и `time` на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
+Помимо <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span> на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
 </p>
 <div class="Monokai-Code">
 $weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br/>
@@ -97,7 +97,7 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
 И вот теперь всё готово для того, чтобы мы могли пользоваться полноценным календарём в нашей игре.
 </p>
 <p>
-Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной `time`. Например:
+Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной <span class="em_BLCK">time</span>. Например:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br/>
@@ -106,17 +106,17 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
 <span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-Нажав на действие, мы изменим значение переменной `time`, т.е. переместимся во времени на 45 минут, и с помощью оператора `goto` переместимся на локацию `"smolny"`.
+Нажав на действие, мы изменим значение переменной <span class="em_BLCK">time</span>, т.е. переместимся во времени на 45 минут, и с помощью оператора <span class="em_BLCK">goto</span> переместимся на локацию <span class="em_BLCK">"smolny"</span>.
 </p>
 <p>
-Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации `"calendar"`, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
+Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации <span class="em_BLCK">"calendar"</span>, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">','</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
 </div>
 <p>
-Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации `"calendar"`:
+Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации <span class="em_BLCK">"calendar"</span>:
 </p>
 <div class="Monokai-Code">
 $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>year&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;-year+1&gt;&gt;&nbsp;г.&nbsp;до&nbsp;н.э.'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;year&gt;&gt;&nbsp;г.'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
@@ -128,7 +128,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 Для закрепления понимания того, как это всё работает, напишите несколько локаций:
 </p>
 <p>
-`Локация "smolny"`
+<span class="em_BLCK">Локация "smolny"</span>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Смольный'</span><br/>
@@ -140,7 +140,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-`Локация "station"`
+<span class="em_BLCK">Локация "station"</span>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Вокзал'</span><br/>
@@ -157,7 +157,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-`Локация "moscow"`
+<span class="em_BLCK">Локация "moscow"</span>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Москва'</span><br/>
