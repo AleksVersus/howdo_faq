@@ -211,7 +211,7 @@ class NewDataBase():
 			return None
 
 	def get_full_link_to_anchor(self, anchor:str):
-		print(f"[214] {anchor}")
+		# print(f"[214] {anchor}")
 		if anchor in self.anchors_db['anchors']:
 			return f"{self.get_crosslink()}{self.get_file_name(anchor)}.html#{anchor}"
 		else:
@@ -313,7 +313,7 @@ class NewFile():
 	def __init__(self, file_path):
 		self.path = file_path
 		with open(self.path, 'r', encoding='utf-8') as file:
-			self.source_lines = file.readlines()
+			self.source_lines = NewNode.comments_replace(file.readlines())
 
 	def get_file_name(self, mode='full'):
 		if mode in ('full'):
@@ -814,7 +814,7 @@ class NewNode():
 			output_path = f"{self.data_base.get_output_path()}\\{self.clear_file_name(self.attributes['path'])}.html"
 			with open(output_path, 'w', encoding='utf-8') as file:
 				file.write(output_text)
-				print(f"'[776] File {output_path} was been exist from {self.attributes['path']}'")
+				# print(f"'[776] File {output_path} was been exist from {self.attributes['path']}'")
 
 		elif self.node_type == 'segment':
 			text=""
@@ -1137,14 +1137,64 @@ class NewNode():
 
 	# ------------------------------- static methods ---------------------------
 
+	@staticmethod
+	def comments_replace(string_lines:list, mode=''):
+		input_text = '\r'.join(string_lines)
+		output_text = ""
+		while len(input_text)>0:
+			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_main(input_text, mode=mode)
+			if scope_type=='comment':
+				output_text += prev_text
+				input_text = post_text
+			elif scope_type in ("string", "code"):
+				output_text += prev_text + scope_regexp_obj.group(0)
+				input_text = post_text
+			else:
+				output_text += input_text
+				input_text = ''
+		return output_text.split('\r')
 
+	@staticmethod
+	def find_overlap_main(string_line:str, mode=''):
+		maximal = len(string_line)+1
+		mini_data_base = {
+			"scope-name": [
+				'comment',
+				'string',
+				'code'
+			],
+			"scope-regexp":
+			[
+				re.search(r'\/\*[\s\S]*?\*\/', string_line, flags=re.MULTILINE),
+				re.search(r'((?<!")"(?!")|(?<!\')\'(?!\'))[\s\S]*?\1', string_line, flags=re.MULTILINE),
+				re.search(r'(```\w*)[\S\s]*?(```)', string_line, flags=re.MULTILINE)
+			],
+			"scope-instring":
+			[]
+		}
+		for string_id in mini_data_base['scope-name']:
+			i = mini_data_base['scope-name'].index(string_id)
+			match_in = mini_data_base['scope-regexp'][i]
+			mini_data_base['scope-instring'].append(
+				string_line.index(match_in.group(0)) if match_in is not None else maximal)
+		minimal = min(mini_data_base['scope-instring'])
+		if minimal!=maximal:
+			i = mini_data_base['scope-instring'].index(minimal)
+			scope_type = mini_data_base['scope-name'][i]
+			scope_regexp_obj = mini_data_base['scope-regexp'][i]
+			scope = scope_regexp_obj.group(0)
+			q = string_line.index(scope)
+			prev_line = string_line[0:q]
+			post_line = string_line[q+len(scope):]
+			return scope_type, prev_line, scope_regexp_obj, post_line
+		else:
+			return None, '', '', string_line
 
 	@staticmethod
 	def stilization_qsp_code(code_text:str):
 		# convert code_text to css
 		output_text = ""
-		count=0
-		while len(code_text)>0 and count<999:
+		while len(code_text)>0:
 			scope_type, prev_text, scope_regexp_obj, post_text = NewNode.find_overlap_qsp_scope(code_text)
 			if scope_type=='comment':
 				output_text += prev_text
@@ -1208,7 +1258,6 @@ class NewNode():
 			else:
 				output_text += code_text
 				code_text = ''
-			count+=1
 		return NewNode.replace_spaces(output_text).replace('\n','<br/>\n')
 
 	@staticmethod

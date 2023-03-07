@@ -56,37 +56,37 @@ $money&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Op
 В game.css вашего шаблона:
 </p>
 <div class="Monokai-Code">
-/*
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;данный&nbsp;стиль&nbsp;описывает&nbsp;внешний&nbsp;вид&nbsp;общего&nbsp;блока,&nbsp;играющего&nbsp;в&nbsp;т.ч.&nbsp;роль&nbsp;затенения
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;(обратите&nbsp;внимание,&nbsp;на&nbsp;какую&nbsp;область&nbsp;в&nbsp;вашем&nbsp;шаблоне&nbsp;распространяется&nbsp;затенение)
-<br/>&nbsp;*/
-<br/>.modalDialog&nbsp;{&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;fixed;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;right:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;bottom:&nbsp;0;&nbsp;left:&nbsp;0;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;hsla(0,0%,0%,0.8);&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;z-index:&nbsp;50;&nbsp;/*&nbsp;выводится&nbsp;одним&nbsp;из&nbsp;верхних&nbsp;слоёв&nbsp;*/
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;0;&nbsp;/*&nbsp;видимость&nbsp;на&nbsp;нуле,&nbsp;чтобы&nbsp;игрок&nbsp;не&nbsp;видел&nbsp;содержимое&nbsp;*/
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition:&nbsp;opacity&nbsp;400ms&nbsp;ease-in;&nbsp;/*&nbsp;обеспечивает&nbsp;плавное&nbsp;появление&nbsp;*/
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;none;&nbsp;/*&nbsp;скрывает&nbsp;блок&nbsp;от&nbsp;курсора&nbsp;мыши&nbsp;*/
-<br/>}&nbsp;
-<br/>/*&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;псевдокласс&nbsp;:target&nbsp;применяется&nbsp;к&nbsp;тому&nbsp;элементу
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;к&nbsp;которому&nbsp;обратился&nbsp;браузер/плеер&nbsp;по&nbsp;нажатию&nbsp;на&nbsp;ссылку&nbsp;(по&nbsp;id)
-<br/>*/
-<br/>.modalDialog:target&nbsp;{&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;1;&nbsp;/*&nbsp;видимость&nbsp;повышается&nbsp;до&nbsp;100%&nbsp;*/
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;pointer-events:&nbsp;auto;&nbsp;/*&nbsp;с&nbsp;блоком&nbsp;снова&nbsp;может&nbsp;работать&nbsp;мышь&nbsp;*/
-<br/>}&nbsp;
-<br/>/*&nbsp;стилизация&nbsp;дочернего&nbsp;блока,&nbsp;т.е.&nbsp;непосредственно&nbsp;окошка&nbsp;*/
-<br/>.modalDialog&nbsp;&gt;&nbsp;div&nbsp;{&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;400px;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;relative;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;margin:&nbsp;10%&nbsp;auto;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;padding:&nbsp;5px&nbsp;20px&nbsp;13px&nbsp;20px;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;border-radius:&nbsp;10px;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;#fff;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;background:&nbsp;-webkit-linear-gradient(#fff,&nbsp;#b8ecfb);&nbsp;
-<br/>}
+<span class="Monokai-Comment">/*<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;данный&nbsp;стиль&nbsp;описывает&nbsp;внешний&nbsp;вид&nbsp;общего&nbsp;блока,&nbsp;играющего&nbsp;в&nbsp;т.ч.&nbsp;роль&nbsp;затенения<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(обратите&nbsp;внимание,&nbsp;на&nbsp;какую&nbsp;область&nbsp;в&nbsp;вашем&nbsp;шаблоне&nbsp;распространяется&nbsp;затенение)<br/>
+&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.modalDialog</span>&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">fixed</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">top</span>:&nbsp;<span class="Monokai-Numeric">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">right</span>:&nbsp;<span class="Monokai-Numeric">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">bottom</span>:&nbsp;<span class="Monokai-Numeric">0</span>;&nbsp;<span class="Monokai-Construct">left</span>:&nbsp;<span class="Monokai-Numeric">0</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">hsla(0,0%,0%,0.8)</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">z-index</span>:&nbsp;<span class="Monokai-Numeric">50</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;выводится&nbsp;одним&nbsp;из&nbsp;верхних&nbsp;слоёв&nbsp;*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">opacity</span>:&nbsp;<span class="Monokai-Numeric">0</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;видимость&nbsp;на&nbsp;нуле,&nbsp;чтобы&nbsp;игрок&nbsp;не&nbsp;видел&nbsp;содержимое&nbsp;*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">-webkit-transition</span>:&nbsp;<span class="Monokai-Numeric">opacity&nbsp;400ms&nbsp;ease-in</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;обеспечивает&nbsp;плавное&nbsp;появление&nbsp;*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">pointer-events</span>:&nbsp;<span class="Monokai-Numeric">none</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;скрывает&nbsp;блок&nbsp;от&nbsp;курсора&nbsp;мыши&nbsp;*/</span><br/>
+}&nbsp;<br/>
+<span class="Monokai-Comment">/*&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;псевдокласс&nbsp;:target&nbsp;применяется&nbsp;к&nbsp;тому&nbsp;элементу<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;к&nbsp;которому&nbsp;обратился&nbsp;браузер/плеер&nbsp;по&nbsp;нажатию&nbsp;на&nbsp;ссылку&nbsp;(по&nbsp;id)<br/>
+*/</span><br/>
+<span class="Monokai-Markup">.modalDialog</span>:target&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">opacity</span>:&nbsp;<span class="Monokai-Numeric">1</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;видимость&nbsp;повышается&nbsp;до&nbsp;100%&nbsp;*/</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">pointer-events</span>:&nbsp;<span class="Monokai-Numeric">auto</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;с&nbsp;блоком&nbsp;снова&nbsp;может&nbsp;работать&nbsp;мышь&nbsp;*/</span><br/>
+}&nbsp;<br/>
+<span class="Monokai-Comment">/*&nbsp;стилизация&nbsp;дочернего&nbsp;блока,&nbsp;т.е.&nbsp;непосредственно&nbsp;окошка&nbsp;*/</span><br/>
+<span class="Monokai-Markup">.modalDialog</span>&nbsp;<span class="Monokai-TagName">&gt;</span>&nbsp;<span class="Monokai-TagName">div</span>&nbsp;{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">width</span>:&nbsp;<span class="Monokai-Numeric">400px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">position</span>:&nbsp;<span class="Monokai-Numeric">relative</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">margin</span>:&nbsp;<span class="Monokai-Numeric">10%&nbsp;auto</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">5px&nbsp;20px&nbsp;13px&nbsp;20px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">border-radius</span>:&nbsp;<span class="Monokai-Numeric">10px</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">#fff</span>;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">background</span>:&nbsp;<span class="Monokai-Numeric">-webkit-linear-gradient(#fff,&nbsp;#b8ecfb)</span>;&nbsp;<br/>
+}<br/>
 </div>
 <div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/instruktsija_po_smene_oformlenija_iz_koda_igry_0042.html" class="emHREFTT">&lt; Назад, к странице 35</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/obnovlenie_do_5.7.0_0023.html" class="emHREFTT">Вперёд, к странице 37 &gt;</a></div></div>
 <!-- body end -->
