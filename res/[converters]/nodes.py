@@ -1027,18 +1027,7 @@ class NewNode():
 			del file['path']
 			main_segment = file.segment
 			main_segment['type']='files-segment'
-			for segment in main_segment.find_all('segment', {'segment-class': 'for-head'}):
-				t = segment.find_previous_sibling()
-				if t is not None and t.name=='header':
-					t.name='title'
-					segment['id']=t['anchor']
-					del t['anchor']
-					del t['head-level']
-					segment.insert(0, t)
-				segment.name = 'section'
-				for s in segment.find_all('segment'):
-					s.unwrap()
-				del segment['segment-class']
+			self.fb2_retape_segment(main_segment)
 			main_segment.unwrap()
 			title.name = 'title'
 			del title['anchor']
@@ -1135,6 +1124,21 @@ class NewNode():
 		text = text.replace('<html>','').replace('</html>','')
 		text = text.replace('<body>','').replace('</body>','')
 		return text
+
+	def fb2_retape_segment(self, main_segment):
+		for segment in main_segment.find_all('segment', {'segment-class': 'for-head'}):
+			t = segment.find_previous_sibling()
+			if t is not None and t.name=='header':
+				t.name='title'
+				segment['id']=t['anchor']
+				del t['anchor']
+				del t['head-level']
+				segment.insert(0, t)
+				self.fb2_retape_segment(segment)
+			segment.name = 'section'
+			for s in segment.find_all('segment'):
+				s.unwrap()
+			del segment['segment-class']
 
 	# ------------------------------- static methods ---------------------------
 
