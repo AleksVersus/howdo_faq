@@ -3,7 +3,7 @@
 
 Исходники: [github/QSPFoundation/txt2gam](https://github.com/QSPFoundation/txt2gam)
 
-`Порядок сборки:`
+**Порядок сборки:**
 
 	1. Скачиваем все файлы с расширениями *.c и *.h и помещаем их в один каталог.
 	2. Открываем ваш терминал(gnome-terminal, xfce4-terminal, konsole или какой у вас там).
