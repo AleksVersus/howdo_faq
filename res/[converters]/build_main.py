@@ -4,8 +4,8 @@ def main():
 	# названия файлов, из которых берём сборку
 	html_json=[
 		# "..\\..\\[source]\\example\\html.json",
-		"..\\..\\[source]\\готовые статьи\\build-project.json",
-		# "..\\..\\[source]\\ответы\\html.json",
+		# "..\\..\\[source]\\готовые статьи\\build-project.json",
+		"..\\..\\[source]\\ответы\\build-project.json",
 		# "..\\..\\[source]\\вики-qsp\\html.json"
 	]
 	for path in html_json:

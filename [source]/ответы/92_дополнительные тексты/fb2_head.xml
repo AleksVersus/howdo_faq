@@ -12,9 +12,9 @@
    <book-title>Как сделать? Часто Задаваемые Вопросы по QSP</book-title>
    <annotation>
     <p>На форуме QSP.su в теме "Как сделать?" было задано очень много вопросов. В этом сборнике представлены наиболее часто задаваемые. </p>
-    <p>редакция от <strong>23.08.2021 г.</strong></p>
+    <p>редакция от <strong>%TIME% г.</strong></p>
    </annotation>
-   <date value="2021-08-24">24 августа 2021</date>
+   <date value="%DATE%">07 марта 2023</date>
    <coverpage>
     <image l:href="#cover.png"/></coverpage>
    <lang>ru</lang>
@@ -25,7 +25,7 @@
     <last-name>Versus</last-name>
    </author>
    <program-used>build_fb2.py, FictionBook Editor Release 2.6.6</program-used>
-   <date value="2021-09-27">2021-09-27</date>
+   <date value="%DATE%">%DATE%</date>
    <id>691C3AD3-DB00-4DCD-8B3F-FE36355FD126</id>
    <version>2.0</version>
    <history>
