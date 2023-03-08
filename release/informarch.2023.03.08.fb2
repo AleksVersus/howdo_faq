@@ -12,9 +12,9 @@
    <book-title>Информархив QSP</book-title>
    <annotation>
     <p>Сборник устаревших статей по программированию на QSP. Новости, эссе, теория, описание плееров.</p>
-    <p>редакция от <strong>2023.03.07 г.</strong></p>
+    <p>редакция от <strong>2023.03.08 г.</strong></p>
    </annotation>
-   <date value="2023-03-07">07 марта 2023</date>
+   <date value="2023-03-08">07 марта 2023</date>
    <coverpage>
     <image l:href="#cover.png"/></coverpage>
    <lang>ru</lang>
@@ -25,7 +25,7 @@
     <last-name>Versus</last-name>
    </author>
    <program-used>build_fb2.py, FictionBook Editor Release 2.6.6</program-used>
-   <date value="2023-03-07">2023-03-07</date>
+   <date value="2023-03-08">2023-03-08</date>
    <id>5b03c14f-7c11-4306-8c20-291b6b9e72cf</id>
    <version>2.0</version>
    <history>
@@ -4345,10 +4345,10 @@ skins/game.css</p>
 
  и других.</p>
 <p>Откройте "gameAwesomium.html" в любом текстовом редакторе, а лучше в редакторе с подсветкой кода, например в SublimeText.</p>
+<p>&lt;section_of_head&gt;</p>
 
 </section>
 
-<segment segment-class="for-soh">
 <header anchor="head" head-level="h1">
 <p>HEAD</p>
 </header>
@@ -4389,11 +4389,11 @@ skins/game.css</p>
 <p><code>&lt;script type="text/javascript" src="avsscripts/alert.js"&gt;&lt;/script&gt;</code></p>
 <segment>
 <p>Сейчас мы не будем править скрипты, или писать свои. Приведённая информация только для ознакомления. Если вы не знакомы с JavaScript, пока эту часть лучше не трогать.</p>
+<p>&lt;/section_of_head&gt;</p>
+<p>&lt;section_of_head&gt;</p>
 </segment>
 </segment>
 </segment>
-</segment>
-<segment segment-class="for-soh">
 <header anchor="body" head-level="h1">
 <p>BODY</p>
 </header>
@@ -4685,14 +4685,12 @@ skins/game.css</p>
 <p>qsp-dialog-error</p>
 </header>
 <segment segment-class="for-head">
+<segment segment-class="for-head">
 <segment>
 <p>Блок "qsp-dialog-error" отвечает за вывод сообщений об ошибках в коде QSP.</p>
+<p>&lt;/section_of_head&gt;</p>
 </segment>
 </segment>
-</segment>
-</segment>
-</segment>
-<segment segment-class="for-soh">
 <header anchor="ps" head-level="h6">
 <p>P.S.</p>
 </header>
@@ -4705,6 +4703,8 @@ skins/game.css</p>
 <p>Так же вы можете перенести частично блоки из шаблона в код QSP. Их само собой можно будет выводить либо в основном либо в дополнительном описании, и вести себя они будут несколько иначе, чем если прописаны заранее в шаблоне, однако и так делать можно. Можно в принципе отказаться от всех окон, кроме окна основного описания, растянуть это окно на всю ширину страницы, и прямо из кода QSP формировать собственную разметку, причём эта разметка может всякий раз отличаться.</p>
 <p>Возможностей море, если вы хорошо владеете HTML и CSS. Работа с JavaScript вам понадобится только тогда, когда вы захотите навешать на игру дополнительные функции, например различные горячие клавиши, управление с клавиатуры в принципе, анимации и т.д.</p>
 <p>Quest Navigator в отличие от Классического плеера позволяет делать адаптивную вёрстку, то есть вёрстку подстраивающуюся под конкретное окно, а значит вы можете написать именно такую вёрстку, какая вам нужна и не беспокоиться о возможных отличиях в размере дисплеев, окон и т.д.</p>
+</segment>
+</segment>
 </segment>
 </segment>
 </segment>
@@ -7476,7 +7476,7 @@ www.npmjs.com/qsp-converters</a></p>
 
 </section>
 
-<section id="qsp---txt"><title>
+<section id="qsp--gt-txt"><title>
 <p>qsp -&gt; txt</p>
 </title>
 

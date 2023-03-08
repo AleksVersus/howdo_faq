@@ -12,9 +12,9 @@
    <book-title>Как сделать? Часто Задаваемые Вопросы по QSP</book-title>
    <annotation>
     <p>На форуме QSP.su в теме "Как сделать?" было задано очень много вопросов. В этом сборнике представлены наиболее часто задаваемые. </p>
-    <p>редакция от <strong>2023.03.07 г.</strong></p>
+    <p>редакция от <strong>2023.03.08 г.</strong></p>
    </annotation>
-   <date value="2023-03-07">07 марта 2023</date>
+   <date value="2023-03-08">07 марта 2023</date>
    <coverpage>
     <image l:href="#cover.png"/></coverpage>
    <lang>ru</lang>
@@ -25,7 +25,7 @@
     <last-name>Versus</last-name>
    </author>
    <program-used>build_fb2.py, FictionBook Editor Release 2.6.6</program-used>
-   <date value="2023-03-07">2023-03-07</date>
+   <date value="2023-03-08">2023-03-08</date>
    <id>691C3AD3-DB00-4DCD-8B3F-FE36355FD126</id>
    <version>2.0</version>
    <history>
@@ -11474,7 +11474,7 @@ XGT</a></p>
 
 </section>
 </section>
-<section id="link_01_01">
+<section>
 <section id="link_list">
 <title head-level="h1">
 <p>Источники и дополнительные материалы</p>
@@ -11494,10 +11494,10 @@ github/howdo_faq</a></p>
 <section id="link_01"><title>
 <p>01. Чем отличается?</p>
 </title>
-<title anchor="link_01_01" head-level="h6">
+
+<section id="link_01_01"><title>
 <p>1.1. В чём разница между `set x=10`, `let x=10` и `x=10`?</p>
 </title>
-
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=25s">
@@ -11506,11 +11506,11 @@ https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=211&amp;prc=25&amp;Itemid=57#p26532">
 `set x = 1` `let x = 1` `x = 1` Может между ними есть хоть какая-то разница?</a></p>
 
+</section>
 
-<header anchor="link_01_02" head-level="h6">
+<section id="link_01_02"><title>
 <p>1.2. В чём разница между переменной со знаком `$` и без знака `$`?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=64s">
@@ -11519,11 +11519,11 @@ https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=209&amp;prc=25&amp;Itemid=57#p26408">
 Какая разница между названием переменной с $ и без $ ?</a></p>
 
+</section>
 
-<header anchor="link_01_03" head-level="h6">
+<section id="link_01_03"><title>
 <p>1.3. В чём разница между ' ' (апострофы) и " " (кавычки)?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=113s">
@@ -11535,11 +11535,11 @@ https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=143&amp;prc=25&amp;Itemid=57#p21978">
 Сложный код</a></p>
 
+</section>
 
-<header anchor="link_01_04" head-level="h6">
+<section id="link_01_04"><title>
 <p>1.4. В чём разница между `*pl "строка"` и просто `"строка"`?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=238s">
@@ -11548,15 +11548,15 @@ https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=140&amp;prc=25&amp;Itemid=57#p21694">
 не вижу разницы между командами</a></p>
 
+</section>
 
-<header anchor="link_01_05" head-level="h6">
+<section id="link_01_05"><title>
 <p>1.5. Чем отличаются эти две команды? `
 <emphasis>
 pl "&lt;&lt;$perem&gt;&gt;"` и `</emphasis>
 
 pl $perem`</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=280s">
@@ -11565,43 +11565,43 @@ https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26396">
 Чем отличаются эти две команды?</a></p>
 
+</section>
 
-<header anchor="link_01_06" head-level="h6">
+<section id="link_01_06"><title>
 <p>1.6. В чём разница между `dynamic` и `dyneval`?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=399s">
 https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 
+</section>
 
-<header anchor="link_01_07" head-level="h6">
+<section id="link_01_07"><title>
 <p>1.7. В чём разница между `gt` и `goto`?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=529s">
 https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 
+</section>
 
-<header anchor="link_01_08" head-level="h6">
+<section id="link_01_08"><title>
 <p>1.8. Чем отличается `goto` от `gosub`?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;list=PLcAHO4WsUl2R70UDclnyevDSuBJGDH9F6&amp;index=1&amp;t=557s">
 https://www.youtube.com/watch?v=uaEfDzBXFSw&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_02"><title>
 <p>02. Вопросы о $COUNTER</p>
 </title>
-
+<section>
 <p>Реалтайм в справке: 
 <a l:href="https://wiki.qsp.org/help:realtime">
 https://wiki.qsp.org/help:realtime</a></p>
@@ -11638,47 +11638,47 @@ CH_B_L, теоретически можно в локации каунтер ч�
 <p>Larson. #4971 29.Мар.17 20:20:50: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=199&amp;prc=25&amp;Itemid=57#p25399">
 Какой нужен код чтобы при переходе на локацию, звук в ней воспроизводился не сразу а например через 5 сек.?</a></p>
+</section>
 
-<header anchor="link_02_01" head-level="h6">
+<section id="link_02_01"><title>
 <p>2.1. Как сделать, чтобы значение переменной изменялось с течением времени?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=vRqh-dYa8WI&amp;t=19s">
 https://www.youtube.com/watch?v=vRqh-dYa8WI&amp;</a></p>
+</section>
 
-<header anchor="link_02_02" head-level="h6">
+<section id="link_02_02"><title>
 <p>2.2. Как сделать, чтобы из одной локации меня через пару секунд перебрасывало в другую локацию?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=vRqh-dYa8WI&amp;t=284s">
 https://www.youtube.com/watch?v=vRqh-dYa8WI&amp;</a></p>
+</section>
 
-<header anchor="link_02_03" head-level="h6">
+<section id="link_02_03"><title>
 <p>2.3. Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YYGMIZcXAUc&amp;t=19s">
 https://www.youtube.com/watch?v=YYGMIZcXAUc&amp;</a></p>
+</section>
 
-<header anchor="link_02_04" head-level="h6">
+<section id="link_02_04"><title>
 <p>2.4. Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YYGMIZcXAUc&amp;t=417s">
 https://www.youtube.com/watch?v=YYGMIZcXAUc&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_03"><title>
 <p>03. Вопросы о MSG и $INPUT</p>
 </title>
-
+<section>
 
 <p>Справка по `input`: 
 <a l:href="https://wiki.qsp.org/help:inputs">
@@ -11711,55 +11711,55 @@ https://wiki.qsp.org/help:strings</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=210&amp;prc=25&amp;Itemid=57#p26516">
 Зачем нужно поле ввода в плеере?</a></p>
 
+</section>
 
-<header anchor="link_03_01" head-level="h6">
+<section id="link_03_01"><title>
 <p>3.1. Как вывести на экран отдельное окошко с текстом?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;t=16s">
 https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;</a></p>
+</section>
 
-<header anchor="link_03_02" head-level="h6">
+<section id="link_03_02"><title>
 <p>3.2. Как вывести на экран окошко, в котором игрок должен ввести текст?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;t=77s">
 https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;</a></p>
+</section>
 
-<header anchor="link_03_03" head-level="h6">
+<section id="link_03_03"><title>
 <p>3.3. Как прикрутить возможность выбора варианта к окну msg?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;t=193s">
 https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;</a></p>
+</section>
 
-<header anchor="link_03_04" head-level="h6">
+<section id="link_03_04"><title>
 <p>3.4. Как сделать ввод имени игроком?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;t=309s">
 https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;</a></p>
+</section>
 
-<header anchor="link_03_05" head-level="h6">
+<section id="link_03_05"><title>
 <p>3.5. Как сделать варианты для ответа через $input?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;t=415s">
 https://www.youtube.com/watch?v=RTMrZF_mTD0&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_04"><title>
 <p>04. Вопросы о меню</p>
 </title>
-
+<section>
 
 <p>Пример от Svandrus:		
 <a l:href="https://qsp.org/components/com_agora/img/members/983/menu_2.qsp">
@@ -11798,71 +11798,71 @@ https://wiki.qsp.org/help:menu</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=229&amp;prc=25&amp;Itemid=57#p18215">
 Как сделать, чтобы предмет (записка, например) можно было использовать прямо в окне предметов</a></p>
 
+</section>
 
-<header anchor="link_04_01" head-level="h6">
+<section id="link_04_01"><title>
 <p>4.1. Как сделать меню предмета?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=THlEwBbzf1k&amp;t=16s">
 https://www.youtube.com/watch?v=THlEwBbzf1k&amp;</a></p>
+</section>
 
-<header anchor="link_04_02" head-level="h6">
+<section id="link_04_02"><title>
 <p>4.2. Как сделать разные меню для двух и более предметов?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=THlEwBbzf1k&amp;t=460s">
 https://www.youtube.com/watch?v=THlEwBbzf1k&amp;</a></p>
+</section>
 
-<header anchor="link_04_03" head-level="h6">
+<section id="link_04_03"><title>
 <p>4.3. Как сделать меню в ссылках?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=JRUjSCbbUIY&amp;t=16s">
 https://www.youtube.com/watch?v=JRUjSCbbUIY&amp;</a></p>
+</section>
 
-<header anchor="link_04_04" head-level="h6">
+<section id="link_04_04"><title>
 <p>4.4. Как передавать локациям-пунктам меню аргументы?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=JRUjSCbbUIY&amp;t=292s">
 https://www.youtube.com/watch?v=JRUjSCbbUIY&amp;</a></p>
+</section>
 
-<header anchor="link_04_05" head-level="h6">
+<section id="link_04_05"><title>
 <p>4.5. Как делать контекстное (динамическое) меню?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;t=18s">
 https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;</a></p>
+</section>
 
-<header anchor="link_04_06" head-level="h6">
+<section id="link_04_06"><title>
 <p>4.6. Как вставить разделитель в меню?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;t=210s">
 https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;</a></p>
+</section>
 
-<header anchor="link_04_07" head-level="h6">
+<section id="link_04_07"><title>
 <p>4.7. Как вставить картинки в меню?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;t=287s">
 https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_05"><title>
 <p>05. Вопросы по $ONNEWLOC</p>
 </title>
-
+<section>
 
 <p>SneakBug8, Одиночка. #2813 07.Май.15 10:16:00: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=113&amp;prc=25&amp;Itemid=57#p19885">
@@ -11877,19 +11877,19 @@ https://www.youtube.com/watch?v=eMYJG5WrY4k&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=230&amp;prc=25&amp;Itemid=57#p17161">
 Как сделать счетчик ходов? ... Как сделать временную локацию чтобы мне работало это.</a></p>
 
+</section>
 
-<header anchor="link_05_01" head-level="h6">
+<section id="link_05_01"><title>
 <p>5.1. Как сделать так, чтобы не писать один и тот же код в каждой локации?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=M0V-qO3V0Io&amp;t=16s">
 https://www.youtube.com/watch?v=M0V-qO3V0Io&amp;</a></p>
+</section>
 
-<header anchor="link_05_02" head-level="h6">
+<section id="link_05_02"><title>
 <p>5.2. Как сделать кнопку "Назад", работающую на каждой локации?</p>
-</header>
-
+</title>
 <p>Amadeus. #5295 12.Апр.18 22:09:32: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=212&amp;prc=25&amp;Itemid=57#p26617">
 Есть ли в QSP команда, которая отвечает за возврат на предыдущую локацию?</a></p>
@@ -11904,26 +11904,26 @@ https://www.youtube.com/watch?v=M0V-qO3V0Io&amp;</a></p>
 Скачать</a>
 
 ](https://qsp.org/components/com_agora/img/members/248/example.qsp))</p>
+</section>
 
-<header anchor="link_05_03" head-level="h6">
+<section id="link_05_03"><title>
 <p>5.3. Почему в args[] на локации-обработчике перехода на новую локацию уже есть данные?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=d9XzToqROok&amp;t=16s">
 https://www.youtube.com/watch?v=d9XzToqROok&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_06"><title>
 <p>06. Вопросы по звуковым файлам в QSP</p>
 </title>
-<header anchor="link_06_01" head-level="h6">
-<p>6.1. Как вставить музыку или звук в игру?</p>
-</header>
 
+<section id="link_06_01"><title>
+<p>6.1. Как вставить музыку или звук в игру?</p>
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=d9XzToqROok&amp;t=172s">
@@ -11962,41 +11962,41 @@ https://wiki.qsp.org/help:sound</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=227&amp;prc=25&amp;Itemid=57#p25177">
 Можно ли вставить в игру свой саундтрек?</a></p>
 
+</section>
 
-<header anchor="link_06_02" head-level="h6">
+<section id="link_06_02"><title>
 <p>6.2. Как запустить две звуковые дорожки?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=d9XzToqROok&amp;t=295s">
 https://www.youtube.com/watch?v=d9XzToqROok&amp;</a></p>
 
+</section>
 
-<header anchor="link_06_03" head-level="h6">
+<section id="link_06_03"><title>
 <p>6.3. Как при переходе на новую локацию прервать одну мелодию и запустить другую?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=d9XzToqROok&amp;t=410s">
 https://www.youtube.com/watch?v=d9XzToqROok&amp;</a></p>
 
+</section>
 
-<header anchor="link_06_04" head-level="h6">
+<section id="link_06_04"><title>
 <p>6.4. Как перезапустить звуковую дорожку?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=d9XzToqROok&amp;t=501s">
 https://www.youtube.com/watch?v=d9XzToqROok&amp;</a></p>
 
+</section>
 
-<header anchor="link_06_05" head-level="h6">
+<section id="link_06_05"><title>
 <p>6.5. Как приглушить музыку?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=L08MyUk6QEQ&amp;t=16s">
@@ -12005,11 +12005,11 @@ https://www.youtube.com/watch?v=L08MyUk6QEQ&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=194&amp;prc=25&amp;Itemid=57#p25054">
 хочу её не закрывать чтобы её снова запускать а чтобы она затихала и при возвращении в бар продолжала играть как будто за время отсутствия прошло время  возможно ли это ?</a></p>
 
+</section>
 
-<header anchor="link_06_06" head-level="h6">
+<section id="link_06_06"><title>
 <p>6.6. Как зациклить мелодию?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=L08MyUk6QEQ&amp;t=150s">
@@ -12042,13 +12042,13 @@ Ol(U23)leneri]. #3535 30.Сен.15 12:56:41: [единственный спос�
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26305">
 как сделать цикличное воспроизведение музыкального файла</a></p>
 
-
+</section>
 </section>
 
 <section id="link_07"><title>
 <p>07. Вопросы о гиперссылках</p>
 </title>
-
+<section>
 
 <p>Darvin432. #4408 24.Май.16 12:43:48: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=177&amp;prc=25&amp;Itemid=57#p24011">
@@ -12075,58 +12075,58 @@ Ol(U23)leneri]. #3535 30.Сен.15 12:56:41: [единственный спос�
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=200&amp;prc=25&amp;Itemid=57#p25442">
 можно ли выполнить по ссылке сразу два действия?</a></p>
 
+</section>
 
-<header anchor="link_07_01" head-level="h6">
+<section id="link_07_01"><title>
 <p>7.1. Как делать гиперссылки, по нажатию на которые выполняется код?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2lVeh7udKLY&amp;t=16s">
 https://www.youtube.com/watch?v=2lVeh7udKLY&amp;</a></p>
 
+</section>
 
-<header anchor="link_07_02" head-level="h6">
+<section id="link_07_02"><title>
 <p>7.2. Как менять цвет гиперссылки?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2lVeh7udKLY&amp;t=181s">
 https://www.youtube.com/watch?v=2lVeh7udKLY&amp;</a></p>
 
+</section>
 
-<header anchor="link_07_03" head-level="h6">
+<section id="link_07_03"><title>
 <p>7.3. Как помещать в гиперссылки сложный код?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2lVeh7udKLY&amp;t=317s">
 https://www.youtube.com/watch?v=2lVeh7udKLY&amp;</a></p>
 
+</section>
 
-<header anchor="link_07_04" head-level="h6">
+<section id="link_07_04"><title>
 <p>7.4. Как сделать гиперссылки без подчёркивания?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2lVeh7udKLY&amp;t=518s">
 https://www.youtube.com/watch?v=2lVeh7udKLY&amp;</a></p>
 
-
+</section>
 </section>
 
 <section id="link_08"><title>
 <p>08. Есть ли команда...</p>
 </title>
+<section>
+</section>
 
-
-<header anchor="link_08_01" head-level="h6">
+<section id="link_08_01"><title>
 <p>8.1. Какой командой можно очистить окно дополнительного описания?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=0aeXqSRncZI&amp;t=16s">
@@ -12144,11 +12144,11 @@ https://wiki.qsp.org/help:stat</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=164&amp;prc=25&amp;Itemid=57#p23363">
 Как отчистить окно описания предметов после начала игры заново?</a></p>
 
+</section>
 
-<header anchor="link_08_02" head-level="h6">
+<section id="link_08_02"><title>
 <p>8.2. Существует ли команда для того, чтобы получить название текущей локации?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=0aeXqSRncZI&amp;t=116s">
@@ -12157,11 +12157,11 @@ https://www.youtube.com/watch?v=0aeXqSRncZI&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=118&amp;prc=25&amp;Itemid=57#p20296">
 есть ли какая команда, чтобы можно было присвоить переменной имя данной локации</a></p>
 
+</section>
 
-<header anchor="link_08_03" head-level="h6">
+<section id="link_08_03"><title>
 <p>8.3. Какой командой можно вывести текст в окно дополнительного описания?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=0aeXqSRncZI&amp;t=333s">
@@ -12173,11 +12173,11 @@ https://www.youtube.com/watch?v=0aeXqSRncZI&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=215&amp;prc=25&amp;Itemid=57#p26781">
 как добавить текст в "Дополнительное описание"</a></p>
 
+</section>
 
-<header anchor="link_08_04" head-level="h6">
+<section id="link_08_04"><title>
 <p>8.4. Есть ли команда, которая делает выход из игры?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=0aeXqSRncZI&amp;t=478s">
@@ -12189,16 +12189,16 @@ https://wiki.qsp.org/help:stat</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=121&amp;prc=25&amp;Itemid=57#p20553">
 Как в коде прописать опцию Quit ? Ну тоесть выход из игры.</a></p>
 
-
+</section>
 </section>
 
 <section id="link_09"><title>
 <p>09. Вопросы об изображениях</p>
 </title>
-<header anchor="link_09_01" head-level="h6">
-<p>9.1. Как вставить картинку в игру?</p>
-</header>
 
+<section id="link_09_01"><title>
+<p>9.1. Как вставить картинку в игру?</p>
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=16s">
@@ -12210,11 +12210,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=185&amp;prc=25&amp;Itemid=57#p24565">
 Как загрузить картинку в игру и изменить фон.</a></p>
 
+</section>
 
-<header anchor="link_09_02" head-level="h6">
+<section id="link_09_02"><title>
 <p>9.2. Можно ли вставить в игру gif-файл?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=431s">
@@ -12240,11 +12240,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=231&amp;prc=25&amp;Itemid=57#p27217">
 Гифка не работает/не отображается/выводится неправильно</a></p>
 
+</section>
 
-<header anchor="link_09_03" head-level="h6">
+<section id="link_09_03"><title>
 <p>9.3. Как вставить картинку в действие?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=616s">
@@ -12253,11 +12253,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=198&amp;prc=25&amp;Itemid=57#p25305">
 Как вставить изображение в меню плеера? Например, чтобы рядом с act'ом "север" стояла пикча в формате jpg</a></p>
 
+</section>
 
-<header anchor="link_09_04" head-level="h6">
+<section id="link_09_04"><title>
 <p>9.4. Как поставить картинку фоном?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=45s">
@@ -12266,11 +12266,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=148&amp;prc=25&amp;Itemid=57#p22306">
 как сделать картинку фоном?</a></p>
 
+</section>
 
-<header anchor="link_09_05" head-level="h6">
+<section id="link_09_05"><title>
 <p>9.5. Как выводить изображения послойно? Накладывать друг на друга?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=744s">
@@ -12282,11 +12282,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=167&amp;prc=25&amp;Itemid=57#p23534">
 Возможно ли в QSP 5.7 осуществить наложение одной картинки на другую</a></p>
 
+</section>
 
-<header anchor="link_09_06" head-level="h6">
+<section id="link_09_06"><title>
 <p>9.6. Как сделать кликабельное изображение?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;t=801s">
@@ -12304,11 +12304,11 @@ https://www.youtube.com/watch?v=xCpp_ZYN7Tw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=230&amp;prc=25&amp;Itemid=57#p19373">
 Как заставить код выполняться по нажатию на картинку/текст</a></p>
 
+</section>
 
-<header anchor="link_09_07" head-level="h6">
+<section id="link_09_07"><title>
 <p>9.7. Как сделать сменяемое изображение на локации?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=HMYo0xVyGNA&amp;t=16s">
 https://www.youtube.com/watch?v=HMYo0xVyGNA&amp;</a></p>
@@ -12318,11 +12318,11 @@ https://www.youtube.com/watch?v=HMYo0xVyGNA&amp;</a></p>
 <p>Фрай. #5430 06.Янв.19 13:47:25: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=218&amp;prc=25&amp;Itemid=57#p27018">
 как сделать, чтобы на одной локации картинки (jpg, png, gif) и текст под ними, сменяли одна другую?</a></p>
+</section>
 
-<header anchor="link_09_08" head-level="h6">
+<section id="link_09_08"><title>
 <p>9.8. Как сделать вывод рандомного изображения?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=HMYo0xVyGNA&amp;t=318s">
@@ -12331,23 +12331,23 @@ https://www.youtube.com/watch?v=HMYo0xVyGNA&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=163&amp;prc=25&amp;Itemid=57#p23310">
 Как создать выбор из нескольких картинок?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_10"><title>
 <p>10. Интерфейс, дизайн, украшения</p>
 </title>
-
+<section>
 
 <p>Bup0H. #4421 29.Май.16 11:55:38: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=177&amp;prc=25&amp;Itemid=57#p24056">
 Какие цвета по умолчанию можно вписать (Red, Green и т.п) есть ли весь список?</a></p>
 
+</section>
 
-<header anchor="link_10_01" head-level="h6">
+<section id="link_10_01"><title>
 <p>10.1. Для чего нужен оператор REFINT, и как он работает?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;t=16s">
@@ -12359,11 +12359,11 @@ https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=41&amp;prc=25&amp;Itemid=57#p10355">
 REFINT принудительно выводит на экран текст, который находится в буфере вывода</a></p>
 
+</section>
 
-<header anchor="link_10_02" head-level="h6">
+<section id="link_10_02"><title>
 <p>10.2. Как изменить цвет фона в игре?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;t=370s">
@@ -12387,11 +12387,11 @@ https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=226&amp;prc=25&amp;Itemid=57#p25541">
 Подскажите простейшие команды, типо изменение цвета текста и фона.</a></p>
 
+</section>
 
-<header anchor="link_10_03" head-level="h6">
+<section id="link_10_03"><title>
 <p>10.3. Как изменить формат части текста? Размер, цвет, наклон и т.д.?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=16s">
@@ -12422,11 +12422,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=174&amp;prc=25&amp;Itemid=57#p23889">
 как в qsp можно часть строки сделать, скажем, курсивом, а часть - нормальной?</a></p>
 
+</section>
 
-<header anchor="link_10_04" head-level="h6">
+<section id="link_10_04"><title>
 <p>10.4. Как сделать красивый фон в классическом плеере?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;t=563s">
@@ -12435,11 +12435,11 @@ https://www.youtube.com/watch?v=9KHLbHZ7T_Q&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=207&amp;prc=25&amp;Itemid=57#p26184">
 Такой вопрос - есть ли какой-нибудь способ сделать нормальный и красивый  фон в классике?</a></p>
 
+</section>
 
-<header anchor="link_10_05" head-level="h6">
+<section id="link_10_05"><title>
 <p>10.5. Хочу, чтоб в игре окна располагались определённым образом. Как это сделать?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=235s">
@@ -12472,11 +12472,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=212&amp;prc=25&amp;Itemid=57#p26614">
 как задать дефолтные настройки размера(размеров) экрана(экранов)?</a></p>
 
+</section>
 
-<header anchor="link_10_06" head-level="h6">
+<section id="link_10_06"><title>
 <p>10.6. Можно ли задавать размер окон из кода игры? Чтобы в одной локации были одни настройки, в другой — другие.</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=303s">
@@ -12491,11 +12491,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=158&amp;prc=25&amp;Itemid=57#p23132">
 как заставить закрываться окно предпросмотра автоматически</a></p>
 
+</section>
 
-<header anchor="link_10_07" head-level="h6">
+<section id="link_10_07"><title>
 <p>10.7. Настроил расположение окна предпросмотра, но когда выключаю его, другие окна смещаются, как это исправить?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=394s">
@@ -12504,11 +12504,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=133&amp;prc=25&amp;Itemid=57#p21353">
 как сделать, чтобы окно предпросмотра (которое VIEW) не скакало по экрану после перезагрузки интерфейса в процессе игры?</a></p>
 
+</section>
 
-<header anchor="link_10_08" head-level="h6">
+<section id="link_10_08"><title>
 <p>10.8. Как изменить цвет подсветки действий?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=440s">
@@ -12517,11 +12517,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=140&amp;prc=25&amp;Itemid=57#p21700">
 как изменить цвет подсветки, выбираемого действия</a></p>
 
+</section>
 
-<header anchor="link_10_09" head-level="h6">
+<section id="link_10_09"><title>
 <p>10.9. Как изменить цвет фона для отдельного окна?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=463s">
@@ -12530,11 +12530,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=222&amp;prc=25&amp;Itemid=57#p26317">
 Как сделать так, чтобы блок действий был другого цвета?</a></p>
 
+</section>
 
-<header anchor="link_10_10" head-level="h6">
+<section id="link_10_10"><title>
 <p>10.10. Как сделать плавное появление текста?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ggTZHJsGHBs&amp;t=16s">
@@ -12546,11 +12546,11 @@ https://qsp.org/index.php?...&amp;Itemid=76</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=223&amp;prc=25&amp;Itemid=57#p26533">
 возможно ли реализовать плавное появление текста, и, через какое-либо время, его плавное затухание?</a></p>
 
+</section>
 
-<header anchor="link_10_11" head-level="h6">
+<section id="link_10_11"><title>
 <p>10.11. Как использовать в игре собственный шрифт?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;t=504s">
@@ -12559,11 +12559,11 @@ https://www.youtube.com/watch?v=ITvRi_pmgRo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=150&amp;prc=25&amp;Itemid=57#p22401">
 а как добавить альтернативный шрифт ( пользовательский шрифт, которого на компе нет по умолчанию) для qsp</a></p>
 
+</section>
 
-<header anchor="link_10_12" head-level="h6">
+<section id="link_10_12"><title>
 <p>10.12. С предметов можно снимать выделение, а можно ли снять выделение с действия?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=ggTZHJsGHBs&amp;t=365s">
@@ -12575,16 +12575,16 @@ https://www.youtube.com/watch?v=ggTZHJsGHBs&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=207&amp;prc=25&amp;Itemid=57#p26187">
 Можно ли сделать так, чтобы шрифт использовался в игре, но не был установлен на компьютере?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_11"><title>
 <p>11. Вопросы об условиях</p>
 </title>
-<header anchor="link_11_01" head-level="h6">
-<p>11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</p>
-</header>
 
+<section id="link_11_01"><title>
+<p>11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</p>
+</title>
 
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=tzu-0aV_m5M&amp;t=16s">
@@ -12593,11 +12593,11 @@ https://www.youtube.com/watch?v=tzu-0aV_m5M&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=188&amp;prc=25&amp;Itemid=57#p24736">
 наткнулся у себя же на такую строчку: "if x &gt; 100 and y:", где, как видите, "y" просто "y" без всяких там больше-меньше-равно. Разве это не ошибка?</a></p>
 
+</section>
 
-<header anchor="link_11_02" head-level="h6">
+<section id="link_11_02"><title>
 <p>11.2. Как сделать так, чтобы действие появлялось только при определённом условии?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=tzu-0aV_m5M&amp;t=196s">
 https://www.youtube.com/watch?v=tzu-0aV_m5M&amp;</a></p>
@@ -12637,44 +12637,44 @@ https://www.youtube.com/watch?v=tzu-0aV_m5M&amp;</a></p>
 <p>Katy. #3459 11.Сен.15 20:06:27: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=139&amp;prc=25&amp;Itemid=57#p21642">
 как сделать так, чтобы после того, как действие сработало один раз и исчезло, появилось новое действие?</a></p>
+</section>
 
-<header anchor="link_11_03" head-level="h6">
+<section id="link_11_03"><title>
 <p>11.3. Видел в одной из игр, как после нажатия на действие, оно становится неактивным. Как это сделать?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;t=16s">
 https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;</a></p>
 <p>Bup0H. #4416 26.Май.16 23:29:21: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=177&amp;prc=25&amp;Itemid=57#p24036">
 При выполнение действия, кнопка меняет цвет и уже повторно нажать не удается.</a></p>
+</section>
 
-<header anchor="link_11_04" head-level="h6">
+<section id="link_11_04"><title>
 <p>11.4. Как добавить текст, который будет выводиться только при выполнении определённого условия?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;t=475s">
 https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;</a></p>
 <p>Cannibal_Rat. #5108 10.Июл.17 09:31:56: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=205&amp;prc=25&amp;Itemid=57#p25990">
 как добавить зависимый текст в описание (QGen)?</a></p>
+</section>
 
-<header anchor="link_11_05" head-level="h6">
+<section id="link_11_05"><title>
 <p>11.5. Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;t=216s">
 https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;</a></p>
 <p>прохожий. #4763 05.Ноя.16 21:42:54: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=191&amp;prc=25&amp;Itemid=57#p24837">
 как в диалоговое окно засунуть несколько условий?</a></p>
+</section>
 
-<header anchor="link_11_06" head-level="h6">
+<section id="link_11_06"><title>
 <p>11.6. Как упростить условие?</p>
-</header>
-
+</title>
 
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;t=586s">
@@ -12683,16 +12683,16 @@ https://www.youtube.com/watch?v=qYDeZ6wmaDY&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=135&amp;prc=25&amp;Itemid=57#p21473">
 как сделать: к примеру есть 3 локации... что бы открылась 4 надо во всех 3 побыть, неважно в каком порядке.</a></p>
 
-
+</section>
 </section>
 
 <section id="link_12"><title>
 <p>12. Вопросы о DYNAMIC</p>
 </title>
-<header anchor="link_12_01" head-level="h6">
-<p>12.1. Зачем нужен оператор dynamic?</p>
-</header>
 
+<section id="link_12_01"><title>
+<p>12.1. Зачем нужен оператор dynamic?</p>
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=djQbaN7-bfE&amp;t=16s">
 https://www.youtube.com/watch?v=djQbaN7-bfE&amp;</a></p>
@@ -12708,22 +12708,22 @@ https://www.youtube.com/watch?v=djQbaN7-bfE&amp;</a></p>
 <p>Hinkmar. #5010 21.Апр.17 20:04:22: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=201&amp;prc=25&amp;Itemid=57#p25505">
 можно ли проверить соответствие истине выражения, записанного в текстовую переменную?</a></p>
+</section>
 
-<header anchor="link_12_02" head-level="h6">
+<section id="link_12_02"><title>
 <p>12.2. Можно ли сделать переменную с рандомным (случайным) названием?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YqEGWwMNzDc&amp;t=16s">
 https://www.youtube.com/watch?v=YqEGWwMNzDc&amp;</a></p>
 <p>Hungry. #3114 20.Июл.15 06:08:09: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=125&amp;prc=25&amp;Itemid=57#p20811">
 Вопрос такой: можно ли сделать, чтобы игра создавала переменную с рандомным НАЗВАНИЕМ?</a></p>
+</section>
 
-<header anchor="link_12_03" head-level="h6">
+<section id="link_12_03"><title>
 <p>12.3. Создаю действия с помощью цикла, но они работают неправильно. Что делать?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YqEGWwMNzDc&amp;t=254s">
 https://www.youtube.com/watch?v=YqEGWwMNzDc&amp;</a></p>
@@ -12742,29 +12742,29 @@ Ol(U23)leneri]. #3484 14.Сен.15 11:23:49: [Понимаю, что во все
 <p>St-john. #4616 28.Авг.16 19:01:39: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=185&amp;prc=25&amp;Itemid=57#p24572">
 Как в коде ниже при генерации действий сделать так чтобы получились связанные действия и реакция на него?</a></p>
+</section>
 
-<header anchor="link_12_04" head-level="h6">
+<section id="link_12_04"><title>
 <p>12.4. Почему не работает dynamic?</p>
-</header>
-
+</title>
 <p>Смотреть на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=djQbaN7-bfE&amp;t=512s">
 https://www.youtube.com/watch?v=djQbaN7-bfE&amp;</a></p>
 <p>oleksandrigo (TEMP_USER). #5310 13.Май.18 14:48:52: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=213&amp;prc=25&amp;Itemid=57#p26665">
 Почему вместо того чтобы изменить Х он просто в виде текста выдает мне x -= 10. И как сделать так чтобы это был не текст а код?</a></p>
-
+</section>
 </section>
 
 <section id="link_13"><title>
 <p>13. Не работает...</p>
 </title>
+<section>
+</section>
 
-
-<header anchor="link_13_01" head-level="h6">
+<section id="link_13_01"><title>
 <p>13.1. Рисую таблицу и хочу зафиксировать высоту, но атрибут height не работает.</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;t=18s">
@@ -12779,11 +12779,11 @@ https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=218&amp;prc=25&amp;Itemid=57#p27028">
 почему то не работает тег "height", хотя  тег "width" работает</a></p>
 
+</section>
 
-<header anchor="link_13_02" head-level="h6">
+<section id="link_13_02"><title>
 <p>13.2. Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;t=151s">
 https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;</a></p>
@@ -12796,11 +12796,11 @@ wiki.qsp.su</a></p>
 <p>Darvin432. #4842 10.Янв.17 01:16:10: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=194&amp;prc=25&amp;Itemid=57#p25060">
 Я нашёл команду table-layout, Но не могу разобраться почему она не работает в Qsp.</a></p>
+</section>
 
-<header anchor="link_13_03" head-level="h6">
+<section id="link_13_03"><title>
 <p>13.3. Не работает IIF!</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;t=244s">
@@ -12809,11 +12809,11 @@ https://www.youtube.com/watch?v=177Wyt7Z13Q&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=211&amp;prc=25&amp;Itemid=57#p26532">
 Насчет оператора IIF</a></p>
 
+</section>
 
-<header anchor="link_13_04" head-level="h6">
+<section id="link_13_04"><title>
 <p>13.4. Пытаюсь сделать кликабельную картинку с помощью тегов MAP и AREA, но ничего не получается</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=h5h1pwbkw5k&amp;t=18s">
@@ -12834,11 +12834,11 @@ https://www.youtube.com/watch?v=h5h1pwbkw5k&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=205&amp;prc=25&amp;Itemid=57#p25964">
 Подскажите пожалуйста, поддерживает ли QSP работу с картами изображений?</a></p>
 
+</section>
 
-<header anchor="link_13_05" head-level="h6">
+<section id="link_13_05"><title>
 <p>13.5. Не работает *pl в действии с goto</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=h5h1pwbkw5k&amp;t=383s">
@@ -12853,11 +12853,11 @@ PL - не работают. </emphasis>
 CLR так же.
 </a></p>
 
+</section>
 
-<header anchor="link_13_08" head-level="h6">
+<section id="link_13_08"><title>
 <p>13.8. Не работает оператор JUMP — не может найти метку</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=TCve-b6AQMs&amp;t=376s">
 https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</a></p>
@@ -12882,11 +12882,11 @@ https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</a></p>
 <p>Lv2013. #5036 03.Май.17 17:48:52: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=202&amp;prc=25&amp;Itemid=57#p25575">
 есть такой код...</a></p>
+</section>
 
-<header anchor="link_13_09" head-level="h6">
+<section id="link_13_09"><title>
 <p>13.9. Не работает многострочное условие. Как исправить?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=TCve-b6AQMs&amp;t=531s">
 https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</a></p>
@@ -12896,11 +12896,11 @@ https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</a></p>
 <p>Lexon. #3909 21.Фев.16 03:13:48: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=157&amp;prc=25&amp;Itemid=57#p23047">
 все 3 картинки всплывают когда подходишь к кузницу в любое время и при любом статусе, как сделать что бы 1 картинка была, а не все 3.</a></p>
+</section>
 
-<header anchor="link_13_10" head-level="h6">
+<section id="link_13_10"><title>
 <p>13.10. Не работает многострочный код. Как исправить?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;t=18s">
@@ -12909,11 +12909,11 @@ https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=137&amp;prc=25&amp;Itemid=57#p21592">
 помогите плз найти ошибку</a></p>
 
+</section>
 
-<header anchor="link_13_11" head-level="h6">
+<section id="link_13_11"><title>
 <p>13.11. Сколько END'ов нужно добавить?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;t=377s">
 https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
@@ -12926,11 +12926,11 @@ https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
 <p>skov. #4800 14.Дек.16 18:32:43: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=193&amp;prc=25&amp;Itemid=57#p24964">
 скажите пожалуйста что не так? Почему он не видит функцию IF?</a></p>
+</section>
 
-<header anchor="link_13_12" head-level="h6">
+<section id="link_13_12"><title>
 <p>13.12. Не работает условие. Как исправить?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;t=838s">
 https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
@@ -12946,11 +12946,11 @@ https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
 <p>SneakBug8. #5681 19.Май.19 12:12:28: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=228&amp;prc=25&amp;Itemid=57#p17192">
 Как в один оператор if загнать несколько условий типо if x=1 y=6 z=39?</a></p>
+</section>
 
-<header anchor="link_13_13" head-level="h6">
+<section id="link_13_13"><title>
 <p>13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;t=874s">
@@ -12965,26 +12965,26 @@ https://www.youtube.com/watch?v=2S4nFzzal7Y&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=230&amp;prc=25&amp;Itemid=57#p18405">
 Умеет ли QSP работать с дробными числами?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_14"><title>
 <p>14. Вопросы о предметах</p>
 </title>
-<header anchor="link_14_01" head-level="h6">
-<p>14.1. Как добавить предмет в окно предметов?</p>
-</header>
 
+<section id="link_14_01"><title>
+<p>14.1. Как добавить предмет в окно предметов?</p>
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;t=18s">
 https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;</a></p>
 
+</section>
 
-<header anchor="link_14_02" head-level="h6">
+<section id="link_14_02"><title>
 <p>14.2. Как удалить предмет из окна предметов?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;t=143s">
@@ -12993,11 +12993,11 @@ https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=120&amp;prc=25&amp;Itemid=57#p20499">
 Разве нельзя удалять предмет из инвентаря по индексу?</a></p>
 
+</section>
 
-<header anchor="link_14_03" head-level="h6">
+<section id="link_14_03"><title>
 <p>14.3. Как удалить все предметы?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;t=374s">
@@ -13006,11 +13006,11 @@ https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=213&amp;prc=25&amp;Itemid=57#p26642">
 После смерти игрока все предметы должны исчезнуть,как это сделать?</a></p>
 
+</section>
 
-<header anchor="link_14_04" head-level="h6">
+<section id="link_14_04"><title>
 <p>14.4. Как добавить предмет в определённую позицию в окне предметов?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;t=448s">
@@ -13019,11 +13019,11 @@ https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=162&amp;prc=25&amp;Itemid=57#p23284">
 как сделать так, чтобы предмет "Очистить журнал" был последним, а предмет "Экипировка" первым?</a></p>
 
+</section>
 
-<header anchor="link_14_05" head-level="h6">
+<section id="link_14_05"><title>
 <p>14.5. Как заменить один предмет на другой?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;t=551s">
@@ -13032,11 +13032,11 @@ https://www.youtube.com/watch?v=VRRPLrP72Ds&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=147&amp;prc=25&amp;Itemid=57#p22168">
 меню у предмета появляется, а вот имя предмета меняться не хочет. Что делать?</a></p>
 
+</section>
 
-<header anchor="link_14_06" head-level="h6">
+<section id="link_14_06"><title>
 <p>14.6. Как делать динамические/считаемые предметы?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;t=18s">
 https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;</a></p>
@@ -13055,11 +13055,11 @@ addobj 'Здоровье: &lt;&lt;$Здоровье&gt;&gt; ед.' Добави�
 <p>Aleks Versus. #5594 18.Май.19 10:06:35: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=224&amp;prc=25&amp;Itemid=57#p26370">
 Стакающиеся предметы — это считаемые, как я понимаю. Деньги, патроны, одинаковые мечи и прочее. Тема довольно интересная и сложная. Но новичкам обычно предлагают начать с этого:</a></p>
+</section>
 
-<header anchor="link_14_07" head-level="h6">
+<section id="link_14_07"><title>
 <p>14.7. Как добавить предмет с картинкой но без названия?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;t=366s">
 https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;</a></p>
@@ -13075,11 +13075,11 @@ https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;</a></p>
 <p>новичок. #5479 08.Фев.19 23:41:11: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=220&amp;prc=25&amp;Itemid=57#p27084">
 как сделать предмет в виде картинки?</a></p>
+</section>
 
-<header anchor="link_14_08" head-level="h6">
+<section id="link_14_08"><title>
 <p>14.8. Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;t=566s">
 https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;</a></p>
@@ -13107,11 +13107,11 @@ https://www.youtube.com/watch?v=4tjOVO8ccrI&amp;</a></p>
 <p>loony25. #5238 04.Мар.18 20:31:45: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=210&amp;prc=25&amp;Itemid=57#p26487">
 Как сделать так, чтобы при нажатии использовать игрока перекинуло на другую локацию?</a></p>
+</section>
 
-<header anchor="link_14_09" head-level="h6">
+<section id="link_14_09"><title>
 <p>14.9. Как снять выделение предмета?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;t=18s">
@@ -13120,21 +13120,21 @@ https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=116&amp;prc=25&amp;Itemid=57#p20231">
 Как сделать чтобы на выбраный предмет в инвентаре можно было кликнуть еще раз?</a></p>
 
+</section>
 
-<header anchor="link_14_10" head-level="h6">
+<section id="link_14_10"><title>
 <p>14.10. Как сделать два списка предметов?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=TWAA2cq-hhk&amp;t=18s">
 https://www.youtube.com/watch?v=TWAA2cq-hhk&amp;</a></p>
 
+</section>
 
-<header anchor="link_14_11" head-level="h6">
+<section id="link_14_11"><title>
 <p>14.11. Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;t=279s">
@@ -13143,21 +13143,21 @@ https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=166&amp;prc=25&amp;Itemid=57#p23440">
 Можно ли сделать так, чтобы при добавлении любого предмета в инвентарь какая-либо переменная менялась автоматически?</a></p>
 
+</section>
 
-<header anchor="link_14_12" head-level="h6">
+<section id="link_14_12"><title>
 <p>14.12. Как сделать два разных предмета с одинаковыми названиями?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;t=495s">
 https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;</a></p>
 
+</section>
 
-<header anchor="link_14_13" head-level="h6">
+<section id="link_14_13"><title>
 <p>14.13. Как сделать многоуровневый рюкзак?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=TWAA2cq-hhk&amp;t=1177s">
 https://www.youtube.com/watch?v=TWAA2cq-hhk&amp;</a></p>
@@ -13167,11 +13167,11 @@ https://www.youtube.com/watch?v=TWAA2cq-hhk&amp;</a></p>
 <p>Многоуровневый рюкзак: 
 <a l:href="https://qsp.org/components/com_agora/img/members/248/multibag.qsp">
 Скачать пример</a></p>
+</section>
 
-<header anchor="link_14_14" head-level="h6">
+<section id="link_14_14"><title>
 <p>14.14. Можно ли выводить предметы не в окне предметов?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;t=670s">
@@ -13183,21 +13183,21 @@ https://www.youtube.com/watch?v=7OCfh3TxLbk&amp;</a></p>
 <a l:href="https://qsp.org/components/com_agora/img/members/248/invent.zip">
 Скачать пример</a></p>
 
-
+</section>
 </section>
 
 <section id="link_15"><title>
 <p>15. Вопросы о строке ввода</p>
 </title>
-
+<section>
 <p>Раздел о Строке Ввода в справке: 
 <a l:href="https://wiki.qsp.org/help:inputs">
 wiki.qsp.su/inputs</a></p>
+</section>
 
-<header anchor="link_15_01" head-level="h6">
+<section id="link_15_01"><title>
 <p>15.1. Зачем вообще нужна строка ввода (поле ввода)?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=1FGiKZLiNP8&amp;t=18s">
 https://www.youtube.com/watch?v=1FGiKZLiNP8&amp;</a></p>
@@ -13210,11 +13210,11 @@ ifwiki.ru/Парсерные игры</a></p>
 <p>Alcohol. #5025 27.Апр.17 17:02:05: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=202&amp;prc=25&amp;Itemid=57#p25547">
 Как сделать в игре что-то типа консоли?</a></p>
+</section>
 
-<header anchor="link_15_02" head-level="h6">
+<section id="link_15_02"><title>
 <p>15.2. Как задействовать строку ввода в игре?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=1FGiKZLiNP8&amp;t=117s">
@@ -13226,18 +13226,18 @@ https://www.youtube.com/watch?v=1FGiKZLiNP8&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=194&amp;prc=25&amp;Itemid=57#p25040">
 Как сделать обработку команд через поле ввода</a></p>
 
-
+</section>
 </section>
 
 <section id="link_16"><title>
 <p>16. Вопросы по вёрстке</p>
 </title>
+<section>
+</section>
 
-
-<header anchor="link_16_01" head-level="h6">
+<section id="link_16_01"><title>
 <p>16.01. Можно ли писать текст поверх вставленной картинки (не бэкграунда)?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;t=18s">
@@ -13246,11 +13246,11 @@ https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=121&amp;prc=25&amp;Itemid=57#p20575">
 Можно ли писать поверх вставленной картинки (не бекграунда)?</a></p>
 
+</section>
 
-<header anchor="link_16_02" head-level="h6">
+<section id="link_16_02"><title>
 <p>16.02. Возможно ли сделать плавный переход между локациями?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;t=124s">
@@ -13259,11 +13259,11 @@ https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=121&amp;prc=25&amp;Itemid=57#p20575">
 возможно ли реализовать плавный переход между локациями?</a></p>
 
+</section>
 
-<header anchor="link_16_03" head-level="h6">
+<section id="link_16_03"><title>
 <p>16.03. Как расположить картинку справа, а текст слева?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;t=248s">
 https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
@@ -13279,11 +13279,11 @@ https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
 <p>Совёнок. #4430 02.Июн.16 18:42:38: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=178&amp;prc=25&amp;Itemid=57#p24077">
 Как вставить изображение в окно описания перед текстом?</a></p>
+</section>
 
-<header anchor="link_16_04" head-level="h6">
+<section id="link_16_04"><title>
 <p>16.04. Как ограничить размер выводимого изображения?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;t=394s">
@@ -13292,11 +13292,11 @@ https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=139&amp;prc=25&amp;Itemid=57#p21673">
 Можно сделать, чтобы вставляемая картинка как-нибудь ограничивалась в размере, а не занимала всё пространство?</a></p>
 
+</section>
 
-<header anchor="link_16_05" head-level="h6">
+<section id="link_16_05"><title>
 <p>16.05. Как сделать рамку окна основного описания?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=la-2HpjAiic&amp;t=18s">
@@ -13305,11 +13305,11 @@ https://www.youtube.com/watch?v=la-2HpjAiic&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=145&amp;prc=25&amp;Itemid=57#p22103">
 Возможно ли сделать так чтобы картинки шли по контуру основного окна?</a></p>
 
+</section>
 
-<header anchor="link_16_06" head-level="h6">
+<section id="link_16_06"><title>
 <p>16.06. Как сделать вывод предметов магазина не длинным списком, а в виде таблицы?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=la-2HpjAiic&amp;t=258s">
@@ -13318,11 +13318,11 @@ https://www.youtube.com/watch?v=la-2HpjAiic&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=151&amp;prc=25&amp;Itemid=57#p22616">
 предметы в магазине у меня расположены вертикально ... как сделать так чтобы например 1 сет брони у меня был расположен горизонтально?</a></p>
 
+</section>
 
-<header anchor="link_16_07" head-level="h6">
+<section id="link_16_07"><title>
 <p>16.7. Можно ли зеркально отразить картинку методами плеера?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;t=508s">
 https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
@@ -13332,11 +13332,11 @@ https://www.youtube.com/watch?v=_L0MJaaWJAo&amp;</a></p>
 <p>Morning Star. #5177 29.Дек.17 02:11:56: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26288">
  есть ли какой-то код, чтобы вставленные картинки автоматически подгонялись под разрешение экрана?</a></p>
+</section>
 
-<header anchor="link_16_08" head-level="h6">
+<section id="link_16_08"><title>
 <p>16.8. Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=Q5-AEr4Vdwk&amp;t=18s">
@@ -13357,11 +13357,11 @@ https://www.youtube.com/watch?v=Q5-AEr4Vdwk&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=218&amp;prc=25&amp;Itemid=57#p27014">
 Можно ли как-нибудь задать ширину ячейки таблицы "не больше 50%", к примеру?</a></p>
 
+</section>
 
-<header anchor="link_16_09" head-level="h6">
+<section id="link_16_09"><title>
 <p>16.9. Можно как-нибудь вывести текст в два столбца в классике?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=Q5-AEr4Vdwk&amp;t=210s">
@@ -13370,11 +13370,11 @@ https://www.youtube.com/watch?v=Q5-AEr4Vdwk&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=149&amp;prc=25&amp;Itemid=57#p22388">
 Можно как нибудь вывести текст в два столба в классике?</a></p>
 
+</section>
 
-<header anchor="link_16_10" head-level="h6">
+<section id="link_16_10"><title>
 <p>16.10. Как работать с тегами MAP и AREA?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://youtu.be/CeMLenb-n5w">
@@ -13398,27 +13398,27 @@ https://youtu.be/CeMLenb-n5w</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=205&amp;prc=25&amp;Itemid=57#p25964">
 Подскажите пожалуйста, поддерживает ли QSP работу с картами изображений?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_17"><title>
 <p>17. Вопросы о сохранениях</p>
 </title>
-<header anchor="link_17_01" head-level="h6">
-<p>17.1.  Как запретить игроку самостоятельно сохранять игру?</p>
-</header>
 
+<section id="link_17_01"><title>
+<p>17.1.  Как запретить игроку самостоятельно сохранять игру?</p>
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;t=18s">
 https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
 <p>Ontario. #5666 19.Май.19 10:11:55: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=227&amp;prc=25&amp;Itemid=57#p17136">
 Нужно выключить возможность сохраняться где угодно и сделать возможность сохраняться там где мне это нужно</a></p>
+</section>
 
-<header anchor="link_17_02" head-level="h6">
+<section id="link_17_02"><title>
 <p>17.2.   Во время теста игры делал сохранения, затем внёс в игру несколько правок, но сохранения перестали загружаться. Почему так происходит, и что теперь делать?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;t=95s">
 https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
@@ -13431,11 +13431,11 @@ https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
 <p>TEMP_USER. #5267 26.Мар.18 20:27:15: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=211&amp;prc=25&amp;Itemid=57#p26573">
 Что делает Код:debug = 1и для чего он нужен?</a></p>
+</section>
 
-<header anchor="link_17_03" head-level="h6">
+<section id="link_17_03"><title>
 <p>17.3.  Как сделать чекпойнты в игре?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;t=219s">
 https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
@@ -13445,11 +13445,11 @@ https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
 <p>DeathSpace. #4087 14.Мар.16 19:27:42: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=164&amp;prc=25&amp;Itemid=57#p23369">
 Ребят, как сделать чтобы после проигрыша в игре ее можно было начать с последнего сохранения? avtosave.sav</a></p>
+</section>
 
-<header anchor="link_17_04" head-level="h6">
+<section id="link_17_04"><title>
 <p>17.4.  Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;t=1477s">
@@ -13458,49 +13458,49 @@ https://www.youtube.com/watch?v=D9zfeG5IWYE&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=165&amp;prc=25&amp;Itemid=57#p23387">
 проблема в сохранениях. как сделать чтобы act сейва делала два сохранения поочерёдно при каждом следующем клике</a></p>
 
-
+</section>
 </section>
 
 <section id="link_18"><title>
 <p>18. Вопросы о файлах и модулях</p>
 </title>
-<header anchor="link_18_01" head-level="h6">
-<p>18.1.  Чем отличаются команды `inclib` и `openqst`?</p>
-</header>
 
+<section id="link_18_01"><title>
+<p>18.1.  Чем отличаются команды `inclib` и `openqst`?</p>
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=oi3lFKTI_HI&amp;t=18s">
 https://www.youtube.com/watch?v=oi3lFKTI_HI&amp;</a></p>
 <p>lamerUA. #4566 11.Авг.16 18:20:01: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=183&amp;prc=25&amp;Itemid=57#p24507">
 Если inclib именно "вклеивает" все локации/переменные - то боюсь идея моя не прокатывает авансом. Но может быть все-же осуществимо - просто я использую не тот метод?</a></p>
+</section>
 
-<header anchor="link_18_021" head-level="h6">
+<section id="link_18_021"><title>
 <p>18.2.  Как сделать лаунчер?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=UVZhiksS1zk&amp;t=18s">
 https://www.youtube.com/watch?v=UVZhiksS1zk&amp;</a></p>
 <p>Aaaspavel. #4308 29.Апр.16 14:58:39: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=173&amp;prc=25&amp;Itemid=57#p23832">
 нужно чтобы при запуске ярлычком навигатора появлялось меню выбора, ну к примеру игра1 или игра2 и в зависимости от выбора игрока запускался соответственно файл start1.qsp или start2.qsp</a></p>
+</section>
 
-<header anchor="link_18_03" head-level="h6">
+<section id="link_18_03"><title>
 <p>18.3.  Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=UVZhiksS1zk&amp;t=152s">
 https://www.youtube.com/watch?v=UVZhiksS1zk&amp;</a></p>
 <p>Chaos Legion. #3885 16.Фев.16 17:53:27: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=156&amp;prc=25&amp;Itemid=57#p22957">
 при точном количестве файлов сабж не вызывают вопроса, а вот как сделать, чтобы при добавлении новых файлов не менять код?</a></p>
+</section>
 
-<header anchor="link_18_04" head-level="h6">
+<section id="link_18_04"><title>
 <p>18.4.  Перенёс файл игры из одной папки в другую. В Quest Generator пропали все папки. Почему так происходит, и как этого избежать?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=oi3lFKTI_HI&amp;t=707s">
 https://www.youtube.com/watch?v=oi3lFKTI_HI&amp;</a></p>
@@ -13510,11 +13510,11 @@ https://www.youtube.com/watch?v=oi3lFKTI_HI&amp;</a></p>
 <p>mkir. #2997 21.Июн.15 00:13:23: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=120&amp;prc=25&amp;Itemid=57#p20526">
 При переносе почему-то из игры пропали все папки. То есть локации остались, но без папок и в жутком беспорядке. что это такое и как с этим бороться?</a></p>
+</section>
 
-<header anchor="link_18_05" head-level="h6">
+<section id="link_18_05"><title>
 <p>18.5.  В папке с игрой стали появляться файлы с расширением .tmp. Что это за файлы, нужны они, и как избавиться от их появления?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=UVZhiksS1zk&amp;t=665s">
@@ -13526,29 +13526,29 @@ https://www.youtube.com/watch?v=UVZhiksS1zk&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=205&amp;prc=25&amp;Itemid=57#p26049">
 в оригинальных папках с каждым тестом "копятся" какие-то непонятные (временные?) файлы .tmp. Что с ними делать, зачем они нужны?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_19"><title>
 <p>19. Изыски</p>
 </title>
+<section>
+</section>
 
-
-<header anchor="link_19_01" head-level="h6">
+<section id="link_19_01"><title>
 <p>19.1.  Как использовать ASCII-графику в QSP?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=y-OafwUm9ow&amp;t=18s">
 https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
 <p>Hungry. #3896 17.Фев.16 12:15:04: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=156&amp;prc=25&amp;Itemid=57#p22971">
 Вроде бы уже был этот вопрос (я вроде бы и задавал): как осуществить ascii графику на куспе?</a></p>
+</section>
 
-<header anchor="link_19_02" head-level="h6">
+<section id="link_19_02"><title>
 <p>19.2.  Как вставить в игру видео?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=y-OafwUm9ow&amp;t=127s">
 https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
@@ -13570,11 +13570,11 @@ https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
 <p>Andrik2219. #5494 22.Фев.19 12:57:08: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=220&amp;prc=25&amp;Itemid=57#p27117">
 Как в свою игру вставить webm видео?</a></p>
+</section>
 
-<header anchor="link_19_03" head-level="h6">
+<section id="link_19_03"><title>
 <p>19.3.  Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=y-OafwUm9ow&amp;t=183s">
 https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
@@ -13584,11 +13584,11 @@ https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
 <p>Lisichka. #4288 17.Апр.16 13:46:41: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=172&amp;prc=25&amp;Itemid=57#p23785">
 возможно ли прикрутить кнопку, чтобы скипнуть постепенное появление текста или пока цикл не закончится, его не удастся прервать?</a></p>
+</section>
 
-<header anchor="link_19_04" head-level="h6">
+<section id="link_19_04"><title>
 <p>19.4.  Как защитить игру от чита?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=y-OafwUm9ow&amp;t=544s">
 https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
@@ -13598,11 +13598,11 @@ https://www.youtube.com/watch?v=y-OafwUm9ow&amp;</a></p>
 <p>Aaaspavel. #4089 14.Мар.16 19:47:15: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=164&amp;prc=25&amp;Itemid=57#p23371">
 вопрос: есть какие-нибудь эффективные варианты пароля на файлы qsp?</a></p>
+</section>
 
-<header anchor="link_19_05" head-level="h6">
+<section id="link_19_05"><title>
 <p>19.5.  Как задействовать клавиатуру в игре?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;t=18s">
 https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
@@ -13621,11 +13621,11 @@ zsoft, реально, на яваскрипте сделай.</a></p>
 <p>ejikplains. #5580 18.Май.19 07:58:08: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=224&amp;prc=25&amp;Itemid=57#p26757">
 у меня получилось привязать клавиши к действиям в классическом плеере</a></p>
+</section>
 
-<header anchor="link_19_06" head-level="h6">
+<section id="link_19_06"><title>
 <p>19.6.  Как пропустить прохождение нескольких глав, чтобы протестировать вновь написанную главу и только её?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;t=139s">
 https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
@@ -13635,11 +13635,11 @@ https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
 <p>ejikplains. #5531 18.Май.19 07:58:08: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=222&amp;prc=25&amp;Itemid=57#p26319">
 как запускать для проверки отдельные главы?</a></p>
+</section>
 
-<header anchor="link_19_07" head-level="h6">
+<section id="link_19_07"><title>
 <p>19.7.  Как из под плеера выполнить произвольную строку кода?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;t=188s">
 https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
@@ -13655,11 +13655,11 @@ https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
 <p>Valvs. #3554 09.Окт.15 11:11:19: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=143&amp;prc=25&amp;Itemid=57#p21929">
 Есть ли возможность из клиента (aka плеера) задать значение произвольной переменной?</a></p>
+</section>
 
-<header anchor="link_19_08" head-level="h6">
+<section id="link_19_08"><title>
 <p>19.8.  Как узнать, на каком устройстве запущена игра? Телефон, компьютер, планшет?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;t=333s">
 https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
@@ -13669,38 +13669,38 @@ https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
 <p>Nex. #2 19.Ноя.13 21:05:23: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=658&amp;p=1&amp;prc=30&amp;Itemid=57#p14905">
 в Quest Navigator сделана функция GETPLAYER</a></p>
+</section>
 
-<header anchor="link_19_09" head-level="h6">
+<section id="link_19_09"><title>
 <p>19.9.  Как обновлять переменные на экране?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;t=397s">
 https://www.youtube.com/watch?v=DDmIxbOWbgc&amp;</a></p>
 <p>Straginski. #4717 23.Окт.16 19:50:40: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=189&amp;prc=25&amp;Itemid=57#p24781">
 Нужно что бы в зависимости от выбора в тексте менялась переменная</a></p>
+</section>
 
-<header anchor="link_19_10" head-level="h6">
+<section id="link_19_10"><title>
 <p>19.10.  Как сделать, чтобы текст выводился снизу вверх?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;t=530s">
 https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;</a></p>
 <p>NickoAilus. #5197 16.Фев.18 10:53:24: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26391">
 Как сделать так, чтобы текст выводился с нижней левой части экрана?</a></p>
-
+</section>
 </section>
 
 <section id="link_20"><title>
 <p>20. Конкретные задачи</p>
 </title>
-<header anchor="link_20_01" head-level="h6">
-<p>20.1.  Как сделать возврат на предыдущую локацию?</p>
-</header>
 
+<section id="link_20_01"><title>
+<p>20.1.  Как сделать возврат на предыдущую локацию?</p>
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=v5JRRscDgSM&amp;t=18s">
 https://www.youtube.com/watch?v=v5JRRscDgSM&amp;</a></p>
@@ -13725,11 +13725,11 @@ https://www.youtube.com/watch?v=v5JRRscDgSM&amp;</a></p>
 <p>WastedCarl. #5302 02.Май.18 18:11:01: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=213&amp;prc=25&amp;Itemid=57#p26646">
 Инветарь продуман как отдельная локация Как сделать выход с нее равносильным ?</a></p>
+</section>
 
-<header anchor="link_20_02" head-level="h6">
+<section id="link_20_02"><title>
 <p>20.2.  Как проверить число на чётность?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;t=18s">
 https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
@@ -13742,11 +13742,11 @@ https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
 <p>Amadeus. #5307 06.Май.18 19:47:41: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=213&amp;prc=25&amp;Itemid=57#p26657">
 Есть ли возможность сделать проверку числа переменной по значению "четное/нечетное число"?</a></p>
+</section>
 
-<header anchor="link_20_03" head-level="h6">
+<section id="link_20_03"><title>
 <p>20.3.  Как сделать шанс на выпадение определённой вещи?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=vR3fdzPczfU&amp;t=18s">
 https://www.youtube.com/watch?v=vR3fdzPczfU&amp;</a></p>
@@ -13762,33 +13762,33 @@ https://gist.github.com/Riateche/3038910</a></p>
 <p>ejikplains. #5569 18.Май.19 07:58:08: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=223&amp;prc=25&amp;Itemid=57#p26730">
 Есть ячейка А. В неё должен попадать предмет рандомно из немалого количества разных. Однако, у каждого предмета свой шанс на его выпадение(процент), как возможно реализовать подобное?</a></p>
+</section>
 
-<header anchor="link_20_04" head-level="h6">
+<section id="link_20_04"><title>
 <p>20.4.  Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7uU3MeS-Sgw&amp;t=18s">
 https://www.youtube.com/watch?v=7uU3MeS-Sgw&amp;</a></p>
 <p>De@th K!d. #5496 23.Фев.19 17:21:55: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=220&amp;prc=25&amp;Itemid=57#p27119">
 как сделать вывод текста, вбитового в основное окно, в начале локации?</a></p>
+</section>
 
-<header anchor="link_20_05" head-level="h6">
+<section id="link_20_05"><title>
 <p>20.5.  Как можно удалить часть текста из описания?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;t=272s">
 https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
 <p>Совёнок. #4098 15.Мар.16 21:33:23: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=164&amp;prc=25&amp;Itemid=57#p23381">
 Можно ли как-то выборочно удалить одно из описаний, чтобы остальные остались?</a></p>
+</section>
 
-<header anchor="link_20_06" head-level="h6">
+<section id="link_20_06"><title>
 <p>20.6.  Как вывести на экран HTML-разметку, не отключая режим распознавания HTML? То есть при usehtml=1</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;t=128s">
@@ -13800,11 +13800,11 @@ https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26310">
 Здравствуйте... Появилась одна проблема. Мне нужно, чтобы в одном окне показывался текст с HTML-форматированием, а в другом - без. Возможно ли такое сделать?</a></p>
 
+</section>
 
-<header anchor="link_20_07" head-level="h6">
+<section id="link_20_07"><title>
 <p>20.7.  Есть несколько переменных с разными значениями. Как получить имя переменной, в которой находится наибольшее значение?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=7uU3MeS-Sgw&amp;t=562s">
@@ -13816,22 +13816,22 @@ https://www.youtube.com/watch?v=7uU3MeS-Sgw&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=123&amp;prc=25&amp;Itemid=57#p20693">
 Есть 3 числа, надо определить какое из них самое большое</a></p>
 
+</section>
 
-<header anchor="link_20_08" head-level="h6">
+<section id="link_20_08"><title>
 <p>20.8.  Как в QSP сравнить два массива?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=HGX87nDwHRY&amp;t=18s">
 https://www.youtube.com/watch?v=HGX87nDwHRY&amp;</a></p>
 <p>Белый Шарик. #3259 03.Авг.15 13:11:39: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=131&amp;prc=25&amp;Itemid=57#p21159">
 По моему разумению Код:if win = fail : jump 'opp'Сверит весь массив переменных win на равенство всему массиву fail?</a></p>
+</section>
 
-<header anchor="link_20_09" head-level="h6">
+<section id="link_20_09"><title>
 <p>20.9.  Как сделать вытягивание случайных карт из колоды?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;t=18s">
 https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;</a></p>
@@ -13847,11 +13847,11 @@ https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;</a></p>
 <p>D31M0S. #5504 05.Апр.19 20:56:05: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=221&amp;prc=25&amp;Itemid=57#p27163">
 Как сделать так, чтобы программа вытаскивала карты (переменные) из колоды (массива)?</a></p>
+</section>
 
-<header anchor="link_20_10" head-level="h6">
+<section id="link_20_10"><title>
 <p>20.10.  Как отсортировать данные?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе:  
 <a l:href="https://www.youtube.com/watch?v=HGX87nDwHRY&amp;t=343s">
 https://www.youtube.com/watch?v=HGX87nDwHRY&amp;</a></p>
@@ -13861,11 +13861,11 @@ https://www.youtube.com/watch?v=HGX87nDwHRY&amp;</a></p>
 <p>cleep. #5082 21.Июн.17 11:25:30: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=204&amp;prc=25&amp;Itemid=57#p25894">
 Возможно ли организовать сортировку в Quest Navigator?</a></p>
+</section>
 
-<header anchor="link_20_11" head-level="h6">
+<section id="link_20_11"><title>
 <p>20.11.  Как сделать проценты?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;t=472s">
 https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;</a></p>
@@ -13878,22 +13878,22 @@ https://www.youtube.com/watch?v=NsxbBgkI_kE&amp;</a></p>
 <p>Одиночка. #2851 13.Май.15 21:24:12: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=115&amp;prc=25&amp;Itemid=57#p19996">
 А как сделать проценты в игре? Допустим 25 из 100 56 из 100 и так далее?</a></p>
+</section>
 
-<header anchor="link_20_12" head-level="h6">
+<section id="link_20_12"><title>
 <p>20.12.  Как решить задачу по поиску случайного набора слагаемых?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=Daa6LvyqU4Q&amp;t=18s">
 https://www.youtube.com/watch?v=Daa6LvyqU4Q&amp;</a></p>
 <p>Genryzz. #4426 01.Июн.16 23:20:43: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=178&amp;prc=25&amp;Itemid=57#p24072">
 Нужно получить определенную сумму из случайных чисел. Случайные числа определенны, но их количество зависит от суммы.</a></p>
+</section>
 
-<header anchor="link_20_13" head-level="h6">
+<section id="link_20_13"><title>
 <p>20.13.  Как разредить текст пробелами?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YJT9Zk_1LJU&amp;t=18s">
 https://www.youtube.com/watch?v=YJT9Zk_1LJU&amp;</a></p>
@@ -13903,77 +13903,77 @@ https://www.youtube.com/watch?v=YJT9Zk_1LJU&amp;</a></p>
 <p>ItsHim. #3075 13.Июл.15 12:16:35: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=123&amp;prc=25&amp;Itemid=57#p20734">
 Может кто-нибудь подсказать как сделать пробел через каждые три буквы/цифры сплошного слова?</a></p>
+</section>
 
-<header anchor="link_20_14" head-level="h6">
+<section id="link_20_14"><title>
 <p>20.14.  Как сделать записную книжку в игре?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=YJT9Zk_1LJU&amp;t=323s">
 https://www.youtube.com/watch?v=YJT9Zk_1LJU&amp;</a></p>
 <p>loony25. #5235 04.Мар.18 17:15:14: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=210&amp;prc=25&amp;Itemid=57#p26483">
 появилась идея реализовать внутри нее что-то вроде "Записной книжки". Можно ли вообще такое реализовать и если да, то как?</a></p>
+</section>
 
-<header anchor="link_20_15" head-level="h6">
+<section id="link_20_15"><title>
 <p>20.15.  Как сделать так, чтобы на локацию можно было зайти только один раз?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;t=411s">
 https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
 <p>skunsss. #4347 10.Май.16 18:36:08: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=174&amp;prc=25&amp;Itemid=57#p23905">
 Подскажите, пожалуйста,как сделать так что-б локация была только одноразово посещаема ?</a></p>
+</section>
 
-<header anchor="link_20_16" head-level="h6">
+<section id="link_20_16"><title>
 <p>20.16.  Как заставить действия выводиться в нужном мне порядке?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=K0PN86klR_E&amp;t=18s">
 https://www.youtube.com/watch?v=K0PN86klR_E&amp;</a></p>
 <p>Совёнок. #4140 21.Мар.16 15:21:47: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=166&amp;prc=25&amp;Itemid=57#p23467">
 При запуске игры это действие появляется ниже всех остальных доступных действий. Как сделать, чтобы оно было самым первым, или находилось среди других?</a></p>
+</section>
 
-<header anchor="link_20_17" head-level="h6">
+<section id="link_20_17"><title>
 <p>20.17.  Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=vR3fdzPczfU&amp;t=528s">
 https://www.youtube.com/watch?v=vR3fdzPczfU&amp;</a></p>
 <p>denedi. #3690 16.Дек.15 11:23:58: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=148&amp;prc=25&amp;Itemid=57#p22320">
 как сделать например книгу которую можно взять в инвентарь и потом прочитать?</a></p>
+</section>
 
-<header anchor="link_20_18" head-level="h6">
+<section id="link_20_18"><title>
 <p>20.18.  Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uK8EOCF4Mok&amp;t=18s">
 https://www.youtube.com/watch?v=uK8EOCF4Mok&amp;</a></p>
 <p>Одиночка. #2872 17.Май.15 23:17:12: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=115&amp;prc=25&amp;Itemid=57#p20060">
 Кто нибудь подскажите, как сделать тайник?</a></p>
+</section>
 
-<header anchor="link_20_19" head-level="h6">
+<section id="link_20_19"><title>
 <p>20.19.  Как сделать выпадение случайного действия на локации?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=uK8EOCF4Mok&amp;t=465s">
 https://www.youtube.com/watch?v=uK8EOCF4Mok&amp;</a></p>
 <p>Larson. #5016 22.Апр.17 20:32:04: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=201&amp;prc=25&amp;Itemid=57#p25514">
 Как сделать чтобы при посещении локации, пусть она будет называться Портал, случайным образом выводились действия перехода на другую локацию</a></p>
+</section>
 
-<header anchor="link_20_20" head-level="h6">
+<section id="link_20_20"><title>
 <p>20.20.  Как сделать перемещение на случайную локацию?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;t=18s">
 https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;</a></p>
@@ -13986,11 +13986,11 @@ https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;</a></p>
 <p>Andrik2219. #5473 06.Фев.19 12:30:27: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=219&amp;prc=25&amp;Itemid=57#p27075">
 Всем привет. Подскажите про систему рандомизации что бы при заходе на определенную локацию перекидывало на одну из рандомных локаций</a></p>
+</section>
 
-<header anchor="link_20_21" head-level="h6">
+<section id="link_20_21"><title>
 <p>20.21.  Как сделать случайный предмет?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;t=288s">
@@ -14002,11 +14002,11 @@ https://www.youtube.com/watch?v=yDBsyKk2TPA&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=158&amp;prc=25&amp;Itemid=57#p23110">
 Допустим у меня есть 10 предметов, и надо сделать так, чтобы выбралось рандомом один из них</a></p>
 
+</section>
 
-<header anchor="link_20_22" head-level="h6">
+<section id="link_20_22"><title>
 <p>20.22.  Как узнать, какие переменные есть в игре? Может для этого есть специальная команда?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;t=553s">
@@ -14015,37 +14015,37 @@ https://www.youtube.com/watch?v=qvSAU6PjC2E&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=126&amp;prc=25&amp;Itemid=57#p20860">
 а есть ли какая возможность узнать количество переменных в игре?</a></p>
 
-
+</section>
 </section>
 
 <section id="link_21"><title>
 <p>21. Вопросы о Quest Generator (v.4.0.0 beta)</p>
 </title>
-<header anchor="link_21_01" head-level="h6">
-<p>21.1.  Мне часто приходится вставлять одинаковые или почти одинаковые кусочки кода. Как автоматизировать этот процесс?</p>
-</header>
 
+<section id="link_21_01"><title>
+<p>21.1.  Мне часто приходится вставлять одинаковые или почти одинаковые кусочки кода. Как автоматизировать этот процесс?</p>
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;t=197s">
 https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;</a></p>
 
+</section>
 
-<header anchor="link_21_02" head-level="h6">
+<section id="link_21_02"><title>
 <p>21.2.  Делаю преформатирование пробелами, чтобы появлялась вертикальная полоска, так нагляднее. Нет ли какой-то комбинации клавиш, чтобы не тыкать пробел по пять раз?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;t=478s">
 https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;</a></p>
 <p>saks. #3498 16.Сен.15 20:29:14: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=140&amp;prc=25&amp;Itemid=57#p21719">
 многие используют в кодах отступы чтобы выделять куски кода, и пунктирную линию ведущую от начала куска до его завершения. естли какаято комбинация клавиш или настройка чтобы не тыкать пробелы для отступа или все тыкают пробелы?</a></p>
+</section>
 
-<header anchor="link_21_03" head-level="h6">
+<section id="link_21_03"><title>
 <p>21.3.  Как свернуть кусочек кода, написанный под комментарием?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;t=629s">
@@ -14054,21 +14054,21 @@ https://www.youtube.com/watch?v=nZtsLkiOv0o&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=159&amp;prc=25&amp;Itemid=57#p23194">
 Есть ли способ или какая то разметка, али мудрость народная, чтобы все это красиво свернуть? В идеале, чтобы оставался один коммент</a></p>
 
-
+</section>
 </section>
 
 <section id="link_23"><title>
 <p>22. Ограничения</p>
 </title>
-
+<section>
 <p>Ограничения QSP: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=392&amp;Itemid=57">
 Тема на форуме qsp.su</a></p>
+</section>
 
-<header anchor="link_23_01" head-level="h6">
+<section id="link_23_01"><title>
 <p>22.1.  Видел в справке ограничение на 100 подключаемых файлов. Это что, я не смогу использовать более ста файлов картинок и музыки?</p>
-</header>
-
+</title>
 
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;t=18s">
@@ -14080,22 +14080,22 @@ https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;</a></p>
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=206&amp;prc=25&amp;Itemid=57#p26114">
 Скорее всего, я что-то путаю и даже догадываюсь что, но точно помню, об ограничении подключаемых файлов в 100, однако, например, в этой игре их несколько тысяч. Получается, о чем здесь шла речь?</a></p>
 
+</section>
 
-<header anchor="link_23_02" head-level="h6">
+<section id="link_23_02"><title>
 <p>22.2.  Хочу разместить на локации около 100 действий. Это вообще возможно?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;t=103s">
 https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;</a></p>
 <p>De@th K!d. #3619 03.Ноя.15 20:28:49: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=145&amp;prc=25&amp;Itemid=57#p22117">
 Каково максимальное число действий, которые можно впихнуть на одну локацию?</a></p>
+</section>
 
-<header anchor="link_23_03" head-level="h6">
+<section id="link_23_03"><title>
 <p>22.3.  Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?</p>
-</header>
-
+</title>
 <p>Смотреть ответ на ютубе: 
 <a l:href="https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;t=144s">
 https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;</a></p>
@@ -14108,7 +14108,7 @@ https://www.youtube.com/watch?v=5pSZ3-itIOY&amp;</a></p>
 <p>Small Jerboa. #3875 11.Фев.16 00:43:13: 
 <a l:href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=155&amp;prc=25&amp;Itemid=57#p22916">
 Надо по вставлять кучу (предполагаю 5-10 тысяч строк) текста в строковых переменных. Лучше сделать это через обычные переменные? какой из вариантов будет меньше памяти жрать, быстрее работать, меньше ограничений на применение?</a></p>
-
+</section>
 </section>
 
 </section>
