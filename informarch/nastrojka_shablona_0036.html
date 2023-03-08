@@ -41,14 +41,17 @@
 <p>
 Откройте "gameAwesomium.html" в любом текстовом редакторе, а лучше в редакторе с подсветкой кода, например в SublimeText.
 </p>
+<p>
+&lt;section_of_head&gt;
+</p>
 <h5 id="head">HEAD</h5><h5 id="podkliuchenie-css">Подключение CSS</h5><p>
-В блоке "<head>...</head>" вы увидите вот такую строку:
+В блоке "&lt;head&gt;...&lt;/head&gt;" вы увидите вот такую строку:
 </p>
 <div class="Monokai-Code">
 &lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"skins/game.css"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span>&nbsp;/&gt;<br/>
 </div>
 <p>
-Как вы понимаете, это ссылка на таблицу стилей, которая используется в вашей игре. Вы можете добавить собственные файлы ".css", разместив их в той же папке "skins", например, или в любой другой папке на одном уровне с "gameAwesomium.html" или ниже, и прописать подобную ссылку на таблицу стилей. Например, я создал папку "avscss" и разместил в ней файл собственных стилей "coolstyle.css", значит мне нужно прописать в блоке "<head> ... </head>" такую строчку:
+Как вы понимаете, это ссылка на таблицу стилей, которая используется в вашей игре. Вы можете добавить собственные файлы ".css", разместив их в той же папке "skins", например, или в любой другой папке на одном уровне с "gameAwesomium.html" или ниже, и прописать подобную ссылку на таблицу стилей. Например, я создал папку "avscss" и разместил в ней файл собственных стилей "coolstyle.css", значит мне нужно прописать в блоке "&lt;head&gt; ... &lt;/head&gt;" такую строчку:
 </p>
 <div class="Monokai-Code">
 &lt;<span class="Monokai-TagName">link</span>&nbsp;<span class="Monokai-Markup">type</span>=<span class="Monokai-String">"text/css"</span>&nbsp;<span class="Monokai-Markup">href</span>=<span class="Monokai-String">"avscss/coolstyle.css"</span>&nbsp;<span class="Monokai-Markup">rel</span>=<span class="Monokai-String">"stylesheet"</span>&nbsp;/&gt;<br/>
@@ -78,8 +81,14 @@
 <p>
 Сейчас мы не будем править скрипты, или писать свои. Приведённая информация только для ознакомления. Если вы не знакомы с JavaScript, пока эту часть лучше не трогать.
 </p>
+<p>
+&lt;/section_of_head&gt;
+</p>
+<p>
+&lt;section_of_head&gt;
+</p>
 <h5 id="body">BODY</h5><p>
-Переходим к блоку "<body>...</body>". Для этого блока в "skins/game.css" определены следующие настройки:
+Переходим к блоку "&lt;body&gt;...&lt;/body&gt;". Для этого блока в "skins/game.css" определены следующие настройки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-TagName">html</span>,&nbsp;<span class="Monokai-TagName">body</span>&nbsp;{&nbsp;<span class="Monokai-Construct">height</span>:&nbsp;<span class="Monokai-Numeric">100%</span>;&nbsp;<span class="Monokai-Construct">margin</span>:&nbsp;<span class="Monokai-Numeric">0px</span>;&nbsp;<span class="Monokai-Construct">padding</span>:&nbsp;<span class="Monokai-Numeric">0px</span>;&nbsp;}<br/>
@@ -94,7 +103,7 @@
 ниже по коду "skins/game.css" можно удалить, так как она частично дублирует предыдущую.
 </p>
 <p>
-В блоке "<body>...</body>" находится множество блоков div, которые и отвечают за отрисовывание всего оформления игры. Далее вместо того, чтобы произносить целиком "div с id (айди) skin-splashscreen-foreground", мы будем говорить просто "блок skin-splashscreen-foreground", и тому подобное. Поскольку вся оставшаяся часть HTML-кода состоит из блоков div, и так будет понятно, что мы говорим о блоках div.
+В блоке "&lt;body&gt;...&lt;/body&gt;" находится множество блоков div, которые и отвечают за отрисовывание всего оформления игры. Далее вместо того, чтобы произносить целиком "div с id (айди) skin-splashscreen-foreground", мы будем говорить просто "блок skin-splashscreen-foreground", и тому подобное. Поскольку вся оставшаяся часть HTML-кода состоит из блоков div, и так будет понятно, что мы говорим о блоках div.
 </p>
 <h5 id="skin-splashscreen-foreground">skin-splashscreen-foreground</h5><p>
 Два основных блока в "body" это "skin-splashscreen-foreground" и "skin-ui-wrapper". И для обоих основные стили прописаны непосредственно в "gameAwesomium.html". Это сделано для того, чтобы данные блоки отображались адекватно стилям ещё при загрузке страницы, даже если "skins/game.css" ещё не загрузился.
@@ -105,10 +114,10 @@
 <p>
 Непосредственно внутри блока "skin-splashscreen-foreground" вы можете разместить логотип или приветственную надпись, которые появятся на короткое время, сменившись экраном игры. (Рекомендую оставлять основной фон сплэшскрина белым)
 </p>
-<h5 id="skin-ui-wrapper">skin-ui-wrapper</h5><h6 id="skin-back1">skin-back1</h6><p>
+<h5 id="skin-ui-wrapper">skin-ui-wrapper</h5><h5 id="skin-back1">skin-back1</h5><p>
 Далее мы будем рассматривать содержимое блока "skin-ui-wrapper". И первый блок, который нам тут встречается, это блок "skin-back1". Он пустой и служит для того, чтобы задавать затенение по краям страницы (а строго говоря он задаёт фон страницы). Все его стили задаются в "skins/game.css", таким образом вы легко можете отредактировать стилистику этого блока, чтобы задать собственную рамку по краям окна, или создать какой либо эффект на фоне, ну или просто удалите этот блок, если подобные эффекты вам не нужны. Удаление блока "skin-back1" не повлияет на работоспособность игры.
 </p>
-<h6 id="skin-page">skin-page</h6><p>
+<h5 id="skin-page">skin-page</h5><p>
 Следующий блок — это блок "skin-page". Собственно это вся страница целиком, где размещены блоки окон основного, дополнительного описаний, окна предметов, действий и строки ввода. Нет явных скриптов, которые работают с блоком "skin-page", однако удалять его не рекомендуется. Особенностью данного блока является то, что он перекрывает собой блок "skin-back1" (оно и понятно, ведь для отрисовки фона страницы используется именно "skin-back1"). Поэтому, если вы стилизуете "skin-page" каким-нибудь фоном, этот фон перекроет видимость блока "skin-back1".
 </p>
 <h6 id="skin-back2">skin-back2</h6><p>
@@ -198,7 +207,7 @@ skinToggleInv();
 "qsp-acts" — отвечает за отображение окна действий.
 </p>
 <h6 id="qsp-input-line">qsp-input-line</h6><p>
-Блок "qsp-input-line", а так же вложенные в него блоки, нужны для отображения и стилизации строки ввода, реализованной через поле "<input>".
+Блок "qsp-input-line", а так же вложенные в него блоки, нужны для отображения и стилизации строки ввода, реализованной через поле "&lt;input&gt;".
 </p>
 <h6 id="dialogovye-okna">Диалоговые окна</h6><p>
 Блоки диалоговых окон располагаются ниже блока "skin-page", чтобы при выведении на экран блоки диалоговых окон перекрывали блок "skin-page". Структура у всех диалоговых окон похожа, поэтому мы не будем подробно разбирать эти блоки.
@@ -223,6 +232,9 @@ skinToggleInv();
 </p>
 <h6 id="qsp-dialog-error">qsp-dialog-error</h6><p>
 Блок "qsp-dialog-error" отвечает за вывод сообщений об ошибках в коде QSP.
+</p>
+<p>
+&lt;/section_of_head&gt;
 </p>
 <h6 id="ps">P.S.</h6><p>
 Такова в общих чертах структура шаблона "default". О том, как поставить шаблон оформления на свою игру читайте в соответствующем разделе <a href="https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html#faq_22_01" style="text-decoration:none;" class="emFOLD">"шаблоны оформления для игр"</a>.

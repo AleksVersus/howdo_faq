@@ -40,17 +40,17 @@
 <ul>
 <li>добавлена возможность вызвать команду отладчика из кода (в предыдущей версии вызов команды был тесно связан с строкой ввода и сделать это было довольно проблематично)	например: <span class="em_BLCK">gs 'debugger_process', 'addvar test</span>'
 </li>
-<li>обавлена возможность ввести несколько команд одновреммено разделив их & (в предыдущей версии была бы отработана только первая команда)	например: <span class="em_BLCK">addVar test & test = 3 & showVars</span>
+<li>обавлена возможность ввести несколько команд одновреммено разделив их &amp; (в предыдущей версии была бы отработана только первая команда)	например: <span class="em_BLCK">addVar test &amp; test = 3 &amp; showVars</span>
 </li>
-<li>добавлена возможность ввода <span class="em_BLCK"><<</span> и <span class="em_BLCK">>></span> (в предыдущей версии были проблемы с отображением и обработкой)</li>
-<li>добавлена возможность запланировать выполнение команды отладчика - для этого необходимо добавить перед командой >	например: <span class="em_BLCK">>showVars gs 'test_loc' >showVars</span>
+<li>добавлена возможность ввода <span class="em_BLCK">&lt;&lt;</span> и <span class="em_BLCK">&gt;&gt;</span> (в предыдущей версии были проблемы с отображением и обработкой)</li>
+<li>добавлена возможность запланировать выполнение команды отладчика - для этого необходимо добавить перед командой &gt;	например: <span class="em_BLCK">&gt;showVars gs 'test_loc' &gt;showVars</span>
 	здесь команды <span class="em_BLCK">showVars</span> будут выполнены не сразу после ввода, а только когда код будет запущен через run
 </li>
 <li>в <span class="em_BLCK">addVar</span> и <span class="em_BLCK">delVar</span> теперь можно передавать несколько имен переменных разделенных пробелом	например: <span class="em_BLCK">addvar test[0] test[3] $test</span>
 </li>
-<li>в <span class="em_BLCK">run</span> вторым параметром можно передать название переменной с кодом для выполнения (похоже на вызов <span class="em_BLCK">load $var & run</span>, только код не загружается в список команд)</li>
+<li>в <span class="em_BLCK">run</span> вторым параметром можно передать название переменной с кодом для выполнения (похоже на вызов <span class="em_BLCK">load $var &amp; run</span>, только код не загружается в список команд)</li>
 <li>добавлена команда clearVars для очистки списка переменных</li>
-<li>добавлены команды для отслеживания логических выражений <span class="em_BLCK">addCond</span>, <span class="em_BLCK">delCond</span>, <span class="em_BLCK">showCond</span>, <span class="em_BLCK">clearCond</span> (об этом писал на форуме <span class="em_BLCK">invertercant</span>)	например: <span class="em_BLCK">addcond test1 > test2 & showcond</span>
+<li>добавлены команды для отслеживания логических выражений <span class="em_BLCK">addCond</span>, <span class="em_BLCK">delCond</span>, <span class="em_BLCK">showCond</span>, <span class="em_BLCK">clearCond</span> (об этом писал на форуме <span class="em_BLCK">invertercant</span>)	например: <span class="em_BLCK">addcond test1 &gt; test2 &amp; showcond</span>
 </li>
 <li>в <span class="em_BLCK">help</span> вторым параметром можно передать название команды для просмотра информации по ней</li>
 <li>добавлены команды <span class="em_BLCK">createCommand</span>, <span class="em_BLCK">loadCommand</span>, <span class="em_BLCK">updateCommand</span> и <span class="em_BLCK">deleteCommand</span> для создания пользовательских команд	все параметры переданные после названия команды доступны в массиве <span class="em_BLCK">$debugger_args</span>

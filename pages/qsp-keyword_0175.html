@@ -20,7 +20,7 @@
 [:faq_80_01_00]Список операций для плеера версии 5.7.0 в порядке возрастания приоритета:
 </p>
 <p>
-`&`
+`&amp;`
 </p>
 <p>
 `OR`
@@ -32,7 +32,7 @@
 `OBJ`, `LOC`, `NO`
 </p>
 <p>
-`=`, `<`, `>`, `!`, `<>`, `<=`, `>=`, `=<`, `=>`
+`=`, `&lt;`, `&gt;`, `!`, `&lt;&gt;`, `&lt;=`, `&gt;=`, `=&lt;`, `=&gt;`
 </p>
 <p>
 `+`, `-`
@@ -271,8 +271,8 @@ warrior<span class="Monokai-Operator">=</span>warrior<span class="Monokai-Operat
 </span><span class="Monokai-Comment">!&nbsp;на&nbsp;деление-присвоение&nbsp;(действие&nbsp;аналогично)</span><br/>
 warrior<span class="Monokai-Operator">/=</span><span class="Monokai-Numeric">2</span><br/>
 </div>
-<h4 id="faq_80_01_smal">< (меньше)</h4><p>
-`<` — операция сравнения "МЕНЬШЕ".  Общая запись:
+<h4 id="faq_80_01_smal">&lt; (меньше)</h4><p>
+`&lt;` — операция сравнения "МЕНЬШЕ".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -299,8 +299,8 @@ warrior<span class="Monokai-Operator">/=</span><span class="Monokai-Numeric">2</
 <span class="Monokai-String">"z"</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-String">"zz"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 <span class="Monokai-String">"aaaaaa"</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 </div>
-<h4 id="faq_80_01_smaleq"><= (меньше либо равно)</h4><p>
-`<=` — операция сравнения "МЕНЬШЕ ЛИБО РАВНО".  Общая запись:
+<h4 id="faq_80_01_smaleq">&lt;= (меньше либо равно)</h4><p>
+`&lt;=` — операция сравнения "МЕНЬШЕ ЛИБО РАВНО".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -320,7 +320,7 @@ warrior<span class="Monokai-Operator">/=</span><span class="Monokai-Numeric">2</
 <span class="Monokai-Numeric">7</span><span class="Monokai-Operator">&lt;=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-	Аналогично "=<" и конструкциям:
+	Аналогично "=&lt;" и конструкциям:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
@@ -335,8 +335,8 @@ warrior<span class="Monokai-Operator">/=</span><span class="Monokai-Numeric">2</
 <span class="Monokai-String">"aaaaaa"</span><span class="Monokai-Operator">&lt;=</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 <span class="Monokai-String">"z"</span><span class="Monokai-Operator">&lt;=</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 </div>
-<h4 id="faq_80_01_smalmore"><> (не равно)</h4><p>
-`<>` — операция сравнения "НЕ РАВНО". Общая запись:
+<h4 id="faq_80_01_smalmore">&lt;&gt; (не равно)</h4><p>
+`&lt;&gt;` — операция сравнения "НЕ РАВНО". Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -447,8 +447,8 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Не&nbsp;хватает&nbsp;сил"</span><br/>
 </div>
-<h4 id="faq_80_01_eqsmal">=< (равно либо меньше)</h4><p>
-`=<` — операция сравнения "РАВНО ЛИБО МЕНЬШЕ".  Общая запись:
+<h4 id="faq_80_01_eqsmal">=&lt; (равно либо меньше)</h4><p>
+`=&lt;` — операция сравнения "РАВНО ЛИБО МЕНЬШЕ".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -468,7 +468,7 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-Numeric">7</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-	Аналогично "<=" и конструкциям:
+	Аналогично "&lt;=" и конструкциям:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
@@ -484,10 +484,10 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 </div>
 <p>
-Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте "<= (меньше либо равно)" вместо этого.
+Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте "&lt;= (меньше либо равно)" вместо этого.
 </p>
-<h4 id="faq_80_01_eqmore">=> (равно или больше)</h4><p>
-`=>` — операция сравнения "РАВНО ИЛИ БОЛЬШЕ".  Общая запись:
+<h4 id="faq_80_01_eqmore">=&gt; (равно или больше)</h4><p>
+`=&gt;` — операция сравнения "РАВНО ИЛИ БОЛЬШЕ".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -507,7 +507,7 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-Numeric">7</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br/>
 </div>
 <p>
-	Аналогично ">=" и конструкциям:
+	Аналогично "&gt;=" и конструкциям:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
@@ -523,10 +523,10 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-String">"z"</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">"z"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 </div>
 <p>
-Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте ">= (больше либо равно)" вместо этого.
+Данная запись, хотя и допустима в QSP, к использованию не рекомендуется. Используйте "&gt;= (больше либо равно)" вместо этого.
 </p>
-<h4 id="faq_80_01_more">> (больше)</h4><p>
-`>` — операция сравнения "БОЛЬШЕ".  Общая запись:
+<h4 id="faq_80_01_more">&gt; (больше)</h4><p>
+`&gt;` — операция сравнения "БОЛЬШЕ".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -553,8 +553,8 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-String">"zz"</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">"z"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 <span class="Monokai-String">"z"</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-String">"aaaaaa"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;верно</span><br/>
 </div>
-<h4 id="faq_80_01_moreeq">> (больше либо равно)</h4><p>
-`>=` — операция сравнения "БОЛЬШЕ ЛИБО РАВНО".  Общая запись:
+<h4 id="faq_80_01_moreeq">&gt; (больше либо равно)</h4><p>
+`&gt;=` — операция сравнения "БОЛЬШЕ ЛИБО РАВНО".  Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -574,7 +574,7 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 <span class="Monokai-Numeric">7</span><span class="Monokai-Operator">&gt;=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br/>
 </div>
 <p>
-	Аналогично "=>" и конструкциям:
+	Аналогично "=&gt;" и конструкциям:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
@@ -599,7 +599,7 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 	Если значение выражения `[выражение_1]` не равно значению выражения `[выражение_2]` операция вернёт -1, в противном случае вернёт 0. Иными словами: верно, если выражения не равны.
 </p>
 <p>
-	Аналогично "<>", или конструкции:
+	Аналогично "&lt;&gt;", или конструкции:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Operator">[</span>выражение_1<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение_2<span class="Monokai-Operator">]</span><br/>
@@ -608,7 +608,7 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 	Не путать с оператором комментария.
 </p>
 <p>
-	Для лучшей читаемости кода лучше использовать `<>`.
+	Для лучшей читаемости кода лучше использовать `&lt;&gt;`.
 </p>
 <p>
 	Примеры:
@@ -619,8 +619,8 @@ alukard<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1000
 </span><span class="Monokai-Comment">!&nbsp;5&nbsp;равно&nbsp;5&nbsp;—&nbsp;вернёт&nbsp;0</span><br/>
 <span class="Monokai-Numeric">5</span><span class="Monokai-Operator"></span><span class="Monokai-Comment">!5</span><br/>
 </div>
-<h4 id="faq_80_01_concatenation">& (конкатенация)</h4><p>
-`&` — конкатенация, операция объединения строковых выражений. Общая запись:
+<h4 id="faq_80_01_concatenation">&amp; (конкатенация)</h4><p>
+`&amp;` — конкатенация, операция объединения строковых выражений. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>$выражение&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>$выражение&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br/>

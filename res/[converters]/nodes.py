@@ -364,6 +364,7 @@ class NewNode():
 			# folder-nodes have not sources
 			pass
 		elif self.node_type == 'file':
+			self.source_lines = [self.replace_specsymbols(line) for line in self.source_lines]
 			self.segment_stn()
 		elif self.node_type == 'segment':
 			self.segment_stn()
@@ -751,7 +752,7 @@ class NewNode():
 				# if self.node_type == 'head': print(f"[700] ", print(node.source_lines, node.includes_nodes))
 				text+=node.test_convert()
 		elif len(self.source_lines)>0:
-			text += '<br/>'.join([self.replace_specsymbols(line) for line in self.source_lines])
+			text += '<br/>'.join(self.source_lines)
 		text = f"{arround_tags[0]}{text}{arround_tags[1]}"
 		return text
 
@@ -865,7 +866,7 @@ class NewNode():
 		elif self.node_type == 'code':
 			code_type = (self.attributes['code-type'] if 'code-type' in self.attributes else None)
 			text = ""
-			source_lines = [self.replace_specsymbols(line) for line in self.source_lines]
+			source_lines = self.source_lines
 			if code_type == 'qsp':
 				text = self.stilization_qsp_code(''.join(source_lines))
 			elif code_type == 'css':
@@ -1798,9 +1799,9 @@ class NewNode():
 			return 'ol-li'
 		elif re.match(r'^\s*```\w*?', string_line)!=None:
 			return 'code'
-		elif re.match(r'^\s*?>>>\s*?$', string_line)!=None:
+		elif re.match(r'^\s*?&gt;&gt;&gt;\s*?$', string_line)!=None:
 			return 'quote'
-		elif re.match(r'^\s*?>\s+', string_line)!=None:
+		elif re.match(r'^\s*?&gt;\s+', string_line)!=None:
 			return 'quote-line'
 		elif re.match(r'^\s*?$', string_line)!=None:
 			return 'empty'
@@ -1825,7 +1826,7 @@ class NewNode():
 
 	@staticmethod
 	def clear_quote_string(string_line:str):
-		return re.match(r'^(\s*>\s*)(.+?)$', string_line).group(2)
+		return re.match(r'^(\s*&gt;\s*)(.+?)$', string_line).group(2)
 
 	@staticmethod
 	def get_string_level(string_line:str):
