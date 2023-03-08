@@ -418,7 +418,7 @@ QSP - это система разработки текстовых игр. Пр
 <p>
 <tag name="simple-string">
 Скачайте справку и редактор QGen со страницы </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=57&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=56">
 "Разработчикам"</tag>
 <tag name="simple-string">
 .</tag>
@@ -617,7 +617,7 @@ evp</tag>
 </tag>
 </p>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=956&amp;Itemid=57">
 Тема на форуме QSP</tag>
 <tag name="simple-string">
 .
@@ -885,7 +885,7 @@ qsp.org</tag>
 синтетическая статья</tag>
 <tag name="simple-string">
  на основе темы </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=348&amp;Itemid=57">
 "Действие по условию"</tag>
 <tag name="simple-string">
 .
@@ -1021,7 +1021,7 @@ wiki.qsp.org/Ограничения</tag>
 <p>
 <tag name="simple-string">
 Ещё более подробный ответ на этот вопрос есть в соответствующей </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=751&Itemid=57&p=2">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=751&amp;Itemid=57&amp;p=2">
 теме</tag>
 <tag name="simple-string">
  на форуме.
@@ -1051,7 +1051,7 @@ wiki.qsp.org/Ограничения</tag>
 синтетическая статья</tag>
 <tag name="simple-string">
  на основе соответствующей </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=93&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=93&amp;Itemid=57">
 темы</tag>
 <tag name="simple-string">
 .
@@ -1177,7 +1177,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 Более подробно можно о модуле можно почитать на форуме qsp.org в теме </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=169&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=169&amp;Itemid=57">
 "Модуль для работы с таблицами данных"</tag>
 <tag name="simple-string">
 ,
@@ -1235,7 +1235,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 Более подробно о модуле можно прочитать на форуме qsp.org в теме </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=170&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=170&amp;Itemid=57">
 "Модуль для работы с меню (расширение функционала оператора "menu")"</tag>
 <tag name="simple-string">
 ,
@@ -1285,7 +1285,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 Более подробно о модуле можно прочитать на форуме qsp.org в теме </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=191&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=191&amp;Itemid=57">
 "QSP:Типограф" — модуль для форматирования текста</tag>
 <tag name="simple-string">
 ,
@@ -1355,7 +1355,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 Статья на сайте qsp.org: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=105:2010-06-17-13-54-25&catid=36:2009-02-19-06-11-21&Itemid=76">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=105:2010-06-17-13-54-25&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76">
 Мини-игра "Взорви зомби" - пример использования локации-счётчика</tag>
 <tag name="simple-string">
 
@@ -1390,7 +1390,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 На форуме qsp.org так же существует тема </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=861&amp;Itemid=57">
 Настройка окошек классического плеера с помощью qspgui.cfg</tag>
 <tag name="simple-string">
 
@@ -1408,7 +1408,7 @@ Olegus t.Gl. написал для QSP модуль работы с такими
 <p>
 <tag name="simple-string">
 Не нашли ответа на свой вопрос? Спрашивайте здесь - </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;Itemid=57">
 Как сделать?</tag>
 <tag name="simple-string">
 
@@ -1429,7 +1429,7 @@ NEX</tag>
 <p>
 <tag name="simple-string">
 Оригинал: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=316&amp;Itemid=57">
 FAQ</tag>
 </p>
 </segment>
@@ -1633,7 +1633,7 @@ Byte</tag>
 <p>
 <tag name="simple-string">
 Установили </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56">
 плеер QSP</tag>
 </p>
 </segment>
@@ -1641,7 +1641,7 @@ Byte</tag>
 <p>
 <tag name="simple-string">
 Скачали и распаковали </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&task=view&id=46&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;task=view&amp;id=46&amp;Itemid=56">
 редактор QGen</tag>
 </p>
 </segment>
@@ -1649,7 +1649,7 @@ Byte</tag>
 <p>
 <tag name="simple-string">
 Скачали справку по QSP со страницы </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=57&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=56">
 "Разработчикам"</tag>
 </p>
 </segment>
@@ -2769,7 +2769,7 @@ Nex</tag>
 <p>
 <tag name="simple-string">
 Тема на форуме: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=164&amp;Itemid=57">
 "Локализация QSP"</tag>
 <tag name="simple-string">
 
@@ -3171,7 +3171,7 @@ https://youtu.be/Ca4ynD_1BqQ</tag>
 <p>
 <tag name="simple-string">
 Genryzz. #3912 21.Фев.16 21:30:40: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=157&amp;prc=25&amp;Itemid=57#p23065">
 как сделать пусковой файл?</tag>
 <tag name="simple-string">
 
@@ -4542,7 +4542,7 @@ qsp2txt</tag>
 <p>
 <tag name="simple-string">
 Существовали разные </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=686&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=686&amp;Itemid=57">
 <tag name="simple-string">
 подсветки синтаксиса для </tag>
 <tag name="tt">
@@ -4618,11 +4618,11 @@ https://github.com/QSPFoundation/converters</tag>
 TXT2GAM</tag>
 <tag name="simple-string">
 . Для более удобного использования этой программы существует специальная оболочка </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&task=view&id=53&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;task=view&amp;id=53&amp;Itemid=56">
 GAMConv</tag>
 <tag name="simple-string">
 , которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56">
 QSP-плеер</tag>
 <tag name="simple-string">
 .
@@ -5747,7 +5747,7 @@ PROFIT</p>
 evp</tag>
 <tag name="simple-string">
 . Синтетическая статья, основанная на </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=956&amp;Itemid=57">
 серии сообщений</tag>
 <tag name="simple-string">
 .
@@ -6356,7 +6356,7 @@ Aleks Versus</tag>
 <p>
 <tag name="simple-string">
 Оригинал в теме: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=93&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=93&amp;Itemid=57">
 Подробности использования массивов, все вопросы сюда</tag>
 <tag name="simple-string">
 
@@ -6663,7 +6663,7 @@ Nex</tag>
 <p>
 <tag name="simple-string">
 Оригинал в теме: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=348&amp;Itemid=57">
 Действие по условию</tag>
 <tag name="simple-string">
 
@@ -6795,7 +6795,7 @@ ANTIPOD</tag>
 <p>
 <tag name="simple-string">
 Оригинал статьи: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=112:2011-05-20-06-23-02&catid=36:2009-02-19-06-11-21&Itemid=76">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=112:2011-05-20-06-23-02&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76">
 Плавное изменение цвета фона 1.0</tag>
 <tag name="simple-string">
 
@@ -7502,7 +7502,7 @@ skins/game.css</p>
 <p>
 <tag name="simple-string">
 Oliver. #5326 07.Июн.18 00:14:02: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=214&prc=25&Itemid=57#p26714">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=214&amp;prc=25&amp;Itemid=57#p26714">
 Короче, есть фон, на котором изображены люди. Необходимо, чтобы при наведении на определённого человека, его изображение изменялось(хотя бы как-то выделялось). Весьма буду благодарен за помощь.</tag>
 <tag name="simple-string">
 
@@ -7520,7 +7520,7 @@ Oliver. #5326 07.Июн.18 00:14:02: </tag>
 <p>
 <tag name="simple-string">
 cleep. #5125 29.Июл.17 12:24:52: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26061">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=206&amp;prc=25&amp;Itemid=57#p26061">
 Возник такой вопрос: можно ли как-то на Quest Navigator-е, например, при нажатии на клавишу ESC вызвать меню паузы?</tag>
 <tag name="simple-string">
 
@@ -7529,7 +7529,7 @@ cleep. #5125 29.Июл.17 12:24:52: </tag>
 <p>
 <tag name="simple-string">
 cleep. #5132 22.Авг.17 17:57:20: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=206&prc=25&Itemid=57#p26100">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=206&amp;prc=25&amp;Itemid=57#p26100">
 Можете объяснит на примере, как в QN привязать к клавише какое-либо действие?</tag>
 <tag name="simple-string">
 
@@ -7538,7 +7538,7 @@ cleep. #5132 22.Авг.17 17:57:20: </tag>
 <p>
 <tag name="simple-string">
 TEMP_USER. #5228 26.Фев.18 14:20:47: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=210&prc=25&Itemid=57#p26454">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=210&amp;prc=25&amp;Itemid=57#p26454">
 quest navigator и qgen это разные вещи?</tag>
 <tag name="simple-string">
 
@@ -7547,7 +7547,7 @@ quest navigator и qgen это разные вещи?</tag>
 <p>
 <tag name="simple-string">
 Hessar. #5291 09.Апр.18 15:19:27: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=212&amp;prc=25&amp;Itemid=57#p26613">
 можно ли подключить к игре библиотеку jQuery и как правильно использовать JavaScript для отображения в плеере? Что писать и куда? </tag>
 <tag name="simple-string">
 
@@ -7556,7 +7556,7 @@ Hessar. #5291 09.Апр.18 15:19:27: </tag>
 <p>
 <tag name="simple-string">
 новичок. #5466 31.Янв.19 11:43:10: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=219&amp;prc=25&amp;Itemid=57#p27067">
 еще такой вопрос. почему в навигаторе при pl описание выводится в основном окне</tag>
 <tag name="simple-string">
 
@@ -7565,7 +7565,7 @@ Hessar. #5291 09.Апр.18 15:19:27: </tag>
 <p>
 <tag name="simple-string">
 Подробный разбор изменений дизайна в Quest Navigator: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=1067&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1067&amp;Itemid=57">
 тема на форуме qsp.su</tag>
 <tag name="simple-string">
 
@@ -7580,7 +7580,7 @@ Hessar. #5291 09.Апр.18 15:19:27: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=1mMcOyG6_jc&t=18s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;t=18s">
 https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;</tag>
 <tag name="simple-string">
 
@@ -7595,7 +7595,7 @@ https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=1mMcOyG6_jc&t=414s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;t=414s">
 https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;</tag>
 <tag name="simple-string">
 
@@ -7607,7 +7607,7 @@ https://www.youtube.com/watch?v=1mMcOyG6_jc&amp;</tag>
 <p>
 <tag name="simple-string">
 gribochek. #3756 12.Янв.16 13:26:27: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=151&prc=25&Itemid=57#p22462">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=151&amp;prc=25&amp;Itemid=57#p22462">
 Если я выберу шрифт, то люди при скачивании его будут видеть опционально, или же мне придется закладывать шрифт в папку с игрой, и просьбой установить его?</tag>
 <tag name="simple-string">
 
@@ -7616,7 +7616,7 @@ gribochek. #3756 12.Янв.16 13:26:27: </tag>
 <p>
 <tag name="simple-string">
 Aaaspavel. #4203 31.Мар.16 09:53:21: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23627">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=169&amp;prc=25&amp;Itemid=57#p23627">
 задумка такая: к репутации гг привязать шрифт в навигаторе,  как это можно сделать?</tag>
 <tag name="simple-string">
 
@@ -7631,7 +7631,7 @@ Aaaspavel. #4203 31.Мар.16 09:53:21: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&t=18s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&amp;t=18s">
 https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <tag name="simple-string">
 
@@ -7646,7 +7646,7 @@ https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&t=182s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&amp;t=182s">
 https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <tag name="simple-string">
 
@@ -7658,7 +7658,7 @@ https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <p>
 <tag name="simple-string">
 Aaaspavel. #4256 08.Апр.16 21:56:56: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=171&prc=25&Itemid=57#p23707">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=171&amp;prc=25&amp;Itemid=57#p23707">
 при выполнении наведении курсора на определённые области курсор менялся на другие значки, к примеру с с разрешением (.ani)?</tag>
 <tag name="simple-string">
 
@@ -7674,7 +7674,7 @@ Aaaspavel. #4256 08.Апр.16 21:56:56: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=eB_BrqnD7Vw&t=18s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=eB_BrqnD7Vw&amp;t=18s">
 https://www.youtube.com/watch?v=eB_BrqnD7Vw&amp;</tag>
 <tag name="simple-string">
 
@@ -7683,7 +7683,7 @@ https://www.youtube.com/watch?v=eB_BrqnD7Vw&amp;</tag>
 <p>
 <tag name="simple-string">
 Iam. #4469 25.Июн.16 22:47:24: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=179&prc=25&Itemid=57#p24237">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=179&amp;prc=25&amp;Itemid=57#p24237">
 Может кто-то на конкретном примере показать как перелопатить интерфейс?</tag>
 <tag name="simple-string">
 
@@ -7692,7 +7692,7 @@ Iam. #4469 25.Июн.16 22:47:24: </tag>
 <p>
 <tag name="simple-string">
 Macmep. #4737 31.Окт.16 13:34:16: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=190&prc=25&Itemid=57#p24810">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=190&amp;prc=25&amp;Itemid=57#p24810">
 Собственно вопрос: как создать блок вывода действий? Что именно прописать в CSS?</tag>
 <tag name="simple-string">
 
@@ -7708,7 +7708,7 @@ Macmep. #4737 31.Окт.16 13:34:16: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&t=495s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=xhRfyqNepr0&amp;t=495s">
 https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <tag name="simple-string">
 
@@ -7723,7 +7723,7 @@ https://www.youtube.com/watch?v=xhRfyqNepr0&amp;</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&t=18s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&amp;t=18s">
 https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <tag name="simple-string">
 
@@ -7732,7 +7732,7 @@ https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <p>
 <tag name="simple-string">
 Deagle. #4829 05.Янв.17 19:26:21: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25042">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=194&amp;prc=25&amp;Itemid=57#p25042">
 Подскажите, пожалуйста, как вставить видео в quest navigator?</tag>
 <tag name="simple-string">
 
@@ -7747,7 +7747,7 @@ Deagle. #4829 05.Янв.17 19:26:21: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&t=323s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&amp;t=323s">
 https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <tag name="simple-string">
 
@@ -7762,7 +7762,7 @@ https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&t=502s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&amp;t=502s">
 https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <tag name="simple-string">
 
@@ -7771,7 +7771,7 @@ https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <p>
 <tag name="simple-string">
 kosmosnash. #4475 27.Июн.16 01:12:06: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=180&prc=25&Itemid=57#p24255">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=180&amp;prc=25&amp;Itemid=57#p24255">
 вопрос по Quest Navigator. Как можно сделать так, чтобы при разворачивании окна и (или) при изменении его размера сама игра тоже разворачивалась?</tag>
 <tag name="simple-string">
 
@@ -7780,7 +7780,7 @@ kosmosnash. #4475 27.Июн.16 01:12:06: </tag>
 <p>
 <tag name="simple-string">
 Deagle. #4838 08.Янв.17 18:31:12: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25056">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=194&amp;prc=25&amp;Itemid=57#p25056">
 А где в quest navigator править размер окна с игрой.</tag>
 <tag name="simple-string">
 
@@ -7795,7 +7795,7 @@ Deagle. #4838 08.Янв.17 18:31:12: </tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&t=763s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=g367zg1P7PM&amp;t=763s">
 https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <tag name="simple-string">
 
@@ -7804,7 +7804,7 @@ https://www.youtube.com/watch?v=g367zg1P7PM&amp;</tag>
 <p>
 <tag name="simple-string">
 cleep. #5106 04.Июл.17 10:26:14: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=205&prc=25&Itemid=57#p25969">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=205&amp;prc=25&amp;Itemid=57#p25969">
 Получается, что Quest Navigator поддерживает возможность включения Javascript-ов прямо в игре?</tag>
 <tag name="simple-string">
 
@@ -7813,7 +7813,7 @@ cleep. #5106 04.Июл.17 10:26:14: </tag>
 <p>
 <tag name="simple-string">
 NickoAilus. #5364 10.Авг.18 16:31:18: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=215&prc=25&Itemid=57#p26826">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=215&amp;prc=25&amp;Itemid=57#p26826">
 Есть ли тут знатоки Навигатора? Можно ли выполнять в нём запросы к JS? Можно ли заставить js-функцию возвращать нужное значение так, чтобы QSP его принял?</tag>
 <tag name="simple-string">
 
@@ -8019,7 +8019,7 @@ aleksversus@mail.ru</tag>
 </segment>
 </file>
 <file path="D:\my\projects\howdo_faq\[source]\ИнформАрхив QSP\954_nastrojka_shablona_0036.txt-light">
-<segment segment-class="for-soh">
+<segment segment-class="for-head">
 <header anchor="faq_22_05" head-level="h2">
 <p>
 22.5. Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать?</p>
@@ -8069,10 +8069,12 @@ $input</tag>
 <p>
 Откройте "gameAwesomium.html" в любом текстовом редакторе, а лучше в редакторе с подсветкой кода, например в SublimeText.
 </p>
+<p>
+&lt;section_of_head&gt;
+</p>
 </segment>
 </segment>
 </segment>
-<segment segment-class="for-soh">
 <header head-level="h1" anchor="head">
 <p>
 HEAD</p>
@@ -8140,11 +8142,15 @@ HEAD</p>
 <p>
 Сейчас мы не будем править скрипты, или писать свои. Приведённая информация только для ознакомления. Если вы не знакомы с JavaScript, пока эту часть лучше не трогать.
 </p>
+<p>
+&lt;/section_of_head&gt;
+</p>
+<p>
+&lt;section_of_head&gt;
+</p>
 </segment>
 </segment>
 </segment>
-</segment>
-<segment segment-class="for-soh">
 <header head-level="h1" anchor="body">
 <p>
 BODY</p>
@@ -8566,16 +8572,16 @@ qsp-dialog-view</p>
 qsp-dialog-error</p>
 </header>
 <segment segment-class="for-head">
+<segment segment-class="for-head">
 <segment>
 <p>
 Блок "qsp-dialog-error" отвечает за вывод сообщений об ошибках в коде QSP.
 </p>
+<p>
+&lt;/section_of_head&gt;
+</p>
 </segment>
 </segment>
-</segment>
-</segment>
-</segment>
-<segment segment-class="for-soh">
 <header head-level="h6" anchor="ps">
 <p>
 P.S.</p>
@@ -8603,6 +8609,8 @@ P.S.</p>
 <p>
 Quest Navigator в отличие от Классического плеера позволяет делать адаптивную вёрстку, то есть вёрстку подстраивающуюся под конкретное окно, а значит вы можете написать именно такую вёрстку, какая вам нужна и не беспокоиться о возможных отличиях в размере дисплеев, окон и т.д.
 </p>
+</segment>
+</segment>
 </segment>
 </segment>
 </segment>
@@ -9062,7 +9070,7 @@ BODY</tag>
 <p>
 <tag name="simple-string">
 Найти данную инструкцию и много полезных сообщений можно здесь: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=633&p=9&prc=25&Itemid=57#p19887">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=633&amp;p=9&amp;prc=25&amp;Itemid=57#p19887">
 Quest Navigator для Windows</tag>
 <tag name="simple-string">
 
@@ -9254,7 +9262,7 @@ Aleks Versus</tag>
 <p>
 <tag name="simple-string">
 Скачать всё можно на странице </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=57&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=56">
 "Разработчикам"</tag>
 <tag name="simple-string">
 . 
@@ -9295,7 +9303,7 @@ AeroQSP</tag>
 <p>
 <tag name="simple-string">
 Отличия от </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56">
 классической версии</tag>
 <tag name="simple-string">
  плеера:
@@ -9316,7 +9324,7 @@ AeroQSP</tag>
 <p>
 <tag name="simple-string">
 Проигрыватель AeroQSP для Windows: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56">
 AeroQSP Shell</tag>
 <tag name="simple-string">
 
@@ -9334,7 +9342,7 @@ AeroQSP Shell</tag>
 <p>
 <tag name="simple-string">
 Тема для вопросов на форуме: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=14&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=14&amp;Itemid=57">
 AeroQSP: вопросы</tag>
 <tag name="simple-string">
 
@@ -9343,7 +9351,7 @@ AeroQSP: вопросы</tag>
 <p>
 <tag name="simple-string">
 Набор шрифтов специально для разработки в AeroQSP: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=328&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=328&amp;Itemid=57">
 Набор swf-шрифтов и утилита для их тестирования</tag>
 <tag name="simple-string">
 
@@ -9352,7 +9360,7 @@ AeroQSP: вопросы</tag>
 <p>
 <tag name="simple-string">
 Пакет для сборки stand-alone версий игр на AeroQSP: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=117&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=117&amp;Itemid=56">
 Stand-alone сборка игр на AeroQSP</tag>
 <tag name="simple-string">
 
@@ -9575,7 +9583,7 @@ https://youtu.be/UqcQhd-HFzw</tag>
 <p>
 <tag name="simple-string">
 NickoAilus. #5647 18.Май.19 10:50:55: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25202">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=226&amp;prc=25&amp;Itemid=57#p25202">
 Что надо сделать с QGen, чтобы он заработал на AeroQSP?</tag>
 <tag name="simple-string">
 
@@ -9602,7 +9610,7 @@ https://qsp.org/misc/aero/readme.txt</tag>
 <p>
 <tag name="simple-string">
 Запуск AeroQSP из Quest Generator: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=297&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=297&amp;Itemid=57">
 Тема на форуме QSP.su</tag>
 <tag name="simple-string">
 
@@ -9611,7 +9619,7 @@ https://qsp.org/misc/aero/readme.txt</tag>
 <p>
 <tag name="simple-string">
 Stand-alone сборка на AeroQSP: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=117&Itemid=56">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=117&amp;Itemid=56">
 статья на QSP.su</tag>
 <tag name="simple-string">
 
@@ -9620,7 +9628,7 @@ Stand-alone сборка на AeroQSP: </tag>
 <p>
 <tag name="simple-string">
 Lisichka. #3849 05.Фев.16 00:51:59: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=154&prc=25&Itemid=57#p22877">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=154&amp;prc=25&amp;Itemid=57#p22877">
 можно ли как-то в аэру добавить второе окно доп описания?</tag>
 <tag name="simple-string">
 
@@ -9629,7 +9637,7 @@ Lisichka. #3849 05.Фев.16 00:51:59: </tag>
 <p>
 <tag name="simple-string">
 Mira. #4952 28.Фев.17 22:49:27: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25311">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=199&amp;prc=25&amp;Itemid=57#p25311">
 Создала на аеро свой хелоуворд, через standalone не работает, swf создается, грузится и черный экран дальше</tag>
 <tag name="simple-string">
 
@@ -9638,7 +9646,7 @@ Mira. #4952 28.Фев.17 22:49:27: </tag>
 <p>
 <tag name="simple-string">
 BlooDwareN. #5182 10.Янв.18 22:00:22: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=208&prc=25&Itemid=57#p26298">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=208&amp;prc=25&amp;Itemid=57#p26298">
 как установить AeroQSP!</tag>
 <tag name="simple-string">
 
@@ -13189,7 +13197,7 @@ https://qsp.org/misc/aero/help.htm</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=TCve-b6AQMs&t=18s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=TCve-b6AQMs&amp;t=18s">
 https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</tag>
 <tag name="simple-string">
 
@@ -13198,7 +13206,7 @@ https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</tag>
 <p>
 <tag name="simple-string">
 Storm. #2828 10.Май.15 18:33:19: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=113&amp;prc=25&amp;Itemid=57#p19941">
 В классическом плеере и в Quest Navigator`е свойство "border" работает, а в Aero нет.</tag>
 <tag name="simple-string">
 
@@ -13207,7 +13215,7 @@ Storm. #2828 10.Май.15 18:33:19: </tag>
 <p>
 <tag name="simple-string">
 Вета. #3784 24.Янв.16 14:50:18: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22645">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=152&amp;prc=25&amp;Itemid=57#p22645">
 как в аере задать ячейке таблицы цвет? С bgcolor не работает что-то...</tag>
 <tag name="simple-string">
 
@@ -13216,7 +13224,7 @@ Storm. #2828 10.Май.15 18:33:19: </tag>
 <p>
 <tag name="simple-string">
 DeathSpace. #4212 02.Апр.16 13:52:20: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=169&prc=25&Itemid=57#p23639">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=169&amp;prc=25&amp;Itemid=57#p23639">
 перевожу игру на AeroQSP но не показывает таблицы который были в классической версии плеера</tag>
 <tag name="simple-string">
 
@@ -13225,7 +13233,7 @@ DeathSpace. #4212 02.Апр.16 13:52:20: </tag>
 <p>
 <tag name="simple-string">
 DeathSpace. #4313 01.Май.16 02:05:59: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=173&prc=25&Itemid=57#p23838">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=173&amp;prc=25&amp;Itemid=57#p23838">
 Ребят кто знает как в AeroQSP строить таблицы?</tag>
 <tag name="simple-string">
 
@@ -13291,7 +13299,7 @@ DIV</tag>
 <p>
 <tag name="simple-string">
 Смотреть ответ на ютубе: </tag>
-<tag name="hyperlink" href="https://www.youtube.com/watch?v=TCve-b6AQMs&t=221s">
+<tag name="hyperlink" href="https://www.youtube.com/watch?v=TCve-b6AQMs&amp;t=221s">
 https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</tag>
 <tag name="simple-string">
 
@@ -13300,7 +13308,7 @@ https://www.youtube.com/watch?v=TCve-b6AQMs&amp;</tag>
 <p>
 <tag name="simple-string">
 folkextreme. #4534 20.Июл.16 14:45:03: </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24397">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=40&amp;p=182&amp;prc=25&amp;Itemid=57#p24397">
 примерно в области, выделенной красным, некликабельны ссылки</tag>
 <tag name="simple-string">
 
@@ -13320,7 +13328,7 @@ folkextreme. #4534 20.Июл.16 14:45:03: </tag>
 <p>
 <tag name="simple-string">
 Обзоры взяты из темы </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;Itemid=57">
 Обсуждение игр QSP-Compo 2010: Дневник странника</tag>
 <tag name="simple-string">
 .
@@ -13329,7 +13337,7 @@ folkextreme. #4534 20.Июл.16 14:45:03: </tag>
 <p>
 <tag name="simple-string">
 Комментарии и обсуждения </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;Itemid=57">
 там же</tag>
 <tag name="simple-string">
 .
@@ -13348,7 +13356,7 @@ folkextreme. #4534 20.Июл.16 14:45:03: </tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p488">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=1&amp;Itemid=57#p488">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -13427,7 +13435,7 @@ folkextreme. #4534 20.Июл.16 14:45:03: </tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p490">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=1&amp;Itemid=57#p490">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -13510,7 +13518,7 @@ La Villa Esperance</p>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p494">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=1&amp;Itemid=57#p494">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -13547,7 +13555,7 @@ La Villa Esperance</tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=2&Itemid=57#p511">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=2&amp;Itemid=57#p511">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -13700,7 +13708,7 @@ Narrator</tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=2&Itemid=57#p552">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=2&amp;Itemid=57#p552">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -13828,15 +13836,15 @@ uux</tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p760">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=3&amp;Itemid=57#p760">
 ссылка1</tag>
 <tag name="simple-string">
 , </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p776">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=3&amp;Itemid=57#p776">
 ссылка2</tag>
 <tag name="simple-string">
 , </tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p780">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=3&amp;Itemid=57#p780">
 ссылка3</tag>
 <tag name="simple-string">
 
@@ -14035,7 +14043,7 @@ Nex</tag>
 <segment segment-class="for-head">
 <segment>
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p784">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=49&amp;p=3&amp;Itemid=57#p784">
 ссылка</tag>
 <tag name="simple-string">
 
@@ -14289,7 +14297,7 @@ www.npmjs.com/qsp-converters</tag>
 </p>
 </segment>
 </segment>
-<header head-level="h3" anchor="qsp---txt">
+<header head-level="h3" anchor="qsp--gt-txt">
 <p>
 qsp -&gt; txt</p>
 </header>
@@ -14328,7 +14336,7 @@ codepen.io/qsp@txt2gam-converster</tag>
 <p>
 <tag name="simple-string">
 	</tag>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=64&Itemid=87">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=87">
 https://qsp.org/index.php?...&amp;Itemid=87</tag>
 <tag name="simple-string">
 
@@ -14574,7 +14582,7 @@ qspfoundation.github.io/qspider</tag>
 <p>
 <tag name="simple-string">
 Статья по работе с плеером: </tag>
-<tag name="hyperlink" href="https://m.vk.com/@qsplayer-qspider-v-0120-svodnaya-statya?context=author_page_date&ref=author_page">
+<tag name="hyperlink" href="https://m.vk.com/@qsplayer-qspider-v-0120-svodnaya-statya?context=author_page_date&amp;ref=author_page">
 vk.com/qSpider v.0.12.0</tag>
 <tag name="simple-string">
 , </tag>
@@ -14631,43 +14639,43 @@ discord/getGraphTool</tag>
 <list list-type="ul-list">
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=316&amp;Itemid=57">
 F.A.Q общие вопросы и некоторые примеры</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=956&amp;Itemid=57">
 Календарь по методу счёта Юлианских дней</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76">
 Гибкий плейлист 1.0</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=70:qsp-inventory-advanced-lib-076&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76">
 Библиотечка, дополняющая инвентарь</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=348&amp;Itemid=57">
 Действие по условию</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=164&amp;Itemid=57">
 Локализация классического плеера QSP v.5.7.0</tag>
 </p>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=861&amp;Itemid=57">
 Настройка окошек классического плеера с помощью qspgui.cfg</tag>
 </p>
 </segment>
@@ -14707,7 +14715,7 @@ http://ru.wikipedia.org/wiki/OFL</tag>
 </segment>
 <segment name="li">
 <p>
-<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&task=topic&id=398&Itemid=57">
+<tag name="hyperlink" href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=398&amp;Itemid=57">
 Что такое Royalty-Free</tag>
 </p>
 </segment>
