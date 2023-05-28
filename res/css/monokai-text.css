@@ -1,0 +1,128 @@
+.Monokai-Code .avs-article-h5 {
+    color:#6f39b5;
+    font-size: 1em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+.Monokai-Code .avs-article-h6 {
+    color: #452370;
+    font-size: 1em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+.cmd__item {
+    transition: background 1s ease;
+    padding: 3px;
+}
+.cmd__item:hover {
+    background: #ffffff11;
+    border-radius: 3px;
+}
+
+/*
+    TODO: стили для содержания вынести в общие стили сайта,
+    сделать в виде общих стилей для модальных окон
+*/
+
+/*#soderzhanije_outer {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding: 1em 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.87);
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
+
+.soderzhanije {
+    background-color: white;
+    overflow: auto;
+    box-sizing: border-box;
+    max-height:90%;
+    max-width:75%;
+    padding:1em;
+    border:1px solid;
+    align-self:flex-start;
+}
+
+.em_AROUND {
+    max-width:840px;
+    width:100%;
+    overflow: auto;
+    box-sizing: border-box;
+    height:99%;
+    background: #fff694;
+    padding:0.75em;
+    border: 2px solid #666;
+    border-radius: 5px;
+    font-family: Arial, serif;
+}
+
+.em_btn {
+    display:flex;
+/*    rgba(255, 246, 148, 0.86)*/
+    background: rgba(255, 246, 148, 0.86);
+    justify-content: space-between;
+    position: sticky;
+    bottom: -0.6em;
+
+/*
+    border:solid 1px #00000055;
+    border-radius: 2px;
+*/
+}
+
+.em_btn > div {
+    border:solid 1px #00888855;
+    border-radius:2px;
+    box-shadow:0 0 0.25em 0.1em rgba(83, 40, 40, 0.94);
+}
+
+.cmd > li {
+    background: #00000000;
+    transition: background 1s ease;
+    padding:3px;
+}
+.cmd > li:hover {
+    background: #ffffff11;
+    border-radius: 3px;
+}
+
+/* стилизация скроллов */
+/* полоса прокрутки (скроллбар) */
+.soderzhanije::-webkit-scrollbar {
+    background-color: #8BA02E22;
+    width:0.5em;
+    visibility: hidden;
+}
+
+/* ползунок скроллбара */
+.soderzhanije::-webkit-scrollbar-thumb {
+    background-color: #8BA02E88;
+    border-radius: 9em;
+    visibility: hidden;
+}
+.soderzhanije:hover::-webkit-scrollbar {
+    visibility: visible;
+    transition: visibility 1s ease;
+}
+
+/* ползунок скроллбара */
+.soderzhanije:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    transition: visibility 1s ease;
+}
+.soderzhanije .emFOLD {font-weight:normal}
+/* полоса прокрутки (скроллбар) */
+.em_AROUND::-webkit-scrollbar {
+    background-color: #8BA02E44;
+    width:0.5em;
+    transition: visibility 1s ease;
+    visibility: hidden;
+}*/
