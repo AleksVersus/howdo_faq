@@ -774,16 +774,16 @@ class NewNode():
 		crosslink = self.data_base.get_crosslink()
 		if prev_>-1:
 			prev_name = self.get_file_name_from_number(prev_)
-			prev_link = f'<a href="{crosslink}{prev_name}.html" class="emHREFTT">&lt; Назад, к странице {prev_+1}</a>'
+			prev_link = f'<a href="{crosslink}{prev_name}.html" class="avs-pages-button__link">&lt; Назад, к странице {prev_+1}</a>'
 		else:
 			prev_link = '&nbsp;'
 		if next_<len(self.data_base.files_db['files-paths']):
 			next_name = self.get_file_name_from_number(next_)
-			next_link = f'<a href="{crosslink}{next_name}.html" class="emHREFTT">Вперёд, к странице {next_+1} &gt;</a>'
+			next_link = f'<a href="{crosslink}{next_name}.html" class="avs-pages-button__link">Вперёд, к странице {next_+1} &gt;</a>'
 		else:
 			next_link = '&nbsp;'
-		text = '<div style="display:flex;justify-content:space-between;">'
-		text += f'<div>{prev_link}</div><div>{next_link}</div>'
+		text = '<div class="avs-pages-button__wrapper">'
+		text += f'<div class="avs-pages-button">{prev_link}</div><div class="avs-pages-button">{next_link}</div>'
 		text += '</div>\n'
 		return text
 
@@ -841,7 +841,7 @@ class NewNode():
 			elif len(self.source_lines)>0:
 				text += '<br/>'.join(self.source_lines)
 			if parent.node_type=='folder':
-				self.data_base.add_addition(f"<h2{anchor}>{text}</h2>")
+				self.data_base.add_addition(f'<h2{anchor} class="avs-article-h2">{text}</h2>')
 			else:
 				last_key = list(self.data_base.deep_level_head.keys())[-1]
 				last_head_level = int(re.match(r'h(\d+)', last_key).group(1))
@@ -849,9 +849,9 @@ class NewNode():
 					last_head_level+=1
 					if last_head_level>6: last_head_level=6
 					self.data_base.deep_level_head[f"h{last_head_level}"]=deep_level
-					text = f"<h{last_head_level}{anchor}>{text}</h{last_head_level}>"
+					text = f'<h{last_head_level}{anchor} class="avs-article-h{last_head_level}">{text}</h{last_head_level}>'
 				else:
-					text = f"<{last_key}{anchor}>{text}</{last_key}>"
+					text = f'<{last_key}{anchor} class="avs-article-{last_key}">{text}</{last_key}>'
 
 		elif self.node_type == 'list-node':
 			text=""
@@ -899,19 +899,21 @@ class NewNode():
 			elif len(self.source_lines)>0:
 				text += '<br/>'.join(self.source_lines)
 			if self.attributes['name']=='tt':
-				text = f'<span class="em_BLCK">{text}</span>'
+				text = f'<code>{text}</code>'
 			elif self.attributes['name']=='hyperlink':
 				href = (self.attributes['href'] if 'href' in self.attributes else '#')
 				if '#' in href:
 					if href.index('#')==0:
 						href = self.data_base.get_full_link_to_anchor(href[1:])
-				text = f'<a href="{href}" style="text-decoration:none;" class="emFOLD">{text}</a>'
+				text = f'<a href="{href}" style="text-decoration:none;" class="avs-page-external-link">{text}</a>'
 			elif self.attributes['name']=='anchor':
 				text = f'<a id="{self.attributes["anchor"]}" name="{self.attributes["anchor"]}"></a>'
 			elif self.attributes['name']=='hr':
-				text = '<hr class="em_HR" />'
+				text = '<hr class="em-hr" />'
 			elif self.attributes['name']=='image':
-				text = f'<img src="{self.attributes["src"]}" alt="AleksVersus-GAM-RUS" class="em_IMG" />'
+				text = '<div class="avs-articles-image__wrapper">'
+				text += f'<img src="{self.attributes["src"]}" alt="AleksVersus-GAM-RUS" class="avs-articles-image">'
+				text += '</div>'
 			elif self.attributes['name']=='bold-italic':
 				text = f'<strong><em>{text}</em></strong>'
 			elif self.attributes['name']=='bold':
