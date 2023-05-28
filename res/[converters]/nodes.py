@@ -775,15 +775,17 @@ class NewNode():
 		if prev_>-1:
 			prev_name = self.get_file_name_from_number(prev_)
 			prev_link = f'<a href="{crosslink}{prev_name}.html" class="avs-pages-button__link">&lt; Назад, к странице {prev_+1}</a>'
+			prev_btn = f'<div class="avs-pages-button__left-combine"><div class="avs-pages-button">{prev_link}</div></div>'
 		else:
-			prev_link = '&nbsp;'
+			prev_btn = '<div class="empty">&nbsp;</div>'
 		if next_<len(self.data_base.files_db['files-paths']):
 			next_name = self.get_file_name_from_number(next_)
 			next_link = f'<a href="{crosslink}{next_name}.html" class="avs-pages-button__link">Вперёд, к странице {next_+1} &gt;</a>'
+			next_btn = f'<div class="avs-pages-button__right-combine"><div class="avs-pages-button">{next_link}</div></div>'
 		else:
-			next_link = '&nbsp;'
+			next_btn = '<div class="empty">&nbsp;</div>'
 		text = '<div class="avs-pages-button__wrapper">'
-		text += f'<div class="avs-pages-button">{prev_link}</div><div class="avs-pages-button">{next_link}</div>'
+		text += f'{prev_btn}{next_btn}'
 		text += '</div>\n'
 		return text
 
