@@ -14,10 +14,10 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_jump_0082.html" class="avs-pages-button__link">&lt; Назад, к странице 81</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_mnogostrochnyj_kod_0084.html" class="avs-pages-button__link">Вперёд, к странице 83 &gt;</a></div></div></div>
-<h3 id="faq_13_09" class="avs-article-h3">13.9. Не работает многострочное условие. Как исправить?</h3><p>
+<h3 id="faq_13_09" class="avs-article-h3">13.9. Не работает многострочное условие. Как исправить?</h3><p class="avs-article-p">
 В: Не работает многострочный код. Как исправить?
 </p>
-<p>
+<p class="avs-article-p">
 Пишу такой код:
 </p>
 <div class="Monokai-Code">
@@ -26,34 +26,34 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Но даже если `mark_var` равно нулю, второй и третий текст всё равно выводятся.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Необходимо различать однострочную и многострочную формы записи конструкции условия.
 </p>
-<p>
+<p class="avs-article-p">
 Вот так выглядит однострочная форма:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:&nbsp;[команды&nbsp;1]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Как видите, за ключевым словом `IF` следует выражение `[#выражение]`, и если это выражение верно, тогда выполняется набор команд `[команды 1]`, который записан после двоеточия в той же строке, что и `IF`. При этом команды перечисляются через амперсанд (`&amp;`).
 </p>
-<p>
+<p class="avs-article-p">
 Код из примера в однострочной форме должен будет выглядеть так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Однострочную форму записи не требуется закрывать ключевым словом `END`, так как окончанием этой формы считается конец строки с `IF`.
 </p>
-<p>
+<p class="avs-article-p">
 А вот так выглядит многострочная форма записи конструкции условия:
 </p>
 <div class="Monokai-Code">
@@ -61,13 +61,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команды&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Здесь после двоеточия в той же строке, где находится и ключевое слово `IF`, ничего не пишется. Именно так плеер понимает, что имеет дело с многострочной формой записи. И в этом случае, если выражение `[#выражение]` верно, плеер ищет соответствующие верному условию команды (`[команды 1]`) в следующей строке после двоеточия.
 </p>
-<p>
+<p class="avs-article-p">
 Многострочная форма записи всегда закрывается ключевым словом `END`. Только так плеер может понять, что последующие команды уже не относятся к конструкции условия.
 </p>
-<p>
+<p class="avs-article-p">
 Код из примера в многострочной форме записи должен выглядеть так:
 </p>
 <div class="Monokai-Code">
@@ -77,7 +77,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Или так:
 </p>
 <div class="Monokai-Code">
@@ -85,19 +85,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Второй&nbsp;текст.'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Третий&nbsp;текст.'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Оба варианта являются многострочной формой записи конструкции условия.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь нетрудно догадаться, почему даже когда `mark_var` равно нулю в исходном примере второй и ттретий тексты всё равно выводились.
 </p>
-<p>
+<p class="avs-article-p">
 Плеер встречает конструкцию:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;mark_var<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-String">'Первый&nbsp;текст.'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 и, поскольку за двоеточием в той же строке, где находится `IF`, идёт команда `'Первый текст.'`, плеер понимает, что это однострочная форма записи, а значит окончанием конструкции условия можно считать конец строки. Таким образом команды, расположенные в нижеследующих строках, для плеера попросту не относятся к конструкции условия, и он выполняет их в любом случае. `END` при этом игнорируется.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_jump_0082.html" class="avs-pages-button__link">&lt; Назад, к странице 81</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_mnogostrochnyj_kod_0084.html" class="avs-pages-button__link">Вперёд, к странице 83 &gt;</a></div></div></div>

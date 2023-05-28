@@ -14,35 +14,35 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dva_spiska_predmetov_0097.html" class="avs-pages-button__link">&lt; Назад, к странице 96</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/raznye_predmety_s_odinakovymi_nazvanijami_0099.html" class="avs-pages-button__link">Вперёд, к странице 98 &gt;</a></div></div></div>
-<h3 id="faq_14_11" class="avs-article-h3">14.11. Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?</h3><p>
+<h3 id="faq_14_11" class="avs-article-h3">14.11. Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?</h3><p class="avs-article-p">
 В: Как сделать, чтобы плеер выполнял определённый код при добавлении любого предмета?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Для этого используйте локацию-обработчик события "добавление предмета". Чтобы сделать это, нужно:
 </p>
 <ul>
 <li>создать локацию, например с названием "предмет_добавлен" (название может быть любым),</li>
-<li><p>
+<li><p class="avs-article-p">
 указать плееру, какую локацию он должен использовать, как локацию-обработчик события "добавление предмета":</p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onobjadd</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"предмет_добавлен"</span><br/>
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 Теперь на локации "предмет_добавлен" можно прописать нужный вам код.
 </p>
-<p>
+<p class="avs-article-p">
 Локации-обработчику события "добавление предмета" передаются два значения, которые вы можете получить из массива `args`:
 </p>
 <ul>
 <li>`$args[0]` — название добавляемого предмета</li>
 <li>`$args[1]` — путь к файлу картинки добавляемого предмета</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Код локации-обработчика события "добавление предмета" выполняется уже после того, как предмет добавлен в окно предметов. Учитывайте это, например, при использовании функции `countobj`.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dva_spiska_predmetov_0097.html" class="avs-pages-button__link">&lt; Назад, к странице 96</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/raznye_predmety_s_odinakovymi_nazvanijami_0099.html" class="avs-pages-button__link">Вперёд, к странице 98 &gt;</a></div></div></div>

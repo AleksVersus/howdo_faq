@@ -14,25 +14,25 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/varianty_otveta_v_input_0018.html" class="avs-pages-button__link">&lt; Назад, к странице 19</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__raznye_menju_0020.html" class="avs-pages-button__link">Вперёд, к странице 21 &gt;</a></div></div></div>
-<h3 id="faq_04_01" class="avs-article-h3">4.1. Как сделать меню предмета?</h3><p>
+<h3 id="faq_04_01" class="avs-article-h3">4.1. Как сделать меню предмета?</h3><p class="avs-article-p">
 В: Как сделать меню предмета?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы меню всплывало по щелчку на предмете, нужно задействовать локацию-обработчик выделения предмета. Для этого:
 </p>
 <ul>
 <li>создаём локацию и называем, например, "если_предмет_выбран". Название может быть любым.</li>
-<li><p>
+<li><p class="avs-article-p">
 в самой первой локации в игре указываем плееру, какую локацию он должен использовать, как обработчик выделения предмета. Для этого в системную переменную `$onobjsel` вносим имя нашей новой локации:</p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выбран"</span><br/>
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 Теперь мы должны определиться с тем, сколько пунктов будет в нашем меню. Допустим, у нас есть предмет "Отвёртка" (добавленный где-то в игре с помощью `addobj "Отвёртка"`), и мы хотим сделать три пункта:
 </p>
 <ul>
@@ -40,7 +40,7 @@
 <li>Использовать</li>
 <li>Выбросить</li>
 </ul>
-<p>
+<p class="avs-article-p">
 На каждый пункт меню нам нужно создать отдельную локацию:
 </p>
 <ul>
@@ -48,7 +48,7 @@
 <li>Для пункта "Использовать" локация будет называться "use_screw"</li>
 <li>Для пункта "Выбросить" локация будет называться "put_screw"</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Далее нам нужно завести массив, в котором мы пропишем все наши пункты меню. Назовём его, например, `$меню_отвёртка`:
 </p>
 <div class="Monokai-Code">
@@ -56,20 +56,20 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Использовать:use_screw"</span><br/>
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Выбросить:put_screw"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 (этот код можно прописать на самой первой локации в игре)
 </p>
-<p>
+<p class="avs-article-p">
 Как видите, пункты нужно вписывать в массив, начиная с нулевой ячейки, по порядку. Каждый пункт состоит из двух частей:
 </p>
 <ul>
 <li>первая часть — название пункта меню</li>
 <li>вторая часть — название локации, которая отвечает за этот пункт меню.</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Части разделяются двоеточием.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь на локации-обработчике выделения предмета ("если_предмет_выбран") пишем такой код:
 </p>
 <div class="Monokai-Code">
@@ -82,14 +82,14 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 </span><span class="Monokai-Comment">!&nbsp;в&nbsp;самом&nbsp;конце&nbsp;локации&nbsp;не&nbsp;забудьте&nbsp;снять&nbsp;выделение&nbsp;с&nbsp;предмета:</span><br/>
 <span class="Monokai-Operator">unselect</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В качестве аргумента оператору `menu` передаётся название массива, в который мы прописали пункты меню.
 </p>
-<p>
+<p class="avs-article-p">
 Не забываем прописать код для каждой локации, которая отвечает за выполнение пункта меню:
 </p>
 <ul>
-<li><p>
+<li><p class="avs-article-p">
 локация "info_screw":</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
@@ -98,7 +98,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Обыкновенная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Подойдёт&nbsp;для&nbsp;регулирования&nbsp;громкости"</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 локация "use_screw"</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;например&nbsp;изменяем&nbsp;значение&nbsp;переменной</span><br/>
@@ -107,7 +107,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сунули&nbsp;отвёртку&nbsp;в&nbsp;ухо&nbsp;и&nbsp;звуки&nbsp;стали&nbsp;тише."</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 локация "put_screw"</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;очищаем&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
@@ -119,7 +119,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 Теперь осталось только попробовать, как всё работает.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/varianty_otveta_v_input_0018.html" class="avs-pages-button__link">&lt; Назад, к странице 19</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__raznye_menju_0020.html" class="avs-pages-button__link">Вперёд, к странице 21 &gt;</a></div></div></div>

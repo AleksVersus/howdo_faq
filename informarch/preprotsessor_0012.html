@@ -15,64 +15,64 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 13</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">Вперёд, к странице 15 &gt;</a></div></div></div>
-<h5 id="informarch_txt2gam_preprocessor" class="avs-article-h5">Тем, кто применяет TXT2GAM (использование препроцессора)</h5><p>
+<h5 id="informarch_txt2gam_preprocessor" class="avs-article-h5">Тем, кто применяет TXT2GAM (использование препроцессора)</h5><p class="avs-article-p">
 При написании игры без использования QGen, исходный текст не зашифрован и может редактироваться любым текстовым редактором.
 </p>
-<p>
+<p class="avs-article-p">
 Это также дает возможность обработать текстовый файл игры перед тем, как он будет превращен в QSP-файл - например, удалить отладочный код или неиспользуемые фрагменты текста, а также собрать один файл из нескольких мелких.
 </p>
-<p>
+<p class="avs-article-p">
 В мире программирования на Си эта возможность называется "препроцессинг" и выполняется утилитой cpp, которая идет в пакете с компиляторами C.
 </p>
-<p>
+<p class="avs-article-p">
 В нашем случае удобно использовать утилиту, которая не привязана к языку С и и может быть использована отдельно от компилятора — GPP для Win32.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы воспользоваться этим, нужно добавить в текст специальные инструкции и обработать текст утилитой GPP. После такой обработки текст уже не будет содержать инструкции и может быть преобразован в QSP-файл без ошибок.
 </p>
-<h5 id="instruktsii-osnovnye" class="avs-article-h5">Инструкции (основные)</h5><p>
+<h5 id="instruktsii-osnovnye" class="avs-article-h5">Инструкции (основные)</h5><p class="avs-article-p">
 <code>#mode quote</code> — отключает обработку символа "\" как служебного, рекомендуется поставить первой строчкой файла
 </p>
-<p>
+<p class="avs-article-p">
 <code>#define</code> &lt;имя&gt; — определить флажок, на который можно будет позже ссылаться
 </p>
-<p>
+<p class="avs-article-p">
 <code>#define</code> &lt;имя&gt; &lt;значение&gt; — определить значение, на которое можно будет позже ссылаться
 </p>
-<p>
+<p class="avs-article-p">
 <code>#undef</code> &lt;имя&gt; — удаление значения или флажка
 </p>
-<p>
+<p class="avs-article-p">
 <code>#ifdef</code> &lt;имя&gt; — если флаг или значение определены, то весь текст после этого условия до <code>#endif</code> или до <code>#else</code> будет выведен в итоговый файл
 </p>
-<p>
+<p class="avs-article-p">
 <code>#else</code> — окончание фрагмента, регулируемого инструкцией <code>#ifdef</code> - последующий текст выводится, если условие в <code>#ifdef</code> не выполнено
 </p>
-<p>
+<p class="avs-article-p">
 <code>#endif</code> — окончание фрагмента, регулируемого инструкцией <code>#ifdef</code> или <code>#else</code>
 </p>
-<p>
+<p class="avs-article-p">
 <code>#ifndef</code> — аналогично <code>#ifdef,</code> однако проверяется, что флаг или значение не определены - весь текст после этого условия до <code>#endif</code> или до <code>#else</code> будет выведен в итоговый файл
 </p>
-<p>
+<p class="avs-article-p">
 <code>#include</code> "&lt;имя файла&gt;" — в выходной файл вставляет текст из указанного файла (из той же папки) - если файл содержит инструкции, то он также будет обработан
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку в <code>txt2gam</code>, по умолчанию, для обозначения начала локации используется символ "#", то важно, чтобы имена локаций не назывались по имени инструкции (<code>define</code>, <code>ifdef</code>, и т.п.). Также не стоит включать инструкции в комментарии и строки, лучше их записывать на отдельных строчках.
 </p>
-<p>
+<p class="avs-article-p">
 Доступны также и другие инструкции, о них можно узнать в документации или спросить на форуме.
 </p>
-<p>
+<p class="avs-article-p">
 Для запуска текста игры на обработку нужно открыть консоль и набрать команду:
 </p>
-<p>
+<p class="avs-article-p">
 gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 </p>
-<p>
+<p class="avs-article-p">
 Другие ключи запуска можно узнать, запустив как: gpp.exe --help
 </p>
-<h5 id="primer-ispol_zovaniia" class="avs-article-h5">Пример использования</h5><p>
+<h5 id="primer-ispol_zovaniia" class="avs-article-h5">Пример использования</h5><p class="avs-article-p">
 Исходный файл:
 </p>
 <div class="Monokai-Code">
@@ -86,7 +86,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <br/>
 -&nbsp;Start</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 После обработки в выходной файл запишется:
 </p>
 <div class="Monokai-Code">
@@ -96,7 +96,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <br/>
 -&nbsp;Start</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если же убрать инструкцию <code>#define</code> - например, заменив на <code>#undef,</code> то после обработки в выходной файл запишется:
 </p>
 <div class="Monokai-Code">
@@ -104,13 +104,13 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <br/>
 -&nbsp;Start</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 То есть текст, регулируемый инструкцией <code>#ifdef,</code> был удален из конечного результата.
 </p>
-<p>
+<p class="avs-article-p">
 Прошу задавать вопросы на форуме.
 </p>
-<p>
+<p class="avs-article-p">
 Ссылки:
 </p>
 <ul>
@@ -118,10 +118,10 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <li><a href="http://files.nothingisreal.com/software/gpp/gpp.html" style="text-decoration:none;" class="avs-page-external-link">Документация на английском</a></li>
 <li><a href="http://en.nothingisreal.com/wiki/GPP" style="text-decoration:none;" class="avs-page-external-link">Домашний сайт GPP</a></li>
 </ul>
-<p>
+<p class="avs-article-p">
 АВТОР: <strong>NTROPY</strong> 
 </p>
-<p>
+<p class="avs-article-p">
 07.04.2010 18:47
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 13</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">Вперёд, к странице 15 &gt;</a></div></div></div>

@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_dejstvie_na_lokatsii_0151.html" class="avs-pages-button__link">&lt; Назад, к странице 150</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnyj_predmet_0153.html" class="avs-pages-button__link">Вперёд, к странице 152 &gt;</a></div></div></div>
-<h3 id="faq_20_20" class="avs-article-h3">20.20. Как сделать перемещение на случайную локацию?</h3><p>
+<h3 id="faq_20_20" class="avs-article-h3">20.20. Как сделать перемещение на случайную локацию?</h3><p class="avs-article-p">
 В: Как сделать перемещение на случайную локацию?
 </p>
-<p>
+<p class="avs-article-p">
 	Например, чтобы портал переносил случайным образом на одну из локаций.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Можно прописать выбор из случайного варианта прямо в действии:
 </p>
 <div class="Monokai-Code">
@@ -42,7 +42,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Можно заранее внести названия локаций в массив (создаём список):
 </p>
 <div class="Monokai-Code">
@@ -56,7 +56,7 @@ $portal<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</s
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$portal<span class="Monokai-Operator">[</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Последний вариант удобен тем, что посещённые места можно убирать из массива, и таким образом игрок не сможет посетить одно место дважды, но всё равно будет посещать их в случайном порядке:
 </p>
 <div class="Monokai-Code">

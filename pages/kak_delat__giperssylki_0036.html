@@ -14,64 +14,64 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__plejlist_0035.html" class="avs-pages-button__link">&lt; Назад, к странице 36</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_giperssylok_0037.html" class="avs-pages-button__link">Вперёд, к странице 38 &gt;</a></div></div></div>
-<h3 id="faq_07_01" class="avs-article-h3">7.1. Как делать гиперссылки, по нажатию на которые выполняется код?</h3><p>
+<h3 id="faq_07_01" class="avs-article-h3">7.1. Как делать гиперссылки, по нажатию на которые выполняется код?</h3><p class="avs-article-p">
 В:	Как делать гиперссылки, по нажатию на которые выполняется код?
 </p>
-<p>
+<p class="avs-article-p">
 	Как делать кликабельный текст?
 </p>
-<p>
+<p class="avs-article-p">
 	Как сделать, чтобы по нажатию на текст что-то происходило?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Гиперссылки в QSP делаются точно так же, как и в HTML-документах, то есть с использованием тегов `&lt;a&gt;` и `&lt;/a&gt;`.
 </p>
-<p>
+<p class="avs-article-p">
 Например так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;&lt;a&nbsp;href=''&gt;яблок&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В атрибуте `href`, если говорить об html-документе, обычно пишется url — адресс страницы в интернете. Однако в QSP мы можем разместить внутри этого атрибута строку кода. Например такую:
 </p>
 <div class="Monokai-Code">
 яблоко<span class="Monokai-Operator">=</span>яблоко<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Яблоко"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Чтобы плеер понял, что в атрибуте `href` находится не url, а какой-то код, мы должны указать перед этим кодом ключевое слово `EXEC`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;&lt;a&nbsp;href='exec:&nbsp;'&gt;яблок&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь нам нужно вставить после EXEC: нашу строку кода. Однако, мы уже использовали кавычки ("") для указания границ строки, и апострофы ('') для указания границ атрибута `href`. А в нашей строке кода тоже есть кавычки. Как быть?
 </p>
-<p>
+<p class="avs-article-p">
 Мы можем использовать три различных варианта:
 </p>
-<p>
+<p class="avs-article-p">
 Можно экранировать кавычки кода от QSP с помощью дублирования:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;&lt;a&nbsp;href='exec:яблоко=яблоко+1&nbsp;&amp;&nbsp;addobj&nbsp;"</span><span class="Monokai-String">"Яблоко"</span><span class="Monokai-String">"'&gt;яблок&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Можно заменить кавычки кода на апострофы, и эти апострофы экранировать от HTML спомощью обратного слэша (данный способ не рекомендуется, так как может не работать в Quest Navigator, qSpider и других более новых версиях плеера):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;&lt;a&nbsp;href='exec:яблоко=яблоко+1&nbsp;&amp;&nbsp;addobj&nbsp;\'Яблоко\''&gt;яблок&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Либо мы можем заменить апострофы атрибута `href` на кавычки и экранировать эти кавычки от кода QSP:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"На&nbsp;берёзе&nbsp;созрело&nbsp;несколько&nbsp;&lt;a&nbsp;href="</span><span class="Monokai-String">"exec:яблоко=яблоко+1&nbsp;&amp;&nbsp;addobj&nbsp;'Яблоко'"</span><span class="Monokai-String">"&gt;яблок&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Все три способа равнозначны. Используйте тот, что удобнее.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__plejlist_0035.html" class="avs-pages-button__link">&lt; Назад, к странице 36</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_giperssylok_0037.html" class="avs-pages-button__link">Вперёд, к странице 38 &gt;</a></div></div></div>

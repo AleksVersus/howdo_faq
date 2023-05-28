@@ -14,25 +14,25 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__smenjaemoe_izobrazhenie_0050.html" class="avs-pages-button__link">&lt; Назад, к странице 51</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/refint_0052.html" class="avs-pages-button__link">Вперёд, к странице 53 &gt;</a></div></div></div>
-<h3 id="faq_09_08" class="avs-article-h3">9.8. Как сделать вывод рандомного изображения?</h3><p>
+<h3 id="faq_09_08" class="avs-article-h3">9.8. Как сделать вывод рандомного изображения?</h3><p class="avs-article-p">
 В: Как сделать вывод рандомного изображения?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Если у вас есть несколько изображений, имена которых различаются лишь порядковыми номерами, то вывод одного из них случайным образом довольно прост.
 </p>
-<p>
+<p class="avs-article-p">
 Например, изображения с названиями от "pic_1.jpg" до "pic_10.jpg" лежат в папке с игрой. Вывести на экран случайное можно так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;img&nbsp;src='pic_&lt;&lt;rand(1,10)&gt;&gt;.jpg'&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Плеер встретит данную команду, и в первую очередь раскроет подвыражение. В подвыражении стоит функция `rand(1,10)`, которая вернёт случайное число от 1 до 10. Это число будет подставленно вместо подвыражения, и таким образом в атрибуте `src` получится полное название файла изображения. Плееру останется только вывести его на экран.
 </p>
-<p>
+<p class="avs-article-p">
 Если же у вас есть изображения с названиями, которые различаются не только порядковыми номерами, или лежат в разных папках, вывести на экран одно случайное будет ненамного сложнее. Главное предварительно внести все пути изображений в массив:
 </p>
 <div class="Monokai-Code">
@@ -43,13 +43,13 @@ $pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 $pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"personage/жена&nbsp;чукчи.gif"</span><br/>
 $pic_mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"arrow.png"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Затем уже выбранный случайный элемент массива подставляется в аттрибут `src`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;img&nbsp;src='&lt;&lt;$pic_mass[rand(0,5)]&gt;&gt;'&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Точно так же. Плеер попытается раскрыть подвыражение, в котором находится выражение `$pic_mass[rand(0,5)]` — то есть плееру нужно получить значение некой ячейки массива `$pic_mass`. Номер ячейки определяет функция `rand(0,5)` — то есть случайное число от 0 до 5 (таков номер последней заполненной ячейки массива). Плеер получит значение этой ячейки (а туда записан путь к изображению) и подставит вместо подвыражения. Таким образом в атрибуте `src` будет полный путь к изображению, плееру останется только вывести изображение на экран.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__smenjaemoe_izobrazhenie_0050.html" class="avs-pages-button__link">&lt; Назад, к странице 51</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/refint_0052.html" class="avs-pages-button__link">Вперёд, к странице 53 &gt;</a></div></div></div>

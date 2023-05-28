@@ -14,10 +14,10 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/snjat__vydelenie_s_dejstvij_0063.html" class="avs-pages-button__link">&lt; Назад, к странице 64</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dejstvie_po_usloviju_0065.html" class="avs-pages-button__link">Вперёд, к странице 66 &gt;</a></div></div></div>
-<h3 id="faq_11_01" class="avs-article-h3">11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</h3><p>
+<h3 id="faq_11_01" class="avs-article-h3">11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?</h3><p class="avs-article-p">
 В: При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
@@ -25,24 +25,24 @@
 &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;код</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Дело в том, что как такового в QSP нет булевого типа данных. То есть операции сравнения возвращают не значения 'true' и 'false', а значения 1 (заменяет 'true') и 0 (заменяет 'false'). Это легко проверить:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 <span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом оператор if проверяет не булевое, а числовое значение. И для этого оператора есть два варианта:
 </p>
 <ol>
 <li>Если ему передаётся значение 0, значит условие не выполнено.</li>
 <li>Если ему передаётся не 0, значит условие выполнено.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Именно поэтому когда Вы передаёте оператору if просто числовое значение, он работает с ним правильно, как должен.
 </p>
 <div class="Monokai-Code">

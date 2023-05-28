@@ -14,26 +14,26 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/zachem_nuzhna_stroka_vvoda_0102.html" class="avs-pages-button__link">&lt; Назад, к странице 101</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_pisat__poverh_vstavlennoj_kartinki_0104.html" class="avs-pages-button__link">Вперёд, к странице 103 &gt;</a></div></div></div>
-<h3 id="faq_15_02" class="avs-article-h3">15.2. Как задействовать строку ввода в игре?</h3><p>
+<h3 id="faq_15_02" class="avs-article-h3">15.2. Как задействовать строку ввода в игре?</h3><p class="avs-article-p">
 В: Как задействовать строку ввода в игре?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Начать следует с того, что любой текст, введённый игроком, можно получить в любой момент с помощью функции `$user_text`.
 </p>
-<p>
+<p class="avs-article-p">
 Для примера попробуйте сделать следующее:
 </p>
 <ol>
-<li><p>
+<li><p class="avs-article-p">
 Включите строку ввода:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 Создайте действие:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Вывести&nbsp;текст&nbsp;из&nbsp;строки&nbsp;ввода"</span><span class="Monokai-Operator">:</span><br/>
@@ -43,21 +43,21 @@
 </li>
 <li>Теперь запустите игру, пробуйте вводить текст в поле ввода, а затем нажимать на действие. Текст из поля ввода будет появляться на экране.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Далее обратимся к локации-обработчику строки ввода. Несмотря на то, что предназначение локации "обработчик строки ввода", сама по себе эта локация строку ввода не обрабатывает. Код этой системной локации выполняется, если установить курсор в поле ввода, а затем нажать клавишу "Enter".
 </p>
-<p>
+<p class="avs-article-p">
 Для того, чтобы это проверить, проделайте следующее:
 </p>
 <ol>
 <li>Создайте новую локацию. Имя может быть любым, но для примера назовём её "обработчик_ввода".</li>
-<li><p>
+<li><p class="avs-article-p">
 Чтобы плеер понял, какую локацию он должен использовать, как обработчик строки ввода, необходимо прописать название этой локации в переменной `$usercom`. Например, на самой первой локации в игре пишем:</p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$usercom</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"обработчик_ввода"</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 На локации-обработчике строки ввода пишем такой код:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;значение&nbsp;переменной&nbsp;на&nbsp;единицу</span><br/>
@@ -68,7 +68,7 @@ enter<span class="Monokai-Operator">=</span>enter<span class="Monokai-Operator">
 </li>
 <li>Теперь, когда вы запустите игру и установите курсор в поле ввода, а затем нажмёте клавишу "Enter", вы увидите, что на экране появится число. С каждым нажатием клавиши "Enter" на экране будет появляться новое число.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Объединив две эти возможности, можно задействовать строку ввода. Т.е. по нажатию клавиши "Enter", прямо на локации-обработчике строки ввода с помощью функции `$user_text` получаем текст, введённый игроком, и производим действия, в зависимости от того, что нам нужно:
 </p>
 <div class="Monokai-Code">

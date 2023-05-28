@@ -15,41 +15,41 @@
             <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html" class="avs-pages-button__link">&lt; Назад, к странице 7</a></div></div><div class="empty">&nbsp;</div></div>
-<h6 id="manifest-ob-organizatsii-koda-v-qsp" class="avs-article-h6">Манифест об организации кода в QSP</h6><p>
+<h6 id="manifest-ob-organizatsii-koda-v-qsp" class="avs-article-h6">Манифест об организации кода в QSP</h6><p class="avs-article-p">
 Этот манифест объявляю исключительно я, Aleks Versus. Следовать ему или не следовать, ваше право, поскольку каждый стилизует код под себя. Однако, если вы разрабатываете модуль, использование которого предполагается другими людьми, или совместно работаете над игрой, необходимо вывести стандартные правила оформления кода.
 </p>
-<p>
+<p class="avs-article-p">
 Здесь я предлагаю вам положиться на мой авторитет, поскольку я написал и перечитал неимоверное количество кода, и некоторые из нижеизложенных рекомендаций почерпнуты мной из чужих наработок и успешно внедрены в собственный стиль.
 </p>
-<p>
+<p class="avs-article-p">
 Повторюсь. Это лишь рекомендации по оформлению. Строго следовать им не нужно. В каждом конкретном случае подходите к написанию с умом и старайтесь делать код более читаемым. Хотя бы для себя.
 </p>
-<h6 id="zapis_-komand" class="avs-article-h6">Запись команд</h6><p>
+<h6 id="zapis_-komand" class="avs-article-h6">Запись команд</h6><p class="avs-article-p">
 Команды следует писать в отдельных строках. Допустимо объединять в одной строке две-три команды, если они очень короткие.
 </p>
-<p>
+<p class="avs-article-p">
 Правильно:
 </p>
 <div class="Monokai-Code">
 square&nbsp;<span class="Monokai-Operator">=</span>&nbsp;a&nbsp;<span class="Monokai-Operator">*</span>&nbsp;b<br/>
 volume&nbsp;<span class="Monokai-Operator">=</span>&nbsp;square&nbsp;<span class="Monokai-Operator">*</span>&nbsp;height<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Допустимо:
 </p>
 <div class="Monokai-Code">
 square&nbsp;<span class="Monokai-Operator">=</span>&nbsp;a&nbsp;<span class="Monokai-Operator">*</span>&nbsp;b&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;&nbsp;volume&nbsp;<span class="Monokai-Operator">=</span>&nbsp;square&nbsp;<span class="Monokai-Operator">*</span>&nbsp;height<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Как видите, подобное перечисление уже трудно читать, приходиться обрамлять дополнительными пробелами разделитель команд. Что уж говорить про перечисление большего количества команд в одной строке.
 </p>
-<p>
+<p class="avs-article-p">
 Недопустимо, потому что нечитаемо:
 </p>
 <div class="Monokai-Code">
 square&nbsp;<span class="Monokai-Operator">=</span>&nbsp;a&nbsp;<span class="Monokai-Operator">*</span>&nbsp;b&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;&nbsp;volume&nbsp;<span class="Monokai-Operator">=</span>&nbsp;square&nbsp;<span class="Monokai-Operator">*</span>&nbsp;height&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;&nbsp;space&nbsp;<span class="Monokai-Operator">=</span>&nbsp;volume&nbsp;<span class="Monokai-Operator">*</span>&nbsp;<span class="Monokai-Numeric">23</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;dev&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;space<span class="Monokai-Operator">/</span>square&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"end&nbsp;of&nbsp;math."</span>&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;ещё&nbsp;и&nbsp;комментарий</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же допустимо объединять команды при заполнении каких-то структурных данных. Например, вы заполняете таблицу, разнося её по массивам. Тогда имеет смысл объединять в одной строке несколько команд, чтобы таблица была наглядной:
 </p>
 <div class="Monokai-Code">
@@ -58,22 +58,22 @@ $id<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span>
 $id<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'0003'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;$object<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Старый&nbsp;ган'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;power<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">99</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;stam<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br/>
 $id<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'0004'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;$object<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Клиган-бой'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;power<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">9999</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;stam<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">999</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом случае приходится обрамлять разделители команд дополнительными пробелами, чтобы выровнять "столбцы".
 </p>
-<h6 id="odnostrochnye-i-mnogostrochnye-konstruktsii" class="avs-article-h6">Однострочные и многострочные конструкции</h6><p>
+<h6 id="odnostrochnye-i-mnogostrochnye-konstruktsii" class="avs-article-h6">Однострочные и многострочные конструкции</h6><p class="avs-article-p">
 Конструкции условий, действий и циклов поддерживают формы как многострочной, так и однострочной записи. В догонку предыдущему пункту: если в конструкции предполагается выполнение более одной команды, используйте многострочную форму.
 </p>
-<h6 id="imenovanie-peremennyh" class="avs-article-h6">Именование переменных</h6><p>
+<h6 id="imenovanie-peremennyh" class="avs-article-h6">Именование переменных</h6><p class="avs-article-p">
 Однобуквенные переменные, в т.ч. переменные типа <code>$y</code> или <code>$z</code>, никогда не используются как глобальные.
 </p>
-<p>
+<p class="avs-article-p">
 Если нужна многобуквенная локальная переменная в конце её названия ставим символ нижнего подчёркивания так мы сразу будем понимать, что используемая в коде переменная является локальной.
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку типы кортежей и строк фактически неразличимы необходимо начинать названия переменных кортежей с символа нижнего подчёркивания.
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -84,10 +84,10 @@ $_tuple&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-O
 </span><span class="Monokai-Comment">!&nbsp;объявляем&nbsp;локальный&nbsp;кортеж</span><br/>
 <span class="Monokai-Operator">local</span>&nbsp;$_personage_&nbsp;<span class="Monokai-Operator">=</span>&nbsp;$_tuple<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Аналоги констант и игровые переменные для хранения глобальных настроек пишутся заглавными буквами.
 </p>
-<p>
+<p class="avs-article-p">
 https://pythonworld.ru/osnovy/pep-8-rukovodstvo-po-napisaniyu-koda-na-python.html#section-30</p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html" class="avs-pages-button__link">&lt; Назад, к странице 7</a></div></div><div class="empty">&nbsp;</div></div>
 <!-- body end -->

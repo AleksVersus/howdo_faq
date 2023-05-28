@@ -15,13 +15,13 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html" class="avs-pages-button__link">&lt; Назад, к странице 29</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/video_0038.html" class="avs-pages-button__link">Вперёд, к странице 31 &gt;</a></div></div></div>
-<h6 id="faq_22_06" class="avs-article-h6">22.6. Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?</h6><p>
+<h6 id="faq_22_06" class="avs-article-h6">22.6. Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?</h6><p class="avs-article-p">
 В: Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 На данный момент существует только костыльный способ, предложенный <strong>newsash</strong>:
 </p>
 <div class="Monokai-Code">
@@ -35,19 +35,19 @@ tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Игра&nbsp;запущена&nbsp;на&nbsp;Классике"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данный способ работает благодаря разнице в интерпретации однострочной команды, разбитой на несколько строк.
 </p>
-<p>
+<p class="avs-article-p">
 В классическом плеере оператору условия передаётся имя переменной <code>tort</code>, тогда как в Quest Navigator это выражение
 </p>
 <div class="Monokai-Code">
 t&nbsp;<span class="Monokai-Func">or</span>&nbsp;t<br/>
 </div>
-<p>
+<p class="avs-article-p">
 , результат которого равен 1.
 </p>
-<p>
+<p class="avs-article-p">
 В самом Quest Navigator есть встроенная функция <code>$GETPLAYER</code>, которая позволяет получить название плеера, на котором запущена игра:
 </p>
 <div class="Monokai-Code">

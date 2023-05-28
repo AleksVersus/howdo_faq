@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/otlozhennyj_perehod_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/raspredelionnye_vychislenija_0013.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div></div>
-<h3 id="faq_02_03" class="avs-article-h3">2.3. Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?</h3><p>
+<h3 id="faq_02_03" class="avs-article-h3">2.3. Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?</h3><p class="avs-article-p">
 В: Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Вы можете написать любое событие, происходящее с течением действительного времени, если будете использовать локацию-счётчик.
 </p>
-<p>
+<p class="avs-article-p">
 Для начала нужно создать локацию-счётчик:
 </p>
 <ul>
@@ -33,14 +33,14 @@
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"реалтайм"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 По умолчанию обращение к локации-счётчику выполняется каждые пол секунды. Если нужно изменить период обращения, воспользуйтесь оператором `settimer`. В качестве аргумента этому оператору указывается период обращения к локации-счётчику в миллисекундах:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;обращение&nbsp;к&nbsp;локации-счётчику&nbsp;каждые&nbsp;100&nbsp;мс.</span><br/>
 <span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">100</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь на локации-счётчике пишем требуемый код. Например, данный код будет создавать действие "Шагнуть в портал" через 7 секунд после входа на локацию "зал_с_порталами":
 </p>
 <div class="Monokai-Code">
@@ -67,7 +67,7 @@
 <span class="Monokai-Koperator">end</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;переменная&nbsp;timer&nbsp;являюется&nbsp;глобальной</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Довольно простой код. Функция `msecscount` возвращает, сколько прошло миллисекунд с момента начала игры.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/otlozhennyj_perehod_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/raspredelionnye_vychislenija_0013.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div></div>

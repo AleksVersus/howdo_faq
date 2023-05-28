@@ -15,7 +15,7 @@
             <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="avs-pages-button__link">&lt; Назад, к странице 2</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="avs-pages-button__link">Вперёд, к странице 4 &gt;</a></div></div></div>
-<h4 id="novoje_v_rabote_massivov" class="avs-article-h4">Массивы уже не те</h4><h4 id="kak-vedut-sebia-massivy-sejchas" class="avs-article-h4">Как ведут себя массивы сейчас</h4><p>
+<h4 id="novoje_v_rabote_massivov" class="avs-article-h4">Массивы уже не те</h4><h4 id="kak-vedut-sebia-massivy-sejchas" class="avs-article-h4">Как ведут себя массивы сейчас</h4><p class="avs-article-p">
 Начать следует с того, что в «классическом» плеере версии 5.7.0 и ниже, а так же в Quest Navigator 0.0.28 и AeroQSP, в одном элементе массива можно хранить как текстовое, так и числовое значение. Вот как это выглядит:
 </p>
 <div class="Monokai-Code">
@@ -24,21 +24,21 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"груша"</span><br/>
 mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 При этом мы спокойно можем получить и числовое, и текстовое значение по указанному индексу:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Правда это создаёт ряд дополнительных трудностей. Например, каков будет размер массива в нашем примере?
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В обоих случаях <code>arrsize</code> выдаст ответ <code>2</code>. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
 </p>
 <div class="Monokai-Code">
@@ -52,10 +52,10 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом примере оба <code>arrsize</code> вернут <code>4</code>. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию <code>0</code>, для текстовых — <code>""</code> (пустая строка).
 </p>
-<p>
+<p class="avs-article-p">
 Такое поведение массива весьма просто представить в виде таблицы:
 </p>
 <div class="Monokai-Code">
@@ -70,10 +70,10 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <br/>|----------|------------|------------|
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'апельсин'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
-<p>
+<p class="avs-article-p">
 Для удобства восприятия мы не внесли в таблицу значения элементов, которые не были явно заданы. Однако, как было сказано выше, при попытке использовать значения этих элементов, мы получим значения по умолчанию. В данном случае для числовых элементов это будут нули.
 </p>
-<p>
+<p class="avs-article-p">
 Может показаться, что такое поведение массива не только правильно, но и удобно, поскольку позволяет использовать одно имя для хранения и текстовых и числовых значений. Некоторые авторы, знающие о таком поведении, делали, например, такие вещи:
 </p>
 <div class="Monokai-Code">
@@ -88,10 +88,10 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <br/>|----------|---------------|------------|
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;'артиллерист'&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
-<p>
+<p class="avs-article-p">
 То есть в одном массиве хранили и наименования юнитов, и их количество.
 </p>
-<p>
+<p class="avs-article-p">
 Однако данным способом Вы могли пользоваться, только когда явно указывали числовой индекс элемента массива. Если написать такой код:
 </p>
 <div class="Monokai-Code">
@@ -103,15 +103,15 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 — уверенность в том, какое значение вернёт <code>arrsize</code> пропадает.
 </p>
 <blockquote class="avs-article-blockquote">
-<p>
+<p class="avs-article-p">
 Для тех, кто ещё не знает: пустые квадратные скобки после имени массива означают, что мы хотим работать с последним элементом массива, и нам не важен его номер.
 </p>
 </blockquote>
-<p>
+<p class="avs-article-p">
 И тут происходит интересная штука. В момент, когда мы пытаемся последнему элементу присвоить значение, плеер создаёт новый элемент указанного типа и уже ему присваивает значение. Таким образом каждая такая команда генерирует в массиве элементы обоих типов, но лишь одному присваивается значение:
 </p>
 <div class="Monokai-Code">
@@ -126,16 +126,16 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <br/>|----------|------------|------------|
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
-<p>
+<p class="avs-article-p">
 Мы снова не вписали в таблицу значения элементов, которые не задавали, однако <code>mass[0]</code> и <code>mass[2]</code> вернут нам нули, если мы попробуем их использовать, а <code>$mass[1]</code> и <code>$mass[3]</code> вернут пустые строки (это соответствует их значениям по умолчанию).
 </p>
-<p>
+<p class="avs-article-p">
 Таким образом оба <code>arrsize</code> вернут нам значение <code>4</code>, хотя мы явно задавали только два числовых и два текстовых элемента.
 </p>
-<h4 id="kak-massivy-budut-sebia-vesti" class="avs-article-h4">Как массивы будут себя вести</h4><p>
+<h4 id="kak-massivy-budut-sebia-vesti" class="avs-article-h4">Как массивы будут себя вести</h4><p class="avs-article-p">
 Новая версия плеера ещё не вышла, но всё ниже следующее будет работать в ней так. (Уже работает в плеере qSpider)
 </p>
-<p>
+<p class="avs-article-p">
 Теперь под одним индексом можно хранить либо только текстовое, либо только числовое значение. Мы своего рода объединили столбцы нашей таблицы:
 </p>
 <div class="Monokai-Code">
@@ -150,7 +150,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <br/>|----------|------------|------------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----------|----------------|
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
-<p>
+<p class="avs-article-p">
 Это означает, что код:
 </p>
 <div class="Monokai-Code">
@@ -162,10 +162,10 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 будет работать так же, как и работал. Т.е. каждая операция присвоения создаёт новый элемент в массиве, которому мы присваиваем либо строку, либо текст. И в данном случае мы создадим четыре разных элемента массива, два из которых будут текстового типа, два — числового.
 </p>
-<p>
+<p class="avs-article-p">
 Немного по-другому поведёт себя наш изначальный код:
 </p>
 <div class="Monokai-Code">
@@ -177,10 +177,10 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — <code>arrsize</code> вернёт <code>2</code> в обеих командах.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы закрепить новые знания, рассмотрим другой наш пример:
 </p>
 <div class="Monokai-Code">
@@ -194,10 +194,10 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов <code>0</code> и <code>1</code>, а в элементах <code>2</code> и <code>3</code> будут текстовые значения. Соответственно обе команды <code>arrsize</code> вернут значение <code>4</code>.
 </p>
-<p>
+<p class="avs-article-p">
 В виде таблицы мы можем представить это так:
 </p>
 <div class="Monokai-Code">
@@ -212,22 +212,22 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <br/>|----------|----------------|
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'апельсин'&nbsp;&nbsp;|
 </div>
-<p>
+<p class="avs-article-p">
 Если мы попытаемся использовать текстовые значения элементов <code>0</code> и <code>1</code>, то получим значения по-умолчанию, то есть — <code>""</code> (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов <code>2</code> и <code>3</code>, то получим числовые значения по-умолчанию — <code>0</code> (нули).
 </p>
-<p>
+<p class="avs-article-p">
 Возможно пока Вы этого не заметили, но это очень масштабное изменение, которое потребует от некоторых авторов существенно изменить свои привычки в программировании на QSP.
 </p>
-<h4 id="chto-mozhno-i-nuzhno-sdelat_" class="avs-article-h4">Что можно и нужно сделать</h4><p>
+<h4 id="chto-mozhno-i-nuzhno-sdelat_" class="avs-article-h4">Что можно и нужно сделать</h4><p class="avs-article-p">
 Автор этой статьи уже ощутил на себе вес изменений в работе массивов.
 </p>
-<p>
+<p class="avs-article-p">
 Протестировав «Вереницу миров или выводы из закона Мёрфи» на плеере qSpider, который уже использует новую версию библиотеки, я (не без помощи <strong>Werewolf</strong>`а и <strong>Byte</strong>`а) обнаружил ошибки логики в коде, которые скрадывались в плеерах версии 5.7.0. именно благодаря тому, что под одним индексом в массиве можно было хранить и текстовое, и числовое значение. К счастью, эти ошибки легко поправить.
 </p>
-<p>
+<p class="avs-article-p">
 Если Вы где-либо использовали запись в массив под одним индексом и числовых и текстовых значений, Вам так же следует исправить это. Особенно критично исправить в проектах, разработка которых затянется на ближайшие год-два.
 </p>
-<p>
+<p class="avs-article-p">
 Предложенный пример, где названия и количество юнитов хранились в одном массиве, больше работать не будет.
 </p>
 <div class="Monokai-Code">
@@ -244,30 +244,30 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <br/>
 <br/>!!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;так&nbsp;делать&nbsp;нельзя&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!!!
 </div>
-<p>
+<p class="avs-article-p">
 И наш совет таков: не используйте и текстовые, и числовые значения элементов в одном массиве. Лучше завести два массива. Отдельно для текстовых и числовых значений:
 </p>
 <div class="Monokai-Code">
 $unit_name<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'пехотинец'</span><br/>
 unit_count<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">337</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Помимо изменений в массивах нас ждёт ещё целый ряд изменений, но они менее глобальны, и о них мы поговорим в следующих статьях.
 </p>
-<p>
+<p class="avs-article-p">
 Всем успехов в написании игр, и не бойтесь кажущейся сложности!
 </p>
-<p>
+<p class="avs-article-p">
 Памятка по изменениям в работе массивов:
 </p>
-<div class="avs-articles-image__wrapper"><img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" alt="AleksVersus-GAM-RUS" class="avs-articles-image"></div><p>
+<div class="avs-articles-image__wrapper"><img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" alt="AleksVersus-GAM-RUS" class="avs-articles-image"></div><p class="avs-article-p">
 Статья написана по мотивам:
 </p>
 <ul>
 <li>статьи <strong>Pseudopod</strong>`а <a href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri" style="text-decoration:none;" class="avs-page-external-link">trello.com/.../одновременное-использование-arri-и-arri</a></li>
 <li>и поста <strong>Byte</strong>`а <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1290&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">qsp.org/index.php...&amp;Itemid=57</a></li>
 </ul>
-<p>
+<p class="avs-article-p">
 Статья доступна и на других ресурсах:
 </p>
 <ul>

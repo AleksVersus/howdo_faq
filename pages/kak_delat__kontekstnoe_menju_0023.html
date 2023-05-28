@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_peredavat__lokatsijam-punktam_menju_argumenty_0022.html" class="avs-pages-button__link">&lt; Назад, к странице 23</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__razdelitel__0024.html" class="avs-pages-button__link">Вперёд, к странице 25 &gt;</a></div></div></div>
-<h3 id="faq_04_05" class="avs-article-h3">4.5. Как делать контекстное (динамическое) меню?</h3><p>
+<h3 id="faq_04_05" class="avs-article-h3">4.5. Как делать контекстное (динамическое) меню?</h3><p class="avs-article-p">
 В: Как делать контекстное (динамическое) меню?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Контекстное меню делать не сложнее, чем обыкновенное. Единственная сложность в том, чтобы добавлять в меню новые пункты, не отслеживая номеров.
 </p>
-<p>
+<p class="avs-article-p">
 Любое меню записывается в массив, начиная с нулевой ячейки, и обычно мы это делаем так:
 </p>
 <div class="Monokai-Code">
@@ -31,7 +31,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Использовать:use_screw"</span><br/>
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Выбросить:put_screw"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Тем самым мы указываем плееру конкретные ячейки, в которые нужно прописать пункты меню. Однако мы можем писать и так:
 </p>
 <div class="Monokai-Code">
@@ -39,7 +39,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Использовать:use_screw"</span><br/>
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Выбросить:put_screw"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Запись `$меню_отвёртка[]=` означает, что когда мы используем операцию присвоения, плеер создаст новую ячейку в массиве `$меню_отвёртка` с номером на 1 больше номера самой последней ячейки, и уже ей присвоит значение. Эта запись аналогична такой:
 </p>
 <div class="Monokai-Code">
@@ -47,7 +47,7 @@ $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Mo
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$меню_предмет'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Использовать:use_screw"</span><br/>
 $меню_отвёртка<span class="Monokai-Operator">[</span><span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$меню_предмет'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Выбросить:put_screw"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом мы можем добавлять в массив меню новые пункты, не опасаясь, что одни пункты затрут другие.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_peredavat__lokatsijam-punktam_menju_argumenty_0022.html" class="avs-pages-button__link">&lt; Назад, к странице 23</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__razdelitel__0024.html" class="avs-pages-button__link">Вперёд, к странице 25 &gt;</a></div></div></div>

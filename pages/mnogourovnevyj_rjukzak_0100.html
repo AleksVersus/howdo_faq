@@ -14,19 +14,19 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/raznye_predmety_s_odinakovymi_nazvanijami_0099.html" class="avs-pages-button__link">&lt; Назад, к странице 98</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/predmety_ne_v_okne_predmetov_0101.html" class="avs-pages-button__link">Вперёд, к странице 100 &gt;</a></div></div></div>
-<h3 id="faq_14_13" class="avs-article-h3">14.13. Как сделать многоуровневый рюкзак?</h3><p>
+<h3 id="faq_14_13" class="avs-article-h3">14.13. Как сделать многоуровневый рюкзак?</h3><p class="avs-article-p">
 В: Как сделать многоуровневый рюкзак?
 </p>
-<p>
+<p class="avs-article-p">
 В: Как сделать предметы в предметах?
 </p>
-<p>
+<p class="avs-article-p">
 Например, щёлкаешь по предмету "Рюкзак", и в окне инвентаря появляется список предметов в рюкзаке.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Списки предметов можно хранить в разных массивах. Например:
 </p>
 <div class="Monokai-Code">
@@ -40,10 +40,10 @@ $ур1_предметы<span class="Monokai-Operator">[</span><span class="Monok
 $ур1_предметы<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Хрустальный&nbsp;шар"</span><br/>
 $ур1_предметы<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Агар-Агар"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 С помощью цикла любой из этих списков можно вывести на экран.
 </p>
-<p>
+<p class="avs-article-p">
 На локации-обработчике выделения предмета можно прописать примерно такой код:
 </p>
 <div class="Monokai-Code">
@@ -70,17 +70,17 @@ $ур1_предметы<span class="Monokai-Operator">[</span><span class="Monok
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если вам нужно более двух списков предметов, то заводить отдельный массив на каждый неразумно. Проще завести два массива:
 </p>
 <ul>
 <li>в одном массиве прописывать сам предмет: `$предмет_название[0]="Бутылка кетчупа"`</li>
 <li>во втором массиве прописывать, где этот предмет находится: `$предмет_расположение[0]="Рюкзак"`</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Важно, чтобы индексы и предмета, и его расположения, в каждом массиве совпадали.
 </p>
-<p>
+<p class="avs-article-p">
 Вывести все предметы текущего уровня можно так:
 </p>
 <div class="Monokai-Code">

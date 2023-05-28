@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/protsenty_0143.html" class="avs-pages-button__link">&lt; Назад, к странице 142</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/razrezhenie_teksta_0145.html" class="avs-pages-button__link">Вперёд, к странице 144 &gt;</a></div></div></div>
-<h3 id="faq_20_12" class="avs-article-h3">20.12. Как решить задачу по поиску случайного набора слагаемых?</h3><p>
+<h3 id="faq_20_12" class="avs-article-h3">20.12. Как решить задачу по поиску случайного набора слагаемых?</h3><p class="avs-article-p">
 В: Как решить задачу по поиску случайного набора слагаемых?
 </p>
-<p>
+<p class="avs-article-p">
 	Например, есть набор чисел 2,3,5 и 9, и нужно случайным образом выбрать из них несколько чисел (можно одинаковых), которые в сумме составляют 9. Как это реализовать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Для начала разберём алгоритм для этого конкретного случая, а затем попытаемся написать более универсальную процедуру.
 </p>
 <div class="Monokai-Code">
@@ -64,10 +64,10 @@ summ&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Nume
 <span class="Monokai-Koperator">end</span><span class="Monokai-Markup"><br/>
 :cycle_end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Как видим, алгоритм генерации случайного набора слагаемых довольно прост. Однако он предполагает, что нам изначально известны слагаемые, на которые может быть разложена исходная сумма.
 </p>
-<p>
+<p class="avs-article-p">
 Можно написать универсальную процедуру для подобных случаев (назовём её "summ.break"):
 </p>
 <div class="Monokai-Code">
@@ -129,23 +129,23 @@ summ&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Nume
 </span><span class="Monokai-Comment">!&nbsp;массив&nbsp;mass&nbsp;удаляем,&nbsp;он&nbsp;был&nbsp;временным</span><span class="Monokai-Markup"><br/>
 :endandexit</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вариант вызова для исходной задачи:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-UnFunc">@summ.break</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'2,3,5,9'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данный алгоритм не включает в себя защиту от некоторых ошибок. Две очевидные:
 </p>
 <ul>
 <li>Вы не знаете изначально можно ли получить для данного числа хоть один набор слагаемых из тех, что даны.</li>
 <li>Перечень слагаемых включает числа, из которых можно получить набор слагаемых, но не во всех случаях.</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Обе эти ошибки не должны приводить к зацикливанию, но их всё равно стоит избегать.
 </p>
-<p>
+<p class="avs-article-p">
 См. так же: <a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html#faq_20_09" style="text-decoration:none;" class="avs-page-external-link">тянем карту из колоды</a>, <a href="https://aleksversus.github.io/howdo_faq/pages/sortirovka_dannyh_0142.html#faq_20_10" style="text-decoration:none;" class="avs-page-external-link">сортировка данных</a>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/protsenty_0143.html" class="avs-pages-button__link">&lt; Назад, к странице 142</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/razrezhenie_teksta_0145.html" class="avs-pages-button__link">Вперёд, к странице 144 &gt;</a></div></div></div>

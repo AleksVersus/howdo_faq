@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_nazvanie_peremennoj_0072.html" class="avs-pages-button__link">&lt; Назад, к странице 73</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/pochemu_ne_rabotaet_0074.html" class="avs-pages-button__link">Вперёд, к странице 75 &gt;</a></div></div></div>
-<h3 id="faq_12_03" class="avs-article-h3">12.3. Создаю действия с помощью цикла, но они работают неправильно. Что делать?</h3><p>
+<h3 id="faq_12_03" class="avs-article-h3">12.3. Создаю действия с помощью цикла, но они работают неправильно. Что делать?</h3><p class="avs-article-p">
 В: Создаю действия с помощью цикла, но они работают неправильно. Что делать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Это классическая "грабля", с которой сталкиваются все новички из-за неполного понимания порядка работы кода.
 </p>
-<p>
+<p class="avs-article-p">
 Допустим мы создаём действие:
 </p>
 <div class="Monokai-Code">
@@ -33,13 +33,13 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Это&nbsp;действие&nbsp;номер&nbsp;"</span><span class="Monokai-Operator">+</span>i<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Что мы при этом увидим на экране? Перед созданием действия переменной `i` присвоено значение 1. Значит название действия будет склеено из текста "Действие номер " и значения переменной `i`, то есть будет выглядеть так: "Действие номер 1".
 </p>
-<p>
+<p class="avs-article-p">
 Однако код, который мы назначили действию, будет выполнен только в момент нажатия действия.
 </p>
-<p>
+<p class="avs-article-p">
 То есть, если мы нажмём на действие, когда переменная `i` равна 1, мы увидим на экране текст: "Это действие номер 1". Но если переменную `i` изменить уже после создания действия, то когда мы нажмём на действие, мы увидим другой текст. Например:
 </p>
 <div class="Monokai-Code">
@@ -51,10 +51,10 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><b
 <br/>
 i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом случае мы увидим на экране действие с названием "Действие номер 1", а текст, который оно выведет на экран при нажатии, будет такой: "Это действие номер 2".
 </p>
-<p>
+<p class="avs-article-p">
 Теперь давайте посмотрим, что происходит при создании действий с помощью цикла:
 </p>
 <div class="Monokai-Code">
@@ -64,25 +64,25 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В конце цикла значение переменной `i` будет равно 6, тогда как цикл создаст нам пять действий с названиями:
 </p>
 <blockquote class="avs-article-blockquote">
-<p>
+<p class="avs-article-p">
 Действие номер 1</p>
-<p>
+<p class="avs-article-p">
 Действие номер 2</p>
-<p>
+<p class="avs-article-p">
 Действие номер 3</p>
-<p>
+<p class="avs-article-p">
 Действие номер 4</p>
-<p>
+<p class="avs-article-p">
 Действие номер 5</p>
 </blockquote>
-<p>
+<p class="avs-article-p">
 При этом, какое бы действие мы не нажимали, поскольку значение переменной `i` будет равно 6, мы всегда при нажатии на действие будем видеть на экране строку текста: "Это действие номер 6".
 </p>
-<p>
+<p class="avs-article-p">
 Однако, мы можем формировать действия с конкретными значениями с помощью оператора `dynamic`:
 </p>
 <div class="Monokai-Code">
@@ -92,7 +92,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь на каждом проходе цикла, когда плеер будет встречать оператор `dynamic`, этому оператору будет передаваться строка текста:
 </p>
 <div class="Monokai-Code">
@@ -100,7 +100,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+&lt;&lt;i&gt;&gt;<br/>
 end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Перед выполнением оператора `dynamic` плеер будет раскрывать подвыражения, подставляя вместо них значение `i`, соответствующее проходу. На первом проходе оператору `dynamic` будет передан такой текст:
 </p>
 <div class="Monokai-Code">
@@ -108,7 +108,7 @@ end'</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+1<br/>
 end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 На втором проходе такой:
 </p>
 <div class="Monokai-Code">
@@ -116,13 +116,13 @@ end'</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"Это&nbsp;действие&nbsp;номер&nbsp;"+2<br/>
 end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 И так далее.
 </p>
-<p>
+<p class="avs-article-p">
 `dynamic` выполняет код записанный в виде текста, и поскольку мы передаём ему команды для создания действий, будут созданы пять действий с конкретными числами в коде действий.
 </p>
-<p>
+<p class="avs-article-p">
 Для лучшего понимания попробуйте запустить такой код, и объясните его работу:
 </p>
 <div class="Monokai-Code">

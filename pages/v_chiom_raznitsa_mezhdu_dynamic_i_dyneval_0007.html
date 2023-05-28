@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/chem_otlichajutsja_dve_komandy_0006.html" class="avs-pages-button__link">&lt; Назад, к странице 7</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/v_chiom_raznitsa_mezhdu_goto_i_gt_0008.html" class="avs-pages-button__link">Вперёд, к странице 9 &gt;</a></div></div></div>
-<h3 id="faq_01_06" class="avs-article-h3">1.6. В чём разница между `dynamic` и `dyneval`?</h3><p>
+<h3 id="faq_01_06" class="avs-article-h3">1.6. В чём разница между `dynamic` и `dyneval`?</h3><p class="avs-article-p">
 В: В чём разница между `dynamic` и `dyneval`?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 И `dynamic`, и `dyneval` выполняют код, который мы передаём им в виде текста. Однако разница есть. И она заключается в том, что `dynamic` — это оператор, а `dyneval` — это функция. Функция умеет `возвращать` результат. Сравните работу этих двух команд:
 </p>
 <div class="Monokai-Code">
@@ -29,16 +29,16 @@
 <div class="Monokai-Code">
 <span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"result=2&nbsp;&amp;&nbsp;act&nbsp;'Прибавить&nbsp;единицу&nbsp;(1)':&nbsp;dyn=dyn+1"</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Первая просто выведет действие в окно действий, а вторая выведет действие, и число `2` на экран. Потому что результатом работы этой функции в данном случае станет `2`.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы воспользоваться возможностями `dyneval`, следует в конце вычислений присвоить результат переменной `result`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"result=500*13/45"</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Подобно `gosub` и `func`, `dynamic` и `dyneval` работают с аргументами:
 </p>
 <div class="Monokai-Code">
@@ -57,7 +57,7 @@ if&nbsp;args[1]&gt;0:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;jump&nbsp;'for'<br/>
 end"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">57</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если переданный в `dyneval` код не содержит переменную `$result` (ей не присваивается значение), при использовании неявного оператора такая функция `dyneval` будет работать, как оператор `dynamic`.
 </p>
 <div class="Monokai-Code">

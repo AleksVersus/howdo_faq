@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/chekpojnty_0116.html" class="avs-pages-button__link">&lt; Назад, к странице 115</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/addqst_i_openqst_0118.html" class="avs-pages-button__link">Вперёд, к странице 117 &gt;</a></div></div></div>
-<h4 id="faq_17_04" class="avs-article-h4">17.4. Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?</h4><p>
+<h4 id="faq_17_04" class="avs-article-h4">17.4. Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?</h4><p class="avs-article-p">
 В:	Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Это решается довольно просто, с помощью переменной-счётчика:
 </p>
 <div class="Monokai-Code">
@@ -38,13 +38,13 @@ savecount<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1<
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В данном случае в файле сохранения "1.sav" значение переменной-счётчика будет равно 2, а в файле "2.sav" — 1. Это позволит при загрузке игры из одного файла нажатием действия "Сохранить" записать сохранение в следующий файл.
 </p>
-<p>
+<p class="avs-article-p">
 Например, мы нажали действие "Сохранить" и сохранили игру в файл "1.sav", после чего нажатие на действие "Сохранить" должно записывать состояние в файл "2.sav". Не важно, нажмём мы действие ещё раз, или нет, при загрузке состояния из файла "1.sav" мы снова получим ситуацию, когда действие "Сохранить" должно будет записать очередное состояние в файл "2.sav".
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы загружать игру из последнего сохранения, нам нужно такое действие:
 </p>
 <div class="Monokai-Code">
@@ -56,10 +56,10 @@ savecount<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1<
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом случае, если мы сохранили состояние в файл "1.sav", то даже если мы загрузим состояние из этого файла, в следующий раз при выборе "Загрузить последнее" мы вновь загрузим состояние из "1.sav".
 </p>
-<p>
+<p class="avs-article-p">
 Однако если нам нужно загружать состояния из предыдущего файла, нужно создать такое действие:
 </p>
 <div class="Monokai-Code">

@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/proverka_chiotnosti_0134.html" class="avs-pages-button__link">&lt; Назад, к странице 133</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/vyvod_teksta_sverhu_0136.html" class="avs-pages-button__link">Вперёд, к странице 135 &gt;</a></div></div></div>
-<h3 id="faq_20_03" class="avs-article-h3">20.3. Как сделать шанс на выпадение определённой вещи?</h3><p>
+<h3 id="faq_20_03" class="avs-article-h3">20.3. Как сделать шанс на выпадение определённой вещи?</h3><p class="avs-article-p">
 В: Как сделать шанс на выпадение определённой вещи? Например 25 процентный шанс на то, что в сундуке окажется золотая чаша?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 В самом простом виде, когда мы имеем дело с одним конкретным предметом и приблизительно знаем шансы его выпадения, можно сделать весьма простой алгоритм:
 </p>
 <div class="Monokai-Code">
@@ -39,7 +39,7 @@ bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</spa
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;ничего&nbsp;не&nbsp;нашли&nbsp;в&nbsp;сундуке."</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Чуть более сложной задачей становится выбор из нескольких вариантов предметов. Эта задача осложняется тем, что начинающие авторы продолжают применять подход с процентным значением шансов к большому набору предметов:
 </p>
 <div class="Monokai-Code">
@@ -48,20 +48,20 @@ bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</spa
 <br/>Вострый&nbsp;меч&nbsp;—&nbsp;50%
 <br/>Убольшающее&nbsp;зелье&nbsp;—&nbsp;25%
 </div>
-<p>
+<p class="avs-article-p">
 Если сложить все процентные значения в этом случае, мы получаем 125% на все предметы, но такого не может быть.
 </p>
-<p>
+<p class="avs-article-p">
 На самом деле данная запись означает вот что: золотая чаша, кувшин и убольшающее зелье имеют равные шансы для выпадения, но по сравнению с любым из них вострый меч должен выпадать чаще (приблизительно в два раза). Однако шанс выпадения вострого меча в этом случае на треть меньше, чем шанс выпадения золотой чаши, либо кувшина, либо убольшающего зелья.
 </p>
-<p>
+<p class="avs-article-p">
 Всё это говорит нам о том, что мы имеем дело уже не с процентными соотношениями, а с коэффициентами соотношений. Начнём разбор этой ситуации с двух предметов:
 </p>
 <div class="Monokai-Code">
 Вострый&nbsp;меч&nbsp;—&nbsp;50
 <br/>Убольшающее&nbsp;зелье&nbsp;—&nbsp;25
 </div>
-<p>
+<p class="avs-article-p">
 Теперь мы знаем, что это не проценты, а коэффициенты соотношений шанса выпадения. Делим 50 на 25, и понимаем, что Вострый меч должен выпадать вдвое чаще, чем Убольшающее зелье. При условии, что хоть один предмет должен выпасть обязательно, составляем следующий алгоритм:
 </p>
 <div class="Monokai-Code">
@@ -84,7 +84,7 @@ bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</spa
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Убольшающее&nbsp;зелье"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь можно составить алгоритм для случая с четырьмя предметами. Он не будет сильно отличаться от предыдущего:
 </p>
 <div class="Monokai-Code">
@@ -111,7 +111,7 @@ bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</spa
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Золотая&nbsp;чаша"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Что если мы хотим, чтобы в принципе предмет мог выпасть с 50% вероятностью, но между собой они делили шансы выпадения по-прежнему? Просто увеличиваем максимальное значение числа вдвое:
 </p>
 <div class="Monokai-Code">
@@ -141,7 +141,7 @@ bones<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</spa
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Вы&nbsp;ничего&nbsp;не&nbsp;нашли"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Конечно же данное решение не является универсальным, и для более универсального решения рамок обычного F.A.Q не хватит, но в большинстве случаев для написания сносной системы случайного выпадения предметов хватает и данного решения. Главное помнить, что выбирая между разными предметами мы уже работаем не с чистой вероятностью выпадения, а с тем, насколько чаще один предмет выпадает по отношению к другим предметам.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/proverka_chiotnosti_0134.html" class="avs-pages-button__link">&lt; Назад, к странице 133</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/vyvod_teksta_sverhu_0136.html" class="avs-pages-button__link">Вперёд, к странице 135 &gt;</a></div></div></div>

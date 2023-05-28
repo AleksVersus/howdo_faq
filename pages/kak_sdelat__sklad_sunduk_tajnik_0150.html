@@ -14,19 +14,19 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__knigu_v_igre_0149.html" class="avs-pages-button__link">&lt; Назад, к странице 148</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_dejstvie_na_lokatsii_0151.html" class="avs-pages-button__link">Вперёд, к странице 150 &gt;</a></div></div></div>
-<h3 id="faq_20_18" class="avs-article-h3">20.18. Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?</h3><p>
+<h3 id="faq_20_18" class="avs-article-h3">20.18. Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?</h3><p class="avs-article-p">
 В: Как сделать склад, сундук, тайник, место, в котором можно выкладывать и хранить предметы?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Решение данного вопроса состоит из двух частей.
 </p>
-<p>
+<p class="avs-article-p">
 Первая часть — это непосредственно создание тайника. Тайник можно реализовать на отдельной локации.
 </p>
-<p>
+<p class="avs-article-p">
 Создаём новую локацию и называем её "тайник". Затем, на локации, где мы располагаем тайник, нужно добавить действие или гиперссылку, которая ведёт на локацию тайник:
 </p>
 <div class="Monokai-Code">
@@ -34,16 +34,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"тайник"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Само собой на локации "тайник" необходимо создать гиперссылку или действие, ведущие на предыдущую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 На этом первая часть решения нашего вопроса окончена. Переходим ко второй части. Непосредственно сброс предметов на локации.
 </p>
-<p>
+<p class="avs-article-p">
 Для того, чтобы игрок мог взаимодействовать с предметами, необходимо завести локацию-обработчик выделения предмета (более подробно об этом прочитайте в разделе "Предметы") и на этой локации прописать код взаимодействия. Тут тоже есть варианты. Вы можете организовать меню предметов, одним из пунктов которого может быть пункт "Выбросить", можете добавить в окно действий действие "Выбросить" на каждый предмет (если их не много), либо (если на локации "тайник" можно только сбрасывать предметы) воспользоваться нижеследующим решением, которое позволяет сбрасывать предметы по клику на них.
 </p>
-<p>
+<p class="avs-article-p">
 Для того, чтобы каждый предмет на локации "тайник" сбрасывался по клику, на локации-обработчике выделения предмета необходимо прописать следующий код:
 </p>
 <div class="Monokai-Code">
@@ -57,7 +57,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-Func">$curloc</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Чтобы сброшенные предметы воспроизводились на локации "тайник" в виде действий, нужно на локации "тайник" прописать такой код:
 </p>
 <div class="Monokai-Code">
@@ -73,7 +73,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Это универсальный код, позволяющий сбрасывать и поднимать любые предметы, если не требуется учитывать их количество.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__knigu_v_igre_0149.html" class="avs-pages-button__link">&lt; Назад, к странице 148</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_dejstvie_na_lokatsii_0151.html" class="avs-pages-button__link">Вперёд, к странице 150 &gt;</a></div></div></div>

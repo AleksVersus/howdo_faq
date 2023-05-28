@@ -14,31 +14,31 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/predmet_v_vide_kartinki_0094.html" class="avs-pages-button__link">&lt; Назад, к странице 93</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_snjat__vydelenie_0096.html" class="avs-pages-button__link">Вперёд, к странице 95 &gt;</a></div></div></div>
-<h3 id="faq_14_08" class="avs-article-h3">14.8. Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?</h3><p>
+<h3 id="faq_14_08" class="avs-article-h3">14.8. Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?</h3><p class="avs-article-p">
 В: Как сделать, чтоб при щелчке по предмету выполнялся какой-либо код?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Для начала нужно завести локацию-обработчик выделения предмета. Для этого:
 </p>
 <ul>
 <li>создаём локацию и называем, например, "если_предмет_выбран". Название может быть любым.</li>
-<li><p>
+<li><p class="avs-article-p">
 в самой первой локации в игре указываем плееру, какую локацию он должен использовать, как обработчик выделения предмета. Для этого в системную переменную `$onobjsel` вносим имя нашей новой локации:</p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выбран"</span><br/>
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 Теперь код локации будет выполняться всякий раз, когда мы выделяем новый предмет.
 </p>
-<p>
+<p class="avs-article-p">
 Функция `$selobj` возвращает нам название выделенного предмета, поэтому на локации-обработчике мы можем проверять, какой предмет выделен, и выполнять соответствующий код.
 </p>
-<p>
+<p class="avs-article-p">
 Например, можно выводить описание предмета в окно дополнительного описания при щелчке по предмету:
 </p>
 <div class="Monokai-Code">
@@ -50,7 +50,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Прекрасная&nbsp;крестовая&nbsp;отвёртка.&nbsp;Отлично&nbsp;подойдёт&nbsp;для&nbsp;регулирования&nbsp;уровня&nbsp;громкости"</span>&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Или совершать переход на локацию:
 </p>
 <div class="Monokai-Code">
@@ -60,7 +60,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"Эверест"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В конце локации-обработчика не забывайте ставить команду `unselect`, чтобы снять выделение и дать игроку возможность повторно воспользоваться предметом.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/predmet_v_vide_kartinki_0094.html" class="avs-pages-button__link">&lt; Назад, к странице 93</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_snjat__vydelenie_0096.html" class="avs-pages-button__link">Вперёд, к странице 95 &gt;</a></div></div></div>

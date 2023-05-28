@@ -14,25 +14,25 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_zamenit__odin_predmet_na_drugoj_0092.html" class="avs-pages-button__link">&lt; Назад, к странице 91</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/predmet_v_vide_kartinki_0094.html" class="avs-pages-button__link">Вперёд, к странице 93 &gt;</a></div></div></div>
-<h3 id="faq_14_06" class="avs-article-h3">14.6. Как делать динамические/считаемые предметы?</h3><p>
+<h3 id="faq_14_06" class="avs-article-h3">14.6. Как делать динамические/считаемые предметы?</h3><p class="avs-article-p">
 В: Как делать динамические/считаемые предметы?
 </p>
-<p>
+<p class="avs-article-p">
 В: Как делать стакающиеся предметы?
 </p>
-<p>
+<p class="avs-article-p">
 В: Как делать предметы, рядом с названиями которых выводится их количество?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Допустим, на разных локациях мы можем подбирать одинаковые предметы с названием "Грибочек". Если мы просто пропишем везде команду:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , то наш инвентарь окажется захламлён множеством одинаковых "Грибочков". Чтобы избежать этого, обычно заводят переменную, которая ведёт подсчёт числа предметов, и тогда код каждого подъёма грибочков слегка усложняется:
 </p>
 <div class="Monokai-Code">
@@ -44,13 +44,13 @@
 </span><span class="Monokai-Comment">!&nbsp;увеличиваем&nbsp;число&nbsp;собранных&nbsp;грибочков&nbsp;на&nbsp;1</span><br/>
 грибочек<span class="Monokai-Operator">=</span>грибочек<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Затем можно выводить число грибочков на экран при щелчке по предмету "Грибочек".
 </p>
-<p>
+<p class="avs-article-p">
 Но как же сделать, чтобы в окне инвентаря отображалась актуальная информация о числе "Грибочков", и нам не приходилось щёлкать по предмету?
 </p>
-<p>
+<p class="avs-article-p">
 Мы можем добавить в окно инвентаря предмет, указав его количество прямо в названии:
 </p>
 <div class="Monokai-Code">
@@ -59,7 +59,7 @@
 </span><span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;с&nbsp;указанным&nbsp;количеством</span><br/>
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек&nbsp;(&lt;&lt;грибочек&gt;&gt;&nbsp;шт.)"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 А чтобы с экрана пропадал предмет со старым названием, необходимо его предварительно удалить с помощью оператора `delobj`:
 </p>
 <div class="Monokai-Code">
@@ -70,16 +70,16 @@
 </span><span class="Monokai-Comment">!&nbsp;добавляем&nbsp;предмет&nbsp;с&nbsp;новым&nbsp;количеством</span><br/>
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Грибочек&nbsp;(&lt;&lt;грибочек&gt;&gt;&nbsp;шт.)"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Иными словами, всякий раз, как мы изменяем количество, предмет со старым названием удаляется из инвентаря, а предмет с новым, актуальным названием добавляется в инвентарь.
 </p>
-<p>
+<p class="avs-article-p">
 При этом у вас могут возникнуть сложности со взаимодействием с этим предметом, например, в локации-обработчике выделения предмета, поскольку теперь нельзя будет точно предсказать, в какой момент игры, какое будет у предмета название. Условие:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$selobj</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"Грибочек"</span><span class="Monokai-Operator">:</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 не сработает. В этом случае нужно проверять только часть названия, например с помощью функции `instr`:
 </p>
 <div class="Monokai-Code">

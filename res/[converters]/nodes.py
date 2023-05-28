@@ -891,7 +891,7 @@ class NewNode():
 			elif len(self.source_lines)>0:
 				text += '<br/>'.join(self.source_lines)
 			if not parent.node_type in ('head') and not not_p:
-				text = f'<p>\n{text}</p>\n'
+				text = f'<p class="avs-article-p">\n{text}</p>\n'
 
 		elif self.node_type == 'tag':
 			text=""

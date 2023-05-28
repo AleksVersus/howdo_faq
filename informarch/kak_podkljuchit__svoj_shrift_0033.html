@@ -15,16 +15,16 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html" class="avs-pages-button__link">&lt; Назад, к странице 25</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="avs-pages-button__link">Вперёд, к странице 27 &gt;</a></div></div></div>
-<h5 id="faq_22_02" class="avs-article-h5">22.2. Как подключить свой шрифт к игре?</h5><p>
+<h5 id="faq_22_02" class="avs-article-h5">22.2. Как подключить свой шрифт к игре?</h5><p class="avs-article-p">
 В: Как подключить свой шрифт к игре?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Это делается через CSS. Используйте правило <code>@font-face</code>, чтобы импортировать шрифт в игру.
 </p>
-<p>
+<p class="avs-article-p">
 В файле "game.css" вашего шаблона пропишите подобное правило:
 </p>
 <div class="Monokai-Code">
@@ -33,7 +33,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">src</span>:&nbsp;<span class="Monokai-Numeric">url(fonts/versus-new.ttf)</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;Указываем&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;со&nbsp;шрифтом&nbsp;*/</span><br/>
 }<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Применить шрифт можно, назначив стиль:
 </p>
 <div class="Monokai-Code">
@@ -41,10 +41,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Construct">font-family</span>:&nbsp;<span class="Monokai-String">"Versus&nbsp;New"</span>;&nbsp;<span class="Monokai-Comment">/*&nbsp;применяем&nbsp;шрифт&nbsp;к&nbsp;абзацам&nbsp;*/</span><br/>
 }<br/>
 </div>
-<p>
+<p class="avs-article-p">
 <code>src:url();</code> — это ссылка на файл шрифта. Ваш файл шрифта должен лежать на уровне файла "game.css" вашего шаблона, или во вложенной папке. Соответственно указываем относительный путь — относительно файла "game.css".
 </p>
-<p>
+<p class="avs-article-p">
 P.S.: К сожалению, данный способ по факту работает только в стандалон-сборке. А ещё придётся поэкспериментировать с форматом шрифта, так как замечено, что Навигатор не справляется с truetype-шрифтами, но неплохо ест opentype ttf и woff. Поэтому, если вы заметили, что ваш шрифт не работает в Навигаторе, попробуйте сконвертировать его в другие форматы и подключить их.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html" class="avs-pages-button__link">&lt; Назад, к странице 25</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="avs-pages-button__link">Вперёд, к странице 27 &gt;</a></div></div></div>

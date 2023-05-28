@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html" class="avs-pages-button__link">&lt; Назад, к странице 140</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/protsenty_0143.html" class="avs-pages-button__link">Вперёд, к странице 142 &gt;</a></div></div></div>
-<h3 id="faq_20_10" class="avs-article-h3">20.10. Как отсортировать данные?</h3><p>
+<h3 id="faq_20_10" class="avs-article-h3">20.10. Как отсортировать данные?</h3><p class="avs-article-p">
 В: Как отсортировать данные? Например, список персонажей по алфавиту, или набор чисел от меньшего к большему.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Прежде всего такие данные должны лежать в одном массиве. Например:
 </p>
 <div class="Monokai-Code">
@@ -30,7 +30,7 @@ $personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2
 $personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Саша'</span><br/>
 $personage<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Лёня'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Или:
 </p>
 <div class="Monokai-Code">
@@ -40,7 +40,7 @@ number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</sp
 number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">121</span><br/>
 number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">474</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Далее можно воспользоваться простым алгоритмом:
 </p>
 <div class="Monokai-Code">
@@ -66,10 +66,10 @@ number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</sp
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$personage_temp'</span><span class="Monokai-Operator">,</span>index<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Обратите внимание, при работе с текстовыми значениями меньшим считается то, которое идёт раньше согласно алфавитного порядка.
 </p>
-<p>
+<p class="avs-article-p">
 Сортировка чисел ничем практически не отличается:
 </p>
 <div class="Monokai-Code">
@@ -83,7 +83,7 @@ number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</sp
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'number_temp'</span><span class="Monokai-Operator">,</span>index<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Этот алгоритм достаточно быстр и прост для решения большинства задач. Он требует нескольких переменных и дополнительный массив для временного хранения данных. Если необходимо отсортировать данные сразу внутри массива, не прибегая к помощи дополнительного массива, можно воспользоваться методом сортировки "пузырьком":
 </p>
 <div class="Monokai-Code">
@@ -100,10 +100,10 @@ number<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</sp
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Операции сравнения прекрасно работают с текстовыми значениями по тому же принципу, что и функции `$max` и `$min`.
 </p>
-<p>
+<p class="avs-article-p">
 Готовое решение по методу сортировки пузырьком есть в библиотеке "easy.math" с различными дополнительными возможностями. Смотрите функцию <a href="https://github.com/AleksVersus/easy.math.3" style="text-decoration:none;" class="avs-page-external-link">em.arr.sort</a>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html" class="avs-pages-button__link">&lt; Назад, к странице 140</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/protsenty_0143.html" class="avs-pages-button__link">Вперёд, к странице 142 &gt;</a></div></div></div>

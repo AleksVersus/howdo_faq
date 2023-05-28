@@ -14,38 +14,38 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sortirovka_dannyh_0142.html" class="avs-pages-button__link">&lt; Назад, к странице 141</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/razlozhenie_na_slagaemye_0144.html" class="avs-pages-button__link">Вперёд, к странице 143 &gt;</a></div></div></div>
-<h3 id="faq_20_11" class="avs-article-h3">20.11. Как сделать проценты?</h3><p>
+<h3 id="faq_20_11" class="avs-article-h3">20.11. Как сделать проценты?</h3><p class="avs-article-p">
 В: Как сделать проценты?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Как таковые процентные вычисления в QSP не поддерживаются, равно как не поддерживаются дробные числа, однако выход из данной ситуации есть.
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку процент является сотой частью от исходного числа, можно составлять простые формулы для различных вычислений:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;двадцать&nbsp;процентов&nbsp;от&nbsp;числа</span><br/>
 percent<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">20</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">100</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Обратите внимание, сначала производим операцию умножения, а лишь затем — деления. Это сделано потому, что QSP не поддерживает дробные числа. И если мы, например, захотим вычислить двадцать процентов от числа 80, то деление 80 на 100 даст в результате ноль, а значит и при умножении результата на 20 получится ноль. Но в нашем случае мы сначала умножаем 80 на 20, и получаем 1600, а затем делим на 100 и получаем 16. Число 16 — это 20 процентов от числа 80.
 </p>
-<p>
+<p class="avs-article-p">
 Уменьшаем число на 25%:
 </p>
 <div class="Monokai-Code">
 N<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">-</span>N<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">100</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Увеличиваем число на 37%
 </p>
 <div class="Monokai-Code">
 N<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">+</span>N<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">37</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">100</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Естественно при делении на 100 число теряет дробную часть и данное решение не даст нужной точности для маленьких чисел:
 </p>
 <div class="Monokai-Code">
@@ -53,7 +53,7 @@ N<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span><
 N<span class="Monokai-Operator">=</span>N<span class="Monokai-Operator">-</span>N<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">50</span><span class="Monokai-Operator">/</span><span class="Monokai-Numeric">100</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;N<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для больших чисел неточность будет скрадываться.
 </p>
 <div class="Monokai-Code">

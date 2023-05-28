@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_dobavit__predmet_v_opredelionnuju_pozitsiju_0091.html" class="avs-pages-button__link">&lt; Назад, к странице 90</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__schitaeye_predmety_0093.html" class="avs-pages-button__link">Вперёд, к странице 92 &gt;</a></div></div></div>
-<h3 id="faq_14_05" class="avs-article-h3">14.5. Как заменить один предмет на другой?</h3><p>
+<h3 id="faq_14_05" class="avs-article-h3">14.5. Как заменить один предмет на другой?</h3><p class="avs-article-p">
 В: Как заменить один предмет на другой?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы заменить один предмет на другой, нужно удалить старый предмет, а в позицию, которую он занимал, вписать новый предмет.
 </p>
-<p>
+<p class="avs-article-p">
 Если вы знаете позицию предмета, который собираетесь удалить, то код довольно простой:
 </p>
 <div class="Monokai-Code">
@@ -34,7 +34,7 @@
 </span><span class="Monokai-Comment">!&nbsp;добавляем&nbsp;"Тёмный&nbsp;шар"&nbsp;в&nbsp;третью&nbsp;позицию</span><br/>
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Тёмный&nbsp;шар"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если вы не знаете заранее, в какой позиции окажется тот или иной предмет, придётся написать алгоритм, который будет находить позицию нужного предмета перед удалением:
 </p>
 <div class="Monokai-Code">
@@ -51,10 +51,10 @@
 </span><span class="Monokai-Comment">!&nbsp;вставляем&nbsp;на&nbsp;его&nbsp;место&nbsp;новый&nbsp;предмет&nbsp;</span><br/>
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Тёмный&nbsp;шар"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span>objnumber<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Функция `countobj` возвращает число предметов в инвентаре. Функция `$getobj` возвращает название предмета по его номеру.
 </p>
-<p>
+<p class="avs-article-p">
 То есть, данный алгоритм сравнивает названия всех предметов в инвентаре по очереди, и если встречает такое же название, как мы указали, записывает номер в переменную `objnumber`.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_dobavit__predmet_v_opredelionnuju_pozitsiju_0091.html" class="avs-pages-button__link">&lt; Назад, к странице 90</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__schitaeye_predmety_0093.html" class="avs-pages-button__link">Вперёд, к странице 92 &gt;</a></div></div></div>

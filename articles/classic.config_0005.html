@@ -15,16 +15,16 @@
             <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="avs-pages-button__link">&lt; Назад, к странице 5</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html" class="avs-pages-button__link">Вперёд, к странице 7 &gt;</a></div></div></div>
-<h6 id="classic_cfg" class="avs-article-h6">Структура конфигурационного файла классического плеера версии 5.7.0</h6><p>
+<h6 id="classic_cfg" class="avs-article-h6">Структура конфигурационного файла классического плеера версии 5.7.0</h6><p class="avs-article-p">
 Классический плеер QSP версии 5.7.0 хранит все настройки отображения и расположения окон в файле <code>qspgui.cfg</code>. Данный файл создаётся автоматически при первом запуске плеера и перезаписывается всякий раз, когда игрок плеер закрывает. Таким образом, чтобы сбросить настройки плеера, нужно просто удалить файл <code>qspgui.cfg</code> из папки с плеером.
 </p>
-<p>
+<p class="avs-article-p">
 Если файл <code>qspgui.cfg</code> найден в папке с игрой, то применяются настройки из него. Если в папке с игрой такой файл не найден, применяются настройки из файла, который лежит рядом с плеером.
 </p>
-<p>
+<p class="avs-article-p">
 Это позволяет для каждой отдельной игры задавать собственные настройки оформления.
 </p>
-<p>
+<p class="avs-article-p">
 Официального, задокументированного способа сделать это — нет. Но есть небольшой трюк, позволяющий добиться нужного эффекта:
 </p>
 <ol>
@@ -34,46 +34,46 @@
 <li>Открываем папку плеера (где находится <code>qspgui.exe</code>) и копируем оттуда файл <code>qspgui.cfg</code> в папку с игрой.</li>
 <li>Ставим на файле <code>qspgui.cfg</code> в папке с игрой атрибут "только для чтения".</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Теперь игра будет открываться с нужным расположением и размером окон.
 </p>
-<p>
+<p class="avs-article-p">
 Если не выполнить пункт <code>5</code>, то игрок сможет изменить расположение и размер окон, и новые настройки сохранятся у него для текущей игры после закрытия плеера.
 </p>
-<p>
+<p class="avs-article-p">
 Некоторых особо хитрых комбинаций расположения окон можно добиться только самостоятельным редактированием <code>qspgui.cfg</code>. И опять же, нет никакой подробной официальной документации по этому файлу. Все сведения, приведённые в данной статье, получены экспериментальным путём.
 </p>
-<p>
+<p class="avs-article-p">
 Конфигурационный файл <code>qspgui.cfg</code> состоит из нескольких секций настроек. Каждая секция объявляется заголовком, заключённым в квадратные скобки.
 </p>
-<p>
+<p class="avs-article-p">
 Настройки представляют собой пары типа <code>Переменная=Значение</code>. Если какую-то из настроек удалить, при запуске плеера будет применена настройка по-умолчанию, после чего эта настройка будет восстановлена в конфигурационном файле.
 </p>
-<p>
+<p class="avs-article-p">
 На каждую игру можно создать собственный конфигурационный файл, который будет иметь приоритет перед основным конфигурационным файлом плеера.
 </p>
-<p>
+<p class="avs-article-p">
 Если на конфигурационном файле не стоит атрибут "только для чтения", после закрытия плеера все данные в конфигурационном файле будут перезаписаны в соответствии с новыми настройками плеера.
 </p>
-<h6 id="sektsiia-nastroek-tsveta-colors" class="avs-article-h6">Секция настроек цвета [Colors]</h6><p>
+<h6 id="sektsiia-nastroek-tsveta-colors" class="avs-article-h6">Секция настроек цвета [Colors]</h6><p class="avs-article-p">
 Данная секция объявляется заголовком <code>[Colors]</code>. В неё помещаются три настройки, каждая из которых должна располагаться на отдельной строке:
 </p>
-<p>
+<p class="avs-article-p">
 <code>BackColor</code> — цвет фона плеера.
 </p>
-<p>
+<p class="avs-article-p">
 <code>FontColor</code> — цвет шрифта плеера.
 </p>
-<p>
+<p class="avs-article-p">
 <code>LinkColor</code> — цвет ссылок плеера.
 </p>
-<p>
+<p class="avs-article-p">
 Цвет задаётся целочисленным цветовым кодом, который вычисляется из трёх цветовых составляющих: <code>RED</code> (красная), <code>GREEN</code> (зелёная) и <code>BLUE</code> (синяя). Вычислить необходимый цветовой код можно по формуле:
 </p>
 <div class="Monokai-Code">
 RED&nbsp;<span class="Monokai-Operator">+</span>&nbsp;GREEN<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">256</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;BLUE<span class="Monokai-Operator">*</span><span class="Monokai-Numeric">256</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">256</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Пример настроек цветов для плеера (стандартные):
 </p>
 <div class="Monokai-Code">
@@ -82,19 +82,19 @@ BackColor<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">14
 FontColor<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
 LinkColor<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">16711680</span><br/>
 </div>
-<h6 id="sektsiia-nastroek-shrifta-font" class="avs-article-h6">Секция настроек шрифта [Font]</h6><p>
+<h6 id="sektsiia-nastroek-shrifta-font" class="avs-article-h6">Секция настроек шрифта [Font]</h6><p class="avs-article-p">
 Данная секция объявляется заголовком <code>[Font]</code>. В неё помещаются три настройки, каждая на отдельной строке:
 </p>
-<p>
+<p class="avs-article-p">
 <code>FontSize</code> — утанавливает предпочтительный размер шрифта в плеере. Это основной размер шрифта так же и для HTML-разметки. Может принимать значения от 1 до 72 (или сколько позволит система). Если выставить число ноль, то будет применён размер шрифта по-умолчанию, т.е. 12.
 </p>
-<p>
+<p class="avs-article-p">
 <code>FontName</code> — устанавливает имя предпочтительного шрифта в плеере. Можно указывать названия шрифтов, установленных в системе. Если указать несуществующий в системе шрифт, будет восстановлена настройка по-умолчанию, шрифт <code>Segoe UI</code>.
 </p>
-<p>
+<p class="avs-article-p">
 <code>UseFontSize</code> — эта настройка запрещает использовать иной размер шрифта, кроме указанного в секции настроек. Т.е. переменная fsize в игре перестаёт действовать. Можно указывать значение 0 — отключает принудительное использование системного размера шрифта, 1 — включает принудительное использование системного размера шрифта.
 </p>
-<p>
+<p class="avs-article-p">
 Пример настроек шрифта для плеера (стандартный):
 </p>
 <div class="Monokai-Code">
@@ -103,139 +103,139 @@ FontSize<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">12<
 FontName<span class="Monokai-Operator">=</span>Segoe&nbsp;UI<br/>
 UseFontSize<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
 </div>
-<h6 id="sektsiia-osnovnyh-nastroek-general" class="avs-article-h6">Секция основных настроек [General]</h6><p>
+<h6 id="sektsiia-osnovnyh-nastroek-general" class="avs-article-h6">Секция основных настроек [General]</h6><p class="avs-article-p">
 Данная секция объявляется заголовком <code>[General]</code>. В неё помещается множество настроек.
 </p>
-<p>
+<p class="avs-article-p">
 <code>Volume</code> — данная настройка выставляет уровень громкости звуков в плеере. Принимает значения от 0 до 100 (проценты громкости). Пишется отдельной строкой.
 </p>
-<p>
+<p class="avs-article-p">
 <code>ShowHotkeys</code> — данная настройка отвечает за отображение подсказок по горячим клавишам действий. Принимает значения: 0 — горячие клавиши действий не отображаются, 1 — горячие клавиши действий отображаются. Пишется отдельной строкой
 </p>
-<p>
+<p class="avs-article-p">
 <code>Language</code> — данная настройка отвечает за выбор языка локализации плеера. Можно выбрать один из пяти языков: <code>de_DE</code> - немецкий, <code>en_GB</code> — английский, ru_RU — русский, uk_UA — украинский, eo — эсперанто. Можно заменить один из языков на свой собственный, используя инструкцию отсюда: <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=164&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">Локализация классического плеера QSP</a>.
 </p>
-<p>
+<p class="avs-article-p">
 Далее следуют настройки, перечисляемые в одну строку. Лучше всего их записывать по порядку, как есть, без лишних пробелов. Данные настройки разделяются на группы. Каждая группа закрывается вертикальной чертой <code>|</code>. Последняя группа так же должна быть закрыта вертикальной чертой. Внутри группы настройки закрываются точкой с запятой <code>;</code>.
 </p>
-<h6 id="panels" class="avs-article-h6">Panels</h6><p>
+<h6 id="panels" class="avs-article-h6">Panels</h6><p class="avs-article-p">
 Первая группа состоит из одной настройки Panels. Её значение всегда сбрасывается к <code>layout2</code>, поэтому особого смысла менять её нет. Но если всё же измените на другую, пропорции панелей сбросятся к виду с приоритетом площади у окна основного описания.
 </p>
 <div class="Monokai-Code">
 Panels<span class="Monokai-Operator">=</span>layout2|<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Следующие шесть групп настроек определяют размещение шести разных окон плеера. У всех окон настройки одинаковые, поэтому рассмотрим их вне привязки к какой либо группе. Если поведение окна будет отличаться от прочих при изменении какой либо настройки, об этом будет сказано отдельно.
 </p>
-<h6 id="name" class="avs-article-h6">name</h6><p>
+<h6 id="name" class="avs-article-h6">name</h6><p class="avs-article-p">
 Первая переменная служебная и не относится непосредственно к настройкам плеера. Она нужна, чтобы плеер понимал для какого окна ему применить все последующие настройки. Это системное название окна:
 </p>
 <div class="Monokai-Code">
 name<span class="Monokai-Operator">=</span>imgview;<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данной переменной можно передавать только шесть значений — системные названия окон плеера. Это значения: <code>imgview</code> (окно предпросмотра изображений), <code>desc</code> (окно основного описания), <code>objs</code> (окно предметов), <code>acts</code> (окно действий), <code>vars</code> (окно дополнительного описания), <code>input</code> (окно пользовательского ввода, поле ввода). Именно по значению в этой переменной вы можете понять, к настройкам какого окна относится данная группа настроек.
 </p>
-<h6 id="caption" class="avs-article-h6">caption</h6><p>
+<h6 id="caption" class="avs-article-h6">caption</h6><p class="avs-article-p">
 Следующей переменной бесполезно прописывать какие-либо настройки, так как значения в неё подтягиваются из текущей локализации. Это названия окон. Поэтому значения могут быть любыми в зависимости от локализации. Вот так выглядит эта "настройка" для окна предметов в английской локализации:
 </p>
 <div class="Monokai-Code">
 caption<span class="Monokai-Operator">=</span>Objects;<br/>
 </div>
-<p>
+<p class="avs-article-p">
 У окна основного описания нет своей подписи, поэтому и значение в данную переменную прописывается пустое:
 </p>
 <div class="Monokai-Code">
 caption<span class="Monokai-Operator">=</span>;<br/>
 </div>
-<h6 id="state" class="avs-article-h6">state</h6><p>
+<h6 id="state" class="avs-article-h6">state</h6><p class="avs-article-p">
 Переменная <code>state</code> отвечает за внешний вид и поведение окна. Можете поэкспериментировать с этой настройкой, задавая разные значения, но по-умолчанию всеми окнами используются лишь несколько значений, определяющих поведение:
 </p>
-<p>
+<p class="avs-article-p">
 <code>768</code> — это значение предопределяет поведение окна, как у окна основного описания по-умолчанию. Например, при этом значении отсутствует заголовок окна.
 </p>
-<p>
+<p class="avs-article-p">
 <code>6293500</code> — это значение предопределяет поведение окна, как у окон действий, предметов и дополнительного описания по-умолчанию. При этом значении обязательно присутствует заголовок окна.
 </p>
-<p>
+<p class="avs-article-p">
 <code>2099196</code> — это значение предопределяет поведение окна, как у окна ввода по-умолчанию. Заголовок окна присутствует.
 </p>
-<p>
+<p class="avs-article-p">
 <code>1080035324</code> — это значение предопределяет поведение окна, как у окна предпросмотра по-умолчанию.
 </p>
-<p>
+<p class="avs-article-p">
 Увеличение любого из этих значений на единицу сделает любое из окон независимым от основного окна плеера, то есть плавающим. Например окно основного описания можно сделать плавающим, прописав такую настройку:
 </p>
 <div class="Monokai-Code">
 state<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">769</span>;<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Увеличение любого из этих значений на 2 — скрывает окно, однако его можно вернуть обратно через меню плеера.
 </p>
-<h6 id="dir" class="avs-article-h6">dir</h6><p>
+<h6 id="dir" class="avs-article-h6">dir</h6><p class="avs-article-p">
 Переменная <code>dir</code> отвечает за расположение и поведение окна. Можете так же поэкспериментировать с этой настройкой, задавая разные значения. Всего таких значений можно указать шесть: от 0 до 5. Если указать иное значение, окно появится в верхнем левом углу плеера в нерабочем виде. Название пременной очевидно происходит от слова "direction" — т.е. "направление". В зависимости от выбранного направления выстраиваются и прочие блоки.
 </p>
-<p>
+<p class="avs-article-p">
 <code>0</code> — полностью скрывает окно из виду, а вернее сворачивает до небольшой полоски в левом верхнем углу.
 </p>
-<p>
+<p class="avs-article-p">
 <code>1</code> — окно располагается в подвижный блок <code>Top</code> (то есть типа <code>верх</code>). При выборе данного направления, слои (<code>layer</code>) располагаются и нумеруются снизу вверх. В одном слое ряды (<code>row</code>) располагаются и нумеруются сверху вниз. В одном ряду (или слое) позиции (<code>pos</code>) располагаются и нумеруются слева направо.
 </p>
-<p>
+<p class="avs-article-p">
 <code>2</code> — окно располагается в подвижный блок <code>Right</code> (то есть типа <code>право</code>). При выборе данного направления, слои (<code>layer</code>) располагаются и нумеруются слева направо. В одном слое ряды (<code>row</code>) располагаются и нумеруются справа налево. В одном ряду (или слое) позиции (<code>pos</code>) располагаются и нумеруются сверху вниз.
 </p>
-<p>
+<p class="avs-article-p">
 <code>3</code> — окно располагается в подвижный блок <code>Bottom</code> (то есть типа <code>низ</code>). При выборе данного направления, слои (<code>layer</code>) располагаются и нумеруются сверху вниз. В одном слое ряды (<code>row</code>) располагаются и нумеруются снизу вверх. В одном ряду (или слое) позиции (<code>pos</code>) располагаются и нумеруются слева направо.
 </p>
-<p>
+<p class="avs-article-p">
 <code>4</code> — окно располагается в подвижный блок <code>Left</code> (то есть типа <code>лево</code>). При выборе данного направления, слои (<code>layer</code>) располагаются и нумеруются справа налево. В одном слое ряды (<code>row</code>) располагаются и нумеруются слева направо. В одном ряду (или слое) позиции (<code>pos</code>) располагаются и нумеруются сверху вниз.
 </p>
-<p>
+<p class="avs-article-p">
 <code>5</code> — окно располагается в неподвижный блок <code>Center</code>. При выборе данного направления, слои (<code>layer</code>) располагаются и нумеруются слева направа. В одном слое ряды (<code>row</code>) располагаются и нумеруются слева направо. В одном ряду (или слое) позиции (<code>pos</code>) располагаются и нумеруются сверху вниз.
 </p>
-<p>
+<p class="avs-article-p">
 Можно разместить все окна в одном блоке, однако при этом нужно учитывать, как ведут себя окна в соответствии с другими настройками.
 </p>
-<h6 id="layer" class="avs-article-h6">layer</h6><p>
+<h6 id="layer" class="avs-article-h6">layer</h6><p class="avs-article-p">
 Значение переменной <code>layer</code> определяет номер слоя, в котором будет располагаться окно. Может принимать значения от 0 до 5. Слои выстравиваются в определённом порядке в зависимости от выбранного направления (переменная <code>dir</code>).
 </p>
-<h6 id="raw" class="avs-article-h6">raw</h6><p>
+<h6 id="raw" class="avs-article-h6">raw</h6><p class="avs-article-p">
 Значения переменной <code>raw</code> определяет номер ряда, в котором будет располагаться окно. Ряды выстравиваются в определённом порядке внутри слоя (переменная <code>layer</code>), в зависимости от выбранного направления (переменная <code>dir</code>).
 </p>
-<h6 id="pos" class="avs-article-h6">pos</h6><p>
+<h6 id="pos" class="avs-article-h6">pos</h6><p class="avs-article-p">
 Значения переменной <code>pos</code> определяет номер позиции, в которой будет располагаться окно. Позиции располагаются определённым образом внутри ряда или слоя, в зависимости от выбранного направления (переменная <code>dir</code>).
 </p>
-<h6 id="prop" class="avs-article-h6">prop</h6><p>
+<h6 id="prop" class="avs-article-h6">prop</h6><p class="avs-article-p">
 Переменная <code>prop</code> устанавливает пропорции между окнами внутри ряда. Значения указываются от 100000 в одну или другую сторону.
 </p>
-<h6 id="bestw-besth-minw-minh-maxw-maxh" class="avs-article-h6">bestw, besth, minw, minh, maxw, maxh</h6><p>
+<h6 id="bestw-besth-minw-minh-maxw-maxh" class="avs-article-h6">bestw, besth, minw, minh, maxw, maxh</h6><p class="avs-article-p">
 Переменные <code>bestw</code> и <code>besth</code> — это предпочтительные ширина и высота окна соответственно. Эти параметры будут применяться в зависимости от того, в каком направлении размещено окно, и как изменено значение переменной <code>prop</code>.
 </p>
-<p>
+<p class="avs-article-p">
 Переменные <code>maxw</code> и <code>maxh</code> — это максимальные ширина и высота окна соответственно. Эти параметры могут не работать, в зависимости от того, как скомбинированы окна. 
 </p>
-<p>
+<p class="avs-article-p">
 Переменные <code>minw</code> и <code>minh</code> — это минимальные ширина и высота окна соответственно. Эти параметры могут не работать, в зависимости от того, как скомбинированы окна.
 </p>
-<h6 id="floatx-floaty-floatw-floath" class="avs-article-h6">floatx, floaty, floatw, floath</h6><p>
+<h6 id="floatx-floaty-floatw-floath" class="avs-article-h6">floatx, floaty, floatw, floath</h6><p class="avs-article-p">
 Переменные <code>floatx</code>, <code>floaty</code>, <code>floatw</code>, <code>floath</code> отвечают за расположение и размеры окна, когда окно откреплено от окна плеера, т.е. когда оно переключено в режим плавающего окошка. <code>floatx</code> — отступ от левой границы экрана, <code>floaty</code> — отступ от верхней границы экрана, <code>floatw</code> — ширина плавающего окна, <code>floath</code> — высота плавающего окна.
 </p>
-<h6 id="dock_size" class="avs-article-h6">dock_size</h6><p>
+<h6 id="dock_size" class="avs-article-h6">dock_size</h6><p class="avs-article-p">
 В конце секции основных настроек прописываются несколько групп <code>dock_size</code>, количество которых совпадает с числом окон, размещённых в направлениях top, right, bottom и left. Изменение значений этих настроек не влияют на отображение окон, это служебные значения.
 </p>
-<h6 id="sektsiia-nastroek-okna-pleera-pos" class="avs-article-h6">Секция настроек окна плеера [Pos]</h6><p>
+<h6 id="sektsiia-nastroek-okna-pleera-pos" class="avs-article-h6">Секция настроек окна плеера [Pos]</h6><p class="avs-article-p">
 Данная секция объявляется заголовком <code>[Pos]</code>. Здесь расположены пять настроек, каждая из которых записывается отдельной строкой.
 </p>
-<p>
+<p class="avs-article-p">
 <code>Left</code> и <code>Top</code> — определяют отступ от левой и верхней границ экрана.
 </p>
-<p>
+<p class="avs-article-p">
 <code>Width</code> и <code>Height</code> — определяют ширину и высоту окна соответственно.
 </p>
-<p>
+<p class="avs-article-p">
 <code>Maximize</code> — определяет развернётся ли окно плеера на всю свободную ширину и высоту экрана, или откроется в окне с размерами, указанными в настройках Left, Top, Width, Height. Может принимать значения 0 (окно с указанными размерами) и 1 (развёрнутое окно).
 </p>
-<p>
+<p class="avs-article-p">
 Пример настроек окна плеера (стандартные):
 </p>
 <div class="Monokai-Code">
@@ -246,10 +246,10 @@ Width<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">850</s
 Height<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">650</span><br/>
 Maximize<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><br/>
 </div>
-<h6 id="post-scriptum" class="avs-article-h6">Post Scriptum</h6><p>
+<h6 id="post-scriptum" class="avs-article-h6">Post Scriptum</h6><p class="avs-article-p">
 Для более полного понимания работы настроек рекомендуется ознакомиться с документацией по <a href="https://ru.wikipedia.org/wiki/WxWidgets" style="text-decoration:none;" class="avs-page-external-link">wxWidgets</a>.
 </p>
-<p>
+<p class="avs-article-p">
 Вводная часть статьи взята из инструкции за авторством <strong>Nex</strong>`а в теме <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=861&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">Настройка окошек классического плеера с помощью qspgui.cfg</a>
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="avs-pages-button__link">&lt; Назад, к странице 5</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/operatory_funktsii_argumenty_0006.html" class="avs-pages-button__link">Вперёд, к странице 7 &gt;</a></div></div></div>

@@ -14,34 +14,34 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_ne_pisat__odin_i_tot_zhe_kod_v_kazhdoj_lokatsii_0026.html" class="avs-pages-button__link">&lt; Назад, к странице 27</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/peredacha_argumentov_v_onnewloc_0028.html" class="avs-pages-button__link">Вперёд, к странице 29 &gt;</a></div></div></div>
-<h3 id="faq_05_02" class="avs-article-h3">5.2. Как сделать кнопку "Назад", работающую на каждой локации?</h3><p>
+<h3 id="faq_05_02" class="avs-article-h3">5.2. Как сделать кнопку "Назад", работающую на каждой локации?</h3><p class="avs-article-p">
 В: Как сделать кнопку "Назад", работающую на каждой локации?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы иметь возможность с любой локации вернуться на предыдущую, нужно использовать локацию-обработчик перехода на новую локацию. Допустим, мы создали локацию "при_переходе" и на самой первой локации в игре прописали:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_переходе"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом каждый раз при переходе на любую локацию с помощью `goto`, `xgoto` плеер будет выполнять и код локации "при_переходе".
 </p>
-<p>
+<p class="avs-article-p">
 Теперь нам нужно прописать в локации "при_переходе" код, который будет запоминать последнюю локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Если мы напишем просто:
 </p>
 <div class="Monokai-Code">
 $current_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Эта строчка кода будет просто прописывать название текущей локации в переменную `$current_loc`. Например, если у нас есть две локации "комната" и "кухня", то при переходе в "комнату" в `$current_loc` запишется значение "комната", а при переходе из "комнаты" в "кухню" — значение "кухня".
 </p>
-<p>
+<p class="avs-article-p">
 Значит, перед тем, как записать в `$current_loc` название текущей локации, мы должны предварительно сохранить значение из `$current_loc` в другой переменной. Таким образом наш код будет выглядеть вот так:
 </p>
 <div class="Monokai-Code">
@@ -50,10 +50,10 @@ $back_loc<span class="Monokai-Operator">=</span>$current_loc<span class="Monokai
 </span><span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;название&nbsp;локации,&nbsp;на&nbsp;которую&nbsp;пришли&nbsp;(текущая)</span><br/>
 $current_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь, когда мы зайдём в "комнату", в `$current_loc` запишется значение "комната". Если дальше мы перейдём в "кухню", значение "комната" из `$current_loc` пропишется в `$back_loc`, то есть в `$back_loc` окажется значение "комната", а в $current_loc запишется название текущей локации, т.е. значение "кухня".
 </p>
-<p>
+<p class="avs-article-p">
 Осталось только привязать команду перехода, например, к действию. На той же локации "при_переходе" пишем это действие:
 </p>
 <div class="Monokai-Code">
@@ -65,10 +65,10 @@ $current_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$c
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данный код позволяет вернуться только на одну локацию назад. То есть, если мы перешли из "кухни" в "комнату", действие "Назад" вернёт нас из "комнаты" в "кухню", а из "кухни" снова в "комнату".
 </p>
-<p>
+<p class="avs-article-p">
 Если мы хотим "запомнить" весь путь, а затем с помощью кнопки "Назад" воспроизвести его в обратном порядке, нужно воспользоваться более сложным кодом:
 </p>
 <div class="Monokai-Code">

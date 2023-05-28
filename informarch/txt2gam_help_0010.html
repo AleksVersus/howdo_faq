@@ -15,28 +15,28 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="avs-pages-button__link">&lt; Назад, к странице 11</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">Вперёд, к странице 13 &gt;</a></div></div></div>
-<h5 id="informarch_txt2gam_manual" class="avs-article-h5">TXT2GAM. Краткое руководство</h5><p>
+<h5 id="informarch_txt2gam_manual" class="avs-article-h5">TXT2GAM. Краткое руководство</h5><p class="avs-article-p">
 Утилита "TXT2GAM" ("txt2gam.exe") предназначена для конвертирования текстовых файлов, написанных в специальном формате, в файлы QSP-игр <code>.qsp</code>. Таким образом вы можете создавать игры в обычном текстовом редакторе, а затем конвертировать их в приемлемые для плееров файлы.
 </p>
-<p>
+<p class="avs-article-p">
 <a href="https://qsp.org/attachments/txt2gam011.zip" style="text-decoration:none;" class="avs-page-external-link">Скачать утилиту</a>
 </p>
-<h5 id="format-txt2gam" class="avs-article-h5">Формат TXT2GAM</h5><p>
+<h5 id="format-txt2gam" class="avs-article-h5">Формат TXT2GAM</h5><p class="avs-article-p">
 Файлы в формате TXT2GAM — это обычные текстовые файлы, в которых мы размещаем код QSP, при этом данный код нужно записывать по определённым правилам.
 </p>
-<p>
+<p class="avs-article-p">
 Начало локации отмечается символом <code>#</code> (решётка/диез), после которого должен стоять пробел и название локации. Например так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;начало</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Конец локации обозначается символом <code>-</code> (дефис) в отдельной строке. После этого символа в той же строке могут идти любые символы, например, снова название локации:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">-</span>&nbsp;начало<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Между началом и концом локации записывается обычный код QSP, как если бы вы его писали в поле "Выполнить при посещении" редактора Quest Generator. Вот пример кода в формате TXT2GAM с двумя локациями:
 </p>
 <div class="Monokai-Code">
@@ -61,16 +61,16 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-String">'Это&nbsp;всё.'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Между локациями в таком файле может быть записан любой текст, он не попадёт в конечный файл игры. Поэтому вы можете помещать туда различные комментарии, команды препроцессора и другой сопроводительный текст.
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку концом локации считается символ <code>-</code> в начале отдельно стоящей строки, могут возникнуть ошибки, если вы напишете команду, наподобие этой:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">-</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Записанная в поле "Выполнить при посещении" редактора Quest Generator данная команда будет нормально работать в итоговой игре, однако если эту команду записать в файле формата TXT2GAM, конвертер посчитает её окончанием локации, и все последующие за данной командой строки вплоть до начала следующей локации будут проигнорированы.
 </p>
 <div class="Monokai-Code">
@@ -87,7 +87,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 </span><span class="Monokai-Comment">!&nbsp;какой-то&nbsp;код</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;локация&nbsp;2</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если не закрыть локацию строкой начинающейся с <code>-</code>, новую локацию открыть будет нельзя, а значит строка, начинающаяся с символа <code>#</code> может вызвать ошибку "Неизвестное действие" в конечной игре:
 </p>
 <div class="Monokai-Code">
@@ -97,84 +97,84 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-String">"Забыли&nbsp;закрыть&nbsp;локацию&nbsp;перед&nbsp;открытием&nbsp;новой"</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;локация&nbsp;2</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Внимание! Для формата TXT2GAM не предусмотрено редактирование базового описания и базовых действий. Поэтому при экспорте игры из Quest Generator в формат TXT2GAM будьте внимательны: все базовые описания и базовые действия будут экспортированы в основной код локаций. Если впоследствии вы импортируете игру обратно из TXT2GAM-файла в Quest Generator, то поля "Описание" и "Базовые действия" во всех локациях окажутся пустыми.
 </p>
-<h5 id="ispol_zovanie-utility-txt2gam" class="avs-article-h5">Использование утилиты TXT2GAM</h5><p>
+<h5 id="ispol_zovanie-utility-txt2gam" class="avs-article-h5">Использование утилиты TXT2GAM</h5><p class="avs-article-p">
 TXT2GAM — это консольная утилита, т.е. она запускается командами из консоли, например из командной строки Windows. Ознакомиться с основными командами командной строки вы можете в обучающей статье <a href="https://sonikelf.ru/vvodnaya-statya-po-rabote-v-konsoli-chto-takoe-konsol-komandy-konsoli-i-prochee-takoe-raznoe-cmd/" style="text-decoration:none;" class="avs-page-external-link">"Что такое консоль, команды и прочее такое разное — CMD"</a>.
 </p>
-<p>
+<p class="avs-article-p">
 Пример работы с утилитой:
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;game.txt&nbsp;game.qsp
 </div>
-<p>
+<p class="avs-article-p">
 Здесь: <code>game.txt</code> — исходный файл вашей игры, написанный в формате TXT2GAM; <code>game.qsp</code> — конечный файл, в котором будет сохранена ваша игра.
 </p>
-<p>
+<p class="avs-article-p">
 Предположим, вы написали игру в текстовом редакторе, и теперь она у вас лежит в виде файла <code>game.txt</code> на диске "<code>D:</code>" в папке "<code>QSP\Games\myCoolGame</code>".
 </p>
-<p>
+<p class="avs-article-p">
 Для удобства скопируйте утилиту TXT2GAM (т.е. файл <code>txt2gam.exe</code>) в папку с игрой. Теперь для конвертирования игры вам нужно сделать следующее:
 </p>
 <ol>
 <li>Откройте консоль</li>
 <li>Перейдите на диск "<code>D:</code>", введя команду <code>D:</code> в командной строке и нажав клавишу "Enter".</li>
 <li>Перейдите в папку с вашей игрой с помощью команды <code>cd</code>. В нашем примере это делается так <code>cd "QSP\Games\myCoolGame"</code></li>
-<li><p>
+<li><p class="avs-article-p">
 Запустите утилиту TXT2GAM, указав в качестве параметров сначала исходный файл вашей игры (т.е. <code>game.txt</code>), а затем название файла, который хотите получить, например <code>myCoolGame.qsp</code>:</p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp
 </div>
 </li>
 </ol>
-<p>
+<p class="avs-article-p">
 Утилита поддерживает полные пути к файлам, поэтому вы можете использовать одну утилиту для конвертирования разных игр:
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;"D:\QSP\Games\myCoolGame\game.txt"&nbsp;"D:\QSP\releases\myCoolGame\myCoolGame.qsp"
 </div>
-<p>
+<p class="avs-article-p">
 Для получения дополнительной информации об утилите, запустите её в консоли без параметров:
 </p>
 <div class="Monokai-Code">
 txt2gam.exe
 </div>
-<p>
+<p class="avs-article-p">
 Если указать ключ <code>u</code>, исходный файл будет обрабатываться как Unicode-файл (кодировка UCS-2 LE / UTF-16 LE):
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp&nbsp;u<br/>
 </div>
-<h5 id="dopolnitel_nye-vozmozhnosti-utility" class="avs-article-h5">Дополнительные возможности утилиты</h5><h5 id="ispol_zovanie" class="avs-article-h5">Использование</h5><p>
+<h5 id="dopolnitel_nye-vozmozhnosti-utility" class="avs-article-h5">Дополнительные возможности утилиты</h5><h5 id="ispol_zovanie" class="avs-article-h5">Использование</h5><p class="avs-article-p">
 Общий вид команды для консоли:
 </p>
 <div class="Monokai-Code">
 txt2gam&nbsp;[txt&nbsp;file]&nbsp;[output&nbsp;file]&nbsp;[options]
 </div>
-<h5 id="optsii-options" class="avs-article-h5">Опции. [Options]</h5><p>
+<h5 id="optsii-options" class="avs-article-h5">Опции. [Options]</h5><p class="avs-article-p">
 a, A — режим ANSI. По-умолчанию утилита работает в режиме Unicode (UCS-2 / UTF-16).
 </p>
-<p>
+<p class="avs-article-p">
 u, U — режим Unicode (UCS-2 LE/ UTF-16 LE).
 </p>
-<p>
+<p class="avs-article-p">
 o, O — сохранить игру в старом формате (<code>.gam</code>). По умолчанию используется новый формат (<code>.qsp</code>).
 </p>
-<p>
+<p class="avs-article-p">
 s[char], S[char] — вместо [char] нужно указать символ, с которого начинаются ваши локации. Т.е. это символ, который вы можете использовать вместо <code>#</code>, если это необходимо.
 </p>
-<p>
+<p class="avs-article-p">
 e[char], E[char] — вместо [char] нужно указать символ, которым будет отмечаться конец локации. Т.е. это символ, который вы можете использовать вместо <code>-</code>, если это необходимо.
 </p>
-<p>
+<p class="avs-article-p">
 p[pass], P[pass] — вместо [pass] укажите пароль, который хотите установить на игру. По умолчанию <code>No</code>. Если пароль содержит пробелы, заключите его в кавычки.
 </p>
-<p>
+<p class="avs-article-p">
 t, T — извлечь строки из текста.
 </p>
-<p>
+<p class="avs-article-p">
 q, Q - извлечь q-строки из текста.
 </p>
 <h5 id="primery-vyzova" class="avs-article-h5">Примеры вызова:</h5><div class="Monokai-Code">
@@ -190,26 +190,26 @@ txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;pMyPassword
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;s@&nbsp;e~&nbsp;o
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;t&nbsp;u
 </div>
-<h5 id="podkliuchenie-utility-k-tekstovomu-redaktoru" class="avs-article-h5">Подключение утилиты к текстовому редактору</h5><p>
+<h5 id="podkliuchenie-utility-k-tekstovomu-redaktoru" class="avs-article-h5">Подключение утилиты к текстовому редактору</h5><p class="avs-article-p">
 При разработке игр в текстовом редакторе, очень полезным может оказаться создание специального действия / кнопки для автоматической компиляции файла в <code>.qsp</code> и запуска плеера сразу с редактируемым файлом.
 </p>
-<p>
+<p class="avs-article-p">
 То есть пишете текст игры в редакторе, нажимаете некое сочетание клавиш и получаете запущенную в плеере игру.
 </p>
-<p>
+<p class="avs-article-p">
 Данное руководство, на примере <code><a href="http://www.emeditor.com" style="text-decoration:none;" class="avs-page-external-link">EmEditor</a></code>а , описывает, как это сделать.
 </p>
-<p>
+<p class="avs-article-p">
 Для начала, создайте папку (допустим, <code>D:\Games\QSP</code>), распаковав в неё базовый архив плеера (<code>qspgui.exe</code> + все <code>DLL</code>`ки) и архив утилиты TXT2GAM.
 </p>
-<p>
+<p class="avs-article-p">
 Далее, создайте в этой папке (рядом с <code>qspgui.exe</code>, <code>txt2gam.exe</code>) файл <code>start.bat</code> со следующим содержимым:
 </p>
 <div class="Monokai-Code">
 txt2gam&nbsp;%1&nbsp;%2
 <br/>start&nbsp;qspgui&nbsp;%2
 </div>
-<p>
+<p class="avs-article-p">
 Теперь нужно в редакторе добавить действие / кнопку, при нажатии на которую будет запущен файл <code>start.bat</code> с двумя аргументами - указанием исходного TXT файла и конечного <code>.qsp</code>-файла.
 </p>
 <ol>
@@ -222,7 +222,7 @@ txt2gam&nbsp;%1&nbsp;%2
 <li>Затем поставьте флажок напротив <code>Save File</code>, и нажмите <code>OK</code>.</li>
 <li>На панели инструментов появится новая кнопка с подписью "QSP", при нажатии на которую будут произведены требуемые действия.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Теперь нужно назначить сочетание клавиш для кнопки.
 </p>
 <ol>
@@ -230,19 +230,19 @@ txt2gam&nbsp;%1&nbsp;%2
 <li>Установите курсор в поле <code>Press New Shortcut Key</code> и нажмите желаемое сочетание клавиш (к примеру, F1). Станет доступной кнопка <code>Assign</code>. Нажимаем.</li>
 <li>Далее жмём <code>OK</code> и пишем игры в формате TXT2GAM :-)</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Чтобы установить пароль на файл, создаваемый утилитой TXT2GAM, замените в файле <code>start.bat</code> строчку
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;%1&nbsp;%2
 </div>
-<p>
+<p class="avs-article-p">
 на
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;pMyPassword
 </div>
-<p>
+<p class="avs-article-p">
 где <code>MyPassword</code> - устанавливаемый пароль. Для задания паролей с пробелами, строчка pMyPassword должна быть указана в кавычках:
 </p>
 <div class="Monokai-Code">

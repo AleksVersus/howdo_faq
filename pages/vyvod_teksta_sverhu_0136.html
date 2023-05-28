@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/shans_vypadenija_0135.html" class="avs-pages-button__link">&lt; Назад, к странице 134</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/udalit__chast__teksta_0137.html" class="avs-pages-button__link">Вперёд, к странице 136 &gt;</a></div></div></div>
-<h3 id="faq_20_04" class="avs-article-h3">20.4. Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?</h3><p>
+<h3 id="faq_20_04" class="avs-article-h3">20.4. Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?</h3><p class="avs-article-p">
 В: Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Проще всего написать отдельную локацию, и потом вызывать её всякий раз, когда понадобится добавить текст вверху окна основного описания. Локация будет называться "p.top":
 </p>
 <div class="Monokai-Code">
@@ -35,13 +35,13 @@
 </span><span class="Monokai-Comment">!&nbsp;выводим&nbsp;текст,&nbsp;который&nbsp;был&nbsp;ранее</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;$main_txt<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь, чтобы добавить текст сверху, в нужном месте:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'p.top'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Строка,&nbsp;которая&nbsp;выведется&nbsp;над&nbsp;основным&nbsp;описанием!'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Этот пример можно развить:
 </p>
 <div class="Monokai-Code">
@@ -65,7 +65,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt;$screen&gt;&gt;p&nbsp;$args[1]<br/>
 "</span><span class="Monokai-Operator">,</span>$top_text<span class="Monokai-Operator">,</span>$text<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь можно выводить текст в окне основного и дополнительного описаний сверху разными способами:
 </p>
 <div class="Monokai-Code">

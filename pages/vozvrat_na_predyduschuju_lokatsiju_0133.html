@@ -14,35 +14,35 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_snizu_vverh_0132.html" class="avs-pages-button__link">&lt; Назад, к странице 131</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/proverka_chiotnosti_0134.html" class="avs-pages-button__link">Вперёд, к странице 133 &gt;</a></div></div></div>
-<h3 id="faq_20_01" class="avs-article-h3">20.1. Как сделать возврат на предыдущую локацию?</h3><p>
+<h3 id="faq_20_01" class="avs-article-h3">20.1. Как сделать возврат на предыдущую локацию?</h3><p class="avs-article-p">
 В: Как сделать возврат на предыдущую локацию?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 В общем виде это делается так:
 </p>
 <ul>
 <li>"Запоминаем" название текущей локации в какой-нибудь переменной.</li>
 <li>При переходе на новую локацию создаём действие, гиперссылку или предмет, по нажатию на которые произойдёт переход на предыдущую локацию (которую мы "запомнили").</li>
 </ul>
-<p>
+<p class="avs-article-p">
 Для примера рассмотрим пару частных случаев.
 </p>
-<p>
+<p class="avs-article-p">
 Сделаем действие, которое будет появляться в каждой локации, и по нажатию на которое можно будет вернуться на предыдущую посещённую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Для начала создадим локацию-обработчик перехода на новую локацию. Назвать её можно как угодно, например "при_переходе".
 </p>
-<p>
+<p class="avs-article-p">
 Теперь нужно указать плееру, какую локацию он должен использовать как локацию-обработчик перехода на новую локацию. Для этого в переменную `$onnewloc` помещаем название нашей новой созданной локации. Пишем, например, на самой первой локации в игре:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onnewloc</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_переходе"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь всякий раз при переходе на локацию по `goto` или `xgoto` автоматически будет выполняться код локации "при_переходе". Вот на ней мы и пишем следующий код:
 </p>
 <div class="Monokai-Code">
@@ -62,16 +62,16 @@ $now_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curlo
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;условие</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вот такой короткий код позволит нам возвращаться на предыдущую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 К примеру, если игрок посетил сначала локацию "коридор", в `$now_loc` записалось название "коридор". Затем он перешёл на локацию "спальня", в `$back_loc` записалось значение из `$now_loc`, то есть "коридор", а в `$now_loc` — "спальня". Если нажать действие "Вернуться", игрок вернётся на локацию "коридор".
 </p>
-<p>
+<p class="avs-article-p">
 У этого кода есть ряд недостатков. Например, здесь не учтён случай, когда игрок совершает переход на текущую локацию. Так же, если игрок уже вернулся на локацию "коридор", то при нажатии действия "Вернуться", он вновь попадёт на локацию "спальня", и так это действие будет перекидывать его между двумя локациями.
 </p>
-<p>
+<p class="avs-article-p">
 Если есть необходимость "пролистывать" локации в порядке обратном прохождению, можно немного модифицировать код:
 </p>
 <div class="Monokai-Code">
@@ -94,25 +94,25 @@ $now_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curlo
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие&nbsp;возврата</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данный код лишён недостатков предыдущего и удобен там, где может потребоваться возвращаться на несколько локаций назад. Например, в книгах-играх.
 </p>
-<p>
+<p class="avs-article-p">
 Если нам нужен предмет, который будет работать, как действие "Вернуться", снова изменим код.
 </p>
-<p>
+<p class="avs-article-p">
 Во-первых, нам понадобится ещё одна служебная локация — локация-обработчик выделения предмета. Опять же, название может быть любым, например, "предмет_выделен". И как и с локацией-обработчиком перехода на новую локацию, необходимо указать плееру, какую локацию ему следует использовать как локацию-обработчик выделения предмета. Пишем, например на самой первой локации в игре:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"предмет_выделен"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 И добавляем в окно предметов предмет для возврата. Можно так же на самой первой локации:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Вернуться"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 На локации "при_переходе" оставляем только эту часть:
 </p>
 <div class="Monokai-Code">
@@ -121,7 +121,7 @@ $now_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curlo
 &nbsp;&nbsp;&nbsp;&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">$curloc</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 На локации "предмет_выделен" пишем следующее:
 </p>
 <div class="Monokai-Code">
@@ -132,10 +132,10 @@ $now_loc<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curlo
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;$back_loc<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Модифицируя и комбинируя эти способы, вы можете добиться нужного поведения кнопок для возврата на предыдущие локации.
 </p>
-<p>
+<p class="avs-article-p">
 Так же почитайте тему "Как сделать?", там не раз задавлись подобные вопросы, наверняка вы найдёте подходящий вариант для себя.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_snizu_vverh_0132.html" class="avs-pages-button__link">&lt; Назад, к странице 131</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/proverka_chiotnosti_0134.html" class="avs-pages-button__link">Вперёд, к странице 133 &gt;</a></div></div></div>

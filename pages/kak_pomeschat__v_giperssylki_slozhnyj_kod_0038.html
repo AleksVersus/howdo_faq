@@ -14,22 +14,22 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_giperssylok_0037.html" class="avs-pages-button__link">&lt; Назад, к странице 38</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__ssylki_bez_podchiorkivanija_0039.html" class="avs-pages-button__link">Вперёд, к странице 40 &gt;</a></div></div></div>
-<h3 id="faq_07_03" class="avs-article-h3">7.3. Как помещать в гиперссылки сложный код?</h3><p>
+<h3 id="faq_07_03" class="avs-article-h3">7.3. Как помещать в гиперссылки сложный код?</h3><p class="avs-article-p">
 В: Как помещать в гиперссылки сложный код?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Большой кусок кода в гиперссылке будет трудно читать, к тому же это грозит ошибками. Некоторые плееры, работающие с бразуерным html-рендером, могут криво обрабатывать многострочный код в гиперссылках. Поэтому лучше избегать больших объёмов кода непосредственно в самих гиперссылках. Однако есть два решения, которые позволяют выполнять сколь угодно сложный код при щелчке по ссылке.
 </p>
-<p>
+<p class="avs-article-p">
 Например, мы делаем покупку предметов через гиперссылки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:&nbsp;'&gt;Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля&lt;/a&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 И нам нужно, чтобы при щелчке по ссылке выполнялся такой вот код:
 </p>
 <div class="Monokai-Code">
@@ -43,13 +43,13 @@
 <span class="Monokai-Koperator">end</span><br/>
 </div>
 <ol>
-<li><p>
+<li><p class="avs-article-p">
 Чтобы не совать весь код в гиперссылку, мы можем создать отдельную локацию, назвав её, например "купить_эль", разместить код в этой локации, а затем просто вызывать локацию из гиперссылки по `gosub`:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:gosub&nbsp;"</span><span class="Monokai-String">"купить_эль"</span><span class="Monokai-String">"'&gt;Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля&lt;/a&gt;"</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 Можно не создавать отдельную локацию под кусок кода, а выделить для него отдельную переменную. То есть, поместим наш код в текстовую переменную:</p>
 <div class="Monokai-Code">
 $code<span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</span><br/>
@@ -65,13 +65,13 @@ $code<span class="Monokai-Operator">=</span><span class="Monokai-Operator">{</sp
 </div>
 </li>
 </ol>
-<p>
+<p class="avs-article-p">
 Теперь этот код можно будет выполнить в любой момент, используя оператор `dynamic`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href='exec:dynamic&nbsp;$code'&gt;Купить&nbsp;кружку&nbsp;имбирного&nbsp;эля&lt;/a&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Как видите, первый способ требует написания отдельной локации, а так же мы всё ещё можем неверно закрыть кавычки, прописывая команду для вызова этой локации. Во втором варианте этот риск минимален, однако нам приходится выделять для размещения кода переменную, которую нельзя уничтожать, пока игрок не щёлкнет по гиперссылке.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__tsvet_giperssylok_0037.html" class="avs-pages-button__link">&lt; Назад, к странице 38</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__ssylki_bez_podchiorkivanija_0039.html" class="avs-pages-button__link">Вперёд, к странице 40 &gt;</a></div></div></div>

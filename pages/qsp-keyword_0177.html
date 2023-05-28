@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html" class="avs-pages-button__link">&lt; Назад, к странице 163</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="avs-pages-button__link">Вперёд, к странице 165 &gt;</a></div></div></div>
-<h4 id="faq_80_03" class="avs-article-h4">Функции</h4><h4 id="faq_80_03_curacts" class="avs-article-h4">$CURACTS</h4><p>
+<h4 id="faq_80_03" class="avs-article-h4">Функции</h4><h4 id="faq_80_03_curacts" class="avs-article-h4">$CURACTS</h4><p class="avs-article-p">
 `$CURACTS` —  данная функция возвращает выведенные на экран действия в виде кода QSP, как текстовое значение.
 </p>
-<p>
+<p class="avs-article-p">
 	Действия сохраняются как набор операторов `act` с cответствующими параметрами и операциями.
 </p>
-<p>
+<p class="avs-article-p">
 	Записав возвращённое функцией значение в переменную, можно восстановить действия с помощью оператора `dynamic`. Пример:
 </p>
 <div class="Monokai-Code">
@@ -29,28 +29,28 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 </span><span class="Monokai-Comment">!&nbsp;восстанавливаем&nbsp;действия&nbsp;из&nbsp;переменной</span><br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;$actlist<br/>
 </div>
-<h4 id="faq_80_03_curloc" class="avs-article-h4">$CURLOC</h4><p>
+<h4 id="faq_80_03_curloc" class="avs-article-h4">$CURLOC</h4><p class="avs-article-p">
 `$CURLOC` —  функция возвращает название текущей локации, т.е. локации, в которой "находится" игрок.
 </p>
-<p>
+<p class="avs-article-p">
 	Технически это следует понимать так. В момент запуска игры плеер начинает выполнять код самой первой локации в игре, а когда код выполнен, плеер "останавливается" и ждёт участия игрока. Игрок может нажимать различные кнопки в игре, ссылки и выбирать пункты меню, что приводит к выполнению других блоков кода (например, действий) и переходам на новые локации по `goto` или `xgoto`. При таких переходах плеер вновь выполняет код других локаций и, когда код выполнен, "останавливается".
 </p>
-<p>
+<p class="avs-article-p">
 	Так вот, когда на локацию осуществлён непосредственный переход (т.е. по `goto` или `xgoto`, либо это самая первая локация в игре), `$curloc` начинает возвращать название этой локации, — во всё время, пока выполняется код, и когда плеер "останавливается". Если после остановки не происходит переход по `goto`/`xgoto`, значение, которое возвращает `$curloc`, не меняется.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример использования:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"—&nbsp;Где&nbsp;я&nbsp;нахожусь?"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Это&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"."</span><br/>
 </div>
-<h4 id="faq_80_03_desc" class="avs-article-h4">$DESC</h4><p>
+<h4 id="faq_80_03_desc" class="avs-article-h4">$DESC</h4><p class="avs-article-p">
 `$DESC` —  возвращает текст базового описания локации с заданным названием. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$DESC</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$локация]` — это название интересующей нас локации. Например:
 </p>
 <div class="Monokai-Code">
@@ -59,26 +59,26 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 </span><span class="Monokai-Comment">!возвращаем&nbsp;базовое&nbsp;описание&nbsp;текущей&nbsp;локации</span><br/>
 <span class="Monokai-Func">$desc</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если в базовом описании присутствуют подвыражения, функция автоматически раскрывает их.
 </p>
-<p>
+<p class="avs-article-p">
 Использование данной функции имеет смысл только если вы работает в редакторе `Quest Generator`, поскольку лишь из этого редактора доступно редактирование поля "Базовое описание" локации.
 </p>
-<h4 id="faq_80_03_dyneval" class="avs-article-h4">$DYNEVAL (DYNEVAL)</h4><p>
+<h4 id="faq_80_03_dyneval" class="avs-article-h4">$DYNEVAL (DYNEVAL)</h4><p class="avs-article-p">
 `DYNEVAL` —  выполняет код, переданный в виде строки текста, и возвращает результат, если он есть. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$DYNEVAL</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$код<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">DYNEVAL</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$код<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$код]` — это обычный код QSP, записанный в виде текста. Выполнение такого кода аналогично выполнению кода функции `FUNC`. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться внутри `[$код]`, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно.
 </p>
-<p>
+<p class="avs-article-p">
 	Чтобы `dyneval` возвращала результат, необходимо внутри `[$код]` присвоить этот результат переменной `result`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -86,32 +86,32 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">$dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$result&nbsp;=&nbsp;mid("abcd",2,1)+"qwerty"'</span><span class="Monokai-Operator">)</span><br/>
 проход<span class="Monokai-Operator">=</span><span class="Monokai-Func">dyneval</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"result&nbsp;=&nbsp;($args[0]&nbsp;&lt;&gt;&nbsp;'текст')"</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'строка'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Результат функции равен значению `$result` при возврате строкового значения или `result` при возврате числового значения. если при выполнении кода были установлены и `result`, и `$result`, то предпочтение отдаётся строковому значению. После выполнения кода предыдущие значения `args` и `result` восстанавливаются, затем продолжается выполнение кода после `dyneval`.
 </p>
-<p>
+<p class="avs-article-p">
 	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html#faq_80_02_dynamic" style="text-decoration:none;" class="avs-page-external-link">оператор `DYNAMIC`</a>.
 </p>
-<h4 id="faq_80_03_func" class="avs-article-h4">$FUNC (FUNC)</h4><p>
+<h4 id="faq_80_03_func" class="avs-article-h4">$FUNC (FUNC)</h4><p class="avs-article-p">
 `FUNC` —  выполнение кода указанной локации без непосредственного перехода на неё с возвращением значения.
 </p>
-<p>
+<p class="avs-article-p">
 	Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">$FUNC</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$локация]` — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. 
 </p>
-<p>
+<p class="avs-article-p">
 	Базовое описание и список действий локации `[$локация]` добавляются к основному описанию и действиям старой локации. Так же происходит выполнение операторов в поле "Выполнить при посещении"
 </p>
-<p>
+<p class="avs-article-p">
 	Результат функции равен значению `$RESULT` при возврате строкового значения или `RESULT` при возврате числового значения. Если при обработке локации были установлены и `RESULT`, и `$RESULT`, то предпочтение отдаётся строковому значению. После обработки локации предыдущие значения `ARGS` и `RESULT` восстанавливаются.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -143,16 +143,16 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 $name_loc<span class="Monokai-Operator">=</span><span class="Monokai-String">"summ"</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span>$name_loc<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;276</span><br/>
 </div>
-<h4 id="faq_80_03_getobj" class="avs-article-h4">$GETOBJ</h4><p>
+<h4 id="faq_80_03_getobj" class="avs-article-h4">$GETOBJ</h4><p class="avs-article-p">
 `$GETOBJ` —  возвращает название предмета в Окне предметов, расположенного в заданной позиции. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$GETOBJ</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>номер&nbsp;предмета<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Индексация (нумерация) предметов в Окне предметов ведётся с 1. Если предмета с индексом `[номер предмета]` не существует, возвращается пустая строка (`''`).
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -160,7 +160,7 @@ $name_loc<span class="Monokai-Operator">=</span><span class="Monokai-String">"su
 <br/>
 <span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">countobj</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;название&nbsp;последнего&nbsp;добавленного&nbsp;предмета</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Код, подсчитывающий в массиве `OBJECTS` число предметов с одинаковым названием:
 </p>
 <div class="Monokai-Code">
@@ -172,20 +172,20 @@ i&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_03_iif" class="avs-article-h4">$IIF (IIF)</h4><p>
+<h4 id="faq_80_03_iif" class="avs-article-h4">$IIF (IIF)</h4><p class="avs-article-p">
 `IIF` —  возвращает значение в зависимости от верности выражения.
 </p>
-<p>
+<p class="avs-article-p">
 	Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">IIF</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение],[#выражение_да],[#выражение_нет])</span><br/>
 <span class="Monokai-Func">$IIF</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение],[$выражение_да],[$выражение_нет])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Если `[#выражение]` верно, возвращает значение выражения `[выражение_да]`, в противном случае возвращает значение выражения `[выражение_нет]`. При выполнении функции вычисляются значения всех трёх выражений.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -199,25 +199,25 @@ y<span class="Monokai-Operator">=</span><span class="Monokai-Func">iif</span><sp
 </span><span class="Monokai-Comment">!&nbsp;типичное&nbsp;решение&nbsp;для&nbsp;вывода&nbsp;времени,&nbsp;чтобы&nbsp;не&nbsp;терять&nbsp;ноль&nbsp;на&nbsp;часах:</span><br/>
 <span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-String">":"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_input" class="avs-article-h4">$INPUT</h4><p>
+<h4 id="faq_80_03_input" class="avs-article-h4">$INPUT</h4><p class="avs-article-p">
 `$INPUT` —  возвращает интерпретатору введённый игроком текст, либо `''` (пустая строка), если была нажата кнопка "Отмена". Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$INPUT</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$текст]` — это приглашение в диалоговом окне, которое видит игрок. Например:
 </p>
 <div class="Monokai-Code">
 $name&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">$input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Как&nbsp;звать&nbsp;тебя,&nbsp;герой?'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 При выполнении данной команды на экране появится диалоговое окно с текстом "Как звать тебя, герой?", а выполнение остального кода приостановится, пока игрок не провзаимодействует с диалоговым окном.
 </p>
-<p>
+<p class="avs-article-p">
 Игрок может ввести или не ввести текст, и нажать кнопку "ОК" или "Отмена". Если игрок ввёл текст и нажал кнопку "ОК", функция `$input` вернёт переменной `$text` введённый игроком текст. Во всех остальных случаях после закрытия диалогового окна функция вернёт пустую строку (`''`).
 </p>
-<p>
+<p class="avs-article-p">
 Другие примеры:
 </p>
 <div class="Monokai-Code">
@@ -233,19 +233,19 @@ $answer&nbsp;<span class="Monokai-Operator">=</span><span class="Monokai-Func">$
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span>$answer<span class="Monokai-Operator">,</span><span class="Monokai-String">'красный'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span>$answer<span class="Monokai-Operator">,</span><span class="Monokai-String">'желтый'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span>$answer<span class="Monokai-Operator">,</span><span class="Monokai-String">'зеленый'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">gt</span>&nbsp;<span class="Monokai-String">'win'</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;Введя&nbsp;красный&nbsp;или&nbsp;зеленый&nbsp;ил&nbsp;желтый&nbsp;произойдет&nbsp;переход&nbsp;на&nbsp;локацию&nbsp;'win'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Допустимо, но не одобряется, использовать функцию для возвращения числовых значений:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">INPUT</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$приглашение<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Это может привести к различным ошибкам в игре, если игрок введёт в диалоговом окне не только цифры. Например:
 </p>
 <div class="Monokai-Code">
 age<span class="Monokai-Operator">=</span><span class="Monokai-Func">input</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Сколько&nbsp;вам&nbsp;лет?'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если игрок введёт вместо числа строку "24 года", плеер выдаст ошибку 101 "Несоответствие типов данных". Подобные ситуации должен предусматривать автор игры, а значит правильно будет озаботиться проверкой введённого значения уже после того, как функция $input будет выполнена.
 </p>
 <div class="Monokai-Code">
@@ -262,16 +262,16 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</s
 &nbsp;&nbsp;&nbsp;&nbsp;age<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span>$text<span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_03_lcase" class="avs-article-h4">$LCASE</h4><p>
+<h4 id="faq_80_03_lcase" class="avs-article-h4">$LCASE</h4><p class="avs-article-p">
 `$LCASE` —  возвращает строку маленьких букв, полученную изменением регистра букв исходной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$LCASE</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$текст]` — любая строка текста.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -279,10 +279,10 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</s
 <span class="Monokai-Func">$lcase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Привет,&nbsp;Алиса!'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'привет,&nbsp;алиса!'</span><br/>
 <span class="Monokai-Func">$lcase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Я&nbsp;НЕ&nbsp;ХОЧУ&nbsp;НА&nbsp;ВАС&nbsp;ОРАТЬ.'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'я&nbsp;не&nbsp;хочу&nbsp;на&nbsp;вас&nbsp;орать.'</span><br/>
 </div>
-<h4 id="faq_80_03_maintxt" class="avs-article-h4">$MAINTXT</h4><p>
+<h4 id="faq_80_03_maintxt" class="avs-article-h4">$MAINTXT</h4><p class="avs-article-p">
 `$MAINTXT` —  возвращает текст, выведенный в окно основного описания.
 </p>
-<p>
+<p class="avs-article-p">
 	Данная функция может быть полезна для замены части текста в окне основного описания, либо иной обработке текста. Пример:
 </p>
 <div class="Monokai-Code">
@@ -298,7 +298,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 </span><span class="Monokai-Comment">!&nbsp;выводим&nbsp;новый&nbsp;текст</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;$text_new<br/>
 </div>
-<h4 id="faq_80_03_max" class="avs-article-h4">$MAX (MAX)</h4><p>
+<h4 id="faq_80_03_max" class="avs-article-h4">$MAX (MAX)</h4><p class="avs-article-p">
 `MAX` —  возвращает максимальное из значений выражений-аргументов. Можно передавать от одного до девяти значений/аргументов. Если передан один аргумент, то считается, что указано имя массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -308,27 +308,27 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Func">MAX</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">$MAX</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Обратите внимание, при передаче одного аргумента поиск максимального элемента происходит среди строковых (если название массива указано со знаком `$`) или среди числовых значений элементов массива. Например:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;числовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br/>
 <span class="Monokai-Func">$max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;строковых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"b"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Нельзя писать так и надеяться, что произойдёт поиск среди значений массива `a`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Можно так:
 </p>
 <div class="Monokai-Code">
 $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span><br/>
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span>$b<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;произойдёт&nbsp;поиск&nbsp;максимального&nbsp;значения&nbsp;среди&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Другие примеры:
 </p>
 <div class="Monokai-Code">
@@ -336,13 +336,13 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">,</span>b<span class="Monokai-Operator">,</span>c<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;значений&nbsp;переменных&nbsp;a,b,c</span><br/>
 <span class="Monokai-Func">$max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'aa'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'ab'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'zz'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'zz'</span><br/>
 </div>
-<h4 id="faq_80_03_mid" class="avs-article-h4">$MID</h4><p>
+<h4 id="faq_80_03_mid" class="avs-article-h4">$MID</h4><p class="avs-article-p">
 `$MID` —  позволяет вырезать из строки её часть. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$MID</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало],[#длина])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$строка]` — это строка текста, именно из неё функция вырезает часть, начиная с символа номер `[#начало]`, и длиной в `[#длина]` символов. Нумерация символов начинается с 1. Если отсутствует параметр `[#длина]`, вырезается часть до конца строки. Параметр `[#начало]` обязателен, и может в принципе принимать любые значения.
 </p>
 <div class="Monokai-Code">
@@ -353,7 +353,7 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'abcdef'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;'abcdef'</span><br/>
 <span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'abcdef'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;''</span><br/>
 </div>
-<h4 id="faq_80_03_min" class="avs-article-h4">$MIN (MIN)</h4><p>
+<h4 id="faq_80_03_min" class="avs-article-h4">$MIN (MIN)</h4><p class="avs-article-p">
 `MIN` —  возвращает минимальное из значений выражений-аргументов. Можно передавать от одного до девяти значений/аргументов. Если передан один аргумент, то считается, что указано имя массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -364,27 +364,27 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">MIN</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">$MIN</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Обратите внимание, при передаче одного аргумента поиск минимального элемента происходит среди строковых (если название массива указано со знаком `$`) или среди числовых значений элементов массива. Например:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">min</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;числовых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br/>
 <span class="Monokai-Func">$min</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;строковых&nbsp;значений&nbsp;элементов&nbsp;массива&nbsp;"b"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Нельзя писать так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">min</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Можно так:
 </p>
 <div class="Monokai-Code">
 $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span><br/>
 <span class="Monokai-Func">min</span><span class="Monokai-Operator">(</span>$b<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;произойдёт&nbsp;поиск&nbsp;максимального&nbsp;значения&nbsp;среди&nbsp;элементов&nbsp;массива&nbsp;"a"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Другие примеры:
 </p>
 <div class="Monokai-Code">
@@ -392,19 +392,19 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">min</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">,</span>b<span class="Monokai-Operator">,</span>c<span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;значений&nbsp;переменных&nbsp;a,b,c</span><br/>
 <span class="Monokai-Func">$min</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'aa'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'ab'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'zz'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'aa'</span><br/>
 </div>
-<h4 id="faq_80_03_qspver" class="avs-article-h4">$QSPVER</h4><p>
+<h4 id="faq_80_03_qspver" class="avs-article-h4">$QSPVER</h4><p class="avs-article-p">
 `$QSPVER` - возвращает версию интерпретатора в формате "X.Y.Z". Пример вызова:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$qspver</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-String">"5.7.0"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваша&nbsp;версия&nbsp;плеера&nbsp;не&nbsp;подходит&nbsp;для&nbsp;этой&nbsp;игры.&nbsp;Установите&nbsp;плеер&nbsp;версии&nbsp;5.7.0&nbsp;или&nbsp;выше."</span><br/>
 </div>
-<h4 id="faq_80_03_replace" class="avs-article-h4">$REPLACE</h4><p>
+<h4 id="faq_80_03_replace" class="avs-article-h4">$REPLACE</h4><p class="avs-article-p">
 `$REPLACE` —  общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$REPLACE</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$поиск<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$замена<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Данная функция заменяет в строке `[$строка]` все вхождения строки `[$поиск]` строкой `[$замена]` и возвращает результат. Если `[$замена]` отсутствует или указана пустая строка, то удаляет в исходной строке все вхождения искомой строки. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -421,55 +421,55 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$text<br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$text_new<br/>
 </div>
-<h4 id="faq_80_03_selact" class="avs-article-h4">$SELACT</h4><p>
+<h4 id="faq_80_03_selact" class="avs-article-h4">$SELACT</h4><p class="avs-article-p">
 `$SELACT` —  возвращает название выделенного действия в любом месте игры.
 </p>
-<p>
+<p class="avs-article-p">
 	Следует помнить, что выделение действия происходит при наведении на него указателя мыши, а не при непосредственном нажатии.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onactsel" style="text-decoration:none;" class="avs-page-external-link">`$onactsel`</a>
 </p>
-<h4 id="faq_80_03_selobj" class="avs-article-h4">$SELOBJ</h4><p>
+<h4 id="faq_80_03_selobj" class="avs-article-h4">$SELOBJ</h4><p class="avs-article-p">
 `$SELOBJ` —  возвращает название выделенного предмета в любом месте игры. Выделение предмета происходит в момент нажатия (щелчка мышью по предмету) и не снимается до применения команды `unselect`.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onobjsel" style="text-decoration:none;" class="avs-page-external-link">`$onobjsel`</a>
 </p>
-<h4 id="faq_80_03_stattxt" class="avs-article-h4">$STATTXT</h4><p>
+<h4 id="faq_80_03_stattxt" class="avs-article-h4">$STATTXT</h4><p class="avs-article-p">
 `$STATTXT` —  возвращает текст, выведенный в окно дополнительного описания. Может быть полезна для замены части текста в окне дополнительного описания.
 </p>
-<h4 id="faq_80_03_str" class="avs-article-h4">$STR</h4><p>
+<h4 id="faq_80_03_str" class="avs-article-h4">$STR</h4><p class="avs-article-p">
 `$STR` —  возвращает строку текста, полученную переводом числа в строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$STR</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#число])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">56</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;превратит&nbsp;число&nbsp;56&nbsp;в&nbsp;строку&nbsp;"56"&nbsp;и&nbsp;выведет&nbsp;на&nbsp;экран</span><br/>
 </div>
-<h4 id="faq_80_03_strfind" class="avs-article-h4">$STRFIND</h4><p>
+<h4 id="faq_80_03_strfind" class="avs-article-h4">$STRFIND</h4><p class="avs-article-p">
 `$STRFIND` —  возвращает подстроку, соответствующую регулярному выражению, из указанной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$STRFIND</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$шаблон<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#номер])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$строка]` — исходная строка, в которой производим поиск вхождения, соответствующего регулярному выражению `[$шаблон]`, или группе номер `[#номер]` в регулярном выражении. Если подстрока с указанным номером отсутствует, то возвращается пустая строка. Нумерация групп подстрок начинается с 1. Если параметр `[#номер]` отсутствует или равен 0, то возвращается подстрока, соответствующая всему регулярному выражению `[$шаблон]`
 </p>
-<p>
+<p class="avs-article-p">
 Например, возьмём регулярное выражение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">'^(\S+)\s(\S+)\s(\S+)$'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Метасимвол `\S` означает любой непробельный символ, а квантификатор `+` указывает, что непробельные символы должны присутствовать один или более раз. Таким образом запись `\S+` можно условно сопоставить слову. Каждое слово с помощью скобок `()` выделено в отдельную группу, а между группами присутствуют пробельные символы `\s`. Метасимволы `^` и `$` означают соответственно начало и конец строки. Таким образом наше регулярное выражение соответствует любой строке из трёх слов, разделённых пробелами.
 </p>
-<p>
+<p class="avs-article-p">
 Тогда:
 </p>
 <div class="Monokai-Code">
@@ -503,7 +503,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 </span><span class="Monokai-Comment">!&nbsp;а&nbsp;вот&nbsp;эта&nbsp;строка&nbsp;уже&nbsp;не&nbsp;соответствует&nbsp;регулярному&nbsp;выражению</span><br/>
 <span class="Monokai-Func">$strfind</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'искать'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'^(\S+)\s(\S+)(\s(\S+))?$'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;''</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Следующие примеры показывают, как `$strfind` возвращает часть строки, соответствующую регулярному выражению:
 </p>
 <div class="Monokai-Code">
@@ -511,28 +511,28 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Func">$strfind</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'идти&nbsp;к&nbsp;дому'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'к\s(\S+)'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'дому'</span><br/>
 <span class="Monokai-Func">$strfind</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'идти&nbsp;к&nbsp;своему&nbsp;дому'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'к\s(\S+)'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'своему'</span><br/>
 </div>
-<h4 id="faq_80_03_trim" class="avs-article-h4">$TRIM</h4><p>
+<h4 id="faq_80_03_trim" class="avs-article-h4">$TRIM</h4><p class="avs-article-p">
 `$TRIM` —  возвращает указанную строку без прилегающих символов табуляции и пробелов. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$TRIM</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$выражение<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Например:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$trim</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trim&nbsp;test&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'trim&nbsp;test'</span><br/>
 </div>
-<h4 id="faq_80_03_ucase" class="avs-article-h4">$UCASE</h4><p>
+<h4 id="faq_80_03_ucase" class="avs-article-h4">$UCASE</h4><p class="avs-article-p">
 `$UCASE` —  возвращает строку больших букв, полученную изменением регистра букв исходной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$UCASE</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$текст]` — любая строка текста.
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -540,28 +540,28 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Func">$ucase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Привет,&nbsp;Алиса!'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'ПРИВЕТ,&nbsp;АЛИСА!'</span><br/>
 <span class="Monokai-Func">$ucase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Я&nbsp;хочу&nbsp;на&nbsp;вас&nbsp;орать.'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'Я&nbsp;ХОЧУ&nbsp;НА&nbsp;ВАС&nbsp;ОРАТЬ.'</span><br/>
 </div>
-<h4 id="faq_80_03_usrtxt" class="avs-article-h4">$USER_TEXT ($USRTXT)</h4><p>
+<h4 id="faq_80_03_usrtxt" class="avs-article-h4">$USER_TEXT ($USRTXT)</h4><p class="avs-article-p">
 `$USER_TEXT` —  в любом месте игры возвращает текст, который находится в строке ввода (поле ввода). Имеет краткую форму `$usrtxt`. Пример смотри в разделе `$usercom`.
 </p>
-<h4 id="faq_80_03_arrcomp" class="avs-article-h4">ARRCOMP</h4><p>
+<h4 id="faq_80_03_arrcomp" class="avs-article-h4">ARRCOMP</h4><p class="avs-article-p">
 `ARRCOMP` —  возвращает индекс элемента массива, соответствующего регулярному выражению. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает -1. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало],[$имя_массива],[$шаблон])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[#начало]` — номер элемента массива, с которого следует начать поиск, `[$имя_массива]` — название массива, по которому нужно произвести поиск, `[$шаблон]` — регулярное выражение, с которым будет сравниваться искомый элемент.
 </p>
-<p>
+<p class="avs-article-p">
 Параметр `[#начало]` может отсутствовать, при этом его значение принимается равным 0. Поиск ведётся только среди текстовых элементов массива.
 </p>
-<p>
+<p class="avs-article-p">
 Важно! В более новых версиях плеера (например, в Quest Navigator) параметр `[#начало]` переставлен в конец:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ARRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$имя_массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$шаблон<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для примера возьмём вот такой массив:
 </p>
 <div class="Monokai-Code">
@@ -570,25 +570,25 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</spa
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"не&nbsp;иду&nbsp;в&nbsp;пещеру"</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"топаю&nbsp;к&nbsp;дому"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Нам нужно найти элемент, значение которого состояит из трёх слов. В грубом приближении слово — это набор из одного или более непробельных символов `\S+`, по бокам от которого могут стоять или не стоять символы пробела `\s`, отсюда мы можем составить вот такое регулярное выражение:
 </p>
 <div class="Monokai-Code">
 \s?\S+\s\S+\s\S+\s?
 </div>
-<p>
+<p class="avs-article-p">
 Остаётся только выяснить какой элемент массива соответсвует шаблону:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s\S+\s\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;этому&nbsp;выражению&nbsp;соответствует&nbsp;первый&nbsp;элемент</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы хотим проигнорировать первый элемент и начать поиск со второго:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s\S+\s\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;этому&nbsp;выражению&nbsp;соответствует&nbsp;третий&nbsp;элемент</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 А вот так мы можем вывести на экран значения всех элементов, содержащих слово "иду":
 </p>
 <div class="Monokai-Code">
@@ -601,7 +601,7 @@ index<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrcomp</
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'for'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Другие примеры:
 </p>
 <div class="Monokai-Code">
@@ -616,22 +616,22 @@ index<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrcomp</
 <br/>
 <span class="Monokai-Func">arrcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'This'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;эквивалентно&nbsp;1му&nbsp;варианту</span><br/>
 </div>
-<h4 id="faq_80_03_arrpos" class="avs-article-h4">ARRPOS</h4><p>
+<h4 id="faq_80_03_arrpos" class="avs-article-h4">ARRPOS</h4><p class="avs-article-p">
 `ARRPOS` —   возвращает индекс элемента массива, равного указанному значению. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает -1. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало],[$имя_массива],[значение])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[#начало]` — номер элемента массива, с которого следует начать поиск, `[$имя_массива]` — название массива, по которому нужно произвести поиск, `[значение]` — число, или строка (в зависимости от типа массива), которое нужно найти в массиве.
 </p>
-<p>
+<p class="avs-article-p">
 Важно! В более новых версиях плеера (например, в Quest Navigator) параметр `[#начало]` переставлен в конец:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ARRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$имя_массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$шаблон<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для примера возьмём такой массив:
 </p>
 <div class="Monokai-Code">
@@ -641,25 +641,25 @@ $color<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</sp
 $color<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'синий'</span><br/>
 $color<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'жёлтый'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Нам нужно найти элемент со значением "жёлтый":
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$color'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'жёлтый'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы хотим проигнорировать первые два элемента:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'$color'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'жёлтый'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;4</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы хотим найти элемент со значением, которого нет в массиве:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$color'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'голубой'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;-1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Другие примеры:
 </p>
 <div class="Monokai-Code">
@@ -670,16 +670,16 @@ $color<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</sp
 </span><span class="Monokai-Comment">!&nbsp;поиск&nbsp;строки&nbsp;'test'&nbsp;среди&nbsp;значений&nbsp;массива&nbsp;"$b"</span><br/>
 <span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'test'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_arrsize" class="avs-article-h4">ARRSIZE</h4><p>
+<h4 id="faq_80_03_arrsize" class="avs-article-h4">ARRSIZE</h4><p class="avs-article-p">
 `ARRSIZE` —  функция возвращает число элементов массива. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ARRSIZE</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$имя_массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$имя_массива]` — название массива, размер которого хотим получить.
 </p>
-<p>
+<p class="avs-article-p">
 В силу особенностей движка плеера, не важно, указывается ли название текстового, или числового, массива, возвращено будет наибольшее значение. Для примера:
 </p>
 <div class="Monokai-Code">
@@ -701,59 +701,59 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;3</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'b'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;3</span><br/>
 </div>
-<h4 id="faq_80_03_countobj" class="avs-article-h4">COUNTOBJ</h4><p>
+<h4 id="faq_80_03_countobj" class="avs-article-h4">COUNTOBJ</h4><p class="avs-article-p">
 `COUNTOBJ` —  возвращает количество предметов в инвентаре.
 </p>
-<p>
+<p class="avs-article-p">
 	Номер последнего предмета в списке численно совпадает с количеством предметов, поэтому всегда можно получить название последнего предмета так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">countobj</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_instr" class="avs-article-h4">INSTR</h4><p>
+<h4 id="faq_80_03_instr" class="avs-article-h4">INSTR</h4><p class="avs-article-p">
 `INSTR` —  возвращает номер символа, с которого начинается вхождение подстроки в строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">INSTR</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало],[$строка],[$подстрока])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[#начало]` — это номер символа, с которого нужно начинать поиск, `[$строка]` — это текстовое значение (строка), по которому нужно производить поиск, а `[$подстрока]` — значение, которое мы ищем в указанной строке. Нумерация символов начианется с 1. Параметр `[#начало]` может отсутствовать, при этом он принимается равным 1.
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'abcdefabcdef'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'bc'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;число&nbsp;8</span><br/>
 <span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'abcdefghijklm'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'abc'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;число&nbsp;1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если ни одного вхождения указанной подстроки в строке нет, instr возвращает 0.
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">instr</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Вася&nbsp;вышел&nbsp;из&nbsp;дома.'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'идти'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Важно: в более новых версиях (Quest Navigator) необязательный параметр `[#начало]` переставлен в конец:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">INSTR</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$подстрока<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало])</span><br/>
 </div>
-<h4 id="faq_80_03_isnum" class="avs-article-h4">ISNUM</h4><p>
+<h4 id="faq_80_03_isnum" class="avs-article-h4">ISNUM</h4><p class="avs-article-p">
 `ISNUM` —  функция возвращает -1 (истина), если переданная строка является числом, и  — 0, если строка не является числом. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ISNUM</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$строка]` — любая строка текста.
 </p>
-<p>
+<p class="avs-article-p">
 При проверке учитываются знак `-` в начале, прилегающие пробелы и символы табуляции, но кроме того, если хотя бы один символ окажется не цифрой, функция вернёт 0 (ложь).
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -762,31 +762,31 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">isnum</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'777a6'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 <span class="Monokai-Func">isnum</span><span class="Monokai-Operator">(</span><span class="Monokai-String">''</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1,&nbsp;так&nbsp;как&nbsp;нет&nbsp;ни&nbsp;одной&nbsp;не-цифры&nbsp;(пустая&nbsp;строка&nbsp;считается&nbsp;нулём)</span><br/>
 </div>
-<h4 id="faq_80_03_isplay" class="avs-article-h4">ISPLAY</h4><p>
+<h4 id="faq_80_03_isplay" class="avs-article-h4">ISPLAY</h4><p class="avs-article-p">
 `ISPLAY` —  функция проверяет, проигрывается ли в данный момент файл с указанным названием, и если проигрывается, возвращает -1. В противном случае функция возвращает 0. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">ISPLAY</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$путь_к_файлу<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$путь_к_файлу]` — путь к звуковому файлу относительно файла игры.
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">isplay</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'music/mountsound.mp3'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_len" class="avs-article-h4">LEN</h4><p>
+<h4 id="faq_80_03_len" class="avs-article-h4">LEN</h4><p class="avs-article-p">
 `LEN` —  возвращает длину указанной строки текста (количество символов). Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">LEN</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$текст]` — любое текстовое значение.
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -794,7 +794,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"тысячадевятьсотвосьмидесятидевятимиллиметровый"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;46</span><br/>
 <span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-String">""</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;0</span><br/>
 </div>
-<h4 id="faq_80_03_msecscount" class="avs-article-h4">MSECSCOUNT</h4><p>
+<h4 id="faq_80_03_msecscount" class="avs-article-h4">MSECSCOUNT</h4><p class="avs-article-p">
 `MSECSCOUNT` —  возвращает количество миллисекунд, прошедших с момента начала игры. Данная функция при использовании на локации-счётчике позволяет организовывать различные события, происходящие в реальном времени. Так же, с помощью этой функции можно делать замеры быстродействия различных участков кода в вашей игре:
 </p>
 <div class="Monokai-Code">
@@ -809,16 +809,16 @@ old_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecscount</span><br/>
 <span class="Monokai-Operator">pl</span>&nbsp;new_time<span class="Monokai-Operator">-</span>old_time<br/>
 </div>
-<h4 id="faq_80_03_rand" class="avs-article-h4">RAND</h4><p>
+<h4 id="faq_80_03_rand" class="avs-article-h4">RAND</h4><p class="avs-article-p">
 `RAND` —  возвращает случайное число между двумя указанными числами. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">RAND</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение&nbsp;1],[#выражение&nbsp;2])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[#выражение 1]` и `[#выражение 2]` — два любых числа или числовых выражения. Параметр `[#выражение 2]` может отсутствовать, при этом он принимается равным нулю (в более новых версиях плеера, например Quest Navigator, данный параметр по умолчанию равен единице).
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -827,16 +827,16 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;случайное&nbsp;значение&nbsp;от&nbsp;0(1)&nbsp;до&nbsp;1000</span><br/>
 <span class="Monokai-Func">rand</span>&nbsp;<span class="Monokai-Numeric">1000</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;случайное&nbsp;значение&nbsp;от&nbsp;0(1)&nbsp;до&nbsp;1000</span><br/>
 </div>
-<h4 id="faq_80_03_rgb" class="avs-article-h4">RGB</h4><p>
+<h4 id="faq_80_03_rgb" class="avs-article-h4">RGB</h4><p class="avs-article-p">
 `RGB` —  возвращает числовой код цвета на основе трёх числовых аргумнтов, каждый из которых соответствует составляющей требуемого цвета. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">RGB</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#красный],[#зелёный],[#синий])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[#красный]`,`[#зелёный]` и `[#синий]` — числовое выражение трёх составляющих цвета соответсвенно красной, зелёной и синей; должны принимать значения от 0 до 255.
 </p>
-<p>
+<p class="avs-article-p">
 Данная функция обычно используется совместно с системными переменными `bcolor`, `fcolor`, `lcolor`. Пример:
 </p>
 <div class="Monokai-Code">
@@ -847,28 +847,28 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 </span><span class="Monokai-Comment">!&nbsp;текст&nbsp;светло-зелёного&nbsp;цвета</span><br/>
 <span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_rnd" class="avs-article-h4">RND</h4><p>
+<h4 id="faq_80_03_rnd" class="avs-article-h4">RND</h4><p class="avs-article-p">
 `RND` - возвращает случайное значение от 1 до 1000. Аналогично команде:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_strcomp" class="avs-article-h4">STRCOMP</h4><p>
+<h4 id="faq_80_03_strcomp" class="avs-article-h4">STRCOMP</h4><p class="avs-article-p">
 `STRCOMP` —  проводит сравнение строки с регулярным выражением и, если строка соответствует регулярному выражению, возвращает -1 (истина), а если не соответствует — 0 (ложь). Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">STRCOMP</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$шаблон<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$строка]` — любое текстовое значение, `[$шаблон]` — регулярное выражение, с которым производится сравнение.
 </p>
-<p>
+<p class="avs-article-p">
 Например, нам нужно проверить, состоит ли указанная строка из трёх слов. Каждое слово, в грубом виде, это набор непробельных символов, значит мы можем воспользоваться метасимволом `\S` и квантификатором `+`. Слова обычно разделены пробельными символами, для чего мы используем метасимвол `\s`. Получается вот такое регулярное выражение:
 </p>
 <div class="Monokai-Code">
 "\s?\S+\s+\S+\s+\S+\s?"
 </div>
-<p>
+<p class="avs-article-p">
 Теперь мы можем проверить, какие строки соответствуют этому регулярному выражению:
 </p>
 <div class="Monokai-Code">
@@ -877,22 +877,22 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 <span class="Monokai-Func">strcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'&nbsp;иду&nbsp;в&nbsp;лес&nbsp;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s+\S+\s+\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br/>
 <span class="Monokai-Func">strcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'однословие'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s+\S+\s+\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 </div>
-<h4 id="faq_80_03_strpos" class="avs-article-h4">STRPOS</h4><p>
+<h4 id="faq_80_03_strpos" class="avs-article-h4">STRPOS</h4><p class="avs-article-p">
 `STRPOS` —  возвращает позицию символа, с которого начинается вхождение подстроки, соответствующей регулярному выражению, в указанную строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">STRPOS</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$шаблон<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#номер])</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$строка]` — исходная строка, в которой производим поиск вхождения, соответствующего регулярному выражению `[$шаблон]`, или группе номер `[#номер]` в регулярном выражении. Нумерация групп в регулярном выражении начинается с 1. Если подстрока с указанным номером отсутствует, то возвращается 0.
 </p>
-<p>
+<p class="avs-article-p">
 Если параметр `[#номер]` отсутствует или равен 0, то возвращается позиция символа, с которого начинается вхождение подстроки, соответствующей всему регулярному выражению.
 </p>
-<p>
+<p class="avs-article-p">
 Например, нам нужно выяснить, в какой части текста встречается словосочетание "зелёное яблоко", однако при этом не должно быть важно, в каком падеже записано это прилагательное.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы написать регулярное выражение для этой задачи, нам нужно предусмотреть все падежи:
 </p>
 <div class="Monokai-Code">
@@ -903,13 +903,13 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 <br/>зелёным&nbsp;яблоком
 <br/>зелёном&nbsp;яблоке
 </div>
-<p>
+<p class="avs-article-p">
 Как видим, во всех формах меняются только окончания слов. Поэтому мы можем составить вот такое регулярное выражение:
 </p>
 <div class="Monokai-Code">
 "зелён(ое|ого|ому|ым|ом)\s+яблок(о|а|у|ом|е)"
 </div>
-<p>
+<p class="avs-article-p">
 Через прямую черту в скобках перечисленны возможные варианты окончаний. А теперь выясним, с какого символа в строке начинается возможное слвовосочетание "зелёное яблоко":
 </p>
 <div class="Monokai-Code">
@@ -919,7 +919,7 @@ $regexp<span class="Monokai-Operator">=</span><span class="Monokai-String">"зе
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Ты&nbsp;швырнул&nbsp;в&nbsp;него&nbsp;зелёным&nbsp;яблоком!"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;19</span><br/>
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"полный&nbsp;ящик&nbsp;зелёных&nbsp;яблок"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0,&nbsp;потому&nbsp;что&nbsp;такую&nbsp;форму&nbsp;мы&nbsp;не&nbsp;учли</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы не просто хотим узнать, с какого символа начинается вхождение в строку словосочетания, но где начинается вхождение слово "яблоко" из этого словосочетания, нам нужно выделить слово "яблоко" с вариантами окончаний в отдельную группу и воспользоваться параметром `[#номер]`:
 </p>
 <div class="Monokai-Code">
@@ -928,19 +928,19 @@ $regexp<span class="Monokai-Operator">=</span><span class="Monokai-String">"зе
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Ты&nbsp;швырнул&nbsp;в&nbsp;него&nbsp;зелёным&nbsp;яблоком!"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;27</span><br/>
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"полный&nbsp;ящик&nbsp;зелёных&nbsp;яблок"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0,&nbsp;потому&nbsp;что&nbsp;мы&nbsp;не&nbsp;учли&nbsp;форму</span><br/>
 </div>
-<h4 id="faq_80_03_val" class="avs-article-h4">VAL</h4><p>
+<h4 id="faq_80_03_val" class="avs-article-h4">VAL</h4><p class="avs-article-p">
 `VAL` —  переводит указанную строку цифр в соответствующее число. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">VAL</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$выражение<span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$выражение]` — любая строка текста.
 </p>
-<p>
+<p class="avs-article-p">
 При проверке учитываются знак `-` в начале, прилегающие пробелы и символы табуляции, но кроме того, если хотя бы один символ окажется не цифрой, функция вернёт 0. Так же если `[$выражение]` равно `''` (пустая строка), то возвращается 0.
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">

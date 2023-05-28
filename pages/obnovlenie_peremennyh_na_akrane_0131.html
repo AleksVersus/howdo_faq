@@ -14,45 +14,45 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/na_kakom_ustrojstve_0130.html" class="avs-pages-button__link">&lt; Назад, к странице 129</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_snizu_vverh_0132.html" class="avs-pages-button__link">Вперёд, к странице 131 &gt;</a></div></div></div>
-<h3 id="faq_19_09" class="avs-article-h3">19.9. Как обновлять переменные на экране?</h3><p>
+<h3 id="faq_19_09" class="avs-article-h3">19.9. Как обновлять переменные на экране?</h3><p class="avs-article-p">
 В: Как обновлять переменные на экране?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Очень частый вопрос, который происходит от непонимания того, в каком порядке плеер выполняет код.
 </p>
-<p>
+<p class="avs-article-p">
 Например, автор пишет вывод здоровья в окне дополнительного описания так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье&nbsp;&lt;&lt;health&gt;&gt;/100"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Переменная `health` в данном случае показывает уровень здоровья главного героя. Далее автор меняет значение переменной
 </p>
 <div class="Monokai-Code">
 health<span class="Monokai-Operator">=</span>health<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">20</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 И ожидает, что и на экране значение изменится, но в окне дополнительного описания изменения не происходят.
 </p>
-<p>
+<p class="avs-article-p">
 А всё дело в том, что плеер выполняет команды последовательно, а кроме выполнения команд ничего иного делать не умеет.
 </p>
-<p>
+<p class="avs-article-p">
 Когда плеер выполняет команду
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье&nbsp;&lt;&lt;health&gt;&gt;/100"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Происходит следующее:
 </p>
 <ol>
 <li>Плеер видит оператор `pl` и понимает, что ему нужно вывести некий текст в окно дополнительного описания. Данный текст плееру передан в виде конкретного значения, однако в этом значении присутствует подвыражение "&lt;&lt;health&gt;&gt;" (так же оно называется вложенным выражением).</li>
-<li><p>
+<li><p class="avs-article-p">
 Плеер "раскрывает" подвыражение. То есть вычисляет его значение и подставляет это значение вместо подвыражения в строку. Например, если значение переменной `health` в этот момент было равно 50, плеер подставит число 50 вместо подвыражения, и теперь команда будет для него выглядеть так:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье&nbsp;50/100"</span><br/>
@@ -60,23 +60,23 @@ health<span class="Monokai-Operator">=</span>health<span class="Monokai-Operator
 </li>
 <li>Строка передаётся оператору `pl`, и оператор `pl` выводит строку в окно дополнительного описания, что собственно и видит игрок.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Что же происходит, когда выполняется команда
 </p>
 <div class="Monokai-Code">
 health<span class="Monokai-Operator">=</span>health<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">20</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 А вот что. Плеер вычисляет значение выражения `health+20`, подставляя значение переменной `health` (равно 50), и получает конкретное значение (50+20 равно 70), и уже это конкретное значение возвращает переменной `health` (теперь в переменной `health` значение 70). И всё. Здесь нет указания плееру "обновить" значение на экране. Только вычислить.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы значение в окне дополнительного описания "обновилось", нужно:
 </p>
 <ol>
 <li>Стереть старое значение в окне дополнительного описания</li>
 <li>Вывести новое значение в окне дополнительного описания</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Простой код для этого:
 </p>
 <div class="Monokai-Code">
@@ -87,7 +87,7 @@ health<span class="Monokai-Operator">=</span>health<span class="Monokai-Operator
 </span><span class="Monokai-Comment">!&nbsp;выводим&nbsp;новый&nbsp;текст&nbsp;на&nbsp;экран</span><br/>
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваше&nbsp;здоровье&nbsp;&lt;&lt;health&gt;&gt;/100"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом всякий раз, изменив значение переменной, вам нужно повторно вывести его на экран, чтобы игрок увидел "обновление" этого значения.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/na_kakom_ustrojstve_0130.html" class="avs-pages-button__link">&lt; Назад, к странице 129</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_snizu_vverh_0132.html" class="avs-pages-button__link">Вперёд, к странице 131 &gt;</a></div></div></div>

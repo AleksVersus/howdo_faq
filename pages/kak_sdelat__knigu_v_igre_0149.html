@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/porjadok_dejstvij_0148.html" class="avs-pages-button__link">&lt; Назад, к странице 147</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__sklad_sunduk_tajnik_0150.html" class="avs-pages-button__link">Вперёд, к странице 149 &gt;</a></div></div></div>
-<h3 id="faq_20_17" class="avs-article-h3">20.17. Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?</h3><p>
+<h3 id="faq_20_17" class="avs-article-h3">20.17. Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?</h3><p class="avs-article-p">
 В: Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 На самом деле это частный случай работы с предметами в игре.
 </p>
-<p>
+<p class="avs-article-p">
 Подъём любого предмета пишется с помощью действий. Например:
 </p>
 <div class="Monokai-Code">
@@ -35,16 +35,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь, чтобы игрок имел возможность читать эту книгу, нужно завести локацию-обработчик выделения предмета, если у вас её ещё нет. Название может быть любым, но для примера я назову эту локацию "если_предмет_выделен".
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы плеер понял, какую локацию ему нужно использовать, как локацию-обработчик выделения предмета, необходимо прописать название этой локации в системную переменную $onobjsel, например на самой первой локации в игре:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$onobjsel</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"если_предмет_выделен"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 На самой вновь созданной локации пишем код для книги:
 </p>
 <div class="Monokai-Code">
@@ -58,7 +58,7 @@
 </span><span class="Monokai-Comment">!&nbsp;снимаем&nbsp;выделение&nbsp;предмета</span><br/>
 <span class="Monokai-Operator">unselect</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же посмотрите раздел вопросов о создании меню, если хотите добавить больше действий с книгой для игрока.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/porjadok_dejstvij_0148.html" class="avs-pages-button__link">&lt; Назад, к странице 147</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__sklad_sunduk_tajnik_0150.html" class="avs-pages-button__link">Вперёд, к странице 149 &gt;</a></div></div></div>

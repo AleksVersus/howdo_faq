@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sravnenie_massivov_0140.html" class="avs-pages-button__link">&lt; Назад, к странице 139</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sortirovka_dannyh_0142.html" class="avs-pages-button__link">Вперёд, к странице 141 &gt;</a></div></div></div>
-<h3 id="faq_20_09" class="avs-article-h3">20.9. Как сделать вытягивание случайных карт из колоды?</h3><p>
+<h3 id="faq_20_09" class="avs-article-h3">20.9. Как сделать вытягивание случайных карт из колоды?</h3><p class="avs-article-p">
 В: Как сделать вытягивание случайных карт из колоды? Карты вытягиваются несколько раз, но они не должны повторяться.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 В общем виде эта задача решается так:
 </p>
 <ol>
@@ -30,10 +30,10 @@
 <li>Уничтожаем ячейку, чтобы больше не получать из неё данные</li>
 <li>При необходимости повторяем.</li>
 </ol>
-<p>
+<p class="avs-article-p">
 На основе этого общего алгоритма составим алгоритм под конкретную задачу. Будем вытягивать по шесть карт из колоды, пока карты не кончатся.
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку все карты в колоде разные, можно присвоить каждой из них номер, и записать эти номера в массив:
 </p>
 <div class="Monokai-Code">
@@ -45,7 +45,7 @@ deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">51</spa
 deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">52</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">53</span><br/>
 deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">53</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">54</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Можно описать каждую карту строкой текста:
 </p>
 <div class="Monokai-Code">
@@ -57,10 +57,10 @@ $deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">51</sp
 $deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">52</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"джокер&nbsp;красный"</span><br/>
 $deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">53</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"джокер&nbsp;чёрный"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Выбирайте способ, который вам будет удобен.
 </p>
-<p>
+<p class="avs-article-p">
 Алгоритм, который мы будем использовать далее, необходимо изменить под ваши конкретные нужды. В данном случае мы напишем действие, которое будет сдавать по шесть карт:
 </p>
 <div class="Monokai-Code">
@@ -92,7 +92,7 @@ $deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">53</sp
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Данное решение можно применять для других задач. Например, в массиве есть несколько чисел, и их необходимо вывести в порядке от большего к меньшему:
 </p>
 <div class="Monokai-Code">
@@ -120,7 +120,7 @@ deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;цикла</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В упрощённом виде алгоритм, выбрасывающий случайные карты из колоды (с первой по последнюю) можно записать так:
 </p>
 <div class="Monokai-Code">
@@ -133,7 +133,7 @@ deck<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">5</span
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$deck'</span><span class="Monokai-Operator">,</span>i<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Посмотрите так же предложенные решения по <a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html#link_20_09" style="text-decoration:none;" class="avs-page-external-link">ссылкам</a>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sravnenie_massivov_0140.html" class="avs-pages-button__link">&lt; Назад, к странице 139</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sortirovka_dannyh_0142.html" class="avs-pages-button__link">Вперёд, к странице 141 &gt;</a></div></div></div>

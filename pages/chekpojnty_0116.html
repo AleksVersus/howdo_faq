@@ -14,22 +14,22 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_zagruzhajutsja_sohranenija_0115.html" class="avs-pages-button__link">&lt; Назад, к странице 114</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dva_fajla_0117.html" class="avs-pages-button__link">Вперёд, к странице 116 &gt;</a></div></div></div>
-<h4 id="faq_17_03" class="avs-article-h4">17.3. Как сделать чекпойнты в игре?</h4><p>
+<h4 id="faq_17_03" class="avs-article-h4">17.3. Как сделать чекпойнты в игре?</h4><p class="avs-article-p">
 В: Как сделать чекпойнты в игре?
 </p>
-<p>
+<p class="avs-article-p">
 	Как сделать так, чтобы игру можно было начинать с последнего сохранения?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Прежде всего "последнее" сохранение мы всегда будем записывать в файл "autosave.sav". Делается это просто. Там, где нужно сохраниться пишем такую команду:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вот и всё. Теперь у нас есть файл сохранения, к которому можно обратиться в самом начале игры, чтобы загрузить последнюю сохранённую точку. Для этого на самой первой локации в игре (например, она называется "начало") создаём действие:
 </p>
 <div class="Monokai-Code">
@@ -37,10 +37,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Да, но мы хотим, чтобы данное действие появлялось лишь тогда, когда файл "autosave.sav" создан. То есть если игрок уже добрался до одной из контрольных точек. В противном случае, если игрок первый раз открыл игру, такое действие появляться не должно.
 </p>
-<p>
+<p class="avs-article-p">
 Что ж, нам нужна некая переменная, которая будет означать наличие сохранения. Назовём эту переменную `savetrue` и обернём действие в условие:
 </p>
 <div class="Monokai-Code">
@@ -50,10 +50,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Значение этой переменной на момент начала игры будет равно нулю, и должно измениться на 1 в момент сохранения. Но мы не можем загрузить сохранение, если не можем получить значение переменной, такое условие мы прописали. Что же делать?
 </p>
-<p>
+<p class="avs-article-p">
 Ввести ещё один файл сохранения, назовём его "system.sav". Таким образом в момент сохранения игры мы будем писать два файла:
 </p>
 <div class="Monokai-Code">
@@ -66,22 +66,22 @@ savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</
 </span><span class="Monokai-Comment">!&nbsp;сохраняем&nbsp;состояние&nbsp;чекпоинта</span><br/>
 <span class="Monokai-Operator">savegame</span>&nbsp;<span class="Monokai-String">"autosave.sav"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом в момент сохранения игры мы создаём два файла сохранения: системный и непосредственно файл для продолжения игры с чекпоинта. Лучше оформить этот код на отдельной локации, назвать её например "checkpoint", а затем в нужном месте просто вызывать, используя `gosub`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"checkpoint"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь мы можем загрузить сохранение "system.sav" и при этом получим значение переменной-маркера, равное единице, но так же при этом игрок окажется на той локации, где это сохранение было сделано, а нам нужно вернуть его к стартовой локации. Как сделать это?
 </p>
-<p>
+<p class="avs-article-p">
 Нужно завести локацию-обработчик события "загрузка состояния игры". Создаём новую локацию и называем её, например, "при_загрузке". Далее указываем плееру, какую именно локацию ему нужно использовать, как локацию-обработчик загрузки состояния игры. Для этого в системную переменную `$ongload` вносим название нашей вновь созданной локации (пишем на самой первой локации в игре):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$ongload</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"при_загрузке"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 На локации "при_загрузке" пишем такой код:
 </p>
 <div class="Monokai-Code">
@@ -93,7 +93,7 @@ savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">"начало"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 А код на локации "начало" (самой первой локации в игре, стартовой локации) правим так:
 </p>
 <div class="Monokai-Code">
@@ -109,28 +109,28 @@ savetrue<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"system.sav"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Итак, что будет происходить при этом. Когда игрок первый раз запустит игру, обе переменные-маркеры будут равны нулю. Плеер попытается загрузить состояние "system.sav", но поскольку этот файл ещё не создан, плеер просто проигнорирует команду:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">opengame</span>&nbsp;<span class="Monokai-String">"system.sav"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 По мере прохождения, игрок будет посещать "контрольные точки", где игра будет сохранять состояние автоматически, используя написанную нами процедуру "checkpoint". При этом перед сохранением состояния в условно-системный файл "system.sav" переменной-маркеру `savetrue` будет присваиваться значение `1`, а перед сохранением состояния, которое мы будем использовать для загрузки "контрольной точки" ("autosave.sav"), этой переменной будет присваиваться значение `0`.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь, если игрок повторно откроет игру, обе переменные-маркеры будут равны нулю. Плеер попытается загрузить состояние "system.sav", и поскольку оно теперь создано, загрузит его. Переменной-маркеру `savetrue` будет присвоено значение `1`, так как это значение ей было присвоено перед сохранением "system.sav". Далее произойдёт автоматическое посещение локации-обработчика "при_загрузке".
 </p>
-<p>
+<p class="avs-article-p">
 На этой локации произойдёт проверка условия, правда ли переменной `savetrue` присвоена единица, и это окажется правдой. Переменной-маркеру `lock_resave` будет так же присвоена единица и команда `goto` отправит игрока на стартовую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь сработает условие, проверяющее, правда ли переменной `savetrue` присвоена единица, и игрок увидит на экране действие "Продолжить игру".
 </p>
-<p>
+<p class="avs-article-p">
 А когда игрок выберет это действие, произойдёт загрузка состояния "autosave.sav", но поскольку в этом состоянии переменной-маркеру `savetrue` присвоен ноль, при обращении к локации "при_загрузке" условие не сработает и перезаход на стартовую локацию повторно не произойдёт.
 </p>
-<p>
+<p class="avs-article-p">
 Используя условно-системный файл сохранения, Вы можете не только организовать систему чекпоинтов, но и упростить для игрока различные вступительные части игры и кат-сцены при повторном входе, восстанавливать различные параметры игры частично, а не полностью, и т.д.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_zagruzhajutsja_sohranenija_0115.html" class="avs-pages-button__link">&lt; Назад, к странице 114</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dva_fajla_0117.html" class="avs-pages-button__link">Вперёд, к странице 116 &gt;</a></div></div></div>

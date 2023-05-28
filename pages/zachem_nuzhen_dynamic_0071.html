@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/xor_0070.html" class="avs-pages-button__link">&lt; Назад, к странице 71</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_nazvanie_peremennoj_0072.html" class="avs-pages-button__link">Вперёд, к странице 73 &gt;</a></div></div></div>
-<h3 id="faq_12_01" class="avs-article-h3">12.1. Зачем нужен оператор `dynamic`?</h3><p>
+<h3 id="faq_12_01" class="avs-article-h3">12.1. Зачем нужен оператор `dynamic`?</h3><p class="avs-article-p">
 В: Зачем нужен оператор `dynamic`?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Оператор `dynamic` предназначен для выполнения кода, записанного в виде текста.
 </p>
-<p>
+<p class="avs-article-p">
 Например, у нас есть код:
 </p>
 <div class="Monokai-Code">
@@ -35,7 +35,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;меня&nbsp;нет&nbsp;яблок."</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Мы можем записать этот код в текстовом виде и передать оператору `dynamic` в качестве аргумента. Оператор `dynamic` выполнит код, записанный в виде текста, как обычный код:
 </p>
 <div class="Monokai-Code">
@@ -47,7 +47,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;яблок."<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Это удобно, если нам нужно поместить кусочек кода в переменную, а затем вызывать в нужных местах:
 </p>
 <div class="Monokai-Code">
@@ -61,13 +61,13 @@ $code<span class="Monokai-Operator">=</span><span class="Monokai-String">'if&nbs
 <br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;$code<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Например, этот способ подходит, когда нужно поместить большой объём кода в гиперссылку:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Кажется&nbsp;в&nbsp;моём&nbsp;рюкзаке&nbsp;были&nbsp;&lt;a&nbsp;href='exec:dynamic&nbsp;$code'&gt;яблоки&lt;/a&gt;."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же, поскольку `dynamic` выполняет код, записанный в виде текста, можно генерировать код на лету:
 </p>
 <div class="Monokai-Code">
@@ -101,7 +101,7 @@ $code<span class="Monokai-Operator">=</span><span class="Monokai-String">'if&nbs
 </span><span class="Monokai-Comment">!&nbsp;выполняем&nbsp;сгенерированный&nbsp;код</span><br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;code<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Работает это так. После того как в переменные забиты изначальные значения, будет выполнен код, выводящий действия, и команда, которая присвоит переменной `$code` некое текстовое значение. В текстовом значении присутствуют вложенные выражения (двойные угловые скобки). Плеер раскроет вложенные выражения, т.е. вместо них подставит значения тех выражений, которые вписаны в двойные угловые скобки. Это либо значение переменной `$var_word` либо переменной `$text_word`. Таким образом при первом посещении в переменную `$code` будет вписан текст:
 </p>
 <div class="Monokai-Code">
@@ -113,10 +113,10 @@ $code<span class="Monokai-Operator">=</span><span class="Monokai-String">'if&nbs
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;яблок."<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Далее `dynamic` просто выполнит получившийся код, записанный в переменную `$code`.
 </p>
-<p>
+<p class="avs-article-p">
 Когда мы нажмём на действие "Сколько у меня груш", в переменные `$var_word` и `$text_word` впишутся соответственно значения "груша" и "груш", затем плеер перезайдёт на текущую локацию (команда `goto $curloc`), снова выведет на экран оба действия, и выполнит команду, которая присваивает переменной `$code` значение. Плееру вновь потребуется раскрыть вложенные выражения, и он снова подставит значения переменных `$var_word` и `$text_word` вместо соответствующих подвыражений, таким образом переменной `$code` снова присвоится готовый текст:
 </p>
 <div class="Monokai-Code">
@@ -128,7 +128,7 @@ $code<span class="Monokai-Operator">=</span><span class="Monokai-String">'if&nbs
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*pl&nbsp;"У&nbsp;меня&nbsp;нет&nbsp;груш."<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;end'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Далее `dynamic` просто выполнит получившийся код, записанный в переменную `$code`.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/xor_0070.html" class="avs-pages-button__link">&lt; Назад, к странице 71</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sluchajnoe_nazvanie_peremennoj_0072.html" class="avs-pages-button__link">Вперёд, к странице 73 &gt;</a></div></div></div>

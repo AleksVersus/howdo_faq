@@ -14,28 +14,28 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_v_dva_stolbika_0112.html" class="avs-pages-button__link">&lt; Назад, к странице 111</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/zapret_sohranenij_0114.html" class="avs-pages-button__link">Вперёд, к странице 113 &gt;</a></div></div></div>
-<h3 id="faq_16_10" class="avs-article-h3">16.10. Как работать с тегами MAP и AREA?</h3><p>
+<h3 id="faq_16_10" class="avs-article-h3">16.10. Как работать с тегами MAP и AREA?</h3><p class="avs-article-p">
 В:	 Как разметить картинку на кликабельные зоны?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы выводить на экран изображение (тег `&lt;img&gt;`) и его разметку (теги `&lt;map&gt;` и `&lt;area&gt;`), необходимо в первую очередь включить распознавание HTML:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Далее с помощью тега `&lt;img&gt;` выводим на экран изображение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"&lt;img&nbsp;src='путь&nbsp;к&nbsp;файлу&nbsp;изображения/картинка.jpg'&nbsp;usemap='#groundit'&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В атрибуте `src` тега указываем путь к файлу изображения, а в атрибуте `usemap` прописываем символ `#` (решётка) и значение, вписанное в атрибут `name` тега `&lt;map&gt;`, о котором далее. Атрибут `usemap` — это своего рода ссылка на соответствующий тег `&lt;map&gt;`. Таким образом вы можете разметить несколько изображений, ссылаясь из тегов `&lt;img&gt;` на соответстующие контейнеры `&lt;map&gt;` с помощью атрибута `usemap`.
 </p>
-<p>
+<p class="avs-article-p">
 Теги `&lt;map&gt;` и `&lt;area&gt;` используются для разметки кликабельных областей на изображении. Тег `&lt;map&gt;` является контейнером, объединяющим кликабельные области, каждая из которых описывается отдельным тегом `&lt;area&gt;`.
 </p>
 <div class="Monokai-Code">
@@ -54,26 +54,26 @@
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;контейнер&nbsp;MAP</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"&lt;/map&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Итак, каждый тег `&lt;area&gt;` используется, чтобы описать отдельную кликабельную область изображения. Здесь мы используем следующие атрибуты:
 </p>
 <ul>
-<li><p>
+<li><p class="avs-article-p">
 `shape` — в этом атрибуте указываем форму кликабельной области. Можно указать такие значения:</p>
 <ul>
-<li><p>
+<li><p class="avs-article-p">
 `rect` — задаём прямоугольную кликабельную область. При выборе такого значения для `shape`, в атрибуте `coords` перечисляются координаты левого верхнего угла прямоугольника (X1,Y1) и координаты нижнего правого угла (X2,Y2):</p>
 <div class="Monokai-Code">
 coords='X1,Y1,X2,Y2'
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 `circle` — задаём круглую кликабельную область. При выборе этого значения, в атрибуте `coords` перечисляются значения: X1,Y1 — координаты центра круга; R1 — радиус в пикселях:</p>
 <div class="Monokai-Code">
 coords='X1,Y1,R1'
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 `poly` — задаём полигональную кликабельную область, то есть многоугольник. При выборе этого значения, в атрибуте `coords` можно прописывать довольно много значений точек, которые являются вершинами углов многоугольника, указывая координаты: X1, Y1, X2, Y2 и т.д.:</p>
 <div class="Monokai-Code">
 coords="X1,Y1,X2,Y2,X3,Y3,...,XN,YN"
@@ -82,17 +82,17 @@ coords="X1,Y1,X2,Y2,X3,Y3,...,XN,YN"
 </ul>
 </li>
 <li>`coords` — в этом атрибуте перечисляются координаты областей. Выше подробно описано, какие значения, для каких форм областей следует указывать. Координаты высчитываются в пикселях от верхнего левого угла изображения (0,0). Ось X — это горизонтальная ось координат (абсцисса), ось Y — вертикальная ось координат (ордината).</li>
-<li><p>
+<li><p class="avs-article-p">
 `href` — в данном атрибуте в обыкновенном HTML-документе как правило прописывается адрес страницы в интернете (url), однако в QSP мы можем поместить сюда строку кода, который будет выполнен при клике на области. Для этого вписываем в начале значения атрибута ключевое слово `EXEC:` (двоеточие обязательно), а после двоеточия пишем строку кода:</p>
 <div class="Monokai-Code">
 href<span class="Monokai-Operator">=</span><span class="Monokai-String">"EXEC:*pl&nbsp;'Выводим&nbsp;текст&nbsp;при&nbsp;клике&nbsp;по&nbsp;области.'&nbsp;&amp;&nbsp;!&nbsp;строка&nbsp;кода"</span><br/>
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 Если кликабельные области пересекаются, накладываются друг на друга, реагировать на клик будет та область, которая находится выше в HTML-коде.
 </p>
-<p>
+<p class="avs-article-p">
 Обратите внимание, что в классическом QSP при наведении на кликабельную область курсор не будет менять свой вид.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_v_dva_stolbika_0112.html" class="avs-pages-button__link">&lt; Назад, к странице 111</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/zapret_sohranenij_0114.html" class="avs-pages-button__link">Вперёд, к странице 113 &gt;</a></div></div></div>

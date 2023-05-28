@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/mnogourovnevyj_rjukzak_0100.html" class="avs-pages-button__link">&lt; Назад, к странице 99</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/zachem_nuzhna_stroka_vvoda_0102.html" class="avs-pages-button__link">Вперёд, к странице 101 &gt;</a></div></div></div>
-<h3 id="faq_14_14" class="avs-article-h3">14.14. Можно ли выводить предметы не в окне предметов?</h3><p>
+<h3 id="faq_14_14" class="avs-article-h3">14.14. Можно ли выводить предметы не в окне предметов?</h3><p class="avs-article-p">
 В: Можно ли выводить предметы не в окне предметов?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Да, конечно можно. Названия предметов можно записывать в отдельный массив, а выводить в окно основного описания в виде гиперссылок:
 </p>
 <div class="Monokai-Code">
@@ -39,7 +39,7 @@ $предметы<span class="Monokai-Operator">[</span><span class="Monokai-Num
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;a&nbsp;href="</span><span class="Monokai-String">"EXEC:gosub&nbsp;'objClick','&lt;&lt;$предметы[i]&gt;&gt;'"</span><span class="Monokai-String">"&gt;&lt;&lt;$предметы[i]&gt;&gt;&lt;/a&gt;"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Как видите, из гиперссылки идёт обращение к некоей локации "objClick". Эта локация будет заменять нам локацию-обработчик выделения предмета. И так же вы можете видеть, что название предмета на эту локацию передаётся в качестве аргумента. То есть искать его нужно в `$args[0]`:
 </p>
 <div class="Monokai-Code">

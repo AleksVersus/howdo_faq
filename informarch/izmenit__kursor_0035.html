@@ -15,34 +15,34 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="avs-pages-button__link">&lt; Назад, к странице 27</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html" class="avs-pages-button__link">Вперёд, к странице 29 &gt;</a></div></div></div>
-<h5 id="faq_22_04" class="avs-article-h5">22.4. Хочу прописать игре собственный вид курсора, как это сделать?</h5><p>
+<h5 id="faq_22_04" class="avs-article-h5">22.4. Хочу прописать игре собственный вид курсора, как это сделать?</h5><p class="avs-article-p">
 В: Хочу прописать игре собственный вид курсора, как это сделать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Это можно сделать двумя способами. В файле "game.css" своего шаблона пропишите отдельный стиль для курсора:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Markup">.intCur</span>&nbsp;{<span class="Monokai-Construct">cursor</span>:&nbsp;<span class="Monokai-Numeric">url(путь&nbsp;к&nbsp;файлу&nbsp;курсора/cursor.ani)</span>;}<br/>
 </div>
-<p>
+<p class="avs-article-p">
 Путь до файла курсора нужно указывать относительно файла "game.css", то есть файл курсора (в данном примере "cursor.ani") должен лежать на одном уровне с файлом "game.css", либо во вложенной папке. Чтобы применить стиль курсора в своей игре, используйте класс:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;p&nbsp;class='intCur'&gt;Текст,&nbsp;при&nbsp;наведении&nbsp;на&nbsp;который&nbsp;курсор&nbsp;будет&nbsp;меняться&nbsp;на&nbsp;другой.&lt;/p&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Второй способ — это прописать стиль курсора через атрибут style прямо в игре:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"&lt;p&nbsp;style='cursor:&nbsp;url('/путь&nbsp;к&nbsp;файлу&nbsp;курсора/cursor.ani');'&gt;Текст,&nbsp;при&nbsp;наведении&nbsp;на&nbsp;который&nbsp;курсор&nbsp;будет&nbsp;меняться&nbsp;на&nbsp;твой&lt;/p&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом случае файл курсора должен лежать на одном уровне с игрой или во вложенной папке, и путь до файла курсора указывается относительно файла игры.
 </p>
-<p>
+<p class="avs-article-p">
 Примечание: твёрдого убеждения, что это будет работать у меня нет, я не проверял. Если есть уточнения по любому из этих способов пишите на <code>aleksversus@mail.ru</code>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html" class="avs-pages-button__link">&lt; Назад, к странице 27</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html" class="avs-pages-button__link">Вперёд, к странице 29 &gt;</a></div></div></div>

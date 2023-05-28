@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/maksimal_naja_peremennaja_0139.html" class="avs-pages-button__link">&lt; Назад, к странице 138</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html" class="avs-pages-button__link">Вперёд, к странице 140 &gt;</a></div></div></div>
-<h3 id="faq_20_08" class="avs-article-h3">20.8. Как в QSP сравнить два массива?</h3><p>
+<h3 id="faq_20_08" class="avs-article-h3">20.8. Как в QSP сравнить два массива?</h3><p class="avs-article-p">
 В: Как в QSP сравнить два массива?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 На первый взгляд вопрос кажется довольно простым, однако сравнение сравнению рознь. И если мы зададим вопрос: как именно мы хотим сравнить два массива? — возникают совершенно разные решения для различных вариантов сравнения.
 </p>
-<p>
+<p class="avs-article-p">
 Мы можем сравнить массивы по числу элементов:
 </p>
 <div class="Monokai-Code">
@@ -33,10 +33,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'Число&nbsp;элементов&nbsp;в&nbsp;массивах&nbsp;разное.'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Довольно простая задача.
 </p>
-<p>
+<p class="avs-article-p">
 Возьмём задачу посложнее: проверить массивы на идентичность. То есть значение каждого элемента одного массива должно совпадать со значением элемента другого массива под тем же индексом:
 </p>
 <div class="Monokai-Code">
@@ -47,13 +47,13 @@
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">if</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">'Массивы&nbsp;идентичны'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Само собой проверять на идентичность массивы разного размера нет смысла.
 </p>
-<p>
+<p class="avs-article-p">
 Третья задача ещё сложнее. Нужно проверить, присутствуют ли в массивах одни и те же значения, но при этом не важно, совпадают ли индексы элементов с этими значениями.
 </p>
-<p>
+<p class="avs-article-p">
 Кажется, что она решается относительно просто:
 </p>
 <div class="Monokai-Code">
@@ -64,7 +64,7 @@
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">if</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">''</span><span class="Monokai-Operator">:</span>&nbsp;$text<span class="Monokai-Operator">=</span><span class="Monokai-String">'Массивы&nbsp;состоят&nbsp;из&nbsp;одинаковых&nbsp;элементов'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Это решение может сработать, если в массивах, например, вот такое содержимое:
 </p>
 <div class="Monokai-Code">
@@ -73,7 +73,7 @@ mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</sp
 mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span><br/>
 mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Но как быть, если в массивах вот такое содержимое
 </p>
 <div class="Monokai-Code">
@@ -82,10 +82,10 @@ mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</sp
 mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">4</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;mass_2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Да, в них содержатся одинаковые значения, но встречаются они разное количество раз. А если при сравнении нам нужно учесть и количество?
 </p>
-<p>
+<p class="avs-article-p">
 Задача становится чуть более сложной. И теперь её решение будет включать в себя несколько этапов:
 </p>
 <ol>
@@ -94,10 +94,10 @@ mass_1<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</sp
 <li>Сортировка значений во временных массивах</li>
 <li>Сравнение временных массивов на идентичность</li>
 </ol>
-<p>
+<p class="avs-article-p">
 Сортировка значений в массивах — это отдельный вопрос, и он представлен в смежном разделе (см. 20.10).
 </p>
-<p>
+<p class="avs-article-p">
 Готовое решение для сравнения массивов на идентичность, на подобие (значения одинаковы но расположены в разном порядке), на совпадение хотя бы одного элемента есть в библиотеке <a href="https://github.com/AleksVersus/easy.math" style="text-decoration:none;" class="avs-page-external-link">easy.math</a>, см. функцию <a href="http://aleksversus.narod.ru/index/operacii_nad_massivami/0-72#arraysimp" style="text-decoration:none;" class="avs-page-external-link">#array.simp#</a>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/maksimal_naja_peremennaja_0139.html" class="avs-pages-button__link">&lt; Назад, к странице 138</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tjanem_kartu_iz_kolody_0141.html" class="avs-pages-button__link">Вперёд, к странице 140 &gt;</a></div></div></div>

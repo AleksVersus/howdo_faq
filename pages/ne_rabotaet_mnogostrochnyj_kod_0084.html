@@ -14,10 +14,10 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_(mnogostrochnoe)_0083.html" class="avs-pages-button__link">&lt; Назад, к странице 82</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_end_0085.html" class="avs-pages-button__link">Вперёд, к странице 84 &gt;</a></div></div></div>
-<h3 id="faq_13_10" class="avs-article-h3">13.10. Не работает многострочный код. Как исправить?</h3><p>
+<h3 id="faq_13_10" class="avs-article-h3">13.10. Не работает многострочный код. Как исправить?</h3><p class="avs-article-p">
 В: Не работает многострочный код. Как исправить?
 </p>
-<p>
+<p class="avs-article-p">
 Пишу такой код:
 </p>
 <div class="Monokai-Code">
@@ -31,19 +31,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Плеер выдаёт ошибку.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Перепутаны назначения ключевых слов, очевидно от того, что вы не понимаете порядка работы оператора условия и оператора, создающего действие.
 </p>
-<p>
+<p class="avs-article-p">
 Многострочная форма записи конструкции условия имеет три вида.
 </p>
-<p>
+<p class="avs-article-p">
 Первый вид, это "простое" условие:
 </p>
 <div class="Monokai-Code">
@@ -53,10 +53,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 За ключевым словом `IF` следует выражение `[#выражение]`, и если это выражение верно, плеер выполняет команды в последующих строках после двоеточия до ключевого слова `END`. Если выражение не верно, эти команды просто игнорируются плеером.
 </p>
-<p>
+<p class="avs-article-p">
 Второй вид, это "сложное" условие. Эта запись позволяет нам задать наборы команд на случай, если выражение верно, и на случай, если выражение неверно:
 </p>
 <div class="Monokai-Code">
@@ -70,10 +70,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">6</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом случае, если выражение `[#выражение]` верно, выполняются команды, записанные в последующих строках после двоеточия и до ключевого слова `ELSE`. Т.е. команды `[команда 1]`, `[команда 2]` и `[команда 3]`. А если выражение `[#выражение]` не верно, выполняются команды, записанные в последующих строках после ключевого слова `ELSE` и до ключевого слова `END`. Т.е. команды `[команда 4]`, `[команда 5]` и `[команда 6]`. При этом после `ELSE` не ставится двоеточие, и указать дополнительное условие проверки нельзя.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы указать дополнительное условие, предусмотрен третий вид, это "расширенное" условие, и выглядит он так:
 </p>
 <div class="Monokai-Code">
@@ -91,16 +91,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">9</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь мы можем в одну конструкцию уместить несколько условий и для каждого написать свой набор команд. Если верно выражение `[#выражение 1]`, плеер выполнит команды в последующих строках после двоеточия и до первого `ELSEIF`, т.е. команды `[команда 1]`, `[команда 2]` и `[команда 3]`. Все остальные команды в конструкции условия будет проигнорированы.
 </p>
-<p>
+<p class="avs-article-p">
 Однако, если выражение `[#выражение 1]` неверно, тогда проверяется выражение `[#выражение 2]`, и если оно верно, то выполняются команды в последующих строках до `ELSE`, т.е. комнады `[команда 4]`, `[команда 5]` и `[команда 6]`. И так далее.
 </p>
-<p>
+<p class="avs-article-p">
 Как видно, когда мы пишем ключевое слово `ELSEIF`, к нему нужно указать и выражение, истинность которого следует проверить, и после выражения поставить двоеточие.
 </p>
-<p>
+<p class="avs-article-p">
 Так выглядят три вида многострочной формы записи конструкции условий, но для многострочной записи действия предусмотрен только один вид.
 </p>
 <div class="Monokai-Code">
@@ -109,10 +109,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В многострочной форме записи действия нельзя использовать ключевое слово `ELSE`, или `ELSEIF`. Они относятся только к конструкциям условий.
 </p>
-<p>
+<p class="avs-article-p">
 Тем не менее можно комбинировать различные конструкции, чтобы добиться правильной работы данного кода:
 </p>
 <div class="Monokai-Code">
@@ -143,7 +143,7 @@
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;общее&nbsp;условие</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 От себя могу порекомендовать комментировать каждую строчку кода, если вы только начали изучать язык QSP. Это поможет более чётко и ясно понимать, как и что работает. Если вы не можете объяснить назначение той или иной строчки кода, то с ней следует разобраться. Она может быть банально лишней, а может вам ещё недостаёт знаний, чтобы правильно её применить.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_(mnogostrochnoe)_0083.html" class="avs-pages-button__link">&lt; Назад, к странице 82</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_end_0085.html" class="avs-pages-button__link">Вперёд, к странице 84 &gt;</a></div></div></div>

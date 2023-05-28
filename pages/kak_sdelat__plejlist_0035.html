@@ -14,37 +14,37 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_zatsiklit__melodiju_0034.html" class="avs-pages-button__link">&lt; Назад, к странице 35</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__giperssylki_0036.html" class="avs-pages-button__link">Вперёд, к странице 37 &gt;</a></div></div></div>
-<h3 id="faq_06_07" class="avs-article-h3">6.7. Как сделать плейлист?</h3><p>
+<h3 id="faq_06_07" class="avs-article-h3">6.7. Как сделать плейлист?</h3><p class="avs-article-p">
 Прежде, чем приступить к прочтению данной статьи, ознакомьтесь со статьёй <a href="https://aleksversus.github.io/howdo_faq/pages/kak_zatsiklit__melodiju_0034.html#faq_06_06" style="text-decoration:none;" class="avs-page-external-link">"Как зациклить мелодию?"</a>.
 </p>
-<p>
+<p class="avs-article-p">
 Если вы поняли, как зациклить одну мелодию, а то и как зациклить мелодию для проигрывания на отдельной локации, то смело переходите к следующим примерам и решениям.
 </p>
-<p>
+<p class="avs-article-p">
 Плейлист, как правило, представляет из себя список проигрываемых файлов в том порядке, в котором эти файлы должны проигрываться.
 </p>
-<p>
+<p class="avs-article-p">
 Мы рассмотрим случай, когда четыре файла должны проигрываться друг за другом в непрерывном порядке. И тут у нас есть несколько вариантов решения поставленной задачи.
 </p>
-<h4 id="variant-pervyj-fajly-poimenovany-poocheriodno" class="avs-article-h4">Вариант первый. Файлы поименованы поочерёдно</h4><p>
+<h4 id="variant-pervyj-fajly-poimenovany-poocheriodno" class="avs-article-h4">Вариант первый. Файлы поименованы поочерёдно</h4><p class="avs-article-p">
 Имена файлов могут представлять собой числа, или включать в себя числа от одного до другого по порядку. В этом случае, нам не нужно сохранять полные имена файлов в памяти, достаточно лишь следить за порядковым номером. Например, у нас есть файлы с такимим именами:
 </p>
-<p>
+<p class="avs-article-p">
 `music_1.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `music_2.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `music_3.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `music_4.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 Как видите в названиях этих файлов отличается только одно число, и все числа идут по порядку. Поэтому для организации плейлиста мы можем использовать всего две числовые переменные.
 </p>
-<p>
+<p class="avs-article-p">
 На самой первой локации в игре обозначаем номер первой проигрываемой композиции, общее число файлов, и в системную переменную `$counter` прописываем название локации-счётчика.
 </p>
 <div class="Monokai-Code">
@@ -57,7 +57,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Counter'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;локация-счётчик&nbsp;так&nbsp;и&nbsp;будет&nbsp;называться&nbsp;Counter</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь на локации-счётчике пишем такой код:
 </p>
 <div class="Monokai-Code">
@@ -72,37 +72,37 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'music_&lt;&lt;current_file&gt;&gt;.mp3'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;запускаем&nbsp;проигрывание&nbsp;файла&nbsp;с&nbsp;указанным&nbsp;номером</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вот и всё. Наш непрерывный плейлист готов.
 </p>
-<p>
+<p class="avs-article-p">
 При заранее поименованных файлах вам понадобится небольшое количество переменных и кода. Например, вы можете отдельно поименовать файлы, которые необходимо проигрывать на разных локациях, и тогда станет возможным запускать на разных локациях разные плейлисты, используя только одну дополнительную переменную.
 </p>
-<p>
+<p class="avs-article-p">
 Например, наши файлы называются так:
 </p>
-<p>
+<p class="avs-article-p">
 `комната_1.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `комната_2.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `комната_3.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `коридор_1.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `коридор_2.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `коридор_3.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `коридор_4.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 Тогда код может выглядеть так:
 </p>
 <div class="Monokai-Code">
@@ -130,28 +130,28 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;<span class="Monokai-String">'&lt;&lt;$loc_theme&gt;&gt;_&lt;&lt;current_file&gt;&gt;.mp3'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;запускаем&nbsp;проигрывание&nbsp;файла&nbsp;с&nbsp;указанным&nbsp;номером</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 У такого подхода есть один недостаток. Мы не можем использовать произвольные имена файлов для организации плейлиста, а ведь нам может потребоваться такой вариант, если файлы разбросаны по нескольким папкам. В этом случае нам потребуется следующий вариант.
 </p>
-<h4 id="variant-vtoroj-plejlist-s-proizvol_nymi-imenami-fajlov" class="avs-article-h4">Вариант второй. Плейлист с произвольными именами файлов</h4><p>
+<h4 id="variant-vtoroj-plejlist-s-proizvol_nymi-imenami-fajlov" class="avs-article-h4">Вариант второй. Плейлист с произвольными именами файлов</h4><p class="avs-article-p">
 Данный способ предусматривает использование лишь одной переменной, однако для его реализации потребуется написать гораздо больше кода. Например, у нас есть такие файлы:
 </p>
-<p>
+<p class="avs-article-p">
 `amb/zoo.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `amb/monkey.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `zoo/buss.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 `texlab/drillmusic.mp3`
 </p>
-<p>
+<p class="avs-article-p">
 На локации-счётчике мы будем проверять, проигрывается ли мелодия, записанная в переменную `$music`, и если мелодия уже не проигрывается, то запускать следующую.
 </p>
-<p>
+<p class="avs-article-p">
 Поскольку на начало игры у нас не проигрывается ни одна мелодия, в первый раз нам нужно проверять не проигрывается ли последняя из списка, и тогда автоматически у нас запустится первая То есть на самой первой в игре локации мы записываем в переменную `$music` самую последнюю мелодию из списка, а так же в переменную `$counter` помещаем название локации-счётчика.
 </p>
 <div class="Monokai-Code">
@@ -159,7 +159,7 @@
 $music<span class="Monokai-Operator">=</span><span class="Monokai-String">'texlab/drillmusic.mp3'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;добавили&nbsp;в&nbsp;переменную&nbsp;music&nbsp;самую&nbsp;последнюю&nbsp;проигрываемую&nbsp;мелодию</span><br/>
 <span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Counter'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;в&nbsp;системную&nbsp;переменную&nbsp;прописали&nbsp;название&nbsp;локации-счётчика&nbsp;Counter</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Осталось на локации-счётчике прописать код нашего плейлиста.
 </p>
 <div class="Monokai-Code">
@@ -179,19 +179,19 @@ $music<span class="Monokai-Operator">=</span><span class="Monokai-String">'texla
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;$music<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 По сравнению с первым вариантом кода стало вдвое больше, и соответственно в нём легче запутаться. Однако мы используем всего одну переменную и можем работать с произвольными именами файлов.
 </p>
-<p>
+<p class="avs-article-p">
 Разбирать вариант с разными плейлистами для разных локаций не будем. Код получится достаточно громоздким, и нам потребуется ещё одна переменная, чтобы отличать, какой плейлист сейчас проигрывается. Тем не менее такой вариант, если он вам удобен, вполне имеет право на существование.
 </p>
-<h4 id="tretij-variant-plejlist-v-massive" class="avs-article-h4">Третий вариант. Плейлист в массиве</h4><p>
+<h4 id="tretij-variant-plejlist-v-massive" class="avs-article-h4">Третий вариант. Плейлист в массиве</h4><p class="avs-article-p">
 Этот вариант по сути объединяет два предыдущих варианта. Здесь мы можем использовать произвольные имена файлов, как во втором варианте, но производить переключение на следующий трек, просто зная номер проигрываемого трека.
 </p>
-<p>
+<p class="avs-article-p">
 Единственным недостатком этого варианта можно посчитать то, что пути ко все проигрываемым файлам заносятся в массив и остаются в нём на протяжении всей игры, что нагружает память. Однако, этот недостаток сложно счесть недостатком, ведь чтобы забить даже 100 мегабайт оперативной памяти таким образом вам понадобятся либо ооочень длинные пути, либо оооочень много этих самых путей.
 </p>
-<p>
+<p class="avs-article-p">
 Итак, на самой первой локации в игре мы формируем массив с именами файлов для нашего плейлиста, выставляем номер трека, с которого хотим запустить воспроизведение, и не забываем про локацию-счётчик, название которой нам нужно прописать в переменную `$counter`:
 </p>
 <div class="Monokai-Code">
@@ -210,7 +210,7 @@ $music<span class="Monokai-Operator">=</span><span class="Monokai-String">'texla
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Counter'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Нам осталось на локации-счётчике написать код, похожий на код из первого варианта:
 </p>
 <div class="Monokai-Code">
@@ -225,7 +225,7 @@ $music<span class="Monokai-Operator">=</span><span class="Monokai-String">'texla
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">play</span>&nbsp;$playlist<span class="Monokai-Operator">[</span>current_file<span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;воспроизводим&nbsp;указанный&nbsp;трек</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="zakliuchenie" class="avs-article-h4">Заключение</h4><p>
+<h4 id="zakliuchenie" class="avs-article-h4">Заключение</h4><p class="avs-article-p">
 Как видите, последний вариант практически лишён недостатков первых двух вариантов. Использование массива в данном случае сильно упрощает как написание, так и чтение кода. Если развить этот вариант и дальше, чтобы добиться работы разных плейлистов на разных локациях, то можно прийти к решению, которое предложил `Werewolf` в своём <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76" style="text-decoration:none;" class="avs-page-external-link">Гибком плейлисте</a>. Если решили разрабатывать собственную систему управления музыкой в игре, ознакомьтесь с наработками `Werewolf`а. Вполне возможно, все ваши задумки уже реализованы в удобной и лаконичной системе.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_zatsiklit__melodiju_0034.html" class="avs-pages-button__link">&lt; Назад, к странице 35</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_delat__giperssylki_0036.html" class="avs-pages-button__link">Вперёд, к странице 37 &gt;</a></div></div></div>

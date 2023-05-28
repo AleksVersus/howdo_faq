@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__video_v_igru_0124.html" class="avs-pages-button__link">&lt; Назад, к странице 123</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/zaschitit__ot_chita_0126.html" class="avs-pages-button__link">Вперёд, к странице 125 &gt;</a></div></div></div>
-<h3 id="faq_19_03" class="avs-article-h3">19.3. Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?</h3><p>
+<h3 id="faq_19_03" class="avs-article-h3">19.3. Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?</h3><p class="avs-article-p">
 В: Как сделать так, чтобы текст появлялся на экране постепенно? По буквам?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 В самом простом виде это можно реализовать через цикл с задержкой:
 </p>
 <div class="Monokai-Code">
@@ -36,22 +36,22 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span>$stroka<span class="Monokai-Operator">,</span>i<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Однако оператор `wait` "подвешивает" игру на время задержки, в результате чего игрок не может ничего сделать, пока текст не будет выведен полностью. Если нужно вывести текст побуквенно, но при этом сохранить для игрока возможность взаимодействовать с игрой, необходимо использовать локацию-счётчик.
 </p>
-<p>
+<p class="avs-article-p">
 Для начала нужно создать локацию-счётчик (если ещё не создана):
 </p>
 <ul>
 <li>создаём локацию, название может быть любым, например "реалтайм".</li>
-<li><p>
+<li><p class="avs-article-p">
 указываем плееру, какую локацию ему нужно использовать, как локацию-счётчик. Пишем, например, на самой первой локации в игре:</p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">$counter</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"реалтайм"</span><br/>
 </div>
 </li>
 </ul>
-<p>
+<p class="avs-article-p">
 На локации-счётчик можно написать вот такой код:
 </p>
 <div class="Monokai-Code">
@@ -83,7 +83,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><b
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">settimer</span>&nbsp;control<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь, чтобы строка вывелась побуквенно, достаточно присвоить текст переменной `$stroka` на любой локации:
 </p>
 <div class="Monokai-Code">

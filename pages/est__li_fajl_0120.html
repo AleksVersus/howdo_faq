@@ -14,19 +14,19 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/launcher_0119.html" class="avs-pages-button__link">&lt; Назад, к странице 118</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/fajl_proekta_0121.html" class="avs-pages-button__link">Вперёд, к странице 120 &gt;</a></div></div></div>
-<h3 id="faq_18_03" class="avs-article-h3">18.3. Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?</h3><p>
+<h3 id="faq_18_03" class="avs-article-h3">18.3. Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?</h3><p class="avs-article-p">
 В: Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 К сожалению, в QSP нет специальной функции, позволяющей проверять наличие файлов в папках. Если файл отсутствует, плеер, в зависимости от типа файла, либо проигнорирует его отсутствие, либо покажет на экране ошибку.
 </p>
-<p>
+<p class="avs-article-p">
 Например, если плеер не найдёт файл музыки, он просто проигнорирует команду `play`. Если плеер не найдёт файл изображения, на экран будет выведена "битая картинка". Если плеер не найдёт файл модуля, он выведет ошибку 104: "указанный файл недоступен или не найден!".
 </p>
-<p>
+<p class="avs-article-p">
 Определённо можно проверить наличие звукового файла, если сразу после запуска мелодии воспользоваться функцией `isplay`:
 </p>
 <div class="Monokai-Code">
@@ -37,13 +37,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Файл&nbsp;не&nbsp;существует'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Поскольку воспроизведение отсутствующих звуковых файлов не вызывает ошибки, а команда попросту игнорируется плеером, мы можем использовать этот способ для определения наличия других файлов. Да, это будет костыль, но если вы боитесь забыть, скинули вы в папку нужный файл или нет, способ вам подойдёт.
 </p>
-<p>
+<p class="avs-article-p">
 Смысл в чём.
 </p>
-<p>
+<p class="avs-article-p">
 Параллельно определённому файлу храним звуковой файл без звука длительностью 1 секунда хотя бы. Этот файл у нас имеет точно то же название, что и файл, наличие которого мы хотим проверить. Сама проверка выглядит следующим образом: запускаем звуковой файл и проверяем его воспроизведение через `isplay`. Если файл отсутствует, то он просто не будет воспроизводиться и `isplay` выдаст 0. Из чего мы твёрдо делаем вывод, что и нужного нам файла нет.
 </p>
 <div class="Monokai-Code">
@@ -55,14 +55,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">'Художник&nbsp;забыл&nbsp;нарисовать&nbsp;картинку.'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 <a href="https://mega.nz/file/2W5wgbJL#E1rCFrBpwVonlTlWHIC7xVdBWoFUoF5SFOpWcz2J2Xo" style="text-decoration:none;" class="avs-page-external-link">Пример можно скачать отсюда</a>
 </p>
-<p>
+<p class="avs-article-p">
 Так же вы можете организовать генерацию модуля со списком файлов в указанной папке. Вот метод, предложенный `evp`:
 </p>
 <blockquote class="avs-article-blockquote">
-<p>
+<p class="avs-article-p">
 	Некий исполняемый файл (это может быть даже bat-файл):
 </p>
 <ul>
@@ -71,11 +71,11 @@
 <li>конвертирует этот файл в .qsp, используя txt2gam.exe;</li>
 <li>запускает игру.</li>
 </ul>
-<p>
+<p class="avs-article-p">
 	В самой игре используется функция `INCLIB` для присоединения получившегося модуля.
 </p>
 </blockquote>
-<p>
+<p class="avs-article-p">
 Если вы используете <a href="https://github.com/AleksVersus/JAD_for_QSP" style="text-decoration:none;" class="avs-page-external-link">JAD_QBST</a>, у вас есть возможность прописать в файле проекта специальный параметр "scans", и тогда локация для проверки существования файла будет генерироваться автоматически на основе содержимого указанной папки.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/launcher_0119.html" class="avs-pages-button__link">&lt; Назад, к странице 118</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/fajl_proekta_0121.html" class="avs-pages-button__link">Вперёд, к странице 120 &gt;</a></div></div></div>

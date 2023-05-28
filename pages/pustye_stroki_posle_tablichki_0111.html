@@ -14,13 +14,13 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_zerkal_no_otrazit__kartinku_0110.html" class="avs-pages-button__link">&lt; Назад, к странице 109</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_v_dva_stolbika_0112.html" class="avs-pages-button__link">Вперёд, к странице 111 &gt;</a></div></div></div>
-<h3 id="faq_16_08" class="avs-article-h3">16.8. Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?</h3><p>
+<h3 id="faq_16_08" class="avs-article-h3">16.8. Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?</h3><p class="avs-article-p">
 В: Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Скорее всего вы столкнулись с особенностью плеера QSP. Например, вы вывели табличку вот так:
 </p>
 <div class="Monokai-Code">
@@ -35,10 +35,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Дело в том, что плеер не игнорирует переводы строк между тегами таблицы, как HTML-браузер, и отрисовав табличку, воспроизводит эти пустые строки уже после неё. Поэтому между табличкой и последующим текстом возникают пустые строки.
 </p>
-<p>
+<p class="avs-article-p">
 Везде, где используете HTML, будьте аккуратны с переводами строк. В данном случае проблема решается так:
 </p>
 <div class="Monokai-Code">
@@ -53,7 +53,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"&lt;/tr&gt;"</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"&lt;/table&gt;"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В редких случаях, когда HTML выводится одной строкой, но в самой таблице или после неё наблюдаются "артефакты", необходимо проверить правильно ли закрыты HTML-теги.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/mozhno_li_zerkal_no_otrazit__kartinku_0110.html" class="avs-pages-button__link">&lt; Назад, к странице 109</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/tekst_v_dva_stolbika_0112.html" class="avs-pages-button__link">Вперёд, к странице 111 &gt;</a></div></div></div>

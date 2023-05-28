@@ -15,7 +15,7 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="avs-pages-button__link">&lt; Назад, к странице 18</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="avs-pages-button__link">Вперёд, к странице 20 &gt;</a></div></div></div>
-<h5 id="informarch_usethemassive" class="avs-article-h5">Использование массивов</h5><p>
+<h5 id="informarch_usethemassive" class="avs-article-h5">Использование массивов</h5><p class="avs-article-p">
 Вкратце: в QSP есть возможность использовать массивы. Значит вместо одного значения одной переменной <code>x = 10</code>, можно сохранить несколько значение под одним именем, указывая в скобках после имени переменной код или индекс очередного значения вот так:
 </p>
 <div class="Monokai-Code">
@@ -23,7 +23,7 @@ x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><s
 x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">12</span><br/>
 x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">9</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Это удобно тем, что вместо прямого указания номера индекса мы можем подставить значение какой-нибудь переменной. Так, мы можем, например, произвести вывод всех значений массива, используя всего лишь один цикл:
 </p>
 <div class="Monokai-Code">
@@ -31,7 +31,7 @@ x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><s
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;x<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В качестве индекса или кода может использоваться и строка:
 </p>
 <div class="Monokai-Code">
@@ -40,10 +40,10 @@ x<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><s
 $я&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'щука'</span><br/>
 сила<span class="Monokai-Operator">[</span>$я<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">2</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Значок <code>"$"</code> показывает что переменная строковая.
 </p>
-<p>
+<p class="avs-article-p">
 Начиная с версии плеера 5.8.0 можно создавать многомерные массивы без использования строковых индексов:
 </p>
 <div class="Monokai-Code">
@@ -53,7 +53,7 @@ $ячейка<span class="Monokai-Operator">[</span>x<span class="Monokai-Operat
 $ячейка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"3х&nbsp;палубный"</span><br/>
 $ячейка<span class="Monokai-Operator">[</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">"3х&nbsp;палубный"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Даже если названия (имена) динамические, и их количество может отличаться в разных случаях, то для хранения информации об объекте игры, или персонаже, также можно использовать массив. Например, для случая с расстояниями до врагов:
 </p>
 <div class="Monokai-Code">
@@ -66,10 +66,10 @@ $имя_персонажа<span class="Monokai-Operator">[</span><span class="Mo
 расстояние<span class="Monokai-Operator">[</span>$я<span class="Monokai-Operator">,</span>$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">4</span><br/>
 расстояние<span class="Monokai-Operator">[</span>$я<span class="Monokai-Operator">,</span>$имя_персонажа<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">5</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом примере, зная имена персонажей можно получать и изменять расстояния между ними.
 </p>
-<p>
+<p class="avs-article-p">
 Также вместо имен можно использовать и их порядковые номера:
 </p>
 <div class="Monokai-Code">
@@ -77,19 +77,19 @@ $имя_персонажа<span class="Monokai-Operator">[</span><span class="Mo
 расстояние2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">7</span><br/>
 расстояние2<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">8</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В этом примере у нас массив 2-х мерный. А измерений может быть и больше.
 </p>
-<p>
+<p class="avs-article-p">
 Автор: <strong>Ntropy</strong>
 </p>
-<p>
+<p class="avs-article-p">
 Отредактировал для соответствия версии библиотеке 5.8.0: <strong>Aleks Versus</strong>
 </p>
-<p>
+<p class="avs-article-p">
 26.Июл.10 12:08:22
 </p>
-<p>
+<p class="avs-article-p">
 Оригинал в теме: <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=93&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">Подробности использования массивов, все вопросы сюда</a>
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/gibkij_plejlist_0016.html" class="avs-pages-button__link">&lt; Назад, к странице 18</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/dopolnenie_inventarja_0018.html" class="avs-pages-button__link">Вперёд, к странице 20 &gt;</a></div></div></div>

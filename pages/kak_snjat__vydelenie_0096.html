@@ -14,22 +14,22 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/vypolnenie_koda_pri_schelchke_po_predmetu_0095.html" class="avs-pages-button__link">&lt; Назад, к странице 94</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/dva_spiska_predmetov_0097.html" class="avs-pages-button__link">Вперёд, к странице 96 &gt;</a></div></div></div>
-<h3 id="faq_14_09" class="avs-article-h3">14.9. Как снять выделение предмета?</h3><p>
+<h3 id="faq_14_09" class="avs-article-h3">14.9. Как снять выделение предмета?</h3><p class="avs-article-p">
 В: Как снять выделение предмета?
 </p>
-<p>
+<p class="avs-article-p">
 В: Как сделать, чтобы выбранный предмет можно было кликнуть ещё раз?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Выделение с предмета снимается с помощью команды `unselect`. Обычно её прописывают в конце локации-обработчика выделения предмета:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">unselect</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Однако эта команда не успеет выполниться, если при щелчке по предмету происходит переход с помощью оператора `goto`/`xgoto`. В этом случае можно воспользоваться таким решением:
 </p>
 <div class="Monokai-Code">

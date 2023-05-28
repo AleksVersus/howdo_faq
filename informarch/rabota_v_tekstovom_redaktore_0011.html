@@ -15,22 +15,22 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div></div>
-<h5 id=" informarch_game_in_texteditor" class="avs-article-h5">Пишем QSP-игру в текстовом редакторе</h5><p>
+<h5 id=" informarch_game_in_texteditor" class="avs-article-h5">Пишем QSP-игру в текстовом редакторе</h5><p class="avs-article-p">
 Для того, чтобы написать свой текстовый квест, понадобится любой текстовый редактор и программа <a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="avs-page-external-link">TXT2GAM</a>. Для более удобного использования этой программы существует специальная оболочка <a href="https://qsp.org/index.php?option=com_content&amp;task=view&amp;id=53&amp;Itemid=56" style="text-decoration:none;" class="avs-page-external-link">GAMConv</a>, которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" style="text-decoration:none;" class="avs-page-external-link">QSP-плеер</a>.
 </p>
-<p>
+<p class="avs-article-p">
 В примерах будут использоваться комментарии - строки, которые игрок не увидит и которые служат для того, чтобы можно было делать в коде игры различные заметки. Комментарий начинается с восклицательного знака «!».
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;эта&nbsp;строка&nbsp;видна&nbsp;только&nbsp;создателю&nbsp;квеста,&nbsp;игрок&nbsp;её&nbsp;не&nbsp;увидит</span><br/>
 </div>
-<h5 id="urok-1-lokatsii-dejstviia-perehody" class="avs-article-h5">Урок 1. Локации, Действия, Переходы</h5><p>
+<h5 id="urok-1-lokatsii-dejstviia-perehody" class="avs-article-h5">Урок 1. Локации, Действия, Переходы</h5><p class="avs-article-p">
 Текстовый квест в QSP состоит из отдельных локаций (кадров, сцен, эпизодов), на которых могут выполняться различные игровые действия. Каждая локация имеет начало (тут же указывается имя локации), код локации (середину) и конец (знак «-», минус).
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
@@ -38,10 +38,10 @@
 </span><span class="Monokai-Comment">!&nbsp;тут&nbsp;идёт&nbsp;код&nbsp;локации</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Проигрывание квеста начинается с самой первой локации. Традиционно эта локация называется "Начало". Для того, чтобы вывести в игре текст, вы просто пишете строку в коде локации, заключённую в кавычки ('' или "").
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>1.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -49,19 +49,19 @@
 <span class="Monokai-String">'Привет&nbsp;мир!'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Сохраните эти строки в текстовый файл, отконвертируйте с помощью GamConv или напрямую через txt2gam и откройте получившийся квест в QSPGUI. В основном окне вы должны увидеть текст «Привет мир!».
 </p>
-<p>
+<p class="avs-article-p">
 Но это совсем не похоже на текстовый квест. Ведь если мы будем просто выводить текст, то у нас получится какая-то книга, а не игра.
 </p>
-<p>
+<p class="avs-article-p">
 Игра — это прежде всего интерактивность. От этого и название жанра Интерактивная Литература.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы добавить интерактивности давайте сделаем вторую локацию и дадим возможность игроку перейти из одной локации в другую. Для этого нужно создать на первой локации действие, которое будет осуществлять переход в другую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>2.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -77,28 +77,28 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Вернуться&nbsp;обратно'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Начало'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вторая локация создаётся точно так же, как и первая. Как можно заметить, действие создаётся командой «ACT», после которой идёт название действия в виде заключённой в кавычки строки и двоеточие. После двоеточия пишутся инструкции которые игра выполнит при выборе игроком нашего действие. После одной или нескольких инструкций ставится команда «END», которая означает конец действия.
 </p>
-<p>
+<p class="avs-article-p">
 Если инструкция одна, то мы можем писать её сразу после двоеточия, на той же строке, в этом случае «END» ставить не обязательно (см. Вторая_локация).
 </p>
-<p>
+<p class="avs-article-p">
 В нашем случае инструкциями является переход на другую локацию. Он осуществляется командой «GOTO», после которой идёт имя новой локации, заключённой в кавычки. Как вы уже заметили, все строки в QSP заключены в кавычки ('' или ""), это специфика синтаксиса, которую необходимо соблюдать.
 </p>
-<p>
+<p class="avs-article-p">
 Отконвертировав этот пример, вы сможете походить по двум локациям.
 </p>
-<p>
+<p class="avs-article-p">
 Это основа всех квестов на QSP. Дальше мы попробуем не спеша сделать небольшой квест, в каждом новом уроке добавляя ему новые элементы, пока не охватим все возможности QSP.
 </p>
-<h5 id="urok-2-peremennye-usloviia" class="avs-article-h5">Урок 2. Переменные, Условия</h5><p>
+<h5 id="urok-2-peremennye-usloviia" class="avs-article-h5">Урок 2. Переменные, Условия</h5><p class="avs-article-p">
 Пусть у нас будет игра из трёх локаций. В одной локации игрок сможет зарабатывать деньги, в другой - тратить их на различные предметы, в третьей - дарить эти предметы различным людям. К этим трём добавим ещё одну, стартовую, локацию, в которой будет объясняться задача игрока.
 </p>
-<p>
+<p class="avs-article-p">
 Напишем каркас.
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>3.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -122,22 +122,22 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Откомпилируйте пример и проверьте как работает, походите по городу.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь нам нужно добавить игроку деньги и механизм их зарабатывания. Деньги мы реализуем с помощью переменных. Переменные бывают двух типов: строковые, в которые можно записать любой текст, и числовые, куда можно записать любое целое число. В нашем случае мы будем пользоваться числовыми переменными. Чтобы присвоить переменной какое-либо значение, нужно написать её имя, поставить знак равно и указать значение, которое мы хотим записать в переменную.
 </p>
-<p>
+<p class="avs-article-p">
 Пример:
 </p>
 <div class="Monokai-Code">
 Имя_переменной&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">10</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Сам механизм зарабатывания денег будет у нас очень простым. Нужно будет перенести 3 ящика и тогда бригадир будет давать игроку 5 монет. Для этого нужно будет сделать ещё одну переменную, в которой будет указано число перенесённых игроком ящиков и если их 3, то добавлять игроку деньги, и очищать счётчик ящиков. Наш квест станет таким:
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>4.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -173,28 +173,28 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для того, чтобы в тексте локации вывести значение переменной используется конструкция <code>'&lt;&lt;Имя_переменной&gt;&gt;</code>'. Обратите внимание в каждой локации выводится количество монет у игрока. К тому же, в локации «Порт» показывается количество ящиков, которое нужно перенести, чтобы получить деньги.
 </p>
-<p>
+<p class="avs-article-p">
 Ветвления в QSP задаются командой <code>IF</code>, после которой идёт условие и ставится двоеточие. Затем идут инструкции, которые выполняются, если условие верное и ставится завершающая команда <code>END</code>.
 </p>
-<p>
+<p class="avs-article-p">
 В нашем случае мы проверяем, равна ли переменная <code>Ящик</code> 3-м (все ли ящики перенесли). Если равна, то мы увеличиваем переменную «Деньги» на 5 (наш заработок) и сбрасываем переменную <code>Ящик</code> в 0, чтобы можно заново таскать ящики и зарабатывать деньги.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы текст игры обновился и игрок увидел новые значения переменных, нужно перейти на ту же локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Отконвертируйте и запустите пример, теперь игрок сможет зарабатывать деньги переноской ящиков.
 </p>
-<h5 id="urok-3-inventar_" class="avs-article-h5">Урок 3. Инвентарь</h5><p>
+<h5 id="urok-3-inventar_" class="avs-article-h5">Урок 3. Инвентарь</h5><p class="avs-article-p">
 Теперь добавим игроку возможность покупать различные предметы в магазине и затем дарить. Для предметов очень хорошо подходит «Инвентарь». Теперь купленные предметы игрок сможет носить с собой и дарить своим близким, когда захочет.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы добавить предмет в инвентарь, есть команда <code>ADDOBJ</code>, после которой идёт имя предмета. А для того, чтобы удалить предмет, есть команда <code>DELOBJ</code>, после которой идёт имя удаляемого предмета.
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>5.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -256,13 +256,13 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 С помощью условий мы заранее проверяем, есть ли у игрока достаточно денег, чтобы купить тот или иной предмет. И если денег хватает - добавляем действие покупки этого предмета. Когда игрок выбирает действие купить что-либо, мы забираем у него монеты, добавляем в его инвентарь предмет и делаем переход на ту же локацию («Магазин»), чтобы вывелось обновлённое количество денег.
 </p>
-<p>
+<p class="avs-article-p">
 Следующим важным моментом будет механизм «дарения» предметов. Он будет реализован в локации «Дом».
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>6.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -356,13 +356,13 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Конструкция <code>IF OBJ 'имя_предмета</code>' проверяет, есть ли у игрока в инвентаре указанный предмет. В нашем случае мы проверяем наличие тех предметов, которые мы можем купить в магазине. И если у игрока есть такие предметы - создаём действие «дарения» этих предметов. Когда игрок совершит действие, мы заберем у него тот предмет, который он хочет подарить и выводим диалог благодарности за подарок. К тому же, мы используем команду <code>DELACT</code>, которой удаляем действие, указанное после этой команды.
 </p>
-<h5 id="urok-4-nastrojki-formatirovanie" class="avs-article-h5">Урок 4. Настройки, Форматирование</h5><p>
+<h5 id="urok-4-nastrojki-formatirovanie" class="avs-article-h5">Урок 4. Настройки, Форматирование</h5><p class="avs-article-p">
 В этом уроке рассмотрим, как сделать наш квест более привлекательным. В первую очередь следует настроить интерфейс так, чтобы в нём не оставалось ничего лишнего, отвлекающего от игры. Если вы сейчас запустите наш пример, то увидите, что мы не используем "поле дополнительного описания" (справа внизу) и "командную строку" (внизу). Чтобы они нам не мешали, их нужно отключить. Делается это следующим образом:
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>7.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -371,13 +371,13 @@
 <span class="Monokai-Operator">SHOWINPUT</span>&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Мы вызываем инструкцию <code>SHOWSTAT</code> с параметром <code>0</code> для того, чтобы отключить "поле дополнительного описания". Если бы мы передали <code>1</code> (или число отличное от <code>0</code>), то поле было бы видимым. То же самое и с <code>SHOWINPUT</code> (командная строка). Так же мы можем отключить инвентарь - <code>SHOWOBJS</code>, и список действий - <code>SHOWACTS</code>.
 </p>
-<p>
+<p class="avs-article-p">
 Теперь нам нужно сделать так, чтобы наш текст был более подходящим для нашего квеста. Для этого есть 4 переменные.
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>8.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -389,28 +389,28 @@
 <span class="Monokai-String">'Этот&nbsp;текст&nbsp;написан&nbsp;красным&nbsp;цветом,&nbsp;четырнадцатым&nbsp;размером&nbsp;и&nbsp;шрифтом&nbsp;Arial&nbsp;на&nbsp;чёрном&nbsp;фоне.'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Цвет в QSP задаётся с помощью функции <code>RGB</code>, в которую мы передаём значения его отдельных компонент - красного (Red), зелёного (Green) и синего (Blue). Отсюда и название функции.
 </p>
-<p>
+<p class="avs-article-p">
 Если вы не знакомы с таким способом задания цветов, то вам может помочь программа MS Paint, которая входит в стандартную поставку Windows. Для этого запустите программу, щёлкните два раза по любому цвету в палитре (внизу) и затем нажмите кнопку "Определить цвет". Появится расширенная палитра, на которой можно выбрать нужный вам цвет. Под палитрой снизу будет 3 поля (Красный, Зелёный, Синий), значениями из этих полей вам и нужно заполнить функцию <code>RGB</code>.
 </p>
-<p>
+<p class="avs-article-p">
 Переменная <code>BCOLOR</code> устанавливает цвет заднего фона, <code>FCOLOR</code> - цвет текста.
 </p>
-<p>
+<p class="avs-article-p">
 Следует учесть, что если присвоить переменной цвета значение <code>0</code> (к примеру, <code>BCOLOR = 0</code>), то проигрыватель квестов заменит указанный цвет на цвет из настроек самого плеера, т.е. цвет фона <code>0</code> это прозрачный цвет.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы изменить размер текста, используется переменная <code>FSIZE</code>, шрифт текста задётся строковой переменной <code>$FNAME</code>.
 </p>
-<p>
+<p class="avs-article-p">
 Многие игроки не любят, когда автор задаёт свои визуальные параметры для текстовых квестов. "На вкус и цвет фломастеры разные", кто-то привык читать зелёные буквы на чёрном фоне, а кто-то предпочитает классический вариант чёрного на белом. У кого-то большой монитор - маленькие буквы читать на нём неудобно и т.д. Проигрыватель квестов QSP позволяет настроить такие параметры индивидуально для каждого игрока, но только в том случае, если автор игры не заменил их на свои. Поэтому рекомендуется с осторожностью менять эти настройки для вашего квеста.
 </p>
-<p>
+<p class="avs-article-p">
 Есть ещё один, способ сделать ваш текст внешне более привлекательным. Использование HTML. Язык гипертекстовой разметки документов очень хорошо подходит для этой цели. С помощью него можно не только задавать цвет, размер и шрифт текста, но и делать это для отдельных слов, фраз или даже букв, а так же позиционировать текст на экране. Например, можно расположить заголовки по центру строки, или справа. Для этого нужно переменной <code>USEHTML</code> задать значение <code>1</code> (или любое отличное от <code>0</code>). В следующем примере я приведу лишь небольшую часть возможностей, которых, впрочем, будет достаточно для оформления игры.
 </p>
-<p>
+<p class="avs-article-p">
 Пример ("<code>9.txt</code>"):
 </p>
 <div class="Monokai-Code">
@@ -510,10 +510,10 @@
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-String">'Идти&nbsp;в&nbsp;магазин'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-String">'Магазин'</span><span class="Monokai-EndLoc"><br/>
 -</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Автор: <strong>ELMORTEM</strong>
 </p>
-<p>
+<p class="avs-article-p">
 14.04.2010 15: 16
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div></div>

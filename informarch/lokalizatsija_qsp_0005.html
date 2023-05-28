@@ -16,20 +16,20 @@
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html" class="avs-pages-button__link">&lt; Назад, к странице 5</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="avs-pages-button__link">Вперёд, к странице 7 &gt;</a></div></div></div>
 <h5 id="informarch_localization" class="avs-article-h5">Локализация классического плеера QSP версии 5.7.0</h5><blockquote class="avs-article-blockquote">
-<p>
+<p class="avs-article-p">
 Пишу на QSP полуигровой дипломный проект. Всё круто. Но научрука смущают пункты меню плеера вроде "квест", "игра". Понимаю, что можно поменять названия пунктов в файле языка "*.mo", но не понимаю как. По сему вопрос - Существуют ли способы создания своих файлов языка для интерфейса плеера? И если это как-то очевидно и я просмотрел, то заранее извиняюсь smile</p>
 </blockquote>
-<p>
+<p class="avs-article-p">
 Этот вопрос на сайте нигде пока что не освещен, думаю, пора сделать спец. страничку, посвященную исходному коду и локализациям windows-плеера QSP, а также самой <code>qsp.dll</code>.
 </p>
-<p>
+<p class="avs-article-p">
 Ответ на вопрос, как модифицировать файлы локализации:
 </p>
 <ol>
 <li>Качаем <a href="https://sourceforge.net/projects/poedit/" style="text-decoration:none;" class="avs-page-external-link">poedit</a>, устанавливаем.</li>
 <li>Берем файл с русской локализацией, папка <code>QSP-плеера/langs/ru/qspgui.mo</code></li>
 <li>Копируем в папку папка <code>poedit/bin</code></li>
-<li><p>
+<li><p class="avs-article-p">
 Заходим в эту папку и запускаем командную строку, в ней пишем</p>
 <div class="Monokai-Code">
 msgunfmt&nbsp;qspgui.mo&nbsp;&gt;&nbsp;qspgui.po
@@ -39,10 +39,10 @@ msgunfmt&nbsp;qspgui.mo&nbsp;&gt;&nbsp;qspgui.po
 <li>Сохраняем. При сохранении файл <code>qspgui.mo</code> сгенерируется автоматически(в настройках "по умолчанию" есть соответствующая галочка)</li>
 <li>Берем полученный <code>qspgui.mo</code> и записываем его в папка <code>QSP-плеера/langs/ru/qspgui.mo</code></li>
 </ol>
-<p>
+<p class="avs-article-p">
 Автор заметки: <strong>Nex</strong>.
 </p>
-<p>
+<p class="avs-article-p">
 Тема на форуме: <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=164&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">"Локализация QSP"</a>
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/uchebnik_po_qsp_dlja_redaktora_qgen_0004.html" class="avs-pages-button__link">&lt; Назад, к странице 5</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/analizator_koda_qsp_0006.html" class="avs-pages-button__link">Вперёд, к странице 7 &gt;</a></div></div></div>

@@ -14,7 +14,7 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="avs-pages-button__link">&lt; Назад, к странице 162</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="avs-pages-button__link">Вперёд, к странице 164 &gt;</a></div></div></div>
-<h4 id="faq_80_02" class="avs-article-h4">Операторы</h4><h4 id="faq_80_02_impicit" class="avs-article-h4">Неявный оператор</h4><p>
+<h4 id="faq_80_02" class="avs-article-h4">Операторы</h4><h4 id="faq_80_02_impicit" class="avs-article-h4">Неявный оператор</h4><p class="avs-article-p">
 Неявный оператор — это оператор, который не прописывается в коде QSP, но производит вывод значений на экран. Неявный оператор подразумевается везде, где в команде присутствует выражение без оператора. Неявный оператор выводит в `Окно основного описания` значения таким же образом, как если бы вы использовали явное указание оператора `*pl`, то есть выводит значение и совершает переход на новую строку. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -25,7 +25,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 &nbsp;&nbsp;&nbsp;&nbsp;строка'</span><br/>
 <span class="Monokai-Func">$curloc</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;название&nbsp;локации</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В отличие от оператора `*pl` неявный оператор не выводит на экран пустую строку с переходом на новую строку, если ему не передаётся никакое значение. Это означает, что если функция не возвращает никакого значения, неявный оператор просто игнорируется. Пример:
 </p>
 <div class="Monokai-Code">
@@ -42,7 +42,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;foo</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В данном случае локация-функция `foo` ничего не возвращает, поэтому на экране мы увидим две строки со словом "start", между которыми не будет пустых строк, так как неявный оператор в строках с `$func` на локации `start` будет просто проигнорирован. Сравните с:
 </p>
 <div class="Monokai-Code">
@@ -59,23 +59,23 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;foo</span><br/>
 </div>
-<h4 id="faq_80_02_comments" class="avs-article-h4">! (комментарий)</h4><p>
+<h4 id="faq_80_02_comments" class="avs-article-h4">! (комментарий)</h4><p class="avs-article-p">
 `!` — оператор комментария. То, что находится в строке после оператора комментария, и до конца строки игнорируется интерпретатором. Оператор комментария позволяет "закомментировать" (выключить) ненужный временно оператор / функцию во время отладки игры. Кроме того, написание комментариев к коду программы является одним из признаков хорошего стиля программирования.
 </p>
-<p>
+<p class="avs-article-p">
 	Необходимо чётко понимать, что это именно оператор, поэтому если вы комментируете некую строку кода, то `!` должен стоять после `&amp;`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Hello,&nbsp;world!"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;комментарий</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Комментарии могут быть однострочными, то есть заканчиваться в той же строке, где стоит оператор комментария:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;однострочный&nbsp;комментарий</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"строка&nbsp;текста"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;тоже&nbsp;однострочный&nbsp;комментарий</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Комментарии могут быть многострочными. Для этого после оператора комментария нужно записать кавычки, апострофы, или фигурные скобки. Например так:
 </p>
 <div class="Monokai-Code">
@@ -84,7 +84,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 &nbsp;&nbsp;&nbsp;&nbsp;это&nbsp;третья&nbsp;строка&nbsp;комментария<br/>
 "</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Многострочные комментарии могут принимать самые разнообразные формы:
 </p>
 <div class="Monokai-Code">
@@ -94,16 +94,16 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 продолжать&nbsp;многострочный&nbsp;комментарий<br/>
 }&nbsp;и&nbsp;комментарий&nbsp;не&nbsp;кончится,&nbsp;пока&nbsp;не&nbsp;кончится&nbsp;строка</span><br/>
 </div>
-<h4 id="faq_80_02_sclr" class="avs-article-h4"><em>CLEAR (</em>CLR)</h4><p>
+<h4 id="faq_80_02_sclr" class="avs-article-h4"><em>CLEAR (</em>CLR)</h4><p class="avs-article-p">
 `<em>CLEAR` — очищает окно основного описания. Имеет краткую форму `</em>clr`.
 </p>
-<h4 id="faq_80_02_snl" class="avs-article-h4">*NL</h4><p>
+<h4 id="faq_80_02_snl" class="avs-article-h4">*NL</h4><p class="avs-article-p">
 `*NL` — переход на новую строку, затем вывод текста в окне основного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">NL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$текст]` — любая строка текста, число, или выражение любого типа. Если `[$текст]` отсутствует, происходит просто переход на новую строку. Пример:
 </p>
 <div class="Monokai-Code">
@@ -111,13 +111,13 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_sp" class="avs-article-h4">*P</h4><p>
+<h4 id="faq_80_02_sp" class="avs-article-h4">*P</h4><p class="avs-article-p">
 `<em>P` — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после `</em>p` добавит новый текст сразу после текущего. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">P</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$текст]` — любая строка текста, число, или выражение любого типа. `[$текст]` может быть пустой строкой `''`, но не должен отсутствовать. Пример:
 </p>
 <div class="Monokai-Code">
@@ -126,13 +126,13 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_spl" class="avs-article-h4">*pl</h4><p>
+<h4 id="faq_80_02_spl" class="avs-article-h4">*pl</h4><p class="avs-article-p">
 `*PL` — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	 где `[$текст]` — любая строка текста, число, или выражение любого типа. `[$текст]` может отсутствовать, тогда просто переход на новую строку. Пример:
 </p>
 <div class="Monokai-Code">
@@ -141,7 +141,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Аналогичным образом можно вывести текст, просто написав нужное выражение вместо данного оператора. Например, строки:
 </p>
 <div class="Monokai-Code">
@@ -151,7 +151,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;строка'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	и:
 </p>
 <div class="Monokai-Code">
@@ -161,19 +161,19 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;строка'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
  	сработают одинаково.
 </p>
-<h4 id="faq_80_02_act" class="avs-article-h4">ACT</h4><p>
+<h4 id="faq_80_02_act" class="avs-article-h4">ACT</h4><p class="avs-article-p">
 `ACT` — создаёт и выводит в окно действий новое действие.
 </p>
-<p>
+<p class="avs-article-p">
 	Общая запись в однострочной форме:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;файлу&nbsp;изображения<span class="Monokai-Operator">]</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Общая запись в многострочной форме:
 </p>
 <div class="Monokai-Code">
@@ -183,13 +183,13 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">[</span>оператор<span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	К списку действий в окне действий добавляется новое с названием `[$название]` и изображением, которое лежит по пути `[$путь к файлу изображения]`. При нажатии на действие выполняются заданные операторы.
 </p>
-<p>
+<p class="avs-article-p">
 	Параметр `[$путь к файлу изображения]` может отсутствовать, при этом действие добавится без изображения.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -202,14 +202,14 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вы&nbsp;сорвали&nbsp;арбуз&nbsp;с&nbsp;куста"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Если в списке действий уже есть действие с указанным названием, то новое действие не создаётся, и не заменяет собой уже существующее, плеер просто игнорирует команду `act`. Таким образом нельзя вывести действия с одинаковыми названиями. Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;действие."</span><br/>
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;действие."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Однако, вы можете сымитировать действия с одинаковыми названиями в режиме распознавания HTML, добавив в названия действий несуществующий HTML-тег:
 </p>
 <div class="Monokai-Code">
@@ -217,22 +217,22 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-old&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;действие."</span><br/>
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-new&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;действие."</span><br/>
 </div>
-<h4 id="faq_80_02_addobj" class="avs-article-h4">ADDOBJ</h4><p>
+<h4 id="faq_80_02_addobj" class="avs-article-h4">ADDOBJ</h4><p class="avs-article-p">
 `ADDOBJ` — добавление нового предмета в окно предметов. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">ADDOBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;файлу&nbsp;изображения<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#позиция]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$название]` — это название предмета, `[$путь к файлу изображения]` — это путь к файлу изображения предмета (отображается рядом с названием предмета), а `[#позиция]` — на какое место в инвентаре добавляется предмет. Параметр `[#позиция]` может отсутствовать. По умолчанию предметы добавляются в конец списка. Нумерация предметов в инвентаре ведётся с 1. Параметр `[$путь к файлу изображения]` может отсутствовать, значение по умолчанию - `''`, при этом предмет добавляется без изображения.
 </p>
-<p>
+<p class="avs-article-p">
 	Допускается, но не рекомендуется, запись:
 </p>
 <div class="Monokai-Code">
 ADD&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;файлу&nbsp;изображения<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#индекс]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Можно добавлять предметы с одинаковым названием, однако если вы планируете добавлять много одинаковых предметов, то лучше использовать дополнительную переменную для подсчёта этих предметов, а в окно предметов добавить один предмет, чтобы не загромождать инвентарь списком из 137 предметов Рубль / Патрон:
 </p>
 <div class="Monokai-Code">
@@ -245,7 +245,7 @@ ADD&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operato
 &nbsp;&nbsp;&nbsp;&nbsp;патроны<span class="Monokai-Operator">=</span>патроны<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">10</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Для хранения числа предметов можно использовать массивы, индексируемые через строки:
 </p>
 <div class="Monokai-Code">
@@ -253,49 +253,49 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'де
 objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'патроны'</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">137</span><br/>
 <span class="Monokai-String">'Количество:&nbsp;&lt;&lt;objects[$getobj(countobj)]&gt;&gt;'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Пример добавления предмета в самый верх списка (при этом все остальные предметы сместятся вниз):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<h4 id="faq_80_02_cla" class="avs-article-h4">CLA</h4><p>
+<h4 id="faq_80_02_cla" class="avs-article-h4">CLA</h4><p class="avs-article-p">
 `CLA` - очистка списка текущих действий (удаление всех действий из окна действий).
 </p>
-<h4 id="faq_80_02_clear" class="avs-article-h4">CLEAR (CLR)</h4><p>
+<h4 id="faq_80_02_clear" class="avs-article-h4">CLEAR (CLR)</h4><p class="avs-article-p">
 `CLEAR` — очищает окно дополнительного описания. Имеет краткую форму `clr`.
 </p>
-<h4 id="faq_80_02_close" class="avs-article-h4">CLOSE</h4><p>
+<h4 id="faq_80_02_close" class="avs-article-h4">CLOSE</h4><p class="avs-article-p">
 `CLOSE` — останавливает проигрывание указанного звукового файла. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">CLOSE</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;звуковому&nbsp;файлу<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$путь к звуковому файлу]` — путь к звуковому файлу относительно файла игры. Если параметр `[$путь к звуковому файлу]` не указан, происходит остановка воспроизведения всех звуковых файлов.
 </p>
-<h4 id="faq_80_02_closeall" class="avs-article-h4">CLOSE ALL</h4><p>
+<h4 id="faq_80_02_closeall" class="avs-article-h4">CLOSE ALL</h4><p class="avs-article-p">
 `CLOSE ALL` — остановка проигрывания всех активных звуковых файлов. Имеет краткую форму `close`.
 </p>
-<h4 id="faq_80_02_cls" class="avs-article-h4">CLS</h4><p>
+<h4 id="faq_80_02_cls" class="avs-article-h4">CLS</h4><p class="avs-article-p">
 `CLS` — очищает все окна кроме списка предметов. Эквивалентно конструкции:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cla</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cmdclear</span><br/>
 </div>
-<h4 id="faq_80_02_cmdclear" class="avs-article-h4">CMDCLEAR (CMDCLR)</h4><p>
+<h4 id="faq_80_02_cmdclear" class="avs-article-h4">CMDCLEAR (CMDCLR)</h4><p class="avs-article-p">
 `CMDCLEAR` — очистка строки ввода. Имеет краткую форму `cmdclr`.
 </p>
-<h4 id="faq_80_02_copyarr" class="avs-article-h4">COPYARR</h4><p>
+<h4 id="faq_80_02_copyarr" class="avs-article-h4">COPYARR</h4><p class="avs-article-p">
 `COPYARR` — копирование содержимого одного массива в другой. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">COPYARR</span>&nbsp;<span class="Monokai-Operator">[</span>$приёмник<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$источник<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало],[#количество]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где: `[$приёмник]` — это массив, в который производится копирование, размер и наполнение значения не имеют; `[$источник]` — это массив, из которого производится копирование; `[#начало]` — номер элемента, с которого нужно начинать копирование; `[#количество]` — сколько элементов нужно скопировать. Параметр `[#количество]` является необязательным; по умолчанию — до конца массива-источника. Параметр `[#начало]` является необязательным; по умолчанию — 0.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -309,26 +309,26 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 </span><span class="Monokai-Comment">!</span>&nbsp;копируем&nbsp;шесть&nbsp;первых&nbsp;элементов&nbsp;массива&nbsp;<span class="Monokai-String">'d'</span>&nbsp;в&nbsp;массив&nbsp;<span class="Monokai-String">'c'</span><br/>
 <span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'c'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'d'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	В силу особенностей плеера при копировании, например, числового массива `mass1` в `mass2` копируется также текстовый массив `$mass1` в `$mass2`.
 </p>
-<p>
+<p class="avs-article-p">
 	Другие примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">copyarr</span>&nbsp;$arrname1<span class="Monokai-Operator">,</span>$arrname2<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><br/>
 <span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'a&lt;&lt;$arrname1&gt;&gt;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'a&lt;&lt;$arrname2&gt;&gt;'</span><br/>
 </div>
-<h4 id="faq_80_02_delact" class="avs-article-h4">DELACT</h4><p>
+<h4 id="faq_80_02_delact" class="avs-article-h4">DELACT</h4><p class="avs-article-p">
 `DELACT` — удаляет действие из списка действий (если такое действие существует). Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">DELACT</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$название]` — название действия, которое хотим удалить.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -337,25 +337,25 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 </span><span class="Monokai-Comment">!&nbsp;удаляем&nbsp;выделенное&nbsp;действие</span><br/>
 <span class="Monokai-Operator">delact</span>&nbsp;<span class="Monokai-Func">$selact</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Допустима, но не одобряется, устаревшая форма записи:
 </p>
 <div class="Monokai-Code">
 DEL&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_delobj" class="avs-article-h4">DELOBJ</h4><p>
+<h4 id="faq_80_02_delobj" class="avs-article-h4">DELOBJ</h4><p class="avs-article-p">
 `DELOBJ` — удаление предмета из инвентаря по названию (если такой предмет существует). Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">DELOBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$название]` — название предмета, который хотим удалить.
 </p>
-<p>
+<p class="avs-article-p">
 	Если в инвентаре присутствуют одинаковые предметы, команда удалит самый верхний с указанным индексом.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -364,22 +364,22 @@ DEL&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Op
 </span><span class="Monokai-Comment">!&nbsp;удаляем&nbsp;выделенный&nbsp;предмет</span><br/>
 <span class="Monokai-Operator">delobj</span>&nbsp;<span class="Monokai-Func">$selobj</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Допустима, но не одобряется, форма записи:
 </p>
 <div class="Monokai-Code">
 DEL&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_dynamic" class="avs-article-h4">DYNAMIC</h4><p>
+<h4 id="faq_80_02_dynamic" class="avs-article-h4">DYNAMIC</h4><p class="avs-article-p">
 `DYNAMIC` — выполняет код, переданный в виде строки текста. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">DYNAMIC</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$код<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$код]` — это обычный код QSP, записанный в виде текста. Выполнение такого кода аналогично выполнению кода оператора `GOSUB`. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться внутри `[$код]`, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. После выполнения старые параметры `args` восстанавливаются, затем продолжается выполнение кода со следующей команды после `dynamic`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -391,10 +391,10 @@ DEL&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operato
 &nbsp;&nbsp;&nbsp;&nbsp;addobj&nbsp;$args[1]<br/>
 "</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Текст'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Вилка'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Нижеследующая информация справедлива и для функции `dyneval` (см. <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html#faq_80_03_dyneval" style="text-decoration:none;" class="avs-page-external-link">соответствующий раздел</a>).
 </p>
-<p>
+<p class="avs-article-p">
 	Важно! Если код задан с помощью одинарных (`''`) или двойных (`""`) кавычек, в тексте вычисляются подвыражения:
 </p>
 <div class="Monokai-Code">
@@ -406,10 +406,10 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Str
 <br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span><span class="Monokai-String">'asdfg'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	В этом случае при задании переменной `$code` будет вычислено подвыражение, поэтому первой строкой выведется 'qwerty', второй строкой выведется 'asdfg'.
 </p>
-<p>
+<p class="avs-article-p">
 	Фигурные скобки - третий вид кавычек используемый специально для написания динамического кода. Здесь поддерживается вложенность скобок, а перед выполнением кода не вычисляются подвыражения:
 </p>
 <div class="Monokai-Code">
@@ -421,16 +421,16 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;$code<span class="Monokai-Operator">,</span><span class="Monokai-String">'asdfg'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	В этом случае будут выведены две строки 'asdfg'.
 </p>
-<h4 id="faq_80_02_exit" class="avs-article-h4">EXIT</h4><p>
+<h4 id="faq_80_02_exit" class="avs-article-h4">EXIT</h4><p class="avs-article-p">
 `EXIT` — завершение выполнения текущего блока кода (преждевременный выход из подпрограммы, функции, обработчика какого-либо события, и т.д.).
 </p>
-<p>
+<p class="avs-article-p">
 	В качестве блока кода может выступать локация, действие, код, переданный `dynamic`у или `dyneval`у, или код в гиперссылке.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -444,25 +444,25 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Внимание!!! В более новых версиях плеера (5.8.0 и выше) есть оператор цикла `loop`, и тело цикла так же считается отдельным блоком кода, однако оператор `exit` прерывает не только сам цикл, но и блок кода, в котором находится цикл.
 </p>
-<h4 id="faq_80_02_gosub" class="avs-article-h4">GOSUB (GS)</h4><p>
+<h4 id="faq_80_02_gosub" class="avs-article-h4">GOSUB (GS)</h4><p class="avs-article-p">
 `GOSUB` — выполнение кода указанной локации без непосредственного перехода на неё.
 </p>
-<p>
+<p class="avs-article-p">
 	Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GOSUB</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$локация]` — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. После обработки локации предыдущие значения `args` восстанавливаются. Использование аргументов не обязательно.
 </p>
-<p>
+<p class="avs-article-p">
 	При обращении к локации по `gosub` базовое описание локации добавляется к текущему описанию, базовые действия добавляются к текущим действиям, и происходит выполнение операторов в поле "Выполнить при посещении", затем возврат на исходную строку (продолжение выполнения кода после `gosub`).
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры вызова локаций по `gosub`:
 </p>
 <div class="Monokai-Code">
@@ -478,7 +478,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;$args[2]&nbsp;=&nbsp;"данные".&nbsp;Обратите&nbsp;внимание&nbsp;на&nbsp;символы&nbsp;'$'.</span><br/>
 <span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">'ход'</span><span class="Monokai-Operator">,</span>$var<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Ещё пример:
 </p>
 <div class="Monokai-Code">
@@ -494,25 +494,25 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <span class="Monokai-Koperator">end</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;переход</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Оператор имеет краткую форму gs:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_goto" class="avs-article-h4">GOTO (GT)</h4><p>
+<h4 id="faq_80_02_goto" class="avs-article-h4">GOTO (GT)</h4><p class="avs-article-p">
 `GOTO` — переход на указанную локацию. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GOTO</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$локация]` — название локации, на которую должен быть осуществлён переход. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. Использование аргументов не обязательно.
 </p>
-<p>
+<p class="avs-article-p">
 	При переходе на новую локацию при помощи `goto` очищается окно основного описания, а также список текущих действий, затем в окно основного описания выводится текст базового описания, в окно действий — базовые действия, а так же выполняется код из поля "Выполнить при посещении" локации `[$локация]`. Так же при переходе на новую локацию изменяется значение, возвращаемое функцией `$curloc`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -525,28 +525,28 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;$args[1]&nbsp;содержит&nbsp;строку&nbsp;"данные".</span><br/>
 <span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'улица'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Оператор имеет краткую форму gt:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GT</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_if" class="avs-article-h4">IF (ELSE, ELSEIF)</h4><p>
+<h4 id="faq_80_02_if" class="avs-article-h4">IF (ELSE, ELSEIF)</h4><p class="avs-article-p">
 `IF` — оператор условия. Собственно для того и нужен, чтобы проверять выполнение какого-либо условия. Имеет несколько форм записи.
 </p>
-<p>
+<p class="avs-article-p">
 	Простая однострочная форма записи:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:&nbsp;[команда&nbsp;1]&nbsp;&amp;&nbsp;[команда&nbsp;2]&nbsp;&amp;&nbsp;...</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Как видите, за ключевым словом `if` следует выражение `[#выражение]`, и если это выражение верно, тогда выполняется набор команд `[команда 1]`, `[команда 2]`, и т.д., которые записаны после двоеточия в той же строке. При этом команды перечисляются через амперсанд (`&amp;`).
 </p>
-<p>
+<p class="avs-article-p">
 	Именно по наличию команд сразу в той же строке после двоеточия плеер определяет, что это однострочная форма, и считает конец этой строки концом конструкции условия.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -558,16 +558,16 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;это&nbsp;тоже&nbsp;простая&nbsp;однострочная&nbsp;форма</span><br/>
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">+</span>b<span class="Monokai-Operator">)</span><span class="Monokai-Operator">/</span>c<span class="Monokai-Operator">)</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">54</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;<span class="Monokai-Operator">(</span>b<span class="Monokai-Operator">&lt;</span><span class="Monokai-Numeric">5</span>&nbsp;<span class="Monokai-Func">or</span>&nbsp;c<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">'лопата'</span>&nbsp;<span class="Monokai-Func">and</span>&nbsp;$f<span class="Monokai-Operator">=</span>$vvv<span class="Monokai-Operator">+</span><span class="Monokai-String">'RRRRR'</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'OK'</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">goto</span>&nbsp;<span class="Monokai-String">'Next'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Сложная однострочная форма записи:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">IF</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]:&nbsp;[команда&nbsp;д1]&nbsp;&amp;&nbsp;[команда&nbsp;д2]&nbsp;&amp;&nbsp;...&nbsp;ELSE&nbsp;[команда&nbsp;н1]&nbsp;&amp;&nbsp;[команда&nbsp;н2]&nbsp;&amp;&nbsp;...</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Здесь снова за ключевым словом `if` следует `[#выражение]`, истиность которого требуется проверить. Если выражение верно, выполняется набор команд `[команда д1]`, `[команда д2]` и т.д., от двоеточия до ключевого слова else. В противном случае, если выражение `[#выражение]` неверно, выполняется набор команд `[команда н1]`, `[команда н2]` и т.д., от `else` и до конца строки. Точно так же, как и для простой однострочной формы, концом конструкции условия считается конец строки.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры сложной однострочной формы:
 </p>
 <div class="Monokai-Code">
@@ -579,7 +579,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;выводится&nbsp;соответствующий&nbsp;текст</span><br/>
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;есть&nbsp;апельсин."</span>&nbsp;<span class="Monokai-Koperator">else</span>&nbsp;<span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;Вас&nbsp;нет&nbsp;апельсина."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Простая многострочная форма записи в общем виде выглядит вот так:
 </p>
 <div class="Monokai-Code">
@@ -589,10 +589,10 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;...<br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Как видите, она отличается от простой однострочной формы записи тем, что команды `[команда 1]`, `[команда 2]` и т.д. записаны не сразу после двоеточия, а только в следующей строке. Именно так плеер понимает, что имеет дело с многострочной формой записи. Наличие или отсутствие пробелов или символов табуляции перед командами роли не играет, однако, чтобы плеер понял, где заканчивается конструкция условия, в конце на отдельной строке необходимо прописывать ключевое слово end, или end `if`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -606,7 +606,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;c<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">30</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Сложная многострочная форма в общей записи выглядит вот так:
 </p>
 <div class="Monokai-Code">
@@ -620,13 +620,13 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;...<br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Здесь так же комнады `[команда д1]`, `[команда д2]` и т.д. записываются не сразу после двоеточия, а только в следующей строке. Ключевое слово else так же записывается в отдельной строке, и команды `[команда н1]`, `[команда н2]` и т.д. идут в последующих строках после `else`. Завершается конструкция условия ключевым словом `end` (или `end if`), которое снова идёт отдельной строкой.
 </p>
-<p>
+<p class="avs-article-p">
 	При верности выражения `[#выражение]` выполняется набор команд между двоеточием и `else`, а если `[#выражение]` неверно, выполняется набор команд между `else` и `end`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -649,7 +649,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;tokens&nbsp;<span class="Monokai-Operator">=</span>&nbsp;curtoken<br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Ещё одна форма записи работает только в многострочном варианте (обещали исправить в новых версиях). Это расширенная форма. Она позволяет размещать на одном уровне вложенности последовательно-исключающие условия. Общая форма записи такая:
 </p>
 <div class="Monokai-Code">
@@ -666,16 +666,16 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;...<br/>
 <span class="Monokai-Koperator">END</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Правила записи такие же, как и для других видов многострочных условий. После двоеточия в той же строке, где находится оператор `if` или `elseif` не должно идти никаких команд, только со следующей строки. Вся конструкция должна заканчиваться оператором `end` (или `end if`), стоящим в отдельной строке. В конструкции может как присутствовать, так и отсуствовать часть с `else`.
 </p>
-<p>
+<p class="avs-article-p">
 	Работает это следующим образом. Если `[#выражение 1]` верно, выполняются команды `[набор команд 1]`. Если `[#выражение 1]` неверно, но верно `[#выражение 2]`, выполняются команды `[набор команд 2]`, и т.д. И только если неверны все выражения в текущей конструкции условия, выполнятся команды после `else`.
 </p>
-<p>
+<p class="avs-article-p">
 	Как вы понимаете, верность выражения `[#выражение 1]` не исключает верности выражения `[#выражение 2]`, однако верность выражения `[#выражение 2]` исключает верность выражения `[#выражение 1]`. Поэтому я и назвал эту конструкцию конструкцией последовательно-исключающих условий.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -696,13 +696,13 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"У&nbsp;вас&nbsp;&lt;&lt;money&gt;&gt;&nbsp;монет."</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Обратите внимание. Ключевым словом `end` заканчивается не каждый отдельный `elseif`, а вся конструкция условия.
 </p>
-<p>
+<p class="avs-article-p">
 	Для многострочных форм записи допускается вложенность неограниченной глубины. Каждый уровень вложения должен заканчиваться своей строкой `end`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -732,7 +732,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;g<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">78</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Несколько примеров неверной записи:
 </p>
 <div class="Monokai-Code">
@@ -757,16 +757,16 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_02_addqst" class="avs-article-h4">INCLIB (ADDQST)</h4><p>
+<h4 id="faq_80_02_addqst" class="avs-article-h4">INCLIB (ADDQST)</h4><p class="avs-article-p">
 `INCLIB` — из заданного файла игры добавляет все локации, названия которых отсутствуют среди текущих игровых локаций. Загруженные локации полностью эквивалентны локациям из основного файла игры. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">INCLIB</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;файлу&nbsp;игры<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	В более старых версиях библиотеки команда называлась `addqst` и `addlib` (нигде не использовалось).
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -776,19 +776,19 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">"res/base.qsp"</span><br/>
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">"res/intro.qsp"</span><br/>
 </div>
-<h4 id="faq_80_02_jump" class="avs-article-h4">JUMP</h4><p>
+<h4 id="faq_80_02_jump" class="avs-article-h4">JUMP</h4><p class="avs-article-p">
 `JUMP` — переход в текущем блоке кода на указанную метку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">JUMP</span>&nbsp;<span class="Monokai-Operator">[</span>$метка<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0179.html#faq_80_05_marks" style="text-decoration:none;" class="avs-page-external-link">$метка]` — это метка ниже или выше по коду (см. раздел ["Метки"</a>).
 </p>
-<p>
+<p class="avs-article-p">
 	`jump` находит метку только в пределах текущего блока кода, то есть метки локальны.
 </p>
-<p>
+<p class="avs-article-p">
 	Отдельными блоками кода в QSP являются:
 </p>
 <ul>
@@ -797,7 +797,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <li>код в гиперссылке,</li>
 <li>код `DYNAMIC`/`DYNEVAL`</li>
 </ul>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -806,7 +806,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 :конец</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'А&nbsp;это&nbsp;сообщение&nbsp;пользователь&nbsp;увидит'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	С помощью оператора `jump` можно организовывать циклы:
 </p>
 <div class="Monokai-Code">
@@ -818,7 +818,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">'Всё!'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Двойной цикл с одной меткой:
 </p>
 <div class="Monokai-Code">
@@ -835,34 +835,34 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_02_killall" class="avs-article-h4">KILLALL</h4><p>
+<h4 id="faq_80_02_killall" class="avs-article-h4">KILLALL</h4><p class="avs-article-p">
 `KILLALL` — уничтожает все переменные и удаляет все предметы из окна предметов. Эквивалентен конструкции:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">killobj</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Обратите внимание, `killall` не эквивалентен конструкции:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">killobj</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">killvar</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	поскольку в этом случае значения переменных удаляются после удаления предметов, а значит код локации-обработчика удаления предметов успевает выполниться (см. `$onobjdel`).
 </p>
-<p>
+<p class="avs-article-p">
 	Обычно `killall` используют в начале игры, если в конце игры предусмотрено действие "Начать заново".
 </p>
-<h4 id="faq_80_02_killobj" class="avs-article-h4">KILLOBJ</h4><p>
+<h4 id="faq_80_02_killobj" class="avs-article-h4">KILLOBJ</h4><p class="avs-article-p">
 `KILLOBJ` — удаление предмета, расположенного в заданной позиции. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">KILLOBJ</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#номер]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#номер]` — номер предмета в окне инвентаря. Нумерация предметов начинается с 1. Если параметр `[#номер]` не указан, удаляются все предметы. При удалении каждого предмета с помощью `killobj`, происходит выполнение кода локации-обработчика удаления предметов (см. `$onobjdel`).
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -873,22 +873,22 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;удаляем&nbsp;все&nbsp;предметы</span><br/>
 <span class="Monokai-Operator">killobj</span><br/>
 </div>
-<h4 id="faq_80_02_killqst" class="avs-article-h4">KILLQST</h4><p>
+<h4 id="faq_80_02_killqst" class="avs-article-h4">KILLQST</h4><p class="avs-article-p">
 `KILLQST` — удаляет все локации, добавленные с помощью оператора `inclib`. В более новых версиях библиотеки команда переименована в `dellib`, затем в `freelib`.
 </p>
-<h4 id="faq_80_02_killvar" class="avs-article-h4">KILLVAR</h4><p>
+<h4 id="faq_80_02_killvar" class="avs-article-h4">KILLVAR</h4><p class="avs-article-p">
 `KILLVAR` — удаление указанного элемента массива. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#индекс&nbsp;элемента]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$название массива]` — название массива, из которого хотим удалить элемент, а `[#индекс элемента]` — номер элемента в массиве, который хотим удалить. Нумерация элементов массивов начинается с 0.
 </p>
-<p>
+<p class="avs-article-p">
 	Если индекс элемента не указан, то очищается весь массив. Если оператор вызван без аргументов, то удаляются все переменные и массивы.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -896,10 +896,10 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'a'</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;удаляет&nbsp;массив&nbsp;'a'</span><br/>
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;удаляет&nbsp;все&nbsp;переменные,&nbsp;массивы</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
  	При удалении элемента все следующие за ним элементы сдвигаются на позицию вверх.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -913,16 +913,16 @@ a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><s
 </span><span class="Monokai-Comment">!&nbsp;a[1]=23</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;a[2]=15</span><br/>
 </div>
-<h4 id="faq_80_02_let" class="avs-article-h4">LET</h4><p>
+<h4 id="faq_80_02_let" class="avs-article-h4">LET</h4><p class="avs-article-p">
 `LET` — устаревший оператор для установки значения переменной. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">LET</span>&nbsp;<span class="Monokai-Operator">[</span>название&nbsp;переменной<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[название переменной]` — это допустимое имя переменной, `[выражение]` — это допустимое для данной переменной значение.
 </p>
-<p>
+<p class="avs-article-p">
 	Названия числовых переменных записываются без символа `$` в начале. Названия текстовых переменных записываются с символом `$` в начале. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -931,31 +931,31 @@ a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><s
 </span><span class="Monokai-Comment">!&nbsp;задаём&nbsp;числовую&nbsp;переменную</span><br/>
 <span class="Monokai-Operator">let</span>&nbsp;abs<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Данный оператор является устаревшим, как и оператор `set`, поскольку в настоящее время значение переменной устанавливается через присвоение:
 </p>
 <div class="Monokai-Code">
 $text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Использование операторов `set` и `let` не рекомендуется.
 </p>
-<h4 id="faq_80_02_menu" class="avs-article-h4">MENU</h4><p>
+<h4 id="faq_80_02_menu" class="avs-article-h4">MENU</h4><p class="avs-article-p">
 `MENU` — в любом месте игры выводит на экран всплывающее меню, пункты которого прописаны в указанном массиве. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">MENU</span>&nbsp;<span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Прежде, чем использовать данный оператор, необходимо заполнить массив, на основе содержимого которого будут формироваться пункты меню. Пункты меню — это строковые начения массива с особым форматом записи:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">"название&nbsp;пункта&nbsp;меню:название&nbsp;локации:путь&nbsp;к&nbsp;файлу&nbsp;иконки"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Название пункта меню — это то, что мы увидим на экране, когда меню будет выведено; название локации — это название локации, код которой будет выполняться при щелчке на соответствующем пункте меню; путь к файлу иконки — это путь к файлу изображения, которое будет выведено рядом с названием пункта меню.
 </p>
-<p>
+<p class="avs-article-p">
 	Таким образом мы можем заполнить массив для того, чтоб создать наши пункты меню:
 </p>
 <div class="Monokai-Code">
@@ -963,31 +963,31 @@ $stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</sp
 $stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Кинуть&nbsp;камень:throwstone'</span><br/>
 $stone<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Осмотреть&nbsp;камень:lookstone'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Поиск символов ":" начинается с конца строки, то есть название пункта меню может содержать двоеточия, однако тогда обязательно после названия локации должно стоять двоеточие, даже если вы не используете иконки для пунктов меню.
 </p>
-<p>
+<p class="avs-article-p">
 	Если путь к файлу иконки не указан или указанный файл недоступен, то пункт меню отобразится без иконки.
 </p>
-<p>
+<p class="avs-article-p">
 	Здесь название массива (`$stone`) - это название меню, а текстовые значения массива - действия, для которых указаны названия и названия локаций-обработчиков выбора пунктов меню. При выборе пункта "Взять камень" произойдёт обработка локации с названием "takestone". Аналогично будет происходить с другими пунктами.
 </p>
-<p>
+<p class="avs-article-p">
 	Чтобы вызвать меню на экран нужно воспользоваться оператором menu:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'$stone'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Меню можно вызывать в любом месте игры, например, из гиперссылок:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">'&lt;a&nbsp;href="EXEC:&nbsp;menu&nbsp;'</span><span class="Monokai-String">'$stone'</span><span class="Monokai-String">'"&gt;Камень&lt;/a&gt;'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	В локацию-обработчик выбора пункта меню передаётся аргумент (`args[0]`) - позиция выбранного пункта. Позиции элементов меню нумеруются с 1.
 </p>
-<p>
+<p class="avs-article-p">
 		Пример создания меню с иконками:
 </p>
 <div class="Monokai-Code">
@@ -1002,7 +1002,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <br/>
 <span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'usr_menu'</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;покажет&nbsp;меню&nbsp;из&nbsp;4-х&nbsp;пунктов</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Меню заканчивается на элементе массива со значением `<code>` (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть',</code>,'Бросить', то 2 последних пункта меню не будут созданы:
 </p>
 <div class="Monokai-Code">
@@ -1011,7 +1011,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1<
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">''</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;здесь&nbsp;пустое&nbsp;значение,&nbsp;плеер&nbsp;посчитает,&nbsp;что&nbsp;меню&nbsp;кончилось</span><br/>
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;не&nbsp;увидим</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Чтобы вставить разделитель в меню, вместо соответствующего элемента массива напишите `"-:-"`. Т.е. если нужно поставить разделитель вместо 3-го элемента:
 </p>
 <div class="Monokai-Code">
@@ -1020,16 +1020,16 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1<
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'-:-'</span><br/>
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span><br/>
 </div>
-<h4 id="faq_80_02_msg" class="avs-article-h4">MSG</h4><p>
+<h4 id="faq_80_02_msg" class="avs-article-h4">MSG</h4><p class="avs-article-p">
 `MSG` — вывод указанного сообщения в диалоговом окне. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">MSG</span>&nbsp;<span class="Monokai-Operator">[</span>сообщение<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[сообщение]` — любая строка текста. число, выражение любого типа. Примеры:
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1051,13 +1051,13 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Koperator">end</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;Получаем&nbsp;вывод&nbsp;сообщения&nbsp;когда&nbsp;условие&nbsp;hlebgotov&nbsp;=&nbsp;1</span><br/>
 </div>
-<h4 id="faq_80_02_nl" class="avs-article-h4">NL</h4><p>
+<h4 id="faq_80_02_nl" class="avs-article-h4">NL</h4><p class="avs-article-p">
 `NL` — переход на новую строку, затем вывод текста в окне основногодополнительного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">NL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$текст]` — любая строка текста, число, или выражение любого типа. Если `[$текст]` отсутствует, происходит просто переход на новую строку. Пример:
 </p>
 <div class="Monokai-Code">
@@ -1065,16 +1065,16 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_opengame" class="avs-article-h4">OPENGAME</h4><p>
+<h4 id="faq_80_02_opengame" class="avs-article-h4">OPENGAME</h4><p class="avs-article-p">
 `OPENGAME` — загрузка указанного файла состояния игры. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">OPENGAME</span>&nbsp;<span class="Monokai-Operator">[</span>$путь<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$путь]` — путь к файлу сохранённого состояния игры. Если параметр `[$путь]` отсутствует, то вызывается окно загрузки состояния игры.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -1083,34 +1083,34 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 </span><span class="Monokai-Comment">!&nbsp;открываем&nbsp;окно&nbsp;загрузки&nbsp;состояния</span><br/>
 <span class="Monokai-Operator">opengame</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	См. также локацию-обработчик события загрузки состояния игры (<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongload" style="text-decoration:none;" class="avs-page-external-link">$ongload</a>).
 </p>
-<h4 id="faq_80_02_openqst" class="avs-article-h4">OPENQST</h4><p>
+<h4 id="faq_80_02_openqst" class="avs-article-h4">OPENQST</h4><p class="avs-article-p">
 `OPENQST` — открытие и запуск указанного файла игры. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">OPENQST</span>&nbsp;<span class="Monokai-Operator">[</span>$путь<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где [$путь] — путь к файлу игры, который требуется запустить. Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">openqst</span>&nbsp;<span class="Monokai-String">"gamespool/cubesgame.qsp"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	При использовании данного оператора, не происходит удаления переменных, удаления предметов инвентаря, очистки дополнительного описания и строки ввода, а также остановки проигрываемых файлов. Если вам нужно очистить экран и значения всех переменных, можно прописать в начале загружаемого файла игры такие команды:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">killall</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cls</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">close</span>&nbsp;<span class="Monokai-Operator">all</span><br/>
 </div>
-<h4 id="faq_80_02_p" class="avs-article-h4">P</h4><p>
+<h4 id="faq_80_02_p" class="avs-article-h4">P</h4><p class="avs-article-p">
 `P` — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после p добавит новый текст сразу после текущего. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">P</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$текст]` — любая строка текста, число, или выражение любого типа. `[$текст]` может быть пустой строкой '', но не должен отсутствовать. Пример:
 </p>
 <div class="Monokai-Code">
@@ -1119,13 +1119,13 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_pl" class="avs-article-h4">PL</h4><p>
+<h4 id="faq_80_02_pl" class="avs-article-h4">PL</h4><p class="avs-article-p">
 `PL` — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$текст]` — любая строка текста, число, или выражение любого типа. `[$текст]` может отсутствовать, тогда просто переход на новую строку. Пример:
 </p>
 <div class="Monokai-Code">
@@ -1134,13 +1134,13 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_play" class="avs-article-h4">PLAY</h4><p>
+<h4 id="faq_80_02_play" class="avs-article-h4">PLAY</h4><p class="avs-article-p">
 `PLAY` — проигрывание указанного звукового файла с заданной громкостью. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">PLAY</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;звуковому&nbsp;файлу<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#громкость]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$путь к звуковому файлу]` — путь к звуковому файлу относительно файла игры, `[#громкость]` — громкость воспроизведения в процентах от 0 до 100. Параметр `[#громкость]` может отсутствовать, при этом громкость принимается равной 100%. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1161,25 +1161,25 @@ $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody
 $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody.mid"</span><br/>
 <span class="Monokai-Operator">play</span>&nbsp;$file<span class="Monokai-Operator">,</span>volume<br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Если файл уже проигрывается, то изменяется громкость звучания без его "перезапуска". Поддерживается множество различных аудиоформатов и одновременное звучание до 32-х композиций.
 </p>
-<h4 id="faq_80_02_refint" class="avs-article-h4">REFINT</h4><p>
+<h4 id="faq_80_02_refint" class="avs-article-h4">REFINT</h4><p class="avs-article-p">
 `REFINT` — принудительное обновление интерфейса (в т.ч. смена цветов, шрифтов, назначенных с помощью системных переменных).
 </p>
-<p>
+<p class="avs-article-p">
 	По умолчанию обновление интерфейса происходит 2 раза в секунду (каждые 500 мс). Так же см. оператор settimer.
 </p>
-<h4 id="faq_80_02_savegame" class="avs-article-h4">SAVEGAME</h4><p>
+<h4 id="faq_80_02_savegame" class="avs-article-h4">SAVEGAME</h4><p class="avs-article-p">
 `SAVEGAME` — сохранение состояния игры в указанный файл. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SAVEGAME</span>&nbsp;<span class="Monokai-Operator">[</span>$путь<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$путь]` — путь к создаваемому файлу сохранения состояния игры. Если параметр `[$путь]` отсутствует, то вызывается окно сохранения состояния игры.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
@@ -1188,19 +1188,19 @@ $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody
 </span><span class="Monokai-Comment">!&nbsp;открываем&nbsp;окно&nbsp;сохранения&nbsp;состояния</span><br/>
 <span class="Monokai-Operator">savegame</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongsave" style="text-decoration:none;" class="avs-page-external-link">локацию-обработчик события сохранения состояния игры ($ongsave)</a>.
 </p>
-<h4 id="faq_80_02_set" class="avs-article-h4">SET</h4><p>
+<h4 id="faq_80_02_set" class="avs-article-h4">SET</h4><p class="avs-article-p">
 `SET` — устаревший оператор для установки значения переменной. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SET</span>&nbsp;<span class="Monokai-Operator">[</span>название&nbsp;переменной<span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">[</span>выражение<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[название переменной]` — это допустимое имя переменной, `[выражение]` — это допустимое для данной переменной значение.
 </p>
-<p>
+<p class="avs-article-p">
 	Названия числовых переменных записываются без символа `$` в начале. Названия текстовых переменных записываются с символом `$` в начале. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1209,28 +1209,28 @@ $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody
 </span><span class="Monokai-Comment">!&nbsp;задаём&nbsp;числовую&nbsp;переменную</span><br/>
 <span class="Monokai-Operator">set</span>&nbsp;abs<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Данный оператор является устаревшим, как и оператор `let`, поскольку в настоящее время значение переменной устанавливается через присвоение:
 </p>
 <div class="Monokai-Code">
 $text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Использование операторов `set` и `let` не рекомендуется, так как они устарели.
 </p>
-<h4 id="faq_80_02_settimer" class="avs-article-h4">SETTIMER</h4><p>
+<h4 id="faq_80_02_settimer" class="avs-article-h4">SETTIMER</h4><p class="avs-article-p">
 `SETTIMER` — задаёт интервал обращения к локации-счётчику. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SETTIMER</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#выражение]` — период обращения к локации-счётчику в миллисекундах. По умолчанию плеер обращается к локации-счётчику каждые 500 мс., т.е. 2 раза в секунду.
 </p>
-<p>
+<p class="avs-article-p">
 	Установка периода обращения к локации-счётчику влияет и на частоту автоматического обновления настроек интерфейса.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1251,29 +1251,29 @@ frequency<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">10
 period<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;каждые&nbsp;две&nbsp;секунды</span><br/>
 <span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">*</span>period<br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Минимальное значение периода таким образом может быть 1 миллисекунда:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">settimer</span>&nbsp;<span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Однако на практике минимальное значение ограничено мощностью вашего компьютера, и оно, как правило, выше 1 миллисекунды.
 </p>
-<h4 id="faq_80_02_showacts" class="avs-article-h4">SHOWACTS</h4><p>
+<h4 id="faq_80_02_showacts" class="avs-article-h4">SHOWACTS</h4><p class="avs-article-p">
 `SHOWACTS` — управляет отображением окна действий на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SHOWACTS</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#выражение]` — это число. Обычно используются значения 0 и 1. Если значение выражения `[#выражение]` отлично от нуля, окно действий отображается. Если значение выражения `[#выражение]` равно нулю, окно действий скрыто. Примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;список&nbsp;действий</span><br/>
 <span class="Monokai-Operator">showacts</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;список&nbsp;действий</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Для удобства чтения кода можно заранее определить переменные on и off и использовать их:
 </p>
 <div class="Monokai-Code">
@@ -1282,20 +1282,20 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showacts</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;список&nbsp;действий</span><br/>
 <span class="Monokai-Operator">showacts</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;список&nbsp;действий</span><br/>
 </div>
-<h4 id="faq_80_02_showinput" class="avs-article-h4">SHOWINPUT</h4><p>
+<h4 id="faq_80_02_showinput" class="avs-article-h4">SHOWINPUT</h4><p class="avs-article-p">
 `SHOWINPUT` — управляет отображением строки ввода на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SHOWINPUT</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#выражение]` — это число. Обычно используются значения 0 и 1. Если значение выражения `[#выражение]` отлично от нуля, строка ввода отображается. Если значение выражения `[#выражение]` равно нулю, строка ввода скрыта. Примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;строку&nbsp;ввода</span><br/>
 <span class="Monokai-Operator">showinput</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;строку&nbsp;ввода</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Для удобства чтения кода можно заранее определить переменные on и off и использовать их:
 </p>
 <div class="Monokai-Code">
@@ -1304,20 +1304,20 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showinput</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;строку&nbsp;ввода</span><br/>
 <span class="Monokai-Operator">showinput</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;строку&nbsp;ввода</span><br/>
 </div>
-<h4 id="faq_80_02_showobjs" class="avs-article-h4">SHOWOBJS</h4><p>
+<h4 id="faq_80_02_showobjs" class="avs-article-h4">SHOWOBJS</h4><p class="avs-article-p">
 `SHOWOBJS` — управляет отображением инвентаря на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SHOWOBJS</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#выражение]` — это число. Обычно используются значения 0 и 1. Если значение выражения `[#выражение]` отлично от нуля, инвентарь отображается. Если значение выражения `[#выражение]` равно нулю, инвентарь скрыт. Примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">showobjs</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;инвентарь</span><br/>
 <span class="Monokai-Operator">showobjs</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;инвентарь</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Для удобства чтения кода можно заранее определить переменные `on` и `off` и использовать их:
 </p>
 <div class="Monokai-Code">
@@ -1326,20 +1326,20 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showobjs</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;инвентарь</span><br/>
 <span class="Monokai-Operator">showobjs</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;инвентарь</span><br/>
 </div>
-<h4 id="faq_80_02_showstat" class="avs-article-h4">SHOWSTAT</h4><p>
+<h4 id="faq_80_02_showstat" class="avs-article-h4">SHOWSTAT</h4><p class="avs-article-p">
 `SHOWSTAT` — управляет отображением окна дополнительного описания на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">SHOWSTAT</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#выражение]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#выражение]` — это число. Обычно используются значения 0 и 1. Если значение выражения `[#выражение]` отлично от нуля, окно дополнительного описания отображается. Если значение выражения `[#выражение]` равно нулю, окно дополнительного описания скрыто. Примеры:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">1</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 <span class="Monokai-Operator">showstat</span>&nbsp;<span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Для удобства чтения кода можно заранее определить переменные `on` и `off` и использовать их:
 </p>
 <div class="Monokai-Code">
@@ -1348,10 +1348,10 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showstat</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 <span class="Monokai-Operator">showstat</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 </div>
-<h4 id="faq_80_02_unsel" class="avs-article-h4">UNSELECT (UNSEL)</h4><p>
+<h4 id="faq_80_02_unsel" class="avs-article-h4">UNSELECT (UNSEL)</h4><p class="avs-article-p">
 `UNSELECT` — отмена выделения предмета. Имеет краткую форму `unsel`.
 </p>
-<p>
+<p class="avs-article-p">
 	При щелчке играющим по какому-либо предмету, он остаётся выделенным. Чтобы снять выделение с предмета используется данный оператор. Обычно его размещают на локации-обработчике выделения предмета.
 </p>
 <div class="Monokai-Code">
@@ -1367,16 +1367,16 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Operator">unsel</span><br/>
 </div>
-<h4 id="faq_80_02_view" class="avs-article-h4">VIEW</h4><p>
+<h4 id="faq_80_02_view" class="avs-article-h4">VIEW</h4><p class="avs-article-p">
 `VIEW` — выводит на экран указанное изображение. В классическом плеере изображение выводися в отдельном окошке (окно предпросмотра), в AeroQSP и Quest Navigator изображение выводится верхним слоем в общем окне. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">VIEW</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;графическому&nbsp;файлу<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$путь к графическому файлу]` — путь к файлу картинки. Если параметр `[$путь к графическому файлу]` отсутствует, или задан как `''` (пустая строка), окно предпросмотра закрывается.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1388,29 +1388,29 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 </span><span class="Monokai-Comment">!&nbsp;закрыть&nbsp;окно&nbsp;предпросмотра&nbsp;можно&nbsp;и&nbsp;так</span><br/>
 <span class="Monokai-Operator">view</span><br/>
 </div>
-<h4 id="faq_80_02_wait" class="avs-article-h4">WAIT</h4><p>
+<h4 id="faq_80_02_wait" class="avs-article-h4">WAIT</h4><p class="avs-article-p">
 `WAIT` — приостановка выполнения кода программы на указанное количество миллисекунд. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">WAIT</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#миллисекунды]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[#миллисекунды]` — время в миллисекундах, на какое следует остановить выполнение кода программы.
 </p>
-<p>
+<p class="avs-article-p">
 	Пример:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;остановка&nbsp;выполнения&nbsp;программы&nbsp;на&nbsp;5&nbsp;секунд</span><br/>
 <span class="Monokai-Operator">wait</span>&nbsp;<span class="Monokai-Numeric">5000</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Использовать данный оператор необходимо с осторожностью, поскольку приостановка выполнения кода блокирует для игрока возможность взаимодействовать с игрой.
 </p>
-<p>
+<p class="avs-article-p">
 `WAIT` не только прерывает выполнение кода, но так же засталяет плеер выводить на экран информацию из буфера экрана. При нормальном выполнении кода локации, весь текст для операторов <em>pl </em>p pl nl и т.д. помещается в специальный буфер экрана, и уже после выполнения всего кода на локации выводится на экран. При использовании `WAIT` текст из буфера выводится сразу в момент выполнения `WAIT`, что иногда полезно, поскольку позволяет проследить изменение некоторых значений поэтапно.
 </p>
-<p>
+<p class="avs-article-p">
 В примере ниже числа сначала запишутся в буфер экрана и только потом появятся на экране:
 </p>
 <div class="Monokai-Code">
@@ -1419,22 +1419,22 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 В следующем примере
 </p>
-<h4 id="faq_80_02_xgoto" class="avs-article-h4">XGOTO (XGT)</h4><p>
+<h4 id="faq_80_02_xgoto" class="avs-article-h4">XGOTO (XGT)</h4><p class="avs-article-p">
 `XGOTO` — переход на указанную локацию без очистки окна основного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">XGOTO</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[$локация]` — название локации, на которую должен быть осуществлён переход. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. Использование аргументов не обязательно.
 </p>
-<p>
+<p class="avs-article-p">
 	При переходе на новую локацию при помощи `xgoto` не очищается окно основного описания, а базовое описание новой локации добавляется к уже имеющемуся тексту в окне основного описания. Список действий очищается, затем в окно действий выводятся базовые действия, а так же выполняется код из поля "Выполнить при посещении" локации `[$локация]`. Так же при переходе на новую локацию изменяется значение, возвращаемое функцией `$curloc`.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -1448,7 +1448,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 </span><span class="Monokai-Comment">!&nbsp;$args[1]&nbsp;содержит&nbsp;строку&nbsp;"данные".</span><br/>
 <span class="Monokai-Operator">xgoto</span>&nbsp;<span class="Monokai-String">'улица'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'данные'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Оператор имеет краткую форму xgt:
 </p>
 <div class="Monokai-Code">

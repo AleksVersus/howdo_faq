@@ -14,7 +14,7 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="avs-pages-button__link">&lt; Назад, к странице 165</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0180.html" class="avs-pages-button__link">Вперёд, к странице 167 &gt;</a></div></div></div>
-<h4 id="faq_80_05" class="avs-article-h4">Синтаксемы и спецсимволы</h4><h4 id="faq_80_05_end" class="avs-article-h4">END</h4><p>
+<h4 id="faq_80_05" class="avs-article-h4">Синтаксемы и спецсимволы</h4><h4 id="faq_80_05_end" class="avs-article-h4">END</h4><p class="avs-article-p">
 Ключевое слово (оператор), отмечающее окончание многострочной конструкции. Многострочными могут быть действия, конструкции условий, циклов. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -35,7 +35,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Проход&nbsp;&lt;&lt;i+1&gt;&gt;:&nbsp;i=&lt;&lt;i&gt;&gt;"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Каждая многострочная конструкция должна завершаться ключевым словом `end`. Однако здесь работают такие же правила, как для HTML-тегов или скобок: если мы вкладываем одну конструкцию в другую, сначала необходимо закрывать последнюю открытую конструкцию:
 </p>
 <div class="Monokai-Code">
@@ -54,7 +54,7 @@
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;УСЛОВИЕ</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Можно использовать не просто `end`, а `end if`, `end act` и `end loop`:
 </p>
 <div class="Monokai-Code">
@@ -76,7 +76,7 @@
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие</span><br/>
 <span class="Monokai-Koperator">end</span>&nbsp;<span class="Monokai-Koperator">act</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Вообще, после ключевого слова `end` допускается, но не одобряется, запись любого текста. При этом игнорируется весь текст до следующей команды. Если команда записывается в той же строке, что и `end`, то эта команда должна стоять после амперсанда (`&amp;`):
 </p>
 <div class="Monokai-Code">
@@ -87,13 +87,13 @@
 </span><span class="Monokai-Comment">!&nbsp;закрываем&nbsp;действие</span><br/>
 <span class="Monokai-Koperator">end</span>&nbsp;присутствие&nbsp;этого&nbsp;текста&nbsp;после&nbsp;<span class="Monokai-Koperator">end</span>&nbsp;не&nbsp;одобряется&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Новая&nbsp;команда"</span><br/>
 </div>
-<h4 id="faq_80_05_marks" class="avs-article-h4">Метки `:`</h4><p>
+<h4 id="faq_80_05_marks" class="avs-article-h4">Метки `:`</h4><p class="avs-article-p">
 Метки — это особые синтаксические конструкции (а вернее меньше, чем конструкции, — синтаксемы), которые отмечают указанную строку кода и служат для быстрого перемещения к таким строкам с помощью оператора <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html#faq_80_02_jump" style="text-decoration:none;" class="avs-page-external-link">`JUMP`</a>. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">:</span><span class="Monokai-Operator">[</span>название&nbsp;метки<span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	, где `[название метки]` — теоретически любое сочетание символов, однако на практике желательно использовать лишь буквы, цифры, символы подчёркивания и пробелы. Перед двоеточием могут стоять символы пробелов и табуляции в любом количестве. Так же игнорируются прилегающие к названию метки символы пробелов и табуляций (однако ставить их не рекомендуется для удобства чтения кода).
 </p>
 <div class="Monokai-Code">
@@ -114,7 +114,7 @@
 </span><span class="Monokai-Comment">!&nbsp;...</span><br/>
 <span class="Monokai-Operator">:</span>метка&nbsp;с&nbsp;прилегающими&nbsp;пробелами<br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Непосредственно после метки, в той же строке, через амперсанд (`&amp;`) могут идти любые другие команды, однако так делать не рекомендуется.
 </p>
 <div class="Monokai-Code">
@@ -123,7 +123,7 @@
 </span><span class="Monokai-Comment">!&nbsp;...</span><span class="Monokai-Markup"><br/>
 :markdown</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"вывожу&nbsp;текст"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;комментарий</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Метки не чувствительны к регистру:
 </p>
 <div class="Monokai-Code">
@@ -131,13 +131,13 @@
 </span><span class="Monokai-Comment">!&nbsp;...</span><span class="Monokai-Markup"><br/>
 :for</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Оператор `jump` "видит" метки только внутри текущего блока кода. Иными словами метки локальны, метки с одинаковыми названиями могут располагаться на разных локациях, в разных блоках кода).
 </p>
-<p>
+<p class="avs-article-p">
 	Если метки с одинаковыми названиями расположены в одном блоке кода, то все дублирующие метки, кроме самой первой, игнорируются плеером.
 </p>
-<p>
+<p class="avs-article-p">
 	Отдельными блоками кода считаются:
 </p>
 <ul>
@@ -146,19 +146,19 @@
 <li>код в гиперссылке,</li>
 <li>код, передаваемый `DYNAMIC`/`DYNEVAL`.</li>
 </ul>
-<p>
+<p class="avs-article-p">
 	Случайные метки, то есть метки, на которые в текущем блоке кода нет перехода с помощью `jump`, просто игнорируются интерпретатором.
 </p>
-<h4 id="faq_80_05_ampersand" class="avs-article-h4">Амперсанд `&amp;`</h4><p>
+<h4 id="faq_80_05_ampersand" class="avs-article-h4">Амперсанд `&amp;`</h4><p class="avs-article-p">
 `&amp;` — символ амперсанда служит для перечисления команд в одной строке. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">[</span>команда&nbsp;<span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;...<br/>
 </div>
-<p>
+<p class="avs-article-p">
 	Данный символ не следует путать с <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html#faq_80_01_concatenation" style="text-decoration:none;" class="avs-page-external-link">операцией объединения строк (конкатенация)</a>, а использовать нужно с осторожностью.
 </p>
-<p>
+<p class="avs-article-p">
 	Примеры:
 </p>
 <div class="Monokai-Code">
@@ -166,7 +166,7 @@
 <br/>
 a<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;b<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">7</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;g<span class="Monokai-Operator">=</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">(</span><span class="Monokai-String">"26"</span><span class="Monokai-Operator">&amp;</span><span class="Monokai-String">"27"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;в&nbsp;скобках&nbsp;—&nbsp;конкатенация</span><br/>
 </div>
-<h4 id="faq_80_05_comma" class="avs-article-h4">Запятая ,</h4><p>
+<h4 id="faq_80_05_comma" class="avs-article-h4">Запятая ,</h4><p class="avs-article-p">
 Запятая `,` в QSP используется для перечисления аргументов, передаваемых различным операторам и функциям:
 </p>
 <div class="Monokai-Code">
@@ -175,11 +175,11 @@ a<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&n
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screwdriver.png"</span><br/>
 <span class="Monokai-Operator">gosub</span>&nbsp;<span class="Monokai-String">"add_object"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Апельсин"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Еда"</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">37</span><br/>
 </div>
-<h4 id="faq_80_05_roundbrackets" class="avs-article-h4">Круглые скобки ()</h4><p>
+<h4 id="faq_80_05_roundbrackets" class="avs-article-h4">Круглые скобки ()</h4><p class="avs-article-p">
 Круглые скобки `()` в QSP используются в трёх случаях:
 </p>
 <ol>
-<li><p>
+<li><p class="avs-article-p">
 В различных выражениях скобки повышают приоритет операций (операции в скобках выполняются в первую очередь):</p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;повышение&nbsp;приоритета&nbsp;арифметических&nbsp;операций</span><br/>
@@ -188,20 +188,20 @@ a<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&n
 <span class="Monokai-Koperator">if</span>&nbsp;A<span class="Monokai-Operator">=</span><span class="Monokai-Operator">(</span>A<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&gt;</span>B<span class="Monokai-Operator">)</span><span class="Monokai-Operator">:</span>&nbsp;...<br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 Если нужно передать функции более одного аргумента следует помещать всю группу аргументов в скобки:</p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">25</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">250</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">12</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">89</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">122</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">135</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">168</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 		Будет хорошим тоном помещать даже один аргумент функции в скобки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">999</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 		Не будет осуждаться, хотя так обычно не делают, если в скобки помещать и группу аргументов к операторам:
 </p>
 <div class="Monokai-Code">
@@ -211,7 +211,7 @@ a<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">3</span>&n
 <span class="Monokai-Operator">gosub</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"add_object"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Рек"</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"Артефакт"</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">36</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">67</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">90</span><span class="Monokai-Operator">,</span>a<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
 </div>
 </li>
-<li><p>
+<li><p class="avs-article-p">
 Если нужно организовать кортеж значений:</p>
 <div class="Monokai-Code">
 tuple<span class="Monokai-Operator">=</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">234</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'string'</span><span class="Monokai-Operator">)</span><br/>
@@ -219,20 +219,20 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">23</spa
 </div>
 </li>
 </ol>
-<h4 id="faq_80_05_squarebrackets" class="avs-article-h4">Квадратные скобки []</h4><p>
+<h4 id="faq_80_05_squarebrackets" class="avs-article-h4">Квадратные скобки []</h4><p class="avs-article-p">
 Квадратные скобки `[]` в QSP используются для указания индекса ячейки массива:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;присваиваем&nbsp;значение&nbsp;седьмой&nbsp;ячейке&nbsp;массива&nbsp;$mass</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">7</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"textstring"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для индексации ячеек массивов можно использовать строковые значения:
 </p>
 <div class="Monokai-Code">
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-String">"x:4,y:6"</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"map-dot"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же для индексации ячеек массивов можно использовать кортежи. При этом не обязательно указывать внутри квадратных скобок ещё и круглые:
 </p>
 <div class="Monokai-Code">
@@ -240,7 +240,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 </span><span class="Monokai-Comment">!&nbsp;эквивалентно</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">4</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"map_cell"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если квадратные скобки после названия массива не стоят, значит происходит работа с нулевой ячейкой массива:
 </p>
 <div class="Monokai-Code">
@@ -248,7 +248,7 @@ $mass<span class="Monokai-Operator">=</span><span class="Monokai-String">"text"<
 </span><span class="Monokai-Comment">!&nbsp;равнозначно</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"text"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если индекс в квадратных скобках не указан, значит мы работаем с последней ячейкой массива:
 </p>
 <div class="Monokai-Code">
@@ -258,13 +258,13 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</sp
 </span><span class="Monokai-Comment">!&nbsp;получаем&nbsp;значение&nbsp;из&nbsp;последней&nbsp;ячейки&nbsp;массива:</span><br/>
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_05_curclybrackets" class="avs-article-h4">Фигурные скобки {}</h4><p>
+<h4 id="faq_80_05_curclybrackets" class="avs-article-h4">Фигурные скобки {}</h4><p class="avs-article-p">
 Фигурные скобки `{}` в QSP выступают как спецсимволы, отмечающие начало и конец строковых значений. Иными словами, по наличию таких скобок плеер может понять, где начинается и где кончается строковое значение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Operator">{</span>Текст<span class="Monokai-Operator">,</span>&nbsp;который&nbsp;будет&nbsp;выведен&nbsp;на&nbsp;экран.<span class="Monokai-Operator">}</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Особенностью указания текстового значения с помощью фигурных скобок является то, что в таких строках не раскрываются подвыражения:
 </p>
 <div class="Monokai-Code">
@@ -274,7 +274,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье:&nbsp;&lt;&lt;health&gt;&gt;"</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведен&nbsp;текст&nbsp;'Здоровье:&nbsp;150'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для большей совместимости с различными версиями плееров, а так же для удобства чтения, фигурные скобки следует в основном использовать для записи кода, предназначенного для оператора `dynamic` или функции `dyneval`:
 </p>
 <div class="Monokai-Code">
@@ -284,7 +284,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Operator">}</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Текст'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Вилка'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же фигурные скобки можно использовать для написания многострочных комментариев:
 </p>
 <div class="Monokai-Code">
@@ -293,16 +293,16 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 &nbsp;&nbsp;&nbsp;&nbsp;комментарий<br/>
 }</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Допустимо вложение любого количества фигурных скобок друг в друга.
 </p>
-<h4 id="faq_80_05_quotes" class="avs-article-h4">Кавычки `""`</h4><p>
+<h4 id="faq_80_05_quotes" class="avs-article-h4">Кавычки `""`</h4><p class="avs-article-p">
 Кавычки `" "` (двойные апострофы) в QSP выступают как спецсимволы, отмечающие начало и конец строковых значений. Иными словами, по наличию кавычек плеер может понять, где начинается и где кончается строковое значение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Текст,&nbsp;который&nbsp;будет&nbsp;выведен&nbsp;на&nbsp;экран."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Особенностью указания текстового значения с помощью апострофов является то, что в таких строках раскрываются подвыражения:
 </p>
 <div class="Monokai-Code">
@@ -310,13 +310,13 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье:&nbsp;&lt;&lt;health&gt;&gt;"</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведен&nbsp;текст&nbsp;'Здоровье:&nbsp;150'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Кавычки внутри строки можно экранировать дублированием:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"В&nbsp;кабачке&nbsp;"</span><span class="Monokai-String">"У&nbsp;Мо"</span><span class="Monokai-String">"&nbsp;сегодня&nbsp;весело&nbsp;и&nbsp;шумно."</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же кавычки можно использовать для написания многострочных комментариев:
 </p>
 <div class="Monokai-Code">
@@ -325,13 +325,13 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 &nbsp;&nbsp;&nbsp;&nbsp;комментарий<br/>
 "</span><br/>
 </div>
-<h4 id="faq_80_05_apostrophes" class="avs-article-h4">Апострофы ''</h4><p>
+<h4 id="faq_80_05_apostrophes" class="avs-article-h4">Апострофы ''</h4><p class="avs-article-p">
 Апострофы `' '` в QSP выступают как спецсимволы, отмечающие начало и конец строковых значений. Иными словами, по наличию апострофов плеер может понять, где начинается и где кончается строковое значение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'Текст,&nbsp;который&nbsp;будет&nbsp;выведен&nbsp;на&nbsp;экран.'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Особенностью указания текстового значения с помощью апострофов является то, что в таких строках раскрываются подвыражения:
 </p>
 <div class="Monokai-Code">
@@ -339,13 +339,13 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'Здоровье:&nbsp;&lt;&lt;health&gt;&gt;'</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;на&nbsp;экран&nbsp;будет&nbsp;выведен&nbsp;текст&nbsp;'Здоровье:&nbsp;150'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Кавычки внутри строки можно экранировать дублированием:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">'Руг'</span><span class="Monokai-String">'Ста'</span><span class="Monokai-String">'Раг&nbsp;сказал:&nbsp;—&nbsp;Что&nbsp;ты&nbsp;хочешь,&nbsp;мора?&nbsp;Хочешь&nbsp;мухомора?'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Так же апострофы можно использовать для написания многострочных комментариев:
 </p>
 <div class="Monokai-Code">
@@ -354,22 +354,22 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 &nbsp;&nbsp;&nbsp;&nbsp;комментарий<br/>
 '</span><br/>
 </div>
-<h4 id="simvol-kommercheskoe-et-" class="avs-article-h4">Символ "Коммерческое эт" @</h4><p>
+<h4 id="simvol-kommercheskoe-et-" class="avs-article-h4">Символ "Коммерческое эт" @</h4><p class="avs-article-p">
 Символ "Коммерческое эт" `@` используется для организации неявного вызова локаций-функций, упрощая запись и заменяя собой оператор `gosub` или функию `func`. Общая запись:
 </p>
 <div class="Monokai-Code">
 @<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">18</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 , где `[$локация]` — это название локации, код которой мы хотим выполнить без непосредственного перехода на неё. Аргументы `[аргумент 0]`, `[аргумент 1]` и т.д. могут использоваться на этой локации, их значения автоматически помещаются в переменные `args[0]`, `args[1]`, и т.д. соответственно. После обработки локации предыдущие значения `args` восстанавливаются. Использование аргументов не обязательно, в этом случае скобки можно опускать.
 </p>
-<p>
+<p class="avs-article-p">
 При обращении к локации с помощью `@` базовое описание локации добавляется к текущему описанию, базовые действия добавляются к текущим действиям, и происходит выполнение операторов в поле "Выполнить при посещении", затем возврат на исходную строку (продолжение выполнения кода после команды с `@`).
 </p>
-<p>
+<p class="avs-article-p">
 Название локации при неявном вызове не должно содержать специальных символов, иначе это может привести к неработоспособности кода. Можно использовать буквы, цифры, символ подчёркивания и точку.
 </p>
-<p>
+<p class="avs-article-p">
 Примеры:
 </p>
 <div class="Monokai-Code">
@@ -406,7 +406,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">150</
 </span><span class="Monokai-Comment">!&nbsp;пример&nbsp;вызова&nbsp;локации&nbsp;"summ",&nbsp;как&nbsp;функции</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-UnFunc">@summ</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">19</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;190</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Обратите внимание, неявный вызов локации-функции заменяет и `gosub`, и `func`, поэтому, если ваша локация-функция возвращает результат, неявный вызов такой локации будет работать точно так же, как явный вызов через `func`; если же локация-функция не возвращает результат, то при использовании её с неявным оператором она будет работать, как явный вызов через `gosub`.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="avs-pages-button__link">&lt; Назад, к странице 165</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0180.html" class="avs-pages-button__link">Вперёд, к странице 167 &gt;</a></div></div></div>

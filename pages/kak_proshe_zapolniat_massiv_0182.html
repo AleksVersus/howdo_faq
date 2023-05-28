@@ -14,10 +14,10 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_ubrat__preformatirovanie_0155.html" class="avs-pages-button__link">&lt; Назад, к странице 154</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sochetanie_klavish_0156.html" class="avs-pages-button__link">Вперёд, к странице 156 &gt;</a></div></div></div>
-<h3 id="faq_20_24" class="avs-article-h3">20.24. Как проще заполнять массив?</h3><p>
+<h3 id="faq_20_24" class="avs-article-h3">20.24. Как проще заполнять массив?</h3><p class="avs-article-p">
 В:
 </p>
-<p>
+<p class="avs-article-p">
 	Нет ли способа упростить внесение первоначальных данных в массив? Чтобы не писать
 </p>
 <div class="Monokai-Code">
@@ -26,22 +26,22 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span
 mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">345</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;и&nbsp;т.д.</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 	а вместо этого написать что-то типа
 </p>
 <div class="Monokai-Code">
 mass&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">234</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">345</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 QSP предоставляет возможность самостоятельно писать любые функции, которые вам необходимы, в том числе и такие, которые будут упрощать ввод данных.
 </p>
-<p>
+<p class="avs-article-p">
 В данном случае мы можем написать функцию, которая будет принимать в качестве аргумента имя массива и кортеж значений, которые мы в этот массив хотим поместить, и с помощью цикла внутри функции извлечь из кортежа все значения в подряд идущие ячейки массива.
 </p>
-<p>
+<p class="avs-article-p">
 Вот как может выглядеть такая функция:
 </p>
 <div class="Monokai-Code">
@@ -59,7 +59,7 @@ QSP предоставляет возможность самостоятельн
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">dynamic</span>&nbsp;<span class="Monokai-String">"&lt;&lt;$args[0]&gt;&gt;[]=args[0]"</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span>$cut<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;а&nbsp;так&nbsp;числовые</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Теперь, когда нам нужно быстро записать в массив много значений, не расписывая на множество строчек присвоение каждой ячейке, мы просто вызываем функцию "full_array":
 </p>
 <div class="Monokai-Code">
@@ -71,10 +71,10 @@ QSP предоставляет возможность самостоятельн
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Примечание: чтобы понимать, каким образом мы вытаскиваем данные из кортежа, нужно понимать, в каком виде в QSP представлен кортеж. Кортеж — это строка значений. Фактически это обычная строка, в которой все значения разделяются символом "``". Этот символ имеет код 0x1f. Именно эту особенность хранения данных мы и используем, чтобы извлечь значения из кортежа. Мы определяем, в какой позиции находится разделяющий символ, затем вырезаем строку до этого символа и помещаем в новую ячейку массива. Дальше работаем уже с оставшейся строкой.
 </p>
-<p>
+<p class="avs-article-p">
 Данная функция была реализована в <a href="https://github.com/AleksVersus/easy.math.3/blob/main/%5Bsource%5D/07_операции%20с%20массивами/99_em.arr.fill.qsps" style="text-decoration:none;" class="avs-page-external-link">easy.math версии 3.0</a>.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_ubrat__preformatirovanie_0155.html" class="avs-pages-button__link">&lt; Назад, к странице 154</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/sochetanie_klavish_0156.html" class="avs-pages-button__link">Вперёд, к странице 156 &gt;</a></div></div></div>

@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/refint_0052.html" class="avs-pages-button__link">&lt; Назад, к странице 53</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_izmenit__format_chasti_teksta_0054.html" class="avs-pages-button__link">Вперёд, к странице 55 &gt;</a></div></div></div>
-<h3 id="faq_10_02" class="avs-article-h3">10.2. Как изменить цвет фона в игре?</h3><p>
+<h3 id="faq_10_02" class="avs-article-h3">10.2. Как изменить цвет фона в игре?</h3><p class="avs-article-p">
 В: Как изменить цвет фона в игре?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы изменить цвет фона в игре, необходимо изменить значение системной переменной `bcolor`.
 </p>
-<p>
+<p class="avs-article-p">
 В QSP используется формат записи цвета из трёх составляющих: красная, зелёная, синяя. Любой цвет закодирован обычным числом. Например:
 </p>
 <div class="Monokai-Code">
@@ -34,13 +34,13 @@
 </span><span class="Monokai-Comment">!&nbsp;белый&nbsp;цвет&nbsp;фона</span><br/>
 <span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для нас такая запись числа очень непонятна, поэтому в QSP предусмотрена функция, которая позволяет нам задавать цвет более понятным образом. Это функция `rgb`:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span>red<span class="Monokai-Operator">,</span>green<span class="Monokai-Operator">,</span>blue<span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Вместо `red`, `green` и `blue` необходимо указать значения составляющих для цвета числами от 0 до 255 (`red` — красная, `green` — зелёная, `blue` — синяя). Например:
 </p>
 <div class="Monokai-Code">
@@ -63,7 +63,7 @@
 </span><span class="Monokai-Comment">!&nbsp;фон&nbsp;малинового&nbsp;цвета</span><br/>
 <span class="Monokai-SysVar">bcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Чтобы сбросить цвет фона к значению по-умолчанию, необходимо присвоить переменной `bcolor` значение 0:
 </p>
 <div class="Monokai-Code">

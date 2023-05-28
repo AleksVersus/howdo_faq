@@ -15,13 +15,13 @@
             <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/soderzhanie_0000.html" class="avs-pages-button__link">&lt; Назад, к странице 1</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="avs-pages-button__link">Вперёд, к странице 3 &gt;</a></div></div></div>
-<h3 id="preobrazovanije_tipov_qsp" class="avs-article-h3">Преобразование типов в QSP</h3><p>
+<h3 id="preobrazovanije_tipov_qsp" class="avs-article-h3">Преобразование типов в QSP</h3><p class="avs-article-p">
 Эта статья поможет вам разобраться в таком сложном вопросе, как преобразование типов в операции присвоения, или в выражениях.
 </p>
-<p>
+<p class="avs-article-p">
 В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от <code>-2147483648</code> до <code>2147483647</code>; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
 </p>
-<p>
+<p class="avs-article-p">
 Вот как выглядят такие значения:
 </p>
 <div class="Monokai-Code">
@@ -35,22 +35,22 @@
 <span class="Monokai-String">'Ещё&nbsp;одна&nbsp;строка&nbsp;текста'</span><br/>
 <span class="Monokai-String">"Третья&nbsp;строка&nbsp;текста"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
 </p>
-<p>
+<p class="avs-article-p">
 Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак <code>=</code> и число:
 </p>
 <div class="Monokai-Code">
 box<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">13</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак <code>$</code>.
 </p>
 <div class="Monokai-Code">
 $text<span class="Monokai-Operator">=</span><span class="Monokai-String">'Текстовое&nbsp;значение'</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы попытаемся записать в текстовую переменную числовое значение, плеер автоматически преобразует число в текст, и в текстовой переменной окажется текстовое значение:
 </p>
 <div class="Monokai-Code">
@@ -60,7 +60,7 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</s
 <br/>
 $text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы попытаемся присвоить числовой переменной текстовое значение, плеер попытается преобразовать текстовое значение в числовое, но если преобразование невозможно, на экране появится ошибка.
 </p>
 <div class="Monokai-Code">
@@ -74,58 +74,58 @@ cell<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span>
 <br/>
 </span><span class="Monokai-Comment">!&nbsp;только&nbsp;для&nbsp;команды&nbsp;2&nbsp;не&nbsp;удастся&nbsp;выполнить&nbsp;преобразование&nbsp;типа</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Всё становится гораздо интереснее, если мы имеем дело не с отдельными значениями, а с выражениями.
 </p>
-<p>
+<p class="avs-article-p">
 Например, если мы попытаемся сложить два числа, то результатом сложения будет третье число:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">456</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;579</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если мы попытаемся «сложить» две строки, то мы их просто «склеим» (в программировании это называется конкатенация):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">"Hello"</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"World"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;строка&nbsp;"HelloWorld"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Но что будет, если мы попытаемся сложить число и строку?
 </p>
-<p>
+<p class="avs-article-p">
 А тут произойдёт вот что.
 </p>
-<p>
+<p class="avs-article-p">
 Если хотя бы одно из значений в выражении — числовое, плеер попытается все значения преобразовать в числовые и вычислить выражение:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"456"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;579</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если преобразование не удастся, то выполняется конкатенация:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Numeric">123</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"d456"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;строка&nbsp;123d456</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Строки можно только «складывать» или сравнивать, поэтому если вы попытаетесь проделать с ними какие-то другие штуки, плеер выдаст ошибку о несоответствии типов данных:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">"Hello"</span><span class="Monokai-Operator">-</span><span class="Monokai-String">"World"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;плеер&nbsp;выдаст&nbsp;ошибку&nbsp;101</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Однако, если возможно преобразование всех строк в числа, то можно сделать так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-String">"4560"</span><span class="Monokai-Operator">/</span><span class="Monokai-String">"3"</span><span class="Monokai-Operator">*</span><span class="Monokai-String">"9"</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;результатом&nbsp;будет&nbsp;число&nbsp;13680</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Таким образом, плеер обязательно преобразует тип к необходимому, если это возможно, особенно для операций присвоения.
 </p>
-<p>
+<p class="avs-article-p">
 Вам не нужно строго следить за тем, какие типы значений вы используете в выражениях, однако старайтесь избегать выражений, в которых математические операции применяются к строкам.
 </p>
-<p>
+<p class="avs-article-p">
 Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций <code>$str</code> и <code>val</code>:
 </p>
 <div class="Monokai-Code">
@@ -137,7 +137,7 @@ cell<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span>
 </span><span class="Monokai-Comment">!&nbsp;если&nbsp;не&nbsp;может&nbsp;преобразовать&nbsp;в&nbsp;число,&nbsp;возвращает&nbsp;ноль</span><br/>
 <span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"string"</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Не забывайте пользоваться подвыражениями, если нужно вставить значение в строку:
 </p>
 <div class="Monokai-Code">
@@ -145,7 +145,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 max_health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">350</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье:&nbsp;&lt;&lt;health&gt;&gt;/&lt;&lt;max_health&gt;&gt;."</span><br/>
 </div>
-<h4 id="post_scriptum_articles_0001" class="avs-article-h4">P.S.:</h4><p>
+<h4 id="post_scriptum_articles_0001" class="avs-article-h4">P.S.:</h4><p class="avs-article-p">
 Данную статью вы можете найти так же и на других ресурсах:
 </p>
 <ul>

@@ -14,40 +14,40 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotajut_drobnye_chisla_0087.html" class="avs-pages-button__link">&lt; Назад, к странице 86</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_udalit__predmet_0089.html" class="avs-pages-button__link">Вперёд, к странице 88 &gt;</a></div></div></div>
-<h3 id="faq_14_01" class="avs-article-h3">14.1. Как добавить предмет в окно предметов?</h3><p>
+<h3 id="faq_14_01" class="avs-article-h3">14.1. Как добавить предмет в окно предметов?</h3><p class="avs-article-p">
 В: Как добавить предмет в окно предметов?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Всё очень просто. Для этого используется оператор `addobj`. В качестве аргумента оператору передаётся название предмета:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Если нужно добавить предмет с картинкой, то вторым аргументом указывается путь к файлу картинки.
 </p>
-<p>
+<p class="avs-article-p">
 Например, файл картинки нашего предмета называется "screw.png" и лежит в папке "img", вложенной в папку с игрой, тогда предмет с картинкой можно добавить так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"img/screw.png"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Ещё картинку можно вставлять прямо в название предмета, используя html. Для этого включаем поддержку html в плеере, прописав, например на самой первой локации в игре, команду:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-SysVar">usehtml</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Далее добавляем предмет с картинкой, используя тег `&lt;img&gt;`. В атрибуте `src` этого тега указываем путь к файлу картинки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"&lt;img&nbsp;scr='img/screw.png'&gt;&nbsp;Отвёртка"</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Обратите внимание. Хотя при этом на экране мы будем видеть картинку и слово "Отвёртка", названием предмета будет вся строка "&lt;img scr='img/screw.png'&gt; Отвёртка".
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotajut_drobnye_chisla_0087.html" class="avs-pages-button__link">&lt; Назад, к странице 86</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_udalit__predmet_0089.html" class="avs-pages-button__link">Вперёд, к странице 88 &gt;</a></div></div></div>

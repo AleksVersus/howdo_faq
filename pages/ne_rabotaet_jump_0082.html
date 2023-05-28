@@ -14,10 +14,10 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_zviozdochka-pl_v_dejstvii_0079.html" class="avs-pages-button__link">&lt; Назад, к странице 80</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_(mnogostrochnoe)_0083.html" class="avs-pages-button__link">Вперёд, к странице 82 &gt;</a></div></div></div>
-<h3 id="faq_13_08" class="avs-article-h3">13.8. Не работает оператор `JUMP` — не может найти метку</h3><p>
+<h3 id="faq_13_08" class="avs-article-h3">13.8. Не работает оператор `JUMP` — не может найти метку</h3><p class="avs-article-p">
 В: Не работает оператор `JUMP` — не может найти метку.
 </p>
-<p>
+<p class="avs-article-p">
 У меня есть действие
 </p>
 <div class="Monokai-Code">
@@ -25,16 +25,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 и метка "loop", расположенная в той же локации, что и действие, но плеер пишет, что указанная метка не найдена.
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Дело в том, что оператор `jump` может "прыгать" только по меткам, которые находятся в его области видимости. В данном случае область видимости оператора `jump` будет ограничена кодом действия, а значит "прыгнуть" он сможет только на метку, расположенную внутри действия.
 </p>
-<p>
+<p class="avs-article-p">
 Данный вариант работать не будет:
 </p>
 <div class="Monokai-Code">
@@ -46,7 +46,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 А вот этот сработает:
 </p>
 <div class="Monokai-Code">
@@ -58,7 +58,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Сработает и этот вариант, поскольку код действия является частью кода локации, а значит входит в область видимости оператора `jump` (но действие при этом на экране не появится):
 </p>
 <div class="Monokai-Code">
@@ -68,7 +68,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!...&nbsp;какой-то&nbsp;код...</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Аналогичным образом нельзя "выпрыгнуть" из кода гиперссылки и из кода, переданного оператору `dynamic` или фyнкции `dyneval`.
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_zviozdochka-pl_v_dejstvii_0079.html" class="avs-pages-button__link">&lt; Назад, к странице 80</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/ne_rabotaet_uslovie_(mnogostrochnoe)_0083.html" class="avs-pages-button__link">Вперёд, к странице 82 &gt;</a></div></div></div>

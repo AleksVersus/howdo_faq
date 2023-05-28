@@ -15,28 +15,28 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="avs-pages-button__link">&lt; Назад, к странице 17</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="avs-pages-button__link">Вперёд, к странице 19 &gt;</a></div></div></div>
-<h5 id="informarch_flexible_playlist" class="avs-article-h5">Гибкий плейлист 1.0</h5><p>
+<h5 id="informarch_flexible_playlist" class="avs-article-h5">Гибкий плейлист 1.0</h5><p class="avs-article-p">
 Код гибкого плейлиста для воспроизведения фоновой музыки.
 </p>
-<p>
+<p class="avs-article-p">
 Огромное спасибо Byte за помощь в доработке.
 </p>
-<p>
+<p class="avs-article-p">
 Идея возникла в ходе работы по озвучке "Лабиринта страха", поскольку все скрипты плейлистов, которые я нашел, были недостаточно гибкими - по сути любой скрипт нужно было полностью переделывать под себя.
 </p>
-<p>
+<p class="avs-article-p">
 После ряда эксперементов у меня получилось сделать код, который можно использовать в любом проекте.
 </p>
-<p>
+<p class="avs-article-p">
 В основе плейлиста лежит понятие темы - списка файлов, которые проигрываются один за другим. Количество тем в игре и файлов в теме не ограничено. Плейлист также запоминает текущий файл в теме при смене темы и при выключении музыки. Поддерживаеться изменение громкости.
 </p>
-<p>
+<p class="avs-article-p">
 Для использования плейлиста в игре нужно сделать следующее:
 </p>
 <ol>
 <li>В локацию-счетчик добавить код плеера (весь код из локации counter)</li>
 <li>Сделать списки файлов в темах. Для этого нужно для каждой темы создать маcсив с именем $tracklist_название темы. То есть для темы default название массива должно быть $tracklist_default. Примеры списков можно найти в локации init_music.</li>
-<li><p>
+<li><p class="avs-article-p">
 Осталось только включить музыку и инициировать тему. Для этого в код добавляем</p>
 <div class="Monokai-Code">
 music_on<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><br/>
@@ -45,25 +45,25 @@ $music_theme&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Mono
 </div>
 </li>
 </ol>
-<p>
+<p class="avs-article-p">
 Переменная <code>music_on</code> отвечает за включение/выключение плейлиста. Выключить плейлист можно также с помощью <code>$music_theme = </code>''.
 </p>
-<p>
+<p class="avs-article-p">
 С помощью переменной <code>volume</code> изменяется громкость проигрывания.
 </p>
-<p>
+<p class="avs-article-p">
 В переменной <code>$music_theme</code> хранится название текущей темы. При ее изменении останавливается проигрывание текущей темы (при этом запоминается файл, на котором было остановлено проигрывание) и начинается прогрывание следующей.
 </p>
-<p>
+<p class="avs-article-p">
 Автор: <strong>WEREWOLF</strong>
 </p>
-<p>
+<p class="avs-article-p">
 06.04.2010 15:26
 </p>
-<p>
+<p class="avs-article-p">
 Оригинал статьи: https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=79:-10&amp;catid=36:2009-02-19-06-11-21&amp;Itemid=76
 </p>
-<p>
+<p class="avs-article-p">
 Скачать модуль гибкого плейлиста можно здесь: <a href="https://qsp.org/attachments/playlist.zip" style="text-decoration:none;" class="avs-page-external-link">playlist.zip</a>
 </p>
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="avs-pages-button__link">&lt; Назад, к странице 17</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="avs-pages-button__link">Вперёд, к странице 19 &gt;</a></div></div></div>

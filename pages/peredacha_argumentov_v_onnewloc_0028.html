@@ -14,16 +14,16 @@
             <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_sdelat__knopku_nazad_0027.html" class="avs-pages-button__link">&lt; Назад, к странице 28</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/kak_vstavit__muzyku_ili_zvuk_v_igru_0029.html" class="avs-pages-button__link">Вперёд, к странице 30 &gt;</a></div></div></div>
-<h3 id="faq_05_03" class="avs-article-h3">5.3. Почему в `args[]` на локации-обработчике перехода на новую локацию уже есть данные?</h3><p>
+<h3 id="faq_05_03" class="avs-article-h3">5.3. Почему в `args[]` на локации-обработчике перехода на новую локацию уже есть данные?</h3><p class="avs-article-p">
 В: Почему в `args[]` на локации-обработчике перехода на новую локацию уже есть данные?
 </p>
-<p>
+<p class="avs-article-p">
 О:
 </p>
-<p>
+<p class="avs-article-p">
 Таково устройство QSP. Если Вы передаёте аргументы при переходе на локацию с помощью оператора `goto`, `xgoto`, значения этих аргументов становятся доступны не только на текущей локации, на которую Вы перешли, но и на локации-обработчике перехода на новую локацию.
 </p>
-<p>
+<p class="avs-article-p">
 Пример такой работы:
 </p>
 <div class="Monokai-Code">
@@ -42,10 +42,10 @@
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-SysVar">$args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc"><br/>
 ---&nbsp;onNewLoc&nbsp;---------------------------------</span><br/>
 </div>
-<p>
+<p class="avs-article-p">
 Однако, обратите внимание: хотя на локацию, на которую был совершён переход, и на локацию-обработчик перехода на новую локацию передаются одинаковые данные, на обеих локациях с ними можно работать совершенно произвольно. То есть изменение `args[0]` на локации "комната" не отразится на значении `args[0]` в локации "onNewLoc" и туда всё равно будет передано исходное значение аргумента.
 </p>
-<p>
+<p class="avs-article-p">
 Пример такого поведения:
 </p>
 <div class="Monokai-Code">
