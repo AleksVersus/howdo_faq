@@ -832,7 +832,7 @@ class NewNode():
 			if len(self.includes_nodes)>0:
 				for node in self.includes_nodes:
 					text+=node.convert_to_html(parent=self, deep_level=deep_level+1)
-			text = f'<blockquote>\n{text}</blockquote>\n'
+			text = f'<blockquote class="avs-article-blockquote">\n{text}</blockquote>\n'
 
 		elif self.node_type == 'head':
 			text=""
