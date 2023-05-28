@@ -5,18 +5,16 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Как сделать?</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html" class="emHREFTT">&lt; Назад, к странице 163</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="emHREFTT">Вперёд, к странице 165 &gt;</a></div></div>
-<h4 id="faq_80_03">Функции</h4><h4 id="faq_80_03_curacts">$CURACTS</h4><p>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html" class="avs-pages-button__link">&lt; Назад, к странице 163</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="avs-pages-button__link">Вперёд, к странице 165 &gt;</a></div></div>
+<h4 id="faq_80_03" class="avs-article-h4">Функции</h4><h4 id="faq_80_03_curacts" class="avs-article-h4">$CURACTS</h4><p>
 `$CURACTS` —  данная функция возвращает выведенные на экран действия в виде кода QSP, как текстовое значение.
 </p>
 <p>
@@ -31,7 +29,7 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 </span><span class="Monokai-Comment">!&nbsp;восстанавливаем&nbsp;действия&nbsp;из&nbsp;переменной</span><br/>
 <span class="Monokai-Operator">dynamic</span>&nbsp;$actlist<br/>
 </div>
-<h4 id="faq_80_03_curloc">$CURLOC</h4><p>
+<h4 id="faq_80_03_curloc" class="avs-article-h4">$CURLOC</h4><p>
 `$CURLOC` —  функция возвращает название текущей локации, т.е. локации, в которой "находится" игрок.
 </p>
 <p>
@@ -46,7 +44,7 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"—&nbsp;Где&nbsp;я&nbsp;нахожусь?"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Это&nbsp;"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$curloc</span><span class="Monokai-Operator">+</span><span class="Monokai-String">"."</span><br/>
 </div>
-<h4 id="faq_80_03_desc">$DESC</h4><p>
+<h4 id="faq_80_03_desc" class="avs-article-h4">$DESC</h4><p>
 `$DESC` —  возвращает текст базового описания локации с заданным названием. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -67,7 +65,7 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 <p>
 Использование данной функции имеет смысл только если вы работает в редакторе `Quest Generator`, поскольку лишь из этого редактора доступно редактирование поля "Базовое описание" локации.
 </p>
-<h4 id="faq_80_03_dyneval">$DYNEVAL (DYNEVAL)</h4><p>
+<h4 id="faq_80_03_dyneval" class="avs-article-h4">$DYNEVAL (DYNEVAL)</h4><p>
 `DYNEVAL` —  выполняет код, переданный в виде строки текста, и возвращает результат, если он есть. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -92,9 +90,9 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 	Результат функции равен значению `$result` при возврате строкового значения или `result` при возврате числового значения. если при выполнении кода были установлены и `result`, и `$result`, то предпочтение отдаётся строковому значению. После выполнения кода предыдущие значения `args` и `result` восстанавливаются, затем продолжается выполнение кода после `dyneval`.
 </p>
 <p>
-	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html#faq_80_02_dynamic" style="text-decoration:none;" class="emFOLD">оператор `DYNAMIC`</a>.
+	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html#faq_80_02_dynamic" style="text-decoration:none;" class="avs-page-external-link">оператор `DYNAMIC`</a>.
 </p>
-<h4 id="faq_80_03_func">$FUNC (FUNC)</h4><p>
+<h4 id="faq_80_03_func" class="avs-article-h4">$FUNC (FUNC)</h4><p>
 `FUNC` —  выполнение кода указанной локации без непосредственного перехода на неё с возвращением значения.
 </p>
 <p>
@@ -145,7 +143,7 @@ $actlist<span class="Monokai-Operator">=</span><span class="Monokai-Func">$curac
 $name_loc<span class="Monokai-Operator">=</span><span class="Monokai-String">"summ"</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">func</span><span class="Monokai-Operator">(</span>$name_loc<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;276</span><br/>
 </div>
-<h4 id="faq_80_03_getobj">$GETOBJ</h4><p>
+<h4 id="faq_80_03_getobj" class="avs-article-h4">$GETOBJ</h4><p>
 `$GETOBJ` —  возвращает название предмета в Окне предметов, расположенного в заданной позиции. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -174,7 +172,7 @@ i&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_03_iif">$IIF (IIF)</h4><p>
+<h4 id="faq_80_03_iif" class="avs-article-h4">$IIF (IIF)</h4><p>
 `IIF` —  возвращает значение в зависимости от верности выражения.
 </p>
 <p>
@@ -201,7 +199,7 @@ y<span class="Monokai-Operator">=</span><span class="Monokai-Func">iif</span><sp
 </span><span class="Monokai-Comment">!&nbsp;типичное&nbsp;решение&nbsp;для&nbsp;вывода&nbsp;времени,&nbsp;чтобы&nbsp;не&nbsp;терять&nbsp;ноль&nbsp;на&nbsp;часах:</span><br/>
 <span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>hour<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">+</span><span class="Monokai-String">":"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$iif</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">&gt;</span><span class="Monokai-Numeric">9</span><span class="Monokai-Operator">,</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">)</span><span class="Monokai-Operator">,</span><span class="Monokai-String">"0"</span><span class="Monokai-Operator">+</span><span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span>minute<span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_input">$INPUT</h4><p>
+<h4 id="faq_80_03_input" class="avs-article-h4">$INPUT</h4><p>
 `$INPUT` —  возвращает интерпретатору введённый игроком текст, либо `''` (пустая строка), если была нажата кнопка "Отмена". Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -264,7 +262,7 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</s
 &nbsp;&nbsp;&nbsp;&nbsp;age<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span>$text<span class="Monokai-Operator">)</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_03_lcase">$LCASE</h4><p>
+<h4 id="faq_80_03_lcase" class="avs-article-h4">$LCASE</h4><p>
 `$LCASE` —  возвращает строку маленьких букв, полученную изменением регистра букв исходной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -281,7 +279,7 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-Func">$input</s
 <span class="Monokai-Func">$lcase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Привет,&nbsp;Алиса!'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'привет,&nbsp;алиса!'</span><br/>
 <span class="Monokai-Func">$lcase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Я&nbsp;НЕ&nbsp;ХОЧУ&nbsp;НА&nbsp;ВАС&nbsp;ОРАТЬ.'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'я&nbsp;не&nbsp;хочу&nbsp;на&nbsp;вас&nbsp;орать.'</span><br/>
 </div>
-<h4 id="faq_80_03_maintxt">$MAINTXT</h4><p>
+<h4 id="faq_80_03_maintxt" class="avs-article-h4">$MAINTXT</h4><p>
 `$MAINTXT` —  возвращает текст, выведенный в окно основного описания.
 </p>
 <p>
@@ -300,7 +298,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 </span><span class="Monokai-Comment">!&nbsp;выводим&nbsp;новый&nbsp;текст</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;$text_new<br/>
 </div>
-<h4 id="faq_80_03_max">$MAX (MAX)</h4><p>
+<h4 id="faq_80_03_max" class="avs-article-h4">$MAX (MAX)</h4><p>
 `MAX` —  возвращает максимальное из значений выражений-аргументов. Можно передавать от одного до девяти значений/аргументов. Если передан один аргумент, то считается, что указано имя массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -338,7 +336,7 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">,</span>b<span class="Monokai-Operator">,</span>c<span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;максимальное&nbsp;из&nbsp;значений&nbsp;переменных&nbsp;a,b,c</span><br/>
 <span class="Monokai-Func">$max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'aa'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'ab'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'zz'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'zz'</span><br/>
 </div>
-<h4 id="faq_80_03_mid">$MID</h4><p>
+<h4 id="faq_80_03_mid" class="avs-article-h4">$MID</h4><p>
 `$MID` —  позволяет вырезать из строки её часть. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -355,7 +353,7 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'abcdef'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;'abcdef'</span><br/>
 <span class="Monokai-Func">$mid</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'abcdef'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">8</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;''</span><br/>
 </div>
-<h4 id="faq_80_03_min">$MIN (MIN)</h4><p>
+<h4 id="faq_80_03_min" class="avs-article-h4">$MIN (MIN)</h4><p>
 `MIN` —  возвращает минимальное из значений выражений-аргументов. Можно передавать от одного до девяти значений/аргументов. Если передан один аргумент, то считается, что указано имя массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -394,13 +392,13 @@ $b<span class="Monokai-Operator">=</span><span class="Monokai-String">'a'</span>
 <span class="Monokai-Func">min</span><span class="Monokai-Operator">(</span>a<span class="Monokai-Operator">,</span>b<span class="Monokai-Operator">,</span>c<span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;минимальное&nbsp;из&nbsp;значений&nbsp;переменных&nbsp;a,b,c</span><br/>
 <span class="Monokai-Func">$min</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'aa'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'ab'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'zz'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'aa'</span><br/>
 </div>
-<h4 id="faq_80_03_qspver">$QSPVER</h4><p>
+<h4 id="faq_80_03_qspver" class="avs-article-h4">$QSPVER</h4><p>
 `$QSPVER` - возвращает версию интерпретатора в формате "X.Y.Z". Пример вызова:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;<span class="Monokai-Func">$qspver</span><span class="Monokai-Operator">&lt;</span><span class="Monokai-String">"5.7.0"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Ваша&nbsp;версия&nbsp;плеера&nbsp;не&nbsp;подходит&nbsp;для&nbsp;этой&nbsp;игры.&nbsp;Установите&nbsp;плеер&nbsp;версии&nbsp;5.7.0&nbsp;или&nbsp;выше."</span><br/>
 </div>
-<h4 id="faq_80_03_replace">$REPLACE</h4><p>
+<h4 id="faq_80_03_replace" class="avs-article-h4">$REPLACE</h4><p>
 `$REPLACE` —  общая запись:
 </p>
 <div class="Monokai-Code">
@@ -423,25 +421,25 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$text<br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$text_new<br/>
 </div>
-<h4 id="faq_80_03_selact">$SELACT</h4><p>
+<h4 id="faq_80_03_selact" class="avs-article-h4">$SELACT</h4><p>
 `$SELACT` —  возвращает название выделенного действия в любом месте игры.
 </p>
 <p>
 	Следует помнить, что выделение действия происходит при наведении на него указателя мыши, а не при непосредственном нажатии.
 </p>
 <p>
-	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onactsel" style="text-decoration:none;" class="emFOLD">`$onactsel`</a>
+	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onactsel" style="text-decoration:none;" class="avs-page-external-link">`$onactsel`</a>
 </p>
-<h4 id="faq_80_03_selobj">$SELOBJ</h4><p>
+<h4 id="faq_80_03_selobj" class="avs-article-h4">$SELOBJ</h4><p>
 `$SELOBJ` —  возвращает название выделенного предмета в любом месте игры. Выделение предмета происходит в момент нажатия (щелчка мышью по предмету) и не снимается до применения команды `unselect`.
 </p>
 <p>
-	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onobjsel" style="text-decoration:none;" class="emFOLD">`$onobjsel`</a>
+	Пример использования можно посмотреть в разделе <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_onobjsel" style="text-decoration:none;" class="avs-page-external-link">`$onobjsel`</a>
 </p>
-<h4 id="faq_80_03_stattxt">$STATTXT</h4><p>
+<h4 id="faq_80_03_stattxt" class="avs-article-h4">$STATTXT</h4><p>
 `$STATTXT` —  возвращает текст, выведенный в окно дополнительного описания. Может быть полезна для замены части текста в окне дополнительного описания.
 </p>
-<h4 id="faq_80_03_str">$STR</h4><p>
+<h4 id="faq_80_03_str" class="avs-article-h4">$STR</h4><p>
 `$STR` —  возвращает строку текста, полученную переводом числа в строку. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -453,7 +451,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <div class="Monokai-Code">
 <span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">56</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;превратит&nbsp;число&nbsp;56&nbsp;в&nbsp;строку&nbsp;"56"&nbsp;и&nbsp;выведет&nbsp;на&nbsp;экран</span><br/>
 </div>
-<h4 id="faq_80_03_strfind">$STRFIND</h4><p>
+<h4 id="faq_80_03_strfind" class="avs-article-h4">$STRFIND</h4><p>
 `$STRFIND` —  возвращает подстроку, соответствующую регулярному выражению, из указанной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -513,7 +511,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Func">$strfind</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'идти&nbsp;к&nbsp;дому'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'к\s(\S+)'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'дому'</span><br/>
 <span class="Monokai-Func">$strfind</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'идти&nbsp;к&nbsp;своему&nbsp;дому'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'к\s(\S+)'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'своему'</span><br/>
 </div>
-<h4 id="faq_80_03_trim">$TRIM</h4><p>
+<h4 id="faq_80_03_trim" class="avs-article-h4">$TRIM</h4><p>
 `$TRIM` —  возвращает указанную строку без прилегающих символов табуляции и пробелов. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -525,7 +523,7 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <div class="Monokai-Code">
 <span class="Monokai-Func">$trim</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trim&nbsp;test&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'trim&nbsp;test'</span><br/>
 </div>
-<h4 id="faq_80_03_ucase">$UCASE</h4><p>
+<h4 id="faq_80_03_ucase" class="avs-article-h4">$UCASE</h4><p>
 `$UCASE` —  возвращает строку больших букв, полученную изменением регистра букв исходной строки. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -542,10 +540,10 @@ $text_new<span class="Monokai-Operator">=</span><span class="Monokai-Func">$repl
 <span class="Monokai-Func">$ucase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Привет,&nbsp;Алиса!'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'ПРИВЕТ,&nbsp;АЛИСА!'</span><br/>
 <span class="Monokai-Func">$ucase</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'Я&nbsp;хочу&nbsp;на&nbsp;вас&nbsp;орать.'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;'Я&nbsp;ХОЧУ&nbsp;НА&nbsp;ВАС&nbsp;ОРАТЬ.'</span><br/>
 </div>
-<h4 id="faq_80_03_usrtxt">$USER_TEXT ($USRTXT)</h4><p>
+<h4 id="faq_80_03_usrtxt" class="avs-article-h4">$USER_TEXT ($USRTXT)</h4><p>
 `$USER_TEXT` —  в любом месте игры возвращает текст, который находится в строке ввода (поле ввода). Имеет краткую форму `$usrtxt`. Пример смотри в разделе `$usercom`.
 </p>
-<h4 id="faq_80_03_arrcomp">ARRCOMP</h4><p>
+<h4 id="faq_80_03_arrcomp" class="avs-article-h4">ARRCOMP</h4><p>
 `ARRCOMP` —  возвращает индекс элемента массива, соответствующего регулярному выражению. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает -1. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -618,7 +616,7 @@ index<span class="Monokai-Operator">=</span><span class="Monokai-Func">arrcomp</
 <br/>
 <span class="Monokai-Func">arrcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$A'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'This'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;эквивалентно&nbsp;1му&nbsp;варианту</span><br/>
 </div>
-<h4 id="faq_80_03_arrpos">ARRPOS</h4><p>
+<h4 id="faq_80_03_arrpos" class="avs-article-h4">ARRPOS</h4><p>
 `ARRPOS` —   возвращает индекс элемента массива, равного указанному значению. Поиск начинается с элемента с заданным номером; индексация элементов массива ведётся с нуля. Если указанное значение не найдено, функция возвращает -1. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -672,7 +670,7 @@ $color<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</sp
 </span><span class="Monokai-Comment">!&nbsp;поиск&nbsp;строки&nbsp;'test'&nbsp;среди&nbsp;значений&nbsp;массива&nbsp;"$b"</span><br/>
 <span class="Monokai-Func">arrpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'test'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_arrsize">ARRSIZE</h4><p>
+<h4 id="faq_80_03_arrsize" class="avs-article-h4">ARRSIZE</h4><p>
 `ARRSIZE` —  функция возвращает число элементов массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -703,7 +701,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$b'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;3</span><br/>
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'b'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;3</span><br/>
 </div>
-<h4 id="faq_80_03_countobj">COUNTOBJ</h4><p>
+<h4 id="faq_80_03_countobj" class="avs-article-h4">COUNTOBJ</h4><p>
 `COUNTOBJ` —  возвращает количество предметов в инвентаре.
 </p>
 <p>
@@ -712,7 +710,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <div class="Monokai-Code">
 <span class="Monokai-Func">$getobj</span><span class="Monokai-Operator">(</span><span class="Monokai-Func">countobj</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_instr">INSTR</h4><p>
+<h4 id="faq_80_03_instr" class="avs-article-h4">INSTR</h4><p>
 `INSTR` —  возвращает номер символа, с которого начинается вхождение подстроки в строку. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -743,7 +741,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <div class="Monokai-Code">
 <span class="Monokai-Func">INSTR</span><span class="Monokai-Operator">(</span><span class="Monokai-Operator">[</span>$строка<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>$подстрока<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#начало])</span><br/>
 </div>
-<h4 id="faq_80_03_isnum">ISNUM</h4><p>
+<h4 id="faq_80_03_isnum" class="avs-article-h4">ISNUM</h4><p>
 `ISNUM` —  функция возвращает -1 (истина), если переданная строка является числом, и  — 0, если строка не является числом. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -764,7 +762,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">isnum</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'777a6'</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 <span class="Monokai-Func">isnum</span><span class="Monokai-Operator">(</span><span class="Monokai-String">''</span><span class="Monokai-Operator">)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1,&nbsp;так&nbsp;как&nbsp;нет&nbsp;ни&nbsp;одной&nbsp;не-цифры&nbsp;(пустая&nbsp;строка&nbsp;считается&nbsp;нулём)</span><br/>
 </div>
-<h4 id="faq_80_03_isplay">ISPLAY</h4><p>
+<h4 id="faq_80_03_isplay" class="avs-article-h4">ISPLAY</h4><p>
 `ISPLAY` —  функция проверяет, проигрывается ли в данный момент файл с указанным названием, и если проигрывается, возвращает -1. В противном случае функция возвращает 0. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -779,7 +777,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <div class="Monokai-Code">
 <span class="Monokai-Func">isplay</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'music/mountsound.mp3'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_len">LEN</h4><p>
+<h4 id="faq_80_03_len" class="avs-article-h4">LEN</h4><p>
 `LEN` —  возвращает длину указанной строки текста (количество символов). Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -796,7 +794,7 @@ b<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><s
 <span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"тысячадевятьсотвосьмидесятидевятимиллиметровый"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;46</span><br/>
 <span class="Monokai-Func">len</span><span class="Monokai-Operator">(</span><span class="Monokai-String">""</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;значение&nbsp;0</span><br/>
 </div>
-<h4 id="faq_80_03_msecscount">MSECSCOUNT</h4><p>
+<h4 id="faq_80_03_msecscount" class="avs-article-h4">MSECSCOUNT</h4><p>
 `MSECSCOUNT` —  возвращает количество миллисекунд, прошедших с момента начала игры. Данная функция при использовании на локации-счётчике позволяет организовывать различные события, происходящие в реальном времени. Так же, с помощью этой функции можно делать замеры быстродействия различных участков кода в вашей игре:
 </p>
 <div class="Monokai-Code">
@@ -811,7 +809,7 @@ old_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecscount</span><br/>
 <span class="Monokai-Operator">pl</span>&nbsp;new_time<span class="Monokai-Operator">-</span>old_time<br/>
 </div>
-<h4 id="faq_80_03_rand">RAND</h4><p>
+<h4 id="faq_80_03_rand" class="avs-article-h4">RAND</h4><p>
 `RAND` —  возвращает случайное число между двумя указанными числами. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -829,7 +827,7 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;случайное&nbsp;значение&nbsp;от&nbsp;0(1)&nbsp;до&nbsp;1000</span><br/>
 <span class="Monokai-Func">rand</span>&nbsp;<span class="Monokai-Numeric">1000</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;случайное&nbsp;значение&nbsp;от&nbsp;0(1)&nbsp;до&nbsp;1000</span><br/>
 </div>
-<h4 id="faq_80_03_rgb">RGB</h4><p>
+<h4 id="faq_80_03_rgb" class="avs-article-h4">RGB</h4><p>
 `RGB` —  возвращает числовой код цвета на основе трёх числовых аргумнтов, каждый из которых соответствует составляющей требуемого цвета. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -849,13 +847,13 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 </span><span class="Monokai-Comment">!&nbsp;текст&nbsp;светло-зелёного&nbsp;цвета</span><br/>
 <span class="Monokai-SysVar">fcolor</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">rgb</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">255</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_rnd">RND</h4><p>
+<h4 id="faq_80_03_rnd" class="avs-article-h4">RND</h4><p>
 `RND` - возвращает случайное значение от 1 до 1000. Аналогично команде:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">rand</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1000</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="faq_80_03_strcomp">STRCOMP</h4><p>
+<h4 id="faq_80_03_strcomp" class="avs-article-h4">STRCOMP</h4><p>
 `STRCOMP` —  проводит сравнение строки с регулярным выражением и, если строка соответствует регулярному выражению, возвращает -1 (истина), а если не соответствует — 0 (ложь). Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -879,7 +877,7 @@ new_time<span class="Monokai-Operator">=</span><span class="Monokai-Func">msecsc
 <span class="Monokai-Func">strcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'&nbsp;иду&nbsp;в&nbsp;лес&nbsp;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s+\S+\s+\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;-1</span><br/>
 <span class="Monokai-Func">strcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'однословие'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\s?\S+\s+\S+\s+\S+\s?'</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0</span><br/>
 </div>
-<h4 id="faq_80_03_strpos">STRPOS</h4><p>
+<h4 id="faq_80_03_strpos" class="avs-article-h4">STRPOS</h4><p>
 `STRPOS` —  возвращает позицию символа, с которого начинается вхождение подстроки, соответствующей регулярному выражению, в указанную строку. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -930,7 +928,7 @@ $regexp<span class="Monokai-Operator">=</span><span class="Monokai-String">"зе
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"Ты&nbsp;швырнул&nbsp;в&nbsp;него&nbsp;зелёным&nbsp;яблоком!"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;27</span><br/>
 <span class="Monokai-Func">strpos</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"полный&nbsp;ящик&nbsp;зелёных&nbsp;яблок"</span><span class="Monokai-Operator">,</span>$regexp<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;вернёт&nbsp;0,&nbsp;потому&nbsp;что&nbsp;мы&nbsp;не&nbsp;учли&nbsp;форму</span><br/>
 </div>
-<h4 id="faq_80_03_val">VAL</h4><p>
+<h4 id="faq_80_03_val" class="avs-article-h4">VAL</h4><p>
 `VAL` —  переводит указанную строку цифр в соответствующее число. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -948,33 +946,33 @@ $regexp<span class="Monokai-Operator">=</span><span class="Monokai-String">"зе
 <div class="Monokai-Code">
 яблоки<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span><span class="Monokai-Operator">(</span>$яблоки<span class="Monokai-Operator">)</span><br/>
 </div>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html" class="emHREFTT">&lt; Назад, к странице 163</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="emHREFTT">Вперёд, к странице 165 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0176.html" class="avs-pages-button__link">&lt; Назад, к странице 163</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html" class="avs-pages-button__link">Вперёд, к странице 165 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
-    <script src="../res/js/text_replace.js"></script>
+    </aside>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>
 </html>

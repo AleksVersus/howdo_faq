@@ -5,22 +5,21 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Статьи</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>Статьи по разработке игр на QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/soderzhanie_0000.html" class="emHREFTT">&lt; Назад, к странице 1</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="emHREFTT">Вперёд, к странице 3 &gt;</a></div></div>
-<h3 id="preobrazovanije_tipov_qsp">Преобразование типов в QSP</h3><p>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/soderzhanie_0000.html" class="avs-pages-button__link">&lt; Назад, к странице 1</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="avs-pages-button__link">Вперёд, к странице 3 &gt;</a></div></div>
+<h3 id="preobrazovanije_tipov_qsp" class="avs-article-h3">Преобразование типов в QSP</h3><p>
 Эта статья поможет вам разобраться в таком сложном вопросе, как преобразование типов в операции присвоения, или в выражениях.
 </p>
 <p>
-В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от <span class="em_BLCK">-2147483648</span> до <span class="em_BLCK">2147483647</span>; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
+В QSP существует всего два типа значений: числовой и текстовый. Числовой означает любое целочисленное число в пределах от <code>-2147483648</code> до <code>2147483647</code>; а текстовый — любую строку текста (нет, на самом деле любую. Ограничения для строк — 2 Гб текста).
 </p>
 <p>
 Вот как выглядят такие значения:
@@ -40,13 +39,13 @@
 Для хранения значений мы используем переменные или массивы. И точно так же массивы и переменные (далее просто — переменные) бывают двух типов.
 </p>
 <p>
-Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак <span class="em_BLCK">=</span> и число:
+Чтобы записать в числовую переменную числовое значение, мы просто пишем имя переменной, знак <code>=</code> и число:
 </p>
 <div class="Monokai-Code">
 box<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">13</span><br/>
 </div>
 <p>
-Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак <span class="em_BLCK">$</span>.
+Чтобы записать в текстовую переменную текстовое значение, перед именем переменной мы обязательно ставим знак <code>$</code>.
 </p>
 <div class="Monokai-Code">
 $text<span class="Monokai-Operator">=</span><span class="Monokai-String">'Текстовое&nbsp;значение'</span><br/>
@@ -127,7 +126,7 @@ cell<span class="Monokai-Operator">=</span><span class="Monokai-Func">val</span>
 Вам не нужно строго следить за тем, какие типы значений вы используете в выражениях, однако старайтесь избегать выражений, в которых математические операции применяются к строкам.
 </p>
 <p>
-Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций <span class="em_BLCK">$str</span> и <span class="em_BLCK">val</span>:
+Старайтесь не использовать строковые и числовые значения в одном выражении, либо приводите их к требуемому типу с помощью функций <code>$str</code> и <code>val</code>:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">$str</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1234</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;преобразует&nbsp;число&nbsp;в&nbsp;строку</span><span class="Monokai-Operator"><br/>
@@ -146,41 +145,41 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 max_health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">350</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье:&nbsp;&lt;&lt;health&gt;&gt;/&lt;&lt;max_health&gt;&gt;."</span><br/>
 </div>
-<h4 id="post_scriptum_articles_0001">P.S.:</h4><p>
+<h4 id="post_scriptum_articles_0001" class="avs-article-h4">P.S.:</h4><p>
 Данную статью вы можете найти так же и на других ресурсах:
 </p>
 <ul>
-<li><a href="http://aleksversus.narod.ru/index/preobrazovanie_tipov_v_qsp/0-53" style="text-decoration:none;" class="emFOLD">мой_сайт/преобразование_типов_в_QSP</a></li>
-<li><a href="https://aleksversus.medium.com/преобразование-типов-в-qsp-8eec585f93e2" style="text-decoration:none;" class="emFOLD">medium/Преобразование типов в QSP</a></li>
-<li><a href="https://vk.com/@qsplayer-preobrazovanie-tipov-v-qsp" style="text-decoration:none;" class="emFOLD">vk.com/Преобразование типов в QSP</a></li>
-<li><a href="https://ifhub.club/2020/09/23/preobrazovanie-tipov-v-qsp.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Преобразование типов в QSP</a></li>
+<li><a href="http://aleksversus.narod.ru/index/preobrazovanie_tipov_v_qsp/0-53" style="text-decoration:none;" class="avs-page-external-link">мой_сайт/преобразование_типов_в_QSP</a></li>
+<li><a href="https://aleksversus.medium.com/преобразование-типов-в-qsp-8eec585f93e2" style="text-decoration:none;" class="avs-page-external-link">medium/Преобразование типов в QSP</a></li>
+<li><a href="https://vk.com/@qsplayer-preobrazovanie-tipov-v-qsp" style="text-decoration:none;" class="avs-page-external-link">vk.com/Преобразование типов в QSP</a></li>
+<li><a href="https://ifhub.club/2020/09/23/preobrazovanie-tipov-v-qsp.html" style="text-decoration:none;" class="avs-page-external-link">ifhub.club/Преобразование типов в QSP</a></li>
 </ul>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/soderzhanie_0000.html" class="emHREFTT">&lt; Назад, к странице 1</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="emHREFTT">Вперёд, к странице 3 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/soderzhanie_0000.html" class="avs-pages-button__link">&lt; Назад, к странице 1</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="avs-pages-button__link">Вперёд, к странице 3 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

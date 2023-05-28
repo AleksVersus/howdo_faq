@@ -5,28 +5,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: ИнформАрхив</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>ИнформАрхив QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
-<h5 id="informarch_calend_jul">Календарь по методу счёта Юлианский дней</h5><p>
-Календарь по рецепту <strong>evp</strong>. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=956&amp;Itemid=57" style="text-decoration:none;" class="emFOLD">серии сообщений</a>.
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">&lt; Назад, к странице 15</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="avs-pages-button__link">Вперёд, к странице 17 &gt;</a></div></div>
+<h5 id="informarch_calend_jul" class="avs-article-h5">Календарь по методу счёта Юлианский дней</h5><p>
+Календарь по рецепту <strong>evp</strong>. Синтетическая статья, основанная на <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=956&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">серии сообщений</a>.
 </p>
 <p>
 Давным-давно были разработаны формулы для вычисления точной календарной даты из Юлианской даты. Юлианская дата — это число, показывающее, сколько точно прошло дней, начиная с полудня понедельника 24 ноября 4714 года до нашей эры.
 </p>
 <p>
-Для тех, кто интересуется теорией, на википедии есть замечательная <a href="https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0" style="text-decoration:none;" class="emFOLD">статья, всё подробно разъясняющая</a>. Нас же интересуют непосредственно формулы, и что мы из них можем получить.
+Для тех, кто интересуется теорией, на википедии есть замечательная <a href="https://ru.wikipedia.org/wiki/%D0%AE%D0%BB%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B0%D1%82%D0%B0" style="text-decoration:none;" class="avs-page-external-link">статья, всё подробно разъясняющая</a>. Нас же интересуют непосредственно формулы, и что мы из них можем получить.
 </p>
 <p>
-<strong>evp</strong> уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации <span class="em_BLCK">"calendar"</span>.
+<strong>evp</strong> уже переложил все необходимые расчёты на QSP. Следующий код достаточно просто скопировать на отдельную локацию, и его можно тут же начать использовать. Для примера, будем считать, что данный код находится на локации <code>"calendar"</code>.
 </p>
 <div class="Monokai-Code">
 JDN&nbsp;<span class="Monokai-Operator">=</span>&nbsp;JDNStart&nbsp;<span class="Monokai-Operator">+</span>&nbsp;time<span class="Monokai-Operator">/</span><span class="Monokai-Numeric">1440</span><br/>
@@ -48,19 +47,19 @@ $hour&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Fun
 $minut&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>minut&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'0&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;minut&gt;&gt;'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В самом начале игры нам нужно задать переменные <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span>. Именно эти переменные будут хранить точное значение времени в нашей игре.
+В самом начале игры нам нужно задать переменные <code>JDNStart</code> и <code>time</code>. Именно эти переменные будут хранить точное значение времени в нашей игре.
 </p>
 <p>
-<span class="em_BLCK">JDNStart</span> показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
+<code>JDNStart</code> показывает, когда наша игра должна начаться. Эта переменная содержит число дней, прошедших с полудня понедельника 24 ноября 4714 года д.н.э и до начала нашей игры.
 </p>
 <p>
-К примеру, наша игра должна начаться 7 ноября 1917 года, в среду. Открываем <a href="https://promenade.imcce.fr/en/pages2/278.html" style="text-decoration:none;" class="emFOLD">калькулятор</a>. Подставляем в нужные поля дату 7 ноября 1917, а время пишем 12 часов 00 минут 00 секунд. Юлианский день начинается с полудня! И получаем число 2421540. Точное, без дробной части, число дней.
+К примеру, наша игра должна начаться 7 ноября 1917 года, в среду. Открываем <a href="https://promenade.imcce.fr/en/pages2/278.html" style="text-decoration:none;" class="avs-page-external-link">калькулятор</a>. Подставляем в нужные поля дату 7 ноября 1917, а время пишем 12 часов 00 минут 00 секунд. Юлианский день начинается с полудня! И получаем число 2421540. Точное, без дробной части, число дней.
 </p>
 <p>
-Это самое число и есть наш <span class="em_BLCK">JDNStart</span>, вот и записываем 2421540 в переменную.
+Это самое число и есть наш <code>JDNStart</code>, вот и записываем 2421540 в переменную.
 </p>
 <p>
-А в переменную <span class="em_BLCK">time</span> мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную <span class="em_BLCK">time</span> записать число <span class="em_BLCK">15*60+37</span>.
+А в переменную <code>time</code> мы записываем, соответственно, число минут, прошедших с начала стартового дня нашей игры (не от полудня, а от полуночи). Например, наша игра стартует в 15:37. Значит с начала дня прошло 15 часов 37 минут, и значит на старте игры мы должны в переменную <code>time</code> записать число <code>15*60+37</code>.
 </p>
 <p>
 Итого мы будем иметь две строчки кода на самой первой локации в нашей игре, описывающие время:
@@ -70,7 +69,7 @@ JDNStart<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">242
 time<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">15</span><span class="Monokai-Operator">*</span><span class="Monokai-Numeric">60</span><span class="Monokai-Operator">+</span><span class="Monokai-Numeric">37</span><br/>
 </div>
 <p>
-Помимо <span class="em_BLCK">JDNStart</span> и <span class="em_BLCK">time</span> на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
+Помимо <code>JDNStart</code> и <code>time</code> на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
 </p>
 <div class="Monokai-Code">
 $weekday<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-String">'Понедельник'</span><br/>
@@ -97,7 +96,7 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
 И вот теперь всё готово для того, чтобы мы могли пользоваться полноценным календарём в нашей игре.
 </p>
 <p>
-Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной <span class="em_BLCK">time</span>. Например:
+Дальше всё просто. Каждый раз, когда мы совершаем действие, которое должно занять какое-то время, в коде этого действия необходимо предусмотреть изменение переменной <code>time</code>. Например:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">'Ехать&nbsp;в&nbsp;Смольный'</span><span class="Monokai-Operator">:</span><br/>
@@ -106,17 +105,17 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
 <span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-Нажав на действие, мы изменим значение переменной <span class="em_BLCK">time</span>, т.е. переместимся во времени на 45 минут, и с помощью оператора <span class="em_BLCK">goto</span> переместимся на локацию <span class="em_BLCK">"smolny"</span>.
+Нажав на действие, мы изменим значение переменной <code>time</code>, т.е. переместимся во времени на 45 минут, и с помощью оператора <code>goto</code> переместимся на локацию <code>"smolny"</code>.
 </p>
 <p>
-Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации <span class="em_BLCK">"calendar"</span>, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
+Чтобы увидеть то самое изменение времени на экране, мы должны просто вызвать код локации <code>"calendar"</code>, чтобы все значения пересчитались, а затем вывести нужные значения на экран. Например, так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">gs</span>&nbsp;<span class="Monokai-String">'calendar'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;$weekday<span class="Monokai-Operator">[</span>weekday<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">','</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;day&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$month<span class="Monokai-Operator">[</span>month<span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;year&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'года'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">'.&nbsp;'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$hour&nbsp;<span class="Monokai-Operator">+</span>&nbsp;<span class="Monokai-String">':'</span>&nbsp;<span class="Monokai-Operator">+</span>&nbsp;$minut<br/>
 </div>
 <p>
-Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации <span class="em_BLCK">"calendar"</span>:
+Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации <code>"calendar"</code>:
 </p>
 <div class="Monokai-Code">
 $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">iif</span>&nbsp;<span class="Monokai-Operator">(</span>year&nbsp;<span class="Monokai-Operator">&lt;</span>&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;-year+1&gt;&gt;&nbsp;г.&nbsp;до&nbsp;н.э.'</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'&lt;&lt;year&gt;&gt;&nbsp;г.'</span><span class="Monokai-Operator">)</span><span class="Monokai-Operator">)</span><br/>
@@ -128,7 +127,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 Для закрепления понимания того, как это всё работает, напишите несколько локаций:
 </p>
 <p>
-<span class="em_BLCK">Локация "smolny"</span>
+<code>Локация "smolny"</code>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Смольный'</span><br/>
@@ -140,7 +139,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Локация "station"</span>
+<code>Локация "station"</code>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Вокзал'</span><br/>
@@ -157,7 +156,7 @@ $year_text&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monoka
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Koperator">end</span><br/>
 </div>
 <p>
-<span class="em_BLCK">Локация "moscow"</span>
+<code>Локация "moscow"</code>
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span><span class="Monokai-String">'Москва'</span><br/>
@@ -203,32 +202,32 @@ $month<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">12</s
 <p>
 Пробуйте запустить и следите за датой 🙂
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">&lt; Назад, к странице 15</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="emHREFTT">Вперёд, к странице 17 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">&lt; Назад, к странице 15</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/game_time_0015.html" class="avs-pages-button__link">Вперёд, к странице 17 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

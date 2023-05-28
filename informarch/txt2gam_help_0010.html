@@ -5,34 +5,33 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: ИнформАрхив</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>ИнформАрхив QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="emHREFTT">&lt; Назад, к странице 11</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">Вперёд, к странице 13 &gt;</a></div></div>
-<h5 id="informarch_txt2gam_manual">TXT2GAM. Краткое руководство</h5><p>
-Утилита "TXT2GAM" ("txt2gam.exe") предназначена для конвертирования текстовых файлов, написанных в специальном формате, в файлы QSP-игр <span class="em_BLCK">.qsp</span>. Таким образом вы можете создавать игры в обычном текстовом редакторе, а затем конвертировать их в приемлемые для плееров файлы.
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="avs-pages-button__link">&lt; Назад, к странице 11</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">Вперёд, к странице 13 &gt;</a></div></div>
+<h5 id="informarch_txt2gam_manual" class="avs-article-h5">TXT2GAM. Краткое руководство</h5><p>
+Утилита "TXT2GAM" ("txt2gam.exe") предназначена для конвертирования текстовых файлов, написанных в специальном формате, в файлы QSP-игр <code>.qsp</code>. Таким образом вы можете создавать игры в обычном текстовом редакторе, а затем конвертировать их в приемлемые для плееров файлы.
 </p>
 <p>
-<a href="https://qsp.org/attachments/txt2gam011.zip" style="text-decoration:none;" class="emFOLD">Скачать утилиту</a>
+<a href="https://qsp.org/attachments/txt2gam011.zip" style="text-decoration:none;" class="avs-page-external-link">Скачать утилиту</a>
 </p>
-<h5 id="format-txt2gam">Формат TXT2GAM</h5><p>
+<h5 id="format-txt2gam" class="avs-article-h5">Формат TXT2GAM</h5><p>
 Файлы в формате TXT2GAM — это обычные текстовые файлы, в которых мы размещаем код QSP, при этом данный код нужно записывать по определённым правилам.
 </p>
 <p>
-Начало локации отмечается символом <span class="em_BLCK">#</span> (решётка/диез), после которого должен стоять пробел и название локации. Например так:
+Начало локации отмечается символом <code>#</code> (решётка/диез), после которого должен стоять пробел и название локации. Например так:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;начало</span><br/>
 </div>
 <p>
-Конец локации обозначается символом <span class="em_BLCK">-</span> (дефис) в отдельной строке. После этого символа в той же строке могут идти любые символы, например, снова название локации:
+Конец локации обозначается символом <code>-</code> (дефис) в отдельной строке. После этого символа в той же строке могут идти любые символы, например, снова название локации:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">-</span>&nbsp;начало<br/>
@@ -66,7 +65,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 Между локациями в таком файле может быть записан любой текст, он не попадёт в конечный файл игры. Поэтому вы можете помещать туда различные комментарии, команды препроцессора и другой сопроводительный текст.
 </p>
 <p>
-Поскольку концом локации считается символ <span class="em_BLCK">-</span> в начале отдельно стоящей строки, могут возникнуть ошибки, если вы напишете команду, наподобие этой:
+Поскольку концом локации считается символ <code>-</code> в начале отдельно стоящей строки, могут возникнуть ошибки, если вы напишете команду, наподобие этой:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">-</span><span class="Monokai-Operator">(</span>x<span class="Monokai-Operator">+</span><span class="Monokai-Numeric">23</span><span class="Monokai-Operator">)</span><br/>
@@ -89,7 +88,7 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 -&nbsp;локация&nbsp;2</span><br/>
 </div>
 <p>
-Если не закрыть локацию строкой начинающейся с <span class="em_BLCK">-</span>, новую локацию открыть будет нельзя, а значит строка, начинающаяся с символа <span class="em_BLCK">#</span> может вызвать ошибку "Неизвестное действие" в конечной игре:
+Если не закрыть локацию строкой начинающейся с <code>-</code>, новую локацию открыть будет нельзя, а значит строка, начинающаяся с символа <code>#</code> может вызвать ошибку "Неизвестное действие" в конечной игре:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;начало</span><br/>
@@ -101,8 +100,8 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">1</span><s
 <p>
 Внимание! Для формата TXT2GAM не предусмотрено редактирование базового описания и базовых действий. Поэтому при экспорте игры из Quest Generator в формат TXT2GAM будьте внимательны: все базовые описания и базовые действия будут экспортированы в основной код локаций. Если впоследствии вы импортируете игру обратно из TXT2GAM-файла в Quest Generator, то поля "Описание" и "Базовые действия" во всех локациях окажутся пустыми.
 </p>
-<h5 id="ispol_zovanie-utility-txt2gam">Использование утилиты TXT2GAM</h5><p>
-TXT2GAM — это консольная утилита, т.е. она запускается командами из консоли, например из командной строки Windows. Ознакомиться с основными командами командной строки вы можете в обучающей статье <a href="https://sonikelf.ru/vvodnaya-statya-po-rabote-v-konsoli-chto-takoe-konsol-komandy-konsoli-i-prochee-takoe-raznoe-cmd/" style="text-decoration:none;" class="emFOLD">"Что такое консоль, команды и прочее такое разное — CMD"</a>.
+<h5 id="ispol_zovanie-utility-txt2gam" class="avs-article-h5">Использование утилиты TXT2GAM</h5><p>
+TXT2GAM — это консольная утилита, т.е. она запускается командами из консоли, например из командной строки Windows. Ознакомиться с основными командами командной строки вы можете в обучающей статье <a href="https://sonikelf.ru/vvodnaya-statya-po-rabote-v-konsoli-chto-takoe-konsol-komandy-konsoli-i-prochee-takoe-raznoe-cmd/" style="text-decoration:none;" class="avs-page-external-link">"Что такое консоль, команды и прочее такое разное — CMD"</a>.
 </p>
 <p>
 Пример работы с утилитой:
@@ -111,20 +110,20 @@ TXT2GAM — это консольная утилита, т.е. она запус
 txt2gam.exe&nbsp;game.txt&nbsp;game.qsp
 </div>
 <p>
-Здесь: <span class="em_BLCK">game.txt</span> — исходный файл вашей игры, написанный в формате TXT2GAM; <span class="em_BLCK">game.qsp</span> — конечный файл, в котором будет сохранена ваша игра.
+Здесь: <code>game.txt</code> — исходный файл вашей игры, написанный в формате TXT2GAM; <code>game.qsp</code> — конечный файл, в котором будет сохранена ваша игра.
 </p>
 <p>
-Предположим, вы написали игру в текстовом редакторе, и теперь она у вас лежит в виде файла <span class="em_BLCK">game.txt</span> на диске "<span class="em_BLCK">D:</span>" в папке "<span class="em_BLCK">QSP\Games\myCoolGame</span>".
+Предположим, вы написали игру в текстовом редакторе, и теперь она у вас лежит в виде файла <code>game.txt</code> на диске "<code>D:</code>" в папке "<code>QSP\Games\myCoolGame</code>".
 </p>
 <p>
-Для удобства скопируйте утилиту TXT2GAM (т.е. файл <span class="em_BLCK">txt2gam.exe</span>) в папку с игрой. Теперь для конвертирования игры вам нужно сделать следующее:
+Для удобства скопируйте утилиту TXT2GAM (т.е. файл <code>txt2gam.exe</code>) в папку с игрой. Теперь для конвертирования игры вам нужно сделать следующее:
 </p>
 <ol>
 <li>Откройте консоль</li>
-<li>Перейдите на диск "<span class="em_BLCK">D:</span>", введя команду <span class="em_BLCK">D:</span> в командной строке и нажав клавишу "Enter".</li>
-<li>Перейдите в папку с вашей игрой с помощью команды <span class="em_BLCK">cd</span>. В нашем примере это делается так <span class="em_BLCK">cd "QSP\Games\myCoolGame"</span></li>
+<li>Перейдите на диск "<code>D:</code>", введя команду <code>D:</code> в командной строке и нажав клавишу "Enter".</li>
+<li>Перейдите в папку с вашей игрой с помощью команды <code>cd</code>. В нашем примере это делается так <code>cd "QSP\Games\myCoolGame"</code></li>
 <li><p>
-Запустите утилиту TXT2GAM, указав в качестве параметров сначала исходный файл вашей игры (т.е. <span class="em_BLCK">game.txt</span>), а затем название файла, который хотите получить, например <span class="em_BLCK">myCoolGame.qsp</span>:</p>
+Запустите утилиту TXT2GAM, указав в качестве параметров сначала исходный файл вашей игры (т.е. <code>game.txt</code>), а затем название файла, который хотите получить, например <code>myCoolGame.qsp</code>:</p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp
 </div>
@@ -143,34 +142,34 @@ txt2gam.exe&nbsp;"D:\QSP\Games\myCoolGame\game.txt"&nbsp;"D:\QSP\releases\myCool
 txt2gam.exe
 </div>
 <p>
-Если указать ключ <span class="em_BLCK">u</span>, исходный файл будет обрабатываться как Unicode-файл (кодировка UCS-2 LE / UTF-16 LE):
+Если указать ключ <code>u</code>, исходный файл будет обрабатываться как Unicode-файл (кодировка UCS-2 LE / UTF-16 LE):
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;game.txt&nbsp;myCoolGame.qsp&nbsp;u<br/>
 </div>
-<h5 id="dopolnitel_nye-vozmozhnosti-utility">Дополнительные возможности утилиты</h5><h5 id="ispol_zovanie">Использование</h5><p>
+<h5 id="dopolnitel_nye-vozmozhnosti-utility" class="avs-article-h5">Дополнительные возможности утилиты</h5><h5 id="ispol_zovanie" class="avs-article-h5">Использование</h5><p>
 Общий вид команды для консоли:
 </p>
 <div class="Monokai-Code">
 txt2gam&nbsp;[txt&nbsp;file]&nbsp;[output&nbsp;file]&nbsp;[options]
 </div>
-<h5 id="optsii-options">Опции. [Options]</h5><p>
+<h5 id="optsii-options" class="avs-article-h5">Опции. [Options]</h5><p>
 a, A — режим ANSI. По-умолчанию утилита работает в режиме Unicode (UCS-2 / UTF-16).
 </p>
 <p>
 u, U — режим Unicode (UCS-2 LE/ UTF-16 LE).
 </p>
 <p>
-o, O — сохранить игру в старом формате (<span class="em_BLCK">.gam</span>). По умолчанию используется новый формат (<span class="em_BLCK">.qsp</span>).
+o, O — сохранить игру в старом формате (<code>.gam</code>). По умолчанию используется новый формат (<code>.qsp</code>).
 </p>
 <p>
-s[char], S[char] — вместо [char] нужно указать символ, с которого начинаются ваши локации. Т.е. это символ, который вы можете использовать вместо <span class="em_BLCK">#</span>, если это необходимо.
+s[char], S[char] — вместо [char] нужно указать символ, с которого начинаются ваши локации. Т.е. это символ, который вы можете использовать вместо <code>#</code>, если это необходимо.
 </p>
 <p>
-e[char], E[char] — вместо [char] нужно указать символ, которым будет отмечаться конец локации. Т.е. это символ, который вы можете использовать вместо <span class="em_BLCK">-</span>, если это необходимо.
+e[char], E[char] — вместо [char] нужно указать символ, которым будет отмечаться конец локации. Т.е. это символ, который вы можете использовать вместо <code>-</code>, если это необходимо.
 </p>
 <p>
-p[pass], P[pass] — вместо [pass] укажите пароль, который хотите установить на игру. По умолчанию <span class="em_BLCK">No</span>. Если пароль содержит пробелы, заключите его в кавычки.
+p[pass], P[pass] — вместо [pass] укажите пароль, который хотите установить на игру. По умолчанию <code>No</code>. Если пароль содержит пробелы, заключите его в кавычки.
 </p>
 <p>
 t, T — извлечь строки из текста.
@@ -178,7 +177,7 @@ t, T — извлечь строки из текста.
 <p>
 q, Q - извлечь q-строки из текста.
 </p>
-<h5 id="primery-vyzova">Примеры вызова:</h5><div class="Monokai-Code">
+<h5 id="primery-vyzova" class="avs-article-h5">Примеры вызова:</h5><div class="Monokai-Code">
 txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;pMyPassword
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;u
@@ -191,48 +190,48 @@ txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;pMyPassword
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;s@&nbsp;e~&nbsp;o
 <br/>txt2gam.exe&nbsp;file.txt&nbsp;gamefile.qsp&nbsp;t&nbsp;u
 </div>
-<h5 id="podkliuchenie-utility-k-tekstovomu-redaktoru">Подключение утилиты к текстовому редактору</h5><p>
-При разработке игр в текстовом редакторе, очень полезным может оказаться создание специального действия / кнопки для автоматической компиляции файла в <span class="em_BLCK">.qsp</span> и запуска плеера сразу с редактируемым файлом.
+<h5 id="podkliuchenie-utility-k-tekstovomu-redaktoru" class="avs-article-h5">Подключение утилиты к текстовому редактору</h5><p>
+При разработке игр в текстовом редакторе, очень полезным может оказаться создание специального действия / кнопки для автоматической компиляции файла в <code>.qsp</code> и запуска плеера сразу с редактируемым файлом.
 </p>
 <p>
 То есть пишете текст игры в редакторе, нажимаете некое сочетание клавиш и получаете запущенную в плеере игру.
 </p>
 <p>
-Данное руководство, на примере <span class="em_BLCK"><a href="http://www.emeditor.com" style="text-decoration:none;" class="emFOLD">EmEditor</a></span>а , описывает, как это сделать.
+Данное руководство, на примере <code><a href="http://www.emeditor.com" style="text-decoration:none;" class="avs-page-external-link">EmEditor</a></code>а , описывает, как это сделать.
 </p>
 <p>
-Для начала, создайте папку (допустим, <span class="em_BLCK">D:\Games\QSP</span>), распаковав в неё базовый архив плеера (<span class="em_BLCK">qspgui.exe</span> + все <span class="em_BLCK">DLL</span>`ки) и архив утилиты TXT2GAM.
+Для начала, создайте папку (допустим, <code>D:\Games\QSP</code>), распаковав в неё базовый архив плеера (<code>qspgui.exe</code> + все <code>DLL</code>`ки) и архив утилиты TXT2GAM.
 </p>
 <p>
-Далее, создайте в этой папке (рядом с <span class="em_BLCK">qspgui.exe</span>, <span class="em_BLCK">txt2gam.exe</span>) файл <span class="em_BLCK">start.bat</span> со следующим содержимым:
+Далее, создайте в этой папке (рядом с <code>qspgui.exe</code>, <code>txt2gam.exe</code>) файл <code>start.bat</code> со следующим содержимым:
 </p>
 <div class="Monokai-Code">
 txt2gam&nbsp;%1&nbsp;%2
 <br/>start&nbsp;qspgui&nbsp;%2
 </div>
 <p>
-Теперь нужно в редакторе добавить действие / кнопку, при нажатии на которую будет запущен файл <span class="em_BLCK">start.bat</span> с двумя аргументами - указанием исходного TXT файла и конечного <span class="em_BLCK">.qsp</span>-файла.
+Теперь нужно в редакторе добавить действие / кнопку, при нажатии на которую будет запущен файл <code>start.bat</code> с двумя аргументами - указанием исходного TXT файла и конечного <code>.qsp</code>-файла.
 </p>
 <ol>
-<li>Запустите EmEditor, выберите в меню <span class="em_BLCK">Tools / External Tools / Customize Tools...</span></li>
-<li>В появившемся окошке нажмите кнопку <span class="em_BLCK">New</span>.</li>
-<li>В поле <span class="em_BLCK">Title</span> впишите название действия (например, "QSP").</li>
-<li>В поле <span class="em_BLCK">Command</span> строку <span class="em_BLCK">D:\Games\QSP\start.bat</span></li>
-<li>В поле <span class="em_BLCK">Arguments</span> строку <span class="em_BLCK">"$(Path)" "$(Dir)\$(Filename).gam"</span> (сохраняя кавычки)</li>
-<li>В поле <span class="em_BLCK">Initial Directory</span> строчку <span class="em_BLCK">D:\Games\QSP</span></li>
-<li>Затем поставьте флажок напротив <span class="em_BLCK">Save File</span>, и нажмите <span class="em_BLCK">OK</span>.</li>
+<li>Запустите EmEditor, выберите в меню <code>Tools / External Tools / Customize Tools...</code></li>
+<li>В появившемся окошке нажмите кнопку <code>New</code>.</li>
+<li>В поле <code>Title</code> впишите название действия (например, "QSP").</li>
+<li>В поле <code>Command</code> строку <code>D:\Games\QSP\start.bat</code></li>
+<li>В поле <code>Arguments</code> строку <code>"$(Path)" "$(Dir)\$(Filename).gam"</code> (сохраняя кавычки)</li>
+<li>В поле <code>Initial Directory</code> строчку <code>D:\Games\QSP</code></li>
+<li>Затем поставьте флажок напротив <code>Save File</code>, и нажмите <code>OK</code>.</li>
 <li>На панели инструментов появится новая кнопка с подписью "QSP", при нажатии на которую будут произведены требуемые действия.</li>
 </ol>
 <p>
 Теперь нужно назначить сочетание клавиш для кнопки.
 </p>
 <ol>
-<li>Выберите пункт меню <span class="em_BLCK">Help / Keyboard Map...</span>. В категории <span class="em_BLCK">External Tools</span> найдите пункт <span class="em_BLCK">QSP</span> (обычно, в самом низу) и щелкните по нему 2 раза.</li>
-<li>Установите курсор в поле <span class="em_BLCK">Press New Shortcut Key</span> и нажмите желаемое сочетание клавиш (к примеру, F1). Станет доступной кнопка <span class="em_BLCK">Assign</span>. Нажимаем.</li>
-<li>Далее жмём <span class="em_BLCK">OK</span> и пишем игры в формате TXT2GAM :-)</li>
+<li>Выберите пункт меню <code>Help / Keyboard Map...</code>. В категории <code>External Tools</code> найдите пункт <code>QSP</code> (обычно, в самом низу) и щелкните по нему 2 раза.</li>
+<li>Установите курсор в поле <code>Press New Shortcut Key</code> и нажмите желаемое сочетание клавиш (к примеру, F1). Станет доступной кнопка <code>Assign</code>. Нажимаем.</li>
+<li>Далее жмём <code>OK</code> и пишем игры в формате TXT2GAM :-)</li>
 </ol>
 <p>
-Чтобы установить пароль на файл, создаваемый утилитой TXT2GAM, замените в файле <span class="em_BLCK">start.bat</span> строчку
+Чтобы установить пароль на файл, создаваемый утилитой TXT2GAM, замените в файле <code>start.bat</code> строчку
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;%1&nbsp;%2
@@ -244,45 +243,45 @@ txt2gam.exe&nbsp;%1&nbsp;%2
 txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;pMyPassword
 </div>
 <p>
-где <span class="em_BLCK">MyPassword</span> - устанавливаемый пароль. Для задания паролей с пробелами, строчка pMyPassword должна быть указана в кавычках:
+где <code>MyPassword</code> - устанавливаемый пароль. Для задания паролей с пробелами, строчка pMyPassword должна быть указана в кавычках:
 </p>
 <div class="Monokai-Code">
 txt2gam.exe&nbsp;%1&nbsp;%2&nbsp;"pMy&nbsp;Pass&nbsp;word"
 </div>
-<h5 id="primechaniia">Примечания:</h5><ol>
-<li>В настоящий момент общепринятым расширением для текстовых файлов формата TXT2GAM можно считать <span class="em_BLCK">.qsps</span>. "Просто потому что" (с) <a href="https://github.com/gretmn102/QSP-VSCode#допустим-я-хочу-попробовать" style="text-decoration:none;" class="emFOLD">Pseudopod</a>.</li>
-<li>Существует утилита <span class="em_BLCK">qsp2txt</span> для конвертирования игр в обратную сторону — из файлов игр <span class="em_BLCK">.qsp</span> в текстовые файлы формата TXT2GAM. Исходная ссылка утеряна, можно скачать в <a href="https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A" style="text-decoration:none;" class="emFOLD">архиве программ QSP от Aleks Versus</a>.</li>
-<li>Существовали разные <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=686&amp;Itemid=57" style="text-decoration:none;" class="emFOLD">подсветки синтаксиса для <span class="em_BLCK">Notepad++</span> и <span class="em_BLCK">AkelPad</span></a>, но были утеряны.</li>
-<li>Подсветка синтаксиса для Sublime Text входит в <a href="https://github.com/AleksVersus/JAD_for_QSP" style="text-decoration:none;" class="emFOLD">пакет JAD на QSP для Sublime Text</a>.</li>
-<li>Существует подсветка для <a href="https://qsp.org/components/com_agora/img/members/20/notepad-qsp.zip" style="text-decoration:none;" class="emFOLD">Notepad++ от Олегуса</a>. С этой подсветкой ассоциируются текстовые файлы с расширением <span class="em_BLCK">.tqsp</span>, однако вы можете отредактировать файл подсветки, указав нужное вам расширение.</li>
-<li>Werewolf разработал утилиту для конвертирования QSP-файла в текстовый формат (аналог <span class="em_BLCK">qsp2txt</span>), которая работает онлайн: <a href="https://codepen.io/srg-kostyrko/full/QWqdwxv" style="text-decoration:none;" class="emFOLD">https://codepen.io/srg-kostyrko/full/QWqdwxv</a>. Так же он разработал специальные пакеты для конвертирования файлов в любую сторону: <a href="https://github.com/QSPFoundation/converters" style="text-decoration:none;" class="emFOLD">https://github.com/QSPFoundation/converters</a>.</li>
+<h5 id="primechaniia" class="avs-article-h5">Примечания:</h5><ol>
+<li>В настоящий момент общепринятым расширением для текстовых файлов формата TXT2GAM можно считать <code>.qsps</code>. "Просто потому что" (с) <a href="https://github.com/gretmn102/QSP-VSCode#допустим-я-хочу-попробовать" style="text-decoration:none;" class="avs-page-external-link">Pseudopod</a>.</li>
+<li>Существует утилита <code>qsp2txt</code> для конвертирования игр в обратную сторону — из файлов игр <code>.qsp</code> в текстовые файлы формата TXT2GAM. Исходная ссылка утеряна, можно скачать в <a href="https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A" style="text-decoration:none;" class="avs-page-external-link">архиве программ QSP от Aleks Versus</a>.</li>
+<li>Существовали разные <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=686&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">подсветки синтаксиса для <code>Notepad++</code> и <code>AkelPad</code></a>, но были утеряны.</li>
+<li>Подсветка синтаксиса для Sublime Text входит в <a href="https://github.com/AleksVersus/JAD_for_QSP" style="text-decoration:none;" class="avs-page-external-link">пакет JAD на QSP для Sublime Text</a>.</li>
+<li>Существует подсветка для <a href="https://qsp.org/components/com_agora/img/members/20/notepad-qsp.zip" style="text-decoration:none;" class="avs-page-external-link">Notepad++ от Олегуса</a>. С этой подсветкой ассоциируются текстовые файлы с расширением <code>.tqsp</code>, однако вы можете отредактировать файл подсветки, указав нужное вам расширение.</li>
+<li>Werewolf разработал утилиту для конвертирования QSP-файла в текстовый формат (аналог <code>qsp2txt</code>), которая работает онлайн: <a href="https://codepen.io/srg-kostyrko/full/QWqdwxv" style="text-decoration:none;" class="avs-page-external-link">https://codepen.io/srg-kostyrko/full/QWqdwxv</a>. Так же он разработал специальные пакеты для конвертирования файлов в любую сторону: <a href="https://github.com/QSPFoundation/converters" style="text-decoration:none;" class="avs-page-external-link">https://github.com/QSPFoundation/converters</a>.</li>
 </ol>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="emHREFTT">&lt; Назад, к странице 11</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">Вперёд, к странице 13 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/avtomatnoe_programmirovanie_0009.html" class="avs-pages-button__link">&lt; Назад, к странице 11</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">Вперёд, к странице 13 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

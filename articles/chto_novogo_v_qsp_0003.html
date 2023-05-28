@@ -5,28 +5,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Статьи</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>Статьи по разработке игр на QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="emHREFTT">Вперёд, к странице 5 &gt;</a></div></div>
-<h4 id="whats_news">Что нового в QSP</h4><p>
-Пока готовится выход нового плеера версии 5.8.0 (или выше), мы решили рассказать о грядущих нововведениях. Всё (или почти всё), что будет представлено в этой статье, вы уже можете пощупать в плеере <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1291&amp;Itemid=57" style="text-decoration:none;" class="emFOLD">"qSpider" от Werewolf`а</a>.
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="avs-pages-button__link">&lt; Назад, к странице 3</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="avs-pages-button__link">Вперёд, к странице 5 &gt;</a></div></div>
+<h4 id="whats_news" class="avs-article-h4">Что нового в QSP</h4><p>
+Пока готовится выход нового плеера версии 5.8.0 (или выше), мы решили рассказать о грядущих нововведениях. Всё (или почти всё), что будет представлено в этой статье, вы уже можете пощупать в плеере <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1291&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">"qSpider" от Werewolf`а</a>.
 </p>
-<h4 id="izmenenie-v-rabote-massivov">Изменение в работе массивов</h4><p>
-Это, пожалуй, самое основное из грядущих изменений, и о нём мы подробно писали в статье <a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="emFOLD">"Массивы уже не те"</a>. Здесь же изложим кратко.
+<h4 id="izmenenie-v-rabote-massivov" class="avs-article-h4">Изменение в работе массивов</h4><p>
+Это, пожалуй, самое основное из грядущих изменений, и о нём мы подробно писали в статье <a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html#novoje_v_rabote_massivov" style="text-decoration:none;" class="avs-page-external-link">"Массивы уже не те"</a>. Здесь же изложим кратко.
 </p>
 <p>
 Теперь в массиве будет нельзя под одним индексом хранить и текстовое и числовое значение. Если вы запишете в ячейку числовое значение, а потом запишете в ту же ячейку текстовое значение, текстовое значение затрёт числовое.
 </p>
 <p>
-При этом, если вы попытаетесь получить из ячейки со строковым значением числовое значение, плеер вернёт значение по-умолчанию, то есть <span class="em_BLCK">0</span>. И наоборот: если попытаться из ячейки с числовым значением получить строковое, плеер вернёт пустую строку.
+При этом, если вы попытаетесь получить из ячейки со строковым значением числовое значение, плеер вернёт значение по-умолчанию, то есть <code>0</code>. И наоборот: если попытаться из ячейки с числовым значением получить строковое, плеер вернёт пустую строку.
 </p>
 <p>
 Примеры:
@@ -45,7 +44,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</spa
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;попытка&nbsp;доступа&nbsp;к&nbsp;числовому&nbsp;значению&nbsp;вернёт&nbsp;0</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'string'</span><br/>
 </div>
-<h4 id="mnogomernye-massivy">Многомерные массивы</h4><p>
+<h4 id="mnogomernye-massivy" class="avs-article-h4">Многомерные массивы</h4><p>
 Чтобы организовать многомерный массив, в плеерах версии 5.7.0 (и более ранних) приходилось использовать текстовые индексы. Например:
 </p>
 <div class="Monokai-Code">
@@ -66,11 +65,11 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <p>
 Это намного упрощает работу с многомерными массивами.
 </p>
-<h4 id="izmeneniia-v-rabote-logicheskih-operatorov-i-funktsij">Изменения в работе логических операторов и функций</h4><p>
-Все мы знаем, что QSP не поддерживает булевые (логические) типы данных, а вместо них в плеерах версии 5.7.0. использовались числа <span class="em_BLCK">0</span> и <span class="em_BLCK">-1</span>. 
+<h4 id="izmeneniia-v-rabote-logicheskih-operatorov-i-funktsij" class="avs-article-h4">Изменения в работе логических операторов и функций</h4><p>
+Все мы знаем, что QSP не поддерживает булевые (логические) типы данных, а вместо них в плеерах версии 5.7.0. использовались числа <code>0</code> и <code>-1</code>. 
 </p>
 <p>
-Здесь <span class="em_BLCK">0</span> означало Ложь (False), а <span class="em_BLCK">-1</span> означало Правду (<span class="em_BLCK">True</span>). Соответственно и все логические операции возвращали нам эти значения. 
+Здесь <code>0</code> означало Ложь (False), а <code>-1</code> означало Правду (<code>True</code>). Соответственно и все логические операции возвращали нам эти значения. 
 </p>
 <p>
 Например:
@@ -85,7 +84,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">no</span><span class="Monokai-EndLoc">&nbsp;-1&nbsp;&amp;&nbsp;!&nbsp;NO&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-В новых версиях плеера все логические операции будут возвращать <span class="em_BLCK">1</span> в случае Правды (<span class="em_BLCK">True</span>), и <span class="em_BLCK">0</span> в случае Лжи (<span class="em_BLCK">False</span>):
+В новых версиях плеера все логические операции будут возвращать <code>1</code> в случае Правды (<code>True</code>), и <code>0</code> в случае Лжи (<code>False</code>):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версия&nbsp;5.8.0&nbsp;и&nbsp;выше</span><br/>
@@ -97,7 +96,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">no</span><span class="Monokai-EndLoc">&nbsp;-1&nbsp;&amp;&nbsp;!&nbsp;NO&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-Соответственно и различные функции, возвращавшие "логические" значения, будут возвращать либо <span class="em_BLCK">1</span> (Правда, <span class="em_BLCK">True</span>), либо <span class="em_BLCK">0</span> (Ложь, <span class="em_BLCK">False</span>):
+Соответственно и различные функции, возвращавшие "логические" значения, будут возвращать либо <code>1</code> (Правда, <code>True</code>), либо <code>0</code> (Ложь, <code>False</code>):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версия&nbsp;5.7.0</span><br/>
@@ -118,7 +117,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">isnum</span><span class="Monokai-Operator">(</span><span class="Monokai-String">"12d"</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;ISNUM&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-Ещё одно изменение в работе логических операций заключается в том, что теперь они на самом деле будут логическими. Да, оказывается в плеерах версий 5.7.0 и старше операции <span class="em_BLCK">AND</span>, <span class="em_BLCK">OR</span>, <span class="em_BLCK">NO</span> не были логическими — они были побитовыми. Это означает, что данные операции могли выполнять сравнение чисел по отдельным битам и возвращать результат этого сравнения.
+Ещё одно изменение в работе логических операций заключается в том, что теперь они на самом деле будут логическими. Да, оказывается в плеерах версий 5.7.0 и старше операции <code>AND</code>, <code>OR</code>, <code>NO</code> не были логическими — они были побитовыми. Это означает, что данные операции могли выполнять сравнение чисел по отдельным битам и возвращать результат этого сравнения.
 </p>
 <p>
 Например:
@@ -130,7 +129,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Numeric">7</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;NO&nbsp;вернёт&nbsp;-8</span><br/>
 </div>
 <p>
-Теперь же, не имеет значения, какое число мы передаём логическому оператору. Если это число отлично от нуля, логический оператор будет воспринимать его как <span class="em_BLCK">1</span>, то есть Правду (<span class="em_BLCK">True</span>).
+Теперь же, не имеет значения, какое число мы передаём логическому оператору. Если это число отлично от нуля, логический оператор будет воспринимать его как <code>1</code>, то есть Правду (<code>True</code>).
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версия&nbsp;5.8.0&nbsp;и&nbsp;выше</span><br/>
@@ -139,7 +138,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">no</span>&nbsp;<span class="Monokai-Numeric">7</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;NO&nbsp;вернёт&nbsp;0</span><br/>
 </div>
 <p>
-И это логично, ведь именно по такому принципу и работали операторы проверки условия <span class="em_BLCK">if</span> и <span class="em_BLCK">elseif</span>. Если этим операторам передавалось значение отличное от <span class="em_BLCK">0</span>, то это означало, что условие верно (Правда, <span class="em_BLCK">True</span>).
+И это логично, ведь именно по такому принципу и работали операторы проверки условия <code>if</code> и <code>elseif</code>. Если этим операторам передавалось значение отличное от <code>0</code>, то это означало, что условие верно (Правда, <code>True</code>).
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;одинаково&nbsp;для&nbsp;всех&nbsp;версий&nbsp;плеера:</span><br/>
@@ -155,8 +154,8 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"условие&nbsp;не&nbsp;выполнено"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="argumenty-peredavaemye-s-operatorami-goto-i-xgoto">Аргументы, передаваемые с операторами GOTO и XGOTO</h4><p>
-Теперь аргументы (параметры, данные), передаваемые с операторами <span class="em_BLCK">GOTO</span> и <span class="em_BLCK">XGOTO</span>, и которые мы можем получить из массива <span class="em_BLCK">ARGS</span> на локации, однозначно можно будет использовать в действиях, созданных на этой локации.
+<h4 id="argumenty-peredavaemye-s-operatorami-goto-i-xgoto" class="avs-article-h4">Аргументы, передаваемые с операторами GOTO и XGOTO</h4><p>
+Теперь аргументы (параметры, данные), передаваемые с операторами <code>GOTO</code> и <code>XGOTO</code>, и которые мы можем получить из массива <code>ARGS</code> на локации, однозначно можно будет использовать в действиях, созданных на этой локации.
 </p>
 <p>
 Раньше это тоже можно было делать, однако в плеере присутствовал досадный баг, который периодически ломал всё это дело. Этот баг исправили, и теперь всё прекрасно работает:
@@ -173,7 +172,7 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 --локация_2</span><br/>
 </div>
 <p>
-Обратите внимание, <span class="em_BLCK">ARGS</span> ведёт себя на текущей локации, как обычный глобальный массив. Т.е., если вы изменяете значения <span class="em_BLCK">ARGS</span> в одном из действий, эти же значения будут использоваться в других действиях.
+Обратите внимание, <code>ARGS</code> ведёт себя на текущей локации, как обычный глобальный массив. Т.е., если вы изменяете значения <code>ARGS</code> в одном из действий, эти же значения будут использоваться в других действиях.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;локация_1</span><br/>
@@ -191,8 +190,8 @@ $unit_coords<span class="Monokai-Operator">[</span><span class="Monokai-Numeric"
 <span class="Monokai-Koperator">end</span><span class="Monokai-EndLoc"><br/>
 --локация_2</span><br/>
 </div>
-<h4 id="disablesubex-bol_she-net">DISABLESUBEX больше нет</h4><p>
-Системная переменная <span class="em_BLCK">DISABLESUBEX</span> была предназначена для того, чтобы отключать обработку вложенных выражений. Например, если вы хотели вывести строку, в которой присутствуют вложенные выражения, без изменений, вы могли воспользоваться данной переменной:
+<h4 id="disablesubex-bol_she-net" class="avs-article-h4">DISABLESUBEX больше нет</h4><p>
+Системная переменная <code>DISABLESUBEX</code> была предназначена для того, чтобы отключать обработку вложенных выражений. Например, если вы хотели вывести строку, в которой присутствуют вложенные выражения, без изменений, вы могли воспользоваться данной переменной:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;в&nbsp;версии&nbsp;5.7.0</span><br/>
@@ -225,8 +224,8 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Operator">{</span>Здоровье&nbsp;<span class="Monokai-Operator">&lt;</span><span class="Monokai-Operator">&lt;</span>health<span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">&gt;</span><span class="Monokai-Operator">}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;&lt;&lt;health&gt;&gt;'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Здоровье&nbsp;&lt;&lt;health&gt;&gt;"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;строку&nbsp;'Здоровье&nbsp;100'</span><br/>
 </div>
-<h4 id="izmeneniia-v-rabote-neiavnogo-operatora">Изменения в работе неявного оператора</h4><p>
-Неявный оператор — это оператор, который мы не указываем. В 5.7.0 он делал примерно то же, что делал и оператор <span class="em_BLCK">*pl</span>. То есть выводил на экран значение, добавляя после этого значения перевод строки:
+<h4 id="izmeneniia-v-rabote-neiavnogo-operatora" class="avs-article-h4">Изменения в работе неявного оператора</h4><p>
+Неявный оператор — это оператор, который мы не указываем. В 5.7.0 он делал примерно то же, что делал и оператор <code>*pl</code>. То есть выводил на экран значение, добавляя после этого значения перевод строки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;плеерах&nbsp;любых&nbsp;версий</span><br/>
@@ -239,7 +238,7 @@ health<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">100</
 <span class="Monokai-String">"text"</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;и&nbsp;здесь&nbsp;для&nbsp;вывода&nbsp;используется&nbsp;неявный&nbsp;оператор</span><br/>
 </div>
 <p>
-Если мы вызывали какую-то функцию, но она не возвращала никакого результата, неявный оператор, как и оператор <span class="em_BLCK">*pl</span>, выводил на экран пустую строку и добавлял к ней перевод строки:
+Если мы вызывали какую-то функцию, но она не возвращала никакого результата, неявный оператор, как и оператор <code>*pl</code>, выводил на экран пустую строку и добавлял к ней перевод строки:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;loc1</span><br/>
@@ -267,8 +266,8 @@ N<span class="Monokai-Operator">=</span>R<span class="Monokai-Operator">*</span>
 Строка&nbsp;текста
 <br/>Строка&nbsp;текста
 </div>
-<h4 id="neiavnyj-vyzov-pol_zovatel_skih-funktsij">Неявный вызов пользовательских функций</h4><p>
-В плеерах версии 5.7.0 и более ранних вы могли написать собственную функцию и затем вызвать её без возвращения результата, используя оператор <span class="em_BLCK">GOSUB</span>, или с возвращением результата, используя функцию <span class="em_BLCK">FUNC</span>. В плеерах версии 5.8.0 и выше эта возможность конечно же сохраняется.
+<h4 id="neiavnyj-vyzov-pol_zovatel_skih-funktsij" class="avs-article-h4">Неявный вызов пользовательских функций</h4><p>
+В плеерах версии 5.7.0 и более ранних вы могли написать собственную функцию и затем вызвать её без возвращения результата, используя оператор <code>GOSUB</code>, или с возвращением результата, используя функцию <code>FUNC</code>. В плеерах версии 5.8.0 и выше эта возможность конечно же сохраняется.
 </p>
 <p>
 Пример:
@@ -311,13 +310,13 @@ N<span class="Monokai-Operator">=</span>R<span class="Monokai-Operator">*</span>
 --foo</span><br/>
 </div>
 <p>
-То есть вместо того, чтобы использовать явное указание оператора gosub или функции <span class="em_BLCK">func</span>, можно писать символ <span class="em_BLCK">@</span>, а после него без пробелов записывать название локации. Само название вызываемой таким образом локации/функции так же не должно содержать пробелов.
+То есть вместо того, чтобы использовать явное указание оператора gosub или функции <code>func</code>, можно писать символ <code>@</code>, а после него без пробелов записывать название локации. Само название вызываемой таким образом локации/функции так же не должно содержать пробелов.
 </p>
 <p>
 Если такой функции нужно передать значения, после названия локации ставим скобки и перечисляем нужные аргументы.
 </p>
-<h4 id="novaia-funktsiia-arritem">Новая функция ARRITEM</h4><p>
-Функция <span class="em_BLCK">ARRITEM</span> возвращает значение указанной ячейки массива. Это новая функция, и введена она по большей части для того, чтобы упразднять подвыражения при использовании <span class="em_BLCK">DYNAMIC</span>/<span class="em_BLCK">DYNEVAL</span>.
+<h4 id="novaia-funktsiia-arritem" class="avs-article-h4">Новая функция ARRITEM</h4><p>
+Функция <code>ARRITEM</code> возвращает значение указанной ячейки массива. Это новая функция, и введена она по большей части для того, чтобы упразднять подвыражения при использовании <code>DYNAMIC</code>/<code>DYNEVAL</code>.
 </p>
 <p>
 Примеры:
@@ -331,7 +330,7 @@ xvar&nbsp;<span class="Monokai-Operator">=</span>&nbsp;massive<span class="Monok
 xvar&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Func">arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'massive'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Обе команды присваивают переменной <span class="em_BLCK">xvar</span> значение из ячейки <span class="em_BLCK">123</span> массива <span class="em_BLCK">'massive</span>', однако во втором случае мы указываем название в виде строкового значения. Таким образом мы, не прибегая к помощи <span class="em_BLCK">DYNAMIC</span>/<span class="em_BLCK">DYNEVAL</span> можем динамически формировать названия массива при получении значения.
+Обе команды присваивают переменной <code>xvar</code> значение из ячейки <code>123</code> массива <code>'massive</code>', однако во втором случае мы указываем название в виде строкового значения. Таким образом мы, не прибегая к помощи <code>DYNAMIC</code>/<code>DYNEVAL</code> можем динамически формировать названия массива при получении значения.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;$stringarray[345]='text&nbsp;out'</span><br/>
@@ -340,14 +339,14 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</spa
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$'</span><span class="Monokai-Operator">+</span>$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span>$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">345</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Так же <span class="em_BLCK">ARRITEM</span> позволяет получить значение из ячейки с текстовым индексом:
+Так же <code>ARRITEM</code> позволяет получить значение из ячейки с текстовым индексом:
 </p>
 <div class="Monokai-Code">
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-String">"text&nbsp;index"</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"text&nbsp;string"</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-Func">$arritem</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'text&nbsp;index'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="killvar-udaliaet-po-tekstovomu-indeksu">KILLVAR удаляет по текстовому индексу</h4><p>
-В плеерах версии 5.7.0 и ниже оператор <span class="em_BLCK">KILLVAR</span> умел удалять элементы массивов только по числовому индексу:
+<h4 id="killvar-udaliaet-po-tekstovomu-indeksu" class="avs-article-h4">KILLVAR удаляет по текстовому индексу</h4><p>
+В плеерах версии 5.7.0 и ниже оператор <code>KILLVAR</code> умел удалять элементы массивов только по числовому индексу:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;плеерах&nbsp;любых&nbsp;версий</span><br/>
@@ -362,7 +361,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;'строка&nbsp;3'</span><br/>
 </div>
 <p>
-В плеерах версии 5.8.0 и выше <span class="em_BLCK">KILLVAR</span> умеет удалять элементы массивов не только по числовому, но и по текстовому индексу:
+В плеерах версии 5.8.0 и выше <code>KILLVAR</code> умеет удалять элементы массивов не только по числовому, но и по текстовому индексу:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;только&nbsp;в&nbsp;5.8.0&nbsp;и&nbsp;выше</span><br/>
@@ -376,14 +375,14 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 <span class="Monokai-Operator">killvar</span>&nbsp;<span class="Monokai-String">'$mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'text&nbsp;index'</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;$mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;выведет&nbsp;на&nbsp;экран&nbsp;строку&nbsp;'строка&nbsp;4'</span><br/>
 </div>
-<h4 id="operatory-addqst-i-killqst-pereimenovany">Операторы ADDQST и KILLQST переименованы</h4><p>
-В плеерах версии 5.7.0 (за исключением Quest Navigator) используются операторы <span class="em_BLCK">ADDQST</span> и <span class="em_BLCK">KILLQST</span>. В плеерах более новых версий (5.8.0 и выше) данные операторы заменены на <span class="em_BLCK">INCLIB</span> и <span class="em_BLCK">FREELIB</span> соответственно.
+<h4 id="operatory-addqst-i-killqst-pereimenovany" class="avs-article-h4">Операторы ADDQST и KILLQST переименованы</h4><p>
+В плеерах версии 5.7.0 (за исключением Quest Navigator) используются операторы <code>ADDQST</code> и <code>KILLQST</code>. В плеерах более новых версий (5.8.0 и выше) данные операторы заменены на <code>INCLIB</code> и <code>FREELIB</code> соответственно.
 </p>
 <p>
-<span class="em_BLCK">INCLIB</span> добавляет локации из подключаемого модуля QSP к основной игре.
+<code>INCLIB</code> добавляет локации из подключаемого модуля QSP к основной игре.
 </p>
 <p>
-<span class="em_BLCK">FREELIB</span> удаляет все локации ранее подключённых модулей QSP из основной игры.
+<code>FREELIB</code> удаляет все локации ранее подключённых модулей QSP из основной игры.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">'module.qsp'</span><br/>
@@ -391,15 +390,15 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">4</spa
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">'base.qsp'</span><br/>
 <span class="Monokai-Operator">freelib</span><br/>
 </div>
-<h4 id="izmenenie-v-rabote-operatora-set">Изменение в работе оператора SET</h4><p>
-Для явного объявления переменных в QSP используется оператор <span class="em_BLCK">SET</span>. В плеерах версии 5.7.0 и ниже с помощью этого оператора вы могли объявить лишь одну переменную:
+<h4 id="izmenenie-v-rabote-operatora-set" class="avs-article-h4">Изменение в работе оператора SET</h4><p>
+Для явного объявления переменных в QSP используется оператор <code>SET</code>. В плеерах версии 5.7.0 и ниже с помощью этого оператора вы могли объявить лишь одну переменную:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;плеерах&nbsp;любых&nbsp;версий</span><br/>
 <span class="Monokai-Operator">set</span>&nbsp;mass<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><br/>
 </div>
 <p>
-Если требовалось объявить несколько переменных, приходилось писать несколько команд <span class="em_BLCK">SET</span>:
+Если требовалось объявить несколько переменных, приходилось писать несколько команд <code>SET</code>:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;плеерах&nbsp;любых&nbsp;версий</span><br/>
@@ -415,10 +414,10 @@ mass<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</spa
 <span class="Monokai-Operator">set</span>&nbsp;mass<span class="Monokai-Operator">,</span>&nbsp;daz<span class="Monokai-Operator">,</span>&nbsp;zaz&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">65</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">79</span><br/>
 </div>
 <p>
-Обратите внимание на форму записи. Здесь лишь один знак <span class="em_BLCK">=</span>. Переменные и их значения перечислены через запятую соответственно слева и справа от знака <span class="em_BLCK">=</span>.
+Обратите внимание на форму записи. Здесь лишь один знак <code>=</code>. Переменные и их значения перечислены через запятую соответственно слева и справа от знака <code>=</code>.
 </p>
 <p>
-Более того. С помощью оператора <span class="em_BLCK">SET</span> вы можете не только назначать переменным определённые значения, но и присваивать значения других переменных:
+Более того. С помощью оператора <code>SET</code> вы можете не только назначать переменным определённые значения, но и присваивать значения других переменных:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;5.8.0&nbsp;и&nbsp;выше:</span><br/>
@@ -432,7 +431,7 @@ mass<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</spa
 <span class="Monokai-Operator">set</span>&nbsp;j<span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">=</span>y<span class="Monokai-Operator">,</span>j<br/>
 </div>
 <p>
-Само собой, как и в плеерах версии 5.7.0, оператор <span class="em_BLCK">SET</span> указывать не обязательно:
+Само собой, как и в плеерах версии 5.7.0, оператор <code>SET</code> указывать не обязательно:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;5.8.0&nbsp;и&nbsp;выше:</span><br/>
@@ -440,8 +439,8 @@ mass<span class="Monokai-Operator">,</span>&nbsp;daz<span class="Monokai-Operato
 a<span class="Monokai-Operator">,</span>&nbsp;b<span class="Monokai-Operator">,</span>&nbsp;c&nbsp;<span class="Monokai-Operator">=</span>&nbsp;x<span class="Monokai-Operator">,</span>&nbsp;y<span class="Monokai-Operator">,</span>&nbsp;z<br/>
 j<span class="Monokai-Operator">,</span>y<span class="Monokai-Operator">=</span>y<span class="Monokai-Operator">,</span>j<br/>
 </div>
-<h4 id="novyj-operator-local">Новый оператор LOCAL</h4><p>
-В плеерах версии 5.8.0 и выше, а так же в Quest Navigator появился новый оператор, который позволяет объявить указанные переменные локальными для отдельного блока кода (локации, действия, код в <span class="em_BLCK">DYNAMIC</span>/<span class="em_BLCK">DYNEVAL</span>). После того, как блок кода выполнен, значения переменных восстанавливаются к предыдущим:
+<h4 id="novyj-operator-local" class="avs-article-h4">Новый оператор LOCAL</h4><p>
+В плеерах версии 5.8.0 и выше, а так же в Quest Navigator появился новый оператор, который позволяет объявить указанные переменные локальными для отдельного блока кода (локации, действия, код в <code>DYNAMIC</code>/<code>DYNEVAL</code>). После того, как блок кода выполнен, значения переменных восстанавливаются к предыдущим:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;start</span><br/>
@@ -473,14 +472,14 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><
 <span class="Monokai-Operator">local</span>&nbsp;f<span class="Monokai-Operator">,</span>&nbsp;d<span class="Monokai-Operator">,</span>&nbsp;$g&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span>&nbsp;<span class="Monokai-String">'string'</span><br/>
 </div>
 <p>
-Обратите внимание на последнюю форму записи. Сначала мы перечисляем объявляемые переменные через запятую, затем ставим один знак <span class="em_BLCK">=</span>, а после него перечисляем через запятую значения, которые хотим присвоить переменным. Неправильно делать такую запись:
+Обратите внимание на последнюю форму записи. Сначала мы перечисляем объявляемые переменные через запятую, затем ставим один знак <code>=</code>, а после него перечисляем через запятую значения, которые хотим присвоить переменным. Неправильно делать такую запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;Данная&nbsp;строчка&nbsp;кода&nbsp;вызовет&nbsp;ошибку&nbsp;"Несоответствие&nbsp;типов&nbsp;данных":</span><br/>
 <span class="Monokai-Operator">local</span>&nbsp;f<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">123</span><span class="Monokai-Operator">,</span>&nbsp;d<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><span class="Monokai-Operator">,</span>&nbsp;$g<span class="Monokai-Operator">=</span><span class="Monokai-String">'string'</span><br/>
 </div>
-<h4 id="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos">Изменения в работе функций INSTR, ARRCOMP, ARRPOS</h4><p>
-Необязательные аргументы функций <span class="em_BLCK">INSTR</span>, <span class="em_BLCK">ARRCOMP</span> и <span class="em_BLCK">ARRPOS</span> в плеерах 5.8.0 и выше, а так же в Quest Navigator переставлены в конец. В плеерах версии 5.7.0. и ниже эти аргументы шли в начале.
+<h4 id="izmeneniia-v-rabote-funktsij-instr-arrcomp-arrpos" class="avs-article-h4">Изменения в работе функций INSTR, ARRCOMP, ARRPOS</h4><p>
+Необязательные аргументы функций <code>INSTR</code>, <code>ARRCOMP</code> и <code>ARRPOS</code> в плеерах 5.8.0 и выше, а так же в Quest Navigator переставлены в конец. В плеерах версии 5.7.0. и ниже эти аргументы шли в начале.
 </p>
 <p>
 Примеры для версий плеера 5.7.0 и ниже:
@@ -504,8 +503,8 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><
 </span><span class="Monokai-Comment">!&nbsp;поиск&nbsp;среди&nbsp;элементов&nbsp;массива&nbsp;элемента,&nbsp;который&nbsp;соответствует&nbsp;регулярному&nbsp;выражению,&nbsp;начиная&nbsp;с&nbsp;пятого&nbsp;элемента</span><br/>
 <span class="Monokai-Func">arrcomp</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'$objectbox'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'\S{2}\s\S{6}'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="novyj-operator-tsikla-loop">Новый оператор цикла LOOP</h4><p>
-В плеерах версий 5.7.0 и старше, для организации циклов приходилось использовать метки. Начиная с версии 5.8.0. у нас появляется отдельный оператор циклов <span class="em_BLCK">LOOP</span>. Вот как он записывается в общем виде:
+<h4 id="novyj-operator-tsikla-loop" class="avs-article-h4">Новый оператор цикла LOOP</h4><p>
+В плеерах версий 5.7.0 и старше, для организации циклов приходилось использовать метки. Начиная с версии 5.8.0. у нас появляется отдельный оператор циклов <code>LOOP</code>. Вот как он записывается в общем виде:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;многострочная&nbsp;форма:</span><br/>
@@ -519,12 +518,12 @@ i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">45</span><
 Здесь, как вы видите, есть целых три ключевых слова:
 </p>
 <ul>
-<li><span class="em_BLCK">LOOP</span> — это ключевое слово объявляет, что начинается цикл, оно обязательно. После <span class="em_BLCK">LOOP</span> могут идти некоторые однострочные операторы. Например, здесь мы можем объявить локальные переменные, которые будут считаться локальными только для данного цикла.</li>
-<li><span class="em_BLCK">WHILE</span> — после этого ключевого слова должно стоять условие, и пока выполняется это условие, цикл тоже будет выполняться.</li>
-<li><span class="em_BLCK">STEP</span> — это ключевое слово не является обязательным, однако оно удобно, чтобы перечислить однострочные операторы, не относящиеся напрямую к телу цикла. Например, здесь можно указать изменение счётчика.</li>
+<li><code>LOOP</code> — это ключевое слово объявляет, что начинается цикл, оно обязательно. После <code>LOOP</code> могут идти некоторые однострочные операторы. Например, здесь мы можем объявить локальные переменные, которые будут считаться локальными только для данного цикла.</li>
+<li><code>WHILE</code> — после этого ключевого слова должно стоять условие, и пока выполняется это условие, цикл тоже будет выполняться.</li>
+<li><code>STEP</code> — это ключевое слово не является обязательным, однако оно удобно, чтобы перечислить однострочные операторы, не относящиеся напрямую к телу цикла. Например, здесь можно указать изменение счётчика.</li>
 </ul>
 <p>
-Непосредственно тело цикла, то есть его основные команды пишутся после двоеточия. Для однострочной формы — в той же строке, что и <span class="em_BLCK">loop</span>, а для многострочной формы — в последующих строках сразу после двоеточия. Многострочную форму необходимо завершать ключевым словом <span class="em_BLCK">END</span>.
+Непосредственно тело цикла, то есть его основные команды пишутся после двоеточия. Для однострочной формы — в той же строке, что и <code>loop</code>, а для многострочной формы — в последующих строках сразу после двоеточия. Многострочную форму необходимо завершать ключевым словом <code>END</code>.
 </p>
 <p>
 Несколько примеров:
@@ -567,8 +566,8 @@ $string<span class="Monokai-Operator">=</span><span class="Monokai-String">'long
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;$letters<span class="Monokai-Operator">[</span>i<span class="Monokai-Operator">]</span><span class="Monokai-Operator">+</span><span class="Monokai-String">",&nbsp;"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="izmeneniia-v-chtenii-dlinnyh-strok-razbityh-na-neskol_ko">Изменения в чтении длинных строк, разбитых на несколько</h4><p>
-Для того, чтобы разбивать длинные строки на несколько (для удобства чтения) в QSP используется сочетание символов <span class="em_BLCK">" _"</span> (пробел и символ нижнего подчёркивания). В плеерах версии 5.7.0 и ниже (кроме Quest Navigator 0.0.28) при разборе данной конструкции движок оставлял строки, как есть. Для примера возьмём такую конструкцию:
+<h4 id="izmeneniia-v-chtenii-dlinnyh-strok-razbityh-na-neskol_ko" class="avs-article-h4">Изменения в чтении длинных строк, разбитых на несколько</h4><p>
+Для того, чтобы разбивать длинные строки на несколько (для удобства чтения) в QSP используется сочетание символов <code>" _"</code> (пробел и символ нижнего подчёркивания). В плеерах версии 5.7.0 и ниже (кроме Quest Navigator 0.0.28) при разборе данной конструкции движок оставлял строки, как есть. Для примера возьмём такую конструкцию:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;t&nbsp;_<br/>
@@ -576,13 +575,13 @@ $string<span class="Monokai-Operator">=</span><span class="Monokai-String">'long
 t<span class="Monokai-Operator">:</span><br/>
 </div>
 <p>
-В плеерах версии 5.7.0 символы преформатирования будут исключены, при интерпретации, а строка, разбитая с помощью <span class="em_BLCK">" _"</span> будет объединена, как есть, то есть будет равнозначна строке:
+В плеерах версии 5.7.0 символы преформатирования будут исключены, при интерпретации, а строка, разбитая с помощью <code>" _"</code> будет объединена, как есть, то есть будет равнозначна строке:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;tort<span class="Monokai-Operator">:</span><br/>
 </div>
 <p>
-В плеерах же версии 5.8.0 и выше данная строка будет объединена с добавлением пробела вместо каждого сочетания <span class="em_BLCK">" _"</span>, то есть будет равнозначна строке:
+В плеерах же версии 5.8.0 и выше данная строка будет объединена с добавлением пробела вместо каждого сочетания <code>" _"</code>, то есть будет равнозначна строке:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Koperator">if</span>&nbsp;t&nbsp;<span class="Monokai-Func">or</span>&nbsp;t<span class="Monokai-Operator">:</span><br/>
@@ -601,8 +600,8 @@ tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-String">"Игра&nbsp;запущена&nbsp;на&nbsp;Классике"</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="izmeneniia-v-rabote-funktsii-rand">Изменения в работе функции RAND</h4><p>
-В плеерах версии 5.7.0 и ниже второй параметр функции <span class="em_BLCK">RAND</span> по умолчанию был <span class="em_BLCK">0</span>. Например, если вы указывали число <span class="em_BLCK">100</span> в качестве аргумента функции <span class="em_BLCK">RAND</span>, то эта функция возвращала случайное число от <span class="em_BLCK">0</span> до <span class="em_BLCK">100</span>. В плеерах версии 5.8.0 и выше, а так же в Quest Navigator, второй параметр по умолчанию равен <span class="em_BLCK">1</span>. То есть если вы укажете лишь одно число, например <span class="em_BLCK">100</span>, функция <span class="em_BLCK">RAND</span> вернёт случайное значение от <span class="em_BLCK">1</span> до <span class="em_BLCK">100</span>.
+<h4 id="izmeneniia-v-rabote-funktsii-rand" class="avs-article-h4">Изменения в работе функции RAND</h4><p>
+В плеерах версии 5.7.0 и ниже второй параметр функции <code>RAND</code> по умолчанию был <code>0</code>. Например, если вы указывали число <code>100</code> в качестве аргумента функции <code>RAND</code>, то эта функция возвращала случайное число от <code>0</code> до <code>100</code>. В плеерах версии 5.8.0 и выше, а так же в Quest Navigator, второй параметр по умолчанию равен <code>1</code>. То есть если вы укажете лишь одно число, например <code>100</code>, функция <code>RAND</code> вернёт случайное значение от <code>1</code> до <code>100</code>.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Func">RAND</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">100</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;в&nbsp;5.7.0&nbsp;вернёт&nbsp;значение&nbsp;от&nbsp;0&nbsp;до&nbsp;100</span><br/>
@@ -620,20 +619,20 @@ tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span
 <span class="Monokai-Func">RAND</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;в&nbsp;5.7.0&nbsp;вернёт&nbsp;значение&nbsp;от&nbsp;0&nbsp;до&nbsp;1</span><br/>
 <span class="Monokai-Func">RAND</span><span class="Monokai-Operator">(</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">)</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;в&nbsp;5.8.0&nbsp;вернёт&nbsp;значение&nbsp;1</span><br/>
 </div>
-<h4 id="povyshenie-prioriteta-funktsij-loc-i-obj">Повышение приоритета функций LOC и OBJ</h4><p>
-В плеерах версии 5.7.0 (и ниже) у функций <span class="em_BLCK">LOC</span> и <span class="em_BLCK">OBJ</span> приоритет был ниже, чем у операций сравнения. Это могло быть неочевидным для выражений такого рода:
+<h4 id="povyshenie-prioriteta-funktsij-loc-i-obj" class="avs-article-h4">Повышение приоритета функций LOC и OBJ</h4><p>
+В плеерах версии 5.7.0 (и ниже) у функций <code>LOC</code> и <code>OBJ</code> приоритет был ниже, чем у операций сравнения. Это могло быть неочевидным для выражений такого рода:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">(</span><span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">'Отвёртка'</span><span class="Monokai-Operator">=</span><span class="Monokai-Func">obj</span>&nbsp;<span class="Monokai-String">'Верёвка'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Кажется, что данное выражение должно выполняться так: проверяется наличие предмета "Отвёртка", проверяется наличие предмета "Верёвка", и лишь потом значения сравниваются. Однако в 5.7.0 у операции сравнения приоритет выше, чем у <span class="em_BLCK">OBJ</span>. Поэтому сначала выполняется операция сранения, и лишь потом функция <span class="em_BLCK">OBJ</span>. Таким образом в плеерах версии 5.7.0 данное выражение всегда возвращает <span class="em_BLCK">0</span>.
+Кажется, что данное выражение должно выполняться так: проверяется наличие предмета "Отвёртка", проверяется наличие предмета "Верёвка", и лишь потом значения сравниваются. Однако в 5.7.0 у операции сравнения приоритет выше, чем у <code>OBJ</code>. Поэтому сначала выполняется операция сранения, и лишь потом функция <code>OBJ</code>. Таким образом в плеерах версии 5.7.0 данное выражение всегда возвращает <code>0</code>.
 </p>
 <p>
-В плеерах версии 5.8.0 (и выше) приоритет у функций <span class="em_BLCK">OBJ</span> и <span class="em_BLCK">LOC</span> выше, чем у операций сравнения, поэтому данное выражение будет вычисляться именно так, как мы предположили: сначала проверяется наличие обоих предметов и лишь потом сравниваются полученные значения. В плеерах 5.8.0 (и выше) данное выражение будет возвращать <span class="em_BLCK">1</span>, если оба предмета или отсутствуют, или присутствуют, и <span class="em_BLCK">0</span>, если одни предмет присутствует, а другой отсутствует.
+В плеерах версии 5.8.0 (и выше) приоритет у функций <code>OBJ</code> и <code>LOC</code> выше, чем у операций сравнения, поэтому данное выражение будет вычисляться именно так, как мы предположили: сначала проверяется наличие обоих предметов и лишь потом сравниваются полученные значения. В плеерах 5.8.0 (и выше) данное выражение будет возвращать <code>1</code>, если оба предмета или отсутствуют, или присутствуют, и <code>0</code>, если одни предмет присутствует, а другой отсутствует.
 </p>
-<h4 id="bol_she-argumentov-dlia-funktsij">Больше аргументов для функций</h4><p>
-В плеерах версии 5.7.0 (и ниже) максимальное число аргументов, которое вы могли передавать операторам и функциям, было <span class="em_BLCK">10</span>. Таким образом, например функции <span class="em_BLCK">MAX</span> и <span class="em_BLCK">MIN</span> могли производить поиск значений лишь среди десяти значений. В плеерах версии 5.8.0 и выше максимальное число аргументов, передаваемых функциям и операторам, — <span class="em_BLCK">20</span>.
+<h4 id="bol_she-argumentov-dlia-funktsij" class="avs-article-h4">Больше аргументов для функций</h4><p>
+В плеерах версии 5.7.0 (и ниже) максимальное число аргументов, которое вы могли передавать операторам и функциям, было <code>10</code>. Таким образом, например функции <code>MAX</code> и <code>MIN</code> могли производить поиск значений лишь среди десяти значений. В плеерах версии 5.8.0 и выше максимальное число аргументов, передаваемых функциям и операторам, — <code>20</code>.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;работает&nbsp;в&nbsp;плеерах&nbsp;любых&nbsp;версий</span><br/>
@@ -641,10 +640,10 @@ tort<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span
 </span><span class="Monokai-Comment">!&nbsp;работает&nbsp;лишь&nbsp;в&nbsp;плеерах&nbsp;версии&nbsp;5.8.0&nbsp;и&nbsp;выше</span><br/>
 <span class="Monokai-Func">max</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'a'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'b'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'c'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'d'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'e'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'f'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'g'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'h'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'i'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'j'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'k'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'l'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'m'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'n'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'o'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'p'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'q'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'r'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'s'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'t'</span><span class="Monokai-Operator">)</span><br/>
 </div>
-<h4 id="starye-novosti-o-kotoryh-vy-mogli-ne-znat_">Старые новости, о которых вы могли не знать</h4><p>
+<h4 id="starye-novosti-o-kotoryh-vy-mogli-ne-znat_" class="avs-article-h4">Старые новости, о которых вы могли не знать</h4><p>
 Здесь мы осветим пару изменений, которые появились в плеере версии 5.7.0 (или раньше), но которые прошли не очень заметно.
 </p>
-<h4 id="ignorirovanie-otritsatel_nyh-indeksov">Игнорирование отрицательных индексов</h4><p>
+<h4 id="ignorirovanie-otritsatel_nyh-indeksov" class="avs-article-h4">Игнорирование отрицательных индексов</h4><p>
 В плеерах версий ниже 5.6.5 отрицательные индексы приводились к нулю, а в плеерах более новых версий, они просто напросто игнорируются:
 </p>
 <div class="Monokai-Code">
@@ -661,7 +660,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span
 mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">-</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-Numeric">456</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;на&nbsp;экране&nbsp;увидим&nbsp;123</span><br/>
 </div>
-<h4 id="dobavlenie-predmeta-v-opredelionnuiu-pozitsiiu">Добавление предмета в определённую позицию</h4><p>
+<h4 id="dobavlenie-predmeta-v-opredelionnuiu-pozitsiiu" class="avs-article-h4">Добавление предмета в определённую позицию</h4><p>
 Начиная с версии 5.6.5 вы можете добавлять предмет в указанную позицию в окне предметов. При этом, если на текущей позиции уже находится предмет, он сдвигается вниз (вправо) по списку, и все стоящие за ним предметы так же сдвигаются на одну позицию вниз (вправо).
 </p>
 <div class="Monokai-Code">
@@ -669,7 +668,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">-</spa
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Отвёртка'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'путь&nbsp;к&nbsp;файлу&nbsp;картинки/картинка.png'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">4</span><br/>
 </div>
 <p>
-Индексация предметов в списке начинается с единицы. Можно указать индекс численно больший на один, чем число предметов, тогда предмет добавится в конец списка. Однако, если указать индекс числом больше числа предметов плюс один, или индекс меньше единицы, команда <span class="em_BLCK">addobj</span> будет проигнорирована:
+Индексация предметов в списке начинается с единицы. Можно указать индекс численно больший на один, чем число предметов, тогда предмет добавится в конец списка. Однако, если указать индекс числом больше числа предметов плюс один, или индекс меньше единицы, команда <code>addobj</code> будет проигнорирована:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версии&nbsp;5.6.5&nbsp;и&nbsp;выше</span><br/>
@@ -681,15 +680,15 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">-</spa
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Седьмой&nbsp;предмет'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">''</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">7</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;предмет&nbsp;не&nbsp;будет&nbsp;добавлен</span><br/>
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">'Нулевой&nbsp;предмет'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">''</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">0</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;предмет&nbsp;не&nbsp;будет&nbsp;добавлен</span><br/>
 </div>
-<h4 id="kopirovanie-chasti-massiva-v-copyarr">Копирование части массива в COPYARR</h4><p>
-Начиная с версии 5.7.0 вы можете копировать часть массива в другой массив, используя не обязательные параметры: начальный индекс и количество. В следующем примере в массив <span class="em_BLCK">'mass</span>' будут скопированы шесть элементов массива <span class="em_BLCK">'array</span>', начиная с третьего:
+<h4 id="kopirovanie-chasti-massiva-v-copyarr" class="avs-article-h4">Копирование части массива в COPYARR</h4><p>
+Начиная с версии 5.7.0 вы можете копировать часть массива в другой массив, используя не обязательные параметры: начальный индекс и количество. В следующем примере в массив <code>'mass</code>' будут скопированы шесть элементов массива <code>'array</code>', начиная с третьего:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;версии&nbsp;5.7.0&nbsp;и&nbsp;выше</span><br/>
 <span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'mass'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'array'</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">6</span><br/>
 </div>
-<h4 id="peredacha-argumentov-v-onnewloc">Передача аргументов в ONNEWLOC</h4><p>
-Начиная с версии 5.7.0 аргументы, которые передаются на локацию при переходе на эту локацию с помощью операторов <span class="em_BLCK">GOTO</span> или <span class="em_BLCK">XGOTO</span>, передаются так же и на локацию-обработчик перехода на новую локацию (прописанную в переменной <span class="em_BLCK">$ONNEWLOC</span>). При этом, даже если значения в массиве <span class="em_BLCK">args</span> будут изменены на локации, на которую был осуществлён переход, на локацию, прописанную в переменной <span class="em_BLCK">$ONNEWLOC</span>, будут переданы исходные значения, переданные с <span class="em_BLCK">GOTO</span>/<span class="em_BLCK">XGOTO</span>.
+<h4 id="peredacha-argumentov-v-onnewloc" class="avs-article-h4">Передача аргументов в ONNEWLOC</h4><p>
+Начиная с версии 5.7.0 аргументы, которые передаются на локацию при переходе на эту локацию с помощью операторов <code>GOTO</code> или <code>XGOTO</code>, передаются так же и на локацию-обработчик перехода на новую локацию (прописанную в переменной <code>$ONNEWLOC</code>). При этом, даже если значения в массиве <code>args</code> будут изменены на локации, на которую был осуществлён переход, на локацию, прописанную в переменной <code>$ONNEWLOC</code>, будут переданы исходные значения, переданные с <code>GOTO</code>/<code>XGOTO</code>.
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;start</span><br/>
@@ -719,44 +718,44 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">-</spa
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-SysVar">args</span><span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-EndLoc"><br/>
 --onNewLoc</span><br/>
 </div>
-<h4 id="chto-eschio">Что ещё?</h4><p>
-Плеер продолжает развиваться и совершенствоваться, а значит мы можем ждать ещё много изменений в работе, которые непременно будут отражены в новых статьях, а так же в онлайн-справке <a href="https://wiki.qsp.org/" style="text-decoration:none;" class="emFOLD">wiki.qsp.org</a>.
+<h4 id="chto-eschio" class="avs-article-h4">Что ещё?</h4><p>
+Плеер продолжает развиваться и совершенствоваться, а значит мы можем ждать ещё много изменений в работе, которые непременно будут отражены в новых статьях, а так же в онлайн-справке <a href="https://wiki.qsp.org/" style="text-decoration:none;" class="avs-page-external-link">wiki.qsp.org</a>.
 </p>
-<h4 id="post_scriptum_articles_0003">P.S.:</h4><p>
+<h4 id="post_scriptum_articles_0003" class="avs-article-h4">P.S.:</h4><p>
 Данную статью вы можете найти так же и на других ресурсах:
 </p>
 <ul>
-<li><a href="http://aleksversus.narod.ru/index/novovvedenija_v_qsp_5_8_0/0-71" style="text-decoration:none;" class="emFOLD">мой_сайт/Что нового в QSP 5.8.0?</a></li>
-<li><a href="https://aleksversus.medium.com/нововведения-в-qsp-5-8-0-633e6eeb187e" style="text-decoration:none;" class="emFOLD">medium/Что нового в QSP 5.8.0?</a></li>
-<li><a href="https://vk.com/@qsplayer-novovvedeniya-v-qsp-580" style="text-decoration:none;" class="emFOLD">vk.com/Что нового в QSP 5.8.0?</a></li>
-<li><a href="https://ifhub.club/2021/06/11/novovvedeniya-v-qsp-580.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Что нового в QSP 5.8.0?</a></li>
+<li><a href="http://aleksversus.narod.ru/index/novovvedenija_v_qsp_5_8_0/0-71" style="text-decoration:none;" class="avs-page-external-link">мой_сайт/Что нового в QSP 5.8.0?</a></li>
+<li><a href="https://aleksversus.medium.com/нововведения-в-qsp-5-8-0-633e6eeb187e" style="text-decoration:none;" class="avs-page-external-link">medium/Что нового в QSP 5.8.0?</a></li>
+<li><a href="https://vk.com/@qsplayer-novovvedeniya-v-qsp-580" style="text-decoration:none;" class="avs-page-external-link">vk.com/Что нового в QSP 5.8.0?</a></li>
+<li><a href="https://ifhub.club/2021/06/11/novovvedeniya-v-qsp-580.html" style="text-decoration:none;" class="avs-page-external-link">ifhub.club/Что нового в QSP 5.8.0?</a></li>
 </ul>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="emHREFTT">&lt; Назад, к странице 3</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="emHREFTT">Вперёд, к странице 5 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html" class="avs-pages-button__link">&lt; Назад, к странице 3</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html" class="avs-pages-button__link">Вперёд, к странице 5 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

@@ -5,18 +5,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: ИнформАрхив</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>ИнформАрхив QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
-<h5 id="informarch_txt2gam_preprocessor">Тем, кто применяет TXT2GAM (использование препроцессора)</h5><p>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 13</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">Вперёд, к странице 15 &gt;</a></div></div>
+<h5 id="informarch_txt2gam_preprocessor" class="avs-article-h5">Тем, кто применяет TXT2GAM (использование препроцессора)</h5><p>
 При написании игры без использования QGen, исходный текст не зашифрован и может редактироваться любым текстовым редактором.
 </p>
 <p>
@@ -31,35 +30,35 @@
 <p>
 Чтобы воспользоваться этим, нужно добавить в текст специальные инструкции и обработать текст утилитой GPP. После такой обработки текст уже не будет содержать инструкции и может быть преобразован в QSP-файл без ошибок.
 </p>
-<h5 id="instruktsii-osnovnye">Инструкции (основные)</h5><p>
-<span class="em_BLCK">#mode quote</span> — отключает обработку символа "\" как служебного, рекомендуется поставить первой строчкой файла
+<h5 id="instruktsii-osnovnye" class="avs-article-h5">Инструкции (основные)</h5><p>
+<code>#mode quote</code> — отключает обработку символа "\" как служебного, рекомендуется поставить первой строчкой файла
 </p>
 <p>
-<span class="em_BLCK">#define</span> &lt;имя&gt; — определить флажок, на который можно будет позже ссылаться
+<code>#define</code> &lt;имя&gt; — определить флажок, на который можно будет позже ссылаться
 </p>
 <p>
-<span class="em_BLCK">#define</span> &lt;имя&gt; &lt;значение&gt; — определить значение, на которое можно будет позже ссылаться
+<code>#define</code> &lt;имя&gt; &lt;значение&gt; — определить значение, на которое можно будет позже ссылаться
 </p>
 <p>
-<span class="em_BLCK">#undef</span> &lt;имя&gt; — удаление значения или флажка
+<code>#undef</code> &lt;имя&gt; — удаление значения или флажка
 </p>
 <p>
-<span class="em_BLCK">#ifdef</span> &lt;имя&gt; — если флаг или значение определены, то весь текст после этого условия до <span class="em_BLCK">#endif</span> или до <span class="em_BLCK">#else</span> будет выведен в итоговый файл
+<code>#ifdef</code> &lt;имя&gt; — если флаг или значение определены, то весь текст после этого условия до <code>#endif</code> или до <code>#else</code> будет выведен в итоговый файл
 </p>
 <p>
-<span class="em_BLCK">#else</span> — окончание фрагмента, регулируемого инструкцией <span class="em_BLCK">#ifdef</span> - последующий текст выводится, если условие в <span class="em_BLCK">#ifdef</span> не выполнено
+<code>#else</code> — окончание фрагмента, регулируемого инструкцией <code>#ifdef</code> - последующий текст выводится, если условие в <code>#ifdef</code> не выполнено
 </p>
 <p>
-<span class="em_BLCK">#endif</span> — окончание фрагмента, регулируемого инструкцией <span class="em_BLCK">#ifdef</span> или <span class="em_BLCK">#else</span>
+<code>#endif</code> — окончание фрагмента, регулируемого инструкцией <code>#ifdef</code> или <code>#else</code>
 </p>
 <p>
-<span class="em_BLCK">#ifndef</span> — аналогично <span class="em_BLCK">#ifdef,</span> однако проверяется, что флаг или значение не определены - весь текст после этого условия до <span class="em_BLCK">#endif</span> или до <span class="em_BLCK">#else</span> будет выведен в итоговый файл
+<code>#ifndef</code> — аналогично <code>#ifdef,</code> однако проверяется, что флаг или значение не определены - весь текст после этого условия до <code>#endif</code> или до <code>#else</code> будет выведен в итоговый файл
 </p>
 <p>
-<span class="em_BLCK">#include</span> "&lt;имя файла&gt;" — в выходной файл вставляет текст из указанного файла (из той же папки) - если файл содержит инструкции, то он также будет обработан
+<code>#include</code> "&lt;имя файла&gt;" — в выходной файл вставляет текст из указанного файла (из той же папки) - если файл содержит инструкции, то он также будет обработан
 </p>
 <p>
-Поскольку в <span class="em_BLCK">txt2gam</span>, по умолчанию, для обозначения начала локации используется символ "#", то важно, чтобы имена локаций не назывались по имени инструкции (<span class="em_BLCK">define</span>, <span class="em_BLCK">ifdef</span>, и т.п.). Также не стоит включать инструкции в комментарии и строки, лучше их записывать на отдельных строчках.
+Поскольку в <code>txt2gam</code>, по умолчанию, для обозначения начала локации используется символ "#", то важно, чтобы имена локаций не назывались по имени инструкции (<code>define</code>, <code>ifdef</code>, и т.п.). Также не стоит включать инструкции в комментарии и строки, лучше их записывать на отдельных строчках.
 </p>
 <p>
 Доступны также и другие инструкции, о них можно узнать в документации или спросить на форуме.
@@ -73,7 +72,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <p>
 Другие ключи запуска можно узнать, запустив как: gpp.exe --help
 </p>
-<h5 id="primer-ispol_zovaniia">Пример использования</h5><p>
+<h5 id="primer-ispol_zovaniia" class="avs-article-h5">Пример использования</h5><p>
 Исходный файл:
 </p>
 <div class="Monokai-Code">
@@ -98,7 +97,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 -&nbsp;Start</span><br/>
 </div>
 <p>
-Если же убрать инструкцию <span class="em_BLCK">#define</span> - например, заменив на <span class="em_BLCK">#undef,</span> то после обработки в выходной файл запишется:
+Если же убрать инструкцию <code>#define</code> - например, заменив на <code>#undef,</code> то после обработки в выходной файл запишется:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Start</span><span class="Monokai-EndLoc"><br/>
@@ -106,7 +105,7 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 -&nbsp;Start</span><br/>
 </div>
 <p>
-То есть текст, регулируемый инструкцией <span class="em_BLCK">#ifdef,</span> был удален из конечного результата.
+То есть текст, регулируемый инструкцией <code>#ifdef,</code> был удален из конечного результата.
 </p>
 <p>
 Прошу задавать вопросы на форуме.
@@ -115,9 +114,9 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 Ссылки:
 </p>
 <ul>
-<li><a href="http://yumbrik.ru/gpp-2.24.o1.win32.zip" style="text-decoration:none;" class="emFOLD">Скачать GPP</a></li>
-<li><a href="http://files.nothingisreal.com/software/gpp/gpp.html" style="text-decoration:none;" class="emFOLD">Документация на английском</a></li>
-<li><a href="http://en.nothingisreal.com/wiki/GPP" style="text-decoration:none;" class="emFOLD">Домашний сайт GPP</a></li>
+<li><a href="http://yumbrik.ru/gpp-2.24.o1.win32.zip" style="text-decoration:none;" class="avs-page-external-link">Скачать GPP</a></li>
+<li><a href="http://files.nothingisreal.com/software/gpp/gpp.html" style="text-decoration:none;" class="avs-page-external-link">Документация на английском</a></li>
+<li><a href="http://en.nothingisreal.com/wiki/GPP" style="text-decoration:none;" class="avs-page-external-link">Домашний сайт GPP</a></li>
 </ul>
 <p>
 АВТОР: <strong>NTROPY</strong> 
@@ -125,32 +124,32 @@ gpp.exe &lt;входной файл&gt; -o &lt;выходной файл&gt;
 <p>
 07.04.2010 18:47
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="emHREFTT">&lt; Назад, к странице 13</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="emHREFTT">Вперёд, к странице 15 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/rabota_v_tekstovom_redaktore_0011.html" class="avs-pages-button__link">&lt; Назад, к странице 13</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_for_linux_0013.html" class="avs-pages-button__link">Вперёд, к странице 15 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

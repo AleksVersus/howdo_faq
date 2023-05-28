@@ -5,19 +5,18 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: ИнформАрхив</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>ИнформАрхив QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
-<h5 id=" informarch_game_in_texteditor">Пишем QSP-игру в текстовом редакторе</h5><p>
-Для того, чтобы написать свой текстовый квест, понадобится любой текстовый редактор и программа <a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="emFOLD">TXT2GAM</a>. Для более удобного использования этой программы существует специальная оболочка <a href="https://qsp.org/index.php?option=com_content&amp;task=view&amp;id=53&amp;Itemid=56" style="text-decoration:none;" class="emFOLD">GAMConv</a>, которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" style="text-decoration:none;" class="emFOLD">QSP-плеер</a>.
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div>
+<h5 id=" informarch_game_in_texteditor" class="avs-article-h5">Пишем QSP-игру в текстовом редакторе</h5><p>
+Для того, чтобы написать свой текстовый квест, понадобится любой текстовый редактор и программа <a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html#informarch_txt2gam_manual" style="text-decoration:none;" class="avs-page-external-link">TXT2GAM</a>. Для более удобного использования этой программы существует специальная оболочка <a href="https://qsp.org/index.php?option=com_content&amp;task=view&amp;id=53&amp;Itemid=56" style="text-decoration:none;" class="avs-page-external-link">GAMConv</a>, которой можно пользоваться для конвертирования кода уроков. Для проигрывания квеста понадобится <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" style="text-decoration:none;" class="avs-page-external-link">QSP-плеер</a>.
 </p>
 <p>
 В примерах будут использоваться комментарии - строки, которые игрок не увидит и которые служат для того, чтобы можно было делать в коде игры различные заметки. Комментарий начинается с восклицательного знака «!».
@@ -28,7 +27,7 @@
 <div class="Monokai-Code">
 <span class="Monokai-Operator"></span><span class="Monokai-Comment">!&nbsp;эта&nbsp;строка&nbsp;видна&nbsp;только&nbsp;создателю&nbsp;квеста,&nbsp;игрок&nbsp;её&nbsp;не&nbsp;увидит</span><br/>
 </div>
-<h5 id="urok-1-lokatsii-dejstviia-perehody">Урок 1. Локации, Действия, Переходы</h5><p>
+<h5 id="urok-1-lokatsii-dejstviia-perehody" class="avs-article-h5">Урок 1. Локации, Действия, Переходы</h5><p>
 Текстовый квест в QSP состоит из отдельных локаций (кадров, сцен, эпизодов), на которых могут выполняться различные игровые действия. Каждая локация имеет начало (тут же указывается имя локации), код локации (середину) и конец (знак «-», минус).
 </p>
 <p>
@@ -43,7 +42,7 @@
 Проигрывание квеста начинается с самой первой локации. Традиционно эта локация называется "Начало". Для того, чтобы вывести в игре текст, вы просто пишете строку в коде локации, заключённую в кавычки ('' или "").
 </p>
 <p>
-Пример ("<span class="em_BLCK">1.txt</span>"):
+Пример ("<code>1.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -63,7 +62,7 @@
 Чтобы добавить интерактивности давайте сделаем вторую локацию и дадим возможность игроку перейти из одной локации в другую. Для этого нужно создать на первой локации действие, которое будет осуществлять переход в другую локацию.
 </p>
 <p>
-Пример ("<span class="em_BLCK">2.txt</span>"):
+Пример ("<code>2.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -93,14 +92,14 @@
 <p>
 Это основа всех квестов на QSP. Дальше мы попробуем не спеша сделать небольшой квест, в каждом новом уроке добавляя ему новые элементы, пока не охватим все возможности QSP.
 </p>
-<h5 id="urok-2-peremennye-usloviia">Урок 2. Переменные, Условия</h5><p>
+<h5 id="urok-2-peremennye-usloviia" class="avs-article-h5">Урок 2. Переменные, Условия</h5><p>
 Пусть у нас будет игра из трёх локаций. В одной локации игрок сможет зарабатывать деньги, в другой - тратить их на различные предметы, в третьей - дарить эти предметы различным людям. К этим трём добавим ещё одну, стартовую, локацию, в которой будет объясняться задача игрока.
 </p>
 <p>
 Напишем каркас.
 </p>
 <p>
-Пример ("<span class="em_BLCK">3.txt</span>"):
+Пример ("<code>3.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -139,7 +138,7 @@
 Сам механизм зарабатывания денег будет у нас очень простым. Нужно будет перенести 3 ящика и тогда бригадир будет давать игроку 5 монет. Для этого нужно будет сделать ещё одну переменную, в которой будет указано число перенесённых игроком ящиков и если их 3, то добавлять игроку деньги, и очищать счётчик ящиков. Наш квест станет таким:
 </p>
 <p>
-Пример ("<span class="em_BLCK">4.txt</span>"):
+Пример ("<code>4.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -175,13 +174,13 @@
 -</span><br/>
 </div>
 <p>
-Для того, чтобы в тексте локации вывести значение переменной используется конструкция <span class="em_BLCK">'&lt;&lt;Имя_переменной&gt;&gt;</span>'. Обратите внимание в каждой локации выводится количество монет у игрока. К тому же, в локации «Порт» показывается количество ящиков, которое нужно перенести, чтобы получить деньги.
+Для того, чтобы в тексте локации вывести значение переменной используется конструкция <code>'&lt;&lt;Имя_переменной&gt;&gt;</code>'. Обратите внимание в каждой локации выводится количество монет у игрока. К тому же, в локации «Порт» показывается количество ящиков, которое нужно перенести, чтобы получить деньги.
 </p>
 <p>
-Ветвления в QSP задаются командой <span class="em_BLCK">IF</span>, после которой идёт условие и ставится двоеточие. Затем идут инструкции, которые выполняются, если условие верное и ставится завершающая команда <span class="em_BLCK">END</span>.
+Ветвления в QSP задаются командой <code>IF</code>, после которой идёт условие и ставится двоеточие. Затем идут инструкции, которые выполняются, если условие верное и ставится завершающая команда <code>END</code>.
 </p>
 <p>
-В нашем случае мы проверяем, равна ли переменная <span class="em_BLCK">Ящик</span> 3-м (все ли ящики перенесли). Если равна, то мы увеличиваем переменную «Деньги» на 5 (наш заработок) и сбрасываем переменную <span class="em_BLCK">Ящик</span> в 0, чтобы можно заново таскать ящики и зарабатывать деньги.
+В нашем случае мы проверяем, равна ли переменная <code>Ящик</code> 3-м (все ли ящики перенесли). Если равна, то мы увеличиваем переменную «Деньги» на 5 (наш заработок) и сбрасываем переменную <code>Ящик</code> в 0, чтобы можно заново таскать ящики и зарабатывать деньги.
 </p>
 <p>
 Чтобы текст игры обновился и игрок увидел новые значения переменных, нужно перейти на ту же локацию.
@@ -189,14 +188,14 @@
 <p>
 Отконвертируйте и запустите пример, теперь игрок сможет зарабатывать деньги переноской ящиков.
 </p>
-<h5 id="urok-3-inventar_">Урок 3. Инвентарь</h5><p>
+<h5 id="urok-3-inventar_" class="avs-article-h5">Урок 3. Инвентарь</h5><p>
 Теперь добавим игроку возможность покупать различные предметы в магазине и затем дарить. Для предметов очень хорошо подходит «Инвентарь». Теперь купленные предметы игрок сможет носить с собой и дарить своим близким, когда захочет.
 </p>
 <p>
-Чтобы добавить предмет в инвентарь, есть команда <span class="em_BLCK">ADDOBJ</span>, после которой идёт имя предмета. А для того, чтобы удалить предмет, есть команда <span class="em_BLCK">DELOBJ</span>, после которой идёт имя удаляемого предмета.
+Чтобы добавить предмет в инвентарь, есть команда <code>ADDOBJ</code>, после которой идёт имя предмета. А для того, чтобы удалить предмет, есть команда <code>DELOBJ</code>, после которой идёт имя удаляемого предмета.
 </p>
 <p>
-Пример ("<span class="em_BLCK">5.txt</span>"):
+Пример ("<code>5.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -264,7 +263,7 @@
 Следующим важным моментом будет механизм «дарения» предметов. Он будет реализован в локации «Дом».
 </p>
 <p>
-Пример ("<span class="em_BLCK">6.txt</span>"):
+Пример ("<code>6.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -358,13 +357,13 @@
 -</span><br/>
 </div>
 <p>
-Конструкция <span class="em_BLCK">IF OBJ 'имя_предмета</span>' проверяет, есть ли у игрока в инвентаре указанный предмет. В нашем случае мы проверяем наличие тех предметов, которые мы можем купить в магазине. И если у игрока есть такие предметы - создаём действие «дарения» этих предметов. Когда игрок совершит действие, мы заберем у него тот предмет, который он хочет подарить и выводим диалог благодарности за подарок. К тому же, мы используем команду <span class="em_BLCK">DELACT</span>, которой удаляем действие, указанное после этой команды.
+Конструкция <code>IF OBJ 'имя_предмета</code>' проверяет, есть ли у игрока в инвентаре указанный предмет. В нашем случае мы проверяем наличие тех предметов, которые мы можем купить в магазине. И если у игрока есть такие предметы - создаём действие «дарения» этих предметов. Когда игрок совершит действие, мы заберем у него тот предмет, который он хочет подарить и выводим диалог благодарности за подарок. К тому же, мы используем команду <code>DELACT</code>, которой удаляем действие, указанное после этой команды.
 </p>
-<h5 id="urok-4-nastrojki-formatirovanie">Урок 4. Настройки, Форматирование</h5><p>
+<h5 id="urok-4-nastrojki-formatirovanie" class="avs-article-h5">Урок 4. Настройки, Форматирование</h5><p>
 В этом уроке рассмотрим, как сделать наш квест более привлекательным. В первую очередь следует настроить интерфейс так, чтобы в нём не оставалось ничего лишнего, отвлекающего от игры. Если вы сейчас запустите наш пример, то увидите, что мы не используем "поле дополнительного описания" (справа внизу) и "командную строку" (внизу). Чтобы они нам не мешали, их нужно отключить. Делается это следующим образом:
 </p>
 <p>
-Пример ("<span class="em_BLCK">7.txt</span>"):
+Пример ("<code>7.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -373,13 +372,13 @@
 -</span><br/>
 </div>
 <p>
-Мы вызываем инструкцию <span class="em_BLCK">SHOWSTAT</span> с параметром <span class="em_BLCK">0</span> для того, чтобы отключить "поле дополнительного описания". Если бы мы передали <span class="em_BLCK">1</span> (или число отличное от <span class="em_BLCK">0</span>), то поле было бы видимым. То же самое и с <span class="em_BLCK">SHOWINPUT</span> (командная строка). Так же мы можем отключить инвентарь - <span class="em_BLCK">SHOWOBJS</span>, и список действий - <span class="em_BLCK">SHOWACTS</span>.
+Мы вызываем инструкцию <code>SHOWSTAT</code> с параметром <code>0</code> для того, чтобы отключить "поле дополнительного описания". Если бы мы передали <code>1</code> (или число отличное от <code>0</code>), то поле было бы видимым. То же самое и с <code>SHOWINPUT</code> (командная строка). Так же мы можем отключить инвентарь - <code>SHOWOBJS</code>, и список действий - <code>SHOWACTS</code>.
 </p>
 <p>
 Теперь нам нужно сделать так, чтобы наш текст был более подходящим для нашего квеста. Для этого есть 4 переменные.
 </p>
 <p>
-Пример ("<span class="em_BLCK">8.txt</span>"):
+Пример ("<code>8.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -391,28 +390,28 @@
 -</span><br/>
 </div>
 <p>
-Цвет в QSP задаётся с помощью функции <span class="em_BLCK">RGB</span>, в которую мы передаём значения его отдельных компонент - красного (Red), зелёного (Green) и синего (Blue). Отсюда и название функции.
+Цвет в QSP задаётся с помощью функции <code>RGB</code>, в которую мы передаём значения его отдельных компонент - красного (Red), зелёного (Green) и синего (Blue). Отсюда и название функции.
 </p>
 <p>
-Если вы не знакомы с таким способом задания цветов, то вам может помочь программа MS Paint, которая входит в стандартную поставку Windows. Для этого запустите программу, щёлкните два раза по любому цвету в палитре (внизу) и затем нажмите кнопку "Определить цвет". Появится расширенная палитра, на которой можно выбрать нужный вам цвет. Под палитрой снизу будет 3 поля (Красный, Зелёный, Синий), значениями из этих полей вам и нужно заполнить функцию <span class="em_BLCK">RGB</span>.
+Если вы не знакомы с таким способом задания цветов, то вам может помочь программа MS Paint, которая входит в стандартную поставку Windows. Для этого запустите программу, щёлкните два раза по любому цвету в палитре (внизу) и затем нажмите кнопку "Определить цвет". Появится расширенная палитра, на которой можно выбрать нужный вам цвет. Под палитрой снизу будет 3 поля (Красный, Зелёный, Синий), значениями из этих полей вам и нужно заполнить функцию <code>RGB</code>.
 </p>
 <p>
-Переменная <span class="em_BLCK">BCOLOR</span> устанавливает цвет заднего фона, <span class="em_BLCK">FCOLOR</span> - цвет текста.
+Переменная <code>BCOLOR</code> устанавливает цвет заднего фона, <code>FCOLOR</code> - цвет текста.
 </p>
 <p>
-Следует учесть, что если присвоить переменной цвета значение <span class="em_BLCK">0</span> (к примеру, <span class="em_BLCK">BCOLOR = 0</span>), то проигрыватель квестов заменит указанный цвет на цвет из настроек самого плеера, т.е. цвет фона <span class="em_BLCK">0</span> это прозрачный цвет.
+Следует учесть, что если присвоить переменной цвета значение <code>0</code> (к примеру, <code>BCOLOR = 0</code>), то проигрыватель квестов заменит указанный цвет на цвет из настроек самого плеера, т.е. цвет фона <code>0</code> это прозрачный цвет.
 </p>
 <p>
-Чтобы изменить размер текста, используется переменная <span class="em_BLCK">FSIZE</span>, шрифт текста задётся строковой переменной <span class="em_BLCK">$FNAME</span>.
+Чтобы изменить размер текста, используется переменная <code>FSIZE</code>, шрифт текста задётся строковой переменной <code>$FNAME</code>.
 </p>
 <p>
 Многие игроки не любят, когда автор задаёт свои визуальные параметры для текстовых квестов. "На вкус и цвет фломастеры разные", кто-то привык читать зелёные буквы на чёрном фоне, а кто-то предпочитает классический вариант чёрного на белом. У кого-то большой монитор - маленькие буквы читать на нём неудобно и т.д. Проигрыватель квестов QSP позволяет настроить такие параметры индивидуально для каждого игрока, но только в том случае, если автор игры не заменил их на свои. Поэтому рекомендуется с осторожностью менять эти настройки для вашего квеста.
 </p>
 <p>
-Есть ещё один, способ сделать ваш текст внешне более привлекательным. Использование HTML. Язык гипертекстовой разметки документов очень хорошо подходит для этой цели. С помощью него можно не только задавать цвет, размер и шрифт текста, но и делать это для отдельных слов, фраз или даже букв, а так же позиционировать текст на экране. Например, можно расположить заголовки по центру строки, или справа. Для этого нужно переменной <span class="em_BLCK">USEHTML</span> задать значение <span class="em_BLCK">1</span> (или любое отличное от <span class="em_BLCK">0</span>). В следующем примере я приведу лишь небольшую часть возможностей, которых, впрочем, будет достаточно для оформления игры.
+Есть ещё один, способ сделать ваш текст внешне более привлекательным. Использование HTML. Язык гипертекстовой разметки документов очень хорошо подходит для этой цели. С помощью него можно не только задавать цвет, размер и шрифт текста, но и делать это для отдельных слов, фраз или даже букв, а так же позиционировать текст на экране. Например, можно расположить заголовки по центру строки, или справа. Для этого нужно переменной <code>USEHTML</code> задать значение <code>1</code> (или любое отличное от <code>0</code>). В следующем примере я приведу лишь небольшую часть возможностей, которых, впрочем, будет достаточно для оформления игры.
 </p>
 <p>
-Пример ("<span class="em_BLCK">9.txt</span>"):
+Пример ("<code>9.txt</code>"):
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-StartLoc">#&nbsp;Начало</span><br/>
@@ -517,32 +516,32 @@
 <p>
 14.04.2010 15: 16
 </p>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="emHREFTT">&lt; Назад, к странице 12</a></div><div><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="emHREFTT">Вперёд, к странице 14 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/txt2gam_help_0010.html" class="avs-pages-button__link">&lt; Назад, к странице 12</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/preprotsessor_0012.html" class="avs-pages-button__link">Вперёд, к странице 14 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>

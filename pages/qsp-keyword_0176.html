@@ -5,18 +5,16 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Как сделать?</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <h1 class="avs-article-h1">Онлайн-справочник по самым часто задаваемым вопросам из темы "<a href="https://qsp.org/index.php?option=com_agora&task=topic&id=40&Itemid=57">Как сделать?</a>" на форуме <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank">QSP.su</a></h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="emHREFTT">&lt; Назад, к странице 162</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="emHREFTT">Вперёд, к странице 164 &gt;</a></div></div>
-<h4 id="faq_80_02">Операторы</h4><h4 id="faq_80_02_impicit">Неявный оператор</h4><p>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="avs-pages-button__link">&lt; Назад, к странице 162</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="avs-pages-button__link">Вперёд, к странице 164 &gt;</a></div></div>
+<h4 id="faq_80_02" class="avs-article-h4">Операторы</h4><h4 id="faq_80_02_impicit" class="avs-article-h4">Неявный оператор</h4><p>
 Неявный оператор — это оператор, который не прописывается в коде QSP, но производит вывод значений на экран. Неявный оператор подразумевается везде, где в команде присутствует выражение без оператора. Неявный оператор выводит в `Окно основного описания` значения таким же образом, как если бы вы использовали явное указание оператора `*pl`, то есть выводит значение и совершает переход на новую строку. Примеры:
 </p>
 <div class="Monokai-Code">
@@ -61,7 +59,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">local</span>&nbsp;i<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span><span class="Monokai-EndLoc"><br/>
 -&nbsp;foo</span><br/>
 </div>
-<h4 id="faq_80_02_comments">! (комментарий)</h4><p>
+<h4 id="faq_80_02_comments" class="avs-article-h4">! (комментарий)</h4><p>
 `!` — оператор комментария. То, что находится в строке после оператора комментария, и до конца строки игнорируется интерпретатором. Оператор комментария позволяет "закомментировать" (выключить) ненужный временно оператор / функцию во время отладки игры. Кроме того, написание комментариев к коду программы является одним из признаков хорошего стиля программирования.
 </p>
 <p>
@@ -96,10 +94,10 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 продолжать&nbsp;многострочный&nbsp;комментарий<br/>
 }&nbsp;и&nbsp;комментарий&nbsp;не&nbsp;кончится,&nbsp;пока&nbsp;не&nbsp;кончится&nbsp;строка</span><br/>
 </div>
-<h4 id="faq_80_02_sclr"><em>CLEAR (</em>CLR)</h4><p>
+<h4 id="faq_80_02_sclr" class="avs-article-h4"><em>CLEAR (</em>CLR)</h4><p>
 `<em>CLEAR` — очищает окно основного описания. Имеет краткую форму `</em>clr`.
 </p>
-<h4 id="faq_80_02_snl">*NL</h4><p>
+<h4 id="faq_80_02_snl" class="avs-article-h4">*NL</h4><p>
 `*NL` — переход на новую строку, затем вывод текста в окне основного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -113,7 +111,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_sp">*P</h4><p>
+<h4 id="faq_80_02_sp" class="avs-article-h4">*P</h4><p>
 `<em>P` — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после `</em>p` добавит новый текст сразу после текущего. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -128,7 +126,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_spl">*pl</h4><p>
+<h4 id="faq_80_02_spl" class="avs-article-h4">*pl</h4><p>
 `*PL` — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -166,7 +164,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <p>
  	сработают одинаково.
 </p>
-<h4 id="faq_80_02_act">ACT</h4><p>
+<h4 id="faq_80_02_act" class="avs-article-h4">ACT</h4><p>
 `ACT` — создаёт и выводит в окно действий новое действие.
 </p>
 <p>
@@ -219,7 +217,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-old&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Старое&nbsp;действие."</span><br/>
 <span class="Monokai-Koperator">act</span>&nbsp;<span class="Monokai-String">"Действие&nbsp;1&lt;uid-new&gt;"</span><span class="Monokai-Operator">:</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Новое&nbsp;действие."</span><br/>
 </div>
-<h4 id="faq_80_02_addobj">ADDOBJ</h4><p>
+<h4 id="faq_80_02_addobj" class="avs-article-h4">ADDOBJ</h4><p>
 `ADDOBJ` — добавление нового предмета в окно предметов. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -261,13 +259,13 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 <div class="Monokai-Code">
 <span class="Monokai-Operator">addobj</span>&nbsp;<span class="Monokai-String">"Отвёртка"</span><span class="Monokai-Operator">,</span><span class="Monokai-String">""</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">1</span><br/>
 </div>
-<h4 id="faq_80_02_cla">CLA</h4><p>
+<h4 id="faq_80_02_cla" class="avs-article-h4">CLA</h4><p>
 `CLA` - очистка списка текущих действий (удаление всех действий из окна действий).
 </p>
-<h4 id="faq_80_02_clear">CLEAR (CLR)</h4><p>
+<h4 id="faq_80_02_clear" class="avs-article-h4">CLEAR (CLR)</h4><p>
 `CLEAR` — очищает окно дополнительного описания. Имеет краткую форму `clr`.
 </p>
-<h4 id="faq_80_02_close">CLOSE</h4><p>
+<h4 id="faq_80_02_close" class="avs-article-h4">CLOSE</h4><p>
 `CLOSE` — останавливает проигрывание указанного звукового файла. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -276,19 +274,19 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 <p>
 	, где `[$путь к звуковому файлу]` — путь к звуковому файлу относительно файла игры. Если параметр `[$путь к звуковому файлу]` не указан, происходит остановка воспроизведения всех звуковых файлов.
 </p>
-<h4 id="faq_80_02_closeall">CLOSE ALL</h4><p>
+<h4 id="faq_80_02_closeall" class="avs-article-h4">CLOSE ALL</h4><p>
 `CLOSE ALL` — остановка проигрывания всех активных звуковых файлов. Имеет краткую форму `close`.
 </p>
-<h4 id="faq_80_02_cls">CLS</h4><p>
+<h4 id="faq_80_02_cls" class="avs-article-h4">CLS</h4><p>
 `CLS` — очищает все окна кроме списка предметов. Эквивалентно конструкции:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">*</span><span class="Monokai-Operator">clear</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cla</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cmdclear</span><br/>
 </div>
-<h4 id="faq_80_02_cmdclear">CMDCLEAR (CMDCLR)</h4><p>
+<h4 id="faq_80_02_cmdclear" class="avs-article-h4">CMDCLEAR (CMDCLR)</h4><p>
 `CMDCLEAR` — очистка строки ввода. Имеет краткую форму `cmdclr`.
 </p>
-<h4 id="faq_80_02_copyarr">COPYARR</h4><p>
+<h4 id="faq_80_02_copyarr" class="avs-article-h4">COPYARR</h4><p>
 `COPYARR` — копирование содержимого одного массива в другой. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -321,7 +319,7 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 <span class="Monokai-Operator">copyarr</span>&nbsp;$arrname1<span class="Monokai-Operator">,</span>$arrname2<span class="Monokai-Operator">,</span><span class="Monokai-Numeric">10</span><span class="Monokai-Operator">,</span><span class="Monokai-Numeric">5</span><br/>
 <span class="Monokai-Operator">copyarr</span>&nbsp;<span class="Monokai-String">'a&lt;&lt;$arrname1&gt;&gt;'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'a&lt;&lt;$arrname2&gt;&gt;'</span><br/>
 </div>
-<h4 id="faq_80_02_delact">DELACT</h4><p>
+<h4 id="faq_80_02_delact" class="avs-article-h4">DELACT</h4><p>
 `DELACT` — удаляет действие из списка действий (если такое действие существует). Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -345,7 +343,7 @@ objects<span class="Monokai-Operator">[</span><span class="Monokai-String">'па
 <div class="Monokai-Code">
 DEL&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_delobj">DELOBJ</h4><p>
+<h4 id="faq_80_02_delobj" class="avs-article-h4">DELOBJ</h4><p>
 `DELOBJ` — удаление предмета из инвентаря по названию (если такой предмет существует). Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -372,7 +370,7 @@ DEL&nbsp;<span class="Monokai-Koperator">ACT</span>&nbsp;<span class="Monokai-Op
 <div class="Monokai-Code">
 DEL&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operator">[</span>$название<span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_dynamic">DYNAMIC</h4><p>
+<h4 id="faq_80_02_dynamic" class="avs-article-h4">DYNAMIC</h4><p>
 `DYNAMIC` — выполняет код, переданный в виде строки текста. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -394,7 +392,7 @@ DEL&nbsp;<span class="Monokai-Func">OBJ</span>&nbsp;<span class="Monokai-Operato
 "</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Текст'</span><span class="Monokai-Operator">,</span><span class="Monokai-String">'Вилка'</span><br/>
 </div>
 <p>
-	Нижеследующая информация справедлива и для функции `dyneval` (см. <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html#faq_80_03_dyneval" style="text-decoration:none;" class="emFOLD">соответствующий раздел</a>).
+	Нижеследующая информация справедлива и для функции `dyneval` (см. <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html#faq_80_03_dyneval" style="text-decoration:none;" class="avs-page-external-link">соответствующий раздел</a>).
 </p>
 <p>
 	Важно! Если код задан с помощью одинарных (`''`) или двойных (`""`) кавычек, в тексте вычисляются подвыражения:
@@ -426,7 +424,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <p>
 	В этом случае будут выведены две строки 'asdfg'.
 </p>
-<h4 id="faq_80_02_exit">EXIT</h4><p>
+<h4 id="faq_80_02_exit" class="avs-article-h4">EXIT</h4><p>
 `EXIT` — завершение выполнения текущего блока кода (преждевременный выход из подпрограммы, функции, обработчика какого-либо события, и т.д.).
 </p>
 <p>
@@ -449,7 +447,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <p>
 Внимание!!! В более новых версиях плеера (5.8.0 и выше) есть оператор цикла `loop`, и тело цикла так же считается отдельным блоком кода, однако оператор `exit` прерывает не только сам цикл, но и блок кода, в котором находится цикл.
 </p>
-<h4 id="faq_80_02_gosub">GOSUB (GS)</h4><p>
+<h4 id="faq_80_02_gosub" class="avs-article-h4">GOSUB (GS)</h4><p>
 `GOSUB` — выполнение кода указанной локации без непосредственного перехода на неё.
 </p>
 <p>
@@ -502,7 +500,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GS</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_goto">GOTO (GT)</h4><p>
+<h4 id="faq_80_02_goto" class="avs-article-h4">GOTO (GT)</h4><p>
 `GOTO` — переход на указанную локацию. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -533,7 +531,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <div class="Monokai-Code">
 <span class="Monokai-Operator">GT</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<h4 id="faq_80_02_if">IF (ELSE, ELSEIF)</h4><p>
+<h4 id="faq_80_02_if" class="avs-article-h4">IF (ELSE, ELSEIF)</h4><p>
 `IF` — оператор условия. Собственно для того и нужен, чтобы проверять выполнение какого-либо условия. Имеет несколько форм записи.
 </p>
 <p>
@@ -759,7 +757,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;k1<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">25</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_02_addqst">INCLIB (ADDQST)</h4><p>
+<h4 id="faq_80_02_addqst" class="avs-article-h4">INCLIB (ADDQST)</h4><p>
 `INCLIB` — из заданного файла игры добавляет все локации, названия которых отсутствуют среди текущих игровых локаций. Загруженные локации полностью эквивалентны локациям из основного файла игры. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -778,14 +776,14 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">"res/base.qsp"</span><br/>
 <span class="Monokai-Operator">inclib</span>&nbsp;<span class="Monokai-String">"res/intro.qsp"</span><br/>
 </div>
-<h4 id="faq_80_02_jump">JUMP</h4><p>
+<h4 id="faq_80_02_jump" class="avs-article-h4">JUMP</h4><p>
 `JUMP` — переход в текущем блоке кода на указанную метку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">JUMP</span>&nbsp;<span class="Monokai-Operator">[</span>$метка<span class="Monokai-Operator">]</span><br/>
 </div>
 <p>
-	, где `<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0179.html#faq_80_05_marks" style="text-decoration:none;" class="emFOLD">$метка]` — это метка ниже или выше по коду (см. раздел ["Метки"</a>).
+	, где `<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0179.html#faq_80_05_marks" style="text-decoration:none;" class="avs-page-external-link">$метка]` — это метка ниже или выше по коду (см. раздел ["Метки"</a>).
 </p>
 <p>
 	`jump` находит метку только в пределах текущего блока кода, то есть метки локальны.
@@ -837,7 +835,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="Monokai-Operator">jump</span>&nbsp;<span class="Monokai-String">'loop'</span><br/>
 <span class="Monokai-Koperator">end</span><br/>
 </div>
-<h4 id="faq_80_02_killall">KILLALL</h4><p>
+<h4 id="faq_80_02_killall" class="avs-article-h4">KILLALL</h4><p>
 `KILLALL` — уничтожает все переменные и удаляет все предметы из окна предметов. Эквивалентен конструкции:
 </p>
 <div class="Monokai-Code">
@@ -855,7 +853,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 <p>
 	Обычно `killall` используют в начале игры, если в конце игры предусмотрено действие "Начать заново".
 </p>
-<h4 id="faq_80_02_killobj">KILLOBJ</h4><p>
+<h4 id="faq_80_02_killobj" class="avs-article-h4">KILLOBJ</h4><p>
 `KILLOBJ` — удаление предмета, расположенного в заданной позиции. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -875,10 +873,10 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 </span><span class="Monokai-Comment">!&nbsp;удаляем&nbsp;все&nbsp;предметы</span><br/>
 <span class="Monokai-Operator">killobj</span><br/>
 </div>
-<h4 id="faq_80_02_killqst">KILLQST</h4><p>
+<h4 id="faq_80_02_killqst" class="avs-article-h4">KILLQST</h4><p>
 `KILLQST` — удаляет все локации, добавленные с помощью оператора `inclib`. В более новых версиях библиотеки команда переименована в `dellib`, затем в `freelib`.
 </p>
-<h4 id="faq_80_02_killvar">KILLVAR</h4><p>
+<h4 id="faq_80_02_killvar" class="avs-article-h4">KILLVAR</h4><p>
 `KILLVAR` — удаление указанного элемента массива. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -915,7 +913,7 @@ a<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><s
 </span><span class="Monokai-Comment">!&nbsp;a[1]=23</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;a[2]=15</span><br/>
 </div>
-<h4 id="faq_80_02_let">LET</h4><p>
+<h4 id="faq_80_02_let" class="avs-article-h4">LET</h4><p>
 `LET` — устаревший оператор для установки значения переменной. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -942,7 +940,7 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&n
 <p>
 	Использование операторов `set` и `let` не рекомендуется.
 </p>
-<h4 id="faq_80_02_menu">MENU</h4><p>
+<h4 id="faq_80_02_menu" class="avs-article-h4">MENU</h4><p>
 `MENU` — в любом месте игры выводит на экран всплывающее меню, пункты которого прописаны в указанном массиве. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1005,7 +1003,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">menu</span>&nbsp;<span class="Monokai-String">'usr_menu'</span>&nbsp;<span class="Monokai-Operator">&amp;</span><span class="Monokai-Comment">!&nbsp;покажет&nbsp;меню&nbsp;из&nbsp;4-х&nbsp;пунктов</span><br/>
 </div>
 <p>
-	Меню заканчивается на элементе массива со значением `<span class="em_BLCK">` (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть',</span>,'Бросить', то 2 последних пункта меню не будут созданы:
+	Меню заканчивается на элементе массива со значением `<code>` (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть',</code>,'Бросить', то 2 последних пункта меню не будут созданы:
 </p>
 <div class="Monokai-Code">
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Взять&nbsp;предмет:take_item'</span>&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;этот&nbsp;пункт&nbsp;мы&nbsp;увидим&nbsp;на&nbsp;экране</span><br/>
@@ -1022,7 +1020,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1<
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">2</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'-:-'</span><br/>
 $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">'Положить&nbsp;предмет:put_item'</span><br/>
 </div>
-<h4 id="faq_80_02_msg">MSG</h4><p>
+<h4 id="faq_80_02_msg" class="avs-article-h4">MSG</h4><p>
 `MSG` — вывод указанного сообщения в диалоговом окне. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1053,7 +1051,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Koperator">end</span><span class="Monokai-Operator"><br/>
 </span><span class="Monokai-Comment">!&nbsp;Получаем&nbsp;вывод&nbsp;сообщения&nbsp;когда&nbsp;условие&nbsp;hlebgotov&nbsp;=&nbsp;1</span><br/>
 </div>
-<h4 id="faq_80_02_nl">NL</h4><p>
+<h4 id="faq_80_02_nl" class="avs-article-h4">NL</h4><p>
 `NL` — переход на новую строку, затем вывод текста в окне основногодополнительного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1067,7 +1065,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">nl</span>&nbsp;<span class="Monokai-String">"Переход&nbsp;на&nbsp;новую&nbsp;строку&nbsp;+&nbsp;выведение&nbsp;текста."</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_opengame">OPENGAME</h4><p>
+<h4 id="faq_80_02_opengame" class="avs-article-h4">OPENGAME</h4><p>
 `OPENGAME` — загрузка указанного файла состояния игры. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1086,9 +1084,9 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">opengame</span><br/>
 </div>
 <p>
-	См. также локацию-обработчик события загрузки состояния игры (<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongload" style="text-decoration:none;" class="emFOLD">$ongload</a>).
+	См. также локацию-обработчик события загрузки состояния игры (<a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongload" style="text-decoration:none;" class="avs-page-external-link">$ongload</a>).
 </p>
-<h4 id="faq_80_02_openqst">OPENQST</h4><p>
+<h4 id="faq_80_02_openqst" class="avs-article-h4">OPENQST</h4><p>
 `OPENQST` — открытие и запуск указанного файла игры. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1106,7 +1104,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <div class="Monokai-Code">
 <span class="Monokai-Operator">killall</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">cls</span>&nbsp;<span class="Monokai-Operator">&amp;</span>&nbsp;<span class="Monokai-Operator">close</span>&nbsp;<span class="Monokai-Operator">all</span><br/>
 </div>
-<h4 id="faq_80_02_p">P</h4><p>
+<h4 id="faq_80_02_p" class="avs-article-h4">P</h4><p>
 `P` — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после p добавит новый текст сразу после текущего. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1121,7 +1119,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br/>
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_pl">PL</h4><p>
+<h4 id="faq_80_02_pl" class="avs-article-h4">PL</h4><p>
 `PL` — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1136,7 +1134,7 @@ $usr_menu<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3<
 <span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 <span class="Monokai-Operator">pl</span>&nbsp;<span class="Monokai-String">"Вывод&nbsp;текста,&nbsp;затем&nbsp;переход&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_play">PLAY</h4><p>
+<h4 id="faq_80_02_play" class="avs-article-h4">PLAY</h4><p>
 `PLAY` — проигрывание указанного звукового файла с заданной громкостью. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1166,13 +1164,13 @@ $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody
 <p>
 	Если файл уже проигрывается, то изменяется громкость звучания без его "перезапуска". Поддерживается множество различных аудиоформатов и одновременное звучание до 32-х композиций.
 </p>
-<h4 id="faq_80_02_refint">REFINT</h4><p>
+<h4 id="faq_80_02_refint" class="avs-article-h4">REFINT</h4><p>
 `REFINT` — принудительное обновление интерфейса (в т.ч. смена цветов, шрифтов, назначенных с помощью системных переменных).
 </p>
 <p>
 	По умолчанию обновление интерфейса происходит 2 раза в секунду (каждые 500 мс). Так же см. оператор settimer.
 </p>
-<h4 id="faq_80_02_savegame">SAVEGAME</h4><p>
+<h4 id="faq_80_02_savegame" class="avs-article-h4">SAVEGAME</h4><p>
 `SAVEGAME` — сохранение состояния игры в указанный файл. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1191,9 +1189,9 @@ $file<span class="Monokai-Operator">=</span><span class="Monokai-String">"melody
 <span class="Monokai-Operator">savegame</span><br/>
 </div>
 <p>
-	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongsave" style="text-decoration:none;" class="emFOLD">локацию-обработчик события сохранения состояния игры ($ongsave)</a>.
+	См. также <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0178.html#faq_80_04_ongsave" style="text-decoration:none;" class="avs-page-external-link">локацию-обработчик события сохранения состояния игры ($ongsave)</a>.
 </p>
-<h4 id="faq_80_02_set">SET</h4><p>
+<h4 id="faq_80_02_set" class="avs-article-h4">SET</h4><p>
 `SET` — устаревший оператор для установки значения переменной. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1220,7 +1218,7 @@ $text<span class="Monokai-Operator">=</span><span class="Monokai-String">"text&n
 <p>
 	Использование операторов `set` и `let` не рекомендуется, так как они устарели.
 </p>
-<h4 id="faq_80_02_settimer">SETTIMER</h4><p>
+<h4 id="faq_80_02_settimer" class="avs-article-h4">SETTIMER</h4><p>
 `SETTIMER` — задаёт интервал обращения к локации-счётчику. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1262,7 +1260,7 @@ period<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">2</sp
 <p>
 	Однако на практике минимальное значение ограничено мощностью вашего компьютера, и оно, как правило, выше 1 миллисекунды.
 </p>
-<h4 id="faq_80_02_showacts">SHOWACTS</h4><p>
+<h4 id="faq_80_02_showacts" class="avs-article-h4">SHOWACTS</h4><p>
 `SHOWACTS` — управляет отображением окна действий на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1284,7 +1282,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showacts</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;список&nbsp;действий</span><br/>
 <span class="Monokai-Operator">showacts</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;список&nbsp;действий</span><br/>
 </div>
-<h4 id="faq_80_02_showinput">SHOWINPUT</h4><p>
+<h4 id="faq_80_02_showinput" class="avs-article-h4">SHOWINPUT</h4><p>
 `SHOWINPUT` — управляет отображением строки ввода на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1306,7 +1304,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showinput</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;строку&nbsp;ввода</span><br/>
 <span class="Monokai-Operator">showinput</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;строку&nbsp;ввода</span><br/>
 </div>
-<h4 id="faq_80_02_showobjs">SHOWOBJS</h4><p>
+<h4 id="faq_80_02_showobjs" class="avs-article-h4">SHOWOBJS</h4><p>
 `SHOWOBJS` — управляет отображением инвентаря на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1328,7 +1326,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showobjs</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;инвентарь</span><br/>
 <span class="Monokai-Operator">showobjs</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;инвентарь</span><br/>
 </div>
-<h4 id="faq_80_02_showstat">SHOWSTAT</h4><p>
+<h4 id="faq_80_02_showstat" class="avs-article-h4">SHOWSTAT</h4><p>
 `SHOWSTAT` — управляет отображением окна дополнительного описания на экране. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1350,7 +1348,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">showstat</span>&nbsp;on&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;показывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 <span class="Monokai-Operator">showstat</span>&nbsp;off&nbsp;<span class="Monokai-Operator">&amp;&nbsp;</span><span class="Monokai-Comment">!&nbsp;скрывает&nbsp;окно&nbsp;дополнительного&nbsp;описания</span><br/>
 </div>
-<h4 id="faq_80_02_unsel">UNSELECT (UNSEL)</h4><p>
+<h4 id="faq_80_02_unsel" class="avs-article-h4">UNSELECT (UNSEL)</h4><p>
 `UNSELECT` — отмена выделения предмета. Имеет краткую форму `unsel`.
 </p>
 <p>
@@ -1369,7 +1367,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Koperator">end</span><br/>
 <span class="Monokai-Operator">unsel</span><br/>
 </div>
-<h4 id="faq_80_02_view">VIEW</h4><p>
+<h4 id="faq_80_02_view" class="avs-article-h4">VIEW</h4><p>
 `VIEW` — выводит на экран указанное изображение. В классическом плеере изображение выводися в отдельном окошке (окно предпросмотра), в AeroQSP и Quest Navigator изображение выводится верхним слоем в общем окне. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1390,7 +1388,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 </span><span class="Monokai-Comment">!&nbsp;закрыть&nbsp;окно&nbsp;предпросмотра&nbsp;можно&nbsp;и&nbsp;так</span><br/>
 <span class="Monokai-Operator">view</span><br/>
 </div>
-<h4 id="faq_80_02_wait">WAIT</h4><p>
+<h4 id="faq_80_02_wait" class="avs-article-h4">WAIT</h4><p>
 `WAIT` — приостановка выполнения кода программы на указанное количество миллисекунд. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1424,7 +1422,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <p>
 В следующем примере
 </p>
-<h4 id="faq_80_02_xgoto">XGOTO (XGT)</h4><p>
+<h4 id="faq_80_02_xgoto" class="avs-article-h4">XGOTO (XGT)</h4><p>
 `XGOTO` — переход на указанную локацию без очистки окна основного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
@@ -1456,33 +1454,33 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">XGT</span>&nbsp;<span class="Monokai-Operator">[</span>$локация<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">1</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span>&nbsp;...&nbsp;<span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>аргумент&nbsp;<span class="Monokai-Numeric">8</span><span class="Monokai-Operator">]</span><br/>
 </div>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="emHREFTT">&lt; Назад, к странице 162</a></div><div><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="emHREFTT">Вперёд, к странице 164 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" class="avs-pages-button__link">&lt; Назад, к странице 162</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0177.html" class="avs-pages-button__link">Вперёд, к странице 164 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
-    <script src="../res/js/text_replace.js"></script>
+    </aside>
+    <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>
 </html>

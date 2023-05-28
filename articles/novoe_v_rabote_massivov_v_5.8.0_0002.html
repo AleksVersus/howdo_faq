@@ -5,18 +5,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link id="favicon" rel="icon" type="image/x-icon" href="../res/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="../res/css/easy.library.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/offline.window.css" />
-    <link type="text/css" rel="stylesheet" href="../res/css/qsp_code.css" />
     <title>QSP: Статьи</title>
 </head>
     
 <body>
-    <div class="em_Main">
-        <div class="em_AROUND">
-            <h1>Статьи по разработке игр на QSP</h1>
+    <div class="avs-page-wrapper">
+        <div class="easy-lib-page">
+            <article class="e-block">
+            <h1 class="avs-article-h1">Статьи по разработке игр на QSP</h1>
             <!-- body start -->
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 2</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 4 &gt;</a></div></div>
-<h4 id="novoje_v_rabote_massivov">Массивы уже не те</h4><h4 id="kak-vedut-sebia-massivy-sejchas">Как ведут себя массивы сейчас</h4><p>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="avs-pages-button__link">&lt; Назад, к странице 2</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="avs-pages-button__link">Вперёд, к странице 4 &gt;</a></div></div>
+<h4 id="novoje_v_rabote_massivov" class="avs-article-h4">Массивы уже не те</h4><h4 id="kak-vedut-sebia-massivy-sejchas" class="avs-article-h4">Как ведут себя массивы сейчас</h4><p>
 Начать следует с того, что в «классическом» плеере версии 5.7.0 и ниже, а так же в Quest Navigator 0.0.28 и AeroQSP, в одном элементе массива можно хранить как текстовое, так и числовое значение. Вот как это выглядит:
 </p>
 <div class="Monokai-Code">
@@ -40,7 +39,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В обоих случаях <span class="em_BLCK">arrsize</span> выдаст ответ <span class="em_BLCK">2</span>. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
+В обоих случаях <code>arrsize</code> выдаст ответ <code>2</code>. И нам может показаться, что так и должно быть, ведь скорее всего мы имеем дело с двумя массивами: текстовым и числовым. Но на самом деле массив один. Ведь если мы будем добавлять только текстовые значения, размер «числовой части» массива так же увеличится.
 </p>
 <div class="Monokai-Code">
 $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0</span><span class="Monokai-Operator">]</span><span class="Monokai-Operator">=</span><span class="Monokai-String">"яблоко"</span><br/>
@@ -54,7 +53,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-В этом примере оба <span class="em_BLCK">arrsize</span> вернут <span class="em_BLCK">4</span>. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию <span class="em_BLCK">0</span>, для текстовых — <span class="em_BLCK">""</span> (пустая строка).
+В этом примере оба <code>arrsize</code> вернут <code>4</code>. Это показывает, что мы имеем дело с одним и тем же массивом, который позволяет под одним индексом хранить элементы двух типов, а если мы не задали какой-то элемент явно, то его значение будет значением по умолчанию. Для числовых элементов значение по умолчанию <code>0</code>, для текстовых — <code>""</code> (пустая строка).
 </p>
 <p>
 Такое поведение массива весьма просто представить в виде таблицы:
@@ -105,7 +104,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-— уверенность в том, какое значение вернёт <span class="em_BLCK">arrsize</span> пропадает.
+— уверенность в том, какое значение вернёт <code>arrsize</code> пропадает.
 </p>
 <blockquote>
 <p>
@@ -128,12 +127,12 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Operator">]</spa
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 </div>
 <p>
-Мы снова не вписали в таблицу значения элементов, которые не задавали, однако <span class="em_BLCK">mass[0]</span> и <span class="em_BLCK">mass[2]</span> вернут нам нули, если мы попробуем их использовать, а <span class="em_BLCK">$mass[1]</span> и <span class="em_BLCK">$mass[3]</span> вернут пустые строки (это соответствует их значениям по умолчанию).
+Мы снова не вписали в таблицу значения элементов, которые не задавали, однако <code>mass[0]</code> и <code>mass[2]</code> вернут нам нули, если мы попробуем их использовать, а <code>$mass[1]</code> и <code>$mass[3]</code> вернут пустые строки (это соответствует их значениям по умолчанию).
 </p>
 <p>
-Таким образом оба <span class="em_BLCK">arrsize</span> вернут нам значение <span class="em_BLCK">4</span>, хотя мы явно задавали только два числовых и два текстовых элемента.
+Таким образом оба <code>arrsize</code> вернут нам значение <code>4</code>, хотя мы явно задавали только два числовых и два текстовых элемента.
 </p>
-<h4 id="kak-massivy-budut-sebia-vesti">Как массивы будут себя вести</h4><p>
+<h4 id="kak-massivy-budut-sebia-vesti" class="avs-article-h4">Как массивы будут себя вести</h4><p>
 Новая версия плеера ещё не вышла, но всё ниже следующее будет работать в ней так. (Уже работает в плеере qSpider)
 </p>
 <p>
@@ -179,7 +178,7 @@ mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">1</span
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — <span class="em_BLCK">arrsize</span> вернёт <span class="em_BLCK">2</span> в обеих командах.
+Здесь, присвоив элементу сначала текстовое, а затем числовое значение, мы «затрём» изначальное текстовое значение числовым. В результате работы этого кода мы получим массив из двух элементов, и оба элемента будут числовыми — <code>arrsize</code> вернёт <code>2</code> в обеих командах.
 </p>
 <p>
 Чтобы закрепить новые знания, рассмотрим другой наш пример:
@@ -196,7 +195,7 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <span class="Monokai-Func">arrsize</span><span class="Monokai-Operator">(</span><span class="Monokai-String">'mass'</span><span class="Monokai-Operator">)</span><br/>
 </div>
 <p>
-Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов <span class="em_BLCK">0</span> и <span class="em_BLCK">1</span>, а в элементах <span class="em_BLCK">2</span> и <span class="em_BLCK">3</span> будут текстовые значения. Соответственно обе команды <span class="em_BLCK">arrsize</span> вернут значение <span class="em_BLCK">4</span>.
+Здесь, как и в предыдущем примере, числовые значения «затрут» текстовые для элементов <code>0</code> и <code>1</code>, а в элементах <code>2</code> и <code>3</code> будут текстовые значения. Соответственно обе команды <code>arrsize</code> вернут значение <code>4</code>.
 </p>
 <p>
 В виде таблицы мы можем представить это так:
@@ -214,12 +213,12 @@ $mass<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">3</spa
 <br/>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;'апельсин'&nbsp;&nbsp;|
 </div>
 <p>
-Если мы попытаемся использовать текстовые значения элементов <span class="em_BLCK">0</span> и <span class="em_BLCK">1</span>, то получим значения по-умолчанию, то есть — <span class="em_BLCK">""</span> (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов <span class="em_BLCK">2</span> и <span class="em_BLCK">3</span>, то получим числовые значения по-умолчанию — <span class="em_BLCK">0</span> (нули).
+Если мы попытаемся использовать текстовые значения элементов <code>0</code> и <code>1</code>, то получим значения по-умолчанию, то есть — <code>""</code> (пустые строки). Аналогично, если мы попытаемся использовать числовые значения элементов <code>2</code> и <code>3</code>, то получим числовые значения по-умолчанию — <code>0</code> (нули).
 </p>
 <p>
 Возможно пока Вы этого не заметили, но это очень масштабное изменение, которое потребует от некоторых авторов существенно изменить свои привычки в программировании на QSP.
 </p>
-<h4 id="chto-mozhno-i-nuzhno-sdelat_">Что можно и нужно сделать</h4><p>
+<h4 id="chto-mozhno-i-nuzhno-sdelat_" class="avs-article-h4">Что можно и нужно сделать</h4><p>
 Автор этой статьи уже ощутил на себе вес изменений в работе массивов.
 </p>
 <p>
@@ -261,47 +260,47 @@ unit_count<span class="Monokai-Operator">[</span><span class="Monokai-Numeric">0
 <p>
 Памятка по изменениям в работе массивов:
 </p>
-<img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" alt="AleksVersus-GAM-RUS" class="em_IMG" /><p>
+<div class="avs-articles-image__wrapper"><img src="https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg" alt="AleksVersus-GAM-RUS" class="avs-articles-image"></div><p>
 Статья написана по мотивам:
 </p>
 <ul>
-<li>статьи <strong>Pseudopod</strong>`а <a href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri" style="text-decoration:none;" class="emFOLD">trello.com/.../одновременное-использование-arri-и-arri</a></li>
-<li>и поста <strong>Byte</strong>`а <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1290&amp;Itemid=57" style="text-decoration:none;" class="emFOLD">qsp.org/index.php...&amp;Itemid=57</a></li>
+<li>статьи <strong>Pseudopod</strong>`а <a href="https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri" style="text-decoration:none;" class="avs-page-external-link">trello.com/.../одновременное-использование-arri-и-arri</a></li>
+<li>и поста <strong>Byte</strong>`а <a href="https://qsp.org/index.php?option=com_agora&amp;task=topic&amp;id=1290&amp;Itemid=57" style="text-decoration:none;" class="avs-page-external-link">qsp.org/index.php...&amp;Itemid=57</a></li>
 </ul>
 <p>
 Статья доступна и на других ресурсах:
 </p>
 <ul>
-<li><a href="http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54" style="text-decoration:none;" class="emFOLD">мой сайт/Массивы уже не те</a></li>
-<li><a href="https://vk.com/@qsplayer-massivy-uzhe-ne-te" style="text-decoration:none;" class="emFOLD">vk.com/Массивы уже не те</a></li>
-<li><a href="https://ifhub.club/2020/10/17/massivy-uzhe-ne-te-ili-izmenenie-v-logike-raboty-massivov-v-qsp.html" style="text-decoration:none;" class="emFOLD">ifhub.club/Массивы уже не те</a></li>
+<li><a href="http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54" style="text-decoration:none;" class="avs-page-external-link">мой сайт/Массивы уже не те</a></li>
+<li><a href="https://vk.com/@qsplayer-massivy-uzhe-ne-te" style="text-decoration:none;" class="avs-page-external-link">vk.com/Массивы уже не те</a></li>
+<li><a href="https://ifhub.club/2020/10/17/massivy-uzhe-ne-te-ili-izmenenie-v-logike-raboty-massivov-v-qsp.html" style="text-decoration:none;" class="avs-page-external-link">ifhub.club/Массивы уже не те</a></li>
 </ul>
-<div style="display:flex;justify-content:space-between;"><div><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="emHREFTT">&lt; Назад, к странице 2</a></div><div><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="emHREFTT">Вперёд, к странице 4 &gt;</a></div></div>
+<div class="avs-pages-button__wrapper"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/preobrazovanie_tipov_v_qsp_0001.html" class="avs-pages-button__link">&lt; Назад, к странице 2</a></div><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/articles/chto_novogo_v_qsp_0003.html" class="avs-pages-button__link">Вперёд, к странице 4 &gt;</a></div></div>
 <!-- body end -->
-            <div class="em_Epigraph">
-                <div class="em_subText">
-                    <p>Aleks Versus'HowDo-F.A.Q.'2021-<span id="date_stamp_faq">2022</span></p>
-                    <p>Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span id="date_stamp_gamrus">2022</span></p>
+            </article>
+            <aside class="e-block">
+                <div class="avs-page-stamp">
+                    <p class="empty">Aleks Versus'HowDo-F.A.Q.'2021-<span class="subscribe-year">2022</span></p>
+                    <p class="empty">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2013-<span class="subscribe-year">2022</span></p>
                 </div>
-            </div>
-            <div class="em_btn">
-                <div>
-                    <a href="https://aleksversus.github.io/howdo_faq/" class="emHREFTT">Главная</a>
+            </aside>
+            <aside class="em-btn">
+                <div class="avs-pages-button__wrapper e-block">
+                    <div class="avs-pages-button">
+                        <a href="https://aleksversus.github.io/howdo_faq/" class="avs-pages-button__link">Главная</a>
+                    </div>
+                    <div class="avs-pages-button">
+                        <a href="#"  class="avs-pages-button__link" id="section-content-open">Содержание</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class="emHREFTT" id="section_content_open">Содержание</a>
-                </div>
-            </div>
-        </div>
-        <div class="stub">
-            &nbsp;
-        </div>
-    </div>
-    <div id="soderzhanije_outer">
+            </aside>
+        </div><!-- easy-lib-page -->
+    </div><!-- avs-page-wrapper -->
+    <aside id="soderzhanije_outer">
         <div class="soderzhanije">
 <header-header></header-header>
         </div>
-    </div>
+    </aside>
     <script type="text/javascript" src="../res/js/text_replace.js"></script>
     <script type="text/javascript" src="../res/js/soderzhanie.js" ></script>
 </body>
