@@ -1,0 +1,574 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="FrameName" value="">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="!">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_comment">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$BACKIMAGE">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_backimage">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$COUNTER">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_counter">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$CURACTS">
+    <param name="Local" value="opsfuncs_funcs_acts.htm#func_curacts">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$CURLOC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_curloc">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$DESC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_desc">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$DYNEVAL">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_dyneval">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$FNAME">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_fname">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$FUNC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_func">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$GETOBJ">
+    <param name="Local" value="opsfuncs_funcs_inv.htm#func_getobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$IIF">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_iif">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$INPUT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_input">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$LCASE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_lcase">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$MAINTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_maintxt">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$MAX">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_max">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$MID">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_mid">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$MIN">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_min">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONACTSEL">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_onactsel">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONGLOAD">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_ongload">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONGSAVE">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_ongsave">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONNEWLOC">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_onnewloc">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONOBJADD">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_onobjadd">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONOBJDEL">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_onobjdel">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$ONOBJSEL">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_onobjsel">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$QSPVER">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_qspver">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$REPLACE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_replace">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$SELACT">
+    <param name="Local" value="opsfuncs_funcs_acts.htm#func_selact">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$SELOBJ">
+    <param name="Local" value="opsfuncs_funcs_inv.htm#func_selobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$STATTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_stattxt">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$STR">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_str">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$STRFIND">
+    <param name="Local" value="opsfuncs_funcs_regexps.htm#func_strfind">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$TRIM">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_trim">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$UCASE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_ucase">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$USER_TEXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_usertext">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$USERCOM">
+    <param name="Local" value="opsfuncs_sysvars_events.htm#var_usercom">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="$USRTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_usertext">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="*CLEAR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_mclear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="*CLR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_mclear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="*NL">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_mnl">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="*P">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_mp">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="*PL">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_mpl">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ACT">
+    <param name="Local" value="opsfuncs_ops_acts.htm#op_act">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ADD OBJ">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_addobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ADDOBJ">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_addobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ADDQST">
+    <param name="Local" value="opsfuncs_ops_files.htm#op_addqst">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ARRCOMP">
+    <param name="Local" value="opsfuncs_funcs_regexps.htm#func_arrcomp">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ARRPOS">
+    <param name="Local" value="opsfuncs_funcs_vars.htm#func_arrpos">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ARRSIZE">
+    <param name="Local" value="opsfuncs_funcs_vars.htm#func_arrsize">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="BCOLOR">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_bcolor">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLA">
+    <param name="Local" value="opsfuncs_ops_acts.htm#op_cla">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLEAR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_clear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLOSE">
+    <param name="Local" value="opsfuncs_ops_media_music.htm#op_close">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLOSE ALL">
+    <param name="Local" value="opsfuncs_ops_media_music.htm#op_closeall">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_clear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CLS">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_cls">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CMDCLEAR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_cmdclear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CMDCLR">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_cmdclear">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="COPYARR">
+    <param name="Local" value="opsfuncs_ops_vars.htm#op_copyarr">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="COUNTOBJ">
+    <param name="Local" value="opsfuncs_funcs_inv.htm#func_countobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CURACTS">
+    <param name="Local" value="opsfuncs_funcs_acts.htm#func_curacts">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="CURLOC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_curloc">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DEBUG">
+    <param name="Local" value="opsfuncs_sysvars_base.htm#var_debug">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DEL ACT">
+    <param name="Local" value="opsfuncs_ops_acts.htm#op_delact">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DEL OBJ">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_delobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DELACT">
+    <param name="Local" value="opsfuncs_ops_acts.htm#op_delact">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DELOBJ">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_delobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DESC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_desc">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DISABLESCROLL">
+    <param name="Local" value="opsfuncs_sysvars_base.htm#var_disablescroll">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DISABLESUBEX">
+    <param name="Local" value="opsfuncs_sysvars_base.htm#var_disablesubex">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DYNAMIC">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_dynamic">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="DYNEVAL">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_dyneval">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="EXIT">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_exit">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="FCOLOR">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_fcolor">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="FSIZE">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_fsize">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="FUNC">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_func">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GETOBJ">
+    <param name="Local" value="opsfuncs_funcs_inv.htm#func_getobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GOSUB">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_gosub">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GOTO">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_goto">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GS">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_gosub">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="GT">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_goto">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="IF">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_if">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="IIF">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_iif">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="INPUT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_input">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="INSTR">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_instr">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ISNUM">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_isnum">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="ISPLAY">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_isplay">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="JUMP">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_jump">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="KILLALL">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_killall">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="KILLOBJ">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_killobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="KILLQST">
+    <param name="Local" value="opsfuncs_ops_files.htm#op_killqst">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="KILLVAR">
+    <param name="Local" value="opsfuncs_ops_vars.htm#op_killvar">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="LCASE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_lcase">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="LCOLOR">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_lcolor">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="LEN">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_len">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="LET">
+    <param name="Local" value="opsfuncs_ops_vars.htm#op_set">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MAINTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_maintxt">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MAX">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_max">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MENU">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_menu">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MID">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_mid">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MIN">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_min">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MSECSCOUNT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_msecscount">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="MSG">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_msg">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="NL">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_nl">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="NOSAVE">
+    <param name="Local" value="opsfuncs_sysvars_base.htm#var_nosave">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="OPENGAME">
+    <param name="Local" value="opsfuncs_ops_files.htm#op_opengame">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="OPENQST">
+    <param name="Local" value="opsfuncs_ops_files.htm#op_openqst">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="P">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_p">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="PL">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_pl">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="PLAY">
+    <param name="Local" value="opsfuncs_ops_media_music.htm#op_play">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="QSPVER">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_qspver">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="RAND">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_rand">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="REFINT">
+    <param name="Local" value="opsfuncs_ops_interface.htm#op_refint">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="REPLACE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_replace">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="RGB">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_rgb">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="RND">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_rnd">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SAVEGAME">
+    <param name="Local" value="opsfuncs_ops_files.htm#op_savegame">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SELACT">
+    <param name="Local" value="opsfuncs_funcs_acts.htm#func_selact">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SELOBJ">
+    <param name="Local" value="opsfuncs_funcs_inv.htm#func_selobj">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SET">
+    <param name="Local" value="opsfuncs_ops_vars.htm#op_set">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SETTIMER">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_settimer">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SHOWACTS">
+    <param name="Local" value="opsfuncs_ops_interface.htm#op_showacts">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SHOWINPUT">
+    <param name="Local" value="opsfuncs_ops_interface.htm#op_showinput">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SHOWOBJS">
+    <param name="Local" value="opsfuncs_ops_interface.htm#op_showobjs">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="SHOWSTAT">
+    <param name="Local" value="opsfuncs_ops_interface.htm#op_showstat">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="STATTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_stattxt">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="STR">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_str">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="STRCOMP">
+    <param name="Local" value="opsfuncs_funcs_regexps.htm#func_strcomp">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="STRFIND">
+    <param name="Local" value="opsfuncs_funcs_regexps.htm#func_strfind">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="STRPOS">
+    <param name="Local" value="opsfuncs_funcs_regexps.htm#func_strpos">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="TRIM">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_trim">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="UCASE">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_ucase">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="UNSEL">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_unselect">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="UNSELECT">
+    <param name="Local" value="opsfuncs_ops_inv.htm#op_unselect">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="USEHTML">
+    <param name="Local" value="opsfuncs_sysvars_interface.htm#var_usehtml">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="USER_TEXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_usertext">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="USRTXT">
+    <param name="Local" value="opsfuncs_funcs_base.htm#func_usertext">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="VAL">
+    <param name="Local" value="opsfuncs_funcs_strings.htm#func_val">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="VIEW">
+    <param name="Local" value="opsfuncs_ops_media_graphics.htm#op_view">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="WAIT">
+    <param name="Local" value="opsfuncs_ops_base.htm#op_wait">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="XGOTO">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_xgoto">
+    </OBJECT></LI>
+<LI><OBJECT type="text/sitemap">
+    <param name="Name" value="XGT">
+    <param name="Local" value="opsfuncs_ops_flowcontrol.htm#op_xgoto">
+    </OBJECT></LI>
+</UL>
+</BODY></HTML>

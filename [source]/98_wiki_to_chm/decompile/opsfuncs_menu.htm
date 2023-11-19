@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Создание меню для предметов</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Создание меню для предметов</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_sysvars_interface.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_html.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Меню - набор строковых значений <a href="dict.htm#array">массива</a>, формат записи которых: [$название<span style="font-weight: bold;">:</span>название локации<span style="font-weight: bold;">:</span>путь к файлу иконки].</p>
+<p>Поиск символов &quot;<span style="font-weight: bold;">:</span>&quot; начинается с конца строки, то есть название пункта меню может содержать двоеточия.</p>
+<p>Если путь к файлу иконки не указан или указанный файл недоступен, то пункт меню отобразится без иконки.</p>
+<p>Пример создания меню:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$stone[0]='Взять камень:takestone'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$stone[1]='Кинуть камень:throwstone'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$stone[2]='Осмотреть камень:' + $see_stone</p>
+<p>&nbsp;</p>
+<p>Здесь название массива (&quot;stone&quot;) - это название меню, а текстовые значения массива - действия, для которых указаны названия и названия <a href="dict.htm#location">локаций</a>-обработчиков выбора пунктов меню. Т.е. при выборе пункта &quot;Взять камень&quot; произойдёт обработка локации с названием &quot;takestone&quot;. Аналогично будет происходить с другими пунктами.</p>
+<p>В локацию-обработчик выбора пункта меню передаётся аргумент (ARGS[0]) - позиция выбранного пункта. Позиции элементов меню индексируются с 1.</p>
+<p>Вызов меню производится с помощью <a href="dict.htm#operator">оператора</a> &quot;MENU&quot; из любого места кода игры. Пример:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;menu 'stone'</p>
+<p>&nbsp;</p>
+<p>или</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;menu '$stone'</p>
+<p>&nbsp;</p>
+<p>Этот оператор покажет меню с названием &quot;stone&quot;.</p>
+<p>Пример создания меню с иконками:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$usr_menu[0] = 'Взять предмет:take_item' & ! нет иконки</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$usr_menu[1] = 'Положить предмет:put_item:images/put_item.gif' & ! иконка задана gif-файлом</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$usr_menu[2] = 'Осмотреть предмет:look_item:&lt;&lt;$icon_file&gt;&gt;' & ! иконка задана значением $icon_file</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$usr_menu[3] = '&lt;&lt;$name&gt;&gt;:&lt;&lt;$loc&gt;&gt;:&lt;&lt;$file&gt;&gt;' & ! пункт меню задан 3-мя переменными</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;menu 'usr_menu' - покажет меню из 4-х пунктов</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="50" style="width:50px;"><p><span style="font-weight: bold;">PS:</span></p>
+</td>
+<td valign="top"><p>1) Меню заканчивается на элементе массива со значением '' (пустая строка). Т.е. если массив меню состоит из элементов 'Взять','Осмотреть','','Бросить', то 2 последних пункта меню не будут созданы.</p>
+<p>2) Чтобы вставить разделитель в меню, вместо соответствующего элемента массива напишите &quot;<span style="font-weight: bold;">-:-</span>&quot;. Т.е. если нужно поставить разделитель вместо 2-го элемента меню &quot;stone&quot;:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$stone[1]='-:-'</p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+</body>
+</html>

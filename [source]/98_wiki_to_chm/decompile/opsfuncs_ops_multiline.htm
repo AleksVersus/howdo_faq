@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Многострочные &quot;IF / ACT&quot;</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Многострочные &quot;IF / ACT&quot;</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_ops_media_graphics.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_funcs.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Возможно использование многострочных &quot;IF&quot; и &quot;ACT&quot;. Многострочные формы записи отличаются от однострочных тем, что после символа &quot;<span style="font-weight: bold;">:</span>&quot; ставится перенос строки, затем идут построчно необходимые операторы, а заканчивается всё это словом &quot;END&quot; (можно записывать &quot;END IF / END ACT&quot;). Многострочные формы &quot;IF&quot; и &quot;ACT&quot; могут содержать внутри себя как однострочные формы, так и многострочные. Каждому &quot;IF&quot; и &quot;ACT&quot; должен соответствовать свой &quot;END&quot;. Например:</p>
+<p>&nbsp;</p>
+<p>if a+b&lt;3 or y=8:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;p 'A+B&lt;3 или Y=8'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;nl</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if j=88:nl & p 'NEXT'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if $h='ooo':</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p 'loo' & jump 'lll'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;act 'Идти к '+$Dest:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pl 'Вы пошли к '+$Dest</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;goto $Dest</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p>end</p>
+<p>&nbsp;</p>
+<p>Кроме этого, в многострочной форме &quot;IF&quot; допускается использование ключевого слова &quot;ELSE&quot;. Например:</p>
+<p>&nbsp;</p>
+<p>if a=0:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;'abc1234'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if b=0: '0' else '1'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if j=88:nl & p 'NEXT'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if $h='ooo':</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p 'loo' & jump 'lll'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;else</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p 'sample text'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;v=8</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;1234</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;act 'Идти к '+$Dest:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pl 'Вы пошли к '+$Dest</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;goto $Dest</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p>else</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;'01234'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;g=78</p>
+<p>end</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="50" style="width:50px;"><p><span style="font-weight: bold;">PS:</span></p>
+</td>
+<td valign="top"><p>1) Количество вложений любых форм &quot;IF&quot; и &quot;ACT&quot; не ограничено.</p>
+<p>2) Для многострочной формы &quot;ACT&quot;, также как и для однострочной, допускается указание изображения для действия.</p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+</body>
+</html>

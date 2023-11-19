@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Функции, использующие регулярные выражения</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Функции, использующие регулярные выражения</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_funcs_strings.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_sysvars.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><a name="func_arrcomp"></a><span style="font-weight: bold;">ARRCOMP(</span>[#выражение 1]<span style="font-weight: bold;">,</span>[$выражение 2]<span style="font-weight: bold;">,</span>[$выражение 3]<span style="font-weight: bold;">)</span> - возвращает индекс элемента <a href="dict.htm#array">массива</a> с названием [$выражение 2], соответствующего регулярному выражению [$выражение 3]. Поиск начинается с элемента номер [#выражение 1]; индексация элементов массива ведётся с нуля. Параметр [#выражение 1] может отсутствовать, при этом он принимается равным 0. Если элемент не найден, функция возвращает -1.</div>
+<p>Поиск происходит среди текстовых элементов массива. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;ARRCOMP(0,'A','This') - найдёт строку 'This' среди текстовых элементов массива &quot;A&quot; (или вернёт -1, если такого значения не существует)</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;ARRCOMP(2,'A','abc\d+') - найдёт строку, соответствующую регулярному выражению &quot;abc\d+&quot;, в текстовых значениях массива &quot;A&quot; (первые два элемента массива игнорируются)</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;ARRCOMP(0,'A','.*string.*') - аналогично предыдущему примеру, но поиск осуществляется по всем текстовым элементам массива</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;ARRCOMP('A','This') - эквивалентно 1му варианту</p>
+<p>&nbsp;</p>
+<div><a name="func_strcomp"></a><span style="font-weight: bold;">STRCOMP(</span>[$выражение]<span style="font-weight: bold;">,</span>[$шаблон]<span style="font-weight: bold;">)</span> - проводит сравнение строки [$выражение] на соответствие регулярному выражению [$шаблон]. Возвращает -1, если строка соответствует шаблону, иначе 0. Сравни с функцией &quot;STRFIND&quot;.</div>
+<p>&nbsp;</p>
+<div><a name="func_strfind"></a><span style="font-weight: bold;">STRFIND(</span>[$выражение]<span style="font-weight: bold;">,</span>[$шаблон]<span style="font-weight: bold;">,</span>[#номер]<span style="font-weight: bold;">)</span> - возвращает подстроку в строке [$выражение], соответствующую группе с номером [#номер] регулярного выражения [$шаблон]. Если подстрока с указанным номером отсутствует, то возвращается пустая строка. Нумерация групп подстрок начинается с 1. Если параметр [#номер] отсутствует или равен 0, то возвращается подстрока, соответствующая всему регулярному выражению [$шаблон]. Примеры:</div>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND(' идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 0) = ''</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 1) = 'идти'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 2) = 'к'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 3) = 'пещере'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к пещере', '^(\S+)\s(\S+)(\s(\S+))?$', 4) = 'пещере'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('искать ключ', '^(\S+)\s(\S+)(\s(\S+))?$', 1) = 'искать'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('искать', '^(\S+)\s(\S+)(\s(\S+))?$', 0) = ''</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('искать', '^(\S+)\s(\S+)(\s(\S+))?$', 1) = ''</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('искать', '^(\S+)(\s(\S+)(\s(\S+))?)?$', 1) = 'искать'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к дому', 'к\s(\S+)', 0) = 'к дому'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к дому', 'к\s(\S+)') = 'к дому'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к дому', 'к\s(\S+)', 1) = 'дому'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRFIND('идти к своему дому', 'к\s(\S+)', 1) = 'своему'</p>
+<p>&nbsp;</p>
+<div><a name="func_strpos"></a><span style="font-weight: bold;">STRPOS(</span>[$выражение]<span style="font-weight: bold;">,</span>[$шаблон]<span style="font-weight: bold;">,</span>[#номер]<span style="font-weight: bold;">)</span> - возвращает позицию символа, с которого начинается вхождение подстроки в строке [$выражение], соответствующей группе с номером [#номер] регулярного выражения [$шаблон]. Если подстрока с указанным номером отсутствует, то возвращается 0. Нумерация групп подстрок начинается с 1. Если параметр [#номер] отсутствует или равен 0, то возвращается позиция символа, с которого начинается вхождение подстроки, соответствующей всему регулярному выражению [$шаблон].</div>
+<p>Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS(' идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 0) = 0</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 1) = 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 2) = 6</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к пещере', '^(\S+)\s(\S+)\s(\S+)$', 3) = 8</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к пещере', '^(\S+)\s(\S+)(\s(\S+))?$', 4) = 8</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('искать ключ', '^(\S+)\s(\S+)(\s(\S+))?$', 1) = 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('искать', '^(\S+)\s(\S+)(\s(\S+))?$', 0) = 0</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('искать', '^(\S+)\s(\S+)(\s(\S+))?$', 1) = 0</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('искать', '^(\S+)(\s(\S+)(\s(\S+))?)?$', 1) = 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к дому', 'к\s(\S+)', 0) = 6</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к дому', 'к\s(\S+)') = 6</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к дому', 'к\s(\S+)', 1) = 8</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;STRPOS('идти к своему дому', 'к\s(\S+)', 1) = 8</p>
+<p>&nbsp;</p>
+<p>Также см. раздел <a href="opsfuncs_regexps.htm">&quot;Использование регулярных выражений&quot;</a>.</p>
+
+</td></tr></table>
+
+</body>
+</html>

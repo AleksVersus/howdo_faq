@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Работа с переменными / массивами</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Работа с переменными / массивами</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_ops_inv.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_ops_flowcontrol.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><a name="op_set"></a><span style="font-weight: bold;">SET</span> [название переменной]<span style="font-weight: bold;">=</span>[выражение], <span style="font-weight: bold;">LET</span> [название переменной]<span style="font-weight: bold;">=</span>[выражение] или [название переменной]<span style="font-weight: bold;">=</span>[выражение] - установка значения <a href="dict.htm#variable">переменной</a>. Если нужно установить текстовое значение переменной, то перед её названием ставится &quot;<span style="font-weight: bold;">$</span>&quot;.</div>
+<p>Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;SET A=123</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;SET $B='строка'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;LET C=A</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;D=456</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$D='ещё строка'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$D='и ещё</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;одна</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;строка'</p>
+<p>&nbsp;</p>
+<div><a name="op_killvar"></a><span style="font-weight: bold;">KILLVAR</span> [$название массива]<span style="font-weight: bold;">,</span>[#индекс элемента] - удаление элемента <a href="dict.htm#array">массива</a>. Если индекс элемента не указан, то очищается весь массив. Если оператор вызван без аргументов, то удаляются все переменные - обычно применяется в начале игры, чтобы при возврате в начальную локацию после неудачного прохождения какого-то этапа игры обнулить все переменные (в противном случае, может оказаться, что запертые двери уже открыты, жена похищена до свадьбы, а Баба-Яга уже отдала кому-то нужный клубочек). Примеры:</div>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;KILLVAR</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;KILLVAR 'a'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;KILLVAR 'a',3</p>
+<p>&nbsp;</p>
+<p><a name="op_copyarr"></a><span style="font-weight: bold;">COPYARR</span> [$массив-приёмник]<span style="font-weight: bold;">,</span>[$массив-источник] - копирование содержимого <a href="dict.htm#array">массива</a> в другой массив. Копируются как текстовые, так и числовые значения массива. Размер массива-приёмника при копировании не имеет значения. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;COPYARR '$a','$b'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;COPYARR 'a','b'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;COPYARR $arrname1,$arrname2</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;COPYARR 'a&lt;&lt;$arrname1&gt;&gt;','a&lt;&lt;$arrname2&gt;&gt;'</p>
+<p>&nbsp;</p>
+<p>См. также <a href="dict.htm#functions">функции</a> для работы с массивами (<a href="opsfuncs_funcs_vars.htm">здесь</a>).</p>
+
+</td></tr></table>
+
+</body>
+</html>

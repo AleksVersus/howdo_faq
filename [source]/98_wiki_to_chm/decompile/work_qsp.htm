@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Принцип работы QSP</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Принцип работы QSP</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="work_txt2gam.htm">Previous</a>&nbsp;
+     <a href="opsfuncs.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>При обработке новой <a href="dict.htm#location">локации</a> (например, при переходе с помощью <a href="dict.htm#operator">операторов</a> &quot;GOTO, XGOTO, GOSUB&quot;) выполняются следующие действия:</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">1)</span> Очистка списка действий предыдущей локации, если был осуществлен непосредственный переход на локацию (например, с помощью операторов &quot;GOTO, XGOTO&quot;);</p>
+<p><span style="font-weight: bold;">2)</span> Обновление поля описания локации (замена существующего основного описания, либо добавление к нему текста базового описания новой локации - в зависимости от того, каким образом был произведён переход);</p>
+<p><span style="font-weight: bold;">3)</span> Добавление базовых действий новой локации;</p>
+<p><span style="font-weight: bold;">4)</span> Последовательное выполнение операторов, находящихся в поле &quot;Выполнить при посещении&quot;;</p>
+<p><span style="font-weight: bold;">5)</span> При непосредственном переходе на локацию выполняется обработка <a href="dict.htm#location_newloc">локации-обработчика перехода на новую локацию</a>, если таковая указана;</p>
+<p><span style="font-weight: bold;">6)</span> Если <a href="dict.htm#variable">переменная</a> <a href="dict.htm#location_counter">локации-счётчика</a> не пуста, то происходит обработка соответствующей локации (по умолчанию, 2 раза в секунду);</p>
+<p><span style="font-weight: bold;">7)</span> Обновление интерфейса (шрифт, цвета, заданные с помощью системных переменных) - также, по умолчанию, 2 раза в секунду;</p>
+<p><span style="font-weight: bold;">8)</span> При выборе действия или предмета пользователем, происходит обработка <a href="dict.htm#location_sel_act_obj">локаций-обработчиков выбора действий и предметов</a>;</p>
+<p><span style="font-weight: bold;">9)</span> При загрузке или сохранении состояния игры, происходит обработка <a href="dict.htm#location_game_load_save">локаций-обработчиков загрузки и сохранения игры</a>;</p>
+<p><span style="font-weight: bold;">10)</span> Если пользователь щёлкает на действии, то выполняются операторы, определённые для этого действия;</p>
+<p><span style="font-weight: bold;">11)</span> Если пользователь нажимает &quot;Enter&quot; в строке ввода, то происходит обработка <a href="dict.htm#location_usercom">локации-обработчика строки ввода</a>.</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Использование регулярных выражений</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Использование регулярных выражений</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_html.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_regexps_intro.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Также см. разделы <a href="opsfuncs_regexps_intro.htm">&quot;Введение в регулярные выражения&quot;</a> и <a href="opsfuncs_funcs_regexps.htm">&quot;Функции, работающие с регулярными выражениями&quot;</a>.</p>
+<p>&nbsp;</p>
+<p>Основные поддерживаемые в QSP операции при записи регулярных выражений (для более подробной информации смотрите помощь по регулярным выражениям (PCRE)):</p>
+<p>&nbsp;</p>
+<p>Метасимволы:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\</span></p>
+</td>
+<td valign="top"><p>Экранирующий символ</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">|</span></p>
+</td>
+<td valign="top"><p>Выбор из альтернатив</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">()</span></p>
+</td>
+<td valign="top"><p>Группировка</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">[]</span></p>
+</td>
+<td valign="top"><p>Класс символа</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Фиксаторы:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">^</span></p>
+</td>
+<td valign="top"><p>Соответствует началу строки</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">$</span></p>
+</td>
+<td valign="top"><p>Соответствует концу строки</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\b</span></p>
+</td>
+<td valign="top"><p>Граница слова</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\B</span></p>
+</td>
+<td valign="top"><p>Не граница слова</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Квантификаторы:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">*</span></p>
+</td>
+<td valign="top"><p>0 или более вхождений</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">+</span></p>
+</td>
+<td valign="top"><p>1 или более вхождений</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">?</span></p>
+</td>
+<td valign="top"><p>0 или 1 вхождение</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{n}</span></p>
+</td>
+<td valign="top"><p>n вхождений</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{n,}</span></p>
+</td>
+<td valign="top"><p>Как минимум n вхождений</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{,n}</span></p>
+</td>
+<td valign="top"><p>0 или не более n вхождений (аналог {0,n})</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{n,m}</span></p>
+</td>
+<td valign="top"><p>От n до m вхождений</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">*?</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; *</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">+?</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; +</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">??</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; ?</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{n,}?</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; {n,}</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{,n}?</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; {,n}</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">{n,m}?</span></p>
+</td>
+<td valign="top"><p>&quot;Ленивое&quot; {n,m}</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Спецсимволы:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\t</span></p>
+</td>
+<td valign="top"><p>Табуляция</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\n</span></p>
+</td>
+<td valign="top"><p>Перевод строки</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\r</span></p>
+</td>
+<td valign="top"><p>Возврат каретки</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Предопределённые классы символов:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">.</span></p>
+</td>
+<td valign="top"><p>Любой символ</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\w</span></p>
+</td>
+<td valign="top"><p>Буква или цифра или символ подчёркивания</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\W</span></p>
+</td>
+<td valign="top"><p>Не буква и не цифра и не символ подчёркивания</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\s</span></p>
+</td>
+<td valign="top"><p>Пробельный символ</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\S</span></p>
+</td>
+<td valign="top"><p>Не пробельный символ</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\d</span></p>
+</td>
+<td valign="top"><p>Цифра</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\D</span></p>
+</td>
+<td valign="top"><p>Не цифра</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\h</span></p>
+</td>
+<td valign="top"><p>Шестнадцатеричная цифра</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="90" style="width:90px;"><p><span style="font-weight: bold;">\H</span></p>
+</td>
+<td valign="top"><p>Не шестнадцатеричная цифра</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Свойства символов:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="165" style="width:165px;"><p><span style="font-weight: bold;">\p{</span>имя свойства<span style="font-weight: bold;">}</span></p>
+</td>
+<td valign="top" width="752" style="width:752px;"><br>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="165" style="width:165px;"><p><span style="font-weight: bold;">\p{^</span>имя свойства<span style="font-weight: bold;">}</span></p>
+</td>
+<td valign="top" width="752" style="width:752px;"><p>Отрицание</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="165" style="width:165px;"><p><span style="font-weight: bold;">\P{</span>имя свойства<span style="font-weight: bold;">}</span></p>
+</td>
+<td valign="top" width="752" style="width:752px;"><p>Отрицание</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Возможные названия свойств:</p>
+<p><span style="font-weight: bold;">Alnum</span>, <span style="font-weight: bold;">Alpha</span>, <span style="font-weight: bold;">Blank</span>, <span style="font-weight: bold;">Cntrl</span>, <span style="font-weight: bold;">Digit</span>, <span style="font-weight: bold;">Graph</span>, <span style="font-weight: bold;">Lower</span>, <span style="font-weight: bold;">Print</span>, <span style="font-weight: bold;">Punct</span>, <span style="font-weight: bold;">Space</span>, <span style="font-weight: bold;">Upper</span>, <span style="font-weight: bold;">XDigit</span>, <span style="font-weight: bold;">Word</span>, <span style="font-weight: bold;">ASCII</span></p>
+<p>&nbsp;</p>
+<p>Также поддерживаются обратные ссылки: <span style="font-weight: bold;">\n</span>, где n - номер группы.</p>
+
+</td></tr></table>
+
+</body>
+</html>

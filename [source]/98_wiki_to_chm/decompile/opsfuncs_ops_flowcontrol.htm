@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Условные выражения и переходы</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Условные выражения и переходы</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_ops_vars.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_ops_files.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><a name="op_if"></a><span style="font-weight: bold;">IF</span> [#выражение]<span style="font-weight: bold;">:</span>[оператор1] <span style="font-weight: bold;">&</span> [оператор2] <span style="font-weight: bold;">&</span> ... <span style="font-weight: bold;">ELSE</span> [оператор3] <span style="font-weight: bold;">&</span> [оператор4] <span style="font-weight: bold;">&</span> ... - если [#выражение] верно (не равно 0), то выполнить заданные операторы до ключевого слова &quot;ELSE&quot;, иначе выполнить операторы после &quot;ELSE&quot;.</p>
+<p>Если ключевое слово &quot;ELSE&quot; не указано, то при верном значении [#выражение], выполняются все операторы, находящиеся после символа &quot;<span style="font-weight: bold;">:</span>&quot;.</p>
+<p>Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if ((a+b)/c)=45+54 or (b&lt;5 or c&gt;45) and no obj 'лопата' and $f=$vvv+'RRRRR':p 'OK' & goto 'Next'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if был_здесь[$curloc]:exit</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if a&lt;3:jump 'sss'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if $имя = '':msg 'Введите имя!' & jump 'ввод'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if a+b=2:c=30 & gt 'next' else c=10</p>
+<p>&nbsp;</p>
+<p>Также см. раздел <a href="opsfuncs_ops_multiline.htm">&quot;Многострочные IF / ACT&quot;</a>.</p>
+<p>&nbsp;</p>
+<div><a name="op_exit"></a><span style="font-weight: bold;">EXIT</span> - завершение выполнения текущего кода (преждевременный выход из подпрограммы / обработчика какого-либо события...).</div>
+<p>&nbsp;</p>
+<div><a name="op_jump"></a><span style="font-weight: bold;">JUMP</span> [$выражение] - переход в текущем коде (при обработке <a href="dict.htm#location">локации</a> / выбора действия) на метку [$выражение]. Метка на локации обозначается как &quot;<span style="font-weight: bold;">:</span>[название метки]&quot;. После описания метки (через &quot;<span style="font-weight: bold;">&</span>&quot;) могут идти операторы. Если <a href="dict.htm#interpreter">интерпретатор</a> находит случайную метку, то он её просто игнорирует. Например:</div>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;jump 'КонеЦ'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;p 'Это сообщение не будет выведено'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;:конец</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;p 'А это сообщение пользователь увидит'</p>
+<p>&nbsp;</p>
+<p>С помощью оператора &quot;JUMP&quot; можно организовывать циклы:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;s=0</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;:loop</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;if s&lt;9:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s=s+1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pl s</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;jump 'LOOP'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;end</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;p 'Всё!'</p>
+<p>&nbsp;</p>
+<p>Оператор &quot;JUMP&quot; также полезен во время отладки квеста, чтобы &quot;обойти&quot; группу операторов, которые временно не нужны.</p>
+<p>&nbsp;</p>
+<div><a name="op_gosub"></a><span style="font-weight: bold;">GOSUB</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... или <span style="font-weight: bold;">GS</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... - обработка <a href="dict.htm#location">локации</a> с названием [$выражение]. Базовое описание локации добавляется к текущему описанию, базовые действия добавляются к текущим действиям, и происходит выполнение операторов в поле &quot;Выполнить при посещении&quot;, затем возврат на исходную строку (продолжение выполнения программы).</div>
+<p>Переданные параметры хранятся в <a href="dict.htm#array">массиве</a> <span style="font-weight: bold;">ARGS</span>. После обработки локации предыдущие значения ARGS восстанавливаются. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GS 'ход' - обработка локации &quot;ход&quot;. Массив ARGS пуст.</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GS $loc,1 - обработка локации, название которой хранится в $loc с передачей одного параметра. ARGS[0] равен 1.</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GS 'ход',$var,2,'данные' - обработка локации &quot;ход&quot; с передачей 3-х параметров. $ARGS[0] равен значению $var, ARGS[1] равен 2, $ARGS[2] содержит строку &quot;данные&quot;.</p>
+<p>&nbsp;</p>
+<div><a name="op_goto"></a><span style="font-weight: bold;">GOTO</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... или <span style="font-weight: bold;">GT</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... - переход на <a href="dict.htm#location">локацию</a> с названием [$выражение]. Поле основного описания локации, а также список текущих действий заменяются описанием и действиями новой локации.</div>
+<p>Переданные параметры хранятся в <a href="dict.htm#array">массиве</a> <span style="font-weight: bold;">ARGS</span>. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GT 'локация' - переход на локацию &quot;локация&quot;. Массив ARGS пуст.</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GT 'локация',1,'данные' - переход на локацию &quot;локация&quot; с передачей 2-х параметров. ARGS[0] равен 1, $ARGS[1] содержит строку &quot;данные&quot;.</p>
+<p>&nbsp;</p>
+<p>См. также <a href="dict.htm#location_newloc">локацию-обработчик перехода на новую локацию</a>.</p>
+<p>&nbsp;</p>
+<div><a name="op_xgoto"></a><span style="font-weight: bold;">XGOTO</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... или <span style="font-weight: bold;">XGT</span> [$выражение]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... - отличается от &quot;GOTO / GT&quot; тем, что при переходе не очищается поле основного описания локации, а базовое описание новой локации добавляется к текущему основному описанию. Тем не менее, список действий заменяется действиями новой локации. См. также <a href="dict.htm#location_newloc">локацию-обработчик перехода на новую локацию</a>.</div>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="50" style="width:50px;"><p><span style="font-weight: bold;">PS:</span></p>
+</td>
+<td valign="top"><p>При обработке локаций по GOSUB, а также локаций, на которые указывают пункты пользовательского меню и <a href="dict.htm#sys_variables">системные переменные</a> ($COUNTER, $USERCOM, $ONGLOAD, $ONGSAVE, $ONNEWLOC, $ONACTSEL, $ONOBJSEL, $ONOBJADD, $ONOBJDEL), учитываются базовые описания и действия на локациях (при отсутствии действий с такими же названиями - к текущим действиям добавляются базовые действия обрабатываемой локации, базовое описание локации добавляется к текущему основному описанию). Аналогично, при вызовах XGOTO, к текущему основному описанию добавляется базовое описание локации, на которую произошёл переход.</p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+</body>
+</html>

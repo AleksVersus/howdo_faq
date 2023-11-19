@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Использование массивов</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Использование массивов</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_mathops.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_ops.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>QSP поддерживает работу с массивами. Массив - последовательный набор значений, имеющих один тип данных и обладающих одним названием. Элементы массива идентифицируются по индексам. Индексация ведётся с нуля. Т.е. элемент с индексом 0 - первый элемент массива, 1 - второй и т.д. В зависимости от типа элементов массива он может быть текстовым или числовым. В QSP каждый массив имеет и текстовые, и числовые значения. Если вы хотите обратиться к текстовым элементам массива, нужно перед его названием поставить символ &quot;<span style="font-weight: bold;">$</span>&quot;, если к числовым - достаточно указать его название. Обращение к элементу массива происходит так: сначала указывается название массива (с символом &quot;<span style="font-weight: bold;">$</span>&quot; или без него), затем в квадратных скобках - числовое выражение, равное индексу элемента, к которому производится обращение. Т.е. &quot;$A[6]&quot; - обращение к текстовому значению элемента с индексом 6 (7-му) массива с названием &quot;A&quot;, &quot;NEW[2]&quot; - обращение к числовому значению элемента с индексом 2 (3-му) массива с названием &quot;NEW&quot;.</p>
+<p>Присваивание и считывание значений элементов массива происходит точно так же, как и при работе с переменной. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;A[2]=89 - присвоить числовому значению 3-го элемента массива &quot;A&quot; значение 89</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$B[3]='Cool' - присвоить текстовому значению 4-го элемента массива &quot;B&quot; значение 'Cool'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;A=B[5] - присвоить числовому значению переменной &quot;A&quot; числовое значение 6-го элемента массива &quot;B&quot;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$C=$MAS[54] - аналогично</p>
+<p>&nbsp;</p>
+<p>Массивы могут индексироваться через строки. Регистр символов данной строки не имеет значения. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$ARR['mystring'] = 'value' эквивалентно $arr['MyString'] = 'value'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;ARR['mystring'] = 890</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$item_loc['палка'] = 'лес'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$DESCS[$curloc] = '&lt;&lt;$DESCS[$curloc]&gt;&gt; text.'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;values['67'] = 87</p>
+<p>&nbsp;</p>
+<p>Кроме этого, существует упрощённый синтаксис добавления элемента в массив - если индекс элемента не указан, то будет выбран элемент, следующий за последним. Например:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$objs[] = 'Топор'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$objs[] = 'Напильник'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$objs[] = 'Доска'</p>
+<p>&nbsp;</p>
+<p>При получении значения, если индекс элемента не указан, то будет выбран последний элемент. Например:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$a = $objs[]</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;a = objs[]</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="50" style="width:50px;"><p><span style="font-weight: bold;">PS:</span></p>
+</td>
+<td valign="top"><p>В QSP все переменные являются массивами (если не указывать индекс - он будет равен 0), поэтому обращение &quot;A=AR[5]&quot; полностью эквивалентно такому: &quot;A[0]=AR[5]&quot;. Следствие этого - к названиям массивов применяются точно такие же правила записи, как к названиям переменных.</p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+</body>
+</html>

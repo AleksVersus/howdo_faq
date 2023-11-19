@@ -1,0 +1,63 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=new_hhp.chm
+Contents file=qsp.hhc
+Default Window=new
+Default topic=about_greetings.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=qsp.hhk
+Language=0x419 Русский (Россия)
+Title=QSP 5.8.0 Help
+
+[WINDOWS]
+new=,"qsp.hhc","qsp.hhk","about_greetings.htm",,,,,,0x23520,,0x3006,,,,,,,,0
+
+
+[FILES]
+about_greetings.htm
+about_license_gpl.htm
+about_license_gpl_russian.htm
+about_requirements.htm
+dict.htm
+faq.htm
+help_qsp.htm
+opsfuncs.htm
+opsfuncs_funcs.htm
+opsfuncs_funcs_acts.htm
+opsfuncs_funcs_base.htm
+opsfuncs_funcs_inv.htm
+opsfuncs_funcs_regexps.htm
+opsfuncs_funcs_strings.htm
+opsfuncs_funcs_vars.htm
+opsfuncs_html.htm
+opsfuncs_marks.htm
+opsfuncs_mathops.htm
+opsfuncs_mathops_arrays.htm
+opsfuncs_menu.htm
+opsfuncs_ops.htm
+opsfuncs_ops_acts.htm
+opsfuncs_ops_base.htm
+opsfuncs_ops_files.htm
+opsfuncs_ops_flowcontrol.htm
+opsfuncs_ops_interface.htm
+opsfuncs_ops_inv.htm
+opsfuncs_ops_media_graphics.htm
+opsfuncs_ops_media_music.htm
+opsfuncs_ops_multiline.htm
+opsfuncs_ops_vars.htm
+opsfuncs_regexps.htm
+opsfuncs_regexps_intro.htm
+opsfuncs_sysvars.htm
+opsfuncs_sysvars_base.htm
+opsfuncs_sysvars_events.htm
+opsfuncs_sysvars_interface.htm
+start.htm
+tips.htm
+work.htm
+work_qgen.htm
+work_qsp.htm
+work_txt2gam.htm
+
+[INFOTYPES]
+

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Мультимедийные возможности: звук и музыка</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Мультимедийные возможности: звук и музыка</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_ops_interface.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_ops_media_graphics.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><a name="op_play"></a><span style="font-weight: bold;">PLAY</span> [$путь к звуковому файлу]<span style="font-weight: bold;">,</span>[#громкость] - проигрывание звукового файла с заданным названием и громкостью. Громкость указывается в процентах от 0 до 100.</div>
+<p>Параметр [#громкость] может отсутствовать, при этом громкость принимается равной 100%. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;PLAY 'sound/music.mp3' - проигрывает файл с громкостью 100%</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;PLAY 'sound/music.mp3',50 - проигрывает файл в половину возможной громкости</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;PLAY 'sound/music.mp3',0 - проигрывает файл с громкостью 0% (без звука)</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;PLAY '&lt;&lt;$file&gt;&gt;.mid',volume - проигрывает файл, имя которого хранится в $file (расширение &quot;mid&quot;) с громкостью, значение которой задано в volume</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;PLAY $file,volume - аналогично</p>
+<p>&nbsp;</p>
+<p>Если файл уже проигрывается, то изменяется громкость звучания без его &quot;перезапуска&quot;. Поддерживается множество различных аудиоформатов и одновременное звучание до 32-х композиций.</p>
+<p>&nbsp;</p>
+<div><a name="op_close"></a><span style="font-weight: bold;">CLOSE</span> [$путь к звуковому файлу] - остановка проигрывания звукового файла с заданным названием.</div>
+<p>&nbsp;</p>
+<div><a name="op_closeall"></a><span style="font-weight: bold;">CLOSE ALL</span> - остановка проигрывания всех активных звуковых файлов.</div>
+<p>&nbsp;</p>
+<p>См. также <a href="dict.htm#functions">функцию</a> &quot;ISPLAY&quot; (<a href="opsfuncs_funcs_base.htm#func_isplay">здесь</a>).</p>
+
+</td></tr></table>
+
+</body>
+</html>

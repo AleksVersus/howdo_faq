@@ -1310,8 +1310,7 @@ class NewNode():
 			"scope-instring":
 			[]
 		}
-		for string_id in mini_data_base['scope-name']:
-			i = mini_data_base['scope-name'].index(string_id)
+		for i, string_id in enumerate(mini_data_base['scope-name']):
 			match_in = mini_data_base['scope-regexp'][i]
 			mini_data_base['scope-instring'].append(
 				string_line.index(match_in.group(0)) if match_in is not None else maximal)

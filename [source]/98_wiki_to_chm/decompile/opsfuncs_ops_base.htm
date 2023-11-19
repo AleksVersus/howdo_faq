@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Базовые операторы языка QSP</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Базовые операторы языка QSP</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_ops.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_ops_acts.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><a name="op_comment"></a><span style="font-weight: bold;">!</span> - оператор комментария. То, что находится в данной строке после оператора комментария, и до конца строки игнорируется <a href="dict.htm#interpreter">интерпретатором</a>. Оператор комментария позволяет &quot;закомментировать&quot; (выключить) ненужный временно оператор / функцию во время отладки игры. Кроме того, написание комментариев к коду программы является одним из признаков хорошего стиля программирования.</div>
+<p>В операторе комментария поддерживаются преформатированные строки. Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;! это комментарий без преформатированных строк</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;!&quot;а этот комментарий</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;содержит преформатированную</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;строку&quot;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;!&quot;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;и этот</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;тоже</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;&quot;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;a = 3 & ! а также 'вот</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;этот'</p>
+<p>&nbsp;</p>
+<div><a name="op_mp"></a><span style="font-weight: bold;">*P</span> [выражение] - вывод текста в основное окно описаний (по умолчанию находится слева сверху и не может быть отключено).</div>
+<p>&nbsp;</p>
+<div><a name="op_mpl"></a><span style="font-weight: bold;">*PL</span> [выражение] - вывод текста, затем переход на новую строку в основном окне описаний. Если [выражение] не указано, то перевод строки. Аналогичным образом можно вывести текст, просто написав нужное выражение вместо данного оператора. Например, строки</div>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;*PL $AAA+'989'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;*PL 'Вы находитесь в парке'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;*PL 'Преформатированная</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;строка'</p>
+<p>&nbsp;</p>
+<p>и</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;$AAA+'989'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;'Вы находитесь в парке'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;'Преформатированная</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;строка'</p>
+<p>&nbsp;</p>
+<p>выполнят одно и то же действие.</p>
+<p>&nbsp;</p>
+<p><a name="op_mnl"></a><span style="font-weight: bold;">*NL</span> [выражение] - переход на новую строку, затем вывод текста в основном окне описаний. Если [выражение] не указано, то перевод строки. Отличается от *PL порядком вывода текста.</p>
+<p>&nbsp;</p>
+<div><a name="op_mclear"></a><span style="font-weight: bold;">*CLEAR</span> или <span style="font-weight: bold;">*CLR</span> - очистка основного окна описаний.</div>
+<p>&nbsp;</p>
+<div><a name="op_p"></a><span style="font-weight: bold;">P</span> [выражение] - вывод текста в окно пользователя (по умолчанию находится справа внизу, обычно служит для вспомогательных целей).</div>
+<p>&nbsp;</p>
+<div><a name="op_pl"></a><span style="font-weight: bold;">PL</span> [выражение] - вывод текста, затем переход на новую строку в окне пользователя. Если [выражение] не указано, то перевод строки.</div>
+<p>&nbsp;</p>
+<div><a name="op_nl"></a><span style="font-weight: bold;">NL</span> [выражение] - переход на новую строку (перевод каретки), затем вывод текста в окне пользователя. Если [выражение] не указано, то перевод строки. Отличается от PL порядком вывода текста.</div>
+<p>&nbsp;</p>
+<div><a name="op_clear"></a><span style="font-weight: bold;">CLEAR</span> или <span style="font-weight: bold;">CLR</span> - очистка окна пользователя.</div>
+<p>&nbsp;</p>
+<div><a name="op_cmdclear"></a><span style="font-weight: bold;">CMDCLEAR</span> или <span style="font-weight: bold;">CMDCLR</span> - очистка строки ввода.</div>
+<p>&nbsp;</p>
+<div><a name="op_cls"></a><span style="font-weight: bold;">CLS</span> - эквивалентен конструкции &quot;CLEAR & *CLEAR & CLA & CMDCLEAR&quot;, т.е. очищает всё, кроме списка предметов.</div>
+<p>&nbsp;</p>
+<div><a name="op_msg"></a><span style="font-weight: bold;">MSG</span> [выражение] - вывод заданного сообщения в информационном окне.</div>
+<p>&nbsp;</p>
+<div><a name="op_wait"></a><span style="font-weight: bold;">WAIT</span> [#выражение] - остановка выполнения программы на заданное количество миллисекунд (1 секунда = 1000 миллисекунд).</div>
+<p>&nbsp;</p>
+<div><a name="op_menu"></a><span style="font-weight: bold;">MENU</span> [$выражение] - вызов меню с заданным названием (см. раздел <a href="opsfuncs_menu.htm">&quot;Создание меню для предметов&quot;</a>).</div>
+<p>&nbsp;</p>
+<p><a name="op_settimer"></a><span style="font-weight: bold;">SETTIMER</span> [#выражение] - задает интервал таймера для <a href="dict.htm#location_counter">локации-счётчика</a> (по умолчанию 500мс, т.е. локация-счётчик обрабатывается 2 раза в секунду). Также влияет на частоту автоматического обновления интерфейса.</p>
+<p>&nbsp;</p>
+<div><a name="op_dynamic"></a><span style="font-weight: bold;">DYNAMIC</span> [$строка кода]<span style="font-weight: bold;">,</span>[параметр 1]<span style="font-weight: bold;">,</span>[параметр 2]<span style="font-weight: bold;">,</span> ... - выполнение кода. Данный оператор позволяет динамически генерировать код игры. Переданные параметры хранятся в <a href="dict.htm#array">массиве</a> <span style="font-weight: bold;">ARGS</span>. После выполнения кода предыдущие значения ARGS восстанавливаются. Примеры:</div>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;DYNAMIC '$a=&quot;string&lt;&lt;$b&gt;&gt;&quot;'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;DYNAMIC '$a'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;DYNAMIC 'if $a=&quot;string&quot;:''text!'''</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;DYNAMIC &quot;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$args[0]</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;addobj $args[1]</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;&quot;,'Текст','Вилка'</p>
+
+</td></tr></table>
+
+</body>
+</html>

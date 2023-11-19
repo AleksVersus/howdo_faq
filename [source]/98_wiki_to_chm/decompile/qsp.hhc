@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<BODY>
+<OBJECT type="text/site properties">
+	<param name="Window Styles" value="0x800025">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="О программе">
+	<param name="Local" value="about.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Лицензионное соглашение">
+	<param name="Local" value="about_license.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="GNU GPL">
+	<param name="Local" value="about_license_gpl.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="GNU GPL на русском">
+	<param name="Local" value="about_license_gpl_russian.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Системные требования">
+	<param name="Local" value="about_requirements.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Благодарности">
+	<param name="Local" value="about_greetings.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Принцип работы">
+	<param name="Local" value="work.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с редактором игр">
+	<param name="Local" value="work_qgen.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с утилитой TXT2GAM">
+	<param name="Local" value="work_txt2gam.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Принцип работы QSP">
+	<param name="Local" value="work_qsp.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Операторы и функции">
+	<param name="Local" value="opsfuncs.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Обозначения">
+	<param name="Local" value="opsfuncs_marks.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Выражения">
+	<param name="Local" value="opsfuncs_mathops.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Использование массивов">
+	<param name="Local" value="opsfuncs_mathops_arrays.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Операторы">
+	<param name="Local" value="opsfuncs_ops.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Базовые операторы языка QSP">
+	<param name="Local" value="opsfuncs_ops_base.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с действиями">
+	<param name="Local" value="opsfuncs_ops_acts.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с инвентарём">
+	<param name="Local" value="opsfuncs_ops_inv.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с переменными / массивами">
+	<param name="Local" value="opsfuncs_ops_vars.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Условные выражения и переходы">
+	<param name="Local" value="opsfuncs_ops_flowcontrol.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с файлами">
+	<param name="Local" value="opsfuncs_ops_files.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Настройка интерфейса">
+	<param name="Local" value="opsfuncs_ops_interface.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Мультимедийные возможности: звук и музыка">
+	<param name="Local" value="opsfuncs_ops_media_music.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Мультимедийные возможности: графика">
+	<param name="Local" value="opsfuncs_ops_media_graphics.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Многострочные &quot;IF / ACT&quot;">
+	<param name="Local" value="opsfuncs_ops_multiline.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Функции">
+	<param name="Local" value="opsfuncs_funcs.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Базовые функции языка QSP">
+	<param name="Local" value="opsfuncs_funcs_base.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с действиями">
+	<param name="Local" value="opsfuncs_funcs_acts.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с инвентарём">
+	<param name="Local" value="opsfuncs_funcs_inv.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа с массивами">
+	<param name="Local" value="opsfuncs_funcs_vars.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Работа со строками">
+	<param name="Local" value="opsfuncs_funcs_strings.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Функции, использующие регулярные выражения">
+	<param name="Local" value="opsfuncs_funcs_regexps.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Системные переменные">
+	<param name="Local" value="opsfuncs_sysvars.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Базовые системные переменные">
+	<param name="Local" value="opsfuncs_sysvars_base.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Переменные, задающие обработчики событий">
+	<param name="Local" value="opsfuncs_sysvars_events.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Переменные настройки интерфейса">
+	<param name="Local" value="opsfuncs_sysvars_interface.htm">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Создание меню для предметов">
+	<param name="Local" value="opsfuncs_menu.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Использование тегов HTML при разработке игр">
+	<param name="Local" value="opsfuncs_html.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Использование регулярных выражений">
+	<param name="Local" value="opsfuncs_regexps.htm">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Введение в регулярные выражения">
+	<param name="Local" value="opsfuncs_regexps_intro.htm">
+</OBJECT>
+</UL>
+</UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Подсказки / Советы">
+	<param name="Local" value="tips.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Часто задаваемые вопросы (&quot;FAQ&quot;)">
+	<param name="Local" value="faq.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Словарь терминов">
+	<param name="Local" value="dict.htm">
+</OBJECT>
+</UL>
+</BODY></HTML>

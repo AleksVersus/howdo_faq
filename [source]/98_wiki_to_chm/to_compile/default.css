@@ -1,0 +1,121 @@
+/* Text Styles */
+html, body {
+  box-sizing: border-box;
+}
+body, table /* Normal */
+{
+ font-size: 10pt;
+ font-family: 'Arial';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ font-family: 'Courier New';
+ color: #000000;
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_CourierFixed /* Courier Fixed */
+{
+ font-size: 9pt;
+ font-family: 'Courier New';
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 14pt;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 8pt;
+ font-weight: bold;
+}
+span.f_Notes /* Notes */
+{
+}
+
+.p_CodeExample /* Code Example */
+{
+ white-space: nowrap;
+}
+.p_Comment /* Comment */
+{
+}
+.p_Heading1 /* Heading1 */
+{
+}
+.p_ImageCaption /* Image Caption */
+{
+}
+.p_Notes /* Notes */
+{
+}
+
+
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 1em;
+ padding: 0.25em;
+ margin: 0px 0px 0px 0px;
+}
+
+p code {
+    font-family: Consolas,"Andale Mono WT","Andale Mono","Bitstream Vera Sans Mono","Nimbus Mono L",Monaco,"Courier New",monospace;
+    font-size: 1em;
+    direction: ltr;
+    text-align: left;
+    background-color: #fbfaf9;
+    color: #333;
+    box-shadow: inset 0 0 .3em #ccc;
+    border-radius: 2px;
+}
+
+h4, .syntaxhighlighter, .sectionedit3 {padding-left: 1.25em;}
+
+/* table of code */
+.syntaxhighlighter .gutter {
+  text-align: right;
+  padding-right: 0.5em;
+  color: rgba(80,80,80,0.5);
+  border-right: 3px solid rgba(0,100, 0, 0.5);
+}
+.syntaxhighlighter .code {padding-left: 1em;}
+.sectionedit1 {
+	background: #808080;
+	color: #ffffff;
+}
+.page-buttons {
+  width: 100%;
+  padding: 0.5em 0.25em 0.9em;
+}
+.page-buttons__item {
+  background: #808080;
+  color: #ffffff;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  text-decoration: none;
+}
+.page-buttons__item:hover {
+  background: #404040;
+}
+
+td.right-button {
+  width:50%;
+  align-content: right;
+  text-align: right;
+}
+.syntaxhighlighter .keyword {
+  font-weight: 700;
+  color:rgb(0, 102, 153);
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+    color: #ff1493;
+}

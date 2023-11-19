@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>Работа с инвентарём</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#808080">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Работа с инвентарём</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="about.htm">Top</a>&nbsp;
+     <a href="opsfuncs_funcs_acts.htm">Previous</a>&nbsp;
+     <a href="opsfuncs_funcs_vars.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><a name="func_countobj"></a><span style="font-weight: bold;">COUNTOBJ</span> - возвращает количество предметов в рюкзаке.</div>
+<p>&nbsp;</p>
+<div><a name="func_selobj"></a><span style="font-weight: bold;">SELOBJ</span> - возвращает название выделенного предмета.</div>
+<p>&nbsp;</p>
+<div><a name="func_getobj"></a><span style="font-weight: bold;">GETOBJ(</span>[#выражение]<span style="font-weight: bold;">)</span> - возвращает название предмета в рюкзаке, расположенного в заданной позиции. Индексация предметов рюкзака ведётся с 1.</div>
+<p>Если предмета с заданным индексом не существует, возвращается пустая строка ('').</p>
+<p>Примеры:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GETOBJ(1) - вернёт название первого предмета в рюкзаке</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;GETOBJ(COUNTOBJ) - вернёт название последнего добавленного предмета</p>
+<p>&nbsp;</p>
+<p>Код, подсчитывающий в массиве OBJECTS число предметов с одинаковым названием:</p>
+<p>&nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;i = 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;:loop</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;IF i &lt;= COUNTOBJ:</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OBJECTS[$GETOBJ(i)] = OBJECTS[$GETOBJ(i)] + 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i = i + 1</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;JUMP 'loop'</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;END</p>
+<p>&nbsp;</p>
+<p>См. также <a href="dict.htm#operator">операторы</a> для работы с инвентарём (<a href="opsfuncs_ops_inv.htm">здесь</a>).</p>
+
+</td></tr></table>
+
+</body>
+</html>
