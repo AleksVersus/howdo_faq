@@ -34,6 +34,10 @@ p code {
     border-radius: 2px;
 }
 
+h1 {
+  padding-left: 1em;
+}
+
 h2, h3, h4, .syntaxhighlighter, .sectionedit3 {padding-left: 1.25em;}
 
 /* table of code */

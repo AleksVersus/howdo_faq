@@ -14,185 +14,186 @@
 <body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
   <div id="dokuwiki__content">
     <div class="pad group">
-      
       <div class="page group" style="min-height: 1037px;">
-        <h1 class="sectionedit1" id="chto_takoe_qsp">Что такое QSP?</h1>
+        <h1 class="sectionedit1" id="lokacii">Локации</h1>
         <div class="level1">
           <p>
-            Платформа <strong>QSP</strong> - набор программ, с помощью которых можно создавать текстовые игры и играть в них. Расшифровывается как <strong>Quest Soft Player</strong>.
+            <strong>Локация</strong> - элементарная единица игрового мира. Это может быть пещера, дом, комната, улица, большой город или даже целая планета.
           </p>
           <p>
-            В основном платформа <strong>QSP</strong> ориентирована на создание так называемых "менюшных" игр, то есть игр, где управление осуществляется при помощи нажатия различных кнопок и пунктов меню. Однако на <strong>QSP</strong> можно писать и парсерные игры — игры, управление которыми осуществляется с помощью вводимых в строку ввода команд.
+            С точки зрения игрока он исследует игровой мир перемещаясь по локациям, но с точки зрения создателя игры понятие локации гораздо шире. В <strong>QSP</strong> локации — это отдельные блоки кода, и они могут использоваться не только для написания различных мест.
           </p>
           <p>
-            Подробная Справка, простой синтаксис, множество примеров и отзывчивое сообщество позволят Вам освоить QSP максимально быстро.
+            Возможные назначения локаций:
           </p>
-          <p>
-            Текущая редакция Справки составлялась для плееров с версией библиотеки 5.8.0.
-          </p>
-          <p>
-            Стандартный классический плеер <strong>QSP</strong> воспроизводит файлы игр с расширением "<code>.qsp</code>". Эти файлы можно создавать в редакторе <strong><a href="#qgen" title="help:qsp ↵" class="wikilink1">Quest Generator</a></strong>, а так же конвертируя обычные текстовые файлы, написанные в специальном формате, с помощью утилиты <strong><a href="help_txt2gam.htm"  title="help:txt2gam">TXT2GAM</a></strong>.
-          </p>
-          <p>
-            Большинство статей ориентированы на использование классического плеера <strong>QSP</strong> версии 5.8.0 и редактора игр <strong>Quest Generator</strong> версии 4.0.0 Beta. Отдельные разделы посвящены новому плееру <a href="#qspider" title="help:qsp ↵" class="wikilink1"><strong>qSpider</strong></a> и написанию игр в текстовом редакторе с использованием утилиты <a href="help_txt2gam.htm" class="" title="help:txt2gam"><strong>TXT2GAM</strong></a>. Большой разницы в написании игр для разных плееров и в разных редакторах нет; о существенных отличиях будет упомянуто в соответствующих статьях.
-          </p>
-        </div>
-        
-        <h2 class="sectionedit2" id="vozmozhnosti_qsp">Возможности QSP</h2>
-        <div class="level2">
-          <p>
-            Базовый функционал QSP<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>:
-          </p>
-          <ol>
+          <ul>
             <li class="level1">
-              <div class="li"> Два окна для вывода текста: основное и дополнительное</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Окно Действий</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Окно Предметов (Инвентаря)</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Строка ввода (для реализации парсерных игр и отладки)</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Всплывающие сообщения пользователю, картинки</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Всплывающее окно для ввода текста пользователем</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Возможность создания всплывающего меню для предметов (и не только)</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Проигрывание музыки и звуков</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Поддержка <abbr title="HyperText Markup Language">HTML</abbr></div>
-            </li>
-            <li class="level1">
-              <div class="li"> Возможность сохранения и загрузки игрового прогресса</div>
-            </li>
-            <li class="level1">
-              <div class="li"> Встроенный язык программирования со следующими особенностями:</div>
+              <div class="li"> <strong>Игровые локации</strong> - локации, по которым ходит игрок, основа игрового мира. Такие локации можно разделить по назначению:</div>
               <ul>
                 <li class="level2">
-                  <div class="li"> Целочисленные и строковые переменные</div>
+                  <div class="li"> <strong>локации мест</strong> - локации, в которых описывается некоторый кусочек игрового мира. Комнаты, дома, города, пещеры, подземелья и т.д.</div>
                 </li>
                 <li class="level2">
-                  <div class="li"> Поддержка массивов</div>
+                  <div class="li"> <strong>информационные локации</strong> - локации, на которых размещается информация об игре, своего рода страницы. Это могут быть: стартовый экран, страницы главного меню, страницы информации об авторе и об игре.</div>
                 </li>
                 <li class="level2">
-                  <div class="li"> Продвинутая обработка строк и массивов (поддержка регулярных выражений)</div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Условные выражения</div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Циклы</div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Метки и переходы по меткам</div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Возможность привязки к реальному времени</div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Возможность выполнения определенных действий при каждом переходе на новую локацию, при создании и удалении предметов, при выборе пункта меню и других <strong>событиях</strong></div>
-                </li>
-                <li class="level2">
-                  <div class="li"> Возможность выносить часть кода в подключаемые файлы</div>
+                  <div class="li"> <strong>локации главы, параграфы, или разделы</strong> - локации, составляющие основу книг-игр. В книгах-играх игрок перемещается не столько по игровому миру, сколько между страницами интерактивной истории. Вот в такой роли и могут в данном случае выступать локации.</div>
                 </li>
               </ul>
             </li>
-          </ol>
+            <li class="level1">
+              <div class="li"> <strong>Служебные локации</strong> - локации, на которые игрок не может попасть, но которые необходимы для работы игры:</div>
+              <ul>
+                <li class="level2">
+                  <div class="li"> <strong>Локации-обработчики</strong> - локации, обрабатывающие определенные события в игре (переходы между локациями, таймер, выбор предмета и т.п.).</div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong>Локации-данные</strong> - иногда удобно хранить игровые тексты в отдельных переменных, а переменные - в отдельной локации, чтобы не захламлять код.</div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong>Локации-функции</strong> - в QSP есть возможность сделать локацию-функцию.</div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong>Локации с кодом</strong> - иногда удобно вынести часть кода в отдельную локацию. Чаще всего это код, который используется в нескольких локациях.</div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Вы сами определяете назначение локации, для плеера абсолютно все локации равнозначны.
+          </p>
+          <p>
+            Любая локация может состоять из трёх полей:
+          </p>
+          <ul>
+            <li class="level1">
+              <div class="li"> Базовое описание локации</div>
+            </li>
+            <li class="level1">
+              <div class="li"> Базовые действия локации</div>
+            </li>
+            <li class="level1">
+              <div class="li"> Код "Выполнить при посещении"</div>
+            </li>
+          </ul>
+          <p>
+            Вы можете заполнять эти поля по своему усмотрению. Можно заполнить их все, или одно из них, или не заполнять ни одного, — всё зависит от того, какое назначение вы выбрали для вашей локации, и как вам удобнее воплощать вашу идею.
+          </p>
+          <p>
+            Поля <strong>Базовое описание локации</strong> и <strong>Базовые действия локации</strong> доступны для заполнения только в редакторе <a href="#qgen" title="help:locations ↵" class="wikilink1">Quest Generator</a>, если вы работаете в обычном текстовом редакторе, весь код пишется только для поля <strong>Выполнить при посещении</strong>.
+          </p>
         </div>
-        
-        <h2 class="sectionedit3" id="standartnyj_ehkran_qsp">Стандартный экран QSP</h2>
+        <h2 class="sectionedit2" id="imenovanie_lokacij">Именование локаций</h2>
         <div class="level2">
           <p>
-            На представленном ниже изображении вы можете видеть пять основных областей классического плеера <strong>QSP</strong>, которые так же могут называться окнами.
+            Имя локации в процессе игры не отображается и может быть любым. Вы сами решаете, как назвать вашу локацию и какие символы использовать для названия. Но есть общие рекомендации:
           </p>
+          <ul>
+            <li class="level1">
+              <div class="li"> Имя локации должно соответствовать её смыслу - если локация описывает дом, то это может быть "Дом", "House", но никак не "Пещера".</div>
+            </li>
+            <li class="level1">
+              <div class="li"> Можно пользоваться префиксами в названии:</div>
+              <ul>
+                <li class="level2">
+                  <div class="li"> <strong><code>!название</code></strong> или <strong><code>$название</code></strong> - служебная локация (не с базой данных)</div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong><code>#название</code></strong> - служебная локация с <a href="#help_glossary_data_base" title="help:locations ↵" class="wikilink1">базой данных</a></div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong><code>^название</code></strong> - локация, вложенная в предыдущую. Например, названия локаций через запятую: <strong><code>Северная площадь</code></strong>, <strong><code>^Магазин игрушек</code></strong>, <strong><code>^^Продавец игрушек</code></strong>, <strong><code>^Магазин оружия</code></strong>, <strong><code>^^Мечи</code></strong>, <strong><code>^^Булавы</code></strong>, <strong><code>^^Оружейник</code></strong>.</div>
+                </li>
+              </ul>
+            </li>
+          </ul>
           <p>
-            <img src="qspblank2.jpg" class="media" title="Экран QSP" alt="Экран QSP" width="500">
+            Подобная маркировка префиксами была актуальна для старых версий <a href="#qgen" title="help:locations ↵" class="wikilink1">Quest Generator</a>, в которых не было возможности распределять локации по папкам. Сейчас такая маркировка менее актуальна, так как названия без префиксов использовать намного удобнее, а в <a href="#qgen" title="help:locations ↵" class="wikilink1">Quest Generator</a> есть возможность размещать локации в отдельных папках.
           </p>
-          <ol>
+          <ul>
             <li class="level1">
-              <div class="li"> Окно основного описания</div>
+              <div class="li"> Названия локаций из нескольких слов можно писать любым удобным способом, например:</div>
+              <ul>
+                <li class="level2">
+                  <div class="li"> <strong><code>Дом с трубой</code></strong></div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong><code>Дом_с_трубой</code></strong></div>
+                </li>
+                <li class="level2">
+                  <div class="li"> <strong><code>ДомСТрубой</code></strong></div>
+                </li>
+              </ul>
             </li>
             <li class="level1">
-              <div class="li"> Окно предметов (инвентаря)</div>
+              <div class="li"> Регистр букв не важен: "домструбой", "ДОМСТРУБОЙ" и "ДомСТрубой" - одна и та же локация.</div>
             </li>
             <li class="level1">
-              <div class="li"> Окно действий</div>
+              <div class="li"> Если вы пишете <a href="/help:organizing" class="wikilink1" title="help:organizing">локацию-функцию</a>, рекомендуется использовать в названии только буквы, цифры, символ подчёркивания и точку. Остальные символы могут поломать работу кода при упрощённом (неявном) вызове таких локаций-функций.</div>
             </li>
             <li class="level1">
-              <div class="li"> Окно дополнительного описания</div>
+              <div class="li"> Рекомендуется выбирать названия локаций не совпадающие с <a href="/help:keywords" class="wikilink1" title="help:keywords">ключевыми словами</a> <strong>QSP</strong>.</div>
             </li>
-            <li class="level1">
-              <div class="li"> Поле ввода, или Строка ввода</div>
-            </li>
-          </ol>
-          <p>
-            Интерфейс <strong>QSP</strong> отличается гибкостью. Все окна, кроме основного окна описания могут отключаться.
-          </p>
-          <p>
-            Ниже для примера приведены скриншоты игр "Куртуазная баллада" и "Мировое сознание, 13 уровень" <!--(картинки кликабельны)-->.
-          </p>
-          <p>
-            <img src="ballad.jpg" class="media" title="Куртуазная баллада" alt="Куртуазная баллада" width="480">
-          </p><p>
-            <img src="level13.jpg" class="media" alt="" width="480">
-          </p>
+          </ul>
         </div>
-        
-        <h2 class="sectionedit4" id="primery_vsplyvajuschix_okon_i_menju">Примеры всплывающих окон и меню</h2>
-        <div class="level2">
-          <p>
-            Примеры использования вывода сообщения в диалоговом окне посредством <a href="help_msgbox.htm" class="" title="help:msgbox">MSG</a>, и ввода текста в диалоговом окне игроком посредством <a href="help_inputs.htm" class="" title="help:inputs">INPUT</a>
-          </p>
-          <p>
-            <img src="window_msg.png" class="media" title="сообщение в  диалоговом окне" alt="сообщение в  диалоговом окне" width="480">
-          </p><p>  
-            <img src="input_window.png" class="media" title="всплывающие окно со строкой ввода." alt="всплывающие окно со строкой ввода." width="480">
-          </p>
-<!--
-          <p>
-            !!! Здесь должны быть → Скриншот VIEW; Три скриншота MENU (предмет, действие, ссылка)
-          </p>
--->
+        <h2 class="sectionedit3" id="komandy_dlja_raboty_s_lokacijami">Команды для работы с локациями</h2>
+        <h3 class="sectionedit4" id="funkcii_dlja_obrabotki_lokacij">Функции для обработки локаций</h3>
+        <div class="level3">
+          <ul>
+            <li class="level1">
+              <div class="li"> <strong><code>$CURLOC</code></strong> — данная функция возвращает название <strong>текущей</strong> ("активной") локации, т.е. локации на которой "находится" игрок. Пример:<div>
+                  <div id="highlighter_540184" class="syntaxhighlighter  qsp">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                            <div class="line number4 index3 alt1">4</div>
+                            <div class="line number5 index4 alt2">5</div>
+                            <div class="line number6 index5 alt1">6</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="qsp keyword">*pl</code> <code class="qsp keyword">$curloc</code> <code class="qsp color1">&amp; ! выводим название текущей локации в Окно основного описания</code></div>
+                              <div class="line number2 index1 alt1"><code class="qsp keyword">*pl</code> <code class="qsp comments">"Сколько раз перезашли: &lt;&lt;перезашёл&gt;&gt;"</code></div>
+                              <div class="line number3 index2 alt2"><code class="qsp keyword">act</code> <code class="qsp comments">"Перезайти на текущую локацию"</code><code class="qsp plain">:</code></div>
+                              <div class="line number4 index3 alt1"><code class="qsp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="qsp plain">перезашёл+=</code><code class="qsp color2">1</code></div>
+                              <div class="line number5 index4 alt2"><code class="qsp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="qsp keyword">goto</code> <code class="qsp keyword">$curloc</code></div>
+                              <div class="line number6 index5 alt1"><code class="qsp keyword">end</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        
-        <h2 class="sectionedit5" id="versii_pleera_qsp">Версии плеера QSP</h2>
-        <div class="level2">
+        <h2 class="sectionedit5" id="porjadok_vosproizvedenija_lokacij">Порядок воспроизведения локаций</h2>
+        <div class="level3">
           <p>
-            Существуют различные версии плееров для разных операционных систем, в том числе и для устройств на Андроид. Вы можете скачать подходящий плеер <a href="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" class="urlextern" title="https://qsp.org/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=56" rel="nofollow">здесь</a>.
-          </p>
-        </div>
-        
-        <h2 class="sectionedit6" id="isxodnyj_kod">Исходный код</h2>
-        <div class="level2">
-          <p>
-            <a href="https://github.com/QSPFoundation/qsp" class="urlextern" title="http://github.com/QSPFoundation/qsp" rel="nofollow">Исходный код библиотеки интерпретатора QSP</a>
+            Автоматически при запуске игры воспроизводится только самая первая локация в игре, на все остальные локации нужно делать <a href="/help:goto" class="wikilink1" title="help:goto">переходы</a>, или <a href="/help:organizing" class="wikilink1" title="help:organizing">вызывать</a> их иным образом.
           </p>
           <p>
-            
+            Так же, автоматически может выполняться код <a href="/help:service_locations" class="wikilink1" title="help:service_locations">служебных локаций</a>, отвечающих за обработку разных событий, и локации-счётчика.
           </p>
-        </div>
-        <hr>
-        <h5>Примечания:</h5>
-        <div class="footnotes">
-          <div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup>
-            без дополнительных ухищрений, с ухищрениями - гораздо больше =)</div>
+          <p>
+            Подробнее о порядке воспроизведения локаций смотри статью <a href="/help:principle" class="wikilink1" title="help:principle">"Порядок работы интерпретатора"</a>.
+          </p>
         </div>
         <hr>
         <table class="page-buttons">
-            <tr><td class="left-button"><a href="start.htm" class="page-buttons__item" title="start">Назад: Введение</a></td>
+          <tr>
+            <td class="left-button"><a href="help_qsp.htm" class="page-buttons__item" title="help_qsp.htm">Назад: Что такое QSP?</a></td>
             <td class="right-button">
-            <a href="help_locations.htm" class="page-buttons__item" title="help:locations">Вперёд: Локации</a>
+              <a href="help_main.htm" class="page-buttons__item" title="help_main.htm">Вперёд: Окно основного описания</a>
             </td>
-          </table>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

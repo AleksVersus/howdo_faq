@@ -25,8 +25,8 @@ JDm = (5*JDe + 2)/153
 day = JDe - (153*JDm+2)/5 + 1
 month = JDm + 3 - 12*(JDm/10)
 year = 100*JDb + JDd - 4800 + JDm/10
-$hour = iif (hour < 10, '0<<hour>>', '<<hour>>')
-$minut = iif (minut < 10, '0<<minut>>', '<<minut>>')
+$hour_text = iif (hour < 10, '0<<hour>>', '<<hour>>')
+$minut_text = iif (minut < 10, '0<<minut>>', '<<minut>>')
 ```
 
 В самом начале игры нам нужно задать переменные ''JDNStart'' и ''time''. Именно эти переменные будут хранить точное значение времени в нашей игре.
@@ -49,25 +49,25 @@ $minut = iif (minut < 10, '0<<minut>>', '<<minut>>')
 Помимо ''JDNStart'' и ''time'' на самой первой локации нужно ещё прописать в отдельные массивы текстовое представление для дней недели и месяцев:
 
 ```qsp
-$weekday[1] = 'Понедельник'
-$weekday[2] = 'Вторник'
-$weekday[3] = 'Среда'
-$weekday[4] = 'Четверг'
-$weekday[5] = 'Пятница'
-$weekday[6] = 'Суббота'
-$weekday[7] = 'Воскресенье'
-$month[1] = 'Январь'
-$month[2] = 'Февраль'
-$month[3] = 'Март'
-$month[4] = 'Апрель'
-$month[5] = 'Май'
-$month[6] = 'Июнь'
-$month[7] = 'Июль'
-$month[8] = 'Август'
-$month[9] = 'Сентябрь'
-$month[10] = 'Октябрь'
-$month[11] = 'Ноябрь'
-$month[12] = 'Декабрь'
+$weekday_text[1] = 'Понедельник'
+$weekday_text[2] = 'Вторник'
+$weekday_text[3] = 'Среда'
+$weekday_text[4] = 'Четверг'
+$weekday_text[5] = 'Пятница'
+$weekday_text[6] = 'Суббота'
+$weekday_text[7] = 'Воскресенье'
+$month_text[1] = 'Январь'
+$month_text[2] = 'Февраль'
+$month_text[3] = 'Март'
+$month_text[4] = 'Апрель'
+$month_text[5] = 'Май'
+$month_text[6] = 'Июнь'
+$month_text[7] = 'Июль'
+$month_text[8] = 'Август'
+$month_text[9] = 'Сентябрь'
+$month_text[10] = 'Октябрь'
+$month_text[11] = 'Ноябрь'
+$month_text[12] = 'Декабрь'
 ```
 
 И вот теперь всё готово для того, чтобы мы могли пользоваться полноценным календарём в нашей игре.
@@ -87,7 +87,7 @@ $month[12] = 'Декабрь'
 
 ```qsp
 gs 'calendar'
-*nl $weekday[weekday] + ',' + day + $month[month] + ' ' + year + 'года' + '. ' + $hour + ':' + $minut
+*nl $weekday_text[weekday] + ',' + day + $month_text[month] + ' ' + year + 'года' + '. ' + $hour_text + ':' + $minut_text
 ```
 
 Этот алгоритм хорошо работает на датах от 1 г. н.э. и дальше. Но если мы хотим его использовать для отображения дат до нашей эры, то нужно добавить вот эту строчку в самый конец локации ''"calendar"'':
@@ -104,7 +104,7 @@ $year_text = iif (year < 1, '<<-year+1>> г. до н.э.', '<<year>> г.'))
 
 ```qsp
 *nl'Смольный'
-*nl $weekday[weekday] + ', ' + day + ' ' + $month[month] + ' ' + year + 'года' + '.  ' + $hour + ':' + $minut
+*nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
     act 'Ехать на вокзал':
         time += 45
         gs 'calendar' 
@@ -116,7 +116,7 @@ $year_text = iif (year < 1, '<<-year+1>> г. до н.э.', '<<year>> г.'))
 
 ```qsp
 *nl'Вокзал'
-*nl $weekday[weekday] + ', ' + day + ' ' + $month[month] + ' ' + year + 'года' + '.  ' + $hour + ':' + $minut
+*nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
     act 'Ехать в Смольный':
         time += 45
         gs 'calendar' 
@@ -133,7 +133,7 @@ $year_text = iif (year < 1, '<<-year+1>> г. до н.э.', '<<year>> г.'))
 
 ```qsp
 *nl'Москва'
-*nl $weekday[weekday] + ', ' + day + ' ' + $month[month] + ' ' + year + 'года' + '.  ' + $hour + ':' + $minut
+*nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
     act 'Ехать в Питер (время в пути 1 сутки, 3 часа 45 минут)':
         time += 1665
         gs 'calendar' 
@@ -148,25 +148,25 @@ $year_text = iif (year < 1, '<<-year+1>> г. до н.э.', '<<year>> г.'))
 JDNStart=2421540
 time=3*60+37
 ! прописываем в массив названия месяцев и дней недели
-$weekday[1] = 'Понедельник'
-$weekday[2] = 'Вторник'
-$weekday[3] = 'Среда'
-$weekday[4] = 'Четверг'
-$weekday[5] = 'Пятница'
-$weekday[6] = 'Суббота'
-$weekday[7] = 'Воскресенье'
-$month[1] = 'Январь'
-$month[2] = 'Февраль'
-$month[3] = 'Март'
-$month[4] = 'Апрель'
-$month[5] = 'Май'
-$month[6] = 'Июнь'
-$month[7] = 'Июль'
-$month[8] = 'Август'
-$month[9] = 'Сентябрь'
-$month[10] = 'Октябрь'
-$month[11] = 'Ноябрь'
-$month[12] = 'Декабрь'
+$weekday_text[1] = 'Понедельник'
+$weekday_text[2] = 'Вторник'
+$weekday_text[3] = 'Среда'
+$weekday_text[4] = 'Четверг'
+$weekday_text[5] = 'Пятница'
+$weekday_text[6] = 'Суббота'
+$weekday_text[7] = 'Воскресенье'
+$month_text[1] = 'Январь'
+$month_text[2] = 'Февраль'
+$month_text[3] = 'Март'
+$month_text[4] = 'Апрель'
+$month_text[5] = 'Май'
+$month_text[6] = 'Июнь'
+$month_text[7] = 'Июль'
+$month_text[8] = 'Август'
+$month_text[9] = 'Сентябрь'
+$month_text[10] = 'Октябрь'
+$month_text[11] = 'Ноябрь'
+$month_text[12] = 'Декабрь'
 ! пересчитываем значения времени
 gs 'calendar'
 ! переносимся  в Смольный

@@ -96,10 +96,10 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 }&nbsp;и&nbsp;комментарий&nbsp;не&nbsp;кончится,&nbsp;пока&nbsp;не&nbsp;кончится&nbsp;строка</span><br/>
 </div>
 <h4 id="faq_80_02_sclr" class="avs-article-h4"><em>CLEAR (</em>CLR)</h4><p class="avs-article-p">
-`<em>CLEAR` — очищает окно основного описания. Имеет краткую форму `</em>clr`.
+<code>*CLEAR</code> — очищает окно основного описания. Имеет краткую форму <code>*clr</code>.
 </p>
 <h4 id="faq_80_02_snl" class="avs-article-h4">*NL</h4><p class="avs-article-p">
-`*NL` — переход на новую строку, затем вывод текста в окне основного описания. Общая запись:
+<code>*NL</code> — переход на новую строку, затем вывод текста в окне основного описания. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">NL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
@@ -113,7 +113,7 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
 <h4 id="faq_80_02_sp" class="avs-article-h4">*P</h4><p class="avs-article-p">
-`<em>P` — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после `</em>p` добавит новый текст сразу после текущего. Общая запись:
+<code>*P</code> — вывод текста в окно основного описания без перехода на новую строку. Вывод текста любым другим оператором сразу после <code>*p</code> добавит новый текст сразу после текущего. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">P</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
@@ -127,8 +127,8 @@ $AAA<span class="Monokai-Operator">+</span><span class="Monokai-String">'989'</s
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">""</span><br/>
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">p</span>&nbsp;<span class="Monokai-String">"Текст&nbsp;без&nbsp;перехода&nbsp;на&nbsp;новую&nbsp;строку."</span><br/>
 </div>
-<h4 id="faq_80_02_spl" class="avs-article-h4">*pl</h4><p class="avs-article-p">
-`*PL` — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
+<h4 id="faq_80_02_spl" class="avs-article-h4">*PL</h4><p class="avs-article-p">
+<code>*PL</code> — вывод текста в окно основного описания, затем переход на новую строку. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">*</span><span class="Monokai-Operator">PL</span>&nbsp;<span class="Monokai-Operator">[</span>$текст<span class="Monokai-Operator">]</span><br/>
@@ -881,7 +881,7 @@ $code&nbsp;<span class="Monokai-Operator">=</span>&nbsp;<span class="Monokai-Ope
 `KILLVAR` — удаление указанного элемента массива. Общая запись:
 </p>
 <div class="Monokai-Code">
-<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span><span class="Monokai-StartLoc">#индекс&nbsp;элемента]</span><br/>
+<span class="Monokai-Operator">KILLVAR</span>&nbsp;<span class="Monokai-Operator">[</span>$название&nbsp;массива<span class="Monokai-Operator">]</span><span class="Monokai-Operator">,</span><span class="Monokai-Operator">[</span>индекс&nbsp;элемента<span class="Monokai-Operator">]</span><br/>
 </div>
 <p class="avs-article-p">
 	, где `[$название массива]` — название массива, из которого хотим удалить элемент, а `[#индекс элемента]` — номер элемента в массиве, который хотим удалить. Нумерация элементов массивов начинается с 0.
@@ -1369,7 +1369,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 <span class="Monokai-Operator">unsel</span><br/>
 </div>
 <h4 id="faq_80_02_view" class="avs-article-h4">VIEW</h4><p class="avs-article-p">
-`VIEW` — выводит на экран указанное изображение. В классическом плеере изображение выводися в отдельном окошке (окно предпросмотра), в AeroQSP и Quest Navigator изображение выводится верхним слоем в общем окне. Общая запись:
+`VIEW` — выводит на экран указанное изображение. В классическом плеере изображение выводится в отдельном окошке (окно предпросмотра), в AeroQSP и Quest Navigator изображение выводится верхним слоем в общем окне. Общая запись:
 </p>
 <div class="Monokai-Code">
 <span class="Monokai-Operator">VIEW</span>&nbsp;<span class="Monokai-Operator">[</span>$путь&nbsp;к&nbsp;графическому&nbsp;файлу<span class="Monokai-Operator">]</span><br/>
@@ -1409,7 +1409,7 @@ off<span class="Monokai-Operator">=</span><span class="Monokai-Numeric">0</span>
 	Использовать данный оператор необходимо с осторожностью, поскольку приостановка выполнения кода блокирует для игрока возможность взаимодействовать с игрой.
 </p>
 <p class="avs-article-p">
-`WAIT` не только прерывает выполнение кода, но так же засталяет плеер выводить на экран информацию из буфера экрана. При нормальном выполнении кода локации, весь текст для операторов <em>pl </em>p pl nl и т.д. помещается в специальный буфер экрана, и уже после выполнения всего кода на локации выводится на экран. При использовании `WAIT` текст из буфера выводится сразу в момент выполнения `WAIT`, что иногда полезно, поскольку позволяет проследить изменение некоторых значений поэтапно.
+`WAIT` не только прерывает выполнение кода, но так же засталяет плеер выводить на экран информацию из буфера экрана. При нормальном выполнении кода локации, весь текст для операторов <code><em>pl </em>p</code> pl nl и т.д. помещается в специальный буфер экрана, и уже после выполнения всего кода на локации выводится на экран. При использовании `WAIT` текст из буфера выводится сразу в момент выполнения `WAIT`, что иногда полезно, поскольку позволяет проследить изменение некоторых значений поэтапно.
 </p>
 <p class="avs-article-p">
 В примере ниже числа сначала запишутся в буфер экрана и только потом появятся на экране:

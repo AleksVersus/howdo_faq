@@ -15,7 +15,11 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/ispol_zovanie_massivov_0017.html" class="avs-pages-button__link">&lt; Назад, к странице 19</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/dejstvie_po_usloviju_0019.html" class="avs-pages-button__link">Вперёд, к странице 21 &gt;</a></div></div></div>
-<h5 id="informarch_ia_lib_ntropy" class="avs-article-h5">Библиотечка дополняющая инвентарь 0.76</h5><p class="avs-article-p">
+<h5 id="informarch_ia_lib_ntropy" class="avs-article-h5">Библиотечка дополняющая инвентарь 0.76</h5><blockquote class="avs-article-blockquote">
+<p class="avs-article-p">
+Модуль разрабатывался для плееров версии ниже 5.8.0.</p>
+</blockquote>
+<p class="avs-article-p">
 Библиотечка для работы с инвентарём (<code>inventory_advanced.qsp</code>) + простой пример для демонстрации возможностей (<code>invadv_test.qsp</code>).
 </p>
 <p class="avs-article-p">
@@ -28,7 +32,7 @@
 Для получения описания функций библиотечки откройте её файл (<code>inventory_advanced.qsp</code>) в QSP-плеере.
 </p>
 <h5 id="opisanie" class="avs-article-h5">Описание</h5><p class="avs-article-p">
-Локации могут вызываться как функции, так и как процедуры, например вызов func('ia_obj_count', 'шишки') возвращает количество шишек в инвентаре, а вызов процедуры <code>gs 'ia_add_obj','шишки</code>' добавляет одну шишку в инвентарь.
+Локации могут вызываться как функции, так и как процедуры, например вызов func('ia_obj_count', 'шишки') возвращает количество шишек в инвентаре, а вызов процедуры <code>gs 'ia_add_obj',"шишки"</code> добавляет одну шишку в инвентарь.
 </p>
 <ul>
 <li><code>ia_add_obj, &lt;предмет&gt;, [&lt;тип предмета&gt;]</code>    Функция для добавления предмета в инвентарь или увеличения счетчика на 1, тип предмета задает сокращение после количества, например "руб." или "шт."

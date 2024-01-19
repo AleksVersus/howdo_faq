@@ -15,7 +15,11 @@
             <h1 class="avs-article-h1">ИнформАрхив QSP</h1>
             <!-- body start -->
 <div class="avs-pages-button__wrapper"><div class="avs-pages-button__left-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/plavnoe_izmenenie_0020.html" class="avs-pages-button__link">&lt; Назад, к странице 22</a></div></div><div class="avs-pages-button__right-combine"><div class="avs-pages-button"><a href="https://aleksversus.github.io/howdo_faq/informarch/tjanem_karty_iz_kollody_0022.html" class="avs-pages-button__link">Вперёд, к странице 24 &gt;</a></div></div></div>
-<h5 id="informarch_debugger20" class="avs-article-h5">Отладчик 2.0 beta</h5><p class="avs-article-p">
+<h5 id="informarch_debugger20" class="avs-article-h5">Отладчик 2.0 beta</h5><blockquote class="avs-article-blockquote">
+<p class="avs-article-p">
+Модуль разрабатывался для плееров версии ниже 5.8.0.</p>
+</blockquote>
+<p class="avs-article-p">
 Позволяет в любое время выполнить произвольный кусок кода или просмотреть значения переменных из указанного списка.
 </p>
 <p class="avs-article-p">
@@ -26,9 +30,9 @@
 </p>
 <ul>
 <li>Распаковать архив в папку с игрой</li>
-<li>Добавить в первую локацию команду: <code>addqst 'lib/debugger.qsp</code>', для загрузки отладчика</li>
+<li>Добавить в первую локацию команду: <code>addqst 'lib/debugger.qsp</code>, для загрузки отладчика</li>
 <li>Включить отладочный режим: <code>debug = 1</code>, для плеера</li>
-<li>Добавить команду: <code>gs 'debugger_init</code>', для включения отладчика</li>
+<li>Добавить команду: <code>gs "debugger_init"</code>, для включения отладчика</li>
 </ul>
 <p class="avs-article-p">
 Основным недостатком первой версии было то, что команды можно было вводить только через строку ввода. Вызов команд из кода был затруднен, и создание новых команд требовало знания структуры и принципа отладчика. Кроме того у части команд был не совсем удобный вызов. В новой версии я постарался решить все эти проблемы.
@@ -37,7 +41,7 @@
 Для этого были сделаны следующие изменения:
 </p>
 <ul>
-<li>добавлена возможность вызвать команду отладчика из кода (в предыдущей версии вызов команды был тесно связан с строкой ввода и сделать это было довольно проблематично)	например: <code>gs 'debugger_process', 'addvar test</code>'
+<li>добавлена возможность вызвать команду отладчика из кода (в предыдущей версии вызов команды был тесно связан с строкой ввода и сделать это было довольно проблематично)	например: <code>gs "debugger_process", "addvar test"</code>
 </li>
 <li>обавлена возможность ввести несколько команд одновреммено разделив их &amp; (в предыдущей версии была бы отработана только первая команда)	например: <code>addVar test &amp; test = 3 &amp; showVars</code>
 </li>
@@ -56,7 +60,7 @@
 	в принципе с помощью <code>createCommand</code> можно перегрузить любую команду отладчика, но пользоваться этой возможностью нужно с осторожностью
 </li>
 <li>добавлен "визуальный" режим для тех, кто не хочет учить команды:)	для его использования при вызове <code>debugger_init</code> первым параметром передайте <code>1</code> в локацию-обработчик выбора предмета добавьте
-	<code>if $selobj = 'Отладчик': menu '$visual_main</code>'
+	<code>if $selobj = 'Отладчик': menu "$visual_main"</code>
 </li>
 </ul>
 <p class="avs-article-p">
