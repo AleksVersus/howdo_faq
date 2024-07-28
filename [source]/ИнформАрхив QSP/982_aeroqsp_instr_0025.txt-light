@@ -1,5 +1,5 @@
-==Инструкция по использованию AeroQSP совместно с Quest Generator==
-[:informarch_aeroqsp_instr]
+# Инструкция по использованию AeroQSP совместно с Quest Generator
+<!-- [:informarch_aeroqsp_instr] -->
 
 	1. Скачиваем https://qsp.org/misc/aero/aerodev.zip
 	2. Скачиваем https://qsp.org/attachments/aeroshell.zip
@@ -14,14 +14,14 @@
 
 Для работы Aeroshell требуется предустановленный плагин Flash для Internet Explorer. Брать здесь: http://get.adobe.com/ru/flashplayer/otherversions
 
--Примечание Aleks Versus:-
+#### Примечание Aleks Versus:
 	
  > AeroQSP — плеер, работающий на устаревшей и отжившей своё технологии Flash. Adobe прекратила поддержку данной технологии, что означает, что AeroQSP стало невозможно использовать. Игры AeroQSP можно пробовать запустить на [qSpider](https://aleksversus.github.io/howdo_faq/articles/qspider_0004#qspider_0120), но это так же потребует танцев с бубнами. Лучше писать игры сразу для qSpider, не уповая на то, что он поддерживает AeroQSP.
 
 Следующий раздел перенесён из справочника по самым часто задаваемым вопросам.
 
-=24.1. Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?=
-[:faq_24_01]
+## 24.1. Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?
+<!-- [:faq_24_01] -->
 В: Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?
 
 О:
@@ -46,8 +46,8 @@
 
 Если оболочка AeroQSP не запустится, или запустится с чёрным экраном, обновите версию флеш-плеера
 
-+23.1.  Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?+
-[:link_24_01]
+###### 23.1.  Как сделать так, чтобы AeroQSP запускался прямо из Quest Generator?
+<!-- [:link_24_01] -->
 Смотреть ответ на ютубе: [https://youtu.be/UqcQhd-HFzw](https://youtu.be/UqcQhd-HFzw)
 NickoAilus. #5647 18.Май.19 10:50:55: [Что надо сделать с QGen, чтобы он заработал на AeroQSP?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25202)
 Инструкция по работе с AeroQSP: [https://qsp.org/misc/aero/help.htm](https://qsp.org/misc/aero/help.htm)

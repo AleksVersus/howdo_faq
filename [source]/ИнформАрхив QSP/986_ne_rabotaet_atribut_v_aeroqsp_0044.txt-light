@@ -1,5 +1,5 @@
-=13.6. В AeroQSP не работает атрибут=
-[:faq_13_06]
+## 13.6. В AeroQSP не работает атрибут
+<!-- [:faq_13_06] -->
 
 > Примечание Aleks Versus: это статья об устаревшем плеере AeroQSP; данный плеер больше не работает в связи с прекращением поддержки и распространения Adobe Flash Player; статья представлена для ознакомительных целей, так как в ней достаточно полно отражены основные принципы написания игр на QSP.
 
@@ -59,8 +59,8 @@ AeroQSP ориентирован на работу со стилями, поэт
 ```
 Все поддерживаемые свойства перечисленны в сводной справке по AeroQSP [https://qsp.org/misc/aero/help.htm](https://qsp.org/misc/aero/help.htm)
 
-+13.6. В AeroQSP не работает атрибут+
-[:link_13_06]
+###### 13.6. В AeroQSP не работает атрибут
+<!-- [:link_13_06] -->
 Смотреть ответ на ютубе: [https://www.youtube.com/watch?v=TCve-b6AQMs&](https://www.youtube.com/watch?v=TCve-b6AQMs&t=18s)
 Storm. #2828 10.Май.15 18:33:19: [В классическом плеере и в Quest Navigator`е свойство "border" работает, а в Aero нет.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941)
 Вета. #3784 24.Янв.16 14:50:18: [как в аере задать ячейке таблицы цвет? С bgcolor не работает что-то...](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=152&prc=25&Itemid=57#p22645)

@@ -1,5 +1,5 @@
-==Преобразование типов в QSP==
-[:preobrazovanije_tipov_qsp]
+# Преобразование типов в QSP
+<!-- [:preobrazovanije_tipov_qsp] -->
 
 Эта **статья** поможет вам ''разобраться'' в таком ''[*сложном вопросе*](#linetest)'', как преобразование типов в операции присвоения, или в выражениях.
 
@@ -178,8 +178,8 @@ end
 	*pl "Здоровье: <<health>>/<<max_health>>."
 ```
 
--P.S.:-
-[:post_scriptum_articles_0001]
+#### P.S.:
+<!-- [:post_scriptum_articles_0001] -->
 
 Данную статью вы можете найти так же и на других ресурсах:
 	* [мой_сайт/преобразование_типов_в_QSP](http://aleksversus.narod.ru/index/preobrazovanie_tipov_v_qsp/0-53)

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "236dfa1c280d331c",
   "lastOpenFiles": [
+    "qsp-project-workspace.json",
+    "README.md",
     "res/[converters]/output.html",
     "[source]/ответы/00_intro/01_soderzhanie_0001.txt-light",
     "[source]/ответы/00_intro/00_vstuplenie_0000.md",
@@ -157,7 +159,6 @@
     "[source]/ИнформАрхив QSP/по qSpider_удаление игр.md",
     "res/img/uparrow_btn.png",
     "res/img/cover.png",
-    "README.md",
     "[source]/98_wiki_to_chm/to_compile/window_msg.png",
     "[source]/98_wiki_to_chm/to_compile/qspblank2.jpg",
     "[source]/98_wiki_to_chm/to_compile/qsp-logo-128.png",
@@ -192,7 +193,6 @@
     "писательство/писатели/печкин",
     "игрострой/статьи/правила игр/тайны тёмного владыки",
     "игрострой/статьи/правила игр/берсерк",
-    "игрострой/статьи/правила игр/берсерк/Rasshirennye_Pravila_KKI_Berserk_3_1_3_ot_17_05_2024.pdf",
     "Pasted image 20240522182934.jpg",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
