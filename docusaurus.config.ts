@@ -121,7 +121,8 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} "QSP F.A.Q". Built with Docusaurus.`,
+      copyright: `Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.<br/>` +
+      `Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2019-${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

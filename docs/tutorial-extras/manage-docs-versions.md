@@ -2,30 +2,30 @@
 sidebar_position: 1
 ---
 
-# Manage Docs Versions
+# Управление версиями документов
 
-Docusaurus can manage multiple versions of your docs.
+Docusaurus может управлять несколькими версиями ваших документов.
 
-## Create a docs version
+## Создание версии документов
 
-Release a version 1.0 of your project:
+Выпуск версии 1.0 вашего проекта:
 
 ```bash
 npm run docusaurus docs:version 1.0
 ```
 
-The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
+Папка `docs` копируется в `versioned_docs/version-1.0` и создается `versions.json`.
 
-Your docs now have 2 versions:
+Теперь у ваших документов есть 2 версии:
 
-- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
-- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
+- `1.0` по адресу `http://localhost:3000/docs/` для документов версии 1.0
+- `current` по адресу `http://localhost:3000/docs/next/` для **будущих, невыпущенных документов**
 
-## Add a Version Dropdown
+## Добавить раскрывающийся список версий
 
-To navigate seamlessly across versions, add a version dropdown.
+Чтобы легко перемещаться между версиями, добавьте раскрывающийся список версий.
 
-Modify the `docusaurus.config.js` file:
+Измените файл `docusaurus.config.js`:
 
 ```js title="docusaurus.config.js"
 export default {
@@ -43,13 +43,13 @@ export default {
 };
 ```
 
-The docs version dropdown appears in your navbar:
+Раскрывающийся список версий документов отображается на панели навигации:
 
 ![Docs Version Dropdown](./img/docsVersionDropdown.png)
 
-## Update an existing version
+## Обновить существующую версию
 
-It is possible to edit versioned docs in their respective folder:
+Возможно редактировать версионные документы в соответствующей папке:
 
-- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
-- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`
+- `versioned_docs/version-1.0/hello.md` обновляет `http://localhost:3000/docs/hello`
+- `docs/hello.md` обновляет `http://localhost:3000/docs/next/hello`

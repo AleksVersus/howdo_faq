@@ -2,13 +2,13 @@
 sidebar_position: 4
 ---
 
-# Markdown Features
+# Возможности Markdown
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Docusaurus поддерживает **[Markdown](https://daringfireball.net/projects/markdown/syntax)** и несколько **дополнительных функций**.
 
-## Front Matter
+## Вводная часть
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+Документы Markdown имеют метаданные в верхней части, называемые [Вводная часть](https://jekyllrb.com/docs/front-matter/):
 
 ```text title="my-doc.md"
 // highlight-start
@@ -25,9 +25,9 @@ slug: /my-custom-url
 Markdown text with [links](./hello.md)
 ```
 
-## Links
+## Ссылки
 
-Regular Markdown links are supported, using url paths or relative file paths.
+Поддерживаются обычные ссылки Markdown, использующие пути URL или относительные пути к файлам.
 
 ```md
 Let's see how to [Create a page](/create-a-page).
@@ -37,13 +37,13 @@ Let's see how to [Create a page](/create-a-page).
 Let's see how to [Create a page](./create-a-page.md).
 ```
 
-**Result:** Let's see how to [Create a page](./create-a-page.md).
+**Результат:** Давайте посмотрим, как [Создать страницу](./create-a-page.md).
 
-## Images
+## Изображения
 
-Regular Markdown images are supported.
+Поддерживаются обычные изображения Markdown.
 
-You can use absolute paths to reference images in the static directory (`static/img/docusaurus.png`):
+Вы можете использовать абсолютные пути для ссылок на изображения в статическом каталоге (`static/img/docusaurus.png`):
 
 ```md
 ![Docusaurus logo](/img/docusaurus.png)
@@ -51,15 +51,15 @@ You can use absolute paths to reference images in the static directory (`static/
 
 ![Docusaurus logo](/img/docusaurus.png)
 
-You can reference images relative to the current file as well. This is particularly useful to colocate images close to the Markdown files using them:
+Вы также можете ссылаться на изображения относительно текущего файла. Это особенно полезно для размещения изображений рядом с файлами Markdown, используя их:
 
 ```md
 ![Docusaurus logo](./img/docusaurus.png)
 ```
 
-## Code Blocks
+## Блоки кода
 
-Markdown code blocks are supported with Syntax highlighting.
+Блоки кода Markdown поддерживаются с подсветкой синтаксиса.
 
 ````md
 ```jsx title="src/components/HelloDocusaurus.js"
@@ -75,39 +75,39 @@ function HelloDocusaurus() {
 }
 ```
 
-## Admonitions
+## Предупреждения
 
-Docusaurus has a special syntax to create admonitions and callouts:
+Docusaurus имеет специальный синтаксис для создания предостережений и выносок:
 
 ```md
-:::tip My tip
+:::tip Мой совет
 
-Use this awesome feature option
+Используйте эту замечательную опцию функции
 
 :::
 
-:::danger Take care
+:::danger Будьте осторожны
 
-This action is dangerous
+Это действие опасно
 
 :::
 ```
 
-:::tip My tip
+:::tip  Мой совет
 
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
+Используйте эту замечательную опцию функции
 
 :::
 
-## MDX and React Components
+:::danger Будьте осторожны
 
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
+Это действие опасно
+
+:::
+
+## Компоненты MDX и React
+
+[MDX](https://mdxjs.com/) может сделать вашу документацию более **интерактивной** и позволяет использовать любые **компоненты React внутри Markdown**:
 
 ```jsx
 export const Highlight = ({children, color}) => (
@@ -147,6 +147,6 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+Это <Highlight color="#25c2a0">Docusaurus зелёный</Highlight>!
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+Это <Highlight color="#1877F2">Facebook синий</Highlight>!

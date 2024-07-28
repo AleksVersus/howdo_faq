@@ -2,17 +2,17 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Создать документ
 
-Documents are **groups of pages** connected through:
+Документы — это **группы страниц**, связанные посредством:
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+- **боковой панели**
+- **предыдущей/следующей навигации**
+- **управления версиями**
 
-## Create your first Doc
+## Создайте свой первый документ
 
-Create a Markdown file at `docs/hello.md`:
+Создайте файл Markdown в `docs/hello.md`:
 
 ```md title="docs/hello.md"
 # Hello
@@ -20,13 +20,13 @@ Create a Markdown file at `docs/hello.md`:
 This is my **first Docusaurus document**!
 ```
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+Новый документ теперь доступен по адресу [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
 
-## Configure the Sidebar
+## Настройка боковой панели
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+Docusaurus автоматически **создает боковую панель** из папки `docs`.
 
-Add metadata to customize the sidebar label and position:
+Добавьте метаданные для настройки метки и положения боковой панели:
 
 ```md title="docs/hello.md" {1-4}
 ---
@@ -39,7 +39,7 @@ sidebar_position: 3
 This is my **first Docusaurus document**!
 ```
 
-It is also possible to create your sidebar explicitly in `sidebars.js`:
+Также можно создать боковую панель явно в `sidebars.js`:
 
 ```js title="sidebars.js"
 export default {

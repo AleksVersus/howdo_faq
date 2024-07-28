@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "Руководство - основы",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "5 минут на изучение самых важных концепций Docusaurus'а."
   }
 }

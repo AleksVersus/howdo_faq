@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# Create a Blog Post
+# Создайте запись в блоге
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+Docusaurus создает **страницу для каждой записи в блоге**, а также **страницу индекса блога**, **систему тегов**, **RSS**-канал...
 
-## Create your first Post
+## Создайте свою первую запись
 
-Create a file at `blog/2021-02-28-greetings.md`:
+Создайте файл по адресу `blog/2021-02-28-greetings.md`:
 
 ```md title="blog/2021-02-28-greetings.md"
 ---
@@ -31,4 +31,4 @@ Congratulations, you have made your first post!
 Feel free to play around and edit this post as much as you like.
 ```
 
-A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
+Новая запись в блоге теперь доступна по адресу [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).

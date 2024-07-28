@@ -2,22 +2,22 @@
 sidebar_position: 6
 ---
 
-# Congratulations!
+# Поздравляем!
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Вы только что изучили **основы Docusaurus** и внесли некоторые изменения в **исходный шаблон**.
 
-Docusaurus has **much more to offer**!
+Docusaurus может предложить **гораздо больше**!
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+Есть **еще 5 минут**? Взгляните на **[versioning](../tutorial-extras/manage-docs-versions.md)** и **[i18n](../tutorial-extras/translate-your-site.md)**.
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+Есть что-нибудь **непонятное** или **неправильное** в этом руководстве? [Пожалуйста, сообщите об этом!](https://github.com/facebook/docusaurus/discussions/4610)
 
-## What's next?
+## Что дальше?
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+- Прочитайте [официальную документацию](https://docusaurus.io/)
+- Измените конфигурацию своего сайта с помощью [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
+- Добавьте элементы панели навигации и нижнего колонтитула с помощью [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
+- Добавьте пользовательский [дизайн и макет](https://docusaurus.io/docs/styling-layout)
+- Добавьте [панель поиска](https://docusaurus.io/docs/search)
+- Найдите вдохновение в [витрине Docusaurus](https://docusaurus.io/showcase)
+- Примите участие в [сообществе Docusaurus](https://docusaurus.io/community/support)

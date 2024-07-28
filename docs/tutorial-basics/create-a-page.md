@@ -2,17 +2,17 @@
 sidebar_position: 1
 ---
 
-# Create a Page
+# Создать страницу
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+Добавьте файлы **Markdown или React** в `src/pages`, чтобы создать **отдельную страницу**:
 
 - `src/pages/index.js` → `localhost:3000/`
 - `src/pages/foo.md` → `localhost:3000/foo`
 - `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
 
-## Create your first React Page
+## Создайте свою первую страницу React
 
-Create a file at `src/pages/my-react-page.js`:
+Создайте файл в `src/pages/my-react-page.js`:
 
 ```jsx title="src/pages/my-react-page.js"
 import React from 'react';
@@ -28,11 +28,11 @@ export default function MyReactPage() {
 }
 ```
 
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
+Новая страница теперь доступна по адресу [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
 
-## Create your first Markdown Page
+## Создайте свою первую страницу Markdown
 
-Create a file at `src/pages/my-markdown-page.md`:
+Создайте файл по адресу `src/pages/my-markdown-page.md`:
 
 ```mdx title="src/pages/my-markdown-page.md"
 # My Markdown page
@@ -40,4 +40,4 @@ Create a file at `src/pages/my-markdown-page.md`:
 This is a Markdown page
 ```
 
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+Новая страница теперь доступна по адресу [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
