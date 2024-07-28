@@ -1,7 +1,12 @@
 {
 	
-	"output-folder":"..\\..\\pages",
-	"source-folder":"..\\..\\[source]\\ответы",
+	"output-folder":"..\\..\\answers",
+	"pages": [
+		{
+			"source-path": "",
+			"out-name": ""
+		},
+	],
 
 	"project-html":
 	{
