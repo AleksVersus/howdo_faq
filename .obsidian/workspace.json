@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
+                "file": "[source]/ответы/92_дополнительные тексты/Структура.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
+                "file": "[source]/ответы/92_дополнительные тексты/Структура.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md",
+                "file": "[source]/ответы/92_дополнительные тексты/Структура.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "[source]/ответы/00_intro/00_vstuplenie_0000.md"
+                "file": "[source]/ответы/92_дополнительные тексты/Структура.md"
               }
             }
           }
@@ -146,17 +146,44 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "236dfa1c280d331c",
+  "active": "61daad17fd4f3291",
   "lastOpenFiles": [
-    "qsp-project-workspace.json",
-    "README.md",
-    "res/[converters]/output.html",
-    "[source]/ответы/00_intro/01_soderzhanie_0001.txt-light",
+    "package-lock.json",
+    "package.json",
+    "node_modules/resolve/SECURITY.md",
+    "node_modules/resolve/readme.markdown",
+    "node_modules/resolve/sync.js",
+    "node_modules/resolve/example/sync.js",
+    "node_modules/resolve/example/async.js",
+    "node_modules/resolve/example",
+    "node_modules/resolve/test/resolver/symlinked/_/node_modules/foo.js",
+    "node_modules/resolve/test/resolver/multirepo/packages/package-b/package.json",
+    "node_modules/resolve/test/resolver/multirepo/packages/package-a/package.json",
+    "node_modules/resolve/test/resolver/multirepo/packages/package-b/index.js",
+    "node_modules/minimatch/README.md",
+    "node_modules/color-name/README.md",
+    "node_modules/path-is-absolute/readme.md",
+    "node_modules/brace-expansion/README.md",
+    "node_modules/balanced-match/README.md",
+    "node_modules/ansi-styles/readme.md",
+    "[source]/ответы/92_дополнительные тексты/пример списка.md",
+    "[source]/ответы/00_intro/01_soderzhanie_0001.md",
+    "[source]/ответы/92_дополнительные тексты/пример SOH.md",
+    "[source]/ответы/92_дополнительные тексты/Структура.md",
     "[source]/ответы/00_intro/00_vstuplenie_0000.md",
-    "[source]/ответы/00_intro",
-    "res/[converters]/md2html.py",
-    "[source]/ответы/00_вступления/00_vstuplenie_0000.md",
-    "[source]/ИнформАрхив QSP/по qSpider_удаление игр.md",
+    "[source]/ответы/90_ссылки/90_ssylki_0181.md",
+    "[source]/ответы/01_Основной раздел/01_в чём разница/00.md",
+    "[source]/ответы/91_изменения/внесённые изменения.md",
+    "[source]/ответы/01_Основной раздел/01_в чём разница/01_v_chiom_raznitsa_mezhdu_set_let_i_0002.md",
+    "[source]/ИнформАрхив QSP/985_aeroqsp_uchebnik_0028.md",
+    "[source]/уроки по QSP/00_вводный.md",
+    "[source]/ответы/01_Основной раздел/20_конкретные задачи/01_vozvrat_na_predyduschuju_lokatsiju_0133.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/10_tekst_snizu_vverh_0132.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/09_obnovlenie_peremennyh_na_akrane_0131.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/08_na_kakom_ustrojstve_0130.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/07_otladchik_0129.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/06_propustit__glavy_0128.md",
+    "[source]/ответы/01_Основной раздел/19_изыски/05_kak_zadejstvovat__klaviaturu_v_igre_0127.md",
     "res/img/uparrow_btn.png",
     "res/img/cover.png",
     "[source]/98_wiki_to_chm/to_compile/window_msg.png",
@@ -166,33 +193,6 @@
     "[source]/98_wiki_to_chm/to_compile/input_window.png",
     "[source]/98_wiki_to_chm/to_compile/ballad.jpg",
     "[source]/98_wiki_to_chm/decompile/qsp-logo-128.png",
-    "железо/android.md",
-    "программирование/+Sublime Text/syntax_definitions.md",
-    "программирование/JavaScript/webpack/настройка webpack5.md",
-    "программирование/JavaScript/00_общее.md",
-    "программирование/python/83_модуль datetime.md",
-    "программирование/python/функции.md",
-    "программирование/Алгоритмы/деление.md",
-    "программирование/Алгоритмы/алгоритмы.md",
-    "программирование/Алгоритмы/дополнительный код.md",
-    "библиотеки/эзотерика и псевдонаука/вакуумный компьютер.md",
-    "писательство/Приёмы.md",
-    "библиотеки/эзотерика и псевдонаука",
-    "игрострой/статьи/нарратив/игроки и сюжет.md",
-    "игрострой/статьи/странный аттрактор.md",
-    "игрострой/статьи/сложность игр.md",
-    "иллюстрации/стоковые изображения.md",
-    "писательство/грамматика/лжевводные слова.md",
-    "софт/online/конвертер base64.md",
-    "программирование/+Sublime Text/ссылки.md",
-    "писательство/статьи и ссылки.md",
-    "писательство/стихосложение/поэтика. фигуры.md",
-    "писательство/стихосложение/фигуры.md",
-    "библиотеки/афоризмы",
-    "писательство/писатели/поэты",
-    "писательство/писатели/печкин",
-    "игрострой/статьи/правила игр/тайны тёмного владыки",
-    "игрострой/статьи/правила игр/берсерк",
     "Pasted image 20240522182934.jpg",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
