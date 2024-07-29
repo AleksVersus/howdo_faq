@@ -1,7 +1,9 @@
 # 22.10. Как выполнить JavaScript прямо из кода QSP?
 <!-- [:faq_22_10] -->
 
-> Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html)
+:::danger[**Эта статья устарела!**]
+Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](04_qspider_0004.md).
+:::
 
 В: Как выполнить JavaScript прямо из кода QSP?
 

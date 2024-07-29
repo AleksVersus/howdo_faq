@@ -1,4 +1,8 @@
-# Содержание
+---
+id: 00_contents
+---
+
+# Оглавление
 <!-- [:soderzhanije] -->
 
 * [Преобразование типов в QSP](#preobrazovanije_tipov_qsp)

@@ -60,14 +60,20 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'howdoSidebar',
           position: 'left',
-          label: 'Содержание',
+          label: 'Как сделать? F.A.Q.',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'articlesSidebar',
+          position: 'left',
+          label: 'Статьи',
         },
         {
           type: 'docSidebar',
           sidebarId: 'informArchSidebar',
-          position: 'left',
+          position: 'right',
           label: 'Информ-Архив',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},

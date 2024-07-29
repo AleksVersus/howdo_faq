@@ -1,7 +1,9 @@
 # 22.8. Как делать standalone-сборку на Навигаторе?
 <!-- [:faq_22_08] -->
 
-> Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](https://aleksversus.github.io/howdo_faq/articles/qspider_0004.html)
+:::danger[**Эта статья устарела!**]
+Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](04_qspider_0004.md).
+:::
 
 В: Как делать standalone-сборку на Навигаторе?
 	Независимая сборка на Quest Navigator

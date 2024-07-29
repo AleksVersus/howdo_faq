@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/informarch/999_zakladki_0030.md",
+                "file": "docs/articles/01_preobrazovanie_tipov_v_qsp_0001.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/informarch/999_zakladki_0030.md",
+                "file": "docs/articles/01_preobrazovanie_tipov_v_qsp_0001.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/informarch/999_zakladki_0030.md",
+                "file": "docs/articles/01_preobrazovanie_tipov_v_qsp_0001.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/informarch/999_zakladki_0030.md"
+                "file": "docs/articles/01_preobrazovanie_tipov_v_qsp_0001.md"
               }
             }
           }
@@ -148,8 +148,15 @@
   },
   "active": "236dfa1c280d331c",
   "lastOpenFiles": [
-    "docs/informarch/11_qspider/по qSpider_удаление игр.md",
-    "docs/informarch/10_review/990_obzory_qsp-compo_2010_0029.md",
+    "docs/articles/00_contents.md",
+    "docs/articles/03_chto_novogo_v_qsp_0003.md",
+    "docs/articles/04_qspider_0004.md",
+    "03_chto_nonogo_v_qsp_0003.md",
+    "03_chto_nonogo_v_qsp.md",
+    "docs/informarch/08_navigator/961_modal_window_0043.md",
+    "infomarch/04_qspider_0004.md",
+    "infomarch",
+    "docs/informarch/08_navigator/962_externallinks.md",
     "docs/informarch/09_aeroqsp/987_ne_rabotaet_giperssylka_v_aeroqsp_0045.md",
     "docs/informarch/09_aeroqsp/986_ne_rabotaet_atribut_v_aeroqsp_0044.md",
     "docs/informarch/09_aeroqsp/985_aeroqsp_uchebnik_0028.md",
@@ -157,35 +164,28 @@
     "docs/informarch/09_aeroqsp/983_aeroqsp_help_0026.md",
     "docs/informarch/09_aeroqsp/982_aeroqsp_instr_0025.md",
     "docs/informarch/09_aeroqsp/981_aeroqsp_0024.md",
-    "docs/informarch/08_navigator/962_externallinks.md",
-    "docs/informarch/08_navigator/961_modal_window_0043.md",
+    "docs/informarch/10_review/990_obzory_qsp-compo_2010_0029.md",
+    "docs/informarch/11_qspider/по qSpider_удаление игр.md",
+    "docs/informarch/999_zakladki_0030.md",
+    "docs/informarch/intro.md",
+    "docs/articles/07_stylization_manifest_0007.md",
+    "docs/articles/06_operatory_funktsii_argumenty_0006.md",
+    "docs/articles/05_classic.config_0005.md",
+    "docs/articles/02_novoe_v_rabote_massivov_v_5.8.0_0002.md",
+    "docs/articles/01_preobrazovanie_tipov_v_qsp_0001.md",
+    "docs/articles",
+    "docs/Новая папка",
+    "[source]/older/articles/chto_novogo_v_qsp_0003.html",
+    "[source]/older/articles/novoe_v_rabote_massivov_v_5.8.0_0002.html",
+    "[source]/older/articles/operatory_funktsii_argumenty_0006.html",
+    "[source]/older/articles/stylization_manifest_0007.html",
+    "[source]/older/articles/soderzhanie_0000.html",
+    "[source]/older/articles/qspider_0004.html",
+    "[source]/older/articles/preobrazovanie_tipov_v_qsp_0001.html",
     "docs/informarch/08_navigator/960_instruktsija_po_smene_oformlenija_iz_koda_igry_0042.md",
     "docs/informarch/08_navigator/959_vypolnenie_js_iz_qsp-koda_0041.md",
-    "docs/informarch/08_navigator/958_razmer_okna_igry_0040.md",
-    "docs/informarch/08_navigator/957_standalone_0039.md",
-    "docs/informarch/08_navigator/956_video_0038.md",
-    "docs/informarch/08_navigator/955_proverka_pleera_0037.md",
-    "docs/informarch/08_navigator/954_nastrojka_shablona_0036.md",
-    "docs/informarch/08_navigator/953_izmenit__kursor_0035.md",
-    "docs/informarch/08_navigator/952_kak_izmenit__tsvet_fona_0034.md",
-    "docs/informarch/08_navigator/951_kak_podkljuchit__svoj_shrift_0033.md",
-    "docs/informarch/08_navigator/950_shablony_oformlenija_dlja_igr_0032.md",
-    "docs/informarch/07_updates/970_obnovlenie_do_5.7.0_0023.md",
-    "docs/informarch/06_program/309_tjanem_karty_iz_kollody_0022.md",
-    "docs/informarch/06_program/308_otladchik_0021.md",
-    "docs/informarch/06_program/307_plavnoe_izmenenie_0020.md",
-    "docs/informarch/11_qspider/_category_.yaml",
-    "docs/informarch/10_review/_category_.yaml",
-    "docs/informarch/09_aeroqsp/_category_.yaml",
-    "docs/informarch/07_updates/_category_.yaml",
-    "docs/informarch/06_program/_category_.yaml",
-    "docs/informarch/05_txtgam/_category_.yaml",
     "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/graf.png",
-    "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/graf.png.opdownload",
     "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/red.png",
-    "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/red.png.opdownload",
-    "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/img",
-    "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie",
     "docs/informarch/04_extrqsp/021_avtomatnoe_programmirovanie/shema.png",
     "howdo-faq/node_modules/serve-index/public/icons/page_white_paintbrush.png",
     "howdo-faq/node_modules/serve-index/public/icons/page_white_excel.png",
