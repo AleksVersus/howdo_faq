@@ -1,0 +1,13 @@
+/* Light mode stilization */
+
+.cm-sys-variable {
+    color: #ff0000;
+}
+
+
+.cm-start-location {
+	font-weight: bold;
+}
+.cm-end-location {
+	font-weight: bold;
+}

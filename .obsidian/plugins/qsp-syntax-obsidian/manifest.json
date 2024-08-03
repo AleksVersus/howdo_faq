@@ -1,0 +1,14 @@
+{
+	"id": "qsp-syntax-highlight",
+	"name": "QSP-syntax hightlighting",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "This plugin add to your Obsidian storage highlighting of QSP-syntax.",
+	"author": "Aleks Versus",
+	"authorUrl": "https://aleksversus.narod.ru",
+	"fundingUrl": {
+		"Subscribe my boosty": "https://boosty.to/aleksversus",
+		"Donate": "https://www.donationalerts.com/r/aleksversus"
+	},
+	"isDesktopOnly": false
+}

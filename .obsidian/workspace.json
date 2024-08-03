@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "1340cd895d50b2e3",
+        "id": "4677de956ce78070",
         "type": "tabs",
         "children": [
           {
-            "id": "236dfa1c280d331c",
+            "id": "22189d4f16d5ebf6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md"
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md"
               }
             }
           }
@@ -143,12 +143,15 @@
       "canvas:Создать новый холст": false,
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "obsidiosaurus:Obsidiosaurus": false
+      "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "22189d4f16d5ebf6",
   "lastOpenFiles": [
+    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+    "README.md",
+    "docs/ds/tutorial-extras/code blocks.md",
+    "src/theme/prism-include-languages.ts",
     "src/theme/qsp-syntax/prism-qsp.js",
     "src/theme/qsp-syntax",
     "src/theme/qsp-lang/prism-qsp.js",
@@ -162,7 +165,6 @@
     "Pasted image 20240803133026.png",
     "Pasted image 20240803131439.png",
     "Pasted image 20240803130936.png",
-    "docs/ds/tutorial-extras/code blocks.md",
     "Pasted image 20240803140518.png",
     "Pasted image 20240803140243.png",
     "Pasted image 20240803135453.png",
@@ -191,10 +193,7 @@
     "docs/howdo/contents/sound/04_kak_perezapustit__zvukovuju_dorozhku_0032.md",
     "docs/howdo/contents/sound/03_kak_pri_perehode_na_novuju_lokatsiju_prervat__odnu_melodiju_i_zapustit__druguju_0031.md",
     "docs/howdo/contents/sound/02_kak_zapustit__dve_zvukovye_dorozhki_0030.md",
-    "docs/howdo/contents/sound/01_kak_vstavit__muzyku_ili_zvuk_v_igru_0029.md",
     "docs/howdo/01_Содержание/05_onnewloc",
-    "docs/howdo/01_Содержание/04_menu",
-    "docs/howdo/01_Содержание/18_libs_n_mods",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",
