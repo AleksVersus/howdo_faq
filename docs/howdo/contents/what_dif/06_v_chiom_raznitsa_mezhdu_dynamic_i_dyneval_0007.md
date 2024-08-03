@@ -8,6 +8,7 @@
 ```qsp
 dynamic "result=1 & act 'Прибавить единицу (0)': dyn=dyn+1"
 ```
+
 ```qsp
 dyneval("result=2 & act 'Прибавить единицу (1)': dyn=dyn+1")
 ```

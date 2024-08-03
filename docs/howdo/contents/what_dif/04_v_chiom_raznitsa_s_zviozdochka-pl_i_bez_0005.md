@@ -35,9 +35,9 @@ $mid("какая-то строка",10)
 'implicit'
 $func('foo')
 'implicit'
-### - start -
+- start -
 
 # foo
 	N=45+67
-### - foo -
+- foo -
 ```

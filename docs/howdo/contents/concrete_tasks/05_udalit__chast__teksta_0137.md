@@ -1,4 +1,4 @@
-## 20.5. Как можно удалить часть текста из описания?
+# 20.5. Как можно удалить часть текста из описания?
 <!-- [:faq_20_05] -->
 В: Как можно удалить часть текста из описания?
 
@@ -30,7 +30,7 @@ loop while 1 step i+=1:
 	in_str=instr($description,$killstr,fromPos+1)
 	if i<iNum and in_str<>fromPos:
 		fromPos=in_str
-	else
+	else:
 		! вырезаем первую часть до вхождения
 		$part_1=$mid($description,1,fromPos-1)
 		! вырезаем часть после вхождения
