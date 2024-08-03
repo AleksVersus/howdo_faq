@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/ds/tutorial-extras/code blocks.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/ds/tutorial-extras/code blocks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/ds/tutorial-extras/code blocks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md"
+                "file": "docs/ds/tutorial-extras/code blocks.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "22189d4f16d5ebf6",
   "lastOpenFiles": [
+    "docs/ds/tutorial-extras/translate-your-site.md",
     "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "README.md",
     "docs/ds/tutorial-extras/code blocks.md",
@@ -160,16 +161,16 @@
     "src/qsp-lang",
     "src/theme/prism-include-languages.js",
     "src/theme",
-    "Pasted image 20240803140637.png",
-    "Pasted image 20240803132628.png",
-    "Pasted image 20240803133026.png",
-    "Pasted image 20240803131439.png",
-    "Pasted image 20240803130936.png",
-    "Pasted image 20240803140518.png",
-    "Pasted image 20240803140243.png",
-    "Pasted image 20240803135453.png",
-    "Pasted image 20240803135118.png",
-    "Pasted image 20240803134506.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803140637.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803132628.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803133026.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803131439.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803130936.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803140518.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803140243.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803135453.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803135118.png",
+    "docs/ds/tutorial-extras/img/Pasted image 20240803134506.png",
     "docs/howdo/qsp_keywords/04_qsp-keyword_0178.md",
     "docs/howdo/qsp_keywords/03_qsp-keyword_0177.md",
     "docs/howdo/qsp_keywords/02_qsp-keyword_0176.md",
@@ -192,7 +193,6 @@
     "docs/howdo/contents/sound/05_kak_priglushit__muzyku_0033.md",
     "docs/howdo/contents/sound/04_kak_perezapustit__zvukovuju_dorozhku_0032.md",
     "docs/howdo/contents/sound/03_kak_pri_perehode_na_novuju_lokatsiju_prervat__odnu_melodiju_i_zapustit__druguju_0031.md",
-    "docs/howdo/contents/sound/02_kak_zapustit__dve_zvukovye_dorozhki_0030.md",
     "docs/howdo/01_Содержание/05_onnewloc",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
