@@ -353,3 +353,39 @@
   .monokaiObjType {
     color: #35b7de;
   }
+
+.cmd__item {
+  transition: background 1s ease;
+  padding: 3px;
+}
+.cmd__item:hover {
+    background: #ffffff11;
+    border-radius: 3px;
+}
+
+.cmd > li {
+  background: #00000000;
+  transition: background 1s ease;
+  padding:3px;
+}
+.cmd > li:hover {
+  background: #ffffff11;
+  border-radius: 3px;
+}
+
+.avsPageStamp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.6em;
+}
+@media all and (max-width: 750px) {
+  .avsPageStamp {
+    align-items: center;
+  }
+}
+
+.emptyP {
+  margin: 0;
+  padding: 0;
+}

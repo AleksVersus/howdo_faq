@@ -203,17 +203,7 @@ html {
   flex: 1 2 0;
 }
 
-.avs-page-stamp {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-size: 0.6em;
-}
-@media all and (max-width: 750px) {
-  .avs-page-stamp {
-    align-items: center;
-  }
-}
+
 
 .ifwiki-table {
   border-collapse: collapse;

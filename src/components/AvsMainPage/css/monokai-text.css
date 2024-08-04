@@ -12,14 +12,7 @@
     margin-block-end: 1.33em;
 }
 
-.cmd__item {
-    transition: background 1s ease;
-    padding: 3px;
-}
-.cmd__item:hover {
-    background: #ffffff11;
-    border-radius: 3px;
-}
+
 
 /*
     TODO: стили для содержания вынести в общие стили сайта,
@@ -63,7 +56,7 @@
     border-radius: 5px;
     font-family: Arial, serif;
 }
-
+*/
 .em_btn {
     display:flex;
 /*    rgba(255, 246, 148, 0.86)*/
@@ -84,15 +77,7 @@
     box-shadow:0 0 0.25em 0.1em rgba(83, 40, 40, 0.94);
 }
 
-.cmd > li {
-    background: #00000000;
-    transition: background 1s ease;
-    padding:3px;
-}
-.cmd > li:hover {
-    background: #ffffff11;
-    border-radius: 3px;
-}
+
 
 /* стилизация скроллов */
 /* полоса прокрутки (скроллбар) */
@@ -125,4 +110,4 @@
     width:0.5em;
     transition: visibility 1s ease;
     visibility: hidden;
-}*/
+}

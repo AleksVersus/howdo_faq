@@ -127,8 +127,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.<br/>` +
-      `Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2019-${new Date().getFullYear()}`,
+      copyright: `Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
