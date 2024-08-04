@@ -26,7 +26,7 @@ Prism.languages.qsp = {
 	'keyword': RegExp(`(?:((${kw_text_operators})\b)|${kw_operators}|${kw_controls})`, 'i'),
 	'start-location': /^\#\s*\S+.*$/im,
 	'end-location': /^\-.*$/im,
-	'operator': /[<>\+\-\*\/]=|<>|\+|-|<|>|=|\/|\*|!|and|or|mod/i,
+	'operator': /[<>\+\-\*\/]=|<>|\+|-|<|>|=|\/|\*|!|\b(and|or|mod)\b/i,
 	'punctuation': /[{}[\];(),:]/,
 	'user-variable': /[\$\%][\wа-я]+|[\wа-я]+/i,
 };
