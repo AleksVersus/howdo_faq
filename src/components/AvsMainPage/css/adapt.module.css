@@ -1,0 +1,16 @@
+.contentsWrapper {
+    min-height: 480px;
+    white-space: normal;
+    border-radius: 0.2em;
+}
+
+.pWarning {
+    color:#ffbbbb;
+}
+
+.hrefPlain {
+    text-decoration: none;
+}
+.hrefPlain:hover {
+    text-decoration: none;
+}

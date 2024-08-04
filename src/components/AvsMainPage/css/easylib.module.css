@@ -1,0 +1,355 @@
+.avsPageWrapper {
+    width: 100%;
+    max-width: 50vw;
+    min-height: 70vh;
+  }
+@media all and (max-width: 750px) {
+    .avsPageWrapper {
+        max-width: initial;
+    }
+}
+
+.easyLibPage .eBlock {
+  padding: 1vh 1em;
+  margin-top: 1em;
+  font-family: Arial, serif;
+  color: #000000;
+  background-color: #fff694;
+  border-radius: 0.5em;
+  border: 2px solid #666666;
+}
+.easyLibPage .innerEblock {
+  padding: 1vh 1em;
+  margin-top: 1em;
+  border-radius: 0.25em;
+  border: 1px solid #d10000;
+}
+.easyLibPage .avsArticleH1 {
+  padding: 1vh 0;
+  color: #000000;
+  text-align: center;
+  border-radius: 3px;
+  transition: background 1s ease;
+}
+.easyLibPage .avsArticleH1:hover {
+  background-color: #ffffff56;
+}
+.easyLibPage .avsArticleH2 {
+  padding: 1vh 0;
+  color: #000088;
+}
+.easyLibPage .avsArticleH3 {
+  padding: 1vh 0;
+  color: #008800;
+}
+.easyLibPage .avsArticleH4 {
+  padding: 1vh 0;
+  color: #008888;
+}
+.easyLibPage .avsArticleH5 {
+  padding: 0.85vh 0;
+  color: #3e61c1;
+}
+.easyLibPage .avsArticleH6 {
+  padding: 0.7vh 0;
+  color: #1078ef;
+}
+.easyLibPage .avsArticlesUnderhead {
+  color: #26060c;
+}
+.easyLibPage .avsPageExternalLink:link {
+  color: #910a0a;
+}
+.easyLibPage .avsPageExternalLink:visited {
+  color: #720095;
+}
+.easyLibPage .avsPageExternalLink:hover {
+  color: #004080;
+}
+.easyLibPage .avsPageExternalLink:active {
+  color: #430300;
+}
+.easyLibPage .avsPageInternalLink {
+  text-decoration: none;
+  font-family: monospace;
+  color: #005500;
+  transition: background 1s ease;
+}
+.easyLibPage .avsPageInternalLink:hover {
+  background-color: #ffffff9f;
+}
+.easyLibPage .avsArticleP,
+.easyLibPage .avsArticlePnullIndent {
+  margin: 1vh 0;
+}
+.easyLibPage .avsArticlePterminFirstWord {
+  color: #b70000;
+  font-weight: bolder;
+}
+.easyLibPage .avsArticlesNote__redHead {
+  color: #6f0000;
+}
+.easyLibPage .avsArticlesFeaturesList {
+  margin: 0;
+  padding-left: 2em;
+}
+.easyLibPage .avsArticlesFeatures__item {
+  text-align: justify;
+}
+.easyLibPage .avsArticlesInstruction {
+  margin: 1em 0;
+  padding: 0;
+  padding-left: 2em;
+}
+.easyLibPage .avsArticlesInstruction .avsArticlesInstruction {
+  margin: 0.1em 0;
+  padding-left: 2em;
+}
+.easyLibPage .avsArticlesInstruction__item {
+  text-align: justify;
+  margin: 0.5em 0;
+}
+.easyLibPage .avsPagesButton {
+  background-color: #272822;
+  border: 1px solid #e6db74;
+}
+.easyLibPage .avsPagesButton:hover {
+  box-shadow: 0 0 0.25em 0.1em rgba(52, 52, 26, 0.88);
+  border: 1px solid #e6db74;
+}
+.easyLibPage .avsPagesButton__link:link {
+  color: #e6db74;
+}
+.easyLibPage .avsPagesButton__link:visited {
+  color: #ae81ff;
+}
+.easyLibPage .avsPagesButton__link:hover {
+  color: #fd9621;
+}
+.easyLibPage .avsPagesButton__link:active {
+  color: #a6e22c;
+}
+.easyLibPage .emGosub {
+  padding: 0 0.3em;
+  color: #2a79aa;
+  background: #e2e2e2;
+  border-radius: 0.1em;
+  box-shadow: 0.01em 0.01em 0.2em 0.01em rgba(0, 0, 0, 0.75);
+}
+.easyLibPage .emSystem {
+  color: #aa0000;
+}
+.easyLibPage .emString {
+  color: #008800;
+}
+.easyLibPage .emNumber {
+  color: #880088;
+}
+.easyLibPage .emFunc {
+  color: #cc6d00;
+}
+.easyLibPage .emOperator {
+  color: #008899;
+}
+.easyLibPage .emMarker {
+  color: #999900;
+}
+.easyLibPage .emComment {
+  color: #666666;
+}
+.easyLibPage .emFolder,
+.easyLibPage .em-lib {
+  color: #000000;
+  background: #f6f6bc;
+}
+.easyLibPage .emVarName {
+  color: #4e4e00;
+}
+.easyLibPage .emSystem > .emNumber {
+  color: #000000;
+}
+.easyLibPage .emObjId {
+  color: #0000ff;
+}
+.easyLibPage .emObjType {
+  color: #006666;
+}
+.easyLibPage .emObjClass {
+  color: #008080;
+}
+.easyLibPage .avsArticlePwarning {
+  margin: 0.5em 0;
+  text-align: justify;
+  color: #ff0000;
+}
+.easyLibPage .emBlockArguments {
+  padding: 0.5em 2em;
+  text-align: justify;
+  color: #000000;
+  font-family: monospace;
+  font-weight: bolder;
+  border: 1px solid rgba(0, 0, 0, 0.88);
+  overflow: auto;
+}
+.easyLibPage .emBlockArguments .emBlockArguments {
+  padding: 0;
+  padding-left: 2em;
+  border: initial;
+}
+.easyLibPage .emOnScreen {
+  border: 1px solid #88888899;
+  padding: 0.5em 1.25em;
+  box-shadow: 0 0 0.25em;
+  margin: 1em 2em;
+  text-indent: 0;
+}
+.easyLibPage .emActButton {
+  border: 1px solid #88880088;
+  border-radius: 2px;
+  background-color: #ffffff88;
+  padding: 0.5em;
+  box-shadow: 0.15em 0.15em 0.25em #888888;
+  text-indent: 0;
+  display: inline-block;
+}
+.easyLibPage .emBtn {
+  position: sticky;
+  bottom: -1em;
+}
+.easyLibPage .avsArticleBlockquote {
+  border-left: 4px solid rgba(0, 196, 255, 0.43);
+  padding: 0.25em 0.25em 0.25em 1em;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+
+/* Monokai */
+
+.monokaiCode {
+    margin: 0.4em 0;
+    padding: 0.5em;
+    font-family: Consolas, monospace;
+    color: #f8f8f2;
+    text-indent: 0;
+    white-space: nowrap;
+    background-color: #272822;
+    overflow: auto;
+  }
+  .monokaiCode::-webkit-scrollbar {
+    width: 1vw;
+    height: 1vh;
+    background: rgba(162, 161, 156, 0.24);
+    transition: 0.5s ease 0.5s;
+  }
+  .monokaiCode::-webkit-scrollbar-thumb {
+    background: rgba(177, 168, 92, 0);
+    border-radius: 0.12em;
+    transition: 0.5s ease 0.5s;
+  }
+  .monokaiCode:hover::-webkit-scrollbar-thumb {
+    background: rgba(180, 180, 180, 0.65);
+    border-radius: 0.12em;
+    transition: 0.5s ease 0.5s;
+  }
+  
+  .monokaiInitial {
+    color: #f8f8f2;
+  }
+  
+  .monokaiComment {
+    color: #75715e;
+  }
+  
+  .monokaiQbracket,
+  .monokaiAssign,
+  .monokaiOperator {
+    color: #66d9ef;
+  }
+  
+  .monokaiKoperator {
+    color: #67d8ef;
+    font-style: italic;
+  }
+  
+  .monokaiString {
+    color: #e6db74;
+  }
+  
+  .monokaiNumeric,
+  .monokaiStartLoc {
+    color: #ae81ff;
+  }
+  
+  .monokaiEndLoc {
+    color: #fd971f;
+    font-style: italic;
+  }
+  
+  .monokaiSysVar {
+    color: #f92672;
+  }
+  
+  .monokaiUnFunc {
+    color: #a6e22c;
+    font-style: italic;
+  }
+  
+  .monokaiFunc {
+    color: #fd9621;
+  }
+  
+  .monokaiInvalid {
+    color: #f8f8f1;
+    background-color: #f92472;
+  }
+  
+  .monokaiConstruct {
+    color: #67d8ef;
+    font-style: italic;
+  }
+  
+  .monokaiCommand {
+    color: #bbffaa;
+  }
+  
+  .monokaiError {
+    color: #ff4f4f;
+  }
+  
+  .monokaiMarkup {
+    color: #a6e22e;
+  }
+  
+  .monokaiTagName {
+    color: #f92672;
+  }
+  
+  .monokaiTable {
+    margin: 0.5em 0;
+    color: #8dd6a5;
+    border: 1px solid;
+    border-spacing: 0.3em;
+    white-space: nowrap;
+  }
+  
+  .monokaiTable__Cell {
+    padding: 0.3em;
+    border: 1px solid;
+    border-spacing: 0.3em;
+  }
+  
+  .monokaiCommandTable {
+    margin: 0.5em 0;
+    padding: 0;
+    border-spacing: 0;
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .monokaiObjClass {
+    color: #6ce3e3;
+  }
+  
+  .monokaiObjType {
+    color: #35b7de;
+  }
