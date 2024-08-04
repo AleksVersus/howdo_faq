@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-
+import Link from '@docusaurus/Link';
 import easylib from './css/easylib.module.css';
 import adapt from './css/adapt.module.css';
 
@@ -26,16 +26,25 @@ export default function AvsMainPage(): JSX.Element {
                
                 <ul className="cmd" >
                     <li className="cmd__item">
-                    <a href="https://aleksversus.github.io/howdo_faq/pages/vstuplenie_0000.html" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Важное предисловие"</span></a>
+                        <Link 
+                            className={adapt.hrefPlain}
+                            to="/docs/howdo/intro">
+                            <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Важное предисловие"</span>
+                        </Link>
                     </li>
                     <li className="cmd__item">
-                    <a href="https://aleksversus.github.io/howdo_faq/pages/soderzhanie_0001.html" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Содержание"</span></a>
+                        <Link 
+                            className={adapt.hrefPlain}
+                            to="/docs/howdo/qsp_keywords/qsp-keywords-operacion">
+                            <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span>
+                        </Link>
                     </li>
                     <li className="cmd__item">
-                    <a href="https://aleksversus.github.io/howdo_faq/pages/qsp-keyword_0175.html" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span></a>
-                    </li>
-                    <li className="cmd__item">
-                    <a href="https://aleksversus.github.io/howdo_faq/pages/ssylki_0181.html" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Источники и дополнительные материалы"</span></a>
+                        <Link 
+                            className={adapt.hrefPlain}
+                            to="/docs/howdo/links">
+                            <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Источники и дополнительные материалы"</span>
+                        </Link>
                     </li>
                 </ul>
                 <h6 className="avs-article-h6"><span className={easylib.monokaiFunc}>Дополнительно:</span></h6>
