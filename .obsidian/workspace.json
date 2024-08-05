@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2e62a4d0a8eed852",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/ds/tutorial-extras/code blocks.md"
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md"
               }
             }
           }
@@ -146,21 +159,47 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "22189d4f16d5ebf6",
+  "active": "2e62a4d0a8eed852",
   "lastOpenFiles": [
-    "docs/ds/tutorial-extras/translate-your-site.md",
-    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
-    "README.md",
-    "docs/ds/tutorial-extras/code blocks.md",
-    "src/theme/prism-include-languages.ts",
-    "src/theme/qsp-syntax/prism-qsp.js",
-    "src/theme/qsp-syntax",
-    "src/theme/qsp-lang/prism-qsp.js",
-    "src/theme/qsp-lang",
-    "src/qsp-lang/prism-qsp.js",
-    "src/qsp-lang",
-    "src/theme/prism-include-languages.js",
-    "src/theme",
+    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
+    "docs/informarch/program/game_time.md",
+    "docs/informarch/program/kalendar__po_metodu_schiota_julianskih_dnej.md",
+    "docs/informarch/navigator/modal_window.md",
+    "docs/informarch/navigator/instruktsija_po_smene_oformlenija_iz_koda_igry.md",
+    "docs/informarch/navigator/razmer_okna_igry.md",
+    "docs/informarch/navigator/standalone.md",
+    "docs/informarch/navigator/video.md",
+    "docs/informarch/navigator/proverka_pleera.md",
+    "docs/informarch/navigator/nastrojka_shablona.md",
+    "docs/informarch/navigator/izmenit__kursor.md",
+    "docs/informarch/navigator/kak_izmenit__tsvet_fona.md",
+    "docs/informarch/navigator/kak_podkljuchit__svoj_shrift.md",
+    "docs/informarch/navigator/shablony_oformlenija_dlja_igr.md",
+    "docs/informarch/general/rasprostranjaemaja_standalon_sborka_na_klassike.md",
+    "docs/informarch/general/polka_igr.md",
+    "docs/informarch/general/analizator_koda_qsp.md",
+    "docs/informarch/general/lokalizatsija_qsp.md",
+    "docs/informarch/general/uchebnik_po_qsp_dlja_redaktora_qgen.md",
+    "docs/informarch/aeroqsp/ne_rabotaet_giperssylka_v_aeroqsp.md",
+    "docs/informarch/aeroqsp/ne_rabotaet_atribut_v_aeroqsp.md",
+    "docs/informarch/aeroqsp/aeroqsp_uchebnik.md",
+    "docs/informarch/wii_qsp/_category_.json",
+    "docs/informarch/wii_qsp",
+    "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/shema.png",
+    "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/red.png",
+    "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/graf.png",
+    "docs/informarch/extrqsp/_category_.yml",
+    "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie",
+    "docs/informarch/extrqsp",
+    "docs/informarch/general/_category_.yml",
+    "docs/informarch/general",
+    "docs/informarch/txtgam/_category_.yml",
+    "docs/informarch/txtgam",
+    "docs/informarch/program/_category_.yaml",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140637.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803132628.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803133026.png",
@@ -168,32 +207,6 @@
     "docs/ds/tutorial-extras/img/Pasted image 20240803130936.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140518.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140243.png",
-    "docs/ds/tutorial-extras/img/Pasted image 20240803135453.png",
-    "docs/ds/tutorial-extras/img/Pasted image 20240803135118.png",
-    "docs/ds/tutorial-extras/img/Pasted image 20240803134506.png",
-    "docs/howdo/qsp_keywords/04_qsp-keyword_0178.md",
-    "docs/howdo/qsp_keywords/03_qsp-keyword_0177.md",
-    "docs/howdo/qsp_keywords/02_qsp-keyword_0176.md",
-    "docs/howdo/qsp_keywords/01_qsp-keyword_0175.md",
-    "docs/howdo/contents/what_dif/08_v_chiom_raznitsa_mezhdu_goto_i_gosub_0009.md",
-    "docs/howdo/contents/what_dif/07_v_chiom_raznitsa_mezhdu_goto_i_gt_0008.md",
-    "docs/howdo/contents/what_dif/06_v_chiom_raznitsa_mezhdu_dynamic_i_dyneval_0007.md",
-    "docs/howdo/contents/what_dif/05_chem_otlichajutsja_dve_komandy_0006.md",
-    "docs/howdo/contents/what_dif/04_v_chiom_raznitsa_s_zviozdochka-pl_i_bez_0005.md",
-    "docs/howdo/contents/what_dif/03_v_chiom_raznitsa_mezhdu_kavychkami_i_apostrofami_0004.md",
-    "docs/howdo/contents/what_dif/99_inclib_openqst/index.md",
-    "docs/howdo/contents/what_dif/02_v_chiom_raznitsa_so_znakom_$_ili_bez_0003.md",
-    "docs/howdo/contents/what_dif/01_v_chiom_raznitsa_mezhdu_set_let_i_0002.md",
-    "docs/howdo/contents/what_command/04_komanda_dlja_vyhoda_iz_igry_0043.md",
-    "docs/howdo/contents/what_command/03_vyvesti_tekst_v_okno_dop_opisanija_0042.md",
-    "docs/howdo/contents/what_command/02_poluchit__nazvanie_lokatsii_0041.md",
-    "docs/howdo/contents/what_command/01_ochistit__okno_dopopisanija_0040.md",
-    "docs/howdo/contents/sound/07_kak_sdelat__plejlist_0035.md",
-    "docs/howdo/contents/sound/06_kak_zatsiklit__melodiju_0034.md",
-    "docs/howdo/contents/sound/05_kak_priglushit__muzyku_0033.md",
-    "docs/howdo/contents/sound/04_kak_perezapustit__zvukovuju_dorozhku_0032.md",
-    "docs/howdo/contents/sound/03_kak_pri_perehode_na_novuju_lokatsiju_prervat__odnu_melodiju_i_zapustit__druguju_0031.md",
-    "docs/howdo/01_Содержание/05_onnewloc",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",

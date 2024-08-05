@@ -3,5 +3,8 @@
   "livePreview": true,
   "showLineNumber": true,
   "readableLineLength": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./",
+  "newLinkFormat": "relative"
 }
