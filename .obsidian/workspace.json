@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "8ee93ae24e3030a7",
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md"
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md"
               }
             }
           }
@@ -163,8 +162,15 @@
   },
   "active": "2e62a4d0a8eed852",
   "lastOpenFiles": [
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+    "docs/howdo/contents/concrete_tasks/maksimal_naja_peremennaja.md",
+    "docs/howdo/contents/concrete_tasks/kak_ubrat__preformatirovanie.md",
+    "docs/howdo/contents/concrete_tasks/kak_sdelat__sklad_sunduk_tajnik.md",
+    "docs/howdo/contents/concrete_tasks/kak_sdelat__knigu_v_igre.md",
+    "docs/howdo/contents/concrete_tasks/kak_proshe_zapolniat_massiv.md",
+    "docs/howdo/contents/concrete_tasks/html_bez_otkljuchenija_html.md",
+    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
     "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
     "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
     "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
@@ -182,13 +188,6 @@
     "docs/informarch/navigator/kak_izmenit__tsvet_fona.md",
     "docs/informarch/navigator/kak_podkljuchit__svoj_shrift.md",
     "docs/informarch/navigator/shablony_oformlenija_dlja_igr.md",
-    "docs/informarch/general/rasprostranjaemaja_standalon_sborka_na_klassike.md",
-    "docs/informarch/general/polka_igr.md",
-    "docs/informarch/general/analizator_koda_qsp.md",
-    "docs/informarch/general/lokalizatsija_qsp.md",
-    "docs/informarch/general/uchebnik_po_qsp_dlja_redaktora_qgen.md",
-    "docs/informarch/aeroqsp/ne_rabotaet_giperssylka_v_aeroqsp.md",
-    "docs/informarch/aeroqsp/ne_rabotaet_atribut_v_aeroqsp.md",
     "docs/informarch/wii_qsp/_category_.json",
     "docs/informarch/wii_qsp",
     "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/shema.png",
