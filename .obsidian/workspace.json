@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "8ee93ae24e3030a7",
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md"
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-functions.md"
               }
             }
           }
@@ -147,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5
+    "width": 366.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -161,11 +163,12 @@
   },
   "active": "2e62a4d0a8eed852",
   "lastOpenFiles": [
-    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
     "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
     "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
     "docs/informarch/program/game_time.md",
     "docs/informarch/program/kalendar__po_metodu_schiota_julianskih_dnej.md",
     "docs/informarch/navigator/modal_window.md",
@@ -186,7 +189,6 @@
     "docs/informarch/general/uchebnik_po_qsp_dlja_redaktora_qgen.md",
     "docs/informarch/aeroqsp/ne_rabotaet_giperssylka_v_aeroqsp.md",
     "docs/informarch/aeroqsp/ne_rabotaet_atribut_v_aeroqsp.md",
-    "docs/informarch/aeroqsp/aeroqsp_uchebnik.md",
     "docs/informarch/wii_qsp/_category_.json",
     "docs/informarch/wii_qsp",
     "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/shema.png",
