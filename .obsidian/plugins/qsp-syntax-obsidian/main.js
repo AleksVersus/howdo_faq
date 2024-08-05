@@ -58,16 +58,16 @@ var require_qsp_syntax = __commonJS({
       let kw_text_operators = "\\*(pl?|nl|clr|clear)|(pl?|nl|clr|clear)";
       let functions_string = "\\$(desc|user_text|usrtxt|maintxt|stattxt|curloc|selobj|selact|mid|(u|l)case|trim|replace|str|strfind|input|qspver|curacts|getobj|iif|dyneval|func|max|min|arritem)\\b";
       let functions_num = "\\b(loc|obj|isnum|isplay|len|val|instr|strcomp|strpos|arrsize|arrpos|arrcomp|msecscount|rgb|countobj|ra?nd|iif|dyneval|func|max|min|arritem)\\b";
-      let system_vars_string = "\\$(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)\b";
+      let system_vars_string = "\\$(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)\\b";
       let system_vars_num = "\\b(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|args|result)\\b";
       CodeMirror2.defineSimpleMode("qsp", {
         start: [
           { token: "start-location", regex: /^\#\s*\S+.*$/im },
-          { token: "end-location", regex: /^\-.*$/im },
+          // { token: "end-location", regex: /^\-.*$/im },
           { regex: /\d+/, token: "number" },
           { regex: /((^\s*?)|(\&\s*?))(!.*$)/m, token: "comment" },
           { regex: RegExp(`(?:((${kw_text_operators})\b)|${kw_operators}|${kw_controls})`, "i"), token: "keyword" },
-          { regex: /[<>\+\-\*\/]=|<>|\+|-|<|>|=|\/|\*|!|and|or|mod/i, token: "operator" },
+          { regex: /[<>\+\-\*\/]=|<>|\+|-|<|>|=|\/|\*|!|\b(and|or|mod|no)\b/i, token: "operator" },
           { regex: RegExp(`(?:(${functions_string}|${functions_num}))`, "i"), token: "builtin" },
           { regex: /("|')(?:[\s\S]*?)\1/i, token: "string" },
           { token: "sys-variable", regex: RegExp(`(?:${system_vars_string}|${system_vars_num})`, "i") },
