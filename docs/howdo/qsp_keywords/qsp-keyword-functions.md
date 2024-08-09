@@ -534,14 +534,14 @@ act "Съесть яблоко":
 end
 ```
 
-Так же смотрите примеры использования в разделе [`$onactsel`](#faq_80_04_onactsel)
+Так же смотрите примеры использования в разделе [`$onactsel`](qsp-keyword-sys-var#onactsel)
 
 ## `$SELOBJ`
 <!-- [:faq_80_03_selobj] -->
 
 `$SELOBJ` —  возвращает название выделенного предмета в любом месте игры. Выделение предмета происходит в момент нажатия (щелчка мышью по предмету) и не снимается до применения команды `unselect`.
 
-Пример использования можно посмотреть в разделе [`$onobjsel`](#faq_80_04_onobjsel)
+Пример использования можно посмотреть в разделе [`$onobjsel`](qsp-keyword-sys-var#onobjsel)
 
 ## `$STATTXT`
 <!-- [:faq_80_03_stattxt] -->
@@ -796,15 +796,15 @@ ARRITEM([$имя_массива], [индекс_элемента])
 Эта функция может быть полезна для извлечения значений, если имя массива заранее не известно. Пример:
 
 ```qsp title="Выводим содержимое нескольких массивов без использования DYNAMIC"
-$array_name[]='mass_1'
-$array_name[]='mass_2'
-$array_name[]='mass_3'
-$array_name[]='mass_4'
-$array_name[]='mass_5'
+$array_name[] = 'mass_1'
+$array_name[] = 'mass_2'
+$array_name[] = 'mass_3'
+$array_name[] = 'mass_4'
+$array_name[] = 'mass_5'
 ! внешний цикл перебирает имена массивов
-loop local j=0 while j<arrsize('$array_name') step j+=1:
+loop local j = 0 while j < arrsize('$array_name') step j += 1:
     ! внутренний цикл выводит содержимое массивов
-    loop local i=0 while i<arrsize($array_name[j]) step i+=1:
+    loop local i = 0 while i < arrsize($array_name[j]) step i += 1:
         *pl arritem($array_name[j], i)
     end
 end

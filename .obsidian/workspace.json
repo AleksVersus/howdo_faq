@@ -20,19 +20,18 @@
             }
           },
           {
-            "id": "2e62a4d0a8eed852",
+            "id": "84947eb925196e98",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md"
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md"
               }
             }
           }
@@ -147,8 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5,
-    "collapsed": true
+    "width": 366.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -160,21 +158,24 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "2e62a4d0a8eed852",
+  "active": "22189d4f16d5ebf6",
   "lastOpenFiles": [
+    "src/css/footer.css",
+    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+    "docs/howdo/qsp_keywords/py.py",
+    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+    "docs/howdo/qsp_keywords/qsp-keywoed-operators.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
+    "docs/howdo/contents/concrete_tasks/html_bez_otkljuchenija_html.md",
+    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "docs/howdo/contents/concrete_tasks/maksimal_naja_peremennaja.md",
     "docs/howdo/contents/concrete_tasks/kak_ubrat__preformatirovanie.md",
     "docs/howdo/contents/concrete_tasks/kak_sdelat__sklad_sunduk_tajnik.md",
     "docs/howdo/contents/concrete_tasks/kak_sdelat__knigu_v_igre.md",
     "docs/howdo/contents/concrete_tasks/kak_proshe_zapolniat_massiv.md",
-    "docs/howdo/contents/concrete_tasks/html_bez_otkljuchenija_html.md",
-    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
     "docs/informarch/program/game_time.md",
     "docs/informarch/program/kalendar__po_metodu_schiota_julianskih_dnej.md",
     "docs/informarch/navigator/modal_window.md",
@@ -186,8 +187,6 @@
     "docs/informarch/navigator/nastrojka_shablona.md",
     "docs/informarch/navigator/izmenit__kursor.md",
     "docs/informarch/navigator/kak_izmenit__tsvet_fona.md",
-    "docs/informarch/navigator/kak_podkljuchit__svoj_shrift.md",
-    "docs/informarch/navigator/shablony_oformlenija_dlja_igr.md",
     "docs/informarch/wii_qsp/_category_.json",
     "docs/informarch/wii_qsp",
     "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/shema.png",
@@ -200,7 +199,6 @@
     "docs/informarch/general",
     "docs/informarch/txtgam/_category_.yml",
     "docs/informarch/txtgam",
-    "docs/informarch/program/_category_.yaml",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140637.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803132628.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803133026.png",
