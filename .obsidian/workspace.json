@@ -160,6 +160,7 @@
   },
   "active": "22189d4f16d5ebf6",
   "lastOpenFiles": [
+    "src/css/qsp-syntax.css",
     "src/css/footer.css",
     "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
     "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
@@ -198,7 +199,6 @@
     "docs/informarch/general/_category_.yml",
     "docs/informarch/general",
     "docs/informarch/txtgam/_category_.yml",
-    "docs/informarch/txtgam",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140637.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803132628.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803133026.png",

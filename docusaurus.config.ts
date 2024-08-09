@@ -54,6 +54,7 @@ const config: Config = {
           customCss: [
             './src/css/custom.css',
             './src/css/footer.css',
+            './src/css/qsp-syntax.css'
           ],
         },
       } satisfies Preset.Options,
