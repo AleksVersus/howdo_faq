@@ -35,7 +35,7 @@ export default function AvsMainPage(): JSX.Element {
                     <li className={easylib.cmd_item}>
                         <Link 
                             className={adapt.hrefPlain}
-                            to="/docs/howdo/qsp_keywords/qsp-keywords-operacion">
+                            to="/docs/howdo/qsp_keywords/qsp-keyword-pointer">
                             <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span>
                         </Link>
                     </li>

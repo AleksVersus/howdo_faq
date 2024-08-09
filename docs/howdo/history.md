@@ -17,7 +17,7 @@ sidebar_position: 5
 
 ###  2021.06.06
 
-20-24 Перенесён в 16 {Вёрстка}
+20-24 Перенесён в 16 Вёрстка
 
 ###  2021.08.18
 
@@ -43,8 +43,8 @@ sidebar_position: 5
 
 ###  2023.02.24
 
-* Статьи по Quest Navigator удалены из сборника вопросов. Можете найти их онлайн в разделе [ИнформАрхива](https://aleksversus.github.io/howdo_faq/informarch/soderzhanie_0000.html).
-* Статья по Standalone-сборке классического плеера перенесена в [wiki.qsp.org](https://wiki.qsp.org/help:classic_standalone). Старая версия статьи доступна в [ИнформАрхиве](https://aleksversus.github.io/howdo_faq/informarch/soderzhanie_0000.html).
+* Статьи по Quest Navigator удалены из сборника вопросов. Можете найти их онлайн в разделе [ИнформАрхива](../informarch/intro.md).
+* Статья по Standalone-сборке классического плеера перенесена в [wiki.qsp.org](https://wiki.qsp.org/help:classic_standalone). Старая версия статьи доступна в [ИнформАрхиве](../informarch/standalone_classic.md).
 
 ###  2023.02.25
 * Статьи, описывающие работу с AeroQSP, удалены из сборника, перенесены в ИнформАрхив.

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+                "file": "docs/informarch/general/standalone_classic.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+                "file": "docs/informarch/general/standalone_classic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+                "file": "docs/informarch/general/standalone_classic.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md"
+                "file": "docs/informarch/general/standalone_classic.md"
               }
             }
           }
@@ -160,18 +160,19 @@
   },
   "active": "22189d4f16d5ebf6",
   "lastOpenFiles": [
+    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
+    "docs/informarch/general/standalone_classic.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
     "src/css/qsp-syntax.css",
     "src/css/footer.css",
     "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
     "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
     "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
     "docs/howdo/qsp_keywords/py.py",
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
     "docs/howdo/qsp_keywords/qsp-keywoed-operators.md",
     "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
     "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
     "docs/howdo/contents/concrete_tasks/html_bez_otkljuchenija_html.md",
-    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "docs/howdo/contents/concrete_tasks/maksimal_naja_peremennaja.md",
     "docs/howdo/contents/concrete_tasks/kak_ubrat__preformatirovanie.md",
     "docs/howdo/contents/concrete_tasks/kak_sdelat__sklad_sunduk_tajnik.md",
@@ -198,7 +199,6 @@
     "docs/informarch/extrqsp",
     "docs/informarch/general/_category_.yml",
     "docs/informarch/general",
-    "docs/informarch/txtgam/_category_.yml",
     "docs/ds/tutorial-extras/img/Pasted image 20240803140637.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803132628.png",
     "docs/ds/tutorial-extras/img/Pasted image 20240803133026.png",

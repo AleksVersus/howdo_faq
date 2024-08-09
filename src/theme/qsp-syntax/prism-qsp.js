@@ -38,7 +38,7 @@ Prism.languages.qsp = {
 	'builtin': RegExp(`(?:(${functions_string}|${functions_num}))`, 'i'),
 	'number': /\b\d+\b/,
 	'keyword': RegExp(`(?:${kw_text_operators}|${kw_operators}|${kw_controls})`, 'i'),
-	'declarator': /(?:\b(local|set|let)\b)/,
+	'declarator': /(?:\b(local|set|let)\b)/i,
 	'operator': /[<>\+\-\*\/]=|<>|\+|\&|-|<|>|=|\/|\*|!|\b(and|or|mod|no)\b/i,
 	'sign-punctuation': /[{}[\];(),:]/,
 	'user-variable': /[\$\%][\wа-я]+|[\wа-я]+/i,

@@ -8,9 +8,13 @@ Stand this plugin into your Obsidian storage:
 
 1. Find folder `.obsidian` into you Obsidian storage folder.
 2. Go to folder `plugins`
-3. Extract folder `qsp-syntax-obsidian` from arch of this realese.
+3. Extract folder `qsp-syntax-obsidian` from [arch](https://github.com/AleksVersus/qsp-syntax-obsidian/releases) of this realese.
 4. Load or reload Obsidian
-5. Prove syntax work by this fragment:
+5. In Obsidian, open **Settings**.
+6. In the side menu, select **Community plugins**.
+7. Select **Turn on community plugins**.
+8. Under Installed plugins, enable the **QSP-syntax highlight** by selecting the toggle button next to it.
+9. Prove syntax work by this fragment:
 
 ````
 ```qsp
@@ -34,6 +38,8 @@ dynamic "
 ", $top_text, $text
 ```
 ````
+
+if syntax don't work, reload page, or type text in codeblock.
 
 - ask me: aleksversus@mail.ru
 - "Subscribe my boosty": "https://boosty.to/aleksversus",
