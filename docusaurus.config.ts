@@ -2,10 +2,19 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+let footer = `<aside class="footerBlock">
+<div class="eBlock">
+<div class="avsPageStamp">
+    <p class="emptyP">Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.<br/></p>
+    <p class="emptyP">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2019-${new Date().getFullYear()}</p>
+</div></div>
+</aside>`
+
 const config: Config = {
   title: 'Справочник | F.A.Q.',
   tagline: 'Справочные материалы и статьи по QSP',
   favicon: 'res/favicon.ico',
+  // stylesheets: ['@site/src/components/AvsMainPage/css/easylib.module.css'],
 
   // Set the production url of your site here
   url: 'https://aleksversus.github.io',
@@ -42,7 +51,10 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/footer.css',
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -127,7 +139,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.`,
+      copyright: footer,
     },
     prism: {
       theme: prismThemes.github,

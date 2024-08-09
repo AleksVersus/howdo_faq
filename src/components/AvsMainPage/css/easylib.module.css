@@ -1,11 +1,13 @@
 .avsPageWrapper {
     width: 100%;
-    max-width: 50vw;
+    max-width: 750px;
     min-height: 70vh;
+    transition: 0.5s ease-out 0.5s;
   }
 @media all and (max-width: 750px) {
     .avsPageWrapper {
-        max-width: initial;
+        max-width: 100%;
+        transition: 0.5s ease-out 0.5s;
     }
 }
 

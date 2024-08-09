@@ -1,0 +1,38 @@
+.footer {
+    background-color: initial;
+}
+.footer__copyright {
+    display: flex;
+    justify-content: center;
+}
+.footerBlock {
+    width: 100%;
+    max-width: 750px;
+    transition: 0.5s ease-out 0.5s;
+}
+.footerBlock .eBlock {
+    padding: 1vh 1em;
+    margin-top: 1em;
+    font-family: Arial, serif;
+    color: #000000;
+    background-color: #fff694;
+    border-radius: 0.5em;
+    border: 2px solid #666666;
+}
+
+.footerBlock .emptyP {
+  margin: 0;
+  padding: 0;
+}
+
+.footerBlock .avsPageStamp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.6em;
+}
+@media all and (max-width: 750px) {
+    .footerBlock .avsPageStamp {
+        align-items: center;
+    }
+}

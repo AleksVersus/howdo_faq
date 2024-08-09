@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import easylib from './css/easylib.module.css';
 import adapt from './css/adapt.module.css';
-import AvsFooter from '../AvsFooter';
 
 export default function AvsMainPage(): JSX.Element {
     return (
@@ -122,8 +121,6 @@ export default function AvsMainPage(): JSX.Element {
                 </ul>
             </div>
             </article>
-
-            <AvsFooter />
         </div>
     </div>
     );
