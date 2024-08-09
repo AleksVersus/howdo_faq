@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# 24.2. Как сделать StandAlone-сборку на классическом плеере?
+# Как сделать StandAlone-сборку на классическом плеере?
 <!-- [:faq_24_02] -->
 В:	Как сделать StandAlone-сборку на классическом плеере?
 	Можно ли сделать игру так, чтобы играть без плеера?
@@ -56,5 +56,6 @@ sidebar_position: 14
 
 ###### 23.2.  Как сделать StandAlone-сборку на классическом плеере?
 <!-- [:link_24_02] -->
-Смотреть ответ на ютубе: [https://youtu.be/Ca4ynD_1BqQ](https://youtu.be/Ca4ynD_1BqQ)
-Genryzz. #3912 21.Фев.16 21:30:40: [как сделать пусковой файл?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065)
+
+- Смотреть ответ на ютубе: [https://youtu.be/Ca4ynD_1BqQ](https://youtu.be/Ca4ynD_1BqQ)
+- Genryzz. #3912 21.Фев.16 21:30:40: [как сделать пусковой файл?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065)

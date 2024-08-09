@@ -4,9 +4,11 @@ sidebar_position: 6
 
 # Указатель
 <!-- [:faq_80_06] -->
-
+:::note
+Вычеркнутые команды не работают в плеерах версии 5.8.0 и выше.
+:::
 - [Неявный оператор](qsp-keyword-operators.md#неявный-оператор)
-- [`!` (комментарий)](qsp-keyword-operators.md#comments)
+- [`!` (комментарий)](qsp-keyword-operators.md#-комментарий)
 - [`!` (не равно)](qsp-keyword-operacion.md#-не-равно-1)
 - [`&` (конкатенация)](qsp-keyword-operacion.md#-конкатенация)
 - [`&` (перечисление команд)](qsp-keyword-syntaxems#амперсанд-)
@@ -16,14 +18,14 @@ sidebar_position: 6
 - [`''` (апострофы)](qsp-keyword-syntaxems#апостроф-)
 - [`{}` (Фигурные скобки)](qsp-keyword-syntaxems#фигурные-скобки-)
 - [`()` (круглые скобки)](qsp-keyword-syntaxems#круглые-скобки-)
-- [`[]` (квадратные скобки)](qsp-keyword-syntaxems#квадратные-скобки)
+- [`[]` (квадратные скобки)](qsp-keyword-syntaxems#квадратные-скобки-)
 - [`*`](qsp-keyword-operacion.md#-умножение)
 - [`*=`](qsp-keyword-operacion.md#-умножение-присвоение)
 - [`+`](qsp-keyword-operacion.md#-сложение)
 - [`+=`](qsp-keyword-operacion.md#-сложение-присвоение)
 - ~~[`+` (унарный)](qsp-keyword-operacion.md#--унарный-минус)~~
-- [`-`](qsp-keyword-operacion.md#-вычитание)
-- [`-=`](qsp-keyword-operacion.md#-вычитание-присвоение)
+- [`-`](qsp-keyword-operacion.md#--вычитание)
+- [`-=`](qsp-keyword-operacion.md#--вычитание-присвоение)
 - [`-` (унарный)](qsp-keyword-operacion.md#--унарный-минус)
 - [`/`](qsp-keyword-operacion.md#-деление)
 - [`/=`](qsp-keyword-operacion.md#-деление-присвоение)
@@ -156,12 +158,12 @@ sidebar_position: 6
 - [`STRPOS`](qsp-keyword-functions.md#strpos)
 - [`$TRIM`](qsp-keyword-functions.md#trim)
 - [`$UCASE`](qsp-keyword-functions.md#ucase)
-- [`UNSEL`](qsp-keyword-operators.md#unsel)
-- [`UNSELECT`](qsp-keyword-operators.md#unsel)
+- [`UNSEL`](qsp-keyword-operators.md#unselect)
+- [`UNSELECT`](qsp-keyword-operators.md#unselect)
 - [`USEHTML`](qsp-keyword-sys-var#usehtml)
 - [`$USERCOM`](qsp-keyword-sys-var#usercom)
-- [`$USER_TEXT`](qsp-keyword-functions.md#usrtxt)
-- [`$USRTXT`](qsp-keyword-functions.md#usrtxt)
+- [`$USER_TEXT`](qsp-keyword-functions.md#user_text)
+- [`$USRTXT`](qsp-keyword-functions.md#user_text)
 - [`VAL`](qsp-keyword-functions.md#val)
 - [`VIEW`](qsp-keyword-operators.md#view)
 - [`WAIT`](qsp-keyword-operators.md#wait)
