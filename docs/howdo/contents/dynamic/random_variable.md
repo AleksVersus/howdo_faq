@@ -31,7 +31,7 @@ $letter[4]="E"
 $letter[5]="F"
 
 loop local i=0 while i<4 step i+=1:
-	$name_var+=$letter[rand(0,5)]
+    $name_var+=$letter[rand(0,5)]
 end
 
 dynamic "<<$name_var>>=984

@@ -39,7 +39,7 @@ QSP предоставляет возможность самостоятельн
 !# full_array
 local $arr_name_, $tuple_ = $args[0], $args[1]
 loop while $arritem($arr_name_, arrsize($arr_name_)-1) <> $tuple_:
-	dynamic "<<$arr_name_>>[], $tuple_ = $tuple_"
+    dynamic "<<$arr_name_>>[], $tuple_ = $tuple_"
 end
 ! за упрощение алгоритма спасибо HronoStranger`у
 ```
@@ -52,7 +52,7 @@ end
 
 ! для проверки внесённых значений используем цикл
 loop local i = 0 while i < arrsize('mass') step i += 1:
-	*pl mass[i]
+    *pl mass[i]
 end
 ```
 

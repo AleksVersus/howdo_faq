@@ -32,3 +32,20 @@
 a[target="_blank"] {
   color: #25abc2;
 }
+
+[data-theme='dark'] .alert--warning a[target='_blank'] {
+  color: rgb(230,167,0);
+}
+[data-theme='dark'] .alert--warning a[target='_blank']:hover {
+  color: rgb(226, 197, 117);
+}
+[data-theme='dark'] .alert--secondary a[target='_blank'] {
+  color: rgb(180, 180, 180);
+}
+[data-theme='dark'] .alert--secondary a[target='_blank']:hover {
+  color: rgb(219, 219, 219);
+}
+
+.token.class-name {
+  color: rgb(121,93,163)
+}

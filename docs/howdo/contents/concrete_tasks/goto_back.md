@@ -31,11 +31,11 @@ $now_loc=$curloc
 
 ! теперь если нам есть куда вернуться
 if $back_loc<>"":
-	! создаём действие возврата
-	act "Вернуться":
-		goto $back_loc
-	! закрываем действие
-	end
+    ! создаём действие возврата
+    act "Вернуться":
+        goto $back_loc
+    ! закрываем действие
+    end
 ! закрываем условие
 end
 ```
@@ -51,18 +51,18 @@ end
 if $back_loc[]<>$curloc:
 ! если в последней ячейке массива
 ! ещё не записано название текущей локации
-	! вписываем
-	$back_loc[]=$curloc
+    ! вписываем
+    $back_loc[]=$curloc
 end
 
 ! создаём действие возврата
 act "Вернуться":
-	! получаем размер массива
-	local array_size=arrsize('$back_loc')
-	! удаляем последнюю ячейку
-	killvar '$back_loc',array_size-1
-	! переходим на предыдущую локацию
-	goto $back_loc[]
+    ! получаем размер массива
+    local array_size=arrsize('$back_loc')
+    ! удаляем последнюю ячейку
+    killvar '$back_loc',array_size-1
+    ! переходим на предыдущую локацию
+    goto $back_loc[]
 ! закрываем действие возврата
 end
 ```
@@ -82,16 +82,16 @@ addobj "Вернуться"
 ```qsp
 !#при_переходе
 if $back_loc[]<>$curloc:
-	$back_loc[]=$curloc
+    $back_loc[]=$curloc
 end
 ```
 На локации "предмет_выделен" пишем следующее:
 ```qsp
 if $selobj="Вернуться":
 ! если выделен предмет "Вернуться"
-	local array_size=arrsize('$back_loc')
-	killvar '$back_loc',array_size-1
-	goto $back_loc[]
+    local array_size=arrsize('$back_loc')
+    killvar '$back_loc',array_size-1
+    goto $back_loc[]
 end
 ```
 Модифицируя и комбинируя эти способы, вы можете добиться нужного поведения кнопок для возврата на предыдущие локации.

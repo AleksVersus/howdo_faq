@@ -16,35 +16,35 @@ sidebar_position: 13
 ```qsp
 !$text - здесь лежит текст
 loop while len($text)>0:
-	!вырезаем первые три символа
-	$t=$mid($text,1,3)
-	!убираем первые три символа из строки
-	$text=$mid($text,4)
-	! составляем новую строку
-	$print_text=$print_text+$t+' '
+    !вырезаем первые три символа
+    $t=$mid($text,1,3)
+    !убираем первые три символа из строки
+    $text=$mid($text,4)
+    ! составляем новую строку
+    $print_text=$print_text+$t+' '
 end
 ```
 Если разрежение необходимо производить через каждые три символа, начиная с последнего, немного меняем алгоритм:
 ```qsp
 loop while len($text)>0:
-	!вырезаем последние три символа
-	$t=$mid($text,len($text)-2)
-	!убираем последние три символа из строки
-	$text=$mid($text,1,len($text)-3)
-	! составляем новую строку
-	$print_text=' '+$t+$print_text
+    !вырезаем последние три символа
+    $t=$mid($text,len($text)-2)
+    !убираем последние три символа из строки
+    $text=$mid($text,1,len($text)-3)
+    ! составляем новую строку
+    $print_text=' '+$t+$print_text
 end
 ```
 Легко заметить, что данные алгоритмы будут добавлять лишний символ пробела в конце или в начале строки. Но этот недостаток так же легко исправить:
 ```qsp
 loop while len($text)>0:
-	$t=$mid($text,1,3)
-	$text=$mid($text,4)
-	if len($text)>0:
-		$print_text=$print_text+$t+' '
-	else
-		$print_text=$print_text+$t
-	end
+    $t=$mid($text,1,3)
+    $text=$mid($text,4)
+    if len($text)>0:
+        $print_text=$print_text+$t+' '
+    else
+        $print_text=$print_text+$t
+    end
 end
 ```
 В библиотеке "`easy.math`" присутствует готовая функция, разрежающая текст, с дополнительными возможностями и различными настройками. См. функцию [em.str.thin](https://github.com/AleksVersus/easy.math.3).

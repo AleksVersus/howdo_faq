@@ -80,8 +80,8 @@ $month_text[12] = 'Декабрь'
 
 ```qsp
 act 'Ехать в Смольный':
-	time += 45
-	gt 'smolny'
+    time += 45
+    gt 'smolny'
 end
 ```
 
@@ -111,9 +111,9 @@ $year_text = iif (year < 1, '<<-year+1>> г. до н.э.', '<<year>> г.'))
 *nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
 
 act 'Ехать на вокзал':
-	time += 45
-	gs 'calendar' 
-	gt 'station'
+    time += 45
+    gs 'calendar' 
+    gt 'station'
 end
 ```
 
@@ -124,15 +124,15 @@ end
 *nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
 
 act 'Ехать в Смольный':
-	time += 45
-	gs 'calendar' 
-	gt 'smolny'
+    time += 45
+    gs 'calendar' 
+    gt 'smolny'
 end
 
 act 'Ехать в Москву (время в пути 1 сутки, 3 часа)':
-	time += 1620
-	gs 'calendar' 
-	gt 'moscow'
+    time += 1620
+    gs 'calendar' 
+    gt 'moscow'
 end
 ```
 
@@ -143,9 +143,9 @@ end
 *nl $weekday_text[weekday] + ', ' + day + ' ' + $month_text[month] + ' ' + year + 'года' + '.  ' + $hour_text + ':' + $minut_text
 
 act 'Ехать в Питер (время в пути 1 сутки, 3 часа 45 минут)':
-	time += 1665
-	gs 'calendar' 
-	gt 'station'
+    time += 1665
+    gs 'calendar' 
+    gt 'station'
 end
 ```
 

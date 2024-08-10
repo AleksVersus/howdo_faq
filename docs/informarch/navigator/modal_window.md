@@ -6,7 +6,7 @@ sidebar_position: 12
 <!-- [:faq_22_11] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 В Quest Navigator Вы можете самостоятельно написать такое окошко, даже не прибегая к помощи JavaScript.

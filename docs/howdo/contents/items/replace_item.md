@@ -23,10 +23,10 @@ addobj "Тёмный шар","",3
 ```qsp
 !ищем позицию предмета по имени 
 loop local i=1 while no i > countobj step i+=1 :
-	if $getobj(i)="Светящийся шар": 
-		objnumber = i 
-		jump 'end_cycle'
-	end 
+    if $getobj(i)="Светящийся шар": 
+        objnumber = i 
+        jump 'end_cycle'
+    end 
 end
 :end_cycle
 ! удаляем предмет по индексу 

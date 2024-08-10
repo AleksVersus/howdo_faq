@@ -26,17 +26,17 @@ dyneval("result=500*13/45")
 ```qsp
 dynamic "hp=hp+args[0]
 if hp>hp_max:
-	hp=hp_max
+    hp=hp_max
 elseif hp<0:
-	hp=0
+    hp=0
 end",23
 
 dyneval("result=1
 :for
 if args[1]>0:
-	result=result*args[0]
-	args[1]-=1
-	jump 'for'
+    result=result*args[0]
+    args[1]-=1
+    jump 'for'
 end",57,3)
 ```
 

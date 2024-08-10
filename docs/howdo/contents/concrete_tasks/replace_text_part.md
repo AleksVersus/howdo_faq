@@ -34,18 +34,18 @@ local i=0 & ! счётчик
 local fromPos=0 & ! с какого символа начинать поиск вхождения
 local in_str=0 & ! с какого символа начинается вхождение
 loop while 1 step i+=1:
-	in_str=instr($description,$killstr,fromPos+1)
-	if i<iNum and in_str<>fromPos:
-		fromPos=in_str
-	else:
-		! вырезаем первую часть до вхождения
-		$part_1=$mid($description,1,fromPos-1)
-		! вырезаем часть после вхождения
-		$part_2=$mid($description,fromPos+len($killstr))
-		! собираем новое описание
-		$description=$part_1+$part_2
-		jump 'end_cycle' & ! прерываем цикл
-	end
+    in_str=instr($description,$killstr,fromPos+1)
+    if i<iNum and in_str<>fromPos:
+        fromPos=in_str
+    else:
+        ! вырезаем первую часть до вхождения
+        $part_1=$mid($description,1,fromPos-1)
+        ! вырезаем часть после вхождения
+        $part_2=$mid($description,fromPos+len($killstr))
+        ! собираем новое описание
+        $description=$part_1+$part_2
+        jump 'end_cycle' & ! прерываем цикл
+    end
 end
 :end_cycle
 ! стираем основное описание

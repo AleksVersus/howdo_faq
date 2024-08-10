@@ -1,20 +1,20 @@
 {
-	"source-folder": "..\\..\\[source]\\ИнформАрхив QSP",
-	"output-folder": "..\\..\\informarch",
+    "source-folder": "..\\..\\[source]\\ИнформАрхив QSP",
+    "output-folder": "..\\..\\informarch",
 
-	"project-html":
-	{
-		"cross-link": "https://aleksversus.github.io/howdo_faq/informarch/",
-		"head": "..\\..\\[source]\\ИнформАрхив QSP\\add\\02_start.html",
-		"foot": "..\\..\\[source]\\ИнформАрхив QSP\\add\\03_end.html",
-		"head-contents": "..\\..\\[source]\\ИнформАрхив QSP\\000_soderzhanie_0000.txt-light"
-	},
-	
+    "project-html":
+    {
+        "cross-link": "https://aleksversus.github.io/howdo_faq/informarch/",
+        "head": "..\\..\\[source]\\ИнформАрхив QSP\\add\\02_start.html",
+        "foot": "..\\..\\[source]\\ИнформАрхив QSP\\add\\03_end.html",
+        "head-contents": "..\\..\\[source]\\ИнформАрхив QSP\\000_soderzhanie_0000.txt-light"
+    },
+    
 
-	"project-fb2":
-	{
-		"output-file":"informarch.%TIME%.fb2",
-		"book-info": "..\\..\\[source]\\ИнформАрхив QSP\\add\\fb2_head.xml",
-		"binary": "..\\..\\[source]\\ИнформАрхив QSP\\add\\fb2_footer.xml"
-	}
+    "project-fb2":
+    {
+        "output-file":"informarch.%TIME%.fb2",
+        "book-info": "..\\..\\[source]\\ИнформАрхив QSP\\add\\fb2_head.xml",
+        "binary": "..\\..\\[source]\\ИнформАрхив QSP\\add\\fb2_footer.xml"
+    }
 }

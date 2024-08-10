@@ -14,30 +14,30 @@ sidebar_position: 21
 ```qsp
 i=rand(1,5)
 if i=1:
-	act "Взять отвёртку":
-		addobj "Отвёртка"
-		! другой код
-	end
+    act "Взять отвёртку":
+        addobj "Отвёртка"
+        ! другой код
+    end
 elseif i=2:
-	act "Взять кость":
-		addobj "Кость"
-		! другой код
-	end
+    act "Взять кость":
+        addobj "Кость"
+        ! другой код
+    end
 elseif i=3:
-	act "Взять ржавую монету":
-		addobj "Ржавая монета"
-		! другой код
-	end
+    act "Взять ржавую монету":
+        addobj "Ржавая монета"
+        ! другой код
+    end
 elseif i=4:
-	act "Взять шкуру тролля":
-		addobj "Шкура Тролля"
-		! другой код
-	end
+    act "Взять шкуру тролля":
+        addobj "Шкура Тролля"
+        ! другой код
+    end
 elseif i=5:
-	act "Взять пачку масла":
-		addobj "Пачка масла"
-		! другой код
-	end
+    act "Взять пачку масла":
+        addobj "Пачка масла"
+        ! другой код
+    end
 end
 ```
 
@@ -56,9 +56,9 @@ $objects[8]='Ржавая монета'
 $objects[9]='Упавшая звезда' 
 $object_rand = $objects[rand(0,9)] 
 dynamic "
-	act 'Взять предмет <<$object_rand>>': 
-		addobj '<<$object_rand>>'
-		! ... другой код ... 
-	end
+    act 'Взять предмет <<$object_rand>>': 
+        addobj '<<$object_rand>>'
+        ! ... другой код ... 
+    end
 "
 ```

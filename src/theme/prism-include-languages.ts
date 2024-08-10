@@ -27,5 +27,6 @@ export default function prismIncludeLanguages(
     require(`prismjs/components/prism-${lang}`);
   });
   require('./qsp-syntax/prism-qsp.js');
+  require('./toml-syntax/prism-toml.js');
   delete (globalThis as Optional<typeof globalThis, 'Prism'>).Prism;
 }

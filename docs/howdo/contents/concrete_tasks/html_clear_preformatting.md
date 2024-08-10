@@ -18,22 +18,22 @@ sidebar_position: 23
 
 ```qsp
 !@ delPref
-local $html=$args[0]	& ! помещаем переданный в функцию текст в локальную переменную
-local $prevtag, $aftertag	& ! задаём дополнительные локальные переменные для удобства
+local $html=$args[0]    & ! помещаем переданный в функцию текст в локальную переменную
+local $prevtag, $aftertag    & ! задаём дополнительные локальные переменные для удобства
 loop local run=1 while run:
-	! цикл будет выполняться, пока переменной run присвоена единица
-	$prevtag=$strfind($html,'[\s\r\n]+<')	& ! получаем символы преформатирования до начала тега и левую угловую скобку
-	$aftertag=$strfind($html,'>[\s\r\n]+')	& ! получаем правую угловую скобку и символы преформатирования после тега
-	if $prevtag<>'':
-		! если символы до тега получены
-		$html=$replace($html,$prevtag,'<')
-	elseif $aftertag<>'':
-		! если получены символы после тега
-		$html=$replace($html,$aftertag,'>')
-	else
-		! если символы преформатирования около тега не найдены
-		run=0
-	end
+    ! цикл будет выполняться, пока переменной run присвоена единица
+    $prevtag=$strfind($html,'[\s\r\n]+<')    & ! получаем символы преформатирования до начала тега и левую угловую скобку
+    $aftertag=$strfind($html,'>[\s\r\n]+')    & ! получаем правую угловую скобку и символы преформатирования после тега
+    if $prevtag<>'':
+        ! если символы до тега получены
+        $html=$replace($html,$prevtag,'<')
+    elseif $aftertag<>'':
+        ! если получены символы после тега
+        $html=$replace($html,$aftertag,'>')
+    else
+        ! если символы преформатирования около тега не найдены
+        run=0
+    end
 end
 $result=$trim($html)
 ```
@@ -43,18 +43,18 @@ $result=$trim($html)
 ```qsp
 $html = '<qhtml>
 <table border=1>
-	<tr>
-		<td width=25% bgcolor=#ffffee>
-			Некий текст
-		</td>
-		<td>Ещё текст</td>
-	</tr>
-	<tr>
-		<td width=25% bgcolor=#ffffee>
-			Вторая строка
-		</td>
-		<td>12345677 &lt; &gt;</td>
-	</tr>
+    <tr>
+        <td width=25% bgcolor=#ffffee>
+            Некий текст
+        </td>
+        <td>Ещё текст</td>
+    </tr>
+    <tr>
+        <td width=25% bgcolor=#ffffee>
+            Вторая строка
+        </td>
+        <td>12345677 &lt; &gt;</td>
+    </tr>
 </table>
 </qhtml>'
 
@@ -62,4 +62,4 @@ $html = '<qhtml>
 ```
 
 
-	
+    

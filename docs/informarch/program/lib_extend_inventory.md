@@ -5,7 +5,9 @@ sidebar_position: 305
 # Библиотечка дополняющая инвентарь 0.76
 <!-- [:informarch_ia_lib_ntropy] -->
 
-> Модуль разрабатывался для плееров версии ниже 5.8.0.
+:::warning[`<= 5.7.0`]
+Модуль разрабатывался для плееров версии ниже 5.8.0.
+:::
 
 Библиотечка для работы с инвентарём (`inventory_advanced.qsp`) + простой пример для демонстрации возможностей (`invadv_test.qsp`).
 
@@ -30,10 +32,10 @@ sidebar_position: 305
 
 При использовании библиотечки в своих проектах настаиваю на сохранении авторства.
 
-Ntropy ( ...@yandex.ru) 18.06.2009
+Ntropy (...@yandex.ru) 18.06.2009
 
 Автор: **NTROPY**
 02.04.2010 12:50
 
-Оригинал статьи: https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76
-Скачать модуль можно здесь: [inventory_advanced.zip](https://qsp.org/attachments/inventory_advanced.zip)
+- Оригинал статьи: [Библиотечка дополняющая инвентарь 0.76](https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Скачать модуль можно здесь: [inventory_advanced.zip](https://qsp.org/attachments/inventory_advanced.zip)

@@ -17,10 +17,10 @@ sidebar_position: 2
 # launcher
 *pl "Выберите игру:"
 act "Выбрать игру №1":
-	openqst 'game_1.qsp'
+    openqst 'game_1.qsp'
 end
 act "Выбрать игру №2":
-	openqst 'game_2.qsp'
+    openqst 'game_2.qsp'
 end
 -- launcher
 ```
@@ -31,12 +31,12 @@ end
 # launcher
 *pl "Выберите игру:"
 act "Выбрать игру №1":
-	inclib 'game_1.qsp'
-	goto 'start_1'
+    inclib 'game_1.qsp'
+    goto 'start_1'
 end
 act "Выбрать игру №2":
-	inclib 'game_2.qsp'
-	goto 'start_2'
+    inclib 'game_2.qsp'
+    goto 'start_2'
 end
 -- launcher
 ```

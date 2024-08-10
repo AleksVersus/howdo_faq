@@ -7,15 +7,15 @@ sidebar_position: 999
 
 ## Официальный сайт QSP
 
-[QSP.ORG](https://qsp.org)
+- [QSP.ORG](https://qsp.org)
 
 ## Наша группа во Вконтакте
 
-[vk.com/qsplayer](https://vk.com/qsplayer)
+- [vk.com/qsplayer](https://vk.com/qsplayer)
 
 ## Программы
 
-Основные репозитории QSP: [GitHub/QSPFoundation](https://github.com/QSPFoundation)
+- Основные репозитории QSP: [GitHub/QSPFoundation](https://github.com/QSPFoundation)
 
 ### Плееры, редакторы, конвертеры, анализаторы
 
@@ -23,18 +23,18 @@ sidebar_position: 999
 
 Сюда входят:
 
--	Плееры:
-	* Quest Soft Player (classic v.5.8.0, 5.7.0),
-	* Quest Navigator v.0.0.28
-	* QSPider (qSpider) v.0.12.0
-	* Qqsp, QSP для Pocketbook, QSP CE и др.
--	Редакторы:
-	* Quest Generator (QGen) v.4.0.0
-	* Редактор сохранений QSPSaveEditor 0.3.7
--	QSP-Анализатор — программа для анализа кода
--	Конвертеры:
-	* TXT2GAM (v.0.11)
-	* GamConv
+- Плееры:
+  * Quest Soft Player (classic v.5.8.0, 5.7.0),
+  * Quest Navigator v.0.0.28
+  * QSPider (qSpider) v.0.12.0
+  * Qqsp, QSP для Pocketbook, QSP CE и др.
+- Редакторы:
+  * Quest Generator (QGen) v.4.0.0
+  * Редактор сохранений QSPSaveEditor 0.3.7
+- QSP-Анализатор — программа для анализа кода
+- Конвертеры:
+  * TXT2GAM (v.0.11)
+  * GamConv
 
 Пакет для Sublime Text: билдер + подсветка синтаксиса.
 
@@ -42,7 +42,7 @@ sidebar_position: 999
 
 ### Пакет qsp-конвертеров
 
-[www.npmjs.com/qsp-converters](https://www.npmjs.com/package/@qsp/converters)
+- [www.npmjs.com/qsp-converters](https://www.npmjs.com/package/@qsp/converters)
 
 Пакет для работы с текстовым и бинарным форматом qsp от Werewolf. Если кому-то захочется поиграться - там специально сделано что IO операции не часть пакета (чтобы его можно было в браузере(qspider) и в nodejs использовать), поэтому четние/запись файла нужно делать средствами nodejs.
 
@@ -50,7 +50,7 @@ sidebar_position: 999
 
 Утилита **Werewolf**'а для конвертирования QSP-файла в текстовый файл формата TXT2GAM
 
- [codepen.io/qsp@txt2gam-converster](https://codepen.io/srg-kostyrko/full/QWqdwxv)
+- [`codepen.io/qsp@txt2gam-converster`](https://codepen.io/srg-kostyrko/full/QWqdwxv)
 
 ## Плеер | Различные версии плееров | Players
 
@@ -59,29 +59,28 @@ sidebar_position: 999
 
 ## Quest Player fork от SeedHartha для Android | Плеер для Андроид
 
-Репозиторий: [GitHub/seedhartha/QuestPlayer](https://github.com/seedhartha/QuestPlayer)
-Релизные версии: [GitHub/seedhartha/QuestPlayer/releases](https://github.com/seedhartha/QuestPlayer/releases)
+- Репозиторий: [GitHub/seedhartha/QuestPlayer](https://github.com/seedhartha/QuestPlayer)
+- Релизные версии: [GitHub/seedhartha/QuestPlayer/releases](https://github.com/seedhartha/QuestPlayer/releases)
 
 ## Справка | Видеоуроки
 
-Видео-уроки и другая справочная информация в видеоформате по QSP: [youtube.com/aleksversus](https://www.youtube.com/c/aleksversus)
+- Видео-уроки и другая справочная информация в видеоформате по QSP: [youtube.com/aleksversus](https://www.youtube.com/c/aleksversus)
 
 ## Справка | Справочник "Как сделать?"
 
-[Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su](https://aleksversus.github.io/howdo_faq)
-
-Офлайн-версию справочника можно скачать здесь: [GitHub/howdo_faq/releases](https://github.com/AleksVersus/howdo_faq/releases)
+- [Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su](https://aleksversus.github.io/howdo_faq)
+- Офлайн-версию справочника можно скачать здесь: [GitHub/howdo_faq/releases](https://github.com/AleksVersus/howdo_faq/releases)
 
 ## Справка | wiki.qsp.org
 
-Официальная справка: [wiki.qsp.org](https://wiki.qsp.org)
-Резервная копия официальной справки на 20 июня 2022 года: [MEGA.nz/official_helpful](https://mega.nz/folder/vG4XzSoZ#gf0jU0FFdWHpgJnN8eAaGA)
+- Официальная справка: [wiki.qsp.org](https://wiki.qsp.org)
+- Резервная копия официальной справки на 20 июня 2022 года: [MEGA.nz/official_helpful](https://mega.nz/folder/vG4XzSoZ#gf0jU0FFdWHpgJnN8eAaGA)
 
 ## Examples | Примеры
 
 Некоторые примеры: диалоги, как делать меню, календарь (время), работа с предметами, простые примеры, события по таймеру, шкалы и прогресс-бары
 
-[MEGA.nz/Example](https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw)
+- [MEGA.nz/Example](https://mega.nz/folder/rfAllKzR#rssaaJSs4tpGA_tUbaCCQw)
 
 ## Игры
 
@@ -94,30 +93,29 @@ sidebar_position: 999
 книга-игра Ольги Голотвиной, реализованная на qSpider: [aleksversus.github.io/merphy_law](https://aleksversus.github.io/merphy_law)
 
 ### Демка плеера qSpider
+
 Демонстрация работы qSpider онлайн. Три игры:
 Сказочка на ночь, Куртуазная баллада, Город туманов
 
-[qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
+- [qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
 
 ## qSpider | Плеер
 
 Отличается от классического плеера возможностью полноценно работать с HTML, назначать горячие клавиши, размещать игру онлайн у себя на сайте и другими интересными плюшками.
 
-Основной репозиторий qSpider — нового плеера от Werewolf: [GitHub/QSPFoundation/qspider](https://github.com/QSPFoundation/qspider)
-Страница релизов нового плеера qSpider от Werewolf: [GitHub/QSPFoundation/qspider/releases](https://github.com/QSPFoundation/qspider/releases)
-Демка с тремя играми: [qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
-
-Статья по работе с плеером: [vk.com/qSpider v.0.12.0](https://m.vk.com/@qsplayer-qspider-v-0120-svodnaya-statya?context=author_page_date&ref=author_page), [medium/qSpider v.0.12.0](https://discord.com/channels/373163463842725891/994958390524657685/994967462871306280)
-
-Видеоурок по работе с плеером: [https://youtu.be/bEjRzTDsPp4](https://youtu.be/bEjRzTDsPp4)
+- Основной репозиторий qSpider — нового плеера от Werewolf: [GitHub/QSPFoundation/qspider](https://github.com/QSPFoundation/qspider)
+- Страница релизов нового плеера qSpider от Werewolf: [GitHub/QSPFoundation/qspider/releases](https://github.com/QSPFoundation/qspider/releases)
+- Демка с тремя играми: [qspfoundation.github.io/qspider](https://qspfoundation.github.io/qspider)
+- Статья по работе с плеером: [vk.com/qSpider v.0.12.0](https://m.vk.com/@qsplayer-qspider-v-0120-svodnaya-statya?context=author_page_date&ref=author_page), [medium/qSpider v.0.12.0](https://discord.com/channels/373163463842725891/994958390524657685/994967462871306280)
+- Видеоурок по работе с плеером: [https://youtu.be/bEjRzTDsPp4](https://youtu.be/bEjRzTDsPp4)
 
 ## Инструмент для построения полного графа книг игр от Larkin
 
-[quest-book.ru/forum/topic/3776](https://quest-book.ru/forum/topic/3776)
-Необходимо зайти на [сервер интерактивной литературы в дискорде](https://discord.gg/KYCXC2R2W6) и затем пройти по этой ссылке: [discord/getGraphTool](https://discord.com/channels/373163463842725891/373188009715040266/997120867769253939)
+- [quest-book.ru/forum/topic/3776](https://quest-book.ru/forum/topic/3776)
+- Необходимо зайти на [сервер интерактивной литературы в дискорде](https://discord.gg/bbbdxhE9M2) и затем пройти по этой ссылке: [discord/getGraphTool](https://discord.com/channels/373163463842725891/373188009715040266/997120867769253939)
 
 ## Темы и статьи с различными решениями на QSP (форум QSP.org)
-	
+
 * [F.A.Q общие вопросы и некоторые примеры](https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57)
 * [Календарь по методу счёта Юлианских дней](https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57)
 * [Гибкий плейлист 1.0](https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
@@ -151,9 +149,9 @@ sidebar_position: 999
 * [http://www.tineye.com](http://www.tineye.com) - поиск изображений по фрагменту либо отредактированному изображению. Полезно, если нужно установить автора или найти картинку в полном масштабе.
 * Сборник фотографий с лицензией CC0 (полностью свободная для любого использования): [http://www.pexels.com](http://www.pexels.com)
 * Бесплатные тайлы для бэкграунда:
-	* [http://www.grsites.com/archive/textures](http://www.grsites.com/archive/textures)
-	* [http://patterns.ava7.com](http://patterns.ava7.com)
-	* [http://bgpatterns.com](http://bgpatterns.com)
+  * [http://www.grsites.com/archive/textures](http://www.grsites.com/archive/textures)
+  * [http://patterns.ava7.com](http://patterns.ava7.com)
+  * [http://bgpatterns.com](http://bgpatterns.com)
 
 ## Бесплатные шрифты
 
@@ -180,8 +178,6 @@ sidebar_position: 999
 * Бесплатные [звуки](https://soundslibmp3.ru) для видеомонтажа в самых популярных форматах wav, mp3, ogg.
 
 ## Платные Royalty-Free звуки и музыка для игр
-
-В этой теме собираем ссылки на ресурсы, на которых есть платные звуки и музыка, которые можно легально использовать в своих играх, распространяемые по принципу Royalty-Free. Желательно давать краткое описание к ссылке.
 
 * [Stock Music Site](http://www.stockmusicsite.com) -  Музыка, в т.ч. спец. раздел музыки для игр, и звуковые эффекты.
 * [Twune](http://twune.myshopify.com) - Студия музыки для игр, продажа готовых треков и разработка на заказ.

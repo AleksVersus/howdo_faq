@@ -42,6 +42,6 @@ $func('foo')
 - start -
 
 # foo
-	N=45+67
+    N=45+67
 - foo -
 ```

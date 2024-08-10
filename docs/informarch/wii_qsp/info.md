@@ -11,9 +11,9 @@ sidebar_position: 2
 
 ## Контакты:
 
-E-mail: `hzdbyte [AT] gmail.com`
-ICQ: 122289012
-IRC: irc.forestnet.org, #ifrus, Byte
+- E-mail: `hzdbyte [AT] gmail.com`
+- ICQ: 122289012
+- IRC: irc.forestnet.org, #ifrus, Byte
 
 ## Сообщество:
 
@@ -21,9 +21,10 @@ IRC: irc.forestnet.org, #ifrus, Byte
 
 ## Исходный код:
 
-qsp.dll, txt2gam, AeroQSP, справка - [https://github.com/QSPFoundation/qsp](https://github.com/QSPFoundation/qsp)
-
-Редактор игр QGen - [http://my-trac.assembla.com/q-gen](http://my-trac.assembla.com/q-gen) (нынешняя версия на wxWidgets), [https://github.com/rrockru/QtQGen](https://github.com/rrockru/QtQGen) (будущая версия на Qt)
+- qsp.dll, txt2gam, AeroQSP, справка - [https://github.com/QSPFoundation/qsp](https://github.com/QSPFoundation/qsp)
+- Редактор игр QGen
+    - [http://my-trac.assembla.com/q-gen](http://my-trac.assembla.com/q-gen) (нынешняя версия на wxWidgets),
+    - [https://github.com/rrockru/QtQGen](https://github.com/rrockru/QtQGen) (будущая версия на Qt)
 
 АВТОР: **BYTE**  
 01.06.2010 11:20

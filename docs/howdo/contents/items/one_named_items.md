@@ -13,26 +13,26 @@ sidebar_position: 12
 
 Однако, мы можем прописать в названии некие отличительные данные предмета и скрыть эти данные от игрока. Для этого:
 * включаем распознавание html, прописав, например, на самой первой локации в игре команду:
-	```qsp
-	usehtml=1
-	```
+    ```qsp
+    usehtml=1
+    ```
 * в названиях предметов прописываем их отличительные особенности, используя несуществующие ([пользовательские](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwis6v6VqOqHAxVEIxAIHVbbAcQQFnoECBcQAQ&url=https%3A%2F%2Flearn.javascript.ru%2Fwebcomponent-core&usg=AOvVaw0aLbXbOxvV_whB2ZrKaFiv&opi=89978449)) html-теги:
-	```qsp
-	addobj 'Старый меч<atack power="3">'
-	addobj 'Старый меч<atack power="5">'
-	```
+    ```qsp
+    addobj 'Старый меч<atack power="3">'
+    addobj 'Старый меч<atack power="5">'
+    ```
 
 На экране игрок увидит одинаковые названия "Старый меч", однако плеер будет работать с их полными названиями. Для примера, код локации-обработчика выделения предмета:
 ```qsp
 if $selobj='Старый меч<atack power="3">':
-	clr
-	pl "Старый меч"
-	pl "Сила атаки: +3"
+    clr
+    pl "Старый меч"
+    pl "Сила атаки: +3"
 end
 if $selobj='Старый меч<atack power="5">':
-	clr
-	pl "Старый меч (с зазубринами)"
-	pl "Сила атаки: +5"
+    clr
+    pl "Старый меч (с зазубринами)"
+    pl "Сила атаки: +5"
 end
 ```
 

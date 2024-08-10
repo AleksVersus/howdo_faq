@@ -6,7 +6,7 @@ sidebar_position: 11
 <!-- [:faq_22_11] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 `$BACKIMAGE` в Навигаторе отключен, как и другие переменные оформления. Всё оформление в Навигаторе делается через HTML, CSS и Javascript.

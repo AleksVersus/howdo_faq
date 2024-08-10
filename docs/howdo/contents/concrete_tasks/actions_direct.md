@@ -18,13 +18,13 @@ sidebar_position: 16
 Например:
 ```qsp
 act "Первое действие":
-	*pl "Действие вверху списка"
+    *pl "Действие вверху списка"
 end
 act "Второе действие":
-	*pl "Действие в середине списка"
+    *pl "Действие в середине списка"
 end
 act "Третье действие":
-	*pl "Действие внизу списка"
+    *pl "Действие внизу списка"
 end
 ```
 Если же вам нужно, чтобы порядок действий менялся динамически, например, выбранное игроком действие добавлялось в конец списка, то действия можно поместить в виде текстовых значений в переменные, или массив.
@@ -34,50 +34,50 @@ end
 usehtml=1
 ! записываем действия в массив
 if arrsize('$act_array')=0:
-	! непосредственно действие
-	$act_array[0]={
-		act "Первое действие":
-			$text+="Теперь порядок действий меняется.<br>"
-			! в самом действии есть код замены
-			i=arrpos('$id_array',"первое")
-			$act_array[]=$act_array[i]
-			$id_array[]=$id_array[i]
-			killvar '$act_array',i
-			killvar '$id_array',i
-			! чтобы список обновился на экране
-			goto $curloc
-		end
-	}
-	! а здесь лежит идентификатор действия
-	$id_array[0]="первое"
-	$act_array[1]={
-		act "Второе действие":
-			$text+="Раньше это действие было в середине списка.<br>"
-			i=arrpos('$id_array',"второе")
-			$act_array[]=$act_array[i]
-			$id_array[]=$id_array[i]
-			killvar '$act_array',i
-			killvar '$id_array',i
-			goto $curloc
-		end
-	}
-	$id_array[1]="второе"
-	$act_array[2]={
-		act "Третье действие":
-			$text+="Теперь действия меняются местами.<br>"
-			i=arrpos('$id_array',"третье")
-			$act_array[]=$act_array[i]
-			$id_array[]=$id_array[i]
-			killvar '$act_array',i
-			killvar '$id_array',i
-			goto $curloc
-		end
-	}
-	$id_array[2]="третье"
+    ! непосредственно действие
+    $act_array[0]={
+        act "Первое действие":
+            $text+="Теперь порядок действий меняется.<br>"
+            ! в самом действии есть код замены
+            i=arrpos('$id_array',"первое")
+            $act_array[]=$act_array[i]
+            $id_array[]=$id_array[i]
+            killvar '$act_array',i
+            killvar '$id_array',i
+            ! чтобы список обновился на экране
+            goto $curloc
+        end
+    }
+    ! а здесь лежит идентификатор действия
+    $id_array[0]="первое"
+    $act_array[1]={
+        act "Второе действие":
+            $text+="Раньше это действие было в середине списка.<br>"
+            i=arrpos('$id_array',"второе")
+            $act_array[]=$act_array[i]
+            $id_array[]=$id_array[i]
+            killvar '$act_array',i
+            killvar '$id_array',i
+            goto $curloc
+        end
+    }
+    $id_array[1]="второе"
+    $act_array[2]={
+        act "Третье действие":
+            $text+="Теперь действия меняются местами.<br>"
+            i=arrpos('$id_array',"третье")
+            $act_array[]=$act_array[i]
+            $id_array[]=$id_array[i]
+            killvar '$act_array',i
+            killvar '$id_array',i
+            goto $curloc
+        end
+    }
+    $id_array[2]="третье"
 end
 ! выводим действия
 loop local i=0 while i<arrsize('$act_array') step i+=1:
-	dynamic $act_array[i]
+    dynamic $act_array[i]
 end
 *pl $text
 ```
@@ -86,24 +86,24 @@ end
 Например, второе действие вписано в ячейку `[1]` массива `$act_array`, идентификатор "второе" вписан в ячейку `[1]` массива `$id_array`. Когда мы щёлкаем по действию, выполняется код действия:
 
 1. Добавляем очередную строку к переменной для вывода на экран
-	```qsp
-		$text+="Раньше это действие было в середине списка.<br>"
-	```
+    ```qsp
+    $text+="Раньше это действие было в середине списка.<br>"
+    ```
 2. Вычисляем, в какую ячейку вписан идентификатор данного действия:
-	```qsp
-		i=arrpos('$id_array',"второе")
-	```
+    ```qsp
+    i=arrpos('$id_array',"второе")
+    ```
 3. Поскольку идентификатор вписан в ячейку `[1]` массива `$id_array`, значит и действие вписано в ячейку `[1]` массива `$act_array`. Это значит, что теперь мы можем скопировать и действие и идентификатор в ячейки `[3]` массивов `$act_arry` и `$id_array` соответственно:
-	```qsp
-		$act_array[]=$act_array[i]
-		$id_array[]=$id_array[i]
-	```
+    ```qsp
+    $act_array[]=$act_array[i]
+    $id_array[]=$id_array[i]
+    ```
 4. Остаётся удалить ячейки `[1]` из обоих массивов, чтоб действий не получилось `4`:
-	```qsp
-		killvar '$act_array',i
-		killvar '$id_array',i
-	```
+    ```qsp
+    killvar '$act_array',i
+    killvar '$id_array',i
+    ```
 5. Ну и чтобы список обновился, а текст обновился на экране, перезаходим на локацию:
-	```qsp			
-		goto $curloc
-	```
+    ```qsp            
+    goto $curloc
+    ```

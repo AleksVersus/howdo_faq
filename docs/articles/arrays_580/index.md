@@ -206,7 +206,7 @@ unit_count[0]=337
 
 Памятка по изменениям в работе массивов:
 
-![%image%](https://i.ibb.co/BgY5GMm/N-Stg0hc-V1-U.jpg)
+![%image%](images/N-Stg0hc-V1-U.jpg)
 
 Статья написана по мотивам:
 * статьи **Pseudopod**'а [trello.com/.../одновременное-использование-arri-и-arri](https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri)

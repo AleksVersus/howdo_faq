@@ -14,9 +14,9 @@ $message=""
 if яблоко>0: $messaga+='яблоки, ' 
 if груша>0: $messaga+='груши, ' 
 if яблоко>0 or груша>0:
-	msg "У меня есть: "+$messaga+"— и всё."
+    msg "У меня есть: "+$messaga+"— и всё."
 else
-	msg "У меня ничего нет."
+    msg "У меня ничего нет."
 end
 ```
 
@@ -36,8 +36,8 @@ if киви>0: $messaga+='киви, ' & markvar=1
 if песок>0: $messaga+='песок, ' & markvar=1
 
 if markvar=1:
-	msg "У меня есть: "+$messaga+"— и всё."
+    msg "У меня есть: "+$messaga+"— и всё."
 else
-	msg "У меня ничего нет."
+    msg "У меня ничего нет."
 end
 ```

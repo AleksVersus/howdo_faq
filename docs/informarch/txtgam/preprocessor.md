@@ -76,9 +76,9 @@ USEHTML=1
 Прошу задавать вопросы на форуме.
 
 Ссылки:
-	* [Скачать GPP](http://yumbrik.ru/gpp-2.24.o1.win32.zip)
-	* [Документация на английском](http://files.nothingisreal.com/software/gpp/gpp.html)
-	* [Домашний сайт GPP](http://en.nothingisreal.com/wiki/GPP)
+    * [Скачать GPP](http://yumbrik.ru/gpp-2.24.o1.win32.zip)
+    * [Документация на английском](http://files.nothingisreal.com/software/gpp/gpp.html)
+    * [Домашний сайт GPP](http://en.nothingisreal.com/wiki/GPP)
 
 АВТОР: **NTROPY** 
 07.04.2010 18:47

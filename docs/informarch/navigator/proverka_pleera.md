@@ -6,7 +6,7 @@ sidebar_position: 6
 <!-- [:faq_22_06] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 **В:** Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?

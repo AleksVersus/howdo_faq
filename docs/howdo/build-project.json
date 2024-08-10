@@ -1,26 +1,26 @@
 {
-	
-	"output-folder":"..\\..\\answers",
-	"pages": [
-		{
-			"source-path": "",
-			"out-name": ""
-		},
-	],
+    
+    "output-folder":"..\\..\\answers",
+    "pages": [
+        {
+            "source-path": "",
+            "out-name": ""
+        },
+    ],
 
-	"project-html":
-	{
-		"head":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\02_start.html",
-		"foot":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\03_end.html",
-		"head-contents":"..\\..\\[source]\\ответы\\00_вступления\\01_soderzhanie_0001.txt-light",
-		"cross-link":"https://aleksversus.github.io/howdo_faq/pages/"
-	},
+    "project-html":
+    {
+        "head":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\02_start.html",
+        "foot":"..\\..\\[source]\\ответы\\92_дополнительные тексты\\03_end.html",
+        "head-contents":"..\\..\\[source]\\ответы\\00_вступления\\01_soderzhanie_0001.txt-light",
+        "cross-link":"https://aleksversus.github.io/howdo_faq/pages/"
+    },
 
-	"project-fb2":
-	{
-		"output-file":"FAQ.QSP.%TIME%.fb2",
-		"book-info": "..\\..\\[source]\\ответы\\92_дополнительные тексты\\fb2_head.xml",
-		"binary": "..\\..\\[source]\\ответы\\92_дополнительные тексты\\fb2_footer.xml"
-	}
-	
+    "project-fb2":
+    {
+        "output-file":"FAQ.QSP.%TIME%.fb2",
+        "book-info": "..\\..\\[source]\\ответы\\92_дополнительные тексты\\fb2_head.xml",
+        "binary": "..\\..\\[source]\\ответы\\92_дополнительные тексты\\fb2_footer.xml"
+    }
+    
 }

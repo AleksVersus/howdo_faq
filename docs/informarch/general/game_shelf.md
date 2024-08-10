@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 4
 ---
 
 # Полка игр
@@ -8,7 +8,9 @@ sidebar_position: 13
 ## Что должно быть реализовано в полке игр
 <!-- [:informarch_gameshelf_todo] -->
 
-> Эта статья устарела. Новый плеер c полкой игр - [qSpider](https://github.com/QSPFoundation/qspider/releases)
+:::warning[Эта статья устарела]
+Новый плеер c полкой игр - [qSpider](https://github.com/QSPFoundation/qspider/releases)
+:::
 
 Обсуждали недавно с elmortem, каким бы хотелось видеть Classic-плеер в плане работы с играми. Вот к чему пришли.
 

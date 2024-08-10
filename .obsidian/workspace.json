@@ -4,24 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "4422f0659c6064e3",
+        "id": "b1f83f93d334f0cf",
         "type": "tabs",
         "children": [
           {
-            "id": "d4c4b8da25d76426",
+            "id": "262dcbaacff72f1f",
             "type": "leaf",
             "state": {
-<<<<<<< Updated upstream
-              "type": "empty",
-              "state": {}
-=======
               "type": "markdown",
               "state": {
-                "file": "docs/informarch/wii_qsp/short_faq.md",
+                "file": "docs/articles/qspider_0120/index.md",
                 "mode": "source",
                 "source": false
               }
->>>>>>> Stashed changes
             }
           }
         ]
@@ -90,10 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "docs/informarch/wii_qsp/short_faq.md",
->>>>>>> Stashed changes
+                "file": "docs/articles/qspider_0120/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,10 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< Updated upstream
-=======
-                "file": "docs/informarch/wii_qsp/short_faq.md",
->>>>>>> Stashed changes
+                "file": "docs/articles/qspider_0120/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,13 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-<<<<<<< Updated upstream
-              "state": {}
-=======
               "state": {
-                "file": "docs/informarch/wii_qsp/short_faq.md"
+                "file": "docs/articles/qspider_0120/index.md"
               }
->>>>>>> Stashed changes
             }
           }
         ],
@@ -161,79 +146,54 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "d4c4b8da25d76426",
+  "active": "61daad17fd4f3291",
   "lastOpenFiles": [
-<<<<<<< Updated upstream
+    "src/theme/toml-syntax/prism-toml.js",
+    "src/theme/toml-syntax/prism-toml.js.opdownload",
+    "src/theme/toml-syntax",
+    "src/theme/Новая папка",
+    "docs/articles/qspider_0120/images/8z8MHyp.png",
+    "docs/articles/qspider_0120/images/image.png",
+    "docs/articles/qspider_0120/images",
+    "docs/articles/qspider_0120",
+    "docs/articles/arrays_580/index.md",
+    "docs/articles/arrays_580/images",
+    "docs/articles/arrays_580",
+    "docs/articles/arrays_580/images/N-Stg0hc-V1-U.jpg",
+    "docs/informarch/updates/classic_to_570.md",
+    "docs/informarch/updates/970_obnovlenie_do_5.7.0_0023.md",
+    "docs/informarch/wii_qsp/info.md",
+    "docs/informarch/wii_qsp/our_way.md",
     "docs/informarch/wii_qsp/short_faq.md",
     "docs/informarch/wii_qsp/003_nash_put.md",
     "docs/informarch/wii_qsp/002_informatsija_o_qsp.md",
     "docs/informarch/wii_qsp/001_faq_po_qsp.md",
-    "docs/informarch/updates/970_obnovlenie_do_5.7.0_0023.md",
-    "docs/informarch/txtgam/rabota_v_tekstovom_redaktore.md",
-    "docs/informarch/txtgam/preprotsessor.md",
-    "docs/informarch/review/990_obzory_qsp-compo_2010_0029.md",
-    "docs/informarch/program/tjanem_karty_iz_kollody.md",
-    "docs/informarch/program/plavnoe_izmenenie.md",
-    "docs/informarch/program/otladchik.md",
-    "docs/informarch/program/kalendar__po_metodu_schiota_julianskih_dnej.md",
-    "docs/informarch/program/ispol_zovanie_massivov.md",
-    "docs/informarch/program/gibkij_plejlist.md",
-    "docs/informarch/program/dopolnenie_inventarja.md",
-    "docs/informarch/program/dejstvie_po_usloviju.md",
-=======
->>>>>>> Stashed changes
-    "docs/informarch/program/choose_card_in_deck.md",
-    "docs/howdo/contents/concrete_tasks/choose_random_card.md",
-    "docs/informarch/bookmarks.md",
-    "docs/informarch/intro.md",
-    "docs/informarch/wii_qsp/our_way.md",
-    "docs/informarch/wii_qsp/info.md",
-<<<<<<< Updated upstream
-=======
-    "docs/informarch/wii_qsp/short_faq.md",
->>>>>>> Stashed changes
-    "docs/informarch/updates/classic_to_570.md",
-    "docs/informarch/txtgam/preprocessor.md",
-    "docs/informarch/txtgam/txt2gam_for_linux.md",
+    "docs/informarch/aeroqsp/guidebook.md",
+    "docs/informarch/aeroqsp/wit/index.md",
+    "docs/informarch/aeroqsp/wit/images",
+    "docs/informarch/aeroqsp/wit",
+    "docs/informarch/aeroqsp/wit/images/cityofmist.png",
+    "docs/informarch/general/qgen_dev_guide/index.md",
+    "docs/informarch/general/qgen_dev_guide/images/tut7-01.png",
+    "docs/informarch/general/qgen_dev_guide/images/tut5-01.png",
+    "docs/informarch/general/qgen_dev_guide/images/tut4-01.png",
+    "docs/informarch/general/qgen_dev_guide/images/tut2-06.png",
+    "docs/informarch/general/qgen_dev_guide/images/tut2-05.png",
+    "docs/informarch/general/qgen_dev_guide/images/tut2-04.png",
+    "docs/informarch/general/qgen_dev_guide/images",
+    "docs/informarch/general/code_analyser.md",
+    "docs/informarch/extrqsp/automat_programming/index.md",
+    "docs/informarch/general/localization_classic_570.md",
+    "docs/informarch/general/standalone_classic.md",
+    "docs/informarch/general/game_shelf.md",
     "docs/informarch/txtgam/text_editor.md",
-<<<<<<< Updated upstream
-=======
-    "docs/informarch/txtgam/txt2gam_help.md",
+    "docs/informarch/txtgam/preprocessor.md",
     "docs/informarch/review/compo_2010.md",
-    "docs/informarch/qspider/deleting_games.md",
     "docs/informarch/program/use_arrays.md",
-    "docs/informarch/program/conditional_actions.md",
     "docs/informarch/program/smooth_background.md",
+    "docs/informarch/program/lib_flex_playlist.md",
     "docs/informarch/program/lib_extend_inventory.md",
     "docs/informarch/program/julian_calendar.md",
-    "docs/informarch/program/game_time.md",
-    "docs/informarch/program/debugger_200beta.md",
-    "docs/informarch/program/lib_flex_playlist.md",
-    "docs/informarch/navigator/layout_templates.md",
-    "docs/articles/qspider_0120.md",
-    "docs/informarch/navigator/externallinks.md",
-    "docs/informarch/navigator/modal_window.md",
->>>>>>> Stashed changes
-    "docs/articles/operators_funcs_args/images/CHdzh7k.png",
-    "docs/articles/operators_funcs_args/images/function-get-gift.png",
-    "docs/articles/operators_funcs_args/images/tbwMRvc.png",
-    "docs/articles/operators_funcs_args/images/image.png",
-    "docs/articles/operators_funcs_args/images/R6WQKpb.png",
-    "docs/articles/operators_funcs_args/images/XCyNJqv.png",
-    "docs/articles/operators_funcs_args/images",
-    "docs/articles/operators_funcs_args/images/QSP.png",
-    "docs/articles/operators_funcs_args/_category_.yml",
-    "docs/articles/operators_funcs_args",
-    "src/css/qsp-syntax.css",
-    "src/css/footer.css",
-    "docs/howdo/qsp_keywords/py.py",
-    "docs/informarch/wii_qsp/_category_.json",
-    "docs/informarch/wii_qsp",
-    "docs/informarch/extrqsp/automat_programming/shema.png",
-    "docs/informarch/extrqsp/automat_programming/red.png",
-    "docs/informarch/extrqsp/automat_programming/graf.png",
-    "docs/informarch/extrqsp/_category_.yml",
-    "docs/informarch/extrqsp/automat_programming",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",

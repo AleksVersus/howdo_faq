@@ -6,7 +6,7 @@ sidebar_position: 8
 <!-- [:faq_22_08] -->
 
 :::danger[**Эта статья устарела!**]
-Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 **В:** Как делать standalone-сборку на Навигаторе?

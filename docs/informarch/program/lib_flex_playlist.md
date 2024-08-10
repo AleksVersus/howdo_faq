@@ -5,7 +5,9 @@ sidebar_position: 303
 # Гибкий плейлист 1.0
 <!-- [:informarch_flexible_playlist] -->
 
-> Модуль разрабатывался для плееров версии ниже 5.8.0.
+:::warning[`<= 5.7.0`]
+Модуль разрабатывался для плееров версии ниже 5.8.0.
+:::
 
 Код гибкого плейлиста для воспроизведения фоновой музыки.
 
@@ -22,11 +24,11 @@ sidebar_position: 303
 1. В локацию-счетчик добавить код плеера (весь код из локации counter)
 2. Сделать списки файлов в темах. Для этого нужно для каждой темы создать маcсив с именем $tracklist_название темы. То есть для темы default название массива должно быть $tracklist_default. Примеры списков можно найти в локации init_music.
 3. Осталось только включить музыку и инициировать тему. Для этого в код добавляем
-	```qsp
-	music_on=1
-	volume = 100
-	$music_theme = 'default'
-	```
+    ```qsp
+    music_on=1
+    volume = 100
+    $music_theme = 'default'
+    ```
 
 Переменная `music_on` отвечает за включение/выключение плейлиста. Выключить плейлист можно также с помощью `$music_theme = ""`.
 
@@ -37,5 +39,5 @@ sidebar_position: 303
 Автор: **WEREWOLF**
 06.04.2010 15:26
 
-Оригинал статьи: https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76
-Скачать модуль гибкого плейлиста можно здесь: [playlist.zip](https://qsp.org/attachments/playlist.zip)
+- Оригинал статьи: [Гибкий плейлист 1.0](https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Скачать модуль гибкого плейлиста можно здесь: [playlist.zip](https://qsp.org/attachments/playlist.zip)

@@ -117,8 +117,8 @@ sidebar_position: 4
 
 ## 04. Вопросы о меню
 
-- Пример от Svandrus:		[Скачать](https://qsp.org/components/com_agora/img/members/983/menu_2.qsp)
-- Пример от Aleks Versus:	[Скачать](https://qsp.org/components/com_agora/img/members/248/21032016-0856_menu.qsp)
+- Пример от Svandrus:        [Скачать](https://qsp.org/components/com_agora/img/members/983/menu_2.qsp)
+- Пример от Aleks Versus:    [Скачать](https://qsp.org/components/com_agora/img/members/248/21032016-0856_menu.qsp)
 - Динамическое меню от Lisichka: [Сообщение в теме "Как сделать?"](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=114&prc=25&Itemid=57#p19982)
 - Как сделать меню предмета? [Тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&prc=25&p=1&id=829&Itemid=57#p18902)
 - О меню в справке: [https://wiki.qsp.org/help:menu](https://wiki.qsp.org/help:menu)

@@ -17,9 +17,9 @@ sidebar_position: 3
 ```qsp
 play 'audio/coolmusic.mp3'
 if isplay('audio/coolmusic.mp3')=-1:
-	'Файл существует'
+    'Файл существует'
 else
-	'Файл не существует'
+    'Файл не существует'
 end
 ```
 
@@ -32,9 +32,9 @@ end
 usehtml=1
 play 'img/picture_000345.MP3'
 if isplay('img/picture_000345.MP3')=-1:
-	'<img src="img/picture_000345.PNG">'
+    '<img src="img/picture_000345.PNG">'
 else
-	'Художник забыл нарисовать картинку.'
+    'Художник забыл нарисовать картинку.'
 end
 ```
 [Пример можно скачать отсюда](https://mega.nz/file/2W5wgbJL#E1rCFrBpwVonlTlWHIC7xVdBWoFUoF5SFOpWcz2J2Xo)

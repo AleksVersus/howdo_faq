@@ -6,7 +6,7 @@ sidebar_position: 1
 <!-- [:faq_22_01] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 **В:** Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?

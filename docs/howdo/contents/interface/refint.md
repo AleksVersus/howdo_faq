@@ -30,19 +30,19 @@ sidebar_position: 1
 showstat 0
 showobjs 0
 act "меняем настройки без refint":
-	showstat 1
-	bcolor=rgb(0,88,0)
-	loop local i=0 while i<10000000 step i+=1:
-		! пустой цикл
-	end
+    showstat 1
+    bcolor=rgb(0,88,0)
+    loop local i=0 while i<10000000 step i+=1:
+        ! пустой цикл
+    end
 end
 act "меняем настройки c refint":
-	showobjs 1
-	bcolor=rgb(0,88,88)
-	refint
-	loop local i=0 while i<10000000 step i+=1:
-		! пустой цикл
-	end
+    showobjs 1
+    bcolor=rgb(0,88,88)
+    refint
+    loop local i=0 while i<10000000 step i+=1:
+        ! пустой цикл
+    end
 end
 ```
 

@@ -13,9 +13,9 @@ sidebar_position: 8
 
 ```qsp
 if arrsize('mass_1') = arrsize('mass_2'):
-	*pl 'Число элементов в массивах одинаковое.'
+    *pl 'Число элементов в массивах одинаковое.'
 else
-	*pl 'Число элементов в массивах разное.'
+    *pl 'Число элементов в массивах разное.'
 end
 ```
 
@@ -25,9 +25,9 @@ end
 
 ```qsp
 loop local i, size = 0, arrsize('mass_1') while i < size and $text = '' step i += 1:
-	if mass_1[i] <> mass_2[i]:
-		$text = 'Массивы не идентичны'
-	end
+    if mass_1[i] <> mass_2[i]:
+        $text = 'Массивы не идентичны'
+    end
 end
 if $text = '': $text = 'Массивы идентичны'
 ```
@@ -40,9 +40,9 @@ if $text = '': $text = 'Массивы идентичны'
 
 ```qsp
 loop local i,size = 0,arrsize('mass_1') while i < size and $text = '' step i += 1:
-	if arrpos('mass_2', mass_1[i]) = -1:
-		$text = 'Массивы разнятся по содержимому'
-	end
+    if arrpos('mass_2', mass_1[i]) = -1:
+        $text = 'Массивы разнятся по содержимому'
+    end
 end
 if $text = '': $text = 'Массивы состоят из одинаковых элементов'
 ```
@@ -74,6 +74,6 @@ mass_1[3] = 4 & mass_2[3] = 1
 3. Сортировка значений во временных массивах
 4. Сравнение временных массивов на идентичность
 
-Сортировка значений в массивах — это отдельный вопрос, и он представлен в смежном разделе [**Сортировка данных**](arrays_comparison.md).
+Сортировка значений в массивах — это отдельный вопрос, и он представлен в смежном разделе [**Сортировка данных**](data_sorting.md).
 
-Готовое решение для сравнения массивов на идентичность, на подобие (значения одинаковы но расположены в разном порядке), на совпадение хотя бы одного элемента есть в библиотеке [easy.math](https://github.com/AleksVersus/easy.math), см. функцию [#array.simp#](http://aleksversus.narod.ru/index/operacii_nad_massivami/0-72#arraysimp).
+Готовое решение для сравнения массивов на идентичность, на подобие (значения одинаковы но расположены в разном порядке), на совпадение хотя бы одного элемента есть в библиотеке [easy.math.3](https://github.com/AleksVersus/easy.math.3), см. функцию [em.arr.simpl](https://aleksversus.narod.ru/index/operacii_s_massivami_stranica_2/0-80#em_arr_simpl).

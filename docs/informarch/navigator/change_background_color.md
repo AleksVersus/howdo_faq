@@ -6,7 +6,7 @@ sidebar_position: 3
 <!-- [:faq_22_03] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 **В:** Пишу `bcolor=rgb(255,200,200)`, но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?

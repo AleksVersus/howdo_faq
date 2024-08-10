@@ -40,16 +40,16 @@ copyarr '$personage_temp','$personage'
 loop while arrsize('$personage_temp')>0:
 ! цикл будет работать, пока размер временного массива
 ! больше нуля
-	! получаем минимальное значение
-	$varMax=$min('$personage_temp')
-	! определяем, в каком элементе лежит это значение
-	index=arrpos('$personage_temp',$varMax)
-	! выводим на экран
-	*pl $varMax
-	! или запоминаем в другом массиве
-	$personage_sort[]=$varMax
-	! удаляем элемент из временного массива
-	killvar '$personage_temp',index
+    ! получаем минимальное значение
+    $varMax=$min('$personage_temp')
+    ! определяем, в каком элементе лежит это значение
+    index=arrpos('$personage_temp',$varMax)
+    ! выводим на экран
+    *pl $varMax
+    ! или запоминаем в другом массиве
+    $personage_sort[]=$varMax
+    ! удаляем элемент из временного массива
+    killvar '$personage_temp',index
 end
 ```
 
@@ -61,11 +61,11 @@ end
 local varMax, index, number_temp
 copyarr 'number_temp','number'
 loop while arrsize('number_temp')>0:
-	varMax=max('number_temp')
-	index=arrpos('number_temp',varMax)
-	*pl varMax
-	number_sort[]=varMax
-	killvar 'number_temp',index
+    varMax=max('number_temp')
+    index=arrpos('number_temp',varMax)
+    *pl varMax
+    number_sort[]=varMax
+    killvar 'number_temp',index
 end
 ```
 
@@ -74,15 +74,15 @@ end
 ```qsp
 проходы=0
 loop local проходы=0 while проходы<arrsize("сортируемый_массив") step проходы+=1:
-	loop local всплытия=проходы while всплытия<arrsize("сортируемый_массив") step всплытия+=1:
-		if сортируемый_массив[проходы] < сортируемый_массив[всплытия]: 
-			! или, если нужен другой порядок: 
-			!if сортируемый_массив[проходы] > сортируемый_массив[всплытия]: 
-			запоминальная_переменная = сортируемый_массив[проходы] 
-			сортируемый_массив[проходы] = сортируемый_массив[всплытия] 
-			сортируемый_массив[всплытия] = запоминальная_переменная 
-		end
-	end
+    loop local всплытия=проходы while всплытия<arrsize("сортируемый_массив") step всплытия+=1:
+        if сортируемый_массив[проходы] < сортируемый_массив[всплытия]: 
+            ! или, если нужен другой порядок: 
+            !if сортируемый_массив[проходы] > сортируемый_массив[всплытия]: 
+            запоминальная_переменная = сортируемый_массив[проходы] 
+            сортируемый_массив[проходы] = сортируемый_массив[всплытия] 
+            сортируемый_массив[всплытия] = запоминальная_переменная 
+        end
+    end
 end
 ```
 

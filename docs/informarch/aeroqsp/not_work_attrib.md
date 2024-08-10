@@ -1,5 +1,5 @@
 ---
-sidebar_position: 986
+sidebar_position: 6
 ---
 
 # 13.6. В AeroQSP не работает атрибут
@@ -19,45 +19,45 @@ AeroQSP ориентирован на работу со стилями, поэт
 
 Собственную таблицу стилей можно вписать в переменную `$STYLESHEET`. Вот пример из игры "Один в снегах" от **Lisichk**`и:
 ```css
-$STYLESHEET='
-	.main { 
-		position:absolute; 
-		height:330px; 
-		width:500px; 
-		left:0px; 
-		text-align:center; 
-	} 
-	.stat1 { 
-		position:absolute;
-		height: 600px; 
-		width: 210px; 
-		top:50;
-		right:650;
-		text-align:center; 
-	} 
-	.stat2 { 
-		position:absolute;
-		height: 600px;
-		width: 200px;
-		left:750px;
-		top:50;
-		text-align:center; 
-	}
-	.roof {
-		position:absolute;
-		width:400px;
-		top:5px;
-		left:440px;
-		text-align:center;
-	}
-	.radio {
-		position:absolute;
-		width:300px;
-		height: 50px;
-		top:300px;
-		left:800px;
-		text-align:center;
-	}
+$STYLESHEET = '
+    .main { 
+        position:absolute; 
+        height:330px; 
+        width:500px; 
+        left:0px; 
+        text-align:center; 
+    } 
+    .stat1 { 
+        position:absolute;
+        height: 600px; 
+        width: 210px; 
+        top:50;
+        right:650;
+        text-align:center; 
+    } 
+    .stat2 { 
+        position:absolute;
+        height: 600px;
+        width: 200px;
+        left:750px;
+        top:50;
+        text-align:center; 
+    }
+    .roof {
+        position:absolute;
+        width:400px;
+        top:5px;
+        left:440px;
+        text-align:center;
+    }
+    .radio {
+        position:absolute;
+        width:300px;
+        height: 50px;
+        top:300px;
+        left:800px;
+        text-align:center;
+    }
 '
 ```
 Стили для отдельного элемента можно прописать в атрибуте `style`:

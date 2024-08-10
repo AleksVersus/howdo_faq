@@ -13,7 +13,7 @@ sidebar_position: 5
 ```qsp
 $answer=$TRIM($LCASE($input('Цвет светофора бывает?..'))) 
 if $answer='красный' OR $answer='желтый' OR $answer='зеленый':
-	goto 'win'
+    goto 'win'
 end
 ```
 Функция `$trim` обрежет прилегающие пробелы и символы табуляции в возвращённой строке.
@@ -29,6 +29,6 @@ $answer_var[2]="зеленый"
 $answer=$trim($lcase($input("Цвет светофора бывает?..")))
 ! теперь проверяем, есть ли такой вариант в массиве
 if arrpos("$answer_var", $answer)<>-1:
-	goto "win"
+    goto "win"
 end
 ```

@@ -34,10 +34,10 @@ local time_now = msecscount
 if timer=0 or time_now>=(timer+5000):
 ! если переменной timer не присвоено значение
 ! или текущее время превышает timer+5000 либо равно ему
-	! фиксируем в timer текущее время
-	timer = time_now
-	! повышаем health на 1
-	health = health+1
+    ! фиксируем в timer текущее время
+    timer = time_now
+    ! повышаем health на 1
+    health = health+1
 ! закрываем условие
 end
 ! переменные timer и health являются глобальными

@@ -37,11 +37,11 @@ jsconsole.log('Every repo must come with a mascot.');
 ```js title="docusaurus.config.js"
 import {themes as prismThemes} from 'prism-react-renderer';
 export default {
-	themeConfig: {
-	    prism: {
-	          theme: prismThemes.dracula,
-	    },
-	},
+    themeConfig: {
+        prism: {
+              theme: prismThemes.dracula,
+        },
+    },
 };
 ```
 
@@ -65,13 +65,13 @@ export default {
 
 ```js title="docusaurus.config.js"
 export default {
-	// ...
-	themeConfig: {
-	    prism: {
-	          additionalLanguages: ['powershell'],
-	    },
-	// ...
-	},
+    // ...
+    themeConfig: {
+        prism: {
+              additionalLanguages: ['powershell'],
+        },
+    // ...
+    },
 };
 ```
 
@@ -87,12 +87,12 @@ npm run swizzle @docusaurus/theme-classic prism-include-languages
 
 ```js title="src/theme/prism-include-languages.js"
 const prismIncludeLanguages = (Prism) => {
-	// ...
-	additionalLanguages.forEach((lang) => {
-		require(`prismjs/components/prism-${lang}`);
-	});
-	require('/path/to/your/prism-language-definition');
-	// ...
+    // ...
+    additionalLanguages.forEach((lang) => {
+        require(`prismjs/components/prism-${lang}`);
+    });
+    require('/path/to/your/prism-language-definition');
+    // ...
 };
 ```
 
@@ -106,21 +106,21 @@ const prismIncludeLanguages = (Prism) => {
 
 ````
 ```jsfunction HighlightSomeText(highlight) {
-	if (highlight) {
-	// highlight-next-line
-	return 'This text is highlighted!';
-	}
-	
-	return 'Nothing highlighted';
+    if (highlight) {
+    // highlight-next-line
+    return 'This text is highlighted!';
+    }
+    
+    return 'Nothing highlighted';
 }
 
 function HighlightMoreText(highlight) {
-	// highlight-start
-	if (highlight) {
-		return 'This range is highlighted!';
-	}
-	// highlight-end
-	return 'Nothing highlighted';
+    // highlight-start
+    if (highlight) {
+        return 'This range is highlighted!';
+    }
+    // highlight-end
+    return 'Nothing highlighted';
 }```
 ````
 
@@ -143,13 +143,13 @@ Supported commenting syntax:
 
 ```css title="/src/css/custom.css"
 :root {
-	--docusaurus-highlighted-code-line-bg: rgb(72, 77, 91);
+    --docusaurus-highlighted-code-line-bg: rgb(72, 77, 91);
 }
 
 /* If you have a different syntax highlighting theme for dark mode. */
 [data-theme='dark'] {
-	/* Color which works with dark mode syntax highlighting theme */
-	--docusaurus-highlighted-code-line-bg: rgb(100, 100, 100);
+    /* Color which works with dark mode syntax highlighting theme */
+    --docusaurus-highlighted-code-line-bg: rgb(100, 100, 100);
 }
 ```
 
@@ -163,10 +163,10 @@ Supported commenting syntax:
 import React from 'react';
 
 function MyComponent(props) {
-	if (props.isBar) {
-		return <div>Bar</div>;
-	}
-	return <div>Foo</div>;
+    if (props.isBar) {
+        return <div>Bar</div>;
+    }
+    return <div>Foo</div>;
 }
 export default MyComponent;
 ```
@@ -182,12 +182,12 @@ export default MyComponent;
 - ```jsx {3}
 + ```jsx {4}
   function HighlightSomeText(highlight) {
-	if (highlight) {
+    if (highlight) {
 +     console.log('Highlighted text found');
-	  return 'This text is highlighted!';
-	}
-	
-	return 'Nothing highlighted';
+      return 'This text is highlighted!';
+    }
+    
+    return 'Nothing highlighted';
   }
   ```
 ````
@@ -204,24 +204,24 @@ export default MyComponent;
 - js
 ```js title="docusaurus.config.js"
 export default {
-	themeConfig: {
-		prism: {
-			magicComments: [
-				// Remember to extend the default highlight class name as well!
-				{
-					className: 'theme-code-block-highlighted-line',
-					line: 'highlight-next-line',
-					block: {start: 'highlight-start', end: 'highlight-end'},
-				},
-				{
-					className: 'code-block-error-line',
-					line: 'This will error',
-				},
-			],
-		},
-	},
+    themeConfig: {
+        prism: {
+            magicComments: [
+                // Remember to extend the default highlight class name as well!
+                {
+                    className: 'theme-code-block-highlighted-line',
+                    line: 'highlight-next-line',
+                    block: {start: 'highlight-start', end: 'highlight-end'},
+                },
+                {
+                    className: 'code-block-error-line',
+                    line: 'This will error',
+                },
+            ],
+        },
+    },
 };
-	```
+    ```
 - css
   ```css title="src/css/custom.css"
   .code-block-error-line {  
@@ -234,15 +234,15 @@ border-left: 3px solid #ff000080;
 ```
 - md
   ````md title="myDoc.md"
-	  In JavaScript, trying to access properties on `null` will error.  
+      In JavaScript, trying to access properties on `null` will error.  
   
-		```js  
-		const name = null;  
-		// This will error  
-		console.log(name.toUpperCase());  
-		// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')  
-		```
-	````
+        ```js  
+        const name = null;  
+        // This will error  
+        console.log(name.toUpperCase());  
+        // Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')  
+        ```
+    ````
 
 ![[Pasted image 20240803132628.png]]
 
@@ -269,11 +269,11 @@ npm run swizzle @docusaurus/theme-classic CodeBlock/Line
 import React from 'react';
 
 function MyComponent(props) {
-	if (props.isBar) {
-		return <div>Bar</div>;
-	}
-	
-	return <div>Foo</div>;
+    if (props.isBar) {
+        return <div>Bar</div>;
+    }
+    
+    return <div>Foo</div>;
 }
 
 export default MyComponent;
@@ -296,9 +296,9 @@ You will also need to add the plugin to your `docusaurus.config.js`.
 
 ```js
 export default {
-	// ...
-	themes: ['@docusaurus/theme-live-codeblock'],
-	// ...
+    // ...
+    themes: ['@docusaurus/theme-live-codeblock'],
+    // ...
 };
 ```
 
@@ -307,24 +307,24 @@ export default {
 ````
 ```jsx live
 function Clock(props) {
-	const [date, setDate] = useState(new Date());
-	useEffect(() => {
-		const timerID = setInterval(() => tick(), 1000);
-		
-		return function cleanup() {
-			clearInterval(timerID);
-		};
-	});
-	
-	function tick() {
-		setDate(new Date());
-	}
-	
-	return (
-		<div>
-			<h2>It is {date.toLocaleTimeString()}.</h2>
-		</div>
-	);
+    const [date, setDate] = useState(new Date());
+    useEffect(() => {
+        const timerID = setInterval(() => tick(), 1000);
+        
+        return function cleanup() {
+            clearInterval(timerID);
+        };
+    });
+    
+    function tick() {
+        setDate(new Date());
+    }
+    
+    return (
+        <div>
+            <h2>It is {date.toLocaleTimeString()}.</h2>
+        </div>
+    );
 }
 ```
 ````
@@ -349,25 +349,25 @@ npm run swizzle @docusaurus/theme-live-codeblock ReactLiveScope -- --eject
 import React from 'react';
 
 const ButtonExample = (props) => (
-	<button
-		{...props}
-		style={{
-			backgroundColor: 'white',
-			color: 'black',
-			border: 'solid red',
-			borderRadius: 20,
-			padding: 10,
-			cursor: 'pointer',
-			...props.style,
-		}}
-	/>
+    <button
+        {...props}
+        style={{
+            backgroundColor: 'white',
+            color: 'black',
+            border: 'solid red',
+            borderRadius: 20,
+            padding: 10,
+            cursor: 'pointer',
+            ...props.style,
+        }}
+    />
 );
 
 // Add react-live imports you need here
 const ReactLiveScope = {
-	React,
-	...React,
-	ButtonExample,
+    React,
+    ...React,
+    ButtonExample,
 };
 
 export default ReactLiveScope;
@@ -402,12 +402,12 @@ render(<Greeting />);
 Блок кода в Markdown всегда сохраняет свое содержимое в виде обычного текста, что означает, что вы не можете сделать что-то вроде:
 ```jsx
 type EditUrlFunction = (params: {
-	// This doesn't turn into a link (for good reason!)
-	version: <a href="/docs/versioning">Version</a>;
-	versionDocsDirPath: string;
-	docPath: string;
-	permalink: string;
-	locale: string;
+    // This doesn't turn into a link (for good reason!)
+    version: <a href="/docs/versioning">Version</a>;
+    versionDocsDirPath: string;
+    docPath: string;
+    permalink: string;
+    locale: string;
 }) => string | undefined;
 ```
 
@@ -415,8 +415,8 @@ type EditUrlFunction = (params: {
 
 ```jsx
 <pre>
-	<b>Input: </b>1 2 3 4{'\n'}
-	<b>Output: </b>"366300745"{'\n'}
+    <b>Input: </b>1 2 3 4{'\n'}
+    <b>Output: </b>"366300745"{'\n'}
 </pre>
 ```
 
@@ -447,7 +447,7 @@ import TabItem from '@theme/TabItem';
 
 ```js
 function helloWorld() {
-	console.log('Hello, world!');
+    console.log('Hello, world!');
 }
 ```
 
@@ -456,7 +456,7 @@ function helloWorld() {
 
 ```py
 def hello_world():
-	print("Hello, world!")
+    print("Hello, world!")
 ```
 
 </TabItem>
@@ -464,9 +464,9 @@ def hello_world():
 
 ```java
 class HelloWorld {
-	public static void main(String args[]) {
-		System.out.println("Hello, World");
-	}
+    public static void main(String args[]) {
+        System.out.println("Hello, World");
+    }
 }
 ```
 
@@ -480,23 +480,23 @@ class HelloWorld {
 
 - JavaScript
   ```js
-	function helloWorld() {  
-		console.log('Hello, world!');  
-	}
-	```
+    function helloWorld() {  
+        console.log('Hello, world!');  
+    }
+    ```
 - Python
   ```python
-	def hello_world():  
-		print("Hello, world!")
-	```
+    def hello_world():  
+        print("Hello, world!")
+    ```
 - Java
   ```java
-	class HelloWorld {  
-		public static void main(String args[]) {  
-			System.out.println("Hello, World");  
-		}  
-	}
-	```
+    class HelloWorld {  
+        public static void main(String args[]) {  
+            System.out.println("Hello, World");  
+        }  
+    }
+    ```
 
 Если у вас несколько таких многоязычных вкладок кода и вы хотите синхронизировать выбор между экземплярами вкладок, обратитесь к разделу [Синхронизация вариантов выбора вкладок](https://docusaurus.io/docs/markdown-features/tabs#syncing-tab-choices).
 
@@ -510,31 +510,31 @@ Docusaurus предоставляет такую ​​утилиту из ко�
 
 ```js title="docusaurus.config.js"
 export default {
-	// ...
-	presets: [
-		[
-			'@docusaurus/preset-classic',
-			{
-				docs: {
-					remarkPlugins: [
-						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
-					],
-				},
-				pages: {
-					remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
-				},
-				blog: {
-					remarkPlugins: [
-						[
-							require('@docusaurus/remark-plugin-npm2yarn'),
-							{converters: ['pnpm']},
-						],
-					],
-					// ...
-				},
-			},
-		],
-	],
+    // ...
+    presets: [
+        [
+            '@docusaurus/preset-classic',
+            {
+                docs: {
+                    remarkPlugins: [
+                        [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+                    ],
+                },
+                pages: {
+                    remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
+                },
+                blog: {
+                    remarkPlugins: [
+                        [
+                            require('@docusaurus/remark-plugin-npm2yarn'),
+                            {converters: ['pnpm']},
+                        ],
+                    ],
+                    // ...
+                },
+            },
+        ],
+    ],
 };
 ```
 
@@ -561,18 +561,18 @@ npm install @docusaurus/remark-plugin-npm2yarn
 import CodeBlock from '@theme/CodeBlock';
 
 export default function MyReactPage() {
-	return (
-		<div>
-			<CodeBlock
-				language="jsx"
-				title="/src/components/HelloCodeTitle.js"
-				showLineNumbers>
-				{`function HelloCodeTitle(props) {
-					return <h1>Hello, {props.name}</h1>;
-				}`}
-			</CodeBlock>
-		</div>
-	);
+    return (
+        <div>
+            <CodeBlock
+                language="jsx"
+                title="/src/components/HelloCodeTitle.js"
+                showLineNumbers>
+                {`function HelloCodeTitle(props) {
+                    return <h1>Hello, {props.name}</h1>;
+                }`}
+            </CodeBlock>
+        </div>
+    );
 }
 ```
 

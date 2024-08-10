@@ -6,7 +6,7 @@ sidebar_position: 10
 <!-- [:faq_22_10] -->
 
 :::danger[**Эта статья устарела!**]
-Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120/index.md).
 :::
 
 **В:** Как выполнить JavaScript прямо из кода QSP?
