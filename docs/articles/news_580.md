@@ -1,5 +1,5 @@
 ---
-id: 03_chto_novogo_v_qsp_0003
+sidebar_position: 3
 ---
 
 # Что нового в QSP

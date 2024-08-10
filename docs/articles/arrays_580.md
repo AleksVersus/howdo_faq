@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Массивы уже не те
 <!-- [:novoje_v_rabote_massivov] -->
 

@@ -1,20 +1,25 @@
 ---
-sidebar_position: 956
+sidebar_position: 7
 ---
 
 # 22.7. Как вставить видео в игру на Навигаторе?
 <!-- [:faq_22_07] -->
 
 :::danger[**Эта статья устарела!**]
-Эта статья устарела. Новый плеер с поддержкой HTML - [qSpider](04_qspider_0004.md).
+Новый плеер с поддержкой HTML - [qSpider](../../articles/qspider_0120.md).
 :::
 
-В: Как вставить видео в игру на Навигаторе?
+**В:** Как вставить видео в игру на Навигаторе?
 
-О:
+**О:**
 
-ВНИМАНИЕ!!! Перед прочтением нижеследующего текста рекомендуется ознакомиться с разделами [22.1. Шаблоны оформления для игр](#faq_22_01) и ["22.8. Stand-Alone сборка на Навигаторе"](#faq_22_08).
-ВНИМАНИЕ!!! Видео формата `mp4` не воспроизводятся в Навигаторе!
+:::warning[ВНИМАНИЕ!!!]
+Перед прочтением нижеследующего текста рекомендуется ознакомиться с разделами [22.1. Шаблоны оформления для игр](layout_templates.md) и ["22.8. Stand-Alone сборка на Навигаторе"](standalone.md).
+:::
+
+:::warning[ВНИМАНИЕ!!!]
+Видео формата **`mp4`** не воспроизводятся в Навигаторе!
+:::
 
 Изначально заявлено, что Quest Navigator умеет воспроизводить видео, как обычный браузер (как это делается в браузере можно прочитать на сайте [htmlbook.ru](http://htmlbook.ru/html/video)).
 
@@ -29,9 +34,9 @@ sidebar_position: 956
 ```qsp
 ! открываем контейнер VIDEO
 *p "<video autoplay loop width='500px'>"
-	! указываем источники видео, то есть пути к файлам в тегах SOURCE
-	*p "<source src='video/GeneveDrive.ogg' type='video/ogg;'>"
-	*p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
+    ! указываем источники видео, то есть пути к файлам в тегах SOURCE
+    *p "<source src='video/GeneveDrive.ogg' type='video/ogg;'>"
+    *p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
 ! закрываем контейнер VIDEO
 *pl "</video>"
 ```
@@ -44,7 +49,7 @@ sidebar_position: 956
 Мы можем указать абсолютный путь к видео, и тогда видео появится в Quest Navigator:
 ```qsp
 *p "<video autoplay loop width='500'>"
-	*p "<source src='D:/QSPgames/myCoolGame/video/GeneveDrive.webm' type='video/webm;'>"
+    *p "<source src='D:/QSPgames/myCoolGame/video/GeneveDrive.webm' type='video/webm;'>"
 *pl "</video>"
 ```
 Однако этот вариант нам не подходит, ведь у каждого игрока игра будет лежать в разных местах на компьютере. Нам нужен вариант, когда мы можем свободно раздавать копии игры, не заботясь о путях. И к сожалению, это возможно только если мы будем распространять нашу игру в виде Standalone-сборки.
@@ -52,7 +57,7 @@ sidebar_position: 956
 Тогда, поскольку наша игра будет располагаться относительно плеера по пути "assets\standalone_content\start.qsp", мы сможем размещать в папке "standalone_content" или во вложенных в неё папках наши видео и вызывать их из игры, когда захотим, используя относительные пути:
 ```qsp
 *p "<video autoplay loop width='500'>"
-	*p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
+    *p "<source src='video/GeneveDrive.webm' type='video/webm;'>"
 *pl "</video>"
 ```
-Подробнее о том, как создавать Standalone-сборки игры для Quest Navigator читайте в разделе ["22.8. Как делать standalone-сборку на Навигаторе?"](#faq_22_08).
+Подробнее о том, как создавать Standalone-сборки игры для Quest Navigator читайте в разделе ["22.8. Как делать standalone-сборку на Навигаторе?"](standalone.md).

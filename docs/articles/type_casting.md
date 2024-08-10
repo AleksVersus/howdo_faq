@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Преобразование типов в QSP
 <!-- [:preobrazovanije_tipov_qsp] -->
 
