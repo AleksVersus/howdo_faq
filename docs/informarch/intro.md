@@ -20,7 +20,7 @@ sidebar_position: 1
 
 ## Общие вопросы и решения
 
-* [Учебник по QSP для редактора QGen](general/gen_dev_guide.md)
+* [Учебник по QSP для редактора QGen](general/qgen_dev_guide/index.md)
 * [Локализация классического плеера версии 5.7.0](general/localization_classic_570.md)
 * [Анализатор кода](general/code_analyser.md)
 * [Полка игр](general/game_shelf.md)
