@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4677de956ce78070",
+        "id": "4422f0659c6064e3",
         "type": "tabs",
         "children": [
           {
-            "id": "22189d4f16d5ebf6",
+            "id": "d4c4b8da25d76426",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/informarch/general/standalone_classic.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "84947eb925196e98",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+                "file": "docs/howdo/contents/restriction/varnames.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/informarch/general/standalone_classic.md",
+                "file": "docs/howdo/contents/restriction/varnames.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/informarch/general/standalone_classic.md",
+                "file": "docs/howdo/contents/restriction/varnames.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/informarch/general/standalone_classic.md"
+                "file": "docs/howdo/contents/restriction/varnames.md"
               }
             }
           }
@@ -158,37 +146,37 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "22189d4f16d5ebf6",
+  "active": "d4c4b8da25d76426",
   "lastOpenFiles": [
-    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
-    "docs/informarch/general/standalone_classic.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+    "docs/howdo/contents/restriction/inclib_numbers.md",
+    "docs/howdo/contents/restriction/actions_numbers.md",
+    "docs/howdo/contents/what_dif/set_let.md",
+    "docs/howdo/contents/what_dif/quotes_apostrophes.md",
+    "docs/howdo/contents/what_dif/gt_goto.md",
+    "docs/howdo/contents/what_dif/goto_gosub.md",
+    "docs/howdo/contents/what_dif/dynamic_dyneval.md",
+    "docs/howdo/contents/what_dif/subexpression.md",
+    "docs/howdo/contents/what_dif/pl_implicit_operator.md",
+    "docs/howdo/contents/what_dif/dollar_sign.md",
+    "docs/howdo/contents/what_dif/inclib_openqst/index.md",
+    "docs/howdo/contents/what_command/print_line_in_stat_window.md",
+    "docs/howdo/contents/what_command/curloc.md",
+    "docs/howdo/contents/what_command/clr.md",
+    "docs/howdo/contents/what_command/exit_command.md",
+    "docs/howdo/contents/sound/loop_soundtrack.md",
+    "docs/howdo/contents/sound/two_soundtracks.md",
+    "docs/howdo/contents/sound/insert_soundtrack.md",
+    "docs/howdo/contents/sound/playlists.md",
+    "docs/howdo/contents/sound/turn_down.md",
+    "docs/howdo/contents/sound/break_soundtrack.md",
+    "docs/howdo/contents/sound/soundtrack_restart.md",
+    "docs/howdo/contents/saves/forbidden_saves.md",
+    "docs/howdo/contents/saves/not_load_saves.md",
+    "docs/howdo/contents/saves/two_save_files.md",
+    "docs/howdo/contents/saves/checkpoints.md",
     "src/css/qsp-syntax.css",
     "src/css/footer.css",
-    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
     "docs/howdo/qsp_keywords/py.py",
-    "docs/howdo/qsp_keywords/qsp-keywoed-operators.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
-    "docs/howdo/contents/concrete_tasks/html_bez_otkljuchenija_html.md",
-    "docs/howdo/contents/concrete_tasks/maksimal_naja_peremennaja.md",
-    "docs/howdo/contents/concrete_tasks/kak_ubrat__preformatirovanie.md",
-    "docs/howdo/contents/concrete_tasks/kak_sdelat__sklad_sunduk_tajnik.md",
-    "docs/howdo/contents/concrete_tasks/kak_sdelat__knigu_v_igre.md",
-    "docs/howdo/contents/concrete_tasks/kak_proshe_zapolniat_massiv.md",
-    "docs/informarch/program/game_time.md",
-    "docs/informarch/program/kalendar__po_metodu_schiota_julianskih_dnej.md",
-    "docs/informarch/navigator/modal_window.md",
-    "docs/informarch/navigator/instruktsija_po_smene_oformlenija_iz_koda_igry.md",
-    "docs/informarch/navigator/razmer_okna_igry.md",
-    "docs/informarch/navigator/standalone.md",
-    "docs/informarch/navigator/video.md",
-    "docs/informarch/navigator/proverka_pleera.md",
-    "docs/informarch/navigator/nastrojka_shablona.md",
-    "docs/informarch/navigator/izmenit__kursor.md",
-    "docs/informarch/navigator/kak_izmenit__tsvet_fona.md",
     "docs/informarch/wii_qsp/_category_.json",
     "docs/informarch/wii_qsp",
     "docs/informarch/extrqsp/021_avtomatnoe_programmirovanie/shema.png",

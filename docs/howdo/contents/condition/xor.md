@@ -4,8 +4,9 @@ sidebar_position: 7
 
 # 11.7. Как упростить взаимоисключающие условия?
 <!-- [:faq_11_07] -->
+
 В: Как упростить взаимоисключающие условия?
-	Подскажите аналог опреации `XOR`.
+	Подскажите аналог операции `XOR`.
 
 О:
 
@@ -14,7 +15,7 @@ sidebar_position: 7
 Например, значение переменной может быть либо равно нулю, либо не равно нулю. На основе этих взаимоисключающих состояний можно написать взаимоисключающие условия:
 
 ```qsp
-if varname=0:
+if varname = 0:
 	"Переменная равна нулю"
 else
 	"Переменная не равна нулю"
@@ -24,7 +25,7 @@ end
 Иногда у нас возникает задача посложнее. Есть две переменные, и условие должно выполняться лишь в том случае, если одна переменная равна нулю, а вторая не равна. Тут кажется всё просто:
 
 ```qsp
-if (varname1=0 and varname2<>0) or (varname1<>0 and varname2=0):
+if (varname1 = 0 and varname2 <> 0) or (varname1 <> 0 and varname2 = 0):
 	"Условие выполняется"
 end
 ```
@@ -35,14 +36,14 @@ end
 
 ```qsp
 marker=0
-if varname1=0: marker+=1
-if varname2=0: marker+=1
-if varname3=0: marker+=1
-if varname4=0: marker+=1
-if varname5=0: marker+=1
-if varname6=0: marker+=1
-if varname7=0: marker+=1
-if marker<>1:
+if varname1 = 0: marker+=1
+if varname2 = 0: marker+=1
+if varname3 = 0: marker+=1
+if varname4 = 0: marker+=1
+if varname5 = 0: marker+=1
+if varname6 = 0: marker+=1
+if varname7 = 0: marker+=1
+if marker <> 1:
 	"Условие не выполнено. Больше одной переменной не равно нулю, либо все они равны нулю"
 else
 	"Условие выполнено. Лишь одна из всех этих переменных равна нулю"
