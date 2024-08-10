@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/images/changable_image",
+  "title": "9.7. Как сделать сменяемое изображение на локации?",
+  "description": "В: Как сделать сменяемое изображение на локации?",
+  "source": "@site/docs/howdo/contents/images/changable_image.md",
+  "sourceDirName": "howdo/contents/images",
+  "slug": "/howdo/contents/images/changable_image",
+  "permalink": "/docs/howdo/contents/images/changable_image",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "9.6. Как сделать кликабельное изображение?",
+    "permalink": "/docs/howdo/contents/images/clickable_image"
+  },
+  "next": {
+    "title": "9.8. Как сделать вывод рандомного изображения?",
+    "permalink": "/docs/howdo/contents/images/random_image"
+  }
+}

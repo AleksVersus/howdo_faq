@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/input/why_need_input_string",
+  "title": "15.1. Зачем вообще нужна строка ввода (поле ввода)?",
+  "description": "В: Зачем вообще нужна строка ввода (поле ввода)?",
+  "source": "@site/docs/howdo/contents/input/why_need_input_string.md",
+  "sourceDirName": "howdo/contents/input",
+  "slug": "/howdo/contents/input/why_need_input_string",
+  "permalink": "/docs/howdo/contents/input/why_need_input_string",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "14.14. Можно ли выводить предметы не в окне предметов?",
+    "permalink": "/docs/howdo/contents/items/item_without_inventory"
+  },
+  "next": {
+    "title": "15.2. Как задействовать строку ввода в игре?",
+    "permalink": "/docs/howdo/contents/input/use_input_string"
+  }
+}

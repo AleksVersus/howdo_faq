@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/choose_card_in_deck",
+  "title": "Выбор случайных вариантов - тянем карты из колоды [1.0]",
+  "description": "Похожая статья в справочнике: тянем карту из колоды.",
+  "source": "@site/docs/informarch/program/choose_card_in_deck.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/choose_card_in_deck",
+  "permalink": "/docs/informarch/program/choose_card_in_deck",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 309,
+  "frontMatter": {
+    "sidebar_position": 309
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Отладчик 2.0 beta",
+    "permalink": "/docs/informarch/program/debugger_200beta"
+  },
+  "next": {
+    "title": "Обновление QSP (5.7.0) и QGen (4.0.0b)",
+    "permalink": "/docs/informarch/updates/classic_to_570"
+  }
+}

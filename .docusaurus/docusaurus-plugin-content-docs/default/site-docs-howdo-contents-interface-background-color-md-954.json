@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/background_color",
+  "title": "10.2. Как изменить цвет фона в игре?",
+  "description": "В: Как изменить цвет фона в игре?",
+  "source": "@site/docs/howdo/contents/interface/background_color.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/background_color",
+  "permalink": "/docs/howdo/contents/interface/background_color",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.1. Для чего нужен оператор REFINT, и как он работает?",
+    "permalink": "/docs/howdo/contents/interface/refint"
+  },
+  "next": {
+    "title": "10.3. Как изменить формат части текста? Размер, цвет, наклон и т.д.?",
+    "permalink": "/docs/howdo/contents/interface/text_formatting"
+  }
+}

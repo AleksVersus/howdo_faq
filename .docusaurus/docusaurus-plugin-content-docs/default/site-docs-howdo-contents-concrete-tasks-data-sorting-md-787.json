@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/data_sorting",
+  "title": "20.10. Как отсортировать данные?",
+  "description": "В: Как отсортировать данные? Например, список персонажей по алфавиту, или набор чисел от меньшего к большему.",
+  "source": "@site/docs/howdo/contents/concrete_tasks/data_sorting.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/data_sorting",
+  "permalink": "/docs/howdo/contents/concrete_tasks/data_sorting",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.9. Как сделать вытягивание случайных карт из колоды?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/choose_random_card"
+  },
+  "next": {
+    "title": "20.11. Как сделать проценты?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/make_percents"
+  }
+}

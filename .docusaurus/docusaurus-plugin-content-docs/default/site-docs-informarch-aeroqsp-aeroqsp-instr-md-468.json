@@ -1,0 +1,26 @@
+{
+  "id": "informarch/aeroqsp/aeroqsp_instr",
+  "title": "Инструкция по использованию AeroQSP совместно с Quest Generator",
+  "description": "1. Скачиваем https://qsp.org/misc/aero/aerodev.zip",
+  "source": "@site/docs/informarch/aeroqsp/aeroqsp_instr.md",
+  "sourceDirName": "informarch/aeroqsp",
+  "slug": "/informarch/aeroqsp/aeroqsp_instr",
+  "permalink": "/docs/informarch/aeroqsp/aeroqsp_instr",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Что такое AeroQSP?",
+    "permalink": "/docs/informarch/aeroqsp/wit/"
+  },
+  "next": {
+    "title": "Справка по AeroQSP (в дополнение к основной справке QSP)",
+    "permalink": "/docs/informarch/aeroqsp/aeroqsp_help"
+  }
+}

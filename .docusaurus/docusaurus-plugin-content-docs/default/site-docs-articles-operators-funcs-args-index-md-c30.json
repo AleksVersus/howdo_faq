@@ -1,0 +1,26 @@
+{
+  "id": "articles/operators_funcs_args/index",
+  "title": "Операторы, функции, аргументы. GOSUB, FUNC, ARGS",
+  "description": "Очень часто новички, пришедшие в QSP, задают вопрос: что такое ARGS, и как их использовать? И хотя информации по данному вопросу очень много, вся она довольно разрознена, отвечает на вопрос слишком общо, или слишком конкретно, вплоть до одного единственного примера.",
+  "source": "@site/docs/articles/operators_funcs_args/index.md",
+  "sourceDirName": "articles/operators_funcs_args",
+  "slug": "/articles/operators_funcs_args/",
+  "permalink": "/docs/articles/operators_funcs_args/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Структура конфигурационного файла классического плеера версии 5.7.0",
+    "permalink": "/docs/articles/config_classic_570"
+  },
+  "next": {
+    "title": "Манифест об организации кода в QSP",
+    "permalink": "/docs/articles/stylization_manifest"
+  }
+}

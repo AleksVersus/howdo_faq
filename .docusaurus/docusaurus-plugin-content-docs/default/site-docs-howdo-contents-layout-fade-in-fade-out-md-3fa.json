@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/layout/fade_in_fade_out",
+  "title": "16.02. Возможно ли сделать плавный переход между локациями?",
+  "description": "В: Возможно ли сделать плавный переход между локациями?",
+  "source": "@site/docs/howdo/contents/layout/fade_in_fade_out.md",
+  "sourceDirName": "howdo/contents/layout",
+  "slug": "/howdo/contents/layout/fade_in_fade_out",
+  "permalink": "/docs/howdo/contents/layout/fade_in_fade_out",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "16.01. Можно ли писать текст поверх вставленной картинки (не бэкграунда)?",
+    "permalink": "/docs/howdo/contents/layout/text_over_image"
+  },
+  "next": {
+    "title": "16.03. Как расположить картинку справа, а текст слева?",
+    "permalink": "/docs/howdo/contents/layout/alignment"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "articles/arrays_580/index",
+  "title": "Массивы уже не те",
+  "description": "Как ведут себя массивы сейчас",
+  "source": "@site/docs/articles/arrays_580/index.md",
+  "sourceDirName": "articles/arrays_580",
+  "slug": "/articles/arrays_580/",
+  "permalink": "/docs/articles/arrays_580/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Преобразование типов в QSP",
+    "permalink": "/docs/articles/type_casting"
+  },
+  "next": {
+    "title": "Что нового в QSP",
+    "permalink": "/docs/articles/news_580"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/saves/forbidden_saves",
+  "title": "17.1. Как запретить игроку самостоятельно сохранять игру?",
+  "description": "В: Как запретить игроку самостоятельно сохранять игру?",
+  "source": "@site/docs/howdo/contents/saves/forbidden_saves.md",
+  "sourceDirName": "howdo/contents/saves",
+  "slug": "/howdo/contents/saves/forbidden_saves",
+  "permalink": "/docs/howdo/contents/saves/forbidden_saves",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "16.10. Как работать с тегами MAP и AREA?",
+    "permalink": "/docs/howdo/contents/layout/map_area"
+  },
+  "next": {
+    "title": "17.2.  Во время теста игры делал сохранения, затем внёс в игру несколько правок, но сохранения перестали загружаться. Почему так происходит, и что теперь делать?",
+    "permalink": "/docs/howdo/contents/saves/not_load_saves"
+  }
+}

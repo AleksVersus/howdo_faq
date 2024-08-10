@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/sound/turn_down",
+  "title": "6.5. Как приглушить музыку?",
+  "description": "В: Как приглушить музыку?",
+  "source": "@site/docs/howdo/contents/sound/turn_down.md",
+  "sourceDirName": "howdo/contents/sound",
+  "slug": "/howdo/contents/sound/turn_down",
+  "permalink": "/docs/howdo/contents/sound/turn_down",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "6.4. Как перезапустить звуковую дорожку?",
+    "permalink": "/docs/howdo/contents/sound/soundtrack_restart"
+  },
+  "next": {
+    "title": "6.6. Как зациклить мелодию?",
+    "permalink": "/docs/howdo/contents/sound/loop_soundtrack"
+  }
+}

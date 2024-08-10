@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/use_arrays",
+  "title": "Использование массивов",
+  "description": "Вкратце",
+  "source": "@site/docs/informarch/program/use_arrays.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/use_arrays",
+  "permalink": "/docs/informarch/program/use_arrays",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 304,
+  "frontMatter": {
+    "sidebar_position": 304
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Гибкий плейлист 1.0",
+    "permalink": "/docs/informarch/program/lib_flex_playlist"
+  },
+  "next": {
+    "title": "Библиотечка дополняющая инвентарь 0.76",
+    "permalink": "/docs/informarch/program/lib_extend_inventory"
+  }
+}

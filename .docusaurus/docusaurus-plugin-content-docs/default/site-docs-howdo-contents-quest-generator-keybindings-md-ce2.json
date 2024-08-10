@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/quest generator/keybindings",
+  "title": "21.2. Делаю преформатирование пробелами, чтобы появлялась вертикальная полоска, так нагляднее. Нет ли какой-то комбинации клавиш, чтобы не тыкать пробел по пять раз?",
+  "description": "В: Делаю преформатирование пробелами, чтобы появлялась вертикальная полоска, так нагляднее. Нет ли какой-то комбинации клавиш, чтобы не тыкать пробел по пять раз?",
+  "source": "@site/docs/howdo/contents/quest generator/keybindings.md",
+  "sourceDirName": "howdo/contents/quest generator",
+  "slug": "/howdo/contents/quest generator/keybindings",
+  "permalink": "/docs/howdo/contents/quest generator/keybindings",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.24. Как проще заполнять массив?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/simple_fill_array"
+  },
+  "next": {
+    "title": "21.3. Как свернуть кусочек кода, написанный под комментарием?",
+    "permalink": "/docs/howdo/contents/quest generator/code_folding"
+  }
+}

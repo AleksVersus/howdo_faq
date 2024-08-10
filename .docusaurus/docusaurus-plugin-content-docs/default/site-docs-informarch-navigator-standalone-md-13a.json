@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/standalone",
+  "title": "22.8. Как делать standalone-сборку на Навигаторе?",
+  "description": "Эта статья устарела. Новый плеер с поддержкой HTML - qSpider.",
+  "source": "@site/docs/informarch/navigator/standalone.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/standalone",
+  "permalink": "/docs/informarch/navigator/standalone",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.7. Как вставить видео в игру на Навигаторе?",
+    "permalink": "/docs/informarch/navigator/video"
+  },
+  "next": {
+    "title": "22.9. Где в Quest Navigator править размер окна с игрой?",
+    "permalink": "/docs/informarch/navigator/windows_size"
+  }
+}

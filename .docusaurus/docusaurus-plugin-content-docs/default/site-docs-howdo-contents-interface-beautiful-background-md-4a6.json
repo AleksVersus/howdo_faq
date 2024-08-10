@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/beautiful_background",
+  "title": "10.4. Как сделать красивый фон в классическом плеере? Добавляю через $backimage — картинка выглядит несуразно.",
+  "description": "Данное решение подходит только для классического плеера.",
+  "source": "@site/docs/howdo/contents/interface/beautiful_background.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/beautiful_background",
+  "permalink": "/docs/howdo/contents/interface/beautiful_background",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.3. Как изменить формат части текста? Размер, цвет, наклон и т.д.?",
+    "permalink": "/docs/howdo/contents/interface/text_formatting"
+  },
+  "next": {
+    "title": "10.5. Хочу, чтоб в игре окна располагались определённым образом. Как это сделать?",
+    "permalink": "/docs/howdo/contents/interface/windows_settings"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/menu/menu_separator",
+  "title": "4.6. Как вставить разделитель в меню?",
+  "description": "В: Как вставить разделитель в меню?",
+  "source": "@site/docs/howdo/contents/menu/menu_separator.md",
+  "sourceDirName": "howdo/contents/menu",
+  "slug": "/howdo/contents/menu/menu_separator",
+  "permalink": "/docs/howdo/contents/menu/menu_separator",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "4.5. Как делать контекстное (динамическое) меню?",
+    "permalink": "/docs/howdo/contents/menu/context_menu"
+  },
+  "next": {
+    "title": "4.7. Как вставить картинки в меню?",
+    "permalink": "/docs/howdo/contents/menu/image_in_menu"
+  }
+}

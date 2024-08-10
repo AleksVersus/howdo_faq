@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/libs_n_mods/inclib_openqst",
+  "title": "18.1. Чем отличаются команды inclib и openqst?",
+  "description": "В: Чем отличаются команды inclib и openqst?",
+  "source": "@site/docs/howdo/contents/libs_n_mods/inclib_openqst.md",
+  "sourceDirName": "howdo/contents/libs_n_mods",
+  "slug": "/howdo/contents/libs_n_mods/inclib_openqst",
+  "permalink": "/docs/howdo/contents/libs_n_mods/inclib_openqst",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "17.4. Как написать действие, которое при каждом клике сохраняло бы игру в файлы \"1.sav\" и \"2.sav\" поочерёдно?",
+    "permalink": "/docs/howdo/contents/saves/two_save_files"
+  },
+  "next": {
+    "title": "18.2. Как сделать лаунчер?",
+    "permalink": "/docs/howdo/contents/libs_n_mods/launcher"
+  }
+}

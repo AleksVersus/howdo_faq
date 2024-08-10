@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/not_work/iif",
+  "title": "13.3. Не работает IIF!",
+  "description": "В: Не работает IIF!",
+  "source": "@site/docs/howdo/contents/not_work/iif.md",
+  "sourceDirName": "howdo/contents/not_work",
+  "slug": "/howdo/contents/not_work/iif",
+  "permalink": "/docs/howdo/contents/not_work/iif",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "13.2. Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?",
+    "permalink": "/docs/howdo/contents/not_work/tags"
+  },
+  "next": {
+    "title": "13.4. Пытаюсь сделать кликабельную картинку с помощью тегов MAP и AREA, но ничего не получается",
+    "permalink": "/docs/howdo/contents/not_work/map_area"
+  }
+}

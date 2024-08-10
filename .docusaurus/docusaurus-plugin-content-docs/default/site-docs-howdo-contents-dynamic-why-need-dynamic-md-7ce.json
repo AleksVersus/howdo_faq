@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/dynamic/why_need_dynamic",
+  "title": "12.1. Зачем нужен оператор dynamic?",
+  "description": "В: Зачем нужен оператор dynamic?",
+  "source": "@site/docs/howdo/contents/dynamic/why_need_dynamic.md",
+  "sourceDirName": "howdo/contents/dynamic",
+  "slug": "/howdo/contents/dynamic/why_need_dynamic",
+  "permalink": "/docs/howdo/contents/dynamic/why_need_dynamic",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "11.7. Как упростить взаимоисключающие условия?",
+    "permalink": "/docs/howdo/contents/condition/xor"
+  },
+  "next": {
+    "title": "12.2. Можно ли сделать переменную с рандомным (случайным) названием?",
+    "permalink": "/docs/howdo/contents/dynamic/random_variable"
+  }
+}

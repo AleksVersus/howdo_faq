@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/lib_flex_playlist",
+  "title": "Гибкий плейлист 1.0",
+  "description": "Модуль разрабатывался для плееров версии ниже 5.8.0.",
+  "source": "@site/docs/informarch/program/lib_flex_playlist.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/lib_flex_playlist",
+  "permalink": "/docs/informarch/program/lib_flex_playlist",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 303,
+  "frontMatter": {
+    "sidebar_position": 303
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Игровое время [1.0]",
+    "permalink": "/docs/informarch/program/game_time"
+  },
+  "next": {
+    "title": "Использование массивов",
+    "permalink": "/docs/informarch/program/use_arrays"
+  }
+}

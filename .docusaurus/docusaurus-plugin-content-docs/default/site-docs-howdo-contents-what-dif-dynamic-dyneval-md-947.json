@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/what_dif/dynamic_dyneval",
+  "title": "1.6. В чём разница между dynamic и dyneval?",
+  "description": "В: В чём разница между dynamic и dyneval?",
+  "source": "@site/docs/howdo/contents/what_dif/dynamic_dyneval.md",
+  "sourceDirName": "howdo/contents/what_dif",
+  "slug": "/howdo/contents/what_dif/dynamic_dyneval",
+  "permalink": "/docs/howdo/contents/what_dif/dynamic_dyneval",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "1.5. Чем отличаются эти две команды? *pl \"<<$perem>>\" и *pl $perem",
+    "permalink": "/docs/howdo/contents/what_dif/subexpression"
+  },
+  "next": {
+    "title": "1.7. В чём разница между gt и goto?",
+    "permalink": "/docs/howdo/contents/what_dif/gt_goto"
+  }
+}

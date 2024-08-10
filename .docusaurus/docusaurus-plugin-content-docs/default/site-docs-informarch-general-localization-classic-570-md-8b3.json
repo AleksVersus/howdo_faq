@@ -1,0 +1,26 @@
+{
+  "id": "informarch/general/localization_classic_570",
+  "title": "Локализация классического плеера QSP версии 5.7.0",
+  "description": "Пишу на QSP полуигровой дипломный проект. Всё круто. Но научрука смущают пункты меню плеера вроде \"квест\", \"игра\". Понимаю, что можно поменять названия пунктов в файле языка \"*.mo\", но не понимаю как. По сему вопрос - Существуют ли способы создания своих файлов языка для интерфейса плеера? И если это как-то очевидно и я просмотрел, то заранее извиняюсь smile",
+  "source": "@site/docs/informarch/general/localization_classic_570.md",
+  "sourceDirName": "informarch/general",
+  "slug": "/informarch/general/localization_classic_570",
+  "permalink": "/docs/informarch/general/localization_classic_570",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Учебник по QSP для редактора QGen",
+    "permalink": "/docs/informarch/general/qgen_dev_guide/"
+  },
+  "next": {
+    "title": "Анализатор кода QSP",
+    "permalink": "/docs/informarch/general/code_analyser"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/window_background",
+  "title": "10.9. Как изменить цвет фона для отдельного окна?",
+  "description": "В: Как изменить цвет фона для отдельного окна?",
+  "source": "@site/docs/howdo/contents/interface/window_background.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/window_background",
+  "permalink": "/docs/howdo/contents/interface/window_background",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.8. Как изменить цвет подсветки действий?",
+    "permalink": "/docs/howdo/contents/interface/actions_highlight"
+  },
+  "next": {
+    "title": "10.10. Как сделать плавное появление текста?",
+    "permalink": "/docs/howdo/contents/interface/smooth_text_fade_in"
+  }
+}

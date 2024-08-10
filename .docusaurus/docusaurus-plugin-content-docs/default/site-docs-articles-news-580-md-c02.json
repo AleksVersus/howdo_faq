@@ -1,0 +1,26 @@
+{
+  "id": "articles/news_580",
+  "title": "Что нового в QSP",
+  "description": "Пока готовится выход нового плеера версии 5.8.0 (или выше), мы решили рассказать о грядущих нововведениях. Всё (или почти всё), что будет представлено в этой статье, вы уже можете пощупать в плеере \"qSpider\" от Werewolf`а.",
+  "source": "@site/docs/articles/news_580.md",
+  "sourceDirName": "articles",
+  "slug": "/articles/news_580",
+  "permalink": "/docs/articles/news_580",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Массивы уже не те",
+    "permalink": "/docs/articles/arrays_580/"
+  },
+  "next": {
+    "title": "qSpider версии 0.12.0",
+    "permalink": "/docs/articles/qspider_0120/"
+  }
+}

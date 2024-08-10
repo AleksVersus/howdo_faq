@@ -1,0 +1,22 @@
+{
+  "id": "informarch/bookmarks",
+  "title": "Подборка ссылок на различные ресурсы, справки и статьи",
+  "description": "Официальный сайт QSP",
+  "source": "@site/docs/informarch/bookmarks.md",
+  "sourceDirName": "informarch",
+  "slug": "/informarch/bookmarks",
+  "permalink": "/docs/informarch/bookmarks",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 999,
+  "frontMatter": {
+    "sidebar_position": 999
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Добавление и удаление игр из списка",
+    "permalink": "/docs/informarch/qspider/deleting_games"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/layout/alignment",
+  "title": "16.03. Как расположить картинку справа, а текст слева?",
+  "description": "В: Как расположить картинку справа, а текст слева?",
+  "source": "@site/docs/howdo/contents/layout/alignment.md",
+  "sourceDirName": "howdo/contents/layout",
+  "slug": "/howdo/contents/layout/alignment",
+  "permalink": "/docs/howdo/contents/layout/alignment",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "16.02. Возможно ли сделать плавный переход между локациями?",
+    "permalink": "/docs/howdo/contents/layout/fade_in_fade_out"
+  },
+  "next": {
+    "title": "16.04. Как ограничить размер выводимого изображения?",
+    "permalink": "/docs/howdo/contents/layout/image_size"
+  }
+}

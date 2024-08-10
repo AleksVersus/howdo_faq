@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/text_thinning",
+  "title": "20.13. Как разредить текст пробелами?",
+  "description": "В: Как разредить текст пробелами?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/text_thinning.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/text_thinning",
+  "permalink": "/docs/howdo/contents/concrete_tasks/text_thinning",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "sidebar_position": 13
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.12. Как решить задачу по поиску случайного набора слагаемых?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/decomposing_in_terms"
+  },
+  "next": {
+    "title": "20.14. Как сделать записную книжку в игре?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/make_notes"
+  }
+}

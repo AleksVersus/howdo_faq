@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/template_settings",
+  "title": "22.5. Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать?",
+  "description": "Новый плеер с поддержкой HTML - qSpider",
+  "source": "@site/docs/informarch/navigator/template_settings.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/template_settings",
+  "permalink": "/docs/informarch/navigator/template_settings",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.4. Хочу прописать игре собственный вид курсора, как это сделать?",
+    "permalink": "/docs/informarch/navigator/change_cursor"
+  },
+  "next": {
+    "title": "22.6. Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?",
+    "permalink": "/docs/informarch/navigator/proverka_pleera"
+  }
+}

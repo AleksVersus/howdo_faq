@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/layout/text_over_image",
+  "title": "16.01. Можно ли писать текст поверх вставленной картинки (не бэкграунда)?",
+  "description": "В: Можно ли писать текст поверх вставленной картинки (не бэкграунда)?",
+  "source": "@site/docs/howdo/contents/layout/text_over_image.md",
+  "sourceDirName": "howdo/contents/layout",
+  "slug": "/howdo/contents/layout/text_over_image",
+  "permalink": "/docs/howdo/contents/layout/text_over_image",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "15.2. Как задействовать строку ввода в игре?",
+    "permalink": "/docs/howdo/contents/input/use_input_string"
+  },
+  "next": {
+    "title": "16.02. Возможно ли сделать плавный переход между локациями?",
+    "permalink": "/docs/howdo/contents/layout/fade_in_fade_out"
+  }
+}

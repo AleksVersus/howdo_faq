@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/sound/loop_soundtrack",
+  "title": "6.6. Как зациклить мелодию?",
+  "description": "В: Как зациклить мелодию?",
+  "source": "@site/docs/howdo/contents/sound/loop_soundtrack.md",
+  "sourceDirName": "howdo/contents/sound",
+  "slug": "/howdo/contents/sound/loop_soundtrack",
+  "permalink": "/docs/howdo/contents/sound/loop_soundtrack",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "6.5. Как приглушить музыку?",
+    "permalink": "/docs/howdo/contents/sound/turn_down"
+  },
+  "next": {
+    "title": "6.7. Как сделать плейлист?",
+    "permalink": "/docs/howdo/contents/sound/playlists"
+  }
+}

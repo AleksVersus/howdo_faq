@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/lib_extend_inventory",
+  "title": "Библиотечка дополняющая инвентарь 0.76",
+  "description": "Модуль разрабатывался для плееров версии ниже 5.8.0.",
+  "source": "@site/docs/informarch/program/lib_extend_inventory.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/lib_extend_inventory",
+  "permalink": "/docs/informarch/program/lib_extend_inventory",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 305,
+  "frontMatter": {
+    "sidebar_position": 305
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Использование массивов",
+    "permalink": "/docs/informarch/program/use_arrays"
+  },
+  "next": {
+    "title": "Действие по условию",
+    "permalink": "/docs/informarch/program/conditional_actions"
+  }
+}

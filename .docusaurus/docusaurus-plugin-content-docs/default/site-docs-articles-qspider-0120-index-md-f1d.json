@@ -1,0 +1,26 @@
+{
+  "id": "articles/qspider_0120/index",
+  "title": "qSpider версии 0.12.0",
+  "description": "qSpider — это QSP-плеер с поддержкой полноценной браузерной HTML-вёрстки, то есть в нём можно использовать такой же HTML-код, как в обычном браузере. Более того существует два варианта плеера: браузерный вариант (запускается непосредственно в браузере, и потому данный вариант можно использовать, например, для публикации игр на QSP в интернете) и десктопный вариант (для стационарных компьютеров, запускается без браузера). Изначально qSpider разрабатывался для поддержки AeroQSP игр (так как технология flash прекратила своё существование), однако позже плеер был переориентирован в основном на поддержку классических игр. Тем не менее возможность запуска игр AeroQSP сохранилась, хотя для их полноценной работы может понадобиться небольшая правка.",
+  "source": "@site/docs/articles/qspider_0120/index.md",
+  "sourceDirName": "articles/qspider_0120",
+  "slug": "/articles/qspider_0120/",
+  "permalink": "/docs/articles/qspider_0120/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Что нового в QSP",
+    "permalink": "/docs/articles/news_580"
+  },
+  "next": {
+    "title": "Структура конфигурационного файла классического плеера версии 5.7.0",
+    "permalink": "/docs/articles/config_classic_570"
+  }
+}

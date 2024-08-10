@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/dynamic/not_work_dynamic",
+  "title": "12.4. Почему не работает dynamic?",
+  "description": "В:    Почему не работает dynamic?",
+  "source": "@site/docs/howdo/contents/dynamic/not_work_dynamic.md",
+  "sourceDirName": "howdo/contents/dynamic",
+  "slug": "/howdo/contents/dynamic/not_work_dynamic",
+  "permalink": "/docs/howdo/contents/dynamic/not_work_dynamic",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "12.3. Создаю действия с помощью цикла, но они работают неправильно. Что делать?",
+    "permalink": "/docs/howdo/contents/dynamic/cycling_actions_create"
+  },
+  "next": {
+    "title": "13.1. Рисую таблицу и хочу зафиксировать высоту, но атрибут height не работает.",
+    "permalink": "/docs/howdo/contents/not_work/attrib_height"
+  }
+}

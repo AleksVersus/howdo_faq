@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/msg_input/modal_confirm",
+  "title": "3.3. Как прикрутить возможность выбора варианта к окну msg?",
+  "description": "В: Как прикрутить возможность выбора варианта к окну msg?",
+  "source": "@site/docs/howdo/contents/msg_input/modal_confirm.md",
+  "sourceDirName": "howdo/contents/msg_input",
+  "slug": "/howdo/contents/msg_input/modal_confirm",
+  "permalink": "/docs/howdo/contents/msg_input/modal_confirm",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "3.2. Как вывести на экран окошко, в котором игрок должен ввести текст?",
+    "permalink": "/docs/howdo/contents/msg_input/modal_prompt"
+  },
+  "next": {
+    "title": "3.4. Как сделать ввод имени игроком?",
+    "permalink": "/docs/howdo/contents/msg_input/players_input_name"
+  }
+}

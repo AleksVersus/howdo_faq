@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/not_work/condition",
+  "title": "13.12. Не работает условие. Как исправить?",
+  "description": "В: Не работает условие. Как исправить?",
+  "source": "@site/docs/howdo/contents/not_work/condition.md",
+  "sourceDirName": "howdo/contents/not_work",
+  "slug": "/howdo/contents/not_work/condition",
+  "permalink": "/docs/howdo/contents/not_work/condition",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "13.11. Сколько END'ов нужно добавить?",
+    "permalink": "/docs/howdo/contents/not_work/end"
+  },
+  "next": {
+    "title": "13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!",
+    "permalink": "/docs/howdo/contents/not_work/fractional_numbers"
+  }
+}

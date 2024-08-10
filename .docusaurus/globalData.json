@@ -1,0 +1,1221 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "ds/intro",
+          "docs": [
+            {
+              "id": "articles/arrays_580/index",
+              "path": "/docs/articles/arrays_580/",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/config_classic_570",
+              "path": "/docs/articles/config_classic_570",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/news_580",
+              "path": "/docs/articles/news_580",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/operators_funcs_args/index",
+              "path": "/docs/articles/operators_funcs_args/",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/qspider_0120/index",
+              "path": "/docs/articles/qspider_0120/",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/stylization_manifest",
+              "path": "/docs/articles/stylization_manifest",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "articles/type_casting",
+              "path": "/docs/articles/type_casting",
+              "sidebar": "articlesSidebar"
+            },
+            {
+              "id": "ds/intro",
+              "path": "/docs/ds/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/congratulations",
+              "path": "/docs/ds/tutorial-basics/congratulations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/create-a-blog-post",
+              "path": "/docs/ds/tutorial-basics/create-a-blog-post",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/create-a-document",
+              "path": "/docs/ds/tutorial-basics/create-a-document",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/create-a-page",
+              "path": "/docs/ds/tutorial-basics/create-a-page",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/deploy-your-site",
+              "path": "/docs/ds/tutorial-basics/deploy-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-basics/markdown-features",
+              "path": "/docs/ds/tutorial-basics/markdown-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-extras/code blocks",
+              "path": "/docs/ds/tutorial-extras/code blocks",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-extras/manage-docs-versions",
+              "path": "/docs/ds/tutorial-extras/manage-docs-versions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ds/tutorial-extras/translate-your-site",
+              "path": "/docs/ds/tutorial-extras/translate-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/actions_direct",
+              "path": "/docs/howdo/contents/concrete_tasks/actions_direct",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/arrays_comparison",
+              "path": "/docs/howdo/contents/concrete_tasks/arrays_comparison",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/check_for_even",
+              "path": "/docs/howdo/contents/concrete_tasks/check_for_even",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/choose_random_card",
+              "path": "/docs/howdo/contents/concrete_tasks/choose_random_card",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/data_sorting",
+              "path": "/docs/howdo/contents/concrete_tasks/data_sorting",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/decomposing_in_terms",
+              "path": "/docs/howdo/contents/concrete_tasks/decomposing_in_terms",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/goto_back",
+              "path": "/docs/howdo/contents/concrete_tasks/goto_back",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/how_much_variables",
+              "path": "/docs/howdo/contents/concrete_tasks/how_much_variables",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/html_clear_preformatting",
+              "path": "/docs/howdo/contents/concrete_tasks/html_clear_preformatting",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/html_with_usehtml",
+              "path": "/docs/howdo/contents/concrete_tasks/html_with_usehtml",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/item_drop_chance",
+              "path": "/docs/howdo/contents/concrete_tasks/item_drop_chance",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/make_book",
+              "path": "/docs/howdo/contents/concrete_tasks/make_book",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/make_chest",
+              "path": "/docs/howdo/contents/concrete_tasks/make_chest",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/make_notes",
+              "path": "/docs/howdo/contents/concrete_tasks/make_notes",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/make_percents",
+              "path": "/docs/howdo/contents/concrete_tasks/make_percents",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/maximal_variable",
+              "path": "/docs/howdo/contents/concrete_tasks/maximal_variable",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/one_off_location",
+              "path": "/docs/howdo/contents/concrete_tasks/one_off_location",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/print_text_top",
+              "path": "/docs/howdo/contents/concrete_tasks/print_text_top",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/random_action",
+              "path": "/docs/howdo/contents/concrete_tasks/random_action",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/random_goto",
+              "path": "/docs/howdo/contents/concrete_tasks/random_goto",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/random_item",
+              "path": "/docs/howdo/contents/concrete_tasks/random_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/replace_text_part",
+              "path": "/docs/howdo/contents/concrete_tasks/replace_text_part",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/simple_fill_array",
+              "path": "/docs/howdo/contents/concrete_tasks/simple_fill_array",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/concrete_tasks/text_thinning",
+              "path": "/docs/howdo/contents/concrete_tasks/text_thinning",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/conditional_action",
+              "path": "/docs/howdo/contents/condition/conditional_action",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/conditional_message",
+              "path": "/docs/howdo/contents/condition/conditional_message",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/conditional_text",
+              "path": "/docs/howdo/contents/condition/conditional_text",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/desactivated_action",
+              "path": "/docs/howdo/contents/condition/desactivated_action",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/number_as_condition",
+              "path": "/docs/howdo/contents/condition/number_as_condition",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/simplificate_condition",
+              "path": "/docs/howdo/contents/condition/simplificate_condition",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/condition/xor",
+              "path": "/docs/howdo/contents/condition/xor",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/counter/distributed_cycle",
+              "path": "/docs/howdo/contents/counter/distributed_cycle",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/counter/promise_action",
+              "path": "/docs/howdo/contents/counter/promise_action",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/counter/promise_goto",
+              "path": "/docs/howdo/contents/counter/promise_goto",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/counter/realtime_variable_change",
+              "path": "/docs/howdo/contents/counter/realtime_variable_change",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/dynamic/cycling_actions_create",
+              "path": "/docs/howdo/contents/dynamic/cycling_actions_create",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/dynamic/not_work_dynamic",
+              "path": "/docs/howdo/contents/dynamic/not_work_dynamic",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/dynamic/random_variable",
+              "path": "/docs/howdo/contents/dynamic/random_variable",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/dynamic/why_need_dynamic",
+              "path": "/docs/howdo/contents/dynamic/why_need_dynamic",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/ascii_graphics",
+              "path": "/docs/howdo/contents/extended/ascii_graphics",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/debugger",
+              "path": "/docs/howdo/contents/extended/debugger",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/hack_protection",
+              "path": "/docs/howdo/contents/extended/hack_protection",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/how_insert_video",
+              "path": "/docs/howdo/contents/extended/how_insert_video",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/how_use_keyboard",
+              "path": "/docs/howdo/contents/extended/how_use_keyboard",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/letter_by_letter",
+              "path": "/docs/howdo/contents/extended/letter_by_letter",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/print_text_bottom_top",
+              "path": "/docs/howdo/contents/extended/print_text_bottom_top",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/skip_chapters",
+              "path": "/docs/howdo/contents/extended/skip_chapters",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/variables_refresh",
+              "path": "/docs/howdo/contents/extended/variables_refresh",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/extended/what_device",
+              "path": "/docs/howdo/contents/extended/what_device",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/hyperlink/how_make_hypelinks",
+              "path": "/docs/howdo/contents/hyperlink/how_make_hypelinks",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/hyperlink/hyperlinks_color",
+              "path": "/docs/howdo/contents/hyperlink/hyperlinks_color",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/hyperlink/hyperlinks_complex_code",
+              "path": "/docs/howdo/contents/hyperlink/hyperlinks_complex_code",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/hyperlink/hyperlinks_none_underline",
+              "path": "/docs/howdo/contents/hyperlink/hyperlinks_none_underline",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/changable_image",
+              "path": "/docs/howdo/contents/images/changable_image",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/clickable_image",
+              "path": "/docs/howdo/contents/images/clickable_image",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/gif_in_game",
+              "path": "/docs/howdo/contents/images/gif_in_game",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/image_in_action",
+              "path": "/docs/howdo/contents/images/image_in_action",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/image_in_game",
+              "path": "/docs/howdo/contents/images/image_in_game",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/image_to_background",
+              "path": "/docs/howdo/contents/images/image_to_background",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/images_in_layers",
+              "path": "/docs/howdo/contents/images/images_in_layers",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/images/random_image",
+              "path": "/docs/howdo/contents/images/random_image",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/input/use_input_string",
+              "path": "/docs/howdo/contents/input/use_input_string",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/input/why_need_input_string",
+              "path": "/docs/howdo/contents/input/why_need_input_string",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/actions_highlight",
+              "path": "/docs/howdo/contents/interface/actions_highlight",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/actions_unselect",
+              "path": "/docs/howdo/contents/interface/actions_unselect",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/background_color",
+              "path": "/docs/howdo/contents/interface/background_color",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/beautiful_background",
+              "path": "/docs/howdo/contents/interface/beautiful_background",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/fixed_preview_window",
+              "path": "/docs/howdo/contents/interface/fixed_preview_window",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/refint",
+              "path": "/docs/howdo/contents/interface/refint",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/smooth_text_fade_in",
+              "path": "/docs/howdo/contents/interface/smooth_text_fade_in",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/text_formatting",
+              "path": "/docs/howdo/contents/interface/text_formatting",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/user_font",
+              "path": "/docs/howdo/contents/interface/user_font",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/window_background",
+              "path": "/docs/howdo/contents/interface/window_background",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/windows_settings",
+              "path": "/docs/howdo/contents/interface/windows_settings",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/interface/windows_sizes",
+              "path": "/docs/howdo/contents/interface/windows_sizes",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/add_item",
+              "path": "/docs/howdo/contents/items/add_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/add_item_in_pos",
+              "path": "/docs/howdo/contents/items/add_item_in_pos",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/del_all_items",
+              "path": "/docs/howdo/contents/items/del_all_items",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/del_item",
+              "path": "/docs/howdo/contents/items/del_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/images_item",
+              "path": "/docs/howdo/contents/items/images_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/item_without_inventory",
+              "path": "/docs/howdo/contents/items/item_without_inventory",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/multi_leveled_backpack",
+              "path": "/docs/howdo/contents/items/multi_leveled_backpack",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/one_named_items",
+              "path": "/docs/howdo/contents/items/one_named_items",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/onobjadd",
+              "path": "/docs/howdo/contents/items/onobjadd",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/onobjsel",
+              "path": "/docs/howdo/contents/items/onobjsel",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/replace_item",
+              "path": "/docs/howdo/contents/items/replace_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/stackable_items",
+              "path": "/docs/howdo/contents/items/stackable_items",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/two_lists_of_items",
+              "path": "/docs/howdo/contents/items/two_lists_of_items",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/items/unselect",
+              "path": "/docs/howdo/contents/items/unselect",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/alignment",
+              "path": "/docs/howdo/contents/layout/alignment",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/fade_in_fade_out",
+              "path": "/docs/howdo/contents/layout/fade_in_fade_out",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/image_reflection",
+              "path": "/docs/howdo/contents/layout/image_reflection",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/image_size",
+              "path": "/docs/howdo/contents/layout/image_size",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/items_table",
+              "path": "/docs/howdo/contents/layout/items_table",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/map_area",
+              "path": "/docs/howdo/contents/layout/map_area",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/text_over_image",
+              "path": "/docs/howdo/contents/layout/text_over_image",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/two_column_text",
+              "path": "/docs/howdo/contents/layout/two_column_text",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/under_table_artefacts",
+              "path": "/docs/howdo/contents/layout/under_table_artefacts",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/layout/windows_border",
+              "path": "/docs/howdo/contents/layout/windows_border",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/libs_n_mods/file_is_exist",
+              "path": "/docs/howdo/contents/libs_n_mods/file_is_exist",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/libs_n_mods/inclib_openqst",
+              "path": "/docs/howdo/contents/libs_n_mods/inclib_openqst",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/libs_n_mods/launcher",
+              "path": "/docs/howdo/contents/libs_n_mods/launcher",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/libs_n_mods/qproj_file",
+              "path": "/docs/howdo/contents/libs_n_mods/qproj_file",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/libs_n_mods/tmp_file",
+              "path": "/docs/howdo/contents/libs_n_mods/tmp_file",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/args_to_menu_item",
+              "path": "/docs/howdo/contents/menu/args_to_menu_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/context_menu",
+              "path": "/docs/howdo/contents/menu/context_menu",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/different_menus",
+              "path": "/docs/howdo/contents/menu/different_menus",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/image_in_menu",
+              "path": "/docs/howdo/contents/menu/image_in_menu",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/menu_in_hyperlinks",
+              "path": "/docs/howdo/contents/menu/menu_in_hyperlinks",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/menu_of_item",
+              "path": "/docs/howdo/contents/menu/menu_of_item",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/menu/menu_separator",
+              "path": "/docs/howdo/contents/menu/menu_separator",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/msg_input/modal_alert_msg",
+              "path": "/docs/howdo/contents/msg_input/modal_alert_msg",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/msg_input/modal_confirm",
+              "path": "/docs/howdo/contents/msg_input/modal_confirm",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/msg_input/modal_input_variants",
+              "path": "/docs/howdo/contents/msg_input/modal_input_variants",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/msg_input/modal_prompt",
+              "path": "/docs/howdo/contents/msg_input/modal_prompt",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/msg_input/players_input_name",
+              "path": "/docs/howdo/contents/msg_input/players_input_name",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/attrib_height",
+              "path": "/docs/howdo/contents/not_work/attrib_height",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/condition",
+              "path": "/docs/howdo/contents/not_work/condition",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/end",
+              "path": "/docs/howdo/contents/not_work/end",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/fractional_numbers",
+              "path": "/docs/howdo/contents/not_work/fractional_numbers",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/iif",
+              "path": "/docs/howdo/contents/not_work/iif",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/jump",
+              "path": "/docs/howdo/contents/not_work/jump",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/manylines_code",
+              "path": "/docs/howdo/contents/not_work/manylines_code",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/manylines_condition",
+              "path": "/docs/howdo/contents/not_work/manylines_condition",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/map_area",
+              "path": "/docs/howdo/contents/not_work/map_area",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/star_print_line",
+              "path": "/docs/howdo/contents/not_work/star_print_line",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/not_work/tags",
+              "path": "/docs/howdo/contents/not_work/tags",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/onnewloc/args_translate",
+              "path": "/docs/howdo/contents/onnewloc/args_translate",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/onnewloc/back_button",
+              "path": "/docs/howdo/contents/onnewloc/back_button",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/onnewloc/system_locations",
+              "path": "/docs/howdo/contents/onnewloc/system_locations",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/quest generator/code_folding",
+              "path": "/docs/howdo/contents/quest generator/code_folding",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/quest generator/keybindings",
+              "path": "/docs/howdo/contents/quest generator/keybindings",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/restriction/actions_numbers",
+              "path": "/docs/howdo/contents/restriction/actions_numbers",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/restriction/inclib_numbers",
+              "path": "/docs/howdo/contents/restriction/inclib_numbers",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/restriction/varnames",
+              "path": "/docs/howdo/contents/restriction/varnames",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/saves/checkpoints",
+              "path": "/docs/howdo/contents/saves/checkpoints",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/saves/forbidden_saves",
+              "path": "/docs/howdo/contents/saves/forbidden_saves",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/saves/not_load_saves",
+              "path": "/docs/howdo/contents/saves/not_load_saves",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/saves/two_save_files",
+              "path": "/docs/howdo/contents/saves/two_save_files",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/break_soundtrack",
+              "path": "/docs/howdo/contents/sound/break_soundtrack",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/insert_soundtrack",
+              "path": "/docs/howdo/contents/sound/insert_soundtrack",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/loop_soundtrack",
+              "path": "/docs/howdo/contents/sound/loop_soundtrack",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/playlists",
+              "path": "/docs/howdo/contents/sound/playlists",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/soundtrack_restart",
+              "path": "/docs/howdo/contents/sound/soundtrack_restart",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/turn_down",
+              "path": "/docs/howdo/contents/sound/turn_down",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/sound/two_soundtracks",
+              "path": "/docs/howdo/contents/sound/two_soundtracks",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_command/clr",
+              "path": "/docs/howdo/contents/what_command/clr",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_command/curloc",
+              "path": "/docs/howdo/contents/what_command/curloc",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_command/exit_command",
+              "path": "/docs/howdo/contents/what_command/exit_command",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_command/print_line_in_stat_window",
+              "path": "/docs/howdo/contents/what_command/print_line_in_stat_window",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/dollar_sign",
+              "path": "/docs/howdo/contents/what_dif/dollar_sign",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/dynamic_dyneval",
+              "path": "/docs/howdo/contents/what_dif/dynamic_dyneval",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/goto_gosub",
+              "path": "/docs/howdo/contents/what_dif/goto_gosub",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/gt_goto",
+              "path": "/docs/howdo/contents/what_dif/gt_goto",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/inclib_openqst/index",
+              "path": "/docs/howdo/contents/what_dif/inclib_openqst/",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/pl_implicit_operator",
+              "path": "/docs/howdo/contents/what_dif/pl_implicit_operator",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/quotes_apostrophes",
+              "path": "/docs/howdo/contents/what_dif/quotes_apostrophes",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/set_let",
+              "path": "/docs/howdo/contents/what_dif/set_let",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/contents/what_dif/subexpression",
+              "path": "/docs/howdo/contents/what_dif/subexpression",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/history",
+              "path": "/docs/howdo/history",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/intro",
+              "path": "/docs/howdo/intro",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/links",
+              "path": "/docs/howdo/links",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-functions",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-functions",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-operacion",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-operacion",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-operators",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-operators",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-pointer",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-pointer",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-syntaxems",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-syntaxems",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "howdo/qsp_keywords/qsp-keyword-sys-var",
+              "path": "/docs/howdo/qsp_keywords/qsp-keyword-sys-var",
+              "sidebar": "howdoSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/aeroqsp_help",
+              "path": "/docs/informarch/aeroqsp/aeroqsp_help",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/aeroqsp_instr",
+              "path": "/docs/informarch/aeroqsp/aeroqsp_instr",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/guidebook",
+              "path": "/docs/informarch/aeroqsp/guidebook",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/not_work_attrib",
+              "path": "/docs/informarch/aeroqsp/not_work_attrib",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/not_work_hyperlink",
+              "path": "/docs/informarch/aeroqsp/not_work_hyperlink",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/standalone_aeroqsp",
+              "path": "/docs/informarch/aeroqsp/standalone_aeroqsp",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/aeroqsp/wit/index",
+              "path": "/docs/informarch/aeroqsp/wit/",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/bookmarks",
+              "path": "/docs/informarch/bookmarks",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/extrqsp/automat_programming/index",
+              "path": "/docs/informarch/extrqsp/automat_programming/",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/extrqsp/console_player",
+              "path": "/docs/informarch/extrqsp/console_player",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/general/code_analyser",
+              "path": "/docs/informarch/general/code_analyser",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/general/game_shelf",
+              "path": "/docs/informarch/general/game_shelf",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/general/localization_classic_570",
+              "path": "/docs/informarch/general/localization_classic_570",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/general/qgen_dev_guide/index",
+              "path": "/docs/informarch/general/qgen_dev_guide/",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/general/standalone_classic",
+              "path": "/docs/informarch/general/standalone_classic",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/intro",
+              "path": "/docs/informarch/intro",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/add_user_font",
+              "path": "/docs/informarch/navigator/add_user_font",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/change_background_color",
+              "path": "/docs/informarch/navigator/change_background_color",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/change_cursor",
+              "path": "/docs/informarch/navigator/change_cursor",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/change_interface",
+              "path": "/docs/informarch/navigator/change_interface",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/exec_js",
+              "path": "/docs/informarch/navigator/exec_js",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/externallinks",
+              "path": "/docs/informarch/navigator/externallinks",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/layout_templates",
+              "path": "/docs/informarch/navigator/layout_templates",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/modal_window",
+              "path": "/docs/informarch/navigator/modal_window",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/proverka_pleera",
+              "path": "/docs/informarch/navigator/proverka_pleera",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/standalone",
+              "path": "/docs/informarch/navigator/standalone",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/template_settings",
+              "path": "/docs/informarch/navigator/template_settings",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/video",
+              "path": "/docs/informarch/navigator/video",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/navigator/windows_size",
+              "path": "/docs/informarch/navigator/windows_size",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/choose_card_in_deck",
+              "path": "/docs/informarch/program/choose_card_in_deck",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/conditional_actions",
+              "path": "/docs/informarch/program/conditional_actions",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/debugger_200beta",
+              "path": "/docs/informarch/program/debugger_200beta",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/game_time",
+              "path": "/docs/informarch/program/game_time",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/julian_calendar",
+              "path": "/docs/informarch/program/julian_calendar",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/lib_extend_inventory",
+              "path": "/docs/informarch/program/lib_extend_inventory",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/lib_flex_playlist",
+              "path": "/docs/informarch/program/lib_flex_playlist",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/smooth_background",
+              "path": "/docs/informarch/program/smooth_background",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/program/use_arrays",
+              "path": "/docs/informarch/program/use_arrays",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/qspider/deleting_games",
+              "path": "/docs/informarch/qspider/deleting_games",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/review/compo_2010",
+              "path": "/docs/informarch/review/compo_2010",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/txtgam/preprocessor",
+              "path": "/docs/informarch/txtgam/preprocessor",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/txtgam/text_editor",
+              "path": "/docs/informarch/txtgam/text_editor",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/txtgam/txt2gam_for_linux",
+              "path": "/docs/informarch/txtgam/txt2gam_for_linux",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/txtgam/txt2gam_help",
+              "path": "/docs/informarch/txtgam/txt2gam_help",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/updates/classic_to_570",
+              "path": "/docs/informarch/updates/classic_to_570",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/wii_qsp/info",
+              "path": "/docs/informarch/wii_qsp/info",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/wii_qsp/our_way",
+              "path": "/docs/informarch/wii_qsp/our_way",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "informarch/wii_qsp/short_faq",
+              "path": "/docs/informarch/wii_qsp/short_faq",
+              "sidebar": "informArchSidebar"
+            },
+            {
+              "id": "/category/руководство---основы",
+              "path": "/docs/category/руководство---основы",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/руководство---остальное",
+              "path": "/docs/category/руководство---остальное",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/ds/intro",
+                "label": "ds/intro"
+              }
+            },
+            "informArchSidebar": {
+              "link": {
+                "path": "/docs/informarch/intro",
+                "label": "informarch/intro"
+              }
+            },
+            "articlesSidebar": {
+              "link": {
+                "path": "/docs/articles/type_casting",
+                "label": "articles/type_casting"
+              }
+            },
+            "howdoSidebar": {
+              "link": {
+                "path": "/docs/howdo/intro",
+                "label": "howdo/intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

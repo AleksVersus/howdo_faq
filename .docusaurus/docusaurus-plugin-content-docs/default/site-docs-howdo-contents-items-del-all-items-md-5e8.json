@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/items/del_all_items",
+  "title": "14.3. Как удалить все предметы?",
+  "description": "В: Как удалить все предметы?",
+  "source": "@site/docs/howdo/contents/items/del_all_items.md",
+  "sourceDirName": "howdo/contents/items",
+  "slug": "/howdo/contents/items/del_all_items",
+  "permalink": "/docs/howdo/contents/items/del_all_items",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "14.2. Как удалить предмет из окна предметов?",
+    "permalink": "/docs/howdo/contents/items/del_item"
+  },
+  "next": {
+    "title": "14.4. Как добавить предмет в определённую позицию в окне предметов?",
+    "permalink": "/docs/howdo/contents/items/add_item_in_pos"
+  }
+}

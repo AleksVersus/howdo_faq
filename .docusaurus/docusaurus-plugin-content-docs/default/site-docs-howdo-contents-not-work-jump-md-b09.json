@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/not_work/jump",
+  "title": "13.8. Не работает оператор JUMP — не может найти метку",
+  "description": "В: Не работает оператор JUMP — не может найти метку.",
+  "source": "@site/docs/howdo/contents/not_work/jump.md",
+  "sourceDirName": "howdo/contents/not_work",
+  "slug": "/howdo/contents/not_work/jump",
+  "permalink": "/docs/howdo/contents/not_work/jump",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "13.5. Не работает *pl в действии с goto",
+    "permalink": "/docs/howdo/contents/not_work/star_print_line"
+  },
+  "next": {
+    "title": "13.9. Не работает многострочное условие. Как исправить?",
+    "permalink": "/docs/howdo/contents/not_work/manylines_condition"
+  }
+}

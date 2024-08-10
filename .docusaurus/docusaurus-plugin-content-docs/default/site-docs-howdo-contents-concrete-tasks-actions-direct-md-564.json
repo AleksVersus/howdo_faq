@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/actions_direct",
+  "title": "20.16. Как заставить действия выводиться в нужном мне порядке?",
+  "description": "В: Как заставить действия выводиться в нужном мне порядке?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/actions_direct.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/actions_direct",
+  "permalink": "/docs/howdo/contents/concrete_tasks/actions_direct",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.15. Как сделать так, чтобы на локацию можно было зайти только один раз?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/one_off_location"
+  },
+  "next": {
+    "title": "20.17. Как сделать в игре книгу? Чтобы её можно было взять и потом прочитать?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/make_book"
+  }
+}

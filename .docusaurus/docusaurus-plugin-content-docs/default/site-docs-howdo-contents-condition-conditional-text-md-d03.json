@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/condition/conditional_text",
+  "title": "11.4. Как добавить текст, который будет выводиться только при выполнении определённого условия?",
+  "description": "В: Как добавить текст, который будет выводиться только при выполнении определённого условия?",
+  "source": "@site/docs/howdo/contents/condition/conditional_text.md",
+  "sourceDirName": "howdo/contents/condition",
+  "slug": "/howdo/contents/condition/conditional_text",
+  "permalink": "/docs/howdo/contents/condition/conditional_text",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "11.3. Видел в одной из игр, как после нажатия на действие, оно становится неактивным. Как это сделать?",
+    "permalink": "/docs/howdo/contents/condition/desactivated_action"
+  },
+  "next": {
+    "title": "11.5. Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий?",
+    "permalink": "/docs/howdo/contents/condition/conditional_message"
+  }
+}

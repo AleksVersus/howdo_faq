@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/smooth_text_fade_in",
+  "title": "10.10. Как сделать плавное появление текста?",
+  "description": "В:    Как сделать плавное появление текста?",
+  "source": "@site/docs/howdo/contents/interface/smooth_text_fade_in.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/smooth_text_fade_in",
+  "permalink": "/docs/howdo/contents/interface/smooth_text_fade_in",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.9. Как изменить цвет фона для отдельного окна?",
+    "permalink": "/docs/howdo/contents/interface/window_background"
+  },
+  "next": {
+    "title": "10.11. Как использовать в игре собственный шрифт?",
+    "permalink": "/docs/howdo/contents/interface/user_font"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/what_dif/subexpression",
+  "title": "1.5. Чем отличаются эти две команды? *pl \"<<$perem>>\" и *pl $perem",
+  "description": "В: Чем отличаются эти две команды?",
+  "source": "@site/docs/howdo/contents/what_dif/subexpression.md",
+  "sourceDirName": "howdo/contents/what_dif",
+  "slug": "/howdo/contents/what_dif/subexpression",
+  "permalink": "/docs/howdo/contents/what_dif/subexpression",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "1.4. В чём разница между *pl \"строка\" и просто \"строка\"?",
+    "permalink": "/docs/howdo/contents/what_dif/pl_implicit_operator"
+  },
+  "next": {
+    "title": "1.6. В чём разница между dynamic и dyneval?",
+    "permalink": "/docs/howdo/contents/what_dif/dynamic_dyneval"
+  }
+}

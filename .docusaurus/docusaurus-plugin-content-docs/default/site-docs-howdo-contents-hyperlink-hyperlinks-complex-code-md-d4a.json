@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/hyperlink/hyperlinks_complex_code",
+  "title": "7.3. Как помещать в гиперссылки сложный код?",
+  "description": "В: Как помещать в гиперссылки сложный код?",
+  "source": "@site/docs/howdo/contents/hyperlink/hyperlinks_complex_code.md",
+  "sourceDirName": "howdo/contents/hyperlink",
+  "slug": "/howdo/contents/hyperlink/hyperlinks_complex_code",
+  "permalink": "/docs/howdo/contents/hyperlink/hyperlinks_complex_code",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "7.2. Как менять цвет гиперссылки?",
+    "permalink": "/docs/howdo/contents/hyperlink/hyperlinks_color"
+  },
+  "next": {
+    "title": "7.4. Как сделать гиперссылки без подчёркивания?",
+    "permalink": "/docs/howdo/contents/hyperlink/hyperlinks_none_underline"
+  }
+}

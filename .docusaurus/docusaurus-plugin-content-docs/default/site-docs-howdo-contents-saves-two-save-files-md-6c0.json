@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/saves/two_save_files",
+  "title": "17.4. Как написать действие, которое при каждом клике сохраняло бы игру в файлы \"1.sav\" и \"2.sav\" поочерёдно?",
+  "description": "В:    Как написать действие, которое при каждом клике сохраняло бы игру в файлы \"1.sav\" и \"2.sav\" поочерёдно?",
+  "source": "@site/docs/howdo/contents/saves/two_save_files.md",
+  "sourceDirName": "howdo/contents/saves",
+  "slug": "/howdo/contents/saves/two_save_files",
+  "permalink": "/docs/howdo/contents/saves/two_save_files",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "17.3. Как сделать чекпойнты в игре?",
+    "permalink": "/docs/howdo/contents/saves/checkpoints"
+  },
+  "next": {
+    "title": "18.1. Чем отличаются команды inclib и openqst?",
+    "permalink": "/docs/howdo/contents/libs_n_mods/inclib_openqst"
+  }
+}

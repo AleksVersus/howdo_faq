@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/items/add_item",
+  "title": "14.1. Как добавить предмет в окно предметов?",
+  "description": "В: Как добавить предмет в окно предметов?",
+  "source": "@site/docs/howdo/contents/items/add_item.md",
+  "sourceDirName": "howdo/contents/items",
+  "slug": "/howdo/contents/items/add_item",
+  "permalink": "/docs/howdo/contents/items/add_item",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!",
+    "permalink": "/docs/howdo/contents/not_work/fractional_numbers"
+  },
+  "next": {
+    "title": "14.2. Как удалить предмет из окна предметов?",
+    "permalink": "/docs/howdo/contents/items/del_item"
+  }
+}

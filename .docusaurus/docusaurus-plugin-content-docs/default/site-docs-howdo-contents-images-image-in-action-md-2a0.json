@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/images/image_in_action",
+  "title": "9.3. Как вставить картинку в действие?",
+  "description": "В: Как вставить картинку в действие?",
+  "source": "@site/docs/howdo/contents/images/image_in_action.md",
+  "sourceDirName": "howdo/contents/images",
+  "slug": "/howdo/contents/images/image_in_action",
+  "permalink": "/docs/howdo/contents/images/image_in_action",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "9.2. Можно ли вставить в игру gif-файл?",
+    "permalink": "/docs/howdo/contents/images/gif_in_game"
+  },
+  "next": {
+    "title": "9.4. Как поставить картинку фоном?",
+    "permalink": "/docs/howdo/contents/images/image_to_background"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ds/intro",
+  "title": "Введение в обучающий курс",
+  "description": "Давайте изучим Docusaurus менее чем за 5 минут.",
+  "source": "@site/docs/ds/intro.md",
+  "sourceDirName": "ds",
+  "slug": "/ds/intro",
+  "permalink": "/docs/ds/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Руководство - основы",
+    "permalink": "/docs/category/руководство---основы"
+  }
+}

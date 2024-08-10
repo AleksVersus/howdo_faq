@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/condition/simplificate_condition",
+  "title": "11.6. Как упростить условие?",
+  "description": "В: Как упростить условие?",
+  "source": "@site/docs/howdo/contents/condition/simplificate_condition.md",
+  "sourceDirName": "howdo/contents/condition",
+  "slug": "/howdo/contents/condition/simplificate_condition",
+  "permalink": "/docs/howdo/contents/condition/simplificate_condition",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "11.5. Как сделать, чтобы в диалоговом окне текст набирался в зависимости от условий?",
+    "permalink": "/docs/howdo/contents/condition/conditional_message"
+  },
+  "next": {
+    "title": "11.7. Как упростить взаимоисключающие условия?",
+    "permalink": "/docs/howdo/contents/condition/xor"
+  }
+}

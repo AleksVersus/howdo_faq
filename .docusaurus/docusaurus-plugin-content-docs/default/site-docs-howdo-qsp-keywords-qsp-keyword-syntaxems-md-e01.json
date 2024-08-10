@@ -1,0 +1,26 @@
+{
+  "id": "howdo/qsp_keywords/qsp-keyword-syntaxems",
+  "title": "Синтаксемы и спецсимволы",
+  "description": "END",
+  "source": "@site/docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
+  "sourceDirName": "howdo/qsp_keywords",
+  "slug": "/howdo/qsp_keywords/qsp-keyword-syntaxems",
+  "permalink": "/docs/howdo/qsp_keywords/qsp-keyword-syntaxems",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "Системные переменные",
+    "permalink": "/docs/howdo/qsp_keywords/qsp-keyword-sys-var"
+  },
+  "next": {
+    "title": "Указатель",
+    "permalink": "/docs/howdo/qsp_keywords/qsp-keyword-pointer"
+  }
+}

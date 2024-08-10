@@ -1,0 +1,22 @@
+{
+  "id": "informarch/intro",
+  "title": "Оглавление",
+  "description": "Это архив устаревших статей, необходимо помнить об этом, когда будете его читать. Не стоит бездумно копировать код, а потом удивляться, что у вас что-то не работает. Некоторые статьи были актуализированы для плееров версии 5.8.0, некоторые хранятся в неизменном виде, как они публиковались на qsp.org. Будьте бдительны.",
+  "source": "@site/docs/informarch/intro.md",
+  "sourceDirName": "informarch",
+  "slug": "/informarch/intro",
+  "permalink": "/docs/informarch/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "informArchSidebar",
+  "next": {
+    "title": "F.A.Q",
+    "permalink": "/docs/informarch/wii_qsp/short_faq"
+  }
+}

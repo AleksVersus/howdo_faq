@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/conditional_actions",
+  "title": "Действие по условию",
+  "description": "Иногда требуется сделать, чтобы действие \"появлялось\" только при выполнении определенного условия.",
+  "source": "@site/docs/informarch/program/conditional_actions.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/conditional_actions",
+  "permalink": "/docs/informarch/program/conditional_actions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 306,
+  "frontMatter": {
+    "sidebar_position": 306
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Библиотечка дополняющая инвентарь 0.76",
+    "permalink": "/docs/informarch/program/lib_extend_inventory"
+  },
+  "next": {
+    "title": "Плавное изменение цвета фона [1.0]",
+    "permalink": "/docs/informarch/program/smooth_background"
+  }
+}

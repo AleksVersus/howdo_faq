@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/extended/ascii_graphics",
+  "title": "19.1. Как использовать ASCII-графику в QSP?",
+  "description": "В: Как использовать ASCII-графику в QSP?",
+  "source": "@site/docs/howdo/contents/extended/ascii_graphics.md",
+  "sourceDirName": "howdo/contents/extended",
+  "slug": "/howdo/contents/extended/ascii_graphics",
+  "permalink": "/docs/howdo/contents/extended/ascii_graphics",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "18.5. В папке с игрой стали появляться файлы с расширением .tmp. Что это за файлы, нужны они, и как избавиться от их появления?",
+    "permalink": "/docs/howdo/contents/libs_n_mods/tmp_file"
+  },
+  "next": {
+    "title": "19.2. Как вставить в игру видео?",
+    "permalink": "/docs/howdo/contents/extended/how_insert_video"
+  }
+}

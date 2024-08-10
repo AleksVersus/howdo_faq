@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/sound/soundtrack_restart",
+  "title": "6.4. Как перезапустить звуковую дорожку?",
+  "description": "В: Как перезапустить звуковую дорожку?",
+  "source": "@site/docs/howdo/contents/sound/soundtrack_restart.md",
+  "sourceDirName": "howdo/contents/sound",
+  "slug": "/howdo/contents/sound/soundtrack_restart",
+  "permalink": "/docs/howdo/contents/sound/soundtrack_restart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "6.3. Как при переходе на новую локацию прервать одну мелодию и запустить другую?",
+    "permalink": "/docs/howdo/contents/sound/break_soundtrack"
+  },
+  "next": {
+    "title": "6.5. Как приглушить музыку?",
+    "permalink": "/docs/howdo/contents/sound/turn_down"
+  }
+}

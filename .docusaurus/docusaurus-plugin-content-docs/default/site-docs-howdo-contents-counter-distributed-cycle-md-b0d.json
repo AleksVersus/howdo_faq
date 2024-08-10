@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/counter/distributed_cycle",
+  "title": "2.4. Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?",
+  "description": "В: Как сделать, чтобы цикл выполнялся параллельно остальному коду, а не прерывал его?",
+  "source": "@site/docs/howdo/contents/counter/distributed_cycle.md",
+  "sourceDirName": "howdo/contents/counter",
+  "slug": "/howdo/contents/counter/distributed_cycle",
+  "permalink": "/docs/howdo/contents/counter/distributed_cycle",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "2.3. Как сделать, чтобы через пару секунд после входа на локацию появлялось новое действие?",
+    "permalink": "/docs/howdo/contents/counter/promise_action"
+  },
+  "next": {
+    "title": "3.1. Как вывести на экран отдельное окошко с текстом?",
+    "permalink": "/docs/howdo/contents/msg_input/modal_alert_msg"
+  }
+}

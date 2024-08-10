@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/add_user_font",
+  "title": "22.2. Как подключить свой шрифт к игре?",
+  "description": "Новый плеер с поддержкой HTML - qSpider",
+  "source": "@site/docs/informarch/navigator/add_user_font.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/add_user_font",
+  "permalink": "/docs/informarch/navigator/add_user_font",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.1. Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?",
+    "permalink": "/docs/informarch/navigator/layout_templates"
+  },
+  "next": {
+    "title": "22.3. Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?",
+    "permalink": "/docs/informarch/navigator/change_background_color"
+  }
+}

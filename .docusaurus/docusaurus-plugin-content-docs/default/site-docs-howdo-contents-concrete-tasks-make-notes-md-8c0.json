@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/make_notes",
+  "title": "20.14. Как сделать записную книжку в игре?",
+  "description": "В: Как сделать записную книжку в игре?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/make_notes.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/make_notes",
+  "permalink": "/docs/howdo/contents/concrete_tasks/make_notes",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "sidebar_position": 14
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.13. Как разредить текст пробелами?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/text_thinning"
+  },
+  "next": {
+    "title": "20.15. Как сделать так, чтобы на локацию можно было зайти только один раз?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/one_off_location"
+  }
+}

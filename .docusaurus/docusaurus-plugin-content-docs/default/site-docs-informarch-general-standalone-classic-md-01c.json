@@ -1,0 +1,26 @@
+{
+  "id": "informarch/general/standalone_classic",
+  "title": "Как сделать StandAlone-сборку на классическом плеере?",
+  "description": "В:    Как сделать StandAlone-сборку на классическом плеере?",
+  "source": "@site/docs/informarch/general/standalone_classic.md",
+  "sourceDirName": "informarch/general",
+  "slug": "/informarch/general/standalone_classic",
+  "permalink": "/docs/informarch/general/standalone_classic",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Полка игр",
+    "permalink": "/docs/informarch/general/game_shelf"
+  },
+  "next": {
+    "title": "Простой консольный QSP-плеер",
+    "permalink": "/docs/informarch/extrqsp/console_player"
+  }
+}

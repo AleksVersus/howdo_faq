@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/menu/image_in_menu",
+  "title": "4.7. Как вставить картинки в меню?",
+  "description": "В: Как вставить картинки в меню?",
+  "source": "@site/docs/howdo/contents/menu/image_in_menu.md",
+  "sourceDirName": "howdo/contents/menu",
+  "slug": "/howdo/contents/menu/image_in_menu",
+  "permalink": "/docs/howdo/contents/menu/image_in_menu",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "4.6. Как вставить разделитель в меню?",
+    "permalink": "/docs/howdo/contents/menu/menu_separator"
+  },
+  "next": {
+    "title": "5.1. Как сделать так, чтобы не писать один и тот же код в каждой локации?",
+    "permalink": "/docs/howdo/contents/onnewloc/system_locations"
+  }
+}

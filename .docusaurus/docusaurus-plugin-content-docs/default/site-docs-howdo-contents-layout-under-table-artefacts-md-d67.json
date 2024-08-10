@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/layout/under_table_artefacts",
+  "title": "16.8. Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?",
+  "description": "В: Вывожу в окно табличку, а потом текст, но между текстом и табличкой возникают пустые строки. Что это и как этого избежать?",
+  "source": "@site/docs/howdo/contents/layout/under_table_artefacts.md",
+  "sourceDirName": "howdo/contents/layout",
+  "slug": "/howdo/contents/layout/under_table_artefacts",
+  "permalink": "/docs/howdo/contents/layout/under_table_artefacts",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "16.7. Можно ли зеркально отразить картинку методами плеера?",
+    "permalink": "/docs/howdo/contents/layout/image_reflection"
+  },
+  "next": {
+    "title": "16.9. Можно как-нибудь вывести текст в два столбца в классике?",
+    "permalink": "/docs/howdo/contents/layout/two_column_text"
+  }
+}

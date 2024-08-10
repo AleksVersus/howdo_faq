@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/layout_templates",
+  "title": "22.1. Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?",
+  "description": "Новый плеер с поддержкой HTML - qSpider.",
+  "source": "@site/docs/informarch/navigator/layout_templates.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/layout_templates",
+  "permalink": "/docs/informarch/navigator/layout_templates",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Обновление QSP (5.7.0) и QGen (4.0.0b)",
+    "permalink": "/docs/informarch/updates/classic_to_570"
+  },
+  "next": {
+    "title": "22.2. Как подключить свой шрифт к игре?",
+    "permalink": "/docs/informarch/navigator/add_user_font"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/change_interface",
+  "title": "22.11. Инструкция от Nex'а, позволяющая сменить оформление из кода игры",
+  "description": "Новый плеер с поддержкой HTML - qSpider.",
+  "source": "@site/docs/informarch/navigator/change_interface.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/change_interface",
+  "permalink": "/docs/informarch/navigator/change_interface",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "sidebar_position": 11
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.10. Как выполнить JavaScript прямо из кода QSP?",
+    "permalink": "/docs/informarch/navigator/exec_js"
+  },
+  "next": {
+    "title": "22.12. Модальное окошко с вариантами выбора",
+    "permalink": "/docs/informarch/navigator/modal_window"
+  }
+}

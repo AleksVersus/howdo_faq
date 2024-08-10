@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/externallinks",
+  "title": "22.13 Вопросы о Quest Navigator (v.0.0.28). Ссылки на внешние ресурсы",
+  "description": "Возможности Quest Navigator в плане HTML почти полностью повторяют возможности обычного браузера//htmlbook.ru",
+  "source": "@site/docs/informarch/navigator/externallinks.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/externallinks",
+  "permalink": "/docs/informarch/navigator/externallinks",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 999,
+  "frontMatter": {
+    "sidebar_position": 999
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.12. Модальное окошко с вариантами выбора",
+    "permalink": "/docs/informarch/navigator/modal_window"
+  },
+  "next": {
+    "title": "Что такое AeroQSP?",
+    "permalink": "/docs/informarch/aeroqsp/wit/"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ds/tutorial-basics/create-a-blog-post",
+  "title": "Создайте запись в блоге",
+  "description": "Docusaurus создает страницу для каждой записи в блоге, а также страницу индекса блога, систему тегов, RSS-канал...",
+  "source": "@site/docs/ds/tutorial-basics/create-a-blog-post.md",
+  "sourceDirName": "ds/tutorial-basics",
+  "slug": "/ds/tutorial-basics/create-a-blog-post",
+  "permalink": "/docs/ds/tutorial-basics/create-a-blog-post",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Создать документ",
+    "permalink": "/docs/ds/tutorial-basics/create-a-document"
+  },
+  "next": {
+    "title": "Возможности Markdown",
+    "permalink": "/docs/ds/tutorial-basics/markdown-features"
+  }
+}

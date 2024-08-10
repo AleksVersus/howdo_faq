@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/game_time",
+  "title": "Игровое время [1.0]",
+  "description": "Эта статья устарела.",
+  "source": "@site/docs/informarch/program/game_time.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/game_time",
+  "permalink": "/docs/informarch/program/game_time",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 302,
+  "frontMatter": {
+    "sidebar_position": 302
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Календарь по методу счёта Юлианский дней",
+    "permalink": "/docs/informarch/program/julian_calendar"
+  },
+  "next": {
+    "title": "Гибкий плейлист 1.0",
+    "permalink": "/docs/informarch/program/lib_flex_playlist"
+  }
+}

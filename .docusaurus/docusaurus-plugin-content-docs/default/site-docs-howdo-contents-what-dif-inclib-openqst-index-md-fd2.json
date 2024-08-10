@@ -1,0 +1,23 @@
+{
+  "id": "howdo/contents/what_dif/inclib_openqst/index",
+  "title": "18.1 Чем отличаются inclib и openqst?",
+  "description": "18.1 Чем отличаются inclib и openqst?",
+  "source": "@site/docs/howdo/contents/what_dif/inclib_openqst/index.md",
+  "sourceDirName": "howdo/contents/what_dif/inclib_openqst",
+  "slug": "/howdo/contents/what_dif/inclib_openqst/",
+  "permalink": "/docs/howdo/contents/what_dif/inclib_openqst/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "1.8. Чем отличается goto от gosub?",
+    "permalink": "/docs/howdo/contents/what_dif/goto_gosub"
+  },
+  "next": {
+    "title": "2.1. Как сделать, чтобы значение переменной изменялось с течением времени?",
+    "permalink": "/docs/howdo/contents/counter/realtime_variable_change"
+  }
+}

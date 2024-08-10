@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/onnewloc/args_translate",
+  "title": "5.3. Почему в args[] на локации-обработчике перехода на новую локацию уже есть данные?",
+  "description": "В: Почему в args[] на локации-обработчике перехода на новую локацию уже есть данные?",
+  "source": "@site/docs/howdo/contents/onnewloc/args_translate.md",
+  "sourceDirName": "howdo/contents/onnewloc",
+  "slug": "/howdo/contents/onnewloc/args_translate",
+  "permalink": "/docs/howdo/contents/onnewloc/args_translate",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "5.2. Как сделать кнопку \"Назад\", работающую на каждой локации?",
+    "permalink": "/docs/howdo/contents/onnewloc/back_button"
+  },
+  "next": {
+    "title": "6.1. Как вставить музыку или звук в игру?",
+    "permalink": "/docs/howdo/contents/sound/insert_soundtrack"
+  }
+}

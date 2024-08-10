@@ -1,0 +1,26 @@
+{
+  "id": "articles/config_classic_570",
+  "title": "Структура конфигурационного файла классического плеера версии 5.7.0",
+  "description": "Классический плеер QSP версии 5.7.0 хранит все настройки отображения и расположения окон в файле qspgui.cfg. Данный файл создаётся автоматически при первом запуске плеера и перезаписывается всякий раз, когда игрок плеер закрывает. Таким образом, чтобы сбросить настройки плеера, нужно просто удалить файл qspgui.cfg из папки с плеером.",
+  "source": "@site/docs/articles/config_classic_570.md",
+  "sourceDirName": "articles",
+  "slug": "/articles/config_classic_570",
+  "permalink": "/docs/articles/config_classic_570",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "qSpider версии 0.12.0",
+    "permalink": "/docs/articles/qspider_0120/"
+  },
+  "next": {
+    "title": "Операторы, функции, аргументы. GOSUB, FUNC, ARGS",
+    "permalink": "/docs/articles/operators_funcs_args/"
+  }
+}

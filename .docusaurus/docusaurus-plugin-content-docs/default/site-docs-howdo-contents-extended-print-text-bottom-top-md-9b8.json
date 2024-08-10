@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/extended/print_text_bottom_top",
+  "title": "print_text_bottom_top",
+  "description": "19.10. Как сделать, чтобы текст выводился снизу вверх?",
+  "source": "@site/docs/howdo/contents/extended/print_text_bottom_top.md",
+  "sourceDirName": "howdo/contents/extended",
+  "slug": "/howdo/contents/extended/print_text_bottom_top",
+  "permalink": "/docs/howdo/contents/extended/print_text_bottom_top",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "19.9. Как обновлять переменные на экране?",
+    "permalink": "/docs/howdo/contents/extended/variables_refresh"
+  },
+  "next": {
+    "title": "20.1. Как сделать возврат на предыдущую локацию?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/goto_back"
+  }
+}

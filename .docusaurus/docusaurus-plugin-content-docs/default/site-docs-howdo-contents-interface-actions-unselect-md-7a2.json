@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/actions_unselect",
+  "title": "10.12. С предметов можно снимать выделение, а можно ли снять выделение с действия?",
+  "description": "В: С предметов можно снимать выделение, а можно ли снять выделение с действия?",
+  "source": "@site/docs/howdo/contents/interface/actions_unselect.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/actions_unselect",
+  "permalink": "/docs/howdo/contents/interface/actions_unselect",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.11. Как использовать в игре собственный шрифт?",
+    "permalink": "/docs/howdo/contents/interface/user_font"
+  },
+  "next": {
+    "title": "11.1. При проверке условия записано просто число, без операции сравнения, но QSP не выдаёт ошибку. Почему?",
+    "permalink": "/docs/howdo/contents/condition/number_as_condition"
+  }
+}

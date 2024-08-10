@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/sound/playlists",
+  "title": "6.7. Как сделать плейлист?",
+  "description": "Прежде, чем приступить к прочтению данной статьи, ознакомьтесь со статьёй \"Как зациклить мелодию?\".",
+  "source": "@site/docs/howdo/contents/sound/playlists.md",
+  "sourceDirName": "howdo/contents/sound",
+  "slug": "/howdo/contents/sound/playlists",
+  "permalink": "/docs/howdo/contents/sound/playlists",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "6.6. Как зациклить мелодию?",
+    "permalink": "/docs/howdo/contents/sound/loop_soundtrack"
+  },
+  "next": {
+    "title": "7.1. Как делать гиперссылки, по нажатию на которые выполняется код?",
+    "permalink": "/docs/howdo/contents/hyperlink/how_make_hypelinks"
+  }
+}

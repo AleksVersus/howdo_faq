@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/simple_fill_array",
+  "title": "20.24. Как проще заполнять массив?",
+  "description": "В:",
+  "source": "@site/docs/howdo/contents/concrete_tasks/simple_fill_array.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/simple_fill_array",
+  "permalink": "/docs/howdo/contents/concrete_tasks/simple_fill_array",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 24,
+  "frontMatter": {
+    "sidebar_position": 24
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.23. Как убрать преформатирование из разметки HTML?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/html_clear_preformatting"
+  },
+  "next": {
+    "title": "21.2. Делаю преформатирование пробелами, чтобы появлялась вертикальная полоска, так нагляднее. Нет ли какой-то комбинации клавиш, чтобы не тыкать пробел по пять раз?",
+    "permalink": "/docs/howdo/contents/quest generator/keybindings"
+  }
+}

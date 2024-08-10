@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/julian_calendar",
+  "title": "Календарь по методу счёта Юлианский дней",
+  "description": "Календарь по рецепту evp. Синтетическая статья, основанная на серии сообщений.",
+  "source": "@site/docs/informarch/program/julian_calendar.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/julian_calendar",
+  "permalink": "/docs/informarch/program/julian_calendar",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 301,
+  "frontMatter": {
+    "sidebar_position": 301
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "TXT2GAM. Сборка для Linux",
+    "permalink": "/docs/informarch/txtgam/txt2gam_for_linux"
+  },
+  "next": {
+    "title": "Игровое время [1.0]",
+    "permalink": "/docs/informarch/program/game_time"
+  }
+}

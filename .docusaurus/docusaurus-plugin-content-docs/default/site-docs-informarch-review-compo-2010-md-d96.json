@@ -1,0 +1,26 @@
+{
+  "id": "informarch/review/compo_2010",
+  "title": "Обзоры игр QSP Compo 2010",
+  "description": "Обзоры взяты из темы Обсуждение игр QSP-Compo 2010: Дневник странника.",
+  "source": "@site/docs/informarch/review/compo_2010.md",
+  "sourceDirName": "informarch/review",
+  "slug": "/informarch/review/compo_2010",
+  "permalink": "/docs/informarch/review/compo_2010",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "13.7. Не работает гиперссылка в AeroQSP",
+    "permalink": "/docs/informarch/aeroqsp/not_work_hyperlink"
+  },
+  "next": {
+    "title": "Добавление и удаление игр из списка",
+    "permalink": "/docs/informarch/qspider/deleting_games"
+  }
+}

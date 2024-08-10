@@ -1,0 +1,26 @@
+{
+  "id": "informarch/aeroqsp/wit/index",
+  "title": "Что такое AeroQSP?",
+  "description": "AeroQSP - специальная версия плеера QSP на технологии Flash, позволяющая играть и локально, и в браузере.",
+  "source": "@site/docs/informarch/aeroqsp/wit/index.md",
+  "sourceDirName": "informarch/aeroqsp/wit",
+  "slug": "/informarch/aeroqsp/wit/",
+  "permalink": "/docs/informarch/aeroqsp/wit/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.13 Вопросы о Quest Navigator (v.0.0.28). Ссылки на внешние ресурсы",
+    "permalink": "/docs/informarch/navigator/externallinks"
+  },
+  "next": {
+    "title": "Инструкция по использованию AeroQSP совместно с Quest Generator",
+    "permalink": "/docs/informarch/aeroqsp/aeroqsp_instr"
+  }
+}

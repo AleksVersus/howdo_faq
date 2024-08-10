@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/item_drop_chance",
+  "title": "20.3. Как сделать шанс на выпадение определённой вещи?",
+  "description": "В: Как сделать шанс на выпадение определённой вещи? Например 25 процентный шанс на то, что в сундуке окажется золотая чаша?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/item_drop_chance.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/item_drop_chance",
+  "permalink": "/docs/howdo/contents/concrete_tasks/item_drop_chance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.2. Как проверить число на чётность?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/check_for_even"
+  },
+  "next": {
+    "title": "20.4. Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/print_text_top"
+  }
+}

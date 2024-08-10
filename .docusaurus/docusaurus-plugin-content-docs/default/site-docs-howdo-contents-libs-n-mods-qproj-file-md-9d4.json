@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/libs_n_mods/qproj_file",
+  "title": "18.4. Перенёс файл игры из одной папки в другую. В Quest Generator пропали все папки. Почему так происходит, и как этого избежать?",
+  "description": "В: Перенёс файл игры из одной папки в другую. В Quest Generator пропали все папки. Почему так происходит, и как этого избежать?",
+  "source": "@site/docs/howdo/contents/libs_n_mods/qproj_file.md",
+  "sourceDirName": "howdo/contents/libs_n_mods",
+  "slug": "/howdo/contents/libs_n_mods/qproj_file",
+  "permalink": "/docs/howdo/contents/libs_n_mods/qproj_file",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "18.3. Мне нужно узнать, есть ли в папке файл (картинка, музыка и т.д.). Как это сделать?",
+    "permalink": "/docs/howdo/contents/libs_n_mods/file_is_exist"
+  },
+  "next": {
+    "title": "18.5. В папке с игрой стали появляться файлы с расширением .tmp. Что это за файлы, нужны они, и как избавиться от их появления?",
+    "permalink": "/docs/howdo/contents/libs_n_mods/tmp_file"
+  }
+}

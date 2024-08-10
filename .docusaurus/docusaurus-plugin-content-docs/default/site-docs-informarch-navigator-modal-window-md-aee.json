@@ -1,0 +1,26 @@
+{
+  "id": "informarch/navigator/modal_window",
+  "title": "22.12. Модальное окошко с вариантами выбора",
+  "description": "Новый плеер с поддержкой HTML - qSpider.",
+  "source": "@site/docs/informarch/navigator/modal_window.md",
+  "sourceDirName": "informarch/navigator",
+  "slug": "/informarch/navigator/modal_window",
+  "permalink": "/docs/informarch/navigator/modal_window",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "22.11. Инструкция от Nex'а, позволяющая сменить оформление из кода игры",
+    "permalink": "/docs/informarch/navigator/change_interface"
+  },
+  "next": {
+    "title": "22.13 Вопросы о Quest Navigator (v.0.0.28). Ссылки на внешние ресурсы",
+    "permalink": "/docs/informarch/navigator/externallinks"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/windows_sizes",
+  "title": "10.6. Можно ли задавать размер окон из кода игры? Чтобы в одной локации были одни настройки, в другой — другие.",
+  "description": "Данное решение подходит только для классического плеера.",
+  "source": "@site/docs/howdo/contents/interface/windows_sizes.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/windows_sizes",
+  "permalink": "/docs/howdo/contents/interface/windows_sizes",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.5. Хочу, чтоб в игре окна располагались определённым образом. Как это сделать?",
+    "permalink": "/docs/howdo/contents/interface/windows_settings"
+  },
+  "next": {
+    "title": "10.7. Настроил расположение окна предпросмотра, но когда выключаю его, другие окна смещаются, как это исправить?",
+    "permalink": "/docs/howdo/contents/interface/fixed_preview_window"
+  }
+}

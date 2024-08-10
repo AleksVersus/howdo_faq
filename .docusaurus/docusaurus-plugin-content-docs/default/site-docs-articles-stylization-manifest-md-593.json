@@ -1,0 +1,22 @@
+{
+  "id": "articles/stylization_manifest",
+  "title": "Манифест об организации кода в QSP",
+  "description": "Это только черновик манифеста. Он ещё будет дорабатываться до полноценной статьи.",
+  "source": "@site/docs/articles/stylization_manifest.md",
+  "sourceDirName": "articles",
+  "slug": "/articles/stylization_manifest",
+  "permalink": "/docs/articles/stylization_manifest",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 999,
+  "frontMatter": {
+    "sidebar_position": 999
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Операторы, функции, аргументы. GOSUB, FUNC, ARGS",
+    "permalink": "/docs/articles/operators_funcs_args/"
+  }
+}

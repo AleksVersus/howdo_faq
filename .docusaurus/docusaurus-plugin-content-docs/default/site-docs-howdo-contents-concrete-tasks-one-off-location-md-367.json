@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/one_off_location",
+  "title": "20.15. Как сделать так, чтобы на локацию можно было зайти только один раз?",
+  "description": "В: Как сделать так, чтобы на локацию можно было зайти только один раз?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/one_off_location.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/one_off_location",
+  "permalink": "/docs/howdo/contents/concrete_tasks/one_off_location",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 15,
+  "frontMatter": {
+    "sidebar_position": 15
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.14. Как сделать записную книжку в игре?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/make_notes"
+  },
+  "next": {
+    "title": "20.16. Как заставить действия выводиться в нужном мне порядке?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/actions_direct"
+  }
+}

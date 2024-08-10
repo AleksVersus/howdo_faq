@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/menu/menu_in_hyperlinks",
+  "title": "4.3. Как сделать меню в ссылках?",
+  "description": "В: Как сделать меню в ссылках?",
+  "source": "@site/docs/howdo/contents/menu/menu_in_hyperlinks.md",
+  "sourceDirName": "howdo/contents/menu",
+  "slug": "/howdo/contents/menu/menu_in_hyperlinks",
+  "permalink": "/docs/howdo/contents/menu/menu_in_hyperlinks",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "4.2. Как сделать разные меню для двух и более предметов?",
+    "permalink": "/docs/howdo/contents/menu/different_menus"
+  },
+  "next": {
+    "title": "4.4. Как передавать локациям-пунктам меню аргументы?",
+    "permalink": "/docs/howdo/contents/menu/args_to_menu_item"
+  }
+}

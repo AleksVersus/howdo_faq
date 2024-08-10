@@ -1,0 +1,26 @@
+{
+  "id": "informarch/aeroqsp/aeroqsp_help",
+  "title": "Справка по AeroQSP (в дополнение к основной справке QSP)",
+  "description": "Для всех элементов оформления рекомендуется использовать формат картинок PNG, с поддержкой альфа-канала (регулируемая прозрачность). Кроме этого, HTML-движок и оператор VIEW поддерживают анимированные GIF-файлы.",
+  "source": "@site/docs/informarch/aeroqsp/aeroqsp_help.md",
+  "sourceDirName": "informarch/aeroqsp",
+  "slug": "/informarch/aeroqsp/aeroqsp_help",
+  "permalink": "/docs/informarch/aeroqsp/aeroqsp_help",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Инструкция по использованию AeroQSP совместно с Quest Generator",
+    "permalink": "/docs/informarch/aeroqsp/aeroqsp_instr"
+  },
+  "next": {
+    "title": "Stand-alone сборка игр на AeroQSP",
+    "permalink": "/docs/informarch/aeroqsp/standalone_aeroqsp"
+  }
+}

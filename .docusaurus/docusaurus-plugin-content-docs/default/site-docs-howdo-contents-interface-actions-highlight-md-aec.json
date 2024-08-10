@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/interface/actions_highlight",
+  "title": "10.8. Как изменить цвет подсветки действий?",
+  "description": "В: Как изменить цвет подсветки действий?",
+  "source": "@site/docs/howdo/contents/interface/actions_highlight.md",
+  "sourceDirName": "howdo/contents/interface",
+  "slug": "/howdo/contents/interface/actions_highlight",
+  "permalink": "/docs/howdo/contents/interface/actions_highlight",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "10.7. Настроил расположение окна предпросмотра, но когда выключаю его, другие окна смещаются, как это исправить?",
+    "permalink": "/docs/howdo/contents/interface/fixed_preview_window"
+  },
+  "next": {
+    "title": "10.9. Как изменить цвет фона для отдельного окна?",
+    "permalink": "/docs/howdo/contents/interface/window_background"
+  }
+}

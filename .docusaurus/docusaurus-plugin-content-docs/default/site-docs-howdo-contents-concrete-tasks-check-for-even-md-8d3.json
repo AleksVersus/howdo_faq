@@ -1,0 +1,26 @@
+{
+  "id": "howdo/contents/concrete_tasks/check_for_even",
+  "title": "20.2. Как проверить число на чётность?",
+  "description": "В: Как проверить число на чётность?",
+  "source": "@site/docs/howdo/contents/concrete_tasks/check_for_even.md",
+  "sourceDirName": "howdo/contents/concrete_tasks",
+  "slug": "/howdo/contents/concrete_tasks/check_for_even",
+  "permalink": "/docs/howdo/contents/concrete_tasks/check_for_even",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "howdoSidebar",
+  "previous": {
+    "title": "20.1. Как сделать возврат на предыдущую локацию?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/goto_back"
+  },
+  "next": {
+    "title": "20.3. Как сделать шанс на выпадение определённой вещи?",
+    "permalink": "/docs/howdo/contents/concrete_tasks/item_drop_chance"
+  }
+}

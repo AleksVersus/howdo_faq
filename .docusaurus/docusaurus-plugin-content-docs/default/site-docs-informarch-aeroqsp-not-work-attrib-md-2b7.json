@@ -1,0 +1,26 @@
+{
+  "id": "informarch/aeroqsp/not_work_attrib",
+  "title": "13.6. В AeroQSP не работает атрибут",
+  "description": "это статья об устаревшем плеере AeroQSP; данный плеер больше не работает в связи с прекращением поддержки и распространения Adobe Flash Player; статья представлена для ознакомительных целей, так как в ней достаточно полно отражены основные принципы написания игр на QSP.",
+  "source": "@site/docs/informarch/aeroqsp/not_work_attrib.md",
+  "sourceDirName": "informarch/aeroqsp",
+  "slug": "/informarch/aeroqsp/not_work_attrib",
+  "permalink": "/docs/informarch/aeroqsp/not_work_attrib",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Учебник по AeroQSP и QGen",
+    "permalink": "/docs/informarch/aeroqsp/guidebook"
+  },
+  "next": {
+    "title": "13.7. Не работает гиперссылка в AeroQSP",
+    "permalink": "/docs/informarch/aeroqsp/not_work_hyperlink"
+  }
+}
