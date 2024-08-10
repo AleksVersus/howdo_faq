@@ -1,12 +1,17 @@
+---
+sidebar_position: 1
+---
+
 # Обзоры игр QSP Compo 2010
 <!-- [:informarch_compo10] -->
 
+:::note
 Обзоры взяты из темы [Обсуждение игр QSP-Compo 2010: Дневник странника](https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57).
 
 Комментарии и обсуждения [там же](https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57).
 
 Часть обзоров содержит спойлеры, особенно об этом предупреждает **uux**.
-
+:::
 ## Обзоры Ajent'ы
 
 [ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p488)

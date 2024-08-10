@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # Операторы, функции, аргументы. GOSUB, FUNC, ARGS
 <!-- [:gosub_func_args] -->
 

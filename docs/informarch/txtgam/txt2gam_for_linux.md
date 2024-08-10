@@ -1,5 +1,5 @@
 ---
-sidebar_position: 103
+sidebar_position: 4
 ---
 
 # TXT2GAM. Сборка для Linux

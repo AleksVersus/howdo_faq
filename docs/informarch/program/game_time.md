@@ -2,7 +2,7 @@
 sidebar_position: 302
 ---
 
-# Игровое время [1.0]
+# Игровое время `[1.0]`
 <!-- [:informarch_gametime] -->
 
 > Эта статья устарела.
@@ -25,7 +25,7 @@ sidebar_position: 302
 
 Пример реализации: [time.qsp](https://qsp.org/attachments/time.qsp)
 
-Также см. [Календарь по методу счёта Юлианских дней](301_kalendar__po_metodu_schiota_julianskih_dnej_0014.md)
+Также см. [Календарь по методу счёта Юлианских дней](julian_calendar.md)
 
 Автор: **NEX**
 18.03.2011 15:13

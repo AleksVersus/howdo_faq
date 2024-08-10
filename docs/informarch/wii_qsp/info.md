@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Информация о QSP
 <!-- [:informarch_qspinfo] -->
 
@@ -7,7 +11,7 @@
 
 ## Контакты:
 
-E-mail: hzdbyte [AT] gmail.com
+E-mail: `hzdbyte [AT] gmail.com`
 ICQ: 122289012
 IRC: irc.forestnet.org, #ifrus, Byte
 

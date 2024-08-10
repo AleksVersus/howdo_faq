@@ -1,5 +1,5 @@
 ---
-sidebar_position: 102
+sidebar_position: 3
 ---
 
 # Тем, кто применяет TXT2GAM (использование препроцессора)
