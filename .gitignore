@@ -5,6 +5,7 @@
 /node_modules/
 *.sublime-workspace
 *.sublime-project
+qsp-project-workspace.json
 */__pycache__/
 /**/__pycache__
 
