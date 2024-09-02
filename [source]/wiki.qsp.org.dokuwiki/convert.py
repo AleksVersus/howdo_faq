@@ -15,6 +15,7 @@ def wf(text:str, path:str) -> None:
 def prefiltration(text:str) -> str:
 	""" Выполняется до прогона через pandoc """
 	text = text.replace('<sxh qsp>', '<code qsp>')
+	text = text.replace('<sxh>', '<code plain>')
 	text = text.replace('</sxh>', '</code>')
 	# text = text.replace('\t*', '  *')
 	# text = text.replace('*  ', '* ')
@@ -33,6 +34,7 @@ def postfiltration(text:str, path:str) -> str:
 	text = text.replace('\r\n', '\n')
 	text = text.replace(r'\"', '"')
 	text = text.replace('---', '—')
+	text = re.sub(r'`([^`]+?)`\{\.(\w+)\}', r'\n    ``` \2\n\1\n```\n', text)
 	# TODO: convertation in list item codesblock
 	if fold != '':
 		text = text.replace('](/', '](../')

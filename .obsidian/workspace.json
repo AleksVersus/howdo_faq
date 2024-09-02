@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/wiki/help/locations.md",
+                "file": "docs/wiki/help/main.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/help/locations.md",
+                "file": "docs/wiki/help/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/help/locations.md",
+                "file": "docs/wiki/help/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/wiki/help/locations.md"
+                "file": "docs/wiki/help/main.md"
               }
             }
           }
@@ -148,9 +148,16 @@
   },
   "active": "262dcbaacff72f1f",
   "lastOpenFiles": [
+    "[source]/wiki.qsp.org.dokuwiki/help/01_05_msgbox.dokuwiki",
+    "docs/wiki/help/msgbox.png",
+    "docs/wiki/help/msgbox.png.opdownload",
+    "[source]/wiki.qsp.org.dokuwiki/help/01_04_stat.dokuwiki",
+    "docs/wiki/help/locations.md",
+    "docs/wiki/help/main.md",
+    "[source]/wiki.qsp.org.dokuwiki/help/01_03_main.dokuwiki",
+    "[source]/wiki.qsp.org.dokuwiki/help/01_3_main.dokuwiki",
     "docs/wiki/help/qsp.md",
     "docs/wiki/start.md",
-    "docs/wiki/help/locations.md",
     "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "docs/wiki/intro.md",
     "[source]/wiki.qsp.org.dokuwiki/md2dw.json",
@@ -166,10 +173,6 @@
     "docs/wiki/help/qspblank2.jpg",
     "docs/wiki/help/Новая папка",
     "docs/articles/qspider_0120/index.md",
-    "src/theme/toml-syntax/prism-toml.js",
-    "src/theme/toml-syntax/prism-toml.js.opdownload",
-    "src/theme/toml-syntax",
-    "src/theme/Новая папка",
     "docs/articles/qspider_0120/images/8z8MHyp.png",
     "docs/articles/qspider_0120/images/image.png",
     "docs/articles/arrays_580/index.md",
@@ -186,14 +189,11 @@
     "docs/informarch/aeroqsp/wit/index.md",
     "docs/informarch/aeroqsp/wit/images/cityofmist.png",
     "docs/informarch/general/qgen_dev_guide/index.md",
-    "docs/informarch/general/qgen_dev_guide/images/tut7-01.png",
     "docs/informarch/general/code_analyser.md",
     "docs/informarch/extrqsp/automat_programming/index.md",
     "docs/informarch/general/localization_classic_570.md",
     "docs/informarch/general/standalone_classic.md",
     "docs/informarch/general/game_shelf.md",
-    "docs/informarch/txtgam/text_editor.md",
-    "docs/informarch/txtgam/preprocessor.md",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",
