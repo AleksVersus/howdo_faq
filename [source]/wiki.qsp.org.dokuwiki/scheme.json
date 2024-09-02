@@ -1,3 +1,5 @@
 {
-	"00_01_start.dokuwiki": "..\\..\\docs\\wiki\\intro.md"
+	"00_01_start.dokuwiki": "..\\..\\docs\\wiki\\start.md",
+	"help\\01_01_qsp.dokuwiki": "..\\..\\docs\\wiki\\help\\qsp.md",
+	"help\\01_02_locations.dokuwiki": "..\\..\\docs\\wiki\\help\\locations.md"
 }

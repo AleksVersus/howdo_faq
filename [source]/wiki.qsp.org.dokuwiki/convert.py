@@ -16,18 +16,28 @@ def prefiltration(text:str) -> str:
 	""" Выполняется до прогона через pandoc """
 	text = text.replace('<sxh qsp>', '<code qsp>')
 	text = text.replace('</sxh>', '</code>')
-	text = text.replace('\t*', '  *')
-	text = text.replace('*  ', '* ')
+	# text = text.replace('\t*', '  *')
+	# text = text.replace('*  ', '* ')
 	text = text.replace('\t', '  ')
 	wf(text, 'pf.dokuwiki')
 	return text
 
-def postfiltration(text:str) -> str:
+def postfiltration(text:str, path:str) -> str:
 	""" Выполняется после прогона через pandoc """
-	text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text)
+	relpath = os.path.relpath(scheme[path], '..\\..\\docs\\wiki')
+	fold = os.path.split(relpath)[0]
+	# print(relpath, fold)
+	text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text, flags=re.MULTILINE)
 	text = text.replace('-   ', '* ')
+	text = text.replace(r'\\\n', r'\n')
 	text = text.replace('\r\n', '\n')
 	text = text.replace(r'\"', '"')
+	text = text.replace('---', '—')
+	# TODO: convertation in list item codesblock
+	if fold != '':
+		text = text.replace('](/', '](../')
+	else:
+		text = text.replace('](/', '](')
 	return text	
 
 def pypan_file(path:str) -> None:
@@ -43,7 +53,7 @@ def pypan_file(path:str) -> None:
 		format='dokuwiki',
 		# filters = ['f_code_instr.py'],
 		extra_args=['--wrap=none'])
-	output_text = postfiltration(output_text)
+	output_text = postfiltration(output_text, path)
 	match = re.match(r'\d+_(\d+)_\w+', name)
 	if match is not None:
 		output_text = f'---\nsidebar_position: {int(match.group(1))}\n---\n' + output_text
@@ -61,9 +71,16 @@ def pypan_file(path:str) -> None:
 # 		extra_args=['--wrap=none', f'--filter={filters}'])
 # 	print(output_text)
 
+def convert_by_scheme():
+	for path in scheme.keys():
+		print('convert', path, 'to', scheme[path])
+		pypan_file(path)
+
 def main():
-	pypan_file('00_01_start.dokuwiki')
+	# pypan_file('help\\01_02_locations.dokuwiki')
 	# poop('..\\..\\docs\\howdo\\intro.md')
+
+	convert_by_scheme()
 
 if __name__ == '__main__':
 	main()
