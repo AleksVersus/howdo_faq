@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/articles/qspider_0120/index.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/articles/qspider_0120/index.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/articles/qspider_0120/index.md",
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/articles/qspider_0120/index.md"
+                "file": "blog/2024-08-03-qsp-highlighting-docusaurus.md"
               }
             }
           }
@@ -146,8 +146,9 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "262dcbaacff72f1f",
   "lastOpenFiles": [
+    "docs/articles/qspider_0120/index.md",
     "src/theme/toml-syntax/prism-toml.js",
     "src/theme/toml-syntax/prism-toml.js.opdownload",
     "src/theme/toml-syntax",
@@ -180,7 +181,6 @@
     "docs/informarch/general/qgen_dev_guide/images/tut2-06.png",
     "docs/informarch/general/qgen_dev_guide/images/tut2-05.png",
     "docs/informarch/general/qgen_dev_guide/images/tut2-04.png",
-    "docs/informarch/general/qgen_dev_guide/images",
     "docs/informarch/general/code_analyser.md",
     "docs/informarch/extrqsp/automat_programming/index.md",
     "docs/informarch/general/localization_classic_570.md",
