@@ -1,0 +1,88 @@
+[[help:navigator|Назад: Quest Navigator]]
+
+=====Шаблон игры на Quest Navigator=====
+
+Шаблон игры отвечает за внешний вид игры. В шаблон игры входят: страницы html для соответствующих платформ, файлы стилей для соответствующих платформ ((чаще всего один файл на все платформы)), файлы JavaScript для соответствующих платформ ((чаще всего один файл на все платформы)) и другие файлы (например, изображения и шрифты).
+
+
+__//Файл шаблона рассмотрен на примере gameAwesomium.htm из одной из работающих игр .//__
+=====Файл шаблона игры в Quest Navigator=====
+
+==== Заголовок (head) страницы ====
+
+<code html5>
+<head>
+  <meta charset="utf-8"> <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <link type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
+  <script type="text/javascript" src="../qsplib/js/core.js"></script>
+  <script type="text/javascript" src="../qsplib/js/coreAwesomium.js"></script>
+  <script type="text/javascript" src="../qsplib/js/QspLibAwesomium.js"></script>
+  <script type="text/javascript" src="../qsplib/js/api.js"></script>
+  <script type="text/javascript" src="../standalone_content/folder/js/game.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        qspInitApi();
+      });
+  </script>
+</head>
+</code> 
+
+Я не буду разбирать каждую строчку, т.к. это излишне и я сам многого не понимаю. Нас интересуют только следующие строчки:
+<code html5>
+<link type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
+<script type="text/javascript" src="../standalone_content/folder/js/game.js"></script>
+</code>
+В первой строке адрес [[fajl_css_igry_v_quest_navigator|файла стилей (CSS)]] игры. Во второй адрес [[fajl_js_igry_v_quest_navigator|файла JavaScript]] игры. Нужно следить, чтобы эти адреса соответствовали действительности. В данном примере файл //game.css// лежит по адресу //folder/game.css//, а файл //game.js// лежит по адресу //folder/js/game.js// относительно папки //standalone_content//.
+==== Тело (body) страницы ====
+
+А вот в структуре body без участия разработчика разобраться будет сложно. По моему мнению здесь стоило бы вставить табличку соответствия id<->назначение, а потом примеры популярных конструкций.
+
+  <div id="qsp-main">Пример использования id</div>
+  <div class="qsp-center">Пример использования class</div>
+
+Таблица id, используемых QSP Navigator'ом:
+^id^Назначение^
+|qsp-js-sandbox|Не добавлять в body ((Генерируется автоматически)), служебный ((используется для выполнения команды EXEC))|
+|qsp-back-image|Контейнер для фонового изображения|
+|qsp-wrapper-main, qsp-scroller-main, qsp-main|Контейнер для описания локации|
+|qsp-wrapper-acts, qsp-scroller-acts, qsp-acts|Контейнер для списка действий локации((см. SHOWACTS))|
+|qsp-wrapper-objs, qsp-scroller-objs, qsp-inv|Контейнер для инвентаря((см. SHOWOBJS))|
+|qsp-wrapper-vars, qsp-scroller-vars, qsp-vars|Контейнер для дополнительного описания((см. SHOWSTATS))|
+|qsp-input-line input| Строка ввода ((обратите внимание - это должно быть <input class="qsp-input-line"> </input>, на данный момент поддержка этой области сильно ограничена)) ((см. SHOWINPUT)) |
+|qsp-dialog-view, qsp-dialog-view-image-container|Контейнер для просмотра картинок ((см. VIEW))|
+|qsp-dialog-msg, qsp-wrapper-msg,\\ qsp-scroller-msg, qsp-dialog-msg-content|Контейнер для диалоговых окон|
+|qsp-dialog-error, qsp-dialog-error-content|Контейнер для ошибок|
+|qsp-dialog-user-menu|Контейнер для пользовательского интерфейса|
+|qsp-dialog-input|Контейнер диалога ввода|
+|qsp-dialog-input-content|Текст приглашения для ввода|
+|qsp-dialog-input-text|Поле для ввода текста|
+|qsp-button-input-ok|Кнопка подтверждения ввода текста|
+|qsp-dialog-system-menu| |
+|qsp-dialog-save-slots,\\ qsp-dialog-save-slots-container|Контейнер для меню сохранения/загрузки|
+
+^class^Назначение^
+|qsp-center       |автоматическое выравнивание по центру экрана|
+|qsp-skin-overlay|оверлей для системного меню (system-menu)|
+|qsp-skin-dialog| |
+|qsp-save-slot-enabled|Не добавлять в body((Генерируется автоматически))|
+|qsp-save-slot-disabled|Не добавлять в body((Генерируется автоматически))|
+|qsp-user-menu-item|Не добавлять в body((Генерируется автоматически))|
+|qsp-action|Не добавлять в body((Генерируется автоматически))|
+|qsp-skin-button|Не добавлять в body((Генерируется автоматически)). Используется для action и save-slot|
+|qsp-object|Не добавлять в body((Генерируется автоматически))|
+
+----
+
+===== Другие статьи =====
+
+  *  [[help:navigator_game_files|Файлы игры на Quest Navigator]]
+  *  [[help:navigator_command_line|Параметры запуска Quest Navigator]]
+  *  Шаблон игры на Quest Navigator
+  *  [[help:sozdanie_igr_na_quest_navigator|Создание игр для плеера Quest Navigator]]
+  *  [[help:ispolzovanie_shriftov_v_quest_navigator|Использование шрифтов в Quest Navigator]]
+  *  [[help:fajl_nastroek_igry_v_quest_navigator|Файл настроек игры в Quest Navigator]]
+  *  [[help:navigator_standalone|Независимая сборка игры для Quest Navigator]]
