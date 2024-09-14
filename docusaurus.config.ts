@@ -90,6 +90,13 @@ const config: Config = {
           position: 'right',
           label: 'Информ-Архив',
         },
+        ,
+        {
+          type: 'docSidebar',
+          sidebarId: 'wikiSidebar',
+          position: 'right',
+          label: 'QSP-wiki',
+        },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://aleksversus.github.io/howdo_faq/',
