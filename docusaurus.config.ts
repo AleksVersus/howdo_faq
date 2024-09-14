@@ -2,11 +2,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+let date = new Date().getFullYear()
 let footer = `<aside class="footerBlock">
 <div class="eBlock">
 <div class="avsPageStamp">
-    <p class="emptyP">Aleks Versus'HowDo-F.A.Q'2019-${new Date().getFullYear()}. Built with Docusaurus.<br/></p>
-    <p class="emptyP">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2019-${new Date().getFullYear()}</p>
+    <p class="emptyP">Aleks Versus'HowDo-F.A.Q'2019-${date}. Built with Docusaurus.<br/></p>
+    <p class="emptyP">Aleks Versus'Game Adventure Making'Really Unimaginable Stories'2019-${date}</p>
 </div></div>
 </aside>`
 
