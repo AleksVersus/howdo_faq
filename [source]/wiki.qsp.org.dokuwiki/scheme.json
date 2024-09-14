@@ -1,8 +1,9 @@
 {
-	"00_01_start.dokuwiki": "..\\..\\docs\\wiki\\start.md",
-	"help\\01_01_qsp.dokuwiki": "..\\..\\docs\\wiki\\help\\qsp.md",
-	"help\\01_02_locations.dokuwiki": "..\\..\\docs\\wiki\\help\\locations.md",
-	"help\\01_03_main.dokuwiki": "..\\..\\docs\\wiki\\help\\main.md",
-	"help\\01_04_stat.dokuwiki": "..\\..\\docs\\wiki\\help\\stat.md",
-	"help\\01_05_msgbox.dokuwiki": "..\\..\\docs\\wiki\\help\\msgbox.md"
+	"01_01_start.dokuwiki": "..\\..\\docs\\wiki\\start.md",
+	"help\\01_02_qsp.dokuwiki": "..\\..\\docs\\wiki\\qsp.md",
+	"help\\01_03_locations.dokuwiki": "..\\..\\docs\\wiki\\locations.md",
+
+	"help\\02_03_main.dokuwiki": "..\\..\\docs\\wiki\\text_print\\main.md",
+	"help\\02_04_stat.dokuwiki": "..\\..\\docs\\wiki\\text_print\\stat.md",
+	"help\\02_05_msgbox.dokuwiki": "..\\..\\docs\\wiki\\text_print\\msgbox.md"
 }
