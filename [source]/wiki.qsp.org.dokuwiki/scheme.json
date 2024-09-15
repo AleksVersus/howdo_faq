@@ -74,13 +74,13 @@
 		"sidebar_position": 6
 	},
 	"help\\03_07_strings.dokuwiki": {
-		"path": "..\\..\\docs\\wiki\\programming\\strings.md",
+		"path": "..\\..\\docs\\wiki\\programming\\strings\\index.md",
 		"sidebar_position": 7
 	},
-	"help\\03_08_regexp.dokuwiki": {
-		"path": "..\\..\\docs\\wiki\\programming\\strings\\regexp.md",
-		"sidebar_position": 2
-	},
+		"help\\03_08_regexp.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\programming\\strings\\regexp.md",
+			"sidebar_position": 2
+		},
 	"help\\03_09_tuples.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\tuples.md",
 		"sidebar_position": 9
@@ -149,9 +149,34 @@
 		"sidebar_position": 1
 	},
 	"help\\06_02_qspider.dokuwiki": {
-		"path": "..\\..\\docs\\wiki\\players\\qspider.md",
-		"sidebar_position": 2
+		"path": "..\\..\\docs\\wiki\\players\\qspider\\index.md",
+		"sidebar_position": 1
 	},
+		"help\\60_02_qspider_gamecfg.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_gamecfg.md",
+			"sidebar_position": 2
+		},
+		"help\\60_03_qspider_aeroqsp.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_aeroqsp.md",
+			"sidebar_position": 3
+		},
+		"help\\60_04_qspider_interface.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_interface.md",
+			"sidebar_position": 4
+		},
+		"help\\60_05_qspider_themes.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_themes.md",
+			"sidebar_position": 5
+		},
+		"help\\60_06_qspider_spectags.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_spectags.md",
+			"sidebar_position": 6
+		},
+		"help\\60_07_qspider_inclib.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_inclib.md",
+			"sidebar_position": 7
+		},
+
 	"help\\06_03_navigator.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\navigator.md",
 		"sidebar_position": 3
