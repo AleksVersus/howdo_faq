@@ -79,7 +79,13 @@
 	},
 		"help\\03_08_regexp.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\programming\\strings\\regexp.md",
-			"sidebar_position": 2
+			"sidebar_position": 2,
+			"wikipath": "help:regexp"
+		},
+		"regex\\02_01_start.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\programming\\strings\\start.md",
+			"sidebar_position": null,
+			"wikipath": "regex:start"
 		},
 	"help\\03_09_tuples.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\tuples.md",
@@ -181,11 +187,50 @@
 		"path": "..\\..\\docs\\wiki\\players\\navigator.md",
 		"sidebar_position": 3
 	},
+		"help\\70_01_navigator_game_files.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_files.md",
+			"sidebar_position": null
+		},
+		"help\\70_02_navigator_command_line.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_command_line.md",
+			"sidebar_position": null
+		},
+		"help\\70_03_navigator_game_template.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_template.md",
+			"sidebar_position": null
+		},
+		"help\\70_04_sozdanie_igr_na_quest_navigator.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\sozdanie_igr_na_quest_navigator.md",
+			"sidebar_position": null
+		},
+		"help\\70_05_ispolzovanie_shriftov_v_quest_navigator.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\ispolzovanie_shriftov_v_quest_navigator.md",
+			"sidebar_position": null
+		},
+		"help\\70_06_fajl_nastroek_igry_v_quest_navigator.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\fajl_nastroek_igry_v_quest_navigator.md",
+			"sidebar_position": null
+		},
+		"help\\70_07_navigator_standalone.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_standalone.md",
+			"sidebar_position": null
+		},
 	"help\\06_04_aeroqsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\aeroqsp.md",
 		"sidebar_position": 4
 	},
-
+		"help\\80_01_txt2gam_linux.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_linux.md",
+			"sidebar_position": null
+		},
+		"help\\80_02_txt2gam_manual.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_manual.md",
+			"sidebar_position": null
+		},
+		"help\\80_03_txt2gam_preprocessor.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_preprocessor.md",
+			"sidebar_position": null
+		},
 	"help\\07_01_qgen.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\qgen.md",
 		"sidebar_position": 1
@@ -201,5 +246,68 @@
 	"help\\07_04_analyzer.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\analyzer.md",
 		"sidebar_position": 4
+	},
+
+	"help\\classic_standalone.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\classic_standalone.md",
+		"sidebar_position": null,
+		"wikipath": "help:classic_standalone"
+	},
+	"help\\gnu_gpl_eng.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\gnu_gpl_eng.md",
+		"sidebar_position": null,
+		"wikipath": "help:gnu_gpl_eng"
+	},
+	"help\\gnu_gpl_rus.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\gnu_gpl_rus.md",
+		"sidebar_position": null,
+		"wikipath": "help:gnu_gpl_rus"
+	},
+	"help\\html_classic.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\html_classic.md",
+		"sidebar_position": null,
+		"wikipath": "help:html_classic"
+	},
+	"help\\keywords_operators.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\keywords_operators.md",
+		"sidebar_position": null,
+		"wikipath": "help:keywords_operators"
+	},
+	"help\\qsp_license.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\qsp_license.md",
+		"sidebar_position": null,
+		"wikipath": "help:qsp_license"
+	},
+	"howto\\start.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\start.md",
+		"sidebar_position": null,
+		"wikipath": "howto:start"
+	},
+	"howto\\arrays.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\arrays.md",
+		"sidebar_position": null,
+		"wikipath": "howto:arrays"
+	},
+	"glossary\\bag.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\bag.md",
+		"sidebar_position": null,
+		"wikipath": "glossary:bag"
+	},
+	"glossary\\snippet.dokuwiki": {
+		"path": "..\\..\\docs\\wiki\\hide\\snippet.md",
+		"sidebar_position": null,
+		"wikipath": "glossary:snippet"
+	},
+
+
+	"informarch\\dummy.dokuwiki": {
+		"path": "..\\..\\docs\\informarch\\program\\dummy.md",
+		"sidebar_position": 310,
+		"wikipath": "help:dummy"
+	},
+	"informarch\\fonts.dokuwiki": {
+		"path": "..\\..\\docs\\informarch\\program\\fonts.md",
+		"sidebar_position": 311,
+		"wikipath": "help:fonts"
 	},
 }
