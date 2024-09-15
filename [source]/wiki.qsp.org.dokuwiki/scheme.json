@@ -1,81 +1,100 @@
 {
 	"01_01_start.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\start.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "start"
 	},
 	"help\\01_02_qsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\qsp.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:qsp"
 	},
 	"help\\01_03_locations.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\locations.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:locations"
 	},
 	"help\\01_05_acts.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\acts.md",
-		"sidebar_position": 5
+		"sidebar_position": 5,
+		"wikipath": "help:acts"
 	},
 	"help\\01_06_goto.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\goto.md",
-		"sidebar_position": 6
+		"sidebar_position": 6,
+		"wikipath": "help:goto"
 	},
 	"help\\01_07_objs.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\objs.md",
-		"sidebar_position": 7
+		"sidebar_position": 7,
+		"wikipath": "help:objs"
 	},
 	"help\\01_13_limits.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\limits.md",
-		"sidebar_position": 13
+		"sidebar_position": 13,
+		"wikipath": "help:limits"
 	},
 	"help\\01_15_glossary.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\glossary.md",
-		"sidebar_position": 15
+		"sidebar_position": 15,
+		"wikipath": "help:glossary"
 	},
 	"help\\01_16_keywords.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\keywords.md",
-		"sidebar_position": 16
+		"sidebar_position": 16,
+		"wikipath": "help:keywords"
 	},
 
 	"help\\02_01_main.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\text_print\\main.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:main"
 	},
 	"help\\02_02_stat.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\text_print\\stat.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:stat"
 	},
 	"help\\02_03_msgbox.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\text_print\\msgbox.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:msgbox"
 	},
 
 	"help\\03_01_principle.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\principle.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:principle"
 	},
 	"help\\03_02_variables.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\variables.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:variables"
 	},
 	"help\\03_03_expressions.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\expressions.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:expressions"
 	},
 	"help\\03_04_coding.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\coding.md",
-		"sidebar_position": 4
+		"sidebar_position": 4,
+		"wikipath": "help:coding"
 	},
 	"help\\03_05_cycle.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\cycle.md",
-		"sidebar_position": 5
+		"sidebar_position": 5,
+		"wikipath": "help:cycle"
 	},
 	"help\\03_06_arrays.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\arrays.md",
-		"sidebar_position": 6
+		"sidebar_position": 6,
+		"wikipath": "help:arrays"
 	},
 	"help\\03_07_strings.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\strings\\index.md",
-		"sidebar_position": 7
+		"sidebar_position": 7,
+		"wikipath": "help:strings"
 	},
 		"help\\03_08_regexp.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\programming\\strings\\regexp.md",
@@ -89,163 +108,203 @@
 		},
 	"help\\03_09_tuples.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\tuples.md",
-		"sidebar_position": 9
+		"sidebar_position": 9,
+		"wikipath": "help:tuples"
 	},
 	"help\\03_10_conditional.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\conditional.md",
-		"sidebar_position": 10
+		"sidebar_position": 10,
+		"wikipath": "help:conditional"
 	},
 	"help\\03_11_organizing.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\organizing.md",
-		"sidebar_position": 11
+		"sidebar_position": 11,
+		"wikipath": "help:organizing"
 	},
 	"help\\03_12_jump.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\jump.md",
-		"sidebar_position": 12
+		"sidebar_position": 12,
+		"wikipath": "help:jump"
 	},
 	"help\\03_13_service_locations.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\service_locations.md",
-		"sidebar_position": 13
+		"sidebar_position": 13,
+		"wikipath": "help:service_locations"
 	},
 	"help\\03_14_dynamical.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\programming\\dynamical.md",
-		"sidebar_position": 14
+		"sidebar_position": 14,
+		"wikipath": "help:dynamical"
 	},
 
 	"help\\04_01_menu.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\design\\menu.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:menu"
 	},
 	"help\\04_02_sound.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\design\\sound.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:sound"
 	},
 	"help\\04_03_graphics.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\design\\graphics.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:graphics"
 	},
 	"help\\04_04_interface.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\design\\interface.md",
-		"sidebar_position": 4
+		"sidebar_position": 4,
+		"wikipath": "help:interface"
 	},
 	"help\\04_05_html.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\design\\html.md",
-		"sidebar_position": 5
+		"sidebar_position": 5,
+		"wikipath": "help:html"
 	},
 
 	"help\\05_01_inputs.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\advanced\\inputs.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:inputs"
 	},
 	"help\\05_02_modules.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\advanced\\modules.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:qsp"
 	},
 	"help\\05_03_savegame.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\advanced\\savegame.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:savegame"
 	},
 	"help\\05_04_realtime.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\advanced\\realtime.md",
-		"sidebar_position": 4
+		"sidebar_position": 4,
+		"wikipath": "help:realtime"
 	},
 
 	"help\\06_01_classic_qsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\classic_qsp.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:classic_qsp"
 	},
 	"help\\06_02_qspider.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\qspider\\index.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:qspider"
 	},
 		"help\\60_02_qspider_gamecfg.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_gamecfg.md",
-			"sidebar_position": 2
+			"sidebar_position": 2,
+		"wikipath": "help:qspider_gamecfg"
 		},
 		"help\\60_03_qspider_aeroqsp.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_aeroqsp.md",
-			"sidebar_position": 3
+			"sidebar_position": 3,
+		"wikipath": "help:qspider_aeroqsp"
 		},
 		"help\\60_04_qspider_interface.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_interface.md",
-			"sidebar_position": 4
+			"sidebar_position": 4,
+		"wikipath": "help:qspider_interface"
 		},
 		"help\\60_05_qspider_themes.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_themes.md",
-			"sidebar_position": 5
+			"sidebar_position": 5,
+		"wikipath": "help:qspider_themes"
 		},
 		"help\\60_06_qspider_spectags.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_spectags.md",
-			"sidebar_position": 6
+			"sidebar_position": 6,
+		"wikipath": "help:qspider_spectags"
 		},
 		"help\\60_07_qspider_inclib.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_inclib.md",
-			"sidebar_position": 7
+			"sidebar_position": 7,
+		"wikipath": "help:qspider_inclib"
 		},
 
 	"help\\06_03_navigator.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\navigator.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:navigator"
 	},
 		"help\\70_01_navigator_game_files.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_files.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:navigator_game_files"
 		},
 		"help\\70_02_navigator_command_line.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_command_line.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:navigator_command_line"
 		},
 		"help\\70_03_navigator_game_template.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_template.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:navigator_game_template"
 		},
 		"help\\70_04_sozdanie_igr_na_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\sozdanie_igr_na_quest_navigator.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:sozdanie_igr_na_quest_navigator"
 		},
 		"help\\70_05_ispolzovanie_shriftov_v_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\ispolzovanie_shriftov_v_quest_navigator.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:ispolzovanie_shriftov_v_quest_navigator"
 		},
 		"help\\70_06_fajl_nastroek_igry_v_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\fajl_nastroek_igry_v_quest_navigator.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:fajl_nastroek_igry_v_quest_navigator"
 		},
 		"help\\70_07_navigator_standalone.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_standalone.md",
-			"sidebar_position": null
+			"sidebar_position": null,
+		"wikipath": "help:navigator_standalone"
 		},
 	"help\\06_04_aeroqsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\aeroqsp.md",
-		"sidebar_position": 4
+		"sidebar_position": 4,
+		"wikipath": "help:aeroqsp"
 	},
-		"help\\80_01_txt2gam_linux.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_linux.md",
-			"sidebar_position": null
-		},
-		"help\\80_02_txt2gam_manual.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_manual.md",
-			"sidebar_position": null
-		},
-		"help\\80_03_txt2gam_preprocessor.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_preprocessor.md",
-			"sidebar_position": null
-		},
+		
 	"help\\07_01_qgen.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\qgen.md",
-		"sidebar_position": 1
+		"sidebar_position": 1,
+		"wikipath": "help:qgen"
 	},
 	"help\\07_02_debugger.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\debugger.md",
-		"sidebar_position": 2
+		"sidebar_position": 2,
+		"wikipath": "help:debugger"
 	},
 	"help\\07_03_txt2gam.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\txt2gam.md",
-		"sidebar_position": 3
+		"sidebar_position": 3,
+		"wikipath": "help:txt2gam"
 	},
+		"help\\80_01_txt2gam_linux.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_linux.md",
+			"sidebar_position": null,
+		"wikipath": "help:txt2gam_linux"
+		},
+		"help\\80_02_txt2gam_manual.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_manual.md",
+			"sidebar_position": null,
+		"wikipath": "help:txt2gam_manual"
+		},
+		"help\\80_03_txt2gam_preprocessor.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_preprocessor.md",
+			"sidebar_position": null,
+		"wikipath": "help:txt2gam_preprocessor"
+		},
 	"help\\07_04_analyzer.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\analyzer.md",
-		"sidebar_position": 4
+		"sidebar_position": 4,
+		"wikipath": "help:analyzer"
 	},
 
 	"help\\classic_standalone.dokuwiki": {
