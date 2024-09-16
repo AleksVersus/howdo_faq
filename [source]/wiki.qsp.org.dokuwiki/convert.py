@@ -4,8 +4,30 @@ import re
 import sys
 import json
 
-with open('scheme.json', 'r', encoding='utf-8') as fp:
-	scheme = json.load(fp)
+class SchemeDw2md:
+	"""Scheme"""
+	def __init__(self, scheme_path:str='scheme.json') -> None:
+		with open(scheme_path, 'r', encoding='utf-8') as fp:
+			self.scheme_json = json.load(fp)
+		self.mb = {}
+		self.mb['wiki_source'] = []
+		self.mb['output_path'] = []
+		self.mb['sidebar_pos'] = []
+		self.mb['wikipath'] = []
+		for el in self.scheme_json:
+			self.mb['wiki_source'].append(el)
+			self.mb['output_path'].append(self.scheme_json[el]['path'])
+			self.mb['sidebar_pos'].append(self.scheme_json[el]['sidebar_position'])
+			self.mb['wikipath'].append(self.scheme_json[el]['wikipath'])
+
+	def get_prop(self, prop:str) -> None:
+		return self.scheme_json[el][prop]
+		
+	def scheme(self) -> None:
+		return self.scheme_json
+		
+
+
 
 def wf(text:str, path:str) -> None:
 	fullpath = os.path.abspath(path)
@@ -36,10 +58,7 @@ def postfiltration(text:str, path:str) -> str:
 	text = text.replace('---', '—')
 	text = re.sub(r'`([^`]+?)`\{\.(\w+)\}', r'\n    ``` \2\n\1\n```\n', text)
 	# TODO: convertation in list item codesblock
-	if fold != '':
-		text = text.replace('](/', '](../')
-	else:
-		text = text.replace('](/', '](')
+	
 	return text	
 
 def pypan_file(path:str) -> None:
@@ -79,10 +98,7 @@ def convert_by_scheme():
 		pypan_file(path)
 
 def main():
-	# pypan_file('help\\01_02_locations.dokuwiki')
-	# poop('..\\..\\docs\\howdo\\intro.md')
-
-	convert_by_scheme()
+	scheme = SchemeDw2md('scheme.json')
 
 if __name__ == '__main__':
 	main()
