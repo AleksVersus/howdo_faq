@@ -197,32 +197,32 @@
 		"help\\60_02_qspider_gamecfg.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_gamecfg.md",
 			"sidebar_position": 2,
-		"wikipath": "help:qspider_gamecfg"
+			"wikipath": "help:qspider_gamecfg"
 		},
 		"help\\60_03_qspider_aeroqsp.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_aeroqsp.md",
 			"sidebar_position": 3,
-		"wikipath": "help:qspider_aeroqsp"
+			"wikipath": "help:qspider_aeroqsp"
 		},
 		"help\\60_04_qspider_interface.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_interface.md",
 			"sidebar_position": 4,
-		"wikipath": "help:qspider_interface"
+			"wikipath": "help:qspider_interface"
 		},
 		"help\\60_05_qspider_themes.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_themes.md",
 			"sidebar_position": 5,
-		"wikipath": "help:qspider_themes"
+			"wikipath": "help:qspider_themes"
 		},
 		"help\\60_06_qspider_spectags.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_spectags.md",
 			"sidebar_position": 6,
-		"wikipath": "help:qspider_spectags"
+			"wikipath": "help:qspider_spectags"
 		},
 		"help\\60_07_qspider_inclib.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\qspider\\qspider_inclib.md",
 			"sidebar_position": 7,
-		"wikipath": "help:qspider_inclib"
+			"wikipath": "help:qspider_inclib"
 		},
 
 	"help\\06_03_navigator.dokuwiki": {
@@ -233,37 +233,37 @@
 		"help\\70_01_navigator_game_files.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_files.md",
 			"sidebar_position": null,
-		"wikipath": "help:navigator_game_files"
+			"wikipath": "help:navigator_game_files"
 		},
 		"help\\70_02_navigator_command_line.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_command_line.md",
 			"sidebar_position": null,
-		"wikipath": "help:navigator_command_line"
+			"wikipath": "help:navigator_command_line"
 		},
 		"help\\70_03_navigator_game_template.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_game_template.md",
 			"sidebar_position": null,
-		"wikipath": "help:navigator_game_template"
+			"wikipath": "help:navigator_game_template"
 		},
 		"help\\70_04_sozdanie_igr_na_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\sozdanie_igr_na_quest_navigator.md",
 			"sidebar_position": null,
-		"wikipath": "help:sozdanie_igr_na_quest_navigator"
+			"wikipath": "help:sozdanie_igr_na_quest_navigator"
 		},
 		"help\\70_05_ispolzovanie_shriftov_v_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\ispolzovanie_shriftov_v_quest_navigator.md",
 			"sidebar_position": null,
-		"wikipath": "help:ispolzovanie_shriftov_v_quest_navigator"
+			"wikipath": "help:ispolzovanie_shriftov_v_quest_navigator"
 		},
 		"help\\70_06_fajl_nastroek_igry_v_quest_navigator.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\fajl_nastroek_igry_v_quest_navigator.md",
 			"sidebar_position": null,
-		"wikipath": "help:fajl_nastroek_igry_v_quest_navigator"
+			"wikipath": "help:fajl_nastroek_igry_v_quest_navigator"
 		},
 		"help\\70_07_navigator_standalone.dokuwiki": {
 			"path": "..\\..\\docs\\wiki\\players\\navigator\\navigator_standalone.md",
 			"sidebar_position": null,
-		"wikipath": "help:navigator_standalone"
+			"wikipath": "help:navigator_standalone"
 		},
 	"help\\06_04_aeroqsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\aeroqsp.md",
@@ -287,19 +287,19 @@
 		"wikipath": "help:txt2gam"
 	},
 		"help\\80_01_txt2gam_linux.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_linux.md",
+			"path": "..\\..\\docs\\wiki\\utilits\\txt2gam\\txt2gam_linux.md",
 			"sidebar_position": null,
-		"wikipath": "help:txt2gam_linux"
+			"wikipath": "help:txt2gam_linux"
 		},
 		"help\\80_02_txt2gam_manual.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_manual.md",
+			"path": "..\\..\\docs\\wiki\\utilits\\txt2gam\\txt2gam_manual.md",
 			"sidebar_position": null,
-		"wikipath": "help:txt2gam_manual"
+			"wikipath": "help:txt2gam_manual"
 		},
 		"help\\80_03_txt2gam_preprocessor.dokuwiki": {
-			"path": "..\\..\\docs\\wiki\\players\\txt2gam\\txt2gam_preprocessor.md",
+			"path": "..\\..\\docs\\wiki\\utilits\\txt2gam\\txt2gam_preprocessor.md",
 			"sidebar_position": null,
-		"wikipath": "help:txt2gam_preprocessor"
+			"wikipath": "help:txt2gam_preprocessor"
 		},
 	"help\\07_04_analyzer.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\utilits\\analyzer.md",
@@ -368,5 +368,5 @@
 		"path": "..\\..\\docs\\informarch\\program\\fonts.md",
 		"sidebar_position": 311,
 		"wikipath": "help:fonts"
-	},
+	}
 }
