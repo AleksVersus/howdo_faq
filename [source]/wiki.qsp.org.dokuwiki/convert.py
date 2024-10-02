@@ -14,11 +14,16 @@ class SchemeDw2md:
 		self.mb['output_path'] = []
 		self.mb['sidebar_position'] = []
 		self.mb['wikipath'] = []
+		self.mb['type'] = []
 		for el in self.scheme_json:
 			self.mb['wiki_source'].append(el)
 			self.mb['output_path'].append(self.scheme_json[el]['path'])
 			self.mb['sidebar_position'].append(self.scheme_json[el]['sidebar_position'])
 			self.mb['wikipath'].append(self.scheme_json[el]['wikipath'])
+			if 'type' in self.scheme_json[el]:
+				self.mb['type'].append(self.scheme_json[el]['type'])
+			else:
+				self.mb['type'].append('page')
 
 	def get_prop(self, el:str, prop:str) -> str:
 		# path; sidebar_position; wikipath;
@@ -32,7 +37,8 @@ class SchemeDw2md:
 			'wiki_source': self.mb['wiki_source'][i],
 			'output_path': self.mb['output_path'][i],
 			'sidebar_position': self.mb['sidebar_position'][i],
-			'wikipath': self.mb['wikipath'][i]
+			'wikipath': self.mb['wikipath'][i],
+			'type': self.mb['type'][i]
 		}
 		return output_dict
 
@@ -41,7 +47,8 @@ class SchemeDw2md:
 			'wiki_source': self.mb['wiki_source'][i],
 			'output_path': self.mb['output_path'][i],
 			'sidebar_position': self.mb['sidebar_position'][i],
-			'wikipath': self.mb['wikipath'][i]
+			'wikipath': self.mb['wikipath'][i],
+			'type': self.mb['type'][i]
 		}
 		
 	def scheme(self) -> dict:
@@ -50,7 +57,8 @@ class SchemeDw2md:
 	def convert_to_md(self) -> None:
 		for i, _ in enumerate(self.mb['wiki_source']):
 			el = self.get_el(i)
-			self.pypan_file(el)
+			if el['type'] == 'page':
+				self.pypan_file(el)
 
 	def pypan_file(self, el:dict) -> None:
 		# prepare path
@@ -93,10 +101,21 @@ class SchemeDw2md:
 		for link in link_patterns:
 			if link[1][0] == '/':
 				wikipath = link[1][1:].replace('/', ':')
+				if '?&#' in wikipath:
+					i = wikipath.find('?&#')
+					hashtag = '#' + wikipath[i+3:]
+					wikipath = wikipath[0:i]
+				else:
+					hashtag = ''
 				link_el = self.get_el_by_prop('wikipath', wikipath)
-				linkpath = os.path.abspath(link_el['output_path'])
+				if link_el['type'] == 'empty': print(f'Warning! Link to not exists page!!! {link} {wikipath}')
+				try:
+					linkpath = os.path.abspath(link_el['output_path'])
+				except TypeError as e:
+					print(link, wikipath, hashtag, link_el)
+					raise e				
 				relpath = os.path.relpath(linkpath, curpath)
-				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({relpath})')
+				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({relpath}{hashtag})')
 		text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text, flags=re.MULTILINE)
 		text = text.replace('-   ', '* ')
 		text = text.replace(r'\\\n', r'\n')
