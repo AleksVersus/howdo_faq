@@ -50,10 +50,9 @@ class SchemeDw2md:
 	def convert_to_md(self) -> None:
 		for i, _ in enumerate(self.mb['wiki_source']):
 			el = self.get_el(i)
-			SchemeDw2md.pypan_file(el)
+			self.pypan_file(el)
 
-	@staticmetchod
-	def pypan_file(el:dict) -> None:
+	def pypan_file(self, el:dict) -> None:
 		# prepare path
 		path = el['wiki_source']
 		fullpath = os.path.abspath(path)
@@ -61,22 +60,21 @@ class SchemeDw2md:
 		with open(fullpath, 'r', encoding='utf-8') as fp:
 			input_text = fp.read()
 		# prepare text
-		input_text = SchemeDw2md.prefiltration(input_text, el)
+		input_text = self.prefiltration(input_text, el)
 		output_text = pypandoc.convert_text(
 			input_text,
 			to='markdown',
 			format='dokuwiki',
 			# filters = ['f_code_instr.py'],
 			extra_args=['--wrap=none'])
-		output_text = SchemeDw2md.postfiltration(output_text, el)
+		output_text = self.postfiltration(output_text, el)
 		sidebar_position = el['sidebar_position']
 		if sidebar_position is not None:
 			output_text = f'---\nsidebar_position: {sidebar_position}\n---\n{output_text}'
 		output_path = os.path.abspath(el['output_path'])
 		wf(output_text, output_path)
 
-	@staticmetchod
-	def prefiltration(text:str, el:dict) -> str:
+	def prefiltration(self, text:str, el:dict) -> str:
 		""" Выполняется до прогона через pandoc """
 		text = text.replace('<sxh qsp>', '<code qsp>')
 		text = text.replace('<sxh>', '<code plain>')
@@ -87,13 +85,18 @@ class SchemeDw2md:
 		# wf(text, 'pf.dokuwiki')
 		return text
 
-	@staticmetchod
-	def postfiltration(text:str, el:dict) -> str:
+	def postfiltration(self, text:str, el:dict) -> str:
 		""" Выполняется после прогона через pandoc """
-		path = el['wiki_source']
-		relpath = os.path.relpath(el['output_path'], '..\\..\\docs\\wiki')
-		fold = os.path.split(relpath)[0]
-		# print(relpath, fold)
+		curpath = os.path.abspath(el['output_path'])
+		# исправляем ссылки
+		link_patterns = re.findall(r'\[([^]]+?)\]\((.*?)\)', text)
+		for link in link_patterns:
+			if link[1][0] == '/':
+				wikipath = link[1][1:].replace('/', ':')
+				link_el = self.get_el_by_prop('wikipath', wikipath)
+				linkpath = os.path.abspath(link_el['output_path'])
+				relpath = os.path.relpath(linkpath, curpath)
+				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({relpath})')
 		text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text, flags=re.MULTILINE)
 		text = text.replace('-   ', '* ')
 		text = text.replace(r'\\\n', r'\n')
@@ -102,10 +105,7 @@ class SchemeDw2md:
 		text = text.replace('---', '—')
 		text = re.sub(r'`([^`]+?)`\{\.(\w+)\}', r'\n    ``` \2\n\1\n```\n', text)
 		# TODO: convertation in list item codesblock
-	
-		return text	
-
-
+		return text
 
 def wf(text:str, path:str) -> None:
 	fullpath = os.path.abspath(path)
@@ -128,6 +128,7 @@ def wf(text:str, path:str) -> None:
 
 def main():
 	scheme = SchemeDw2md('scheme.json')
+	scheme.convert_to_md()
 
 if __name__ == '__main__':
 	main()
