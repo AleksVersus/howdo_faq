@@ -5,7 +5,7 @@ sidebar_position: 3
 
 Плеер **Quest Navigator** создавался как следующий шаг развития платформы **QSP**, на смену устаревшим **классическому плееру** и **AeroQSP**. Однако уже много лет **Quest Navigator** не обновляется и не развивается.
 
-В настоящий момент мы не рекомендуем пользоваться этим плеером, так как существует более современный, развивающийся плеер [qSpider](..\qspider\index.md).
+В настоящий момент мы не рекомендуем пользоваться этим плеером, так как существует более современный, развивающийся плеер [qSpider](../qspider/index.md).
 
 ## Принципиальные отличия
 
@@ -33,13 +33,13 @@ sidebar_position: 3
 
 ## Статьи по теме
 
-*  [Файлы игры на Quest Navigator](..\navigator\navigator_game_files.md)
-*  [Параметры запуска Quest Navigator](..\navigator\navigator_command_line.md)
-*  [Шаблон игры на Quest Navigator](..\navigator\navigator_game_template.md)
-*  [Создание игр для плеера Quest Navigator](..\navigator\sozdanie_igr_na_quest_navigator.md)
-*  [Использование шрифтов в Quest Navigator](..\navigator\ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](..\navigator\fajl_nastroek_igry_v_quest_navigator.md)
-*  [Независимая сборка игры для Quest Navigator](..\navigator\navigator_standalone.md)
+*  [Файлы игры на Quest Navigator](../navigator/navigator_game_files.md)
+*  [Параметры запуска Quest Navigator](../navigator/navigator_command_line.md)
+*  [Шаблон игры на Quest Navigator](../navigator/navigator_game_template.md)
+*  [Создание игр для плеера Quest Navigator](../navigator/sozdanie_igr_na_quest_navigator.md)
+*  [Использование шрифтов в Quest Navigator](../navigator/ispolzovanie_shriftov_v_quest_navigator.md)
+*  [Файл настроек игры в Quest Navigator](../navigator/fajl_nastroek_igry_v_quest_navigator.md)
+*  [Независимая сборка игры для Quest Navigator](../navigator/navigator_standalone.md)
 
 ## Ответы по Quest Navigator в F.A.Q.
 

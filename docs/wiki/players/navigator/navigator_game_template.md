@@ -1,4 +1,4 @@
-[Назад: Quest Navigator](..\..\navigator.md)
+[Назад: Quest Navigator](../../navigator.md)
 
 ## Шаблон игры на Quest Navigator
 
@@ -105,13 +105,13 @@
 
 ## Другие статьи
 
-*  [Файлы игры на Quest Navigator](..\navigator_game_files.md)
-*  [Параметры запуска Quest Navigator](..\navigator_command_line.md)
+*  [Файлы игры на Quest Navigator](../navigator_game_files.md)
+*  [Параметры запуска Quest Navigator](../navigator_command_line.md)
 *  Шаблон игры на Quest Navigator
-*  [Создание игр для плеера Quest Navigator](..\sozdanie_igr_na_quest_navigator.md)
-*  [Использование шрифтов в Quest Navigator](..\ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](..\fajl_nastroek_igry_v_quest_navigator.md)
-*  [Независимая сборка игры для Quest Navigator](..\navigator_standalone.md)
+*  [Создание игр для плеера Quest Navigator](../sozdanie_igr_na_quest_navigator.md)
+*  [Использование шрифтов в Quest Navigator](../ispolzovanie_shriftov_v_quest_navigator.md)
+*  [Файл настроек игры в Quest Navigator](../fajl_nastroek_igry_v_quest_navigator.md)
+*  [Независимая сборка игры для Quest Navigator](../navigator_standalone.md)
 
 [^1]: чаще всего один файл на все платформы
 

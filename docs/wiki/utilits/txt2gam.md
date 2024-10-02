@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 ---
-[Назад: Отладчик](..\debugger.md)
+[Назад: Отладчик](../debugger.md)
 
 # TXT2GAM. Краткое руководство
 
@@ -9,7 +9,7 @@ sidebar_position: 3
 
 [Скачать утилиту для Windows](https://qsp.org/attachments/txt2gam011.zip)
 
-[Сборка TXT2GAM на Linux](..\txt2gam\txt2gam_linux.md)
+[Сборка TXT2GAM на Linux](../txt2gam/txt2gam_linux.md)
 
 ## Формат TXT2GAM (QSPS)
 
@@ -17,7 +17,7 @@ sidebar_position: 3
 
 Использовать qsps-файлы предпочтительнее по трём причинам:
 
-* воспроизведение таких файлов поддерживается плеером **[qSpider](..\..\players\qspider\index.md)**;
+* воспроизведение таких файлов поддерживается плеером **[qSpider](../../players/qspider/index.md)**;
 * расширение для **[MS Visual Studio Cod](https://github.com/gretmn102/QSP-VSCode/blob/master/README.md)e** поддерживает подсветку синтаксиса qsps-файлов;
 * в **[пакете для Sublime Text](https://github.com/AleksVersus/JAD_for_QSP)** встроена подсветка синтаксиса qsps-файлов.
 
@@ -235,7 +235,7 @@ txt2gam.exe %1 %2 "pMy Pass word"
 4.  Подсветка синтаксиса для Sublime Text входит в **[пакет QSP для Sublime Text](https://github.com/AleksVersus/JAD_for_QSP)**. В этот же пакет встроен плагин с конвертерами qsps и QSP-файлов в любую сторону.
 5.  Существует подсветка для [Notepad++ от Олегуса](https://qsp.org/components/com_agora/img/members/20/notepad-qsp.zip). С этой подсветкой ассоциируются текстовые файлы с расширением "`.tqsp`", однако вы можете отредактировать файл подсветки, указав нужное вам расширение.
 6.  Werewolf разработал утилиту для конвертирования QSP-файла в текстовый формат (аналог **qsp2txt**), которая работает онлайн: [https:*codepen.io/srg-kostyrko/full/QWqdwxv\]\]. Так же он разработал специальные пакеты для конвертирования файлов в любую сторону: \[\[https:*github.com/QSPFoundation/converters\|https://github.com/QSPFoundation/converters](https://codepen.io/srg-kostyrko/full/QWqdwxv).
-7.  Существует учебник по написанию игр на QSP, если вы начинаете сразу с работы в текстовом редакторе: [Пишем QSP-игру в текстовом редакторе](..\txt2gam\txt2gam_manual.md).
-8.  Можно дополнительно обрабатывать qsps-файлы специальными программами перед тем, как конвертировать в файл игры QSP. Эти программы называются препроцессорами. В 2010 году NTROPY написал статью на эту тему: ["Препроцессор при использовании TXT2GAM"](..\txt2gam\txt2gam_preprocessor.md)
+7.  Существует учебник по написанию игр на QSP, если вы начинаете сразу с работы в текстовом редакторе: [Пишем QSP-игру в текстовом редакторе](../txt2gam/txt2gam_manual.md).
+8.  Можно дополнительно обрабатывать qsps-файлы специальными программами перед тем, как конвертировать в файл игры QSP. Эти программы называются препроцессорами. В 2010 году NTROPY написал статью на эту тему: ["Препроцессор при использовании TXT2GAM"](../txt2gam/txt2gam_preprocessor.md)
 
-[Вперёд: Анализатор кода](..\analyzer.md)
+[Вперёд: Анализатор кода](../analyzer.md)

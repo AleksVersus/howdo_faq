@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-[Назад: Графика](..\graphics.md)
+[Назад: Графика](../graphics.md)
 
 # Настройки интерфейса
 
@@ -211,4 +211,4 @@ sidebar_position: 4
 ```
       По умолчанию обновление интерфейса происходит 2 раза в секунду (каждые 500 мс). Так же см. оператор ''**[[help:service_locations|SETTIMER]]**''. Также см. оператор ''**[[help:service_locations|SETTIMER]]**''.
 
-[Вперёд: HTML](..\html.md)
+[Вперёд: HTML](../html.md)

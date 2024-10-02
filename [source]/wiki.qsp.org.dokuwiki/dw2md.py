@@ -114,7 +114,7 @@ class SchemeDw2md:
 				except TypeError as e:
 					print(link, wikipath, hashtag, link_el)
 					raise e				
-				relpath = os.path.relpath(linkpath, curpath)
+				relpath = os.path.relpath(linkpath, curpath).replace('\\','/')
 				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({relpath}{hashtag})')
 		text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text, flags=re.MULTILINE)
 		text = text.replace('-   ', '* ')

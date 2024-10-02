@@ -1,4 +1,4 @@
-[Назад: Quest Navigator](..\..\navigator.md)
+[Назад: Quest Navigator](../../navigator.md)
 
 # Параметры запуска Quest Navigator
 
@@ -34,7 +34,7 @@ CLOSE ALL
 -default-skin имя_шаблона
 ```
 
-Указывает имя стандартного шаблона, выбираемого по умолчанию для игры, у которой нет своего шаблона, и не указан желаемый шаблон в [файле настроек игры](..\fajl_nastroek_igry_v_quest_navigator.md). По умолчанию выбирается шаблон default.
+Указывает имя стандартного шаблона, выбираемого по умолчанию для игры, у которой нет своего шаблона, и не указан желаемый шаблон в [файле настроек игры](../fajl_nastroek_igry_v_quest_navigator.md). По умолчанию выбирается шаблон default.
 
 ``` plain
 -restart
@@ -53,10 +53,10 @@ CLOSE ALL
 
 **Другие статьи:**
 
-*  [Файлы игры на Quest Navigator](..\navigator_game_files.md)
+*  [Файлы игры на Quest Navigator](../navigator_game_files.md)
 *  Параметры запуска Quest Navigator
-*  [Шаблон игры на Quest Navigator](..\navigator_game_template.md)
-*  [Создание игр для плеера Quest Navigator](..\sozdanie_igr_na_quest_navigator.md)
-*  [Использование шрифтов в Quest Navigator](..\ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](..\fajl_nastroek_igry_v_quest_navigator.md)
-*  [Независимая сборка игры для Quest Navigator](..\navigator_standalone.md)
+*  [Шаблон игры на Quest Navigator](../navigator_game_template.md)
+*  [Создание игр для плеера Quest Navigator](../sozdanie_igr_na_quest_navigator.md)
+*  [Использование шрифтов в Quest Navigator](../ispolzovanie_shriftov_v_quest_navigator.md)
+*  [Файл настроек игры в Quest Navigator](../fajl_nastroek_igry_v_quest_navigator.md)
+*  [Независимая сборка игры для Quest Navigator](../navigator_standalone.md)

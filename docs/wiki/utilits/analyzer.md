@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-[Назад: Краткое руководство по TXT2GAM](..\txt2gam.md)
+[Назад: Краткое руководство по TXT2GAM](../txt2gam.md)
 
 # Анализатор кода QSP
 
@@ -87,4 +87,4 @@ GOTO $nextloc
 * [Обсуждение на форуме.](https://qsp.org/index.php?option=com_agora&task=topic&id=365)
 * [Две версии анализатора и другие программы на Mega.nz](https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A)
 
-[Вперёд: Ограничения QSP](..\..\limits.md)
+[Вперёд: Ограничения QSP](../../limits.md)

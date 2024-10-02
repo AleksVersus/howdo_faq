@@ -1,8 +1,8 @@
-[Назад: Quest Navigator](..\..\navigator.md)
+[Назад: Quest Navigator](../../navigator.md)
 
 # Создание игр для плеера Quest Navigator
 
-Основная информация о создании игр для плеера [navigator](..\..\navigator.md), а также отличия от других плееров.
+Основная информация о создании игр для плеера [navigator](../../navigator.md), а также отличия от других плееров.
 
 ## Отличия от AeroQSP
 
@@ -59,10 +59,10 @@
 
 ## Другие статьи:
 
-*  [Файлы игры на Quest Navigator](..\navigator_game_files.md)
-*  [Параметры запуска Quest Navigator](..\navigator_command_line.md)
-*  [Шаблон игры на Quest Navigator](..\navigator_game_template.md)
+*  [Файлы игры на Quest Navigator](../navigator_game_files.md)
+*  [Параметры запуска Quest Navigator](../navigator_command_line.md)
+*  [Шаблон игры на Quest Navigator](../navigator_game_template.md)
 *  Создание игр для плеера Quest Navigator
-*  [Использование шрифтов в Quest Navigator](..\ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](..\fajl_nastroek_igry_v_quest_navigator.md)
-*  [Независимая сборка игры для Quest Navigator](..\navigator_standalone.md)
+*  [Использование шрифтов в Quest Navigator](../ispolzovanie_shriftov_v_quest_navigator.md)
+*  [Файл настроек игры в Quest Navigator](../fajl_nastroek_igry_v_quest_navigator.md)
+*  [Независимая сборка игры для Quest Navigator](../navigator_standalone.md)

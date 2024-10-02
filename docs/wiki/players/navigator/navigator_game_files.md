@@ -1,4 +1,4 @@
-[Назад: Quest Navigator](..\..\navigator.md)
+[Назад: Quest Navigator](../../navigator.md)
 
 ## Файлы игры на Quest Navigator
 
@@ -11,11 +11,11 @@
 
 * *game.qsp* - файл игры QSP [^1]
 * шаблоны оформления для разных игровых платформ:
-    * *[gameAwesomium.html](..\navigator_game_template.md)* - устройства на Windows
+    * *[gameAwesomium.html](../navigator_game_template.md)* - устройства на Windows
     * *gamePG-android.html* - устройства на Android
     * *gamePG-ios.html* - устройства на iOS
-* *[config.xml](..\fajl_nastroek_igry_v_quest_navigator.md)* - файл настроек игры
-* *[game.css](..\navigator_game_template.md)* - файл стилей, от этого файла зависит внешний вид игры
+* *[config.xml](../fajl_nastroek_igry_v_quest_navigator.md)* - файл настроек игры
+* *[game.css](../navigator_game_template.md)* - файл стилей, от этого файла зависит внешний вид игры
 * *game.js* - файл JS, в котором программируются дополнительные функции
 * все остальные файлы.
 
@@ -27,12 +27,12 @@
 ## Другие статьи
 
 *  Файлы игры на Quest Navigator
-*  [Параметры запуска Quest Navigator](..\navigator_command_line.md)
-*  [Шаблон игры на Quest Navigator](..\navigator_game_template.md)
-*  [Создание игр для плеера Quest Navigator](..\sozdanie_igr_na_quest_navigator.md)
-*  [Использование шрифтов в Quest Navigator](..\ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](..\fajl_nastroek_igry_v_quest_navigator.md)
-*  [Независимая сборка игры для Quest Navigator](..\navigator_standalone.md)
+*  [Параметры запуска Quest Navigator](../navigator_command_line.md)
+*  [Шаблон игры на Quest Navigator](../navigator_game_template.md)
+*  [Создание игр для плеера Quest Navigator](../sozdanie_igr_na_quest_navigator.md)
+*  [Использование шрифтов в Quest Navigator](../ispolzovanie_shriftov_v_quest_navigator.md)
+*  [Файл настроек игры в Quest Navigator](../fajl_nastroek_igry_v_quest_navigator.md)
+*  [Независимая сборка игры для Quest Navigator](../navigator_standalone.md)
 
 [^1]: Вместо "game" может быть любое название игры
 

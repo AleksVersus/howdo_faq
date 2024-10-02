@@ -90,7 +90,6 @@ const config: Config = {
           position: 'right',
           label: 'Информ-Архив',
         },
-        ,
         {
           type: 'docSidebar',
           sidebarId: 'wikiSidebar',
