@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/wiki/start.md",
+                "file": "docs/wiki/qsp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f5fd665d6410663d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/wiki/keywords.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/start.md",
+                "file": "docs/wiki/qsp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/start.md",
+                "file": "docs/wiki/qsp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/wiki/start.md"
+                "file": "docs/wiki/qsp.md"
               }
             }
           }
@@ -148,6 +160,9 @@
   },
   "active": "262dcbaacff72f1f",
   "lastOpenFiles": [
+    "docs/wiki/start.md",
+    "docs/wiki/keywords.md",
+    "docs/wiki/glossary.md",
     "docs/wiki/acts.md",
     "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
     "docs/wiki/help/main.md",
@@ -159,7 +174,6 @@
     "[source]/wiki.qsp.org.dokuwiki/help/01_03_main.dokuwiki",
     "[source]/wiki.qsp.org.dokuwiki/help/01_3_main.dokuwiki",
     "docs/wiki/help/qsp.md",
-    "docs/wiki/start.md",
     "blog/2024-08-03-qsp-highlighting-docusaurus.md",
     "docs/wiki/intro.md",
     "[source]/wiki.qsp.org.dokuwiki/md2dw.json",
@@ -192,8 +206,6 @@
     "docs/informarch/general/qgen_dev_guide/index.md",
     "docs/informarch/general/code_analyser.md",
     "docs/informarch/extrqsp/automat_programming/index.md",
-    "docs/informarch/general/localization_classic_570.md",
-    "docs/informarch/general/standalone_classic.md",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",
