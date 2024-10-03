@@ -106,7 +106,7 @@ i="Инвентарь"
 * **space**
 * **pageup**
 * **pagedown**
-* `END`
+* **end**
 * **home**
 * **left**
 * **up**

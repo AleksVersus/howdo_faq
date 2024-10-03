@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b1f83f93d334f0cf",
+        "id": "1f632559ad36c179",
         "type": "tabs",
         "children": [
           {
-            "id": "262dcbaacff72f1f",
+            "id": "be4cfee98c039864",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/wiki/acts.md",
+                "file": "docs/wiki/players/qspider/qspider_spectags.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/acts.md",
+                "file": "docs/wiki/players/qspider/qspider_spectags.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/acts.md",
+                "file": "docs/wiki/players/qspider/qspider_spectags.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/wiki/acts.md"
+                "file": "docs/wiki/players/qspider/qspider_spectags.md"
               }
             }
           }
@@ -146,34 +146,43 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "262dcbaacff72f1f",
+  "active": "be4cfee98c039864",
   "lastOpenFiles": [
-    "docs/wiki/text_print/msgbox.md",
-    "docs/wiki/text_print/stat.md",
-    "docs/wiki/text_print/main.md",
-    "docs/wiki/locations.md",
-    "docs/wiki/qsp.md",
-    "docs/wiki/start.md",
-    "docs/wiki/programming/principle.md",
-    "docs/wiki/keywords.md",
-    "docs/wiki/glossary.md",
-    "docs/wiki/acts.md",
-    "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
-    "docs/wiki/help/main.md",
+    "docs/wiki/players/qspider/index.md",
+    "docs/wiki/players/qspider/qspider_standalone.md",
+    "docs/wiki/players/qspider/qspider_spectags.md",
+    "docs/wiki/players/qspider/qspider_themes.md",
+    "docs/wiki/players/qspider/qspider_interface.md",
+    "docs/wiki/players/qspider/qspider_aeroqsp.md",
+    "docs/wiki/players/qspider/qspider_gamecfg.md",
+    "docs/wiki/players/classic_qsp.md",
+    "docs/wiki/programming/tuples.md",
+    "docs/wiki/limits.md",
+    "docs/wiki/programming/variables.md",
+    "docs/wiki/programming/arrays.md",
+    "docs/wiki/programming/strings/index.md",
+    "docs/wiki/programming/expressions.md",
+    "docs/wiki/advanced/realtime.md",
+    "docs/wiki/advanced/savegame.md",
+    "docs/wiki/advanced/modules.md",
+    "docs/wiki/advanced/inputs.md",
+    "docs/wiki/hide/html_classic.md",
+    "docs/wiki/design/html.md",
+    "docs/wiki/design/interface.md",
+    "docs/wiki/programming/service_locations.md",
+    "docs/wiki/design/graphics.md",
+    "docs/wiki/design/sound.md",
+    "docs/wiki/design/menu.md",
+    "docs/wiki/programming/dynamical.md",
     "[source]/wiki.qsp.org.dokuwiki/help/01_05_msgbox.dokuwiki",
     "docs/wiki/help/msgbox.png",
     "docs/wiki/help/msgbox.png.opdownload",
     "[source]/wiki.qsp.org.dokuwiki/help/01_04_stat.dokuwiki",
-    "docs/wiki/help/locations.md",
     "[source]/wiki.qsp.org.dokuwiki/help/01_03_main.dokuwiki",
     "[source]/wiki.qsp.org.dokuwiki/help/01_3_main.dokuwiki",
-    "docs/wiki/help/qsp.md",
-    "blog/2024-08-03-qsp-highlighting-docusaurus.md",
-    "docs/wiki/intro.md",
     "[source]/wiki.qsp.org.dokuwiki/md2dw.json",
     "[source]/wiki.qsp.org.dokuwiki/pf.dokuwiki",
     "[source]/wiki.qsp.org.dokuwiki/f_code_instr.py",
-    "help/qsp.md",
     "help",
     "[source]/wiki.qsp.org.dokuwiki/help/01_02_locations.dokuwiki",
     "docs/wiki/help/input_window.png",
@@ -181,18 +190,9 @@
     "docs/wiki/help/level13.jpg",
     "docs/wiki/help/ballad.jpg",
     "docs/wiki/help/qspblank2.jpg",
-    "docs/articles/qspider_0120/index.md",
     "docs/articles/qspider_0120/images/8z8MHyp.png",
     "docs/articles/qspider_0120/images/image.png",
-    "docs/articles/arrays_580/index.md",
     "docs/articles/arrays_580/images/N-Stg0hc-V1-U.jpg",
-    "docs/informarch/updates/classic_to_570.md",
-    "docs/informarch/updates/970_obnovlenie_do_5.7.0_0023.md",
-    "docs/informarch/wii_qsp/info.md",
-    "docs/informarch/wii_qsp/our_way.md",
-    "docs/informarch/wii_qsp/short_faq.md",
-    "docs/informarch/wii_qsp/003_nash_put.md",
-    "docs/informarch/wii_qsp/002_informatsija_o_qsp.md",
     "docs/informarch/aeroqsp/wit/images/cityofmist.png",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
