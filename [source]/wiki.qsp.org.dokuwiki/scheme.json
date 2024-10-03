@@ -393,7 +393,7 @@
 		"type": "img",
 		"wikipath": "help:input_window.png"
 	},
-	"iimgs\\level13.jpg": {
+	"imgs\\level13.jpg": {
 		"path": "..\\..\\docs\\imgs\\level13.jpg",
 		"sidebar_position": null,
 		"type": "img",

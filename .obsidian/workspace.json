@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/wiki/qsp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f5fd665d6410663d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/wiki/keywords.md",
+                "file": "docs/wiki/text_print/main.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/qsp.md",
+                "file": "docs/wiki/text_print/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/qsp.md",
+                "file": "docs/wiki/text_print/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/wiki/qsp.md"
+                "file": "docs/wiki/text_print/main.md"
               }
             }
           }
@@ -160,6 +148,9 @@
   },
   "active": "262dcbaacff72f1f",
   "lastOpenFiles": [
+    "docs/wiki/locations.md",
+    "docs/wiki/programming/principle.md",
+    "docs/wiki/qsp.md",
     "docs/wiki/start.md",
     "docs/wiki/keywords.md",
     "docs/wiki/glossary.md",
@@ -203,9 +194,6 @@
     "docs/informarch/aeroqsp/guidebook.md",
     "docs/informarch/aeroqsp/wit/index.md",
     "docs/informarch/aeroqsp/wit/images/cityofmist.png",
-    "docs/informarch/general/qgen_dev_guide/index.md",
-    "docs/informarch/general/code_analyser.md",
-    "docs/informarch/extrqsp/automat_programming/index.md",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",
