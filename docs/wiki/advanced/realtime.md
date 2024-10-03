@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-[Назад: Файлы сохранений](../savegame.md)
+[Назад: Файлы сохранений](savegame)
 
 # Реальное время
 
@@ -197,4 +197,4 @@ settimer 0
 *  [Юлианских календарь от evp](https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57)
 *  [Реализация игрового времени](https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57)
 
-[Вперёд: Кортежи](../../programming/tuples.md)
+[Вперёд: Кортежи](../programming/tuples)

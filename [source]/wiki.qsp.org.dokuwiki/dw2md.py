@@ -95,7 +95,7 @@ class SchemeDw2md:
 
 	def postfiltration(self, text:str, el:dict) -> str:
 		""" Выполняется после прогона через pandoc """
-		curpath = os.path.abspath(el['output_path'])
+		curpath = os.path.split(os.path.abspath(el['output_path']))[0]
 		# исправляем ссылки
 		link_patterns = re.findall(r'\[([^]]+?)\]\((.*?)\)', text)
 		for link in link_patterns:
@@ -115,6 +115,8 @@ class SchemeDw2md:
 					print(link, wikipath, hashtag, link_el)
 					raise e				
 				relpath = os.path.relpath(linkpath, curpath).replace('\\','/')
+				p, e = os.path.splitext(relpath)
+				relpath = (p if e == '.md' else relpath)
 				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({relpath}{hashtag})')
 		text = re.sub(r'\[(.*?)\]\{\.underline\}', r'<u>\1</u>', text, flags=re.MULTILINE)
 		text = text.replace('-   ', '* ')

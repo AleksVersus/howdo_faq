@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
+                "file": "docs/wiki/start.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
+                "file": "docs/wiki/start.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
+                "file": "docs/wiki/start.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md"
+                "file": "docs/wiki/start.md"
               }
             }
           }
@@ -146,10 +146,11 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "262dcbaacff72f1f",
   "lastOpenFiles": [
-    "docs/wiki/help/main.md",
+    "docs/wiki/acts.md",
     "blog/2024-09-14-qsplayer-novovvedeniya-v-qsp-590.md",
+    "docs/wiki/help/main.md",
     "[source]/wiki.qsp.org.dokuwiki/help/01_05_msgbox.dokuwiki",
     "docs/wiki/help/msgbox.png",
     "docs/wiki/help/msgbox.png.opdownload",
@@ -193,7 +194,6 @@
     "docs/informarch/extrqsp/automat_programming/index.md",
     "docs/informarch/general/localization_classic_570.md",
     "docs/informarch/general/standalone_classic.md",
-    "docs/informarch/general/game_shelf.md",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",

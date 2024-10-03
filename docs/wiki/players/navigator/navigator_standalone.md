@@ -1,4 +1,4 @@
-[Назад: Quest Navigator](../../navigator.md)
+[Назад: Quest Navigator](../navigator)
 
 # Независимая сборка игры для Quest Navigator
 
@@ -9,7 +9,7 @@
 ## Создание независимой сборки игры
 
 1.  Переименуйте файл игры в `start.qsp`.
-2.  В [файле настроек](../fajl_nastroek_igry_v_quest_navigator.md) укажите режим `standalone`.
+2.  В [файле настроек](fajl_nastroek_igry_v_quest_navigator) укажите режим `standalone`.
 3.  Скопируйте папку плеера целиком в отдельное место, допустим `D:\MyGames\CoolGame-release`.
 4.  Удалите игру "по умолчанию" - `D:\MyGames\CoolGame-release\standalone_content\start.qsp`.
 5.  Поместите все файлы своей игры в папку `D:\MyGames\CoolGame-release\standalone_content`.
@@ -18,10 +18,10 @@
 
 ## Другие статьи
 
-*  [Файлы игры на Quest Navigator](../navigator_game_files.md)
-*  [Параметры запуска Quest Navigator](../navigator_command_line.md)
-*  [Шаблон игры на Quest Navigator](../navigator_game_template.md)
-*  [Создание игр для плеера Quest Navigator](../sozdanie_igr_na_quest_navigator.md)
-*  [Использование шрифтов в Quest Navigator](../ispolzovanie_shriftov_v_quest_navigator.md)
-*  [Файл настроек игры в Quest Navigator](../fajl_nastroek_igry_v_quest_navigator.md)
+*  [Файлы игры на Quest Navigator](navigator_game_files)
+*  [Параметры запуска Quest Navigator](navigator_command_line)
+*  [Шаблон игры на Quest Navigator](navigator_game_template)
+*  [Создание игр для плеера Quest Navigator](sozdanie_igr_na_quest_navigator)
+*  [Использование шрифтов в Quest Navigator](ispolzovanie_shriftov_v_quest_navigator)
+*  [Файл настроек игры в Quest Navigator](fajl_nastroek_igry_v_quest_navigator)
 *  Независимая сборка игры для Quest Navigator
