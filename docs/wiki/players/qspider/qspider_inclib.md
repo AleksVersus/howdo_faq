@@ -7,7 +7,7 @@ sidebar_position: 7
 
 Чтобы воспользоваться функциями библиотеки, её нужно подключить, как [обычный модуль QSP](../../advanced/modules), написав, например в самой первой локации в игре команду:
 
-``` qsp
+```qsp
 inclib 'qspider'
 ```
 
@@ -18,81 +18,81 @@ inclib 'qspider'
 Данные функции позволяют управлять поведением плеера прямо из кода QSP.
 
 * `qspider_quit` — выход из игры на полку игр. 
-    ``` qsp
+    ```qsp
 @qspider_quit()
 ```
 
 * `qspider_restart` — перезапуск текущей игры. 
-    ``` qsp
+    ```qsp
 @qspider_restart()
 ```
 
 * `qspider_resume` — продолжить игру (закрыть меню паузы). 
-    ``` qsp
+    ```qsp
 @qspider_resume()
 ```
 
 * `qspider_mute` — Выключить звук. 
-    ``` qsp
+    ```qsp
 @qspider_mute()
 ```
 
 * `qspider_unmute` — Включить звук. 
-    ``` qsp
+    ```qsp
 @qspider_unmute()
 ```
 
 * `qspider_toggle_mute` — Переключить звук. 
-    ``` qsp
+    ```qsp
 @qspider_toggle_mute()
 ```
 
 * `qspider_quicksave` — Переключить звук. 
-    ``` qsp
+    ```qsp
 @qspider_quicksave()
 ```
 
 * `qspider_quickload` — Переключить звук. 
-    ``` qsp
+    ```qsp
 @qspider_quickload()
 ```
 
 * `qspider_open_pause_screen` — открыть меню паузы. Аргументы `$args[0]`:
     * `saves` — меню сохранений. 
-    ``` qsp
+    ```qsp
 @qspider_open_pause_screen('saves')
 ```
 
     * `preferences` — меню настроек. 
-    ``` qsp
+    ```qsp
 @qspider_open_pause_screen('preferences')
 ```
 
     * без аргументов — основной раздел меню паузы. 
-    ``` qsp
+    ```qsp
 @qspider_open_pause_screen()
 ```
 
 * `qspider_scroll` — прокрутить окно (вверх или вниз). Аргументы:
     * `$args[0]` — указать окно:
         * `main` — окно основного описания. 
-    ``` qsp
+    ```qsp
 @qspider_scroll('main', 'bottom')
 ```
 
         * `stats` — окно дополнительного описания. 
-    ``` qsp
+    ```qsp
 @qspider_scroll('stats', 'bottom')
 ```
 
     * `$args[1]` — указать направление:
         * `top` — прокрутить до верха. 
-    ``` qsp
+    ```qsp
 @qspider_scroll('main', 'top')
 ```
 
         * `bottom` — прокрутить до низа. 
-    ``` qsp
+    ```qsp
 @qspider_scroll('main', 'bottom')
 ```
 
@@ -102,7 +102,7 @@ inclib 'qspider'
 Вы можете переключать созданные заранее [темы оформления](qspider_themes), используя встроенную функцию библиотеки:
 
 * `qspider_change_theme` — включить указанную тему оформления.
-    ``` qsp
+    ```qsp
 @qspider_change_theme('dark-theme')
 ```
  Аргументом указывается название темы.
@@ -116,17 +116,17 @@ inclib 'qspider'
 \<sxh html\>\<qsp-layer name="layer1" index="10"\>Some UI\</qsp-layer\>\</code\>
 
 * `qspider_show_layer` — показать слой на экране.
-    ``` qsp
+    ```qsp
 @qspider_show_layer('layer1')
 ```
  В качестве аргумента передаётся название слоя, соответствующее значению атрибута `name`.
 * `qspider_hide_layer` — скрыть слой с экрана.
-    ``` qsp
+    ```qsp
 @qspider_hide_layer('layer1')
 ```
  В качестве аргумента передаётся название слоя.
 * `qspider_show_only_layer` — показать указанный слой, а остальные скрыть.
-    ``` qsp
+    ```qsp
 @qspider_show_only_layer('layer1')
 ```
  В качестве аргумента передаётся название слоя.
@@ -140,21 +140,21 @@ inclib 'qspider'
 \<sxh html\>\<qsp-region name="region1"\>\</qsp-region\>\</code\>
 
 * `qspider_update_region` — полностью перезаписать содержимое региона.
-    ``` qsp
+    ```qsp
 @qspider_update_region('region1', '<b>Текст</b>')
 ```
  Аргументы:
     * `$args[0]` — название региона.
     * `$args[1]` — новое содержимое региона.
 * `qspider_prepend_region` — вставить содержимое в начало региона.
-    ``` qsp
+    ```qsp
 @qspider_prepend_region('region1', 'Текст<br>')
 ```
  Аргументы:
     * `$args[0]` — название региона.
     * `$args[1]` — добавляемое содержимое региона.
 * `qspider_append_region` — вставить содержимое в начало региона.
-    ``` qsp
+    ```qsp
 @qspider_append_region('region1', '<br>Конец')
 ```
  Аргументы:
@@ -164,17 +164,17 @@ inclib 'qspider'
     * `$args[0]` — название региона.
     * `$args[1]` — направление прокрутки:
         * `top` — прокрутить до верха. 
-    ``` qsp
+    ```qsp
 @qspider_scroll_region('region1', 'top')
 ```
 
         * `bottom` — прокрутить до низа. 
-    ``` qsp
+    ```qsp
 @qspider_scroll_region('region1', 'bottom')
 ```
 
 * `qspider_clear_region` — очистить содержимое региона.
-    ``` qsp
+    ```qsp
 @qspider_clear_region('region1')
 ```
  В качестве аргумента передаётся название региона.
@@ -191,7 +191,7 @@ inclib 'qspider'
 
 Примеры вызова событий:
 
-``` qsp
+```qsp
 @qspider_event('test_event') & ! вызов события без аргументов
 @qspider_event('event_with_args', 1, "test") & ! с аргументами
 ```

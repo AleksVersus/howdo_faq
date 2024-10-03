@@ -10,7 +10,7 @@
 
 ### Заголовок (head) страницы
 
-``` html5
+```html5
 <head>
   <meta charset="utf-8"> <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -33,7 +33,7 @@
 
 Я не буду разбирать каждую строчку, т.к. это излишне и я сам многого не понимаю. Нас интересуют только следующие строчки:
 
-``` html5
+```html5
 <link type="text/css" href="../standalone_content/folder/game.css" rel="stylesheet" />
 <script type="text/javascript" src="../standalone_content/folder/js/game.js"></script>
 ```

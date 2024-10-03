@@ -7,7 +7,7 @@ sidebar_position: 4
 
 Управление интерфейсом и HTML-разметкой из кода игры осуществляется с помощью [встроенной в плеер библиотеки](qspider_inclib) "`qspider`". Чтобы воспользоваться этой библиотекой, необходимо подключить её в начале игры, как обычный модуль QSP:
 
-``` qsp
+```qsp
 inclib 'qspider'
 ```
 
@@ -78,7 +78,7 @@ inclib 'qspider'
 
 Пример вызова команд из кода QSP:
 
-``` qsp
+```qsp
 inclib 'qspider'
 @qspider_quit()
 @qspider_open_pause_screen('saves')

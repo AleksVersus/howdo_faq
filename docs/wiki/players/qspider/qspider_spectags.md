@@ -47,7 +47,7 @@ sidebar_position: 6
 
 Пример смены стилей без перезахода на локацию:
 
-``` qsp
+```qsp
 *p '<qsp-style from="$styles"></qsp-style>'
 *p '<span class="universal">Какого цвета этот текст?</span>'
 
@@ -79,7 +79,7 @@ end
 
 Пример замены содержимого региона новым:
 
-``` qsp
+```qsp
 @qspider_update_region('market-items', '<strong>Здесь больше ничего нет.</strong>')
 ```
 
@@ -102,6 +102,6 @@ end
 
 Пример *включения* слоя:
 
-``` qsp
+```qsp
 @qspider_show_layer('prompt-popup')
 ```
