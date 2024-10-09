@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
+sidebar_label: Особенности работы игр AeroQSP на qSpider
 ---
 [Назад: qSpider - основная информация](index)
 
-# Особенности работы игр AeroQSP на qSpider
+# Особенности работы AeroQSP-игр на qSpider
 
 HTML-движок в флеш версии AeroQSP достаточно специфичен и не всегда совпадает с тем, как работает браузер, поэтому при запуске AeroQSP-игр на **qSpider** будут наблюдаться некоторые отличия в поведении игр.
 
@@ -42,3 +43,8 @@ height = 680
 
 * [qSpider — общая информация](index)
 * [Конфигурационный файл](qspider_gamecfg)
+* [Взаимодействие с интерфейсом](qspider_interface)
+* [Темы оформления](qspider_themes)
+* [Специальные теги](qspider_spectags)
+* [Встроенная библиотека](qspider_inclib)
+* [Стандалон-сборка игры на qSpider](qspider_standalone)

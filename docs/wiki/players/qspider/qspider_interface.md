@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+sidebar_label: Взаимодействие с интерфейсом (расширенные возможности qSpider)
 ---
 # Взаимодействие с интерфейсом (расширенные возможности qSpider)
 
@@ -21,18 +22,18 @@ inclib 'qspider'
 
 ## Привязка элементов HTML-форм к QSP-переменными
 
-В qSpider Элементы HTML-форм (`input`, `select`, `textarea` и др.) можно связать с QSP-переменной. Для этого нужно использовать специальный атрибут `qsp-bind`.
+В **qSpider** Элементы HTML-форм (`input`, `select`, `textarea` и др.) можно связать с QSP-переменной. Для этого нужно использовать специальный атрибут `qsp-bind`.
 
 Связь двунаправленая — изменение переменной обновит элемент и изменение элемента (ввод текста или выбор опции) записываются в переменную.
 
 Примеры использования атрибута `qsp-bind`:
 
-\<sxh html\> \<input type="text" qsp-bind="\$username"\> \<input type="password" qsp-bind="\$form_password"\> \<input type="color" value="#e66465" qsp-bind="\$color"\> \<input type="checkbox" value="1" qsp-bind="enable"\> \<select qsp-bind="\$car"\>
-
+```html
+<input type="text" qsp-bind="$username"> <input type="password" qsp-bind="$form_password"> <input type="color" value="#e66465" qsp-bind="$color"> <input type="checkbox" value="1" qsp-bind="enable"> <select qsp-bind="$car">
     <option value="mercedes">Mercedes</option>
     <option value="audi">Audi</option>
-
-\</select\> \</code\>
+</select>
+```
 
 Это позволяет быстрее и проще создавать собственные диалоговые окна для взаимодействия с игроком.
 
@@ -50,7 +51,11 @@ inclib 'qspider'
 
 Содержимым атрибутов должен быть валидный код QSP. Примеры использования атрибутов:
 
-\<sxh html\> \<div qsp-on:click="exec: msg \'click\'" qsp-on:dblclick="exec: msg \'dblclick\'"\>Click me\</div\> \<div qsp-on:contextmenu="exec: menu \'\$context_menu\'"\>Right Click me\</div\> \<div qsp-on:mouseenter="exec: pl \'enter\'" qsp-on:mouseleave="exec: pl \'leave\'"\>Hover me\</div\> \</code\>
+```html
+<div qsp-on:click="exec: msg 'click'" qsp-on:dblclick="exec: msg 'dblclick'">Click me</div>
+<div qsp-on:contextmenu="exec: menu '$context_menu'">Right Click me</div>
+<div qsp-on:mouseenter="exec: pl 'enter'" qsp-on:mouseleave="exec: pl 'leave'">Hover me</div>
+```
 
 ## Вызов команд плеера
 
@@ -58,7 +63,9 @@ inclib 'qspider'
 
 Пример использования атрибута:
 
-\<sxh html\> \<button qsp-action="resume"\>Resume\</button\> \</code\>
+```html
+<button qsp-command="resume">Resume</button>
+```
 
 Поддерживаются следующие команды плеера:
 
@@ -83,3 +90,13 @@ inclib 'qspider'
 @qspider_quit()
 @qspider_open_pause_screen('saves')
 ```
+
+## Другие статьи по qSpider
+
+* [qSpider — общая информация](index)
+* [Конфигурационный файл](qspider_gamecfg)
+* [Особенности запуска и работы игр AeroQSP на qSpider](qspider_aeroqsp)
+* [Темы оформления](qspider_themes)
+* [Специальные теги](qspider_spectags)
+* [Встроенная библиотека](qspider_inclib)
+* [Стандалон-сборка игры на qSpider](qspider_standalone)
