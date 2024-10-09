@@ -9,7 +9,7 @@
 
 Папка **standalone_content**:
 
-* *game.qsp* - файл игры QSP [^1]
+* *game.qsp* - файл игры QSP ((Вместо "game" может быть любое название игры))
 * шаблоны оформления для разных игровых платформ:
     * *[gameAwesomium.html](navigator_game_template)* - устройства на Windows
     * *gamePG-android.html* - устройства на Android
@@ -34,6 +34,6 @@
 *  [Файл настроек игры в Quest Navigator](fajl_nastroek_igry_v_quest_navigator)
 *  [Независимая сборка игры для Quest Navigator](navigator_standalone)
 
-[^1]: Вместо "game" может быть любое название игры
+[^1]: 
 
 [^2]: Т.к. игра запускается из первого найденного файла .qsp в корне **standalone_content**

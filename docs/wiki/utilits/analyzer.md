@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+sidebar_label: Анализатор кода QSP
 ---
 [Назад: Краткое руководство по TXT2GAM](txt2gam)
 
@@ -20,7 +21,7 @@ sidebar_position: 4
 
 **[Скачать анализатор со страницы релизов](https://code.google.com/archive/p/qsp-analyser/downloads)**
 
-Ссылка на проект, для тех, кому интересно: <http://code.google.com/p/qsp-analyser/>
+Ссылка на проект, для тех, кому интересно: [http://code.google.com/p/qsp-analyser/](http://code.google.com/p/qsp-analyser/)
 
 Главная ценность проекта - исходный код, который полностью открыт. Его можно обновлять и дополнять под изменения в QSP.
 

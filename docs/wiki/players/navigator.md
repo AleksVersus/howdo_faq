@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+sidebar_label: Quest Navigator
 ---
 # Quest Navigator
 
@@ -43,14 +44,14 @@ sidebar_position: 3
 
 ## Ответы по Quest Navigator в F.A.Q.
 
-* [Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?](https://aleksversus.github.io/howdo_faq/informarch/shablony_oformlenija_dlja_igr_0032.html#faq_22_01)
-* [Как подключить свой шрифт к игре?](https://aleksversus.github.io/howdo_faq/informarch/kak_podkljuchit__svoj_shrift_0033.html)
-* [Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?](https://aleksversus.github.io/howdo_faq/informarch/kak_izmenit__tsvet_fona_0034.html)
-* [Хочу прописать игре собственный вид курсора, как это сделать?](https://aleksversus.github.io/howdo_faq/informarch/izmenit__kursor_0035.html)
-* [Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать?](https://aleksversus.github.io/howdo_faq/informarch/nastrojka_shablona_0036.html)
-* [Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?](https://aleksversus.github.io/howdo_faq/informarch/proverka_pleera_0037.html)
-* [Как вставить видео в игру на Навигаторе?](https://aleksversus.github.io/howdo_faq/informarch/video_0038.html)
-* [Как делать standalone-сборку на Навигаторе?](https://aleksversus.github.io/howdo_faq/informarch/standalone_0039.html)
-* [Где в Quest Navigator править размер окна с игрой?](https://aleksversus.github.io/howdo_faq/informarch/razmer_okna_igry_0040.html)
-* [Как выполнить JavaScript прямо из кода QSP?](https://aleksversus.github.io/howdo_faq/informarch/vypolnenie_js_iz_qsp-koda_0041.html)
-* [Инструкция от Nex\'а, позволяющая сменить оформление из кода игры](https://aleksversus.github.io/howdo_faq/informarch/instruktsija_po_smene_oformlenija_iz_koda_igry_0042.html)
+* [Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/layout_templates)
+* [Как подключить свой шрифт к игре?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/add_user_font)
+* [Пишу bcolor=rgb(255,200,200), но это не меняет цвет фона игры. Как изменить цвет фона из кода QSP?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/change_background_color)
+* [Хочу прописать игре собственный вид курсора, как это сделать?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/change_cursor)
+* [Скопировал шаблон оформления в папку со своей игрой, но что с ним теперь делать?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/template_settings)
+* [Как узнать, на каком плеере запущена игра: на классическом QSP, или на Quest Navigator?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/proverka_pleera)
+* [Как вставить видео в игру на Навигаторе?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/video)
+* [Как делать standalone-сборку на Навигаторе?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/standalone)
+* [Где в Quest Navigator править размер окна с игрой?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/windows_size)
+* [Как выполнить JavaScript прямо из кода QSP?](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/exec_js)
+* [Инструкция от Nex\'а, позволяющая сменить оформление из кода игры](https://aleksversus.github.io/howdo_faq/docs/informarch/navigator/change_interface)
