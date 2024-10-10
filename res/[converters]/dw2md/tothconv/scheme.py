@@ -1,12 +1,14 @@
-import pypandoc
 import os
-import re
-import sys
 import json
+import pypandoc
+import re
+from foo import wf
 
 class SchemeDw2md:
 	"""Scheme"""
 	def __init__(self, scheme_path:str='scheme.json') -> None:
+		scheme_path = os.path.abspath(scheme_path)
+		os.chdir(os.path.split(scheme_path[0]))
 		with open(scheme_path, 'r', encoding='utf-8') as fp:
 			self.scheme_json = json.load(fp)
 		self.mb = {}
@@ -127,31 +129,3 @@ class SchemeDw2md:
 		text = re.sub(r'`([^`]+?)`\{\.(\w+)\}', r'\n    ``` \2\n\1\n```\n', text)
 		# TODO: convertation in list item codesblock
 		return text
-
-def wf(text:str, path:str) -> None:
-	fullpath = os.path.abspath(path)
-	with open(fullpath, 'w', encoding='utf-8') as fp:
-		fp.write(text)
-
-# def poop(path:str) -> None:
-# 	path = os.path.abspath(path)
-# 	with open(path, 'r', encoding='utf-8') as fp:
-# 		input_text = fp.read()
-# 	filters = 'f_code_instr.py'
-# 	output_text = pypandoc.convert_text(
-# 		input_text,
-# 		to='dokuwiki',
-# 		format='markdown',
-# 		extra_args=['--wrap=none', f'--filter={filters}'])
-# 	print(output_text)
-
-
-
-def main():
-	scheme = SchemeDw2md('scheme.json')
-	scheme.convert_to_md()
-
-if __name__ == '__main__':
-	main()
-
-# print(pypandoc.get_pandoc_formats())
