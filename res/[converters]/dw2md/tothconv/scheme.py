@@ -2,13 +2,13 @@ import os
 import json
 import pypandoc
 import re
-from foo import wf
+from .foo import wf
 
 class SchemeDw2md:
 	"""Scheme"""
 	def __init__(self, scheme_path:str='scheme.json') -> None:
 		scheme_path = os.path.abspath(scheme_path)
-		os.chdir(os.path.split(scheme_path[0]))
+		os.chdir(os.path.split(scheme_path)[0])
 		with open(scheme_path, 'r', encoding='utf-8') as fp:
 			self.scheme_json = json.load(fp)
 		self.mb = {}
