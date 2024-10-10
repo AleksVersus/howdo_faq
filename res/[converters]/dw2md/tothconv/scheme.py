@@ -137,7 +137,6 @@ class SchemeDw2md:
 			el = self.get_el(i)
 			if el['type'] == 'page':
 				self.pypan_file_to_dw(el)
-				break
 
 	def pypan_file_to_dw(self, el:dict) -> None:
 		# prepare path
@@ -175,7 +174,11 @@ class SchemeDw2md:
 				if os.path.splitext(curlink)[1] == '':
 					curlink += '.md'
 				link_el = self.get_el_by_prop('output_path', curlink)
-				wikipath = link_el['wikipath']
+				try:
+					wikipath = link_el['wikipath']
+				except TypeError as e:
+					print(link, wikipath, link_el)
+					raise e				
 				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({wikipath})')
 		return text
 

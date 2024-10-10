@@ -2,7 +2,7 @@
 sidebar_position: 10
 sidebar_label: Условия
 ---
-[Назад: Регулярные выражения](strings/regexp)
+[Назад: Кортежи](tuples)
 
 # Условия
 

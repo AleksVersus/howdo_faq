@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/wiki/hide/start.md",
+                "file": "docs/wiki/programming/arrays.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/hide/start.md",
+                "file": "docs/wiki/programming/arrays.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/hide/start.md",
+                "file": "docs/wiki/programming/arrays.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/wiki/hide/start.md"
+                "file": "docs/wiki/programming/arrays.md"
               }
             }
           }
@@ -148,32 +148,32 @@
   },
   "active": "be4cfee98c039864",
   "lastOpenFiles": [
-    "docs/wiki/hide/snippet.md",
-    "docs/wiki/hide/qsp_license.md",
-    "docs/wiki/hide/keywords_operator.md",
-    "docs/wiki/hide/gnu_gpl_eng.md",
-    "docs/wiki/hide/classic_standalone.md",
-    "docs/wiki/hide/bag.md",
-    "docs/wiki/hide/arrays.md",
-    "docs/wiki/advanced/inputs.md",
+    "docs/wiki/programming/strings/regexp.md",
+    "docs/wiki/programming/strings/index.md",
+    "docs/wiki/keywords.md",
     "docs/wiki/limits.md",
     "docs/wiki/utilits/analyzer.md",
     "docs/wiki/utilits/txt2gam.md",
-    "docs/wiki/utilits/txt2gam/txt2gam_preprocessor.md",
-    "docs/wiki/utilits/txt2gam/txt2gam_manual.md",
-    "docs/wiki/utilits/txt2gam/txt2gam_linux.md",
     "docs/wiki/utilits/debugger.md",
     "docs/wiki/utilits/qgen.md",
     "docs/wiki/players/qspider/index.md",
-    "docs/wiki/players/navigator/sozdanie_igr_na_quest_navigator.md",
-    "docs/wiki/players/navigator/navigator_standalone.md",
-    "docs/wiki/players/navigator/navigator_game_template.md",
-    "docs/wiki/players/navigator/navigator_game_files.md",
-    "docs/wiki/players/navigator/navigator_command_line.md",
-    "docs/wiki/players/navigator/ispolzovanie_shriftov_v_quest_navigator.md",
-    "docs/wiki/players/navigator/fajl_nastroek_igry_v_quest_navigator.md",
-    "docs/wiki/players/navigator.md",
-    "docs/wiki/players/aeroqsp.md",
+    "docs/wiki/players/classic_qsp.md",
+    "docs/wiki/advanced/realtime.md",
+    "docs/wiki/advanced/savegame.md",
+    "docs/wiki/advanced/modules.md",
+    "docs/wiki/advanced/inputs.md",
+    "docs/wiki/design/html.md",
+    "docs/wiki/design/interface.md",
+    "docs/wiki/design/graphics.md",
+    "docs/wiki/design/sound.md",
+    "docs/wiki/design/menu.md",
+    "docs/wiki/programming/dynamical.md",
+    "docs/wiki/programming/service_locations.md",
+    "docs/wiki/programming/jump.md",
+    "docs/wiki/programming/organizing.md",
+    "docs/wiki/programming/conditional.md",
+    "docs/wiki/programming/tuples.md",
+    "docs/wiki/programming/arrays.md",
     "[source]/wiki.qsp.org.dokuwiki/help/01_05_msgbox.dokuwiki",
     "docs/wiki/help/msgbox.png",
     "docs/wiki/help/msgbox.png.opdownload",

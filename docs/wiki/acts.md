@@ -2,7 +2,7 @@
 sidebar_position: 5
 sidebar_label: Действия
 ---
-[Назад: Диалоговое окно](text_print/msgbox)
+[Назад: Окно сообщений](text_print/msgbox)
 
 # Действия
 
