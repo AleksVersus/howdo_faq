@@ -276,6 +276,18 @@
 			"sidebar_position": null,
 			"wikipath": "help:navigator_standalone"
 		},
+		"help\\70_08_fajl_css_igry_v_quest_navigator.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\fajl_css_igry_v_quest_navigator.md",
+			"sidebar_position": null,
+			"type": "empty",
+			"wikipath": "help:fajl_css_igry_v_quest_navigator"
+		},
+		"help\\70_09_fajl_js_igry_v_quest_navigator.dokuwiki": {
+			"path": "..\\..\\docs\\wiki\\players\\navigator\\fajl_js_igry_v_quest_navigator.md",
+			"sidebar_position": null,
+			"type": "empty",
+			"wikipath": "help:fajl_js_igry_v_quest_navigator"
+		},
 	"help\\06_04_aeroqsp.dokuwiki": {
 		"path": "..\\..\\docs\\wiki\\players\\aeroqsp.md",
 		"sidebar_position": 4,
@@ -382,37 +394,37 @@
 	},
 
 	"imgs\\ballad.jpg": {
-		"path": "..\\..\\docs\\imgs\\ballad.jpg",
+		"path": "..\\..\\docs\\wiki\\imgs\\ballad.jpg",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:ballad.jpg"
 	},
 	"imgs\\input_window.png": {
-		"path": "..\\..\\docs\\imgs\\input_window.png",
+		"path": "..\\..\\docs\\wiki\\imgs\\input_window.png",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:input_window.png"
 	},
 	"imgs\\level13.jpg": {
-		"path": "..\\..\\docs\\imgs\\level13.jpg",
+		"path": "..\\..\\docs\\wiki\\imgs\\level13.jpg",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:level13.jpg"
 	},
 	"imgs\\msgbox.png": {
-		"path": "..\\..\\docs\\imgs\\msgbox.png",
+		"path": "..\\..\\docs\\wiki\\imgs\\msgbox.png",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:msgbox.png"
 	},
 	"imgs\\qspblank2.jpg": {
-		"path": "..\\..\\docs\\imgs\\qspblank2.jpg",
+		"path": "..\\..\\docs\\wiki\\imgs\\qspblank2.jpg",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:qspblank2.jpg"
 	},
 	"imgs\\window_msg.png": {
-		"path": "..\\..\\docs\\imgs\\window_msg.png",
+		"path": "..\\..\\docs\\wiki\\imgs\\window_msg.png",
 		"sidebar_position": null,
 		"type": "img",
 		"wikipath": "help:window_msg.png"

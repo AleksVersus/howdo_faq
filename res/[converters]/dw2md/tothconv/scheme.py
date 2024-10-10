@@ -164,22 +164,27 @@ class SchemeDw2md:
 		# в какой папке лежит текущий файл
 		curpath = os.path.split(el['output_path'])[0]
 		# исправляем ссылки
-		link_patterns = re.findall(r'\[([^]]+?)\]\((.*?)\)', text)
+		link_patterns = re.findall(r'(?<!\@)\[([^]]+?)\]\((.*?)\)', text)
 		for link in link_patterns:
-			if link[1][0:4] != 'http':
+			if link[1][:4] != 'http' and link[1][0] != '#':
 				# ссылка не ссылается на внешний ресурс, значит ссылается на внутренний
 				# пытаемся получить, что это за ссылка относительно текущей папки
 				# здесь будет лежать относительный путь 
 				curlink = os.path.normpath(os.path.join(curpath, link[1]))
+				if '#' in curlink:
+					curlink, hashtag = curlink.split('#')
+					hashtag = '#' + hashtag
+				else:
+					hashtag = ''
 				if os.path.splitext(curlink)[1] == '':
 					curlink += '.md'
 				link_el = self.get_el_by_prop('output_path', curlink)
 				try:
 					wikipath = link_el['wikipath']
 				except TypeError as e:
-					print(link, wikipath, link_el)
+					print(link, curlink, link_el)
 					raise e				
-				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({wikipath})')
+				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({wikipath}{hashtag})')
 		return text
 
 	def dw_postfiltration(self, text:str, el:dict) -> str:

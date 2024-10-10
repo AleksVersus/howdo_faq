@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "1f632559ad36c179",
+        "id": "f93e6dd25996defe",
         "type": "tabs",
         "children": [
           {
-            "id": "be4cfee98c039864",
+            "id": "9967abbb5948d62b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/wiki/programming/arrays.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/wiki/programming/arrays.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/wiki/programming/arrays.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/wiki/programming/arrays.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -146,10 +138,29 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "be4cfee98c039864",
+  "active": "9967abbb5948d62b",
   "lastOpenFiles": [
-    "docs/wiki/programming/strings/regexp.md",
+    "[source]/wiki.qsp.org.out/informarch/fonts.dokuwiki",
+    "[source]/wiki.qsp.org.out/informarch/dummy.dokuwiki",
+    "[source]/wiki.qsp.org.out/informarch",
+    "[source]/wiki.qsp.org.out/glossary/snippet.dokuwiki",
+    "[source]/wiki.qsp.org.out/glossary/bag.dokuwiki",
+    "[source]/wiki.qsp.org.out/glossary",
+    "[source]/wiki.qsp.org.out/howto/02_15_arrays.dokuwiki",
+    "[source]/wiki.qsp.org.out/howto/01_14_start.dokuwiki",
+    "[source]/wiki.qsp.org.out/howto",
+    "[source]/wiki.qsp.org.out/help/qsp_license.dokuwiki",
+    "[source]/wiki.qsp.org.out/help/keywords_operator.dokuwiki",
+    "docs/wiki/players/navigator/navigator_game_template.md",
+    "docs/wiki/players/navigator.md",
+    "docs/wiki/players/qspider/qspider_interface.md",
+    "docs/wiki/players/navigator/fajl_nastroek_igry_v_quest_navigator.md",
+    "docs/wiki/programming/organizing.md",
     "docs/wiki/programming/strings/index.md",
+    "docs/wiki/locations.md",
+    "docs/wiki/glossary.md",
+    "docs/wiki/programming/arrays.md",
+    "docs/wiki/programming/strings/regexp.md",
     "docs/wiki/keywords.md",
     "docs/wiki/limits.md",
     "docs/wiki/utilits/analyzer.md",
@@ -165,26 +176,7 @@
     "docs/wiki/design/html.md",
     "docs/wiki/design/interface.md",
     "docs/wiki/design/graphics.md",
-    "docs/wiki/design/sound.md",
-    "docs/wiki/design/menu.md",
-    "docs/wiki/programming/dynamical.md",
-    "docs/wiki/programming/service_locations.md",
-    "docs/wiki/programming/jump.md",
-    "docs/wiki/programming/organizing.md",
-    "docs/wiki/programming/conditional.md",
-    "docs/wiki/programming/tuples.md",
-    "docs/wiki/programming/arrays.md",
-    "[source]/wiki.qsp.org.dokuwiki/help/01_05_msgbox.dokuwiki",
     "docs/wiki/help/msgbox.png",
-    "docs/wiki/help/msgbox.png.opdownload",
-    "[source]/wiki.qsp.org.dokuwiki/help/01_04_stat.dokuwiki",
-    "[source]/wiki.qsp.org.dokuwiki/help/01_03_main.dokuwiki",
-    "[source]/wiki.qsp.org.dokuwiki/help/01_3_main.dokuwiki",
-    "[source]/wiki.qsp.org.dokuwiki/md2dw.json",
-    "[source]/wiki.qsp.org.dokuwiki/pf.dokuwiki",
-    "[source]/wiki.qsp.org.dokuwiki/f_code_instr.py",
-    "help",
-    "[source]/wiki.qsp.org.dokuwiki/help/01_02_locations.dokuwiki",
     "docs/wiki/help/input_window.png",
     "docs/wiki/help/window_msg.png",
     "docs/wiki/help/level13.jpg",

@@ -1,0 +1,35 @@
+[[help:navigator|Назад: Quest Navigator]]
+
+===== Файлы игры на Quest Navigator =====
+
+В папке с игрой должны быть две папки:
+
+  * **qsplib** - стандартная папка для всех игр, содержащая часть игрового движка, лезть туда не советую, позже она перестанет быть обязательной, пока папку нужно скопировать из папки с плеером.
+  * **standalone_content** - здесь находится сама игра
+
+Папка **standalone_content**:
+
+  * //game.qsp// - файл игры QSP ((Вместо “game” может быть любое название игры))
+  * шаблоны оформления для разных игровых платформ:
+    * //[[help:navigator_game_template|gameAwesomium.html]]// - устройства на Windows
+    * //gamePG-android.html// - устройства на Android
+    * //gamePG-ios.html// - устройства на iOS
+  * //[[help:fajl_nastroek_igry_v_quest_navigator|config.xml]]// - файл настроек игры
+  * //[[help:navigator_game_template|game.css]]// - файл стилей, от этого файла зависит внешний вид игры
+  * //game.js// - файл JS, в котором программируются дополнительные функции
+  * все остальные файлы.
+
+//В корне папки **standalone_content** должны находиться файлы из первых трёх пунктов перечисления. Остальные можно и рекомендуется держать в подпапках для удобства.//\\
+//Все дополнительные QSP файлы (подключаемые модули) должны **обязательно** быть в подпапках ((Т.к. игра запускается из первого найденного файла .qsp в корне **standalone_content**)).//
+
+————————————————————————
+
+===== Другие статьи =====
+
+  * Файлы игры на Quest Navigator
+  * [[help:navigator_command_line|Параметры запуска Quest Navigator]]
+  * [[help:navigator_game_template|Шаблон игры на Quest Navigator]]
+  * [[help:sozdanie_igr_na_quest_navigator|Создание игр для плеера Quest Navigator]]
+  * [[help:ispolzovanie_shriftov_v_quest_navigator|Использование шрифтов в Quest Navigator]]
+  * [[help:fajl_nastroek_igry_v_quest_navigator|Файл настроек игры в Quest Navigator]]
+  * [[help:navigator_standalone|Независимая сборка игры для Quest Navigator]]
