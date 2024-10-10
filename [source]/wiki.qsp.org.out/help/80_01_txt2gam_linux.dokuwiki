@@ -8,8 +8,12 @@
 
   - Скачиваем все файлы с расширениями ''%%*.c%%'' и ''%%*.h%%'' и помещаем их в один каталог.
   - Открываем ваш терминал(gnome-terminal, xfce4-terminal, konsole или какой у вас там).
-  - Пишем в консоли ''%%plain   cd путь/до/директории/куда/скачали/файлы%%''
-  - Пишем в консоли ''%%plain   gcc main.c coding.c locations.c memwatch.c text.c -o txt2gam%%''
+  - Пишем в консоли <sxh>
+   cd путь/до/директории/куда/скачали/файлы
+</sxh>
+  - Пишем в консоли <sxh>
+   gcc main.c coding.c locations.c memwatch.c text.c -o txt2gam
+</sxh>
   - Ждем, пока оно компилируется.
   - ???
   - PROFIT
