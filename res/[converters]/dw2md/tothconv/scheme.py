@@ -2,7 +2,7 @@ import os
 import json
 import pypandoc
 import re
-from .foo import wf
+from .foo import (wf, safe_mk_fold)
 
 class SchemeDw2md:
 	"""Scheme"""
@@ -26,6 +26,7 @@ class SchemeDw2md:
 				self.mb['type'].append(self.scheme_json[el]['type'])
 			else:
 				self.mb['type'].append('page')
+		self.folder_output_md = None
 
 	def get_prop(self, el:str, prop:str) -> str:
 		# path; sidebar_position; wikipath;
@@ -60,9 +61,9 @@ class SchemeDw2md:
 		for i, _ in enumerate(self.mb['wiki_source']):
 			el = self.get_el(i)
 			if el['type'] == 'page':
-				self.pypan_file(el)
+				self.pypan_file_to_md(el)
 
-	def pypan_file(self, el:dict) -> None:
+	def pypan_file_to_md(self, el:dict) -> None:
 		# prepare path
 		path = el['wiki_source']
 		fullpath = os.path.abspath(path)
@@ -70,21 +71,21 @@ class SchemeDw2md:
 		with open(fullpath, 'r', encoding='utf-8') as fp:
 			input_text = fp.read()
 		# prepare text
-		input_text = self.prefiltration(input_text, el)
+		input_text = self.dw_prefiltration(input_text, el)
 		output_text = pypandoc.convert_text(
 			input_text,
 			to='markdown',
 			format='dokuwiki',
 			# filters = ['f_code_instr.py'],
 			extra_args=['--wrap=none'])
-		output_text = self.postfiltration(output_text, el)
+		output_text = self.md_postfiltration(output_text, el)
 		sidebar_position = el['sidebar_position']
 		if sidebar_position is not None:
 			output_text = f'---\nsidebar_position: {sidebar_position}\n---\n{output_text}'
 		output_path = os.path.abspath(el['output_path'])
 		wf(output_text, output_path)
 
-	def prefiltration(self, text:str, el:dict) -> str:
+	def dw_prefiltration(self, text:str, el:dict) -> str:
 		""" Выполняется до прогона через pandoc """
 		text = text.replace('<sxh qsp>', '<code qsp>')
 		text = text.replace('<sxh>', '<code plain>')
@@ -95,7 +96,7 @@ class SchemeDw2md:
 		# wf(text, 'pf.dokuwiki')
 		return text
 
-	def postfiltration(self, text:str, el:dict) -> str:
+	def md_postfiltration(self, text:str, el:dict) -> str:
 		""" Выполняется после прогона через pandoc """
 		curpath = os.path.split(os.path.abspath(el['output_path']))[0]
 		# исправляем ссылки
@@ -129,3 +130,65 @@ class SchemeDw2md:
 		text = re.sub(r'`([^`]+?)`\{\.(\w+)\}', r'\n    ``` \2\n\1\n```\n', text)
 		# TODO: convertation in list item codesblock
 		return text
+
+	def convert_to_dw(self, output_folder:str='.') -> None:
+		self.folder_output_md = os.path.abspath(output_folder)
+		for i, _ in enumerate(self.mb['wiki_source']):
+			el = self.get_el(i)
+			if el['type'] == 'page':
+				self.pypan_file_to_dw(el)
+				break
+
+	def pypan_file_to_dw(self, el:dict) -> None:
+		# prepare path
+		path = el['output_path']
+		fullpath = os.path.abspath(path)
+		# load dokuwiki text
+		with open(fullpath, 'r', encoding='utf-8') as fp:
+			input_text = fp.read()
+		# prepare text
+		input_text = self.md_prefiltration(input_text, el)
+		output_text = pypandoc.convert_text(
+			input_text,
+			to='dokuwiki',
+			format='markdown',
+			# filters = ['f_code_instr.py'],
+			extra_args=['--wrap=none'])
+		output_text = self.dw_postfiltration(output_text, el)
+		output_path = os.path.join(self.folder_output_md, el['wiki_source'])
+		output_folder = os.path.split(output_path)[0]
+		safe_mk_fold(output_folder)
+		wf(output_text, output_path)
+
+	def md_prefiltration(self, text:str, el:dict) -> str:
+		""" Выполняется до прогона через pandoc """
+		# в какой папке лежит текущий файл
+		curpath = os.path.split(el['output_path'])[0]
+		# исправляем ссылки
+		link_patterns = re.findall(r'\[([^]]+?)\]\((.*?)\)', text)
+		for link in link_patterns:
+			if link[1][0:4] != 'http':
+				# ссылка не ссылается на внешний ресурс, значит ссылается на внутренний
+				# пытаемся получить, что это за ссылка относительно текущей папки
+				# здесь будет лежать относительный путь 
+				curlink = os.path.normpath(os.path.join(curpath, link[1]))
+				if os.path.splitext(curlink)[1] == '':
+					curlink += '.md'
+				link_el = self.get_el_by_prop('output_path', curlink)
+				wikipath = link_el['wikipath']
+				text = text.replace(f'[{link[0]}]({link[1]})', f'[{link[0]}]({wikipath})')
+		return text
+
+	def dw_postfiltration(self, text:str, el:dict) -> str:
+		""" Выполняется после прогона через pandoc """
+		text = text.replace('<code qsp>', '<sxh qsp>')
+		text = text.replace('<code html>', '<sxh html>')
+		text = text.replace('<code plain>', '<sxh>')
+		text = text.replace('<code>', '<sxh>')
+		text = text.replace('</code>', '</sxh>')
+		text = text.replace(r'\\\n', r'\n')
+		text = text.replace('\r\n', '\n')
+		return text
+
+if __name__ == '__main__':
+	...
