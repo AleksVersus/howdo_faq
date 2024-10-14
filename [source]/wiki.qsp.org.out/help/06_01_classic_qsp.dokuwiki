@@ -12,14 +12,14 @@
 gui.cfg
 </sxh>.
 
-  * Краткая инструкция по настройке окошек плеера: [[https://aleksversus.github.io/howdo_faq/docs/howdo/contents/interface/windows_settings|“F.A.Q.: Как настроить окошки классического плеера?”]]
+  * Краткая инструкция по настройке окошек плеера: [[https://aleksversus.github.io/howdo_faq/docs/howdo/contents/interface/windows_settings|"F.A.Q.: Как настроить окошки классического плеера?"]]
   * Краткое описание файла <sxh qsp>
 gui.cfg
-</sxh>: [[https://aleksversus.github.io/howdo_faq/docs/articles/config_classic_570|“Конфигурационный файл классического плеера”]].
+</sxh>: [[https://aleksversus.github.io/howdo_faq/docs/articles/config_classic_570|"Конфигурационный файл классического плеера"]].
 
-Мы рекомендуем использовать классический плеер в сочетании с редактором “**Quest Generator**”, если вы только начинаете изучение **QSP** или для быстрых тестов.
+Мы рекомендуем использовать классический плеер в сочетании с редактором "**Quest Generator**", если вы только начинаете изучение **QSP** или для быстрых тестов.
 
-Для более продвинутой разработки игр используйте плеер “**qSpider**” и сторонний редактор, например VS Code с [[https://github.com/QSPFoundation/Qsp.FSharp.VsCode|расширением от **Fering**’а]].
+Для более продвинутой разработки игр используйте плеер "**qSpider**" и сторонний редактор, например VS Code с [[https://github.com/QSPFoundation/Qsp.FSharp.VsCode|расширением от **Fering**’а]].
 
 P.S.: Данная статья будет пополняться.
 

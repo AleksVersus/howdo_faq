@@ -9,7 +9,7 @@
 
 Папка **standalone_content**:
 
-  * //game.qsp// - файл игры QSP ((Вместо “game” может быть любое название игры))
+  * //game.qsp// - файл игры QSP ((Вместо "game" может быть любое название игры))
   * шаблоны оформления для разных игровых платформ:
     * //[[help:navigator_game_template|gameAwesomium.html]]// - устройства на Windows
     * //gamePG-android.html// - устройства на Android
