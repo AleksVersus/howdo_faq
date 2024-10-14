@@ -102,7 +102,7 @@ ider_change_theme
 
 Пример слоя:
 
-<code html5>
+<code html>
 <qsp-layer name="layer1" index="10">Some UI</qsp-layer>
 </sxh>
 
@@ -128,7 +128,7 @@ ider_show_only_layer
 
 Пример региона:
 
-<code html5>
+<code html>
 <qsp-region name="region1"></qsp-region>
 </sxh>
 

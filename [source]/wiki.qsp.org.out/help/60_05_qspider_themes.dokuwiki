@@ -19,7 +19,7 @@
 
 Обратите внимание на первые строки темы (ниже пример из встроенной классической темы):
 
-<code html5>
+<code html>
 <qspider-theme name="qspider:classic">
 <css-link src="qspider:themes/common.css"></css-link>
 <css-link src="qspider:themes/classic.css"></css-link>

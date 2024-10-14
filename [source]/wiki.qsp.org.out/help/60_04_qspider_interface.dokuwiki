@@ -30,7 +30,7 @@ inclib 'qspider'
 -bind
 </sxh>:
 
-<code html5>
+<code html>
 <input type="text" qsp-bind="$username"> <input type="password" qsp-bind="$form_password"> <input type="color" value="#e66465" qsp-bind="$color"> <input type="checkbox" value="1" qsp-bind="enable"> <select qsp-bind="$car">
     <option value="mercedes">Mercedes</option>
     <option value="audi">Audi</option>
@@ -65,7 +65,7 @@ inclib 'qspider'
 
 Содержимым атрибутов должен быть валидный код QSP. Примеры использования атрибутов:
 
-<code html5>
+<code html>
 <div qsp-on:click="exec: msg 'click'" qsp-on:dblclick="exec: msg 'dblclick'">Click me</div>
 <div qsp-on:contextmenu="exec: menu '$context_menu'">Right Click me</div>
 <div qsp-on:mouseenter="exec: pl 'enter'" qsp-on:mouseleave="exec: pl 'leave'">Hover me</div>
@@ -79,7 +79,7 @@ inclib 'qspider'
 
 Пример использования атрибута:
 
-<code html5>
+<code html>
 <button qsp-command="resume">Resume</button>
 </sxh>
 
