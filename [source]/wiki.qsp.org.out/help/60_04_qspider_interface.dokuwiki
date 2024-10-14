@@ -2,9 +2,7 @@
 
 **qSpider** в отличие от классического плеера позволяет авторам более широко работать с выводимой на экран HTML-разметкой.
 
-Управление интерфейсом и HTML-разметкой из кода игры осуществляется с помощью [[help:qspider_inclib|встроенной в плеер библиотеки]] "<sxh qsp>
-ider
-</sxh>". Чтобы воспользоваться этой библиотекой, необходимо подключить её в начале игры, как обычный модуль QSP:
+Управление интерфейсом и HTML-разметкой из кода игры осуществляется с помощью [[help:qspider_inclib|встроенной в плеер библиотеки]] "''qspider''". Чтобы воспользоваться этой библиотекой, необходимо подключить её в начале игры, как обычный модуль QSP:
 
 <sxh qsp>
 inclib 'qspider'
@@ -20,18 +18,18 @@ inclib 'qspider'
 
 ===== Привязка элементов HTML-форм к QSP-переменными =====
 
-В **qSpider** Элементы HTML-форм (''%%input%%'', ''%%select%%'', ''%%textarea%%'' и др.) можно связать с QSP-переменной. Для этого нужно использовать специальный атрибут <sxh qsp>
--bind
-</sxh>.
+В **qSpider** Элементы HTML-форм (''%%input%%'', ''%%select%%'', ''%%textarea%%'' и др.) можно связать с QSP-переменной. Для этого нужно использовать специальный атрибут ''qsp-bind''.
 
 Связь двунаправленая — изменение переменной обновит элемент и изменение элемента (ввод текста или выбор опции) записываются в переменную.
 
-Примеры использования атрибута <sxh qsp>
--bind
-</sxh>:
+Примеры использования атрибута ''qsp-bind'':
 
-<code html>
-<input type="text" qsp-bind="$username"> <input type="password" qsp-bind="$form_password"> <input type="color" value="#e66465" qsp-bind="$color"> <input type="checkbox" value="1" qsp-bind="enable"> <select qsp-bind="$car">
+<sxh html>
+<input type="text" qsp-bind="$username">
+<input type="password" qsp-bind="$form_password">
+<input type="color" value="#e66465" qsp-bind="$color">
+<input type="checkbox" value="1" qsp-bind="enable">
+<select qsp-bind="$car">
     <option value="mercedes">Mercedes</option>
     <option value="audi">Audi</option>
 </select>
@@ -41,31 +39,19 @@ inclib 'qspider'
 
 ===== Вызов QSP-кода по событию в плеере =====
 
-Вы можете вызывать код QSP при определённых событиях в плеере с помощью новых атрибутов, начинающихся с префикса <sxh qsp>
--on:
-</sxh>.
+Вы можете вызывать код QSP при определённых событиях в плеере с помощью новых атрибутов, начинающихся с префикса ''qsp-on:''.
 
 Поддерживаются следующие атрибуты:
 
-  * <sxh qsp>
--on:click
-</sxh> — одинарный клик
-  * <sxh qsp>
--on:dblclick
-</sxh> — двойной клик
-  * <sxh qsp>
--on:contextmenu
-</sxh> — клик правой кнопкой
-  * <sxh qsp>
--on:mouseenter
-</sxh> — наведение курсора
-  * <sxh qsp>
--on:mouseleave
-</sxh> — выход курсора за пределы элемента
+  * ''qsp-on:click'' — одинарный клик
+  * ''qsp-on:dblclick'' — двойной клик
+  * ''qsp-on:contextmenu'' — клик правой кнопкой
+  * ''qsp-on:mouseenter'' — наведение курсора
+  * ''qsp-on:mouseleave'' — выход курсора за пределы элемента
 
 Содержимым атрибутов должен быть валидный код QSP. Примеры использования атрибутов:
 
-<code html>
+<sxh html>
 <div qsp-on:click="exec: msg 'click'" qsp-on:dblclick="exec: msg 'dblclick'">Click me</div>
 <div qsp-on:contextmenu="exec: menu '$context_menu'">Right Click me</div>
 <div qsp-on:mouseenter="exec: pl 'enter'" qsp-on:mouseleave="exec: pl 'leave'">Hover me</div>
@@ -73,13 +59,11 @@ inclib 'qspider'
 
 ===== Вызов команд плеера =====
 
-Вы можете вызывать множество команд плеера по клику на HTML-элемент, используя специальный атрибут <sxh qsp>
--command
-</sxh>.
+Вы можете вызывать множество команд плеера по клику на HTML-элемент, используя специальный атрибут ''qsp-command''.
 
 Пример использования атрибута:
 
-<code html>
+<sxh html>
 <button qsp-command="resume">Resume</button>
 </sxh>
 
@@ -97,9 +81,7 @@ inclib 'qspider'
   * ''%%scroll:main:bottom%%'' и ''%%scroll:main:top%%'' — прокрутка окна основного описания
   * ''%%scroll:stats:bottom%%'' и ''%%scroll:stats:top%%'' — прокуртка окна доп описания
 
-Эти команды можно вызывать и непосредственно из кода QSP, если подключить [[help:qspider_inclib|встроенную библиотеку]] <sxh qsp>
-ider
-</sxh>.
+Эти команды можно вызывать и непосредственно из кода QSP, если подключить [[help:qspider_inclib|встроенную библиотеку]] ''qspider''.
 
 Пример вызова команд из кода QSP:
 

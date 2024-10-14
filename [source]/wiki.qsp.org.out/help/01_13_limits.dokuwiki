@@ -37,6 +37,6 @@
 
 ===== F.A.Q. по ограничениям =====
 
-  * [[https://aleksversus.github.io/howdo_faq/pages/podkljuchaemye_fajly_0170.html#faq_23_01|Видел в справке ограничение на 100 подключаемых файлов. Это что, я не смогу использовать более ста файлов картинок и музыки?]]
-  * [[https://aleksversus.github.io/howdo_faq/pages/vyvodimye_dejstvija_0171.html|Хочу разместить на локации около 100 действий. Это вообще возможно?]]
-  * [[https://aleksversus.github.io/howdo_faq/pages/imena_peremennyh_0172.html|Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?]]
+  * [[https://aleksversus.github.io/howdo_faq/docs/howdo/contents/restriction/inclib_numbers/|Видел в справке ограничение на 100 подключаемых файлов. Это что, я не смогу использовать более ста файлов картинок и музыки?]]
+  * [[https://aleksversus.github.io/howdo_faq/docs/howdo/contents/restriction/actions_numbers|Хочу разместить на локации около 100 действий. Это вообще возможно?]]
+  * [[https://aleksversus.github.io/howdo_faq/docs/howdo/contents/restriction/varnames|Генерирую переменные с помощью оператора dynamic, и вдруг выходит ошибка 123. Что это, и как с этим бороться?]]

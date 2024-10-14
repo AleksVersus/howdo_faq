@@ -20,7 +20,7 @@
 
 Примеры использования:
 
-<code html>
+<sxh html>
 <qsp-variable name="money"></qsp-variable>
 <qsp-variable name="counts" index="5"></qsp-variable>
 <qsp-variable name="$items" key="knife"></qsp-variable>
@@ -36,7 +36,7 @@
 
 Примеры использования:
 
-<code html>
+<sxh html>
 <qsp-show when="should_show=1">Этот текст будет виден только когда значение перменной should_show будет равно 1</qsp-show>
 <qsp-show when="usehtml = 1 and flag = 1">Флаг выставлен.</qsp-show>
 <qsp-show when="no obj('Ваза')">Ваза стоит на столе.</qsp-show>
@@ -78,13 +78,11 @@ end
 
 Пример региона:
 
-<code html>
+<sxh html>
 <qsp-region name="market-items"></qsp-region>
 </sxh>
 
-Для обновления региона из кода QSP используются функции [[help:qspider_inclib|встроенной библиотеки]] <sxh qsp>
-ider
-</sxh>.
+Для обновления региона из кода QSP используются функции [[help:qspider_inclib|встроенной библиотеки]] ''qspider''.
 
 Пример замены содержимого региона новым:
 
@@ -105,13 +103,11 @@ ider
 
 Пример слоя:
 
-<code html>
+<sxh html>
 <qsp-layer name="prompt-popup">Кошелёк или жизнь?</qsp-layer>
 </sxh>
 
-Для управления отображением слоёв из кода QSP нужно использовать функции [[help:qspider_inclib|встроенной библиотеки]] <sxh qsp>
-ider
-</sxh>.
+Для управления отображением слоёв из кода QSP нужно использовать функции [[help:qspider_inclib|встроенной библиотеки]] ''qspider''.
 
 Пример //включения// слоя:
 

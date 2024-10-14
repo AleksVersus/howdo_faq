@@ -1,8 +1,6 @@
 ====== Встроенная библиотека qspider ======
 
-В плеер **qSpider** втроена специальная библиотека <sxh qsp>
-ider
-</sxh>, которая содержит набор функций для управления интерфейсом вашей игры.
+В плеер **qSpider** втроена специальная библиотека ''qspider'', которая содержит набор функций для управления интерфейсом вашей игры.
 
 Чтобы воспользоваться функциями библиотеки, её нужно подключить, как [[help:modules|обычный модуль QSP]], написав, например в самой первой локации в игре команду:
 
@@ -16,49 +14,31 @@ inclib 'qspider'
 
 Данные функции позволяют управлять поведением плеера прямо из кода QSP.
 
-  * <sxh qsp>
-ider_quit
-</sxh> — выход из игры на полку игр. <sxh qsp>
+  * ''qspider_quit'' — выход из игры на полку игр. <sxh qsp>
      @qspider_quit()
 </sxh>
-  * <sxh qsp>
-ider_restart
-</sxh> — перезапуск текущей игры. <sxh qsp>
+  * ''qspider_restart'' — перезапуск текущей игры. <sxh qsp>
      @qspider_restart()
 </sxh>
-  * <sxh qsp>
-ider_resume
-</sxh> — продолжить игру (закрыть меню паузы). <sxh qsp>
+  * ''qspider_resume'' — продолжить игру (закрыть меню паузы). <sxh qsp>
      @qspider_resume()
 </sxh>
-  * <sxh qsp>
-ider_mute
-</sxh> — Выключить звук. <sxh qsp>
+  * ''qspider_mute'' — Выключить звук. <sxh qsp>
      @qspider_mute()
 </sxh>
-  * <sxh qsp>
-ider_unmute
-</sxh> — Включить звук. <sxh qsp>
+  * ''qspider_unmute'' — Включить звук. <sxh qsp>
      @qspider_unmute()
 </sxh>
-  * <sxh qsp>
-ider_toggle_mute
-</sxh> — Переключить звук. <sxh qsp>
+  * ''qspider_toggle_mute'' — Переключить звук. <sxh qsp>
      @qspider_toggle_mute()
 </sxh>
-  * <sxh qsp>
-ider_quicksave
-</sxh> — Переключить звук. <sxh qsp>
+  * ''qspider_quicksave'' — Переключить звук. <sxh qsp>
      @qspider_quicksave()
 </sxh>
-  * <sxh qsp>
-ider_quickload
-</sxh> — Переключить звук. <sxh qsp>
+  * ''qspider_quickload'' — Переключить звук. <sxh qsp>
      @qspider_quickload()
 </sxh>
-  * <sxh qsp>
-ider_open_pause_screen
-</sxh> — открыть меню паузы. Аргументы ''%%$args[0]%%'':
+  * ''qspider_open_pause_screen'' — открыть меню паузы. Аргументы ''%%$args[0]%%'':
     * ''%%saves%%'' — меню сохранений. <sxh qsp>
        @qspider_open_pause_screen('saves')
 </sxh>
@@ -68,9 +48,7 @@ ider_open_pause_screen
     * без аргументов — основной раздел меню паузы. <sxh qsp>
        @qspider_open_pause_screen()
 </sxh>
-  * <sxh qsp>
-ider_scroll
-</sxh> — прокрутить окно (вверх или вниз). Аргументы:
+  * ''qspider_scroll'' — прокрутить окно (вверх или вниз). Аргументы:
     * ''%%$args[0]%%'' — указать окно:
       * ''%%main%%'' — окно основного описания. <sxh qsp>
        @qspider_scroll('main', 'bottom')
@@ -90,9 +68,7 @@ ider_scroll
 
 Вы можете переключать созданные заранее [[help:qspider_themes|темы оформления]], используя встроенную функцию библиотеки:
 
-  * <sxh qsp>
-ider_change_theme
-</sxh> — включить указанную тему оформления. <sxh qsp>
+  * ''qspider_change_theme'' — включить указанную тему оформления. <sxh qsp>
      @qspider_change_theme('dark-theme')
 </sxh> Аргументом указывается название темы.
 
@@ -102,23 +78,17 @@ ider_change_theme
 
 Пример слоя:
 
-<code html>
+<sxh html>
 <qsp-layer name="layer1" index="10">Some UI</qsp-layer>
 </sxh>
 
-  * <sxh qsp>
-ider_show_layer
-</sxh> — показать слой на экране. <sxh qsp>
+  * ''qspider_show_layer'' — показать слой на экране. <sxh qsp>
      @qspider_show_layer('layer1')
 </sxh> В качестве аргумента передаётся название слоя, соответствующее значению атрибута ''%%name%%''.
-  * <sxh qsp>
-ider_hide_layer
-</sxh> — скрыть слой с экрана. <sxh qsp>
+  * ''qspider_hide_layer'' — скрыть слой с экрана. <sxh qsp>
      @qspider_hide_layer('layer1')
 </sxh> В качестве аргумента передаётся название слоя.
-  * <sxh qsp>
-ider_show_only_layer
-</sxh> — показать указанный слой, а остальные скрыть. <sxh qsp>
+  * ''qspider_show_only_layer'' — показать указанный слой, а остальные скрыть. <sxh qsp>
      @qspider_show_only_layer('layer1')
 </sxh> В качестве аргумента передаётся название слоя.
 
@@ -128,28 +98,20 @@ ider_show_only_layer
 
 Пример региона:
 
-<code html>
+<sxh html>
 <qsp-region name="region1"></qsp-region>
 </sxh>
 
-  * <sxh qsp>
-ider_update_region
-</sxh> — полностью перезаписать содержимое региона. <sxh qsp>
+  * ''qspider_update_region'' — полностью перезаписать содержимое региона. <sxh qsp>
      @qspider_update_region('region1', '<b>Текст</b>')
 </sxh> Аргументы: * ''%%$args[0]%%'' — название региона. * ''%%$args[1]%%'' — новое содержимое региона.
-  * <sxh qsp>
-ider_prepend_region
-</sxh> — вставить содержимое в начало региона. <sxh qsp>
+  * ''qspider_prepend_region'' — вставить содержимое в начало региона. <sxh qsp>
      @qspider_prepend_region('region1', 'Текст<br>')
 </sxh> Аргументы: * ''%%$args[0]%%'' — название региона. * ''%%$args[1]%%'' — добавляемое содержимое региона.
-  * <sxh qsp>
-ider_append_region
-</sxh> — вставить содержимое в начало региона. <sxh qsp>
+  * ''qspider_append_region'' — вставить содержимое в начало региона. <sxh qsp>
      @qspider_append_region('region1', '<br>Конец')
 </sxh> Аргументы: * ''%%$args[0]%%'' — название региона. * ''%%$args[1]%%'' — добавляемое содержимое региона.
-  * <sxh qsp>
-ider_scroll_region
-</sxh> — прокрутить регион. Аргументы:
+  * ''qspider_scroll_region'' — прокрутить регион. Аргументы:
     * ''%%$args[0]%%'' — название региона.
     * ''%%$args[1]%%'' — направление прокрутки:
       * ''%%top%%'' — прокрутить до верха. <sxh qsp>
@@ -158,9 +120,7 @@ ider_scroll_region
       * ''%%bottom%%'' — прокрутить до низа. <sxh qsp>
        @qspider_scroll_region('region1', 'bottom')
 </sxh>
-  * <sxh qsp>
-ider_clear_region
-</sxh> — очистить содержимое региона. <sxh qsp>
+  * ''qspider_clear_region'' — очистить содержимое региона. <sxh qsp>
      @qspider_clear_region('region1')
 </sxh> В качестве аргумента передаётся название региона.
 
@@ -170,11 +130,9 @@ ider_clear_region
 
 Команда для вызова события из кода QSP:
 
-  * <sxh qsp>
-ider_event
-</sxh> — вызывает событие с указанным именем. Аргументы:
-    * ''%%$args[0]%%'' — имя события, которое нужно вызвать.
-    * ''%%args[1] ... args[18]%%'' — числовые и текстовые аргументы, которые нужно передать в событие.
+  * ''qspider_event'' — вызывает событие с указанным именем. Аргументы:
+  * ''%%$args[0]%%'' — имя события, которое нужно вызвать.
+  * ''%%args[1] ... args[18]%%'' — числовые и текстовые аргументы, которые нужно передать в событие.
 
 Примеры вызова событий:
 
