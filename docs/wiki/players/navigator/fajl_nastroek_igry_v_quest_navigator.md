@@ -1,6 +1,6 @@
-[Назад: Quest Navigator](../navigator)
-
 # Файл настроек игры в Quest Navigator
+
+[Назад: Quest Navigator](../navigator)
 
 Файл "config.xml" находится в корневой папке игры. Он содержит информацию о настройках игры. Плеер "читает" эту информацию перед тем, как загрузить игру. Исходя из этой информации плеер решает, как именно представлять эту игру пользователю.
 
@@ -39,10 +39,10 @@
 
 ## Другие статьи
 
-      *  [[help:navigator_game_files|Файлы игры на Quest Navigator]]
-      *  [[help:navigator_command_line|Параметры запуска Quest Navigator]]
-      *  [[help:navigator_game_template|Шаблон игры на Quest Navigator]]
-      *  [[help:sozdanie_igr_na_quest_navigator|Создание игр для плеера Quest Navigator]]
-      *  [[help:ispolzovanie_shriftov_v_quest_navigator|Использование шрифтов в Quest Navigator]]
-      *  Файл настроек игры в Quest Navigator
-      *  [[help:navigator_standalone|Независимая сборка игры для Quest Navigator]]
+* [[help:navigator_game_files|Файлы игры на Quest Navigator]]
+* [[help:navigator_command_line|Параметры запуска Quest Navigator]]
+* [[help:navigator_game_template|Шаблон игры на Quest Navigator]]
+* [[help:sozdanie_igr_na_quest_navigator|Создание игр для плеера Quest Navigator]]
+* [[help:ispolzovanie_shriftov_v_quest_navigator|Использование шрифтов в Quest Navigator]]
+* Файл настроек игры в Quest Navigator
+* [[help:navigator_standalone|Независимая сборка игры для Quest Navigator]]

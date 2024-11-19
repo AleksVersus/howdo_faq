@@ -98,7 +98,7 @@ const config: Config = {
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://aleksversus.github.io/howdo_faq/',
+          href: 'https://github.com/AleksVersus/howdo_faq',
           label: 'GitHub/HowDo_F.A.Q',
           position: 'right',
         },
