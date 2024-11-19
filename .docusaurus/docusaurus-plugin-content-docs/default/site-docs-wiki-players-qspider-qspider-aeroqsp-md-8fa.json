@@ -1,0 +1,27 @@
+{
+  "id": "wiki/players/qspider/qspider_aeroqsp",
+  "title": "qspider_aeroqsp",
+  "description": "Назад: qSpider - основная информация",
+  "source": "@site/docs/wiki/players/qspider/qspider_aeroqsp.md",
+  "sourceDirName": "wiki/players/qspider",
+  "slug": "/wiki/players/qspider/qspider_aeroqsp",
+  "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_aeroqsp",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "Особенности работы игр AeroQSP на qSpider"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Конфигурационный файл",
+    "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_gamecfg"
+  },
+  "next": {
+    "title": "Взаимодействие с интерфейсом (расширенные возможности qSpider)",
+    "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_interface"
+  }
+}

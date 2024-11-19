@@ -1,0 +1,23 @@
+{
+  "id": "wiki/hide/snippet",
+  "title": "Сниппет",
+  "description": "Сниппет — это редактируемый фрагмент кода, который вставляется по нажатию горячих клавиш, либо при введении определённого текста.",
+  "source": "@site/docs/wiki/hide/snippet.md",
+  "sourceDirName": "wiki/hide",
+  "slug": "/wiki/hide/snippet",
+  "permalink": "/howdo_faq/docs/wiki/hide/snippet",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "qsp_license",
+    "permalink": "/howdo_faq/docs/wiki/hide/qsp_license"
+  },
+  "next": {
+    "title": "Как сделать",
+    "permalink": "/howdo_faq/docs/wiki/hide/start"
+  }
+}

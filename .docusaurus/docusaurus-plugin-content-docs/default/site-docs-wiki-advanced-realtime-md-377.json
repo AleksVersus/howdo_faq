@@ -1,0 +1,27 @@
+{
+  "id": "wiki/advanced/realtime",
+  "title": "realtime",
+  "description": "Назад: Файлы сохранений",
+  "source": "@site/docs/wiki/advanced/realtime.md",
+  "sourceDirName": "wiki/advanced",
+  "slug": "/wiki/advanced/realtime",
+  "permalink": "/howdo_faq/docs/wiki/advanced/realtime",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Реальное время"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Сохранения",
+    "permalink": "/howdo_faq/docs/wiki/advanced/savegame"
+  },
+  "next": {
+    "title": "Особенности написания игр для классического плеера",
+    "permalink": "/howdo_faq/docs/wiki/players/classic_qsp"
+  }
+}

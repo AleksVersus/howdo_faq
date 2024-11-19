@@ -1,0 +1,23 @@
+{
+  "id": "wiki/players/navigator/navigator_game_template",
+  "title": "navigator_game_template",
+  "description": "Назад: Quest Navigator",
+  "source": "@site/docs/wiki/players/navigator/navigator_game_template.md",
+  "sourceDirName": "wiki/players/navigator",
+  "slug": "/wiki/players/navigator/navigator_game_template",
+  "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_game_template",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "navigator_game_files",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_game_files"
+  },
+  "next": {
+    "title": "navigator_standalone",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_standalone"
+  }
+}

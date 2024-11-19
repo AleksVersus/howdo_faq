@@ -1,0 +1,27 @@
+{
+  "id": "wiki/design/interface",
+  "title": "interface",
+  "description": "Назад: Графика",
+  "source": "@site/docs/wiki/design/interface.md",
+  "sourceDirName": "wiki/design",
+  "slug": "/wiki/design/interface",
+  "permalink": "/howdo_faq/docs/wiki/design/interface",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Настройки интерфейса"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Графика",
+    "permalink": "/howdo_faq/docs/wiki/design/graphics"
+  },
+  "next": {
+    "title": "HTML",
+    "permalink": "/howdo_faq/docs/wiki/design/html"
+  }
+}

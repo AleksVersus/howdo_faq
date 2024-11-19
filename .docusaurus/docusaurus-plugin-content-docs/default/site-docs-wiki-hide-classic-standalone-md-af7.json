@@ -1,0 +1,23 @@
+{
+  "id": "wiki/hide/classic_standalone",
+  "title": "Standalone-сборка игры на классическом плеере",
+  "description": "По этому вопросу записано отдельное видео на ютубе//youtu.be/Ca4ynD1BqQ",
+  "source": "@site/docs/wiki/hide/classic_standalone.md",
+  "sourceDirName": "wiki/hide",
+  "slug": "/wiki/hide/classic_standalone",
+  "permalink": "/howdo_faq/docs/wiki/hide/classic_standalone",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Баг",
+    "permalink": "/howdo_faq/docs/wiki/hide/bag"
+  },
+  "next": {
+    "title": "gnu_gpl_eng",
+    "permalink": "/howdo_faq/docs/wiki/hide/gnu_gpl_eng"
+  }
+}

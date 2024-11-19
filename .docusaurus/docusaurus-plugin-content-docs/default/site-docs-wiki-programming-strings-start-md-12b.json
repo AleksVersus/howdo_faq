@@ -1,0 +1,25 @@
+{
+  "id": "wiki/programming/strings/start",
+  "title": "Самоучитель по регулярным выражениям",
+  "description": "Назад: Регулярные выражения (справка)",
+  "source": "@site/docs/wiki/programming/strings/start.md",
+  "sourceDirName": "wiki/programming/strings",
+  "slug": "/wiki/programming/strings/start",
+  "permalink": "/howdo_faq/docs/wiki/programming/strings/start",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "sidebar_label": "Самоучитель по регулярным выражениям"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Регулярные выражения",
+    "permalink": "/howdo_faq/docs/wiki/programming/strings/regexp"
+  },
+  "next": {
+    "title": "Кортежи",
+    "permalink": "/howdo_faq/docs/wiki/programming/tuples"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "wiki/players/qspider/qspider_interface",
+  "title": "Взаимодействие с интерфейсом (расширенные возможности qSpider)",
+  "description": "qSpider в отличие от классического плеера позволяет авторам более широко работать с выводимой на экран HTML-разметкой.",
+  "source": "@site/docs/wiki/players/qspider/qspider_interface.md",
+  "sourceDirName": "wiki/players/qspider",
+  "slug": "/wiki/players/qspider/qspider_interface",
+  "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_interface",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Взаимодействие с интерфейсом (расширенные возможности qSpider)"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Особенности работы игр AeroQSP на qSpider",
+    "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_aeroqsp"
+  },
+  "next": {
+    "title": "Темы оформления",
+    "permalink": "/howdo_faq/docs/wiki/players/qspider/qspider_themes"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "wiki/locations",
+  "title": "locations",
+  "description": "Назад: Что такое QSP?",
+  "source": "@site/docs/wiki/locations.md",
+  "sourceDirName": "wiki",
+  "slug": "/wiki/locations",
+  "permalink": "/howdo_faq/docs/wiki/locations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "Локации"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Что такое QSP?",
+    "permalink": "/howdo_faq/docs/wiki/qsp"
+  },
+  "next": {
+    "title": "Окно основного описания",
+    "permalink": "/howdo_faq/docs/wiki/text_print/main"
+  }
+}

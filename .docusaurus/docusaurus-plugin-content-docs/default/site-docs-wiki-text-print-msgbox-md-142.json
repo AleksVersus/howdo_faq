@@ -1,0 +1,27 @@
+{
+  "id": "wiki/text_print/msgbox",
+  "title": "Окно сообщений",
+  "description": "Назад: Окно дополнительного описания",
+  "source": "@site/docs/wiki/text_print/msgbox.md",
+  "sourceDirName": "wiki/text_print",
+  "slug": "/wiki/text_print/msgbox",
+  "permalink": "/howdo_faq/docs/wiki/text_print/msgbox",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "Окно сообщений"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Окно дополнительного описания",
+    "permalink": "/howdo_faq/docs/wiki/text_print/stat"
+  },
+  "next": {
+    "title": "Действия",
+    "permalink": "/howdo_faq/docs/wiki/acts"
+  }
+}

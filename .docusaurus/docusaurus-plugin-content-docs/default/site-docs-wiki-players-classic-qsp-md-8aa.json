@@ -1,0 +1,27 @@
+{
+  "id": "wiki/players/classic_qsp",
+  "title": "classic_qsp",
+  "description": "Назад: Кортежи",
+  "source": "@site/docs/wiki/players/classic_qsp.md",
+  "sourceDirName": "wiki/players",
+  "slug": "/wiki/players/classic_qsp",
+  "permalink": "/howdo_faq/docs/wiki/players/classic_qsp",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Особенности написания игр для классического плеера"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Реальное время",
+    "permalink": "/howdo_faq/docs/wiki/advanced/realtime"
+  },
+  "next": {
+    "title": "qSpider — плеер с поддержкой HTML",
+    "permalink": "/howdo_faq/docs/wiki/players/qspider/"
+  }
+}

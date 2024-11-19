@@ -1,0 +1,27 @@
+{
+  "id": "wiki/utilits/txt2gam",
+  "title": "txt2gam",
+  "description": "Назад: Отладчик",
+  "source": "@site/docs/wiki/utilits/txt2gam.md",
+  "sourceDirName": "wiki/utilits",
+  "slug": "/wiki/utilits/txt2gam",
+  "permalink": "/howdo_faq/docs/wiki/utilits/txt2gam",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "TXT2GAM. Краткое руководство"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Отладчик",
+    "permalink": "/howdo_faq/docs/wiki/utilits/debugger"
+  },
+  "next": {
+    "title": "Анализатор кода QSP",
+    "permalink": "/howdo_faq/docs/wiki/utilits/analyzer"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "wiki/glossary",
+  "title": "Словарь терминов",
+  "description": "Если словарю не хватает какого-либо слова или в голову приходят более удобные формулировки, чем в статье, просьба обратиться на форум в тему Новая справка по QSP.",
+  "source": "@site/docs/wiki/glossary.md",
+  "sourceDirName": "wiki",
+  "slug": "/wiki/glossary",
+  "permalink": "/howdo_faq/docs/wiki/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 15,
+  "frontMatter": {
+    "sidebar_position": 15
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Ограничения QSP",
+    "permalink": "/howdo_faq/docs/wiki/limits"
+  },
+  "next": {
+    "title": "Ключевые слова",
+    "permalink": "/howdo_faq/docs/wiki/keywords"
+  }
+}

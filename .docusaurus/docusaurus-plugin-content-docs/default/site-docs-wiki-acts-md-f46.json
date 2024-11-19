@@ -1,0 +1,27 @@
+{
+  "id": "wiki/acts",
+  "title": "acts",
+  "description": "Назад: Окно сообщений",
+  "source": "@site/docs/wiki/acts.md",
+  "sourceDirName": "wiki",
+  "slug": "/wiki/acts",
+  "permalink": "/howdo_faq/docs/wiki/acts",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "sidebar_label": "Действия"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Окно сообщений",
+    "permalink": "/howdo_faq/docs/wiki/text_print/msgbox"
+  },
+  "next": {
+    "title": "Переходы",
+    "permalink": "/howdo_faq/docs/wiki/goto"
+  }
+}

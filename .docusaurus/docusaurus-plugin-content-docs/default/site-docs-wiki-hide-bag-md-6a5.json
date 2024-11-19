@@ -1,0 +1,23 @@
+{
+  "id": "wiki/hide/bag",
+  "title": "Баг",
+  "description": "Баг - ошибка в программе, программный сбой. Существование бага проявляется тогда, когда программа ведёт себя не так, как следует.",
+  "source": "@site/docs/wiki/hide/bag.md",
+  "sourceDirName": "wiki/hide",
+  "slug": "/wiki/hide/bag",
+  "permalink": "/howdo_faq/docs/wiki/hide/bag",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Продвинутое использование массивов",
+    "permalink": "/howdo_faq/docs/wiki/hide/arrays"
+  },
+  "next": {
+    "title": "Standalone-сборка игры на классическом плеере",
+    "permalink": "/howdo_faq/docs/wiki/hide/classic_standalone"
+  }
+}

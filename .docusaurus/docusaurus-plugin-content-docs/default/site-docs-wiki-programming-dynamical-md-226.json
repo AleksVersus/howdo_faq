@@ -1,0 +1,27 @@
+{
+  "id": "wiki/programming/dynamical",
+  "title": "dynamical",
+  "description": "Назад: Служебные локации",
+  "source": "@site/docs/wiki/programming/dynamical.md",
+  "sourceDirName": "wiki/programming",
+  "slug": "/wiki/programming/dynamical",
+  "permalink": "/howdo_faq/docs/wiki/programming/dynamical",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "sidebar_position": 14,
+    "sidebar_label": "Динамический код"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Служебные локации",
+    "permalink": "/howdo_faq/docs/wiki/programming/service_locations"
+  },
+  "next": {
+    "title": "Всплывающее меню",
+    "permalink": "/howdo_faq/docs/wiki/design/menu"
+  }
+}

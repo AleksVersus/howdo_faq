@@ -1,0 +1,23 @@
+{
+  "id": "wiki/players/navigator/navigator_standalone",
+  "title": "navigator_standalone",
+  "description": "Назад: Quest Navigator",
+  "source": "@site/docs/wiki/players/navigator/navigator_standalone.md",
+  "sourceDirName": "wiki/players/navigator",
+  "slug": "/wiki/players/navigator/navigator_standalone",
+  "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_standalone",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "navigator_game_template",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_game_template"
+  },
+  "next": {
+    "title": "sozdanie_igr_na_quest_navigator",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/sozdanie_igr_na_quest_navigator"
+  }
+}

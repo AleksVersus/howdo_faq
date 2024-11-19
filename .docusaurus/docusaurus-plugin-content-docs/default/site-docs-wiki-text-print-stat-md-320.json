@@ -1,0 +1,27 @@
+{
+  "id": "wiki/text_print/stat",
+  "title": "stat",
+  "description": "Назад: Окно основного описания",
+  "source": "@site/docs/wiki/text_print/stat.md",
+  "sourceDirName": "wiki/text_print",
+  "slug": "/wiki/text_print/stat",
+  "permalink": "/howdo_faq/docs/wiki/text_print/stat",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "sidebar_label": "Окно дополнительного описания"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Окно основного описания",
+    "permalink": "/howdo_faq/docs/wiki/text_print/main"
+  },
+  "next": {
+    "title": "Окно сообщений",
+    "permalink": "/howdo_faq/docs/wiki/text_print/msgbox"
+  }
+}

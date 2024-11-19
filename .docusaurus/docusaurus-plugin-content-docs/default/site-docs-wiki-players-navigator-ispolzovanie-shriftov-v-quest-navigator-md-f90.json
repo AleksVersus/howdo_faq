@@ -1,0 +1,23 @@
+{
+  "id": "wiki/players/navigator/ispolzovanie_shriftov_v_quest_navigator",
+  "title": "Использование шрифтов в Quest Navigator",
+  "description": "Назад: Quest Navigator",
+  "source": "@site/docs/wiki/players/navigator/ispolzovanie_shriftov_v_quest_navigator.md",
+  "sourceDirName": "wiki/players/navigator",
+  "slug": "/wiki/players/navigator/ispolzovanie_shriftov_v_quest_navigator",
+  "permalink": "/howdo_faq/docs/wiki/players/navigator/ispolzovanie_shriftov_v_quest_navigator",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Файл настроек игры в Quest Navigator",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/fajl_nastroek_igry_v_quest_navigator"
+  },
+  "next": {
+    "title": "navigator_command_line",
+    "permalink": "/howdo_faq/docs/wiki/players/navigator/navigator_command_line"
+  }
+}

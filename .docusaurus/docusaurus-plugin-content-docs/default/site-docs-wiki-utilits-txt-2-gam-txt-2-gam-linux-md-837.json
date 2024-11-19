@@ -1,0 +1,23 @@
+{
+  "id": "wiki/utilits/txt2gam/txt2gam_linux",
+  "title": "txt2gam_linux",
+  "description": "Назад: Краткое руководство по TXT2GAM",
+  "source": "@site/docs/wiki/utilits/txt2gam/txt2gam_linux.md",
+  "sourceDirName": "wiki/utilits/txt2gam",
+  "slug": "/wiki/utilits/txt2gam/txt2gam_linux",
+  "permalink": "/howdo_faq/docs/wiki/utilits/txt2gam/txt2gam_linux",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Анализатор кода QSP",
+    "permalink": "/howdo_faq/docs/wiki/utilits/analyzer"
+  },
+  "next": {
+    "title": "txt2gam_manual",
+    "permalink": "/howdo_faq/docs/wiki/utilits/txt2gam/txt2gam_manual"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "wiki/hide/start",
+  "title": "Как сделать",
+  "description": "На данном этапе развития справки эта страница будет складом ссылок на тему \"как сделать\".",
+  "source": "@site/docs/wiki/hide/start.md",
+  "sourceDirName": "wiki/hide",
+  "slug": "/wiki/hide/start",
+  "permalink": "/howdo_faq/docs/wiki/hide/start",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Сниппет",
+    "permalink": "/howdo_faq/docs/wiki/hide/snippet"
+  }
+}

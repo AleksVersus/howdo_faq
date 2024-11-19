@@ -1,0 +1,26 @@
+{
+  "id": "informarch/program/dummy",
+  "title": "dummy",
+  "description": "Создание многомерного массива (вложенного):",
+  "source": "@site/docs/informarch/program/dummy.md",
+  "sourceDirName": "informarch/program",
+  "slug": "/informarch/program/dummy",
+  "permalink": "/howdo_faq/docs/informarch/program/dummy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 310,
+  "frontMatter": {
+    "sidebar_position": 310
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Выбор случайных вариантов - тянем карты из колоды [1.0]",
+    "permalink": "/howdo_faq/docs/informarch/program/choose_card_in_deck"
+  },
+  "next": {
+    "title": "fonts",
+    "permalink": "/howdo_faq/docs/informarch/program/fonts"
+  }
+}

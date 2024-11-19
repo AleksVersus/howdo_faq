@@ -1,0 +1,27 @@
+{
+  "id": "wiki/programming/jump",
+  "title": "jump",
+  "description": "Назад: Пользовательские функции и процедуры",
+  "source": "@site/docs/wiki/programming/jump.md",
+  "sourceDirName": "wiki/programming",
+  "slug": "/wiki/programming/jump",
+  "permalink": "/howdo_faq/docs/wiki/programming/jump",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12,
+    "sidebar_label": "Переходы внутри локации"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Пользовательские функции и процедуры",
+    "permalink": "/howdo_faq/docs/wiki/programming/organizing"
+  },
+  "next": {
+    "title": "Служебные локации",
+    "permalink": "/howdo_faq/docs/wiki/programming/service_locations"
+  }
+}

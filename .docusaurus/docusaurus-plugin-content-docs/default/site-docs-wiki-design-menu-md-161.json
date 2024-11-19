@@ -1,0 +1,27 @@
+{
+  "id": "wiki/design/menu",
+  "title": "menu",
+  "description": "Назад: Динамический код",
+  "source": "@site/docs/wiki/design/menu.md",
+  "sourceDirName": "wiki/design",
+  "slug": "/wiki/design/menu",
+  "permalink": "/howdo_faq/docs/wiki/design/menu",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Всплывающее меню"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Динамический код",
+    "permalink": "/howdo_faq/docs/wiki/programming/dynamical"
+  },
+  "next": {
+    "title": "Звук",
+    "permalink": "/howdo_faq/docs/wiki/design/sound"
+  }
+}

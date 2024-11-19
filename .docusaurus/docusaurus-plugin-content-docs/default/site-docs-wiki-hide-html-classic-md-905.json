@@ -1,0 +1,23 @@
+{
+  "id": "wiki/hide/html_classic",
+  "title": "Поддерживаемые классическим плеером HTML-теги и атрибуты",
+  "description": "(для более подробной информации смотрите справочники по HTML)",
+  "source": "@site/docs/wiki/hide/html_classic.md",
+  "sourceDirName": "wiki/hide",
+  "slug": "/wiki/hide/html_classic",
+  "permalink": "/howdo_faq/docs/wiki/hide/html_classic",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "gnu_gpl_rus",
+    "permalink": "/howdo_faq/docs/wiki/hide/gnu_gpl_rus"
+  },
+  "next": {
+    "title": "Операторы",
+    "permalink": "/howdo_faq/docs/wiki/hide/keywords_operator"
+  }
+}

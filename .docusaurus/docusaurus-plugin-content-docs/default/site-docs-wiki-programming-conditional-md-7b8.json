@@ -1,0 +1,27 @@
+{
+  "id": "wiki/programming/conditional",
+  "title": "conditional",
+  "description": "Назад: Кортежи",
+  "source": "@site/docs/wiki/programming/conditional.md",
+  "sourceDirName": "wiki/programming",
+  "slug": "/wiki/programming/conditional",
+  "permalink": "/howdo_faq/docs/wiki/programming/conditional",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10,
+    "sidebar_label": "Условия"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Кортежи",
+    "permalink": "/howdo_faq/docs/wiki/programming/tuples"
+  },
+  "next": {
+    "title": "Пользовательские функции и процедуры",
+    "permalink": "/howdo_faq/docs/wiki/programming/organizing"
+  }
+}

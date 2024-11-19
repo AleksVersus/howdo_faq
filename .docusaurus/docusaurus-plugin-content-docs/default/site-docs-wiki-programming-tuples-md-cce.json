@@ -1,0 +1,27 @@
+{
+  "id": "wiki/programming/tuples",
+  "title": "tuples",
+  "description": "Назад: Регулярные выражения",
+  "source": "@site/docs/wiki/programming/tuples.md",
+  "sourceDirName": "wiki/programming",
+  "slug": "/wiki/programming/tuples",
+  "permalink": "/howdo_faq/docs/wiki/programming/tuples",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9,
+    "sidebar_label": "Кортежи"
+  },
+  "sidebar": "wikiSidebar",
+  "previous": {
+    "title": "Самоучитель по регулярным выражениям",
+    "permalink": "/howdo_faq/docs/wiki/programming/strings/start"
+  },
+  "next": {
+    "title": "Условия",
+    "permalink": "/howdo_faq/docs/wiki/programming/conditional"
+  }
+}
