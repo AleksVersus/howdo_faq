@@ -1,0 +1,61 @@
+.theme-light {
+    --qsp-scope-user-variable: #3a3a3a;
+    --qsp-scope-sys-variable: rgb(189,72,0);
+    --qsp-scope-builtin: rgb(36,147,164);
+    --qsp-scope-number: rgb(121,76,205);
+    --qsp-scope-operator: rgb(85 169 167);
+    --qsp-scope-label: rgb(34, 85, 22);
+    --qsp-scope-start-location: rgb(121,93,163);
+    --qsp-scope-end-location: rgb(121,93,163);
+}
+
+.theme-dark {
+    --qsp-scope-user-variable: #e0e0e0;
+    --qsp-scope-sys-variable: rgb(255,184,107);
+    --qsp-scope-number: rgb(80,250,123);
+    --qsp-scope-operator: rgb(127,233,231);
+    --qsp-scope-label: rgb(241,250,140);
+    --qsp-scope-start-location: rgb(255,121,198);
+    --qsp-scope-end-location: rgb(139,233,253);
+}
+
+/* Custom highlighting of qsp-code */
+.token.sys-variable {
+    color: var(--qsp-scope-sys-variable);
+}
+
+.token.user-variable {
+    color: var(--qsp-scope-user-variable);
+}
+
+.token.builtin {
+    color: var(--qsp-scope-builtin);
+}
+
+.token.number {
+    color: var(--qsp-scope-number);
+}
+
+.token.sign-punktuation,
+.token.operator {
+    color: var(--qsp-scope-operator);
+}
+
+.token.start-location {
+    color: var(--qsp-scope-start-location);
+    font-weight: bold;
+}
+.token.end-location {
+    color: var(--qsp-scope-end-location);
+    font-weight: bold;
+}
+
+.token.label {
+    color: var(--qsp-scope-label);
+    font-weight: bolder;
+}
+
+.token.declarator {
+    color: var(--qsp-scope-operator);
+    font-style: italic;
+}
