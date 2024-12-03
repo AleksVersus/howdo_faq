@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "qsp-keyword-pointer"
+              "title": "qsp-keyword-operators"
             }
           }
         ]
@@ -137,10 +137,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-pointer.md"
+                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md"
               },
               "icon": "lucide-list",
-              "title": "Структура qsp-keyword-pointer"
+              "title": "Структура qsp-keyword-operators"
             }
           }
         ],
@@ -162,10 +162,10 @@
   },
   "active": "f4cda49e13e82d06",
   "lastOpenFiles": [
-    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
     "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
     "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
     "temp list",
     "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
