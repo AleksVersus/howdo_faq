@@ -1,0 +1,26 @@
+{
+  "id": "informarch/qspider/news_20240211_qspider110",
+  "title": "qSpider 1.1.0",
+  "description": "Клуб любителей текстовых игр на QSP·11 фев 2024",
+  "source": "@site/docs/informarch/qspider/news_20240211_qspider110.md",
+  "sourceDirName": "informarch/qspider",
+  "slug": "/informarch/qspider/news_20240211_qspider110",
+  "permalink": "/howdo_faq/docs/informarch/qspider/news_20240211_qspider110",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20240211,
+  "frontMatter": {
+    "sidebar_position": 20240211
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "qSpider v.1.0.0",
+    "permalink": "/howdo_faq/docs/informarch/qspider/news_20240105_qspider100"
+  },
+  "next": {
+    "title": "Удалено из wiki",
+    "permalink": "/howdo_faq/docs/informarch/qspider/del_from_wiki"
+  }
+}

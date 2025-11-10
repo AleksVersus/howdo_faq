@@ -1,0 +1,22 @@
+{
+  "id": "news/news_20100613_570",
+  "title": "Обновление QSP (5.7.0) и QGen (4.0.0b)",
+  "description": "Эта статья устарела.",
+  "source": "@site/docs/news/news_20100613_570.md",
+  "sourceDirName": "news",
+  "slug": "/news/news_20100613_570",
+  "permalink": "/howdo_faq/docs/news/news_20100613_570",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": -20100613,
+  "frontMatter": {
+    "sidebar_position": -20100613
+  },
+  "sidebar": "newsSidebar",
+  "previous": {
+    "title": "Нововведения в QSP 5.8.0",
+    "permalink": "/howdo_faq/docs/news/news_20210601_580"
+  }
+}

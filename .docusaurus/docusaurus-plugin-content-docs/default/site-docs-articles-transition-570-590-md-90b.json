@@ -1,0 +1,26 @@
+{
+  "id": "articles/transition_570_590",
+  "title": "Переход с 5.7.0 на 5.9.x",
+  "description": "В: очень хотелось бы иметь такой инструмент, который бы подсказывал с чем можно столкнутся при переезде на 5.9 с 5.7.0 и какие существуют пути решения этого нечто",
+  "source": "@site/docs/articles/transition_570_590.md",
+  "sourceDirName": "articles",
+  "slug": "/articles/transition_570_590",
+  "permalink": "/howdo_faq/docs/articles/transition_570_590",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Массивы уже не те",
+    "permalink": "/howdo_faq/docs/articles/arrays_580/"
+  },
+  "next": {
+    "title": "qSpider версии 0.12.0",
+    "permalink": "/howdo_faq/docs/articles/qspider_0120/"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "articles/transition_to_",
+  "title": "transition_to_",
+  "description": "",
+  "source": "@site/docs/articles/transition_to_.md",
+  "sourceDirName": "articles",
+  "slug": "/articles/transition_to_",
+  "permalink": "/howdo_faq/docs/articles/transition_to_",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "articlesSidebar",
+  "previous": {
+    "title": "Манифест об организации кода в QSP",
+    "permalink": "/howdo_faq/docs/articles/stylization_manifest"
+  }
+}

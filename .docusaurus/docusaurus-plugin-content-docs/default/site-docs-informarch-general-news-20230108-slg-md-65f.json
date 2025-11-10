@@ -1,0 +1,26 @@
+{
+  "id": "informarch/general/news_20230108_slg",
+  "title": "Senpai Load Guardian",
+  "description": "Клуб любителей текстовых игр на QSP·8 янв 2023",
+  "source": "@site/docs/informarch/general/news_20230108_slg.md",
+  "sourceDirName": "informarch/general",
+  "slug": "/informarch/general/news_20230108_slg",
+  "permalink": "/howdo_faq/docs/informarch/general/news_20230108_slg",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20230108,
+  "frontMatter": {
+    "sidebar_position": 20230108
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Как сделать StandAlone-сборку на классическом плеере?",
+    "permalink": "/howdo_faq/docs/informarch/general/standalone_classic"
+  },
+  "next": {
+    "title": "Простой консольный QSP-плеер",
+    "permalink": "/howdo_faq/docs/informarch/extrqsp/console_player"
+  }
+}

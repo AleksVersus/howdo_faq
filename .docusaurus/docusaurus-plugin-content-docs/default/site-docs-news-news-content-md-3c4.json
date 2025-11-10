@@ -1,0 +1,22 @@
+{
+  "id": "news/news_content",
+  "title": "Новости QSP",
+  "description": "Статьи данного раздела располагаются в порядке обратном хронологическому.",
+  "source": "@site/docs/news/news_content.md",
+  "sourceDirName": "news",
+  "slug": "/news/news_content",
+  "permalink": "/howdo_faq/docs/news/news_content",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": -99999999,
+  "frontMatter": {
+    "sidebar_position": -99999999
+  },
+  "sidebar": "newsSidebar",
+  "next": {
+    "title": "Нововведения в QSP 5.9.2-5.9.4",
+    "permalink": "/howdo_faq/docs/news/news_20251003_594"
+  }
+}

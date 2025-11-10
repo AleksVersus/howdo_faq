@@ -1,0 +1,26 @@
+{
+  "id": "news/news_20240909_590",
+  "title": "Нововведения в QSP 5.9.0",
+  "description": "Клуб любителей текстовых игр на QSP·9 сен 2024",
+  "source": "@site/docs/news/news_20240909_590.md",
+  "sourceDirName": "news",
+  "slug": "/news/news_20240909_590",
+  "permalink": "/howdo_faq/docs/news/news_20240909_590",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": -20240909,
+  "frontMatter": {
+    "sidebar_position": -20240909
+  },
+  "sidebar": "newsSidebar",
+  "previous": {
+    "title": "Нововведения в QSP 5.9.1",
+    "permalink": "/howdo_faq/docs/news/news_20241126_591"
+  },
+  "next": {
+    "title": "Нововведения в QSP 5.8.0",
+    "permalink": "/howdo_faq/docs/news/news_20210601_580"
+  }
+}

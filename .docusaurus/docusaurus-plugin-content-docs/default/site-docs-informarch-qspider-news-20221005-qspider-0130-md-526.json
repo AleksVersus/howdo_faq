@@ -1,0 +1,26 @@
+{
+  "id": "informarch/qspider/news_20221005_qspider0130",
+  "title": "qSpider v.0.13.0",
+  "description": "Клуб любителей текстовых игр на QSP·5 окт 2022",
+  "source": "@site/docs/informarch/qspider/news_20221005_qspider0130.md",
+  "sourceDirName": "informarch/qspider",
+  "slug": "/informarch/qspider/news_20221005_qspider0130",
+  "permalink": "/howdo_faq/docs/informarch/qspider/news_20221005_qspider0130",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20221005,
+  "frontMatter": {
+    "sidebar_position": 20221005
+  },
+  "sidebar": "informArchSidebar",
+  "previous": {
+    "title": "Новая версия qSpider 0.12.0",
+    "permalink": "/howdo_faq/docs/informarch/qspider/news_20220207_qspider0120"
+  },
+  "next": {
+    "title": "qSpider v.1.0.0",
+    "permalink": "/howdo_faq/docs/informarch/qspider/news_20240105_qspider100"
+  }
+}
