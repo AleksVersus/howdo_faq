@@ -79,8 +79,8 @@ export default function AvsMainPage(): JSX.Element {
                             <li className={easylib.cmd_item}>
                                 <Link 
                                     className={adapt.hrefPlain}
-                                    to="/docs/articles/news_580">
-                                    <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Нововведения в QSP 5.8.0"</span>
+                                    to="/docs/news/news_content">
+                                    <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Нововведения в QSP"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>

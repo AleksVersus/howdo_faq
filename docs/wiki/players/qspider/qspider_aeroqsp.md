@@ -2,7 +2,7 @@
 sidebar_position: 3
 sidebar_label: Особенности работы игр AeroQSP на qSpider
 ---
-[Назад: qSpider - основная информация](index)
+[Назад: qSpider - основная информация](index.md)
 
 # Особенности работы AeroQSP-игр на qSpider
 
@@ -41,7 +41,7 @@ height = 680
 
 ## Другие статьи по qSpider
 
-* [qSpider — общая информация](index)
+* [qSpider — общая информация](index.md)
 * [Конфигурационный файл](qspider_gamecfg)
 * [Взаимодействие с интерфейсом](qspider_interface)
 * [Темы оформления](qspider_themes)

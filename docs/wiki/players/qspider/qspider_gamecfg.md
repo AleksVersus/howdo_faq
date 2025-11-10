@@ -2,7 +2,7 @@
 sidebar_position: 2
 sidebar_label: Конфигурационный файл
 ---
-[Назад: qSpider - основная информация](index)
+[Назад: qSpider - основная информация](index.md)
 
 # Конфигурационный файл
 
@@ -271,7 +271,7 @@ minHeight = 480
 
 ## Другие статьи по qSpider
 
-* [qSpider — общая информация](index)
+* [qSpider — общая информация](index.md)
 * [Особенности запуска и работы игр AeroQSP на qSpider](qspider_aeroqsp)
 * [Взаимодействие с интерфейсом](qspider_interface)
 * [Темы оформления](qspider_themes)

@@ -38,14 +38,16 @@
 <script type="text/javascript" src="../standalone_content/folder/js/game.js"></script>
 ```
 
-В первой строке адрес [файла стилей (CSS)](fajl_css_igry_v_quest_navigator) игры. Во второй адрес [файла JavaScript](fajl_js_igry_v_quest_navigator) игры. Нужно следить, чтобы эти адреса соответствовали действительности. В данном примере файл *game.css* лежит по адресу *folder/game.css*, а файл *game.js* лежит по адресу *folder/js/game.js* относительно папки *standalone_content*.
+В первой строке адрес [файла стилей (CSS)](#) игры. Во второй адрес [файла JavaScript](#) игры. Нужно следить, чтобы эти адреса соответствовали действительности. В данном примере файл *game.css* лежит по адресу *folder/game.css*, а файл *game.js* лежит по адресу *folder/js/game.js* относительно папки *standalone_content*.
 
 ### Тело (body) страницы
 
 А вот в структуре body без участия разработчика разобраться будет сложно. По моему мнению здесь стоило бы вставить табличку соответствия id\<-\>назначение, а потом примеры популярных конструкций.
 
+```html
     <div id="qsp-main">Пример использования id</div>
     <div class="qsp-center">Пример использования class</div>
+```
 
 Таблица id, используемых QSP Navigator\'ом:
 
@@ -69,7 +71,7 @@
   qsp-dialog-view, qsp-dialog-view-image-container   Контейнер для просмотра картинок [^10]
 
   qsp-dialog-msg, qsp-wrapper-msg,\                  Контейнер для диалоговых окон
-  qsp-scroller-msg, qsp-dialog-msg-content           
+  qsp-scroller-msg, qsp-dialog-msg-content
 
   qsp-dialog-error, qsp-dialog-error-content         Контейнер для ошибок
 
@@ -83,17 +85,17 @@
 
   qsp-button-input-ok                                Кнопка подтверждения ввода текста
 
-  qsp-dialog-system-menu                             
+  qsp-dialog-system-menu
 
   qsp-dialog-save-slots,\                            Контейнер для меню сохранения/загрузки
-  qsp-dialog-save-slots-container                    
+  qsp-dialog-save-slots-container
   ———————————————————————————————--
 
   class                    Назначение
   ———————— —————————————————————
   qsp-center               автоматическое выравнивание по центру экрана
   qsp-skin-overlay         оверлей для системного меню (system-menu)
-  qsp-skin-dialog          
+  qsp-skin-dialog
   qsp-save-slot-enabled    Не добавлять в body[^11]
   qsp-save-slot-disabled   Не добавлять в body[^12]
   qsp-user-menu-item       Не добавлять в body[^13]
@@ -105,13 +107,13 @@
 
 ## Другие статьи
 
-*  [Файлы игры на Quest Navigator](navigator_game_files)
-*  [Параметры запуска Quest Navigator](navigator_command_line)
-*  Шаблон игры на Quest Navigator
-*  [Создание игр для плеера Quest Navigator](sozdanie_igr_na_quest_navigator)
-*  [Использование шрифтов в Quest Navigator](ispolzovanie_shriftov_v_quest_navigator)
-*  [Файл настроек игры в Quest Navigator](fajl_nastroek_igry_v_quest_navigator)
-*  [Независимая сборка игры для Quest Navigator](navigator_standalone)
+* [Файлы игры на Quest Navigator](navigator_game_files)
+* [Параметры запуска Quest Navigator](navigator_command_line)
+* Шаблон игры на Quest Navigator
+* [Создание игр для плеера Quest Navigator](sozdanie_igr_na_quest_navigator)
+* [Использование шрифтов в Quest Navigator](ispolzovanie_shriftov_v_quest_navigator)
+* [Файл настроек игры в Quest Navigator](fajl_nastroek_igry_v_quest_navigator)
+* [Независимая сборка игры для Quest Navigator](navigator_standalone)
 
 [^1]: чаще всего один файл на все платформы
 

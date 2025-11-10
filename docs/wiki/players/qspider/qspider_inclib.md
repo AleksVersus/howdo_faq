@@ -202,7 +202,7 @@ inclib 'qspider'
 
 ## Другие статьи по qSpider
 
-* [qSpider — общая информация](index)
+* [qSpider — общая информация](index.md)
 * [Конфигурационный файл](qspider_gamecfg)
 * [Особенности запуска и работы игр AeroQSP на qSpider](qspider_aeroqsp)
 * [Взаимодействие с интерфейсом](qspider_interface)

@@ -16,8 +16,8 @@ sidebar_label: Темы оформления
 
 Свою тему вы можете создать, модифицируя шаблон одной из встроенных тем:
 
-  * [Классическая](https://github.com/QSPFoundation/qspider/blob/master/public/themes/classic.html)
-  * [Aero](https://github.com/QSPFoundation/qspider/blob/master/public/themes/aero.html)
+* [Классическая](https://github.com/QSPFoundation/qspider/blob/master/public/themes/classic.html)
+* [Aero](https://github.com/QSPFoundation/qspider/blob/master/public/themes/aero.html)
 
 Если вы когда-нибудь стилизовали HTML-разметку с помощью CSS, отредактировать тему для вас не составит труда.
 
@@ -63,7 +63,7 @@ inclib 'qspider'
 
 ## Другие статьи по qSpider
 
-* [qSpider — общая информация](index)
+* [qSpider — общая информация](index.md)
 * [Конфигурационный файл](qspider_gamecfg)
 * [Особенности запуска и работы игр AeroQSP на qSpider](qspider_aeroqsp)
 * [Взаимодействие с интерфейсом](qspider_interface)

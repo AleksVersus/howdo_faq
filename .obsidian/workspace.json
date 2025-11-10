@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/ds/tutorial-basics/deploy-your-site.md",
+                "file": "docs/informarch/wii_qsp/short_faq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "deploy-your-site"
+              "title": "short_faq"
             }
           }
         ]
@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/ds/tutorial-basics/deploy-your-site.md",
+                "file": "docs/informarch/wii_qsp/short_faq.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура deploy-your-site"
+              "title": "Структура short_faq"
             }
           }
         ],
@@ -167,14 +167,31 @@
   },
   "active": "a7860a75b9003807",
   "lastOpenFiles": [
-    "node_modules/caniuse-lite/data/features/css-if.js",
-    "node_modules/caniuse-lite/data/features/cross-document-view-transitions.js",
-    "build/__server/server.bundle.js",
-    "build/__server",
-    "build",
-    "node_modules/@docusaurus/core/lib/client/serverHelmetUtils.js",
-    "node_modules/webpack/lib/util/traverseDestructuringAssignmentProperties.js",
-    "node_modules/webpack/lib/util/removeBOM.js",
+    "build/sitemap.xml",
+    "build/markdown-page/index.html",
+    "build/markdown-page",
+    "build/assets/js/runtime~main.bfa92524.js",
+    "build/assets/js/main.645527fd.js.LICENSE.txt",
+    "build/assets/js/main.645527fd.js",
+    "build/assets/js/ffaa4b22.073394e8.js",
+    "build/assets/js/fd228cc7.c9a85986.js",
+    "build/assets/js/fcf40b14.092862f0.js",
+    "build/assets/js/fc6e5728.f663f86c.js",
+    "build/assets/js/fab9fe8e.0fc2f67f.js",
+    "build/assets/images/XCyNJqv-c75f9eb5d43bf826e72c80bf9fd84f33.png",
+    "build/assets/images/window_msg-d6ad79c4ca582def4031e294a47639bc.png",
+    "build/assets/images/tut7-01-a369fc2c78d47cbafecf8eb222120668.png",
+    "build/assets/images/tut5-01-ef3719c2f577e7d30d55905411052c4e.png",
+    "build/assets/images/tut4-01-5d05a8d50f363e02ee3a3a76dbaab6d6.png",
+    "build/assets/images/tut2-06-7ce0258f080e85adf059cabe0ca5e1d5.png",
+    "build/assets/images/tut2-05-cc595cb6dc8443a379569bcb330065c6.png",
+    "build/assets/images/tut2-04-fb59bcd431fa5e470bd06bbe361098b5.png",
+    "build/assets/images/tut2-02-ee8218810ed4649f9cf101d42bb974b4.png",
+    "build/assets/images/tut1-12-9b218cb9beb681c8de84eaf7c907948b.png",
+    "docs/informarch/aeroqsp/wit/index.md",
+    "docs/informarch/wii_qsp/short_faq.md",
+    "docs/wiki/keywords.md",
+    "docs/ds/tutorial-basics/deploy-your-site.md",
     "docs/ds/tutorial-basics/create-a-page.md",
     "docs/ds/tutorial-basics/create-a-document.md",
     "docs/ds/tutorial-basics/create-a-blog-post.md",
@@ -196,24 +213,7 @@
     "docs/informarch/program/dummy.md",
     "docs/informarch/program/fonts.md",
     "docs/informarch/program/debugger_200beta.md",
-    "docs/informarch/program/conditional_actions.md",
-    "docs/informarch/program/choose_card_in_deck.md",
-    "docs/wiki/acts.md",
-    "docs/wiki/glossary.md",
-    "node_modules/tinypool/dist/entry/worker.js",
-    "node_modules/tinypool/dist/entry/worker.d.ts",
-    "node_modules/tinypool/dist/entry/utils.d.ts",
     "res/[converters]/Без названия.canvas",
-    "res/img/cover.png",
-    "docs/wiki/help/msgbox.png",
-    "docs/wiki/help/input_window.png",
-    "docs/wiki/help/window_msg.png",
-    "docs/wiki/help/level13.jpg",
-    "docs/wiki/help/ballad.jpg",
-    "docs/wiki/help/qspblank2.jpg",
-    "docs/articles/qspider_0120/images/8z8MHyp.png",
-    "docs/articles/qspider_0120/images/image.png",
-    "docs/articles/arrays_580/images/N-Stg0hc-V1-U.jpg",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",

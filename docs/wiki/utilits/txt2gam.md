@@ -18,7 +18,7 @@ sidebar_label: TXT2GAM. Краткое руководство
 
 Использовать qsps-файлы предпочтительнее по трём причинам:
 
-* воспроизведение таких файлов поддерживается плеером **[qSpider](../players/qspider/index)**;
+* воспроизведение таких файлов поддерживается плеером **[qSpider](../players/qspider/index.md)**;
 * расширение для **[MS Visual Studio Code](https://github.com/gretmn102/QSP-VSCode/blob/master/README.md)** поддерживает подсветку синтаксиса qsps-файлов;
 * в **[пакете для Sublime Text](https://github.com/AleksVersus/JAD_for_QSP)** встроена подсветка синтаксиса qsps-файлов.
 
