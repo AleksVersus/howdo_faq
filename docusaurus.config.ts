@@ -80,6 +80,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'newsSidebar',
+          position: 'left',
+          label: 'Новости QSP',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'articlesSidebar',
           position: 'left',
           label: 'Статьи',

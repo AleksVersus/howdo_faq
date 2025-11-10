@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "df107ca67f674938",
+        "id": "e89f006a74b55284",
         "type": "tabs",
         "children": [
           {
-            "id": "f4cda49e13e82d06",
+            "id": "a7860a75b9003807",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
+                "file": "docs/informarch/extrqsp/automat_programming/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "qsp-keyword-operators"
+              "title": "index"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Файловый менеджер"
@@ -137,10 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords/qsp-keyword-operators.md"
+                "file": "docs/informarch/extrqsp/automat_programming/index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура qsp-keyword-operators"
+              "title": "Структура index"
             }
           }
         ],
@@ -152,6 +156,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Создать новую базу": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "canvas:Создать новый холст": false,
@@ -160,44 +165,46 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "f4cda49e13e82d06",
+  "active": "a7860a75b9003807",
   "lastOpenFiles": [
-    "docs/howdo/qsp_keywords/qsp-keyword-functions.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-pointer.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-operators.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-syntaxems.md",
-    "docs/howdo/qsp_keywords/qsp-keyword-sys-var.md",
-    "temp list",
-    "docs/howdo/qsp_keywords/qsp-keyword-operacion.md",
-    "README.md",
-    "[source]/wiki.qsp.org.out/informarch/fonts.dokuwiki",
-    "[source]/wiki.qsp.org.out/informarch/dummy.dokuwiki",
-    "[source]/wiki.qsp.org.out/informarch",
-    "[source]/wiki.qsp.org.out/glossary/snippet.dokuwiki",
-    "[source]/wiki.qsp.org.out/glossary/bag.dokuwiki",
-    "[source]/wiki.qsp.org.out/glossary",
-    "[source]/wiki.qsp.org.out/howto/02_15_arrays.dokuwiki",
-    "[source]/wiki.qsp.org.out/howto/01_14_start.dokuwiki",
-    "[source]/wiki.qsp.org.out/howto",
-    "docs/wiki/players/navigator/navigator_game_template.md",
-    "docs/wiki/players/navigator.md",
-    "docs/wiki/players/qspider/qspider_interface.md",
-    "docs/wiki/players/navigator/fajl_nastroek_igry_v_quest_navigator.md",
-    "docs/wiki/programming/organizing.md",
-    "docs/wiki/programming/strings/index.md",
-    "docs/wiki/locations.md",
-    "docs/wiki/glossary.md",
-    "docs/wiki/programming/arrays.md",
-    "docs/wiki/programming/strings/regexp.md",
-    "docs/wiki/keywords.md",
-    "docs/wiki/limits.md",
-    "docs/wiki/utilits/analyzer.md",
-    "docs/wiki/utilits/txt2gam.md",
-    "docs/wiki/utilits/debugger.md",
-    "docs/wiki/utilits/qgen.md",
-    "docs/wiki/players/qspider/index.md",
-    "docs/wiki/players/classic_qsp.md",
-    "docs/wiki/advanced/realtime.md",
+    "node_modules/@csstools/postcss-scope-pseudo-class/node_modules/postcss-selector-parser/package.json",
+    "node_modules/@csstools/postcss-random-function/package.json",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/util/unesc.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/util/stripComments.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/util/index.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/util/getProp.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/util/ensureObject.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/selectors/universal.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/selectors/types.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/selectors/tag.js",
+    "node_modules/postcss-selector-not/node_modules/postcss-selector-parser/dist/selectors/string.js",
+    "node_modules/@babel/plugin-transform-regexp-modifiers/README.md",
+    "node_modules/@babel/plugin-transform-explicit-resource-management/README.md",
+    "node_modules/regjsgen/README.md",
+    "node_modules/compression/node_modules/bytes/Readme.md",
+    "node_modules/compression/node_modules/bytes/History.md",
+    "node_modules/accepts/node_modules/negotiator/HISTORY.md",
+    "node_modules/accepts/node_modules/negotiator/README.md",
+    "node_modules/send/node_modules/encodeurl/README.md",
+    "node_modules/send/node_modules/encodeurl/HISTORY.md",
+    "node_modules/call-bound/README.md",
+    "node_modules/call-bound/CHANGELOG.md",
+    "node_modules/call-bind-apply-helpers/README.md",
+    "node_modules/call-bind-apply-helpers/CHANGELOG.md",
+    "node_modules/dunder-proto/README.md",
+    "node_modules/dunder-proto/CHANGELOG.md",
+    "node_modules/get-proto/CHANGELOG.md",
+    "node_modules/get-proto/README.md",
+    "node_modules/es-object-atoms/README.md",
+    "node_modules/es-object-atoms/CHANGELOG.md",
+    "node_modules/baseline-browser-mapping/README.md",
+    "node_modules/@algolia/autocomplete-plugin-algolia-insights/README.md",
+    "node_modules/postcss-preset-env/README.md",
+    "node_modules/postcss-preset-env/LICENSE.md",
+    "node_modules/postcss-preset-env/CHANGELOG.md",
+    "node_modules/micromark-factory-mdx-expression/node_modules/micromark-factory-space/readme.md",
+    "res/[converters]/Без названия.canvas",
+    "res/img/cover.png",
     "docs/wiki/help/msgbox.png",
     "docs/wiki/help/input_window.png",
     "docs/wiki/help/window_msg.png",
@@ -207,7 +214,6 @@
     "docs/articles/qspider_0120/images/8z8MHyp.png",
     "docs/articles/qspider_0120/images/image.png",
     "docs/articles/arrays_580/images/N-Stg0hc-V1-U.jpg",
-    "docs/informarch/aeroqsp/wit/images/cityofmist.png",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
     "социальная психология/Без названия.canvas",

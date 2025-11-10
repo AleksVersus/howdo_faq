@@ -427,7 +427,7 @@ Werewolf продолжает развивать и модернизироват
 * [qSpider 0.11.0 - поддержка игр в AeroQSP-формате](https://ifhub.club/2021/10/22/qspider-0110.html)
 * [qSpider 0.12.0 - полноценная desktop-версия](https://ifhub.club/2022/02/06/qspider-0120.html)
 
-#### P.S.:
+#### Post Scriptum
 <!-- [:post_scriptum_articles_0004] -->
 
 Данную статью вы можете найти так же и на других ресурсах:
