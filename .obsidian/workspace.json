@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e89f006a74b55284",
+        "id": "fe54e7ff4e1883ca",
         "type": "tabs",
         "children": [
           {
-            "id": "a7860a75b9003807",
+            "id": "634012a7f1abb9a3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/informarch/wii_qsp/short_faq.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "short_faq"
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -138,13 +134,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/informarch/wii_qsp/short_faq.md",
+                "file": "docs/articles/transition_570_at_59x/images/error_view_20251228235108.jpg",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура short_faq"
+              "title": "Структура error_view_20251228235108"
             }
           }
         ],
@@ -152,7 +148,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 366.5
+    "width": 369.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,8 +161,24 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "a7860a75b9003807",
+  "active": "61daad17fd4f3291",
   "lastOpenFiles": [
+    "docs/articles/transition_570_at_59x/images/istmt20251227174838.jpg",
+    "docs/articles/transition_570_at_59x/images/istmt20251227174341.jpg",
+    "docs/articles/transition_570_at_59x/images/analyzer_20251226230843.png",
+    "docs/articles/transition_570_at_59x/index.md",
+    "docs/articles/arrays_580/index.md",
+    "docs/articles/transition_570_at_59x/images",
+    "docs/articles/transition_570_at_59x",
+    "docs/articles/transition_570_at_59x/images/error_view_20251228235108.jpg",
+    "docs/articles/transition_570_590.md",
+    "docs/articles/[Массивы.md",
+    "docs/articles/type_casting.md",
+    "docs/informarch/bookmarks.md",
+    "docs/informarch/intro.md",
+    "docs/news/news_content.md",
+    "docs/ds/intro.md",
+    "docs/informarch/wii_qsp/short_faq.md",
     "build/sitemap.xml",
     "build/markdown-page/index.html",
     "build/markdown-page",
@@ -175,21 +187,13 @@
     "build/assets/js/main.645527fd.js",
     "build/assets/js/ffaa4b22.073394e8.js",
     "build/assets/js/fd228cc7.c9a85986.js",
-    "build/assets/js/fcf40b14.092862f0.js",
-    "build/assets/js/fc6e5728.f663f86c.js",
-    "build/assets/js/fab9fe8e.0fc2f67f.js",
     "build/assets/images/XCyNJqv-c75f9eb5d43bf826e72c80bf9fd84f33.png",
     "build/assets/images/window_msg-d6ad79c4ca582def4031e294a47639bc.png",
     "build/assets/images/tut7-01-a369fc2c78d47cbafecf8eb222120668.png",
     "build/assets/images/tut5-01-ef3719c2f577e7d30d55905411052c4e.png",
     "build/assets/images/tut4-01-5d05a8d50f363e02ee3a3a76dbaab6d6.png",
     "build/assets/images/tut2-06-7ce0258f080e85adf059cabe0ca5e1d5.png",
-    "build/assets/images/tut2-05-cc595cb6dc8443a379569bcb330065c6.png",
-    "build/assets/images/tut2-04-fb59bcd431fa5e470bd06bbe361098b5.png",
-    "build/assets/images/tut2-02-ee8218810ed4649f9cf101d42bb974b4.png",
-    "build/assets/images/tut1-12-9b218cb9beb681c8de84eaf7c907948b.png",
     "docs/informarch/aeroqsp/wit/index.md",
-    "docs/informarch/wii_qsp/short_faq.md",
     "docs/wiki/keywords.md",
     "docs/ds/tutorial-basics/deploy-your-site.md",
     "docs/ds/tutorial-basics/create-a-page.md",
@@ -199,20 +203,11 @@
     "docs/ds/tutorial-extras/translate-your-site.md",
     "docs/ds/tutorial-extras/manage-docs-versions.md",
     "docs/ds/tutorial-extras/code blocks.md",
-    "docs/ds/intro.md",
     "docs/informarch/general/standalone_classic.md",
     "docs/informarch/general/localization_classic_570.md",
     "docs/informarch/general/game_shelf.md",
     "docs/informarch/general/code_analyser.md",
     "docs/informarch/program/lib_flex_playlist.md",
-    "docs/informarch/program/use_arrays.md",
-    "docs/informarch/program/smooth_background.md",
-    "docs/informarch/program/lib_extend_inventory.md",
-    "docs/informarch/program/julian_calendar.md",
-    "docs/informarch/program/game_time.md",
-    "docs/informarch/program/dummy.md",
-    "docs/informarch/program/fonts.md",
-    "docs/informarch/program/debugger_200beta.md",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
