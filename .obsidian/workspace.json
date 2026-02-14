@@ -11,10 +11,14 @@
             "id": "634012a7f1abb9a3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/wiki/utilits/txt2gam.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "txt2gam"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "8ee93ae24e3030a7",
@@ -134,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/articles/transition_570_at_59x/images/error_view_20251228235108.jpg",
+                "file": "docs/wiki/utilits/txt2gam.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура error_view_20251228235108"
+              "title": "Структура txt2gam"
             }
           }
         ],
@@ -148,7 +153,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.5
+    "width": 369.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -161,8 +167,11 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "634012a7f1abb9a3",
   "lastOpenFiles": [
+    "[source]/wiki.qsp.org.dokuwiki/help/80_04_txt2gam_emeditor.dokuwiki",
+    "docs/wiki/utilits/txt2gam/txt2gam_emeditor.md",
+    "docs/wiki/utilits/txt2gam.md",
     "docs/articles/transition_570_at_59x/images/istmt20251227174838.jpg",
     "docs/articles/transition_570_at_59x/images/istmt20251227174341.jpg",
     "docs/articles/transition_570_at_59x/images/analyzer_20251226230843.png",
@@ -206,8 +215,6 @@
     "docs/informarch/general/standalone_classic.md",
     "docs/informarch/general/localization_classic_570.md",
     "docs/informarch/general/game_shelf.md",
-    "docs/informarch/general/code_analyser.md",
-    "docs/informarch/program/lib_flex_playlist.md",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
