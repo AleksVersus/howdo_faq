@@ -472,7 +472,7 @@ sidebar_position: 4
 ### 12.1. Зачем нужен оператор dynamic?
 
 - Смотреть на ютубе: [https://www.youtube.com/watch?v=djQbaN7-bfE&](https://www.youtube.com/watch?v=djQbaN7-bfE&t=16s)
-- Динамический код: [Справка на wiki.qsp.su](https://wiki.qsp.org/help:dynamical)
+- Динамический код: [Справка на wiki.qsp.org](https://wiki.qsp.org/help:dynamical)
 - **Storm**. **#2822** **09.Май.15 17:08:46:** [мне нужно к названию массива, допустим, char прибавить число 1, 2 и так далее чтобы получить название нового массива, допустим char1. Затем в этот новый массив копировать данные из какого-то другого массива в игре. Возможно ли это реализовать в QSP?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=113&prc=25&Itemid=57#p19941)
 - **Chaos Legion**. **#3981** **05.Мар.16 19:39:21:** [есть лока changestat которая вызывается по gs и ей передается имя переменной и число ... сама лока должна к этой переменной добавлять число, но я не могу понять, как там оперировать именно переменной, а не args%&#91;%0%&#93;%](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=160&prc=25&Itemid=57#p23212)
 - **Hinkmar**. **#5010** **21.Апр.17 20:04:22:** [можно ли проверить соответствие истине выражения, записанного в текстовую переменную?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=201&prc=25&Itemid=57#p25505)
@@ -507,7 +507,7 @@ sidebar_position: 4
 ### 13.2. Пытаюсь использовать разные HTML-теги в игре, но они не работают — просто не выводятся. Почему?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=177Wyt7Z13Q&](https://www.youtube.com/watch?v=177Wyt7Z13Q&t=151s)
-- Поддерживаемые в классическом плеере HTML-теги: [wiki.qsp.su](https://wiki.qsp.org/help:html)
+- Поддерживаемые в классическом плеере HTML-теги: [wiki.qsp.org](https://wiki.qsp.org/help:html)
 - **Bup0H**. **#4789** **25.Ноя.16 22:01:09:** [Как я понимаю небольшая разница в оформлении HTML в QSP есть](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24921)
 - **Darvin432**. **#4842** **10.Янв.17 01:16:10:** [Я нашёл команду table-layout, Но не могу разобраться почему она не работает в Qsp.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=194&prc=25&Itemid=57#p25060)
 
@@ -660,7 +660,7 @@ sidebar_position: 4
 
 ## 15. Вопросы о строке ввода
 
-- Раздел о Строке Ввода в справке: [wiki.qsp.su/inputs](https://wiki.qsp.org/help:inputs)
+- Раздел о Строке Ввода в справке: [wiki.qsp.org/inputs](https://wiki.qsp.org/help:inputs)
 
 ### 15.1. Зачем вообще нужна строка ввода (поле ввода)?
 
@@ -842,7 +842,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 19.7.  Как из под плеера выполнить произвольную строку кода?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=DDmIxbOWbgc&](https://www.youtube.com/watch?v=DDmIxbOWbgc&t=188s)
-- Отладчик: [Страница на wiki.qsp.su](https://wiki.qsp.org/help:debugger)
+- Отладчик: [Страница на wiki.qsp.org](https://wiki.qsp.org/help:debugger)
 - Отладчик 2.0: [Статья на qsp.su](https://qsp.org/index.php?option=com_content&id=71&Itemid=56)
 - **mkir**. **#3175** **27.Июл.15 04:08:40:** [возможно ли настроить внутри игры эдакий ввод команды, чтобы можно было через тот ж INPUT не только значение переменной, но и к тому же имя, какой именно переменной мы хотим что-то назначать?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=127&prc=25&Itemid=57#p20909)
 - **Valvs**. **#3554** **09.Окт.15 11:11:19:** [Есть ли возможность из клиента (aka плеера) задать значение произвольной переменной?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=143&prc=25&Itemid=57#p21929)

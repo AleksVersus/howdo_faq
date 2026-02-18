@@ -21,4 +21,4 @@ sidebar_position: 9
 <game title="Моя крутая Игра" resizeable="true" standalone="false" width="1280" height="720"/>
 ```
 
-О назначениях атрибутов и о том, какие значения они могут принимать по умолчанию, вы можете прочитать на QSP-wiki: [wiki.qsp.su/файл настрое игры для Quest Navigator](https://wiki.qsp.org/help:fajl_nastroek_igry_v_quest_navigator)
+О назначениях атрибутов и о том, какие значения они могут принимать по умолчанию, вы можете прочитать на QSP-wiki: [wiki.qsp.org/файл настрое игры для Quest Navigator](https://wiki.qsp.org/help:fajl_nastroek_igry_v_quest_navigator)

@@ -32,4 +32,4 @@ sidebar_position: 8
 
 Вот и всё. Теперь в папке "Quest Navigator", размещённой на рабочем столе, находится полностью независимая сборка игры. При запуске плеера ("QuestNavigator.exe") из этой папки, ваша игра запустится автоматически. Эту папку можно распространять в виде архива, либо сделать инсталлятор.
 
-Смотри так же, как отредактировать файл настроек на [wiki.qsp.su](https://wiki.qsp.org/help:fajl_nastroek_igry_v_quest_navigator)
+Смотри так же, как отредактировать файл настроек на [wiki.qsp.org](https://wiki.qsp.org/help:fajl_nastroek_igry_v_quest_navigator)
