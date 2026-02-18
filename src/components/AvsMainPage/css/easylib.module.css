@@ -82,7 +82,11 @@
 }
 .easyLibPage .avsArticleP,
 .easyLibPage .avsArticlePnullIndent {
-  margin: 1vh 0;
+  margin: 1vh 1vh;
+}
+.easyLibPage .avsArticleP {
+  text-indent: 1vw;
+  text-align: justify;
 }
 .easyLibPage .avsArticlePterminFirstWord {
   color: #b70000;
@@ -253,79 +257,79 @@
     border-radius: 0.12em;
     transition: 0.5s ease 0.5s;
   }
-  
+
   .monokaiInitial {
     color: #f8f8f2;
   }
-  
+
   .monokaiComment {
     color: #75715e;
   }
-  
+
   .monokaiQbracket,
   .monokaiAssign,
   .monokaiOperator {
     color: #66d9ef;
   }
-  
+
   .monokaiKoperator {
     color: #67d8ef;
     font-style: italic;
   }
-  
+
   .monokaiString {
     color: #e6db74;
   }
-  
+
   .monokaiNumeric,
   .monokaiStartLoc {
     color: #ae81ff;
   }
-  
+
   .monokaiEndLoc {
     color: #fd971f;
     font-style: italic;
   }
-  
+
   .monokaiSysVar {
     color: #f92672;
   }
-  
+
   .monokaiUnFunc {
     color: #a6e22c;
     font-style: italic;
   }
-  
+
   .monokaiFunc {
     color: #fd9621;
   }
-  
+
   .monokaiInvalid {
     color: #f8f8f1;
     background-color: #f92472;
   }
-  
+
   .monokaiConstruct {
     color: #67d8ef;
     font-style: italic;
   }
-  
+
   .monokaiCommand {
     color: #bbffaa;
   }
-  
+
   .monokaiError {
     color: #ff4f4f;
   }
-  
+
   .monokaiMarkup {
     color: #a6e22e;
   }
-  
+
   .monokaiTagName {
     color: #f92672;
   }
-  
+
   .monokaiTable {
     margin: 0.5em 0;
     color: #8dd6a5;
@@ -333,13 +337,13 @@
     border-spacing: 0.3em;
     white-space: nowrap;
   }
-  
+
   .monokaiTable__Cell {
     padding: 0.3em;
     border: 1px solid;
     border-spacing: 0.3em;
   }
-  
+
   .monokaiCommandTable {
     margin: 0.5em 0;
     padding: 0;
@@ -347,11 +351,11 @@
     white-space: nowrap;
     border: 0;
   }
-  
+
   .monokaiObjClass {
     color: #6ce3e3;
   }
-  
+
   .monokaiObjType {
     color: #35b7de;
   }

@@ -20,27 +20,26 @@ export default function AvsMainPage(): JSX.Element {
                 <p className={easylib.avsArticleP}>Ещё вы можете написать мне в VK, это не возбраняется: <a href="https://vk.com/id40090736" className={adapt.hrefPlain} target="_blank"><span className={easylib.monokaiNumeric}>id40090736</span></a>.</p>
                 <p className={easylib.avsArticleP}>Онлайн-версия <span className={easylib.monokaiString}>Справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме  <a href="https://qsp.org/index.php?option=com_agora&Itemid=57" title="перейти на форум" target="_blank" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>QSP.org</span></a></span> по прежнему доступна как отдельный раздел.</p>
                 <p className={easylib.avsArticleP}>В настоящее время справочник актуализирован под QSP версии 5.8.0, это новый классический плеер и qSpider. Раздел по Quest Navigator исключён, весь код переписан под 5.8.0, многие примеры окажутся нерабочими для плееров версии 5.7.0. Если вам нужен справочник для 5.7.0, есть <a href="https://aleksversus.github.io/howdo_faq/release/F.A.Q.HowDo for QSP 5.7.0.zip" className={adapt.hrefPlain}><span className={easylib.monokaiOperator}>копия онлайн-версии</span></a>, а так же старые релизы офлайн-версии.</p>
-                <p className={adapt.pWarning}>Кнопка "Содержание" пока не работает ни в одном разделе.</p>
-                
+
                 <h6 className={easylib.avsArticleH6}><span className={easylib.monokaiFunc}>Справочник по самым часто задаваемым вопросам из темы "Как сделать?":</span></h6>
-               
+
                 <ul className={easylib.cmd} >
                     <li className={easylib.cmd_item}>
-                        <Link 
+                        <Link
                             className={adapt.hrefPlain}
                             to="/docs/howdo/intro">
                             <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Важное предисловие"</span>
                         </Link>
                     </li>
                     <li className={easylib.cmd_item}>
-                        <Link 
+                        <Link
                             className={adapt.hrefPlain}
                             to="https://dev.qsp.org/ru/docs/language/qsp-keywords/">
                             <span className={easylib.monokaiOperator}>goto</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span>
                         </Link>
                     </li>
                     <li className={easylib.cmd_item}>
-                        <Link 
+                        <Link
                             className={adapt.hrefPlain}
                             to="/docs/howdo/links">
                             <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Источники и дополнительные материалы"</span>
@@ -60,45 +59,45 @@ export default function AvsMainPage(): JSX.Element {
                         <a href="https://github.com/AleksVersus/howdo_faq/releases" className={adapt.hrefPlain} target="_blank"><span className={easylib.monokaiOperator}>goto</span> <span className={easylib.monokaiString}>"GitHub/HowDo_FAQ/releases"</span></a> (Редакция от 03.11.2021.)
                     </li>
                 </ul>
-                <h6 className={easylib.avsArticleH6}><span className={easylib.monokaiFunc}>Статьи по QSP:</span></h6>  
+                <h6 className={easylib.avsArticleH6}><span className={easylib.monokaiFunc}>Статьи по QSP:</span></h6>
                         <ul className={easylib.cmd}>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/articles/type_casting">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Преобразование типов в QSP"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/articles/arrays_580/">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Изменения в работе массивов в плеерах версии 5.8.0"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/news/news_content">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Нововведения в QSP"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/articles/qspider_0120/">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Сводная статья по qSpider версии 0.12.0"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/articles/config_classic_570">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Структура qspgui.cfg классического плеера 5.7.0"</span>
                                 </Link>
                             </li>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/articles/operators_funcs_args/">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Операторы, функции и аргументы в QSP. GOSUB, FUNC, ARGS"</span>
@@ -109,15 +108,15 @@ export default function AvsMainPage(): JSX.Element {
                     <span className={easylib.monokaiComment}>! устаревшие статьи, которые пока ещё существуют и на QSP.org,<br/>! но в скором времени могут быть удалены оттуда.</span>
                     <ul className={easylib.cmd}>
                             <li className={easylib.cmd_item}>
-                                <Link 
+                                <Link
                                     className={adapt.hrefPlain}
                                     to="/docs/informarch/intro">
                                     <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Оглавление"</span>
                                 </Link>
                             </li>
                         </ul>
-     
-                
+
+
                 <h6 className={easylib.avsArticleH6}><span className={easylib.monokaiFunc}>Мои ресурсы:</span></h6>
                 <ul className={easylib.cmd}>
                     <li className={easylib.cmd_item}>
