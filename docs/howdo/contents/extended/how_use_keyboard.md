@@ -12,7 +12,7 @@ sidebar_position: 5
 
 Таким образом, например, в игре "Серафим" от `Mioirel` организовано перемещение по карте. Перемещение на Север, Юг, Запад, Восток привязано соответственно к клавишам "8", "2", "4", "6".
 :::tip[**qSpider**]
-В qSpider вы можете привязывать [к действиям вообще любые клавиши](http://wiki.qsp.org/help:qspider_gamecfg#naznachenie_gorjachix_klavish_gamehotkeys) на клавиатуре.
+В qSpider вы можете привязывать [к действиям вообще любые клавиши](https://wiki.qsp.org/help:qspider_gamecfg#naznachenie_gorjachix_klavish_gamehotkeys) на клавиатуре.
 :::
 
 В классическом плеере подобное тоже можно реализовать, но через костыль:

@@ -115,7 +115,7 @@ Qt Quest Soft Player
 
 ### Справочник "Как сделать?"
 
-- [Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме qsp.su](https://aleksversus.github.io/howdo_faq)
+- [Онлайн-версия справочника по самым часто задаваемым вопросам из темы "Как сделать?" на форуме QSP.org](https://aleksversus.github.io/howdo_faq)
 - Офлайн-версию справочника можно скачать здесь: [GitHub/howdo_faq/releases](https://github.com/AleksVersus/howdo_faq/releases)
 
 ## Examples | Примеры

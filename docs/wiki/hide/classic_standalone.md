@@ -4,7 +4,7 @@
 
 О создании файла запуска: Genryzz. #3912 21.Фев.16 21:30:40: [как сделать пусковой файл?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065)
 
-Статья Серого Волка в теме [Возможности) Помогите разобраться](https://qsp.su/index.php?option=com_agora&task=topic&id=88&Itemid=57)
+Статья Серого Волка в теме [Возможности) Помогите разобраться](https://QSP.org/index.php?option=com_agora&task=topic&id=88&Itemid=57)
 
 Непосредственно без плеера ни одна игра QSP не запустится.
 

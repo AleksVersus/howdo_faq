@@ -120,7 +120,7 @@ sidebar_position: 4
 - Пример от Svandrus:        [Скачать](https://qsp.org/components/com_agora/img/members/983/menu_2.qsp)
 - Пример от Aleks Versus:    [Скачать](https://qsp.org/components/com_agora/img/members/248/21032016-0856_menu.qsp)
 - Динамическое меню от Lisichka: [Сообщение в теме "Как сделать?"](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=114&prc=25&Itemid=57#p19982)
-- Как сделать меню предмета? [Тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&prc=25&p=1&id=829&Itemid=57#p18902)
+- Как сделать меню предмета? [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&prc=25&p=1&id=829&Itemid=57#p18902)
 - О меню в справке: [https://wiki.qsp.org/help:menu](https://wiki.qsp.org/help:menu)
 - **PsiH**. **#3522** **23.Сен.15 17:06:11:** [Покажите пример меню с двумя и более предметами.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21810)
 - **St-john**. **#3665** **25.Ноя.15 10:04:08:** [как мне из меню напрямую передать нужные аргументы?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=147&prc=25&Itemid=57#p22270)
@@ -434,8 +434,8 @@ sidebar_position: 4
 ### 11.2. Как сделать так, чтобы действие появлялось только при определённом условии?
 
 - Смотреть на ютубе: [https://www.youtube.com/watch?v=tzu-0aV_m5M&](https://www.youtube.com/watch?v=tzu-0aV_m5M&t=196s)
-- Действие по условию: [тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57)
-- Примеры реализации диалогов: [тема на форуме QSP.su](https://qsp.org/index.php?option=com_content&view=article&id=72:-11&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Действие по условию: [тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57)
+- Примеры реализации диалогов: [тема на форуме QSP.org](https://qsp.org/index.php?option=com_content&view=article&id=72:-11&catid=36:2009-02-19-06-11-21&Itemid=76)
 - **Jack**. **#3428** **04.Сен.15 18:15:00:** [мне надо сделать в одном действие два действия только не знаю как правильно прописать](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=138&prc=25&Itemid=57#p21604)
 - **saks**. **#3989** **06.Мар.16 10:54:33:** [как упростить код (допустим чтобы вариант "уйти" прописать только 1 раз а не в каждом действии)](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=160&prc=25&Itemid=57#p23220)
 - **Larson**. **#4955** **23.Мар.17 15:32:50:** [Какой код нужно написать чтобы только после посещения Комнаты1, в  Комнате2 появилось действие 'Открыть ключем' ?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=199&prc=25&Itemid=57#p25352)
@@ -534,7 +534,7 @@ sidebar_position: 4
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=TCve-b6AQMs&](https://www.youtube.com/watch?v=TCve-b6AQMs&t=376s)
 - **svandrus**. **#2874** **19.Май.15 20:17:41:** [у меня вопрос по меткам в локации](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20071)
-- JUMP надо модифицировать? [Тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&id=314&Itemid=57)
+- JUMP надо модифицировать? [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=314&Itemid=57)
 - **Белый Шарик**. **#3057** **07.Июл.15 13:37:00:** [Да что ж я делаю не так?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=123&prc=25&Itemid=57#p20670)
 - **Small Jerboa**. **#3336** **19.Авг.15 21:26:16:** [ругается, что не находит такой метки](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=134&prc=25&Itemid=57#p21421)
 - **Storm**. **#3517** **20.Сен.15 03:19:08:** [можно ли использовать оператор "jump" в операторе "dynamic"?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=141&prc=25&Itemid=57#p21764)
@@ -603,7 +603,7 @@ sidebar_position: 4
 ### 14.6. Как делать динамические/считаемые предметы?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=4tjOVO8ccrI&](https://www.youtube.com/watch?v=4tjOVO8ccrI&t=18s)
-- Библиотечка, расширяющая возможности инвентаря: [Страница на QSP.su](https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Библиотечка, расширяющая возможности инвентаря: [Страница на QSP.org](https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
 - **Одиночка**. **#2858** **14.Май.15 02:48:16:** [`addobj 'Здоровье: <<$Здоровье>> ед.'` Добавил в инвентарь, но при изменении переменной здесь ничего не высвечивается, что делать?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=115&prc=25&Itemid=57#p20004)
 - **Белый Шарик**. **#2947** **09.Июн.15 14:09:36:** [Как сделать, что бы однотипные предметы в инвентарь попадали не отдельными строками, а складывались в одну строку с указанием количества?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=118&prc=25&Itemid=57#p20330)
 - **Lexian13**. **#4409** **24.Май.16 17:31:40:** [В своей игре использую объект Зелья. Хочу что бы в запасе было несколько. Но чтоб не забивать инвентарь.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=177&prc=25&Itemid=57#p24014)
@@ -735,7 +735,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 
 - **Смотреть ответ на ютубе:** [https://youtu.be/CeMLenb-n5w](https://youtu.be/CeMLenb-n5w)
 - Теги MAP и AREA: [статья на HTMLBOOK](http://htmlbook.ru/html/area)
-- Теги MAP и AREA: [тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&id=793&Itemid=57)
+- Теги MAP и AREA: [тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=793&Itemid=57)
 - **Shellect**. **#3178** **27.Июл.15 17:27:07:** [Создаю HTML файл, запускаю - всё работает, как задумано. На странице картинка, в центре круглая область-ссылка. Пытаюсь запустить этот код в QSP - ссылки нет.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=128&prc=25&Itemid=57#p20912)
 - **Gefestions**. **#3358** **25.Авг.15 11:05:06:** [Есть ли возможность нарисовать карту? что бы при нажатии на изображение (определенную часть) был переход на локацию?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=135&prc=25&Itemid=57#p21473)
 - **Lamer**. **#4940** **25.Фев.17 17:32:43:** [Можно увидеть, хоть где нибудь, простенький пример использования тегов `<map>` и соответственно `<area>`](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25293)
@@ -758,7 +758,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 17.3.  Как сделать чекпойнты в игре?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=D9zfeG5IWYE&](https://www.youtube.com/watch?v=D9zfeG5IWYE&t=219s)
-- Решение по чекпоинтам: [статья на qsp.su](https://qsp.org/index.php?option=com_content&view=article&id=120:2012-03-21-03-39-37&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Решение по чекпоинтам: [статья на QSP.org](https://qsp.org/index.php?option=com_content&view=article&id=120:2012-03-21-03-39-37&catid=36:2009-02-19-06-11-21&Itemid=76)
 - **DeathSpace**. **#4087** **14.Мар.16 19:27:42:** [Ребят, как сделать чтобы после проигрыша в игре ее можно было начать с последнего сохранения? avtosave.sav](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=164&prc=25&Itemid=57#p23369)
 
 ### 17.4.  Как написать действие, которое при каждом клике сохраняло бы игру в файлы "1.sav" и "2.sav" поочерёдно?
@@ -786,7 +786,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 18.4.  Перенёс файл игры из одной папки в другую. В Quest Generator пропали все папки. Почему так происходит, и как этого избежать?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=oi3lFKTI_HI&](https://www.youtube.com/watch?v=oi3lFKTI_HI&t=707s)
-- Зачем нужен файл `.qproj`: [Тема на форуме qsp.su](https://qsp.org/index.php?option=com_agora&task=topic&id=163&Itemid=57)
+- Зачем нужен файл `.qproj`: [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=163&Itemid=57)
 - **mkir**. **#2997** **21.Июн.15 00:13:23:** [При переносе почему-то из игры пропали все папки. То есть локации остались, но без папок и в жутком беспорядке. что это такое и как с этим бороться?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=120&prc=25&Itemid=57#p20526)
 
 ### 18.5.  В папке с игрой стали появляться файлы с расширением .tmp. Что это за файлы, нужны они, и как избавиться от их появления?
@@ -805,7 +805,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 19.2.  Как вставить в игру видео?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=y-OafwUm9ow&](https://www.youtube.com/watch?v=y-OafwUm9ow&t=127s)
-- Плеер QSP с поддержкой webm: [Тема на форуме QSP.su](https://qsp.org/index.php?option=com_agora&task=topic&id=1192&Itemid=57)
+- Плеер QSP с поддержкой webm: [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=1192&Itemid=57)
 - **Sonnix**. **#5** **17.Фев.18 14:26:08:** [Новая версия 1.4.2](https://qsp.org/index.php?option=com_agora&task=topic&id=1192&p=1&prc=25&Itemid=57#p26404)
 - **Jack**. **#3382** **29.Авг.15 21:13:54:** [скажите пожалуйста а в игру можно внедрять коротко митражные ролики ???](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=136&prc=25&Itemid=57#p21523)
 - **Fyrchun**. **#3738** **09.Янв.16 18:28:12:** [Всем привет ,человек я тут новый. У меня вопрос: можно ли QSP воспроизводить видео? ( если да, то как?)](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=150&prc=25&Itemid=57#p22436)
@@ -843,7 +843,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=DDmIxbOWbgc&](https://www.youtube.com/watch?v=DDmIxbOWbgc&t=188s)
 - Отладчик: [Страница на wiki.qsp.org](https://wiki.qsp.org/help:debugger)
-- Отладчик 2.0: [Статья на qsp.su](https://qsp.org/index.php?option=com_content&id=71&Itemid=56)
+- Отладчик 2.0: [Статья на QSP.org](https://qsp.org/index.php?option=com_content&id=71&Itemid=56)
 - **mkir**. **#3175** **27.Июл.15 04:08:40:** [возможно ли настроить внутри игры эдакий ввод команды, чтобы можно было через тот ж INPUT не только значение переменной, но и к тому же имя, какой именно переменной мы хотим что-то назначать?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=127&prc=25&Itemid=57#p20909)
 - **Valvs**. **#3554** **09.Окт.15 11:11:19:** [Есть ли возможность из клиента (aka плеера) задать значение произвольной переменной?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=143&prc=25&Itemid=57#p21929)
 
@@ -867,7 +867,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 20.1.  Как сделать возврат на предыдущую локацию?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=v5JRRscDgSM&](https://www.youtube.com/watch?v=v5JRRscDgSM&t=18s)
-- Возврат на предыдущую локацию: [Тема на форуме qsp.su](https://qsp.org/index.php?option=com_agora&task=topic&id=751&Itemid=57)
+- Возврат на предыдущую локацию: [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=751&Itemid=57)
 - **Драккан**. **#3060** **07.Июл.15 13:06:42:** [как после случайного события вернуться на локацию срабатывания этого события](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=123&prc=25&Itemid=57#p20673)
 - **svandrus**. **#3541** **01.Окт.15 12:59:43:** [При переходах с локации на локацию приходится прибегать к этому ... чтобы без проблем вернуться куда надо](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=142&prc=25&Itemid=57#p21893)
 - **Сергей**. **#4700** **22.Окт.16 15:40:23:** [Как организовать мобильный телефон с функций, собственно, телефона и браузера (без возможности выбросить или выложить). По сути нужна переносимая локация в окне предметов](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=189&prc=25&Itemid=57#p24764)
@@ -920,7 +920,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 20.9.  Как сделать вытягивание случайных карт из колоды?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=NsxbBgkI_kE&](https://www.youtube.com/watch?v=NsxbBgkI_kE&t=18s)
-- Тянем карту из колоды: [статья на qsp.su](https://qsp.org/index.php?option=com_content&view=article&id=114:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
+- Тянем карту из колоды: [статья на QSP.org](https://qsp.org/index.php?option=com_content&view=article&id=114:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
 - **Белый Шарик**. **#3222** **30.Июл.15 10:08:48:** [Подскажите, почему зависает при исполнении? Хочу сделать рандомные значения для трех переменных, но так чтобы они не были равны](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=129&prc=25&Itemid=57#p21006)
 - **Pin1221**. **#3624** **04.Ноя.15 11:26:06:** [Всем привет, нужна ваша помощь. Нужно, чтобы программа выбрала 3 любых случайных действия](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=145&prc=25&Itemid=57#p22122)
 - **D31M0S**. **#5504** **05.Апр.19 20:56:05:** [Как сделать так, чтобы программа вытаскивала карты (переменные) из колоды (массива)?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=221&prc=25&Itemid=57#p27163)
@@ -946,7 +946,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 ### 20.13.  Как разредить текст пробелами?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=YJT9Zk_1LJU&](https://www.youtube.com/watch?v=YJT9Zk_1LJU&t=18s)
-- Разрежение текста: [тема на форуме qsp.su](https://qsp.org/index.php?option=com_agora&task=topic&id=962&Itemid=57)
+- Разрежение текста: [тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=962&Itemid=57)
 - **ItsHim**. **#3075** **13.Июл.15 12:16:35:** [Может кто-нибудь подсказать как сделать пробел через каждые три буквы/цифры сплошного слова?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=123&prc=25&Itemid=57#p20734)
 
 ### 20.14.  Как сделать записную книжку в игре?
@@ -1015,7 +1015,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 
 ## 22. Ограничения
 
-- Ограничения QSP: [Тема на форуме qsp.su](https://qsp.org/index.php?option=com_agora&task=topic&id=392&Itemid=57)
+- Ограничения QSP: [Тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=392&Itemid=57)
 
 ### 22.1.  Видел в справке ограничение на 100 подключаемых файлов. Это что, я не смогу использовать более ста файлов картинок и музыки?
 

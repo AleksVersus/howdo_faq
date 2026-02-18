@@ -45,7 +45,7 @@ sidebar_label: Что такое QSP?
 
 На представленном ниже изображении вы можете видеть пять основных областей классического плеера **QSP**, которые так же могут называться окнами.
 
-[![Экран QSP](imgs/qspblank2.jpg)](http://wiki.qsp.org/_media/help:qspblank.jpg)
+[![Экран QSP](imgs/qspblank2.jpg)](https://wiki.qsp.org/_media/help:qspblank.jpg)
 
 1. Окно основного описания
 2. Окно предметов (инвентаря)

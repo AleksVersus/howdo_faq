@@ -15,7 +15,7 @@ sidebar_position: 999
 - Hessar. #5291 09.Апр.18 15:19:27: [можно ли подключить к игре библиотеку jQuery и как правильно использовать JavaScript для отображения в плеере? Что писать и куда? ](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=212&prc=25&Itemid=57#p26613)
 - новичок. #5466 31.Янв.19 11:43:10: [еще такой вопрос. почему в навигаторе при pl описание выводится в основном окне](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=219&prc=25&Itemid=57#p27067)
 
-Подробный разбор изменений дизайна в Quest Navigator: [тема на форуме qsp.su](https://qsp.org/index.php?option=com_agora&task=topic&id=1067&Itemid=57)
+Подробный разбор изменений дизайна в Quest Navigator: [тема на форуме QSP.org](https://qsp.org/index.php?option=com_agora&task=topic&id=1067&Itemid=57)
 ## 22.1.  Пишу несколько игр в Quest Navigator. Как сделать, чтобы у каждой игры было собственное оформление?
 <!-- [:link_22_01] -->
 Смотреть ответ на ютубе: [https://www.youtube.com/watch?v=1mMcOyG6_jc&](https://www.youtube.com/watch?v=1mMcOyG6_jc&t=18s)

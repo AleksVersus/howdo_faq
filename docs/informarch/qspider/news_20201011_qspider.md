@@ -70,5 +70,5 @@ sidebar_position: 20201011
 
 **Автор статьи:** Werewolf  
 **Оригинал статьи:** [https://ifhub.club/2020/10/11/qspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html](https://m.vk.com/away.php?to=https%3A%2F%2Fifhub.club%2F2020%2F10%2F11%2Fqspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html "https://ifhub.club/2020/10/11/qspider-pleer-dlya-zapuska-qsp-igr-v-brauzere.html")
-**Обсуждение на форуме:** [http://qsp.su/...topik1291#p2807](https://m.vk.com/away.php?to=http%3A%2F%2Fqsp.su%2Findex.php%3Foption%3Dcom_agora%26task%3Dtopic%26id%3D1291%26Itemid%3D57%23p28071 "http://qsp.su/index.php?option=com_agora&task=topic&id=1291&Itemid=57#p28071")
+**Обсуждение на форуме:** [https://qsp.org/...topik1291#p2807](https://m.vk.com/away.php?to=http%3A%2F%2FQSP.org%2Findex.php%3Foption%3Dcom_agora%26task%3Dtopic%26id%3D1291%26Itemid%3D57%23p28071 "https://qsp.org/index.php?option=com_agora&task=topic&id=1291&Itemid=57#p28071")
 **Обсуждение в дискорде:** [https://discord.gg/K6JyYVk](https://m.vk.com/away.php?to=https%3A%2F%2Fdiscord.gg%2FK6JyYVk)
