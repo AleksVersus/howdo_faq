@@ -35,8 +35,8 @@ export default function AvsMainPage(): JSX.Element {
                     <li className={easylib.cmd_item}>
                         <Link 
                             className={adapt.hrefPlain}
-                            to="/docs/howdo/qsp_keywords/qsp-keyword-pointer">
-                            <span className={easylib.monokaiOperator}>jump</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span>
+                            to="https://dev.qsp.org/ru/docs/language/qsp-keywords/">
+                            <span className={easylib.monokaiOperator}>goto</span> <span className={easylib.monokaiString}>"Зарезервированные слова, спецсимволы и системные переменные"</span>
                         </Link>
                     </li>
                     <li className={easylib.cmd_item}>
@@ -51,7 +51,7 @@ export default function AvsMainPage(): JSX.Element {
                     <span className={easylib.monokaiComment}>! Тема, посвящённая справочнику, на форуме QSP.org:</span>
                         <ul className={easylib.cmd}>
                             <li className={easylib.cmd_item}>
-                                <a href="http://qsp.su/index.php?option=com_agora&task=topic&id=1280&p=1&prc=25&Itemid=57#p28373" className={adapt.hrefPlain} target="_blank"><span className={easylib.monokaiOperator}>goto</span> <span className={easylib.monokaiString}>"qsp.su/F.A.Q.: Часто задаваемые вопросы из темы "Как сделать?""</span></a>
+                                <a href="http://qsp.su/index.php?option=com_agora&task=topic&id=1280&p=1&prc=25&Itemid=57#p28373" className={adapt.hrefPlain} target="_blank"><span className={easylib.monokaiOperator}>goto</span> <span className={easylib.monokaiString}>"qsp.org/F.A.Q.: Часто задаваемые вопросы из темы "Как сделать?""</span></a>
                             </li>
                         </ul>
                     <span className={easylib.monokaiComment}>! Скачать последнюю версию офлайн-справочника вы всегда можете со страницы релизов:</span>
