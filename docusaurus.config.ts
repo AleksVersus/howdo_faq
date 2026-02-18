@@ -14,7 +14,7 @@ let footer = `<aside class="footerBlock">
 const config: Config = {
   title: 'Справочник | F.A.Q.',
   tagline: 'Справочные материалы и статьи по QSP',
-  favicon: 'res/favicon.ico',
+  favicon: 'fav/green.ico',
   // stylesheets: ['@site/src/components/AvsMainPage/css/easylib.module.css'],
 
   // Set the production url of your site here
