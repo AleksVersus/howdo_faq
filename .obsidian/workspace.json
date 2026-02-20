@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
+                "file": "docs/howdo/contents/concrete_tasks/data_sorting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "arrays_comparison"
+              "title": "data_sorting"
             }
           },
           {
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
+                "file": "docs/howdo/contents/concrete_tasks/data_sorting.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура arrays_comparison"
+              "title": "Структура data_sorting"
             }
           }
         ],
@@ -181,8 +181,12 @@
   },
   "active": "565893dd22e8d9b6",
   "lastOpenFiles": [
-    "docs/informarch/oldarticles/array_compare.md",
+    "docs/howdo/contents/concrete_tasks/assets/data_sorting.qsp",
+    "docs/howdo/contents/concrete_tasks/assets/game.qsp",
+    "docs/howdo/contents/concrete_tasks/choose_random_card.md",
+    "docs/howdo/contents/concrete_tasks/check_for_even.md",
     "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
+    "docs/informarch/oldarticles/array_compare.md",
     "docs/informarch/oldarticles/_category_.yaml",
     "docs/informarch/oldarticles",
     "docs/howdo/contents/concrete_tasks/actions_direct.md",
@@ -214,7 +218,6 @@
     "[source]/older/ds/tutorial-extras/img/Pasted image 20240803133508.png",
     "[source]/older/ds/tutorial-extras/img/Pasted image 20240803133026.png",
     "[source]/older/ds/tutorial-basics/markdown-features.mdx",
-    "[source]/older/ds/tutorial-extras/_category_.json",
     "[source]/older/ds/tutorial-extras/translate-your-site.md",
     "[source]/older/ds/tutorial-extras/manage-docs-versions.md",
     "[source]/older/ds/tutorial-basics/deploy-your-site.md",
@@ -224,9 +227,6 @@
     "[source]/older/ds/tutorial-basics/create-a-blog-post.md",
     "[source]/older/ds/tutorial-basics/congratulations.md",
     "[source]/older/ds/intro.md",
-    "docs/ds/tutorial-extras/manage-docs-versions.md",
-    "docs/ds/tutorial-extras/code blocks.md",
-    "docs/ds/intro.md",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
