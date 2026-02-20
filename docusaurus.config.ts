@@ -63,7 +63,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'res/favicon.ico',
+    image: 'fav/green.ico',
     navbar: {
       title: 'Главная',
       // logo: {
@@ -96,8 +96,7 @@ const config: Config = {
           label: 'Информ-Архив',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'wikiSidebar',
+          href: 'https://wiki.qsp.org',
           position: 'right',
           label: 'QSP-wiki',
         },
