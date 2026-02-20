@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/contents/concrete_tasks/actions_direct.md",
+                "file": "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "actions_direct"
+              "title": "arrays_comparison"
+            }
+          },
+          {
+            "id": "4f131a95331c8134",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/informarch/oldarticles/array_compare.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "array_compare"
             }
           }
         ]
@@ -138,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/contents/concrete_tasks/actions_direct.md",
+                "file": "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура actions_direct"
+              "title": "Структура arrays_comparison"
             }
           }
         ],
@@ -167,6 +181,11 @@
   },
   "active": "565893dd22e8d9b6",
   "lastOpenFiles": [
+    "docs/informarch/oldarticles/array_compare.md",
+    "docs/howdo/contents/concrete_tasks/arrays_comparison.md",
+    "docs/informarch/oldarticles/_category_.yaml",
+    "docs/informarch/oldarticles",
+    "docs/howdo/contents/concrete_tasks/actions_direct.md",
     "docs/howdo/contents/concrete_tasks/assets/action_direct_3.qsp",
     "docs/howdo/contents/concrete_tasks/assets/action_direct_2.qsp",
     "docs/howdo/contents/concrete_tasks/assets/action_direct.qsp",
@@ -197,22 +216,17 @@
     "[source]/older/ds/tutorial-basics/markdown-features.mdx",
     "[source]/older/ds/tutorial-extras/_category_.json",
     "[source]/older/ds/tutorial-extras/translate-your-site.md",
-    "[source]/older/ds/tutorial-extras/img",
     "[source]/older/ds/tutorial-extras/manage-docs-versions.md",
-    "[source]/older/ds/tutorial-basics/_category_.json",
     "[source]/older/ds/tutorial-basics/deploy-your-site.md",
     "[source]/older/ds/tutorial-extras/code blocks.md",
     "[source]/older/ds/tutorial-basics/create-a-page.md",
     "[source]/older/ds/tutorial-basics/create-a-document.md",
     "[source]/older/ds/tutorial-basics/create-a-blog-post.md",
     "[source]/older/ds/tutorial-basics/congratulations.md",
-    "[source]/older/ds/tutorial-extras",
     "[source]/older/ds/intro.md",
     "docs/ds/tutorial-extras/manage-docs-versions.md",
     "docs/ds/tutorial-extras/code blocks.md",
     "docs/ds/intro.md",
-    "docs/articles/transition_570_at_59x/index.md",
-    "docs/articles/transition_570_590.md",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
