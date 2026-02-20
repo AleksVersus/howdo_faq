@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/qsp_keywords.md",
+                "file": "docs/howdo/contents/concrete_tasks/actions_direct.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "qsp_keywords"
+              "title": "actions_direct"
             }
           }
         ]
@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/qsp_keywords.md",
+                "file": "docs/howdo/contents/concrete_tasks/actions_direct.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура qsp_keywords"
+              "title": "Структура actions_direct"
             }
           }
         ],
@@ -167,8 +167,15 @@
   },
   "active": "565893dd22e8d9b6",
   "lastOpenFiles": [
-    "docs/howdo/links.md",
+    "docs/howdo/contents/concrete_tasks/assets/action_direct_3.qsp",
+    "docs/howdo/contents/concrete_tasks/assets/action_direct_2.qsp",
+    "docs/howdo/contents/concrete_tasks/assets/action_direct.qsp",
+    "docs/howdo/contents/concrete_tasks/assets",
+    "docs/howdo/contents/concrete_tasks/Новая папка",
     "docs/howdo/intro.md",
+    "docs/howdo/links.md",
+    "docs/howdo/qsp_keywords.md",
+    "node_modules/baseline-browser-mapping/dist/cli.cjs",
     "docs/articles/arrays_580/index.md",
     "src/pages/markdown-page.md",
     "docs/wiki/advanced/savegame.md",
@@ -200,19 +207,12 @@
     "[source]/older/ds/tutorial-basics/create-a-blog-post.md",
     "[source]/older/ds/tutorial-basics/congratulations.md",
     "[source]/older/ds/tutorial-extras",
-    "[source]/older/ds/tutorial-basics",
     "[source]/older/ds/intro.md",
-    "[source]/older/ds",
     "docs/ds/tutorial-extras/manage-docs-versions.md",
     "docs/ds/tutorial-extras/code blocks.md",
     "docs/ds/intro.md",
     "docs/articles/transition_570_at_59x/index.md",
     "docs/articles/transition_570_590.md",
-    "README.md",
-    "docs/wiki/utilits/txt2gam.md",
-    "[source]/wiki.qsp.org.dokuwiki/help/80_04_txt2gam_emeditor.dokuwiki",
-    "docs/articles/transition_570_at_59x/images",
-    "docs/articles/transition_570_at_59x",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
