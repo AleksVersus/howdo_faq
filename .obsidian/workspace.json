@@ -11,10 +11,14 @@
             "id": "565893dd22e8d9b6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/howdo/qsp_keywords.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "qsp_keywords"
             }
           }
         ]
@@ -134,12 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/howdo/qsp_keywords.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура qsp_keywords"
             }
           }
         ],
@@ -162,6 +167,8 @@
   },
   "active": "565893dd22e8d9b6",
   "lastOpenFiles": [
+    "docs/howdo/links.md",
+    "docs/howdo/intro.md",
     "docs/articles/arrays_580/index.md",
     "src/pages/markdown-page.md",
     "docs/wiki/advanced/savegame.md",
@@ -204,10 +211,8 @@
     "README.md",
     "docs/wiki/utilits/txt2gam.md",
     "[source]/wiki.qsp.org.dokuwiki/help/80_04_txt2gam_emeditor.dokuwiki",
-    "docs/wiki/utilits/txt2gam/txt2gam_emeditor.md",
     "docs/articles/transition_570_at_59x/images",
     "docs/articles/transition_570_at_59x",
-    "docs/articles/[Массивы.md",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
