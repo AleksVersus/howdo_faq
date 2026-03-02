@@ -3,7 +3,7 @@ sidebar_position: 6
 ---
 
 # 1.6. В чём разница между `dynamic` и `dyneval`?
-<!-- [:faq_01_06] -->
+
 
 **В:** В чём разница между `dynamic` и `dyneval`?
 
