@@ -30,16 +30,16 @@ settimer 100
 
 ```qsp
 ! фиксируем, в какое время обратились к локации-счётчику
-local time_now=msecscount
-if $curloc="зал_с_порталами":
+local time_now = msecscount
+if $curloc = "зал_с_порталами":
 ! если текущая локация "зал_с_порталами"
     ! фиксируем в timer время, когда должно появиться действие
-    if timer=0: timer=time_now+7000
-    if time_now>=timer and timer>0:
+    if timer=0: timer = time_now+7000
+    if time_now >= timer and timer>0:
     ! если текущее время достигло нужного
         ! записываем в переменную timer -1,
         ! чтобы больше этот код не исполнялся
-        timer=-1
+        timer = -1
         ! создаём действие
         act "Шагнуть в портал":
             ! код в действии

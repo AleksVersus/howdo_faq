@@ -8,6 +8,7 @@ sidebar_position: 8
 
 **О:**
 В плеерах версии 5.8.0 и выше можно использовать функцию `$QSPVER`:
+
 ```qsp
 $QSPVER('platform')
 ```
