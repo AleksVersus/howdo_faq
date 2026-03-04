@@ -29,3 +29,5 @@ $backimage = "background/солнечный_день.jpg"
 ```qsp
 $backimage = ""
 ```
+
+Пример есть в [сборнике примеров](assets/img_ex.zip).

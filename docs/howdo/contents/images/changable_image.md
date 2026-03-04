@@ -62,3 +62,5 @@ elseif изображение = 1:
     *pl "<a href='exec:изображение=0 & goto $curloc'><img src='фон/пасмурный_вечер.png'></a>"
 end
 ```
+
+Пример есть в [сборнике примеров](assets/img_ex.zip).
