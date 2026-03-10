@@ -19,7 +19,7 @@ unselect
 
 ```qsp
 ! запоминаем название выделенного предмета
-$object=$selobj
+local $object=$selobj
 ! снимаем выделение
 unselect
 
