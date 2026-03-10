@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/contents/menu/different_menus.md",
+                "file": "docs/howdo/contents/menu/menu_separator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "different_menus"
+              "title": "menu_separator"
             }
           }
         ]
@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/contents/menu/different_menus.md",
+                "file": "docs/howdo/contents/menu/menu_separator.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура different_menus"
+              "title": "Структура menu_separator"
             }
           }
         ],
@@ -167,6 +167,11 @@
   },
   "active": "1ef6c83b4551919e",
   "lastOpenFiles": [
+    "docs/howdo/contents/menu/menu_of_item.md",
+    "docs/howdo/contents/menu/assets/menu_of_item.qsp",
+    "docs/howdo/contents/menu/menu_in_hyperlinks.md",
+    "docs/howdo/contents/menu/image_in_menu.md",
+    "docs/howdo/contents/menu/different_menus.md",
     "docs/howdo/contents/menu/context_menu.md",
     "docs/howdo/contents/menu/args_to_menu_item.md",
     "docs/howdo/contents/menu/assets/args_to_menu_3.qsp",
@@ -190,7 +195,6 @@
     "docs/howdo/contents/layout/assets/map.bmp",
     "docs/howdo/contents/layout/items_table.md",
     "docs/howdo/contents/layout/assets/items_table.qsp",
-    "docs/howdo/contents/layout/assets",
     "docs/howdo/contents/layout/image_size.md",
     "docs/howdo/contents/layout/image_reflection.md",
     "docs/howdo/contents/layout/fade_in_fade_out.md",
@@ -200,10 +204,6 @@
     "docs/howdo/contents/items/multi_leveled_backpack.md",
     "docs/howdo/contents/items/stackable_items.md",
     "docs/howdo/contents/items/replace_item.md",
-    "docs/howdo/contents/items/onobjsel.md",
-    "docs/howdo/contents/items/onobjadd.md",
-    "docs/howdo/contents/items/one_named_items.md",
-    "docs/howdo/contents/items/item_without_inventory.md",
     "docs/howdo/contents/items/assets/img/orange.png",
     "docs/howdo/contents/items/assets/img/spanner.png",
     "docs/howdo/contents/items/assets/img/screw.png",
