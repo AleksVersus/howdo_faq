@@ -9,6 +9,7 @@ sidebar_position: 1
 **О:**
 
 Воспользуйтесь оператором CLR:
+
 ```qsp
 CLR
 ```
