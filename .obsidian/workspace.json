@@ -165,8 +165,9 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "1ef6c83b4551919e",
+  "active": "61daad17fd4f3291",
   "lastOpenFiles": [
+    "[source]/link_replace.py",
     "docs/howdo/contents/what_dif/set_let.md",
     "docs/howdo/contents/what_dif/quotes_apostrophes.md",
     "docs/howdo/contents/what_dif/pl_implicit_operator.md",
@@ -192,7 +193,6 @@
     "docs/howdo/contents/saves/checkpoints.md",
     "docs/howdo/contents/restriction/varnames.md",
     "docs/howdo/contents/restriction/inclib_numbers.md",
-    "docs/howdo/contents/restriction/actions_numbers.md",
     "docs/howdo/contents/players/image_1.png",
     "docs/howdo/contents/players/image_2.png",
     "docs/howdo/contents/players/image_3.png",
