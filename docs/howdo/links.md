@@ -59,7 +59,7 @@ sidebar_position: 4
 - **NickoAilus**. **#4908** **11.Фев.17 18:36:48:** [можно ли сделать так, чтобы через определённый промежуток времени значение переменной увеличивалось на одну единицу?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=197&prc=25&Itemid=57#p25212)
 - **mkir**. **#5033** **29.Апр.17 19:37:02:** [можно ли сделать так, чтобы была возможность загрузки состояния игры во время срабатывания WAIT...](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=202&prc=25&Itemid=57#p25564)
 - **ejikplains**. **#5391** **04.Сен.18 22:49:33:** [возможно ли сделать "независимые" циклы? Чтобы они исполнялись и игра продолжалась?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=216&prc=25&Itemid=57#p26885)
-- **ejikplains**. **#5550** **18.Май.19 09:58:08:** [возможно ли реализовать таймер с выводом времени?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26389)
+- **ejikplains**. **#5550** **18.Май.19 09:58:08:** [возможно ли реализовать таймер с выводом времени?](https://qsp.org/forum/comments/23067)
 - **BraJelon**. **#3155** **26.Июл.15 07:57:50:** [Как сделать так, чтобы при посещении локации "1" спустя секунду меня перекидывало на локацию "2" автоматически.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=127&prc=25&Itemid=57#p20887)
 - **Ontario**. **#3699** **21.Дек.15 16:20:09:** [Как сделать, чтобы действие открывалось спустя некоторое время проведенное на локации.](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=148&prc=25&Itemid=57#p22355)
 - **Vlad**. **#4530** **18.Июл.16 19:56:08:** [1. Как зациклить проигрывание аудио? 2. на локации В ожидание несколько секунд и автоматический переход на локацию С](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24390)
@@ -296,7 +296,7 @@ sidebar_position: 4
 - Примеры по вставке gif от NickoAilus: [Пример 1 в архиве ZIP](https://qsp.org/components/com_agora/img/members/2018/GIF.zip), [Пример 2в архиве ZIP](https://qsp.org/components/com_agora/img/members/2018/GIF2.zip)
 - **loony25 (WastedCarl)**. **#5167** **16.Дек.17 20:21:46:** [Как в QSP вставить GIF файл ?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=207&prc=25&Itemid=57#p26259)
 - **Bup0H**. **#4512** **14.Июл.16 02:30:39:** [Подскажите, почему некоторые гифки проигрываются нормально, а у некоторых искажаются либо цвета, либо скорость в qsp плеере?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=181&prc=25&Itemid=57#p24359)
-- **ejikplains**. **#5564** **18.Май.19 09:58:08:** [при добавлении гиф картинок они воспроизводятся коряво и то пропадают, то их почти не видно](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26550)
+- **ejikplains**. **#5564** **18.Май.19 09:58:08:** [при добавлении гиф картинок они воспроизводятся коряво и то пропадают, то их почти не видно](https://qsp.org/forum/comments/23208)
 - **Larson**. **#5629** **18.Май.19 10:15:38:** [Проблемы с гифками (+ссылки на сообщения и темы)](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=226&prc=25&Itemid=57#p25409)
 - **TEMP_USER**. **#5769** **23.Май.19 12:32:46:** [Гифка не работает/не отображается/выводится неправильно](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=231&prc=25&Itemid=57#p27217)
 
@@ -405,13 +405,13 @@ sidebar_position: 4
 ### 10.9. Как изменить цвет фона для отдельного окна?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=ITvRi_pmgRo&](https://www.youtube.com/watch?v=ITvRi_pmgRo&t=463s)
-- **ejikplains**. **#5529** **18.Май.19 09:58:08:** [Как сделать так, чтобы блок действий был другого цвета?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=222&prc=25&Itemid=57#p26317)
+- **ejikplains**. **#5529** **18.Май.19 09:58:08:** [Как сделать так, чтобы блок действий был другого цвета?](https://qsp.org/forum/comments/23003)
 
 ### 10.10. Как сделать плавное появление текста?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=ggTZHJsGHBs&](https://www.youtube.com/watch?v=ggTZHJsGHBs&t=16s)
 - Плавное изменение цвета фона: [https://qsp.org/index.php?...&Itemid=76](https://qsp.org/index.php?option=com_content&view=article&id=112:2011-05-20-06-23-02&catid=36:2009-02-19-06-11-21&Itemid=76)
-- **ejikplains**. **#5553** **18.Май.19 09:58:08:** [возможно ли реализовать плавное появление текста, и, через какое-либо время, его плавное затухание?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26533)
+- **ejikplains**. **#5553** **18.Май.19 09:58:08:** [возможно ли реализовать плавное появление текста, и, через какое-либо время, его плавное затухание?](https://qsp.org/forum/comments/23192)
 
 ### 10.11. Как использовать в игре собственный шрифт?
 
@@ -565,7 +565,7 @@ sidebar_position: 4
 - **lamerUA**. **#4151** **25.Мар.16 11:48:46:** [Срабатывают только 2 первых. И как в таком случае проще организовать "сумерки" в игре?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=167&prc=25&Itemid=57#p23532)
 - **skov**. **#4796** **11.Дек.16 13:36:08:** [что я делаю не так?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=192&prc=25&Itemid=57#p24956)
 - **Amadeus**. **#5411** **30.Окт.18 23:25:52:** [Можно ли как-то сделать, чтоб если одна переменная была равна другой? Почему-то выдает ошибку](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=217&prc=25&Itemid=57#p26918)
-- **SneakBug8**. **#5681** **19.Май.19 12:12:28:** [Как в один оператор if загнать несколько условий типо if x=1 y=6 z=39?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=228&prc=25&Itemid=57#p17192)
+- **SneakBug8**. **#5681** **19.Май.19 12:12:28:** [Как в один оператор if загнать несколько условий типо if x=1 y=6 z=39?](https://qsp.org/forum/comments/14819)
 
 ### 13.13. Не работают десятичные дроби, дробные числа, числа с запятыми!
 
@@ -829,15 +829,15 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=DDmIxbOWbgc&](https://www.youtube.com/watch?v=DDmIxbOWbgc&t=18s)
 - Решение по привязке буквенной клавиатуры от ejikplains: [скачать](https://qsp.org/components/com_agora/img/members/2177/privyazka_klavish_v_klassicheskom_pleere.qsp)
 - Пример игры с клавиатуры от Mioirel: [Игра "Серафим"](https://qsp.org/index.php?option=com_sobi2&sobi2Task=sobi2Details&sobi2Id=305&Itemid=55)
-- **ejikplains**. **#5572** **18.Май.19 07:58:08:** [Биндить клаву заместо действий реально?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26738)
+- **ejikplains**. **#5572** **18.Май.19 07:58:08:** [Биндить клаву заместо действий реально?](https://qsp.org/forum/comments/23365)
 - **Nex**. **#311** **17.Июл.17 21:05:43:** [zsoft, реально, на яваскрипте сделай.](https://qsp.org/index.php?option=com_agora&task=topic&id=633&p=13&prc=25&Itemid=57#p26034)
-- **ejikplains**. **#5580** **18.Май.19 07:58:08:** [у меня получилось привязать клавиши к действиям в классическом плеере](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=224&prc=25&Itemid=57#p26757)
+- **ejikplains**. **#5580** **18.Май.19 07:58:08:** [у меня получилось привязать клавиши к действиям в классическом плеере](https://qsp.org/forum/comments/23380)
 
 ### 19.6.  Как пропустить прохождение нескольких глав, чтобы протестировать вновь написанную главу и только её?
 
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=DDmIxbOWbgc&](https://www.youtube.com/watch?v=DDmIxbOWbgc&t=139s)
 - **HITD**. **#5095** **25.Июн.17 15:05:56:** [Как можно проверить кусок написанного кода не запуская игру сначала?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=204&prc=25&Itemid=57#p25935)
-- **ejikplains**. **#5531** **18.Май.19 07:58:08:** [как запускать для проверки отдельные главы?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=222&prc=25&Itemid=57#p26319)
+- **ejikplains**. **#5531** **18.Май.19 07:58:08:** [как запускать для проверки отдельные главы?](https://qsp.org/forum/comments/23005)
 
 ### 19.7.  Как из под плеера выполнить произвольную строку кода?
 
@@ -888,7 +888,7 @@ svandrus.#3059 07.Июл.15 14:27:28: [Табличка в порядке, но 
 - Готовый алгоритм на github: [https://gist.github.com/Riateche/3038910](https://gist.github.com/Riateche/3038910)
 - **Драккан**. **#3054** **06.Июл.15 23:16:52:** [Есть начальная локация (после вступления), нужно добавить кнопку "прогулка". При выполнении в первый раз, должно попасться первое оружие (допустим "труба"). При последующих прогулках должно выпасть одно из 4-х действий...](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=123&prc=25&Itemid=57#p20665)
 - **Svartberg**. **#4927** **17.Фев.17 00:11:55:** [уже в течении нескольких недель бьюсь головой об генератор предметов и единственной моей проблемой является вероятность выпадения предметов](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=198&prc=25&Itemid=57#p25257)
-- **ejikplains**. **#5569** **18.Май.19 07:58:08:** [Есть ячейка А. В неё должен попадать предмет рандомно из немалого количества разных. Однако, у каждого предмета свой шанс на его выпадение(процент), как возможно реализовать подобное?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=223&prc=25&Itemid=57#p26730)
+- **ejikplains**. **#5569** **18.Май.19 07:58:08:** [Есть ячейка А. В неё должен попадать предмет рандомно из немалого количества разных. Однако, у каждого предмета свой шанс на его выпадение(процент), как возможно реализовать подобное?](https://qsp.org/forum/comments/23357)
 
 ### 20.4.  Как сделать, чтобы текст выводился не внизу окна основного описания, а сверху?
 
