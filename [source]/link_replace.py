@@ -32,12 +32,18 @@ def replace_links(text:str, comments_id_map:dict, topic_id_map:dict) -> str:
     for link in all_links:
         comment = COMMENT.search(link)
         if comment:
-            cid = comments_id_map[comment.group(1)]
+            cid = comments_id_map.get(comment.group(1), -1)
+            if cid == -1:
+                print(f'error cid {comment.group(1)} in {link}')
+                continue
             text = text.replace(link, f'https://qsp.org/forum/comments/{cid}')
             continue
         topic = TOPIC.search(link)
         if topic:
-            tid = topic_id_map[topic.group(1)]
+            tid = topic_id_map.get(topic.group(1), -1)
+            if tid == -1:
+                print(f'error tid {topic.group(1)} in {link}')
+                continue
             text = text.replace(link, f'https://qsp.org/forum/{tid}')
             continue
         print(link)
@@ -54,8 +60,7 @@ def main() -> None:
         text = read_file(md_file)
         new_text = replace_links(text, comments_id_map, topic_id_map)
         if new_text != text:
-            print(new_text)
-            break
+            write_file(md_file, new_text)
 
 
 if __name__ == "__main__":
