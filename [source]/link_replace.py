@@ -3,7 +3,7 @@ import os
 import re
 from typing import Dict
 
-OLD_COMM_LINK = re.compile(r"https?://qsp\.org/index\.php\?option\=com_agora&task\=topic[^/\\\(\)\s\"\']*")
+OLD_COMM_LINK = re.compile(r"https?://qsp\.org/index\.php\?option\=com_agora&task\=topic[^/\\\(\)\s\"\|']*")
 COMMENT = re.compile(r'#p(\d+)')
 TOPIC = re.compile(r'\&id\=(\d+)')
 
@@ -11,6 +11,7 @@ NC_LINE = re.compile(r'(comment|topic) #(\d+): /forum/comments/(\d+) → /forum/
 
 
 Path = str
+Extension = str
 OldComment = str
 NewComment = int
 
@@ -18,11 +19,11 @@ def j(file_path:Path) -> Dict[OldComment, NewComment]:
     with open(file_path, 'r', encoding='utf-8') as fp:
         return json.load(fp)
 
-def search_files(folder_path:Path) -> list[Path]:
+def search_files(folder_path:Path, ext:Extension = '.md') -> list[Path]:
     md_files: list[Path] = []
     for root, _, files in os.walk(folder_path):
         for file in files:
-            if file.endswith('.md'):
+            if file.endswith(ext):
                 md_files.append(Path(os.path.join(root, file)))
     return md_files
 
@@ -57,12 +58,14 @@ def replace_links(text:str, comments_id_map:dict, topic_id_map:dict) -> str:
     return text
 
 def main() -> None:
+    folder = 'wiki.qsp.org.out'
+    ext = '.dokuwiki'
     comments_id_map = j('forum_comments_id_map.json')
     topic_id_map = j('forum_topics_id_map.json')
     # new_comment(comments_id_map, topic_id_map)
     md_files: list[Path] = []
-    md_files.extend(search_files('../docs'))
-    md_files.extend(search_files('../blog'))
+    md_files.extend(search_files(folder, ext))
+    # md_files.extend(search_files('../blog'))
     for md_file in md_files:
         text = read_file(md_file)
         new_text = replace_links(text, comments_id_map, topic_id_map)
