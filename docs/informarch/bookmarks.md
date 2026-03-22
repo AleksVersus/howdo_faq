@@ -86,7 +86,7 @@ Quest Navigator standalone app for Windows 10. Contribute to Nex-Otaku/quest-nav
 ### graylor - FastQSP | Плеер для замены AeroQSP
 
 - [Репозиторий: graylor/FastQSP](https://github.com/graylor/FastQSP)
-- [Немного информации](https://qsp.org/index.php?option=com_agora&task=topic&id=850&Itemid=57)
+- [Немного информации](https://qsp.org/forum/697)
 
 > **Nex:** На Aero непохоже, Aero на флэше, а тут Qt'шный проект.
 > **newsash:** Порт с флэша на Qt. Набор переменных оформления если не совпадает, то очень похож.
@@ -97,7 +97,7 @@ Contribute to graylor/FastQSP development by creating an account on GitHub.
 ### Sonnix - Qqsp | Плеер с поддержкой webm
 
 - [Sonnix / Qqsp](https://git.sonnix.tk/sonnix/Qqsp)
-- [Тема на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=1192&Itemid=57)
+- [Тема на форуме](https://qsp.org/forum/951)
 
 Qt Quest Soft Player
 
@@ -150,13 +150,13 @@ Qt Quest Soft Player
 
 ## Темы и статьи с различными решениями на QSP.org
 
-- [F.A.Q общие вопросы и некоторые примеры](https://qsp.org/index.php?option=com_agora&task=topic&id=316&Itemid=57)
-- [Календарь по методу счёта Юлианских дней](https://qsp.org/index.php?option=com_agora&task=topic&id=956&Itemid=57)
+- [F.A.Q общие вопросы и некоторые примеры](https://qsp.org/forum/243)
+- [Календарь по методу счёта Юлианских дней](https://qsp.org/forum/790)
 - [Гибкий плейлист 1.0](https://qsp.org/index.php?option=com_content&view=article&id=79:-10&catid=36:2009-02-19-06-11-21&Itemid=76)
 - [Библиотечка, дополняющая инвентарь](https://qsp.org/index.php?option=com_content&view=article&id=70:qsp-inventory-advanced-lib-076&catid=36:2009-02-19-06-11-21&Itemid=76)
-- [Действие по условию](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57)
-- [Локализация классического плеера QSP v.5.7.0](https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57)
-- [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.org/index.php?option=com_agora&task=topic&id=861&Itemid=57)
+- [Действие по условию](https://qsp.org/forum/268)
+- [Локализация классического плеера QSP v.5.7.0](https://qsp.org/forum/117)
+- [Настройка окошек классического плеера с помощью qspgui.cfg](https://qsp.org/forum/706)
 - [IFWiki о русской интерактивной литературе (текстовых играх)](http://ifwiki.ru)
 - [Библиотека URQ](https://urq.plut.info/texts)
 
@@ -164,7 +164,7 @@ Qt Quest Soft Player
 
 - О лицензии OFL: [http://ru.wikipedia.org/wiki/OFL](http://ru.wikipedia.org/wiki/OFL)
 - [Лицензия Creative Commons, она же CC, и ее разновидности](https://creativecommons.org/licenses/?lang=ru)
-- [Что такое Royalty-Free](https://qsp.org/index.php?option=com_agora&task=topic&id=398&Itemid=57)
+- [Что такое Royalty-Free](https://qsp.org/forum/311)
 
 ## Писательство
 

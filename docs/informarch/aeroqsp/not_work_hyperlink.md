@@ -37,4 +37,4 @@ $args[0]+='<div>.........</div>'
 ###### 13.7. Не работает гиперссылка в AeroQSP
 <!-- [:link_13_07] -->
 - **Смотреть ответ на ютубе:** [https://www.youtube.com/watch?v=TCve-b6AQMs&](https://www.youtube.com/watch?v=TCve-b6AQMs&t=221s)
-- **folkextreme. #4534 20.Июл.16 14:45:03:** [примерно в области, выделенной красным, некликабельны ссылки](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=182&prc=25&Itemid=57#p24397)
+- **folkextreme. #4534 20.Июл.16 14:45:03:** [примерно в области, выделенной красным, некликабельны ссылки](https://qsp.org/forum/comments/21320)

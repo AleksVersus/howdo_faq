@@ -210,7 +210,7 @@ unit_count[0]=337
 
 Статья написана по мотивам:
 * статьи **Pseudopod**'а [trello.com/.../одновременное-использование-arri-и-arri](https://trello.com/c/z9AbJa8O/18-одновременное-использование-arri-и-arri)
-* и поста **Byte**'а [qsp.org/index.php...&Itemid=57](https://qsp.org/index.php?option=com_agora&task=topic&id=1290&Itemid=57)
+* и поста **Byte**'а [qsp.org/index.php...&Itemid=57](https://qsp.org/forum/1012)
 
 Статья доступна и на других ресурсах:
 * [мой сайт/Массивы уже не те](http://aleksversus.narod.ru/index/massivy_uzhe_ne_te/0-54)

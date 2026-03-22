@@ -20,9 +20,9 @@ sidebar_position: 1
 
 Инструкция по использованию AeroQSP: https://qsp.org/misc/aero/readme.txt
 
-Тема для вопросов на форуме: [AeroQSP: вопросы](https://qsp.org/index.php?option=com_agora&task=topic&id=14&Itemid=57)
+Тема для вопросов на форуме: [AeroQSP: вопросы](https://qsp.org/forum/8)
 
-Набор шрифтов специально для разработки в AeroQSP: [Набор swf-шрифтов и утилита для их тестирования](https://qsp.org/index.php?option=com_agora&task=topic&id=328&Itemid=57)
+Набор шрифтов специально для разработки в AeroQSP: [Набор swf-шрифтов и утилита для их тестирования](https://qsp.org/forum/252)
 
 Пакет для сборки stand-alone версий игр на AeroQSP: [Stand-alone сборка игр на AeroQSP](https://qsp.org/index.php?option=com_content&view=article&id=117&Itemid=56)
 
