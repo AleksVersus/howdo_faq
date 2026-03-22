@@ -1,13 +1,20 @@
 import json
 import os
 import re
+from typing import Dict
 
 OLD_COMM_LINK = re.compile(r"https?://qsp\.org/index\.php\?option\=com_agora&task\=topic[^/\\\(\)\s\"\']*")
 COMMENT = re.compile(r'#p(\d+)')
 TOPIC = re.compile(r'\&id\=(\d+)')
-Path = str
 
-def j(file_path:Path) -> None:
+NC_LINE = re.compile(r'(comment|topic) #(\d+): /forum/comments/(\d+) → /forum/comments/(\d+)')
+
+
+Path = str
+OldComment = str
+NewComment = int
+
+def j(file_path:Path) -> Dict[OldComment, NewComment]:
     with open(file_path, 'r', encoding='utf-8') as fp:
         return json.load(fp)
 
@@ -52,7 +59,7 @@ def replace_links(text:str, comments_id_map:dict, topic_id_map:dict) -> str:
 def main() -> None:
     comments_id_map = j('forum_comments_id_map.json')
     topic_id_map = j('forum_topics_id_map.json')
-
+    # new_comment(comments_id_map, topic_id_map)
     md_files: list[Path] = []
     md_files.extend(search_files('../docs'))
     md_files.extend(search_files('../blog'))
@@ -62,6 +69,17 @@ def main() -> None:
         if new_text != text:
             write_file(md_file, new_text)
 
+def new_comment(comments_id_map, topic_id_map) -> None:
+    new_comments = read_file('new_comments.txt').split('\n')
+    cim_reverse = {v: k for k, v in comments_id_map.items()}
+    for line in new_comments:
+        nc = NC_LINE.search(line)
+        if nc:
+            key = cim_reverse.get(int(nc.group(3)), "-1")
+            if key != '-1':
+                comments_id_map[key] = int(nc.group(4))
+            else:
+                print(key, f'old:{nc.group(3)}, new:{nc.group(4)}, in:{nc.group(2)}')
 
 if __name__ == "__main__":
     main()
