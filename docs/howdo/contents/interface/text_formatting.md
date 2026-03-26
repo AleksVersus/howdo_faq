@@ -57,4 +57,4 @@ usehtml = 1
 *pl 'В этой строке нексолько слов будут несколько слов <span style="weight:bold;font-style:italic;color:red;font-size:1em;font-family:''Times New Roman''">написанных полужирным красным курсивом, шрифтом Times New ROman</span>.'
 ```
 
-Рабочий пример: [скачать](text_styles.qsp).
+Рабочий пример: [скачать](assets/text_styles.qsp).
