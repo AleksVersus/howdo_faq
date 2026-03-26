@@ -6,15 +6,15 @@ sidebar_position: 1
 <!-- [:informarch_compo10] -->
 
 :::note
-Обзоры взяты из темы [Обсуждение игр QSP-Compo 2010: Дневник странника](https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57).
+Обзоры взяты из темы [Обсуждение игр QSP-Compo 2010: Дневник странника](https://qsp.org/forum/32).
 
-Комментарии и обсуждения [там же](https://qsp.org/index.php?option=com_agora&task=topic&id=49&Itemid=57).
+Комментарии и обсуждения [там же](https://qsp.org/forum/32).
 
 Часть обзоров содержит спойлеры, особенно об этом предупреждает **uux**.
 :::
 ## Обзоры Ajent'ы
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p488)
+[ссылка](https://qsp.org/forum/comments/311)
 
 Итак, я поиграла во все игры. 
 
@@ -46,7 +46,7 @@ sidebar_position: 1
 
 ## Обзоры Yandexx`а
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p490)
+[ссылка](https://qsp.org/forum/comments/313)
 
 Ради мирового баланса захотелось отписаться и мне. 
 
@@ -79,7 +79,7 @@ sidebar_position: 1
 
 ## Обзоры Ноната
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=1&Itemid=57#p494)
+[ссылка](https://qsp.org/forum/comments/317)
 
 Отыграл в три игры. А высказаться решил о `La Villa Esperance`, а то про неё комментарии какие-то так себе. В игре действительно приходится вроде бы крайне много тупо кликать, но в то же время возможность выбора у игрока есть сразу по двум принципиальным направлениям - по физическому миру (типа, куда пойти?) и по психологическому (наподобие: смириться или бороться?). Напомнило психологические тесты... Я не такой знаток игр, но, по-моему, получилась редкость. 
 
@@ -94,7 +94,7 @@ sidebar_position: 1
 
 ## Обзоры Сидана Рейдана
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=2&Itemid=57#p511)
+[ссылка](https://qsp.org/forum/comments/334)
 
 Итак... Я почти день ждал наступления благого времени "не поздно", но, видимо, повстречать мне его не удастся. По крайней мере, сейчас, в полночь по киевскому. 
 
@@ -165,7 +165,7 @@ P.S. А девушку можно было-бы и похоронить
 
 ## Обзоры Master Set`а
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=2&Itemid=57#p552)
+[ссылка](https://qsp.org/forum/comments/371)
 
 Ну, вставлю и я свои пять копеек. 
 
@@ -230,7 +230,7 @@ P.S. А девушку можно было-бы и похоронить
 
 ## Обзоры **uux**'а
 
-[ссылка1](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p760), [ссылка2](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p776), [ссылка3](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p780)
+[ссылка1](https://qsp.org/forum/comments/553), [ссылка2](https://qsp.org/forum/comments/558), [ссылка3](https://qsp.org/forum/comments/562)
 
 Начинаю потихоньку выкладывать свои обзоры. Пока - три игры (обозрены в том порядке, в каком я в них играл). Оценки - по десятибалльной шкале.
 
@@ -320,7 +320,7 @@ P.S. А девушку можно было-бы и похоронить
 
 ## Обзоры **Nex**'а
 
-[ссылка](https://qsp.org/index.php?option=com_agora&task=topic&id=49&p=3&Itemid=57#p784)
+[ссылка](https://qsp.org/forum/comments/566)
 
 Поиграл во все игры конкурса. 
 

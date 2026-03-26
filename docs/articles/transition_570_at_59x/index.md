@@ -27,9 +27,9 @@ sidebar_position: 11
 	- Скачать её вы можете как с [официального сайта](https://qsp.org/index.php?option=com_content&task=view&id=52&Itemid=56), так и напрямую [со страницы релизов](https://github.com/QSPFoundation/txt2gam/releases) на гитхабе.
 	- Если не знаете, как пользоваться утилитой, рекомендуем прочесть [краткое руководство](https://wiki.qsp.org/help:txt2gam).
 2. **Анализатор QSP-кода**. Это утилита, которая быстро сканирует вашу игру в формате текстового файла и предоставляет список возможных ошибок, списки всех имён переменных, локаций, действий, предметов, и прочее.
-	- Можно скачать по ссылке из [темы на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=365&Itemid=57), посвящённой Анализатору.
+	- Можно скачать по ссылке из [темы на форуме](https://qsp.org/forum/281), посвящённой Анализатору.
 	- Можно скачать из архива на меге ["QSP/Программы"](https://mega.nz/folder/jXwXlSRJ#TF7P-soOJOWIC8MrBA-L1A). ← Здесь смотрите папку "QSP-Analyser". Для первого раза лучше всего выбрать последнюю версию без модификаций.
-	- Краткая информация по утилите доступна и [на форуме](https://qsp.org/index.php?option=com_agora&task=topic&id=365&Itemid=57), и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
+	- Краткая информация по утилите доступна и [на форуме](https://qsp.org/forum/281), и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
 3. Чтобы просматривать игру в формате текстовых файлов подойдёт любой текстовый редактор, однако мы рекомендуем использовать Sublime Text или VS Code, так как эти редакторы поддерживают полноценную подсветку синтаксиса QSP.
 	- Для Sublime Text разработан [пакет](https://github.com/QSPFoundation/sublime_text_qsp_package), включающий плагин для работы с qsps-файлами и подсветку синтаксиса QSP.
 	- Для VS Code существует [специальное расширение](https://github.com/QSPFoundation/Qsp.FSharp.VsCode).

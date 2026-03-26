@@ -3,7 +3,7 @@ sidebar_position: 6
 ---
 
 # 20.6. Как вывести на экран HTML-разметку, не отключая режим распознавания HTML? То есть при `usehtml=1`
-<!-- [:faq_20_06] -->
+
 
 **В:** Как вывести на экран HTML-разметку, не отключая режим распознавания HTML? То есть при `usehtml=1`.
 
@@ -14,7 +14,7 @@ sidebar_position: 6
 
 ```qsp
 ! фиксируем содержимое окна основного описания в переменной
-$description = $maintxt
+local $description = $maintxt
 ! с помощью функции replace заменяем левую угловую скобку на код &lt;
 $description = $replace($description, '<', '&lt;')
 ! с помощью функции replace заменяем правую угловую скобку на код &gt;
@@ -22,3 +22,5 @@ $description = $replace($description, '>', '&gt;')
 ! выводим получившийся результат в окно доп.описания
 p $description
 ```
+
+Рабочий пример: [скачать](assets/html_with_usehtml.qsp).

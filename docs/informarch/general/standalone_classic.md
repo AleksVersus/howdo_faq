@@ -58,4 +58,4 @@ sidebar_position: 5
 <!-- [:link_24_02] -->
 
 - Смотреть ответ на ютубе: [https://youtu.be/Ca4ynD_1BqQ](https://youtu.be/Ca4ynD_1BqQ)
-- Genryzz. #3912 21.Фев.16 21:30:40: [как сделать пусковой файл?](https://qsp.org/index.php?option=com_agora&task=topic&id=40&p=157&prc=25&Itemid=57#p23065)
+- Genryzz. #3912 21.Фев.16 21:30:40: [как сделать пусковой файл?](https://qsp.org/forum/comments/20085)

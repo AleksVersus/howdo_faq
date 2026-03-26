@@ -119,5 +119,5 @@ END
 Автор: **Nex**
 26.Июл.11 06:51:46
 
-Оригинал в теме: [Действие по условию](https://qsp.org/index.php?option=com_agora&task=topic&id=348&Itemid=57)
+Оригинал в теме: [Действие по условию](https://qsp.org/forum/268)
 

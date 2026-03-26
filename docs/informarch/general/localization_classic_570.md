@@ -24,4 +24,4 @@ sidebar_position: 2
 
 Автор заметки: **Nex**.
 
-Тема на форуме: ["Локализация QSP"](https://qsp.org/index.php?option=com_agora&task=topic&id=164&Itemid=57)
+Тема на форуме: ["Локализация QSP"](https://qsp.org/forum/117)
