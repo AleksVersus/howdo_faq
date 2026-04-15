@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/howdo/contents/what_dif/subexpression.md",
+                "file": "docs/news/news_20241126_591.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "subexpression"
+              "title": "news_20241126_591"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "время",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/howdo/contents/what_dif/subexpression.md",
+                "file": "docs/news/news_20241126_591.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура subexpression"
+              "title": "Структура news_20241126_591"
             }
           }
         ],
@@ -165,34 +165,35 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "1ef6c83b4551919e",
   "lastOpenFiles": [
-    "[source]/link_replace.py",
-    "docs/howdo/contents/what_dif/set_let.md",
-    "docs/howdo/contents/what_dif/quotes_apostrophes.md",
-    "docs/howdo/contents/what_dif/pl_implicit_operator.md",
-    "docs/howdo/contents/what_dif/gt_goto.md",
-    "docs/howdo/contents/what_dif/goto_gosub.md",
-    "docs/howdo/contents/what_dif/dynamic_dyneval.md",
-    "docs/howdo/contents/what_dif/dollar_sign.md",
-    "docs/howdo/contents/what_dif/inclib_openqst/index.md",
-    "docs/howdo/contents/what_command/print_line_in_stat_window.md",
-    "docs/howdo/contents/what_command/exit_command.md",
-    "docs/howdo/contents/what_command/curloc.md",
-    "docs/howdo/contents/what_command/clr.md",
-    "docs/howdo/contents/sound/two_soundtracks.md",
-    "docs/howdo/contents/sound/turn_down.md",
-    "docs/howdo/contents/sound/soundtrack_restart.md",
+    "docs/news/news_20240909_590.md",
+    "docs/news/news_20210601_580.md",
+    "docs/news/news_20100613_570.md",
+    "docs/news/news_20251003_594.md",
+    "docs/articles/transition_570_590.md",
+    "docs/articles/arrays_580/index.md",
+    "docs/informarch/wii_qsp/short_faq.md",
+    "docs/howdo/contents/interface/smooth_text_fade_in.md",
+    "docs/informarch/program/use_arrays.md",
+    "docs/howdo/contents/concrete_tasks/goto_back.md",
+    "docs/informarch/program/game_time.md",
+    "docs/informarch/program/smooth_background.md",
+    "docs/howdo/contents/condition/conditional_action.md",
+    "docs/informarch/program/conditional_actions.md",
+    "docs/informarch/program/lib_extend_inventory.md",
+    "docs/howdo/contents/items/stackable_items.md",
+    "docs/informarch/program/lib_flex_playlist.md",
     "docs/howdo/contents/sound/playlists.md",
     "docs/howdo/contents/sound/loop_soundtrack.md",
-    "docs/howdo/contents/sound/insert_soundtrack.md",
-    "docs/howdo/contents/sound/break_soundtrack.md",
-    "docs/howdo/contents/saves/two_save_files.md",
-    "docs/howdo/contents/saves/not_load_saves.md",
-    "docs/howdo/contents/saves/forbidden_saves.md",
-    "docs/howdo/contents/saves/checkpoints.md",
-    "docs/howdo/contents/restriction/varnames.md",
-    "docs/howdo/contents/restriction/inclib_numbers.md",
+    "docs/informarch/program/julian_calendar.md",
+    "docs/informarch/intro.md",
+    "[source]/older/для статей и уроков/время.md",
+    "docs/howdo/links.md",
+    "docs/howdo/contents/layout/fade_in_fade_out.md",
+    "docs/howdo/contents/what_dif/subexpression.md",
+    "[source]/link_replace.py",
+    "docs/howdo/contents/what_dif/set_let.md",
     "docs/howdo/contents/players/image_1.png",
     "docs/howdo/contents/players/image_2.png",
     "docs/howdo/contents/players/image_3.png",
@@ -206,7 +207,6 @@
     "docs/howdo/contents/layout/assets/map_area.zip",
     "docs/howdo/contents/layout/assets/map_area.qsp",
     "docs/howdo/contents/layout/assets/map.bmp",
-    "docs/howdo/contents/layout/assets/items_table.qsp",
     "docs/howdo/contents/items/assets/img/orange.png",
     "docs/howdo/contents/items/assets/img/spanner.png",
     "docs/howdo/contents/items/assets/img/screw.png",
