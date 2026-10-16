@@ -11,14 +11,12 @@
             "id": "243e4fe980fe3874",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "docs/articles/ntropy_inventory_advanced.md",
-                "mode": "source",
-                "source": false
+                "file": "res/img/cover.png"
               },
-              "icon": "lucide-file",
-              "title": "ntropy_inventory_advanced"
+              "icon": "lucide-image",
+              "title": "cover"
             }
           }
         ]
@@ -169,10 +167,15 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "243e4fe980fe3874",
+  "active": "61daad17fd4f3291",
   "lastOpenFiles": [
+    "res/img/qSplogo green.png",
+    "res/img/logo.svg",
+    "res/img/faq_qsp_cover.png",
+    "res/img/faq_qsp_cover.html",
     "[source]/qSplogo green.png",
     "[source]/logo.svg",
+    "docs/articles/ntropy_inventory_advanced.md",
     "[source]/checkpoints_scheme.md",
     "docs/informarch/program/smooth_background.md",
     "docs/informarch/program/choose_card_in_deck.md",
@@ -197,7 +200,6 @@
     "docs/informarch/program/conditional_actions.md",
     "docs/informarch/program/lib_extend_inventory.md",
     "docs/informarch/program/lib_flex_playlist.md",
-    "docs/howdo/contents/sound/playlists.md",
     "[source]/link_replace.py",
     "docs/howdo/contents/players/image_1.png",
     "docs/howdo/contents/players/image_2.png",
@@ -210,12 +212,9 @@
     "docs/howdo/contents/menu/Новая папка",
     "docs/howdo/contents/menu/Новый ярлык.lnk",
     "docs/howdo/contents/layout/assets/map_area.zip",
-    "docs/howdo/contents/layout/assets/map_area.qsp",
     "docs/howdo/contents/layout/assets/map.bmp",
     "docs/howdo/contents/items/assets/img/orange.png",
     "docs/howdo/contents/items/assets/img/spanner.png",
-    "docs/howdo/contents/items/assets/img/screw.png",
-    "docs/howdo/contents/items/assets/img/otvertka.png",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",

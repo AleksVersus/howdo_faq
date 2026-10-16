@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Обложка F.A.Q. QSP — Как сделать?</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 768px; height: 1024px; overflow: hidden;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    background: #10344f;
+  }
+  .bg { position: absolute; inset: 0; width: 768px; height: 1024px; }
+  .content {
+    position: absolute; left: 0; top: 0; width: 768px; height: 1024px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .brand {
+    margin-top: 300px;
+    font-size: 40px; font-weight: 700; letter-spacing: 12px;
+    color: #eaf5ff; text-indent: 12px;
+    text-shadow: 0 2px 18px rgba(6, 26, 42, .55);
+  }
+  .brand .sep { opacity: .45; margin: 0 4px; }
+  .rule {
+    margin-top: 22px; width: 168px; height: 3px;
+    background: linear-gradient(90deg, rgba(158, 214, 255, 0) 0%, #9ed6ff 50%, rgba(158, 214, 255, 0) 100%);
+    border-radius: 3px; opacity: .75;
+  }
+  .title {
+    margin-top: 34px;
+    font-size: 106px; font-weight: 800; letter-spacing: -3px; line-height: .96;
+    color: #ffffff; white-space: nowrap;
+    text-shadow: 0 6px 34px rgba(4, 22, 38, .60);
+  }
+  .subtitle {
+    margin-top: 44px; width: 566px;
+    font-size: 24px; font-weight: 400; line-height: 1.52; letter-spacing: .2px;
+    text-align: center; color: #d3e8fa;
+    text-shadow: 0 2px 14px rgba(6, 26, 42, .5);
+  }
+</style>
+</head>
+<body>
+
+<svg class="bg" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Однотонный сине-петролевый фон в духе обоев Telegram: лёгкое радиальное свечение в центре -->
+    <radialGradient id="glow" cx="50%" cy="42%" r="72%">
+      <stop offset="0%"  stop-color="#2c6d9c"/>
+      <stop offset="55%" stop-color="#1d517a"/>
+      <stop offset="100%" stop-color="#0d2a41"/>
+    </radialGradient>
+    <linearGradient id="vign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a2237" stop-opacity=".38"/>
+      <stop offset="45%"  stop-color="#0a2237" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#071c2e" stop-opacity=".55"/>
+    </linearGradient>
+    <!-- мягкое затемнение под текстом без видимой границы -->
+    <radialGradient id="scrim" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#08243a" stop-opacity=".50"/>
+      <stop offset="55%"  stop-color="#08243a" stop-opacity=".30"/>
+      <stop offset="82%"  stop-color="#08243a" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#08243a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <g id="dice">
+      <rect x="-30" y="-30" width="60" height="60" rx="12" ry="12"/>
+      <circle cx="-15" cy="-15" r="4.6"/><circle cx="15" cy="15" r="4.6"/>
+      <circle cx="-15" cy="15" r="4.6"/><circle cx="15" cy="-15" r="4.6"/>
+      <circle cx="0" cy="0" r="4.6"/>
+    </g>
+    <g id="die3">
+      <rect x="-26" y="-26" width="52" height="52" rx="10" ry="10"/>
+      <circle cx="-12" cy="-12" r="4"/><circle cx="0" cy="0" r="4"/><circle cx="12" cy="12" r="4"/>
+    </g>
+    <g id="token">
+      <circle r="24"/><circle r="13"/>
+      <circle r="4.2" fill="#8ec8f2" stroke="none"/>
+    </g>
+    <g id="chip">
+      <circle r="19" stroke-dasharray="7 6"/>
+      <circle r="9"/>
+    </g>
+    <!-- Карточка персонажа -->
+    <g id="card">
+      <rect x="-40" y="-56" width="80" height="112" rx="9" ry="9"/>
+      <circle cx="0" cy="-26" r="15"/>
+      <path d="M -22 44 C -20 16 -10 8 0 8 C 10 8 20 16 22 44"/>
+      <path d="M -30 22 H 30" opacity=".7"/>
+      <path d="M -30 34 H 14" opacity=".5"/>
+    </g>
+    <g id="cardsm">
+      <rect x="-32" y="-44" width="64" height="88" rx="8" ry="8"/>
+      <rect x="-21" y="-33" width="42" height="40" rx="5"/>
+      <path d="M -21 18 H 21" opacity=".6"/>
+      <path d="M -21 28 H 8" opacity=".4"/>
+    </g>
+    <!-- Мепл (фишка-человечек) -->
+    <g id="meeple">
+      <path d="M 0 -30 C 8 -30 13 -24 13 -18 C 13 -13 10 -9 6 -7 C 15 -5 26 1 29 9 C 30 13 28 16 24 16
+               L 9 16 C 11 22 13 27 12 30 L -12 30 C -13 27 -11 22 -9 16 L -24 16 C -28 16 -30 13 -29 9
+               C -26 1 -15 -5 -6 -7 C -10 -9 -13 -13 -13 -18 C -13 -24 -8 -30 0 -30 Z"/>
+    </g>
+    <g id="star">
+      <path d="M 0 -11 L 3.2 -3.4 L 11 -3.4 L 4.8 1.8 L 7 9.6 L 0 5 L -7 9.6 L -4.8 1.8 L -11 -3.4 L -3.2 -3.4 Z"/>
+    </g>
+    <g id="note">
+      <rect x="-24" y="-30" width="48" height="60" rx="5"/>
+      <path d="M -14 -30 V 30 M 14 -30 V 30" opacity=".55"/>
+      <path d="M -14 -8 H 14 M -14 8 H 14" opacity=".4"/>
+    </g>
+  </defs>
+
+  <rect width="768" height="1024" fill="url(#glow)"/>
+
+  <!-- Декоративный слой: настольные игры, тонкий светло-синий контур, полупрозрачно -->
+  <g fill="none" stroke="#9ed2f5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+     opacity=".17" transform="translate(0,0)">
+    <use href="#dice"   transform="translate(96,116) rotate(-14) scale(1.15)"/>
+    <use href="#die3"   transform="translate(668,96) rotate(22)"/>
+    <use href="#token"  transform="translate(300,74) scale(.95)"/>
+    <use href="#chip"   transform="translate(404,132) scale(1.05)"/>
+    <use href="#token"  transform="translate(524,60) scale(.62)"/>
+    <use href="#star"   transform="translate(612,206) rotate(12) scale(.9)" fill="#9ed2f5" stroke="none"/>
+    <use href="#meeple" transform="translate(690,318) rotate(-8) scale(.92)"/>
+    <use href="#card"   transform="translate(632,548) rotate(11)"/>
+    <use href="#note"   transform="translate(74,540) rotate(-9) scale(1.05)"/>
+    <use href="#cardsm" transform="translate(112,772) rotate(-15)"/>
+    <use href="#dice"   transform="translate(664,790) rotate(9) scale(.82)"/>
+    <use href="#chip"   transform="translate(566,884) scale(.8)"/>
+    <use href="#token"  transform="translate(216,922) scale(.7)"/>
+    <use href="#meeple" transform="translate(48,318) rotate(14) scale(.6)"/>
+    <use href="#star"   transform="translate(196,214) rotate(-16) scale(.62)" fill="#9ed2f5" stroke="none"/>
+    <use href="#die3"   transform="translate(238,404) rotate(-24) scale(.6)"/>
+    <circle cx="352" cy="300" r="3.4" fill="#9ed2f5" stroke="none"/>
+    <circle cx="470" cy="352" r="2.6" fill="#9ed2f5" stroke="none"/>
+    <circle cx="150" cy="466" r="3" fill="#9ed2f5" stroke="none"/>
+    <circle cx="586" cy="440" r="2.4" fill="#9ed2f5" stroke="none"/>
+    <circle cx="268" cy="642" r="3.2" fill="#9ed2f5" stroke="none"/>
+    <circle cx="520" cy="712" r="2.6" fill="#9ed2f5" stroke="none"/>
+  </g>
+
+  <!-- затемнение под текстовым блоком для читаемости -->
+  <ellipse cx="384" cy="520" rx="560" ry="400" fill="url(#scrim)"/>
+  <rect width="768" height="1024" fill="url(#vign)"/>
+  <rect width="768" height="1024" filter="url(#grain)" opacity=".045"/>
+</svg>
+
+<div class="content">
+  <div class="brand">F.A.Q. QSP</div>
+  <div class="rule"></div>
+  <div class="title">Как сделать?</div>
+  <div class="subtitle">Справочник по самым часто задаваемым вопросам&nbsp;из темы «Как сделать» на&nbsp;форуме&nbsp;QSP.ORG</div>
+</div>
+
+</body>
+</html>
