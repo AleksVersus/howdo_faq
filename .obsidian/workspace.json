@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b0346199fdbe7994",
+        "id": "7e88a3a3540ab46a",
         "type": "tabs",
         "children": [
           {
-            "id": "1ef6c83b4551919e",
+            "id": "243e4fe980fe3874",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/news/news_20241126_591.md",
+                "file": "docs/articles/ntropy_inventory_advanced.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "news_20241126_591"
+              "title": "ntropy_inventory_advanced"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Файловый менеджер"
@@ -138,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/news/news_20241126_591.md",
+                "file": "docs/howdo/contents/saves/checkpoints_scheme.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура news_20241126_591"
+              "title": "Структура checkpoints_scheme"
             }
           }
         ],
@@ -152,7 +154,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.5
+    "width": 369.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,15 +165,27 @@
       "canvas:Создать новый холст": false,
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false
+      "command-palette:Открыть палитру команд": false,
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "1ef6c83b4551919e",
+  "active": "243e4fe980fe3874",
   "lastOpenFiles": [
+    "[source]/qSplogo green.png",
+    "[source]/logo.svg",
+    "[source]/checkpoints_scheme.md",
+    "docs/informarch/program/smooth_background.md",
+    "docs/informarch/program/choose_card_in_deck.md",
+    "docs/howdo/contents/concrete_tasks/choose_random_card.md",
+    "docs/howdo/links.md",
+    "docs/howdo/contents/items/stackable_items.md",
+    "docs/howdo/contents/saves/checkpoints.md",
+    "[source]/checkpoints_scheme_2.md",
+    "docs/news/news_20251003_594.md",
+    "docs/news/news_20241126_591.md",
     "docs/news/news_20240909_590.md",
     "docs/news/news_20210601_580.md",
     "docs/news/news_20100613_570.md",
-    "docs/news/news_20251003_594.md",
     "docs/articles/transition_570_590.md",
     "docs/articles/arrays_580/index.md",
     "docs/informarch/wii_qsp/short_faq.md",
@@ -178,22 +193,12 @@
     "docs/informarch/program/use_arrays.md",
     "docs/howdo/contents/concrete_tasks/goto_back.md",
     "docs/informarch/program/game_time.md",
-    "docs/informarch/program/smooth_background.md",
     "docs/howdo/contents/condition/conditional_action.md",
     "docs/informarch/program/conditional_actions.md",
     "docs/informarch/program/lib_extend_inventory.md",
-    "docs/howdo/contents/items/stackable_items.md",
     "docs/informarch/program/lib_flex_playlist.md",
     "docs/howdo/contents/sound/playlists.md",
-    "docs/howdo/contents/sound/loop_soundtrack.md",
-    "docs/informarch/program/julian_calendar.md",
-    "docs/informarch/intro.md",
-    "[source]/older/для статей и уроков/время.md",
-    "docs/howdo/links.md",
-    "docs/howdo/contents/layout/fade_in_fade_out.md",
-    "docs/howdo/contents/what_dif/subexpression.md",
     "[source]/link_replace.py",
-    "docs/howdo/contents/what_dif/set_let.md",
     "docs/howdo/contents/players/image_1.png",
     "docs/howdo/contents/players/image_2.png",
     "docs/howdo/contents/players/image_3.png",
@@ -211,8 +216,6 @@
     "docs/howdo/contents/items/assets/img/spanner.png",
     "docs/howdo/contents/items/assets/img/screw.png",
     "docs/howdo/contents/items/assets/img/otvertka.png",
-    "docs/howdo/contents/items/assets/img/gaje4niy_key.png",
-    "docs/howdo/contents/images/assets/bg/dTFYNu583iU.png",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",

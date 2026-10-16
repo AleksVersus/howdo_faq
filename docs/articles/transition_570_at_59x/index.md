@@ -32,7 +32,7 @@ sidebar_position: 11
 	- Краткая информация по утилите доступна и [на форуме](https://qsp.org/forum/281), и в [архиве статей](https://aleksversus.github.io/howdo_faq/docs/informarch/general/code_analyser).
 3. Чтобы просматривать игру в формате текстовых файлов подойдёт любой текстовый редактор, однако мы рекомендуем использовать Sublime Text или VS Code, так как эти редакторы поддерживают полноценную подсветку синтаксиса QSP.
 	- Для Sublime Text разработан [пакет](https://github.com/QSPFoundation/sublime_text_qsp_package), включающий плагин для работы с qsps-файлами и подсветку синтаксиса QSP.
-	- Для VS Code существует [специальное расширение](https://github.com/QSPFoundation/Qsp.FSharp.VsCode).
+	- Для VS Code существует [специальное расширение](https://github.com/QSPFoundation/qsp-lsp).
 
 Если вы умеете пользоваться системами контроля версий типа GIT, рекомендуем с их помощью фиксировать каждое масштабное изменение сделанное в игре.
 
