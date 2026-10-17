@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7e88a3a3540ab46a",
+        "id": "e4bd21434c91f39a",
         "type": "tabs",
         "children": [
           {
-            "id": "243e4fe980fe3874",
+            "id": "b51de8514581f27f",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "res/img/cover.png"
-              },
-              "icon": "lucide-image",
-              "title": "cover"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -169,6 +167,7 @@
   },
   "active": "61daad17fd4f3291",
   "lastOpenFiles": [
+    "fb2-book-info.json",
     "res/img/qSplogo green.png",
     "res/img/logo.svg",
     "res/img/faq_qsp_cover.png",
@@ -214,7 +213,6 @@
     "docs/howdo/contents/layout/assets/map_area.zip",
     "docs/howdo/contents/layout/assets/map.bmp",
     "docs/howdo/contents/items/assets/img/orange.png",
-    "docs/howdo/contents/items/assets/img/spanner.png",
     "res/[converters]/Без названия.canvas",
     "программирование/+Sublime Text/Модуль QSP.canvas",
     "программирование/+Sublime Text/QSP-plugin.canvas",
