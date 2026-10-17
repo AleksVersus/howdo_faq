@@ -8,7 +8,7 @@
 
 Вы можете добавлять предметы в обход функций библиотечки, они не помешают её работе, но и учитываться ею не будут.
 
-В прикреплённом [архиве](/storage/articles/23/inventory_advanced_0_80.zip) вы найдёте саму библиотечку (`lib/inventory_advanced.qsp`), а так же пример работы с ней (`invadv_test.qsp`).
+В прикреплённом [архиве](https://qsp.org/storage/articles/23/inventory_advanced_0_80.zip) вы найдёте саму библиотечку (`lib/inventory_advanced.qsp`), а так же пример работы с ней (`invadv_test.qsp`).
 
 Автор оригинальной версии [Ntropy](https://qsp.org/users/4) настаивает на сохранении авторства, если вы используете библиотечку в своём проекте.
 
@@ -22,7 +22,7 @@
 
 Для использования библиотечки в собственном проекте:
 
-- распакуйте папку "`lib`" из [скачанного архива](/storage/articles/23/inventory_advanced_0_80.zip) в папку со своей игрой;
+- распакуйте папку "`lib`" из [скачанного архива](https://qsp.org/storage/articles/23/inventory_advanced_0_80.zip) в папку со своей игрой;
 - подключите библиотечку, написав в своей игре на самой первой локации команду `inclib 'lib/inventory_advanced.qsp'`.
 
 Теперь вы можете использовать локации-функции библиотечки для управления предметами.
@@ -106,5 +106,5 @@
 
 ## Скачать
 
-- Последняя версия : [Inventory Advanced (0.80)](/storage/articles/23/inventory_advanced_0_80.zip)
-- Старая версия: [Библиотечка дополняющая инвентарь 0.76](/storage/articles/23/inventory_advanced.zip)
+- Последняя версия : [Inventory Advanced (0.80)](https://qsp.org/storage/articles/23/inventory_advanced_0_80.zip)
+- Старая версия: [Библиотечка дополняющая инвентарь 0.76](https://qsp.org/storage/articles/23/inventory_advanced.zip)
