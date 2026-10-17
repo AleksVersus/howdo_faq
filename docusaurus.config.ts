@@ -98,6 +98,12 @@ const config: Config = {
           label: 'Информ-Архив',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'qspWiki',
+          position: 'right',
+          label: 'QSP-WIKI',
+        },
+        {
           href: 'https://wiki.qsp.org',
           position: 'right',
           label: 'QSP-wiki',
