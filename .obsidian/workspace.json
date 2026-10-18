@@ -11,10 +11,14 @@
             "id": "b51de8514581f27f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "README"
             }
           }
         ]
@@ -165,7 +169,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "61daad17fd4f3291",
+  "active": "b51de8514581f27f",
   "lastOpenFiles": [
     "fb2-book-info.json",
     "res/img/qSplogo green.png",
