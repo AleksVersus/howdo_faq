@@ -39,6 +39,28 @@ const named_token = (pattern) => ({
     lookbehind: true,
 })
 
+const interpolated_string = (quote) => {
+    const inner_quote = quote === '"' ? "'" : '"'
+    const literal = `${inner_quote}(?:[^${inner_quote}]|${inner_quote}${inner_quote})*${inner_quote}(?!${inner_quote})`
+
+    return {
+        pattern: RegExp(`${quote}(?:[^${quote}]|${quote}${quote})*${quote}`),
+        greedy: true,
+        inside: {
+            interpolation: {
+                pattern: RegExp(`<<(?:(?!>>)[^"']|${literal})*>>`),
+                greedy: true,
+                inside: {
+                    'interpolation-punctuation': {
+                        pattern: /^<<|>>$/,
+                        alias: 'punctuation',
+                    },
+                },
+            },
+        },
+    }
+}
+
 Prism.languages.qsp = {
     'comment': {
         pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))(![^\n{'"]*$)/m,
@@ -57,11 +79,7 @@ Prism.languages.qsp = {
         lookbehind: true,
         greedy: true,
     },
-    'string': {
-        pattern: /("|')(?:[\s\S]*?)\1/im,
-        lookbehind: false,
-        greedy: true
-    },
+    'string': [interpolated_string('"'), interpolated_string("'")],
     'function': {
         pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
         lookbehind: true,
@@ -89,3 +107,11 @@ Prism.languages.qsp = {
     'sign-punctuation': /[{}[\]();,:.]/,
     'user-variable': named_token(`${type_prefix}?${name_start}${name_char}*`),
 };
+
+const interpolation_tokens = { ...Prism.languages.qsp }
+for (const token of ['comment', 'braced-comment', 'quoted-comment', 'start-location', 'end-location', 'label']) {
+    delete interpolation_tokens[token]
+}
+for (const string of Prism.languages.qsp.string) {
+    string.inside.interpolation.inside.rest = interpolation_tokens
+}
