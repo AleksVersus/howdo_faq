@@ -1,12 +1,43 @@
-const kw_operators = '\\b(act|addobj|cla|close|all|cls|cmdclear|copyarr|delact|delobj|dynamic|exit|gosub|goto|if|else|elseif|inclib|jump|killall|killobj|freelib|killvar|let|local|loop|menu|msg|opengame|openqst|play|refint|savegame|scanstr|set|settimer|showacts|showinput|showobjs|showstat|sortarr|unselect|view|wait|xgoto|addqst|killqst|unsel|cmdclr|gt|xgt|gs|exec)\\b'
-const kw_controls = '\\b(act|if|elseif|else|loop|while|step|end)\\b'
-const kw_text_operators = '\\*?\\b(pl?|nl|clr|clear)\\b'
+const statements = [
+    'play', 'close', 'view', 'exit', 'jump',
+    'gosub', 'gs', 'goto', 'gt', 'xgoto', 'xgt',
+    'pl', 'p', 'nl', 'clear', 'clr',
+    '\\*pl', '\\*p', '\\*nl', '\\*clear', '\\*clr',
+    'msg', 'wait', 'addobj', 'delobj', 'modobj', 'resetobj', 'killobj',
+    'unselect', 'unsel', 'killall', 'cla', 'delact', 'cls',
+    'cmdclear', 'cmdclr', 'menu', 'settimer', 'dynamic',
+    'setvar', 'insvar', 'killvar', 'copyarr', 'movearr', 'sortarr', 'scanstr', 'unpackarr',
+    'opengame', 'savegame', 'openqst', 'inclib', 'freelib', 'refint',
+    'showacts', 'showinput', 'showobjs', 'showstat',
+].join('|')
 
-const functions_string = '\\$(desc|user_text|usrtxt|maintxt|stattxt|curloc|selobj|selact|mid|(u|l)case|trim|replace|str|strfind|input|qspver|curacts|curobjs|getobj|iif|dyneval|func|max|min|arritem)\\b'
-const functions_num = '\\b(loc|obj|isnum|isplay|len|val|instr|strcomp|strpos|arrsize|arrpos|arrcomp|msecscount|rgb|countobj|ra?nd|iif|dyneval|func|max|min|arritem)\\b'
+const controls = 'act|if|elseif|else|loop|while|step|end'
 
-const system_vars_string = '\\$(counter|ongload|ongsave|onnewloc|onactsel|onobjsel|onobjadd|onobjdel|usercom|fname|backimage|args|result)\\b'
-const system_vars_num = '\\b(nosave|disablescroll|disablesubex|debug|usehtml|(b|f|l)color|fsize|args|result)\\b'
+const functions = [
+    'desc', 'max', 'min', 'rand', 'rnd', 'val', 'iif', 'dyneval', 'func',
+    'input', 'usrtxt', 'user_text', 'maintxt', 'stattxt',
+    'getobj', 'countobj', 'selobj', 'curloc', 'curobjs', 'selact', 'curacts',
+    'arrsize', 'arrtype', 'arrkey', 'arritem', 'arrpack', 'arrpos', 'arrcomp',
+    'strcomp', 'strfind', 'strpos', 'instr', 'isnum',
+    'trim', 'ucase', 'lcase', 'len', 'mid', 'replace', 'str',
+    'isplay', 'rgb', 'msecscount', 'qspver',
+].join('|')
+
+const system_vars = [
+    'counter', 'ongload', 'ongsave', 'onnewloc', 'onactsel', 'onobjsel', 'onobjadd', 'onobjdel',
+    'usercom', 'fname', 'backimage', 'args', 'result',
+    'nosave', 'disablescroll', 'disablesubex', 'debug', 'usehtml',
+    'bcolor', 'fcolor', 'lcolor', 'fsize',
+].join('|')
+
+const delimiter_chars = "\\s&'\"(){}\\[\\],:=!<>+\\-/*\\\\;^@?"
+const name_char = `[^${delimiter_chars}.]`
+const name_start = `[^${delimiter_chars}.0-9#$%]`
+const type_prefix = '[#$%]'
+const named_token = (pattern) => ({
+    pattern: RegExp(`(^|[${delimiter_chars}.])(?:${pattern})(?!${name_char})`, 'i'),
+    lookbehind: true,
+})
 
 Prism.languages.qsp = {
     'comment': {
@@ -32,7 +63,9 @@ Prism.languages.qsp = {
         greedy: true
     },
     'function': {
-        pattern: /\@[\w\.а-я]+(?=\s*\()/i,
+        pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
+        lookbehind: true,
+        greedy: true,
     },
     'start-location': /^\#\s*\S+.*$/im,
     'end-location': /^\-.*$/im,
@@ -41,12 +74,18 @@ Prism.languages.qsp = {
         lookbehind: true,
         greedy: true,
     },
-    'sys-variable': RegExp(`(?:${system_vars_string}|${system_vars_num})`, 'i'),
-    'builtin': RegExp(`(?:(${functions_string}|${functions_num}))`, 'i'),
-    'number': /\b\d+\b/,
-    'keyword': RegExp(`(?:${kw_text_operators}|${kw_operators}|${kw_controls})`, 'i'),
-    'declarator': /(?:\b(local|set|let)\b)/i,
-    'operator': /[<>\+\-\*\/]=|<>|\+|\&|-|<|>|=|\/|\*|!|\b(and|or|mod|no)\b/i,
-    'sign-punctuation': /[{}[\];(),:]/,
-    'user-variable': /[\$\%][\wа-я]+|[\wа-я]+/i,
+    'sys-variable': named_token(`${type_prefix}?(?:${system_vars})`),
+    'builtin': named_token(`${type_prefix}?(?:${functions})`),
+    'number': [named_token('\\d+'), /\?/],
+    'keyword': [
+        named_token('else\\s+if'),
+        named_token(`${controls}|${statements}`),
+    ],
+    'declarator': named_token('alias|local|set|let'),
+    'operator': [
+        /<=|>=|<>|=<|=>|\+=|-=|\*=|\/=|[+\-*/=<>!&]/,
+        named_token('and|or|mod|no|obj|loc'),
+    ],
+    'sign-punctuation': /[{}[\]();,:.]/,
+    'user-variable': named_token(`${type_prefix}?${name_start}${name_char}*`),
 };

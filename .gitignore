@@ -28,3 +28,4 @@ yarn-debug.log*
 yarn-error.log*
 fb2-book-info.json
 fb2-book-scheme.json
+/\[source\]/qsp-syntax-obsidian-example/
