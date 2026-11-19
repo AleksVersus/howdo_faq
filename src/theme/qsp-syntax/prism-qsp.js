@@ -34,6 +34,7 @@ const delimiter_chars = "\\s&'\"(){}\\[\\],:=!<>+\\-/*\\\\;^@?"
 const name_char = `[^${delimiter_chars}.]`
 const name_start = `[^${delimiter_chars}.0-9#$%]`
 const type_prefix = '[#$%]'
+const qsp_prism = Prism
 const named_token = (pattern) => ({
     pattern: RegExp(`(^|[${delimiter_chars}.])(?:${pattern})(?!${name_char})`, 'i'),
     lookbehind: true,
@@ -61,24 +62,157 @@ const interpolated_string = (quote) => {
     }
 }
 
+const end_delimiter = new RegExp(`^[${delimiter_chars}]$`)
+
+const scan_qsp_regions = (code) => {
+    const regions = []
+    let regionStart = 0
+    let regionType = 'code'
+    let textMode = null
+    const stack = []
+    const textStack = []
+    let inString = null
+    let inTextString = null
+    let lastNonWhitespace = null
+    let atLineStart = true
+
+    const pushRegion = (type, start, end) => {
+        if (end > start) {
+            regions.push({ type, text: code.slice(start, end) })
+        }
+    }
+
+    const startText = (mode, start) => {
+        pushRegion(regionType, regionStart, start)
+        regionStart = start
+        regionType = mode === 'label' ? 'label' : 'comment'
+        textMode = mode
+        textStack.length = 0
+        inTextString = null
+    }
+
+    const finishText = (end) => {
+        pushRegion(regionType, regionStart, end)
+        regionStart = end
+        regionType = 'code'
+        textMode = null
+    }
+
+    const isInsideRoundOrSquare = () => {
+        for (let i = stack.length - 1; i >= 0; i--) {
+            if (stack[i] === '(' || stack[i] === '[') return true
+            if (stack[i] === '{') return false
+        }
+        return false
+    }
+
+    for (let i = 0; i < code.length; i++) {
+        const ch = code[i]
+        const startsLine = atLineStart
+        atLineStart = ch === '\n' || (atLineStart && (ch === ' ' || ch === '\t'))
+
+        if (textMode === null) {
+            if (
+                startsLine && inString === null && stack.length === 0 &&
+                ((ch === '#' && (code[i + 1] === ' ' || code[i + 1] === '\t')) ||
+                    (ch === '-' && code[i + 1] === '-'))
+            ) {
+                const newline = code.indexOf('\n', i)
+                i = newline === -1 ? code.length - 1 : newline - 1
+                continue
+            }
+
+            if (inString !== null) {
+                if (ch === inString) {
+                    if (code[i + 1] === inString) {
+                        i++
+                    } else {
+                        inString = null
+                    }
+                }
+            } else {
+                const atStatementStart =
+                    (lastNonWhitespace === null || lastNonWhitespace === '\n' ||
+                        lastNonWhitespace === '&' || lastNonWhitespace === '{' ||
+                        lastNonWhitespace === ':') &&
+                    !isInsideRoundOrSquare()
+
+                if (ch === ':' && atStatementStart) {
+                    startText('label', i + 1)
+                    continue
+                }
+
+                if (
+                    atStatementStart && code.slice(i, i + 3).toLowerCase() === 'end' &&
+                    (i + 3 === code.length || end_delimiter.test(code[i + 3]))
+                ) {
+                    i += 2
+                    lastNonWhitespace = code[i]
+                    let noteStart = i + 1
+                    while (code[noteStart] === ' ' || code[noteStart] === '\t') noteStart++
+                    if (noteStart < code.length && !/[\r\n&}]/.test(code[noteStart])) {
+                        startText('note', noteStart)
+                        i = noteStart - 1
+                    }
+                    continue
+                }
+
+                if (ch === '"' || ch === "'") {
+                    inString = ch
+                } else if (ch === '{') {
+                    stack.push('{')
+                } else if (ch === '}') {
+                    if (stack[stack.length - 1] === '{') stack.pop()
+                } else if (ch === '[') {
+                    stack.push('[')
+                } else if (ch === ']') {
+                    if (stack[stack.length - 1] === '[') stack.pop()
+                } else if (ch === '(') {
+                    stack.push('(')
+                } else if (ch === ')') {
+                    if (stack[stack.length - 1] === '(') stack.pop()
+                } else if (ch === '!' && atStatementStart) {
+                    startText('comment', i)
+                }
+            }
+
+            if (ch !== ' ' && ch !== '\t') {
+                lastNonWhitespace = ch
+            }
+        } else if (inTextString !== null) {
+            if (ch === inTextString) {
+                if (code[i + 1] === inTextString) {
+                    i++
+                } else {
+                    inTextString = null
+                }
+            }
+        } else if (ch === '"' || ch === "'") {
+            inTextString = ch
+        } else if (ch === '{') {
+            textStack.push('{')
+        } else if (ch === '}') {
+            if (textStack[textStack.length - 1] === '{') {
+                textStack.pop()
+            } else if (stack[stack.length - 1] === '{') {
+                finishText(i)
+                stack.pop()
+                lastNonWhitespace = null
+            }
+        } else if (ch === '&' && textMode !== 'comment' && textStack.length === 0) {
+            finishText(i)
+            lastNonWhitespace = '&'
+        } else if (ch === '\n' && textStack.length === 0) {
+            finishText(textMode === 'label' ? i : i + 1)
+            lastNonWhitespace = '\n'
+        }
+    }
+
+    pushRegion(regionType, regionStart, code.length)
+    return regions
+}
+
 Prism.languages.qsp = {
-    'comment': {
-        pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))(![^\n{'"]*$)/m,
-        lookbehind: true,
-        greedy: true,
-    },
-    'braced-comment': {
-        pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))(![^\n{'"]*\{[^\}]*\}.*?$)/m,
-        alias: 'comment',
-        lookbehind: true,
-        greedy: true,
-    },
-    'quoted-comment': {
-        pattern: /((^\s*?)|(\&\s*?)|(\:\s*?))((![^\n{'"]*"[^"]*".*?$)|(![^'\n\r]*'[^']*?'.*?$))/m,
-        alias: 'comment',
-        lookbehind: true,
-        greedy: true,
-    },
     'string': [interpolated_string('"'), interpolated_string("'")],
     'function': {
         pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
@@ -87,11 +221,6 @@ Prism.languages.qsp = {
     },
     'start-location': /^[ \t]*#[ \t]+\S.*$/m,
     'end-location': /^[ \t]*--.*$/m,
-    'label': {
-        pattern: /^\s*:[^&\n]*(?=\&|$)/im,
-        lookbehind: true,
-        greedy: true,
-    },
     'sys-variable': named_token(`${type_prefix}?(?:${system_vars})`),
     'builtin': named_token(`${type_prefix}?(?:${functions})`),
     'number': [named_token('\\d+'), /\?/],
@@ -109,9 +238,26 @@ Prism.languages.qsp = {
 };
 
 const interpolation_tokens = { ...Prism.languages.qsp }
-for (const token of ['comment', 'braced-comment', 'quoted-comment', 'start-location', 'end-location', 'label']) {
+for (const token of ['start-location', 'end-location']) {
     delete interpolation_tokens[token]
 }
 for (const string of Prism.languages.qsp.string) {
     string.inside.interpolation.inside.rest = interpolation_tokens
 }
+
+Prism.hooks.add('after-tokenize', (env) => {
+    if (env.language !== 'qsp') return
+
+    const regions = scan_qsp_regions(env.code)
+    if (!regions.some((region) => region.type !== 'code')) return
+
+    env.tokens = []
+    for (const region of regions) {
+        if (region.type === 'code') {
+            env.tokens.push(...qsp_prism.tokenize(region.text, env.grammar))
+        } else {
+            const type = region.type === 'label' ? 'label' : 'comment'
+            env.tokens.push(new qsp_prism.Token(type, region.text))
+        }
+    }
+})
