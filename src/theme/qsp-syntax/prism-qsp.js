@@ -85,8 +85,8 @@ Prism.languages.qsp = {
         lookbehind: true,
         greedy: true,
     },
-    'start-location': /^\#\s*\S+.*$/im,
-    'end-location': /^\-.*$/im,
+    'start-location': /^[ \t]*#[ \t]+\S.*$/m,
+    'end-location': /^[ \t]*--.*$/m,
     'label': {
         pattern: /^\s*:[^&\n]*(?=\&|$)/im,
         lookbehind: true,
