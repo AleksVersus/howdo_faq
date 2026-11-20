@@ -12,6 +12,7 @@
 .theme-dark {
     --qsp-scope-user-variable: #e0e0e0;
     --qsp-scope-sys-variable: rgb(255,184,107);
+    --qsp-scope-builtin: rgb(36,147,164);
     --qsp-scope-number: rgb(80,250,123);
     --qsp-scope-operator: rgb(127,233,231);
     --qsp-scope-label: rgb(241,250,140);
@@ -36,7 +37,7 @@
     color: var(--qsp-scope-number);
 }
 
-.token.sign-punktuation,
+.token.sign-punctuation,
 .token.operator {
     color: var(--qsp-scope-operator);
 }
@@ -58,4 +59,12 @@
 .token.declarator {
     color: var(--qsp-scope-operator);
     font-style: italic;
+}
+
+.token.user-call {
+    color: var(--qsp-scope-builtin);
+}
+
+.token.interpolation-punctuation {
+    color: var(--qsp-scope-operator);
 }

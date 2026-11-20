@@ -1,6 +1,5 @@
 [
-  "docusaurus-style-admonitions",
+  "qsp-syntax-obsidian",
   "obsidian-excalidraw-plugin",
-  "shortcuts-extender",
-  "qsp-syntax-obsidian"
+  "docusaurus-style-admonitions"
 ]
