@@ -1,0 +1,179 @@
+# Variables: system & user
+
+```qsp
+中國 = 1
+café = 中國 + 2
+len變 = 3
+#args[0] = 7
+%result = [中國, café]
+$fname = 'Consolas'
+```
+
+## sysvars_string
+
+```qsp
+! Строковые системные переменные: допустимы $var и var (универсальный);
+! #var и %var — ошибка типа
+$backimage = 'path to file'	& !@ valid (строковый)
+backimage = 'path'	& !@ valid (универсальный)
+#backimage = 'path to file'	& !@ invalid prefix
+%backimage = 'path to file'	& !@ invalid prefix
+
+$fname = 'Consolas'	& !@ valid
+fname = 'courier new'	& !@ valid (универсальный)
+#fname = 'Consolas'	& !@ invalid prefix
+%fname = 'Consolas'	& !@ invalid prefix
+
+$onactsel = 'onActSel'	& !@ valid
+onactsel = 'onActSel'	& !@ valid (универсальный)
+#onactsel = 'onActSel'	& !@ invalid prefix
+%onactsel = 'onActSel'	& !@ invalid prefix
+
+$ongload = 'onGameLoad'	& !@ valid
+ongload = 'onGameLoad'	& !@ valid (универсальный)
+#ongload = 'onGameLoad'	& !@ invalid prefix
+%ongload = 'onGameLoad'	& !@ invalid prefix
+
+$ongsave = 'onGameSave'	& !@ valid
+ongsave = 'onGameSave'	& !@ valid (универсальный)
+#ongsave = 'onGameSave'	& !@ invalid prefix
+%ongsave = 'onGameSave'	& !@ invalid prefix
+
+$onnewloc = 'onNewLoc'	& !@ valid
+onnewloc = 'onNewLoc'	& !@ valid (универсальный)
+#onnewloc = 'onNewLoc'	& !@ invalid prefix
+%onnewloc = 'onNewLoc'	& !@ invalid prefix
+
+$onobjadd = 'onObjAdd'	& !@ valid
+onobjadd = 'onObjAdd'	& !@ valid (универсальный)
+#onobjadd = 'onObjAdd'	& !@ invalid prefix
+%onobjadd = 'onObjAdd'	& !@ invalid prefix
+
+$onobjdel = 'onObjDel'	& !@ valid
+onobjdel = 'onObjDel'	& !@ valid (универсальный)
+#onobjdel = 'onObjDel'	& !@ invalid prefix
+%onobjdel = 'onObjDel'	& !@ invalid prefix
+
+$onobjsel = 'onObjSel'	& !@ valid
+onobjsel = 'onObjSel'	& !@ valid (универсальный)
+#onobjsel = 'onObjSel'	& !@ invalid prefix
+%onobjsel = 'onObjSel'	& !@ invalid prefix
+
+$usercom = 'userCommand'	& !@ valid
+usercom = 'userCommand'	& !@ valid (универсальный)
+#usercom = 'userCommand'	& !@ invalid prefix
+%usercom = 'userCommand'	& !@ invalid prefix
+
+$counter = 'loc_name'	& !@ valid
+counter = 'loc_name'	& !@ valid (универсальный)
+#counter = 'loc_name'	& !@ invalid prefix
+%counter = 'loc_name'	& !@ invalid prefix
+```
+
+
+## sysvar_number
+
+```qsp
+! Числовые системные переменные: допустимы #var и var (универсальный);
+! $var и %var — ошибка типа
+bcolor = rgb(red,green,blue)	& !@ valid (универсальный)
+#bcolor = rgb(red,green,blue)	& !@ valid (числовой)
+$bcolor	& !@ invalid prefix
+%bcolor	& !@ invalid prefix
+
+fcolor = rgb(red,green,blue)	& !@ valid
+#fcolor = rgb(red,green,blue)	& !@ valid
+$fcolor	& !@ invalid prefix
+%fcolor	& !@ invalid prefix
+
+lcolor = rgb(red,green,blue)	& !@ valid
+#lcolor = rgb(red,green,blue)	& !@ valid
+$lcolor	& !@ invalid prefix
+%lcolor	& !@ invalid prefix
+
+debug = 1	& !@ valid
+#debug = 1	& !@ valid
+$debug	& !@ invalid prefix
+%debug	& !@ invalid prefix
+
+disablescroll = 1	& !@ valid
+#disablescroll = 1	& !@ valid
+$disablescroll	& !@ invalid prefix
+%disablescroll	& !@ invalid prefix
+
+disablesubex & ! не поддерживается
+
+fsize = 14	& !@ valid
+#fsize = 14	& !@ valid
+$fsize	& !@ invalid prefix
+%fsize	& !@ invalid prefix
+
+nosave = 1	& !@ valid
+#nosave = 1	& !@ valid
+$nosave	& !@ invalid prefix
+%nosave	& !@ invalid prefix
+
+usehtml = 1	& !@ valid
+#usehtml = 1	& !@ valid
+$usehtml	& !@ invalid prefix
+%usehtml	& !@ invalid prefix
+```
+
+
+## altypevars
+
+```qsp
+! args и result — системные переменные любого типа:
+! допустимы все четыре формы (без префикса, #, $, %)
+args[0] & !@ valid (универсальный)
+#args[1] & !@ valid (числовой)
+$args[2] & !@ valid (строковый)
+%args[3] & !@ valid (кортежный)
+
+result & !@ valid (универсальный)
+#result & !@ valid (числовой)
+$result & !@ valid (строковый)
+%result & !@ valid (кортежный)
+```
+
+## invar_n_sysvar
+
+```qsp
+!@ имена системных переменных можно использовать как часть имён
+!@ пользовательских переменных — префикс не мешает
+$maintext_backimage
+$new_curloc
+#new_counter
+%new_arr
+$кирилические_переменные
+%中國.變數
+
+!@ запись подряд идущих системных переменных подсвечивается как ошибка
+$result$fname
+
+!@ запись переменной перед значением без операции — ошибка
+new_curloc fffff & !@ неизвестное действие
+showact 1
+$result 34565
+```
+
+## sugarfunc
+
+```qsp
+@foo('dddd')
+@функция()
+@中文功能()
+@@中文功能 55
+```
+
+
+## default_value_symbol
+
+```qsp
+! ? — символ дефолтного значения (QSP 5.8+), подсвечивается как пользовательская переменная
+$x = ?			& !@ присвоить дефолт
+if $args[0] = ?:  !@ проверка на дефолтное значение
+ set result = ?	& !@ вернуть дефолт
+end
+gosub 'loc', ?		& !@ передать дефолтный аргумент
+```
