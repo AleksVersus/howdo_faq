@@ -230,10 +230,11 @@ Prism.languages.qsp = {
         inside: {},
     },
     'string': [interpolated_string('"'), interpolated_string("'")],
-    'function': {
+    'user-call': {
         pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
         lookbehind: true,
         greedy: true,
+        alias: 'function',
     },
     'start-location': /^[ \t]*#[ \t]+\S.*$/m,
     'end-location': /^[ \t]*--.*$/m,
