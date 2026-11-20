@@ -62,7 +62,17 @@ const interpolated_string = (quote) => {
     }
 }
 
+const balanced_pattern = (open, close, atom, depth = 20) => {
+    let inner = `(?:${atom})*`
+    for (let i = 0; i < depth; i++) {
+        inner = `(?:${atom}|\\${open}${inner}\\${close})*`
+    }
+    return `\\${open}${inner}\\${close}`
+}
+
+const string_pattern = `"(?:[^"]|"")*"|'(?:[^']|'')*'`
 const end_delimiter = new RegExp(`^[${delimiter_chars}]$`)
+let processing_qsp_regions = false
 
 const scan_qsp_regions = (code) => {
     const regions = []
@@ -213,6 +223,12 @@ const scan_qsp_regions = (code) => {
 }
 
 Prism.languages.qsp = {
+    'code-block': {
+        pattern: new RegExp(balanced_pattern('{', '}', `[^{}"']|${string_pattern}`)),
+        greedy: true,
+        alias: 'punctuation',
+        inside: {},
+    },
     'string': [interpolated_string('"'), interpolated_string("'")],
     'function': {
         pattern: RegExp(`(^|[${delimiter_chars}.])(@@?\\s*[^${delimiter_chars}]+)`, 'i'),
@@ -237,27 +253,80 @@ Prism.languages.qsp = {
     'user-variable': named_token(`${type_prefix}?${name_start}${name_char}*`),
 };
 
-const interpolation_tokens = { ...Prism.languages.qsp }
-for (const token of ['start-location', 'end-location']) {
-    delete interpolation_tokens[token]
+const nested_tokens = { ...Prism.languages.qsp }
+for (const token of ['code-block', 'start-location', 'end-location']) {
+    delete nested_tokens[token]
 }
 for (const string of Prism.languages.qsp.string) {
-    string.inside.interpolation.inside.rest = interpolation_tokens
+    string.inside.interpolation.inside.rest = nested_tokens
 }
+Prism.languages.qsp['code-block'].inside = nested_tokens
 
 Prism.hooks.add('after-tokenize', (env) => {
-    if (env.language !== 'qsp') return
+    if (env.language !== 'qsp' || processing_qsp_regions) return
 
     const regions = scan_qsp_regions(env.code)
     if (!regions.some((region) => region.type !== 'code')) return
 
-    env.tokens = []
+    let normalizedCode = ''
+    const replacements = new Map()
+    let placeholderIndex = 0
     for (const region of regions) {
         if (region.type === 'code') {
-            env.tokens.push(...qsp_prism.tokenize(region.text, env.grammar))
+            normalizedCode += region.text
         } else {
-            const type = region.type === 'label' ? 'label' : 'comment'
-            env.tokens.push(new qsp_prism.Token(type, region.text))
+            let placeholder
+            do {
+                placeholder = `qspregionplaceholder${placeholderIndex++}qsp`
+            } while (env.code.toLowerCase().includes(placeholder))
+            replacements.set(placeholder, region)
+            normalizedCode += `(${placeholder})`
         }
     }
+
+    processing_qsp_regions = true
+    try {
+        env.tokens = qsp_prism.tokenize(normalizedCode, env.grammar)
+    } finally {
+        processing_qsp_regions = false
+    }
+
+    const regionToken = (region) => {
+        const type = region.type === 'label' ? 'label' : 'comment'
+        return new qsp_prism.Token(type, region.text)
+    }
+
+    const restorePlaceholders = (tokens) => {
+        const restored = []
+        for (let i = 0; i < tokens.length; i++) {
+            const token = tokens[i]
+            const placeholderToken = tokens[i + 1]
+            const closingToken = tokens[i + 2]
+            if (
+                typeof token !== 'string' && token.content === '(' &&
+                typeof placeholderToken !== 'string' &&
+                typeof placeholderToken.content === 'string' &&
+                replacements.has(placeholderToken.content) &&
+                typeof closingToken !== 'string' && closingToken.content === ')'
+            ) {
+                restored.push(regionToken(replacements.get(placeholderToken.content)))
+                i += 2
+                continue
+            }
+            if (typeof token === 'string') {
+                restored.push(token)
+            } else if (typeof token.content === 'string' && replacements.has(token.content)) {
+                restored.push(regionToken(replacements.get(token.content)))
+            } else {
+                if (Array.isArray(token.content)) {
+                    token.content = restorePlaceholders(token.content)
+                    token.length = token.content.reduce((length, child) => length + child.length, 0)
+                }
+                restored.push(token)
+            }
+        }
+        return restored
+    }
+
+    env.tokens = restorePlaceholders(env.tokens)
 })
