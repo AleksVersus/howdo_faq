@@ -1,0 +1,10 @@
+{
+  "shortcuts-extender:insert-hash-sign": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "3"
+    }
+  ]
+}
