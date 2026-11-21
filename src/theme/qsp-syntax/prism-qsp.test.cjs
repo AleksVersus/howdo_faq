@@ -54,6 +54,21 @@ test('distinguishes location markers from typed variables and leaves brackets or
     assert.ok(!html.includes('token tuple'))
 })
 
+test('location markers take precedence over strings in quoted names', () => {
+    const html = highlight(`# O'Bri'en
+# O"Bri"en
+-- O'Bri'en
+-- O"Bri"en
+msg 1`)
+
+    assert.ok(html.includes(`<span class="token start-location"># O'Bri'en</span>`))
+    assert.ok(html.includes('<span class="token start-location"># O"Bri"en</span>'))
+    assert.ok(html.includes(`<span class="token end-location">-- O'Bri'en</span>`))
+    assert.ok(html.includes('<span class="token end-location">-- O"Bri"en</span>'))
+    assert.ok(!html.includes('class="token string"'))
+    assert.ok(html.includes('<span class="token keyword">msg</span>'))
+})
+
 test('keeps @ and @@ calls distinct from built-in function tokens', () => {
     const html = highlight('@foo(1) & @@ bar')
 
