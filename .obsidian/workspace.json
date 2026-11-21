@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e4bd21434c91f39a",
+        "id": "4118ddacb1c3f487",
         "type": "tabs",
         "children": [
           {
-            "id": "b51de8514581f27f",
+            "id": "d78a75619ab8ba57",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "[source]/older/для статей и уроков/-диалоги.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "-диалоги"
+              "title": "README"
             }
           }
         ]
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "[source]/older/для статей и уроков/-диалоги.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -168,11 +168,12 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "b51de8514581f27f",
+  "active": "d78a75619ab8ba57",
   "lastOpenFiles": [
+    "release/for_realeses.md",
+    "[source]/older/для статей и уроков/-диалоги.md",
     "[source]/older/99_без ответа/wait.md",
     "[source]/older/99_без ответа/подвыражения.md",
-    "release/for_realeses.md",
     "[source]/checkpoints_scheme_2.md",
     "[source]/checkpoints_scheme.md",
     "docs/howdo/contents/concrete_tasks/check_for_even.md",
@@ -202,7 +203,6 @@
     "docs/articles/arrays_580/index.md",
     "docs/informarch/wii_qsp/short_faq.md",
     "docs/howdo/contents/interface/smooth_text_fade_in.md",
-    "docs/informarch/program/use_arrays.md",
     "[source]/link_replace.py",
     "docs/howdo/contents/players/image_1.png",
     "docs/howdo/contents/players/image_2.png",
