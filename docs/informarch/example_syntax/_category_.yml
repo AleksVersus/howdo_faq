@@ -1,3 +1,5 @@
 position: 999999
 label: Тесты подсветки синтаксиса
 link: null
+customProps:
+  qsp-docs-hidden: true

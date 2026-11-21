@@ -44,6 +44,35 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+
+            function filterHiddenCategories(
+              items: typeof sidebarItems,
+            ): typeof sidebarItems {
+              return items.reduce<typeof sidebarItems>(
+                (filteredItems, item) => {
+                  if (item.type !== 'category') {
+                    filteredItems.push(item);
+                  } else if (
+                    item.customProps?.['qsp-docs-hidden'] !== true
+                  ) {
+                    filteredItems.push({
+                      ...item,
+                      items: filterHiddenCategories(item.items),
+                    });
+                  }
+                  return filteredItems;
+                },
+                [],
+              );
+            }
+
+            return filterHiddenCategories(sidebarItems);
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -96,12 +125,6 @@ const config: Config = {
           sidebarId: 'informArchSidebar',
           position: 'right',
           label: 'Информ-Архив',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'qspWiki',
-          position: 'right',
-          label: 'QSP-WIKI',
         },
         {
           href: 'https://wiki.qsp.org',
